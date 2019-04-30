@@ -22,7 +22,7 @@ def get_div_contents(url,element_type,el_id):
 tree_lines = get_div_contents(main_url,"div","tree")
 num_parsed_tricks = 0
 all_tricks = {}
-num_tricks = 20
+num_tricks = 200
 f = open("./trick_relationships.txt", "w") 
 for line in tree_lines:	
 
