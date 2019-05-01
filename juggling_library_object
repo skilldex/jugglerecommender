@@ -1,7 +1,7 @@
 {
     "Alex": {
         "prereqs": [
-            "531MillsMess",
+            "531 Mills Mess",
             "Orca's Mess"
         ],
         "related": [],
@@ -35,19 +35,19 @@
     },
     "BostonMess": {
         "prereqs": [
-            "MillsMess",
+            "Mills Mess",
             "The W",
             "Cherry Picker"
         ],
         "related": [
-            "CherryPicker"
+            "Cherry Picker"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BostonMess.html",
         "name": "Boston Mess"
     },
     "CherryPicker": {
         "prereqs": [
-            "BostonMess"
+            "Boston Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CherryPicker.html",
@@ -60,14 +60,14 @@
             "Luke's Shuffle"
         ],
         "related": [
-            "Luke'sShuffle"
+            "Luke's Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BostonShuffle.html",
         "name": "Boston Shuffle"
     },
     "Burke'sSlam": {
         "prereqs": [
-            "BostonShuffle",
+            "Boston Shuffle",
             "Takeouts"
         ],
         "related": [],
@@ -99,7 +99,7 @@
             "Karas's Box"
         ],
         "related": [
-            "Karas'sBox"
+            "Karas's Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BizarreBox.html",
         "name": "Bizarre Box"
@@ -111,18 +111,18 @@
             "Burst Box"
         ],
         "related": [
-            "BurstBox"
+            "Burst Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenBox.html",
         "name": "Broken Box"
     },
     "BurstBox": {
         "prereqs": [
-            "BrokenBox",
+            "Broken Box",
             "Gilligan's Box"
         ],
         "related": [
-            "Gilligan'sBox"
+            "Gilligan's Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BurstBox.html",
         "name": "Burst Box"
@@ -137,7 +137,7 @@
     },
     "Gilligan'sBox": {
         "prereqs": [
-            "BrokenBox"
+            "Broken Box"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Gilligan'sBox.html",
@@ -145,7 +145,7 @@
     },
     "Karas'Box": {
         "prereqs": [
-            "BizarreBox"
+            "Bizarre Box"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Karas'Box.html",
@@ -158,7 +158,7 @@
             "Boston Shuffle"
         ],
         "related": [
-            "BostonShuffle"
+            "Boston Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Luke'sShuffle.html",
         "name": "Luke's Shuffle"
@@ -170,7 +170,7 @@
             "Luke's Shuffle"
         ],
         "related": [
-            "Luke'sShuffle"
+            "Luke's Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/N-Box.html",
         "name": "N-Box"
@@ -208,7 +208,7 @@
             "Threaded Box"
         ],
         "related": [
-            "ThreadedBox"
+            "Threaded Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SwitchedBox.html",
         "name": "Switched Box"
@@ -223,7 +223,7 @@
     },
     "TrueBox": {
         "prereqs": [
-            "Box</a>,<ahref=\"InvertedShower.html\">InvertedShower"
+            "Box</a>,<a href=\"InvertedShower.html\"> Inverted Shower"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TrueBox.html",
@@ -235,7 +235,7 @@
             "Burst Box"
         ],
         "related": [
-            "BurstBox"
+            "Burst Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmBox.html",
         "name": "Underarm Box"
@@ -255,7 +255,7 @@
             "Burke's Barrage"
         ],
         "related": [
-            "Burke'sBarrage"
+            "Burke's Barrage"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takeouts.html",
         "name": "Takeouts"
@@ -292,7 +292,7 @@
             "Reverse Chops"
         ],
         "related": [
-            "ReverseChops"
+            "Reverse Chops"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Chops.html",
         "name": "Chops"
@@ -321,7 +321,7 @@
             "Shower Variation"
         ],
         "related": [
-            "ShowerVariation"
+            "Shower Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnBoxVar.html",
         "name": "Box Variation"
@@ -332,7 +332,7 @@
             "Reverse Crossunder"
         ],
         "related": [
-            "ReverseCrossunder"
+            "Reverse Crossunder"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Crossunder.html",
         "name": "Crossunder"
@@ -349,7 +349,7 @@
     },
     "Matt'sMess": {
         "prereqs": [
-            "ReverseInfinity",
+            "Reverse Infinity",
             "Crossunder"
         ],
         "related": [],
@@ -373,7 +373,7 @@
             "Overthrow Variation"
         ],
         "related": [
-            "OverthrowVariation"
+            "Overthrow Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/RainbowArches.html",
         "name": "Rainbow Cross"
@@ -407,7 +407,7 @@
             "Box Variation"
         ],
         "related": [
-            "BoxVariation"
+            "Box Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnShowVar.html",
         "name": "Shower Variation"
@@ -426,18 +426,18 @@
             "Crossed-Arm Reverse Cascade"
         ],
         "related": [
-            "Crossed-ArmReverseCascade"
+            "Crossed-Arm Reverse Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmCascade.html",
         "name": "Crossed-Arm Cascade"
     },
     "CrossedArmReverseCascade": {
         "prereqs": [
-            "ReverseCascade",
+            "Reverse Cascade",
             "Crossed-Arm Cascade"
         ],
         "related": [
-            "Crossed-ArmCascade"
+            "Crossed-Arm Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmReverseCascade.html",
         "name": "Reverse Variation"
@@ -462,7 +462,7 @@
     },
     "Yo-Yo": {
         "prereqs": [
-            "FakeColumns",
+            "Fake Columns",
             "Oy-Oy"
         ],
         "related": [
@@ -481,7 +481,7 @@
     },
     "Factory": {
         "prereqs": [
-            "FakeColumns"
+            "Fake Columns"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Factory.html",
@@ -510,7 +510,7 @@
             "Inverted Shower"
         ],
         "related": [
-            "InvertedShower"
+            "Inverted Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseFactory.html",
         "name": "Reverse Factory"
@@ -539,14 +539,14 @@
             " Relf's Revenge"
         ],
         "related": [
-            "Relf'sRevenge"
+            " Relf's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Follow.html",
         "name": "Follow"
     },
     "Forklift": {
         "prereqs": [
-            "GeorgianShuffle"
+            "Georgian Shuffle"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Forklift.html",
@@ -554,7 +554,7 @@
     },
     "FranticCascade": {
         "prereqs": [
-            "Crossed-ArmCascade"
+            "Crossed-Arm Cascade"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FranticCascade.html",
@@ -562,35 +562,35 @@
     },
     "Frostbite": {
         "prereqs": [
-            "Reverse441",
+            "Reverse 441",
             "Kraken</a>, <a href=\"Kato'sCrux.html\">Kato's Crux</a>, <a href=\"Shuffler'sMess.html\">Shuffler's Mess</a>, <a href=\"441MillsMess.html\">441 Mills Mess"
         ],
         "related": [
-            "Kraken</a>,<ahref=\"Kato'sCrux.html\">Kato'sCrux</a>,<ahref=\"Shuffler'sMess.html\">Shuffler'sMess</a>,<ahref=\"441MillsMess.html\">441MillsMess"
+            "Kraken</a>, <a href=\"Kato'sCrux.html\">Kato's Crux</a>, <a href=\"Shuffler'sMess.html\">Shuffler's Mess</a>, <a href=\"441MillsMess.html\">441 Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Frostbite.html",
         "name": "Frostbite"
     },
     "GeorgianScuffle": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "Kraken",
             "Symmetric Georgian Scuffle"
         ],
         "related": [
-            "SymmetricGeorgianScuffle"
+            "Symmetric Georgian Scuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianScuffle.html",
         "name": "Georgian Scuffle"
     },
     "SymmetricGeorgianScuffle": {
         "prereqs": [
-            "GeorgianScuffle",
+            "Georgian Scuffle",
             "Kraken",
             "Symmetric Georgian Shuffle"
         ],
         "related": [
-            "SymmetricGeorgianShuffle"
+            "Symmetric Georgian Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianScuffle.html",
         "name": "Symmetric Var."
@@ -601,7 +601,7 @@
             "Singapore Shuffle"
         ],
         "related": [
-            "SingaporeShuffle",
+            "Singapore Shuffle",
             "Davenport Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianShuffle.html",
@@ -609,22 +609,22 @@
     },
     "BuffaloShuffle": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "Davenport Shuffle"
         ],
         "related": [
-            "DavenportShuffle"
+            "Davenport Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BuffaloShuffle.html",
         "name": "Buffalo Shuffle"
     },
     "DavenportShuffle": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "Singapore Shuffle"
         ],
         "related": [
-            "SingaporeShuffle",
+            "Singapore Shuffle",
             "Buffalo Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/DavenportShuffle.html",
@@ -632,29 +632,29 @@
     },
     "SingaporeShuffle": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "Davenport Shuffle"
         ],
         "related": [
-            "DavenportShuffle"
+            "Davenport Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SingaporeShuffle.html",
         "name": "Singapore Shuffle"
     },
     "SymmetricGeorgianShuffle": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "Singapore Shuffle"
         ],
         "related": [
-            "SingaporeShuffle"
+            "Singapore Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianShuffle.html",
         "name": "Symmetric Var."
     },
     "Grace": {
         "prereqs": [
-            "GeorgianShuffle"
+            "Georgian Shuffle"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Grace.html",
@@ -683,7 +683,7 @@
     },
     "Harrison'sHang": {
         "prereqs": [
-            "441",
+            " 441",
             "Penman's Pandemonium"
         ],
         "related": [],
@@ -692,7 +692,7 @@
     },
     "IcelandicShuffle": {
         "prereqs": [
-            "GeorgianScuffle",
+            "Georgian Scuffle",
             "Kraken"
         ],
         "related": [],
@@ -709,7 +709,7 @@
     },
     "Jeanne": {
         "prereqs": [
-            "Orka'sMes",
+            "Orka's Mes",
             "Rubenstein's Revenge"
         ],
         "related": [],
@@ -729,7 +729,7 @@
     },
     "Kato'sCrux": {
         "prereqs": [
-            "SandboxShuffle"
+            "Sandbox Shuffle"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Kato'sCrux.html",
@@ -737,7 +737,7 @@
     },
     "KingofHearts": {
         "prereqs": [
-            "KingstonShuffle"
+            "Kingston Shuffle"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/KingofHearts.html",
@@ -745,18 +745,18 @@
     },
     "KingstonShuffle": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "King of Hearts"
         ],
         "related": [
-            "KingofHearts"
+            "King of Hearts"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/KingstonShuffle.html",
         "name": "Kingston Shuffle"
     },
     "Kraken": {
         "prereqs": [
-            "MillsMess",
+            "Mills Mess",
             "Cherry Picker"
         ],
         "related": [],
@@ -765,18 +765,18 @@
     },
     "Levels": {
         "prereqs": [
-            "N-Box</a>,<ahref=\"Luke'sShuffle.html\">Luke'sShuffle",
+            "N-Box</a>, <a href=\"Luke'sShuffle.html\">Luke's Shuffle",
             "Extended Box"
         ],
         "related": [
-            "ExtendedBox"
+            "Extended Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Levels.html",
         "name": "Levels"
     },
     "Luke'sLobotomy": {
         "prereqs": [
-            "Crossed-ArmReverseCascade",
+            "Crossed-Arm Reverse Cascade",
             "Buffalo Shuffle"
         ],
         "related": [],
@@ -785,11 +785,11 @@
     },
     "Maka'sMess": {
         "prereqs": [
-            "Crossed-ArmReverseCascade",
+            "Crossed-Arm Reverse Cascade",
             "Luke's Lobotomy"
         ],
         "related": [
-            "Luke'sLobotomy"
+            "Luke's Lobotomy"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Maka'sMess.html",
         "name": "Maka's Mess"
@@ -804,7 +804,7 @@
     },
     "Marden'sMarvel": {
         "prereqs": [
-            "Rubenstein'sRevenge",
+            "Rubenstein's Revenge",
             "Windmill"
         ],
         "related": [],
@@ -813,18 +813,18 @@
     },
     "Mike'sMess": {
         "prereqs": [
-            "Crossed-ArmReverseCascade",
+            "Crossed-Arm Reverse Cascade",
             "Mills Mess"
         ],
         "related": [
-            "MillsMess"
+            "Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Mike'sMess.html",
         "name": "Mike's Mess"
     },
     "MillsMess": {
         "prereqs": [
-            "ReverseCascade"
+            "Reverse Cascade"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/MillsMess.html",
@@ -832,7 +832,7 @@
     },
     "441MillsMess": {
         "prereqs": [
-            "Reverse441",
+            "Reverse 441",
             "Mills Mess"
         ],
         "related": [],
@@ -863,14 +863,14 @@
             "Mills Mess"
         ],
         "related": [
-            "MillsMess"
+            "Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FakeMess.html",
         "name": "Fake Mess"
     },
     "FlippedMess": {
         "prereqs": [
-            "MillsMess"
+            "Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FlippedMess.html",
@@ -878,7 +878,7 @@
     },
     "Flo'sMess": {
         "prereqs": [
-            "MillsMess",
+            "Mills Mess",
             "Windmill"
         ],
         "related": [
@@ -889,7 +889,7 @@
     },
     "Half-Mess": {
         "prereqs": [
-            "MillsMess"
+            "Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Mess.html",
@@ -897,7 +897,7 @@
     },
     "ReverseMillsMess": {
         "prereqs": [
-            "MillsMess"
+            "Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseMillsMess.html",
@@ -905,7 +905,7 @@
     },
     "MillsMessShower": {
         "prereqs": [
-            "MillsMess",
+            "Mills Mess",
             "Shower"
         ],
         "related": [],
@@ -927,7 +927,7 @@
             "Compressed Olas"
         ],
         "related": [
-            "CompressedOlas"
+            "Compressed Olas"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Olas.html",
         "name": "Olas"
@@ -961,7 +961,7 @@
     },
     "Penman'sPandemonium": {
         "prereqs": [
-            "Orka'sMess",
+            "Orka's Mess",
             "Sandbox Shuffle"
         ],
         "related": [
@@ -977,7 +977,7 @@
             "Relf's Revenge 6"
         ],
         "related": [
-            "Relf'sRevenge6",
+            "Relf's Revenge 6",
             "Relf's Rubensteins"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRevenge.html",
@@ -985,23 +985,23 @@
     },
     "Relf'sRevenge6": {
         "prereqs": [
-            "Rubenstein'sRevenge",
+            "Rubenstein's Revenge",
             "Relf's Revenge"
         ],
         "related": [
-            "Relf'sRevenge"
+            "Relf's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRevenge6.html",
         "name": "Relf's Revenge 6"
     },
     "Relf'sRubensteins": {
         "prereqs": [
-            "Rubenstein'sRevenge",
+            "Rubenstein's Revenge",
             "Romeo's Revenge",
             "Relf's Revenge"
         ],
         "related": [
-            "Relf'sRevenge"
+            "Relf's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRubensteins.html",
         "name": "Relf's Rubensteins"
@@ -1016,7 +1016,7 @@
     },
     "Rolf'sWave": {
         "prereqs": [
-            "GeorgianShuffle",
+            "Georgian Shuffle",
             "Kingston Shuffle"
         ],
         "related": [],
@@ -1025,7 +1025,7 @@
     },
     "Romeo'sRevenge": {
         "prereqs": [
-            "Rubenstein'sRevenge"
+            "Rubenstein's Revenge"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Romeo'sRevenge.html",
@@ -1033,11 +1033,11 @@
     },
     "Rubenstein'sRevenge": {
         "prereqs": [
-            "MillsMess",
+            "Mills Mess",
             "Romeo's Revenge"
         ],
         "related": [
-            "Romeo'sRevenge"
+            "Romeo's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Rubenstein'sRevenge.html",
         "name": "Rubenstein's Revenge"
@@ -1048,7 +1048,7 @@
             "Penman's Pandemonium"
         ],
         "related": [
-            "Penman'sPandemonium",
+            "Penman's Pandemonium",
             "Frances"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SandboxShuffle.html",
@@ -1080,7 +1080,7 @@
             "Broken Box"
         ],
         "related": [
-            "BrokenBox"
+            "Broken Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenShower.html",
         "name": "Broken Shower"
@@ -1091,7 +1091,7 @@
             "Reverse Variation"
         ],
         "related": [
-            "ReverseVariation"
+            "Reverse Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmShower.html",
         "name": "Crossed-Arm Shower"
@@ -1113,7 +1113,7 @@
             "Crossed-Arm Shower"
         ],
         "related": [
-            "Crossed-ArmShower"
+            "Crossed-Arm Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCrossedArmShower.html",
         "name": "Reverse Crossed-Arm Shower"
@@ -1125,7 +1125,7 @@
             "Swap Box"
         ],
         "related": [
-            "SwapBox"
+            "Swap Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ShowerSwapVariation.html",
         "name": "Swap Variation"
@@ -1136,7 +1136,7 @@
             "Underarm Box"
         ],
         "related": [
-            "UnderarmBox"
+            "Underarm Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmShower.html",
         "name": "Underarm Var."
@@ -1156,7 +1156,7 @@
             "Low Shuffle"
         ],
         "related": [
-            "LowShuffle"
+            "Low Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffle.html",
         "name": "Shuffle"
@@ -1171,7 +1171,7 @@
     },
     "Shuffler'sMess": {
         "prereqs": [
-            "531",
+            " 531",
             "Mills Mess</a>, <a href=\"531MillsMess.html\">531 Mills Mess"
         ],
         "related": [],
@@ -1196,7 +1196,7 @@
     },
     "Takearound": {
         "prereqs": [
-            "Takeouts</a>,<ahref=\"FlyingDiscoDrop.html\">FlyingDiscoDrop"
+            "Takeouts</a>, <a href=\"FlyingDiscoDrop.html\">Flying Disco Drop"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takearound.html",
@@ -1260,11 +1260,11 @@
     },
     "ChopShower": {
         "prereqs": [
-            "Windmill</a>,<ahref=\"CrossedArmReverseCascade.html\">Crossed-ArmReverseCascade",
+            "Windmill</a>, <a href=\"CrossedArmReverseCascade.html\">Crossed-Arm Reverse Cascade",
             "Chops</a>, <a href=\"FranticCascade.html\">Frantic Cascade"
         ],
         "related": [
-            "Chops</a>,<ahref=\"FranticCascade.html\">FranticCascade",
+            "Chops</a>, <a href=\"FranticCascade.html\">Frantic Cascade",
             "Statue of Liberty"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ChopShower.html",
@@ -1296,11 +1296,11 @@
     },
     "Reverse441(Half-Box)": {
         "prereqs": [
-            "441(Half-Box)",
+            "441 (Half-Box)",
             "441 Mills Mess"
         ],
         "related": [
-            "441MillsMess"
+            "441 Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Reverse441(Half-Box).html",
         "name": "Reverse 441"
@@ -1332,14 +1332,14 @@
             "Four Ball Box"
         ],
         "related": [
-            "FourBallBox"
+            "Four Ball Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallStackedBox.html",
         "name": "Stacked Variation"
     },
     "Cliff'sConfusion": {
         "prereqs": [
-            "MillsMess"
+            "Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Cliff'sConfusion.html",
@@ -1347,19 +1347,19 @@
     },
     "FourBallColumns": {
         "prereqs": [
-            "Synch.Fountain",
+            "Synch. Fountain",
             "Columns",
             "Four Ball Rainbow Cross"
         ],
         "related": [
-            "FourBallRainbowCross"
+            "Four Ball Rainbow Cross"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallColumns.html",
         "name": "Columns"
     },
     "FourBallRainbowCross": {
         "prereqs": [
-            "FourBallColumns",
+            "Four Ball Columns",
             "Rainbow Cross"
         ],
         "related": [],
@@ -1388,7 +1388,7 @@
     },
     "Arches": {
         "prereqs": [
-            "FourBallHalf-Shower"
+            "Four Ball Half-Shower"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Arches.html",
@@ -1400,14 +1400,14 @@
             "Synchronous Pistons"
         ],
         "related": [
-            "SynchronousPistons"
+            "Synchronous Pistons"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Pistons.html",
         "name": "Pistons"
     },
     "SynchPistons": {
         "prereqs": [
-            "FourBallColumns",
+            "Four Ball Columns",
             "Pistons"
         ],
         "related": [
@@ -1422,7 +1422,7 @@
             "Reverse Fountain"
         ],
         "related": [
-            "ReverseFountain"
+            "Reverse Fountain"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Fountain.html",
         "name": "Fountain"
@@ -1446,7 +1446,7 @@
     },
     "FourBallMillsMess": {
         "prereqs": [
-            "MillsMess",
+            "Mills Mess",
             "Reverse Fountain"
         ],
         "related": [],
@@ -1464,7 +1464,7 @@
     },
     "534MillsMess": {
         "prereqs": [
-            "FourBallMillsMess",
+            "Four Ball Mills Mess",
             "534</a>, <a href=\"../3balltricks/531MillsMess.html\">531 Mills Mess"
         ],
         "related": [],
@@ -1500,7 +1500,7 @@
     },
     "ReverseSynchFountain": {
         "prereqs": [
-            "SynchronousFountain"
+            "Synchronous Fountain"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/ReverseSynchFountain.html",
@@ -1526,7 +1526,7 @@
     },
     "Tsunami": {
         "prereqs": [
-            "FourBallMillsMess"
+            "Four Ball Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Tsunami.html",
@@ -1538,7 +1538,7 @@
             "Four Ball Half-Shower"
         ],
         "related": [
-            "FourBallHalf-Shower"
+            "Four Ball Half-Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Wimpy.html",
         "name": "Wimpy"
@@ -1576,7 +1576,7 @@
             "Sprung Cascade"
         ],
         "related": [
-            "SprungCascade"
+            "Sprung Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/5551.html",
         "name": "5551"
@@ -1600,14 +1600,14 @@
             "Reverse Five Ball Cascade"
         ],
         "related": [
-            "ReverseFiveBallCascade"
+            "Reverse Five Ball Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallCascade.html",
         "name": "Cascade"
     },
     "FiveBallReverseCascade": {
         "prereqs": [
-            "FiveBallCascade"
+            "Five Ball Cascade"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallReverseCascade.html",
@@ -1615,7 +1615,7 @@
     },
     "FiveBallHalf-Shower": {
         "prereqs": [
-            "FiveBallCascade",
+            "Five Ball Cascade",
             "Four Ball Half-Shower"
         ],
         "related": [],

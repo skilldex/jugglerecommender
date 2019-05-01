@@ -31,11 +31,8 @@ for line in tree_lines:
 		link = line.split("\"")[1]
 		trick_name = link.split("/")[2]
 		trick_name = trick_name.replace(".html","")
-		print('line',line)
 		trick_name_with_spaces = line.split(">")[2]
-		print('trick_name_with_spaces1',trick_name_with_spaces)
 		trick_name_with_spaces = trick_name_with_spaces.split("<")[0]
-		print('trick_name_with_spaces2',trick_name_with_spaces)
 		trick_info = get_div_contents(main_url + link,"ul","otherinfo")
 		all_tricks[trick_name] = {}
 		all_tricks[trick_name]["prereqs"] = []
@@ -70,7 +67,6 @@ for line in tree_lines:
 				print("MATCH " ,match)
 				if match:
 					print(match[0])
-					match[0] = match[0].replace(" ","")
 					all_tricks[trick_name]['prereqs'].append(match[0])
 					f.write(trick_name + " requires " + match[0] + "\n")
 			if "Related" in line:
@@ -79,7 +75,6 @@ for line in tree_lines:
 				print("MATCH " ,match)
 				if match:
 					print(match[0])
-					match[0] = match[0].replace(" ","")
 					all_tricks[trick_name]['related'].append(match[0])
 					f.write(trick_name + " related " + match[0] + "\n")
 
