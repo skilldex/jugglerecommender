@@ -6,12 +6,10 @@ ArrowofAsai requires Penman's Box
 Backcrosses requires Cascade
 BostonMess requires Mills Mess
 BostonMess requires The W
-BostonMess requires Cherry Picker
 BostonMess related Cherry Picker
 CherryPicker requires Boston Mess
 BostonShuffle requires Cascade
 BostonShuffle requires Shuffle
-BostonShuffle requires Luke's Shuffle
 BostonShuffle related Luke's Shuffle
 Burke'sSlam requires Boston Shuffle
 Burke'sSlam requires Takeouts
@@ -20,25 +18,20 @@ Peter'sShuffle requires Boston Shuffle
 Box requires Shower
 Box related N-Box
 BizarreBox requires Box
-BizarreBox requires Karas's Box
 BizarreBox related Karas's Box
 BrokenBox requires Box
 BrokenBox requires Shower-Cascade
-BrokenBox requires Burst Box
 BrokenBox related Burst Box
 BurstBox requires Broken Box
-BurstBox requires Gilligan's Box
 BurstBox related Gilligan's Box
 ExtendedBox requires Box
 Gilligan'sBox requires Broken Box
 Karas'Box requires Bizarre Box
 Luke'sShuffle requires Box
 Luke'sShuffle requires Shuffle
-Luke'sShuffle requires Boston Shuffle
 Luke'sShuffle related Boston Shuffle
 N-Box requires Box
 N-Box requires Shuffle
-N-Box requires Luke's Shuffle
 N-Box related Luke's Shuffle
 InvertedBox requires N-Box
 InvertedBox requires Luke's Shuffle
@@ -47,68 +40,52 @@ Penman'sBox requires Penman's Pandemonium
 SwapBox requires Box
 SwapBox requires Shuffle-Switch
 SwitchedBox requires Box
-SwitchedBox requires Threaded Box
 SwitchedBox related Threaded Box
 ThreadedBox requires Box
 TrueBox requires Box</a>,<a href="InvertedShower.html"> Inverted Shower
 UnderarmBox requires Box
-UnderarmBox requires Burst Box
 UnderarmBox related Burst Box
 Burke'sBarrage requires Takeouts
 Burke'sBarrage requires Fake Mess 
 Takeouts requires Cascade
-Takeouts requires Burke's Barrage
 Takeouts related Burke's Barrage
 ReverseCascade requires Half-Shower
 ReverseCascade requires Juggler's Tennis
-ReverseCascade requires Cascade
 ReverseCascade related Cascade
 High-LowCascade requires Cascade
 Chops requires Cascade
-Chops requires Reverse Chops
 Chops related Reverse Chops
 ReverseChops requires Chops
 ReverseChops requires Takeouts
 Columns related Four Ball Columns
 ColumnBoxVar requires Columns
 ColumnBoxVar requires 441
-ColumnBoxVar requires Shower Variation
 ColumnBoxVar related Shower Variation
 Crossunder requires Columns
-Crossunder requires Reverse Crossunder
 Crossunder related Reverse Crossunder
 Infinity requires Columns
 Infinity related Reverse Infinity
 Matt'sMess requires Reverse Infinity
 Matt'sMess requires Crossunder
 ColumnOverVar requires Columns
-ColumnOverVar requires Infinity
 ColumnOverVar related Infinity
 RainbowArches requires Columns
-RainbowArches requires Overthrow Variation
 RainbowArches related Overthrow Variation
 ReverseCrossunder requires Columns
-ReverseCrossunder requires Crossunder
 ReverseCrossunder related Crossunder
 ReverseInfinity requires Columns
-ReverseInfinity requires Infinity
 ReverseInfinity related Infinity
 ColumnShowVar requires Columns
 ColumnShowVar requires Shower
-ColumnShowVar requires Box Variation
 ColumnShowVar related Box Variation
 Shuffle-Switch requires Columns
 CrossedArmCascade requires Cascade
-CrossedArmCascade requires Crossed-Arm Reverse Cascade
 CrossedArmCascade related Crossed-Arm Reverse Cascade
 CrossedArmReverseCascade requires Reverse Cascade
-CrossedArmReverseCascade requires Crossed-Arm Cascade
 CrossedArmReverseCascade related Crossed-Arm Cascade
 David'sDilemma requires Shower
-FakeColumns requires Yo-Yo
 FakeColumns related Yo-Yo
 Yo-Yo requires Fake Columns
-Yo-Yo requires Oy-Oy
 Yo-Yo related Oy-Oy
 Oy-Oy requires Yo-Yo
 Factory requires Fake Columns
@@ -116,49 +93,38 @@ CrossedArmFactory requires Factory
 Relf'sFactory requires Factory
 Relf'sFactory requires Mangham's Mangle
 ReverseFactory requires Factory
-ReverseFactory requires Inverted Shower
 ReverseFactory related Inverted Shower
 ZebraFactory requires Factory
 ZebraFactory requires N-Box
 FlyingDiscoDrop requires Shower
 FlyingDiscoDrop requires Orka's Mess</a>, <a href="HandsOfTime.html">Hands of Time
 Follow requires 423
-Follow requires  Relf's Revenge
 Follow related  Relf's Revenge
 Forklift requires Georgian Shuffle
 FranticCascade requires Crossed-Arm Cascade
 Frostbite requires Reverse 441
-Frostbite requires Kraken</a>, <a href="Kato'sCrux.html">Kato's Crux</a>, <a href="Shuffler'sMess.html">Shuffler's Mess</a>, <a href="441MillsMess.html">441 Mills Mess
 Frostbite related Kraken</a>, <a href="Kato'sCrux.html">Kato's Crux</a>, <a href="Shuffler'sMess.html">Shuffler's Mess</a>, <a href="441MillsMess.html">441 Mills Mess
 GeorgianScuffle requires Georgian Shuffle
 GeorgianScuffle requires Kraken
-GeorgianScuffle requires Symmetric Georgian Scuffle
 GeorgianScuffle related Symmetric Georgian Scuffle
 SymmetricGeorgianScuffle requires Georgian Scuffle
 SymmetricGeorgianScuffle requires Kraken
-SymmetricGeorgianScuffle requires Symmetric Georgian Shuffle
 SymmetricGeorgianScuffle related Symmetric Georgian Shuffle
 GeorgianShuffle requires Cascade
-GeorgianShuffle requires Singapore Shuffle
 GeorgianShuffle related Singapore Shuffle
 GeorgianShuffle related Davenport Shuffle
 BuffaloShuffle requires Georgian Shuffle
-BuffaloShuffle requires Davenport Shuffle
 BuffaloShuffle related Davenport Shuffle
 DavenportShuffle requires Georgian Shuffle
-DavenportShuffle requires Singapore Shuffle
 DavenportShuffle related Singapore Shuffle
 DavenportShuffle related Buffalo Shuffle
 SingaporeShuffle requires Georgian Shuffle
-SingaporeShuffle requires Davenport Shuffle
 SingaporeShuffle related Davenport Shuffle
 SymmetricGeorgianShuffle requires Georgian Shuffle
-SymmetricGeorgianShuffle requires Singapore Shuffle
 SymmetricGeorgianShuffle related Singapore Shuffle
 Grace requires Georgian Shuffle
 Half-Shower requires Cascade
 Half-Shower requires Juggler's Tennis
-Half-Shower requires Shower
 Half-Shower related Shower
 HandsOfTime requires Shower
 HandsOfTime requires Windmill
@@ -170,28 +136,23 @@ InvertedShower requires Factory
 Jeanne requires Orka's Mes
 Jeanne requires Rubenstein's Revenge
 JugglersTennis requires Cascade
-JugglersTennis requires Half-Shower
 JugglersTennis related Half-Shower
 Kato'sCrux requires Sandbox Shuffle
 KingofHearts requires Kingston Shuffle
 KingstonShuffle requires Georgian Shuffle
-KingstonShuffle requires King of Hearts
 KingstonShuffle related King of Hearts
 Kraken requires Mills Mess
 Kraken requires Cherry Picker
 Levels requires N-Box</a>, <a href="Luke'sShuffle.html">Luke's Shuffle
-Levels requires Extended Box
 Levels related Extended Box
 Luke'sLobotomy requires Crossed-Arm Reverse Cascade
 Luke'sLobotomy requires Buffalo Shuffle
 Maka'sMess requires Crossed-Arm Reverse Cascade
-Maka'sMess requires Luke's Lobotomy
 Maka'sMess related Luke's Lobotomy
 Mangham'sMangle requires Cascade
 Marden'sMarvel requires Rubenstein's Revenge
 Marden'sMarvel requires Windmill
 Mike'sMess requires Crossed-Arm Reverse Cascade
-Mike'sMess requires Mills Mess
 Mike'sMess related Mills Mess
 MillsMess requires Reverse Cascade
 441MillsMess requires Reverse 441
@@ -201,11 +162,9 @@ MillsMess requires Reverse Cascade
 Charley requires Crossed-Arm Reverse Cascade
 Charley requires Mills Mess
 FakeMess requires 423
-FakeMess requires Mills Mess
 FakeMess related Mills Mess
 FlippedMess requires Mills Mess
 Flo'sMess requires Mills Mess
-Flo'sMess requires Windmill
 Flo'sMess related Windmill
 Half-Mess requires Mills Mess
 ReverseMillsMess requires Mills Mess
@@ -214,11 +173,9 @@ MillsMessShower requires Shower
 Nelson'sNemesis requires Columns
 Nelson'sNemesis requires Rubenstein's Revenge
 Olas requires Cascade
-Olas requires Compressed Olas
 Olas related Compressed Olas
 CompressedOlas requires Olas
 Orka'sMess requires Cascade
-PendulumDrop requires Factory
 PendulumDrop related Factory
 PendulumDrop related Inverted Shower
 Penman'sPandemonium requires Orka's Mess
@@ -226,25 +183,20 @@ Penman'sPandemonium requires Sandbox Shuffle
 Penman'sPandemonium related Frances
 Relf'sRevenge requires Follow
 Relf'sRevenge requires Weave
-Relf'sRevenge requires Relf's Revenge 6
 Relf'sRevenge related Relf's Revenge 6
 Relf'sRevenge related Relf's Rubensteins
 Relf'sRevenge6 requires Rubenstein's Revenge
-Relf'sRevenge6 requires Relf's Revenge
 Relf'sRevenge6 related Relf's Revenge
 Relf'sRubensteins requires Rubenstein's Revenge
 Relf'sRubensteins requires Romeo's Revenge
-Relf'sRubensteins requires Relf's Revenge
 Relf'sRubensteins related Relf's Revenge
 Ripley'sRainbow requires Cascade
 Rolf'sWave requires Georgian Shuffle
 Rolf'sWave requires Kingston Shuffle
 Romeo'sRevenge requires Rubenstein's Revenge
 Rubenstein'sRevenge requires Mills Mess
-Rubenstein'sRevenge requires Romeo's Revenge
 Rubenstein'sRevenge related Romeo's Revenge
 SandboxShuffle requires Cascade
-SandboxShuffle requires Penman's Pandemonium
 SandboxShuffle related Penman's Pandemonium
 SandboxShuffle related Frances
 Frances requires Sandbox Shuffle
@@ -253,28 +205,21 @@ Shower requires 441 (Half-Box)
 Shower related Four Ball Shower
 BrokenShower requires Shower
 BrokenShower requires Shower Cascade
-BrokenShower requires Broken Box
 BrokenShower related Broken Box
 CrossedArmShower requires Shower
-CrossedArmShower requires Reverse Variation
 CrossedArmShower related Reverse Variation
 High-LowShower requires Shower
-High-LowShower requires 531
 High-LowShower related 531
 ReverseCrossedArmShower requires Shower
-ReverseCrossedArmShower requires Crossed-Arm Shower
 ReverseCrossedArmShower related Crossed-Arm Shower
 ShowerSwapVariation requires Shower
 ShowerSwapVariation requires Shuffle-Switch
-ShowerSwapVariation requires Swap Box
 ShowerSwapVariation related Swap Box
 UnderarmShower requires Shower
-UnderarmShower requires Underarm Box
 UnderarmShower related Underarm Box
 Shower-Cascade requires Shower
 Shuffle requires Shower
 Shuffle requires Box
-Shuffle requires Low Shuffle
 Shuffle related Low Shuffle
 LowShuffle requires Shuffle
 Shuffler'sMess requires  531
@@ -291,14 +236,11 @@ OrinocoFlow requires Weave
 Windmill requires Mills Mess
 Windmill related Four Ball Windmill
 ChopShower requires Windmill</a>, <a href="CrossedArmReverseCascade.html">Crossed-Arm Reverse Cascade
-ChopShower requires Chops</a>, <a href="FranticCascade.html">Frantic Cascade
 ChopShower related Chops</a>, <a href="FranticCascade.html">Frantic Cascade
 ChopShower related Statue of Liberty
 TheW requires 423
-Half-Box(441) requires Box
 Half-Box(441) related Box
 Reverse441(Half-Box) requires 441 (Half-Box)
-Reverse441(Half-Box) requires 441 Mills Mess
 Reverse441(Half-Box) related 441 Mills Mess
 531 requires Shower
 FourBallBox requires Box
@@ -307,29 +249,23 @@ FourBallBox requires Sprung Cascade
 FourBallBox related Stacked variation
 FourBallStackedBox requires Box
 FourBallStackedBox requires High-Low Shower
-FourBallStackedBox requires Four Ball Box
 FourBallStackedBox related Four Ball Box
 Cliff'sConfusion requires Mills Mess
 FourBallColumns requires Synch. Fountain
 FourBallColumns requires Columns
-FourBallColumns requires Four Ball Rainbow Cross
 FourBallColumns related Four Ball Rainbow Cross
 FourBallRainbowCross requires Four Ball Columns
 FourBallRainbowCross requires Rainbow Cross
 Dancey'sDevilment requires Rubenstein's Revenge
 FourBallHalfShower requires Half-Shower
 FourBallHalfShower requires Wimpy
-FourBallHalfShower requires Arches
 FourBallHalfShower related Arches
 Arches requires Four Ball Half-Shower
 Pistons requires Fountain
-Pistons requires Synchronous Pistons
 Pistons related Synchronous Pistons
 SynchPistons requires Four Ball Columns
-SynchPistons requires Pistons
 SynchPistons related Pistons
 Fountain requires 441(Half-Box)
-Fountain requires Reverse Fountain
 Fountain related Reverse Fountain
 ReverseFountain requires Fountain
 Lisa requires 441
@@ -352,7 +288,6 @@ TennesseeWaltz requires Cascade
 TennesseeWaltz requires Cliff's Confusion
 Tsunami requires Four Ball Mills Mess
 Wimpy requires Cascade
-Wimpy requires Four Ball Half-Shower
 Wimpy related Four Ball Half-Shower
 FourBallWindmill requires Windmill
 FourBallWindmill requires Fountain</a>, <a href="FourBallMillsMess.html">Four Ball Mills Mess
@@ -361,7 +296,6 @@ FourBallWindmill requires Fountain</a>, <a href="FourBallMillsMess.html">Four Ba
 552 requires Cascade
 552 requires Snake
 5551 requires Shower
-5551 requires Sprung Cascade
 5551 related Sprung Cascade
 55550 requires 5551
 55550 related Five Ball Cascade
@@ -369,7 +303,6 @@ FiveBallCascade requires Cascade
 FiveBallCascade requires 552
 FiveBallCascade requires 5551
 FiveBallCascade requires 55550
-FiveBallCascade requires Reverse Five Ball Cascade
 FiveBallCascade related Reverse Five Ball Cascade
 FiveBallReverseCascade requires Five Ball Cascade
 FiveBallHalf-Shower requires Five Ball Cascade

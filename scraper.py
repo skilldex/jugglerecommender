@@ -22,7 +22,7 @@ def get_div_contents(url,element_type,el_id):
 tree_lines = get_div_contents(main_url,"div","tree")
 num_parsed_tricks = 0
 all_tricks = {}
-num_tricks = 300
+num_tricks = 200
 f = open("./trick_relationships.txt", "w") 
 for line in tree_lines:	
 
@@ -43,6 +43,8 @@ for line in tree_lines:
 		next_line_related = False
 		for line in trick_info:
 			print("LINE " , line)
+			if "Related" in line:
+				next_line_prereq = False
 			if next_line_prereq and "<a" in line:
 				match = re.findall("\">(.+)</a", line)
 				print("MATCH " ,match)
@@ -71,6 +73,7 @@ for line in tree_lines:
 					f.write(trick_name + " requires " + match[0] + "\n")
 			if "Related" in line:
 				next_line_related = True
+				#next_line_prereq = False
 				match = re.findall("\">(.+)</a", line)
 				print("MATCH " ,match)
 				if match:
