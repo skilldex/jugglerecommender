@@ -15,7 +15,6 @@ class TrickGraph extends React.Component {
       let edges = []
       let nodes = []
 
-      console.log(jugglingLibrary)
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
                 console.log(trick)
@@ -40,7 +39,7 @@ class TrickGraph extends React.Component {
           })
         }
       })
-
+      console.log("length" ,Object.keys(jugglingLibrary).length)
       this.renderCytoscapeElement({ edges, nodes })
     }
 
@@ -55,6 +54,13 @@ class TrickGraph extends React.Component {
         layout: {
           name     : 'cose',
           directed : true,
+          nodeRepulsion: function( node ){ return 10048; },
+           nodeOverlap: 50,
+            // Gravity force (constant)
+          gravity: .001,
+
+          // Maximum number of iterations to perform
+          numIter: 1500,
         },
         style: cytoscape.stylesheet()
           .selector('node')
@@ -66,18 +72,25 @@ class TrickGraph extends React.Component {
             'label'            : 'data(id)',
             'font-size'        : 40,
             'opacity'          : '1',
-            'width'            : 100,
-            'height'            : 100
+            'width'            : 200,
+            'height'            : 200,
+            'background-color'           : 'cyan'
           })
           .selector('edge')
           .css({
-            'width'                   : 5,
+            'width'                   : 8,
             'target-arrow-shape'      : 'triangle',
             'curve-style'             : 'bezier',
             'control-point-step-size' : 0,
-            'opacity'                 : .3,
+            'opacity'                 : .5,
+            'color' : 'black'
           }),
       })
+      this.cy.on('click', 'node', function(evt) {
+        console.log(jugglingLibrary)
+        console.log("cliekd", jugglingLibrary[this.id()])
+      })
+      
       this.cy.maxZoom(1)
       this.cy.minZoom(0.3)
 
