@@ -16,14 +16,21 @@ class TrickGraph extends React.Component {
       let nodes = []
       let trickNamesToKeys = {}
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-        trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
+        const trick = jugglingLibrary[trickKey]
+        if(this.props.filters.includes(trick.num)){
+          trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
+        }
       })
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
+        console.log(trick, this.props.filters)
+        if(!this.props.filters.includes(trick.num)){
+          return
+        }
         trick.name = trick.name.replace("-"," ")
         nodes.push({ data: {
           id    : trickKey,
-          name : trick.name
+          name : trick.name,
         }})
         if(trick.prereqs){
          

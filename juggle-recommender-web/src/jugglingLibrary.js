@@ -6,7 +6,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Alex.html",
-        "name": "Alex"
+        "name": "Alex",
+        "num": 3
     },
     "Al'sSlide": {
         "prereqs": [
@@ -14,7 +15,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Al'sSlide.html",
-        "name": "Al's Slide"
+        "name": "Al's Slide",
+        "num": 3
     },
     "ArrowofAsai": {
         "prereqs": [
@@ -23,7 +25,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ArrowofAsai.html",
-        "name": "Arrow of Asai"
+        "name": "Arrow of Asai",
+        "num": 3
     },
     "Backcrosses": {
         "prereqs": [
@@ -31,7 +34,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Backcrosses.html",
-        "name": "Backcrosses"
+        "name": "Backcrosses",
+        "num": 3
     },
     "BostonMess": {
         "prereqs": [
@@ -42,7 +46,8 @@ export default {
             "Cherry Picker"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BostonMess.html",
-        "name": "Boston Mess"
+        "name": "Boston Mess",
+        "num": 3
     },
     "CherryPicker": {
         "prereqs": [
@@ -50,7 +55,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CherryPicker.html",
-        "name": "Cherry Picker"
+        "name": "Cherry Picker",
+        "num": 3
     },
     "BostonShuffle": {
         "prereqs": [
@@ -61,7 +67,8 @@ export default {
             "Luke's Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BostonShuffle.html",
-        "name": "Boston Shuffle"
+        "name": "Boston Shuffle",
+        "num": 3
     },
     "Burke'sSlam": {
         "prereqs": [
@@ -70,7 +77,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Burke'sSlam.html",
-        "name": "Burke's Slam"
+        "name": "Burke's Slam",
+        "num": 3
     },
     "Peter'sShuffle": {
         "prereqs": [
@@ -79,7 +87,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Peter'sShuffle.html",
-        "name": "Peter's Shuffle"
+        "name": "Peter's Shuffle",
+        "num": 3
     },
     "Box": {
         "prereqs": [
@@ -89,7 +98,8 @@ export default {
             "N-Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Box.html",
-        "name": "Box"
+        "name": "Box",
+        "num": 3
     },
     "BizarreBox": {
         "prereqs": [
@@ -99,7 +109,8 @@ export default {
             "Karas's Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BizarreBox.html",
-        "name": "Bizarre Box"
+        "name": "Bizarre Box",
+        "num": 3
     },
     "BrokenBox": {
         "prereqs": [
@@ -110,7 +121,8 @@ export default {
             "Burst Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenBox.html",
-        "name": "Broken Box"
+        "name": "Broken Box",
+        "num": 3
     },
     "BurstBox": {
         "prereqs": [
@@ -120,7 +132,8 @@ export default {
             "Gilligan's Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BurstBox.html",
-        "name": "Burst Box"
+        "name": "Burst Box",
+        "num": 3
     },
     "ExtendedBox": {
         "prereqs": [
@@ -128,7 +141,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ExtendedBox.html",
-        "name": "Extended Box"
+        "name": "Extended Box",
+        "num": 3
     },
     "Gilligan'sBox": {
         "prereqs": [
@@ -136,7 +150,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Gilligan'sBox.html",
-        "name": "Gilligan's Box"
+        "name": "Gilligan's Box",
+        "num": 3
     },
     "Karas'Box": {
         "prereqs": [
@@ -144,7 +159,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Karas'Box.html",
-        "name": "Karas' Box"
+        "name": "Karas' Box",
+        "num": 3
     },
     "Luke'sShuffle": {
         "prereqs": [
@@ -155,7 +171,8 @@ export default {
             "Boston Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Luke'sShuffle.html",
-        "name": "Luke's Shuffle"
+        "name": "Luke's Shuffle",
+        "num": 3
     },
     "N-Box": {
         "prereqs": [
@@ -166,7 +183,8 @@ export default {
             "Luke's Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/N-Box.html",
-        "name": "N-Box"
+        "name": "N-Box",
+        "num": 3
     },
     "InvertedBox": {
         "prereqs": [
@@ -175,7 +193,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/InvertedBox.html",
-        "name": "Inverted Box"
+        "name": "Inverted Box",
+        "num": 3
     },
     "Penman'sBox": {
         "prereqs": [
@@ -184,7 +203,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Penman'sBox.html",
-        "name": "Penman's Box"
+        "name": "Penman's Box",
+        "num": 3
     },
     "SwapBox": {
         "prereqs": [
@@ -193,7 +213,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SwapBox.html",
-        "name": "Swap Box"
+        "name": "Swap Box",
+        "num": 3
     },
     "SwitchedBox": {
         "prereqs": [
@@ -203,7 +224,8 @@ export default {
             "Threaded Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SwitchedBox.html",
-        "name": "Switched Box"
+        "name": "Switched Box",
+        "num": 3
     },
     "ThreadedBox": {
         "prereqs": [
@@ -211,16 +233,17 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ThreadedBox.html",
-        "name": "Threaded Box"
+        "name": "Threaded Box",
+        "num": 3
     },
     "TrueBox": {
         "prereqs": [
-            "Box",
-            "Inverted Shower"
+            "Box</a>,<a href=\"InvertedShower.html\"> Inverted Shower"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TrueBox.html",
-        "name": "True Box"
+        "name": "True Box",
+        "num": 3
     },
     "UnderarmBox": {
         "prereqs": [
@@ -230,7 +253,8 @@ export default {
             "Burst Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmBox.html",
-        "name": "Underarm Box"
+        "name": "Underarm Box",
+        "num": 3
     },
     "Burke'sBarrage": {
         "prereqs": [
@@ -239,7 +263,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Burke'sBarrage.html",
-        "name": "Burke's Barrage"
+        "name": "Burke's Barrage",
+        "num": 3
     },
     "Takeouts": {
         "prereqs": [
@@ -249,13 +274,15 @@ export default {
             "Burke's Barrage"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takeouts.html",
-        "name": "Takeouts"
+        "name": "Takeouts",
+        "num": 3
     },
     "Cascade": {
         "prereqs": [],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Cascade.html",
-        "name": "Cascade"
+        "name": "Cascade",
+        "num": 3
     },
     "ReverseCascade": {
         "prereqs": [
@@ -266,7 +293,8 @@ export default {
             "Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCascade.html",
-        "name": "Reverse Cascade"
+        "name": "Reverse Cascade",
+        "num": 3
     },
     "High-LowCascade": {
         "prereqs": [
@@ -274,7 +302,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/High-LowCascade.html",
-        "name": "High-Low Var."
+        "name": "High-Low Var.",
+        "num": 3
     },
     "Chops": {
         "prereqs": [
@@ -284,7 +313,8 @@ export default {
             "Reverse Chops"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Chops.html",
-        "name": "Chops"
+        "name": "Chops",
+        "num": 3
     },
     "ReverseChops": {
         "prereqs": [
@@ -293,7 +323,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseChops.html",
-        "name": "Reverse Chops"
+        "name": "Reverse Chops",
+        "num": 3
     },
     "Columns": {
         "prereqs": [],
@@ -301,7 +332,8 @@ export default {
             "Four Ball Columns"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Columns.html",
-        "name": "Columns"
+        "name": "Columns",
+        "num": 3
     },
     "ColumnBoxVar": {
         "prereqs": [
@@ -312,7 +344,8 @@ export default {
             "Shower Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnBoxVar.html",
-        "name": "Box Variation"
+        "name": "Box Variation",
+        "num": 3
     },
     "Crossunder": {
         "prereqs": [
@@ -322,7 +355,8 @@ export default {
             "Reverse Crossunder"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Crossunder.html",
-        "name": "Crossunder"
+        "name": "Crossunder",
+        "num": 3
     },
     "Infinity": {
         "prereqs": [
@@ -332,7 +366,8 @@ export default {
             "Reverse Infinity"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Infinity.html",
-        "name": "Infinity"
+        "name": "Infinity",
+        "num": 3
     },
     "Matt'sMess": {
         "prereqs": [
@@ -341,7 +376,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Matt'sMess.html",
-        "name": "Matt's Mess"
+        "name": "Matt's Mess",
+        "num": 3
     },
     "ColumnOverVar": {
         "prereqs": [
@@ -351,7 +387,8 @@ export default {
             "Infinity"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnOverVar.html",
-        "name": "Overthrow Var."
+        "name": "Overthrow Var.",
+        "num": 3
     },
     "RainbowArches": {
         "prereqs": [
@@ -361,7 +398,8 @@ export default {
             "Overthrow Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/RainbowArches.html",
-        "name": "Rainbow Cross"
+        "name": "Rainbow Cross",
+        "num": 3
     },
     "ReverseCrossunder": {
         "prereqs": [
@@ -371,7 +409,8 @@ export default {
             "Crossunder"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCrossunder.html",
-        "name": "Reverse Crossunder"
+        "name": "Reverse Crossunder",
+        "num": 3
     },
     "ReverseInfinity": {
         "prereqs": [
@@ -381,7 +420,8 @@ export default {
             "Infinity"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseInfinity.html",
-        "name": "Reverse Infinity"
+        "name": "Reverse Infinity",
+        "num": 3
     },
     "ColumnShowVar": {
         "prereqs": [
@@ -392,7 +432,8 @@ export default {
             "Box Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnShowVar.html",
-        "name": "Shower Variation"
+        "name": "Shower Variation",
+        "num": 3
     },
     "Shuffle-Switch": {
         "prereqs": [
@@ -400,7 +441,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffle-Switch.html",
-        "name": "Shuffle-Switch"
+        "name": "Shuffle-Switch",
+        "num": 3
     },
     "CrossedArmCascade": {
         "prereqs": [
@@ -410,7 +452,8 @@ export default {
             "Crossed-Arm Reverse Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmCascade.html",
-        "name": "Crossed-Arm Cascade"
+        "name": "Crossed-Arm Cascade",
+        "num": 3
     },
     "CrossedArmReverseCascade": {
         "prereqs": [
@@ -420,7 +463,8 @@ export default {
             "Crossed-Arm Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmReverseCascade.html",
-        "name": "Reverse Variation"
+        "name": "Reverse Variation",
+        "num": 3
     },
     "David'sDilemma": {
         "prereqs": [
@@ -428,7 +472,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/David'sDilemma.html",
-        "name": "David's Dilemma"
+        "name": "David's Dilemma",
+        "num": 3
     },
     "FakeColumns": {
         "prereqs": [],
@@ -436,7 +481,8 @@ export default {
             "Yo-Yo"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FakeColumns.html",
-        "name": "Fake Columns"
+        "name": "Fake Columns",
+        "num": 3
     },
     "Yo-Yo": {
         "prereqs": [
@@ -446,7 +492,8 @@ export default {
             "Oy-Oy"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Yo-Yo.html",
-        "name": "Yo-Yo"
+        "name": "Yo-Yo",
+        "num": 3
     },
     "Oy-Oy": {
         "prereqs": [
@@ -454,7 +501,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Oy-Oy.html",
-        "name": "Oy-Oy"
+        "name": "Oy-Oy",
+        "num": 3
     },
     "Factory": {
         "prereqs": [
@@ -462,7 +510,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Factory.html",
-        "name": "Factory"
+        "name": "Factory",
+        "num": 3
     },
     "CrossedArmFactory": {
         "prereqs": [
@@ -470,7 +519,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmFactory.html",
-        "name": "Crossed-Arm Var."
+        "name": "Crossed-Arm Var.",
+        "num": 3
     },
     "Relf'sFactory": {
         "prereqs": [
@@ -479,7 +529,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sFactory.html",
-        "name": "Relf's Factory"
+        "name": "Relf's Factory",
+        "num": 3
     },
     "ReverseFactory": {
         "prereqs": [
@@ -489,7 +540,8 @@ export default {
             "Inverted Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseFactory.html",
-        "name": "Reverse Factory"
+        "name": "Reverse Factory",
+        "num": 3
     },
     "ZebraFactory": {
         "prereqs": [
@@ -498,17 +550,18 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ZebraFactory.html",
-        "name": "Zebra Factory"
+        "name": "Zebra Factory",
+        "num": 3
     },
     "FlyingDiscoDrop": {
         "prereqs": [
             "Shower",
-            "Orka's Mess",
-            "Hands of Time"
+            "Orka's Mess</a>, <a href=\"HandsOfTime.html\">Hands of Time"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FlyingDiscoDrop.html",
-        "name": "Flying Disco Drop"
+        "name": "Flying Disco Drop",
+        "num": 3
     },
     "Follow": {
         "prereqs": [
@@ -518,7 +571,8 @@ export default {
             " Relf's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Follow.html",
-        "name": "Follow"
+        "name": "Follow",
+        "num": 3
     },
     "Forklift": {
         "prereqs": [
@@ -526,7 +580,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Forklift.html",
-        "name": "Forklift"
+        "name": "Forklift",
+        "num": 3
     },
     "FranticCascade": {
         "prereqs": [
@@ -534,20 +589,19 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FranticCascade.html",
-        "name": "Frantic Cascade"
+        "name": "Frantic Cascade",
+        "num": 3
     },
     "Frostbite": {
         "prereqs": [
             "Reverse 441"
         ],
         "related": [
-            "Kraken",
-            "Kato's Crux",
-            "Shuffler's Mess",
-            "441 Mills Mess"
+            "Kraken</a>, <a href=\"Kato'sCrux.html\">Kato's Crux</a>, <a href=\"Shuffler'sMess.html\">Shuffler's Mess</a>, <a href=\"441MillsMess.html\">441 Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Frostbite.html",
-        "name": "Frostbite"
+        "name": "Frostbite",
+        "num": 3
     },
     "GeorgianScuffle": {
         "prereqs": [
@@ -558,7 +612,8 @@ export default {
             "Symmetric Georgian Scuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianScuffle.html",
-        "name": "Georgian Scuffle"
+        "name": "Georgian Scuffle",
+        "num": 3
     },
     "SymmetricGeorgianScuffle": {
         "prereqs": [
@@ -569,7 +624,8 @@ export default {
             "Symmetric Georgian Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianScuffle.html",
-        "name": "Symmetric Var."
+        "name": "Symmetric Var.",
+        "num": 3
     },
     "GeorgianShuffle": {
         "prereqs": [
@@ -580,7 +636,8 @@ export default {
             "Davenport Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianShuffle.html",
-        "name": "Georgian Shuffle"
+        "name": "Georgian Shuffle",
+        "num": 3
     },
     "BuffaloShuffle": {
         "prereqs": [
@@ -590,7 +647,8 @@ export default {
             "Davenport Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BuffaloShuffle.html",
-        "name": "Buffalo Shuffle"
+        "name": "Buffalo Shuffle",
+        "num": 3
     },
     "DavenportShuffle": {
         "prereqs": [
@@ -601,7 +659,8 @@ export default {
             "Buffalo Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/DavenportShuffle.html",
-        "name": "Davenport Shuffle"
+        "name": "Davenport Shuffle",
+        "num": 3
     },
     "SingaporeShuffle": {
         "prereqs": [
@@ -611,7 +670,8 @@ export default {
             "Davenport Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SingaporeShuffle.html",
-        "name": "Singapore Shuffle"
+        "name": "Singapore Shuffle",
+        "num": 3
     },
     "SymmetricGeorgianShuffle": {
         "prereqs": [
@@ -621,7 +681,8 @@ export default {
             "Singapore Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianShuffle.html",
-        "name": "Symmetric Var."
+        "name": "Symmetric Var.",
+        "num": 3
     },
     "Grace": {
         "prereqs": [
@@ -629,7 +690,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Grace.html",
-        "name": "Grace"
+        "name": "Grace",
+        "num": 3
     },
     "Half-Shower": {
         "prereqs": [
@@ -640,7 +702,8 @@ export default {
             "Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Shower.html",
-        "name": "Half-Shower"
+        "name": "Half-Shower",
+        "num": 3
     },
     "HandsOfTime": {
         "prereqs": [
@@ -649,7 +712,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/HandsOfTime.html",
-        "name": "Hands of Time"
+        "name": "Hands of Time",
+        "num": 3
     },
     "Harrison'sHang": {
         "prereqs": [
@@ -658,7 +722,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Harrison'sHang.html",
-        "name": "Harrison's Hang"
+        "name": "Harrison's Hang",
+        "num": 3
     },
     "IcelandicShuffle": {
         "prereqs": [
@@ -667,7 +732,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/IcelandicShuffle.html",
-        "name": "Icelandic Shuffle"
+        "name": "Icelandic Shuffle",
+        "num": 3
     },
     "InvertedShower": {
         "prereqs": [
@@ -675,7 +741,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/InvertedShower.html",
-        "name": "Inverted Shower"
+        "name": "Inverted Shower",
+        "num": 3
     },
     "Jeanne": {
         "prereqs": [
@@ -684,7 +751,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Jeanne.html",
-        "name": "Jeanne"
+        "name": "Jeanne",
+        "num": 3
     },
     "JugglersTennis": {
         "prereqs": [
@@ -694,7 +762,8 @@ export default {
             "Half-Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/JugglersTennis.html",
-        "name": "Juggler's Tennis"
+        "name": "Juggler's Tennis",
+        "num": 3
     },
     "Kato'sCrux": {
         "prereqs": [
@@ -702,7 +771,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Kato'sCrux.html",
-        "name": "Kato's Crux"
+        "name": "Kato's Crux",
+        "num": 3
     },
     "KingofHearts": {
         "prereqs": [
@@ -710,7 +780,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/KingofHearts.html",
-        "name": "King of Hearts"
+        "name": "King of Hearts",
+        "num": 3
     },
     "KingstonShuffle": {
         "prereqs": [
@@ -720,7 +791,8 @@ export default {
             "King of Hearts"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/KingstonShuffle.html",
-        "name": "Kingston Shuffle"
+        "name": "Kingston Shuffle",
+        "num": 3
     },
     "Kraken": {
         "prereqs": [
@@ -729,18 +801,19 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Kraken.html",
-        "name": "Kraken"
+        "name": "Kraken",
+        "num": 3
     },
     "Levels": {
         "prereqs": [
-            "N-Box",
-            "Luke's Shuffle"
+            "N-Box</a>, <a href=\"Luke'sShuffle.html\">Luke's Shuffle"
         ],
         "related": [
             "Extended Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Levels.html",
-        "name": "Levels"
+        "name": "Levels",
+        "num": 3
     },
     "Luke'sLobotomy": {
         "prereqs": [
@@ -749,7 +822,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Luke'sLobotomy.html",
-        "name": "Luke's Lobotomy"
+        "name": "Luke's Lobotomy",
+        "num": 3
     },
     "Maka'sMess": {
         "prereqs": [
@@ -759,7 +833,8 @@ export default {
             "Luke's Lobotomy"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Maka'sMess.html",
-        "name": "Maka's Mess"
+        "name": "Maka's Mess",
+        "num": 3
     },
     "Mangham'sMangle": {
         "prereqs": [
@@ -767,7 +842,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Mangham'sMangle.html",
-        "name": "Mangham's Mangle"
+        "name": "Mangham's Mangle",
+        "num": 3
     },
     "Marden'sMarvel": {
         "prereqs": [
@@ -776,7 +852,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Marden'sMarvel.html",
-        "name": "Marden's Marvel"
+        "name": "Marden's Marvel",
+        "num": 3
     },
     "Mike'sMess": {
         "prereqs": [
@@ -786,7 +863,8 @@ export default {
             "Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Mike'sMess.html",
-        "name": "Mike's Mess"
+        "name": "Mike's Mess",
+        "num": 3
     },
     "MillsMess": {
         "prereqs": [
@@ -794,7 +872,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/MillsMess.html",
-        "name": "Mills Mess"
+        "name": "Mills Mess",
+        "num": 3
     },
     "441MillsMess": {
         "prereqs": [
@@ -803,7 +882,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/441MillsMess.html",
-        "name": "441 Mills Mess"
+        "name": "441 Mills Mess",
+        "num": 3
     },
     "531MillsMess": {
         "prereqs": [
@@ -812,7 +892,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/531MillsMess.html",
-        "name": "531 Mills Mess"
+        "name": "531 Mills Mess",
+        "num": 3
     },
     "Charley": {
         "prereqs": [
@@ -821,7 +902,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Charley.html",
-        "name": "Charley"
+        "name": "Charley",
+        "num": 3
     },
     "FakeMess": {
         "prereqs": [
@@ -831,7 +913,8 @@ export default {
             "Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FakeMess.html",
-        "name": "Fake Mess"
+        "name": "Fake Mess",
+        "num": 3
     },
     "FlippedMess": {
         "prereqs": [
@@ -839,7 +922,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FlippedMess.html",
-        "name": "Flipped Mess"
+        "name": "Flipped Mess",
+        "num": 3
     },
     "Flo'sMess": {
         "prereqs": [
@@ -849,7 +933,8 @@ export default {
             "Windmill"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Flo'sMess.html",
-        "name": "Flo's Mess"
+        "name": "Flo's Mess",
+        "num": 3
     },
     "Half-Mess": {
         "prereqs": [
@@ -857,7 +942,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Mess.html",
-        "name": "Half-Mess"
+        "name": "Half-Mess",
+        "num": 3
     },
     "ReverseMillsMess": {
         "prereqs": [
@@ -865,7 +951,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseMillsMess.html",
-        "name": "Reverse Mills Mess"
+        "name": "Reverse Mills Mess",
+        "num": 3
     },
     "MillsMessShower": {
         "prereqs": [
@@ -874,7 +961,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/MillsMessShower.html",
-        "name": "Mills Mess Shower"
+        "name": "Mills Mess Shower",
+        "num": 3
     },
     "Nelson'sNemesis": {
         "prereqs": [
@@ -883,7 +971,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Nelson'sNemesis.html",
-        "name": "Nelson's Nemesis"
+        "name": "Nelson's Nemesis",
+        "num": 3
     },
     "Olas": {
         "prereqs": [
@@ -893,7 +982,8 @@ export default {
             "Compressed Olas"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Olas.html",
-        "name": "Olas"
+        "name": "Olas",
+        "num": 3
     },
     "CompressedOlas": {
         "prereqs": [
@@ -901,7 +991,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CompressedOlas.html",
-        "name": "Compressed Olas"
+        "name": "Compressed Olas",
+        "num": 3
     },
     "Orka'sMess": {
         "prereqs": [
@@ -909,7 +1000,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Orka'sMess.html",
-        "name": "Orka's Mess"
+        "name": "Orka's Mess",
+        "num": 3
     },
     "PendulumDrop": {
         "prereqs": [],
@@ -918,7 +1010,8 @@ export default {
             "Inverted Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/PendulumDrop.html",
-        "name": "Pendulum Drop"
+        "name": "Pendulum Drop",
+        "num": 3
     },
     "Penman'sPandemonium": {
         "prereqs": [
@@ -929,7 +1022,8 @@ export default {
             "Frances"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Penman'sPandemonium.html",
-        "name": "Penman's Pandemonium"
+        "name": "Penman's Pandemonium",
+        "num": 3
     },
     "Relf'sRevenge": {
         "prereqs": [
@@ -941,7 +1035,8 @@ export default {
             "Relf's Rubensteins"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRevenge.html",
-        "name": "Relf's Revenge"
+        "name": "Relf's Revenge",
+        "num": 3
     },
     "Relf'sRevenge6": {
         "prereqs": [
@@ -951,7 +1046,8 @@ export default {
             "Relf's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRevenge6.html",
-        "name": "Relf's Revenge 6"
+        "name": "Relf's Revenge 6",
+        "num": 3
     },
     "Relf'sRubensteins": {
         "prereqs": [
@@ -962,7 +1058,8 @@ export default {
             "Relf's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRubensteins.html",
-        "name": "Relf's Rubensteins"
+        "name": "Relf's Rubensteins",
+        "num": 3
     },
     "Ripley'sRainbow": {
         "prereqs": [
@@ -970,7 +1067,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Ripley'sRainbow.html",
-        "name": "Ripley's Rainbow"
+        "name": "Ripley's Rainbow",
+        "num": 3
     },
     "Rolf'sWave": {
         "prereqs": [
@@ -979,7 +1077,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Rolf'sWave.html",
-        "name": "Rolf's Wave"
+        "name": "Rolf's Wave",
+        "num": 3
     },
     "Romeo'sRevenge": {
         "prereqs": [
@@ -987,7 +1086,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Romeo'sRevenge.html",
-        "name": "Romeo's Revenge"
+        "name": "Romeo's Revenge",
+        "num": 3
     },
     "Rubenstein'sRevenge": {
         "prereqs": [
@@ -997,7 +1097,8 @@ export default {
             "Romeo's Revenge"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Rubenstein'sRevenge.html",
-        "name": "Rubenstein's Revenge"
+        "name": "Rubenstein's Revenge",
+        "num": 3
     },
     "SandboxShuffle": {
         "prereqs": [
@@ -1008,7 +1109,8 @@ export default {
             "Frances"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SandboxShuffle.html",
-        "name": "Sandbox Shuffle"
+        "name": "Sandbox Shuffle",
+        "num": 3
     },
     "Frances": {
         "prereqs": [
@@ -1016,7 +1118,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Frances.html",
-        "name": "Frances"
+        "name": "Frances",
+        "num": 3
     },
     "Shower": {
         "prereqs": [
@@ -1027,7 +1130,8 @@ export default {
             "Four Ball Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shower.html",
-        "name": "Shower"
+        "name": "Shower",
+        "num": 3
     },
     "BrokenShower": {
         "prereqs": [
@@ -1038,7 +1142,8 @@ export default {
             "Broken Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenShower.html",
-        "name": "Broken Shower"
+        "name": "Broken Shower",
+        "num": 3
     },
     "CrossedArmShower": {
         "prereqs": [
@@ -1048,7 +1153,8 @@ export default {
             "Reverse Variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmShower.html",
-        "name": "Crossed-Arm Shower"
+        "name": "Crossed-Arm Shower",
+        "num": 3
     },
     "High-LowShower": {
         "prereqs": [
@@ -1058,7 +1164,8 @@ export default {
             "531"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/High-LowShower.html",
-        "name": "High-Low Var."
+        "name": "High-Low Var.",
+        "num": 3
     },
     "ReverseCrossedArmShower": {
         "prereqs": [
@@ -1068,7 +1175,8 @@ export default {
             "Crossed-Arm Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCrossedArmShower.html",
-        "name": "Reverse Crossed-Arm Shower"
+        "name": "Reverse Crossed-Arm Shower",
+        "num": 3
     },
     "ShowerSwapVariation": {
         "prereqs": [
@@ -1079,7 +1187,8 @@ export default {
             "Swap Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ShowerSwapVariation.html",
-        "name": "Swap Variation"
+        "name": "Swap Variation",
+        "num": 3
     },
     "UnderarmShower": {
         "prereqs": [
@@ -1089,7 +1198,8 @@ export default {
             "Underarm Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmShower.html",
-        "name": "Underarm Var."
+        "name": "Underarm Var.",
+        "num": 3
     },
     "Shower-Cascade": {
         "prereqs": [
@@ -1097,7 +1207,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shower-Cascade.html",
-        "name": "Shower Cascade"
+        "name": "Shower Cascade",
+        "num": 3
     },
     "Shuffle": {
         "prereqs": [
@@ -1108,7 +1219,8 @@ export default {
             "Low Shuffle"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffle.html",
-        "name": "Shuffle"
+        "name": "Shuffle",
+        "num": 3
     },
     "LowShuffle": {
         "prereqs": [
@@ -1116,17 +1228,18 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/LowShuffle.html",
-        "name": "Low Shuffle"
+        "name": "Low Shuffle",
+        "num": 3
     },
     "Shuffler'sMess": {
         "prereqs": [
-            "531",
-            "Mills Mess",
-            "531 Mills Mess"
+            " 531",
+            "Mills Mess</a>, <a href=\"531MillsMess.html\">531 Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffler'sMess.html",
-        "name": "Shuffler's Mess"
+        "name": "Shuffler's Mess",
+        "num": 3
     },
     "Snake": {
         "prereqs": [
@@ -1134,7 +1247,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Snake.html",
-        "name": "Snake"
+        "name": "Snake",
+        "num": 3
     },
     "StatueofLiberty": {
         "prereqs": [
@@ -1142,22 +1256,24 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/StatueofLiberty.html",
-        "name": "Statue of Liberty"
+        "name": "Statue of Liberty",
+        "num": 3
     },
     "Takearound": {
         "prereqs": [
-            "Takeouts",
-            "Flying Disco Drop"
+            "Takeouts</a>, <a href=\"FlyingDiscoDrop.html\">Flying Disco Drop"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takearound.html",
-        "name": "Takearound"
+        "name": "Takearound",
+        "num": 3
     },
     "ThreeInOne": {
         "prereqs": [],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ThreeInOne.html",
-        "name": "Three In One"
+        "name": "Three In One",
+        "num": 3
     },
     "Tom'sTrick": {
         "prereqs": [
@@ -1166,7 +1282,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Tom'sTrick.html",
-        "name": "Tom's Trick"
+        "name": "Tom's Trick",
+        "num": 3
     },
     "Triazzle": {
         "prereqs": [
@@ -1174,13 +1291,15 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Triazzle.html",
-        "name": "Triazzle"
+        "name": "Triazzle",
+        "num": 3
     },
     "TruffleShuffle": {
         "prereqs": [],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TruffleShuffle.html",
-        "name": "Truffle Shuffle"
+        "name": "Truffle Shuffle",
+        "num": 3
     },
     "Weave": {
         "prereqs": [
@@ -1189,7 +1308,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Weave.html",
-        "name": "Weave"
+        "name": "Weave",
+        "num": 3
     },
     "OrinocoFlow": {
         "prereqs": [
@@ -1197,7 +1317,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/OrinocoFlow.html",
-        "name": "Orinoco Flow"
+        "name": "Orinoco Flow",
+        "num": 3
     },
     "Windmill": {
         "prereqs": [
@@ -1207,26 +1328,27 @@ export default {
             "Four Ball Windmill"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Windmill.html",
-        "name": "Windmill"
+        "name": "Windmill",
+        "num": 3
     },
     "ChopShower": {
         "prereqs": [
-            "Windmill",
-            "Crossed-Arm Reverse Cascade"
+            "Windmill</a>, <a href=\"CrossedArmReverseCascade.html\">Crossed-Arm Reverse Cascade"
         ],
         "related": [
-            "Chops",
-            "Frantic Cascade",
+            "Chops</a>, <a href=\"FranticCascade.html\">Frantic Cascade",
             "Statue of Liberty"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ChopShower.html",
-        "name": "Chop Shower"
+        "name": "Chop Shower",
+        "num": 3
     },
     "423": {
         "prereqs": [],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/423.html",
-        "name": "423"
+        "name": "423",
+        "num": 3
     },
     "TheW": {
         "prereqs": [
@@ -1234,7 +1356,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TheW.html",
-        "name": "The W"
+        "name": "The W",
+        "num": 3
     },
     "Half-Box(441)": {
         "prereqs": [],
@@ -1242,7 +1365,8 @@ export default {
             "Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Box(441).html",
-        "name": "441 (Half-Box)"
+        "name": "441 (Half-Box)",
+        "num": 3
     },
     "Reverse441(Half-Box)": {
         "prereqs": [
@@ -1252,7 +1376,8 @@ export default {
             "441 Mills Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Reverse441(Half-Box).html",
-        "name": "Reverse 441"
+        "name": "Reverse 441",
+        "num": 3
     },
     "531": {
         "prereqs": [
@@ -1260,7 +1385,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/531.html",
-        "name": "531"
+        "name": "531",
+        "num": 3
     },
     "FourBallBox": {
         "prereqs": [
@@ -1272,7 +1398,8 @@ export default {
             "Stacked variation"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallBox.html",
-        "name": "Box"
+        "name": "Box",
+        "num": 4
     },
     "FourBallStackedBox": {
         "prereqs": [
@@ -1283,7 +1410,8 @@ export default {
             "Four Ball Box"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallStackedBox.html",
-        "name": "Stacked Variation"
+        "name": "Stacked Variation",
+        "num": 4
     },
     "Cliff'sConfusion": {
         "prereqs": [
@@ -1291,7 +1419,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Cliff'sConfusion.html",
-        "name": "Cliff's Confusion"
+        "name": "Cliff's Confusion",
+        "num": 4
     },
     "FourBallColumns": {
         "prereqs": [
@@ -1302,7 +1431,8 @@ export default {
             "Four Ball Rainbow Cross"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallColumns.html",
-        "name": "Columns"
+        "name": "Columns",
+        "num": 4
     },
     "FourBallRainbowCross": {
         "prereqs": [
@@ -1311,7 +1441,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallRainbowCross.html",
-        "name": "Rainbow Cross"
+        "name": "Rainbow Cross",
+        "num": 4
     },
     "Dancey'sDevilment": {
         "prereqs": [
@@ -1319,7 +1450,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Dancey'sDevilment.html",
-        "name": "Dancey's Devilment"
+        "name": "Dancey's Devilment",
+        "num": 4
     },
     "FourBallHalfShower": {
         "prereqs": [
@@ -1330,7 +1462,8 @@ export default {
             "Arches"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallHalfShower.html",
-        "name": "Half-Shower"
+        "name": "Half-Shower",
+        "num": 4
     },
     "Arches": {
         "prereqs": [
@@ -1338,7 +1471,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Arches.html",
-        "name": "Arches"
+        "name": "Arches",
+        "num": 4
     },
     "Pistons": {
         "prereqs": [
@@ -1348,7 +1482,8 @@ export default {
             "Synchronous Pistons"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Pistons.html",
-        "name": "Pistons"
+        "name": "Pistons",
+        "num": 4
     },
     "SynchPistons": {
         "prereqs": [
@@ -1358,7 +1493,8 @@ export default {
             "Pistons"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/SynchPistons.html",
-        "name": "Synch. Pistons"
+        "name": "Synch. Pistons",
+        "num": 4
     },
     "Fountain": {
         "prereqs": [
@@ -1368,7 +1504,8 @@ export default {
             "Reverse Fountain"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Fountain.html",
-        "name": "Fountain"
+        "name": "Fountain",
+        "num": 4
     },
     "ReverseFountain": {
         "prereqs": [
@@ -1376,7 +1513,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/ReverseFountain.html",
-        "name": "Reverse Fountain"
+        "name": "Reverse Fountain",
+        "num": 4
     },
     "Lisa": {
         "prereqs": [
@@ -1385,7 +1523,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Lisa.html",
-        "name": "Lisa"
+        "name": "Lisa",
+        "num": 4
     },
     "FourBallMillsMess": {
         "prereqs": [
@@ -1394,7 +1533,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallMillsMess.html",
-        "name": "Mills Mess"
+        "name": "Mills Mess",
+        "num": 4
     },
     "FourBallHalf-Mess": {
         "prereqs": [
@@ -1403,17 +1543,18 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallHalf-Mess.html",
-        "name": "Half-Mess"
+        "name": "Half-Mess",
+        "num": 4
     },
     "534MillsMess": {
         "prereqs": [
             "Four Ball Mills Mess",
-            "534",
-            "531 Mills Mess"
+            "534</a>, <a href=\"../3balltricks/531MillsMess.html\">531 Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/534MillsMess.html",
-        "name": "534 Mills Mess"
+        "name": "534 Mills Mess",
+        "num": 4
     },
     "FourBallShower": {
         "prereqs": [
@@ -1423,7 +1564,8 @@ export default {
             "Five Ball Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallShower.html",
-        "name": "Shower"
+        "name": "Shower",
+        "num": 4
     },
     "SprungCascade": {
         "prereqs": [
@@ -1432,7 +1574,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/SprungCascade.html",
-        "name": "Sprung Cascade"
+        "name": "Sprung Cascade",
+        "num": 4
     },
     "SynchFountain": {
         "prereqs": [
@@ -1440,7 +1583,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/SynchFountain.html",
-        "name": "Synchronous Fountain"
+        "name": "Synchronous Fountain",
+        "num": 4
     },
     "ReverseSynchFountain": {
         "prereqs": [
@@ -1448,7 +1592,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/ReverseSynchFountain.html",
-        "name": "Reverse Variation"
+        "name": "Reverse Variation",
+        "num": 4
     },
     "FourBallTakeouts": {
         "prereqs": [
@@ -1457,7 +1602,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallTakeouts.html",
-        "name": "Takeouts"
+        "name": "Takeouts",
+        "num": 4
     },
     "TennesseeWaltz": {
         "prereqs": [
@@ -1466,7 +1612,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/TennesseeWaltz.html",
-        "name": "Tennessee Waltz"
+        "name": "Tennessee Waltz",
+        "num": 4
     },
     "Tsunami": {
         "prereqs": [
@@ -1474,7 +1621,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Tsunami.html",
-        "name": "Tsunami"
+        "name": "Tsunami",
+        "num": 4
     },
     "Wimpy": {
         "prereqs": [
@@ -1484,17 +1632,18 @@ export default {
             "Four Ball Half-Shower"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Wimpy.html",
-        "name": "Wimpy"
+        "name": "Wimpy",
+        "num": 4
     },
     "FourBallWindmill": {
         "prereqs": [
             "Windmill",
-            "Fountain",
-            "Four Ball Mills Mess"
+            "Fountain</a>, <a href=\"FourBallMillsMess.html\">Four Ball Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallWindmill.html",
-        "name": "Windmill"
+        "name": "Windmill",
+        "num": 4
     },
     "534": {
         "prereqs": [
@@ -1503,7 +1652,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/534.html",
-        "name": "534"
+        "name": "534",
+        "num": 4
     },
     "552": {
         "prereqs": [
@@ -1512,7 +1662,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/552.html",
-        "name": "552"
+        "name": "552",
+        "num": 4
     },
     "5551": {
         "prereqs": [
@@ -1522,7 +1673,8 @@ export default {
             "Sprung Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/5551.html",
-        "name": "5551"
+        "name": "5551",
+        "num": 4
     },
     "55550": {
         "prereqs": [
@@ -1532,7 +1684,8 @@ export default {
             "Five Ball Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/55550.html",
-        "name": "55550"
+        "name": "55550",
+        "num": 4
     },
     "FiveBallCascade": {
         "prereqs": [
@@ -1545,7 +1698,8 @@ export default {
             "Reverse Five Ball Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallCascade.html",
-        "name": "Cascade"
+        "name": "Cascade",
+        "num": 5
     },
     "FiveBallReverseCascade": {
         "prereqs": [
@@ -1553,7 +1707,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallReverseCascade.html",
-        "name": "Reverse Cascade"
+        "name": "Reverse Cascade",
+        "num": 5
     },
     "FiveBallHalf-Shower": {
         "prereqs": [
@@ -1562,7 +1717,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallHalf-Shower.html",
-        "name": "Half-Shower"
+        "name": "Half-Shower",
+        "num": 5
     },
     "Martin": {
         "prereqs": [
@@ -1570,7 +1726,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/Martin.html",
-        "name": "Martin"
+        "name": "Martin",
+        "num": 5
     },
     "FiveBallMultiplexColumns": {
         "prereqs": [
@@ -1578,7 +1735,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallMultiplexColumns.html",
-        "name": "Multiplex Columns"
+        "name": "Multiplex Columns",
+        "num": 5
     },
     "FiveBallShower": {
         "prereqs": [
@@ -1586,7 +1744,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallShower.html",
-        "name": "Shower"
+        "name": "Shower",
+        "num": 5
     },
     "FiveBallSplitMultiplexCascade": {
         "prereqs": [
@@ -1596,7 +1755,8 @@ export default {
             "Stacked Multiplex Cascade"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallSplitMultiplexCascade.html",
-        "name": "Split Cascade"
+        "name": "Split Cascade",
+        "num": 5
     },
     "FiveBallStackedMultiplexCascade": {
         "prereqs": [
@@ -1604,7 +1764,8 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallStackedMultiplexCascade.html",
-        "name": "Stacked Cascade"
+        "name": "Stacked Cascade",
+        "num": 5
     },
     "SixBallFountain": {
         "prereqs": [
@@ -1614,7 +1775,7 @@ export default {
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/6balltricks/SixBallFountain.html",
-        "name": "Six Ball Fountain"
+        "name": "Six Ball Fountain",
+        "num": 6
     }
-
 }
