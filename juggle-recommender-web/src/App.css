@@ -1,6 +1,4 @@
 .App {
-  text-align: center;
-  position : relative;
 }
 
 .App-logo {
@@ -8,7 +6,13 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+.selectedFilterButton{
+  font-size: 40pt;
+  background-color : darkgray;
+}
+.unselectedFilterButton{
+  font-size: 40pt;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -22,11 +22,18 @@ class App extends Component {
  		})
  	}
  	render(){
+ 		const buttonFilterClass = (num)=>{
+ 			let className = "unselectedFilterButton"
+ 			 if(this.state.filters.includes(num)){
+ 			 	className = "selectedFilterButton"
+ 			 }
+ 			 return className
+ 		}
 		return (
 		<div className="App">
-			<button onClick={()=>{this.toggleFilter(3)}}>3 ball</button>
-			<button onClick={()=>{this.toggleFilter(4)}}>4 ball</button>
-			<button onClick={()=>{this.toggleFilter(5)}}>5 ball</button>
+			<button className={buttonFilterClass(3)} onClick={()=>{this.toggleFilter(3)}}>3 ball</button>
+			<button className={buttonFilterClass(4)} onClick={()=>{this.toggleFilter(4)}}>4 ball</button>
+			<button className={buttonFilterClass(5)} onClick={()=>{this.toggleFilter(5)}}>5 ball</button>
 		  	<TrickGraph filters={this.state.filters}/>
 		</div>
 		);
