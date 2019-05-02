@@ -14,37 +14,39 @@ class TrickGraph extends React.Component {
     TrickGraphToGraph = () => {
       let edges = []
       let nodes = []
-
+      let trickNamesToKeys = {}
+      Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+        trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
+      })
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
-                console.log(trick)
         trick.name = trick.name.replace("-"," ")
         nodes.push({ data: {
-          id    : trick.name,
+          id    : trickKey,
           name : trick.name
         }})
         if(trick.prereqs){
          
           trick.prereqs.forEach((prereq, j)=>{
-            console.log(trick.name, prereq)
+            //console.log(trick.name, prereq)
             prereq = prereq.replace("-"," ")
-            if(!jugglingLibrary[prereq]){
-              jugglingLibrary[prereq] = { name : prereq}
+            if(!trickNamesToKeys[prereq]){
+              console.log("no trick " ,prereq)
+              trickNamesToKeys[prereq] = prereq
               nodes.push({ data: {
                 id    : prereq,
                 name : prereq
               }})
             }
-            edges.push({ data: { source: trick.name, target: prereq } })
+            edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
           })
         }
       })
-      console.log("length" ,Object.keys(jugglingLibrary).length)
+      console.log(trickNamesToKeys)
       this.renderCytoscapeElement({ edges, nodes })
     }
 
     renderCytoscapeElement = (elements) => {
-      console.log(elements)
       this.cy = cytoscape(
       {
         container: document.getElementById('cy'),
@@ -89,6 +91,10 @@ class TrickGraph extends React.Component {
       this.cy.on('click', 'node', function(evt) {
         console.log(jugglingLibrary)
         console.log("cliekd", jugglingLibrary[this.id()])
+        const url = jugglingLibrary[this.id()].url
+        if(url){
+          window.open(url)
+        }
       })
       
       this.cy.maxZoom(1)
