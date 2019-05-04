@@ -8,10 +8,12 @@ class TrickGraph extends React.Component {
     }
 
     componentDidUpdate() {
+      console.log("update graph")
       this.TrickGraphToGraph()
     }
 
     TrickGraphToGraph = () => {
+      console.log("graph checked ",this.props.checkedTricks)
       let edges = []
       let nodes = []
       let trickNamesToKeys = {}
@@ -27,22 +29,27 @@ class TrickGraph extends React.Component {
           return
         }
         trick.name = trick.name.replace("-"," ")
-        const checked = this.props.checkedTricks[trickKey] ? 1 : 0
+
+        let checked = this.props.checkedTricks[trickKey] ? 1 : 0
+        if(trickKey == "423"){
+          console.log("423 trcik ", checked,this.props.checkedTricks[trickKey])
+        }
         nodes.push({ data: {
           checked : checked,
           id    : trickKey,
           name : trick.name,
         }})
         if(trick.prereqs){
-         
           trick.prereqs.forEach((prereq, j)=>{
             //console.log(trick.name, prereq)
             prereq = prereq.replace("-"," ")
             if(!trickNamesToKeys[prereq]){
               trickNamesToKeys[prereq] = prereq
+              checked = this.props.checkedTricks[prereq] ? 1 : 0
               nodes.push({ data: {
                 id    : prereq,
-                name : prereq
+                name : prereq,
+                checked : checked
               }})
             }
             edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
@@ -53,6 +60,7 @@ class TrickGraph extends React.Component {
     }
 
     renderCytoscapeElement = (elements) => {
+      console.log(elements)
       this.cy = cytoscape(
       {
         container: document.getElementById('cy'),

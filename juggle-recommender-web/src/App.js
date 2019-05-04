@@ -8,6 +8,13 @@ class App extends Component {
  		filters : [3],
  		checkedTricks : {}
 	}
+	componentDidMount(){
+		const checkedTricks = JSON.parse(localStorage.getItem("checkedTricks"))
+		if(checkedTricks){
+			console.log("got tricks",checkedTricks)
+			this.setState({checkedTricks})
+		}
+	}
  	toggleFilter =(filter)=>{
  		let newFilters = []
  		if(!this.state.filters.includes(filter)){
@@ -26,6 +33,7 @@ class App extends Component {
  	updateCheckedTricks=(checkedTricks)=>{
  		console.log("updating tricks")
  		this.setState({checkedTricks})
+ 		localStorage.setItem('checkedTricks', JSON.stringify(checkedTricks))
  	}
  	render(){
  		const buttonFilterClass = (num)=>{
@@ -37,7 +45,7 @@ class App extends Component {
  		}
 		return (
 		<div className="App">
-			<TrickCheckboxes updateCheckedTricks={this.updateCheckedTricks}/>
+			<TrickCheckboxes updateCheckedTricks={this.updateCheckedTricks} />
 			<button className={buttonFilterClass(3)} onClick={()=>{this.toggleFilter(3)}}>3 ball</button>
 			<button className={buttonFilterClass(4)} onClick={()=>{this.toggleFilter(4)}}>4 ball</button>
 			<button className={buttonFilterClass(5)} onClick={()=>{this.toggleFilter(5)}}>5 ball</button>
