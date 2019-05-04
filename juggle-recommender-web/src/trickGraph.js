@@ -23,12 +23,13 @@ class TrickGraph extends React.Component {
       })
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
-        console.log(trick, this.props.filters)
         if(!this.props.filters.includes(trick.num)){
           return
         }
         trick.name = trick.name.replace("-"," ")
+        const checked = this.props.checkedTricks[trickKey] ? 1 : 0
         nodes.push({ data: {
+          checked : checked,
           id    : trickKey,
           name : trick.name,
         }})
@@ -38,7 +39,6 @@ class TrickGraph extends React.Component {
             //console.log(trick.name, prereq)
             prereq = prereq.replace("-"," ")
             if(!trickNamesToKeys[prereq]){
-              console.log("no trick " ,prereq)
               trickNamesToKeys[prereq] = prereq
               nodes.push({ data: {
                 id    : prereq,
@@ -49,7 +49,6 @@ class TrickGraph extends React.Component {
           })
         }
       })
-      console.log(trickNamesToKeys)
       this.renderCytoscapeElement({ edges, nodes })
     }
 
@@ -79,11 +78,11 @@ class TrickGraph extends React.Component {
             'content'          : 'data(name)',
             'text-valign'      : 'center',
             'label'            : 'data(id)',
+            'background-color'            : 'mapData(checked, 0, 1, pink, cyan)',
             'font-size'        : 40,
             'opacity'          : '1',
             'width'            : 200,
             'height'            : 200,
-            'background-color'           : 'cyan'
           })
           .selector('edge')
           .css({
@@ -105,7 +104,7 @@ class TrickGraph extends React.Component {
       })
       
       this.cy.maxZoom(1)
-      this.cy.minZoom(0.3)
+      this.cy.minZoom(0.15)
 
     }
 
@@ -116,8 +115,8 @@ class TrickGraph extends React.Component {
         id    = "cy"
         style = {{
 
-          height : '1000px',
-          width  : '2000px',
+          height : '500px',
+          width  : '1000px',
           border: '1px solid black',
           textAlign : "left"
         }}
