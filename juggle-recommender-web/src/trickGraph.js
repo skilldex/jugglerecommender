@@ -75,14 +75,15 @@ class TrickGraph extends React.Component {
               console.log("skip")
               return
             }
-            edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
-
+            if(tempNodes[trickNamesToKeys[prereq]].checked && tempNodes[trickKey].checked ){
+              edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
+            }
           })
         }
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        if(this.props.search && !tempNodes[trickKey].visible){
+        if(this.props.search && !tempNodes[trickKey].visible || !tempNodes[trickKey].checked){
           return
         }
         nodes.push({data:{...tempNodes[trickKey]}})
