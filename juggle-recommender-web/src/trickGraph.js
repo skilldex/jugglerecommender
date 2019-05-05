@@ -14,6 +14,7 @@ class TrickGraph extends React.Component {
 
     TrickGraphToGraph = () => {
       console.log("graph checked ",this.props.checkedTricks)
+      let numChecked = 0
       let edges = []
       let tempNodes = {}
       let trickNamesToKeys = {}
@@ -65,12 +66,13 @@ class TrickGraph extends React.Component {
               }
             }
             if(checkedPrereq && tempNodes[trickKey].checked == 0){
+              ++numChecked
               tempNodes[trickKey].checked = 75
             }
             if(checkedTrick > 0 && !tempNodes[trickNamesToKeys[prereq]].checked){
+              ++numChecked
               tempNodes[trickNamesToKeys[prereq]].checked = 25
             }
-            console.log(prereq,checkedTrick, checkedPrereq,tempNodes[trickNamesToKeys[prereq]].checked )
             if(this.props.search && !visibleTrick) {
               console.log("skip")
               return
@@ -88,7 +90,6 @@ class TrickGraph extends React.Component {
         }
         nodes.push({data:{...tempNodes[trickKey]}})
       })
-      console.log(tempNodes)
       this.renderCytoscapeElement({ edges, nodes })
     }
 
@@ -105,7 +106,7 @@ class TrickGraph extends React.Component {
           name     : 'cose',
           directed : true,
           nodeRepulsion: function( node ){ return 10048; },
-           nodeOverlap: 100,
+           nodeOverlap: 20,
             // Gravity force (constant)
           gravity: .0005,
 
@@ -133,6 +134,7 @@ class TrickGraph extends React.Component {
             'curve-style'             : 'bezier',
             'control-point-step-size' : 0,
             'opacity'                 : .5,
+            'arrow-scale'             : 5,
             'color' : 'black'
           }),
       })

@@ -25,11 +25,14 @@ class TrickCheckboxes extends Component {
  	let checkboxes = []
  	
 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-		checkboxes.push(
-			<div className="checkboxDiv" key={trickKey + "div"}>
-				<input type="checkbox" checked={this.state.checkedTricks[trickKey]} key={trickKey} id={trickKey} onChange={()=>{this.checkTrick(trickKey)}}/><label>{trickKey}</label>
-			</div>
-	)})
+		if(this.props.filters.includes(jugglingLibrary[trickKey].num)){
+			checkboxes.push(
+				<div className="checkboxDiv" key={trickKey + "div"}>
+					<input type="checkbox" checked={this.state.checkedTricks[trickKey]} key={trickKey} id={trickKey} onChange={()=>{this.checkTrick(trickKey)}}/><label>{trickKey}</label>
+				</div>
+			)
+		}
+	})
 	return (	
 		<div>
 			{checkboxes}
