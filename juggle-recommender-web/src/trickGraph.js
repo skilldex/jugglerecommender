@@ -30,19 +30,22 @@ class TrickGraph extends React.Component {
         }
         trick.name = trick.name.replace("-"," ")
 
-        let checkedTrick = this.props.checkedTricks[trickKey] ? 10 : 0
+        let checkedTrick = this.props.checkedTricks[trickKey] ? 100 : 0
         let visibleTrick = this.props.search && trickKey.includes(this.props.search) ? 1 : 0
-        tempNodes[trickKey]={
-          checked : checkedTrick,
-          id    : trickKey,
-          name : trick.name,
-          visible : visibleTrick
+        if(!tempNodes[trickKey]){
+          tempNodes[trickKey]={
+            checked : checkedTrick,
+            id    : trickKey,
+            name : trick.name,
+            visible : visibleTrick
+          }
         }
+        
         if(trick.prereqs){
           trick.prereqs.forEach((prereq, j)=>{
             prereq = prereq.replace("-"," ")
 
-            let checkedPrereq = this.props.checkedTricks[prereq] ? 10 : 0
+            let checkedPrereq = this.props.checkedTricks[prereq] ? 100 : 0
             if(!trickNamesToKeys[prereq]){
               trickNamesToKeys[prereq] = prereq
               tempNodes[prereq] ={
@@ -62,12 +65,12 @@ class TrickGraph extends React.Component {
               }
             }
             if(checkedPrereq && tempNodes[trickKey].checked == 0){
-              tempNodes[trickKey].checked = 8
+              tempNodes[trickKey].checked = 75
             }
             if(checkedTrick > 0 && !tempNodes[trickNamesToKeys[prereq]].checked){
-              tempNodes[trickNamesToKeys[prereq]].checked = 3
+              tempNodes[trickNamesToKeys[prereq]].checked = 25
             }
-            console.log("search ", this.props.search, visibleTrick)
+            console.log(prereq,checkedTrick, checkedPrereq,tempNodes[trickNamesToKeys[prereq]].checked )
             if(this.props.search && !visibleTrick) {
               console.log("skip")
               return
@@ -116,7 +119,7 @@ class TrickGraph extends React.Component {
             'content'          : 'data(name)',
             'text-valign'      : 'center',
             'label'            : 'data(id)',
-            'background-color' : 'mapData(checked, 0, 10, cyan, yellow)',
+            'background-color' : 'mapData(checked, 0, 100, cyan, yellow)',
             'font-size'        : 40,
             'width'            : 200,
             'height'            : 200,
