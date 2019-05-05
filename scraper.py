@@ -36,6 +36,7 @@ for line in tree_lines:
 		current_ball_num = 6
 	if "href" in line and "Tricks/" in line and num_parsed_tricks < num_tricks:
 		num_parsed_tricks += 1
+		print("tricks parsed ",num_parsed_tricks)
 		link = line.split("\"")[1]
 		trick_name = link.split("/")[2]
 		trick_name = trick_name.replace(".html","")
@@ -90,7 +91,7 @@ for line in tree_lines:
 					all_tricks[trick_name]['related'].append(match[0])
 					f.write(trick_name + " related " + match[0] + "\n")
 
-'''all_tricks['FourBallWindmill']["prereqs"] = ['Windmill','Fountain','Four Ball Mills Mess']
+all_tricks['FourBallWindmill']["prereqs"] = ['Windmill','Fountain','Four Ball Mills Mess']
 all_tricks['534MillsMess']["prereqs"] = ["Four Ball Mills Mess",'534',"531 Mills Mess"]
 all_tricks['ChopShower']["prereqs"] = ["Windmill",'Crossed-Arm Reverse Cascade']
 all_tricks['ChopShower']["related"] = ["Chops",'Frantic Cascade',"Statue of Liberty"]
@@ -99,7 +100,7 @@ all_tricks["Shuffler'sMess"]["prereqs"] = ["531",'Mills Mess','531 Mills Mess']
 all_tricks["Levels"]["prereqs"] = ["N-Box","Luke's Shuffle"]
 all_tricks["Frostbite"]["related"] = ["Kraken","Kato's Crux","Shuffler's Mess"]
 all_tricks["FlyingDiscoDrop"]["prereqs"] = ["Shower","Orka's Mess","Hands of Time"]
-all_tricks["TrueBox"]["prereqs"] = ["Box","Inverted Shower"]'''
+all_tricks["TrueBox"]["prereqs"] = ["Box","Inverted Shower"]
 
 f.close()
 print(json.dumps(all_tricks, indent = 4, separators = (",",": ")))
