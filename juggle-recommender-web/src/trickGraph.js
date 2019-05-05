@@ -31,12 +31,10 @@ class TrickGraph extends React.Component {
         trick.name = trick.name.replace("-"," ")
 
         let checkedTrick = this.props.checkedTricks[trickKey] ? 1 : 0
-        if(checkedTrick){
-          tempNodes[trickKey]={
-            checked : checkedTrick,
-            id    : trickKey,
-            name : trick.name,
-          }
+        tempNodes[trickKey]={
+          checked : checkedTrick,
+          id    : trickKey,
+          name : trick.name,
         }
         if(trick.prereqs){
           trick.prereqs.forEach((prereq, j)=>{
@@ -59,19 +57,16 @@ class TrickGraph extends React.Component {
               }
             }
             if(checkedTrick > 0){
-              console.log("trick",trickKey, tempNodes[trickKey], trickNamesToKeys[prereq],tempNodes[trickNamesToKeys[prereq]] )
               tempNodes[trickNamesToKeys[prereq]].checked = 2
-              console.log("checked trick" , trickKey, trickNamesToKeys[prereq])
-              edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
             }
+            edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
+
           })
         }
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        if(tempNodes[trickKey].checked > 0){
-          nodes.push({data:{...tempNodes[trickKey]}})
-        }
+        nodes.push({data:{...tempNodes[trickKey]}})
       })
       console.log(tempNodes)
       this.renderCytoscapeElement({ edges, nodes })
