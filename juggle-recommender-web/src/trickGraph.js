@@ -15,13 +15,13 @@ class TrickGraph extends React.Component {
     TrickGraphToGraph = () => {
       console.log("graph checked ",this.props.checkedTricks)
       let edges = []
-      let nodes = []
+      let tempNodes = {}
       let trickNamesToKeys = {}
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
         if(this.props.filters.includes(trick.num)){
           trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
-        }
+        }   
       })
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
@@ -30,37 +30,56 @@ class TrickGraph extends React.Component {
         }
         trick.name = trick.name.replace("-"," ")
 
-        let checked = this.props.checkedTricks[trickKey] ? 1 : 0
-        if(trickKey == "423"){
-          console.log("423 trcik ", checked,this.props.checkedTricks[trickKey])
+        let checkedTrick = this.props.checkedTricks[trickKey] ? 1 : 0
+        if(checkedTrick){
+          tempNodes[trickKey]={
+            checked : checkedTrick,
+            id    : trickKey,
+            name : trick.name,
+          }
         }
-        nodes.push({ data: {
-          checked : checked,
-          id    : trickKey,
-          name : trick.name,
-        }})
         if(trick.prereqs){
           trick.prereqs.forEach((prereq, j)=>{
-            //console.log(trick.name, prereq)
             prereq = prereq.replace("-"," ")
+            let checkedPrereq = this.props.checkedTricks[prereq] ? 1 : 0
             if(!trickNamesToKeys[prereq]){
               trickNamesToKeys[prereq] = prereq
-              checked = this.props.checkedTricks[prereq] ? 1 : 0
-              nodes.push({ data: {
+              tempNodes[prereq] ={
                 id    : prereq,
                 name : prereq,
-                checked : checked
-              }})
+                checked : checkedPrereq
+              }
             }
-            edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
+
+            if(!tempNodes[trickNamesToKeys[prereq]]){
+              tempNodes[trickNamesToKeys[prereq]]={
+                checked : checkedPrereq,
+                id    : trickNamesToKeys[prereq],
+                name : prereq,
+              }
+            }
+            if(checkedTrick > 0){
+              console.log("trick",trickKey, tempNodes[trickKey], trickNamesToKeys[prereq],tempNodes[trickNamesToKeys[prereq]] )
+              tempNodes[trickNamesToKeys[prereq]].checked = 2
+              console.log("checked trick" , trickKey, trickNamesToKeys[prereq])
+              edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
+            }
           })
         }
       })
+      const nodes = []
+      Object.keys(tempNodes).forEach((trickKey)=>{
+        if(tempNodes[trickKey].checked > 0){
+          nodes.push({data:{...tempNodes[trickKey]}})
+        }
+      })
+      console.log(tempNodes)
       this.renderCytoscapeElement({ edges, nodes })
     }
 
     renderCytoscapeElement = (elements) => {
-      console.log(elements)
+      console.log("elements " ,elements)
+
       this.cy = cytoscape(
       {
         container: document.getElementById('cy'),
@@ -86,11 +105,12 @@ class TrickGraph extends React.Component {
             'content'          : 'data(name)',
             'text-valign'      : 'center',
             'label'            : 'data(id)',
-            'background-color'            : 'mapData(checked, 0, 1, pink, cyan)',
+            'background-color' : 'mapData(checked, 0, 2, red, yellow)',
             'font-size'        : 40,
             'opacity'          : '1',
             'width'            : 200,
             'height'            : 200,
+            'border'          : 'black'
           })
           .selector('edge')
           .css({
