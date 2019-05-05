@@ -30,22 +30,26 @@ class TrickGraph extends React.Component {
         }
         trick.name = trick.name.replace("-"," ")
 
-        let checkedTrick = this.props.checkedTricks[trickKey] ? 1 : 0
+        let checkedTrick = this.props.checkedTricks[trickKey] ? 10 : 0
+        let visibleTrick = this.props.search && trickKey.includes(this.props.search) ? 1 : 0
         tempNodes[trickKey]={
           checked : checkedTrick,
           id    : trickKey,
           name : trick.name,
+          visible : visibleTrick
         }
         if(trick.prereqs){
           trick.prereqs.forEach((prereq, j)=>{
             prereq = prereq.replace("-"," ")
-            let checkedPrereq = this.props.checkedTricks[prereq] ? 1 : 0
+
+            let checkedPrereq = this.props.checkedTricks[prereq] ? 10 : 0
             if(!trickNamesToKeys[prereq]){
               trickNamesToKeys[prereq] = prereq
               tempNodes[prereq] ={
                 id    : prereq,
                 name : prereq,
-                checked : checkedPrereq
+                checked : checkedPrereq,
+                visible : visibleTrick
               }
             }
 
@@ -54,10 +58,19 @@ class TrickGraph extends React.Component {
                 checked : checkedPrereq,
                 id    : trickNamesToKeys[prereq],
                 name : prereq,
+                visible : visibleTrick
               }
             }
-            if(checkedTrick > 0){
-              tempNodes[trickNamesToKeys[prereq]].checked = 2
+            if(checkedPrereq && tempNodes[trickKey].checked == 0){
+              tempNodes[trickKey].checked = 8
+            }
+            if(checkedTrick > 0 && !tempNodes[trickNamesToKeys[prereq]].checked){
+              tempNodes[trickNamesToKeys[prereq]].checked = 3
+            }
+            console.log("search ", this.props.search, visibleTrick)
+            if(this.props.search && !visibleTrick) {
+              console.log("skip")
+              return
             }
             edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
 
@@ -66,6 +79,9 @@ class TrickGraph extends React.Component {
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
+        if(this.props.search && !tempNodes[trickKey].visible){
+          return
+        }
         nodes.push({data:{...tempNodes[trickKey]}})
       })
       console.log(tempNodes)
@@ -85,9 +101,9 @@ class TrickGraph extends React.Component {
           name     : 'cose',
           directed : true,
           nodeRepulsion: function( node ){ return 10048; },
-           nodeOverlap: 50,
+           nodeOverlap: 100,
             // Gravity force (constant)
-          gravity: .001,
+          gravity: .0005,
 
           // Maximum number of iterations to perform
           numIter: 1500,
@@ -100,9 +116,8 @@ class TrickGraph extends React.Component {
             'content'          : 'data(name)',
             'text-valign'      : 'center',
             'label'            : 'data(id)',
-            'background-color' : 'mapData(checked, 0, 2, red, yellow)',
+            'background-color' : 'mapData(checked, 0, 10, cyan, yellow)',
             'font-size'        : 40,
-            'opacity'          : '1',
             'width'            : 200,
             'height'            : 200,
             'border'          : 'black'

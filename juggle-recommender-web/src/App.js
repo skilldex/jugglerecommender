@@ -7,7 +7,8 @@ class App extends Component {
  	state = {
  		filters : [3],
  		checkedTricks : {},
- 		searchInput : ""
+ 		searchInput : "",
+ 		searchTrick : ""
 	}
 	componentDidMount(){
 		const checkedTricks = JSON.parse(localStorage.getItem("checkedTricks"))
@@ -36,13 +37,23 @@ class App extends Component {
  		this.setState({checkedTricks})
  		localStorage.setItem('checkedTricks', JSON.stringify(checkedTricks))
  	}
- 	searchTrick=(searchTrick)=>{
- 		this.setState({searchTrick})
+ 	searchInputChange=(e)=>{
+ 		console.log("input change " ,e)
+ 		this.setState({
+ 			searchInput: e.target.value
+ 		})
+ 	}
+ 	searchTrick=()=>{
+ 		console.log("submit " ,this.state.searchInput)
+ 		this.setState({
+ 			searchTrick: this.state.searchInput
+ 		})
  	}
  	
  	render(){
  		const search= <div>
- 					<label>Find trick </label><input onSubmit={this.searchTrick}/>
+ 						<label>Find trick </label><input value={this.state.searchInput} onChange={this.searchInputChange}/>
+ 						<button onClick={this.searchTrick}>Search</button>
  				  </div>
  		const buttonFilterClass = (num)=>{
  			let className = "unselectedFilterButton"
@@ -58,7 +69,7 @@ class App extends Component {
 			<button className={buttonFilterClass(3)} onClick={()=>{this.toggleFilter(3)}}>3 ball</button>
 			<button className={buttonFilterClass(4)} onClick={()=>{this.toggleFilter(4)}}>4 ball</button>
 			<button className={buttonFilterClass(5)} onClick={()=>{this.toggleFilter(5)}}>5 ball</button>
-		  	<TrickGraph checkedTricks={this.state.checkedTricks} search={this.state.searchInput} filters={this.state.filters}/>
+		  	<TrickGraph checkedTricks={this.state.checkedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
 		</div>
 		);
 	}
