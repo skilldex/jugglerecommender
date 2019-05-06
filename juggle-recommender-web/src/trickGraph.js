@@ -31,57 +31,61 @@ class TrickGraph extends React.Component {
         trick.name = trick.name.replace("-"," ")
 
         let checkedTrick = this.props.checkedTricks[trickKey] ? 100 : 0
-        let visibleTrick = this.props.search && trickKey.includes(this.props.search) ? 1 : 0
         if(!tempNodes[trickKey]){
           tempNodes[trickKey]={
-            checked : checkedTrick,
             id    : trickKey,
             name : trick.name,
-            visible : visibleTrick
+            checked : 0
           }
         }
-        
+        if(tempNodes[trickKey].checked != 100 && checkedTrick > 0){
+          tempNodes[trickKey].checked = checkedTrick
+        }
+        if(trickKey == "Infinity"){
+          console.log("infi ",tempNodes[trickKey])
+        }
         if(trick.prereqs){
           trick.prereqs.forEach((prereq, j)=>{
             prereq = prereq.replace("-"," ")
-
-            let checkedPrereq = this.props.checkedTricks[trickNamesToKeys[prereq]] ? 100 : 0
-            if(!trickNamesToKeys[prereq]){
-              trickNamesToKeys[prereq] = prereq
-              tempNodes[prereq] ={
-                id    : prereq,
-                name : prereq,
-                checked : checkedPrereq,
-                visible : visibleTrick
-              }
+            let prereqKey = trickNamesToKeys[prereq]
+            if(!prereqKey){
+              prereqKey = prereq
             }
-
-            if(!tempNodes[trickNamesToKeys[prereq]]){
-              tempNodes[trickNamesToKeys[prereq]]={
-                checked : checkedPrereq,
-                id    : trickNamesToKeys[prereq],
-                name : prereq,
-                visible : visibleTrick
-              }
-            }
-            if(checkedPrereq && tempNodes[trickKey].checked == 0){
+            let checkedPrereq = this.props.checkedTricks[prereqKey]  ? 100 : 0
+            if(checkedPrereq == 100 && tempNodes[trickKey].checked == 0){
               tempNodes[trickKey].checked = 75
             }
-            if(checkedTrick > 0 && !tempNodes[trickNamesToKeys[prereq]].checked){
-              tempNodes[trickNamesToKeys[prereq]].checked = 25
+            if(!tempNodes[prereqKey]){
+              tempNodes[prereqKey]={
+                id    : prereqKey,
+                name : prereq,
+                checked : 0
+              }
             }
-            if(this.props.search && !visibleTrick) {
-              return
+            if(tempNodes[prereqKey].checked != 100 && checkedPrereq > 0){
+              tempNodes[prereqKey].checked = checkedPrereq
             }
-            if((tempNodes[trickNamesToKeys[prereq]].checked && tempNodes[trickKey].checked)||numChecked == 0){
-              edges.push({ data: { source: trickKey, target: trickNamesToKeys[prereq] } })
+            
+            if(tempNodes[trickKey].checked  == 100 && !tempNodes[prereqKey].checked){
+              tempNodes[prereqKey].checked = 25
+            }
+
+            if((tempNodes[prereqKey].checked && tempNodes[trickKey].checked)||numChecked == 0){
+              edges.push({ data: { source: trickKey, target: prereqKey } })
+            }
+            if(prereqKey == "Columns"){
+              console.log(trickKey,tempNodes[prereqKey], tempNodes[trickKey] )
+            
             }
           })
         }
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        if(this.props.search && !tempNodes[trickKey].visible || !tempNodes[trickKey].checked && numChecked > 0){
+        if(trickKey == "Infinity"){
+          console.log("DONE " ,tempNodes[trickKey])
+        }
+        if(!tempNodes[trickKey].checked && numChecked > 0){
           return
         }
         nodes.push({data:{...tempNodes[trickKey]}})

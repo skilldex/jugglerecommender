@@ -12,10 +12,8 @@ class TrickCheckboxes extends Component {
 	}
  }
  checkTrick =(trickKey)=>{
- 	console.log("checked " ,trickKey)
  	const input =document.getElementById(trickKey)
  	if(!input){return}
- 	console.log("found trick")
  	const checkedTricks = this.state.checkedTricks
  	if(checkedTricks[trickKey] != input.checked && input.checked ){
  		checkedTricks[trickKey] = true
@@ -35,7 +33,6 @@ class TrickCheckboxes extends Component {
 			</div>
 		)
 	}) 	
-	console.log("nested boxes", nestedCheckboxes)
 	return nestedCheckboxes
 
  }
@@ -55,7 +52,6 @@ class TrickCheckboxes extends Component {
  	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
  		const trick = jugglingLibrary[trickKey]
  		if(trick.parent in expandableTricks){
- 			console.log(trick.parent)
  			expandableTricks[trick.parent][trickKey] = trick
  		}
  	})

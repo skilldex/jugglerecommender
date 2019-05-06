@@ -10,10 +10,16 @@ class App extends Component {
  		searchInput : "",
  		searchTrick : ""
 	}
+	shouldComponentUpdate(nextProps,nextState){
+		if(nextState.searchInput != this.state.searchInput){
+			return false
+		}else{
+			return true
+		}
+	}
 	componentDidMount(){
 		const checkedTricks = JSON.parse(localStorage.getItem("checkedTricks"))
 		if(checkedTricks){
-			console.log("got tricks",checkedTricks)
 			this.setState({checkedTricks})
 		}
 	}
@@ -33,18 +39,22 @@ class App extends Component {
  		})
  	}
  	updateCheckedTricks=(checkedTricks)=>{
- 		console.log("updating tricks")
  		this.setState({checkedTricks})
  		localStorage.setItem('checkedTricks', JSON.stringify(checkedTricks))
  	}
  	searchInputChange=(e)=>{
- 		console.log("input change " ,e)
  		this.setState({
  			searchInput: e.target.value
  		})
+ 		console.log("search", e.target.value)
+ 		if(e.target.value == ""){
+ 			console.log("search trick changing")
+ 			this.setState({
+ 				searchTrick: ""
+ 			})
+ 		}
  	}
  	searchTrick=()=>{
- 		console.log("submit " ,this.state.searchInput)
  		this.setState({
  			searchTrick: this.state.searchInput
  		})
@@ -52,9 +62,9 @@ class App extends Component {
  	
  	render(){
  		const search= <div>
- 						<label>Find trick </label><input value={this.state.searchInput} onChange={this.searchInputChange}/>
- 						<button onClick={this.searchTrick}>Search</button>
- 				  </div>
+	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
+	 						<button type="submit" onClick={this.searchTrick}>Search</button>
+	 				  </div>
  		const buttonFilterClass = (num)=>{
  			let className = "unselectedFilterButton"
  			 if(this.state.filters.includes(num)){
