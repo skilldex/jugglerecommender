@@ -30,7 +30,7 @@ class TrickGraph extends React.Component {
         }
         trick.name = trick.name.replace("-"," ")
 
-        let checkedTrick = this.props.checkedTricks[trickKey] ? 100 : 0
+        let checkedTrick = this.props.checkedTricks[trickKey] && !this.props.search || this.props.search &&  trickKey.toLowerCase().includes(this.props.search) ? 100 : 0
         if(!tempNodes[trickKey]){
           tempNodes[trickKey]={
             id    : trickKey,
@@ -41,9 +41,7 @@ class TrickGraph extends React.Component {
         if(tempNodes[trickKey].checked != 100 && checkedTrick > 0){
           tempNodes[trickKey].checked = checkedTrick
         }
-        if(trickKey == "Infinity"){
-          console.log("infi ",tempNodes[trickKey])
-        }
+
         if(trick.prereqs){
           trick.prereqs.forEach((prereq, j)=>{
             prereq = prereq.replace("-"," ")
@@ -51,7 +49,7 @@ class TrickGraph extends React.Component {
             if(!prereqKey){
               prereqKey = prereq
             }
-            let checkedPrereq = this.props.checkedTricks[prereqKey]  ? 100 : 0
+            let checkedPrereq = this.props.checkedTricks[prereqKey] && !this.props.search ||this.props.search &&  prereqKey.toLowerCase().includes(this.props.search) ? 100 : 0
             if(checkedPrereq == 100 && tempNodes[trickKey].checked == 0){
               tempNodes[trickKey].checked = 75
             }
@@ -73,18 +71,11 @@ class TrickGraph extends React.Component {
             if((tempNodes[prereqKey].checked && tempNodes[trickKey].checked)||numChecked == 0){
               edges.push({ data: { source: trickKey, target: prereqKey } })
             }
-            if(prereqKey == "Columns"){
-              console.log(trickKey,tempNodes[prereqKey], tempNodes[trickKey] )
-            
-            }
           })
         }
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        if(trickKey == "Infinity"){
-          console.log("DONE " ,tempNodes[trickKey])
-        }
         if(!tempNodes[trickKey].checked && numChecked > 0){
           return
         }
