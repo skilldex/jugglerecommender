@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import cytoscape from 'cytoscape'
 import jugglingLibrary from './jugglingLibrary.js'
+
 class TrickGraph extends React.Component {
 
     componentDidMount() {
@@ -8,14 +9,10 @@ class TrickGraph extends React.Component {
     }
 
     componentDidUpdate() {
-      console.log("update graph",this.props.checkedTricks)
       this.TrickGraphToGraph()
-
     }
 
     TrickGraphToGraph = () => {
-
-      console.log("graph checked ",this.props.checkedTricks)
       const numChecked = Object.keys(this.props.checkedTricks).length
       let edges = []
       let tempNodes = {}
@@ -67,14 +64,12 @@ class TrickGraph extends React.Component {
                 visible : visibleTrick
               }
             }
-            console.log(checkedPrereq, prereq, this.props.checkedTricks)
             if(checkedPrereq && tempNodes[trickKey].checked == 0){
               tempNodes[trickKey].checked = 75
             }
             if(checkedTrick > 0 && !tempNodes[trickNamesToKeys[prereq]].checked){
               tempNodes[trickNamesToKeys[prereq]].checked = 25
             }
-            console.log(trickKey,prereq,checkedPrereq, tempNodes[trickNamesToKeys[prereq]],tempNodes[trickKey])
             if(this.props.search && !visibleTrick) {
               return
             }

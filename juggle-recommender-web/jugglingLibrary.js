@@ -1,6 +1,5 @@
-let jugglingLibrary = 
 {
-"Alex": {
+    "Alex": {
         "prereqs": [
             "531 Mills Mess",
             "Orca's Mess"
@@ -239,7 +238,8 @@ let jugglingLibrary =
     },
     "TrueBox": {
         "prereqs": [
-            "Box</a>,<a href=\"InvertedShower.html\"> Inverted Shower"
+            "Box",
+            "Inverted Shower"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TrueBox.html",
@@ -557,7 +557,8 @@ let jugglingLibrary =
     "FlyingDiscoDrop": {
         "prereqs": [
             "Shower",
-            "Orka's Mess</a>, <a href=\"HandsOfTime.html\">Hands of Time"
+            "Orka's Mess",
+            "Hands of Time"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FlyingDiscoDrop.html",
@@ -598,7 +599,9 @@ let jugglingLibrary =
             "Reverse 441"
         ],
         "related": [
-            "Kraken</a>, <a href=\"Kato'sCrux.html\">Kato's Crux</a>, <a href=\"Shuffler'sMess.html\">Shuffler's Mess</a>, <a href=\"441MillsMess.html\">441 Mills Mess"
+            "Kraken",
+            "Kato's Crux",
+            "Shuffler's Mess"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Frostbite.html",
         "name": "Frostbite",
@@ -807,7 +810,8 @@ let jugglingLibrary =
     },
     "Levels": {
         "prereqs": [
-            "N-Box</a>, <a href=\"Luke'sShuffle.html\">Luke's Shuffle"
+            "N-Box",
+            "Luke's Shuffle"
         ],
         "related": [
             "Extended Box"
@@ -1234,8 +1238,9 @@ let jugglingLibrary =
     },
     "Shuffler'sMess": {
         "prereqs": [
-            " 531",
-            "Mills Mess</a>, <a href=\"531MillsMess.html\">531 Mills Mess"
+            "531",
+            "Mills Mess",
+            "531 Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffler'sMess.html",
@@ -1262,7 +1267,8 @@ let jugglingLibrary =
     },
     "Takearound": {
         "prereqs": [
-            "Takeouts</a>, <a href=\"FlyingDiscoDrop.html\">Flying Disco Drop"
+            "Takeouts",
+            "Flying Disco Drop"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takearound.html",
@@ -1334,10 +1340,12 @@ let jugglingLibrary =
     },
     "ChopShower": {
         "prereqs": [
-            "Windmill</a>, <a href=\"CrossedArmReverseCascade.html\">Crossed-Arm Reverse Cascade"
+            "Windmill",
+            "Crossed-Arm Reverse Cascade"
         ],
         "related": [
-            "Chops</a>, <a href=\"FranticCascade.html\">Frantic Cascade",
+            "Chops",
+            "Frantic Cascade",
             "Statue of Liberty"
         ],
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ChopShower.html",
@@ -1550,7 +1558,8 @@ let jugglingLibrary =
     "534MillsMess": {
         "prereqs": [
             "Four Ball Mills Mess",
-            "534</a>, <a href=\"../3balltricks/531MillsMess.html\">531 Mills Mess"
+            "534",
+            "531 Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/534MillsMess.html",
@@ -1639,7 +1648,8 @@ let jugglingLibrary =
     "FourBallWindmill": {
         "prereqs": [
             "Windmill",
-            "Fountain</a>, <a href=\"FourBallMillsMess.html\">Four Ball Mills Mess"
+            "Fountain",
+            "Four Ball Mills Mess"
         ],
         "related": [],
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallWindmill.html",
@@ -1780,41 +1790,3 @@ let jugglingLibrary =
         "num": 6
     }
 }
-jugglingLibrary["BizarreBox"].parent = "Box" 
-jugglingLibrary["BrokenBox"].parent = "Box" 
-jugglingLibrary["BurstBox"].parent = "Box" 
-jugglingLibrary["ExtendedBox"].parent = "Box" 
-jugglingLibrary["Gilligan'sBox"].parent = "Box" 
-jugglingLibrary["Karas'Box"].parent = "Box" 
-jugglingLibrary["Luke'sShuffle"].parent = "Box" 
-jugglingLibrary["N-Box"].parent = "Box" 
-jugglingLibrary["InvertedBox"].parent = "Box" 
-jugglingLibrary["Penman'sBox"].parent = "Box" 
-jugglingLibrary["SwapBox"].parent = "Box" 
-jugglingLibrary["SwitchedBox"].parent = "Box" 
-jugglingLibrary["ThreadedBox"].parent = "Box" 
-jugglingLibrary["TrueBox"].parent = "Box" 
-jugglingLibrary["UnderarmBox"].parent = "Box" 
-jugglingLibrary["ColumnBoxVar"].parent = "Columns" 
-jugglingLibrary["Crossunder"].parent = "Columns" 
-jugglingLibrary["Infinity"].parent = "Columns" 
-jugglingLibrary["Matt'sMess"].parent = "Columns" 
-jugglingLibrary["ColumnOverVar"].parent = "Columns" 
-jugglingLibrary["RainbowArches"].parent = "Columns" 
-jugglingLibrary["ReverseCrossunder"].parent = "Columns" 
-jugglingLibrary["ReverseInfinity"].parent = "Columns" 
-jugglingLibrary["ColumnShowVar"].parent = "Columns" 
-jugglingLibrary["Shuffle-Switch"].parent = "Columns" 
-jugglingLibrary["441MillsMess"].parent = "MillsMess" 
-jugglingLibrary["531MillsMess"].parent = "MillsMess" 
-jugglingLibrary["Charley"].parent = "MillsMess" 
-jugglingLibrary["FakeMess"].parent = "MillsMess" 
-jugglingLibrary["FlippedMess"].parent = "MillsMess" 
-jugglingLibrary["Flo'sMess"].parent = "MillsMess" 
-jugglingLibrary["Half-Mess"].parent = "MillsMess" 
-jugglingLibrary["ReverseMillsMess"].parent = "MillsMess" 
-jugglingLibrary["MillsMessShower"].parent = "MillsMess" 
-
-console.log(jugglingLibrary)
-
-export default jugglingLibrary
