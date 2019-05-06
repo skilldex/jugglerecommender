@@ -16,10 +16,13 @@ class TrickCheckboxes extends Component {
  	if(!input){return}
  	console.log("found trick")
  	const checkedTricks = this.state.checkedTricks
- 	if(checkedTricks[trickKey] != input.checked ){
- 		checkedTricks[trickKey] = input.checked
-		this.props.updateCheckedTricks(checkedTricks)
+ 	if(checkedTricks[trickKey] != input.checked && input.checked ){
+ 		checkedTricks[trickKey] = true
+ 	}else if (checkedTricks[trickKey] != input.checked && !input.checked){
+ 		delete checkedTricks[trickKey]
  	}
+ 	this.props.updateCheckedTricks(checkedTricks)
+
  }
  render() {
  	let checkboxes = []
