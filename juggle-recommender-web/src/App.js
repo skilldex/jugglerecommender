@@ -9,7 +9,8 @@ class App extends Component {
  		filters : [3],
  		checkedTricks : {},
  		searchInput : "",
- 		searchTrick : ""
+ 		searchTrick : "",
+ 		selectedTricks : []
 	}
 	shouldComponentUpdate(nextProps,nextState){
 		if(nextState.searchInput != this.state.searchInput){
@@ -60,7 +61,11 @@ class App extends Component {
  			searchTrick: this.state.searchInput
  		})
  	}
- 	
+ 	selectTricks=(selectedTricks)=>{
+ 		this.setState({
+ 			selectedTricks
+ 		})
+ 	}
  	render(){
  		const search= <div>
 	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
@@ -75,8 +80,8 @@ class App extends Component {
  		}
 		return (
 		<div className="App">
-			<TrickList/>
-			<TrickGraph checkedTricks={this.state.checkedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
+			<TrickList selectTricks={this.selectTricks}/>
+			<TrickGraph checkedTricks={this.state.selectedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
 		</div>
 		);
 	}

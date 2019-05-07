@@ -13,21 +13,18 @@ class TrickGraph extends React.Component {
     }
 
     TrickGraphToGraph = () => {
+      console.log(this.props.checkedTricks)
       const numChecked = Object.keys(this.props.checkedTricks).length
       let edges = []
       let tempNodes = {}
       let trickNamesToKeys = {}
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
-        if(this.props.filters.includes(trick.num)){
           trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
-        }   
       })
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
-        if(!this.props.filters.includes(trick.num)){
-          return
-        }
+
         trick.name = trick.name.replace("-"," ")
 
         let checkedTrick = this.props.checkedTricks[trickKey] && !this.props.search || this.props.search &&  trickKey.toLowerCase().includes(this.props.search) ? 100 : 0

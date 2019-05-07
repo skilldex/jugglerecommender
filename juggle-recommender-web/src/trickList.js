@@ -24,6 +24,11 @@ class TrickList extends Component {
  	expandedSections[section] = !expandedSections[section]
  	this.setState({expandedSections})
  }
+ selectTrick = (trickKey)=>{
+ 	const selectedTricks = {}
+ 	selectedTricks[trickKey] = jugglingLibrary[trickKey]
+ 	this.props.selectTricks(selectedTricks)
+ }
  render() {
  	let tricks = {
  		"3" : [],
@@ -37,7 +42,7 @@ class TrickList extends Component {
 		const trick = jugglingLibrary[trickKey]
 		console.log(trick.num)
 		tricks[trick.num.toString()].push(
-				<div className="listCard" key={trickKey + "div"}>
+				<div className="listCard" onClick={()=>{this.selectTrick(trickKey)}} key={trickKey + "div"}>
 					{trick.url ? <a href={trick.url}>{trick.name}</a> : <span>{trick.name}</span>}
 					<button className="addToMyListButton" onClick={()=>{this.addToMyList(trickKey)}}>Add to My List</button>
 				</div>

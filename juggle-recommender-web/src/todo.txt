@@ -1,13 +1,10 @@
 -status property for tricks, 'done'
 -seperate from display behavior, ie the checkboxes
 -make search filter my tricks or all tricks
--two list of tricks, all tricks and my tricks
--in the all tricks list, each trick has an 'add to my tricks button'
+-my tricks
 -remove trick from my tricks
 -toggle between my tricks and all tricks
--names in lists should be links
 -the patterns shown in the graph should be the currently selected list(all tricks OR my tricks)
 	in it's filtered state
--each trick has its own card
 
 add missing prereqs to library 
