@@ -6,6 +6,18 @@
   width: 220px;
   font-size : 8pt;
 }
+.listCard{
+  border : 1px solid gray;
+}
+.listDiv{
+  width: 375px;
+  border : 1px solid gray;
+  margin-left : 1px;
+}
+.addToMyListButton{
+  float: right;
+  background-color : lightblue;
+}
 .nestedCheckboxDiv{
   margin-left: 20px;
   width: 200px;

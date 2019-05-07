@@ -10,3 +10,4 @@
 	in it's filtered state
 -each trick has its own card
 
+add missing prereqs to library 

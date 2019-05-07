@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickCheckboxes from './trickCheckboxes.js'
+import TrickList from './trickList.js'
 class App extends Component {
  	state = {
  		filters : [3],
@@ -74,12 +75,8 @@ class App extends Component {
  		}
 		return (
 		<div className="App">
-			{search}
-			<TrickCheckboxes updateCheckedTricks={this.updateCheckedTricks} filters={this.state.filters}/>
-			<button className={buttonFilterClass(3)} onClick={()=>{this.toggleFilter(3)}}>3 ball</button>
-			<button className={buttonFilterClass(4)} onClick={()=>{this.toggleFilter(4)}}>4 ball</button>
-			<button className={buttonFilterClass(5)} onClick={()=>{this.toggleFilter(5)}}>5 ball</button>
-		  	<TrickGraph checkedTricks={this.state.checkedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
+			<TrickList/>
+			<TrickGraph checkedTricks={this.state.checkedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
 		</div>
 		);
 	}
