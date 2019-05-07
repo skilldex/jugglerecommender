@@ -1,10 +1,11 @@
 -status property for tricks, 'done'
--seperate from display behavior, ie the checkboxes
--make search filter my tricks or all tricks
--my tricks
--remove trick from my tricks
--toggle between my tricks and all tricks
--the patterns shown in the graph should be the currently selected list(all tricks OR my tricks)
-	in it's filtered state
-
-add missing prereqs to library 
+-make search filter my tricks or all tricks (ian)
+-my tricks (ian)
+-remove trick from my tricks (tj)
+-toggle between my tricks and all tricks 
+- filter selected by expanding list
+- show full graph if nothing is expanded or select 
+- add unselect which should refilter graph to show all (tj) 
+-refactor to use global store (ian)
+- refactor to select by keys rather than entire object (ian)
+- add missing prereqs to jugglingLibrary.js i.e find all prereqs that are not in the library object and add them inside jugglingLibrary.js (tj)
