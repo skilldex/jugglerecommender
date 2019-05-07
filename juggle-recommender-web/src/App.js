@@ -61,10 +61,15 @@ class App extends Component {
  			searchTrick: this.state.searchInput
  		})
  	}
+
  	selectTricks=(selectedTricks)=>{
- 		this.setState({
- 			selectedTricks
- 		})
+ 		if (Object.keys(this.state.selectedTricks)[0] == Object.keys(selectedTricks)[0]){
+			this.setState({selectedTricks: []})
+ 			console.log('unselected')
+	 	}else{
+	 		this.setState({selectedTricks})
+	 		console.log('selected')
+	 	}
  	}
  	render(){
  		const search= <div>
