@@ -6,7 +6,7 @@ import TrickCheckboxes from './trickCheckboxes.js'
 import TrickList from './trickList.js'
 class App extends Component {
  	state = {
- 		filters : [3],
+ 		filters : [],
  		checkedTricks : {},
  		searchInput : "",
  		searchTrick : "",

@@ -4,8 +4,6 @@
 -remove trick from my tricks (tj)
 -toggle between my tricks and all tricks 
 - filter selected by expanding list
-- show full graph if nothing is expanded or select 
-- add unselect which should refilter graph to show all (tj) 
 - style select and deselect behavior - use conditional css classname (tj)
 -refactor to use global store (ian)
 - refactor to select by keys rather than entire object (ian)

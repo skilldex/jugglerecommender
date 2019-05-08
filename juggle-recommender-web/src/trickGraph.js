@@ -145,13 +145,7 @@ class TrickGraph extends React.Component {
 
       return <div
         id    = "cy"
-        style = {{
-
-          height : '500px',
-          width  : '1000px',
-          border: '1px solid black',
-          textAlign : "left"
-        }}
+        className = "graphDiv"
       />
     }
 

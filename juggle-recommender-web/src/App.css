@@ -13,6 +13,15 @@
   width: 375px;
   border : 1px solid gray;
   margin-left : 1px;
+  display: inline-block;
+}
+.graphDiv{
+  display: inline-block;
+  vertical-align: top;
+  height : 1000px;
+  width  : 1000px;
+  border: 1px solid black;
+  text-align : left;
 }
 .sectionHeader{
   display: inline-block;
