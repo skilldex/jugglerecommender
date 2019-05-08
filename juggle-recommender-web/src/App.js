@@ -108,6 +108,7 @@ class App extends Component {
 				selectedList={this.state.selectedList}
 				selectTricks={this.selectTricks}
 				addToMyList={this.addToMyList}
+				selectedTricks={this.state.selectedTricks}
 			/>
 			<TrickGraph 
 				myTricks={this.state.myTricks} 

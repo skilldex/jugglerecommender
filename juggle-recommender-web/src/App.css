@@ -9,6 +9,10 @@
 .listCard{
   border : 1px solid gray;
 }
+.selectedListCard{
+  border : 1px solid gray;
+  background-color : darkgray;
+}
 .listDiv{
   width: 375px;
   border : 1px solid gray;
