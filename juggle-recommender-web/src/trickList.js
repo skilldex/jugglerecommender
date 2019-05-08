@@ -44,11 +44,11 @@ class TrickList extends Component {
 			this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
 		){
 			tricks[trick.num.toString()].push(
-					<div className="listCard" key={trickKey + "div"}>
+					<div onClick={()=>{this.selectTrick(trickKey)}} className="listCard" key={trickKey + "div"}>
 						{trick.url ?
-						 <a onClick={()=>{this.selectTrick(trickKey)}}  href={trick.url}>{trick.name}</a> : 
-						 <span onClick={()=>{this.selectTrick(trickKey)}} >{trick.name}</span>}
-						<button className="addToMyListButton" onClick={()=>{this.addToMyList(trickKey)}}>Add to My List</button>
+						 <a   href={trick.url}>{trick.name}</a> : 
+						 <span>{trick.name}</span>}
+						<button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>
 					</div>
 			)
 		}

@@ -13,7 +13,7 @@ class TrickGraph extends React.Component {
     }
 
     TrickGraphToGraph = () => {
-      const numChecked = Object.keys(this.props.checkedTricks).length
+      const numChecked = Object.keys(this.props.selectedTricks).length
       let edges = []
       let tempNodes = {}
       let trickNamesToKeys = {}
@@ -26,7 +26,9 @@ class TrickGraph extends React.Component {
 
         trick.name = trick.name.replace("-"," ")
 
-        let checkedTrick = this.props.checkedTricks[trickKey] && !this.props.search || this.props.search &&  trickKey.toLowerCase().includes(this.props.search) ? 100 : 0
+        let checkedTrick = this.props.selectedTricks[trickKey]
+          || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks"  
+          ? 100 : 0
         if(!tempNodes[trickKey]){
           tempNodes[trickKey]={
             id    : trickKey,
@@ -45,7 +47,9 @@ class TrickGraph extends React.Component {
             if(!prereqKey){
               prereqKey = prereq
             }
-            let checkedPrereq = this.props.checkedTricks[prereqKey] && !this.props.search ||this.props.search &&  prereqKey.toLowerCase().includes(this.props.search) ? 100 : 0
+            let checkedPrereq = this.props.selectedTricks[prereqKey]  
+              || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks" 
+              ? 100 : 0
             if(checkedPrereq == 100 && tempNodes[trickKey].checked == 0){
               tempNodes[trickKey].checked = 75
             }

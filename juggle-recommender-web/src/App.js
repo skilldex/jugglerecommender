@@ -70,7 +70,7 @@ class App extends Component {
  	}
 
  	selectTricks=(selectedTricks)=>{
-
+ 		console.log("selecting ",selectedTricks)
  		if (Object.keys(this.state.selectedTricks)[0] == Object.keys(selectedTricks)[0] && Object.keys(this.state.selectedTricks).length == 1){
 			this.setState({selectedTricks: []})
  			console.log('unselected')
@@ -96,6 +96,7 @@ class App extends Component {
  			 }
  			 return className
  		}
+ 		console.log("rendering app", this.state.selectedTricks)
 		return (
 		<div className="App">
 			<div>
@@ -108,7 +109,13 @@ class App extends Component {
 				selectTricks={this.selectTricks}
 				addToMyList={this.addToMyList}
 			/>
-			<TrickGraph checkedTricks={this.state.selectedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
+			<TrickGraph 
+				myTricks={this.state.myTricks} 
+				selectedTricks={this.state.selectedTricks} 
+				selectedList={this.state.selectedList}
+				search={this.state.searchTrick} 
+				filters={this.state.filters}
+			/>
 		</div>
 		);
 	}
