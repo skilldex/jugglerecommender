@@ -13,7 +13,6 @@ class TrickGraph extends React.Component {
     }
 
     TrickGraphToGraph = () => {
-      console.log(this.props.checkedTricks)
       const numChecked = Object.keys(this.props.checkedTricks).length
       let edges = []
       let tempNodes = {}
@@ -82,7 +81,6 @@ class TrickGraph extends React.Component {
     }
 
     renderCytoscapeElement = (elements) => {
-      console.log("elements " ,elements)
 
       this.cy = cytoscape(
       {
@@ -127,8 +125,6 @@ class TrickGraph extends React.Component {
           }),
       })
       this.cy.on('click', 'node', function(evt) {
-        console.log(jugglingLibrary)
-        console.log("cliekd", jugglingLibrary[this.id()])
         const url = jugglingLibrary[this.id()].url
         if(url){
           window.open(url)

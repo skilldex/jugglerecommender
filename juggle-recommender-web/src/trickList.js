@@ -16,7 +16,7 @@ class TrickList extends Component {
 	}
  }
  addToMyList = (trickKey)=>{
- 	console.log(trickKey)
+ 	this.props.addToMyList(trickKey)
  }
  toggleExpandedSection=(section)=>{
  	console.log(this.state.expandedSections, section)
@@ -40,13 +40,18 @@ class TrickList extends Component {
  	}
  	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 		const trick = jugglingLibrary[trickKey]
-		console.log(trick.num)
-		tricks[trick.num.toString()].push(
-				<div className="listCard" onClick={()=>{this.selectTrick(trickKey)}} key={trickKey + "div"}>
-					{trick.url ? <a href={trick.url}>{trick.name}</a> : <span>{trick.name}</span>}
-					<button className="addToMyListButton" onClick={()=>{this.addToMyList(trickKey)}}>Add to My List</button>
-				</div>
-		)
+		if(this.props.selectedList == "allTricks" || 
+			this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
+		){
+			tricks[trick.num.toString()].push(
+					<div className="listCard" key={trickKey + "div"}>
+						{trick.url ?
+						 <a onClick={()=>{this.selectTrick(trickKey)}}  href={trick.url}>{trick.name}</a> : 
+						 <span onClick={()=>{this.selectTrick(trickKey)}} >{trick.name}</span>}
+						<button className="addToMyListButton" onClick={()=>{this.addToMyList(trickKey)}}>Add to My List</button>
+					</div>
+			)
+		}
 	})
 
 	return (	

@@ -15,6 +15,9 @@
   margin-left : 1px;
   display: inline-block;
 }
+.selectedListButton{
+  background-color : darkgray;
+}
 .graphDiv{
   display: inline-block;
   vertical-align: top;
@@ -29,6 +32,7 @@
 .addToMyListButton{
   float: right;
   background-color : lightblue;
+  border-radius: 3px;
 }
 .nestedCheckboxDiv{
   margin-left: 20px;

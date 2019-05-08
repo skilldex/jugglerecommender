@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TrickGraph from './trickGraph.js'
-import TrickCheckboxes from './trickCheckboxes.js'
 import TrickList from './trickList.js'
 class App extends Component {
  	state = {
@@ -10,7 +9,9 @@ class App extends Component {
  		checkedTricks : {},
  		searchInput : "",
  		searchTrick : "",
- 		selectedTricks : []
+ 		selectedTricks : [],
+ 		selectedList : "allTricks",
+ 		myTricks : []
 	}
 	shouldComponentUpdate(nextProps,nextState){
 		if(nextState.searchInput != this.state.searchInput){
@@ -56,6 +57,12 @@ class App extends Component {
  			})
  		}
  	}
+ 	addToMyList=(trickKey)=>{
+ 		const myTricks = this.state.myTricks
+ 		myTricks.push(trickKey)
+ 		console.log("added trick " ,trickKey)
+ 		this.setState({myTricks})
+ 	}
  	searchTrick=()=>{
  		this.setState({
  			searchTrick: this.state.searchInput
@@ -63,13 +70,19 @@ class App extends Component {
  	}
 
  	selectTricks=(selectedTricks)=>{
- 		if (Object.keys(this.state.selectedTricks)[0] == Object.keys(selectedTricks)[0]){
+
+ 		if (Object.keys(this.state.selectedTricks)[0] == Object.keys(selectedTricks)[0] && Object.keys(this.state.selectedTricks).length == 1){
 			this.setState({selectedTricks: []})
  			console.log('unselected')
 	 	}else{
 	 		this.setState({selectedTricks})
 	 		console.log('selected')
 	 	}
+ 	}
+ 	setListType=(listType)=>{
+ 		this.setState({
+ 			selectedList : listType
+ 		})
  	}
  	render(){
  		const search= <div>
@@ -85,7 +98,16 @@ class App extends Component {
  		}
 		return (
 		<div className="App">
-			<TrickList selectTricks={this.selectTricks}/>
+			<div>
+				<button className={this.state.selectedList == "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("myTricks")}}>My Tricks</button>
+				<button className={this.state.selectedList == "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("allTricks")}}>All Tricks</button>
+			</div>
+			<TrickList 
+				myTricks={this.state.myTricks} 
+				selectedList={this.state.selectedList}
+				selectTricks={this.selectTricks}
+				addToMyList={this.addToMyList}
+			/>
 			<TrickGraph checkedTricks={this.state.selectedTricks} search={this.state.searchTrick} filters={this.state.filters}/>
 		</div>
 		);
