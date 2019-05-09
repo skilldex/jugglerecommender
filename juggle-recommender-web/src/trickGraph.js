@@ -23,7 +23,6 @@ class TrickGraph extends React.Component {
       })
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
-
         trick.name = trick.name.replace("-"," ")
 
         let checkedTrick = this.props.selectedTricks[trickKey]

@@ -15,9 +15,22 @@ class TrickList extends Component {
 		this.setState({checkedTricks})
 	}
  }
+ addOrRemoveMyList(trickKey,AddToOrRemoveFrom){
+ 	 	if (AddToOrRemoveFrom === 'Add to'){
+ 		this.addToMyList(trickKey)
+ 	}else if (AddToOrRemoveFrom === 'Remove from'){
+ 		this.removeFromMyList(trickKey)
+ 	}
+ }
+
  addToMyList = (trickKey)=>{
  	this.props.addToMyList(trickKey)
  }
+
+ removeFromMyList = (trickKey)=>{
+ 	this.props.removeFromMyList(trickKey)
+ }
+
  toggleExpandedSection=(section)=>{
  	console.log(this.state.expandedSections, section)
  	const expandedSections =this.state.expandedSections 
@@ -41,8 +54,12 @@ class TrickList extends Component {
  	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 		const trick = jugglingLibrary[trickKey]
 		var cardClass='listCard'
+		var AddToOrRemoveFrom = 'Add to'
 		if(Object.keys(this.props.selectedTricks)[0] == trick.name){
 			cardClass = 'selectedListCard'
+		}
+		if(this.props.myTricks.includes(trickKey)){
+			AddToOrRemoveFrom = 'Remove from'
 		}
 		if(this.props.selectedList == "allTricks" || 
 			this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
@@ -50,9 +67,9 @@ class TrickList extends Component {
 			tricks[trick.num.toString()].push(
 				<div onClick={()=>{this.selectTrick(trickKey)}} className={cardClass} key={trickKey + "div"}>
 					{trick.url ?
-					 <a   href={trick.url}>{trick.name}</a> : 
+					 <a href={trick.url}>{trick.name}</a> : 
 					 <span>{trick.name}</span>}
-					<button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>
+					<button className="addToMyListButton" onClick={(e)=>{this.addOrRemoveMyList(trickKey,AddToOrRemoveFrom);e.stopPropagation()}}>{AddToOrRemoveFrom} My List</button>
 				</div>
 			)
 		}

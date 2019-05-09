@@ -63,6 +63,17 @@ class App extends Component {
  		console.log("added trick " ,trickKey)
  		this.setState({myTricks})
  	}
+
+ 	removeFromMyList=(trickKey)=>{
+ 		console.log('removeFromMyListApps',trickKey)
+ 		const myTricks = this.state.myTricks
+		var index = myTricks.indexOf(trickKey);
+		if (index > -1) {
+		  myTricks.splice(index, 1);
+		}
+ 		console.log("trick removed " ,trickKey)
+ 		this.setState({myTricks})
+ 	}	
  	searchTrick=()=>{
  		this.setState({
  			searchTrick: this.state.searchInput
@@ -108,6 +119,7 @@ class App extends Component {
 				selectedList={this.state.selectedList}
 				selectTricks={this.selectTricks}
 				addToMyList={this.addToMyList}
+				removeFromMyList={this.removeFromMyList}
 				selectedTricks={this.state.selectedTricks}
 			/>
 			<TrickGraph 
