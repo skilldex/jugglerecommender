@@ -1816,6 +1816,6 @@ console.log('final lib ',finalLibrary )
 //         })
 //         trick.prereqs = prereqKeys
 //     }
-// })
+// })...
 
 export default finalLibrary
