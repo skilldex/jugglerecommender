@@ -13,7 +13,7 @@ class TrickGraph extends React.Component {
     }
 
     TrickGraphToGraph = () => {
-      const numChecked = Object.keys(this.props.selectedTricks).length
+      const numSelected = Object.keys(this.props.selectedTricks).length
       let edges = []
       let tempNodes = {}
       let trickNamesToKeys = {}
@@ -35,8 +35,8 @@ class TrickGraph extends React.Component {
             checked : 0
           }
         }
-        if(tempNodes[trickKey].checked != 100 && checkedTrick > 0){
-          tempNodes[trickKey].checked = checkedTrick
+        if(tempNodes[trickKey].involved != 100 && checkedTrick > 0){
+          tempNodes[trickKey].involved = checkedTrick
         }
 
         if(trick.prereqs){
@@ -49,8 +49,8 @@ class TrickGraph extends React.Component {
             let checkedPrereq = this.props.selectedTricks[prereqKey]  
               || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks" 
               ? 100 : 0
-            if(checkedPrereq == 100 && tempNodes[trickKey].checked == 0){
-              tempNodes[trickKey].checked = 75
+            if(checkedPrereq == 100 && tempNodes[trickKey].involved == 0){
+              tempNodes[trickKey].involved = 75
             }
             if(!tempNodes[prereqKey]){
               tempNodes[prereqKey]={
@@ -59,26 +59,25 @@ class TrickGraph extends React.Component {
                 checked : 0
               }
             }
-            if(tempNodes[prereqKey].checked != 100 && checkedPrereq > 0){
-              tempNodes[prereqKey].checked = checkedPrereq
+            if(tempNodes[prereqKey].involved != 100 && checkedPrereq > 0){
+              tempNodes[prereqKey].involved = checkedPrereq
             }
             
-            if(tempNodes[trickKey].checked  == 100 && !tempNodes[prereqKey].checked){
-              tempNodes[prereqKey].checked = 25
+            if(tempNodes[trickKey].involved  == 100 && !tempNodes[prereqKey].involved){
+              tempNodes[prereqKey].involved = 25
             }
 
-            //if((tempNodes[prereqKey].checked && tempNodes[trickKey].checked)||numChecked == 0){
+            if((tempNodes[prereqKey].involved && tempNodes[trickKey].involved)){
               edges.push({ data: { source: trickKey, target: prereqKey } })
-            //}
+            }
           })
         }
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        /*if(!tempNodes[trickKey].checked && numChecked > 0){
-          return
-        }*/
-        nodes.push({data:{...tempNodes[trickKey]}})
+        if(tempNodes[trickKey].involved){
+          nodes.push({data:{...tempNodes[trickKey]}})
+        }
       })
       this.renderCytoscapeElement({ edges, nodes })
     }
