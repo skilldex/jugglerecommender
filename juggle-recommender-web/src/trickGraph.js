@@ -67,17 +67,17 @@ class TrickGraph extends React.Component {
               tempNodes[prereqKey].checked = 25
             }
 
-            if((tempNodes[prereqKey].checked && tempNodes[trickKey].checked)||numChecked == 0){
+            //if((tempNodes[prereqKey].checked && tempNodes[trickKey].checked)||numChecked == 0){
               edges.push({ data: { source: trickKey, target: prereqKey } })
-            }
+            //}
           })
         }
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        if(!tempNodes[trickKey].checked && numChecked > 0){
+        /*if(!tempNodes[trickKey].checked && numChecked > 0){
           return
-        }
+        }*/
         nodes.push({data:{...tempNodes[trickKey]}})
       })
       this.renderCytoscapeElement({ edges, nodes })
