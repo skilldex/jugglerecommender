@@ -1785,37 +1785,63 @@ let trickNamesToKeys = {}
 let finalLibrary = {}
 Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     const trick = jugglingLibrary[trickKey]
-    if(trick.num > 3){
-        trickKey = trickKey + "(" + trick.num + "b)" 
-        trickKey = trickKey.replace("FourBall","")
-        trickKey = trickKey.replace("FiveBall","")
-        trick.name = trick.name + "(" + trick.num + "b)" 
-    }
+    
+    trickKey = trickKey.replace("-","")
+    trickKey = trickKey.replace("FourBall","")
+    trickKey = trickKey.replace("FiveBall","")
+    trickKey = trickKey.replace("HalfBox","")
+    trickKey = trickKey.replace("(","")
+    trickKey = trickKey.replace(")","")
+    trickKey = trickKey.trim()
 
+    trick.name = trick.name.replace("-","")
+    trick.name = trick.name.replace("HalfBox","")
+    trick.name = trick.name.replace("(","")
+    trick.name = trick.name.replace(")","")
+    trick.name = trick.name.trim()
+
+    if(trick.num > 3){
+        trickKey = trickKey + "(" + trick.num + "b)"
+        trick.name = trick.name + "(" + trick.num + "b)"
+
+    }
+    trickNamesToKeys[trick.name] = trickKey
     finalLibrary[trickKey] = trick
 })
 
+console.log("names to keys" ,trickNamesToKeys)
 console.log('final lib ',finalLibrary )
 
-
-// Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-//     const trick = jugglingLibrary[trickKey]
-//     const prereqKeys = []
-//     if(trick.prereqs){
-//         trick.prereqs.forEach((prereq, j)=>{
-//             prereq = prereq.replace("-","")
-//             const prereqKey = trickNamesToKeys[prereq] ? trickNamesToKeys[prereq] : prereq
-//             if(!trickNamesToKeys[prereq]){
-//                 jugglingLibrary[prereqKey] = {
-//                 "name" : prereq,
-//                 "num" : trick.num,
-//                 }
-//                 console.log("missing " ,prereq)
-//             }
-//             prereqKeys.push(prereqKey)
-//         })
-//         trick.prereqs = prereqKeys
-//     }
-// })...
-
+Object.keys(finalLibrary).forEach((trickKey, i) => {
+    const trick = finalLibrary[trickKey]
+    const prereqKeys = []
+    if(trick.prereqs){
+        trick.prereqs.forEach((prereq, j)=>{
+            prereq = prereq.replace("-","")
+            prereq = prereq.replace("HalfBox","")
+            prereq = prereq.replace("(","")
+            prereq = prereq.replace(")","")
+            if(prereq.includes("Four")){
+                prereq = prereq.replace("Four Ball ", "")
+                prereq = prereq + "(" + 4 + "b)"
+            }
+            if(prereq.includes("Five")){
+                prereq = prereq.replace("Five Ball ", "")
+                prereq = prereq + "(" + 5 + "b)"
+            }
+            prereq = prereq.trim()
+            const prereqKey = trickNamesToKeys[prereq] ? trickNamesToKeys[prereq] : prereq
+            if(!trickNamesToKeys[prereq]){
+                finalLibrary[prereq] = {
+                    "name" : prereq,
+                    "num" : trick.num
+                }
+                console.log("missing " ,prereq)
+            }
+            prereqKeys.push(prereqKey)
+        })
+        trick.prereqs = prereqKeys
+    }
+})
+console.log("prereq keys", finalLibrary)
 export default finalLibrary

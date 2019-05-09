@@ -25,18 +25,18 @@ class TrickGraph extends React.Component {
         const trick = jugglingLibrary[trickKey]
         trick.name = trick.name.replace("-"," ")
 
-        let checkedTrick = this.props.selectedTricks[trickKey]
+        let involvedTrick = this.props.selectedTricks[trickKey]
           || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks"  
-          ? 100 : 0
+          ? 100 : 1
         if(!tempNodes[trickKey]){
           tempNodes[trickKey]={
             id    : trickKey,
             name : trick.name,
-            checked : 0
+            involved : 1
           }
         }
-        if(tempNodes[trickKey].involved != 100 && checkedTrick > 0){
-          tempNodes[trickKey].involved = checkedTrick
+        if(tempNodes[trickKey].involved != 100 && involvedTrick > 0){
+          tempNodes[trickKey].involved = involvedTrick
         }
 
         if(trick.prereqs){
@@ -46,27 +46,27 @@ class TrickGraph extends React.Component {
             if(!prereqKey){
               prereqKey = prereq
             }
-            let checkedPrereq = this.props.selectedTricks[prereqKey]  
-              || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks" 
-              ? 100 : 0
-            if(checkedPrereq == 100 && tempNodes[trickKey].involved == 0){
+            let involvedPrereq = this.props.selectedTricks[prereqKey]  
+              || this.props.myTricks.includes(trickKey)  
+              ? 100 : 1
+            if(involvedPrereq == 100 && tempNodes[trickKey].involved == 0){
               tempNodes[trickKey].involved = 75
             }
             if(!tempNodes[prereqKey]){
               tempNodes[prereqKey]={
                 id    : prereqKey,
                 name : prereq,
-                checked : 0
+                involved : 1
               }
             }
-            if(tempNodes[prereqKey].involved != 100 && checkedPrereq > 0){
-              tempNodes[prereqKey].involved = checkedPrereq
+            if(tempNodes[prereqKey].involved != 100 && involvedPrereq > 0){
+              tempNodes[prereqKey].involved = involvedPrereq
             }
             
             if(tempNodes[trickKey].involved  == 100 && !tempNodes[prereqKey].involved){
               tempNodes[prereqKey].involved = 25
             }
-
+            //if(numSelected > 0 && )
             if((tempNodes[prereqKey].involved && tempNodes[trickKey].involved)){
               edges.push({ data: { source: trickKey, target: prereqKey } })
             }
@@ -109,7 +109,7 @@ class TrickGraph extends React.Component {
             'content'          : 'data(name)',
             'text-valign'      : 'center',
             'label'            : 'data(id)',
-            'background-color' : 'mapData(checked, 0, 100, cyan, yellow)',
+            'background-color' : 'mapData(involved, 0, 100, cyan, yellow)',
             'font-size'        : 40,
             'width'            : 200,
             'height'            : 200,

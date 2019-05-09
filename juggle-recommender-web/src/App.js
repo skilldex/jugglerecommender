@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
+import jugglingLibrary from './jugglingLibrary.js'
+
 class App extends Component {
  	state = {
  		filters : [],
@@ -100,6 +102,24 @@ class App extends Component {
 	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
 	 						<button type="submit" onClick={this.searchTrick}>Search</button>
 	 				  </div>
+	 	let graphRootTricks = []
+	 	let allInvolvedTricks = []
+
+	 	if(this.selectedList == "allTricks"){
+	 		Object.keys(jugglingLibrary).forEach((trickKey)=>{
+	 			const trick = jugglingLibrary[trickKey]
+	 			graphRootTricks.push(trickKey)
+	 			if(trick.prereqs){
+	 				trick.prereqs.forEach((prereqKey)=>{
+	 					//Do stuff with key
+	 				})
+	 			}
+
+	 		})
+	 	}else{
+	 		graphRootTricks = this.state.myTricks
+	 	}
+
  		const buttonFilterClass = (num)=>{
  			let className = "unselectedFilterButton"
  			 if(this.state.filters.includes(num)){
