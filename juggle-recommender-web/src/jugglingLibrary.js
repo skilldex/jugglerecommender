@@ -1780,41 +1780,42 @@ let jugglingLibrary =
         "num": 6
     }
 }
-jugglingLibrary["BizarreBox"].parent = "Box" 
-jugglingLibrary["BrokenBox"].parent = "Box" 
-jugglingLibrary["BurstBox"].parent = "Box" 
-jugglingLibrary["ExtendedBox"].parent = "Box" 
-jugglingLibrary["Gilligan'sBox"].parent = "Box" 
-jugglingLibrary["Karas'Box"].parent = "Box" 
-jugglingLibrary["Luke'sShuffle"].parent = "Box" 
-jugglingLibrary["N-Box"].parent = "Box" 
-jugglingLibrary["InvertedBox"].parent = "Box" 
-jugglingLibrary["Penman'sBox"].parent = "Box" 
-jugglingLibrary["SwapBox"].parent = "Box" 
-jugglingLibrary["SwitchedBox"].parent = "Box" 
-jugglingLibrary["ThreadedBox"].parent = "Box" 
-jugglingLibrary["TrueBox"].parent = "Box" 
-jugglingLibrary["UnderarmBox"].parent = "Box" 
-jugglingLibrary["ColumnBoxVar"].parent = "Columns" 
-jugglingLibrary["Crossunder"].parent = "Columns" 
-jugglingLibrary["Infinity"].parent = "Columns" 
-jugglingLibrary["Matt'sMess"].parent = "Columns" 
-jugglingLibrary["ColumnOverVar"].parent = "Columns" 
-jugglingLibrary["RainbowArches"].parent = "Columns" 
-jugglingLibrary["ReverseCrossunder"].parent = "Columns" 
-jugglingLibrary["ReverseInfinity"].parent = "Columns" 
-jugglingLibrary["ColumnShowVar"].parent = "Columns" 
-jugglingLibrary["Shuffle-Switch"].parent = "Columns" 
-jugglingLibrary["441MillsMess"].parent = "MillsMess" 
-jugglingLibrary["531MillsMess"].parent = "MillsMess" 
-jugglingLibrary["Charley"].parent = "MillsMess" 
-jugglingLibrary["FakeMess"].parent = "MillsMess" 
-jugglingLibrary["FlippedMess"].parent = "MillsMess" 
-jugglingLibrary["Flo'sMess"].parent = "MillsMess" 
-jugglingLibrary["Half-Mess"].parent = "MillsMess" 
-jugglingLibrary["ReverseMillsMess"].parent = "MillsMess" 
-jugglingLibrary["MillsMessShower"].parent = "MillsMess" 
-
 console.log(jugglingLibrary)
+let trickNamesToKeys = {}
+let finalLibrary = {}
+Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+    const trick = jugglingLibrary[trickKey]
+    if(trick.num > 3){
+        trickKey = trickKey + "(" + trick.num + "b)" 
+        trickKey = trickKey.replace("FourBall","")
+        trickKey = trickKey.replace("FiveBall","")
+        trick.name = trick.name + "(" + trick.num + "b)" 
+    }
 
-export default jugglingLibrary
+    finalLibrary[trickKey] = trick
+})
+
+console.log('final lib ',finalLibrary )
+
+
+// Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+//     const trick = jugglingLibrary[trickKey]
+//     const prereqKeys = []
+//     if(trick.prereqs){
+//         trick.prereqs.forEach((prereq, j)=>{
+//             prereq = prereq.replace("-","")
+//             const prereqKey = trickNamesToKeys[prereq] ? trickNamesToKeys[prereq] : prereq
+//             if(!trickNamesToKeys[prereq]){
+//                 jugglingLibrary[prereqKey] = {
+//                 "name" : prereq,
+//                 "num" : trick.num,
+//                 }
+//                 console.log("missing " ,prereq)
+//             }
+//             prereqKeys.push(prereqKey)
+//         })
+//         trick.prereqs = prereqKeys
+//     }
+// })
+
+export default finalLibrary
