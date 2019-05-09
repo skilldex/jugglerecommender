@@ -6,7 +6,6 @@ import TrickList from './trickList.js'
 class App extends Component {
  	state = {
  		filters : [],
- 		checkedTricks : {},
  		searchInput : "",
  		searchTrick : "",
  		selectedTricks : [],
@@ -71,7 +70,7 @@ class App extends Component {
 
  	selectTricks=(selectedTricks)=>{
  		console.log("selecting ",selectedTricks)
- 		if (Object.keys(this.state.selectedTricks)[0] == Object.keys(selectedTricks)[0] && Object.keys(this.state.selectedTricks).length == 1){
+ 		if (this.state.selectedTricks[0] == selectedTricks[0] && this.state.selectedTricks.length == 1){
 			this.setState({selectedTricks: []})
  			console.log('unselected')
 	 	}else{

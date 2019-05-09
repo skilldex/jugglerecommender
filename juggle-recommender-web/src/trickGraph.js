@@ -13,27 +13,22 @@ class TrickGraph extends React.Component {
     }
 
     TrickGraphToGraph = () => {
-      const numChecked = Object.keys(this.props.selectedTricks).length
+      console.log("loading graph", this.props.selectedTricks, this.props.myTricks)
+      const numChecked = this.props.selectedTricks.length
+      const initializeChecked = 
+        this.props.selectedTricks.length == 0 && 
+        this.props.selectedList == "allTricks" ? 1 : 0
       let edges = []
       let tempNodes = {}
-      let trickNamesToKeys = {}
       Object.keys(jugglingLibrary).forEach((trickKey, i) => {
         const trick = jugglingLibrary[trickKey]
-          trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
-      })
-      Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-        const trick = jugglingLibrary[trickKey]
-
-        trick.name = trick.name.replace("-"," ")
-
-        let checkedTrick = this.props.selectedTricks[trickKey]
-          || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks"  
-          ? 100 : 0
+        let checkedTrick = this.props.selectedTricks.includes(trickKey) || 
+          this.props.myTricks.includes(trickKey) ? 100 : 0
         if(!tempNodes[trickKey]){
           tempNodes[trickKey]={
             id    : trickKey,
             name : trick.name,
-            checked : 0
+            checked : initializeChecked
           }
         }
         if(tempNodes[trickKey].checked != 100 && checkedTrick > 0){
@@ -41,34 +36,32 @@ class TrickGraph extends React.Component {
         }
 
         if(trick.prereqs){
-          trick.prereqs.forEach((prereq, j)=>{
-            prereq = prereq.replace("-"," ")
-            let prereqKey = trickNamesToKeys[prereq]
-            if(!prereqKey){
-              prereqKey = prereq
-            }
-            let checkedPrereq = this.props.selectedTricks[prereqKey]  
-              || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks" 
-              ? 100 : 0
-            if(checkedPrereq == 100 && tempNodes[trickKey].checked == 0){
+          trick.prereqs.forEach((prereqKey, j)=>{
+            let checkedPrereq = this.props.selectedTricks.includes(prereqKey) || 
+              this.props.myTricks.includes(prereqKey) ? 100 : 0
+            if(checkedPrereq == 100 && tempNodes[trickKey].checked <=1){
               tempNodes[trickKey].checked = 75
             }
             if(!tempNodes[prereqKey]){
               tempNodes[prereqKey]={
                 id    : prereqKey,
-                name : prereq,
-                checked : 0
+                name : prereqKey,
+                checked : initializeChecked
               }
             }
-            if(tempNodes[prereqKey].checked != 100 && checkedPrereq > 0){
+            if(tempNodes[prereqKey].checked != 100 && checkedPrereq > 1){
               tempNodes[prereqKey].checked = checkedPrereq
             }
             
             if(tempNodes[trickKey].checked  == 100 && !tempNodes[prereqKey].checked){
               tempNodes[prereqKey].checked = 25
             }
-
-            if((tempNodes[prereqKey].checked && tempNodes[trickKey].checked)||numChecked == 0){
+            if(
+              (tempNodes[prereqKey].checked && tempNodes[trickKey].checked)
+                ){
+              if(trickKey == prereqKey){
+                console.log("nodes " ,tempNodes[trickKey],tempNodes[prereqKey])
+              }
               edges.push({ data: { source: trickKey, target: prereqKey } })
             }
           })
@@ -76,7 +69,7 @@ class TrickGraph extends React.Component {
       })
       const nodes = []
       Object.keys(tempNodes).forEach((trickKey)=>{
-        if(!tempNodes[trickKey].checked && numChecked > 0){
+        if(!tempNodes[trickKey].checked){
           return
         }
         nodes.push({data:{...tempNodes[trickKey]}})

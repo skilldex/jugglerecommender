@@ -1814,7 +1814,33 @@ jugglingLibrary["Flo'sMess"].parent = "MillsMess"
 jugglingLibrary["Half-Mess"].parent = "MillsMess" 
 jugglingLibrary["ReverseMillsMess"].parent = "MillsMess" 
 jugglingLibrary["MillsMessShower"].parent = "MillsMess" 
-
-console.log(jugglingLibrary)
+let trickNamesToKeys = {}
+Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+    const trick = jugglingLibrary[trickKey]
+    trick.key = trickKey
+    if(trick.num > 3){
+        trick.key = trickKey + "( " + trick.num + ")" 
+    }
+    trickNamesToKeys[trick.name.replace("-","")] = trickKey
+})
+Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+    const trick = jugglingLibrary[trickKey]
+    const prereqKeys = []
+    if(trick.prereqs){
+        trick.prereqs.forEach((prereq, j)=>{
+            prereq = prereq.replace("-","")
+            const prereqKey = trickNamesToKeys[prereq] ? trickNamesToKeys[prereq] : prereq
+            if(!trickNamesToKeys[prereq]){
+                jugglingLibrary[prereqKey] = {
+                "name" : prereq,
+                "num" : trick.num,
+                }
+                console.log("missing " ,prereq)
+            }
+            prereqKeys.push(prereqKey)
+        })
+        trick.prereqs = prereqKeys
+    }
+})
 
 export default jugglingLibrary
