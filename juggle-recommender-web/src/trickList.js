@@ -3,7 +3,7 @@ import jugglingLibrary from './jugglingLibrary.js'
 class TrickList extends Component {
  state = {
  	expandedSections : {
- 		"3" : false,
+ 		"3" : true,
  		"4" : false,
  		"5" : false,
 
@@ -14,6 +14,29 @@ class TrickList extends Component {
 	if(checkedTricks){
 		this.setState({checkedTricks})
 	}
+ }
+ componentDidUpdate(prevProps,prevState){
+ 	console.log("comp up ",prevProps, prevState, this.props, this.state)
+ 	if(prevState.expandedSections !== this.state.expandedSections || 
+ 		prevProps.selectedList !== this.props.selectedList
+ 	){
+ 		console.log("update root tricks")
+ 		this.updateRootTricks()
+ 	}
+ }
+ updateRootTricks=()=>{
+ 	let rootTricks = []
+ 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+		if(this.props.selectedList == "allTricks" || 
+			this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
+		){
+			rootTricks.push(
+				trickKey
+			)
+		}
+	})
+	console.log("updateding root", rootTricks)
+ 	this.props.updateRootTricks(rootTricks)
  }
  addOrRemoveMyList(trickKey,AddToOrRemoveFrom){
  	 	if (AddToOrRemoveFrom === 'Add to'){
@@ -32,8 +55,8 @@ class TrickList extends Component {
  }
 
  toggleExpandedSection=(section)=>{
- 	console.log(this.state.expandedSections, section)
- 	const expandedSections =this.state.expandedSections 
+ 	console.log("Expanded " ,this.state.expandedSections, section)
+ 	const expandedSections = {...this.state.expandedSections} 
  	expandedSections[section] = !expandedSections[section]
  	this.setState({expandedSections})
  }

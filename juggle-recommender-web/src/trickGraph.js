@@ -40,12 +40,8 @@ class TrickGraph extends React.Component {
         }
 
         if(trick.prereqs){
-          trick.prereqs.forEach((prereq, j)=>{
-            prereq = prereq.replace("-"," ")
-            let prereqKey = trickNamesToKeys[prereq]
-            if(!prereqKey){
-              prereqKey = prereq
-            }
+          trick.prereqs.forEach((prereqKey, j)=>{
+  
             let involvedPrereq = this.props.selectedTricks[prereqKey]  
               || this.props.myTricks.includes(trickKey)  
               ? 100 : 1
@@ -55,7 +51,7 @@ class TrickGraph extends React.Component {
             if(!tempNodes[prereqKey]){
               tempNodes[prereqKey]={
                 id    : prereqKey,
-                name : prereq,
+                name : prereqKey,
                 involved : 1
               }
             }

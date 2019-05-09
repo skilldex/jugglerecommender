@@ -13,7 +13,8 @@ class App extends Component {
  		searchTrick : "",
  		selectedTricks : [],
  		selectedList : "allTricks",
- 		myTricks : []
+ 		myTricks : [],
+ 		rootTricks : []
 	}
 	shouldComponentUpdate(nextProps,nextState){
 		if(nextState.searchInput != this.state.searchInput){
@@ -97,28 +98,31 @@ class App extends Component {
  			selectedList : listType
  		})
  	}
+ 	updateRootTricks=(rootTricks)=>{
+ 		this.setState({rootTricks})
+ 	}
  	render(){
  		const search= <div>
 	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
 	 						<button type="submit" onClick={this.searchTrick}>Search</button>
 	 				  </div>
-	 	let graphRootTricks = []
 	 	let allInvolvedTricks = []
+	 	console.log("root tricks" ,this.state.rootTricks)
+ 		Object.keys(jugglingLibrary).forEach((trickKey)=>{
+ 			const trick = jugglingLibrary[trickKey]
+ 			if(!allInvolvedTricks.includes(trickKey)){
+ 				allInvolvedTricks.push(trickKey)
+ 			}
+ 			if(trick.prereqs){
+ 				trick.prereqs.forEach((prereqKey)=>{
+ 					if(!allInvolvedTricks.includes(prereqKey)){
+ 						allInvolvedTricks.push(prereqKey)
+ 					}
+ 				})
+ 			}
 
-	 	if(this.selectedList == "allTricks"){
-	 		Object.keys(jugglingLibrary).forEach((trickKey)=>{
-	 			const trick = jugglingLibrary[trickKey]
-	 			graphRootTricks.push(trickKey)
-	 			if(trick.prereqs){
-	 				trick.prereqs.forEach((prereqKey)=>{
-	 					//Do stuff with key
-	 				})
-	 			}
-
-	 		})
-	 	}else{
-	 		graphRootTricks = this.state.myTricks
-	 	}
+ 		})
+	 	
 
  		const buttonFilterClass = (num)=>{
  			let className = "unselectedFilterButton"
@@ -141,6 +145,7 @@ class App extends Component {
 				addToMyList={this.addToMyList}
 				removeFromMyList={this.removeFromMyList}
 				selectedTricks={this.state.selectedTricks}
+				updateRootTricks={this.updateRootTricks}
 			/>
 			<TrickGraph 
 				myTricks={this.state.myTricks} 
