@@ -101,25 +101,28 @@ class App extends Component {
  	}
  	updateRootTricks=(rootTricks)=>{
  		let nodes = []
+ 		let tempNodes = {}
  		let edges = []
 	 	if(this.state.selectedList == "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			if(rootTrick.dependents || rootTrick.prereqs){
-		 			nodes.push({data:{
+		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				name : rootTrick.name,
 		 				involved : 100
-		 			}})
+		 			}
 		 		}
 		 		if(rootTrick.prereqs){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
-		 				nodes.push({data:{
-		 					id: prereqKey,
-		 					name: prereq.name,
-		 					involved : 25
-		 				}})
+		 				if(!tempNodes[prereqKey]){
+			 				tempNodes[prereqKey] = {
+			 					id: prereqKey,
+			 					name: prereq.name,
+			 					involved : 25
+			 				}
+			 			}
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 
 		 			})
@@ -127,11 +130,13 @@ class App extends Component {
 	 			if(rootTrick.dependents){
 		 			rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = jugglingLibrary[dependentKey]
-		 				nodes.push({data:{
-		 					id: dependentKey,
-		 					name: dependent.name,
-		 					involved : 75
-		 				}})
+			 			if(!tempNodes[dependentKey]){
+			 				tempNodes[dependentKey] = {
+			 					id: dependentKey,
+			 					name: dependent.name,
+			 					involved : 75
+			 				}
+			 			}
 		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 
 		 			})
@@ -143,34 +148,46 @@ class App extends Component {
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
-	 			if(rootTrick.dependents || rootTrick.prereqs){
-		 			nodes.push({data:{
+	 			if(rootTrick.dependents || rootTrick.prereqs && !tempNodes[trickKey]){
+		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				name : rootTrick.name,
 		 				involved : involvedRoot
-		 			}})
+		 			}
 		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
-		 				const involvedPrereq = involvedRoot > 0 ? 25 : 0
-		 				nodes.push({data:{
+		 				let involvedPrereq = involvedRoot > 0 ? 25 : 0
+		 				if(tempNodes[prereqKey] && tempNodes[prereqKey].involved > 25){
+		 					involvedPrereq = tempNodes[prereqKey].involved
+		 				}
+		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
 		 					name: prereq.name,
 		 					involved : involvedPrereq
-		 				}})
+		 				}
+		 				if(trickKey == "Box"){
+		 					console.log("pre",prereqKey, involvedPrereq)
+		 				}
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 			 		})
 	 			}
  				if(rootTrick.dependents){
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = jugglingLibrary[dependentKey]
-		 				const involvedDependent = involvedRoot > 0 ? 75 : 0
-		 				nodes.push({data:{
+		 				let involvedDependent = involvedRoot > 0 ? 75 : 0
+		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > 75){
+		 					involvedDependent = tempNodes[dependentKey].involved
+		 				}
+		 				if(trickKey == "Box"){
+		 					console.log("dep",dependentKey, involvedDependent)
+		 				}
+		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
 		 					name: dependent.name,
 		 					involved : involvedDependent
-		 				}})
+		 				}
 
 		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 		 			})
@@ -178,6 +195,12 @@ class App extends Component {
  					
  			})
 	 	}
+	 	Object.keys(tempNodes).forEach((trickKey)=>{
+	 		if(trickKey == "Shower"){
+		 		console.log(tempNodes[trickKey])
+		 	}
+	 		nodes.push({ data: {...tempNodes[trickKey]}})
+	 	})
  		this.setState({edges, nodes})
  	}
  	render(){
