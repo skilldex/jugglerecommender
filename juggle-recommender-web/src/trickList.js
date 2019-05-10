@@ -36,21 +36,15 @@ class TrickList extends Component {
 	})
  	this.props.updateRootTricks(rootTricks)
  }
- addOrRemoveMyList(trickKey,AddToOrRemoveFrom){
- 	if (AddToOrRemoveFrom === 'Add to'){
- 		this.addToMyList(trickKey)
- 	}else if (AddToOrRemoveFrom === 'Remove from'){
- 		this.removeFromMyList(trickKey)
- 	}
- 	this.updateRootTricks()
- }
 
  addToMyList = (trickKey)=>{
  	this.props.addToMyList(trickKey)
+ 	this.updateRootTricks()
  }
 
  removeFromMyList = (trickKey)=>{
  	this.props.removeFromMyList(trickKey)
+ 	this.updateRootTricks()
  }
 
  toggleExpandedSection=(section)=>{
@@ -77,7 +71,11 @@ class TrickList extends Component {
 		const trick = jugglingLibrary[trickKey]
 		var cardClass='listCard'
 		var AddToOrRemoveFrom = 'Add to'
-		if(Object.keys(this.props.selectedTricks)[0] == trick.name){
+		console.log('this.props.selectedTricks',this.props.selectedTricks)
+		console.log('trick.name',trick.name)
+		if(this.props.selectedTricks == trick.name){
+			console.log('selected!!!')
+
 			cardClass = 'selectedListCard'
 		}
 		if(this.props.myTricks.includes(trickKey)){
@@ -91,7 +89,9 @@ class TrickList extends Component {
 					{trick.url ?
 					 <a href={trick.url}>{trick.name}</a> : 
 					 <span>{trick.name}</span>}
-					<button className="addToMyListButton" onClick={(e)=>{this.addOrRemoveMyList(trickKey,AddToOrRemoveFrom);e.stopPropagation()}}>{AddToOrRemoveFrom} My List</button>
+					{this.props.myTricks.includes(trickKey) ?
+  					 <button className="addToMyListButton" onClick={(e)=>{this.removeFromMyList(trickKey);e.stopPropagation()}}>Remove from My List</button> :
+					 <button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>}				
 				</div>
 			)
 		}
