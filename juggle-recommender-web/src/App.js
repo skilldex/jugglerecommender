@@ -96,6 +96,7 @@ class App extends Component {
 	 		this.setState({selectedTricks})
 	 		console.log('selected')
 	 	}
+
  	}
  	setListType=(listType)=>{
  		this.setState({
