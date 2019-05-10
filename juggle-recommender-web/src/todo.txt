@@ -1,8 +1,5 @@
 -status property for tricks, 'done'
 - make search filter my tricks or all tricks (tj)
-- filter root tricks by 3b,4b,5b expanding list (tj)
-- filtr root tricks by selected tricks (tj)
-- change addOrremote to two separate buttons (tj)
 
 - refactor to select by keys rather than entire object (ian in progress)
 - in my tricks, default graph view is all of my tricks 
