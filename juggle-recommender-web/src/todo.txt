@@ -1,29 +1,10 @@
 -status property for tricks, 'done'
--make search filter my tricks or all tricks (ian)
-- filter selected by expanding list
--refactor to use global store (ian)
-- refactor to select by keys rather than entire object (ian)
-- add missing prereqs to jugglingLibrary.js i.e find all prereqs that are not in the library object and add them inside jugglingLibrary.js (tj)
+- make search filter my tricks or all tricks (tj)
+- filter root tricks by 3b,4b,5b expanding list (tj)
+- filtr root tricks by selected tricks (tj)
+- change addOrremote to two separate buttons (tj)
 
+- refactor to select by keys rather than entire object (ian in progress)
 - in my tricks, default graph view is all of my tricks 
-
-
-Currently:
-	
-	"trickKey" : { 
-		name : "trickNameX",
-		prereqs: [trickName1, trickName2] 
-	} 
-
-
-	select by key
-	color by key
-	filter by key through search
-	filter by num 
-
-	graph shows what is shown on list (expanded, searched)
-	List shows what is searched
-
-	DATA TODO:
-	Add number to trick names and keys (high)
-	
+- clean remaining prereq data exceptions
+-refactor to use global store (ian)
