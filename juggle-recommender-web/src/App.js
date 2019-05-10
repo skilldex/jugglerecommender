@@ -102,7 +102,6 @@ class App extends Component {
  	updateRootTricks=(rootTricks)=>{
  		let nodes = []
  		let edges = []
-	 	console.log("root tricks" ,rootTricks)
 	 	if(this.state.selectedList == "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
@@ -113,26 +112,30 @@ class App extends Component {
 		 				involved : 100
 		 			}})
 		 		}
-	 			rootTrick.prereqs.forEach((prereqKey)=>{
-	 				const prereq = jugglingLibrary[prereqKey]
-	 				nodes.push({data:{
-	 					id: prereqKey,
-	 					name: prereq.name,
-	 					involved : 25
-	 				}})
-	 				edges.push({ data: { source: trickKey, target: prereqKey } })
+		 		if(rootTrick.prereqs){
+		 			rootTrick.prereqs.forEach((prereqKey)=>{
+		 				const prereq = jugglingLibrary[prereqKey]
+		 				nodes.push({data:{
+		 					id: prereqKey,
+		 					name: prereq.name,
+		 					involved : 25
+		 				}})
+		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 
-	 			})
-	 			rootTrick.dependents.forEach((dependentKey)=>{
-	 				const dependent = jugglingLibrary[dependentKey]
-	 				nodes.push({data:{
-	 					id: dependentKey,
-	 					name: dependent.name,
-	 					involved : 75
-	 				}})
-	 				edges.push({ data: { source: dependentKey, target: trickKey } })
+		 			})
+		 		}
+	 			if(rootTrick.dependents){
+		 			rootTrick.dependents.forEach((dependentKey)=>{
+		 				const dependent = jugglingLibrary[dependentKey]
+		 				nodes.push({data:{
+		 					id: dependentKey,
+		 					name: dependent.name,
+		 					involved : 75
+		 				}})
+		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 
-	 			})
+		 			})
+		 		}
  			})
 	 	}else if(this.state.selectedList == "allTricks"){
 	 		const involvedTricks = this.state.selectedTricks.length > 0 ? this.state.selectedTricks : this.state.myTricks 
@@ -156,7 +159,6 @@ class App extends Component {
 		 					name: prereq.name,
 		 					involved : involvedPrereq
 		 				}})
-		 				console.log("prereqs", trickKey, prereqKey)
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 			 		})
 	 			}
@@ -169,7 +171,6 @@ class App extends Component {
 		 					name: dependent.name,
 		 					involved : involvedDependent
 		 				}})
-		 				console.log("dependent", trickKey, dependentKey)
 
 		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 		 			})
@@ -177,7 +178,6 @@ class App extends Component {
  					
  			})
 	 	}
- 		console.log(edges, nodes)
  		this.setState({edges, nodes})
  	}
  	render(){
@@ -193,7 +193,7 @@ class App extends Component {
  			 }
  			 return className
  		}
- 		console.log("rendering app", this.state.selectedTricks)
+ 		console.log("rendering app", this.state.myTricks)
 		return (
 		<div className="App">
 			<div>

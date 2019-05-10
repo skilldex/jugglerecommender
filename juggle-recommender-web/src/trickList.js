@@ -17,11 +17,9 @@ class TrickList extends Component {
 	this.updateRootTricks()
  }
  componentDidUpdate(prevProps,prevState){
- 	console.log("comp up ",prevProps, prevState, this.props, this.state)
  	if(prevState.expandedSections !== this.state.expandedSections || 
  		prevProps.selectedList !== this.props.selectedList
  	){
- 		console.log("update root tricks")
  		this.updateRootTricks()
  	}
  }
@@ -36,15 +34,15 @@ class TrickList extends Component {
 			)
 		}
 	})
-	console.log("updateding root", rootTricks)
  	this.props.updateRootTricks(rootTricks)
  }
  addOrRemoveMyList(trickKey,AddToOrRemoveFrom){
- 	 	if (AddToOrRemoveFrom === 'Add to'){
+ 	if (AddToOrRemoveFrom === 'Add to'){
  		this.addToMyList(trickKey)
  	}else if (AddToOrRemoveFrom === 'Remove from'){
  		this.removeFromMyList(trickKey)
  	}
+ 	this.updateRootTricks()
  }
 
  addToMyList = (trickKey)=>{

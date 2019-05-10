@@ -1780,7 +1780,6 @@ let jugglingLibrary =
         "num": 6
     }
 }
-console.log(jugglingLibrary)
 let trickNamesToKeys = {}
 let finalLibrary = {}
 Object.keys(jugglingLibrary).forEach((trickKey, i) => {
@@ -1833,7 +1832,6 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
                     "name" : prereq,
                     "num" : trick.num
                 }
-                console.log("missing " ,prereq)
             }
             prereqKeys.push(prereqKey)
             if(!finalLibrary[prereqKey].dependents){
