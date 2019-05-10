@@ -14,7 +14,8 @@ class App extends Component {
  		selectedTricks : [],
  		selectedList : "allTricks",
  		myTricks : [],
- 		rootTricks : []
+ 		edges : [],
+ 		nodes : []
 	}
 	shouldComponentUpdate(nextProps,nextState){
 		if(nextState.searchInput != this.state.searchInput){
@@ -99,30 +100,83 @@ class App extends Component {
  		})
  	}
  	updateRootTricks=(rootTricks)=>{
- 		this.setState({rootTricks})
+ 		let nodes = []
+ 		let edges = []
+	 	console.log("root tricks" ,rootTricks)
+	 	if(this.state.selectedList == "myTricks" ){
+	 		rootTricks.forEach((trickKey)=>{
+	 			const rootTrick = jugglingLibrary[trickKey]
+	 			nodes.push({data:{
+	 				id: trickKey,
+	 				name : rootTrick.name,
+	 				involved : 100
+	 			}})
+	 			rootTrick.prereqs.forEach((prereqKey)=>{
+	 				const prereq = jugglingLibrary[prereqKey]
+	 				nodes.push({
+	 					id: prereqKey,
+	 					name: prereq.name,
+	 					involved : 25
+	 				})
+	 				edges.push({ data: { source: trickKey, target: prereqKey } })
+
+	 			})
+	 			rootTrick.dependents.forEach((dependentKey)=>{
+	 				const dependent = jugglingLibrary[dependentKey]
+	 				nodes.push({
+	 					id: dependentKey,
+	 					name: dependent.name,
+	 					involved : 75
+	 				})
+	 				edges.push({ data: { source: dependentKey, target: trickKey } })
+
+	 			})
+ 			})
+	 	}else if(this.state.selectedList == "allTricks"){
+	 		const involvedTricks = this.state.selectedTricks.length > 0 ? this.state.selectedTricks : this.state.myTricks 
+	 		rootTricks.forEach((trickKey)=>{
+	 			const rootTrick = jugglingLibrary[trickKey]
+	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
+	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
+	 			nodes.push({data:{
+	 				id: trickKey,
+	 				name : rootTrick.name,
+	 				involved : involvedRoot
+	 			}})
+	 			if(rootTrick.prereqs){
+	 				rootTrick.prereqs.forEach((prereqKey)=>{
+		 				const prereq = jugglingLibrary[prereqKey]
+		 				const involvedPrereq = involvedRoot > 0 ? 25 : 0
+		 				nodes.push({
+		 					id: prereqKey,
+		 					name: prereq.name,
+		 					involved : involvedPrereq
+		 				})
+		 				edges.push({ data: { source: trickKey, target: prereqKey } })
+			 		})
+	 			}
+ 				if(rootTrick.dependents){
+ 					rootTrick.dependents.forEach((dependentKey)=>{
+		 				const dependent = jugglingLibrary[dependentKey]
+		 				const involvedDependent = involvedRoot > 0 ? 75 : 0
+		 				nodes.push({
+		 					id: dependentKey,
+		 					name: dependent.name,
+		 					involved : involvedDependent
+		 				})
+		 				edges.push({ data: { source: dependentKey, target: trickKey } })
+		 			})
+ 				}	
+ 			})
+	 	}
+ 		console.log(edges, nodes)
+ 		this.setState({edges, nodes})
  	}
  	render(){
  		const search= <div>
 	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
 	 						<button type="submit" onClick={this.searchTrick}>Search</button>
 	 				  </div>
-	 	let allInvolvedTricks = []
-	 	console.log("root tricks" ,this.state.rootTricks)
- 		Object.keys(jugglingLibrary).forEach((trickKey)=>{
- 			const trick = jugglingLibrary[trickKey]
- 			if(!allInvolvedTricks.includes(trickKey)){
- 				allInvolvedTricks.push(trickKey)
- 			}
- 			if(trick.prereqs){
- 				trick.prereqs.forEach((prereqKey)=>{
- 					if(!allInvolvedTricks.includes(prereqKey)){
- 						allInvolvedTricks.push(prereqKey)
- 					}
- 				})
- 			}
-
- 		})
-	 	
 
  		const buttonFilterClass = (num)=>{
  			let className = "unselectedFilterButton"
@@ -148,11 +202,8 @@ class App extends Component {
 				updateRootTricks={this.updateRootTricks}
 			/>
 			<TrickGraph 
-				myTricks={this.state.myTricks} 
-				selectedTricks={this.state.selectedTricks} 
-				selectedList={this.state.selectedList}
-				search={this.state.searchTrick} 
-				filters={this.state.filters}
+				nodes = {this.state.nodes}
+				edges = {this.state.edges}
 			/>
 		</div>
 		);

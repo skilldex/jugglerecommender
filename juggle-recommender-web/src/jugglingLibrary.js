@@ -1809,9 +1809,6 @@ Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     finalLibrary[trickKey] = trick
 })
 
-console.log("names to keys" ,trickNamesToKeys)
-console.log('final lib ',finalLibrary )
-
 Object.keys(finalLibrary).forEach((trickKey, i) => {
     const trick = finalLibrary[trickKey]
     const prereqKeys = []
@@ -1839,9 +1836,14 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
                 console.log("missing " ,prereq)
             }
             prereqKeys.push(prereqKey)
+            if(!finalLibrary[prereqKey].dependents){
+                finalLibrary[prereqKey].dependents = []
+            }
+             if(!finalLibrary[prereqKey].dependents.includes(trickKey)){
+                finalLibrary[prereqKey].dependents.push(trickKey)
+             }
         })
         trick.prereqs = prereqKeys
     }
 })
-console.log("prereq keys", finalLibrary)
 export default finalLibrary

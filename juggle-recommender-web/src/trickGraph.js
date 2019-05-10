@@ -13,68 +13,8 @@ class TrickGraph extends React.Component {
     }
 
     TrickGraphToGraph = () => {
-      const numSelected = Object.keys(this.props.selectedTricks).length
-      let edges = []
-      let tempNodes = {}
-      let trickNamesToKeys = {}
-      Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-        const trick = jugglingLibrary[trickKey]
-          trickNamesToKeys[jugglingLibrary[trickKey].name] = trickKey
-      })
-      Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-        const trick = jugglingLibrary[trickKey]
-        trick.name = trick.name.replace("-"," ")
-
-        let involvedTrick = this.props.selectedTricks[trickKey]
-          || this.props.myTricks.includes(trickKey) && this.selectedList == "myTricks"  
-          ? 100 : 1
-        if(!tempNodes[trickKey]){
-          tempNodes[trickKey]={
-            id    : trickKey,
-            name : trick.name,
-            involved : 1
-          }
-        }
-        if(tempNodes[trickKey].involved != 100 && involvedTrick > 0){
-          tempNodes[trickKey].involved = involvedTrick
-        }
-
-        if(trick.prereqs){
-          trick.prereqs.forEach((prereqKey, j)=>{
-  
-            let involvedPrereq = this.props.selectedTricks[prereqKey]  
-              || this.props.myTricks.includes(trickKey)  
-              ? 100 : 1
-            if(involvedPrereq == 100 && tempNodes[trickKey].involved == 0){
-              tempNodes[trickKey].involved = 75
-            }
-            if(!tempNodes[prereqKey]){
-              tempNodes[prereqKey]={
-                id    : prereqKey,
-                name : prereqKey,
-                involved : 1
-              }
-            }
-            if(tempNodes[prereqKey].involved != 100 && involvedPrereq > 0){
-              tempNodes[prereqKey].involved = involvedPrereq
-            }
-            
-            if(tempNodes[trickKey].involved  == 100 && !tempNodes[prereqKey].involved){
-              tempNodes[prereqKey].involved = 25
-            }
-            //if(numSelected > 0 && )
-            if((tempNodes[prereqKey].involved && tempNodes[trickKey].involved)){
-              edges.push({ data: { source: trickKey, target: prereqKey } })
-            }
-          })
-        }
-      })
-      const nodes = []
-      Object.keys(tempNodes).forEach((trickKey)=>{
-        if(tempNodes[trickKey].involved){
-          nodes.push({data:{...tempNodes[trickKey]}})
-        }
-      })
+      const nodes = this.props.nodes
+      const edges = this.props.edges
       this.renderCytoscapeElement({ edges, nodes })
     }
 

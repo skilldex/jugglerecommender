@@ -63,7 +63,7 @@ class TrickList extends Component {
  selectTrick = (trickKey)=>{
  	const selectedTricks = {}
  	selectedTricks[trickKey] = jugglingLibrary[trickKey]
- 	this.props.selectTricks(selectedTricks)
+ 	this.props.selectTricks([trickKey])
  }
  render() {
  	let tricks = {
