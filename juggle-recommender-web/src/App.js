@@ -86,7 +86,10 @@ class App extends Component {
 
  	selectTricks=(selectedTricks)=>{
  		console.log("selecting ",selectedTricks)
- 		if (Object.keys(this.state.selectedTricks)[0] == Object.keys(selectedTricks)[0] && Object.keys(this.state.selectedTricks).length == 1){
+ 		console.log('this.state.selectedTricks',this.state.selectedTricks)
+ 		console.log('selectedTricks',selectedTricks)
+ 		console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
+ 		if (this.state.selectedTricks[0] == selectedTricks[0] && this.state.selectedTricks.length == 1){
 			this.setState({selectedTricks: []})
  			console.log('unselected')
 	 	}else{
