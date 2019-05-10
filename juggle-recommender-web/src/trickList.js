@@ -14,6 +14,7 @@ class TrickList extends Component {
 	if(checkedTricks){
 		this.setState({checkedTricks})
 	}
+	this.updateRootTricks()
  }
  componentDidUpdate(prevProps,prevState){
  	console.log("comp up ",prevProps, prevState, this.props, this.state)

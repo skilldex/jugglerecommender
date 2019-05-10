@@ -106,28 +106,30 @@ class App extends Component {
 	 	if(this.state.selectedList == "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
-	 			nodes.push({data:{
-	 				id: trickKey,
-	 				name : rootTrick.name,
-	 				involved : 100
-	 			}})
+	 			if(rootTrick.dependents || rootTrick.prereqs){
+		 			nodes.push({data:{
+		 				id: trickKey,
+		 				name : rootTrick.name,
+		 				involved : 100
+		 			}})
+		 		}
 	 			rootTrick.prereqs.forEach((prereqKey)=>{
 	 				const prereq = jugglingLibrary[prereqKey]
-	 				nodes.push({
+	 				nodes.push({data:{
 	 					id: prereqKey,
 	 					name: prereq.name,
 	 					involved : 25
-	 				})
+	 				}})
 	 				edges.push({ data: { source: trickKey, target: prereqKey } })
 
 	 			})
 	 			rootTrick.dependents.forEach((dependentKey)=>{
 	 				const dependent = jugglingLibrary[dependentKey]
-	 				nodes.push({
+	 				nodes.push({data:{
 	 					id: dependentKey,
 	 					name: dependent.name,
 	 					involved : 75
-	 				})
+	 				}})
 	 				edges.push({ data: { source: dependentKey, target: trickKey } })
 
 	 			})
@@ -138,20 +140,23 @@ class App extends Component {
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
-	 			nodes.push({data:{
-	 				id: trickKey,
-	 				name : rootTrick.name,
-	 				involved : involvedRoot
-	 			}})
+	 			if(rootTrick.dependents || rootTrick.prereqs){
+		 			nodes.push({data:{
+		 				id: trickKey,
+		 				name : rootTrick.name,
+		 				involved : involvedRoot
+		 			}})
+		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
 		 				const involvedPrereq = involvedRoot > 0 ? 25 : 0
-		 				nodes.push({
+		 				nodes.push({data:{
 		 					id: prereqKey,
 		 					name: prereq.name,
 		 					involved : involvedPrereq
-		 				})
+		 				}})
+		 				console.log("prereqs", trickKey, prereqKey)
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 			 		})
 	 			}
@@ -159,14 +164,17 @@ class App extends Component {
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = jugglingLibrary[dependentKey]
 		 				const involvedDependent = involvedRoot > 0 ? 75 : 0
-		 				nodes.push({
+		 				nodes.push({data:{
 		 					id: dependentKey,
 		 					name: dependent.name,
 		 					involved : involvedDependent
-		 				})
+		 				}})
+		 				console.log("dependent", trickKey, dependentKey)
+
 		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 		 			})
- 				}	
+ 				}
+ 					
  			})
 	 	}
  		console.log(edges, nodes)
