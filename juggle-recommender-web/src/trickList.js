@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import jugglingLibrary from './jugglingLibrary.js'
 class TrickList extends Component {
  state = {
+ 	selectedTricks : [],
  	expandedSections : {
  		"3" : true,
  		"4" : false,
@@ -23,47 +24,46 @@ class TrickList extends Component {
  		this.updateRootTricks()
  	}
  }
- updateRootTricks=(selectedTrickKey)=>{
+ updateRootTricks=()=>{
  	let rootTricks = []
- 	console.log('selectedTrickKey',selectedTrickKey)
- 	console.log('this.props.selectedTricks[0]',this.props.selectedTricks[0])
-	if (selectedTrickKey && selectedTrickKey != 'unselected'){
-		//if (selectedTrickKey == this.props.selectedTricks[0]){
-			console.log('pushing')
-			rootTricks.push(
-				selectedTrickKey
-			)
-		//}
-	}else{
-		if (selectedTrickKey != 'unselected' && this.props.selectedTricks.length==1){
-			rootTricks.push(
-				this.props.selectedTricks[0]
-			)
-		}else{
-		 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-				if(this.props.selectedList == "allTricks" || 
-					this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
-				){
-					const trick = jugglingLibrary[trickKey]
-					let shouldPushTrick = false
-					if (trick.num == 3 && this.state.expandedSections[3]){
-						shouldPushTrick = true
-					}
-					if (trick.num == 4 && this.state.expandedSections[4]){
-						shouldPushTrick = true
-					}
-					if (trick.num == 5 && this.state.expandedSections[5]){
-						shouldPushTrick = true
-					}
-					if (shouldPushTrick){
-						rootTricks.push(
-							trickKey
-						)
-					}
+ 	let selectedIsShown = true
+ 	console.log('this.state.selectedTricks',this.state.selectedTricks)
+ 	console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
+ 	if(this.props.selectedList == "myTricks" && !this.props.myTricks.includes(this.state.selectedTricks[0])){
+ 		this.props.selectTricks([])
+ 		this.setState({selectedTricks : []})
+ 		selectedIsShown = false
+ 	}
+ 	if (this.state.selectedTricks.length > 0 && selectedIsShown){
+		rootTricks.push(
+			this.state.selectedTricks[0]
+		)
+ 	}else{
+	 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
+			if(this.props.selectedList == "allTricks" || 
+				this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
+			){
+				console.log('INHERE!')
+				const trick = jugglingLibrary[trickKey]
+				let shouldPushTrick = false
+				if (trick.num == 3 && this.state.expandedSections[3]){
+					shouldPushTrick = true
 				}
-			})
-		 }
-	 }
+				if (trick.num == 4 && this.state.expandedSections[4]){
+					shouldPushTrick = true
+				}
+				if (trick.num == 5 && this.state.expandedSections[5]){
+					shouldPushTrick = true
+				}
+				if (shouldPushTrick){
+					rootTricks.push(
+						trickKey
+					)
+				}
+			}
+		})
+ 	}
+
  	this.props.updateRootTricks(rootTricks)
  	console.log('this.props.selectedTricks[0]',this.props.selectedTricks[0])
  }
@@ -87,18 +87,34 @@ class TrickList extends Component {
  selectTrick = (trickKey)=>{
 
  	const selectedTricks = {}
+ 	let toSetStateTo
+ 	let shouldSelect
+ 	let shouldUnselect
  	selectedTricks[trickKey] = jugglingLibrary[trickKey]
- 	this.props.selectTricks([trickKey])
- 	if (this.props.selectedTricks[0] != trickKey){
- 		console.log('a')
+	if (this.state.selectedTricks[0] == selectedTricks[0] && this.state.selectedTricks.length == 1){
+		
+		toSetStateTo = []
+		shouldUnselect = true
+		this.props.selectTricks([])
+		console.log('unselectedTrickList')
+ 	}else{
+ 		
+ 		toSetStateTo = [trickKey]
+ 		shouldSelect = true
+ 		this.props.selectTricks([trickKey])
+ 		console.log('selectedTrickList')
+ 	}
+      this.setState({selectedTricks : toSetStateTo}, function () {
+        this.updateRootTricks()
+    });
 
-	 	this.updateRootTricks(trickKey)
-	}else{
-		console.log('b')
-		this.updateRootTricks('unselected')
-	}
+  }
+ 		
 
- }
+		
+	
+
+ 
  render() {
  	let tricks = {
  		"3" : [],
