@@ -30,12 +30,12 @@ class TrickGraph extends React.Component {
           name     : 'cose',
           directed : true,
           nodeRepulsion: function( node ){ return 10048; },
-           nodeOverlap: 20,
+           nodeOverlap: 100,
             // Gravity force (constant)
           gravity: .0005,
 
           // Maximum number of iterations to perform
-          numIter: 1500,
+          numIter: 250,
         },
         style: cytoscape.stylesheet()
           .selector('node')
