@@ -124,7 +124,7 @@ class App extends Component {
 			 				tempNodes[prereqKey] = {
 			 					id: prereqKey,
 			 					name: prereq.name,
-			 					involved : 25
+			 					involved : 40
 			 				}
 			 			}
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
@@ -152,28 +152,38 @@ class App extends Component {
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
-	 			if(rootTrick.dependents || rootTrick.prereqs && !tempNodes[trickKey]){
+	 			if((rootTrick.dependents || rootTrick.prereqs) && !tempNodes[trickKey]){
+		 			if(trickKey == "Shower"){
+		 				console.log(tempNodes[trickKey])
+	 					console.log("root shower",trickKey, involvedRoot)
+	 				}
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				name : rootTrick.name,
 		 				involved : involvedRoot
 		 			}
+
 		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
-		 				let involvedPrereq = involvedRoot > 0 ? 25 : 0
-		 				if(tempNodes[prereqKey] && tempNodes[prereqKey].involved > 25){
+		 				let involvedPrereq = involvedRoot > 0 ? 40 : 0
+		 				
+		 				if(
+		 					tempNodes[prereqKey] && 
+		 					tempNodes[prereqKey].involved > involvedPrereq
+		 				){
 		 					involvedPrereq = tempNodes[prereqKey].involved
+		 				}
+		 				if(prereqKey == "Shower"){
+		 					console.log("pre shower",prereqKey,tempNodes[prereqKey], involvedPrereq)
 		 				}
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
 		 					name: prereq.name,
 		 					involved : involvedPrereq
 		 				}
-		 				if(trickKey == "Box"){
-		 					console.log("pre",prereqKey, involvedPrereq)
-		 				}
+
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 			 		})
 	 			}
@@ -181,10 +191,10 @@ class App extends Component {
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = jugglingLibrary[dependentKey]
 		 				let involvedDependent = involvedRoot > 0 ? 75 : 0
-		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > 75){
+		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
 		 					involvedDependent = tempNodes[dependentKey].involved
 		 				}
-		 				if(trickKey == "Box"){
+		 				if(dependentKey == "Shower"){
 		 					console.log("dep",dependentKey, involvedDependent)
 		 				}
 		 				tempNodes[dependentKey] = {
