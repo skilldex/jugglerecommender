@@ -1782,6 +1782,7 @@ let jugglingLibrary =
 }
 let trickNamesToKeys = {}
 let finalLibrary = {}
+let defaultTricks = []
 Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     const trick = jugglingLibrary[trickKey]
     
@@ -1798,7 +1799,9 @@ Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     trick.name = trick.name.replace("(","")
     trick.name = trick.name.replace(")","")
     trick.name = trick.name.trim()
-
+    if(trick.num == 3){
+        defaultTricks.push(trickKey)
+    }
     if(trick.num > 3){
         trickKey = trickKey + "(" + trick.num + "b)"
         trick.name = trick.name + "(" + trick.num + "b)"
@@ -1844,4 +1847,8 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
         trick.prereqs = prereqKeys
     }
 })
-export default finalLibrary
+jugglingLibrary = finalLibrary
+export { 
+    jugglingLibrary,
+    defaultTricks
+}

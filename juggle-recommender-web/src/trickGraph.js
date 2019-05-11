@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import cytoscape from 'cytoscape'
-import jugglingLibrary from './jugglingLibrary.js'
+import {jugglingLibrary} from './jugglingLibrary.js'
 
 class TrickGraph extends React.Component {
 

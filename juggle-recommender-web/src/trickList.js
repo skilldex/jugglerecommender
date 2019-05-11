@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import jugglingLibrary from './jugglingLibrary.js'
+import {jugglingLibrary} from './jugglingLibrary.js'
 class TrickList extends Component {
  state = {
  	selectedTricks : [],

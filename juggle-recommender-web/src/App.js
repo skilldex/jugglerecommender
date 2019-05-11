@@ -2,12 +2,11 @@ import React, {Component} from 'react';
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
-import jugglingLibrary from './jugglingLibrary.js'
+import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
 
 class App extends Component {
  	state = {
  		filters : [],
- 		checkedTricks : {},
  		searchInput : "",
  		searchTrick : "",
  		selectedTricks : [],
@@ -26,9 +25,13 @@ class App extends Component {
 		}
 	}
 	componentDidMount(){
-		const checkedTricks = JSON.parse(localStorage.getItem("checkedTricks"))
-		if(checkedTricks){
-			this.setState({checkedTricks})
+		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
+		if(myTricks){
+			this.setState({myTricks},()=>{
+				console.log("mounted default " ,defaultTricks)
+				this.updateRootTricks(defaultTricks)
+			})
+			
 		}
 	}
  	toggleFilter =(filter)=>{
@@ -46,10 +49,7 @@ class App extends Component {
  			filters : newFilters
  		})
  	}
- 	updateCheckedTricks=(checkedTricks)=>{
- 		this.setState({checkedTricks})
- 		localStorage.setItem('checkedTricks', JSON.stringify(checkedTricks))
- 	}
+
  	searchInputChange=(e)=>{
  		this.setState({
  			searchInput: e.target.value
@@ -66,6 +66,7 @@ class App extends Component {
  		const myTricks = this.state.myTricks
  		myTricks.push(trickKey)
  		console.log("added trick " ,trickKey)
+ 		localStorage.setItem('myTricks', JSON.stringify(myTricks))
  		this.setState({myTricks})
  	}
 
@@ -77,6 +78,7 @@ class App extends Component {
 		  myTricks.splice(index, 1);
 		}
  		console.log("trick removed " ,trickKey)
+ 		localStorage.setItem('myTricks', JSON.stringify(myTricks))
  		this.setState({myTricks})
  	}	
  	searchTrick=()=>{
@@ -143,18 +145,23 @@ class App extends Component {
 		 		}
  			})
 	 	}else if(this.state.selectedList === "allTricks"){
+	 		console.log("checking my tricks ", this.state.myTricks)
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
+
 	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
-	 			if((rootTrick.dependents || rootTrick.prereqs) && !tempNodes[trickKey]){
+	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				name : rootTrick.name,
 		 				involved : involvedRoot
 		 			}
-
 		 		}
+		 		if(trickKey == "441"){
+		 			console.log("441 root ",rootTrick,tempNodes[trickKey], involvedRoot)
+		 		}
+
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
@@ -171,6 +178,9 @@ class App extends Component {
 		 					name: prereq.name,
 		 					involved : involvedPrereq
 		 				}
+		 				if(prereqKey == "441"){
+				 			console.log(tempNodes[prereqKey])
+				 		}
 
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 			 		})
@@ -187,7 +197,9 @@ class App extends Component {
 		 					name: dependent.name,
 		 					involved : involvedDependent
 		 				}
-
+						if(dependentKey == "441"){
+				 			console.log(tempNodes[dependentKey])
+				 		}
 		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 		 			})
  				}
@@ -195,6 +207,9 @@ class App extends Component {
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
+	 		if(trickKey == "441"){
+	 			console.log(tempNodes[trickKey])
+	 		}
 	 		nodes.push({ data: {...tempNodes[trickKey]}})
 	 	})
  		this.setState({edges, nodes})
