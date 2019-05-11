@@ -125,7 +125,7 @@ class TrickList extends Component {
 		var AddToOrRemoveFrom = 'Add to'
 		//console.log('this.props.selectedTricks',this.props.selectedTricks)
 		//console.log('trick.name',trick.name)
-		if(this.props.selectedTricks === trick.name){
+		if(this.props.selectedTricks == trick.name){
 			//console.log('this.props.selectedTricks === trick.name')
 			cardClass = 'selectedListCard'
 		}
