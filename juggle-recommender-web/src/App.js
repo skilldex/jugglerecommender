@@ -153,9 +153,9 @@ class App extends Component {
 	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
 	 			if((rootTrick.dependents || rootTrick.prereqs) && !tempNodes[trickKey]){
-		 			if(trickKey == "Shower"){
+		 			if(trickKey == "Alex"){
 		 				console.log(tempNodes[trickKey])
-	 					console.log("root shower",trickKey, involvedRoot)
+	 					console.log("root Alex",trickKey, involvedRoot, this.state.selectedTricks)
 	 				}
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
@@ -175,8 +175,8 @@ class App extends Component {
 		 				){
 		 					involvedPrereq = tempNodes[prereqKey].involved
 		 				}
-		 				if(prereqKey == "Shower"){
-		 					console.log("pre shower",prereqKey,tempNodes[prereqKey], involvedPrereq)
+		 				if(prereqKey == "Alex"){
+		 					console.log("pre Alex",prereqKey,tempNodes[prereqKey], involvedPrereq)
 		 				}
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
@@ -194,7 +194,7 @@ class App extends Component {
 		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
 		 					involvedDependent = tempNodes[dependentKey].involved
 		 				}
-		 				if(dependentKey == "Shower"){
+		 				if(dependentKey == "Alex"){
 		 					console.log("dep",dependentKey, involvedDependent)
 		 				}
 		 				tempNodes[dependentKey] = {
@@ -210,7 +210,7 @@ class App extends Component {
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		if(trickKey == "Shower"){
+	 		if(trickKey == "Alex"){
 		 		console.log(tempNodes[trickKey])
 		 	}
 	 		nodes.push({ data: {...tempNodes[trickKey]}})
