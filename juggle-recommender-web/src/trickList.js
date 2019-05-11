@@ -27,34 +27,30 @@ class TrickList extends Component {
  updateRootTricks=()=>{
  	let rootTricks = []
  	let selectedIsShown = true
- 	console.log('this.state.selectedTricks',this.state.selectedTricks)
- 	console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
- 	if(this.props.selectedList == "myTricks" && !this.props.myTricks.includes(this.state.selectedTricks[0])){
- 		console.log('firstSpot')
+ 	console.log('updating root')
+ 	if(this.props.selectedList === "myTricks" && !this.props.myTricks.includes(this.state.selectedTricks[0])){
  		this.props.selectTricks([])
  		this.setState({selectedTricks : []})
  		selectedIsShown = false
  	}
  	if (this.state.selectedTricks.length > 0 && selectedIsShown){
- 		console.log('secondSpot')
 		rootTricks.push(
 			this.state.selectedTricks[0]
 		)
  	}else{
 	 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-			if(this.props.selectedList == "allTricks" || 
-				this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
+			if(this.props.selectedList === "allTricks" || 
+				this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
 			){
-				console.log('INHERE!')
 				const trick = jugglingLibrary[trickKey]
 				let shouldPushTrick = false
-				if (trick.num == 3 && this.state.expandedSections[3]){
+				if (trick.num === 3 && this.state.expandedSections[3]){
 					shouldPushTrick = true
 				}
-				if (trick.num == 4 && this.state.expandedSections[4]){
+				if (trick.num === 4 && this.state.expandedSections[4]){
 					shouldPushTrick = true
 				}
-				if (trick.num == 5 && this.state.expandedSections[5]){
+				if (trick.num === 5 && this.state.expandedSections[5]){
 					shouldPushTrick = true
 				}
 				if (shouldPushTrick){
@@ -67,7 +63,6 @@ class TrickList extends Component {
  	}
 
  	this.props.updateRootTricks(rootTricks)
- 	console.log('this.props.selectedTricks[0]',this.props.selectedTricks[0])
  }
 
  addToMyList = (trickKey)=>{
@@ -87,30 +82,24 @@ class TrickList extends Component {
  	this.setState({expandedSections})
  }
  selectTrick = (trickKey)=>{
-
  	const selectedTricks = {}
  	let toSetStateTo
  	let shouldSelect
  	let shouldUnselect
  	selectedTricks[trickKey] = jugglingLibrary[trickKey]
- 	console.log('this.state.selectedTricks[0]',this.state.selectedTricks[0])
- 	console.log('trickKey',trickKey)
- 	console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
-	if (this.state.selectedTricks[0] == trickKey && this.state.selectedTricks.length == 1){
+ 	console.log("selecting trick")
+	if (this.state.selectedTricks[0] === trickKey && this.state.selectedTricks.length === 1){
 		
 		toSetStateTo = []
 		shouldUnselect = true
 		this.props.selectTricks([])
-		console.log('unselectedTrickListHERE')
  	}else{
  		
  		toSetStateTo = [trickKey]
  		shouldSelect = true
  		this.props.selectTricks([trickKey])
- 		console.log('selectedTrickListHERE')
  	}
-      this.setState({selectedTricks : toSetStateTo}, function () {
-      	console.log('this.state.selectedTricksHERE',this.state.selectedTricks)
+    this.setState({selectedTricks : toSetStateTo}, function () {
         this.updateRootTricks()
     });
 
@@ -136,15 +125,15 @@ class TrickList extends Component {
 		var AddToOrRemoveFrom = 'Add to'
 		//console.log('this.props.selectedTricks',this.props.selectedTricks)
 		//console.log('trick.name',trick.name)
-		if(this.props.selectedTricks == trick.name){
-			//console.log('this.props.selectedTricks == trick.name')
+		if(this.props.selectedTricks === trick.name){
+			//console.log('this.props.selectedTricks === trick.name')
 			cardClass = 'selectedListCard'
 		}
 		if(this.props.myTricks.includes(trickKey)){
 			AddToOrRemoveFrom = 'Remove from'
 		}
-		if(this.props.selectedList == "allTricks" || 
-			this.props.selectedList == "myTricks" && this.props.myTricks.includes(trickKey)
+		if(this.props.selectedList === "allTricks" || 
+			this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
 		){
 			tricks[trick.num.toString()].push(
 				<div onClick={()=>{this.selectTrick(trickKey)}} className={cardClass} key={trickKey + "div"}>

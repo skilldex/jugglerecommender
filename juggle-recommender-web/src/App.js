@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
@@ -18,7 +17,9 @@ class App extends Component {
  		nodes : []
 	}
 	shouldComponentUpdate(nextProps,nextState){
-		if(nextState.searchInput != this.state.searchInput){
+		if(nextState.searchInput !== this.state.searchInput || 
+			nextState.selectedTricks !== this.state.selectedTricks
+		){
 			return false
 		}else{
 			return true
@@ -54,7 +55,7 @@ class App extends Component {
  			searchInput: e.target.value
  		})
  		console.log("search", e.target.value)
- 		if(e.target.value == ""){
+ 		if(e.target.value === ""){
  			console.log("search trick changing")
  			this.setState({
  				searchTrick: ""
@@ -86,15 +87,10 @@ class App extends Component {
 
  	selectTricks=(selectedTricks)=>{
  		console.log("selecting ",selectedTricks)
- 		console.log('this.state.selectedTricks',this.state.selectedTricks)
- 		console.log('selectedTricks',selectedTricks)
- 		console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
- 		if (this.state.selectedTricks[0] == selectedTricks[0] && this.state.selectedTricks.length == 1){
+ 		if (this.state.selectedTricks[0] === selectedTricks[0] && this.state.selectedTricks.length === 1){
 			this.setState({selectedTricks: []})
- 			console.log('unselected')
 	 	}else{
 	 		this.setState({selectedTricks})
-	 		console.log('selected')
 	 	}
 
  	}
@@ -107,7 +103,7 @@ class App extends Component {
  		let nodes = []
  		let tempNodes = {}
  		let edges = []
-	 	if(this.state.selectedList == "myTricks" ){
+	 	if(this.state.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			if(rootTrick.dependents || rootTrick.prereqs){
@@ -146,17 +142,12 @@ class App extends Component {
 		 			})
 		 		}
  			})
-	 	}else if(this.state.selectedList == "allTricks"){
-	 		const involvedTricks = this.state.selectedTricks.length > 0 ? this.state.selectedTricks : this.state.myTricks 
+	 	}else if(this.state.selectedList === "allTricks"){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
 	 			if((rootTrick.dependents || rootTrick.prereqs) && !tempNodes[trickKey]){
-		 			if(trickKey == "Alex"){
-		 				console.log(tempNodes[trickKey])
-	 					console.log("root Alex",trickKey, involvedRoot, this.state.selectedTricks)
-	 				}
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				name : rootTrick.name,
@@ -175,9 +166,6 @@ class App extends Component {
 		 				){
 		 					involvedPrereq = tempNodes[prereqKey].involved
 		 				}
-		 				if(prereqKey == "Alex"){
-		 					console.log("pre Alex",prereqKey,tempNodes[prereqKey], involvedPrereq)
-		 				}
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
 		 					name: prereq.name,
@@ -194,9 +182,6 @@ class App extends Component {
 		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
 		 					involvedDependent = tempNodes[dependentKey].involved
 		 				}
-		 				if(dependentKey == "Alex"){
-		 					console.log("dep",dependentKey, involvedDependent)
-		 				}
 		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
 		 					name: dependent.name,
@@ -210,9 +195,6 @@ class App extends Component {
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		if(trickKey == "Alex"){
-		 		console.log(tempNodes[trickKey])
-		 	}
 	 		nodes.push({ data: {...tempNodes[trickKey]}})
 	 	})
  		this.setState({edges, nodes})
@@ -223,19 +205,12 @@ class App extends Component {
 	 						<button type="submit" onClick={this.searchTrick}>Search</button>
 	 				  </div>
 
- 		const buttonFilterClass = (num)=>{
- 			let className = "unselectedFilterButton"
- 			 if(this.state.filters.includes(num)){
- 			 	className = "selectedFilterButton"
- 			 }
- 			 return className
- 		}
  		console.log("rendering app", this.state.myTricks)
 		return (
 		<div className="App">
 			<div>
-				<button className={this.state.selectedList == "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("myTricks")}}>My Tricks</button>
-				<button className={this.state.selectedList == "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("allTricks")}}>All Tricks</button>
+				<button className={this.state.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("myTricks")}}>My Tricks</button>
+				<button className={this.state.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("allTricks")}}>All Tricks</button>
 			</div>
 			<TrickList 
 				myTricks={this.state.myTricks} 

@@ -75,7 +75,7 @@ class TrickGraph extends React.Component {
     }
 
     render() {
-      
+      console.log("rendering graph")
 
       return <div
         id    = "cy"
