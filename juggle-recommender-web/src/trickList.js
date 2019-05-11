@@ -30,11 +30,13 @@ class TrickList extends Component {
  	console.log('this.state.selectedTricks',this.state.selectedTricks)
  	console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
  	if(this.props.selectedList == "myTricks" && !this.props.myTricks.includes(this.state.selectedTricks[0])){
+ 		console.log('firstSpot')
  		this.props.selectTricks([])
  		this.setState({selectedTricks : []})
  		selectedIsShown = false
  	}
  	if (this.state.selectedTricks.length > 0 && selectedIsShown){
+ 		console.log('secondSpot')
 		rootTricks.push(
 			this.state.selectedTricks[0]
 		)
@@ -91,20 +93,24 @@ class TrickList extends Component {
  	let shouldSelect
  	let shouldUnselect
  	selectedTricks[trickKey] = jugglingLibrary[trickKey]
-	if (this.state.selectedTricks[0] == selectedTricks[0] && this.state.selectedTricks.length == 1){
+ 	console.log('this.state.selectedTricks[0]',this.state.selectedTricks[0])
+ 	console.log('trickKey',trickKey)
+ 	console.log('this.state.selectedTricks.length',this.state.selectedTricks.length)
+	if (this.state.selectedTricks[0] == trickKey && this.state.selectedTricks.length == 1){
 		
 		toSetStateTo = []
 		shouldUnselect = true
 		this.props.selectTricks([])
-		console.log('unselectedTrickList')
+		console.log('unselectedTrickListHERE')
  	}else{
  		
  		toSetStateTo = [trickKey]
  		shouldSelect = true
  		this.props.selectTricks([trickKey])
- 		console.log('selectedTrickList')
+ 		console.log('selectedTrickListHERE')
  	}
       this.setState({selectedTricks : toSetStateTo}, function () {
+      	console.log('this.state.selectedTricksHERE',this.state.selectedTricks)
         this.updateRootTricks()
     });
 
