@@ -61,7 +61,6 @@ class TrickList extends Component {
 			}
 		})
  	}
-
  	this.props.updateRootTricks(rootTricks)
  }
 
@@ -84,19 +83,13 @@ class TrickList extends Component {
  selectTrick = (trickKey)=>{
  	const selectedTricks = {}
  	let toSetStateTo
- 	let shouldSelect
- 	let shouldUnselect
  	selectedTricks[trickKey] = jugglingLibrary[trickKey]
  	console.log("selecting trick")
 	if (this.state.selectedTricks[0] === trickKey && this.state.selectedTricks.length === 1){
-		
 		toSetStateTo = []
-		shouldUnselect = true
 		this.props.selectTricks([])
- 	}else{
- 		
+ 	}else{ 		
  		toSetStateTo = [trickKey]
- 		shouldSelect = true
  		this.props.selectTricks([trickKey])
  	}
     this.setState({selectedTricks : toSetStateTo}, function () {

@@ -102,11 +102,13 @@ class App extends Component {
  		})
  	}
  	updateRootTricks=(rootTricks)=>{
+ 		console.log('rootTricks in updateRootTricks',rootTricks)
  		let nodes = []
  		let tempNodes = {}
  		let edges = []
 	 	if(this.state.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
+	 			console.log('rootForEach')
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			if(rootTrick.dependents || rootTrick.prereqs){
 		 			tempNodes[trickKey] = {
@@ -212,7 +214,11 @@ class App extends Component {
 	 		}
 	 		nodes.push({ data: {...tempNodes[trickKey]}})
 	 	})
- 		this.setState({edges, nodes})
+
+    this.setState({edges, nodes}, function () {
+	 	this.setState({edges, nodes})
+    });
+
  	}
  	render(){
  		const search= <div>
