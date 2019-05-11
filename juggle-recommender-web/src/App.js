@@ -160,10 +160,6 @@ class App extends Component {
 		 				involved : involvedRoot
 		 			}
 		 		}
-		 		if(trickKey == "441"){
-		 			console.log("441 root ",rootTrick,tempNodes[trickKey], involvedRoot)
-		 		}
-
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
@@ -180,9 +176,6 @@ class App extends Component {
 		 					name: prereq.name,
 		 					involved : involvedPrereq
 		 				}
-		 				if(prereqKey == "441"){
-				 			console.log(tempNodes[prereqKey])
-				 		}
 
 		 				edges.push({ data: { source: trickKey, target: prereqKey } })
 			 		})
@@ -199,9 +192,6 @@ class App extends Component {
 		 					name: dependent.name,
 		 					involved : involvedDependent
 		 				}
-						if(dependentKey == "441"){
-				 			console.log(tempNodes[dependentKey])
-				 		}
 		 				edges.push({ data: { source: dependentKey, target: trickKey } })
 		 			})
  				}
@@ -209,9 +199,6 @@ class App extends Component {
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		if(trickKey == "441"){
-	 			console.log(tempNodes[trickKey])
-	 		}
 	 		nodes.push({ data: {...tempNodes[trickKey]}})
 	 	})
 

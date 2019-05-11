@@ -146,17 +146,30 @@ class TrickList extends Component {
 			<div>
 				<span onClick={()=>{this.toggleExpandedSection("3")}}>{this.state.expandedSections["3"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">3 Ball</h3>
-				{this.state.expandedSections["3"] ? tricks["3"] : null}
+				{this.state.expandedSections["3"] ?
+					<div className="listSection"> 
+					{tricks["3"]}
+					</div> : null
+				}
+				
 			</div>
 			<div>
 				<span onClick={()=>{this.toggleExpandedSection("4")}}>{this.state.expandedSections["4"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">4 Ball</h3>
-				{this.state.expandedSections["4"] ? tricks["4"] : null}	
+				{this.state.expandedSections["4"] ?
+					<div className="listSection"> 
+					{tricks["4"]}
+					</div> : null
+				}
 			</div>
 			<div>	
 				<span onClick={()=>{this.toggleExpandedSection("5")}}>{this.state.expandedSections["5"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">5 Ball</h3>
-				{this.state.expandedSections["5"] ? tricks["5"] : null}
+				{this.state.expandedSections["5"] ?
+					<div className="listSection"> 
+					{tricks["5"]}
+					</div> : null
+				}
 			</div>
 		</div>
 	)
