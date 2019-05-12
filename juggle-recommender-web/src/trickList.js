@@ -4,6 +4,8 @@ class TrickList extends Component {
  state = {
  	selectedTricks : [],
  	rootTricksLength : 0,
+ 	searchInput : "",
+ 	searchTrick : "",
  	expandedSections : {
  		"3" : true,
  		"4" : false,
@@ -11,6 +13,14 @@ class TrickList extends Component {
 
  	}
  }
+shouldComponentUpdate(nextProps,nextState){
+	if(nextState.searchInput !== this.state.searchInput 
+	){
+		return false
+	}else{
+		return true
+	}
+}
  componentDidMount(){
  	const checkedTricks =  JSON.parse(localStorage.getItem("checkedTricks"))
 	if(checkedTricks){
@@ -45,7 +55,9 @@ class TrickList extends Component {
 			){
 				const trick = jugglingLibrary[trickKey]
 				let shouldPushTrick = false
-				if (trick.num === 3 && this.state.expandedSections[3]){
+				if (trick.num === 3 && this.state.expandedSections[3] &&
+					(trick.name.includes(this.state.searchTrick) || 
+						this.state.searchTrick === "")){
 					shouldPushTrick = true
 				}
 				if (trick.num === 4 && this.state.expandedSections[4]){
@@ -63,11 +75,11 @@ class TrickList extends Component {
 			}
 		})
  	}
-
- 	this.setState({rootTricksLength : rootTricks.length}, function () {
-	 	console.log('this.state.rootTricksLength',this.state.rootTricksLength)
-	 	this.props.updateRootTricks(rootTricks)
-    });
+this.props.updateRootTricks(rootTricks)
+ 	// this.setState({rootTricksLength : rootTricks.length}, function () {
+	 // 	console.log('this.state.rootTricksLength',this.state.rootTricksLength)
+	 	
+  //   });
 
  }
 
@@ -104,6 +116,30 @@ class TrickList extends Component {
     });
 
   }
+
+searchInputChange=(e)=>{
+	this.setState({
+		searchInput: e.target.value
+	})
+	console.log("search", e.target.value)
+	if(e.target.value === ""){
+		console.log("search trick changing")
+		this.setState({searchTrick: ""}, function () {
+            this.setState({searchTrick: ""}, function () {
+        		this.updateRootTricks()
+    	});
+    });
+	}
+}
+ searchTrick=()=>{
+    this.setState({searchTrick: this.state.searchInput}, function () {
+            this.setState({searchTrick: this.state.searchInput}, function () {
+        		this.updateRootTricks()
+    	});
+    });
+
+
+}
  		
 
 		
@@ -125,40 +161,46 @@ class TrickList extends Component {
 		var AddToOrRemoveFrom = 'Add to'
 		//console.log('this.props.selectedTricks',this.props.selectedTricks)
 		//console.log('trick.name',trick.name)
-		if(this.props.selectedTricks == trick.name){
-			//console.log('this.props.selectedTricks === trick.name')
-			cardClass = 'selectedListCard'
-		}
-		if(this.props.myTricks.includes(trickKey)){
-			AddToOrRemoveFrom = 'Remove from'
-		}
-		if(this.props.selectedList === "allTricks" || 
-			this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
-		){
-			tricks[trick.num.toString()].push(
-				<div onClick={()=>{this.selectTrick(trickKey)}} className={cardClass} key={trickKey + "div"}>
-					{trick.url ?
-					 <a href={trick.url}>{trick.name}</a> : 
-					 <span>{trick.name}</span>}
-					{this.props.myTricks.includes(trickKey) ?
-  					 <button className="removeFromMyListButton" onClick={(e)=>{this.removeFromMyList(trickKey);e.stopPropagation()}}>Remove from My List</button> :
-					 <button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>}				
-				</div>
-			)
+		if(trick.name.includes(this.state.searchTrick)){
+			if(this.props.selectedTricks == trick.name.replace(" ","")){
+
+				cardClass = 'selectedListCard'
+			}
+			if(this.props.myTricks.includes(trickKey)){
+				AddToOrRemoveFrom = 'Remove from'
+			}
+			if(this.props.selectedList === "allTricks" || 
+				this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
+			){
+				tricks[trick.num.toString()].push(
+					<div onClick={()=>{this.selectTrick(trickKey)}} className={cardClass} key={trickKey + "div"}>
+						{trick.url ?
+						 <a href={trick.url}>{trick.name}</a> : 
+						 <span>{trick.name}</span>}
+						{this.props.myTricks.includes(trickKey) ?
+	  					 <button className="removeFromMyListButton" onClick={(e)=>{this.removeFromMyList(trickKey);e.stopPropagation()}}>Remove from My List</button> :
+						 <button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>}				
+					</div>
+				)
+			}
 		}
 	})
-	let listSectionToUse = null
-	if (this.state.rootTricksLength > 19){
-		listSectionToUse = 'listSection'
+	let listSectionToUse3 = null
+	if (tricks["3"].length > 19){
+		listSectionToUse3 = 'listSection'
 	}
 
 	return (	
 		<div className="listDiv">
+		 	<div>
+	 			<label>Find trick </label><input onChange={this.searchInputChange}/>
+	 			<button type="submit" onClick={this.searchTrick}>Search</button>
+	 		</div>
 			<div>
 				<span onClick={()=>{this.toggleExpandedSection("3")}}>{this.state.expandedSections["3"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">3 Ball</h3>
 				{this.state.expandedSections["3"] ?
-					<div className={listSectionToUse}> 
+					<div className={listSectionToUse3}> 
 					{tricks["3"]}
 					</div> : null
 				}
@@ -168,7 +210,7 @@ class TrickList extends Component {
 				<span onClick={()=>{this.toggleExpandedSection("4")}}>{this.state.expandedSections["4"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">4 Ball</h3>
 				{this.state.expandedSections["4"] ?
-					<div className={listSectionToUse}> 
+					<div className={listSectionToUse3}> 
 					{tricks["4"]}
 					</div> : null
 				}
@@ -177,7 +219,7 @@ class TrickList extends Component {
 				<span onClick={()=>{this.toggleExpandedSection("5")}}>{this.state.expandedSections["5"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">5 Ball</h3>
 				{this.state.expandedSections["5"] ?
-					<div className={listSectionToUse}> 
+					<div className={listSectionToUse3}> 
 					{tricks["5"]}
 					</div> : null
 				}
