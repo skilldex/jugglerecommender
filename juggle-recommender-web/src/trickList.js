@@ -75,12 +75,7 @@ shouldComponentUpdate(nextProps,nextState){
 			}
 		})
  	}
-this.props.updateRootTricks(rootTricks)
- 	// this.setState({rootTricksLength : rootTricks.length}, function () {
-	 // 	console.log('this.state.rootTricksLength',this.state.rootTricksLength)
-	 	
-  //   });
-
+	this.props.updateRootTricks(rootTricks)
  }
 
  addToMyList = (trickKey)=>{
@@ -103,7 +98,6 @@ this.props.updateRootTricks(rootTricks)
  	const selectedTricks = {}
  	let toSetStateTo
  	selectedTricks[trickKey] = jugglingLibrary[trickKey]
- 	console.log("selecting trick")
 	if (this.state.selectedTricks[0] === trickKey && this.state.selectedTricks.length === 1){
 		toSetStateTo = []
 		this.props.selectTricks([])
@@ -159,11 +153,8 @@ searchInputChange=(e)=>{
 		const trick = jugglingLibrary[trickKey]
 		var cardClass='listCard'
 		var AddToOrRemoveFrom = 'Add to'
-		//console.log('this.props.selectedTricks',this.props.selectedTricks)
-		//console.log('trick.name',trick.name)
 		if(trick.name.includes(this.state.searchTrick)){
 			if(this.props.selectedTricks == trick.name.replace(" ","")){
-
 				cardClass = 'selectedListCard'
 			}
 			if(this.props.myTricks.includes(trickKey)){

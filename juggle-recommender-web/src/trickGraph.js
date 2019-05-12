@@ -15,8 +15,6 @@ class TrickGraph extends React.Component {
     TrickGraphToGraph = () => {
       const nodes = this.props.nodes
       const edges = this.props.edges
-      console.log('Gnodes',nodes)
-      console.log('Gedges',edges)
       this.renderCytoscapeElement({ edges, nodes })
     }
 

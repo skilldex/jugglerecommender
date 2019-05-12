@@ -56,7 +56,6 @@ class App extends Component {
  		})
  		console.log("search", e.target.value)
  		if(e.target.value === ""){
- 			console.log("search trick changing")
  			this.setState({
  				searchTrick: ""
  			})
@@ -88,13 +87,11 @@ class App extends Component {
  	}
 
  	selectTricks=(selectedTricks)=>{
- 		console.log("selecting ",selectedTricks)
  		if (this.state.selectedTricks[0] === selectedTricks[0] && this.state.selectedTricks.length === 1){
 			this.setState({selectedTricks: []})
 	 	}else{
 	 		this.setState({selectedTricks})
 	 	}
-
  	}
  	setListType=(listType)=>{
  		this.setState({
@@ -102,7 +99,6 @@ class App extends Component {
  		})
  	}
  	updateRootTricks=(rootTricks)=>{
- 		console.log('rootTricks in updateRootTricks',rootTricks)
  		let nodes = []
  		let tempNodes = {}
  		let edges = []
@@ -147,7 +143,6 @@ class App extends Component {
 		 		}
  			})
 	 	}else if(this.state.selectedList === "allTricks"){
-	 		console.log("checking my tricks ", this.state.myTricks)
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 
@@ -212,8 +207,6 @@ class App extends Component {
 	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
 	 						<button type="submit" onClick={this.searchTrick}>Search</button>
 	 				  </div>
-
- 		console.log("rendering app", this.state.myTricks)
 		return (
 
 		<div className="App">
