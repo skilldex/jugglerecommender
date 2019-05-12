@@ -5,11 +5,9 @@
 
 
 -Style expand arrows as icons
-- make expandable list scrollable
 - add loading graphic
 - style add/remove buttons
 - add title
 
 - click node to expand selection
 - disable expand toggle while loading
--save mytricks

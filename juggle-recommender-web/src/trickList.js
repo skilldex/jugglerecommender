@@ -134,7 +134,7 @@ class TrickList extends Component {
 					 <a href={trick.url}>{trick.name}</a> : 
 					 <span>{trick.name}</span>}
 					{this.props.myTricks.includes(trickKey) ?
-  					 <button className="addToMyListButton" onClick={(e)=>{this.removeFromMyList(trickKey);e.stopPropagation()}}>Remove from My List</button> :
+  					 <button className="removeFromMyListButton" onClick={(e)=>{this.removeFromMyList(trickKey);e.stopPropagation()}}>Remove from My List</button> :
 					 <button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>}				
 				</div>
 			)
