@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
+import { observer } from "mobx-react"
+
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
 
+console.log(observer)
+
+@observer
 class App extends Component {
  	state = {
  		filters : [],
