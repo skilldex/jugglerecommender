@@ -152,13 +152,9 @@ searchInputChange=(e)=>{
  	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 		const trick = jugglingLibrary[trickKey]
 		var cardClass='listCard'
-		var AddToOrRemoveFrom = 'Add to'
-		if(trick.name.includes(this.state.searchTrick)){
+		if(trick.name.toLowerCase().includes(this.state.searchTrick.toLowerCase())){
 			if(this.props.selectedTricks == trick.name.replace(" ","")){
 				cardClass = 'selectedListCard'
-			}
-			if(this.props.myTricks.includes(trickKey)){
-				AddToOrRemoveFrom = 'Remove from'
 			}
 			if(this.props.selectedList === "allTricks" || 
 				this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
