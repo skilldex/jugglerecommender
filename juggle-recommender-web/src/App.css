@@ -1,4 +1,11 @@
-.App {
+h1{
+  font-size: 25pt;
+}
+.title {
+  text-align: center;
+}
+.listButtonDiv{
+  text-align: left;
 }
 .checkboxDiv{
   display: inline-block; 
@@ -24,7 +31,11 @@
   overflow-y: scroll;
 }
 .selectedListButton{
+  font-size: 20pt;
   background-color : darkgray;
+}
+.unselectedListButton{
+  font-size: 20pt;
 }
 .graphDiv{
   display: inline-block;

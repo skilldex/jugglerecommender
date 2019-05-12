@@ -216,7 +216,11 @@ class App extends Component {
  		console.log("rendering app", this.state.myTricks)
 		return (
 		<div className="App">
-			<div>
+			<div className="title">
+				<h1>Juggledex</h1>
+				<h3>Gotta catch em all ;)</h3>	
+			</div>
+			<div className="listButtonDiv">
 				<button className={this.state.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("myTricks")}}>My Tricks</button>
 				<button className={this.state.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("allTricks")}}>All Tricks</button>
 			</div>
