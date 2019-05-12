@@ -3,6 +3,7 @@ import {jugglingLibrary} from './jugglingLibrary.js'
 class TrickList extends Component {
  state = {
  	selectedTricks : [],
+ 	rootTricksLength : 0,
  	expandedSections : {
  		"3" : true,
  		"4" : false,
@@ -54,6 +55,7 @@ class TrickList extends Component {
 					shouldPushTrick = true
 				}
 				if (shouldPushTrick){
+
 					rootTricks.push(
 						trickKey
 					)
@@ -61,7 +63,12 @@ class TrickList extends Component {
 			}
 		})
  	}
- 	this.props.updateRootTricks(rootTricks)
+
+ 	this.setState({rootTricksLength : rootTricks.length}, function () {
+	 	console.log('this.state.rootTricksLength',this.state.rootTricksLength)
+	 	this.props.updateRootTricks(rootTricks)
+    });
+
  }
 
  addToMyList = (trickKey)=>{
@@ -140,6 +147,10 @@ class TrickList extends Component {
 			)
 		}
 	})
+	let listSectionToUse = null
+	if (this.state.rootTricksLength > 19){
+		listSectionToUse = 'listSection'
+	}
 
 	return (	
 		<div className="listDiv">
@@ -147,7 +158,7 @@ class TrickList extends Component {
 				<span onClick={()=>{this.toggleExpandedSection("3")}}>{this.state.expandedSections["3"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">3 Ball</h3>
 				{this.state.expandedSections["3"] ?
-					<div className="listSection"> 
+					<div className={listSectionToUse}> 
 					{tricks["3"]}
 					</div> : null
 				}
@@ -157,7 +168,7 @@ class TrickList extends Component {
 				<span onClick={()=>{this.toggleExpandedSection("4")}}>{this.state.expandedSections["4"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">4 Ball</h3>
 				{this.state.expandedSections["4"] ?
-					<div className="listSection"> 
+					<div className={listSectionToUse}> 
 					{tricks["4"]}
 					</div> : null
 				}
@@ -166,7 +177,7 @@ class TrickList extends Component {
 				<span onClick={()=>{this.toggleExpandedSection("5")}}>{this.state.expandedSections["5"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">5 Ball</h3>
 				{this.state.expandedSections["5"] ?
-					<div className="listSection"> 
+					<div className={listSectionToUse}> 
 					{tricks["5"]}
 					</div> : null
 				}
