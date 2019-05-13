@@ -9,7 +9,6 @@ class TrickGraph extends React.Component {
     render() {
       store.nodes
       store.edges
-      console.log("rendering graph", toJS(store.nodes), toJS(store.edges))
       const nodes = JSON.parse(JSON.stringify(store.nodes))
       const edges = JSON.parse(JSON.stringify(store.edges))
     const data = {

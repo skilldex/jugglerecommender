@@ -133,7 +133,7 @@ class Store {
 			 					color : this.getInvolvedNodeColor(1)
 			 				}
 			 			}
-		 				edges.push({from: trickKey, to: prereqKey})
+		 				edges.push({from: prereqKey, to: trickKey })
 
 		 			})
 		 		}
@@ -147,12 +147,13 @@ class Store {
 			 					color : this.getInvolvedNodeColor(2)
 			 				}
 			 			}
-		 				edges.push({from: dependentKey, to: trickKey})
+		 				edges.push({from: trickKey, to: dependentKey })
 
 		 			})
 		 		}
  			})
 	 	}else if(this.selectedList === "allTricks"){
+	 		console.log("updating root , my tricks" ,toJS(store.myTricks))
 	 		this.rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.myTricks.includes(trickKey) || 
@@ -161,8 +162,13 @@ class Store {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: rootTrick.name,
-		 				color : this.getInvolvedNodeColor(involvedRoot)
+		 				color : this.getInvolvedNodeColor(involvedRoot),
+		 				involved : involvedRoot
 		 			}
+		 			if(trickKey == "423"){
+		 				console.log(tempNodes[trickKey])
+		 			}
+		 			
 		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
@@ -178,10 +184,14 @@ class Store {
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
 		 					label: prereq.name,
-		 					color : this.getInvolvedNodeColor(involvedPrereq)
+		 					color : this.getInvolvedNodeColor(involvedPrereq),
+		 					involved : involvedPrereq
 		 				}
 
-		 				edges.push({from: trickKey, to: prereqKey})
+		 				edges.push({from: prereqKey, to: trickKey })
+		 				if(prereqKey == "423"){
+			 				console.log("pre",tempNodes[prereqKey])
+			 			}
 			 		})
 	 			}
  				if(rootTrick.dependents){
@@ -194,15 +204,20 @@ class Store {
 		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
 		 					label: dependent.name,
-		 					color : this.getInvolvedNodeColor(involvedDependent)
+		 					color : this.getInvolvedNodeColor(involvedDependent),
+		 					involved : involvedDependent
 		 				}
-		 				edges.push({from: dependentKey, to: trickKey})
+		 				if(dependentKey == "423"){
+			 				console.log("dep",tempNodes[dependentKey])
+			 			}
+		 				edges.push({from: trickKey , to: dependentKey })
 		 			})
  				}
  					
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
+	 		delete tempNodes[trickKey].involveds
 	 		nodes.push({...tempNodes[trickKey]})
 	 	})
 
