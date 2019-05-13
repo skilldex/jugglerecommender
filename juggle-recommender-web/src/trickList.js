@@ -7,19 +7,9 @@ import { observer } from "mobx-react"
 class TrickList extends Component {
  state = {
  	selectedTricks : [],
- 	rootTricksLength : 0,
- 	searchInput : "",
- 	searchTrick : "",
-
+ 	rootTricksLength : 0
  }
-shouldComponentUpdate(nextProps,nextState){
-	if(nextState.searchInput !== this.state.searchInput 
-	){
-		return false
-	}else{
-		return true
-	}
-}
+
  componentDidMount(){
  	const checkedTricks =  JSON.parse(localStorage.getItem("checkedTricks"))
 	if(checkedTricks){
@@ -29,28 +19,9 @@ shouldComponentUpdate(nextProps,nextState){
  }
 
 
-
-searchInputChange=(e)=>{
-	this.setState({
-		searchInput: e.target.value
-	})
-	console.log("search", e.target.value)
-	if(e.target.value === ""){
-		console.log("search trick changing")
-		this.setState({searchTrick: ""}, function () {
-            this.setState({searchTrick: ""}, function () {
-    	});
-    });
-	}
-}
- searchTrick=()=>{
-    this.setState({searchTrick: this.state.searchInput}, function () {
-            this.setState({searchTrick: this.state.searchInput}, function () {
-    	});
-    });
-}
  
  render() {
+
  	let tricks = {
  		"3" : [],
  		"4" : [],
@@ -62,7 +33,7 @@ searchInputChange=(e)=>{
  	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 		const trick = jugglingLibrary[trickKey]
 		var cardClass='listCard'
-		if(trick.name.toLowerCase().includes(this.state.searchTrick.toLowerCase())){
+		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
 			if(store.selectedTricks == trick.name.replace(" ","")){
 				cardClass = 'selectedListCard'
 			}
@@ -86,8 +57,8 @@ searchInputChange=(e)=>{
 	return (	
 		<div className="listDiv">
 		 	<div>
-	 			<label>Find trick </label><input onChange={this.searchInputChange}/>
-	 			<button type="submit" onClick={this.searchTrick}>Search</button>
+	 			<label>Find trick </label><input onChange={store.searchInputChange}/>
+	 			<button type="submit" onClick={store.performSearch}>Search</button>
 	 		</div>
 			<div>
 				<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>

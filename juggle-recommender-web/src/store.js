@@ -9,6 +9,8 @@ class Store {
 	@observable rootTricks = []
 	@observable nodes = []
 	@observable edges = []
+	@observable searchInput = ''
+	@observable searchTrick = ''
 	@observable expandedSections = {
 		'3' : true,
 		'4' : false,
@@ -43,6 +45,18 @@ class Store {
  		this.selectedList = listType
  		this.updateRootTricks()
  	}
+ 	@action	searchInputChange=(e)=>{
+ 		this.searchInput = e.target.value 		
+ 		console.log("search", e.target.value)
+ 		if(e.target.value === ""){
+ 			this.searchTrick = ""
+ 		}
+ 	}
+ 		
+ 	@action performSearch=()=>{
+ 		this.searchTrick = this.searchInput
+ 		this.updateRootTricks()
+ 	}
  	@action updateRootTricks=()=>{
 	 	this.rootTricks = []
 	 	if (this.selectedTricks.length > 0){
@@ -55,11 +69,12 @@ class Store {
 					this.selectedList === "myTricks" && this.myTricks.includes(trickKey)
 				){
 					const trick = jugglingLibrary[trickKey]
-					let shouldPushTrick = true
+					let shouldPushTrick = false
 					
-					if (trick.num === 3 && this.expandedSections['3'] ){//&&
-						// (trick.name.includes(this.searchTrick) || 
-						// 	this.searchTrick === "")){
+					if (trick.num === 3 && this.expandedSections['3'] &&
+						(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
+							this.searchTrick === "")){
+						console.log('ya')
 						shouldPushTrick = true
 					}
 					if (trick.num === 4 && this.expandedSections['4']){

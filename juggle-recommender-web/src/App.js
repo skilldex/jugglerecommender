@@ -12,8 +12,6 @@ console.log(observer)
 class App extends Component {
  	state = {
  		filters : [],
- 		searchInput : "",
- 		searchTrick : "",
  		selectedList : "allTricks",
  		edges : [],
  		nodes : []
@@ -42,33 +40,12 @@ class App extends Component {
  		})
  	}
 
- 	searchInputChange=(e)=>{
- 		this.setState({
- 			searchInput: e.target.value
- 		})
- 		console.log("search", e.target.value)
- 		if(e.target.value === ""){
- 			this.setState({
- 				searchTrick: ""
- 			})
- 		}
- 	}
 
-	
- 	searchTrick=()=>{
- 		this.setState({
- 			searchTrick: this.state.searchInput
- 		})
- 	}
 
  	
  	render(){
  		store.nodes
  		store.edges
- 		const search= <div>
-	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
-	 						<button type="submit" onClick={this.searchTrick}>Search</button>
-	 				  </div>
 	 	console.log("rendering app")
 		return (
 
