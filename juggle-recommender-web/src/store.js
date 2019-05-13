@@ -79,6 +79,21 @@ class Store {
 	 	}
 	 	this.updateGraphData()
 	}
+	@action getInvolvedNodeColor=(involvement)=>{
+		
+		if(involvement == 0){
+			return "cyan"
+		}
+		if(involvement == 1){
+			return "pink"
+		}
+		if(involvement == 2){
+			return "orange"
+		}
+		if(involvement == 3){
+			return "yellow"
+		}
+	}
 	@action updateGraphData=()=>{
  		let nodes = []
  		let tempNodes = {}
@@ -89,8 +104,8 @@ class Store {
 	 			if(rootTrick.dependents || rootTrick.prereqs){
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
-		 				name : rootTrick.name,
-		 				involved : 100
+		 				label: rootTrick.name,
+		 				color : this.getInvolvedNodeColor(3)
 		 			}
 		 		}
 		 		if(rootTrick.prereqs){
@@ -99,11 +114,11 @@ class Store {
 		 				if(!tempNodes[prereqKey]){
 			 				tempNodes[prereqKey] = {
 			 					id: prereqKey,
-			 					name: prereq.name,
-			 					involved : 40
+			 					label: prereq.name,
+			 					color : this.getInvolvedNodeColor(1)
 			 				}
 			 			}
-		 				edges.push({ data: { source: trickKey, target: prereqKey } })
+		 				edges.push({from: trickKey, to: prereqKey})
 
 		 			})
 		 		}
@@ -113,11 +128,11 @@ class Store {
 			 			if(!tempNodes[dependentKey]){
 			 				tempNodes[dependentKey] = {
 			 					id: dependentKey,
-			 					name: dependent.name,
-			 					involved : 75
+			 					label: dependent.name,
+			 					color : this.getInvolvedNodeColor(2)
 			 				}
 			 			}
-		 				edges.push({ data: { source: dependentKey, target: trickKey } })
+		 				edges.push({from: dependentKey, to: trickKey})
 
 		 			})
 		 		}
@@ -126,18 +141,18 @@ class Store {
 	 		this.rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.myTricks.includes(trickKey) || 
-	 							this.selectedTricks.includes(trickKey) ? 100 : 0
+	 							this.selectedTricks.includes(trickKey) ? 3 : 0
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
-		 				name : rootTrick.name,
-		 				involved : involvedRoot
+		 				label: rootTrick.name,
+		 				color : this.getInvolvedNodeColor(involvedRoot)
 		 			}
 		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
-		 				let involvedPrereq = involvedRoot > 0 ? 40 : 0
+		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0
 		 				
 		 				if(
 		 					tempNodes[prereqKey] && 
@@ -147,43 +162,45 @@ class Store {
 		 				}
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
-		 					name: prereq.name,
-		 					involved : involvedPrereq
+		 					label: prereq.name,
+		 					color : this.getInvolvedNodeColor(involvedPrereq)
 		 				}
 
-		 				edges.push({ data: { source: trickKey, target: prereqKey } })
+		 				edges.push({from: trickKey, to: prereqKey})
 			 		})
 	 			}
  				if(rootTrick.dependents){
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = jugglingLibrary[dependentKey]
-		 				let involvedDependent = involvedRoot > 0 ? 75 : 0
+		 				let involvedDependent = involvedRoot > 0 ? 2 : 0
 		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
 		 					involvedDependent = tempNodes[dependentKey].involved
 		 				}
 		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
-		 					name: dependent.name,
-		 					involved : involvedDependent
+		 					label: dependent.name,
+		 					color : this.getInvolvedNodeColor(involvedDependent)
 		 				}
-		 				edges.push({ data: { source: dependentKey, target: trickKey } })
+		 				edges.push({from: dependentKey, to: trickKey})
 		 			})
  				}
  					
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		nodes.push({ data: {...tempNodes[trickKey]}})
+	 		nodes.push({...tempNodes[trickKey]})
 	 	})
+
+	 	console.log("nodes ", toJS(nodes))
 	 	this.nodes = nodes
 	 	this.edges = edges
  	}
 
  	@action toggleExpandedSection=(section)=>{
- 	console.log("Expanded " ,this.expandedSections, section)
- 	this.expandedSections[section] = !this.expandedSections[section]
- 	this.updateRootTricks()
- }
+	 	console.log("Expanded " ,this.expandedSections, section)
+	 	this.expandedSections[section] = !this.expandedSections[section]
+	 	this.updateRootTricks()
+	 }
 }
 
 const store = new Store()

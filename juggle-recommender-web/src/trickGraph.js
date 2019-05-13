@@ -2,85 +2,37 @@ import React,{Component} from 'react'
 import cytoscape from 'cytoscape'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
+import Graph from 'vis-react'
+import {toJS} from "mobx"
+
 class TrickGraph extends React.Component {
-
-    componentDidMount() {
-      this.TrickGraphToGraph()
-    }
-
-    componentDidUpdate() {
-      this.TrickGraphToGraph()
-    }
-
-    TrickGraphToGraph=()=>{
-      let nodes = JSON.parse(JSON.stringify(this.props.nodes))
-      let edges = JSON.parse(JSON.stringify(this.props.edges))
-      this.renderCytoscapeElement({ edges, nodes })
-    }
-
-    renderCytoscapeElement = (elements) => {
-
-      this.cy = cytoscape(
-      {
-        container: document.getElementById('cy'),
-        boxSelectionEnabled: false,
-        autounselectify: true,
-        elements: elements,
-        layout: {
-          name     : 'cose',
-          directed : true,
-          nodeRepulsion: function( node ){ return 10048; },
-           nodeOverlap: 100,
-            // Gravity force (constant)
-          gravity: .0005,
-
-          // Maximum number of iterations to perform
-          numIter: 250,
-        },
-        style: cytoscape.stylesheet()
-          .selector('node')
-          .css({
-            'background-fit'   : 'cover',
-            'border-opacity'   : 1,
-            'content'          : 'data(name)',
-            'text-valign'      : 'center',
-            'label'            : 'data(id)',
-            'background-color' : 'mapData(involved, 0, 100, cyan, yellow)',
-            'font-size'        : 40,
-            'width'            : 200,
-            'height'            : 200,
-            'border'          : 'black'
-          })
-          .selector('edge')
-          .css({
-            'width'                   : 8,
-            'target-arrow-shape'      : 'triangle',
-            'curve-style'             : 'bezier',
-            'control-point-step-size' : 0,
-            'opacity'                 : 1,
-            'arrow-scale'             : 3,
-            'color' : 'black'
-          }),
-      })
-      this.cy.on('click', 'node', function(evt) {
-        const url = jugglingLibrary[this.id()].url
-        if(url){
-          window.open(url)
-        }
-      })
-      
-      this.cy.maxZoom(1)
-      this.cy.minZoom(0.15)
-
-    }
-
     render() {
-      console.log("rendering graph")
+      store.nodes
+      store.edges
+      console.log("rendering graph", toJS(store.nodes), toJS(store.edges))
+      const nodes = JSON.parse(JSON.stringify(store.nodes))
+      const edges = JSON.parse(JSON.stringify(store.edges))
+    const data = {
+      nodes: nodes,
+      edges: edges
+    }
+    const options = {
+      nodes: {borderWidth: 2},
+      interaction: {hover: true}
+    }
+      return (
+        <div className="graphDiv">
+          <Graph
+            graph={data}
+            options={options}
+            getNetwork={this.getNetwork}
+            getEdges={this.getEdges}
+            getNodes={this.getNodes}
+            vis={vis => (this.vis = vis)}
+          />
+        </div>
+      )
 
-      return <div
-        id    = "cy"
-        className = "graphDiv"
-      />
     }
 
 }

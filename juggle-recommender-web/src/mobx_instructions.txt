@@ -6,3 +6,4 @@ copy dependencies and babel-config from package.json in arflowarts
 copy config folder 
 
 npm install
+
