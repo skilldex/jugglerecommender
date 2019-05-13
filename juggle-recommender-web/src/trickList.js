@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
+import store from './store'
 class TrickList extends Component {
  state = {
  	selectedTricks : [],
@@ -39,7 +40,7 @@ shouldComponentUpdate(nextProps,nextState){
  	let rootTricks = []
  	let selectedIsShown = true
  	console.log('updating root')
- 	if(this.props.selectedList === "myTricks" && !this.props.myTricks.includes(this.state.selectedTricks[0])){
+ 	if(this.props.selectedList === "myTricks" && !store.myTricks.includes(this.state.selectedTricks[0])){
  		this.props.selectTricks([])
  		this.setState({selectedTricks : []})
  		selectedIsShown = false
@@ -51,7 +52,7 @@ shouldComponentUpdate(nextProps,nextState){
  	}else{
 	 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 			if(this.props.selectedList === "allTricks" || 
-				this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
+				this.props.selectedList === "myTricks" && store.myTricks.includes(trickKey)
 			){
 				const trick = jugglingLibrary[trickKey]
 				let shouldPushTrick = false
@@ -78,13 +79,13 @@ shouldComponentUpdate(nextProps,nextState){
 	this.props.updateRootTricks(rootTricks)
  }
 
- addToMyList = (trickKey)=>{
- 	this.props.addToMyList(trickKey)
+ addToMyTricks = (trickKey)=>{
+ 	store.addToMyTricks(trickKey)
  	this.updateRootTricks()
  }
 
- removeFromMyList = (trickKey)=>{
- 	this.props.removeFromMyList(trickKey)
+ removeFromMyTricks = (trickKey)=>{
+ 	this.props.removeFromMyTricks(trickKey)
  	this.updateRootTricks()
  }
 
@@ -152,25 +153,21 @@ searchInputChange=(e)=>{
 				cardClass = 'selectedListCard'
 			}
 			if(this.props.selectedList === "allTricks" || 
-				this.props.selectedList === "myTricks" && this.props.myTricks.includes(trickKey)
+				this.props.selectedList === "myTricks" && store.myTricks.includes(trickKey)
 			){
 				tricks[trick.num.toString()].push(
 					<div onClick={()=>{this.selectTrick(trickKey)}} className={cardClass} key={trickKey + "div"}>
 						{trick.url ?
 						 <a href={trick.url}>{trick.name}</a> : 
 						 <span>{trick.name}</span>}
-						{this.props.myTricks.includes(trickKey) ?
-	  					 <button className="removeFromMyListButton" onClick={(e)=>{this.removeFromMyList(trickKey);e.stopPropagation()}}>Remove from My List</button> :
-						 <button className="addToMyListButton" onClick={(e)=>{this.addToMyList(trickKey);e.stopPropagation()}}>Add to My List</button>}				
+						{store.myTricks.includes(trickKey) ?
+	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{this.removeFromMyTricks(trickKey);e.stopPropagation()}}>Remove from My List</button> :
+						 <button className="addToMyTricksButton" onClick={(e)=>{this.addToMyTricks(trickKey);e.stopPropagation()}}>Add to My List</button>}				
 					</div>
 				)
 			}
 		}
 	})
-	let listSectionToUse3 = null
-	if (tricks["3"].length > 19){
-		listSectionToUse3 = 'listSection'
-	}
 
 	return (	
 		<div className="listDiv">
@@ -182,7 +179,7 @@ searchInputChange=(e)=>{
 				<span onClick={()=>{this.toggleExpandedSection("3")}}>{this.state.expandedSections["3"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">3 Ball</h3>
 				{this.state.expandedSections["3"] ?
-					<div className={listSectionToUse3}> 
+					<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
 					{tricks["3"]}
 					</div> : null
 				}
@@ -192,7 +189,7 @@ searchInputChange=(e)=>{
 				<span onClick={()=>{this.toggleExpandedSection("4")}}>{this.state.expandedSections["4"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">4 Ball</h3>
 				{this.state.expandedSections["4"] ?
-					<div className={listSectionToUse3}> 
+					<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
 					{tricks["4"]}
 					</div> : null
 				}
@@ -201,7 +198,7 @@ searchInputChange=(e)=>{
 				<span onClick={()=>{this.toggleExpandedSection("5")}}>{this.state.expandedSections["5"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">5 Ball</h3>
 				{this.state.expandedSections["5"] ?
-					<div className={listSectionToUse3}> 
+					<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
 					{tricks["5"]}
 					</div> : null
 				}

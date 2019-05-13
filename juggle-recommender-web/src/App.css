@@ -50,12 +50,12 @@ h1{
 .sectionHeader{
   display: inline-block;
 }
-.addToMyListButton{
+.addToMyTricksButton{
   float: right;
   background-color : cyan;
   border-radius: 3px;
 }
-.removeFromMyListButton{
+.removeFromMyTricksButton{
   float: right;
   background-color : yellow;
   border-radius: 3px;

@@ -5,7 +5,7 @@ import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
-
+import store from './store'
 console.log(observer)
 
 @observer
@@ -16,7 +16,6 @@ class App extends Component {
  		searchTrick : "",
  		selectedTricks : [],
  		selectedList : "allTricks",
- 		myTricks : [],
  		edges : [],
  		nodes : []
 	}
@@ -32,10 +31,8 @@ class App extends Component {
 	componentDidMount(){
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
 		if(myTricks){
-			this.setState({myTricks},()=>{
-				console.log("mounted default " ,defaultTricks)
-				this.updateRootTricks(defaultTricks)
-			})
+			store.setMyTricks(myTricks)
+			this.updateRootTricks(defaultTricks)
 			
 		}
 	}
@@ -66,17 +63,10 @@ class App extends Component {
  			})
  		}
  	}
- 	addToMyList=(trickKey)=>{
- 		const myTricks = this.state.myTricks
- 		myTricks.push(trickKey)
- 		console.log("added trick " ,trickKey)
- 		localStorage.setItem('myTricks', JSON.stringify(myTricks))
- 		this.setState({myTricks})
- 	}
 
- 	removeFromMyList=(trickKey)=>{
- 		console.log('removeFromMyListApps',trickKey)
- 		const myTricks = this.state.myTricks
+ 	removeFromMyTricks=(trickKey)=>{
+ 		console.log('removeFromMyTricksApps',trickKey)
+ 		const myTricks = store.myTricks
 		var index = myTricks.indexOf(trickKey);
 		if (index > -1) {
 		  myTricks.splice(index, 1);
@@ -151,7 +141,7 @@ class App extends Component {
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 
-	 			const involvedRoot = this.state.myTricks.includes(trickKey) || 
+	 			const involvedRoot = store.myTricks.includes(trickKey) || 
 	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			tempNodes[trickKey] = {
@@ -224,11 +214,10 @@ class App extends Component {
 				<button className={this.state.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("allTricks")}}>All Tricks</button>
 			</div>
 			<TrickList 
-				myTricks={this.state.myTricks} 
+				myTricks={store.myTricks} 
 				selectedList={this.state.selectedList}
 				selectTricks={this.selectTricks}
-				addToMyList={this.addToMyList}
-				removeFromMyList={this.removeFromMyList}
+				removeFromMyTricks={this.removeFromMyTricks}
 				selectedTricks={this.state.selectedTricks}
 				updateRootTricks={this.updateRootTricks}
 			/>
