@@ -6,7 +6,6 @@ import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
 import store from './store'
-console.log(observer)
 
 @observer
 class App extends Component {
@@ -46,7 +45,6 @@ class App extends Component {
  	render(){
  		store.nodes
  		store.edges
-	 	console.log("rendering app")
 		return (
 
 		<div className="App">

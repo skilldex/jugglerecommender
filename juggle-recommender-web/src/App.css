@@ -25,6 +25,10 @@ h1{
   border : 1px solid gray;
   margin-left : 1px;
   display: inline-block;
+  position: absolute;
+  z-index: 1000;
+  opacity : 100%;
+  background-color : white;
 }
 .listSection{
   max-height: 450px;
@@ -42,7 +46,7 @@ h1{
   display: inline-block;
   vertical-align: top;
   height : 1000px;
-  width  : 1000px;
+  width  : 100%;
   border: 1px solid black;
   text-align : left;
   position: fixed;
