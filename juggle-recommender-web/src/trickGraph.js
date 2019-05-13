@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import cytoscape from 'cytoscape'
 import {jugglingLibrary} from './jugglingLibrary.js'
-
+import store from './store'
 class TrickGraph extends React.Component {
 
     componentDidMount() {
@@ -12,9 +12,9 @@ class TrickGraph extends React.Component {
       this.TrickGraphToGraph()
     }
 
-    TrickGraphToGraph = () => {
-      const nodes = this.props.nodes
-      const edges = this.props.edges
+    TrickGraphToGraph=()=>{
+      let nodes = JSON.parse(JSON.stringify(this.props.nodes))
+      let edges = JSON.parse(JSON.stringify(this.props.edges))
       this.renderCytoscapeElement({ edges, nodes })
     }
 

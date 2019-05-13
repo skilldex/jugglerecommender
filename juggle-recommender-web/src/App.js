@@ -22,7 +22,7 @@ class App extends Component {
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
 		if(myTricks){
 			store.setMyTricks(myTricks)
-			this.updateRootTricks(defaultTricks)
+			store.updateRootTricks(defaultTricks)
 			
 		}
 	}
@@ -61,121 +61,15 @@ class App extends Component {
  		})
  	}
 
-
- 	setListType=(listType)=>{
- 		this.setState({
- 			selectedList : listType
- 		})
- 	}
- 	updateRootTricks=(rootTricks)=>{
- 		let nodes = []
- 		let tempNodes = {}
- 		let edges = []
-	 	if(this.state.selectedList === "myTricks" ){
-	 		rootTricks.forEach((trickKey)=>{
-	 			console.log('rootForEach')
-	 			const rootTrick = jugglingLibrary[trickKey]
-	 			if(rootTrick.dependents || rootTrick.prereqs){
-		 			tempNodes[trickKey] = {
-		 				id: trickKey,
-		 				name : rootTrick.name,
-		 				involved : 100
-		 			}
-		 		}
-		 		if(rootTrick.prereqs){
-		 			rootTrick.prereqs.forEach((prereqKey)=>{
-		 				const prereq = jugglingLibrary[prereqKey]
-		 				if(!tempNodes[prereqKey]){
-			 				tempNodes[prereqKey] = {
-			 					id: prereqKey,
-			 					name: prereq.name,
-			 					involved : 40
-			 				}
-			 			}
-		 				edges.push({ data: { source: trickKey, target: prereqKey } })
-
-		 			})
-		 		}
-	 			if(rootTrick.dependents){
-		 			rootTrick.dependents.forEach((dependentKey)=>{
-		 				const dependent = jugglingLibrary[dependentKey]
-			 			if(!tempNodes[dependentKey]){
-			 				tempNodes[dependentKey] = {
-			 					id: dependentKey,
-			 					name: dependent.name,
-			 					involved : 75
-			 				}
-			 			}
-		 				edges.push({ data: { source: dependentKey, target: trickKey } })
-
-		 			})
-		 		}
- 			})
-	 	}else if(this.state.selectedList === "allTricks"){
-	 		rootTricks.forEach((trickKey)=>{
-	 			const rootTrick = jugglingLibrary[trickKey]
-
-	 			const involvedRoot = store.myTricks.includes(trickKey) || 
-	 							store.selectedTricks.includes(trickKey) ? 100 : 0
-	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
-		 			tempNodes[trickKey] = {
-		 				id: trickKey,
-		 				name : rootTrick.name,
-		 				involved : involvedRoot
-		 			}
-		 		}
-	 			if(rootTrick.prereqs){
-	 				rootTrick.prereqs.forEach((prereqKey)=>{
-		 				const prereq = jugglingLibrary[prereqKey]
-		 				let involvedPrereq = involvedRoot > 0 ? 40 : 0
-		 				
-		 				if(
-		 					tempNodes[prereqKey] && 
-		 					tempNodes[prereqKey].involved > involvedPrereq
-		 				){
-		 					involvedPrereq = tempNodes[prereqKey].involved
-		 				}
-		 				tempNodes[prereqKey] = {
-		 					id: prereqKey,
-		 					name: prereq.name,
-		 					involved : involvedPrereq
-		 				}
-
-		 				edges.push({ data: { source: trickKey, target: prereqKey } })
-			 		})
-	 			}
- 				if(rootTrick.dependents){
- 					rootTrick.dependents.forEach((dependentKey)=>{
-		 				const dependent = jugglingLibrary[dependentKey]
-		 				let involvedDependent = involvedRoot > 0 ? 75 : 0
-		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
-		 					involvedDependent = tempNodes[dependentKey].involved
-		 				}
-		 				tempNodes[dependentKey] = {
-		 					id: dependentKey,
-		 					name: dependent.name,
-		 					involved : involvedDependent
-		 				}
-		 				edges.push({ data: { source: dependentKey, target: trickKey } })
-		 			})
- 				}
- 					
- 			})
-	 	}
-	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		nodes.push({ data: {...tempNodes[trickKey]}})
-	 	})
-
-    this.setState({edges, nodes}, function () {
-	 	this.setState({edges, nodes})
-    });
-
- 	}
+ 	
  	render(){
+ 		store.nodes
+ 		store.edges
  		const search= <div>
 	 						<label>Find trick </label><input onChange={this.searchInputChange}/>
 	 						<button type="submit" onClick={this.searchTrick}>Search</button>
 	 				  </div>
+	 	console.log("rendering app")
 		return (
 
 		<div className="App">
@@ -184,18 +78,16 @@ class App extends Component {
 				<h3>Gotta catch em all ;)</h3>	
 			</div>
 			<div className="listButtonDiv">
-				<button className={this.state.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("myTricks")}}>My Tricks</button>
-				<button className={this.state.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{this.setListType("allTricks")}}>All Tricks</button>
+				<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
+				<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
 			</div>
 			<TrickList 
 				myTricks={store.myTricks} 
-				selectedList={this.state.selectedList}
-
-				updateRootTricks={this.updateRootTricks}
+				selectedList={store.selectedList}
 			/>
 			<TrickGraph 
-				nodes = {this.state.nodes}
-				edges = {this.state.edges}
+				nodes = {store.nodes}
+				edges = {store.edges}
 			/>
 		</div>
 		);
