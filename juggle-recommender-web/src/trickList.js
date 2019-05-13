@@ -134,11 +134,6 @@ searchInputChange=(e)=>{
 
 
 }
- 		
-
-		
-	
-
  
  render() {
  	let tricks = {

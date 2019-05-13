@@ -1,6 +1,9 @@
 -status property for tricks, 'done'
 - clean remaining prereq data exceptions
 -refactor to use global store (ian)
+-maybe get rid of search button and make search happen with every keyinput
+
+-get rid of weird node url bug, sometimes clicking a node takes me to the wrong jugglinglibrary url
 
 
 -Style expand arrows as icons
