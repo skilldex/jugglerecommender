@@ -14,19 +14,9 @@ class App extends Component {
  		filters : [],
  		searchInput : "",
  		searchTrick : "",
- 		selectedTricks : [],
  		selectedList : "allTricks",
  		edges : [],
  		nodes : []
-	}
-	shouldComponentUpdate(nextProps,nextState){
-		if(nextState.searchInput !== this.state.searchInput || 
-			nextState.selectedTricks !== this.state.selectedTricks
-		){
-			return false
-		}else{
-			return true
-		}
 	}
 	componentDidMount(){
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
@@ -64,30 +54,14 @@ class App extends Component {
  		}
  	}
 
- 	removeFromMyTricks=(trickKey)=>{
- 		console.log('removeFromMyTricksApps',trickKey)
- 		const myTricks = store.myTricks
-		var index = myTricks.indexOf(trickKey);
-		if (index > -1) {
-		  myTricks.splice(index, 1);
-		}
- 		console.log("trick removed " ,trickKey)
- 		localStorage.setItem('myTricks', JSON.stringify(myTricks))
- 		this.setState({myTricks})
- 	}	
+	
  	searchTrick=()=>{
  		this.setState({
  			searchTrick: this.state.searchInput
  		})
  	}
 
- 	selectTricks=(selectedTricks)=>{
- 		if (this.state.selectedTricks[0] === selectedTricks[0] && this.state.selectedTricks.length === 1){
-			this.setState({selectedTricks: []})
-	 	}else{
-	 		this.setState({selectedTricks})
-	 	}
- 	}
+
  	setListType=(listType)=>{
  		this.setState({
  			selectedList : listType
@@ -142,7 +116,7 @@ class App extends Component {
 	 			const rootTrick = jugglingLibrary[trickKey]
 
 	 			const involvedRoot = store.myTricks.includes(trickKey) || 
-	 							this.state.selectedTricks.includes(trickKey) ? 100 : 0
+	 							store.selectedTricks.includes(trickKey) ? 100 : 0
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
@@ -216,9 +190,7 @@ class App extends Component {
 			<TrickList 
 				myTricks={store.myTricks} 
 				selectedList={this.state.selectedList}
-				selectTricks={this.selectTricks}
-				removeFromMyTricks={this.removeFromMyTricks}
-				selectedTricks={this.state.selectedTricks}
+
 				updateRootTricks={this.updateRootTricks}
 			/>
 			<TrickGraph 

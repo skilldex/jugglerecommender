@@ -20,7 +20,7 @@ class TrickCheckboxes extends Component {
  	}else if (checkedTricks[trickKey] != input.checked && !input.checked){
  		delete checkedTricks[trickKey]
  	}
- 	this.props.updateCheckedTricks(checkedTricks)
+ 	.updateCheckedTricks(checkedTricks)
 
  }
  renderNestedCheckboxes=(tricks)=>{
@@ -58,7 +58,7 @@ class TrickCheckboxes extends Component {
 
 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 		const trick = jugglingLibrary[trickKey]
-		if(this.props.filters.includes(trick.num) && !trick.parent){
+		if(.filters.includes(trick.num) && !trick.parent){
 			checkboxes.push(
 			<div className="checkboxDiv" key={trickKey + "div"}>
 				{trickKey in this.state.expandTrick ? 
