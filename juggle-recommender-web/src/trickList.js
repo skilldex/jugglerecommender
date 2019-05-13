@@ -10,12 +10,7 @@ class TrickList extends Component {
  	rootTricksLength : 0,
  	searchInput : "",
  	searchTrick : "",
- 	expandedSections : {
- 		"3" : true,
- 		"4" : false,
- 		"5" : false,
 
- 	}
  }
 shouldComponentUpdate(nextProps,nextState){
 	if(nextState.searchInput !== this.state.searchInput 
@@ -32,18 +27,8 @@ shouldComponentUpdate(nextProps,nextState){
 	}
 	store.updateRootTricks()
  }
- componentDidUpdate(prevProps,prevState){
- 	if(prevState.expandedSections !== this.state.expandedSections){
- 		store.updateRootTricks()
- 	}
- }
 
- toggleExpandedSection=(section)=>{
- 	console.log("Expanded " ,this.state.expandedSections, section)
- 	const expandedSections = {...this.state.expandedSections} 
- 	expandedSections[section] = !expandedSections[section]
- 	this.setState({expandedSections})
- }
+
 
 searchInputChange=(e)=>{
 	this.setState({
@@ -105,9 +90,9 @@ searchInputChange=(e)=>{
 	 			<button type="submit" onClick={this.searchTrick}>Search</button>
 	 		</div>
 			<div>
-				<span onClick={()=>{this.toggleExpandedSection("3")}}>{this.state.expandedSections["3"] ? "^" : ">"}</span>
+				<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">3 Ball</h3>
-				{this.state.expandedSections["3"] ?
+				{store.expandedSections["3"] ?
 					<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
 					{tricks["3"]}
 					</div> : null
@@ -115,18 +100,18 @@ searchInputChange=(e)=>{
 				
 			</div>
 			<div>
-				<span onClick={()=>{this.toggleExpandedSection("4")}}>{this.state.expandedSections["4"] ? "^" : ">"}</span>
+				<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">4 Ball</h3>
-				{this.state.expandedSections["4"] ?
+				{store.expandedSections["4"] ?
 					<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
 					{tricks["4"]}
 					</div> : null
 				}
 			</div>
 			<div>	
-				<span onClick={()=>{this.toggleExpandedSection("5")}}>{this.state.expandedSections["5"] ? "^" : ">"}</span>
+				<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "^" : ">"}</span>
 				<h3 className="sectionHeader">5 Ball</h3>
-				{this.state.expandedSections["5"] ?
+				{store.expandedSections["5"] ?
 					<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
 					{tricks["5"]}
 					</div> : null

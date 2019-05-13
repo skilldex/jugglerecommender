@@ -9,6 +9,11 @@ class Store {
 	@observable rootTricks = []
 	@observable nodes = []
 	@observable edges = []
+	@observable expandedSections = {
+		'3' : true,
+		'4' : false,
+		'5' : false
+	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks.push(trickKey)
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
@@ -51,18 +56,18 @@ class Store {
 				){
 					const trick = jugglingLibrary[trickKey]
 					let shouldPushTrick = true
-					/*
-					if (trick.num === 3 && this.state.expandedSections[3] &&
-						(trick.name.includes(this.state.searchTrick) || 
-							this.state.searchTrick === "")){
+					
+					if (trick.num === 3 && this.expandedSections['3'] ){//&&
+						// (trick.name.includes(this.searchTrick) || 
+						// 	this.searchTrick === "")){
 						shouldPushTrick = true
 					}
-					if (trick.num === 4 && this.state.expandedSections[4]){
+					if (trick.num === 4 && this.expandedSections['4']){
 						shouldPushTrick = true
 					}
-					if (trick.num === 5 && this.state.expandedSections[5]){
+					if (trick.num === 5 && this.expandedSections['5']){
 						shouldPushTrick = true
-					}*/
+					}
 					if (shouldPushTrick){
 
 						this.rootTricks.push(
@@ -173,6 +178,12 @@ class Store {
 	 	this.nodes = nodes
 	 	this.edges = edges
  	}
+
+ 	@action toggleExpandedSection=(section)=>{
+ 	console.log("Expanded " ,this.expandedSections, section)
+ 	this.expandedSections[section] = !this.expandedSections[section]
+ 	this.updateRootTricks()
+ }
 }
 
 const store = new Store()
