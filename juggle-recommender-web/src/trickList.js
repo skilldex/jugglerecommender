@@ -43,7 +43,7 @@ class TrickList extends Component {
 				tricks[trick.num.toString()].push(
 					<div onClick={()=>{store.selectTricks([trickKey])}} className={cardClass} key={trickKey + "div"}>
 						{trick.url ?
-						 <a href={trick.url}>{trick.name}</a> : 
+						 <a href={trick.url} target="_blank">{trick.name}</a> : 
 						 <span>{trick.name}</span>}
 						{store.myTricks.includes(trickKey) ?
 	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>Remove from My List</button> :

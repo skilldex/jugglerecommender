@@ -29,6 +29,8 @@ h1{
   z-index: 1000;
   opacity : 100%;
   background-color : white;
+  box-shadow : 5px 10px 8px #888888;;
+
 }
 .listSection{
   max-height: 450px;
@@ -77,6 +79,15 @@ h1{
 .selectedFilterButton{
   font-size: 40pt;
   background-color : darkgray;
+}
+.popupDiv{
+
+  position : absolute;
+  background-color : white;
+  z-index : 1200;
+  padding: 15px 10px 10px 15px;
+  border : 1px solid gray;
+  box-shadow : 5px 10px 8px #888888;;
 }
 .unselectedFilterButton{
   font-size: 40pt;

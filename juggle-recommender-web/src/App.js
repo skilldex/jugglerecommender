@@ -40,11 +40,20 @@ class App extends Component {
  	}
 
 
-
  	
  	render(){
  		store.nodes
  		store.edges
+ 		const popup = store.popupTrick ? <div style={{
+				left : store.popupTrick.x,
+				top : store.popupTrick.y
+			}} className="popupDiv">
+              <div>{store.popupTrick.id}</div> 
+              {jugglingLibrary[store.popupTrick.id].url ? <a 
+              	href={jugglingLibrary[store.popupTrick.id].url} 
+              	target="_blank"
+              >Library of Juggling</a> : null}
+            </div>  : null
 		return (
 
 		<div className="App">
@@ -60,18 +69,7 @@ class App extends Component {
 				myTricks={store.myTricks} 
 				selectedList={store.selectedList}
 			/>
-			{store.popupTrick ? <div style={{
-				left : store.popupTrick.x,
-				top : store.popupTrick.y,
-				position : "absolute",
-				backgroundColor : "white",
-				zIndex : "1200"
-			}} className="popUpDiv">
-              {store.popupTrick.id} 
-              {store.popupTrick.x} 
-              {store.popupTrick.y}
-            </div> : null
-          }
+			{popup}
 			<TrickGraph 
 				nodes = {store.nodes}
 				edges = {store.edges}
