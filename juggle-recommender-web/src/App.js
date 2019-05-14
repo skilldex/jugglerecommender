@@ -48,8 +48,8 @@ class App extends Component {
 				left : store.popupTrick.x,
 				top : store.popupTrick.y
 			}} className="popupDiv">
-              <div>{store.popupTrick.id}</div> 
-              {jugglingLibrary[store.popupTrick.id].url ? <a 
+              <h3>{store.popupTrick.id}</h3> 
+              {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
               	href={jugglingLibrary[store.popupTrick.id].url} 
               	target="_blank"
               >Library of Juggling</a> : null}
