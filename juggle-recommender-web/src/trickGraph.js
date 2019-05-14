@@ -6,8 +6,6 @@ import Graph from 'vis-react'
 import {toJS} from "mobx"
 
 class TrickGraph extends React.Component {
-
-
     render() {
       store.nodes
       store.edges
@@ -18,6 +16,7 @@ class TrickGraph extends React.Component {
       edges: edges
     }
     const options = {
+      autoResize: true,
       nodes: {borderWidth: 2},
       interaction: {hover: true},
       }
@@ -25,16 +24,12 @@ class TrickGraph extends React.Component {
     select: function(event) {
         var { nodes, edges } = event;
         console.log('event',event)
-
         store.setPopupTrick({
           'id': event.nodes[0],
           'x' : event.pointer.DOM.x,
           'y' : event.pointer.DOM.y+140})
     } 
-
-  }
-    
-  
+  } 
       return (
         <div className="graphDiv">
           <Graph
@@ -48,9 +43,7 @@ class TrickGraph extends React.Component {
           />
         </div>
       )
-
     }
-
 }
 
 export default TrickGraph
