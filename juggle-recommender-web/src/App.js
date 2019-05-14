@@ -40,11 +40,20 @@ class App extends Component {
  	}
 
 
-
  	
  	render(){
  		store.nodes
  		store.edges
+ 		const popup = store.popupTrick ? <div style={{
+				left : store.popupTrick.x,
+				top : store.popupTrick.y
+			}} className="popupDiv">
+              <h3>{store.popupTrick.id}</h3> 
+              {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
+              	href={jugglingLibrary[store.popupTrick.id].url} 
+              	target="_blank"
+              >Library of Juggling</a> : null}
+            </div>  : null
 		return (
 
 		<div className="App">
@@ -56,22 +65,21 @@ class App extends Component {
 				<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
 				<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
 			</div>
+			<div>
+				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
+				<span>My tricks</span>
+				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
+				<span>Prerequisite</span>
+				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
+				<span>Dependent</span>
+				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
+				<span>Not relevant</span>
+			</div>
 			<TrickList 
 				myTricks={store.myTricks} 
 				selectedList={store.selectedList}
 			/>
-			{store.popupTrick ? <div style={{
-				left : store.popupTrick.x,
-				top : store.popupTrick.y,
-				position : "absolute",
-				backgroundColor : "white",
-				zIndex : "1200"
-			}} className="popUpDiv">
-              {store.popupTrick.id} 
-              {store.popupTrick.x} 
-              {store.popupTrick.y}
-            </div> : null
-          }
+			{popup}
 			<TrickGraph 
 				nodes = {store.nodes}
 				edges = {store.edges}
