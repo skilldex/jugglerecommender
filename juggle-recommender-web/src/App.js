@@ -47,9 +47,14 @@ class App extends Component {
 			}} className="popupDiv">
               <h3>{store.popupTrick.id}</h3> 
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
+              	className="popupLink"
               	href={jugglingLibrary[store.popupTrick.id].url} 
               	target="_blank"
-              >Library of Juggling</a> : null}
+              >See explanation</a> : null}
+              {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <img
+              	className="popupGif"
+              	src={jugglingLibrary[store.popupTrick.id].url.toLowerCase().replace("/tricks","/JugglingGifs").replace("html","gif")} 
+              /> : null}
             </div>  : null
 		return (
 

@@ -1,6 +1,25 @@
 h1{
   font-size: 25pt;
 }
+.popupGif{
+  width: 200px;
+  height: 200px;
+  float: left;
+}
+.popupLink{
+  display: block;
+}
+.popupDiv{
+
+  position : absolute;
+  background-color : white;
+  z-index : 1200;
+  padding: 15px 10px 10px 15px;
+  border : 1px solid gray;
+  box-shadow : 5px 10px 8px #888888;;
+  border-radius: 8px;
+  text-align: center;
+}
 .title {
   text-align: center;
 }
@@ -80,17 +99,7 @@ h1{
   font-size: 40pt;
   background-color : darkgray;
 }
-.popupDiv{
 
-  position : absolute;
-  background-color : white;
-  z-index : 1200;
-  padding: 15px 10px 10px 15px;
-  border : 1px solid gray;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
-
-}
 .unselectedFilterButton{
   font-size: 40pt;
 }
