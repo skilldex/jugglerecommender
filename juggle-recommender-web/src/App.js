@@ -65,6 +65,16 @@ class App extends Component {
 				<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
 				<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
 			</div>
+			<div>
+				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
+				<span>My tricks</span>
+				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
+				<span>Prerequisite</span>
+				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
+				<span>Dependent</span>
+				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
+				<span>Not relevant</span>
+			</div>
 			<TrickList 
 				myTricks={store.myTricks} 
 				selectedList={store.selectedList}
