@@ -7,8 +7,13 @@
 - add title
 
 - disable expand toggle while loading
-
 - make checkboxes for showing (related, depends, prereqs) in graph
+Popup:
+	Scrape gifs
+	use scraped gif in popupgif
+	add difficulty 
+	add to my tricks
+	add to selected tricks 
 
 DIFFICULTY
 - scrape difficulty
