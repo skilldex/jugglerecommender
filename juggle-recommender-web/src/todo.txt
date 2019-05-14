@@ -1,25 +1,14 @@
 -status property for tricks, 'done'
 - clean remaining prereq data exceptions
 
--maybe get rid of search button and make search happen with every keyinput
-
--get rid of weird node url bug, sometimes clicking a node takes me to the wrong jugglinglibrary url
-
-
 -Style expand arrows as icons
 - add loading graphic
 - style add/remove buttons
 - add title
 
-
-
-- click node to expand selection
 - disable expand toggle while loading
 
 - make checkboxes for showing (related, depends, prereqs) in graph
-
--popup menu when clicking load on graph clicking on a node
--put url in popup
 
 DIFFICULTY
 - scrape difficulty
