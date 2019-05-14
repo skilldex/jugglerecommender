@@ -60,6 +60,18 @@ class App extends Component {
 				myTricks={store.myTricks} 
 				selectedList={store.selectedList}
 			/>
+			{store.popupTrick ? <div style={{
+				left : store.popupTrick.x,
+				top : store.popupTrick.y,
+				position : "absolute",
+				backgroundColor : "white",
+				zIndex : "1200"
+			}} className="popUpDiv">
+              {store.popupTrick.id} 
+              {store.popupTrick.x} 
+              {store.popupTrick.y}
+            </div> : null
+          }
 			<TrickGraph 
 				nodes = {store.nodes}
 				edges = {store.edges}

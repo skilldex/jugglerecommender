@@ -49,7 +49,7 @@ h1{
   width  : 100%;
   border: 1px solid black;
   text-align : left;
-  position: fixed;
+  
 }
 .sectionHeader{
   display: inline-block;

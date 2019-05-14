@@ -16,6 +16,7 @@ class Store {
 		'4' : false,
 		'5' : false
 	}
+	@observable popupTrick = null
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks.push(trickKey)
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
@@ -51,6 +52,7 @@ class Store {
  		if(e.target.value === ""){
  			this.searchTrick = ""
  		}
+ 		this.performSearch()
  	}
  		
  	@action performSearch=()=>{
@@ -220,6 +222,11 @@ class Store {
 	 	console.log("Expanded " ,this.expandedSections, section)
 	 	this.expandedSections[section] = !this.expandedSections[section]
 	 	this.updateRootTricks()
+	 }
+
+	 @action setPopupTrick=(clickedTrick)=>{
+	 	this.popupTrick = clickedTrick
+	 	console.log('clickedTrick',clickedTrick)
 	 }
 }
 
