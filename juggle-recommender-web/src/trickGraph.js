@@ -8,6 +8,8 @@ import {toJS} from "mobx"
 class TrickGraph extends React.Component {
 
 
+
+
     render() {
       store.nodes
       store.edges
@@ -18,6 +20,7 @@ class TrickGraph extends React.Component {
       edges: edges
     }
     const options = {
+      autoResize: true,
       nodes: {borderWidth: 2},
       interaction: {hover: true},
       }

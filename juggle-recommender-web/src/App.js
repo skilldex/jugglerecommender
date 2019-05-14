@@ -37,10 +37,7 @@ class App extends Component {
  		this.setState({
  			filters : newFilters
  		})
- 	}
-
-
- 	
+ 	} 	
  	render(){
  		store.nodes
  		store.edges
