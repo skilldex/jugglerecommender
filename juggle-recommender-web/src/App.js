@@ -41,11 +41,17 @@ class App extends Component {
  	render(){
  		store.nodes
  		store.edges
- 		const popup = store.popupTrick ? <div style={{
+ 		console.log("rendering app")
+ 		const addToMyTricksButton = store.popupTrick && store.myTricks.includes(store.popupTrick.id) ? 
+              		  <button style={{"backgroundColor" : "yellow", "margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>Remove from My Tricks</button> :
+ 		              <button style={{"backgroundColor" : "cyan", "margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>Add to My Tricks</button>
+
+ 		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
 				left : store.popupTrick.x,
 				top : store.popupTrick.y
 			}} className="popupDiv">
               <h3>{store.popupTrick.id}</h3> 
+              {addToMyTricksButton}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
               	className="popupLink"
               	href={jugglingLibrary[store.popupTrick.id].url} 
