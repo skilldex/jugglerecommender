@@ -30,11 +30,18 @@ class TrickList extends Component {
  		"7" : [],
  		
  	}
+ 	console.log('store.selectedTricks',store.selectedTricks)
  	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 		const trick = jugglingLibrary[trickKey]
 		var cardClass='listCard'
+
 		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
+			//console.log('store.selectedTricks',store.selectedTricks)
+			//console.log('trick.name.replace(" ","")',trick.name.replace(" ",""))
 			if(store.selectedTricks == trick.name.replace(" ","")){
+							console.log('store.selectedTricks',store.selectedTricks)
+			console.log('trick.name.replace(" ","")',trick.name.replace(" ",""))
+				console.log('SELECTED')
 				cardClass = 'selectedListCard'
 			}
 			if(store.selectedList === "allTricks" || 

@@ -1780,6 +1780,17 @@ let jugglingLibrary =
         "num": 6
     }
 }
+jugglingLibrary["High-LowShower"].name = "High-Low Shower"
+jugglingLibrary["High-LowCascade"].name = "High-Low Cascade"
+jugglingLibrary["ColumnBoxVar"].name = "Column BoxVar" 
+jugglingLibrary["ColumnOverVar"].name = "Column OverVar" 
+jugglingLibrary["RainbowArches"].name = "Rainbow Arches"
+jugglingLibrary["ColumnShowVar"].name = "Column ShowVar"
+jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed-Arm ReverseCascade"
+jugglingLibrary["CrossedArmFactory"].name = "CrossedArmFactory"
+jugglingLibrary["FlyingDiscoDrop"].name = "Flying DiscoDrop"
+jugglingLibrary["SymmetricGeorgianScuffle"].name = "Symmetric GeorgianScuffle"
+jugglingLibrary["SymmetricGeorgianShuffle"].name = "Symmetric GeorgianShuffle"
 let trickNamesToKeys = {}
 let finalLibrary = {}
 let defaultTricks = []

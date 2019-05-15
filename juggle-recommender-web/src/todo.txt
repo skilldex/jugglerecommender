@@ -15,6 +15,12 @@ Popup:
 	add to my tricks
 	add to selected tricks 
 
+POSSIBLE SELECTION OPTION:
+-Don't show the entire 'all tricks' list in the graph
+-Allow multiple selected tricks
+-show all selected tricks in graph
+-make a select all button to select all of the tricks in the list
+
 DIFFICULTY
 - scrape difficulty
 - represent difficulty in nodes(maybe with border color, node shape, something else)
@@ -24,3 +30,8 @@ USERS:
 -login
 -allow users to add tricks
 -toggle tricks by user added tricks
+
+BUGS:
+-Some tricks do not get background changed when selected, this is because their
+	key doesn't match their name. Under the object in jugglingLibrary is a list of corrected ones
+
