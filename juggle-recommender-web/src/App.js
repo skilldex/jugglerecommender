@@ -73,10 +73,6 @@ class App extends Component {
 				<h1>Juggledex</h1>
 				<h3>Gotta catch em all ;)</h3>	
 			</div>
-			<div className="listButtonDiv">
-				<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
-				<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
-			</div>
 			<div>
 				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
 				<span>My tricks </span>

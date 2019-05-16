@@ -101,6 +101,10 @@ alphabeticalSortObject(data, attr) {
 			<div className={this.state.showText ? "displayNone" : {}}>
 				
 			 	<div>
+			 		<div className="listButtonDiv">
+						<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
+						<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
+					</div>
 		 			<input onChange={store.searchInputChange}/>
 		 			<button type="submit" onClick={store.performSearch}>Search</button>
 		 		</div>

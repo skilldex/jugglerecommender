@@ -68,11 +68,11 @@ h1{
   overflow-x: hidden;
 }
 .selectedListButton{
-  font-size: 20pt;
+  font-size: 12pt;
   background-color : darkgray;
 }
 .unselectedListButton{
-  font-size: 20pt;
+  font-size: 12pt;
 }
 .graphDiv{
   display: inline-block;
