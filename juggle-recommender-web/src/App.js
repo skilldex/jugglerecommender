@@ -43,8 +43,8 @@ class App extends Component {
  		store.edges
  		console.log("rendering app")
  		const addToMyTricksButton = store.popupTrick && store.myTricks.includes(store.popupTrick.id) ? 
-              		  <button style={{"backgroundColor" : "yellow", "margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>Remove from My Tricks</button> :
- 		              <button style={{"backgroundColor" : "cyan", "margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>Add to My Tricks</button>
+              		  <button style={{"backgroundColor" : "yellow", "margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>&#9733;</button> :
+ 		              <button style={{"backgroundColor" : "cyan", "margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>&#9734;</button>
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
