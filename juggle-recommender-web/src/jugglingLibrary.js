@@ -1,11 +1,13 @@
 let jugglingLibrary = 
 {
-"Alex": {
+    "Alex": {
         "prereqs": [
             "531 Mills Mess",
             "Orca's Mess"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/alex.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Alex.html",
         "name": "Alex",
         "num": 3
@@ -15,6 +17,8 @@ let jugglingLibrary =
             "Infinity"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/alsslide.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Al'sSlide.html",
         "name": "Al's Slide",
         "num": 3
@@ -25,6 +29,8 @@ let jugglingLibrary =
             "Penman's Box"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/arrowofasai.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ArrowofAsai.html",
         "name": "Arrow of Asai",
         "num": 3
@@ -34,6 +40,8 @@ let jugglingLibrary =
             "Cascade"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/backcrosses.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Backcrosses.html",
         "name": "Backcrosses",
         "num": 3
@@ -46,6 +54,8 @@ let jugglingLibrary =
         "related": [
             "Cherry Picker"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/bostonmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BostonMess.html",
         "name": "Boston Mess",
         "num": 3
@@ -55,6 +65,8 @@ let jugglingLibrary =
             "Boston Mess"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/cherrypicker.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CherryPicker.html",
         "name": "Cherry Picker",
         "num": 3
@@ -67,6 +79,8 @@ let jugglingLibrary =
         "related": [
             "Luke's Shuffle"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/bostonshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BostonShuffle.html",
         "name": "Boston Shuffle",
         "num": 3
@@ -77,6 +91,8 @@ let jugglingLibrary =
             "Takeouts"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/burkesslam.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Burke'sSlam.html",
         "name": "Burke's Slam",
         "num": 3
@@ -87,6 +103,8 @@ let jugglingLibrary =
             "Boston Shuffle"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/petersshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Peter'sShuffle.html",
         "name": "Peter's Shuffle",
         "num": 3
@@ -98,6 +116,8 @@ let jugglingLibrary =
         "related": [
             "N-Box"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/box.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Box.html",
         "name": "Box",
         "num": 3
@@ -109,6 +129,8 @@ let jugglingLibrary =
         "related": [
             "Karas's Box"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/bizarrebox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BizarreBox.html",
         "name": "Bizarre Box",
         "num": 3
@@ -121,6 +143,8 @@ let jugglingLibrary =
         "related": [
             "Burst Box"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/brokenbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenBox.html",
         "name": "Broken Box",
         "num": 3
@@ -132,6 +156,8 @@ let jugglingLibrary =
         "related": [
             "Gilligan's Box"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/burstbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BurstBox.html",
         "name": "Burst Box",
         "num": 3
@@ -141,6 +167,8 @@ let jugglingLibrary =
             "Box"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/extendedbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ExtendedBox.html",
         "name": "Extended Box",
         "num": 3
@@ -150,6 +178,8 @@ let jugglingLibrary =
             "Broken Box"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/gilligansbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Gilligan'sBox.html",
         "name": "Gilligan's Box",
         "num": 3
@@ -159,6 +189,8 @@ let jugglingLibrary =
             "Bizarre Box"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/karasbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Karas'Box.html",
         "name": "Karas' Box",
         "num": 3
@@ -171,6 +203,8 @@ let jugglingLibrary =
         "related": [
             "Boston Shuffle"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/lukeshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Luke'sShuffle.html",
         "name": "Luke's Shuffle",
         "num": 3
@@ -183,6 +217,8 @@ let jugglingLibrary =
         "related": [
             "Luke's Shuffle"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/nbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/N-Box.html",
         "name": "N-Box",
         "num": 3
@@ -193,6 +229,8 @@ let jugglingLibrary =
             "Luke's Shuffle"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/invertedbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/InvertedBox.html",
         "name": "Inverted Box",
         "num": 3
@@ -203,6 +241,8 @@ let jugglingLibrary =
             "Penman's Pandemonium"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/penmansbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Penman'sBox.html",
         "name": "Penman's Box",
         "num": 3
@@ -213,6 +253,8 @@ let jugglingLibrary =
             "Shuffle-Switch"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/swapbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SwapBox.html",
         "name": "Swap Box",
         "num": 3
@@ -224,6 +266,8 @@ let jugglingLibrary =
         "related": [
             "Threaded Box"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/switchedbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SwitchedBox.html",
         "name": "Switched Box",
         "num": 3
@@ -233,6 +277,8 @@ let jugglingLibrary =
             "Box"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/threadedbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ThreadedBox.html",
         "name": "Threaded Box",
         "num": 3
@@ -242,6 +288,8 @@ let jugglingLibrary =
             "Box</a>,<a href=\"InvertedShower.html\"> Inverted Shower"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/truebox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TrueBox.html",
         "name": "True Box",
         "num": 3
@@ -253,6 +301,8 @@ let jugglingLibrary =
         "related": [
             "Burst Box"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/underarmbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmBox.html",
         "name": "Underarm Box",
         "num": 3
@@ -263,6 +313,8 @@ let jugglingLibrary =
             "Fake Mess "
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/burkesbarrage.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Burke'sBarrage.html",
         "name": "Burke's Barrage",
         "num": 3
@@ -274,6 +326,8 @@ let jugglingLibrary =
         "related": [
             "Burke's Barrage"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/takeouts.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takeouts.html",
         "name": "Takeouts",
         "num": 3
@@ -281,6 +335,8 @@ let jugglingLibrary =
     "Cascade": {
         "prereqs": [],
         "related": [],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/3ballcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Cascade.html",
         "name": "Cascade",
         "num": 3
@@ -293,6 +349,8 @@ let jugglingLibrary =
         "related": [
             "Cascade"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversecascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCascade.html",
         "name": "Reverse Cascade",
         "num": 3
@@ -302,6 +360,8 @@ let jugglingLibrary =
             "Cascade"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/highlowcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/High-LowCascade.html",
         "name": "High-Low Var.",
         "num": 3
@@ -313,6 +373,8 @@ let jugglingLibrary =
         "related": [
             "Reverse Chops"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/chops.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Chops.html",
         "name": "Chops",
         "num": 3
@@ -323,6 +385,8 @@ let jugglingLibrary =
             "Takeouts"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversechops.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseChops.html",
         "name": "Reverse Chops",
         "num": 3
@@ -332,6 +396,8 @@ let jugglingLibrary =
         "related": [
             "Four Ball Columns"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/columnsonehand.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Columns.html",
         "name": "Columns",
         "num": 3
@@ -344,6 +410,8 @@ let jugglingLibrary =
         "related": [
             "Shower Variation"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/columnsbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnBoxVar.html",
         "name": "Box Variation",
         "num": 3
@@ -355,6 +423,8 @@ let jugglingLibrary =
         "related": [
             "Reverse Crossunder"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/crossunder.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Crossunder.html",
         "name": "Crossunder",
         "num": 3
@@ -366,6 +436,8 @@ let jugglingLibrary =
         "related": [
             "Reverse Infinity"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/infinity.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Infinity.html",
         "name": "Infinity",
         "num": 3
@@ -376,6 +448,8 @@ let jugglingLibrary =
             "Crossunder"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/mattsmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Matt'sMess.html",
         "name": "Matt's Mess",
         "num": 3
@@ -387,6 +461,8 @@ let jugglingLibrary =
         "related": [
             "Infinity"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/columnover.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnOverVar.html",
         "name": "Overthrow Var.",
         "num": 3
@@ -398,6 +474,8 @@ let jugglingLibrary =
         "related": [
             "Overthrow Variation"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/rainbowarches.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/RainbowArches.html",
         "name": "Rainbow Cross",
         "num": 3
@@ -409,6 +487,8 @@ let jugglingLibrary =
         "related": [
             "Crossunder"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversecrossunder.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCrossunder.html",
         "name": "Reverse Crossunder",
         "num": 3
@@ -420,6 +500,8 @@ let jugglingLibrary =
         "related": [
             "Infinity"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reverseinfinity.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseInfinity.html",
         "name": "Reverse Infinity",
         "num": 3
@@ -432,6 +514,8 @@ let jugglingLibrary =
         "related": [
             "Box Variation"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/columnsshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnShowVar.html",
         "name": "Shower Variation",
         "num": 3
@@ -441,6 +525,8 @@ let jugglingLibrary =
             "Columns"
         ],
         "related": [],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shuffleswitch.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffle-Switch.html",
         "name": "Shuffle-Switch",
         "num": 3
@@ -452,6 +538,8 @@ let jugglingLibrary =
         "related": [
             "Crossed-Arm Reverse Cascade"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/crossedarmcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmCascade.html",
         "name": "Crossed-Arm Cascade",
         "num": 3
@@ -463,6 +551,8 @@ let jugglingLibrary =
         "related": [
             "Crossed-Arm Cascade"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/crossedarmreversecascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmReverseCascade.html",
         "name": "Reverse Variation",
         "num": 3
@@ -472,6 +562,8 @@ let jugglingLibrary =
             "Shower"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/davidsdilemma.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/David'sDilemma.html",
         "name": "David's Dilemma",
         "num": 3
@@ -481,6 +573,8 @@ let jugglingLibrary =
         "related": [
             "Yo-Yo"
         ],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/fakecolumns.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FakeColumns.html",
         "name": "Fake Columns",
         "num": 3
@@ -492,6 +586,8 @@ let jugglingLibrary =
         "related": [
             "Oy-Oy"
         ],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/yoyo.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Yo-Yo.html",
         "name": "Yo-Yo",
         "num": 3
@@ -501,6 +597,8 @@ let jugglingLibrary =
             "Yo-Yo"
         ],
         "related": [],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/oyoy.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Oy-Oy.html",
         "name": "Oy-Oy",
         "num": 3
@@ -510,6 +608,8 @@ let jugglingLibrary =
             "Fake Columns"
         ],
         "related": [],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/factory.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Factory.html",
         "name": "Factory",
         "num": 3
@@ -519,6 +619,8 @@ let jugglingLibrary =
             "Factory"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/crossedarmfactory.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmFactory.html",
         "name": "Crossed-Arm Var.",
         "num": 3
@@ -529,6 +631,8 @@ let jugglingLibrary =
             "Mangham's Mangle"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/relfsfactory.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sFactory.html",
         "name": "Relf's Factory",
         "num": 3
@@ -540,6 +644,8 @@ let jugglingLibrary =
         "related": [
             "Inverted Shower"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversefactory.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseFactory.html",
         "name": "Reverse Factory",
         "num": 3
@@ -550,6 +656,8 @@ let jugglingLibrary =
             "N-Box"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/zebrafactory.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ZebraFactory.html",
         "name": "Zebra Factory",
         "num": 3
@@ -560,6 +668,8 @@ let jugglingLibrary =
             "Orka's Mess</a>, <a href=\"HandsOfTime.html\">Hands of Time"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/flyingdiscodrop.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FlyingDiscoDrop.html",
         "name": "Flying Disco Drop",
         "num": 3
@@ -571,6 +681,8 @@ let jugglingLibrary =
         "related": [
             " Relf's Revenge"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/follow.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Follow.html",
         "name": "Follow",
         "num": 3
@@ -580,6 +692,8 @@ let jugglingLibrary =
             "Georgian Shuffle"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/forklift.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Forklift.html",
         "name": "Forklift",
         "num": 3
@@ -589,6 +703,8 @@ let jugglingLibrary =
             "Crossed-Arm Cascade"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/diadochiccascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FranticCascade.html",
         "name": "Frantic Cascade",
         "num": 3
@@ -600,6 +716,8 @@ let jugglingLibrary =
         "related": [
             "Kraken</a>, <a href=\"Kato'sCrux.html\">Kato's Crux</a>, <a href=\"Shuffler'sMess.html\">Shuffler's Mess</a>, <a href=\"441MillsMess.html\">441 Mills Mess"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/frostbite.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Frostbite.html",
         "name": "Frostbite",
         "num": 3
@@ -612,6 +730,8 @@ let jugglingLibrary =
         "related": [
             "Symmetric Georgian Scuffle"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/georgianscuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianScuffle.html",
         "name": "Georgian Scuffle",
         "num": 3
@@ -624,6 +744,8 @@ let jugglingLibrary =
         "related": [
             "Symmetric Georgian Shuffle"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/symgeorgianscuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianScuffle.html",
         "name": "Symmetric Var.",
         "num": 3
@@ -636,6 +758,8 @@ let jugglingLibrary =
             "Singapore Shuffle",
             "Davenport Shuffle"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/georgianshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianShuffle.html",
         "name": "Georgian Shuffle",
         "num": 3
@@ -647,6 +771,8 @@ let jugglingLibrary =
         "related": [
             "Davenport Shuffle"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/buffaloshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BuffaloShuffle.html",
         "name": "Buffalo Shuffle",
         "num": 3
@@ -659,6 +785,8 @@ let jugglingLibrary =
             "Singapore Shuffle",
             "Buffalo Shuffle"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/davenportshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/DavenportShuffle.html",
         "name": "Davenport Shuffle",
         "num": 3
@@ -670,6 +798,8 @@ let jugglingLibrary =
         "related": [
             "Davenport Shuffle"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/singaporeshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SingaporeShuffle.html",
         "name": "Singapore Shuffle",
         "num": 3
@@ -681,6 +811,8 @@ let jugglingLibrary =
         "related": [
             "Singapore Shuffle"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/symgeorgianshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianShuffle.html",
         "name": "Symmetric Var.",
         "num": 3
@@ -690,6 +822,8 @@ let jugglingLibrary =
             "Georgian Shuffle"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/grace.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Grace.html",
         "name": "Grace",
         "num": 3
@@ -702,6 +836,8 @@ let jugglingLibrary =
         "related": [
             "Shower"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/halfshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Shower.html",
         "name": "Half-Shower",
         "num": 3
@@ -712,6 +848,8 @@ let jugglingLibrary =
             "Windmill"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/handsoftime.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/HandsOfTime.html",
         "name": "Hands of Time",
         "num": 3
@@ -722,6 +860,8 @@ let jugglingLibrary =
             "Penman's Pandemonium"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/harrisonshang.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Harrison'sHang.html",
         "name": "Harrison's Hang",
         "num": 3
@@ -732,6 +872,8 @@ let jugglingLibrary =
             "Kraken"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/icelandicshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/IcelandicShuffle.html",
         "name": "Icelandic Shuffle",
         "num": 3
@@ -741,6 +883,8 @@ let jugglingLibrary =
             "Factory"
         ],
         "related": [],
+        "difficulty": "8",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/invertedshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/InvertedShower.html",
         "name": "Inverted Shower",
         "num": 3
@@ -751,6 +895,8 @@ let jugglingLibrary =
             "Rubenstein's Revenge"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/jeanne.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Jeanne.html",
         "name": "Jeanne",
         "num": 3
@@ -762,6 +908,8 @@ let jugglingLibrary =
         "related": [
             "Half-Shower"
         ],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/jugglerstennis.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/JugglersTennis.html",
         "name": "Juggler's Tennis",
         "num": 3
@@ -771,6 +919,8 @@ let jugglingLibrary =
             "Sandbox Shuffle"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/katoscrux.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Kato'sCrux.html",
         "name": "Kato's Crux",
         "num": 3
@@ -780,6 +930,8 @@ let jugglingLibrary =
             "Kingston Shuffle"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/kingofhearts.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/KingofHearts.html",
         "name": "King of Hearts",
         "num": 3
@@ -791,6 +943,8 @@ let jugglingLibrary =
         "related": [
             "King of Hearts"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/kingstonshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/KingstonShuffle.html",
         "name": "Kingston Shuffle",
         "num": 3
@@ -801,6 +955,8 @@ let jugglingLibrary =
             "Cherry Picker"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/kraken.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Kraken.html",
         "name": "Kraken",
         "num": 3
@@ -812,6 +968,8 @@ let jugglingLibrary =
         "related": [
             "Extended Box"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/levels.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Levels.html",
         "name": "Levels",
         "num": 3
@@ -822,6 +980,8 @@ let jugglingLibrary =
             "Buffalo Shuffle"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/lukeslobotomy.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Luke'sLobotomy.html",
         "name": "Luke's Lobotomy",
         "num": 3
@@ -833,6 +993,8 @@ let jugglingLibrary =
         "related": [
             "Luke's Lobotomy"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/makasmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Maka'sMess.html",
         "name": "Maka's Mess",
         "num": 3
@@ -842,6 +1004,8 @@ let jugglingLibrary =
             "Cascade"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/manghamsmangle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Mangham'sMangle.html",
         "name": "Mangham's Mangle",
         "num": 3
@@ -852,6 +1016,8 @@ let jugglingLibrary =
             "Windmill"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/mardensmarvel.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Marden'sMarvel.html",
         "name": "Marden's Marvel",
         "num": 3
@@ -863,6 +1029,8 @@ let jugglingLibrary =
         "related": [
             "Mills Mess"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/mikesmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Mike'sMess.html",
         "name": "Mike's Mess",
         "num": 3
@@ -872,6 +1040,8 @@ let jugglingLibrary =
             "Reverse Cascade"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/millsmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/MillsMess.html",
         "name": "Mills Mess",
         "num": 3
@@ -882,6 +1052,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/441millsmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/441MillsMess.html",
         "name": "441 Mills Mess",
         "num": 3
@@ -892,6 +1064,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/531millsmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/531MillsMess.html",
         "name": "531 Mills Mess",
         "num": 3
@@ -902,6 +1076,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/charley.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Charley.html",
         "name": "Charley",
         "num": 3
@@ -913,6 +1089,8 @@ let jugglingLibrary =
         "related": [
             "Mills Mess"
         ],
+        "difficulty": "3",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/fakemess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FakeMess.html",
         "name": "Fake Mess",
         "num": 3
@@ -922,6 +1100,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/flippedmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/FlippedMess.html",
         "name": "Flipped Mess",
         "num": 3
@@ -933,6 +1113,8 @@ let jugglingLibrary =
         "related": [
             "Windmill"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/flosmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Flo'sMess.html",
         "name": "Flo's Mess",
         "num": 3
@@ -942,6 +1124,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/halfmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Mess.html",
         "name": "Half-Mess",
         "num": 3
@@ -951,6 +1135,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversemess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseMillsMess.html",
         "name": "Reverse Mills Mess",
         "num": 3
@@ -961,6 +1147,8 @@ let jugglingLibrary =
             "Shower"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/millsmessshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/MillsMessShower.html",
         "name": "Mills Mess Shower",
         "num": 3
@@ -971,6 +1159,8 @@ let jugglingLibrary =
             "Rubenstein's Revenge"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/nelsonsnemesis.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Nelson'sNemesis.html",
         "name": "Nelson's Nemesis",
         "num": 3
@@ -982,6 +1172,8 @@ let jugglingLibrary =
         "related": [
             "Compressed Olas"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/olas.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Olas.html",
         "name": "Olas",
         "num": 3
@@ -991,6 +1183,8 @@ let jugglingLibrary =
             "Olas"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/olascomp.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CompressedOlas.html",
         "name": "Compressed Olas",
         "num": 3
@@ -1000,6 +1194,8 @@ let jugglingLibrary =
             "Cascade"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/orkasmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Orka'sMess.html",
         "name": "Orka's Mess",
         "num": 3
@@ -1010,6 +1206,8 @@ let jugglingLibrary =
             "Factory",
             "Inverted Shower"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/pendulumdrop.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/PendulumDrop.html",
         "name": "Pendulum Drop",
         "num": 3
@@ -1022,6 +1220,8 @@ let jugglingLibrary =
         "related": [
             "Frances"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/penmanspandemonium.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Penman'sPandemonium.html",
         "name": "Penman's Pandemonium",
         "num": 3
@@ -1035,6 +1235,8 @@ let jugglingLibrary =
             "Relf's Revenge 6",
             "Relf's Rubensteins"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/relfsrevenge.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRevenge.html",
         "name": "Relf's Revenge",
         "num": 3
@@ -1046,6 +1248,8 @@ let jugglingLibrary =
         "related": [
             "Relf's Revenge"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/relfsrevenge6.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRevenge6.html",
         "name": "Relf's Revenge 6",
         "num": 3
@@ -1058,6 +1262,8 @@ let jugglingLibrary =
         "related": [
             "Relf's Revenge"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/relfsrubensteins.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRubensteins.html",
         "name": "Relf's Rubensteins",
         "num": 3
@@ -1067,6 +1273,8 @@ let jugglingLibrary =
             "Cascade"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/ripleysrainbow.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Ripley'sRainbow.html",
         "name": "Ripley's Rainbow",
         "num": 3
@@ -1077,6 +1285,8 @@ let jugglingLibrary =
             "Kingston Shuffle"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/rolfswave.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Rolf'sWave.html",
         "name": "Rolf's Wave",
         "num": 3
@@ -1086,6 +1296,8 @@ let jugglingLibrary =
             "Rubenstein's Revenge"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/romeosrevenge.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Romeo'sRevenge.html",
         "name": "Romeo's Revenge",
         "num": 3
@@ -1097,6 +1309,8 @@ let jugglingLibrary =
         "related": [
             "Romeo's Revenge"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/rubensteinsrevenge.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Rubenstein'sRevenge.html",
         "name": "Rubenstein's Revenge",
         "num": 3
@@ -1109,6 +1323,8 @@ let jugglingLibrary =
             "Penman's Pandemonium",
             "Frances"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/sandboxshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/SandboxShuffle.html",
         "name": "Sandbox Shuffle",
         "num": 3
@@ -1118,6 +1334,8 @@ let jugglingLibrary =
             "Sandbox Shuffle"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/gnomevariation.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Frances.html",
         "name": "Frances",
         "num": 3
@@ -1130,6 +1348,8 @@ let jugglingLibrary =
         "related": [
             "Four Ball Shower"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shower.html",
         "name": "Shower",
         "num": 3
@@ -1142,6 +1362,8 @@ let jugglingLibrary =
         "related": [
             "Broken Box"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/brokenshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenShower.html",
         "name": "Broken Shower",
         "num": 3
@@ -1153,6 +1375,8 @@ let jugglingLibrary =
         "related": [
             "Reverse Variation"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/crossedarmshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmShower.html",
         "name": "Crossed-Arm Shower",
         "num": 3
@@ -1164,6 +1388,8 @@ let jugglingLibrary =
         "related": [
             "531"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/high-lowshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/High-LowShower.html",
         "name": "High-Low Var.",
         "num": 3
@@ -1175,6 +1401,8 @@ let jugglingLibrary =
         "related": [
             "Crossed-Arm Shower"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversecrossedarmshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseCrossedArmShower.html",
         "name": "Reverse Crossed-Arm Shower",
         "num": 3
@@ -1187,6 +1415,8 @@ let jugglingLibrary =
         "related": [
             "Swap Box"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/showerswap.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ShowerSwapVariation.html",
         "name": "Swap Variation",
         "num": 3
@@ -1198,6 +1428,8 @@ let jugglingLibrary =
         "related": [
             "Underarm Box"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/underarmshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmShower.html",
         "name": "Underarm Var.",
         "num": 3
@@ -1207,6 +1439,8 @@ let jugglingLibrary =
             "Shower"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/showercascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shower-Cascade.html",
         "name": "Shower Cascade",
         "num": 3
@@ -1219,6 +1453,8 @@ let jugglingLibrary =
         "related": [
             "Low Shuffle"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffle.html",
         "name": "Shuffle",
         "num": 3
@@ -1228,6 +1464,8 @@ let jugglingLibrary =
             "Shuffle"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/lowshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/LowShuffle.html",
         "name": "Low Shuffle",
         "num": 3
@@ -1238,6 +1476,8 @@ let jugglingLibrary =
             "Mills Mess</a>, <a href=\"531MillsMess.html\">531 Mills Mess"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shufflersmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffler'sMess.html",
         "name": "Shuffler's Mess",
         "num": 3
@@ -1247,6 +1487,8 @@ let jugglingLibrary =
             "Shower"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/snake.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Snake.html",
         "name": "Snake",
         "num": 3
@@ -1256,6 +1498,8 @@ let jugglingLibrary =
             "Half-Shower"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/statueofliberty.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/StatueofLiberty.html",
         "name": "Statue of Liberty",
         "num": 3
@@ -1265,6 +1509,8 @@ let jugglingLibrary =
             "Takeouts</a>, <a href=\"FlyingDiscoDrop.html\">Flying Disco Drop"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/takearound.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Takearound.html",
         "name": "Takearound",
         "num": 3
@@ -1272,6 +1518,8 @@ let jugglingLibrary =
     "ThreeInOne": {
         "prereqs": [],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/threeinone.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ThreeInOne.html",
         "name": "Three In One",
         "num": 3
@@ -1282,6 +1530,8 @@ let jugglingLibrary =
             "Boston Shuffle"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/tomstrick.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Tom'sTrick.html",
         "name": "Tom's Trick",
         "num": 3
@@ -1291,6 +1541,8 @@ let jugglingLibrary =
             "Shower"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/triazzle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Triazzle.html",
         "name": "Triazzle",
         "num": 3
@@ -1298,6 +1550,8 @@ let jugglingLibrary =
     "TruffleShuffle": {
         "prereqs": [],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/truffleshuffle.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TruffleShuffle.html",
         "name": "Truffle Shuffle",
         "num": 3
@@ -1308,6 +1562,8 @@ let jugglingLibrary =
             "Burke's Barrage"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/weave.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Weave.html",
         "name": "Weave",
         "num": 3
@@ -1317,6 +1573,8 @@ let jugglingLibrary =
             "Weave"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/orinocoflow.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/OrinocoFlow.html",
         "name": "Orinoco Flow",
         "num": 3
@@ -1328,6 +1586,8 @@ let jugglingLibrary =
         "related": [
             "Four Ball Windmill"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/windmill.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Windmill.html",
         "name": "Windmill",
         "num": 3
@@ -1340,6 +1600,8 @@ let jugglingLibrary =
             "Chops</a>, <a href=\"FranticCascade.html\">Frantic Cascade",
             "Statue of Liberty"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/chopshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ChopShower.html",
         "name": "Chop Shower",
         "num": 3
@@ -1347,6 +1609,8 @@ let jugglingLibrary =
     "423": {
         "prereqs": [],
         "related": [],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/423.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/423.html",
         "name": "423",
         "num": 3
@@ -1356,6 +1620,8 @@ let jugglingLibrary =
             "423"
         ],
         "related": [],
+        "difficulty": "2",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/thew.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/TheW.html",
         "name": "The W",
         "num": 3
@@ -1365,6 +1631,8 @@ let jugglingLibrary =
         "related": [
             "Box"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/441.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Box(441).html",
         "name": "441 (Half-Box)",
         "num": 3
@@ -1376,6 +1644,8 @@ let jugglingLibrary =
         "related": [
             "441 Mills Mess"
         ],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reverse441.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/Reverse441(Half-Box).html",
         "name": "Reverse 441",
         "num": 3
@@ -1385,6 +1655,8 @@ let jugglingLibrary =
             "Shower"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/531.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/531.html",
         "name": "531",
         "num": 3
@@ -1398,6 +1670,8 @@ let jugglingLibrary =
         "related": [
             "Stacked variation"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallBox.html",
         "name": "Box",
         "num": 4
@@ -1410,6 +1684,8 @@ let jugglingLibrary =
         "related": [
             "Four Ball Box"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballstackedbox.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallStackedBox.html",
         "name": "Stacked Variation",
         "num": 4
@@ -1419,6 +1695,8 @@ let jugglingLibrary =
             "Mills Mess"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/cliffsconfusion.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Cliff'sConfusion.html",
         "name": "Cliff's Confusion",
         "num": 4
@@ -1431,6 +1709,8 @@ let jugglingLibrary =
         "related": [
             "Four Ball Rainbow Cross"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballcolumns.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallColumns.html",
         "name": "Columns",
         "num": 4
@@ -1441,6 +1721,8 @@ let jugglingLibrary =
             "Rainbow Cross"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballrainbowcross.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallRainbowCross.html",
         "name": "Rainbow Cross",
         "num": 4
@@ -1450,6 +1732,8 @@ let jugglingLibrary =
             "Rubenstein's Revenge"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/danceysdevilment.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Dancey'sDevilment.html",
         "name": "Dancey's Devilment",
         "num": 4
@@ -1462,6 +1746,8 @@ let jugglingLibrary =
         "related": [
             "Arches"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballhalfshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallHalfShower.html",
         "name": "Half-Shower",
         "num": 4
@@ -1471,6 +1757,8 @@ let jugglingLibrary =
             "Four Ball Half-Shower"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/arches.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Arches.html",
         "name": "Arches",
         "num": 4
@@ -1482,6 +1770,8 @@ let jugglingLibrary =
         "related": [
             "Synchronous Pistons"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/pistons.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Pistons.html",
         "name": "Pistons",
         "num": 4
@@ -1493,6 +1783,8 @@ let jugglingLibrary =
         "related": [
             "Pistons"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/synchpistons.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/SynchPistons.html",
         "name": "Synch. Pistons",
         "num": 4
@@ -1504,6 +1796,8 @@ let jugglingLibrary =
         "related": [
             "Reverse Fountain"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fountain.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Fountain.html",
         "name": "Fountain",
         "num": 4
@@ -1513,6 +1807,8 @@ let jugglingLibrary =
             "Fountain"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/reversefountain.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/ReverseFountain.html",
         "name": "Reverse Fountain",
         "num": 4
@@ -1523,6 +1819,8 @@ let jugglingLibrary =
             "Four Ball Columns"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/lisa.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Lisa.html",
         "name": "Lisa",
         "num": 4
@@ -1533,6 +1831,8 @@ let jugglingLibrary =
             "Reverse Fountain"
         ],
         "related": [],
+        "difficulty": "8",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballmillsmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallMillsMess.html",
         "name": "Mills Mess",
         "num": 4
@@ -1543,6 +1843,8 @@ let jugglingLibrary =
             "Four Ball Mills Mess"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballhalfmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallHalf-Mess.html",
         "name": "Half-Mess",
         "num": 4
@@ -1553,6 +1855,8 @@ let jugglingLibrary =
             "534</a>, <a href=\"../3balltricks/531MillsMess.html\">531 Mills Mess"
         ],
         "related": [],
+        "difficulty": "8",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/534millsmess.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/534MillsMess.html",
         "name": "534 Mills Mess",
         "num": 4
@@ -1564,6 +1868,8 @@ let jugglingLibrary =
         "related": [
             "Five Ball Shower"
         ],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallShower.html",
         "name": "Shower",
         "num": 4
@@ -1574,6 +1880,8 @@ let jugglingLibrary =
             "5551"
         ],
         "related": [],
+        "difficulty": "8",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/sprungcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/SprungCascade.html",
         "name": "Sprung Cascade",
         "num": 4
@@ -1583,6 +1891,8 @@ let jugglingLibrary =
             "Fountain"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/synchfountain.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/SynchFountain.html",
         "name": "Synchronous Fountain",
         "num": 4
@@ -1592,6 +1902,8 @@ let jugglingLibrary =
             "Synchronous Fountain"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/reversesynchfountain.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/ReverseSynchFountain.html",
         "name": "Reverse Variation",
         "num": 4
@@ -1602,6 +1914,8 @@ let jugglingLibrary =
             "Cliff's Confusion"
         ],
         "related": [],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballtakeouts.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallTakeouts.html",
         "name": "Takeouts",
         "num": 4
@@ -1612,6 +1926,8 @@ let jugglingLibrary =
             "Cliff's Confusion"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/tennesseewaltz.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/TennesseeWaltz.html",
         "name": "Tennessee Waltz",
         "num": 4
@@ -1621,6 +1937,8 @@ let jugglingLibrary =
             "Four Ball Mills Mess"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/tsunami.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Tsunami.html",
         "name": "Tsunami",
         "num": 4
@@ -1632,6 +1950,8 @@ let jugglingLibrary =
         "related": [
             "Four Ball Half-Shower"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/wimpy.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/Wimpy.html",
         "name": "Wimpy",
         "num": 4
@@ -1642,6 +1962,8 @@ let jugglingLibrary =
             "Fountain</a>, <a href=\"FourBallMillsMess.html\">Four Ball Mills Mess"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballwindmill.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallWindmill.html",
         "name": "Windmill",
         "num": 4
@@ -1652,6 +1974,8 @@ let jugglingLibrary =
             "Fountain"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/534.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/534.html",
         "name": "534",
         "num": 4
@@ -1662,6 +1986,8 @@ let jugglingLibrary =
             "Snake"
         ],
         "related": [],
+        "difficulty": "4",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/552.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/552.html",
         "name": "552",
         "num": 4
@@ -1673,6 +1999,8 @@ let jugglingLibrary =
         "related": [
             "Sprung Cascade"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/5551.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/5551.html",
         "name": "5551",
         "num": 4
@@ -1684,6 +2012,8 @@ let jugglingLibrary =
         "related": [
             "Five Ball Cascade"
         ],
+        "difficulty": "5",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/55550.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/4balltricks/55550.html",
         "name": "55550",
         "num": 4
@@ -1698,6 +2028,8 @@ let jugglingLibrary =
         "related": [
             "Reverse Five Ball Cascade"
         ],
+        "difficulty": "9",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallCascade.html",
         "name": "Cascade",
         "num": 5
@@ -1707,6 +2039,8 @@ let jugglingLibrary =
             "Five Ball Cascade"
         ],
         "related": [],
+        "difficulty": "9",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballreversecascadefull.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallReverseCascade.html",
         "name": "Reverse Cascade",
         "num": 5
@@ -1717,6 +2051,8 @@ let jugglingLibrary =
             "Four Ball Half-Shower"
         ],
         "related": [],
+        "difficulty": "9",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballhalfshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallHalf-Shower.html",
         "name": "Half-Shower",
         "num": 5
@@ -1726,6 +2062,8 @@ let jugglingLibrary =
             "Three in One"
         ],
         "related": [],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/martin.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/Martin.html",
         "name": "Martin",
         "num": 5
@@ -1735,6 +2073,8 @@ let jugglingLibrary =
             "Columns"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballmultiplexcolumns.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallMultiplexColumns.html",
         "name": "Multiplex Columns",
         "num": 5
@@ -1744,6 +2084,8 @@ let jugglingLibrary =
             "Four Ball Shower"
         ],
         "related": [],
+        "difficulty": "9",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballshower.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallShower.html",
         "name": "Shower",
         "num": 5
@@ -1755,6 +2097,8 @@ let jugglingLibrary =
         "related": [
             "Stacked Multiplex Cascade"
         ],
+        "difficulty": "6",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballsplitmultiplexcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallSplitMultiplexCascade.html",
         "name": "Split Cascade",
         "num": 5
@@ -1764,6 +2108,8 @@ let jugglingLibrary =
             "Cascade"
         ],
         "related": [],
+        "difficulty": "7",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballstackedmultiplexcascade.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallStackedMultiplexCascade.html",
         "name": "Stacked Cascade",
         "num": 5
@@ -1775,6 +2121,8 @@ let jugglingLibrary =
             "Five Ball Cascade"
         ],
         "related": [],
+        "difficulty": "9",
+        "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/6balltricks/sixballfountain.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/6balltricks/SixBallFountain.html",
         "name": "Six Ball Fountain",
         "num": 6

@@ -53,7 +53,7 @@ class App extends Component {
               >See explanation</a> : null}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <img
               	className="popupGif"
-              	src={jugglingLibrary[store.popupTrick.id].url.toLowerCase().replace("/tricks","/JugglingGifs").replace("html","gif")} 
+              	src={jugglingLibrary[store.popupTrick.id].gifUrl} 
               /> : null}
             </div>  : null
 		return (
