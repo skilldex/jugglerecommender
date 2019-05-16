@@ -35,6 +35,13 @@ h1{
 .listCard{
   border : 1px solid gray;
 }
+.listCardName{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display : inline-block;
+  width: 150px;
+}
 .selectedListCard{
   border : 1px solid gray;
   background-color : darkgray;
@@ -55,8 +62,6 @@ h1{
   max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
 }
 .selectedListButton{
   font-size: 20pt;

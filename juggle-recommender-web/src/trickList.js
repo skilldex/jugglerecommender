@@ -36,12 +36,7 @@ class TrickList extends Component {
 		var cardClass='listCard'
 
 		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
-			//console.log('store.selectedTricks',store.selectedTricks)
-			//console.log('trick.name.replace(" ","")',trick.name.replace(" ",""))
 			if(store.selectedTricks == trickKey){
-							console.log('store.selectedTricks',store.selectedTricks)
-			console.log('trick.name.replace(" ","")',trick.name.replace(" ",""))
-				console.log('SELECTED')
 				cardClass = 'selectedListCard'
 			}
 			if(store.selectedList === "allTricks" || 
@@ -52,7 +47,7 @@ class TrickList extends Component {
 						 {store.myTricks.includes(trickKey) ? 
 	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addToMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
-						 <span style={{"display":"inline-block"}}>{trick.name}</span>			
+						 <span className="listCardName">{trick.name}</span>			
 					</div>
 				)
 			}
