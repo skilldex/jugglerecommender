@@ -2158,7 +2158,7 @@ Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     trick.name = trick.name.replace("(","")
     trick.name = trick.name.replace(")","")
     trick.name = trick.name.trim()
-    console.log('trick.gifUrl',trick.gifUrl)
+
     trick.gifUrl = trick.gifUrl.replace("'","")
     if(trick.num == 3){
         defaultTricks.push(trickKey)

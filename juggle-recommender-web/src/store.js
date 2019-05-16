@@ -230,7 +230,6 @@ class Store {
 
 	 @action setPopupTrick=(clickedTrick)=>{
 	 	this.popupTrick = clickedTrick
-	 	console.log('clickedTrick',clickedTrick)
 	 }
 }
 

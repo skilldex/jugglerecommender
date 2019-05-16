@@ -34,7 +34,7 @@ alphabeticalSortObject(data, attr) {
             bt = b.tempSortName;
         return at > bt ? 1 : ( at < bt ? -1 : 0 );
     });
-    var result = [];
+    var result = {};
     for (var i=0, l=arr.length; i<l; i++) {
         var obj = arr[i];
         delete obj.tempSortName;
@@ -44,7 +44,7 @@ alphabeticalSortObject(data, attr) {
             }
         }
         var item = obj[id];
-        result.push(item);
+        result[Object.keys(obj)] = item;
     }
     return result;
 }
