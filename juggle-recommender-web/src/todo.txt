@@ -5,11 +5,7 @@
 - add loading graphic
 - disable expand toggle while loading
 - make checkboxes for showing (related, depends, prereqs) in graph
-Popup:
-	Scrape gifs
-	use scraped gif in popupgif
-	add difficulty 
-	click off popup closes
+
 POSSIBLE SELECTION OPTION:
 -Don't show the entire 'all tricks' list in the graph
 -Allow multiple selected tricks
@@ -26,8 +22,6 @@ USERS:
 -toggle tricks by user added tricks
 
 BUGS:
--when we switch from selected to my tricks we should kill the current selection(maybe unless it is on both lists)
-
 
 -fix list card styles for retina
 

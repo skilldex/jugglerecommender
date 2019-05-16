@@ -54,6 +54,7 @@ class App extends Component {
 				top : store.popupTrick.y
 			}} className="popupDiv">
               <h3>{store.popupTrick.id}</h3> 
+              <label>Difficult: {jugglingLibrary[store.popupTrick.id].difficulty} / 10</label><br></br><br></br>
               {addToMyTricksButton}
               {selectTrickButton}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
