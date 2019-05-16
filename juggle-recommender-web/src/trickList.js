@@ -18,7 +18,41 @@ class TrickList extends Component {
 	store.updateRootTricks()
  }
 
-
+alphabeticalSortObject(data, attr) {
+	console.log('data',data)
+    var arr = [];
+    for (var prop in data) {
+        if (data.hasOwnProperty(prop)) {
+        	console.log('prop',prop)
+            var obj = {};
+            obj[prop] = data[prop];
+            obj.tempSortName = data[prop][attr].toLowerCase();
+            console.log('obj',obj)
+            arr.push(obj);
+        }
+    }
+    console.log('arr',arr)
+    arr.sort(function(a, b) {
+        var at = a.tempSortName,
+            bt = b.tempSortName;
+        return at > bt ? 1 : ( at < bt ? -1 : 0 );
+    });
+    console.log('soreted arr',arr)
+    var result = [];
+    for (var i=0, l=arr.length; i<l; i++) {
+        var obj = arr[i];
+        delete obj.tempSortName;
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                var id = prop;
+            }
+        }
+        var item = obj[id];
+        result.push(item);
+    }
+    console.log('result',result)
+    return result;
+}
  
  render() {
 
@@ -30,9 +64,10 @@ class TrickList extends Component {
  		"7" : [],
  		
  	}
- 	console.log('store.selectedTricks',store.selectedTricks)
- 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-		const trick = jugglingLibrary[trickKey]
+ 	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+ 	console.log('sortedJugglingLibrary',sortedJugglingLibrary)
+ 	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
+		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
 
 		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
