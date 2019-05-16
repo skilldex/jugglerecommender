@@ -79,7 +79,7 @@ class App extends Component {
 			</div>
 			<div>
 				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
-				<span>&#9733; My tricks</span>
+				<span>My tricks </span>
 				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
 				<span>Prerequisite</span>
 				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
