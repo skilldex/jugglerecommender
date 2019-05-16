@@ -46,6 +46,7 @@ class Store {
 	 	}
  	}
  	@action setSelectedList=(listType)=>{
+ 		this.selectedTricks = []
  		this.selectedList = listType
  		this.updateRootTricks()
  		this.popupTrick = null
