@@ -47,7 +47,7 @@ class TrickList extends Component {
 						 {store.myTricks.includes(trickKey) ? 
 	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addToMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
-						 <span className="listCardName">{trick.name}</span>			
+						 <span className="listCardName" title={trick.name}>{trick.name}</span>			
 					</div>
 				)
 			}
