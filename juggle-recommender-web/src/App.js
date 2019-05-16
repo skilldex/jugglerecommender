@@ -43,8 +43,8 @@ class App extends Component {
  		store.edges
  		console.log("rendering app")
  		const addToMyTricksButton = store.popupTrick && store.myTricks.includes(store.popupTrick.id) ? 
-              		  <button style={{"backgroundColor" : "yellow", "margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>&#9733;</button> :
- 		              <button style={{"backgroundColor" : "cyan", "margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>&#9734;</button>
+              		  <button className="removeFromMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>&#9733;</button> :
+ 		              <button className="addToMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>&#9734;</button>
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
@@ -63,7 +63,7 @@ class App extends Component {
               >See explanation</a> : null}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <img
               	className="popupGif"
-              	src={jugglingLibrary[store.popupTrick.id].gifUrl} 
+              	src={jugglingLibrary[store.popupTrick.id].url.toLowerCase().replace("/tricks","/JugglingGifs").replace("html","gif")} 
               /> : null}
             </div>  : null
 		return (
@@ -79,7 +79,7 @@ class App extends Component {
 			</div>
 			<div>
 				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
-				<span>My tricks</span>
+				<span>&#9733; My tricks</span>
 				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
 				<span>Prerequisite</span>
 				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
