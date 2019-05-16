@@ -26,8 +26,7 @@ USERS:
 -toggle tricks by user added tricks
 
 BUGS:
--Some tricks do not get background changed when selected, this is because their
-	key doesn't match their name. Under the object in jugglingLibrary is a list of corrected ones
+-crashes when trick selected
 -when we switch from selected to my tricks we should kill the current selection(maybe unless it is on both lists)
 
 
