@@ -1,5 +1,6 @@
 -status property for tricks, 'done'
 - clean remaining prereq data exceptions
+	there is an orka's mess and an orka's mes
 
 -Style expand arrows as icons
 - add loading graphic
