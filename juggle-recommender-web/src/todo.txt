@@ -3,26 +3,20 @@
 
 -Style expand arrows as icons
 - add loading graphic
-- style add/remove buttons
-- add title
-
 - disable expand toggle while loading
 - make checkboxes for showing (related, depends, prereqs) in graph
 Popup:
 	Scrape gifs
 	use scraped gif in popupgif
 	add difficulty 
-	add to my tricks
-	add to selected tricks 
-
+	click off popup closes
 POSSIBLE SELECTION OPTION:
 -Don't show the entire 'all tricks' list in the graph
 -Allow multiple selected tricks
 -show all selected tricks in graph
--make a select all button to select all of the tricks in the list
+-make a select all button to select all of the tricks in the list (show all relationships, maybe default view)
 
 DIFFICULTY
-- scrape difficulty
 - represent difficulty in nodes(maybe with border color, node shape, something else)
 
 USERS:
@@ -34,4 +28,4 @@ USERS:
 BUGS:
 -Some tricks do not get background changed when selected, this is because their
 	key doesn't match their name. Under the object in jugglingLibrary is a list of corrected ones
-
+- Float right not working 
