@@ -28,4 +28,7 @@ USERS:
 BUGS:
 -Some tricks do not get background changed when selected, this is because their
 	key doesn't match their name. Under the object in jugglingLibrary is a list of corrected ones
-- Float right not working 
+
+
+-right now it only colors a trick as being my trick if it is in the rootlist, we want it to
+	color all of my tricks that it shows
