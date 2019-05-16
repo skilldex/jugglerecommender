@@ -41,10 +41,14 @@ class Store {
 	 		this.selectedTricks = selectedTricks
 	 	}
 	 	this.updateRootTricks()
+	 	if(!selectedTricks.includes(selectedTricks[0])){
+	 		this.popupTrick = null
+	 	}
  	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType
  		this.updateRootTricks()
+ 		this.popupTrick = null
  	}
  	@action	searchInputChange=(e)=>{
  		this.searchInput = e.target.value 		

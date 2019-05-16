@@ -41,11 +41,21 @@ class App extends Component {
  	render(){
  		store.nodes
  		store.edges
- 		const popup = store.popupTrick ? <div style={{
+ 		console.log("rendering app")
+ 		const addToMyTricksButton = store.popupTrick && store.myTricks.includes(store.popupTrick.id) ? 
+              		  <button style={{"backgroundColor" : "yellow", "margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>&#9733;</button> :
+ 		              <button style={{"backgroundColor" : "cyan", "margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>&#9734;</button>
+		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
+ 		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
+ 		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
+
+ 		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
 				left : store.popupTrick.x,
 				top : store.popupTrick.y
 			}} className="popupDiv">
               <h3>{store.popupTrick.id}</h3> 
+              {addToMyTricksButton}
+              {selectTrickButton}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
               	className="popupLink"
               	href={jugglingLibrary[store.popupTrick.id].url} 

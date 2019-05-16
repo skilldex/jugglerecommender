@@ -40,7 +40,7 @@ h1{
   background-color : darkgray;
 }
 .listDiv{
-  width: 375px;
+  width: 200px;
   border : 1px solid gray;
   margin-left : 1px;
   display: inline-block;
@@ -55,6 +55,8 @@ h1{
   max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .selectedListButton{
   font-size: 20pt;
@@ -76,12 +78,10 @@ h1{
   display: inline-block;
 }
 .addToMyTricksButton{
-  float: right;
   background-color : cyan;
   border-radius: 3px;
 }
 .removeFromMyTricksButton{
-  float: right;
   background-color : yellow;
   border-radius: 3px;
 }
