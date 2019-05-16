@@ -36,7 +36,6 @@ for line in tree_lines:
 		current_ball_num = 6
 	if "href" in line and "Tricks/" in line and num_parsed_tricks < num_tricks:
 		num_parsed_tricks += 1
-		print("tricks parsed ",num_parsed_tricks)
 		link = line.split("\"")[1]
 		trick_name = link.split("/")[2]
 		trick_name = trick_name.replace(".html","")
@@ -46,9 +45,14 @@ for line in tree_lines:
 		all_tricks[trick_name] = {}
 		all_tricks[trick_name]["prereqs"] = []
 		all_tricks[trick_name]["related"] = []
+		all_tricks[trick_name]['difficulty'] = ''
+		animation_image = get_div_contents(main_url + link,"img","jugglinganimation")[0]
+		all_tricks[trick_name]['gifUrl'] = re.findall("src=\"(.+)\" ", animation_image)[0]
+		all_tricks[trick_name]['gifUrl'] = all_tricks[trick_name]['gifUrl'].replace('../../',main_url)
 		all_tricks[trick_name]["url"] = main_url + link
 		all_tricks[trick_name]['name'] = trick_name_with_spaces
 		all_tricks[trick_name]['num'] = current_ball_num
+
 		next_line_prereq = False
 		next_line_related = False
 		for line in trick_info:
@@ -90,17 +94,21 @@ for line in tree_lines:
 					#print(match[0])
 					all_tricks[trick_name]['related'].append(match[0])
 					f.write(trick_name + " related " + match[0] + "\n")
+			if "Difficulty" in line:
+				#next_line_difficulty = True
+				all_tricks[trick_name]['difficulty'] = re.sub("[^0-9]", "", line.split(">")[3])				
 
-all_tricks['FourBallWindmill']["prereqs"] = ['Windmill','Fountain','Four Ball Mills Mess']
-all_tricks['534MillsMess']["prereqs"] = ["Four Ball Mills Mess",'534',"531 Mills Mess"]
-all_tricks['ChopShower']["prereqs"] = ["Windmill",'Crossed-Arm Reverse Cascade']
-all_tricks['ChopShower']["related"] = ["Chops",'Frantic Cascade',"Statue of Liberty"]
-all_tricks['Takearound']["prereqs"] = ["Takeouts",'Flying Disco Drop']
-all_tricks["Shuffler'sMess"]["prereqs"] = ["531",'Mills Mess','531 Mills Mess']
-all_tricks["Levels"]["prereqs"] = ["N-Box","Luke's Shuffle"]
-all_tricks["Frostbite"]["related"] = ["Kraken","Kato's Crux","Shuffler's Mess"]
-all_tricks["FlyingDiscoDrop"]["prereqs"] = ["Shower","Orka's Mess","Hands of Time"]
-all_tricks["TrueBox"]["prereqs"] = ["Box","Inverted Shower"]
+
+# all_tricks['FourBallWindmill']["prereqs"] = ['Windmill','Fountain','Four Ball Mills Mess']
+# all_tricks['534MillsMess']["prereqs"] = ["Four Ball Mills Mess",'534',"531 Mills Mess"]
+# all_tricks['ChopShower']["prereqs"] = ["Windmill",'Crossed-Arm Reverse Cascade']
+# all_tricks['ChopShower']["related"] = ["Chops",'Frantic Cascade',"Statue of Liberty"]
+# all_tricks['Takearound']["prereqs"] = ["Takeouts",'Flying Disco Drop']
+# all_tricks["Shuffler'sMess"]["prereqs"] = ["531",'Mills Mess','531 Mills Mess']
+# all_tricks["Levels"]["prereqs"] = ["N-Box","Luke's Shuffle"]
+# all_tricks["Frostbite"]["related"] = ["Kraken","Kato's Crux","Shuffler's Mess"]
+# all_tricks["FlyingDiscoDrop"]["prereqs"] = ["Shower","Orka's Mess","Hands of Time"]
+# all_tricks["TrueBox"]["prereqs"] = ["Box","Inverted Shower"]
 
 f.close()
 print(json.dumps(all_tricks, indent = 4, separators = (",",": ")))

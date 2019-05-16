@@ -38,7 +38,7 @@ class TrickList extends Component {
 		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
 			//console.log('store.selectedTricks',store.selectedTricks)
 			//console.log('trick.name.replace(" ","")',trick.name.replace(" ",""))
-			if(store.selectedTricks == trick.name.replace(" ","")){
+			if(store.selectedTricks == trickKey){
 							console.log('store.selectedTricks',store.selectedTricks)
 			console.log('trick.name.replace(" ","")',trick.name.replace(" ",""))
 				console.log('SELECTED')
