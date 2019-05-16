@@ -59,6 +59,9 @@ h1{
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
 }
+.displayNone{
+  display: none;
+}
 .listSection{
   max-height: 450px;
   overflow-y: scroll;

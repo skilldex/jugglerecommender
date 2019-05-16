@@ -30,7 +30,7 @@ BUGS:
 	key doesn't match their name. Under the object in jugglingLibrary is a list of corrected ones
 -when we switch from selected to my tricks we should kill the current selection(maybe unless it is on both lists)
 
--alphabetize list
+
 
 -fix list card styles for retina
 

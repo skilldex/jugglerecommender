@@ -7,7 +7,8 @@ import { observer } from "mobx-react"
 class TrickList extends Component {
  state = {
  	selectedTricks : [],
- 	rootTricksLength : 0
+ 	rootTricksLength : 0,
+ 	showText: false
  }
 
  componentDidMount(){
@@ -90,38 +91,47 @@ alphabeticalSortObject(data, attr) {
 	})
 
 	return (	
-		<div className="listDiv">
-		 	<div>
-	 			<label>Find trick </label><input onChange={store.searchInputChange}/>
-	 			<button type="submit" onClick={store.performSearch}>Search</button>
-	 		</div>
-			<div>
-				<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
-				<h3 className="sectionHeader">3 Ball</h3>
-				{store.expandedSections["3"] ?
-					<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
-					{tricks["3"]}
-					</div> : null
-				}
+		<div className="listDiv">			
+			<label style={{"font-size":"30px",
+							"text-align" : "right", 
+							"padding-right" : "15px",
+							"display" : "block"}} 
+					onClick={() => this.setState({ showText: !this.state.showText })}>
+			{this.state.showText ? "+" : "-"}</label>
+			<div className={this.state.showText ? "displayNone" : {}}>
 				
-			</div>
-			<div>
-				<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "^" : ">"}</span>
-				<h3 className="sectionHeader">4 Ball</h3>
-				{store.expandedSections["4"] ?
-					<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
-					{tricks["4"]}
-					</div> : null
-				}
-			</div>
-			<div>	
-				<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "^" : ">"}</span>
-				<h3 className="sectionHeader">5 Ball</h3>
-				{store.expandedSections["5"] ?
-					<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
-					{tricks["5"]}
-					</div> : null
-				}
+			 	<div>
+		 			<input onChange={store.searchInputChange}/>
+		 			<button type="submit" onClick={store.performSearch}>Search</button>
+		 		</div>
+				<div>
+					<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
+					<h3 className="sectionHeader">3 Ball</h3>
+					{store.expandedSections["3"] ?
+						<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
+						{tricks["3"]}
+						</div> : null
+					}
+					
+				</div>
+				<div>
+					<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "^" : ">"}</span>
+					<h3 className="sectionHeader">4 Ball</h3>
+					{store.expandedSections["4"] ?
+						<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
+						{tricks["4"]}
+						</div> : null
+					}
+				</div>
+				<div>	
+					<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "^" : ">"}</span>
+					<h3 className="sectionHeader">5 Ball</h3>
+					{store.expandedSections["5"] ?
+						<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
+						{tricks["5"]}
+						</div> : null
+					}
+				</div>
 			</div>
 		</div>
 	)
