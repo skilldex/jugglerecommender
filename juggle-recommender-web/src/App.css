@@ -40,7 +40,7 @@ h1{
   white-space: nowrap;
   text-overflow: ellipsis;
   display : inline-block;
-  width: 150px;
+  width: 70%;
 }
 .selectedListCard{
   border : 1px solid gray;
