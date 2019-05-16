@@ -17,7 +17,7 @@ POSSIBLE SELECTION OPTION:
 -make a select all button to select all of the tricks in the list (show all relationships, maybe default view)
 
 DIFFICULTY
-- represent difficulty in nodes(maybe with border color, node shape, something else)
+-represent difficulty in nodes(maybe with border color, node shape, something else)
 
 USERS:
 -create user
@@ -37,7 +37,6 @@ BUGS:
 -right now it only colors a trick as being my trick if it is in the rootlist, we want it to
 	color all of my tricks that it shows
 
--move my tricks and all tricks into list
 -make legend good for mobile(smaller)
 
 
