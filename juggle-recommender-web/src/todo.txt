@@ -28,7 +28,20 @@ USERS:
 BUGS:
 -Some tricks do not get background changed when selected, this is because their
 	key doesn't match their name. Under the object in jugglingLibrary is a list of corrected ones
+-when we switch from selected to my tricks we should kill the current selection(maybe unless it is on both lists)
+
+-alphabetize list
+
+-fix list card styles for retina
 
 
 -right now it only colors a trick as being my trick if it is in the rootlist, we want it to
 	color all of my tricks that it shows
+
+-move my tricks and all tricks into list
+-make legend good for mobile(smaller)
+
+
+MOBILE:
+-make list minimizable
+-
