@@ -65,17 +65,36 @@ h1{
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
+-ms-touch-action: none;
+  touch-action: none;
 }
-.displayNone{
-  display: none;
+.swipedDiv{
+  width : 25px;
+  box-shadow : 5px 10px 8px #888888;;
+  background-color : white;
+  border-radius: 8px;
+  height : 100%;
+  z-index: 1001;
+  opacity : 100%;
+  border : 1px solid gray;
+  position: absolute;
+  -ms-touch-action: none;
+  touch-action: none;
+  font-size: 12pt;
+  padding-left: 10px;
+
 }
 .listSection{
   max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
-}
 
+}
+.instructions{
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
 .selectedListButton{
   font-size: 12pt;
   border-radius: 5px;
@@ -115,6 +134,7 @@ h1{
   box-shadow : 2px 0px 5px #888888;;
 
 }
+
 .removeFromMyTricksButton{
   color : yellow;
   font-size: 16pt;

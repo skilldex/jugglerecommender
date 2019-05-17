@@ -5,6 +5,7 @@ import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
 import store from './store'
+import Swipe from 'react-easy-swipe';
 
 @observer
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
  		filters : [],
  		selectedList : "allTricks",
  		edges : [],
- 		nodes : []
+ 		nodes : [],
+ 		swipedList : false
 	}
 	componentDidMount(){
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
@@ -68,7 +70,13 @@ class App extends Component {
 		<div className="App">
 			<div className="title">
 				<h1>Juggledex</h1>
-				<h3>Gotta catch em all ;)</h3>	
+				<h3>Gotta catch em all ;)</h3>
+			</div>
+			<div className="instructions">
+				<h3>Instructions</h3>
+				<span>Find new tricks to learn next that are related to tricks you know.</span>
+				<br/>
+				<span> Keep track of tricks you know in "My Tricks"</span> 	
 			</div>
 			<div className="legend">
 				<h3>Legend</h3>
@@ -77,14 +85,21 @@ class App extends Component {
 				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
 				<span>Prerequisite</span>
 				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
-				<span>Dependent</span>
+				<span>Learn Next</span>
 				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
 				<span>Not relevant</span>
 			</div>
-			<TrickList 
-				myTricks={store.myTricks} 
-				selectedList={store.selectedList}
-			/>
+
+			{this.state.swipedList ? 
+				<div className="swipedDiv" 
+					onClick={
+						(event)=>{this.setState({swipedList : false})}
+					}
+				>+</div> : 
+				<TrickList 
+					myTricks={store.myTricks} 
+					selectedList={store.selectedList}
+				/>}
 			{popup}
 			<TrickGraph 
 				nodes = {store.nodes}
