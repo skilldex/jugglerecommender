@@ -99,20 +99,19 @@ class Store {
 	 	}
 	 	this.updateGraphData()
 	}
-	@action getInvolvedNodeColor=(involvement)=>{
+
+	@action getInvolvedNodeColor=(difficulty, involved)=>{
+		const opacity = 50
+		//return "rgba(" + 255*(difficulty-2)/10   + "," + 255*(10 - difficulty-2)/10 + ", 0, 80%)"
 		
-		if(involvement == 0){
-			return "cyan"
-		}
-		if(involvement == 1){
-			return "pink"
-		}
-		if(involvement == 2){
-			return "orange"
-		}
-		if(involvement == 3){
-			return "yellow"
-		}
+		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",0%, 100%)"
+		if(involved == 1 || involved == 2 ){
+			colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 50%)"
+		} 
+		
+		console.log(colorString)
+		return colorString
+
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
@@ -125,7 +124,7 @@ class Store {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: rootTrick.name,
-		 				color : this.getInvolvedNodeColor(3)
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3)
 		 			}
 		 		}
 		 		if(rootTrick.prereqs){
@@ -135,7 +134,7 @@ class Store {
 			 				tempNodes[prereqKey] = {
 			 					id: prereqKey,
 			 					label: prereq.name,
-			 					color : this.getInvolvedNodeColor(1)
+			 					color : this.getInvolvedNodeColor(prereq.difficulty, 1)
 			 				}
 			 			}
 		 				edges.push({from: prereqKey, to: trickKey })
@@ -148,7 +147,7 @@ class Store {
 			 				tempNodes[dependentKey] = {
 			 					id: dependentKey,
 			 					label: dependent.name,
-			 					color : this.getInvolvedNodeColor(2)
+			 					color : this.getInvolvedNodeColor(dependent.difficulty, 2)
 			 				}
 			 			}
 		 				edges.push({from: trickKey, to: dependentKey })
@@ -164,7 +163,7 @@ class Store {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: rootTrick.name,
-		 				color : this.getInvolvedNodeColor(involvedRoot),
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
 		 				involved : involvedRoot
 		 			}	 			
 		 		}
@@ -181,7 +180,7 @@ class Store {
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
 		 					label: prereq.name,
-		 					color : this.getInvolvedNodeColor(involvedPrereq),
+		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
 		 					involved : involvedPrereq
 		 				}
 		 				edges.push({from: prereqKey, to: trickKey })
@@ -197,7 +196,7 @@ class Store {
 		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
 		 					label: dependent.name,
-		 					color : this.getInvolvedNodeColor(involvedDependent),
+		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
 		 					involved : involvedDependent
 		 				}
 		 				edges.push({from: trickKey , to: dependentKey })
