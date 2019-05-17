@@ -27,6 +27,14 @@ BUGS:
 -right now it only colors a trick as being my trick if it is in the rootlist, we want it to
 	color all of my tricks that it shows
 
+VISUALIZING:
+-we want to easily see at a glance which tricks I can do and which I am interested in
+
+-show name in popup instead of trickKey
+
+-if they have my tricks, default to my tricks when they get on site
+
+-create initial filter based on some keyword
 
 MOBILE:
 -make legend good for mobile(smaller)
