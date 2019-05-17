@@ -23,6 +23,7 @@ USERS:
 -toggle tricks by user added tricks
 
 BUGS:
+-there is strange behavior with half-mess and half-shower in jugglingLibrary, if I change their names to something other than their key they dont show up on the list. I think it has something to do with the fact that there are 3b and 4b versions with same name, but not sure.
 
 -fix list card styles for retina
 

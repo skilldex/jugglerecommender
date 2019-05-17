@@ -2130,19 +2130,31 @@ let jugglingLibrary =
 }
 jugglingLibrary["High-LowShower"].name = "High-Low Shower"
 jugglingLibrary["High-LowCascade"].name = "High-Low Cascade"
-jugglingLibrary["ColumnBoxVar"].name = "Column BoxVar" 
-jugglingLibrary["ColumnOverVar"].name = "Column OverVar" 
+jugglingLibrary["ColumnBoxVar"].name = "Column Box Var" 
+jugglingLibrary["ColumnOverVar"].name = "Column Over Var" 
 jugglingLibrary["RainbowArches"].name = "Rainbow Arches"
-jugglingLibrary["ColumnShowVar"].name = "Column ShowVar"
-jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed-Arm ReverseCascade"
-jugglingLibrary["CrossedArmFactory"].name = "CrossedArmFactory"
-jugglingLibrary["FlyingDiscoDrop"].name = "Flying DiscoDrop"
-jugglingLibrary["SymmetricGeorgianScuffle"].name = "Symmetric GeorgianScuffle"
-jugglingLibrary["SymmetricGeorgianShuffle"].name = "Symmetric GeorgianShuffle"
+jugglingLibrary["ColumnShowVar"].name = "Column Show Var"
+jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed Arm Reverse Cascade"
+jugglingLibrary["CrossedArmFactory"].name = "Crossed Arm Factory"
+jugglingLibrary["FlyingDiscoDrop"].name = "Flying Disco Drop"
+jugglingLibrary["SymmetricGeorgianScuffle"].name = "Symmetric Georgian Scuffle"
+jugglingLibrary["SymmetricGeorgianShuffle"].name = "Symmetric Georgian Shuffle"
 
-jugglingLibrary["Frostbite"].related = ["Kraken","Kato's Crux","Shuffler's Mess","441 Mills Mess"]
+jugglingLibrary["Half-Mess"].name = "HalfMess"
+jugglingLibrary["Half-Shower"].name = "HalfShower"
+
+
+
 jugglingLibrary["TrueBox"].prereqs = ["Box","Inverted Shower"]
 jugglingLibrary["FlyingDiscoDrop"].prereqs = ["Shower","Orka's Mess","Hands of Time"]
+jugglingLibrary["Frostbite"].related = ["Kraken","Kato's Crux","Shuffler's Mess","441 Mills Mess"]
+jugglingLibrary["Levels"].prereqs = ["N-Box","Luke's Shuffle"]
+jugglingLibrary["Shuffler'sMess"].prereqs = ["Mills Mess","531 Mills Mess"]
+jugglingLibrary["Takearound"].prereqs = ["Takeouts","Flying Disco Drop"]
+jugglingLibrary["ChopShower"].prereqs = ["Windmill","Crossed-Arm Reverse Cascade"]
+jugglingLibrary["ChopShower"].related = ["Chops","Frantic Cascade","Statue of Liberty"]
+jugglingLibrary["534MillsMess"].prereqs = ["Four Ball Mills Mess","534","531 Mills Mess"]
+jugglingLibrary["FourBallWindmill"].prereqs = ["Windmill","Fountain","Four Ball Mills Mess"]
 
 let trickNamesToKeys = {}
 let finalLibrary = {}
