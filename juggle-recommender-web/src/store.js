@@ -77,8 +77,14 @@ class Store {
 				){
 					const trick = jugglingLibrary[trickKey]
 					let shouldPushTrick = false					
+
+					var fullStringToSearch = trick.name.toLowerCase()
+					trick.tags.forEach(function (tag, index) {
+						fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
+					});
+					
 					if (trick.num === 3 && this.expandedSections['3'] &&
-						(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
+						(fullStringToSearch.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
 							this.searchTrick === "")){
 						shouldPushTrick = true
 					}

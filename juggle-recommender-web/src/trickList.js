@@ -95,7 +95,7 @@ alphabeticalSortObject(data, attr) {
 							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
 						</div>
 			 			<div className="search" >
-				 			<input value = "common" onChange={store.searchInputChange}/>
+				 			<input defaultValue = "common" onChange={store.searchInputChange}/>
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
 				 		</div>
 			 		</div>
