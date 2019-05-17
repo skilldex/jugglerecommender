@@ -22,11 +22,12 @@ USERS:
 
 BUGS:
 -when a popup is open and a new trick becomes selected, clicking on the empty space doesn't get rid of the popup
+-swipe seems to do nothing on android and PC
 
 -fix list card styles for retina
-
 
 -right now it only colors a trick as being my trick if it is in the rootlist, we want it to
 	color all of my tricks that it shows
 
 -make legend good for mobile(smaller)
+
