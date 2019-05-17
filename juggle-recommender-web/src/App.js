@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { observer } from "mobx-react"
-
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
@@ -43,14 +42,12 @@ class App extends Component {
  	render(){
  		store.nodes
  		store.edges
- 		console.log("rendering app")
  		const addToMyTricksButton = store.popupTrick && store.myTricks.includes(store.popupTrick.id) ? 
               		  <button className="removeFromMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addToMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>&#9734;</button>
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
-
  		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
 				left : store.popupTrick.x,
 				top : store.popupTrick.y
@@ -70,7 +67,6 @@ class App extends Component {
               /> : null}
             </div>  : null
 		return (
-
 		<div className="App">
 			<div className="title">
 				<h1>Juggledex</h1>
@@ -113,5 +109,4 @@ class App extends Component {
 		);
 	}
 }
-
 export default App;

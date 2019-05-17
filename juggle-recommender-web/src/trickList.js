@@ -55,8 +55,7 @@ alphabeticalSortObject(data, attr) {
  		"4" : [],
  		"5" : [],
  		"6" : [],
- 		"7" : [],
- 		
+ 		"7" : [], 		
  	}
  	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
@@ -97,9 +96,7 @@ alphabeticalSortObject(data, attr) {
 				 		</div>
 			 		</div>
 	return (	
-		<div className="listDiv">			
-			
-			
+		<div className="listDiv">				
 	 		{this.state.expanded ? 
 				<div>
 				 	{buttons}

@@ -1,5 +1,4 @@
 
-
 -Style expand arrows as icons
 - add loading graphic
 - make checkboxes for showing (related, depends, prereqs) in graph
@@ -20,8 +19,8 @@ USERS:
 -toggle tricks by user added tricks
 
 BUGS:
--there is strange behavior with half-mess and half-shower in jugglingLibrary, if I change their names to something other than their key they dont show up on the list. I think it has something to do with the fact that there are 3b and 4b versions with same name, but not sure.
-
+-when a popup is open and a new trick becomes selected, clicking on the empty space doesn't get rid of the popup
+-swipe seems to do nothing on android and PC
 
 
 -right now it only colors a trick as being my trick if it is in the rootlist, we want it to
@@ -38,4 +37,3 @@ Later :
 -status property for tricks, 'done'
 - clean remaining prereq data exceptions
 	there is an orka's mess and an orka's mes
-
