@@ -74,7 +74,13 @@ class App extends Component {
 		<div className="App">
 			<div className="title">
 				<h1>Juggledex</h1>
-				<h3>Gotta catch em all ;)</h3>	
+				<h3>Gotta catch em all ;)</h3>
+			</div>
+			<div className="instructions">
+				<h3>Instructions</h3>
+				<span>Find new tricks to learn next that are related to tricks you know.</span>
+				<br/>
+				<span> Keep track of tricks you know in "My Tricks"</span> 	
 			</div>
 			<div className="legend">
 				<h3>Legend</h3>
@@ -83,24 +89,21 @@ class App extends Component {
 				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
 				<span>Prerequisite</span>
 				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
-				<span>Dependent</span>
+				<span>Learn Next</span>
 				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
 				<span>Not relevant</span>
 			</div>
-			<Swipe
-		        onSwipeLeft={(event)=>{this.setState({swipedList : true});}}
-		    >
-				{this.state.swipedList ? 
-					<div className="swipedDiv" 
-						onClick={
-							(event)=>{this.setState({swipedList : false})}
-						}
-					>+</div> : 
-					<TrickList 
-						myTricks={store.myTricks} 
-						selectedList={store.selectedList}
-					/>}
-			</Swipe>
+
+			{this.state.swipedList ? 
+				<div className="swipedDiv" 
+					onClick={
+						(event)=>{this.setState({swipedList : false})}
+					}
+				>+</div> : 
+				<TrickList 
+					myTricks={store.myTricks} 
+					selectedList={store.selectedList}
+				/>}
 			{popup}
 			<TrickGraph 
 				nodes = {store.nodes}

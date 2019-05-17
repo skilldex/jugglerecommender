@@ -91,7 +91,10 @@ h1{
   -webkit-overflow-scrolling : touch;
 
 }
-
+.instructions{
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
 .selectedListButton{
   font-size: 12pt;
   border-radius: 5px;
