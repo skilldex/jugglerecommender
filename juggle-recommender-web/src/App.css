@@ -1,6 +1,11 @@
 h1{
   font-size: 25pt;
 }
+.search{
+  margin-top : 10px;
+  margin-bottom : 10px;
+
+}
 .popupGif{
   width: 200px;
   height: 200px;
@@ -48,6 +53,7 @@ h1{
   background-color : darkgray;
 }
 .listDiv{
+  padding-left : 15px;
   width: 200px;
   border : 1px solid gray;
   margin-left : 1px;

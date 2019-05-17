@@ -80,27 +80,29 @@ alphabeticalSortObject(data, attr) {
 			}
 		}
 	})
-
+ 	const buttons = <div>
+					 	<label style={{"font-size":"30px",
+										"text-align" : "right", 
+										"padding-right" : "15px",
+										"display" : "block"}} 
+								onClick={() => this.setState({ expanded: !this.state.expanded })
+						}>{this.state.expanded ? "-" : "+"}</label>
+				 		<div className="listButtonDiv">
+							<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
+							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
+						</div>
+			 			<div className="search" >
+				 			<input onChange={store.searchInputChange}/>
+				 			<button type="submit" onClick={store.performSearch}>Search</button>
+				 		</div>
+			 		</div>
 	return (	
 		<div className="listDiv">			
 			
 			
 	 		{this.state.expanded ? 
 				<div>
-				 	<div>
-					 	<label style={{"font-size":"30px",
-										"text-align" : "right", 
-										"padding-right" : "15px",
-										"display" : "block"}} 
-								onClick={() => this.setState({ expanded: !this.state.expanded })
-						}>-</label>
-				 		<div className="listButtonDiv">
-							<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
-							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
-						</div>
-			 			<input onChange={store.searchInputChange}/>
-			 			<button type="submit" onClick={store.performSearch}>Search</button>
-			 		</div>
+				 	{buttons}
 					<div>
 						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
 						<h3 className="sectionHeader">3 Ball</h3>
@@ -130,21 +132,8 @@ alphabeticalSortObject(data, attr) {
 						}
 					</div>
 				</div> : 
-				<div>
-					<label style={{"font-size":"30px",
-									"text-align" : "right", 
-									"padding-right" : "15px",
-									"display" : "block"}} 
-							onClick={() => this.setState({ expanded: !this.state.expanded })
-					}>
-					+</label>
-			 		<div className="listButtonDiv">
-						<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>My Tricks</button>
-						<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
-					</div>
-		 			<input onChange={store.searchInputChange}/>
-		 			<button type="submit" onClick={store.performSearch}>Search</button>
-		 		</div>}
+				buttons
+			}
 		</div>
 	)
 
