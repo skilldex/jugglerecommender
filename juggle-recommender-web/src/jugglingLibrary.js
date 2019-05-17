@@ -2134,27 +2134,61 @@ jugglingLibrary["ColumnBoxVar"].name = "Column Box Var"
 jugglingLibrary["ColumnOverVar"].name = "Column Over Var" 
 jugglingLibrary["RainbowArches"].name = "Rainbow Arches"
 jugglingLibrary["ColumnShowVar"].name = "Column Show Var"
-jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed Arm Reverse Cascade"
 jugglingLibrary["CrossedArmFactory"].name = "Crossed Arm Factory"
 jugglingLibrary["FlyingDiscoDrop"].name = "Flying Disco Drop"
 jugglingLibrary["SymmetricGeorgianScuffle"].name = "Symmetric Georgian Scuffle"
 jugglingLibrary["SymmetricGeorgianShuffle"].name = "Symmetric Georgian Shuffle"
-
-jugglingLibrary["Half-Mess"].name = "HalfMess"
-jugglingLibrary["Half-Shower"].name = "HalfShower"
-
-
-
+jugglingLibrary["CrossedArmShower"].name = "Crossed Arm Shower"
+jugglingLibrary["RainbowArches"].name = "Rainbow Arches"
+jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed Arm Reverse Cascade"
+jugglingLibrary["ReverseCrossedArmShower"].name = "Reverse Crossed Arm Shower"
+jugglingLibrary["Shuffle-Switch"].name = "Shuffle Switch"
+jugglingLibrary["ShowerSwapVariation"].name = "Shower Swap Variation"
+jugglingLibrary["UnderarmShower"].name = "Under Arm Shower"
+jugglingLibrary["FourBallHalf-Mess"].name = "Half Mess"
+jugglingLibrary["FourBallHalfShower"].name = "Half Shower(4b)"
+jugglingLibrary["FourBallMillsMess"].name = "Mills Mess(4b)"
+jugglingLibrary["ReverseSynchFountain"].name = "Reverse Synch Fountain"
+jugglingLibrary["SynchFountain"].name = "Synch. Fountain(4b)"
+jugglingLibrary["ThreeInOne"].name = "Three In One"
+jugglingLibrary["4bHalfShower"] = jugglingLibrary["FourBallHalfShower"]
+delete jugglingLibrary["FourBallHalfShower"]
+jugglingLibrary["Martin"].prereqs = ["Three In One"]
+jugglingLibrary["FiveBallCascade"].prereqs = ["Cascade","552(4b)","5551(4b)","55550(4b)"]
+jugglingLibrary["SynchFountain"].prereqs = ["Fountain(4b)"]
+jugglingLibrary["FourBallColumns"].prereqs = ["Synch. Fountain(4b)","Columns"]
+jugglingLibrary["FourBallBox"].prereqs = ["Box","Three in One","Sprung Cascade(4b)"]
+jugglingLibrary["SprungCascade"].prereqs = ["Box","5551(4b)"]
+jugglingLibrary["ReverseSynchFountain"].prereqs = ["Synch. Fountain(4b)"]
+jugglingLibrary["ReverseFountain"].prereqs = ["Fountain(4b)"]
+jugglingLibrary["FourBallMillsMess"].prereqs = ["Mills Mess","Reverse Fountain(4b)"]
+jugglingLibrary["FourBallRainbowCross"].prereqs = ["Four Ball Columns","Rainbow Arches"]
+jugglingLibrary["4bHalfShower"].prereqs = ["Half-Shower","Wimpy(4b)"]
+jugglingLibrary["FourBallTakeouts"].prereqs = ["Takeouts","Cliff's Confusion(4b)"]
+jugglingLibrary["Arches"].prereqs = ["Half Shower(4b)"]
+jugglingLibrary["Wimpy"].related = ["Half Shower(4b)"]
+jugglingLibrary["FiveBallHalf-Shower"].prereqs = ["Five Ball Cascade","Half Shower(4b)"]
+jugglingLibrary["TennesseeWaltz"].prereqs = ["Cascade","Cliff's Confusion(4b)"]
+jugglingLibrary["SwapBox"].prereqs = ["Box","Shuffle Switch"]
+jugglingLibrary["ShowerSwapVariation"].prereqs = ["Shower", "Shuffle Switch"]
+jugglingLibrary["BrokenBox"].prereqs = ["Box","Shower Cascade"]
+jugglingLibrary["Jeanne"].prereqs = ["Orka's Mess","Rubenstein's Revenge"]
+jugglingLibrary["Alex"].prereqs = ["531 Mills Mess", "Orka's Mess"]
+jugglingLibrary["Matt'sMess"].prereqs = ["Reverse Infinity","Crossunder"]
+jugglingLibrary["Luke'sLobotomy"].prereqs = ["Crossed Arm Reverse Cascade","Buffalo Shuffle"]
+jugglingLibrary["Maka'sMess"].prereqs = ["Crossed Arm Reverse Cascade"]
+jugglingLibrary["Mike'sMess"].prereqs = ["Crossed Arm Reverse Cascade"]
+jugglingLibrary["Charley"].prereqs = ["Crossed Arm Reverse Cascade", "Mills Mess"]
 jugglingLibrary["TrueBox"].prereqs = ["Box","Inverted Shower"]
 jugglingLibrary["FlyingDiscoDrop"].prereqs = ["Shower","Orka's Mess","Hands of Time"]
 jugglingLibrary["Frostbite"].related = ["Kraken","Kato's Crux","Shuffler's Mess","441 Mills Mess"]
 jugglingLibrary["Levels"].prereqs = ["N-Box","Luke's Shuffle"]
 jugglingLibrary["Shuffler'sMess"].prereqs = ["Mills Mess","531 Mills Mess"]
 jugglingLibrary["Takearound"].prereqs = ["Takeouts","Flying Disco Drop"]
-jugglingLibrary["ChopShower"].prereqs = ["Windmill","Crossed-Arm Reverse Cascade"]
+jugglingLibrary["ChopShower"].prereqs = ["Windmill","Crossed Arm Reverse Cascade"]
 jugglingLibrary["ChopShower"].related = ["Chops","Frantic Cascade","Statue of Liberty"]
-jugglingLibrary["534MillsMess"].prereqs = ["Four Ball Mills Mess","534","531 Mills Mess"]
-jugglingLibrary["FourBallWindmill"].prereqs = ["Windmill","Fountain","Four Ball Mills Mess"]
+jugglingLibrary["534MillsMess"].prereqs = ["Four Ball Mills Mess","534(4b)","531 Mills Mess"]
+jugglingLibrary["FourBallWindmill"].prereqs = ["Windmill","Fountain(4b)","Four Ball Mills Mess"]
 
 let trickNamesToKeys = {}
 let finalLibrary = {}
@@ -2172,19 +2206,24 @@ Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 
     trick.name = trick.name.replace("-","")
     trick.name = trick.name.replace("HalfBox","")
-    trick.name = trick.name.replace("(","")
-    trick.name = trick.name.replace(")","")
+    if (!trick.name.includes("(4b)") && 
+        !trick.name.includes("(5b)") &&
+        !trick.name.includes("(6b)") && 
+        !trick.name.includes("(7b)")){
+            trick.name = trick.name.replace("(","")
+            trick.name = trick.name.replace(")","")
+            if(trick.num > 3){
+                trickKey = trickKey + "(" + trick.num + "b)"
+                trick.name = trick.name + "(" + trick.num + "b)"
+            }
+    }
     trick.name = trick.name.trim()
 
     trick.gifUrl = trick.gifUrl.replace("'","")
     if(trick.num == 3){
         defaultTricks.push(trickKey)
     }
-    if(trick.num > 3){
-        trickKey = trickKey + "(" + trick.num + "b)"
-        trick.name = trick.name + "(" + trick.num + "b)"
 
-    }
     trickNamesToKeys[trick.name] = trickKey
     finalLibrary[trickKey] = trick
 })
@@ -2196,16 +2235,23 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
         trick.prereqs.forEach((prereq, j)=>{
             prereq = prereq.replace("-","")
             prereq = prereq.replace("HalfBox","")
-            prereq = prereq.replace("(","")
-            prereq = prereq.replace(")","")
-            if(prereq.includes("Four")){
-                prereq = prereq.replace("Four Ball ", "")
-                prereq = prereq + "(" + 4 + "b)"
+            if (!prereq.includes("(4b)") && 
+                !prereq.includes("(5b)") &&
+                !prereq.includes("(6b)") && 
+                !prereq.includes("(7b)")){
+                    prereq = prereq.replace("(","")
+                    prereq = prereq.replace(")","")
+                    if(prereq.includes("Four")){
+                        prereq = prereq.replace("Four Ball ", "")
+                        prereq = prereq + "(" + 4 + "b)"
+                    }
+                    if(prereq.includes("Five")){
+                        prereq = prereq.replace("Five Ball ", "")
+                        prereq = prereq + "(" + 5 + "b)"
+                    }
             }
-            if(prereq.includes("Five")){
-                prereq = prereq.replace("Five Ball ", "")
-                prereq = prereq + "(" + 5 + "b)"
-            }
+
+
             prereq = prereq.trim()
             const prereqKey = trickNamesToKeys[prereq] ? trickNamesToKeys[prereq] : prereq
             if(!trickNamesToKeys[prereq]){
@@ -2225,6 +2271,12 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
         trick.prereqs = prereqKeys
     }
 })
+
+jugglingLibrary["Half-Mess"].name = "Half Mess"
+jugglingLibrary["Half-Shower"].name = "Half Shower"
+jugglingLibrary["CrossedArmCascade"].name = "Crossed Arm Cascade"
+jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed Arm Reverse Cascade"
+
 jugglingLibrary = finalLibrary
 export { 
     jugglingLibrary,

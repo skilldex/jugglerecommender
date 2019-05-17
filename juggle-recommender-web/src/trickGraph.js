@@ -24,7 +24,6 @@ class TrickGraph extends React.Component {
     const events = {
     select: function(event) {
         var { nodes, edges } = event;
-        console.log('event',event)
         store.setPopupTrick({
           'id': event.nodes[0],
           'x' : event.pointer.DOM.x,

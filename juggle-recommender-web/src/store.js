@@ -76,8 +76,7 @@ class Store {
 					this.selectedList === "myTricks" && this.myTricks.includes(trickKey)
 				){
 					const trick = jugglingLibrary[trickKey]
-					let shouldPushTrick = false
-					
+					let shouldPushTrick = false					
 					if (trick.num === 3 && this.expandedSections['3'] &&
 						(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
 							this.searchTrick === "")){
@@ -140,7 +139,6 @@ class Store {
 			 				}
 			 			}
 		 				edges.push({from: prereqKey, to: trickKey })
-
 		 			})
 		 		}
 	 			if(rootTrick.dependents){
@@ -154,7 +152,6 @@ class Store {
 			 				}
 			 			}
 		 				edges.push({from: trickKey, to: dependentKey })
-
 		 			})
 		 		}
  			})
@@ -169,17 +166,12 @@ class Store {
 		 				label: rootTrick.name,
 		 				color : this.getInvolvedNodeColor(involvedRoot),
 		 				involved : involvedRoot
-		 			}
-		 			if(trickKey == "423"){
-		 				console.log(tempNodes[trickKey])
-		 			}
-		 			
+		 			}	 			
 		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
-		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0
-		 				
+		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0		 				
 		 				if(
 		 					tempNodes[prereqKey] && 
 		 					tempNodes[prereqKey].involved > involvedPrereq
@@ -192,7 +184,6 @@ class Store {
 		 					color : this.getInvolvedNodeColor(involvedPrereq),
 		 					involved : involvedPrereq
 		 				}
-
 		 				edges.push({from: prereqKey, to: trickKey })
 			 		})
 	 			}

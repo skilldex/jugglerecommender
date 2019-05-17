@@ -55,19 +55,12 @@ alphabeticalSortObject(data, attr) {
  		"4" : [],
  		"5" : [],
  		"6" : [],
- 		"7" : [],
- 		
+ 		"7" : [], 		
  	}
  	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
-		// if (trick.name == "Half Shower"){
-		// 	console.log('Half Shower')
-		// }
-		// if (trick.name == "Half-Mess"){
-		// 	console.log('Half-Mess')
-		// }
 		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
 			if(store.selectedTricks == trickKey){
 				cardClass = 'selectedListCard'
@@ -103,9 +96,7 @@ alphabeticalSortObject(data, attr) {
 				 		</div>
 			 		</div>
 	return (	
-		<div className="listDiv">			
-			
-			
+		<div className="listDiv">				
 	 		{this.state.expanded ? 
 				<div>
 				 	{buttons}
