@@ -74,9 +74,10 @@ class App extends Component {
 				<h1>Juggledex</h1>
 				<h3>Gotta catch em all ;)</h3>	
 			</div>
-			<div>
+			<div className="legend">
+				<h3>Legend</h3>
 				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
-				<span>My tricks </span>
+				<span>My tricks/Selected </span>
 				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
 				<span>Prerequisite</span>
 				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
