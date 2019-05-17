@@ -83,9 +83,9 @@ class App extends Component {
 				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
 				<span>My tricks/Selected </span>
 				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
-				<span>Prerequisite</span>
-				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
 				<span>Learn Next</span>
+				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
+				<span>Prerequisite</span>
 				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
 				<span>Not relevant</span>
 			</div>

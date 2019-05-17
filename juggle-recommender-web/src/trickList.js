@@ -61,7 +61,7 @@ alphabeticalSortObject(data, attr) {
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
-		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
+		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase()) ){
 			if(store.selectedTricks == trickKey){
 				cardClass = 'selectedListCard'
 			}
