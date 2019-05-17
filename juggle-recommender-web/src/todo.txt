@@ -1,10 +1,7 @@
--status property for tricks, 'done'
-- clean remaining prereq data exceptions
-	there is an orka's mess and an orka's mes
+
 
 -Style expand arrows as icons
 - add loading graphic
-- disable expand toggle while loading
 - make checkboxes for showing (related, depends, prereqs) in graph
 
 POSSIBLE SELECTION OPTION:
@@ -14,7 +11,7 @@ POSSIBLE SELECTION OPTION:
 -make a select all button to select all of the tricks in the list (show all relationships, maybe default view)
 
 DIFFICULTY
--represent difficulty in nodes(maybe with border color, node shape, something else)
+-represent difficulty in nodes(maybe with border color, node shape, something else) Maybe color all deps and prereqs by difficulty from green to red, where prereqs are biased to be more green since the dependent has already been done. 
 
 USERS:
 -create user
@@ -25,13 +22,20 @@ USERS:
 BUGS:
 -there is strange behavior with half-mess and half-shower in jugglingLibrary, if I change their names to something other than their key they dont show up on the list. I think it has something to do with the fact that there are 3b and 4b versions with same name, but not sure.
 
--fix list card styles for retina
 
 
 -right now it only colors a trick as being my trick if it is in the rootlist, we want it to
 	color all of my tricks that it shows
 
--make legend good for mobile(smaller)
-
 
 MOBILE:
+-make legend good for mobile(smaller)
+-fix list card styles for retina
+- make gif smaller for rtina 
+
+Later : 
+
+-status property for tricks, 'done'
+- clean remaining prereq data exceptions
+	there is an orka's mess and an orka's mes
+
