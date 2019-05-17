@@ -62,13 +62,12 @@ alphabeticalSortObject(data, attr) {
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
-		console.log('trick.name',trick.name)
-		if (trick.name == "Half Shower"){
-			console.log('Half Shower')
-		}
-		if (trick.name == "Half-Mess"){
-			console.log('Half-Mess')
-		}
+		// if (trick.name == "Half Shower"){
+		// 	console.log('Half Shower')
+		// }
+		// if (trick.name == "Half-Mess"){
+		// 	console.log('Half-Mess')
+		// }
 		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase())){
 			if(store.selectedTricks == trickKey){
 				cardClass = 'selectedListCard'
