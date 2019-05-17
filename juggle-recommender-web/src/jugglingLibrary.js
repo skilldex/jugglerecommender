@@ -2139,6 +2139,11 @@ jugglingLibrary["CrossedArmFactory"].name = "CrossedArmFactory"
 jugglingLibrary["FlyingDiscoDrop"].name = "Flying DiscoDrop"
 jugglingLibrary["SymmetricGeorgianScuffle"].name = "Symmetric GeorgianScuffle"
 jugglingLibrary["SymmetricGeorgianShuffle"].name = "Symmetric GeorgianShuffle"
+
+jugglingLibrary["Frostbite"].related = ["Kraken","Kato's Crux","Shuffler's Mess","441 Mills Mess"]
+jugglingLibrary["TrueBox"].prereqs = ["Box","Inverted Shower"]
+jugglingLibrary["FlyingDiscoDrop"].prereqs = ["Shower","Orka's Mess","Hands of Time"]
+
 let trickNamesToKeys = {}
 let finalLibrary = {}
 let defaultTricks = []
