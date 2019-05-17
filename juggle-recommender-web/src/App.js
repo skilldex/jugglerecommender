@@ -6,6 +6,7 @@ import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
 import store from './store'
+import Swipe from 'react-easy-swipe';
 
 @observer
 class App extends Component {
@@ -13,7 +14,8 @@ class App extends Component {
  		filters : [],
  		selectedList : "allTricks",
  		edges : [],
- 		nodes : []
+ 		nodes : [],
+ 		swipedList : false
 	}
 	componentDidMount(){
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
@@ -85,10 +87,20 @@ class App extends Component {
 				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
 				<span>Not relevant</span>
 			</div>
-			<TrickList 
-				myTricks={store.myTricks} 
-				selectedList={store.selectedList}
-			/>
+			<Swipe
+		        onSwipeLeft={(event)=>{this.setState({swipedList : true});}}
+		    >
+				{this.state.swipedList ? 
+					<div className="swipedDiv" 
+						onClick={
+							(event)=>{this.setState({swipedList : false})}
+						}
+					>+</div> : 
+					<TrickList 
+						myTricks={store.myTricks} 
+						selectedList={store.selectedList}
+					/>}
+			</Swipe>
 			{popup}
 			<TrickGraph 
 				nodes = {store.nodes}
