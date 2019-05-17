@@ -31,9 +31,7 @@ h1{
 .title {
   text-align: center;
 }
-.listButtonDiv{
-  text-align: left;
-}
+
 .checkboxDiv{
   display: inline-block; 
   margin-right: 20px;
@@ -80,10 +78,21 @@ h1{
 
 .selectedListButton{
   font-size: 12pt;
+  border-radius: 5px;
   background-color : darkgray;
+  width : 110px;
+  box-shadow : 2px 0px 5px #888888;;
+
 }
 .unselectedListButton{
   font-size: 12pt;
+  border-radius: 5px;
+  width : 110px;
+  box-shadow : 2px 0px 5px #888888;;
+
+}
+.listButtonDiv{
+  text-align: left;
 }
 
 .graphDiv{
@@ -103,12 +112,16 @@ h1{
   font-size: 16pt;
   margin-right : 5px;
   background-color : darkgray;
+  box-shadow : 2px 0px 5px #888888;;
+
 }
 .removeFromMyTricksButton{
   color : yellow;
   font-size: 16pt;
   margin-right : 5px;
   background-color : darkgray;
+  box-shadow : 2px 0px 5px #888888;;
+
 }
 @supports (-webkit-overflow-scrolling: touch) {  
   .addToMyTricksButton{
@@ -137,12 +150,18 @@ h1{
   font-size: 40pt;
 }
 .legendSpan{
-  width : 50px;
-  height : 50px;
+  width : 30px;
+  height : 30px;
   display: inline-block;
   vertical-align: middle;
   margin-left: 15px;
   margin-right : 15px;
+}
+.legend{
+  border : 1px solid gray;
+  font-color : gray;
+  padding-left: 5px;
+  text-align: left;
 }
 .App-header {
   background-color: #282c34;
