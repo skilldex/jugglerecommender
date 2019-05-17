@@ -2128,6 +2128,10 @@ let jugglingLibrary =
         "num": 6
     }
 }
+var trick = {}
+for (trick in jugglingLibrary){
+    jugglingLibrary[trick].tags = []
+}
 jugglingLibrary["High-LowShower"].name = "High-Low Shower"
 jugglingLibrary["High-LowCascade"].name = "High-Low Cascade"
 jugglingLibrary["ColumnBoxVar"].name = "Column Box Var" 
@@ -2190,6 +2194,15 @@ jugglingLibrary["ChopShower"].related = ["Chops","Frantic Cascade","Statue of Li
 jugglingLibrary["534MillsMess"].prereqs = ["Four Ball Mills Mess","534(4b)","531 Mills Mess"]
 jugglingLibrary["FourBallWindmill"].prereqs = ["Windmill","Fountain(4b)","Four Ball Mills Mess"]
 
+jugglingLibrary["Cascade"].tags = ["common"]
+jugglingLibrary["Shower"].tags = ["common"]
+jugglingLibrary["Box"].tags = ["common"]
+jugglingLibrary["Columns"].tags = ["common"]
+jugglingLibrary["TheW"].tags = ["common"]
+jugglingLibrary["Half-Box(441)"].tags = ["common"]
+
+
+
 let trickNamesToKeys = {}
 let finalLibrary = {}
 let defaultTricks = []
@@ -2220,9 +2233,6 @@ Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     trick.name = trick.name.trim()
 
     trick.gifUrl = trick.gifUrl.replace("'","")
-    if(trick.num == 3){
-        defaultTricks.push(trickKey)
-    }
 
     trickNamesToKeys[trick.name] = trickKey
     finalLibrary[trickKey] = trick
@@ -2257,7 +2267,8 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
             if(!trickNamesToKeys[prereq]){
                 finalLibrary[prereq] = {
                     "name" : prereq,
-                    "num" : trick.num
+                    "num" : trick.num,
+                    "tags" : []
                 }
             }
             prereqKeys.push(prereqKey)
@@ -2279,6 +2290,5 @@ jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed Arm Reverse Cascade"
 
 jugglingLibrary = finalLibrary
 export { 
-    jugglingLibrary,
-    defaultTricks
+    jugglingLibrary
 }
