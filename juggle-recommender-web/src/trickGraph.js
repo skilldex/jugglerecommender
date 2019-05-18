@@ -17,7 +17,6 @@ class TrickGraph extends React.Component {
     }
     const options = {
       autoResize: true,
-      nodes: {borderWidth: 2},
       interaction: {hover: true},
       //physics: {barnesHut: { avoidOverlap: store.rootTricks.length < 20 ? 1:0} }
     }

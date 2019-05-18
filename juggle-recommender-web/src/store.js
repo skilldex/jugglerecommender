@@ -102,14 +102,16 @@ class Store {
 
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
 		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 60%)"
+      	let borderWidth = 1
+      	if(involved == 3){
+      		borderWidth = 10
+      	}
       	const color = {
       		background : colorString,
             border:  'black',
-            highlight: {
-                border: '#2B7CE9',
-            }
+            borderWidth : borderWidth
         }
-		
+		console.log("borderwidth ", borderWidth)
 		return color
 
 	}
@@ -120,12 +122,19 @@ class Store {
 		}
 		return size
 	}
-	@action getInvolvedNodeShape=(involved)=>{
-		let shape = "ellipse" //default
+	@action getInvolvedNodeFont=(involved)=>{
+		let fontSize = 14 //default
 		if(involved == 3){
-			shape = "circle"
+			fontSize = 24
 		}
-		return shape
+		return {size: fontSize}
+	}
+	@action getInvolvedNodeMass =(involved)=>{
+		let mass = 2
+		if(involved == 3){
+			mass = 6
+		}
+		return mass
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
@@ -140,7 +149,8 @@ class Store {
 		 				label: rootTrick.name,
 		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
 		 				size : this.getInvolvedNodeSize(3),
-		 				shape : this.getInvolvedNodeShape(3),
+		 				font : this.getInvolvedNodeFont(3),
+		 				mass : this.getInvolvedNodeMass(3),
 
 		 			}
 		 		}
@@ -183,7 +193,9 @@ class Store {
 		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
 		 				involved : involvedRoot,
 		 				size : this.getInvolvedNodeSize(involvedRoot),
-		 				shape : this.getInvolvedNodeShape(involvedRoot),
+		 				font : this.getInvolvedNodeFont(involvedRoot),
+		 				mass : this.getInvolvedNodeMass(involvedRoot),
+
 
 		 			}	 			
 		 		}
@@ -203,8 +215,8 @@ class Store {
 		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
 		 					involved : involvedPrereq,
 		 					size : this.getInvolvedNodeSize(involvedPrereq),
-		 					shape : this.getInvolvedNodeShape(involvedPrereq),
-
+		 					font : this.getInvolvedNodeFont(involvedPrereq),
+							mass : this.getInvolvedNodeMass(involvedPrereq),
 		 				}
 		 				edges.push({from: prereqKey, to: trickKey })
 			 		})
@@ -222,7 +234,8 @@ class Store {
 		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
 		 					involved : involvedDependent,
 		 					size : this.getInvolvedNodeSize(involvedDependent),
-		 			 		shape : this.getInvolvedNodeShape(involvedDependent),
+		 			 		font : this.getInvolvedNodeFont(involvedDependent),
+		 			 		mass : this.getInvolvedNodeMass(involvedDependent),
 
 		 				}
 		 				edges.push({from: trickKey , to: dependentKey })
