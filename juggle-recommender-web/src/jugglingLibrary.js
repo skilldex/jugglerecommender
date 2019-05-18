@@ -2152,6 +2152,8 @@ jugglingLibrary["UnderarmShower"].name = "Under Arm Shower"
 jugglingLibrary["FourBallHalf-Mess"].name = "Half Mess"
 jugglingLibrary["FourBallHalfShower"].name = "Half Shower(4b)"
 jugglingLibrary["FourBallMillsMess"].name = "Mills Mess(4b)"
+jugglingLibrary["MillsMess4b"] = jugglingLibrary["FourBallMillsMess"]
+delete jugglingLibrary["FourBallMillsMess"]
 jugglingLibrary["ReverseSynchFountain"].name = "Reverse Synch Fountain"
 jugglingLibrary["SynchFountain"].name = "Synch. Fountain(4b)"
 jugglingLibrary["ThreeInOne"].name = "Three In One"
@@ -2165,7 +2167,7 @@ jugglingLibrary["FourBallBox"].prereqs = ["Box","Three in One","Sprung Cascade(4
 jugglingLibrary["SprungCascade"].prereqs = ["Box","5551(4b)"]
 jugglingLibrary["ReverseSynchFountain"].prereqs = ["Synch. Fountain(4b)"]
 jugglingLibrary["ReverseFountain"].prereqs = ["Fountain(4b)"]
-jugglingLibrary["FourBallMillsMess"].prereqs = ["Mills Mess","Reverse Fountain(4b)"]
+jugglingLibrary["MillsMess4b"].prereqs = ["Mills Mess","Reverse Fountain(4b)"]
 jugglingLibrary["FourBallRainbowCross"].prereqs = ["Four Ball Columns","Rainbow Arches"]
 jugglingLibrary["4bHalfShower"].prereqs = ["Half-Shower","Wimpy(4b)"]
 jugglingLibrary["FourBallTakeouts"].prereqs = ["Takeouts","Cliff's Confusion(4b)"]
@@ -2288,7 +2290,13 @@ jugglingLibrary["Half-Shower"].name = "Half Shower"
 jugglingLibrary["CrossedArmCascade"].name = "Crossed Arm Cascade"
 jugglingLibrary["CrossedArmReverseCascade"].name = "Crossed Arm Reverse Cascade"
 
+
 jugglingLibrary = finalLibrary
+
+jugglingLibrary["MillsMess"].num = 3
+
+jugglingLibrary["MillsMess"].name = "Mills Mess"
+console.log(jugglingLibrary)
 export { 
     jugglingLibrary
 }
