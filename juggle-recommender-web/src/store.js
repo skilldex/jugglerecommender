@@ -112,15 +112,17 @@ class Store {
 	}
 
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
-
-		const opacity = 50
-		//return "rgba(" + 255*(difficulty-2)/10   + "," + 255*(10 - difficulty-2)/10 + ", 0, 80%)"		
-		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",0%, 100%)"
-		if(involved == 1 || involved == 2 ){
-			colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 50%)"
-		} 
-		return colorString
-
+		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 60%)"
+      	let borderWidth = 1
+      	if(involved == 3){
+      		borderWidth = 10
+      	}
+      	const color = {
+      		background : colorString,
+            border:  'black',
+            borderWidth : borderWidth
+        }
+		return color
 	}
 	@action getInvolvedNodeSize=(involved)=>{
 		let size = 25 //default
