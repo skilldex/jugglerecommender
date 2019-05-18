@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { observer } from "mobx-react"
+import {toJS} from "mobx"
+
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
@@ -53,11 +55,14 @@ class App extends Component {
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
+ 		if(store.popupTrick){
+ 			console.log("popupTrick", toJS(store.popupTrick))
+ 		}
  		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
 				left : store.popupTrick.x,
 				top : store.popupTrick.y
 			}} className="popupDiv">
-              <h3>{store.popupTrick.id}</h3> 
+              <h3>{jugglingLibrary[store.popupTrick.id].name}</h3> 
               <label>Difficult: {jugglingLibrary[store.popupTrick.id].difficulty} / 10</label><br></br><br></br>
               {addToMyTricksButton}
               {selectTrickButton}
@@ -82,17 +87,6 @@ class App extends Component {
 				<span>Find new tricks to learn next that are related to tricks you know.</span>
 				<br/>
 				<span> Keep track of tricks you know in "My Tricks"</span> 	
-			</div>
-			<div className="legend">
-				<h3>Legend</h3>
-				<p className="legendSpan" style={{"backgroundColor" : "yellow"}}></p>
-				<span>My tricks/Selected </span>
-				<p className="legendSpan" style={{"backgroundColor" : "orange"}}/>
-				<span>Learn Next</span>
-				<p className="legendSpan" style={{"backgroundColor" : "pink"}}/>
-				<span>Prerequisite</span>
-				<p className="legendSpan" style={{"backgroundColor" : "cyan"}}/>
-				<span>Not relevant</span>
 			</div>
 
 			{this.state.swipedList ? 
