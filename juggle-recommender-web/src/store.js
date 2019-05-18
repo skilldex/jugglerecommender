@@ -9,8 +9,8 @@ class Store {
 	@observable rootTricks = []
 	@observable nodes = []
 	@observable edges = []
-	@observable searchInput = ''
-	@observable searchTrick = ''
+	@observable searchInput = 'common'
+	@observable searchTrick = 'common'
 	@observable expandedSections = {
 		'3' : true,
 		'4' : false,

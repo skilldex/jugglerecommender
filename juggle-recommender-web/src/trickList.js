@@ -61,7 +61,11 @@ alphabeticalSortObject(data, attr) {
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
-		if(trick.name.toLowerCase().includes(store.searchTrick.toLowerCase()) ){
+		var fullStringToSearch = trick.name.toLowerCase()
+		trick.tags.forEach(function (tag, index) {
+			fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
+		});
+		if(fullStringToSearch.includes(store.searchTrick.toLowerCase()) ){
 			if(store.selectedTricks == trickKey){
 				cardClass = 'selectedListCard'
 			}
@@ -91,7 +95,7 @@ alphabeticalSortObject(data, attr) {
 							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All Tricks</button>
 						</div>
 			 			<div className="search" >
-				 			<input onChange={store.searchInputChange}/>
+				 			<input value = "common" onChange={store.searchInputChange}/>
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
 				 		</div>
 			 		</div>

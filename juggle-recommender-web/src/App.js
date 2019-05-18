@@ -3,7 +3,7 @@ import { observer } from "mobx-react"
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
-import {jugglingLibrary, defaultTricks} from './jugglingLibrary.js'
+import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import Swipe from 'react-easy-swipe';
 
@@ -20,7 +20,7 @@ class App extends Component {
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
 		if(myTricks){
 			store.setMyTricks(myTricks)
-			store.updateRootTricks(defaultTricks)
+			store.updateRootTricks()
 			
 		}
 	}
