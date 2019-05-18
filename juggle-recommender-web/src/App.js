@@ -55,9 +55,6 @@ class App extends Component {
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
- 		if(store.popupTrick){
- 			console.log("popupTrick", toJS(store.popupTrick))
- 		}
  		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
 				left : store.popupTrick.x,
 				top : store.popupTrick.y

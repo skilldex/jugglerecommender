@@ -1,8 +1,6 @@
 Beta:
 - make gif smaller for rtina 
--Allow multiple selected tricks
--show all selected tricks in graph
--when a popup is open and a new trick becomes selected, clicking on the empty space doesn't get rid of the popup
+
 
 User Launch::
 	-we want to easily see at a glance which tricks I can do and which I am interested in
@@ -10,6 +8,11 @@ User Launch::
 	-login
 	-allow users to add tricks
 	-toggle tricks by user added trick
+
+IDEAS:
+	-it would be nice to compare gifs of different tricks side by side,
+		to do this we would want to be able to show more than one popup
+		and maybe made the popups draggable so they can be put right next to each other
 
 
 BUGS:
