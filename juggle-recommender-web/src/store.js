@@ -112,7 +112,7 @@ class Store {
 	}
 
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
-		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 60%)"
+		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 60%)"
       	let borderWidth = 1
       	if(involved == 3){
       		borderWidth = 10
