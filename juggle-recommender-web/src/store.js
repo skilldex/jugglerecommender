@@ -112,6 +112,7 @@ class Store {
 	}
 
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
+
 		const opacity = 50
 		//return "rgba(" + 255*(difficulty-2)/10   + "," + 255*(10 - difficulty-2)/10 + ", 0, 80%)"		
 		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",0%, 100%)"
@@ -119,6 +120,28 @@ class Store {
 			colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 50%)"
 		} 
 		return colorString
+
+	}
+	@action getInvolvedNodeSize=(involved)=>{
+		let size = 25 //default
+		if(involved == 3){
+			size = 100
+		}
+		return size
+	}
+	@action getInvolvedNodeFont=(involved)=>{
+		let fontSize = 14 //default
+		if(involved == 3){
+			fontSize = 24
+		}
+		return {size: fontSize}
+	}
+	@action getInvolvedNodeMass =(involved)=>{
+		let mass = 2
+		if(involved == 3){
+			mass = 6
+		}
+		return mass
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
@@ -131,7 +154,11 @@ class Store {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: rootTrick.name,
-		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3)
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
+		 				size : this.getInvolvedNodeSize(3),
+		 				font : this.getInvolvedNodeFont(3),
+		 				mass : this.getInvolvedNodeMass(3),
+
 		 			}
 		 		}
 		 		if(rootTrick.prereqs){
@@ -166,52 +193,63 @@ class Store {
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.myTricks.includes(trickKey) || 
 	 							this.selectedTricks.includes(trickKey) ? 3 : 0
-		 		if(rootTrick){
-		 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
-			 			tempNodes[trickKey] = {
-			 				id: trickKey,
-			 				label: rootTrick.name,
-			 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
-			 				involved : involvedRoot
-			 			}	 			
-			 		}
 
-		 			if(rootTrick.prereqs){
-		 				rootTrick.prereqs.forEach((prereqKey)=>{
-			 				const prereq = jugglingLibrary[prereqKey]
-			 				let involvedPrereq = involvedRoot > 0 ? 1 : 0		 				
-			 				if(
-			 					tempNodes[prereqKey] && 
-			 					tempNodes[prereqKey].involved > involvedPrereq
-			 				){
-			 					involvedPrereq = tempNodes[prereqKey].involved
-			 				}
-			 				tempNodes[prereqKey] = {
-			 					id: prereqKey,
-			 					label: prereq.name,
-			 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
-			 					involved : involvedPrereq
-			 				}
-			 				edges.push({from: prereqKey, to: trickKey })
-				 		})
-		 			}
-	 				if(rootTrick.dependents){
-	 					rootTrick.dependents.forEach((dependentKey)=>{
-			 				const dependent = jugglingLibrary[dependentKey]
-			 				let involvedDependent = involvedRoot > 0 ? 2 : 0
-			 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
-			 					involvedDependent = tempNodes[dependentKey].involved
-			 				}
-			 				tempNodes[dependentKey] = {
-			 					id: dependentKey,
-			 					label: dependent.name,
-			 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
-			 					involved : involvedDependent
-			 				}
-			 				edges.push({from: trickKey , to: dependentKey })
-			 			})
-	 				}
+	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
+		 			tempNodes[trickKey] = {
+		 				id: trickKey,
+		 				label: rootTrick.name,
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
+		 				involved : involvedRoot,
+		 				size : this.getInvolvedNodeSize(involvedRoot),
+		 				font : this.getInvolvedNodeFont(involvedRoot),
+		 				mass : this.getInvolvedNodeMass(involvedRoot),
+
+
+		 			}	 			
+		 		}
+	 			if(rootTrick.prereqs){
+	 				rootTrick.prereqs.forEach((prereqKey)=>{
+		 				const prereq = jugglingLibrary[prereqKey]
+		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0		 				
+		 				if(
+		 					tempNodes[prereqKey] && 
+		 					tempNodes[prereqKey].involved > involvedPrereq
+		 				){
+		 					involvedPrereq = tempNodes[prereqKey].involved
+		 				}
+		 				tempNodes[prereqKey] = {
+		 					id: prereqKey,
+		 					label: prereq.name,
+		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
+		 					involved : involvedPrereq,
+		 					size : this.getInvolvedNodeSize(involvedPrereq),
+		 					font : this.getInvolvedNodeFont(involvedPrereq),
+							mass : this.getInvolvedNodeMass(involvedPrereq),
+		 				}
+		 				edges.push({from: prereqKey, to: trickKey })
+			 		})
 	 			}
+ 				if(rootTrick.dependents){
+ 					rootTrick.dependents.forEach((dependentKey)=>{
+		 				const dependent = jugglingLibrary[dependentKey]
+		 				let involvedDependent = involvedRoot > 0 ? 2 : 0
+		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
+		 					involvedDependent = tempNodes[dependentKey].involved
+		 				}
+		 				tempNodes[dependentKey] = {
+		 					id: dependentKey,
+		 					label: dependent.name,
+		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
+		 					involved : involvedDependent,
+		 					size : this.getInvolvedNodeSize(involvedDependent),
+		 			 		font : this.getInvolvedNodeFont(involvedDependent),
+		 			 		mass : this.getInvolvedNodeMass(involvedDependent),
+
+		 				}
+		 				edges.push({from: trickKey , to: dependentKey })
+		 			})
+ 				}
+>>>>>>> 0daaba091c572a413e1649ca342a6af365dc9fe4
  					
  			})
 	 	}
