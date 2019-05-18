@@ -84,9 +84,9 @@ class App extends Component {
 			</div>
 			<div className="instructions">
 				<h3>Instructions</h3>
-				<span>Find new tricks to learn next that are related to tricks you know.</span>
+				<span> Star tricks you know to add to "My Tricks"</span> 	
 				<br/>
-				<span> Keep track of tricks you know in "My Tricks"</span> 	
+				<span>Find new tricks to learn next that are related to tricks you know.</span>
 			</div>
 
 			{this.state.swipedList ? 
