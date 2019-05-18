@@ -66,7 +66,7 @@ alphabeticalSortObject(data, attr) {
 			fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 		});
 		if(fullStringToSearch.includes(store.searchTrick.toLowerCase()) ){
-			if(store.selectedTricks == trickKey){
+			if(store.selectedTricks.includes(trickKey)){
 				cardClass = 'selectedListCard'
 			}
 			if(store.selectedList === "allTricks" || 

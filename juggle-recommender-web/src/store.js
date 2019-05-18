@@ -34,14 +34,19 @@ class Store {
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		this.updateRootTricks()
  	}
- 	@action selectTricks=(selectedTricks)=>{
- 		if (this.selectedTricks[0] === selectedTricks[0] && this.selectedTricks.length === 1){
-			this.selectedTricks = []
-	 	}else{
-	 		this.selectedTricks = selectedTricks
+ 	@action selectTricks=(clickedTrick)=>{
+ 		if (this.selectedTricks.includes(clickedTrick[0])){
+ 			console.log('it includes')
+ 			for (var i=this.selectedTricks.length-1; i>=0; i--) {
+			    if (this.selectedTricks[i] === clickedTrick[0]) {
+			        this.selectedTricks.splice(i, 1);
+			    }
+			}
+ 		}else{
+	 		this.selectedTricks.push(clickedTrick[0])
 	 	}
 	 	this.updateRootTricks()
-	 	if(!selectedTricks.includes(selectedTricks[0])){
+	 	if(!clickedTrick.includes(clickedTrick[0])){
 	 		this.popupTrick = null
 	 	}
  	}
@@ -72,9 +77,7 @@ class Store {
  	@action updateRootTricks=()=>{
 	 	this.rootTricks = []
 	 	if (this.selectedTricks.length > 0){
-			this.rootTricks.push(
-				this.selectedTricks[0]
-			)
+	 		Array.prototype.push.apply(this.rootTricks, this.selectedTricks);
 	 	}else{
 		 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 				if(this.selectedList === "allTricks" || 
