@@ -7,7 +7,10 @@ h1{
 .search{
   margin-top : 10px;
   margin-bottom : 10px;
-
+}
+input{
+  font-size: 16px;
+  width : 100px;
 }
 .popupGif{
   width: 200px;
@@ -99,14 +102,14 @@ h1{
   font-size: 12pt;
   border-radius: 5px;
   background-color : darkgray;
-  width : 110px;
+  width : 90px;
   box-shadow : 2px 0px 5px #888888;;
 
 }
 .unselectedListButton{
   font-size: 12pt;
   border-radius: 5px;
-  width : 110px;
+  width : 90px;
   box-shadow : 2px 0px 5px #888888;;
 
 }

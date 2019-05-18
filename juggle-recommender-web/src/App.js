@@ -20,12 +20,13 @@ class App extends Component {
 	}
 	componentDidMount(){
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
-		if(myTricks.length > 0){
+		if(myTricks && myTricks.length > 0){
 			store.setMyTricks(myTricks)
 			store.setSelectedList("myTricks")
 			store.setSearchInput('')
 			store.updateRootTricks()		
 		}else{
+			store.setMyTricks(["Cascade"])
 			store.selectTricks(['Cascade'])
 			store.setSearchInput('common')
 			store.updateRootTricks()	
@@ -84,7 +85,7 @@ class App extends Component {
 			</div>
 			<div className="instructions">
 				<h3>Instructions</h3>
-				<span> Star tricks you know to add to "My Tricks"</span> 	
+				<span> Star tricks you know to add to "Starred" tricks.</span> 	
 				<br/>
 				<span>Find new tricks to learn next that are related to tricks you know.</span>
 			</div>
