@@ -101,17 +101,31 @@ class Store {
 	}
 
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
-		const opacity = 50
-		//return "rgba(" + 255*(difficulty-2)/10   + "," + 255*(10 - difficulty-2)/10 + ", 0, 80%)"
+		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 60%)"
+      	const color = {
+      		background : colorString,
+            border:  'black',
+            highlight: {
+                border: '#2B7CE9',
+            }
+        }
 		
-		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",0%, 100%)"
-		if(involved == 1 || involved == 2 ){
-			colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 50%)"
-		} 
-		
-		console.log(colorString)
-		return colorString
+		return color
 
+	}
+	@action getInvolvedNodeSize=(involved)=>{
+		let size = 25 //default
+		if(involved == 3){
+			size = 100
+		}
+		return size
+	}
+	@action getInvolvedNodeShape=(involved)=>{
+		let shape = "ellipse" //default
+		if(involved == 3){
+			shape = "circle"
+		}
+		return shape
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
@@ -124,7 +138,10 @@ class Store {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: rootTrick.name,
-		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3)
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
+		 				size : this.getInvolvedNodeSize(3),
+		 				shape : this.getInvolvedNodeShape(3),
+
 		 			}
 		 		}
 		 		if(rootTrick.prereqs){
@@ -164,7 +181,10 @@ class Store {
 		 				id: trickKey,
 		 				label: rootTrick.name,
 		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
-		 				involved : involvedRoot
+		 				involved : involvedRoot,
+		 				size : this.getInvolvedNodeSize(involvedRoot),
+		 				shape : this.getInvolvedNodeShape(involvedRoot),
+
 		 			}	 			
 		 		}
 	 			if(rootTrick.prereqs){
@@ -181,7 +201,10 @@ class Store {
 		 					id: prereqKey,
 		 					label: prereq.name,
 		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
-		 					involved : involvedPrereq
+		 					involved : involvedPrereq,
+		 					size : this.getInvolvedNodeSize(involvedPrereq),
+		 					shape : this.getInvolvedNodeShape(involvedPrereq),
+
 		 				}
 		 				edges.push({from: prereqKey, to: trickKey })
 			 		})
@@ -197,7 +220,10 @@ class Store {
 		 					id: dependentKey,
 		 					label: dependent.name,
 		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
-		 					involved : involvedDependent
+		 					involved : involvedDependent,
+		 					size : this.getInvolvedNodeSize(involvedDependent),
+		 			 		shape : this.getInvolvedNodeShape(involvedDependent),
+
 		 				}
 		 				edges.push({from: trickKey , to: dependentKey })
 		 			})
