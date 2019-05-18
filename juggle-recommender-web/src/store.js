@@ -249,8 +249,7 @@ class Store {
 		 				edges.push({from: trickKey , to: dependentKey })
 		 			})
  				}
->>>>>>> 0daaba091c572a413e1649ca342a6af365dc9fe4
- 					
+	
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
