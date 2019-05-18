@@ -9,8 +9,8 @@ class Store {
 	@observable rootTricks = []
 	@observable nodes = []
 	@observable edges = []
-	@observable searchInput = 'common'
-	@observable searchTrick = 'common'
+	@observable searchInput = ''
+	@observable searchTrick = ''
 	@observable expandedSections = {
 		'3' : true,
 		'4' : false,
@@ -51,6 +51,11 @@ class Store {
  		this.updateRootTricks()
  		this.popupTrick = null
  	}
+ 	@action setSearchInput=(newInput)=>{
+ 		this.searchInput = newInput
+ 		this.performSearch()
+ 	}
+
  	@action	searchInputChange=(e)=>{
  		this.searchInput = e.target.value 		
  		console.log("search", e.target.value)
@@ -82,7 +87,7 @@ class Store {
 					trick.tags.forEach(function (tag, index) {
 						fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 					});
-					
+
 					if (trick.num === 3 && this.expandedSections['3'] &&
 						(fullStringToSearch.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
 							this.searchTrick === "")){
@@ -108,16 +113,12 @@ class Store {
 
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
 		const opacity = 50
-		//return "rgba(" + 255*(difficulty-2)/10   + "," + 255*(10 - difficulty-2)/10 + ", 0, 80%)"
-		
+		//return "rgba(" + 255*(difficulty-2)/10   + "," + 255*(10 - difficulty-2)/10 + ", 0, 80%)"		
 		let	colorString = "hsl(" + 150*(difficulty-2)/10   + ",0%, 100%)"
 		if(involved == 1 || involved == 2 ){
 			colorString = "hsl(" + 150*(difficulty-2)/10   + ",100%, 50%)"
 		} 
-		
-		console.log(colorString)
 		return colorString
-
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
@@ -165,49 +166,52 @@ class Store {
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = this.myTricks.includes(trickKey) || 
 	 							this.selectedTricks.includes(trickKey) ? 3 : 0
-	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
-		 			tempNodes[trickKey] = {
-		 				id: trickKey,
-		 				label: rootTrick.name,
-		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
-		 				involved : involvedRoot
-		 			}	 			
-		 		}
-	 			if(rootTrick.prereqs){
-	 				rootTrick.prereqs.forEach((prereqKey)=>{
-		 				const prereq = jugglingLibrary[prereqKey]
-		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0		 				
-		 				if(
-		 					tempNodes[prereqKey] && 
-		 					tempNodes[prereqKey].involved > involvedPrereq
-		 				){
-		 					involvedPrereq = tempNodes[prereqKey].involved
-		 				}
-		 				tempNodes[prereqKey] = {
-		 					id: prereqKey,
-		 					label: prereq.name,
-		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
-		 					involved : involvedPrereq
-		 				}
-		 				edges.push({from: prereqKey, to: trickKey })
-			 		})
+		 		if(rootTrick){
+		 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
+			 			tempNodes[trickKey] = {
+			 				id: trickKey,
+			 				label: rootTrick.name,
+			 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
+			 				involved : involvedRoot
+			 			}	 			
+			 		}
+
+		 			if(rootTrick.prereqs){
+		 				rootTrick.prereqs.forEach((prereqKey)=>{
+			 				const prereq = jugglingLibrary[prereqKey]
+			 				let involvedPrereq = involvedRoot > 0 ? 1 : 0		 				
+			 				if(
+			 					tempNodes[prereqKey] && 
+			 					tempNodes[prereqKey].involved > involvedPrereq
+			 				){
+			 					involvedPrereq = tempNodes[prereqKey].involved
+			 				}
+			 				tempNodes[prereqKey] = {
+			 					id: prereqKey,
+			 					label: prereq.name,
+			 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
+			 					involved : involvedPrereq
+			 				}
+			 				edges.push({from: prereqKey, to: trickKey })
+				 		})
+		 			}
+	 				if(rootTrick.dependents){
+	 					rootTrick.dependents.forEach((dependentKey)=>{
+			 				const dependent = jugglingLibrary[dependentKey]
+			 				let involvedDependent = involvedRoot > 0 ? 2 : 0
+			 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
+			 					involvedDependent = tempNodes[dependentKey].involved
+			 				}
+			 				tempNodes[dependentKey] = {
+			 					id: dependentKey,
+			 					label: dependent.name,
+			 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
+			 					involved : involvedDependent
+			 				}
+			 				edges.push({from: trickKey , to: dependentKey })
+			 			})
+	 				}
 	 			}
- 				if(rootTrick.dependents){
- 					rootTrick.dependents.forEach((dependentKey)=>{
-		 				const dependent = jugglingLibrary[dependentKey]
-		 				let involvedDependent = involvedRoot > 0 ? 2 : 0
-		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
-		 					involvedDependent = tempNodes[dependentKey].involved
-		 				}
-		 				tempNodes[dependentKey] = {
-		 					id: dependentKey,
-		 					label: dependent.name,
-		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
-		 					involved : involvedDependent
-		 				}
-		 				edges.push({from: trickKey , to: dependentKey })
-		 			})
- 				}
  					
  			})
 	 	}

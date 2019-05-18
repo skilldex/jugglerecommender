@@ -18,10 +18,15 @@ class App extends Component {
 	}
 	componentDidMount(){
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
-		if(myTricks){
+		if(myTricks.length > 0){
 			store.setMyTricks(myTricks)
-			store.updateRootTricks()
-			
+			store.setSelectedList("myTricks")
+			store.setSearchInput('')
+			store.updateRootTricks()		
+		}else{
+			store.selectTricks(['Cascade'])
+			store.setSearchInput('common')
+			store.updateRootTricks()	
 		}
 	}
  	toggleFilter =(filter)=>{
