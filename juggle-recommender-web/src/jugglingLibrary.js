@@ -2280,8 +2280,7 @@ jugglingLibrary["FourBallWindmill"].tags = ["crossed-arms"]
 jugglingLibrary["5551"].tags = ["one-throw"]
 jugglingLibrary["FiveBallShower"].tags = ["one-throw"]
 jugglingLibrary["FiveBallStackedMultiplexCascade"].tags = ["multiplex"]
-
-
+jugglingLibrary["FiveBallSplitMultiplexCascade"].tags = ["multiplex"]
 //jugglingLibrary[""].tags = [""]
 
 

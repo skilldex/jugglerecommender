@@ -4,6 +4,8 @@ Beta:
 
 User Launch::
 	-we want to easily see at a glance which tricks I can do and which I am interested in
+		A way this could possibly be done is an alternate color scheme that can be switche to
+		that shows the length of the users best run with the pattern(Once we have an input for personal best times)
 	-create user
 	-login
 	-allow users to add tricks
