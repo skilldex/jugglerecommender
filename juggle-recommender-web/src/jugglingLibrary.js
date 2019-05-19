@@ -2132,6 +2132,13 @@ var trick = {}
 for (trick in jugglingLibrary){
     jugglingLibrary[trick].tags = []
 }
+jugglingLibrary["Alex"].tags = ["crossed-arms", "sync", "wrist-drop"]
+jugglingLibrary["Al'sSlide"].tags = ["crossed-arms", "sync"]
+jugglingLibrary["ArrowofAsai"].tags = ["multiplex"]
+jugglingLibrary["Backcrosses"].tags = ["body-throw"]
+jugglingLibrary["BostonMess"].tags = ["columns"]
+
+
 jugglingLibrary["High-LowShower"].name = "High-Low Shower"
 jugglingLibrary["High-LowCascade"].name = "High-Low Cascade"
 jugglingLibrary["ColumnBoxVar"].name = "Column Box Var" 
