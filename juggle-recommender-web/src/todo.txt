@@ -1,29 +1,42 @@
-Beta:
-- make gif smaller for rtina 
--Allow multiple selected tricks
--show all selected tricks in graph
--when a popup is open and a new trick becomes selected, clicking on the empty space doesn't get rid of the popup
 
-User Launch::
-	-we want to easily see at a glance which tricks I can do and which I am interested in
-	-create user
-	-login
-	-allow users to add tricks
-	-toggle tricks by user added trick
-
-
-BUGS:
--right now it only sizes a trick as being my trick if it is in the rootlist, we want it to
-	size all of my tricks that it shows
-Later : 
 -Style expand arrows as icons
 - add loading graphic
 - make checkboxes for showing (related, depends, prereqs) in graph
 
+POSSIBLE SELECTION OPTION:
+-Allow multiple selected tricks
+-make a select all button to select all of the tricks in the list (show all relationships, maybe default view)
+
+USERS:
+-create user
+-login
+-allow users to add tricks
+-toggle tricks by user added tricks
+
+BUGS:
+-when a popup is open and a new trick becomes selected, clicking on the empty space doesn't get rid of the popup
+-swipe seems to do nothing on android and PC
+-prereq and learn next key and colors use are switched
+
+
+-right now it only colors a trick as being my trick if it is in the rootlist, we want it to
+	color all of my tricks that it shows
+
+VISUALIZING:
+-we want to easily see at a glance which tricks I can do and which I am interested in
+-show name in popup instead of trickKey
+
+-if they have my tricks, default to my tricks when they get on site
+
+-create initial filter based on some keyword
+
+MOBILE:
+-make legend good for mobile(smaller)
 -fix list card styles for retina
+- make gif smaller for rtina 
+
+Later : 
 
 -status property for tricks, 'done'
 - clean remaining prereq data exceptions
 	there is an orka's mess and an orka's mes
--make a select all button to select all of the tricks in the list (show all relationships, maybe default view)
--add more parameters into the color score like number my tricks related 
