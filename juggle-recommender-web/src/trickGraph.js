@@ -1,5 +1,4 @@
 import React,{Component} from 'react'
-import cytoscape from 'cytoscape'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import Graph from 'vis-react'
