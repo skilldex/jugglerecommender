@@ -36,7 +36,6 @@ class Store {
  	}
  	@action selectTricks=(clickedTrick)=>{
  		if (this.selectedTricks.includes(clickedTrick[0])){
- 			console.log('it includes')
  			for (var i=this.selectedTricks.length-1; i>=0; i--) {
 			    if (this.selectedTricks[i] === clickedTrick[0]) {
 			        this.selectedTricks.splice(i, 1);
@@ -49,6 +48,7 @@ class Store {
 	 	if(!clickedTrick.includes(clickedTrick[0])){
 	 		this.popupTrick = null
 	 	}
+	 	this.popupTrick = null
  	}
  	@action setSelectedList=(listType)=>{
  		this.selectedTricks = []
@@ -84,13 +84,11 @@ class Store {
 					this.selectedList === "myTricks" && this.myTricks.includes(trickKey)
 				){
 					const trick = jugglingLibrary[trickKey]
-					let shouldPushTrick = false					
-
+					let shouldPushTrick = false			
 					var fullStringToSearch = trick.name.toLowerCase()
 					trick.tags.forEach(function (tag, index) {
 						fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 					});
-
 					if (trick.num === 3 && this.expandedSections['3'] &&
 						(fullStringToSearch.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
 							this.searchTrick === "")){
@@ -103,7 +101,6 @@ class Store {
 						shouldPushTrick = true
 					}
 					if (shouldPushTrick){
-
 						this.rootTricks.push(
 							trickKey
 						)
@@ -208,8 +205,6 @@ class Store {
 		 				size : this.getInvolvedNodeSize(involvedRoot),
 		 				font : this.getInvolvedNodeFont(involvedRoot),
 		 				mass : this.getInvolvedNodeMass(involvedRoot),
-
-
 		 			}	 			
 		 		}
 	 			if(rootTrick.prereqs){

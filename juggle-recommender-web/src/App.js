@@ -56,15 +56,12 @@ class App extends Component {
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
- 		if(store.popupTrick){
- 			console.log("popupTrick", toJS(store.popupTrick))
- 		}
  		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
 				left : store.popupTrick.x,
 				top : store.popupTrick.y
 			}} className="popupDiv">
               <h3>{jugglingLibrary[store.popupTrick.id].name}</h3> 
-              <label>Difficult: {jugglingLibrary[store.popupTrick.id].difficulty} / 10</label><br></br><br></br>
+              <label>Difficulty: {jugglingLibrary[store.popupTrick.id].difficulty} / 10</label><br></br><br></br>
               {addToMyTricksButton}
               {selectTrickButton}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <a 
@@ -74,9 +71,14 @@ class App extends Component {
               >See explanation</a> : null}
               {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? <img
               	className="popupGif"
-              	src={jugglingLibrary[store.popupTrick.id].gifUrl} 
+              	src={jugglingLibrary[store.popupTrick.id].gifUrl}              	
               /> : null}
-            </div>  : null
+              <br></br>
+              {jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].tags? <label
+              	className="popupTags">
+              	TAGS: {jugglingLibrary[store.popupTrick.id].tags.join(', ')} 
+              	</label> : null}
+            </div> : null
 		return (
 		<div className="App">
 			<div className="title">

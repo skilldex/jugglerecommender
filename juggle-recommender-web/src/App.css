@@ -15,6 +15,9 @@ input{
 .popupGif{
   width: 200px;
   height: 200px;
+  float: center;
+}
+.popupTags{
   float: left;
 }
 .popupLink{
