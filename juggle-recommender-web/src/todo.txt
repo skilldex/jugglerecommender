@@ -14,11 +14,24 @@ IDEAS:
 		to do this we would want to be able to show more than one popup
 		and maybe made the popups draggable so they can be put right next to each other
 
+TAGS:
+-add style
+-(maybe) make it so when a tag is clicked, that tag is added to the current search
+-(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word
+	'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that
+	have multiplex as tag
+
+POPUPS:
+-(maybe)list depends and prereqs
+-(maybe)show the siteswap of the pattern
 
 BUGS:
 -right now it only sizes a trick as being my trick if it is in the rootlist, we want it to
 	size all of my tricks that it shows
-	
+
+MINOR:
+-make ball num collapse indicator arrows more obvious somehow
+
 Later : 
 -Style expand arrows as icons
 - add loading graphic
