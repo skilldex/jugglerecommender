@@ -24,7 +24,6 @@ input{
   display: block;
 }
 .popupDiv{
-
   position : absolute;
   background-color : white;
   z-index : 1200;

@@ -9,6 +9,8 @@ import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import Swipe from 'react-easy-swipe';
 
+
+
 @observer
 class App extends Component {
  	state = {
@@ -47,6 +49,9 @@ class App extends Component {
  			filters : newFilters
  		})
  	} 	
+ 	handleStart=()=>{
+ 		console.log('startHandled')
+ 	}
  	render(){
  		store.nodes
  		store.edges
@@ -56,9 +61,12 @@ class App extends Component {
 		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
- 		const popup = store.popupTrick && store.popupTrick.id ? <div style={{
-				left : store.popupTrick.x,
-				top : store.popupTrick.y
+ 		const graphDiv = document.getElementById("graphDiv")
+ 		console.log(graphDiv)
+ 		const popup = store.popupTrick && store.popupTrick.id ? 
+			        <div style={{
+				left : Math.min(graphDiv.clientWidth-260,store.popupTrick.x),
+				top : Math.min(graphDiv.clientHeight-460,store.popupTrick.y)
 			}} className="popupDiv">
               <h3>{jugglingLibrary[store.popupTrick.id].name}</h3> 
               <label>Difficulty: {jugglingLibrary[store.popupTrick.id].difficulty} / 10</label><br></br><br></br>
@@ -102,7 +110,10 @@ class App extends Component {
 					myTricks={store.myTricks} 
 					selectedList={store.selectedList}
 				/>}
-			{popup}
+
+			
+					{popup}
+				
 			<TrickGraph 
 				nodes = {store.nodes}
 				edges = {store.edges}

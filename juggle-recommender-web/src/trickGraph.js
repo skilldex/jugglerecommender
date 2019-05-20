@@ -30,7 +30,7 @@ class TrickGraph extends React.Component {
     } 
   } 
       return (
-        <div className="graphDiv">
+        <div className="graphDiv" id="graphDiv">
           <Graph
             graph={data}
             options={options}
