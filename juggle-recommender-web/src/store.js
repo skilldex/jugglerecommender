@@ -7,6 +7,7 @@ class Store {
 	@observable selectedTricks = []
 	@observable selectedList = "allTricks"
 	@observable rootTricks = []
+	@observable listExpanded = true
 	@observable nodes = []
 	@observable edges = []
 	@observable searchInput = ''
@@ -17,6 +18,12 @@ class Store {
 		'5' : false
 	}
 	@observable popupTrick = null
+	@computed get isMobile(){
+	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
+	 }
+	@action setListExpanded=(expanded)=>{
+		this.listExpanded = expanded
+	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks.push(trickKey)
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))

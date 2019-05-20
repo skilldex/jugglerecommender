@@ -21,6 +21,7 @@ class TrickGraph extends React.Component {
     }
     const events = {
     select: function(event) {
+        if (store.isMobile){store.setListExpanded(!store.listExpanded)}
         var { nodes, edges } = event;
         store.setPopupTrick({
           'id': event.nodes[0],

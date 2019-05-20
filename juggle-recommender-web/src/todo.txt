@@ -1,4 +1,3 @@
-Beta:
 
 User Launch::
 	-we want to easily see at a glance which tricks I can do and which I am interested in
