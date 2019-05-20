@@ -1,11 +1,9 @@
 Beta:
 - make gif smaller for retina 
 
-
 User Launch::
 	-we want to easily see at a glance which tricks I can do and which I am interested in
-		A way this could possibly be done is an alternate color scheme that can be switche to
-		that shows the length of the users best run with the pattern(Once we have an input for personal best times)
+		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
 	-create user
 	-login
 	-allow users to add tricks
@@ -19,9 +17,7 @@ IDEAS:
 TAGS:
 -add style
 -(maybe) make it so when a tag is clicked, that tag is added to the current search
--(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word
-	'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that
-	have multiplex as tag
+-(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
 
 POPUPS:
 -(maybe)list depends and prereqs
