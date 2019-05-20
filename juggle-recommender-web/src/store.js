@@ -18,6 +18,9 @@ class Store {
 		'5' : false
 	}
 	@observable popupTrick = null
+	@computed get isMobile(){
+	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
+	 }
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
