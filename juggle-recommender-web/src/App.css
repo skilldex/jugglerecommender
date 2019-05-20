@@ -133,19 +133,15 @@ input{
   display: inline-block;
 }
 .addToMyTricksButton{
-  color : cyan;
   font-size: 16pt;
   margin-right : 5px;
-  background-color : darkgray;
   box-shadow : 2px 0px 5px #888888;;
 
 }
 
 .removeFromMyTricksButton{
-  color : yellow;
   font-size: 16pt;
   margin-right : 5px;
-  background-color : darkgray;
   box-shadow : 2px 0px 5px #888888;;
 
 }

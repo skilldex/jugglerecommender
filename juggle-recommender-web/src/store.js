@@ -155,7 +155,7 @@ class Store {
 	 			if(rootTrick.dependents || rootTrick.prereqs){
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
-		 				label: rootTrick.name,
+		 				label: "★" + rootTrick.name,
 		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
 		 				size : this.getInvolvedNodeSize(3),
 		 				font : this.getInvolvedNodeFont(3),
@@ -197,9 +197,13 @@ class Store {
 	 							this.selectedTricks.includes(trickKey) ? 3 : 0
 
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
+		 			let label = rootTrick.name
+		 			if(involvedRoot == 3){
+		 				label = "★" + rootTrick.name
+		 			}
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
-		 				label: rootTrick.name,
+		 				label: label,
 		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
 		 				involved : involvedRoot,
 		 				size : this.getInvolvedNodeSize(involvedRoot),
@@ -210,16 +214,22 @@ class Store {
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = jugglingLibrary[prereqKey]
-		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0		 				
+		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0
+		 				let label = prereq.name
+		 				
 		 				if(
 		 					tempNodes[prereqKey] && 
 		 					tempNodes[prereqKey].involved > involvedPrereq
 		 				){
 		 					involvedPrereq = tempNodes[prereqKey].involved
+			 				if(involvedPrereq == 3){
+				 				label = "★" + prereq.name
+				 			}
 		 				}
+
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
-		 					label: prereq.name,
+		 					label: label,
 		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
 		 					involved : involvedPrereq,
 		 					size : this.getInvolvedNodeSize(involvedPrereq),
@@ -233,12 +243,17 @@ class Store {
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = jugglingLibrary[dependentKey]
 		 				let involvedDependent = involvedRoot > 0 ? 2 : 0
+		 				let label = dependent.name
 		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
 		 					involvedDependent = tempNodes[dependentKey].involved
+			 				if(involvedDependent == 3){
+				 				label = "★" + dependent.name
+				 			}
 		 				}
+		 				
 		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
-		 					label: dependent.name,
+		 					label: label,
 		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
 		 					involved : involvedDependent,
 		 					size : this.getInvolvedNodeSize(involvedDependent),

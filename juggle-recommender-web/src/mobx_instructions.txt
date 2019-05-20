@@ -4,6 +4,6 @@ npm run eject
 
 copy dependencies and babel-config from package.json in arflowarts
 copy config folder 
-
+copy scripts folder
 npm install
 
