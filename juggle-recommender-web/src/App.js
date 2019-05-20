@@ -8,7 +8,7 @@ import TrickList from './trickList.js'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import Swipe from 'react-easy-swipe';
-
+import Auth from './auth.js'
 @observer
 class App extends Component {
  	state = {
@@ -81,6 +81,8 @@ class App extends Component {
             </div> : null
 		return (
 		<div className="App">
+			<Auth/>
+
 			<div className="title">
 				<h1>Juggledex</h1>
 				<h3>Gotta catch em all ;)</h3>
