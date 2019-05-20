@@ -11,7 +11,7 @@ IDEAS:
 	-it would be nice to compare gifs of different tricks side by side,
 		to do this we would want to be able to show more than one popup
 		and maybe made the popups draggable so they can be put right next to each other
-
+	-Color dots or background in list (same as node)
 
 TAGS:
 -add style
@@ -21,6 +21,8 @@ TAGS:
 POPUPS:
 -(maybe)list depends and prereqs
 -(maybe)show the siteswap of the pattern
+-siteswap
+-other tutorials/user content
 
 BUGS:
 -right now it only sizes a trick as being my trick if it is in the rootlist, we want it to
@@ -41,3 +43,23 @@ Later :
 -status property for tricks, 'done'
 
 -add more parameters into the color score like number my tricks related 
+
+-make tags and whatever else go in overflow
+-rip other tutorial links
+-rip siteswap
+
+
+A way to make nodes gravitate towards visible area would be amazing
+
+Node border with white center could be undone with border being suggested difficulty, but once you've done it then it is colored based on your length. Maybe color relative to other patterns you've done with that number of props. There could even by some hybrid that takes into account the users as well as some kind of all user data.
+
+Might be a good idea to download the whole site incase it gets taken down and we lose the gifs
+
+I would like to be able to input catches or time for my records.
+
+When search clicked, clear all selected
+
+The predone difficulty color could be based on all user data
+
+Make learn to juggle nodes, some simple 1b stuff, 2b stuff, the more different patterns the better so they can keep getting that sense of accomplishment. All the two ball steps from the various trucks could even be added with ankmations..
+

@@ -78,6 +78,7 @@ class Store {
  	}
  		
  	@action performSearch=()=>{
+ 		this.selectedTricks = []
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
  	}
