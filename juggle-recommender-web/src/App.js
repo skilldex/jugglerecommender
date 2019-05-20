@@ -9,7 +9,7 @@ import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import Swipe from 'react-easy-swipe';
 
-
+import Auth from './auth.js'
 
 @observer
 class App extends Component {
@@ -89,15 +89,17 @@ class App extends Component {
             </div> : null
 		return (
 		<div className="App">
+			<Auth/>
+
 			<div className="title">
 				<h1>Juggledex</h1>
 				<h3>Gotta catch em all ;)</h3>
 			</div>
 			<div className="instructions">
 				<h3>Instructions</h3>
-				<span> Star tricks you know to add to "Starred" tricks.</span> 	
+				<span> ★ Star tricks you know to add to "Starred" tricks.</span> 	
 				<br/>
-				<span>Find new tricks to learn next that are related to tricks you know.</span>
+				<span>Find new tricks to learn next that are related to tricks you starred ★.</span>
 			</div>
 
 			{this.state.swipedList ? 

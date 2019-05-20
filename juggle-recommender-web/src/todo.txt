@@ -1,3 +1,4 @@
+
 User Launch::
 	-we want to easily see at a glance which tricks I can do and which I am interested in
 		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
@@ -28,6 +29,7 @@ BUGS:
 MINOR:
 -make ball num collapse indicator arrows more obvious somehow
 - Indicator for which view we are in
+- Ask if sure when removing from my list
 
 Later : 
 -Style expand arrows as icons

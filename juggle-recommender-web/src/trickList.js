@@ -91,7 +91,7 @@ alphabeticalSortObject(data, attr) {
 								onClick={() => store.setListExpanded(!store.listExpanded)
 						}>{store.listExpanded ? "-" : "+"}</label>
 				 		<div className="listButtonDiv">
-							<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>Starred</button>
+							<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>★Starred</button>
 							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All</button>
 						</div>
 			 			<div className="search" >
