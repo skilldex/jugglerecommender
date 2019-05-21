@@ -1,4 +1,10 @@
 
+Refactor : 
+	- consolidate redundant css e.g. add/remove trick buttons have overlapping styles
+	- move popup to own component 
+	- separate css into different files
+	- separate stores for separate functions, e.g. user stuff vs list stuff
+	
 User Launch::
 	- allow user add catches (time)
 	- hollow and just show thick borders the node with 0 catches
