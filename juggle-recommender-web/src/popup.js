@@ -2,8 +2,8 @@ import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import { observer } from "mobx-react"
-import legendImg from './greenToRedFade.jpg'
-import sortIcon from './sortIcon.png'
+import './popup.css';
+
 @observer
 class Popup extends Component {
 	render() {

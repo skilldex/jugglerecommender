@@ -4,6 +4,8 @@ import store from './store'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
 import sortIcon from './sortIcon.png'
+import './trickList.css';
+import './App.css';
 
 @observer
 class TrickList extends Component {
@@ -38,7 +40,6 @@ class TrickList extends Component {
 	        var item = obj[id];
 	        result[Object.keys(obj)] = item;
 	    }
-	    console.log('result',result)
 	    return result;
 	}
 
@@ -83,8 +84,8 @@ sortClicked=(type)=>{
 						style={{backgroundColor: cardClass == 'listCard' ?
 						store.getInvolvedNodeColor(trick.difficulty, 2).background : store.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 						 {store.myTricks.includes(trickKey) ? 
-	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
-						 <button className="addToMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
+	  					 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
+						 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
 						 <span className="listCardName" title={trick.name}>{trick.name}</span>			
 					</div>
 				)

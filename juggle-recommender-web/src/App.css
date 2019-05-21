@@ -11,126 +11,20 @@ button {
   background-color : #F0F0F0;
   text-align: center;
 }
-.search{
-  margin-top : 10px;
-  margin-bottom : 10px;
-  text-align: center;
-}
+
 input{
   font-size: 16px;
   width : 100px;
 }
-.popupGif{
-  width: 200px;
-  height: 200px;
-  float: center;
+
+@supports (-webkit-overflow-scrolling: touch) {  
 }
-.popupTags{
-  float: left;
-}
-.popupLink{
-  display: block;
-}
-.popupDiv{
-  overflow-y: scroll;
-  height:370px;
-  position : absolute;
-  background-color : white;
-  z-index : 1200;
-  padding: 15px 10px 10px 15px;
-  border : 1px solid gray;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
-  text-align: center;
-}
+
 .title {
   text-align: center;
 }
 
-.listCard{
-  border : 1px solid gray;
-  width : 92%;
-  font-size : 15px;
-  cursor: pointer;
-  text-align: left;
-}
-.selectedListCard{
-  border : 2px solid black;
-  width : 92%;
-  font-size : 15px;
-  cursor: pointer;
-  text-align: left;
-}
-.listCardName{
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display : inline-block;
-  width : 70%;
-  cursor: pointer;
-  vertical-align: middle;
-}
 
-.listDiv{
-  padding-left : 5px;
-  padding-right : 5px;
-  width: 160px;
-  border : 1px solid gray;
-  margin-left : 1px;
-  display: inline-block;
-  position: absolute;
-  z-index: 1000;
-  opacity : 100%;
-  background-color : white;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
--ms-touch-action: none;
-  touch-action: none;
-}
-/* Dropdown Button */
-.dropbtn {
-  background-color: #3498DB;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Dropdown button on hover & focus */
-.dropbtn:hover, .dropbtn:focus {
-  background-color: #2980B9;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd}
-
-/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
 .swipedDiv{
   width : 25px;
   box-shadow : 5px 10px 8px #888888;;
@@ -145,71 +39,19 @@ input{
   touch-action: none;
   font-size: 12pt;
   padding-left: 10px;
-
 }
-.listSection{
-  max-height: 450px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling : touch;
 
-}
 .instructions{
   padding-left: 10px;
   margin-bottom: 15px;
 }
-.selectedListButton{
-  font-size: 15px;
-  border-radius: 5px;
-  background-color : darkgray;
-  width : 80px;
-  box-shadow : 2px 0px 5px #888888;
-  padding : 0;
-
-}
-.unselectedListButton{
-  font-size: 15px;
-  border-radius: 5px;
-  width : 80px;
-  box-shadow : 2px 0px 5px #888888;;
-  padding : 0;
-}
-.listButtonDiv{
-  text-align: left;
-}
-
-.graphDiv{
-  display: inline-block;
-  vertical-align: top;
-  height : 1000px;
-  width  : 100%;
-  border: 1px solid black;
-  text-align : left;
-  
-}
-.sectionHeader{
-  display: inline-block;
-  cursor: pointer;
-}
-.addAndRemoveMyTricksButton{
-  font-size: 14px;
-  box-shadow : 2px 0px 5px #888888;
-  padding : 2px;
-  border-radius: 5px;
-  margin-right: 5px;
-}
 
 
-@supports (-webkit-overflow-scrolling: touch) {  
-}
 
 
-.auth {
-  margin-left: 15px;
-  margin-top : 15px;
-}
-.authButton{
-  box-shadow : 2px 0px 5px #888888;
-  border-radius: 5px;
-  margin-right: 5px;
-}
+
+
+
+
+
+

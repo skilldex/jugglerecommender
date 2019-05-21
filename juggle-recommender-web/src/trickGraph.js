@@ -3,6 +3,7 @@ import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import Graph from 'vis-react'
 import {toJS} from "mobx"
+import './trickGraph.css';
 
 class TrickGraph extends React.Component {
     render() {

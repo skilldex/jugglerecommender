@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import { observer } from "mobx-react"
 import {toJS} from "mobx"
-
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
@@ -32,8 +31,7 @@ class App extends Component {
  		this.state.filters.forEach((curFilter)=>{
  			if(curFilter !== filter){
  				newFilters.push(curFilter)
- 			}
- 			
+ 			} 			
  		})
  		this.setState({
  			filters : newFilters

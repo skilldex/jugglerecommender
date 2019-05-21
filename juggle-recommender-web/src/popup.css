@@ -1,0 +1,30 @@
+.addAndRemoveMyTricksButton{
+  font-size: 14px;
+  box-shadow : 2px 0px 5px #888888;
+  padding : 2px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.popupGif{
+  width: 200px;
+  height: 200px;
+  float: center;
+}
+.popupTags{
+  float: left;
+}
+.popupLink{
+  display: block;
+}
+.popupDiv{
+  overflow-y: scroll;
+  height:370px;
+  position : absolute;
+  background-color : white;
+  z-index : 1200;
+  padding: 15px 10px 10px 15px;
+  border : 1px solid gray;
+  box-shadow : 5px 10px 8px #888888;;
+  border-radius: 8px;
+  text-align: center;
+}

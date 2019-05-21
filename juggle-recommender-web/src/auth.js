@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import firebase from 'firebase' 
 import store from "./store"
 import "./App.css"
+import "./auth.css";
 var firebaseConfig = {
     apiKey: "AIzaSyCmnOtb4Wk5MObmo1UPhgEV2Cv3b_6nMuY",
     authDomain: "skilldex-4ebb4.firebaseapp.com",

@@ -358,7 +358,9 @@ class Store {
 
 
 	 @action showSortMenu=()=>{
+
 		if (document.getElementById("myDropdown")){
+			console.log('showSortMenu')
 	  document.getElementById("myDropdown").classList.toggle("show");
 		}
  	}

@@ -1,0 +1,9 @@
+.graphDiv{
+  display: inline-block;
+  vertical-align: top;
+  height : 1000px;
+  width  : 100%;
+  border: 1px solid black;
+  text-align : left;  
+}
+
