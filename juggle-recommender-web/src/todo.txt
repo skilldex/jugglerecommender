@@ -28,8 +28,8 @@ POPUPS:
 - (maybe) other tutorials/user content
 
 BUGS:
--right now it only sizes a trick as being my trick if it is in the rootlist, we want it to
-	size all of my tricks that it shows
+-some gifs are smaller than others, for example, Alex is really small
+-sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
 
 MINOR:
 -make ball num collapse indicator arrows more obvious somehow

@@ -36,11 +36,9 @@ class Store {
             	myTricksKey = myTricksObject.key
             }
             const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
-	        userTricksRef.set({
-	        	
+	        userTricksRef.set({	        	
 	        		'username': this.user.username,
-	        		'myTricks' : this.myTricks
-	        	
+	        		'myTricks' : this.myTricks	        	
 	        })
         })
 	}
@@ -61,6 +59,7 @@ class Store {
 	}
 
 	@action getSavedTricks=()=>{
+		console.log('getSavedTricks1')
 		if(this.user.username){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
 	  	 	let myTricksKey = ""
@@ -71,7 +70,7 @@ class Store {
 	            }
 	            if(myTricksObject.myTricks){
 	            	this.setMyTricks(myTricksObject.myTricks)
-	            	this.setSelectedList("myTricks")
+	            	//this.setSelectedList("myTricks")
 	            	this.setSearchInput('')
 	            }else{
 	            	this.getTricksFromBrowser()
@@ -336,7 +335,13 @@ class Store {
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		delete tempNodes[trickKey].involveds
+	 		delete tempNodes[trickKey].involved
+	 		if (this.myTricks.includes(trickKey) && !tempNodes[trickKey].label.includes("★")){
+	 			tempNodes[trickKey].label = "★" + tempNodes[trickKey].label
+	 			tempNodes[trickKey].size = 100
+	 			tempNodes[trickKey].font = 24
+	 			tempNodes[trickKey].mass = 6
+	 		}
 	 		nodes.push({...tempNodes[trickKey]})
 	 	})
 	 	this.nodes = nodes
@@ -352,6 +357,7 @@ class Store {
 	 	this.popupTrick = clickedTrick
 	 }
 	 @action setUser=(user)=>{
+	 	console.log('setUser')
 	 	this.user = user
 	 	this.getSavedTricks()
 	 }
