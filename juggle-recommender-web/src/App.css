@@ -196,7 +196,6 @@ input{
   box-shadow : 2px 0px 5px #888888;
   padding : 2px;
   border-radius: 5px;
-  height : 100%;
   margin-right: 5px;
 }
 
@@ -205,7 +204,6 @@ input{
   box-shadow : 2px 0px 5px #888888;;
   padding : 2px;
   border-radius: 5px;
-  height : 100%;
   margin-right: 5px;
 }
 @supports (-webkit-overflow-scrolling: touch) {  
