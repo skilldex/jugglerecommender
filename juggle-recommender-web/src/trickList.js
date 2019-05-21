@@ -2,16 +2,22 @@ import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import { observer } from "mobx-react"
+import legendImg from './greenToRedFade.jpg'
+import sortIcon from './sortIcon.png'
 
 @observer
 class TrickList extends Component {
+	 	state = {
+ 		sortType: 'alphabetical'
+	}
 	alphabeticalSortObject(data, attr) {
 	    var arr = [];
 	    for (var prop in data) {
+
 	        if (data.hasOwnProperty(prop)) {
 	            var obj = {};
 	            obj[prop] = data[prop];
-	            obj.tempSortName = data[prop][attr].toLowerCase();
+	            obj.tempSortName = data[prop][attr];
 	            arr.push(obj);
 	        }
 	    }
@@ -32,8 +38,14 @@ class TrickList extends Component {
 	        var item = obj[id];
 	        result[Object.keys(obj)] = item;
 	    }
+	    console.log('result',result)
 	    return result;
 	}
+
+sortClicked=(type)=>{
+	store.toggleSortTypeShow()
+	this.setState({sortType : type})
+}
  
  render() {
  	let tricks = {
@@ -43,7 +55,13 @@ class TrickList extends Component {
  		"6" : [],
  		"7" : [], 		
  	}
- 	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+ 	let sortedJugglingLibrary
+ 	if (this.state.sortType === 'alphabetical'){
+ 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+ }else{
+ 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
+ }
+
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
@@ -59,7 +77,11 @@ class TrickList extends Component {
 				store.selectedList === "myTricks" && store.myTricks.includes(trickKey)
 			){
 				tricks[trick.num.toString()].push(
-					<div onClick={()=>{store.selectTricks([trickKey])}} className={cardClass} key={trickKey + "div"}>
+					<div onClick={()=>{store.selectTricks([trickKey])}} 
+						className={cardClass} 
+						key={trickKey + "div"} 
+						style={{backgroundColor: cardClass == 'listCard' ?
+						store.getInvolvedNodeColor(trick.difficulty, 2).background : store.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 						 {store.myTricks.includes(trickKey) ? 
 	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addToMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
@@ -83,7 +105,16 @@ class TrickList extends Component {
 			 			<div className="search" >
 				 			<input value = {store.searchInput} defaultValue = {store.myTricks.length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
+				 			<button ><img src={sortIcon} alt="my image" 
+				 			onClick={store.showSortMenu} height='15px'width='15px'/></button>
+						  <div id="myDropdown" class="dropdown-content">
+						    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
+						    <a onClick={(e)=>this.sortClicked('difficulty')}>Diff</a>
+						  </div>
 				 		</div>
+				 		<div>
+
+						</div>
 			 		</div>
 	return (	
 		<div className="listDiv">				
@@ -91,6 +122,10 @@ class TrickList extends Component {
 				<div>
 				 	{buttons}
 					<div>
+						<img src={legendImg} alt="legendImg" width="92%"/><br></br>							
+						<label style={{float:"left"}}>easy</label>
+						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
+						<br></br>
 						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{store.expandedSections["3"] ?

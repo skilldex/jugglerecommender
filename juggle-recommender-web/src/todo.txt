@@ -1,11 +1,7 @@
 
 User Launch::
-	CRITICAL: 
-		- Add legend for coloring
 	- allow user add catches (time)
 	- hollow and just show thick borders the node with 0 catches
-	- color list items by difficulty (same as nodes)
-	- ability to sort list by difficulty
 	-we want to easily see at a glance which tricks I can do and which I am interested in
 		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
 	-allow users to add tricks
@@ -28,8 +24,8 @@ POPUPS:
 - (maybe) other tutorials/user content
 
 BUGS:
--right now it only sizes a trick as being my trick if it is in the rootlist, we want it to
-	size all of my tricks that it shows
+-some gifs are smaller than others, for example, Alex is really small
+-sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
 
 MINOR:
 -make ball num collapse indicator arrows more obvious somehow

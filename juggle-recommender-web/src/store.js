@@ -36,11 +36,9 @@ class Store {
             	myTricksKey = myTricksObject.key
             }
             const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
-	        userTricksRef.set({
-	        	
+	        userTricksRef.set({	        	
 	        		'username': this.user.username,
-	        		'myTricks' : this.myTricks
-	        	
+	        		'myTricks' : this.myTricks	        	
 	        })
         })
 	}
@@ -71,7 +69,7 @@ class Store {
 	            }
 	            if(myTricksObject.myTricks){
 	            	this.setMyTricks(myTricksObject.myTricks)
-	            	this.setSelectedList("myTricks")
+	            	//this.setSelectedList("myTricks")
 	            	this.setSearchInput('')
 	            }else{
 	            	this.getTricksFromBrowser()
@@ -138,6 +136,7 @@ class Store {
  	}
  		
  	@action performSearch=()=>{
+ 		console.log('performSearch')
  		this.selectedTricks = []
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
@@ -192,6 +191,14 @@ class Store {
         }
 		return color
 	}
+	@action getSelectedInvolvedNodeColor=(difficulty, involved)=>{
+		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 30%)"
+      	const color = {
+      		background : colorString,
+        }
+		return color
+	}
+
 	@action getInvolvedNodeSize=(involved)=>{
 		let size = 25 //default
 		if(involved == 3){
@@ -336,11 +343,27 @@ class Store {
  			})
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
-	 		delete tempNodes[trickKey].involveds
+	 		delete tempNodes[trickKey].involved
+	 		if (this.myTricks.includes(trickKey) && !tempNodes[trickKey].label.includes("★")){
+	 			tempNodes[trickKey].label = "★" + tempNodes[trickKey].label
+	 			tempNodes[trickKey].size = 100
+	 			tempNodes[trickKey].font = 24
+	 			tempNodes[trickKey].mass = 6
+	 		}
 	 		nodes.push({...tempNodes[trickKey]})
 	 	})
 	 	this.nodes = nodes
 	 	this.edges = edges
+ 	}
+
+
+	 @action showSortMenu=()=>{
+		if (document.getElementById("myDropdown")){
+	  document.getElementById("myDropdown").classList.toggle("show");
+		}
+ 	}
+ 	@action toggleSortTypeShow=()=>{
+ 		document.getElementById("myDropdown").classList.toggle("show");
  	}
 
  	@action toggleExpandedSection=(section)=>{
@@ -352,6 +375,7 @@ class Store {
 	 	this.popupTrick = clickedTrick
 	 }
 	 @action setUser=(user)=>{
+	 	console.log('setUser')
 	 	this.user = user
 	 	this.getSavedTricks()
 	 }

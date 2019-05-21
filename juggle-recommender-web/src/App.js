@@ -77,8 +77,6 @@ class App extends Component {
               	TAGS: {jugglingLibrary[store.popupTrick.id].tags.join(', ')} 
               	</label> : null}
             </div> : null
-
-          console.log("rendering app", store.selectedTricks)
 		return (
 		<div className="App">
 			<Auth/>
