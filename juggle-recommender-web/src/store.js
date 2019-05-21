@@ -51,8 +51,9 @@ class Store {
 	@action initializeTricks=()=>{
 		console.log("initializing tricks")
 		this.setMyTricks(["Cascade"])
-		this.selectTricks(['Cascade'])
 		this.setSearchInput('common')
+		this.selectTricks(['Cascade'])
+		console.log(this.selectedTricks)
 	}
 	@action getTricksFromBrowser=()=>{
 		console.log("getting tricks from browser")
@@ -63,6 +64,7 @@ class Store {
     		this.setSelectedList("myTricks")
     	}else{
     		this.initializeTricks()
+    		console.log(this.selectedTricks)
     	}
 	}
 

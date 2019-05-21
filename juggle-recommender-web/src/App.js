@@ -21,7 +21,9 @@ class App extends Component {
  		swipedList : false
 	}
 	componentDidMount(){
+		console.log("mounted")
 		store.getSavedTricks()	
+		console.log("finished loading")
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []
@@ -76,7 +78,7 @@ class App extends Component {
               	</label> : null}
             </div> : null
 
-          console.log("rendering app", store.selectedList)
+          console.log("rendering app", store.selectedTricks)
 		return (
 		<div className="App">
 			<Auth/>
@@ -101,6 +103,7 @@ class App extends Component {
 				<TrickList 
 					myTricks={store.myTricks} 
 					selectedList={store.selectedList}
+					selectedTricks={store.selectedTricks}
 				/>}
 				{popup}
 			<TrickGraph 

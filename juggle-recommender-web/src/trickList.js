@@ -5,49 +5,35 @@ import { observer } from "mobx-react"
 
 @observer
 class TrickList extends Component {
- state = {
- 	selectedTricks : [],
- 	rootTricksLength : 0,
- 	expanded: true,
- }
-
- componentDidMount(){
- 	const checkedTricks =  JSON.parse(localStorage.getItem("checkedTricks"))
-	if(checkedTricks){
-		this.setState({checkedTricks})
+	alphabeticalSortObject(data, attr) {
+	    var arr = [];
+	    for (var prop in data) {
+	        if (data.hasOwnProperty(prop)) {
+	            var obj = {};
+	            obj[prop] = data[prop];
+	            obj.tempSortName = data[prop][attr].toLowerCase();
+	            arr.push(obj);
+	        }
+	    }
+	    arr.sort(function(a, b) {
+	        var at = a.tempSortName,
+	            bt = b.tempSortName;
+	        return at > bt ? 1 : ( at < bt ? -1 : 0 );
+	    });
+	    var result = {};
+	    for (var i=0, l=arr.length; i<l; i++) {
+	        var obj = arr[i];
+	        delete obj.tempSortName;
+	        for (var prop in obj) {
+	            if (obj.hasOwnProperty(prop)) {
+	                var id = prop;
+	            }
+	        }
+	        var item = obj[id];
+	        result[Object.keys(obj)] = item;
+	    }
+	    return result;
 	}
-	store.updateRootTricks()
- }
-
-alphabeticalSortObject(data, attr) {
-    var arr = [];
-    for (var prop in data) {
-        if (data.hasOwnProperty(prop)) {
-            var obj = {};
-            obj[prop] = data[prop];
-            obj.tempSortName = data[prop][attr].toLowerCase();
-            arr.push(obj);
-        }
-    }
-    arr.sort(function(a, b) {
-        var at = a.tempSortName,
-            bt = b.tempSortName;
-        return at > bt ? 1 : ( at < bt ? -1 : 0 );
-    });
-    var result = {};
-    for (var i=0, l=arr.length; i<l; i++) {
-        var obj = arr[i];
-        delete obj.tempSortName;
-        for (var prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                var id = prop;
-            }
-        }
-        var item = obj[id];
-        result[Object.keys(obj)] = item;
-    }
-    return result;
-}
  
  render() {
  	let tricks = {
@@ -58,7 +44,7 @@ alphabeticalSortObject(data, attr) {
  		"7" : [], 		
  	}
  	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
- 	console.log("list selected", store.selectedTricks)
+ 	console.log("list selected", this.props.selectedTricks, store.selectedTricks)
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
@@ -67,8 +53,7 @@ alphabeticalSortObject(data, attr) {
 			fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 		});
 		if(fullStringToSearch.includes(store.searchTrick.toLowerCase()) ){
-			console.log("including")
-			if(store.selectedTricks.includes(trickKey)){
+			if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
 				console.log("this selected", trickKey)
 				cardClass = 'selectedListCard'
 			}
