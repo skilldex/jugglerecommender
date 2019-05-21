@@ -107,9 +107,9 @@ sortClicked=(type)=>{
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
 				 			<button ><img src={sortIcon} alt="my image" 
 				 			onClick={store.showSortMenu} height='15px'width='15px'/></button>
-						  <div id="myDropdown" class="dropdown-content">
+						  <div title="sort" id="myDropdown" class="dropdown-content">
 						    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
-						    <a onClick={(e)=>this.sortClicked('difficulty')}>Diff</a>
+						    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
 						  </div>
 				 		</div>
 				 		<div>
