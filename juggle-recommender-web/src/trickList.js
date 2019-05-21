@@ -105,12 +105,6 @@ sortClicked=(type)=>{
 			 			<div className="search" >
 				 			<input value = {store.searchInput} defaultValue = {store.myTricks.length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
-				 			<button ><img src={sortIcon} alt="my image" 
-				 			onClick={store.showSortMenu} height='15px'width='15px'/></button>
-						  <div title="sort" id="myDropdown" class="dropdown-content">
-						    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
-						    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
-						  </div>
 				 		</div>
 				 		<div>
 
@@ -122,10 +116,18 @@ sortClicked=(type)=>{
 				<div>
 				 	{buttons}
 					<div>
+						<button style={{"margin-top":"5px", "margin-bottom" : "5px"}}><img src={sortIcon} alt="my image" 
+				 			onClick={store.showSortMenu} height='15px'width='15px'/></button>
+						  <div title="sort" id="myDropdown" class="dropdown-content">
+						    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
+						    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
+						  </div>
+						<br/>
 						<img src={legendImg} alt="legendImg" width="92%"/><br></br>							
 						<label style={{float:"left"}}>easy</label>
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
-						<br></br>
+						<br/>
+						
 						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{store.expandedSections["3"] ?

@@ -79,12 +79,7 @@ class App extends Component {
             </div> : null
 		return (
 		<div className="App">
-			<div>
-				<Auth/>
-				<span style={{"display":"inlineBlock", "float" : "right", "padding-top":"10px", "padding-right":"10px"}}>
-					Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a>
-				</span>			
-			</div>
+			<Auth/>
 			<div className="title">
 				<h1>Juggledex</h1>
 				<h3>Gotta catch em all ;)</h3>
@@ -96,6 +91,10 @@ class App extends Component {
 				<span>Find new tricks to learn next that are related to tricks you starred ★.</span>
 				<br/>
 				<span>Sign in to access your tricks across devices, otherwise tricks will be stored separately on each device</span>
+				<br/><br/>
+				<span >
+					Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a>
+				</span>			
 			</div>
 
 			{this.state.swipedList ? 

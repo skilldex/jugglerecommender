@@ -39,15 +39,12 @@ input{
   text-align: center;
 }
 
-.checkboxDiv{
-  display: inline-block; 
-  margin-right: 20px;
-  width: 220px;
-  font-size : 8pt;
-}
 .listCard{
   border : 1px solid gray;
   width : 92%;
+  font-size : 15px;
+  cursor: pointer;
+
 }
 .listCardName{
   overflow: hidden;
@@ -55,14 +52,18 @@ input{
   text-overflow: ellipsis;
   display : inline-block;
   width : 70%;
+  cursor: pointer;
+
 }
 .selectedListCard{
   border : 2px solid black;
   width : 92%;
+  font-size : 15px;
 }
 .listDiv{
-  padding-left : 15px;
-  width: 200px;
+  padding-left : 5px;
+  padding-right : 5px;
+  width: 160px;
   border : 1px solid gray;
   margin-left : 1px;
   display: inline-block;
@@ -147,17 +148,17 @@ input{
   margin-bottom: 15px;
 }
 .selectedListButton{
-  font-size: 12pt;
+  font-size: 15px;
   border-radius: 5px;
   background-color : darkgray;
-  width : 90px;
+  width : 80px;
   box-shadow : 2px 0px 5px #888888;;
 
 }
 .unselectedListButton{
-  font-size: 12pt;
+  font-size: 15px;
   border-radius: 5px;
-  width : 90px;
+  width : 80px;
   box-shadow : 2px 0px 5px #888888;;
 
 }
@@ -176,19 +177,18 @@ input{
 }
 .sectionHeader{
   display: inline-block;
+  cursor: pointer;
 }
 .addToMyTricksButton{
-  font-size: 16pt;
-  margin-right : 5px;
-  box-shadow : 2px 0px 5px #888888;;
-
+  font-size: 12pt;
+  box-shadow : 2px 0px 5px #888888;
+  padding : 2px;
 }
 
 .removeFromMyTricksButton{
-  font-size: 16pt;
-  margin-right : 5px;
+  font-size: 12pt;
   box-shadow : 2px 0px 5px #888888;;
-
+  padding : 2px;
 }
 @supports (-webkit-overflow-scrolling: touch) {  
   .addToMyTricksButton{
@@ -247,7 +247,6 @@ input{
 .auth {
   margin-left: 15px;
   margin-top : 15px;
-  display : inline-block
 }
 .authButton{
   box-shadow : 2px 0px 5px #888888;
