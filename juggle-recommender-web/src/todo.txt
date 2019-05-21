@@ -1,33 +1,31 @@
-Next:
--scrape other tutorial links
--scrape siteswap
 
 User Launch::
+	CRITICAL: 
+		- Add legend for coloring
+	- allow user add catches (time)
+	- hollow and just show thick borders the node with 0 catches
+	- color list items by difficulty (same as nodes)
+	- ability to sort list by difficulty
 	-we want to easily see at a glance which tricks I can do and which I am interested in
 		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
 	-allow users to add tricks
 	-toggle tricks by user added trick
 
-IDEAS:
-	-it would be nice to compare gifs of different tricks side by side,
-		to do this we would want to be able to show more than one popup
-		and maybe made the popups draggable so they can be put right next to each other
-	-Color dots or background in list (same as node)
-	-Might be a good idea to download the whole site incase it gets taken down and we lose the gifs
-	-A way to make nodes gravitate towards visible area would be amazing
-	-I would like to be able to input catches or time for my records.
-	-Make learn to juggle nodes, some simple 1b stuff, 2b stuff, the more different patterns the better so they can keep getting that sense of accomplishment. All the two ball steps from the various trucks could even be added with ankmations..
+Don't allow state where only graph is showing (limit height)
 
 TAGS:
--add style
--(maybe) make it so when a tag is clicked, that tag is added to the current search
--(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
+	-add style
+	-(maybe) make it so when a tag is clicked, that tag is added to the current search
+	-(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
+
+Next:
+-scrape other tutorial links
+-scrape siteswap
 
 POPUPS:
 -(maybe)list depends and prereqs
--(maybe)show the siteswap of the pattern
 -siteswap
--other tutorials/user content
+- (maybe) other tutorials/user content
 
 BUGS:
 -right now it only sizes a trick as being my trick if it is in the rootlist, we want it to
@@ -43,13 +41,18 @@ Later :
 - add loading graphic
 - make checkboxes for showing (related, depends, prereqs) in graph
 
+IDEAS:
+	-it would be nice to compare gifs of different tricks side by side,
+		to do this we would want to be able to show more than one popup
+		and maybe made the popups draggable so they can be put right next to each other
+	-Might be a good idea to download the whole site incase it gets taken down and we lose the gifs
+	-A way to make nodes gravitate towards visible area would be amazing
+	-Make learn to juggle nodes, some simple 1b stuff, 2b stuff, the more different patterns the better so they can keep getting that sense of accomplishment. All the two ball steps from the various trucks could even be added with ankmations..
+
 COLORING IDEAS:
 - The predone difficulty color could be based on all user data
--Tricks not yet done could have node border with white center, with border indicating predone difficulty, Once you have done a trick, it could be made solid with a color that is hooked up to your length. The range could go from 0(red) to users-longest-trick(green) <-- not sure though, this may be no good with one really long wrong screwing up all other colors. 
+-  Once you have done a trick, it could be made solid with a color that is hooked up to your length. The range could go from 0(red) to users-longest-trick(green) <-- not sure though, this may be no good with one really long wrong screwing up all other colors. 
 
--(STILL NEEDED?) fix list card styles for retina
-
--status property for tricks, 'done' (Maybe this would not be needed if user can input time and/or catches)
 
 
 
