@@ -126,7 +126,7 @@ sortClicked=(type)=>{
 						<label style={{float:"left"}}>easy</label>
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
 						<br></br>
-						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
+						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{store.expandedSections["3"] ?
 							<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
@@ -136,7 +136,7 @@ sortClicked=(type)=>{
 						
 					</div>
 					<div>
-						<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "^" : ">"}</span>
+						<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
 						{store.expandedSections["4"] ?
 							<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
@@ -145,7 +145,7 @@ sortClicked=(type)=>{
 						}
 					</div>
 					<div>	
-						<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "^" : ">"}</span>
+						<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
 						{store.expandedSections["5"] ?
 							<div className={tricks["5"].length > 19 ? "listSection" : ""}> 

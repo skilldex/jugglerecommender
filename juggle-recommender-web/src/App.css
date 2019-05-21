@@ -248,6 +248,7 @@ input{
 .auth {
   margin-left: 15px;
   margin-top : 15px;
+  display : inline-block
 }
 .authButton{
   box-shadow : 2px 0px 5px #888888;

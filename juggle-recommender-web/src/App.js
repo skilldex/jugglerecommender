@@ -79,8 +79,12 @@ class App extends Component {
             </div> : null
 		return (
 		<div className="App">
-			<Auth/>
-
+			<div>
+				<Auth/>
+				<span style={{"display":"inlineBlock", "float" : "right", "padding-top":"10px", "padding-right":"10px"}}>
+					Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a>
+				</span>			
+			</div>
 			<div className="title">
 				<h1>Juggledex</h1>
 				<h3>Gotta catch em all ;)</h3>
