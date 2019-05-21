@@ -30,10 +30,8 @@ class Store {
 		if(!this.user.username){return}
 		let myTricksKey = ""
  		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
-      	console.log("stting my tricks", this.user.username)
   	 	myTricksRef.on('value', resp =>{
            const myTricksObject =this.snapshotToArray(resp)[0]
-           console.log("my fb tricks", myTricksObject, resp)
             if(myTricksObject){
             	myTricksKey = myTricksObject.key
             }
@@ -45,37 +43,29 @@ class Store {
 	        	
 	        })
         })
-        console.log("key", myTricksKey)
 	}
 
 	@action initializeTricks=()=>{
-		console.log("initializing tricks")
 		this.setMyTricks(["Cascade"])
 		this.setSearchInput('common')
 		this.selectTricks(['Cascade'])
-		console.log(this.selectedTricks)
 	}
 	@action getTricksFromBrowser=()=>{
-		console.log("getting tricks from browser")
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
-		console.log(myTricks)
     	if(myTricks  && myTricks.length > 0){
     		this.setMyTricks(myTricks)
     		this.setSelectedList("myTricks")
     	}else{
     		this.initializeTricks()
-    		console.log(this.selectedTricks)
     	}
 	}
 
 	@action getSavedTricks=()=>{
 		if(this.user.username){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
-	      	console.log("getting my tricks", this.user.username)
 	  	 	let myTricksKey = ""
 	  	 	myTricksRef.on('value', resp =>{
 	           const myTricksObject =this.snapshotToArray(resp)[0]
-	           console.log("my fb tricks", myTricksObject, resp)
 	            if(myTricksObject){
 	            	myTricksKey = myTricksObject.key
 	            }
@@ -114,7 +104,6 @@ class Store {
  	}
  	@action selectTricks=(clickedTrick)=>{
  		if (this.selectedTricks.includes(clickedTrick[0])){
- 			console.log("deselecting")
  			for (var i=this.selectedTricks.length-1; i>=0; i--) {
 			    if (this.selectedTricks[i] === clickedTrick[0]) {
 			        this.selectedTricks.splice(i, 1);
@@ -128,7 +117,6 @@ class Store {
 	 		this.popupTrick = null
 	 	}
 	 	this.popupTrick = null
-	 	console.log("selected",this.selectedTricks)
  	}
  	@action setSelectedList=(listType)=>{
  		this.selectedTricks = []
@@ -143,7 +131,6 @@ class Store {
 
  	@action	searchInputChange=(e)=>{
  		this.searchInput = e.target.value 		
- 		console.log("search", e.target.value)
  		if(e.target.value === ""){
  			this.searchTrick = ""
  		}
@@ -357,7 +344,6 @@ class Store {
  	}
 
  	@action toggleExpandedSection=(section)=>{
-	 	console.log("Expanded " ,this.expandedSections, section)
 	 	this.expandedSections[section] = !this.expandedSections[section]
 	 	this.updateRootTricks()
 	 }

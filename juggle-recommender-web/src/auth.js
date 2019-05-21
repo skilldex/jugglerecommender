@@ -14,9 +14,6 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 class Auth extends Component {
-    actionCodeSettings = {
-        url: 'https://www.straitflow.com/',
-    };
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());
     state= {
         loggedIn : false,
@@ -73,17 +70,6 @@ class Auth extends Component {
                 })
                 console.log("logging works", this)
                 store.setUser({"username": user})
-
-                /*this.getUserByEmail(this.state.email).then(user=>{
-                    this.state.id = user["key"]
-                    this.state.user = user 
-                    this.state.username = user["username"]
-                    window.sessionStorage.setItem('email',user["email"]); // user is undefined if no user signed in
-                    window.sessionStorage.setItem('user',JSON.stringify(user)); // user is undefined if no user signed in
-                    window.sessionStorage.setItem('username',JSON.stringify(user["username"])); // user is undefined if no user signed in
-                    store.setUsername(user)
-                    resolve("got user");
-                })*/
                 
             }).catch(error=>{
                 resolve(error)

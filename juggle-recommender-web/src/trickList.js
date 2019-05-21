@@ -44,7 +44,6 @@ class TrickList extends Component {
  		"7" : [], 		
  	}
  	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
- 	console.log("list selected", this.props.selectedTricks, store.selectedTricks)
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
@@ -54,7 +53,6 @@ class TrickList extends Component {
 		});
 		if(fullStringToSearch.includes(store.searchTrick.toLowerCase()) ){
 			if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
-				console.log("this selected", trickKey)
 				cardClass = 'selectedListCard'
 			}
 			if(store.selectedList === "allTricks" || 
