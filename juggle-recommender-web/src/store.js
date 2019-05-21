@@ -1,5 +1,6 @@
 import { action, configure, computed, observable, toJS} from "mobx"
 import {jugglingLibrary} from './jugglingLibrary.js'
+import firebase from 'firebase' 
 
 configure({ enforceActions: "always" })
 class Store {
@@ -12,6 +13,7 @@ class Store {
 	@observable edges = []
 	@observable searchInput = ''
 	@observable searchTrick = ''
+	@observable user = {}
 	@observable expandedSections = {
 		'3' : true,
 		'4' : false,
@@ -26,11 +28,28 @@ class Store {
 	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks.push(trickKey)
+ 		let myTricksKey = ""
+ 		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
+      	console.log("stting my tricks", this.user.username)
+  	 	myTricksRef.on('value', resp =>{
+           const myTricksObject =this.snapshotToArray(resp)[0]
+           console.log("my fb tricks", myTricksObject, resp)
+            if(myTricksObject){
+            	myTricksKey = myTricksObject.key
+            }
+        })
+        const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
+        userTricksRef.set({
+        	
+        		'username': this.user.username,
+        		'myTricks' : this.myTricks
+        	
+        })
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		this.updateRootTricks()
  	}
  	@action setMyTricks=(tricks)=>{
- 		this.myTricks = tricks
+ 		this.myTricks = tricks        
  		this.updateRootTricks()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
@@ -291,6 +310,19 @@ class Store {
 	 @action setPopupTrick=(clickedTrick)=>{
 	 	this.popupTrick = clickedTrick
 	 }
+	 @action setUser=(user)=>{
+	 	this.user = user
+	 }
+	 @action snapshotToArray = snapshot => {
+	    let returnArr = [];
+	    
+	    snapshot.forEach(childSnapshot => {
+	        let item = childSnapshot.val();
+	        item.key = childSnapshot.key;
+	        returnArr.push(item);
+	    });
+	    return returnArr;
+	};
 }
 
 const store = new Store()

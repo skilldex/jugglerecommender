@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import firebase from 'firebase' 
-import store from './store'
+import store from "./store"
 var firebaseConfig = {
     apiKey: "AIzaSyCmnOtb4Wk5MObmo1UPhgEV2Cv3b_6nMuY",
     authDomain: "skilldex-4ebb4.firebaseapp.com",
@@ -68,17 +68,22 @@ class Auth extends Component {
         console.log("logging user", user, pass)
         return new Promise(resolve => {
             firebase.auth().signInWithEmailAndPassword(user, pass).then(data => {
-                this.state.loggedIn = true
-                this.state.email = data.user["email"]
-                this.state.getUserByEmail(this.state.email).then(user=>{
+                this.setState({
+                    loggedIn: true,
+                })
+                console.log("logging works", this)
+                store.setUser({"username": user})
+
+                /*this.getUserByEmail(this.state.email).then(user=>{
                     this.state.id = user["key"]
                     this.state.user = user 
                     this.state.username = user["username"]
                     window.sessionStorage.setItem('email',user["email"]); // user is undefined if no user signed in
                     window.sessionStorage.setItem('user',JSON.stringify(user)); // user is undefined if no user signed in
                     window.sessionStorage.setItem('username',JSON.stringify(user["username"])); // user is undefined if no user signed in
+                    store.setUsername(user)
                     resolve("got user");
-                })
+                })*/
                 
             }).catch(error=>{
                 resolve(error)
@@ -116,7 +121,7 @@ class Auth extends Component {
     }
     signIn=()=>{
         this.LoginUser(this.state.username, this.state.password).then((response)=>{
-            console.log("done" , response)
+            console.log("done logging in" , response)
             if(response.message){
                 this.setState({
                     error : response.message
@@ -127,14 +132,28 @@ class Auth extends Component {
     createAccount=()=>{
         this.RegisterUser(this.state.username,this.state.password).then((response)=>{
             console.log("user registered")
+            
             if(response.message){
                 this.setState({
                     error : response.message
                 })
+            }else{
+                /*let profilesRef = firebase.database().ref('profiles/');
+                let newData = profilesRef.push();
+                newData.set({
+                    username : this.state.username,
+                    myTricks : []
+                });
+                const profileId = newData.key
+                const profileRef = firebase.database().ref('profiles/'+profileId)
+                profileRef.child("key").set(profileId)*/
+                const myTricksRef = firebase.database().ref('myTricks/')
+                let newData = myTricksRef.push();
+                newData.set({"username": this.state.username, "myTricks" : []});
+                this.signIn()
             }
         })
     }
-    
     userInputChange=(e)=>{
         this.setState({username : e.target.value})
     }
