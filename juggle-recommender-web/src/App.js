@@ -92,6 +92,8 @@ class App extends Component {
 				<span> ★ Star tricks you know to add to "Starred" tricks.</span> 	
 				<br/>
 				<span>Find new tricks to learn next that are related to tricks you starred ★.</span>
+				<br/>
+				<span>Sign in to access your tricks across devices, otherwise tricks will be stored separately on each device</span>
 			</div>
 
 			{this.state.swipedList ? 

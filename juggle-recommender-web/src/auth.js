@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase' 
 import store from "./store"
+import "./App.css"
 var firebaseConfig = {
     apiKey: "AIzaSyCmnOtb4Wk5MObmo1UPhgEV2Cv3b_6nMuY",
     authDomain: "skilldex-4ebb4.firebaseapp.com",
@@ -68,7 +69,6 @@ class Auth extends Component {
                 this.setState({
                     loggedIn: true,
                 })
-                console.log("logging works", this)
                 store.setUser({"username": user})
                 
             }).catch(error=>{
@@ -80,7 +80,6 @@ class Auth extends Component {
     RegisterUser(user, pass) {
         
         return new Promise(resolve => {
-            console.log("registering user", user, pass)
             firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
                 resolve("user created")
             }).catch(function (error) {
@@ -134,9 +133,9 @@ class Auth extends Component {
         this.setState({password : e.target.value})
     }
     render(){
-        const inputStyle = {width: "200px"}
+        const inputStyle = {width: "180px", "margin-right" : "10px"}
         return (   
-                <div>
+                <div className="auth">
                     {
                         this.state.loggedIn ? 
                             <div>Signed in as {this.state.username}</div> : 
@@ -146,8 +145,8 @@ class Auth extends Component {
                                 <input style={inputStyle} onChange={this.passwordInputChange}/><label>password</label>
                                 <br/>
                                 <div style={{color : "red"}}>{this.state.error}</div>
-                                <button onClick={this.createAccount}>Create Account</button>
-                                <button onClick={this.signIn}>Sign In</button>
+                                <button className="authButton" onClick={this.createAccount}>Create Account</button>
+                                <button className="authButton"  onClick={this.signIn}>Sign In</button>
                             </div>
                     }
                 </div>
