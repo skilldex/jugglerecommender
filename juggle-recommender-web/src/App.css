@@ -57,8 +57,7 @@ input{
   width : 70%;
 }
 .selectedListCard{
-  border : 1px solid gray;
-  background-color : darkgray;
+  border : 2px solid black;
   width : 92%;
 }
 .listDiv{
