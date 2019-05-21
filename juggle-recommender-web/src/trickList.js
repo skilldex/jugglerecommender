@@ -162,9 +162,6 @@ sortClicked=(type)=>{
 			}
 		</div>
 	)
-
   }
-
 }
-
 export default TrickList

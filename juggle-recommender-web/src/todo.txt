@@ -1,6 +1,6 @@
 
 Refactor : 
-	- consolidate redundant css e.g. add/remove trick buttons have overlapping styles
+	- consolidate redundant css e.g. 
 	- move popup to own component 
 	- separate css into different files
 	- separate stores for separate functions, e.g. user stuff vs list stuff
