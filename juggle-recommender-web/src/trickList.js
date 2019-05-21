@@ -3,16 +3,21 @@ import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
+import sortIcon from './sortIcon.png'
 
 @observer
 class TrickList extends Component {
+	 	state = {
+ 		sortType: 'alphabetical'
+	}
 	alphabeticalSortObject(data, attr) {
 	    var arr = [];
 	    for (var prop in data) {
+
 	        if (data.hasOwnProperty(prop)) {
 	            var obj = {};
 	            obj[prop] = data[prop];
-	            obj.tempSortName = data[prop][attr].toLowerCase();
+	            obj.tempSortName = data[prop][attr];
 	            arr.push(obj);
 	        }
 	    }
@@ -33,8 +38,14 @@ class TrickList extends Component {
 	        var item = obj[id];
 	        result[Object.keys(obj)] = item;
 	    }
+	    console.log('result',result)
 	    return result;
 	}
+
+sortClicked=(type)=>{
+	store.toggleSortTypeShow()
+	this.setState({sortType : type})
+}
  
  render() {
  	let tricks = {
@@ -44,7 +55,13 @@ class TrickList extends Component {
  		"6" : [],
  		"7" : [], 		
  	}
- 	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+ 	let sortedJugglingLibrary
+ 	if (this.state.sortType === 'alphabetical'){
+ 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+ }else{
+ 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
+ }
+
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
@@ -88,8 +105,16 @@ class TrickList extends Component {
 			 			<div className="search" >
 				 			<input value = {store.searchInput} defaultValue = {store.myTricks.length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
+				 			<button ><img src={sortIcon} alt="my image" 
+				 			onClick={store.showSortMenu} height='15px'width='15px'/></button>
+						  <div id="myDropdown" class="dropdown-content">
+						    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
+						    <a onClick={(e)=>this.sortClicked('difficulty')}>Diff</a>
+						  </div>
 				 		</div>
+				 		<div>
 
+						</div>
 			 		</div>
 	return (	
 		<div className="listDiv">				

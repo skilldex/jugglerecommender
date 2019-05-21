@@ -136,6 +136,7 @@ class Store {
  	}
  		
  	@action performSearch=()=>{
+ 		console.log('performSearch')
  		this.selectedTricks = []
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
@@ -353,6 +354,16 @@ class Store {
 	 	})
 	 	this.nodes = nodes
 	 	this.edges = edges
+ 	}
+
+
+	 @action showSortMenu=()=>{
+		if (document.getElementById("myDropdown")){
+	  document.getElementById("myDropdown").classList.toggle("show");
+		}
+ 	}
+ 	@action toggleSortTypeShow=()=>{
+ 		document.getElementById("myDropdown").classList.toggle("show");
  	}
 
  	@action toggleExpandedSection=(section)=>{

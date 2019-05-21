@@ -2347,6 +2347,14 @@ jugglingLibrary["ChopShower"].prereqs = ["Windmill","Crossed Arm Reverse Cascade
 jugglingLibrary["ChopShower"].related = ["Chops","Frantic Cascade","Statue of Liberty"]
 jugglingLibrary["534MillsMess"].prereqs = ["Four Ball Mills Mess","534(4b)","531 Mills Mess"]
 jugglingLibrary["FourBallWindmill"].prereqs = ["Windmill","Fountain(4b)","Four Ball Mills Mess"]
+jugglingLibrary["5551"].difficulty = "4"
+jugglingLibrary["5551"].name = "5551"
+jugglingLibrary["ss5551"] = jugglingLibrary["5551"]
+delete jugglingLibrary["5551"]
+jugglingLibrary["ss441"] = jugglingLibrary["Half-Box(441)"]
+delete jugglingLibrary["Half-Box(441)"]
+jugglingLibrary["ss531"] = jugglingLibrary["531"]
+delete jugglingLibrary["531"]
 
 
 
@@ -2357,7 +2365,8 @@ let finalLibrary = {}
 let defaultTricks = []
 Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     const trick = jugglingLibrary[trickKey]
-    
+    console.log('trickKey',trickKey)
+    console.log('i',i)
     trickKey = trickKey.replace("-","")
     trickKey = trickKey.replace("FourBall","")
     trickKey = trickKey.replace("FiveBall","")
