@@ -138,15 +138,6 @@ class Auth extends Component {
                     error : response.message
                 })
             }else{
-                /*let profilesRef = firebase.database().ref('profiles/');
-                let newData = profilesRef.push();
-                newData.set({
-                    username : this.state.username,
-                    myTricks : []
-                });
-                const profileId = newData.key
-                const profileRef = firebase.database().ref('profiles/'+profileId)
-                profileRef.child("key").set(profileId)*/
                 const myTricksRef = firebase.database().ref('myTricks/')
                 let newData = myTricksRef.push();
                 newData.set({"username": this.state.username, "myTricks" : []});

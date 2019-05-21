@@ -26,9 +26,8 @@ class Store {
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
-	@action addToMyTricks=(trickKey)=>{
- 		this.myTricks.push(trickKey)
- 		let myTricksKey = ""
+	@action updateTricksInDatabase=()=>{
+		let myTricksKey = ""
  		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
       	console.log("stting my tricks", this.user.username)
   	 	myTricksRef.on('value', resp =>{
@@ -37,14 +36,19 @@ class Store {
             if(myTricksObject){
             	myTricksKey = myTricksObject.key
             }
+            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
+	        userTricksRef.set({
+	        	
+	        		'username': this.user.username,
+	        		'myTricks' : this.myTricks
+	        	
+	        })
         })
-        const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
-        userTricksRef.set({
-        	
-        		'username': this.user.username,
-        		'myTricks' : this.myTricks
-        	
-        })
+        console.log("key", myTricksKey)
+	}
+	@action addToMyTricks=(trickKey)=>{
+ 		this.myTricks.push(trickKey)
+        this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		this.updateRootTricks()
  	}
@@ -57,6 +61,7 @@ class Store {
 		if (index > -1) {
 		  this.myTricks.splice(index, 1);
 		}
+		this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		this.updateRootTricks()
  	}
