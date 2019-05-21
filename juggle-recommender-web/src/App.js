@@ -86,11 +86,11 @@ class App extends Component {
 			</div>
 			<div className="instructions">
 				<h3>Instructions</h3>
-				<span> ★ Star tricks you know to add to "Starred" tricks.</span> 	
+				<span>• ★ Star tricks you know to add to "Starred" tricks.</span> 	
 				<br/>
-				<span>Find new tricks to learn next that are related to tricks you starred ★.</span>
+				<span>• Find new tricks to learn next that are related to tricks you starred ★.</span>
 				<br/>
-				<span>Sign in to access your tricks across devices, otherwise tricks will be stored separately on each device</span>
+				<span>• Sign in to access your tricks across devices, otherwise tricks will be stored separately on each device</span>
 				<br/><br/>
 				<span >
 					Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a>

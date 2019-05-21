@@ -104,32 +104,32 @@ sortClicked=(type)=>{
 						</div>
 			 			<div className="search" >
 				 			<input value = {store.searchInput} defaultValue = {store.myTricks.length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
-				 			<button type="submit" onClick={store.performSearch}>Search</button>
 				 		</div>
-				 		<div>
-
-						</div>
 			 		</div>
+	const sort = <div style={{"display" : "inline-block", "marginLeft" : "5px"}}>
+					 <button >
+						<img src={sortIcon} alt="my image" 
+					 			onClick={store.showSortMenu} height='15px'width='15px'/>
+					 </button>
+					  <div title="sort" id="myDropdown" class="dropdown-content">
+					    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
+					    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
+					  </div>
+				</div>
+
 	return (	
 		<div className="listDiv">				
 	 		{store.listExpanded ? 
 				<div>
 				 	{buttons}
 					<div>
-						<button style={{"margin-top":"5px", "margin-bottom" : "5px"}}><img src={sortIcon} alt="my image" 
-				 			onClick={store.showSortMenu} height='15px'width='15px'/></button>
-						  <div title="sort" id="myDropdown" class="dropdown-content">
-						    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
-						    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
-						  </div>
-						<br/>
-						<img src={legendImg} alt="legendImg" width="92%"/><br></br>							
 						<label style={{float:"left"}}>easy</label>
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
-						<br/>
-						
+						<img src={legendImg} alt="legendImg" width="92%"/>						
+						<br></br>
 						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
+						{sort}
 						{store.expandedSections["3"] ?
 							<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
 							{tricks["3"]}
@@ -140,6 +140,7 @@ sortClicked=(type)=>{
 					<div>
 						<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
+						{sort}
 						{store.expandedSections["4"] ?
 							<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
 							{tricks["4"]}
@@ -149,6 +150,7 @@ sortClicked=(type)=>{
 					<div>	
 						<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "+" : "-"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
+						{sort}
 						{store.expandedSections["5"] ?
 							<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
 							{tricks["5"]}
