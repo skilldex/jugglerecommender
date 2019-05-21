@@ -142,7 +142,7 @@ class Auth extends Component {
                             <div>
                                 <input style={inputStyle} onChange={this.userInputChange} value={this.username}/><label>email</label>
                                 <br/>
-                                <input type="password" `style={inputStyle} onChange={this.passwordInputChange}/><label>password</label>
+                                <input type="password" style={inputStyle} onChange={this.passwordInputChange}/><label>password</label>
                                 <br/>
                                 <div style={{color : "red"}}>{this.state.error}</div>
                                 <button className="authButton" onClick={this.createAccount}>Create Account</button>
