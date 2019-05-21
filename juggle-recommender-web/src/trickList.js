@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import { observer } from "mobx-react"
+import legendImg from './greenToRedFade.jpg'
 
 @observer
 class TrickList extends Component {
@@ -84,6 +85,7 @@ class TrickList extends Component {
 				 			<input value = {store.searchInput} defaultValue = {store.myTricks.length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
 				 			<button type="submit" onClick={store.performSearch}>Search</button>
 				 		</div>
+
 			 		</div>
 	return (	
 		<div className="listDiv">				
@@ -91,6 +93,10 @@ class TrickList extends Component {
 				<div>
 				 	{buttons}
 					<div>
+						<img src={legendImg} alt="legendImg" width="92%"/><br></br>							
+						<label style={{float:"left"}}>easy</label>
+						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
+						<br></br>
 						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "^" : ">"}</span>
 						<h3 onClick={()=>{store.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{store.expandedSections["3"] ?
