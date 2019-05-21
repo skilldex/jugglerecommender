@@ -21,18 +21,7 @@ class App extends Component {
  		swipedList : false
 	}
 	componentDidMount(){
-		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
-		if(myTricks && myTricks.length > 0){
-			store.setMyTricks(myTricks)
-			store.setSelectedList("myTricks")
-			store.setSearchInput('')
-			store.updateRootTricks()		
-		}else{
-			store.setMyTricks(["Cascade"])
-			store.selectTricks(['Cascade'])
-			store.setSearchInput('common')
-			store.updateRootTricks()	
-		}
+		store.getSavedTricks()	
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []
@@ -62,7 +51,6 @@ class App extends Component {
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
  		const graphDiv = document.getElementById("graphDiv")
- 		console.log(graphDiv)
  		const popup = store.popupTrick && store.popupTrick.id ? 
 			        <div style={{
 				left : Math.min(graphDiv.clientWidth-260,store.popupTrick.x),
@@ -87,6 +75,8 @@ class App extends Component {
               	TAGS: {jugglingLibrary[store.popupTrick.id].tags.join(', ')} 
               	</label> : null}
             </div> : null
+
+          console.log("rendering app", store.selectedList)
 		return (
 		<div className="App">
 			<Auth/>
@@ -112,10 +102,7 @@ class App extends Component {
 					myTricks={store.myTricks} 
 					selectedList={store.selectedList}
 				/>}
-
-			
-					{popup}
-				
+				{popup}
 			<TrickGraph 
 				nodes = {store.nodes}
 				edges = {store.edges}

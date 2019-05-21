@@ -96,10 +96,7 @@ class Auth extends Component {
         return new Promise(resolve => {
             console.log("registering user", user, pass)
             firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
-                firebase.auth().currentUser.sendEmailVerification(this.state.actionCodeSettings).then(()=>{
-                    resolve("user created")
-
-                 })
+                resolve("user created")
             }).catch(function (error) {
                 resolve(error)
             });
@@ -132,7 +129,6 @@ class Auth extends Component {
     createAccount=()=>{
         this.RegisterUser(this.state.username,this.state.password).then((response)=>{
             console.log("user registered")
-            
             if(response.message){
                 this.setState({
                     error : response.message

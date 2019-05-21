@@ -58,6 +58,7 @@ alphabeticalSortObject(data, attr) {
  		"7" : [], 		
  	}
  	let sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+ 	console.log("list selected", store.selectedTricks)
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
 		var cardClass='listCard'
@@ -66,7 +67,9 @@ alphabeticalSortObject(data, attr) {
 			fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 		});
 		if(fullStringToSearch.includes(store.searchTrick.toLowerCase()) ){
+			console.log("including")
 			if(store.selectedTricks.includes(trickKey)){
+				console.log("this selected", trickKey)
 				cardClass = 'selectedListCard'
 			}
 			if(store.selectedList === "allTricks" || 

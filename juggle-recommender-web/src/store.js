@@ -27,6 +27,7 @@ class Store {
 		this.listExpanded = expanded
 	}
 	@action updateTricksInDatabase=()=>{
+		if(!this.user.username){return}
 		let myTricksKey = ""
  		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
       	console.log("stting my tricks", this.user.username)
@@ -45,6 +46,50 @@ class Store {
 	        })
         })
         console.log("key", myTricksKey)
+	}
+
+	@action initializeTricks=()=>{
+		console.log("initializing tricks")
+		this.setMyTricks(["Cascade"])
+		this.selectTricks(['Cascade'])
+		this.setSearchInput('common')
+	}
+	@action getTricksFromBrowser=()=>{
+		console.log("getting tricks from browser")
+		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
+		console.log(myTricks)
+    	if(myTricks  && myTricks.length > 0){
+    		this.setMyTricks(myTricks)
+    		this.setSelectedList("myTricks")
+    	}else{
+    		this.initializeTricks()
+    	}
+	}
+
+	@action getSavedTricks=()=>{
+		if(this.user.username){
+			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
+	      	console.log("getting my tricks", this.user.username)
+	  	 	let myTricksKey = ""
+	  	 	myTricksRef.on('value', resp =>{
+	           const myTricksObject =this.snapshotToArray(resp)[0]
+	           console.log("my fb tricks", myTricksObject, resp)
+	            if(myTricksObject){
+	            	myTricksKey = myTricksObject.key
+	            }
+	            if(myTricksObject.myTricks){
+	            	this.setMyTricks(myTricksObject.myTricks)
+	            	this.setSelectedList("myTricks")
+	            	this.setSearchInput('')
+	            }else{
+	            	this.getTricksFromBrowser()
+	            }
+	            
+	        })
+	  	 }else{
+	  	 	this.getTricksFromBrowser()
+	  	 }
+		this.updateRootTricks()
 	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks.push(trickKey)
@@ -67,6 +112,7 @@ class Store {
  	}
  	@action selectTricks=(clickedTrick)=>{
  		if (this.selectedTricks.includes(clickedTrick[0])){
+ 			console.log("deselecting")
  			for (var i=this.selectedTricks.length-1; i>=0; i--) {
 			    if (this.selectedTricks[i] === clickedTrick[0]) {
 			        this.selectedTricks.splice(i, 1);
@@ -80,6 +126,7 @@ class Store {
 	 		this.popupTrick = null
 	 	}
 	 	this.popupTrick = null
+	 	console.log("selected",this.selectedTricks)
  	}
  	@action setSelectedList=(listType)=>{
  		this.selectedTricks = []
@@ -122,7 +169,7 @@ class Store {
 						fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 					});
 					if (trick.num === 3 && this.expandedSections['3'] &&
-						(fullStringToSearch.toLowerCase().includes(store.searchTrick.toLowerCase()) || 
+						(fullStringToSearch.toLowerCase().includes(this.searchTrick.toLowerCase()) || 
 							this.searchTrick === "")){
 						shouldPushTrick = true
 					}
@@ -318,6 +365,7 @@ class Store {
 	 }
 	 @action setUser=(user)=>{
 	 	this.user = user
+	 	this.getSavedTricks()
 	 }
 	 @action snapshotToArray = snapshot => {
 	    let returnArr = [];
