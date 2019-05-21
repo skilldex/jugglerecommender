@@ -59,7 +59,6 @@ class Store {
 	}
 
 	@action getSavedTricks=()=>{
-		console.log('getSavedTricks1')
 		if(this.user.username){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
 	  	 	let myTricksKey = ""
@@ -191,6 +190,14 @@ class Store {
         }
 		return color
 	}
+	@action getSelectedInvolvedNodeColor=(difficulty, involved)=>{
+		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 30%)"
+      	const color = {
+      		background : colorString,
+        }
+		return color
+	}
+
 	@action getInvolvedNodeSize=(involved)=>{
 		let size = 25 //default
 		if(involved == 3){

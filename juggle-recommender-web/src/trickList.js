@@ -60,7 +60,11 @@ class TrickList extends Component {
 				store.selectedList === "myTricks" && store.myTricks.includes(trickKey)
 			){
 				tricks[trick.num.toString()].push(
-					<div onClick={()=>{store.selectTricks([trickKey])}} className={cardClass} key={trickKey + "div"}>
+					<div onClick={()=>{store.selectTricks([trickKey])}} 
+						className={cardClass} 
+						key={trickKey + "div"} 
+						style={{backgroundColor: cardClass == 'listCard' ?
+						store.getInvolvedNodeColor(trick.difficulty, 2).background : store.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 						 {store.myTricks.includes(trickKey) ? 
 	  					 <button className="removeFromMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addToMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}

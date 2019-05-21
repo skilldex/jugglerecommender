@@ -47,7 +47,7 @@ input{
 }
 .listCard{
   border : 1px solid gray;
-  cursor: pointer; 
+  width : 92%;
 }
 .listCardName{
   overflow: hidden;
@@ -59,6 +59,7 @@ input{
 .selectedListCard{
   border : 1px solid gray;
   background-color : darkgray;
+  width : 92%;
 }
 .listDiv{
   padding-left : 15px;
