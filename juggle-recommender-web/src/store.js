@@ -41,8 +41,7 @@ class Store {
 		        		'username': this.user.username,
 		        		'myTricks' : this.myTricks	        	
 		        })	
-            }
-            
+            }            
         })
 	}
 

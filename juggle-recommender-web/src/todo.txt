@@ -1,6 +1,6 @@
 
 Refactor : 
-	- separate stores for separate functions, e.g. user stuff vs list stuff
+	- separate stores for separate functions, e.g. auth, myTricks, UI(display toggles)
 	
 User Launch::
 	- allow user add catches (time)
@@ -27,6 +27,7 @@ POPUPS:
 -(maybe) other tutorials/user content
 
 BUGS:
+-selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big?
 -some gifs are smaller than others, for example, Alex is really small
 -sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
 

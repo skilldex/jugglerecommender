@@ -41,7 +41,6 @@ class App extends Component {
  		console.log('startHandled')
  	}
  	render(){
-
  		store.nodes
  		store.edges
 		return (

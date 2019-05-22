@@ -62,33 +62,6 @@ class Auth extends Component {
             })
         })
     }
-    LoginUser(user, pass) {
-        window.sessionStorage.clear
-        console.log("logging user", user, pass)
-        return new Promise(resolve => {
-            firebase.auth().signInWithEmailAndPassword(user, pass).then(data => {
-                this.setState({
-                    loggedIn: true,
-                })
-                store.setUser({"username": user})
-                
-            }).catch(error=>{
-                resolve(error)
-            });
-        });
-    }
-    
-    RegisterUser(user, pass) {
-        
-        return new Promise(resolve => {
-            firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
-                resolve("user created")
-            }).catch(function (error) {
-                resolve(error)
-            });
-        })
-    }
-    
     SignOut() {
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {
@@ -112,6 +85,21 @@ class Auth extends Component {
             }
         })
     }
+    LoginUser(user, pass) {
+        window.sessionStorage.clear
+        console.log("logging user", user, pass)
+        return new Promise(resolve => {
+            firebase.auth().signInWithEmailAndPassword(user, pass).then(data => {
+                this.setState({
+                    loggedIn: true,
+                })
+                store.setUser({"username": user})
+                
+            }).catch(error=>{
+                resolve(error)
+            });
+        });
+    }
     createAccount=()=>{
         this.RegisterUser(this.state.username,this.state.password).then((response)=>{
             console.log("user registered")
@@ -125,6 +113,15 @@ class Auth extends Component {
                 newData.set({"username": this.state.username, "myTricks" : []});
                 this.signIn()
             }
+        })
+    }
+    RegisterUser(user, pass) {        
+        return new Promise(resolve => {
+            firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
+                resolve("user created")
+            }).catch(function (error) {
+                resolve(error)
+            });
         })
     }
     userInputChange=(e)=>{
