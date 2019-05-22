@@ -49,6 +49,22 @@ sortClicked=(type)=>{
 }
  
  render() {
+ 	 		window.onclick = function(event) {
+ 	 			console.log('event.srcElement.alt',event.srcElement['alt'])
+ 	 			if (event.srcElement['alt'] != 'showSortMenu') {
+ 			console.log("window")
+ 			//store.hideSortMenu()
+ 			console.log('document.getElementById("myDropdown").classList',document.getElementById("myDropdown").classList['show'])
+ 			if (document.getElementById("myDropdown").classList.contains('show')){
+ 			store.toggleSortTypeShow()
+ 		}
+ 			}
+ 		}
+
+ 			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
+ 			//	how showSortMenu does it, but  alittle different
+
+
  	let tricks = {
  		"3" : [],
  		"4" : [],
@@ -109,7 +125,7 @@ sortClicked=(type)=>{
 			 		</div>
 	const sort = <div style={{"display" : "inline-block", "marginLeft" : "5px"}}>
 					 <button >
-						<img src={sortIcon} alt="my image" 
+						<img src={sortIcon} alt="showSortMenu" 
 					 			onClick={store.showSortMenu} height='15px'width='15px'/>
 					 </button>
 					  <div title="sort" id="myDropdown" class="dropdown-content">

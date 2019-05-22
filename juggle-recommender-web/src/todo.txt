@@ -24,11 +24,9 @@ Next:
 POPUPS:
 -(maybe)list depends and prereqs
 -siteswap
-- (maybe) other tutorials/user content
+-(maybe) other tutorials/user content
 
 BUGS:
--the sorttype dropdown doesnt go away when you click elsewhere, it forces you to choose a sort type to make it go away.
--Sorttype button doesnt always make a dropdown the first time you click it
 -some gifs are smaller than others, for example, Alex is really small
 -sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
 

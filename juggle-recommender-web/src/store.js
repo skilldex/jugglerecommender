@@ -364,6 +364,15 @@ class Store {
 	  document.getElementById("myDropdown").classList.toggle("show");
 		}
  	}
+
+	 @action hideSortMenu=()=>{
+
+
+			console.log('hideSortMenu')
+	  document.getElementById("myDropdown").classList['show'] = 'block';
+		
+ 	} 	
+ 	hideSortMenu
  	@action toggleSortTypeShow=()=>{
  		document.getElementById("myDropdown").classList.toggle("show");
  	}
