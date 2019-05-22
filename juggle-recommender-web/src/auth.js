@@ -3,15 +3,16 @@ import firebase from 'firebase'
 import store from "./store"
 import "./App.css"
 import "./auth.css";
+ // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyCmnOtb4Wk5MObmo1UPhgEV2Cv3b_6nMuY",
-    authDomain: "skilldex-4ebb4.firebaseapp.com",
-    databaseURL: "https://skilldex-4ebb4.firebaseio.com",
-    projectId: "skilldex-4ebb4",
-    storageBucket: "skilldex-4ebb4.appspot.com",
-    messagingSenderId: "965128070479",
-    appId: "1:965128070479:web:64af3cb91c057166"
-  };
+apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
+authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
+databaseURL: "https://skilldex-dev-6c0ff.firebaseio.com",
+projectId: "skilldex-dev-6c0ff",
+storageBucket: "skilldex-dev-6c0ff.appspot.com",
+messagingSenderId: "224766397892",
+appId: "1:224766397892:web:80beef32563065c3"
+};
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
