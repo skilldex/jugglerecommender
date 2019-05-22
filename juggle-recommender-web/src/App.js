@@ -46,6 +46,7 @@ class App extends Component {
  		store.edges
 		return (
 		<div className="App">
+			<div style={{"padding-left":"10px"}}>contact <a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a></div> 
 			<Auth/>
 			<div className="title">
 				<h1>Juggledex</h1>

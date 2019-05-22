@@ -35,11 +35,14 @@ class Store {
             if(myTricksObject){
             	myTricksKey = myTricksObject.key
             }
-            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
-	        userTricksRef.set({	        	
-	        		'username': this.user.username,
-	        		'myTricks' : this.myTricks	        	
-	        })
+            if(myTricksKey){
+	            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
+		        userTricksRef.set({	        	
+		        		'username': this.user.username,
+		        		'myTricks' : this.myTricks	        	
+		        })	
+            }
+            
         })
 	}
 
@@ -67,8 +70,10 @@ class Store {
 	            if(myTricksObject){
 	            	myTricksKey = myTricksObject.key
 	            }
-	            if(myTricksObject.myTricks){
-	            	this.setMyTricks(myTricksObject.myTricks)
+	            if(myTricksObject && myTricksObject.myTricks){
+	            	if(myTricksObject.myTricks.length > 1){
+	            		this.setMyTricks(myTricksObject.myTricks)
+	            	}
 	            	//this.setSelectedList("myTricks")
 	            	this.setSearchInput('')
 	            }else{
