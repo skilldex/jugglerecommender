@@ -2,9 +2,8 @@
 Refactor : 
 	- separate stores for separate functions, e.g. auth, myTricks, UI(display toggles)
 	
-User Launch::
-	- allow user add catches (time)
-	- hollow and just show thick borders the node with 0 catches
+User Launch:
+	-hollow and just show thick borders the node with 0 catches
 	-we want to easily see at a glance which tricks I can do and which I am interested in
 		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
 	-allow users to add tricks
@@ -18,7 +17,7 @@ TAGS:
 	-(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
 
 Next:
--scrape other tutorial links
+-make animation less crazy
 -scrape siteswap
 
 POPUPS:
@@ -37,6 +36,7 @@ MINOR:
 - Ask if sure when removing from my list
 
 Later : 
+-(maybe)scrape other tutorial links
 -Style expand arrows as icons
 - add loading graphic
 - make checkboxes for showing (related, depends, prereqs) in graph

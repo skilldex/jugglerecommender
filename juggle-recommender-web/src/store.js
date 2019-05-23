@@ -4,7 +4,7 @@ import firebase from 'firebase'
 
 configure({ enforceActions: "always" })
 class Store {
-	@observable myTricks = []
+	@observable myTricks = {}
 	@observable selectedTricks = []
 	@observable selectedList = "allTricks"
 	@observable rootTricks = []
@@ -14,6 +14,7 @@ class Store {
 	@observable searchInput = ''
 	@observable searchTrick = ''
 	@observable user = {}
+	@observable popupCatchEditable = false
 	@observable expandedSections = {
 		'3' : true,
 		'4' : false,
@@ -23,6 +24,9 @@ class Store {
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
+	@action toggleCatchEdit=()=>{
+		this.popupCatchEditable = !this.popupCatchEditable
+	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
@@ -39,20 +43,20 @@ class Store {
 	            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
 		        userTricksRef.set({	        	
 		        		'username': this.user.username,
-		        		'myTricks' : this.myTricks	        	
+		        		'myTricks' : this.myTricks        	
 		        })	
             }            
         })
 	}
 
 	@action initializeTricks=()=>{
-		this.setMyTricks(["Cascade"])
+		this.setMyTricks({"Cascade": { "catches":0}})
 		this.setSearchInput('common')
 		this.selectTricks(['Cascade'])
 	}
 	@action getTricksFromBrowser=()=>{
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
-    	if(myTricks  && myTricks.length > 0){
+    	if(myTricks  && Object.keys(myTricks).length > 0){
     		this.setMyTricks(myTricks)
     		this.setSelectedList("myTricks")
     	}else{
@@ -70,7 +74,7 @@ class Store {
 	            	myTricksKey = myTricksObject.key
 	            }
 	            if(myTricksObject && myTricksObject.myTricks){
-	            	if(myTricksObject.myTricks.length > 1){
+	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
 	            	//this.setSelectedList("myTricks")
@@ -86,7 +90,10 @@ class Store {
 		this.updateRootTricks()
 	}
 	@action addToMyTricks=(trickKey)=>{
- 		this.myTricks.push(trickKey)
+
+ 		this.myTricks[trickKey] = {
+ 			"catches" : 0
+ 		}
         this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		this.updateRootTricks()
@@ -96,13 +103,17 @@ class Store {
  		this.updateRootTricks()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
- 		var index = this.myTricks.indexOf(trickKey);
-		if (index > -1) {
-		  this.myTricks.splice(index, 1);
+		if (this.myTricks[trickKey]) {
+		  delete this.myTricks[trickKey]
 		}
 		this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		this.updateRootTricks()
+ 	}
+ 	@action setCatches=(catches, trickKey)=>{
+ 		this.myTricks[trickKey].catches = catches
+ 		this.updateTricksInDatabase()
+ 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  	}
  	@action selectTricks=(clickedTrick)=>{
  		if (this.selectedTricks.includes(clickedTrick[0])){
@@ -119,12 +130,16 @@ class Store {
 	 		this.popupTrick = null
 	 	}
 	 	this.popupTrick = null
+	 	this.popupCatchEditable = false
+	 	
  	}
  	@action setSelectedList=(listType)=>{
  		this.selectedTricks = []
  		this.selectedList = listType
  		this.updateRootTricks()
  		this.popupTrick = null
+ 		this.popupCatchEditable = false
+ 		
  	}
  	@action setSearchInput=(newInput)=>{
  		this.searchInput = newInput
@@ -152,7 +167,7 @@ class Store {
 	 	}else{
 		 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 				if(this.selectedList === "allTricks" || 
-					this.selectedList === "myTricks" && this.myTricks.includes(trickKey)
+					this.selectedList === "myTricks" && this.myTricks[trickKey]
 				){
 					const trick = jugglingLibrary[trickKey]
 					let shouldPushTrick = false			
@@ -272,7 +287,7 @@ class Store {
 	 	}else if(this.selectedList === "allTricks"){
 	 		this.rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
-	 			const involvedRoot = this.myTricks.includes(trickKey) || 
+	 			const involvedRoot = this.myTricks[trickKey] || 
 	 							this.selectedTricks.includes(trickKey) ? 3 : 0
 
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
@@ -348,7 +363,7 @@ class Store {
 	 	}
 	 	Object.keys(tempNodes).forEach((trickKey)=>{
 	 		delete tempNodes[trickKey].involved
-	 		if (this.myTricks.includes(trickKey) && !tempNodes[trickKey].label.includes("★")){
+	 		if (this.myTricks[trickKey] && !tempNodes[trickKey].label.includes("★")){
 	 			tempNodes[trickKey].label = "★" + tempNodes[trickKey].label
 	 			tempNodes[trickKey].size = 100
 	 			tempNodes[trickKey].font = 24
@@ -360,9 +375,7 @@ class Store {
 	 	this.edges = edges
  	}
 
-
 	 @action showSortMenu=()=>{
-
 		if (document.getElementById("myDropdown")){
 			console.log('showSortMenu')
 	  document.getElementById("myDropdown").classList.toggle("show");
@@ -370,8 +383,6 @@ class Store {
  	}
 
 	 @action hideSortMenu=()=>{
-
-
 			console.log('hideSortMenu')
 	  document.getElementById("myDropdown").classList['show'] = 'block';
 		
@@ -388,12 +399,19 @@ class Store {
 
 	 @action setPopupTrick=(clickedTrick)=>{
 	 	this.popupTrick = clickedTrick
+	 	this.popupCatchEditable = false
 	 }
+
+	 @action clearCatchInput=()=>{
+	 	this.catchInput = ''
+	 }
+
 	 @action setUser=(user)=>{
 	 	console.log('setUser')
 	 	this.user = user
 	 	this.getSavedTricks()
 	 }
+
 	 @action snapshotToArray = snapshot => {
 	    let returnArr = [];
 	    

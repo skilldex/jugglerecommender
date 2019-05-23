@@ -50,11 +50,7 @@ sortClicked=(type)=>{
  
  render() {
  	 		window.onclick = function(event) {
- 	 			console.log('event.srcElement.alt',event.srcElement['alt'])
  	 			if (event.srcElement['alt'] != 'showSortMenu') {
- 			console.log("window")
- 			//store.hideSortMenu()
- 			console.log('document.getElementById("myDropdown").classList',document.getElementById("myDropdown").classList['show'])
  			if (document.getElementById("myDropdown").classList.contains('show')){
  			store.toggleSortTypeShow()
  		}
@@ -91,7 +87,7 @@ sortClicked=(type)=>{
 				cardClass = 'selectedListCard'
 			}
 			if(store.selectedList === "allTricks" || 
-				store.selectedList === "myTricks" && store.myTricks.includes(trickKey)
+				store.selectedList === "myTricks" && store.myTricks[trickKey]
 			){
 				tricks[trick.num.toString()].push(
 					<div onClick={()=>{store.selectTricks([trickKey])}} 
@@ -99,7 +95,7 @@ sortClicked=(type)=>{
 						key={trickKey + "div"} 
 						style={{backgroundColor: cardClass == 'listCard' ?
 						store.getInvolvedNodeColor(trick.difficulty, 2).background : store.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
-						 {store.myTricks.includes(trickKey) ? 
+						 {store.myTricks[trickKey] ? 
 	  					 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
 						 <span className="listCardName" title={trick.name}>{trick.name}</span>			
@@ -120,7 +116,7 @@ sortClicked=(type)=>{
 							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All</button>
 						</div>
 			 			<div className="search" >
-				 			<input value = {store.searchInput} defaultValue = {store.myTricks.length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
+				 			<input value = {store.searchInput} defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
 				 		</div>
 			 		</div>
 	const sort = <div style={{"display" : "inline-block", "marginLeft" : "5px"}}>
