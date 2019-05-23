@@ -51,8 +51,7 @@ class App extends Component {
  		uiStore.edges
 		return (
 			<div className="App">
-				<div ref={ref => this.el = ref}>
-		            
+				<div ref={ref => this.el = ref}>		            
 		            <SlidingPane
 		                className='some-custom-class'
 		                overlayClassName='some-custom-overlay-class'
