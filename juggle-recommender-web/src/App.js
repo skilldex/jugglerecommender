@@ -94,7 +94,7 @@ class App extends Component {
 						</div><br/>
 		            </SlidingPane>
 					<div className="header">
-						<span className="title">Juggledex</span>
+						<span className="title">Juggledex</span><span class="version"> version 0.7</span>
 				            <button class="headerButton" onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
 				            <button class="headerButton" onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>
 					</div>

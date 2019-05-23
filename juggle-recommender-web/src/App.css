@@ -28,6 +28,11 @@ input{
   margin-top: 15px;
   margin-bottom: 15px;  
 }
+.version{
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 14px;
+}
 .title {
   font-weight: bold;
   font-size: 22px;
