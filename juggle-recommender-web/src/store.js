@@ -105,9 +105,7 @@ class Store {
  		uiStore.updateRootTricks()
  	}
 
-
-
-	 @action snapshotToArray = snapshot => {
+	@action snapshotToArray = snapshot => {
 	    let returnArr = [];
 	    
 	    snapshot.forEach(childSnapshot => {

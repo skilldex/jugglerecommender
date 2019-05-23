@@ -1,12 +1,11 @@
 import React,{Component} from 'react'
-import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
 import Graph from 'vis-react'
 import {toJS} from "mobx"
 import './trickGraph.css';
 
-class TrickGraph extends React.Component {
+class TrickGraph extends Component {
     render() {
       uiStore.nodes
       uiStore.edges

@@ -50,6 +50,7 @@ sortClicked=(type)=>{
 }
  
  render() {
+
  	 window.onclick = function(event) {
  	 	if (event.srcElement['alt'] != 'showSortMenu') {
  	 		if (document.getElementById("myDropdown")){
@@ -62,7 +63,6 @@ sortClicked=(type)=>{
  			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
  			//	how showSortMenu does it, but  alittle different
 
-
  	let tricks = {
  		"3" : [],
  		"4" : [],
@@ -72,10 +72,10 @@ sortClicked=(type)=>{
  	}
  	let sortedJugglingLibrary
  	if (this.state.sortType === 'alphabetical'){
- 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
- }else{
- 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
- }
+	 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+	}else{
+	 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
+	}
 
  	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 		const trick = sortedJugglingLibrary[trickKey]
@@ -107,9 +107,9 @@ sortClicked=(type)=>{
 		}
 	})
  	const buttons = <div>
-					 	<label style={{"font-size":"30px",
-										"text-align" : "right", 
-										"padding-right" : "15px",
+					 	<label style={{"fontSize":"30px",
+										"textAlign" : "right", 
+										"paddingRight" : "15px",
 										"display" : "block"}} 
 								onClick={() => uiStore.setListExpanded(!uiStore.listExpanded)
 						}>{uiStore.listExpanded ? "-" : "+"}</label>
@@ -126,7 +126,7 @@ sortClicked=(type)=>{
 						<img src={sortIcon} alt="showSortMenu" 
 					 			onClick={uiStore.showSortMenu} height='15px'width='15px'/>
 					 </button>
-					  <div title="sort" id="myDropdown" class="dropdown-content">
+					  <div title="sort" id="myDropdown" className="dropdown-content">
 					    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
 					    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
 					  </div>

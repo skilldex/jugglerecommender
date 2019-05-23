@@ -305,7 +305,6 @@ class UIStore {
 	  document.getElementById("myDropdown").classList['show'] = 'block';
 		
  	} 	
- 	hideSortMenu
  	@action toggleSortTypeShow=()=>{
  		document.getElementById("myDropdown").classList.toggle("show");
  	}
