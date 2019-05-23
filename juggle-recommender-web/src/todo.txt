@@ -1,8 +1,11 @@
+UI:
+	-this could be a nice way to do login/help/trickList, but it requires react-modal which removes firebase when npm insalled:  	https://www.npmjs.com/package/react-sliding-pane
 
 Refactor : 
-	- separate stores for separate functions, e.g. auth, myTricks, UI(display toggles)
+	Should break up store further?
 	
 User Launch:
+	-we probably want their username(to show at top of screen and to other users) to be something other than their email
 	-hollow and just show thick borders the node with 0 catches
 	-we want to easily see at a glance which tricks I can do and which I am interested in
 		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
@@ -26,6 +29,7 @@ POPUPS:
 -(maybe) other tutorials/user content
 
 BUGS:
+-there is something wrong with the fountain node, it is all black and has no gif in its popup
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big?
 -some gifs are smaller than others, for example, Alex is really small
 -sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
