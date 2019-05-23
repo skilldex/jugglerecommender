@@ -19,7 +19,11 @@ input{
 
 @supports (-webkit-overflow-scrolling: touch) {  
 }
-
+.info{
+  font-size: 16px;
+  color : #787878;
+  width: 375px;
+}
 .header{
   margin-top: 15px;
   margin-bottom: 15px;  
@@ -37,7 +41,6 @@ input{
   font-size: 16px;
   vertical-align: middle;
   float: right;
-
 }
 
 .App {

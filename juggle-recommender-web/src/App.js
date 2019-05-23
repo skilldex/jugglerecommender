@@ -63,12 +63,15 @@ class App extends Component {
 		                <div className="instructions">
 
 		                	<h2>Instructions</h2>
-							<span>• ★ Star tricks you know to add to "Starred" tricks.</span><br/>
-							<span>• Find new tricks to learn next that are related to tricks you starred ★.</span><br/>
+							<span className="info">
+								• ★ Star tricks you know to add to "Starred" tricks.<br/>
+								• Find new tricks to learn next that are related to tricks you starred ★.
+							</span>
 							<br/><br/>
-							<span >Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
-							<div style={{"padding-left":"10px"}}>contact 
-								<a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a>
+							<span className="info">Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
+							<br/>
+							<div className="info" >contact 
+								<a style={{"color":"blue"}}> skilldex.feedback@gmail.com</a>
 							</div>
 						</div><br/>
 		            </SlidingPane>
@@ -80,8 +83,12 @@ class App extends Component {
 		                onRequestClose={ () => {
 		                    this.setState({ isLoginPaneOpen: false });}}>
 		                <div className="instructions">
-		                							<span>Sign in to access your tricks across devices, 
-									otherwise tricks will be stored separately on each device</span>
+		                	<span className="info">
+		                		Create an account to: <br/> 
+		                		• Access your tricks across devices <br/> 
+		                		• Add new tricks for the community to learn <br/> 
+		                		• Contribute your records to community statistics <br/> 
+							</span>
 		                	<Auth/><br/>
 
 						</div><br/>
