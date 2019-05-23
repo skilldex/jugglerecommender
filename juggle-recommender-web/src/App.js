@@ -7,8 +7,12 @@ import TrickList from './trickList.js'
 import Popup from './popup.js'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
+import uiStore from './uiStore'
 import Swipe from 'react-easy-swipe';
 import Auth from './auth.js'
+import Modal from 'react-modal';
+import SlidingPane from 'react-sliding-pane';
+import 'react-sliding-pane/dist/react-sliding-pane.css';
 @observer
 class App extends Component {
  	state = {
@@ -16,12 +20,14 @@ class App extends Component {
  		selectedList : "allTricks",
  		edges : [],
  		nodes : [],
+ 		isPaneOpen: true,
  		swipedList : false
 	}
 	componentDidMount(){
 		console.log("mounted")
 		store.getSavedTricks()	
 		console.log("finished loading")
+		Modal.setAppElement(this.el);
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []
@@ -41,47 +47,55 @@ class App extends Component {
  		console.log('startHandled')
  	}
  	render(){
-
- 		store.nodes
- 		store.edges
+ 		uiStore.nodes
+ 		uiStore.edges
 		return (
-		<div className="App">
-			<div style={{"padding-left":"10px"}}>contact <a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a></div> 
-			<Auth/>
-			<div className="title">
-				<h1>Juggledex</h1>
-				<h3>Gotta catch em all ;)</h3>
+			<div className="App">
+				<div ref={ref => this.el = ref}>
+		            
+		            <SlidingPane
+		                className='some-custom-class'
+		                overlayClassName='some-custom-overlay-class'
+		                isOpen={ this.state.isPaneOpen }
+		                title='Welcome!'
+		                onRequestClose={ () => {
+		                    this.setState({ isPaneOpen: false });}}>
+		                <div className="instructions">
+		                	<Auth/><br/>
+		                	<h2>Instructions</h2>
+							<span>• ★ Star tricks you know to add to "Starred" tricks.</span><br/>
+							<span>• Find new tricks to learn next that are related to tricks you starred ★.</span><br/>
+							<span>• Sign in to access your tricks across devices, 
+									otherwise tricks will be stored separately on each device</span><br/><br/>
+							<span >Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
+							<div style={{"padding-left":"10px"}}>contact 
+								<a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a>
+							</div>
+						</div><br/>
+		            </SlidingPane>
+					<div className="title">
+						<h1>Juggledex
+			            <button style={{"float": "right"}} onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
+			            </h1>
+			            <h3>Gotta catch em all ;)</h3>
+					</div>
+					{this.state.swipedList ? 
+						<div className="swipedDiv" 
+							onClick={
+								(event)=>{this.setState({swipedList : false})}
+							}
+						>+</div> : 
+						<TrickList 
+							myTricks={store.myTricks} 
+							selectedList={uiStore.selectedList}
+							selectedTricks={uiStore.selectedTricks}
+						/>}
+						<Popup/>
+					<TrickGraph 
+						nodes = {uiStore.nodes}
+						edges = {uiStore.edges}/>
+				</div>
 			</div>
-			<div className="instructions">
-				<h3>Instructions</h3>
-				<span>• ★ Star tricks you know to add to "Starred" tricks.</span> 	
-				<br/>
-				<span>• Find new tricks to learn next that are related to tricks you starred ★.</span>
-				<br/>
-				<span>• Sign in to access your tricks across devices, otherwise tricks will be stored separately on each device</span>
-				<br/><br/>
-				<span >
-					Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a>
-				</span>			
-			</div>
-
-			{this.state.swipedList ? 
-				<div className="swipedDiv" 
-					onClick={
-						(event)=>{this.setState({swipedList : false})}
-					}
-				>+</div> : 
-				<TrickList 
-					myTricks={store.myTricks} 
-					selectedList={store.selectedList}
-					selectedTricks={store.selectedTricks}
-				/>}
-				<Popup/>
-			<TrickGraph 
-				nodes = {store.nodes}
-				edges = {store.edges}
-			/>
-		</div>
 		);
 	}
 }

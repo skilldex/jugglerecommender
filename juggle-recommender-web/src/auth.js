@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase' 
 import store from "./store"
+import authStore from "./authStore"
 import "./App.css"
 import "./auth.css";
  // Your web app's Firebase configuration
@@ -44,33 +45,6 @@ class Auth extends Component {
         
     }
 
-
-    LoginUser(username, pass) {
-        localStorage.clear
-        return new Promise(resolve => {
-            firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
-                this.setState({
-                    loggedIn: true,
-                })
-                store.setUser({"username": username})
-                resolve("success")
-            }).catch(error=>{
-                resolve(error)
-            });
-        });
-    }
-    
-    RegisterUser(user, pass) {
-        
-        return new Promise(resolve => {
-            firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
-                resolve("user created")
-            }).catch(function (error) {
-                resolve(error)
-            });
-        })
-    }
-    
     SignOut() {
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {
@@ -93,6 +67,21 @@ class Auth extends Component {
             }
         }) 
     }
+    LoginUser(username, pass) {
+        window.sessionStorage.clear
+        console.log("logging user", username, pass)
+        return new Promise(resolve => {
+            firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
+                this.setState({
+                    loggedIn: true,
+                })
+                authStore.setUser({"username": username})
+                
+            }).catch(error=>{
+                resolve(error)
+            });
+        });
+    }
     createAccount=()=>{
         this.RegisterUser(this.state.username,this.state.password).then((response)=>{
             console.log("user registered")
@@ -106,6 +95,15 @@ class Auth extends Component {
                 newData.set({"username": this.state.username, "myTricks" : []});
                 this.signIn()
             }
+        })
+    }
+    RegisterUser(user, pass) {        
+        return new Promise(resolve => {
+            firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
+                resolve("user created")
+            }).catch(function (error) {
+                resolve(error)
+            });
         })
     }
     userInputChange=(e)=>{
