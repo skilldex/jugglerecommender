@@ -20,59 +20,40 @@ class Auth extends Component {
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());
     state= {
         loggedIn : false,
-        email:"",
-        id:"",
         user: null,
         username : "",
         error : ""
     }
     componentDidMount() {
-        if(window.sessionStorage.getItem('user')){
-            this.state.email =  window.sessionStorage.getItem('email')
-            this.state.user = JSON.parse(window.sessionStorage.getItem('user'))
-            this.state.username = JSON.parse(window.sessionStorage.getItem('username'))
-            this.state.loggedIn = true
-        }
-    }
-    getUserByEmail=(email)=>{
-        return {
-            'name': 'bollocks'
-        }
-    }
-    RefreshUser(){
-        if(this.state.loggedIn){
-            return new Promise(resolve => {
-                this.getUserByEmail(this.state.email).then(user=>{
-                    console.log("got user")
-                    /*this.state.id = user["key"]
-                    this.state.user = user
-                    window.sessionStorage.setItem('email',user["email"]); // user is undefined if no user signed in
-                    window.sessionStorage.setItem('user',JSON.stringify(user)); // user is undefined if no user signed in
-                    window.sessionStorage.setItem('username',JSON.stringify(user["username"])); // user is undefined if no user signed in
-                    */
-                    resolve("got user be");
+        for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+          const key = localStorage.key( i )
+          const that = this
+          if(key.includes("firebase:auth")){
+            firebase.auth().onAuthStateChanged(function(user) {
+              if (user) {
+                console.log("user auth changed", user)
+                that.setState({
+                    user : {username : user.email},
+                    username : user.email,
+                    loggedIn : true
                 })
-            })
+              } 
+            });
+          }
         }
-    }
-    ForgotPassword(email){
         
-        return new Promise(resolve => {
-            firebase.auth().sendPasswordResetEmail(email, this.state.actionCodeSettings).then(()=>{
-                resolve("password reset email sent")
-            })
-        })
     }
-    LoginUser(user, pass) {
-        window.sessionStorage.clear
-        console.log("logging user", user, pass)
+
+
+    LoginUser(username, pass) {
+        localStorage.clear
         return new Promise(resolve => {
-            firebase.auth().signInWithEmailAndPassword(user, pass).then(data => {
+            firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
                 this.setState({
                     loggedIn: true,
                 })
-                store.setUser({"username": user})
-                
+                store.setUser({"username": username})
+                resolve("success")
             }).catch(error=>{
                 resolve(error)
             });
@@ -95,8 +76,6 @@ class Auth extends Component {
             firebase.auth().signOut().then(() => {
                 window.sessionStorage.clear()
                 this.state.loggedIn = false
-                this.state.email = ""
-                this.state.id = ""
                 this.state.user = {}
                 this.state.username = ""
                 resolve("signed out")
@@ -104,14 +83,15 @@ class Auth extends Component {
         })
     }
     signIn=()=>{
+        console.log("signing in", this.state.token)
+        
         this.LoginUser(this.state.username, this.state.password).then((response)=>{
-            console.log("done logging in" , response)
             if(response.message){
                 this.setState({
                     error : response.message
                 })
             }
-        })
+        }) 
     }
     createAccount=()=>{
         this.RegisterUser(this.state.username,this.state.password).then((response)=>{

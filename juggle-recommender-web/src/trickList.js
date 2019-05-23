@@ -49,20 +49,17 @@ sortClicked=(type)=>{
 }
  
  render() {
- 	 		window.onclick = function(event) {
- 	 			console.log('event.srcElement.alt',event.srcElement['alt'])
- 	 			if (event.srcElement['alt'] != 'showSortMenu') {
- 			console.log("window")
- 			//store.hideSortMenu()
- 			console.log('document.getElementById("myDropdown").classList',document.getElementById("myDropdown").classList['show'])
- 			if (document.getElementById("myDropdown").classList.contains('show')){
- 			store.toggleSortTypeShow()
- 		}
+ 		window.onclick = function(event) {
+	 		if (event.srcElement['alt'] != 'showSortMenu') {
+				//store.hideSortMenu()
+				if (document.getElementById("myDropdown").classList.contains('show')){
+					store.toggleSortTypeShow()
+		 		}
  			}
  		}
 
- 			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
- 			//	how showSortMenu does it, but  alittle different
+		//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
+		//	how showSortMenu does it, but  alittle different
 
 
  	let tricks = {
@@ -109,9 +106,9 @@ sortClicked=(type)=>{
 		}
 	})
  	const buttons = <div>
-					 	<label style={{"font-size":"30px",
-										"text-align" : "right", 
-										"padding-right" : "15px",
+					 	<label style={{"fontSize":"30px",
+										"textAlign" : "right", 
+										"paddingRight" : "15px",
 										"display" : "block"}} 
 								onClick={() => store.setListExpanded(!store.listExpanded)
 						}>{store.listExpanded ? "-" : "+"}</label>
@@ -128,7 +125,7 @@ sortClicked=(type)=>{
 						<img src={sortIcon} alt="showSortMenu" 
 					 			onClick={store.showSortMenu} height='15px'width='15px'/>
 					 </button>
-					  <div title="sort" id="myDropdown" class="dropdown-content">
+					  <div title="sort" id="myDropdown" className="dropdown-content">
 					    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
 					    <a onClick={(e)=>this.sortClicked('difficulty')}>Difficulty</a>
 					  </div>

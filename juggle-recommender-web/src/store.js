@@ -394,6 +394,7 @@ class Store {
 	 	console.log('setUser')
 	 	this.user = user
 	 	this.getSavedTricks()
+	 	localStorage.setItem("username",user.username)
 	 }
 	 @action snapshotToArray = snapshot => {
 	    let returnArr = [];
