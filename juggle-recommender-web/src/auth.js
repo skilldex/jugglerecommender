@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import firebase from 'firebase' 
 import store from "./store"
+import authStore from "./authStore"
 import "./App.css"
 import "./auth.css";
  // Your web app's Firebase configuration
@@ -94,7 +95,7 @@ class Auth extends Component {
                 this.setState({
                     loggedIn: true,
                 })
-                store.setUser({"username": user})
+                authStore.setUser({"username": user})
                 
             }).catch(error=>{
                 resolve(error)

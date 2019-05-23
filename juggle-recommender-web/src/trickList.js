@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
+import uiStore from './uiStore'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
 import sortIcon from './sortIcon.png'
@@ -44,7 +45,7 @@ class TrickList extends Component {
 	}
 
 sortClicked=(type)=>{
-	store.toggleSortTypeShow()
+	uiStore.toggleSortTypeShow()
 	this.setState({sortType : type})
 }
  
@@ -52,7 +53,7 @@ sortClicked=(type)=>{
  	 		window.onclick = function(event) {
  	 			if (event.srcElement['alt'] != 'showSortMenu') {
  			if (document.getElementById("myDropdown").classList.contains('show')){
- 			store.toggleSortTypeShow()
+ 			uiStore.toggleSortTypeShow()
  		}
  			}
  		}
@@ -82,19 +83,19 @@ sortClicked=(type)=>{
 		trick.tags.forEach(function (tag, index) {
 			fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
 		});
-		if(fullStringToSearch.includes(store.searchTrick.toLowerCase()) ){
+		if(fullStringToSearch.includes(uiStore.searchTrick.toLowerCase()) ){
 			if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
 				cardClass = 'selectedListCard'
 			}
-			if(store.selectedList === "allTricks" || 
-				store.selectedList === "myTricks" && store.myTricks[trickKey]
+			if(uiStore.selectedList === "allTricks" || 
+				uiStore.selectedList === "myTricks" && store.myTricks[trickKey]
 			){
 				tricks[trick.num.toString()].push(
-					<div onClick={()=>{store.selectTricks([trickKey])}} 
+					<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
 						className={cardClass} 
 						key={trickKey + "div"} 
 						style={{backgroundColor: cardClass == 'listCard' ?
-						store.getInvolvedNodeColor(trick.difficulty, 2).background : store.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
+						uiStore.getInvolvedNodeColor(trick.difficulty, 2).background : uiStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 						 {store.myTricks[trickKey] ? 
 	  					 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}
@@ -109,20 +110,20 @@ sortClicked=(type)=>{
 										"text-align" : "right", 
 										"padding-right" : "15px",
 										"display" : "block"}} 
-								onClick={() => store.setListExpanded(!store.listExpanded)
-						}>{store.listExpanded ? "-" : "+"}</label>
+								onClick={() => uiStore.setListExpanded(!uiStore.listExpanded)
+						}>{uiStore.listExpanded ? "-" : "+"}</label>
 				 		<div className="listButtonDiv">
-							<button className={store.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("myTricks")}}>★Starred</button>
-							<button className={store.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{store.setSelectedList("allTricks")}}>All</button>
+							<button className={uiStore.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("myTricks")}}>★Starred</button>
+							<button className={uiStore.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("allTricks")}}>All</button>
 						</div>
 			 			<div className="search" >
-				 			<input value = {store.searchInput} defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={store.searchInputChange}/>
+				 			<input value = {uiStore.searchInput} defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={uiStore.searchInputChange}/>
 				 		</div>
 			 		</div>
 	const sort = <div style={{"display" : "inline-block", "marginLeft" : "5px"}}>
 					 <button >
 						<img src={sortIcon} alt="showSortMenu" 
-					 			onClick={store.showSortMenu} height='15px'width='15px'/>
+					 			onClick={uiStore.showSortMenu} height='15px'width='15px'/>
 					 </button>
 					  <div title="sort" id="myDropdown" class="dropdown-content">
 					    <a onClick={(e)=>this.sortClicked('alphabetical')}>A->Z</a>
@@ -132,7 +133,7 @@ sortClicked=(type)=>{
 
 	return (	
 		<div className="listDiv">				
-	 		{store.listExpanded ? 
+	 		{uiStore.listExpanded ? 
 				<div>
 				 	{buttons}
 					<div>
@@ -140,10 +141,10 @@ sortClicked=(type)=>{
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
 						<img src={legendImg} alt="legendImg" width="92%"/>						
 						<br></br>
-						<span onClick={()=>{store.toggleExpandedSection("3")}}>{store.expandedSections["3"] ? "+" : "-"}</span>
-						<h3 onClick={()=>{store.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
+						<span onClick={()=>{uiStore.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "+" : "-"}</span>
+						<h3 onClick={()=>{uiStore.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{sort}
-						{store.expandedSections["3"] ?
+						{uiStore.expandedSections["3"] ?
 							<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
 							{tricks["3"]}
 							</div> : null
@@ -151,20 +152,20 @@ sortClicked=(type)=>{
 						
 					</div>
 					<div>
-						<span onClick={()=>{store.toggleExpandedSection("4")}}>{store.expandedSections["4"] ? "+" : "-"}</span>
-						<h3 onClick={()=>{store.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
+						<span onClick={()=>{uiStore.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "+" : "-"}</span>
+						<h3 onClick={()=>{uiStore.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
 						{sort}
-						{store.expandedSections["4"] ?
+						{uiStore.expandedSections["4"] ?
 							<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
 							{tricks["4"]}
 							</div> : null
 						}
 					</div>
 					<div>	
-						<span onClick={()=>{store.toggleExpandedSection("5")}}>{store.expandedSections["5"] ? "+" : "-"}</span>
-						<h3 onClick={()=>{store.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
+						<span onClick={()=>{uiStore.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "+" : "-"}</span>
+						<h3 onClick={()=>{uiStore.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
 						{sort}
-						{store.expandedSections["5"] ?
+						{uiStore.expandedSections["5"] ?
 							<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
 							{tricks["5"]}
 							</div> : null

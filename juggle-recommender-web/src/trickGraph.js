@@ -1,16 +1,17 @@
 import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
+import uiStore from './uiStore'
 import Graph from 'vis-react'
 import {toJS} from "mobx"
 import './trickGraph.css';
 
 class TrickGraph extends React.Component {
     render() {
-      store.nodes
-      store.edges
-      const nodes = JSON.parse(JSON.stringify(store.nodes))
-      const edges = JSON.parse(JSON.stringify(store.edges))
+      uiStore.nodes
+      uiStore.edges
+      const nodes = JSON.parse(JSON.stringify(uiStore.nodes))
+      const edges = JSON.parse(JSON.stringify(uiStore.edges))
     const data = {
       nodes: nodes,
       edges: edges
@@ -18,13 +19,12 @@ class TrickGraph extends React.Component {
     const options = {
       autoResize: true,
       interaction: {hover: true},
-      //physics: {barnesHut: { avoidOverlap: store.rootTricks.length < 20 ? 1:0} }
     }
     const events = {
     select: function(event) {
-        if (store.isMobile){store.setListExpanded(false)}
+        if (store.isMobile){uiStore.setListExpanded(false)}
         var { nodes, edges } = event;
-        store.setPopupTrick({
+        uiStore.setPopupTrick({
           'id': event.nodes[0],
           'x' : event.pointer.DOM.x,
           'y' : event.pointer.DOM.y+140})

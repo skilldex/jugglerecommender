@@ -1,13 +1,11 @@
 import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
+import uiStore from './uiStore'
 import { observer } from "mobx-react"
-import './popup.css';
 import editIcon from './editIcon.png'
-
-
-
 import './App.css';
+import './popup.css';
 
 @observer
 class Popup extends Component {
@@ -15,50 +13,50 @@ class Popup extends Component {
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
 	       const catches = e.target.value
-	   	   store.setCatches(catches, store.popupTrick.id)
+	   	   store.setCatches(catches, uiStore.popupTrick.id)
   	  	}
 	}
 
 	render() {
 		const graphDiv = document.getElementById("graphDiv")
- 		const addToMyTricksButton = store.popupTrick && store.myTricks[store.popupTrick.id] ? 
-              		  <button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(store.popupTrick.id)}}>&#9733;</button> :
- 		              <button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(store.popupTrick.id)}}>&#9734;</button>
-		const selectTrickButton = store.popupTrick && store.selectedTricks.includes(store.popupTrick.id) ? 
- 		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Unselect</button> :
- 		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{store.selectTricks([store.popupTrick.id])}}>Select</button> 
-		const popup = store.popupTrick && store.popupTrick.id ? 
+ 		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
+              		  <button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
+ 		              <button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
+		const selectTrickButton = uiStore.popupTrick && uiStore.selectedTricks.includes(uiStore.popupTrick.id) ? 
+ 		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Unselect</button> :
+ 		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Select</button> 
+		const popup = uiStore.popupTrick && uiStore.popupTrick.id ? 
 			    <div style={{
-					left : Math.min(graphDiv.clientWidth-260,store.popupTrick.x),
-					top : Math.min(graphDiv.clientHeight-460,store.popupTrick.y)
+					left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
+					top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y)
 				}} className="popupDiv">
-              		<h3>{jugglingLibrary[store.popupTrick.id].name}</h3> 
-              		{store.myTricks[store.popupTrick.id] ? 
+              		<h3>{jugglingLibrary[uiStore.popupTrick.id].name}</h3> 
+              		{store.myTricks[uiStore.popupTrick.id] ? 
               		<div>
               			<label>Catches: </label>
-              			{store.popupCatchEditable ?
-              			<input defaultValue = {store.myTricks[store.popupTrick.id].catches} type="number" onChange={this.onCatchesChange}/> :
-              			<span>{store.myTricks[store.popupTrick.id].catches}</span>}
+              			{uiStore.popupCatchEditable ?
+              			<input defaultValue = {store.myTricks[uiStore.popupTrick.id].catches} type="number" onChange={this.onCatchesChange}/> :
+              			<span>{store.myTricks[uiStore.popupTrick.id].catches}</span>}
 
 						<img src={editIcon} alt="toggleCatchEdit" 
-					 			onClick={store.toggleCatchEdit} height='15px'width='15px'/>
+					 			onClick={uiStore.toggleCatchEdit} height='15px'width='15px'/>
 
               		</div>: null}
               		
-              		<label>Difficulty: {jugglingLibrary[store.popupTrick.id].difficulty} / 10</label><br></br><br></br>
+              		<label>Difficulty: {jugglingLibrary[uiStore.popupTrick.id].difficulty} / 10</label><br></br><br></br>
               			{addToMyTricksButton}
               			{selectTrickButton}
-              			{jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? 
+              			{jugglingLibrary[uiStore.popupTrick.id] && jugglingLibrary[uiStore.popupTrick.id].url? 
               				<a className="popupLink"
-              				   href={jugglingLibrary[store.popupTrick.id].url} 
+              				   href={jugglingLibrary[uiStore.popupTrick.id].url} 
               				   target="_blank">See explanation</a> : null}
-              			{jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].url? 
+              			{jugglingLibrary[uiStore.popupTrick.id] && jugglingLibrary[uiStore.popupTrick.id].url? 
               		<img className="popupGif" 
-              			 src={jugglingLibrary[store.popupTrick.id].gifUrl}/> : null}
+              			 src={jugglingLibrary[uiStore.popupTrick.id].gifUrl}/> : null}
               		<br></br>
-              			{jugglingLibrary[store.popupTrick.id] && jugglingLibrary[store.popupTrick.id].tags?
+              			{jugglingLibrary[uiStore.popupTrick.id] && jugglingLibrary[uiStore.popupTrick.id].tags?
               		<label className="popupTags">
-              			TAGS: {jugglingLibrary[store.popupTrick.id].tags.join(', ')} 
+              			TAGS: {jugglingLibrary[uiStore.popupTrick.id].tags.join(', ')} 
               		</label> : null}
             	</div> : null
 		return(

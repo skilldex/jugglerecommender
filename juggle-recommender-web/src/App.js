@@ -7,6 +7,7 @@ import TrickList from './trickList.js'
 import Popup from './popup.js'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
+import uiStore from './uiStore'
 import Swipe from 'react-easy-swipe';
 import Auth from './auth.js'
 @observer
@@ -41,8 +42,8 @@ class App extends Component {
  		console.log('startHandled')
  	}
  	render(){
- 		store.nodes
- 		store.edges
+ 		uiStore.nodes
+ 		uiStore.edges
 		return (
 		<div className="App">
 			<div style={{"padding-left":"10px"}}>contact <a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a></div> 
@@ -72,13 +73,13 @@ class App extends Component {
 				>+</div> : 
 				<TrickList 
 					myTricks={store.myTricks} 
-					selectedList={store.selectedList}
-					selectedTricks={store.selectedTricks}
+					selectedList={uiStore.selectedList}
+					selectedTricks={uiStore.selectedTricks}
 				/>}
 				<Popup/>
 			<TrickGraph 
-				nodes = {store.nodes}
-				edges = {store.edges}
+				nodes = {uiStore.nodes}
+				edges = {uiStore.edges}
 			/>
 		</div>
 		);
