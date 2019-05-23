@@ -24,13 +24,17 @@ input{
   text-align: center;
 }
 
+.App {
+  height: 100px;
+}
+
 .swipedDiv{
   width : 25px;
   box-shadow : 5px 10px 8px #888888;;
   background-color : white;
   border-radius: 8px;
   height : 100%;
-  z-index: 1001;
+  z-index: 3;
   opacity : 100%;
   border : 1px solid gray;
   position: absolute;
@@ -43,7 +47,10 @@ input{
 .instructions{
   padding-left: 10px;
   margin-bottom: 15px;
+  z-index: 30
 }
+
+
 
 
 

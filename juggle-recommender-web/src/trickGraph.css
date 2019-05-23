@@ -1,9 +1,10 @@
 .graphDiv{
   display: inline-block;
   vertical-align: top;
-  height : 1000px;
+  height : 90vh;
   width  : 100%;
   border: 1px solid black;
   text-align : left;  
+  z-index: -1;
 }
 

@@ -20,8 +20,8 @@ class App extends Component {
  		selectedList : "allTricks",
  		edges : [],
  		nodes : [],
- 		isPaneOpen: true,
- 		isLoginPaneOpen: true,
+ 		isPaneOpen: false,
+ 		isLoginPaneOpen: false,
  		swipedList : false
 	}
 	componentDidMount(){
@@ -65,8 +65,7 @@ class App extends Component {
 		                	<h2>Instructions</h2>
 							<span>• ★ Star tricks you know to add to "Starred" tricks.</span><br/>
 							<span>• Find new tricks to learn next that are related to tricks you starred ★.</span><br/>
-							<span>• Sign in to access your tricks across devices, 
-									otherwise tricks will be stored separately on each device</span><br/><br/>
+							<br/><br/>
 							<span >Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
 							<div style={{"padding-left":"10px"}}>contact 
 								<a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a>
@@ -81,6 +80,8 @@ class App extends Component {
 		                onRequestClose={ () => {
 		                    this.setState({ isLoginPaneOpen: false });}}>
 		                <div className="instructions">
+		                							<span>Sign in to access your tricks across devices, 
+									otherwise tricks will be stored separately on each device</span>
 		                	<Auth/><br/>
 
 						</div><br/>
@@ -88,26 +89,24 @@ class App extends Component {
 					<div className="title">
 						<h1>Juggledex
 			            <button style={{"float": "right"}} onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
+			            &nbsp;&nbsp;&nbsp;
 			            <button style={{"float": "right"}} onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>
 			            
 			            </h1>
-			            <h3>Gotta catch em all ;)</h3>
+
 					</div>
-					{this.state.swipedList ? 
-						<div className="swipedDiv" 
-							onClick={
-								(event)=>{this.setState({swipedList : false})}
-							}
-						>+</div> : 
+					{!this.state.isPaneOpen && !this.state.isLoginPaneOpen ?
 						<TrickList 
 							myTricks={store.myTricks} 
 							selectedList={uiStore.selectedList}
 							selectedTricks={uiStore.selectedTricks}
-						/>}
+						/>
+						: null}
 						<Popup/>
 					<TrickGraph 
 						nodes = {uiStore.nodes}
 						edges = {uiStore.edges}/>
+
 				</div>
 			</div>
 		);
