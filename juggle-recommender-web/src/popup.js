@@ -25,38 +25,39 @@ class Popup extends Component {
 		const selectTrickButton = uiStore.popupTrick && uiStore.selectedTricks.includes(uiStore.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Unselect</button> :
  		              <button style={{"backgroundColor" : "lightgray", "margin-bottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Select</button> 
-		const popup = uiStore.popupTrick && uiStore.popupTrick.id ? 
+		const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
+    const popup = uiStore.popupTrick && popupTrickKey ? 
 			    <div style={{
 					left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
 					top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y)
 				}} className="popupDiv">
-              		<h3>{jugglingLibrary[uiStore.popupTrick.id].name}</h3> 
-              		{store.myTricks[uiStore.popupTrick.id] ? 
+              		<h3>{store.myTricks[popupTrickKey] ? "★" : ""}{jugglingLibrary[popupTrickKey].name}</h3> 
+              		{store.myTricks[popupTrickKey] ? 
               		<div>
               			<label>Catches: </label>
               			{uiStore.popupCatchEditable ?
-              			<input defaultValue = {store.myTricks[uiStore.popupTrick.id].catches} type="number" onChange={this.onCatchesChange}/> :
-              			<span>{store.myTricks[uiStore.popupTrick.id].catches}</span>}
+              			<input defaultValue = {store.myTricks[popupTrickKey].catches} type="number" onChange={this.onCatchesChange}/> :
+              			<span>{store.myTricks[popupTrickKey].catches}</span>}
 
-						<img src={editIcon} alt="toggleCatchEdit" 
+						<img src={editIcon} class="editCatchIcon" alt="toggleCatchEdit" 
 					 			onClick={uiStore.toggleCatchEdit} height='15px'width='15px'/>
 
               		</div>: null}
               		
-              		<label>Difficulty: {jugglingLibrary[uiStore.popupTrick.id].difficulty} / 10</label><br></br><br></br>
+              		<label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br></br><br></br>
               			{addToMyTricksButton}
               			{selectTrickButton}
-              			{jugglingLibrary[uiStore.popupTrick.id] && jugglingLibrary[uiStore.popupTrick.id].url? 
+              			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
               				<a className="popupLink"
-              				   href={jugglingLibrary[uiStore.popupTrick.id].url} 
+              				   href={jugglingLibrary[popupTrickKey].url} 
               				   target="_blank">See explanation</a> : null}
-              			{jugglingLibrary[uiStore.popupTrick.id] && jugglingLibrary[uiStore.popupTrick.id].url? 
+              			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
               		<img className="popupGif" 
-              			 src={jugglingLibrary[uiStore.popupTrick.id].gifUrl}/> : null}
+              			 src={jugglingLibrary[popupTrickKey].gifUrl}/> : null}
               		<br></br>
-              			{jugglingLibrary[uiStore.popupTrick.id] && jugglingLibrary[uiStore.popupTrick.id].tags?
+              			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
               		<label className="popupTags">
-              			TAGS: {jugglingLibrary[uiStore.popupTrick.id].tags.join(', ')} 
+              			TAGS: {jugglingLibrary[popupTrickKey].tags.join(', ')} 
               		</label> : null}
             	</div> : null
 		return(
