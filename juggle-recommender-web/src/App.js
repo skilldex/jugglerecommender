@@ -71,7 +71,7 @@ class App extends Component {
 								<a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a>
 							</div>
 						</div><br/>
-		            </SlidingPane>'
+		            </SlidingPane>
 		            <SlidingPane
 		                className='some-custom-class'
 		                overlayClassName='some-custom-overlay-class'
@@ -85,15 +85,11 @@ class App extends Component {
 		                	<Auth/><br/>
 
 						</div><br/>
-		            </SlidingPane>'
-					<div className="title">
-						<h1>Juggledex
-			            <button style={{"float": "right"}} onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
-			            &nbsp;&nbsp;&nbsp;
-			            <button style={{"float": "right"}} onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>
-			            
-			            </h1>
-
+		            </SlidingPane>
+					<div className="header">
+						<span className="title">Juggledex</span>
+				            <button class="headerButton" onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
+				            <button class="headerButton" onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>
 					</div>
 					{!this.state.isPaneOpen && !this.state.isLoginPaneOpen ?
 						<TrickList 

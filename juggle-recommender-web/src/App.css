@@ -20,8 +20,24 @@ input{
 @supports (-webkit-overflow-scrolling: touch) {  
 }
 
+.header{
+  margin-top: 15px;
+  margin-bottom: 15px;  
+}
 .title {
-  text-align: center;
+  font-weight: bold;
+  font-size: 22px;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+.headerButton {
+  background-color : white;
+  margin-right: 15px;
+  border : none;
+  font-size: 16px;
+  vertical-align: middle;
+  float: right;
+
 }
 
 .App {
