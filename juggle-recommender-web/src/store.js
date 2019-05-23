@@ -1,28 +1,26 @@
 import { action, configure, computed, observable, toJS} from "mobx"
-import {jugglingLibrary} from './jugglingLibrary.js'
 import firebase from 'firebase'
 import uiStore from './uiStore'
-
+import authStore from './authStore'
 configure({ enforceActions: "always" })
 class Store {
 
 	@observable myTricks = {}
-	@observable user = {}
 	@observable showSignInDialog = true
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
-
+	 //TODO: move to UI store
 	@action setShowSignInDialog=(shouldShow)=>{
 		this.showSignInDialog = shouldShow
 		console.log('shouldShow',shouldShow)
 	}
 
 	@action updateTricksInDatabase=()=>{
-		if(!this.user.username){return}
+		if(!authStore.user.username){return}
 		let myTricksKey = ""
- 		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
+ 		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
   	 	myTricksRef.on('value', resp =>{
            const myTricksObject =this.snapshotToArray(resp)[0]
             if(myTricksObject){
@@ -31,7 +29,7 @@ class Store {
             if(myTricksKey){
 	            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
 		        userTricksRef.set({	        	
-		        		'username': this.user.username,
+		        		'username': authStore.user.username,
 		        		'myTricks' : this.myTricks        	
 		        })	
             }            
@@ -54,14 +52,15 @@ class Store {
 	}
 
 	@action getSavedTricks=()=>{
-		if(this.user.username){
-			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(this.user.username)
+		if(authStore.user){
+			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
 	  	 	let myTricksKey = ""
 	  	 	myTricksRef.on('value', resp =>{
 	           const myTricksObject =this.snapshotToArray(resp)[0]
 	            if(myTricksObject){
 	            	myTricksKey = myTricksObject.key
 	            }
+	            console.log(authStore.user, myTricksObject)
 	            if(myTricksObject && myTricksObject.myTricks){
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)

@@ -3,11 +3,11 @@ import store from "./store"
 
 configure({ enforceActions: "always" })
 class AuthStore {
-
+	@observable user = null
 
 	 @action setUser=(user)=>{
-	 	console.log('setUser')
-	 	store.user = user
+	 	console.log('setUser', user)
+	 	this.user = user
 	 	store.getSavedTricks()
 	 }
 

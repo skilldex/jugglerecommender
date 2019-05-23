@@ -20,28 +20,17 @@ firebase.initializeApp(firebaseConfig);
 class Auth extends Component {
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());
     state= {
-        loggedIn : false,
-        user: null,
-        username : "",
         error : ""
     }
     componentDidMount() {
-        for ( var i = 0, len = localStorage.length; i < len; ++i ) {
-          const key = localStorage.key( i )
-          const that = this
-          if(key.includes("firebase:auth")){
-            firebase.auth().onAuthStateChanged(function(user) {
-              if (user) {
-                console.log("user auth changed", user)
-                that.setState({
-                    user : {username : user.email},
-                    username : user.email,
-                    loggedIn : true
-                })
-              } 
-            });
-          }
-        }
+        
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log("user auth changed", user)
+            authStore.setUser({username : user.email})
+          } 
+        });
+
         
     }
 
@@ -49,16 +38,11 @@ class Auth extends Component {
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {
                 window.sessionStorage.clear()
-                this.state.loggedIn = false
-                this.state.user = {}
-                this.state.username = ""
                 resolve("signed out")
             });
         })
     }
-    signIn=()=>{
-        console.log("signing in", this.state.token)
-        
+    signIn=()=>{        
         this.LoginUser(this.state.username, this.state.password).then((response)=>{
             if(response.message){
                 this.setState({
@@ -68,15 +52,11 @@ class Auth extends Component {
         }) 
     }
     LoginUser(username, pass) {
-        window.sessionStorage.clear
         console.log("logging user", username, pass)
         return new Promise(resolve => {
             firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
-                this.setState({
-                    loggedIn: true,
-                })
                 authStore.setUser({"username": username})
-                
+                resolve("success")
             }).catch(error=>{
                 resolve(error)
             });
@@ -113,14 +93,14 @@ class Auth extends Component {
         this.setState({password : e.target.value})
     }
     render(){
-        const inputStyle = {width: "180px", "margin-right" : "10px"}
+        const inputStyle = {width: "180px", "marginRight" : "10px"}
         return (   
                 <div className="auth">
                     {
-                        this.state.loggedIn ? 
-                            <div>Signed in as {this.state.username}</div> : 
+                        authStore.user ? 
+                            <div>Signed in as {authStore.user.username}</div> : 
                             <div>
-                                <input style={inputStyle} onChange={this.userInputChange} value={this.username}/><label>email</label>
+                                <input style={inputStyle} onChange={this.userInputChange}/><label>email</label>
                                 <br/>
                                 <input type="password" style={inputStyle} onChange={this.passwordInputChange}/><label>password</label>
                                 <br/>

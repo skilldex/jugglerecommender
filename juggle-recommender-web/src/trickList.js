@@ -13,6 +13,7 @@ class TrickList extends Component {
 	 	state = {
  		sortType: 'alphabetical'
 	}
+	//TODO: move to general utility file
 	alphabeticalSortObject(data, attr) {
 	    var arr = [];
 	    for (var prop in data) {
