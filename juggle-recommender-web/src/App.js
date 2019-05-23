@@ -21,6 +21,7 @@ class App extends Component {
  		edges : [],
  		nodes : [],
  		isPaneOpen: true,
+ 		isLoginPaneOpen: true,
  		swipedList : false
 	}
 	componentDidMount(){
@@ -56,11 +57,11 @@ class App extends Component {
 		                className='some-custom-class'
 		                overlayClassName='some-custom-overlay-class'
 		                isOpen={ this.state.isPaneOpen }
-		                title='Welcome!'
+		                title='Instructions'
 		                onRequestClose={ () => {
 		                    this.setState({ isPaneOpen: false });}}>
 		                <div className="instructions">
-		                	<Auth/><br/>
+
 		                	<h2>Instructions</h2>
 							<span>• ★ Star tricks you know to add to "Starred" tricks.</span><br/>
 							<span>• Find new tricks to learn next that are related to tricks you starred ★.</span><br/>
@@ -71,10 +72,24 @@ class App extends Component {
 								<a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a>
 							</div>
 						</div><br/>
-		            </SlidingPane>
+		            </SlidingPane>'
+		            <SlidingPane
+		                className='some-custom-class'
+		                overlayClassName='some-custom-overlay-class'
+		                isOpen={ this.state.isLoginPaneOpen }
+		                title='Login'
+		                onRequestClose={ () => {
+		                    this.setState({ isLoginPaneOpen: false });}}>
+		                <div className="instructions">
+		                	<Auth/><br/>
+
+						</div><br/>
+		            </SlidingPane>'
 					<div className="title">
 						<h1>Juggledex
 			            <button style={{"float": "right"}} onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
+			            <button style={{"float": "right"}} onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>
+			            
 			            </h1>
 			            <h3>Gotta catch em all ;)</h3>
 					</div>
