@@ -18,6 +18,7 @@ class Store {
 	}
 
 	@action updateTricksInDatabase=()=>{
+		console.log("update tricks",authStore.user)
 		if(!authStore.user.username){return}
 		let myTricksKey = ""
  		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
@@ -83,7 +84,7 @@ class Store {
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  	}
 	@action addToMyTricks=(trickKey)=>{
-
+		console.log("adding", this.myTricks)
  		this.myTricks[trickKey] = {
  			"catches" : 0
  		}

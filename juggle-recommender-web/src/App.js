@@ -10,9 +10,25 @@ import store from './store'
 import uiStore from './uiStore'
 import Swipe from 'react-easy-swipe';
 import Auth from './auth.js'
+import authStore from './authStore.js'
 import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
+import firebase from 'firebase' 
+
+ // Your web app's Firebase configuration
+var firebaseConfig = {
+apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
+authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
+databaseURL: "https://skilldex-dev-6c0ff.firebaseio.com",
+projectId: "skilldex-dev-6c0ff",
+storageBucket: "skilldex-dev-6c0ff.appspot.com",
+messagingSenderId: "224766397892",
+appId: "1:224766397892:web:80beef32563065c3"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
 @observer
 class App extends Component {
  	state = {
@@ -29,6 +45,12 @@ class App extends Component {
 		store.getSavedTricks()	
 		console.log("finished loading")
 		Modal.setAppElement(this.el);
+		firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            console.log("user auth changed", user)
+            authStore.setUser({username : user.email})
+          } 
+        });
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []
