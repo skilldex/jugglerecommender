@@ -60,7 +60,7 @@
   margin-left : 1px;
   display: inline-block;
   position: absolute;
-  z-index: 1000;
+  z-index: 10;
   opacity : 100%;
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;

@@ -8,10 +8,16 @@ class Store {
 
 	@observable myTricks = {}
 	@observable user = {}
+	@observable showSignInDialog = true
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
+
+	@action setShowSignInDialog=(shouldShow)=>{
+		this.showSignInDialog = shouldShow
+		console.log('shouldShow',shouldShow)
+	}
 
 	@action updateTricksInDatabase=()=>{
 		if(!this.user.username){return}

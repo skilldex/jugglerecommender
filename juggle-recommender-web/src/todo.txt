@@ -1,5 +1,5 @@
 UI:
-	-this could be a nice way to do login/help/trickList, but it requires react-modal which removes firebase when npm insalled:  	https://www.npmjs.com/package/react-sliding-pane
+	-sliding divs could be a nice way to do login/help/trickList, but it requires react-modal which removes firebase when npm insalled:  	https://www.npmjs.com/package/react-sliding-pane
 
 Refactor : 
 	Should break up store further?

@@ -50,14 +50,15 @@ sortClicked=(type)=>{
 }
  
  render() {
- 	 		window.onclick = function(event) {
- 	 			if (event.srcElement['alt'] != 'showSortMenu') {
- 			if (document.getElementById("myDropdown").classList.contains('show')){
- 			uiStore.toggleSortTypeShow()
- 		}
+ 	 window.onclick = function(event) {
+ 	 	if (event.srcElement['alt'] != 'showSortMenu') {
+ 	 		if (document.getElementById("myDropdown")){
+ 				if (document.getElementById("myDropdown").classList.contains('show')){
+ 					uiStore.toggleSortTypeShow()
+ 				}
  			}
  		}
-
+ 	}
  			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
  			//	how showSortMenu does it, but  alittle different
 
