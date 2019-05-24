@@ -1521,7 +1521,7 @@ let jugglingLibrary =
         "difficulty": "7",
         "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/threeinone.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ThreeInOne.html",
-        "name": "Three In One",
+        "name": "Three in One",
         "num": 3
     },
     "Tom'sTrick": {
@@ -2308,10 +2308,10 @@ jugglingLibrary["MillsMess4b"] = jugglingLibrary["FourBallMillsMess"]
 delete jugglingLibrary["FourBallMillsMess"]
 jugglingLibrary["ReverseSynchFountain"].name = "Reverse Synch Fountain"
 jugglingLibrary["SynchFountain"].name = "Synch. Fountain(4b)"
-jugglingLibrary["ThreeInOne"].name = "Three In One"
+jugglingLibrary["ThreeInOne"].name = "Three in One"
 jugglingLibrary["4bHalfShower"] = jugglingLibrary["FourBallHalfShower"]
 delete jugglingLibrary["FourBallHalfShower"]
-jugglingLibrary["Martin"].prereqs = ["Three In One"]
+jugglingLibrary["Martin"].prereqs = ["Three in One"]
 jugglingLibrary["FiveBallCascade"].prereqs = ["Cascade","552(4b)","5551(4b)","55550(4b)"]
 jugglingLibrary["SynchFountain"].prereqs = ["Fountain(4b)"]
 jugglingLibrary["FourBallColumns"].prereqs = ["Synch. Fountain(4b)","Columns"]
@@ -2347,7 +2347,12 @@ jugglingLibrary["ChopShower"].prereqs = ["Windmill","Crossed Arm Reverse Cascade
 jugglingLibrary["ChopShower"].related = ["Chops","Frantic Cascade","Statue of Liberty"]
 jugglingLibrary["534MillsMess"].prereqs = ["Four Ball Mills Mess","534(4b)","531 Mills Mess"]
 jugglingLibrary["FourBallWindmill"].prereqs = ["Windmill","Fountain(4b)","Four Ball Mills Mess"]
+jugglingLibrary["55550"].prereqs = ["5551(4b)"]
+jugglingLibrary["534"].prereqs = ["531","Fountain(4b)"]
+jugglingLibrary["SixBallFountain"].prereqs = ["Fountain(4b)", "Three in One", "Five Ball Cascade"]
+jugglingLibrary["Pistons"].prereqs = ["Fountain(4b)"]
 jugglingLibrary["5551"].difficulty = "4"
+
 jugglingLibrary["5551"].name = "5551"
 jugglingLibrary["ss5551"] = jugglingLibrary["5551"]
 delete jugglingLibrary["5551"]

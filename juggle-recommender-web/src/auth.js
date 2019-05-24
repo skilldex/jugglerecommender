@@ -77,11 +77,13 @@ class Auth extends Component {
                         authStore.user ? 
                             <div>Signed in as {authStore.user.username}</div> : 
                             <div>
-                                <input style={inputStyle} onChange={this.userInputChange}/><label>email</label>
+
+                                <label>email</label><br/><input style={inputStyle} onChange={this.userInputChange}/>
                                 <br/>
-                                <input type="password" style={inputStyle} onChange={this.passwordInputChange}/><label>password</label>
+                                <label>password</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/>
                                 <br/>
                                 <div style={{color : "red"}}>{this.state.error}</div>
+                                <br/>
                                 <button className="authButton" onClick={this.createAccount}>Create Account</button>
                                 <button className="authButton"  onClick={this.signIn}>Sign In</button>
                             </div>
