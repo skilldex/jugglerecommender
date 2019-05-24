@@ -19,7 +19,7 @@ class Store {
 
 	@action updateTricksInDatabase=()=>{
 		console.log("update tricks",toJS(authStore.user))
-		if(!authStore.user.username){return}
+		if(!authStore.user){return}
 		let myTricksKey = ""
  		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
   	 	myTricksRef.on('value', resp =>{
