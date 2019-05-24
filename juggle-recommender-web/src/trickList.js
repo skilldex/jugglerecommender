@@ -138,7 +138,7 @@ sortClicked=(type)=>{
 	 		{uiStore.listExpanded ? 
 				<div>
 				 	{buttons}
-					<div>
+					<div style={{height:"100%"}}>
 						<label style={{float:"left"}}>easy</label>
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
 						<img src={legendImg} alt="legendImg" width="92%"/>						
@@ -147,7 +147,7 @@ sortClicked=(type)=>{
 						<h3 onClick={()=>{uiStore.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["3"] ?
-							<div className={tricks["3"].length > 19 ? "listSection" : ""}> 
+							<div className={tricks["3"].length > 1 ? "listSection" : ""}> 
 							{tricks["3"]}
 							</div> : null
 						}
@@ -158,7 +158,7 @@ sortClicked=(type)=>{
 						<h3 onClick={()=>{uiStore.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["4"] ?
-							<div className={tricks["4"].length > 19 ? "listSection" : ""}> 
+							<div className={tricks["4"].length > 1 ? "listSection" : ""}> 
 							{tricks["4"]}
 							</div> : null
 						}

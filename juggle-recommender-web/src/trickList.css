@@ -56,6 +56,7 @@
   padding-left : 5px;
   padding-right : 5px;
   width: 160px;
+  max-height: 90vh;
   border : 1px solid gray;
   margin-left : 1px;
   display: inline-block;
@@ -67,13 +68,16 @@
   border-radius: 8px;
   -ms-touch-action: none;
   touch-action: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling : touch;
 }
 .sectionHeader{
   display: inline-block;
   cursor: pointer;
 }
 .listSection{
-  max-height: 450px;
+  max-height: 40vh;
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;

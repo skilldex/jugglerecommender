@@ -1,6 +1,7 @@
 let jugglingLibrary = 
 {
     "Alex": {
+        "siteswap": "(4x,2x)(2T,4x)*",
         "prereqs": [
             "531 Mills Mess",
             "Orca's Mess"
@@ -13,6 +14,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Al'sSlide": {
+        "siteswap": "(4x,2x)(2,4x)*",
         "prereqs": [
             "Infinity"
         ],
@@ -24,6 +26,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ArrowofAsai": {
+        "siteswap": "[35]1231",
         "prereqs": [
             "Shuffle",
             "Penman's Box"
@@ -36,6 +39,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Backcrosses": {
+        "siteswap": "3",
         "prereqs": [
             "Cascade"
         ],
@@ -47,6 +51,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BostonMess": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess",
             "The W"
@@ -61,6 +66,7 @@ let jugglingLibrary =
         "num": 3
     },
     "CherryPicker": {
+        "siteswap": "3",
         "prereqs": [
             "Boston Mess"
         ],
@@ -72,6 +78,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BostonShuffle": {
+        "siteswap": "52512",
         "prereqs": [
             "Cascade",
             "Shuffle"
@@ -86,6 +93,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Burke'sSlam": {
+        "siteswap": "52512*",
         "prereqs": [
             "Boston Shuffle",
             "Takeouts"
@@ -98,6 +106,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Peter'sShuffle": {
+        "siteswap": "52512",
         "prereqs": [
             "Chops",
             "Boston Shuffle"
@@ -110,6 +119,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Box": {
+        "siteswap": "(4,2x)(2x,4)",
         "prereqs": [
             "Shower"
         ],
@@ -123,6 +133,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BizarreBox": {
+        "siteswap": "(4,2T)(4x,2)(4x,2x)*",
         "prereqs": [
             "Box"
         ],
@@ -136,6 +147,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BrokenBox": {
+        "siteswap": "(4,2x)*",
         "prereqs": [
             "Box",
             "Shower-Cascade"
@@ -150,6 +162,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BurstBox": {
+        "siteswap": "(4,2x)(2x,4x)(2x,4x)*",
         "prereqs": [
             "Broken Box"
         ],
@@ -163,6 +176,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ExtendedBox": {
+        "siteswap": "(4x,2x)(4,2x)*",
         "prereqs": [
             "Box"
         ],
@@ -174,6 +188,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Gilligan'sBox": {
+        "siteswap": "(4,2x)(4,2)(2x,4x)*",
         "prereqs": [
             "Broken Box"
         ],
@@ -185,6 +200,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Karas'Box": {
+        "siteswap": "(4x,2x)(2T,4)(2T,4x)*",
         "prereqs": [
             "Bizarre Box"
         ],
@@ -196,6 +212,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Luke'sShuffle": {
+        "siteswap": "(4,2x)(2x,4)",
         "prereqs": [
             "Box",
             "Shuffle"
@@ -210,6 +227,7 @@ let jugglingLibrary =
         "num": 3
     },
     "N-Box": {
+        "siteswap": "(4,2x)(2x,4)",
         "prereqs": [
             "Box",
             "Shuffle"
@@ -224,6 +242,7 @@ let jugglingLibrary =
         "num": 3
     },
     "InvertedBox": {
+        "siteswap": "(4,2x)(2x,4)",
         "prereqs": [
             "N-Box",
             "Luke's Shuffle"
@@ -236,6 +255,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Penman'sBox": {
+        "siteswap": "(4x,2)(4x,2x)*",
         "prereqs": [
             "Box",
             "Penman's Pandemonium"
@@ -248,6 +268,7 @@ let jugglingLibrary =
         "num": 3
     },
     "SwapBox": {
+        "siteswap": "(6,2x)(2x,2x)*",
         "prereqs": [
             "Box",
             "Shuffle-Switch"
@@ -260,6 +281,7 @@ let jugglingLibrary =
         "num": 3
     },
     "SwitchedBox": {
+        "siteswap": "(4,2x)*",
         "prereqs": [
             "Box"
         ],
@@ -273,6 +295,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ThreadedBox": {
+        "siteswap": "(4,2x)*",
         "prereqs": [
             "Box"
         ],
@@ -284,6 +307,7 @@ let jugglingLibrary =
         "num": 3
     },
     "TrueBox": {
+        "siteswap": "(4,2x)*",
         "prereqs": [
             "Box</a>,<a href=\"InvertedShower.html\"> Inverted Shower"
         ],
@@ -295,6 +319,7 @@ let jugglingLibrary =
         "num": 3
     },
     "UnderarmBox": {
+        "siteswap": "(4,2x)(2x,4x)*",
         "prereqs": [
             "Box"
         ],
@@ -308,6 +333,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Burke'sBarrage": {
+        "siteswap": "423",
         "prereqs": [
             "Takeouts",
             "Fake Mess "
@@ -320,6 +346,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Takeouts": {
+        "siteswap": "423",
         "prereqs": [
             "Cascade"
         ],
@@ -333,6 +360,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Cascade": {
+        "siteswap": "",
         "prereqs": [],
         "related": [],
         "difficulty": "2",
@@ -342,6 +370,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseCascade": {
+        "siteswap": "3",
         "prereqs": [
             "Half-Shower",
             "Juggler's Tennis"
@@ -356,6 +385,7 @@ let jugglingLibrary =
         "num": 3
     },
     "High-LowCascade": {
+        "siteswap": "(4x,2T)*",
         "prereqs": [
             "Cascade"
         ],
@@ -367,6 +397,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Chops": {
+        "siteswap": "3",
         "prereqs": [
             "Cascade"
         ],
@@ -380,6 +411,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseChops": {
+        "siteswap": "3",
         "prereqs": [
             "Chops",
             "Takeouts"
@@ -392,6 +424,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Columns": {
+        "siteswap": "(4,4)(4,0)",
         "prereqs": [],
         "related": [
             "Four Ball Columns"
@@ -403,6 +436,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ColumnBoxVar": {
+        "siteswap": "(6,6)(2x,0)(0,4)*",
         "prereqs": [
             "Columns",
             "441"
@@ -417,6 +451,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Crossunder": {
+        "siteswap": "(4x,4x)(4x,0)*",
         "prereqs": [
             "Columns"
         ],
@@ -430,6 +465,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Infinity": {
+        "siteswap": "(4,4)(4x,0)*",
         "prereqs": [
             "Columns"
         ],
@@ -443,6 +479,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Matt'sMess": {
+        "siteswap": "(4x,4x)(4x,0)*",
         "prereqs": [
             "Reverse Infinity",
             "Crossunder"
@@ -455,6 +492,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ColumnOverVar": {
+        "siteswap": "(4,4)(4x,0)*",
         "prereqs": [
             "Columns"
         ],
@@ -468,6 +506,7 @@ let jugglingLibrary =
         "num": 3
     },
     "RainbowArches": {
+        "siteswap": "",
         "prereqs": [
             "Columns"
         ],
@@ -481,6 +520,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseCrossunder": {
+        "siteswap": "(4x,4x)(4x,0)",
         "prereqs": [
             "Columns"
         ],
@@ -494,6 +534,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseInfinity": {
+        "siteswap": "(4,4)(4x,0)*",
         "prereqs": [
             "Columns"
         ],
@@ -507,6 +548,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ColumnShowVar": {
+        "siteswap": "(6,6)(2x,0)(0,4x)",
         "prereqs": [
             "Columns",
             "Shower"
@@ -521,6 +563,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Shuffle-Switch": {
+        "siteswap": "(4,4)(6,0)(2x,2x)",
         "prereqs": [
             "Columns"
         ],
@@ -532,6 +575,7 @@ let jugglingLibrary =
         "num": 3
     },
     "CrossedArmCascade": {
+        "siteswap": "3",
         "prereqs": [
             "Cascade"
         ],
@@ -545,6 +589,7 @@ let jugglingLibrary =
         "num": 3
     },
     "CrossedArmReverseCascade": {
+        "siteswap": "3",
         "prereqs": [
             "Reverse Cascade"
         ],
@@ -558,6 +603,7 @@ let jugglingLibrary =
         "num": 3
     },
     "David'sDilemma": {
+        "siteswap": "(6x,4)(0,2x)",
         "prereqs": [
             "Shower"
         ],
@@ -569,6 +615,7 @@ let jugglingLibrary =
         "num": 3
     },
     "FakeColumns": {
+        "siteswap": "(4,2)",
         "prereqs": [],
         "related": [
             "Yo-Yo"
@@ -580,6 +627,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Yo-Yo": {
+        "siteswap": "(4,2)",
         "prereqs": [
             "Fake Columns"
         ],
@@ -593,6 +641,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Oy-Oy": {
+        "siteswap": "(4,2)",
         "prereqs": [
             "Yo-Yo"
         ],
@@ -604,6 +653,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Factory": {
+        "siteswap": "(2,4)(2,4x)(2x,4)",
         "prereqs": [
             "Fake Columns"
         ],
@@ -615,6 +665,7 @@ let jugglingLibrary =
         "num": 3
     },
     "CrossedArmFactory": {
+        "siteswap": "(4,2)(4,2)(4x,2T)*",
         "prereqs": [
             "Factory"
         ],
@@ -626,6 +677,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Relf'sFactory": {
+        "siteswap": "42333",
         "prereqs": [
             "Factory",
             "Mangham's Mangle"
@@ -638,6 +690,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseFactory": {
+        "siteswap": "(4x,2x)(2,4)(2,4)",
         "prereqs": [
             "Factory"
         ],
@@ -651,6 +704,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ZebraFactory": {
+        "siteswap": "(4x,2x)(2,4x)(2x,4)",
         "prereqs": [
             "Factory",
             "N-Box"
@@ -663,6 +717,7 @@ let jugglingLibrary =
         "num": 3
     },
     "FlyingDiscoDrop": {
+        "siteswap": "(4x,2x)(2T,4x)(4,2)*",
         "prereqs": [
             "Shower",
             "Orka's Mess</a>, <a href=\"HandsOfTime.html\">Hands of Time"
@@ -675,6 +730,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Follow": {
+        "siteswap": "423",
         "prereqs": [
             "423"
         ],
@@ -688,6 +744,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Forklift": {
+        "siteswap": "3[34]03332",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -699,6 +756,7 @@ let jugglingLibrary =
         "num": 3
     },
     "FranticCascade": {
+        "siteswap": "3",
         "prereqs": [
             "Crossed-Arm Cascade"
         ],
@@ -710,6 +768,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Frostbite": {
+        "siteswap": "44133",
         "prereqs": [
             "Reverse 441"
         ],
@@ -723,6 +782,7 @@ let jugglingLibrary =
         "num": 3
     },
     "GeorgianScuffle": {
+        "siteswap": "2T[32T]333332",
         "prereqs": [
             "Georgian Shuffle",
             "Kraken"
@@ -737,6 +797,7 @@ let jugglingLibrary =
         "num": 3
     },
     "SymmetricGeorgianScuffle": {
+        "siteswap": "",
         "prereqs": [
             "Georgian Scuffle",
             "Kraken"
@@ -751,6 +812,7 @@ let jugglingLibrary =
         "num": 3
     },
     "GeorgianShuffle": {
+        "siteswap": "2T[32T]32",
         "prereqs": [
             "Cascade"
         ],
@@ -765,6 +827,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BuffaloShuffle": {
+        "siteswap": "2T[32T]32",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -778,6 +841,7 @@ let jugglingLibrary =
         "num": 3
     },
     "DavenportShuffle": {
+        "siteswap": "2T[32T]422",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -792,6 +856,7 @@ let jugglingLibrary =
         "num": 3
     },
     "SingaporeShuffle": {
+        "siteswap": "2T[32T]422",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -805,6 +870,7 @@ let jugglingLibrary =
         "num": 3
     },
     "SymmetricGeorgianShuffle": {
+        "siteswap": "3[34]032",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -818,6 +884,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Grace": {
+        "siteswap": "3[31]2",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -829,6 +896,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Half-Shower": {
+        "siteswap": "3",
         "prereqs": [
             "Cascade",
             "Juggler's Tennis"
@@ -843,6 +911,7 @@ let jugglingLibrary =
         "num": 3
     },
     "HandsOfTime": {
+        "siteswap": "(4x,2x)(2,4x)(4,2)*",
         "prereqs": [
             "Shower",
             "Windmill"
@@ -855,6 +924,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Harrison'sHang": {
+        "siteswap": "(4,2x)(4,2)*",
         "prereqs": [
             " 441",
             "Penman's Pandemonium"
@@ -867,6 +937,7 @@ let jugglingLibrary =
         "num": 3
     },
     "IcelandicShuffle": {
+        "siteswap": "33333342",
         "prereqs": [
             "Georgian Scuffle",
             "Kraken"
@@ -879,6 +950,7 @@ let jugglingLibrary =
         "num": 3
     },
     "InvertedShower": {
+        "siteswap": "3",
         "prereqs": [
             "Factory"
         ],
@@ -890,6 +962,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Jeanne": {
+        "siteswap": "(4,4)(4x,0)(2,4x)(4x,2)*",
         "prereqs": [
             "Orka's Mes",
             "Rubenstein's Revenge"
@@ -902,6 +975,7 @@ let jugglingLibrary =
         "num": 3
     },
     "JugglersTennis": {
+        "siteswap": "3",
         "prereqs": [
             "Cascade"
         ],
@@ -915,6 +989,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Kato'sCrux": {
+        "siteswap": "(4x,2x)(2,4x)*",
         "prereqs": [
             "Sandbox Shuffle"
         ],
@@ -926,6 +1001,7 @@ let jugglingLibrary =
         "num": 3
     },
     "KingofHearts": {
+        "siteswap": "3[34]0332",
         "prereqs": [
             "Kingston Shuffle"
         ],
@@ -937,6 +1013,7 @@ let jugglingLibrary =
         "num": 3
     },
     "KingstonShuffle": {
+        "siteswap": "2T[32T]332",
         "prereqs": [
             "Georgian Shuffle"
         ],
@@ -950,6 +1027,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Kraken": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess",
             "Cherry Picker"
@@ -962,6 +1040,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Levels": {
+        "siteswap": "(4x,2x)(4,2x)*",
         "prereqs": [
             "N-Box</a>, <a href=\"Luke'sShuffle.html\">Luke's Shuffle"
         ],
@@ -975,6 +1054,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Luke'sLobotomy": {
+        "siteswap": "(4x,2T)*",
         "prereqs": [
             "Crossed-Arm Reverse Cascade",
             "Buffalo Shuffle"
@@ -987,6 +1067,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Maka'sMess": {
+        "siteswap": "(4,2T)(4x,2)*",
         "prereqs": [
             "Crossed-Arm Reverse Cascade"
         ],
@@ -1000,6 +1081,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Mangham'sMangle": {
+        "siteswap": "(4x,4x)(0,4x)(4,2)*",
         "prereqs": [
             "Cascade"
         ],
@@ -1011,6 +1093,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Marden'sMarvel": {
+        "siteswap": "42333",
         "prereqs": [
             "Rubenstein's Revenge",
             "Windmill"
@@ -1023,6 +1106,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Mike'sMess": {
+        "siteswap": "3",
         "prereqs": [
             "Crossed-Arm Reverse Cascade"
         ],
@@ -1036,6 +1120,7 @@ let jugglingLibrary =
         "num": 3
     },
     "MillsMess": {
+        "siteswap": "3",
         "prereqs": [
             "Reverse Cascade"
         ],
@@ -1047,6 +1132,7 @@ let jugglingLibrary =
         "num": 3
     },
     "441MillsMess": {
+        "siteswap": "441",
         "prereqs": [
             "Reverse 441",
             "Mills Mess"
@@ -1059,6 +1145,7 @@ let jugglingLibrary =
         "num": 3
     },
     "531MillsMess": {
+        "siteswap": "531",
         "prereqs": [
             "531",
             "Mills Mess"
@@ -1071,6 +1158,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Charley": {
+        "siteswap": "3",
         "prereqs": [
             "Crossed-Arm Reverse Cascade",
             "Mills Mess"
@@ -1083,6 +1171,7 @@ let jugglingLibrary =
         "num": 3
     },
     "FakeMess": {
+        "siteswap": "423",
         "prereqs": [
             "423"
         ],
@@ -1096,6 +1185,7 @@ let jugglingLibrary =
         "num": 3
     },
     "FlippedMess": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1107,6 +1197,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Flo'sMess": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1120,6 +1211,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Half-Mess": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1131,6 +1223,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseMillsMess": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1142,6 +1235,7 @@ let jugglingLibrary =
         "num": 3
     },
     "MillsMessShower": {
+        "siteswap": "44133",
         "prereqs": [
             "Mills Mess",
             "Shower"
@@ -1154,6 +1248,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Nelson'sNemesis": {
+        "siteswap": "(4x,4x)(0,4x)(4,2)*",
         "prereqs": [
             "Columns",
             "Rubenstein's Revenge"
@@ -1166,6 +1261,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Olas": {
+        "siteswap": "3323[13]",
         "prereqs": [
             "Cascade"
         ],
@@ -1179,6 +1275,7 @@ let jugglingLibrary =
         "num": 3
     },
     "CompressedOlas": {
+        "siteswap": "[31]23",
         "prereqs": [
             "Olas"
         ],
@@ -1190,6 +1287,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Orka'sMess": {
+        "siteswap": "(4,4)(4x,0)(2,4)*",
         "prereqs": [
             "Cascade"
         ],
@@ -1201,6 +1299,7 @@ let jugglingLibrary =
         "num": 3
     },
     "PendulumDrop": {
+        "siteswap": "(4x,2x)(4,2)",
         "prereqs": [],
         "related": [
             "Factory",
@@ -1213,6 +1312,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Penman'sPandemonium": {
+        "siteswap": "(4x,2)(4x,2x)*",
         "prereqs": [
             "Orka's Mess",
             "Sandbox Shuffle"
@@ -1227,6 +1327,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Relf'sRevenge": {
+        "siteswap": "423",
         "prereqs": [
             "Follow",
             "Weave"
@@ -1242,6 +1343,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Relf'sRevenge6": {
+        "siteswap": "3",
         "prereqs": [
             "Rubenstein's Revenge"
         ],
@@ -1255,6 +1357,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Relf'sRubensteins": {
+        "siteswap": "5224233",
         "prereqs": [
             "Rubenstein's Revenge",
             "Romeo's Revenge"
@@ -1269,6 +1372,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Ripley'sRainbow": {
+        "siteswap": "3[34]032",
         "prereqs": [
             "Cascade"
         ],
@@ -1280,6 +1384,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Rolf'sWave": {
+        "siteswap": "2T[32]332",
         "prereqs": [
             "Georgian Shuffle",
             "Kingston Shuffle"
@@ -1292,6 +1397,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Romeo'sRevenge": {
+        "siteswap": "52233",
         "prereqs": [
             "Rubenstein's Revenge"
         ],
@@ -1303,6 +1409,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Rubenstein'sRevenge": {
+        "siteswap": "52233",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1316,6 +1423,7 @@ let jugglingLibrary =
         "num": 3
     },
     "SandboxShuffle": {
+        "siteswap": "(4x,2x)(2,4x)(4,2)*",
         "prereqs": [
             "Cascade"
         ],
@@ -1330,6 +1438,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Frances": {
+        "siteswap": "(4x,2x)(2,4x)(4,2)*",
         "prereqs": [
             "Sandbox Shuffle"
         ],
@@ -1341,6 +1450,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Shower": {
+        "siteswap": "51",
         "prereqs": [
             "Half-Shower",
             "441 (Half-Box)"
@@ -1355,6 +1465,7 @@ let jugglingLibrary =
         "num": 3
     },
     "BrokenShower": {
+        "siteswap": "(4x,2x)",
         "prereqs": [
             "Shower",
             "Shower Cascade"
@@ -1369,6 +1480,7 @@ let jugglingLibrary =
         "num": 3
     },
     "CrossedArmShower": {
+        "siteswap": "(4x,2x)",
         "prereqs": [
             "Shower"
         ],
@@ -1382,6 +1494,7 @@ let jugglingLibrary =
         "num": 3
     },
     "High-LowShower": {
+        "siteswap": "7131",
         "prereqs": [
             "Shower"
         ],
@@ -1395,6 +1508,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ReverseCrossedArmShower": {
+        "siteswap": "(4x,2x)",
         "prereqs": [
             "Shower"
         ],
@@ -1408,6 +1522,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ShowerSwapVariation": {
+        "siteswap": "(6x,2x)(2x,2x)",
         "prereqs": [
             "Shower",
             "Shuffle-Switch"
@@ -1422,6 +1537,7 @@ let jugglingLibrary =
         "num": 3
     },
     "UnderarmShower": {
+        "siteswap": "(4x,2x)",
         "prereqs": [
             "Shower"
         ],
@@ -1435,6 +1551,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Shower-Cascade": {
+        "siteswap": "51",
         "prereqs": [
             "Shower"
         ],
@@ -1446,6 +1563,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Shuffle": {
+        "siteswap": "51",
         "prereqs": [
             "Shower",
             "Box"
@@ -1460,6 +1578,7 @@ let jugglingLibrary =
         "num": 3
     },
     "LowShuffle": {
+        "siteswap": "51",
         "prereqs": [
             "Shuffle"
         ],
@@ -1471,6 +1590,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Shuffler'sMess": {
+        "siteswap": "53133",
         "prereqs": [
             " 531",
             "Mills Mess</a>, <a href=\"531MillsMess.html\">531 Mills Mess"
@@ -1483,6 +1603,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Snake": {
+        "siteswap": "50505",
         "prereqs": [
             "Shower"
         ],
@@ -1494,6 +1615,7 @@ let jugglingLibrary =
         "num": 3
     },
     "StatueofLiberty": {
+        "siteswap": "3",
         "prereqs": [
             "Half-Shower"
         ],
@@ -1505,6 +1627,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Takearound": {
+        "siteswap": "42342T3",
         "prereqs": [
             "Takeouts</a>, <a href=\"FlyingDiscoDrop.html\">Flying Disco Drop"
         ],
@@ -1516,15 +1639,17 @@ let jugglingLibrary =
         "num": 3
     },
     "ThreeInOne": {
+        "siteswap": "60",
         "prereqs": [],
         "related": [],
         "difficulty": "7",
         "gifUrl": "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/threeinone.gif",
         "url": "http://www.libraryofjuggling.com/Tricks/3balltricks/ThreeInOne.html",
-        "name": "Three in One",
+        "name": "Three In One",
         "num": 3
     },
     "Tom'sTrick": {
+        "siteswap": "(4x,2x)(2,4x)(4x,2)(2,4x)*",
         "prereqs": [
             "Chops",
             "Boston Shuffle"
@@ -1537,6 +1662,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Triazzle": {
+        "siteswap": "(4,2)(4x,2)(4x,2x)*",
         "prereqs": [
             "Shower"
         ],
@@ -1548,6 +1674,7 @@ let jugglingLibrary =
         "num": 3
     },
     "TruffleShuffle": {
+        "siteswap": "(6,2)(2x,2x)",
         "prereqs": [],
         "related": [],
         "difficulty": "4",
@@ -1557,6 +1684,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Weave": {
+        "siteswap": "432",
         "prereqs": [
             "423",
             "Burke's Barrage"
@@ -1569,6 +1697,7 @@ let jugglingLibrary =
         "num": 3
     },
     "OrinocoFlow": {
+        "siteswap": "42423",
         "prereqs": [
             "Weave"
         ],
@@ -1580,6 +1709,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Windmill": {
+        "siteswap": "3",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1593,6 +1723,7 @@ let jugglingLibrary =
         "num": 3
     },
     "ChopShower": {
+        "siteswap": "3",
         "prereqs": [
             "Windmill</a>, <a href=\"CrossedArmReverseCascade.html\">Crossed-Arm Reverse Cascade"
         ],
@@ -1607,6 +1738,7 @@ let jugglingLibrary =
         "num": 3
     },
     "423": {
+        "siteswap": "423",
         "prereqs": [],
         "related": [],
         "difficulty": "2",
@@ -1616,6 +1748,7 @@ let jugglingLibrary =
         "num": 3
     },
     "TheW": {
+        "siteswap": "423",
         "prereqs": [
             "423"
         ],
@@ -1627,6 +1760,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Half-Box(441)": {
+        "siteswap": "441",
         "prereqs": [],
         "related": [
             "Box"
@@ -1638,6 +1772,7 @@ let jugglingLibrary =
         "num": 3
     },
     "Reverse441(Half-Box)": {
+        "siteswap": "441",
         "prereqs": [
             "441 (Half-Box)"
         ],
@@ -1651,6 +1786,7 @@ let jugglingLibrary =
         "num": 3
     },
     "531": {
+        "siteswap": "531",
         "prereqs": [
             "Shower"
         ],
@@ -1662,6 +1798,7 @@ let jugglingLibrary =
         "num": 3
     },
     "FourBallBox": {
+        "siteswap": "(6,2x)(6,2x)*",
         "prereqs": [
             "Box",
             "Three in One",
@@ -1677,6 +1814,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallStackedBox": {
+        "siteswap": "(8,2x)(4,2x)*",
         "prereqs": [
             "Box",
             "High-Low Shower"
@@ -1691,6 +1829,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Cliff'sConfusion": {
+        "siteswap": "3[43]2",
         "prereqs": [
             "Mills Mess"
         ],
@@ -1702,6 +1841,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallColumns": {
+        "siteswap": "(4,4)",
         "prereqs": [
             "Synch. Fountain",
             "Columns"
@@ -1716,6 +1856,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallRainbowCross": {
+        "siteswap": "(4,4)(4x,4x)",
         "prereqs": [
             "Four Ball Columns",
             "Rainbow Cross"
@@ -1728,6 +1869,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Dancey'sDevilment": {
+        "siteswap": "3[51][22]2[32]",
         "prereqs": [
             "Rubenstein's Revenge"
         ],
@@ -1739,6 +1881,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallHalfShower": {
+        "siteswap": "",
         "prereqs": [
             "Half-Shower",
             "Wimpy"
@@ -1753,6 +1896,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Arches": {
+        "siteswap": "(4x,4x)",
         "prereqs": [
             "Four Ball Half-Shower"
         ],
@@ -1764,6 +1908,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Pistons": {
+        "siteswap": "4",
         "prereqs": [
             "Fountain"
         ],
@@ -1777,6 +1922,7 @@ let jugglingLibrary =
         "num": 4
     },
     "SynchPistons": {
+        "siteswap": "(4,4)",
         "prereqs": [
             "Four Ball Columns"
         ],
@@ -1790,6 +1936,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Fountain": {
+        "siteswap": "4",
         "prereqs": [
             "441(Half-Box)"
         ],
@@ -1803,6 +1950,7 @@ let jugglingLibrary =
         "num": 4
     },
     "ReverseFountain": {
+        "siteswap": "4",
         "prereqs": [
             "Fountain"
         ],
@@ -1814,6 +1962,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Lisa": {
+        "siteswap": "(4,2)(2x,[4x4])*",
         "prereqs": [
             "441",
             "Four Ball Columns"
@@ -1826,6 +1975,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallMillsMess": {
+        "siteswap": "4",
         "prereqs": [
             "Mills Mess",
             "Reverse Fountain"
@@ -1838,6 +1988,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallHalf-Mess": {
+        "siteswap": "4",
         "prereqs": [
             "Half-Mess",
             "Four Ball Mills Mess"
@@ -1850,6 +2001,7 @@ let jugglingLibrary =
         "num": 4
     },
     "534MillsMess": {
+        "siteswap": "534",
         "prereqs": [
             "Four Ball Mills Mess",
             "534</a>, <a href=\"../3balltricks/531MillsMess.html\">531 Mills Mess"
@@ -1862,6 +2014,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallShower": {
+        "siteswap": "71",
         "prereqs": [
             "Shower"
         ],
@@ -1875,6 +2028,7 @@ let jugglingLibrary =
         "num": 4
     },
     "SprungCascade": {
+        "siteswap": "(6x,2x)*",
         "prereqs": [
             "Box",
             "5551"
@@ -1887,6 +2041,7 @@ let jugglingLibrary =
         "num": 4
     },
     "SynchFountain": {
+        "siteswap": "(4,4)",
         "prereqs": [
             "Fountain"
         ],
@@ -1898,6 +2053,7 @@ let jugglingLibrary =
         "num": 4
     },
     "ReverseSynchFountain": {
+        "siteswap": "(4,4)",
         "prereqs": [
             "Synchronous Fountain"
         ],
@@ -1909,6 +2065,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallTakeouts": {
+        "siteswap": "[43]23",
         "prereqs": [
             "Takeouts",
             "Cliff's Confusion"
@@ -1921,6 +2078,7 @@ let jugglingLibrary =
         "num": 4
     },
     "TennesseeWaltz": {
+        "siteswap": "3[32T]",
         "prereqs": [
             "Cascade",
             "Cliff's Confusion"
@@ -1933,6 +2091,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Tsunami": {
+        "siteswap": "72416",
         "prereqs": [
             "Four Ball Mills Mess"
         ],
@@ -1944,6 +2103,7 @@ let jugglingLibrary =
         "num": 4
     },
     "Wimpy": {
+        "siteswap": "(4x,4x)",
         "prereqs": [
             "Cascade"
         ],
@@ -1957,6 +2117,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FourBallWindmill": {
+        "siteswap": "4",
         "prereqs": [
             "Windmill",
             "Fountain</a>, <a href=\"FourBallMillsMess.html\">Four Ball Mills Mess"
@@ -1969,6 +2130,7 @@ let jugglingLibrary =
         "num": 4
     },
     "534": {
+        "siteswap": "534",
         "prereqs": [
             "531",
             "Fountain"
@@ -1981,6 +2143,7 @@ let jugglingLibrary =
         "num": 4
     },
     "552": {
+        "siteswap": "552",
         "prereqs": [
             "Cascade",
             "Snake"
@@ -1993,6 +2156,7 @@ let jugglingLibrary =
         "num": 4
     },
     "5551": {
+        "siteswap": "5551",
         "prereqs": [
             "Shower"
         ],
@@ -2006,6 +2170,7 @@ let jugglingLibrary =
         "num": 4
     },
     "55550": {
+        "siteswap": "55550",
         "prereqs": [
             "5551"
         ],
@@ -2019,6 +2184,7 @@ let jugglingLibrary =
         "num": 4
     },
     "FiveBallCascade": {
+        "siteswap": "5",
         "prereqs": [
             "Cascade",
             "552",
@@ -2035,6 +2201,7 @@ let jugglingLibrary =
         "num": 5
     },
     "FiveBallReverseCascade": {
+        "siteswap": "5",
         "prereqs": [
             "Five Ball Cascade"
         ],
@@ -2046,6 +2213,7 @@ let jugglingLibrary =
         "num": 5
     },
     "FiveBallHalf-Shower": {
+        "siteswap": "",
         "prereqs": [
             "Five Ball Cascade",
             "Four Ball Half-Shower"
@@ -2058,6 +2226,7 @@ let jugglingLibrary =
         "num": 5
     },
     "Martin": {
+        "siteswap": "[62]25",
         "prereqs": [
             "Three in One"
         ],
@@ -2069,6 +2238,7 @@ let jugglingLibrary =
         "num": 5
     },
     "FiveBallMultiplexColumns": {
+        "siteswap": "(4,0)([44],[44])",
         "prereqs": [
             "Columns"
         ],
@@ -2080,6 +2250,7 @@ let jugglingLibrary =
         "num": 5
     },
     "FiveBallShower": {
+        "siteswap": "91",
         "prereqs": [
             "Four Ball Shower"
         ],
@@ -2091,6 +2262,7 @@ let jugglingLibrary =
         "num": 5
     },
     "FiveBallSplitMultiplexCascade": {
+        "siteswap": "[32T]",
         "prereqs": [
             "Cascade"
         ],
@@ -2104,6 +2276,7 @@ let jugglingLibrary =
         "num": 5
     },
     "FiveBallStackedMultiplexCascade": {
+        "siteswap": "3[33][33]",
         "prereqs": [
             "Cascade"
         ],
@@ -2115,6 +2288,7 @@ let jugglingLibrary =
         "num": 5
     },
     "SixBallFountain": {
+        "siteswap": "6",
         "prereqs": [
             "Fountain",
             "Three in One",

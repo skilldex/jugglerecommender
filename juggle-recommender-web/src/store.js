@@ -14,12 +14,11 @@ class Store {
 	 //TODO: move to UI store
 	@action setShowSignInDialog=(shouldShow)=>{
 		this.showSignInDialog = shouldShow
-		console.log('shouldShow',shouldShow)
 	}
 
 	@action updateTricksInDatabase=()=>{
-		console.log("update tricks",toJS(authStore.user))
-		if(!authStore.user){return}
+
+		if(!authStore.user.username){return}
 		let myTricksKey = ""
  		let myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
   	 	myTricksRef.on('value', resp =>{
@@ -65,17 +64,14 @@ class Store {
 	            if(myTricksObject){
 	            	myTricksKey = myTricksObject.key
 	            }
-	            console.log(authStore.user, myTricksObject)
 	            if(myTricksObject && myTricksObject.myTricks){
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
-	            	//this.setSelectedList("myTricks")
 	            	uiStore.setSearchInput('')
 	            }else{
 	            	this.getTricksFromBrowser()
-	            }
-	            
+	            }	            
 	        })
 	  	 }else{
 	  	 	this.getTricksFromBrowser()
@@ -101,12 +97,15 @@ class Store {
  		uiStore.updateRootTricks()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
-		if (this.myTricks[trickKey]) {
-		  delete this.myTricks[trickKey]
+		var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
+		if (result){
+			if (this.myTricks[trickKey]) {
+			  delete this.myTricks[trickKey]
+			}
+			this.updateTricksInDatabase()
+	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+	 		uiStore.updateRootTricks()
 		}
-		this.updateTricksInDatabase()
- 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
- 		uiStore.updateRootTricks()
  	}
 
 	@action snapshotToArray = snapshot => {
