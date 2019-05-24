@@ -97,12 +97,15 @@ class Store {
  		uiStore.updateRootTricks()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
-		if (this.myTricks[trickKey]) {
-		  delete this.myTricks[trickKey]
+		var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
+		if (result){
+			if (this.myTricks[trickKey]) {
+			  delete this.myTricks[trickKey]
+			}
+			this.updateTricksInDatabase()
+	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+	 		uiStore.updateRootTricks()
 		}
-		this.updateTricksInDatabase()
- 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
- 		uiStore.updateRootTricks()
  	}
 
 	@action snapshotToArray = snapshot => {

@@ -34,7 +34,7 @@ class Popup extends Component {
               		<h3>{store.myTricks[popupTrickKey] ? "★" : ""}{jugglingLibrary[popupTrickKey].name}</h3> 
               		{store.myTricks[popupTrickKey] ? 
               		<div>
-              			<label>Catches: </label>
+              			<label>Catches: </label><br/>
               			{uiStore.popupCatchEditable ?
               			<input defaultValue = {store.myTricks[popupTrickKey].catches} type="number" onChange={this.onCatchesChange}/> :
               			<span>{store.myTricks[popupTrickKey].catches}</span>}
