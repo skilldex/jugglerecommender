@@ -44,7 +44,8 @@ class Popup extends Component {
 
               		</div>: null}
               		
-              		<label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br></br><br></br>
+              		<label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br/>
+                  <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>
               			{addToMyTricksButton}
               			{selectTrickButton}
               			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 

@@ -10,8 +10,6 @@ User Launch:
 	-allow users to add tricks
 	-toggle tricks by user added trick
 
-Don't allow state where only graph is showing (limit height)
-
 TAGS:
 	-add style
 	-(maybe) make it so when a tag is clicked, that tag is added to the current search
@@ -19,29 +17,26 @@ TAGS:
 
 Next:
 -make animation less crazy
--scrape siteswap
 
 POPUPS:
 -(maybe)list depends and prereqs
--siteswap
 -(maybe) other tutorials/user content
 
 BUGS:
 -clicking any sort button creates a popup at the 3 ball sort button
--list goes past the bottom of the graph when 3 4 and 5 are all expanded, even 4 and 5 collapsed it still sticks out past the bottom
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
--some gifs are smaller than others, for example, Alex is really small
--sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
 
 MINOR:
 - Indicator for which view we are in
-- Ask if sure when removing from my list
 
 Later : 
 -(maybe)scrape other tutorial links
 -Style expand arrows as icons
 - add loading graphic
 - make checkboxes for showing (related, depends, prereqs) in graph
+
+ISSUES?
+-some gifs are smaller than others, for example, Alex is really small
 
 IDEAS:
 	-it would be nice to compare gifs of different tricks side by side,
