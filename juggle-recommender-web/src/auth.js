@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import firebase from 'firebase' 
 import store from "./store"
 import authStore from "./authStore"
 import "./App.css"
 import "./auth.css";
+import firebase from 'firebase' 
 
 class Auth extends Component {
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());
