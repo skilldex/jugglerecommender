@@ -80,8 +80,6 @@ class Store {
 	}
 	@action setCatches=(catches, trickKey)=>{
  		this.myTricks[trickKey].catches = catches.replace(/^0+/,'');
- 		this.updateTricksInDatabase()
- 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  	}
 	@action addToMyTricks=(trickKey)=>{
 		var tricksToReselect = uiStore.selectedTricks
