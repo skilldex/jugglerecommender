@@ -73,7 +73,6 @@ class UIStore {
  	}
  		
  	@action performSearch=()=>{
- 		console.log('performSearch')
  		this.selectedTricks = []
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
@@ -272,7 +271,7 @@ class UIStore {
 		 			 		font : this.getInvolvedNodeFont(involvedDependent),
 		 			 		mass : this.getInvolvedNodeMass(involvedDependent),
 
-		 				}
+		 				}	
 		 				edges.push({from: trickKey , to: dependentKey })
 		 			})
  				}
@@ -295,13 +294,12 @@ class UIStore {
 
 	 @action showSortMenu=()=>{
 		if (document.getElementById("myDropdown")){
-	  document.getElementById("myDropdown").classList.toggle("show");
+	  		document.getElementById("myDropdown").classList.toggle("show");
 		}
  	}
 
 	 @action hideSortMenu=()=>{
-			console.log('hideSortMenu')
-	  document.getElementById("myDropdown").classList['show'] = 'block';
+		document.getElementById("myDropdown").classList['show'] = 'block';
 		
  	} 	
  	@action toggleSortTypeShow=()=>{

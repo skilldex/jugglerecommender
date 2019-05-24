@@ -20,7 +20,7 @@ class Popup extends Component {
 	render() {
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
-              		  <button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
+              		<button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
 		const selectTrickButton = uiStore.popupTrick && uiStore.selectedTricks.includes(uiStore.popupTrick.id) ? 
  		              <button style={{"backgroundColor" : "darkgray", "margin-bottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Unselect</button> :
@@ -55,7 +55,7 @@ class Popup extends Component {
               			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
               		<img className="popupGif" 
               			 src={jugglingLibrary[popupTrickKey].gifUrl}/> : null}
-              		<br></br>
+              		<br></br><br/><br/>
               			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
               		<label className="popupTags">
               			TAGS: {jugglingLibrary[popupTrickKey].tags.join(', ')} 

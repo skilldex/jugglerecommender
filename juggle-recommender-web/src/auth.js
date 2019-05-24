@@ -72,21 +72,19 @@ class Auth extends Component {
     render(){
         const inputStyle = {width: "180px", "marginRight" : "10px"}
         return (   
-                <div className="auth">
-                    {
-                        authStore.user ? 
-                            <div>Signed in as {authStore.user.username}</div> : 
-                            <div>
-
-                                <label>email</label><br/><input style={inputStyle} onChange={this.userInputChange}/>
-                                <br/>
-                                <label>password</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/>
-                                <br/>
-                                <div style={{color : "red"}}>{this.state.error}</div>
-                                <br/>
-                                <button className="authButton" onClick={this.createAccount}>Create Account</button>
-                                <button className="authButton"  onClick={this.signIn}>Sign In</button>
-                            </div>
+                <div className="auth">                    
+                    {authStore.user ? 
+                        <div>Signed in as {authStore.user.username}</div> : 
+                        <div>
+                            <label>email</label><br/><input style={inputStyle} onChange={this.userInputChange}/>
+                            <br/>
+                            <label>password</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/>
+                            <br/>
+                            <div style={{color : "red"}}>{this.state.error}</div>
+                            <br/>
+                            <button className="authButton" onClick={this.createAccount}>Create Account</button>
+                            <button className="authButton"  onClick={this.signIn}>Sign In</button>
+                        </div>
                     }
                 </div>
             )

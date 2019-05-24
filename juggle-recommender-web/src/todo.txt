@@ -1,42 +1,41 @@
+Next:
+	-make animation less crazy
 
 Refactor : 
 	Should break up store further?
 	
 User Launch:
-	-we probably want their username(to show at top of screen and to other users) to be something other than their email
-	-hollow and just show thick borders the node with 0 catches
-	-we want to easily see at a glance which tricks I can do and which I am interested in
-		This could be done with an alternate color scheme color fade based on length of best run. This would eventually result in a much more accurate/personalized difficulty colorring.
 	-allow users to add tricks
 	-toggle tricks by user added trick
+	-we will want usernames instead of just email so we can show them to other users
+	-hollow and just show thick borders the node with 0 catches
+		-this would be done in updateGraphData in uiStore, all through the function there are these:
+		color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
+		We either need to pass through whether or not we are dealing with a myTrick or an allTrick,
+		if myTrick, then business as normal, but in allTricks we want border cnahed and centers hollow.
 
 TAGS:
-	-add style
-	-(maybe) make it so when a tag is clicked, that tag is added to the current search
-	-(maybe) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
-
-Next:
--make animation less crazy
+	-(maybe?) add style
+	-(maybe?) make it so when a tag is clicked, that tag is added to the current search
+	-(maybe?) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
 
 POPUPS:
--(maybe)list depends and prereqs
--(maybe) other tutorials/user content
+-(maybe?)list depends and prereqs
+-(maybe?) other tutorials/user content
 
 BUGS:
 -clicking any sort button creates a popup at the 3 ball sort button
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 
 MINOR:
-- Indicator for which view we are in
+-(maybe?)Indicator for which view we are in
 
 Later : 
--(maybe)scrape other tutorial links
+-(maybe?)scrape other tutorial links
 -Style expand arrows as icons
-- add loading graphic
-- make checkboxes for showing (related, depends, prereqs) in graph
-
-ISSUES?
--some gifs are smaller than others, for example, Alex is really small
+-(maybe?)add loading graphic
+-(maybe?)make checkboxes for showing (related, depends, prereqs) in graph
+-get more patterns brought in
 
 IDEAS:
 	-it would be nice to compare gifs of different tricks side by side,

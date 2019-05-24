@@ -14,11 +14,9 @@ class Store {
 	 //TODO: move to UI store
 	@action setShowSignInDialog=(shouldShow)=>{
 		this.showSignInDialog = shouldShow
-		console.log('shouldShow',shouldShow)
 	}
 
 	@action updateTricksInDatabase=()=>{
-		console.log("update tricks",toJS(authStore.user))
 		if(!authStore.user.username){return}
 		let myTricksKey = ""
  		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
@@ -61,17 +59,14 @@ class Store {
 	            if(myTricksObject){
 	            	myTricksKey = myTricksObject.key
 	            }
-	            console.log(authStore.user, myTricksObject)
 	            if(myTricksObject && myTricksObject.myTricks){
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
-	            	//this.setSelectedList("myTricks")
 	            	uiStore.setSearchInput('')
 	            }else{
 	            	this.getTricksFromBrowser()
-	            }
-	            
+	            }	            
 	        })
 	  	 }else{
 	  	 	this.getTricksFromBrowser()
