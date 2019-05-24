@@ -84,13 +84,19 @@ class Store {
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  	}
 	@action addToMyTricks=(trickKey)=>{
-		console.log("adding", this.myTricks)
+		var tricksToReselect = uiStore.selectedTricks
  		this.myTricks[trickKey] = {
  			"catches" : 0
  		}
         this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		uiStore.updateRootTricks()
+ 		if (tricksToReselect){
+ 			var trick
+ 			for (trick in tricksToReselect){
+ 				uiStore.selectTricks([tricksToReselect[trick]])
+ 			}
+ 		}
  	}
  	@action setMyTricks=(tricks)=>{
  		this.myTricks = tricks        

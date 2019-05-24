@@ -1,3 +1,9 @@
+
+
+
+
+
+
 Next:
 	-make animation less crazy
 
@@ -24,10 +30,15 @@ POPUPS:
 -(maybe?) other tutorials/user content
 
 BUGS:
+-When a pattern gets added to myTricks it becomes unselected in all
 -clicking any sort button creates a popup at the 3 ball sort button
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 
 MINOR:
+-Remember how scrolled the side bar is so that when it collapses it can expand to the same spot
+-Maybe can get rid of a little lag by updating catches when edit button gets clicked, not every time a new digit is input
+-Make down arrow to show that scrolling is possible on cards
+-When editing a pattern with 0 catches, dont show the 0
 -(maybe?)Indicator for which view we are in
 
 Later : 
