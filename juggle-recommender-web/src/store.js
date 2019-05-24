@@ -21,7 +21,7 @@ class Store {
 		console.log("update tricks",toJS(authStore.user))
 		if(!authStore.user){return}
 		let myTricksKey = ""
- 		const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
+ 		let myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
   	 	myTricksRef.on('value', resp =>{
            const myTricksObject =this.snapshotToArray(resp)[0]
             if(myTricksObject){
@@ -33,6 +33,10 @@ class Store {
 		        		'username': authStore.user.username,
 		        		'myTricks' : this.myTricks        	
 		        })	
+            }else{
+            	myTricksRef = firebase.database().ref('myTricks/')
+                let newData = myTricksRef.push();
+                newData.set({"username": authStore.user.username, "myTricks" : []});
             }            
         })
 	}
