@@ -27,15 +27,21 @@ POPUPS:
 -(maybe) other tutorials/user content
 
 BUGS:
--there is something wrong with the fountain node, it is all black and has no gif in its popup
--selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big?
+-clicking any sort button creates a popup at the 3 ball sort button
+-list goes past the bottom of the graph when 3 4 and 5 are all expanded, even 4 and 5 collapsed it still sticks out past the bottom
+-selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 -some gifs are smaller than others, for example, Alex is really small
 -sometimes clicking a node takes us directly to libraryofjuggling.com, it has to do with the popup opening on mouse down instead of mouse up I think. It only happens when the link lines up with where the mouse is
 
 MINOR:
+-5551 has no difficulty, it has no anything
+-make 050 catches be 50 catches
 -make ball num collapse indicator arrows more obvious somehow
 - Indicator for which view we are in
 - Ask if sure when removing from my list
+
+Broken patterns:
+-fountain, 5551, three in one,
 
 Later : 
 -(maybe)scrape other tutorial links
