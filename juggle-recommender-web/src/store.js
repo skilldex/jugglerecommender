@@ -79,7 +79,7 @@ class Store {
 		uiStore.updateRootTricks()
 	}
 	@action setCatches=(catches, trickKey)=>{
- 		this.myTricks[trickKey].catches = catches
+ 		this.myTricks[trickKey].catches = catches.replace(/^0+/,'');
  		this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  	}
