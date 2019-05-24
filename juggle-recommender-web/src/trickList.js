@@ -143,7 +143,7 @@ sortClicked=(type)=>{
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
 						<img src={legendImg} alt="legendImg" width="92%"/>						
 						<br></br>
-						<span onClick={()=>{uiStore.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "+" : "-"}</span>
+						<span onClick={()=>{uiStore.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "-" : "+"}</span>
 						<h3 onClick={()=>{uiStore.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["3"] ?
@@ -154,7 +154,7 @@ sortClicked=(type)=>{
 						
 					</div>
 					<div>
-						<span onClick={()=>{uiStore.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "+" : "-"}</span>
+						<span onClick={()=>{uiStore.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "-" : "+"}</span>
 						<h3 onClick={()=>{uiStore.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["4"] ?
@@ -164,7 +164,7 @@ sortClicked=(type)=>{
 						}
 					</div>
 					<div>	
-						<span onClick={()=>{uiStore.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "+" : "-"}</span>
+						<span onClick={()=>{uiStore.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "-" : "+"}</span>
 						<h3 onClick={()=>{uiStore.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["5"] ?
