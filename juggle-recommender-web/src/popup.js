@@ -39,7 +39,6 @@ class Popup extends Component {
         }
         targetElement = targetElement.parentNode;
       } while (targetElement);
-      console.log('outside')
       if (uiStore.popupCatchEditable){
         uiStore.toggleCatchEdit()
       }

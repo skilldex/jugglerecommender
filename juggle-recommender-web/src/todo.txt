@@ -1,6 +1,10 @@
 
-weird bug:
-	if not signed in and you have a few tricks selected and then you add a trick to my tricks, it unselects some of the selected tricks. If you are signed in it all works as desired.
+when logged in only, all tricks become unselected when I add a trick to my list:
+
+	**This issue has been narrowed down to line ~30 of store.js
+			            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
+	**Somehow on or right around this line uiStore.selectedTricks.length gets reset to 0 
+
 Next:
 	-make animation less crazy
 
@@ -31,10 +35,7 @@ BUGS:
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 
 MINOR:
--Remember how scrolled the side bar is so that when it collapses it can expand to the same spot
--Maybe can get rid of a little lag by updating catches when edit button gets clicked, not every time a new digit is input
 -Make down arrow to show that scrolling is possible on cards
--When editing a pattern with 0 catches, dont show the 0
 -(maybe?)Indicator for which view we are in
 
 Later : 
@@ -43,6 +44,7 @@ Later :
 -(maybe?)add loading graphic
 -(maybe?)make checkboxes for showing (related, depends, prereqs) in graph
 -get more patterns brought in
+-make a 2b section
 
 IDEAS:
 	-it would be nice to compare gifs of different tricks side by side,

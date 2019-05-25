@@ -11,47 +11,98 @@ import './App.css';
 @observer
 class TrickList extends Component {
 	 	state = {
- 		sortType: 'alphabetical'
+ 		sortType: 'alphabetical',
+ 		expandedSectionsPositions : {
+			'3' : 0,
+			'4' : 0,
+			'5' : 0
+		}
 	}
 	//TODO: move to general utility file
-	alphabeticalSortObject(data, attr) {
-	    var arr = [];
-	    for (var prop in data) {
+alphabeticalSortObject(data, attr) {
+    var arr = [];
+    for (var prop in data) {
 
-	        if (data.hasOwnProperty(prop)) {
-	            var obj = {};
-	            obj[prop] = data[prop];
-	            obj.tempSortName = data[prop][attr];
-	            arr.push(obj);
-	        }
-	    }
-	    arr.sort(function(a, b) {
-	        var at = a.tempSortName,
-	            bt = b.tempSortName;
-	        return at > bt ? 1 : ( at < bt ? -1 : 0 );
-	    });
-	    var result = {};
-	    for (var i=0, l=arr.length; i<l; i++) {
-	        var obj = arr[i];
-	        delete obj.tempSortName;
-	        for (var prop in obj) {
-	            if (obj.hasOwnProperty(prop)) {
-	                var id = prop;
-	            }
-	        }
-	        var item = obj[id];
-	        result[Object.keys(obj)] = item;
-	    }
-	    return result;
-	}
+        if (data.hasOwnProperty(prop)) {
+            var obj = {};
+            obj[prop] = data[prop];
+            obj.tempSortName = data[prop][attr];
+            arr.push(obj);
+        }
+    }
+    arr.sort(function(a, b) {
+        var at = a.tempSortName,
+            bt = b.tempSortName;
+        return at > bt ? 1 : ( at < bt ? -1 : 0 );
+    });
+    var result = {};
+    for (var i=0, l=arr.length; i<l; i++) {
+        var obj = arr[i];
+        delete obj.tempSortName;
+        for (var prop in obj) {
+            if (obj.hasOwnProperty(prop)) {
+                var id = prop;
+            }
+        }
+        var item = obj[id];
+        result[Object.keys(obj)] = item;
+    }
+    return result;
+}
 
 sortClicked=(type)=>{
 	uiStore.toggleSortTypeShow()
 	this.setState({sortType : type})
+	console.log('doc',document.getElementById('trickList3').scrollTop)
 }
- 
- render() {
 
+toggleExpandedSection(num){
+	if (uiStore.expandedSections[num]){
+		this.recordScrollerPosition([num])		
+	}
+	uiStore.toggleExpandedSection(num)	
+}
+
+recordScrollerPosition(nums){
+	let expSecPos = {...this.state.expandedSectionsPositions};
+	for (const num of nums){		
+		if(document.getElementById('trickList'+num)){
+			expSecPos[num] = document.getElementById('trickList'+num).scrollTop
+		}
+	}
+	this.setState({'expandedSectionsPositions':expSecPos})
+}
+
+setListExpanded(){
+	if (uiStore.listExpanded){
+		this.recordScrollerPosition(['3','4','5'])	
+		uiStore.setListExpanded(!uiStore.listExpanded)
+	}else{
+		uiStore.setListExpanded(!uiStore.listExpanded)
+	}						
+}
+
+setScrollerPositions() {
+	const nums = ['3','4','5']
+	for (var i = 0; i <3; i++){
+		const num = nums[i]
+	 	const expPos = this.state.expandedSectionsPositions[num]
+	    function setPositions() {
+			if(document.getElementById('trickList'+num)){
+    			document.getElementById('trickList'+num).scrollTop = expPos
+			}
+		}
+	    setTimeout(function() {
+	        setPositions();
+	    }, 10);
+	}
+}
+
+componentDidUpdate() {
+  this.setScrollerPositions()
+}
+
+render() {
  	 window.onclick = function(event) {
  	 	if (event.srcElement['alt'] != 'showSortMenu') {
  	 		if (document.getElementById("myDropdown")){
@@ -112,8 +163,7 @@ sortClicked=(type)=>{
 										"textAlign" : "right", 
 										"paddingRight" : "15px",
 										"display" : "block"}} 
-								onClick={() => uiStore.setListExpanded(!uiStore.listExpanded)
-						}>{uiStore.listExpanded ? "-" : "+"}</label>
+								onClick={() => this.setListExpanded()}>{uiStore.listExpanded ? "-" : "+"}</label>
 				 		<div className="listButtonDiv">
 							<button className={uiStore.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("myTricks")}}>★Starred</button>
 							<button className={uiStore.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("allTricks")}}>All</button>
@@ -143,32 +193,34 @@ sortClicked=(type)=>{
 						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
 						<img src={legendImg} alt="legendImg" width="92%"/>						
 						<br></br>
-						<span onClick={()=>{uiStore.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "-" : "+"}</span>
-						<h3 onClick={()=>{uiStore.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
+						<span onClick={()=>{this.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "-" : "+"}</span>
+						<h3 onClick={()=>{this.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["3"] ?
-							<div className={tricks["3"].length > 1 ? "listSection" : ""}> 
+							<div id='trickList3' 
+								defaultScrollTop = {this.state.expandedSectionsPositions["3"]}
+								className={tricks["3"].length > 1 ? "listSection" : ""}> 
 							{tricks["3"]}
 							</div> : null
 						}
 						
 					</div>
 					<div>
-						<span onClick={()=>{uiStore.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "-" : "+"}</span>
-						<h3 onClick={()=>{uiStore.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
+						<span onClick={()=>{this.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "-" : "+"}</span>
+						<h3 onClick={()=>{this.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["4"] ?
-							<div className={tricks["4"].length > 1 ? "listSection" : ""}> 
+							<div  id='trickList4' className={tricks["4"].length > 1 ? "listSection" : ""}> 
 							{tricks["4"]}
 							</div> : null
 						}
 					</div>
 					<div>	
-						<span onClick={()=>{uiStore.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "-" : "+"}</span>
-						<h3 onClick={()=>{uiStore.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
+						<span onClick={()=>{this.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "-" : "+"}</span>
+						<h3 onClick={()=>{this.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
 						{sort}
 						{uiStore.expandedSections["5"] ?
-							<div className={tricks["5"].length > 19 ? "listSection" : ""}> 
+							<div  id='trickList5' className={tricks["5"].length > 19 ? "listSection" : ""}> 
 							{tricks["5"]}
 							</div> : null
 						}
