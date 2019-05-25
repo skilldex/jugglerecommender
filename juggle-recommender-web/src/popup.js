@@ -11,6 +11,8 @@ import './popup.css';
 @observer
 class Popup extends Component {
 
+
+
 	onCatchesChange=(e)=>{
 
 	 	const re = /^[0-9\b]+$/;
@@ -27,6 +29,21 @@ class Popup extends Component {
   }
 
 	render() {
+    document.addEventListener("click", (evt) => {
+      const inputElement = document.getElementById("catchInput");
+      const buttonElement = document.getElementById("editCatchButton");
+      let targetElement = evt.target; // clicked element
+      do {
+        if (targetElement == inputElement || targetElement == buttonElement) {
+          return;
+        }
+        targetElement = targetElement.parentNode;
+      } while (targetElement);
+      console.log('outside')
+      if (uiStore.popupCatchEditable){
+        uiStore.toggleCatchEdit()
+      }
+    });
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButton" style={{"margin-bottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
@@ -45,12 +62,13 @@ class Popup extends Component {
               		<div>
               			<label>Catches: </label><br/>
               			{uiStore.popupCatchEditable ?
-              			<input type="number" 
+              			<input id = "catchInput"
+                            type="number" 
                            onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
                            onChange={this.onCatchesChange}/> :
               			<span>{store.myTricks[popupTrickKey].catches}</span>}
 
-						<img src={editIcon} class="editCatchIcon" alt="toggleCatchEdit" 
+						<img id="editCatchButton" src={editIcon} class="editCatchIcon" alt="toggleCatchEdit" 
 					 			onClick={uiStore.toggleCatchEdit} height='15px'width='15px'/>
 
               		</div>: null}
