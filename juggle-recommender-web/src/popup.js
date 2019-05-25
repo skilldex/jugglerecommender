@@ -33,7 +33,7 @@ class Popup extends Component {
 					top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y)
 				}} className="popupDiv">
               		<h3>{store.myTricks[popupTrickKey] ? "★" : ""}{jugglingLibrary[popupTrickKey].name}</h3> 
-              		{store.myTricks[popupTrickKey] && authStore.user ? 
+              		{store.myTricks[popupTrickKey] ? 
               		<div>
               			<label>Catches: </label><br/>
               			{uiStore.popupCatchEditable ?
