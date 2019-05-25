@@ -15,11 +15,9 @@ User Launch:
 	-allow users to add tricks
 	-toggle tricks by user added trick
 	-we will want usernames instead of just email so we can show them to other users
-	-hollow and just show thick borders the node with 0 catches
-		-this would be done in updateGraphData in uiStore, all through the function there are these:
+	-if a trick has 0 catches, whether it is starred or not, make it white with a thick border colored based of default difficulty. If a trick has > 0 catches, then color it based on the number of catches where 1 is red and green is the most catches of any recorded trick with that number of balls
+		**this would be done in updateGraphData in uiStore, all through the function there are these:
 		color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
-		We either need to pass through whether or not we are dealing with a myTrick or an allTrick,
-		if myTrick, then business as normal, but in allTricks we want border cnahed and centers hollow.
 
 TAGS:
 	-(maybe?) add style
@@ -32,13 +30,16 @@ POPUPS:
 
 BUGS:
 -clicking any sort button creates a popup at the 3 ball sort button
--selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 
 MINOR:
+-not all popups have the same width, i think it is because gifs are not a standard size
 -Make down arrow to show that scrolling is possible on cards
+	*should it go away when we are at the bottom?
+	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
 -(maybe?)Indicator for which view we are in
 
-Later : 
+Later :
+-make popups be draggable divs
 -(maybe?)scrape other tutorial links
 -Style expand arrows as icons
 -(maybe?)add loading graphic
@@ -50,9 +51,7 @@ IDEAS:
 	-it would be nice to compare gifs of different tricks side by side,
 		to do this we would want to be able to show more than one popup
 		and maybe made the popups draggable so they can be put right next to each other
-	-Might be a good idea to download the whole site incase it gets taken down and we lose the gifs
-	-A way to make nodes gravitate towards visible area would be amazing
-	-Make learn to juggle nodes, some simple 1b stuff, 2b stuff, the more different patterns the better so they can keep getting that sense of accomplishment. All the two ball steps from the various trucks could even be added with ankmations..
+	-2b stuff might be useful, the more different patterns the better so they can keep getting that sense of accomplishment. All the two ball steps from the various trucks could even be added with animations..
 
 COLORING IDEAS:
 - The predone difficulty color could be based on all user data

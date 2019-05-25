@@ -83,7 +83,6 @@ class App extends Component {
 		                onRequestClose={ () => {
 		                    this.setState({ isPaneOpen: false });}}>
 		                <div className="instructions">
-
 		                	<h2>Instructions</h2>
 							<span className="info">
 								• ★ Star tricks you know to add to "Starred" tricks.<br/>
@@ -112,7 +111,6 @@ class App extends Component {
 		                		• Contribute your records to community statistics <br/> 
 							</span>
 		                	<Auth/><br/>
-
 						</div><br/>
 		            </SlidingPane>
 					<div className="header">
@@ -131,7 +129,6 @@ class App extends Component {
 					<TrickGraph 
 						nodes = {uiStore.nodes}
 						edges = {uiStore.edges}/>
-
 				</div>
 			</div>
 		);
