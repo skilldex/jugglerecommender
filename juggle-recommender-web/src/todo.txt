@@ -30,6 +30,7 @@ POPUPS:
 -(maybe?) other tutorials/user content
 
 BUGS:
+-adding number of catches when not logged in crashes it
 -clicking any sort button creates a popup at the 3 ball sort button
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 

@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
+import authStore from "./authStore"
 import { observer } from "mobx-react"
 import editIcon from './editIcon.png'
 import './App.css';
@@ -32,11 +33,12 @@ class Popup extends Component {
 					top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y)
 				}} className="popupDiv">
               		<h3>{store.myTricks[popupTrickKey] ? "★" : ""}{jugglingLibrary[popupTrickKey].name}</h3> 
-              		{store.myTricks[popupTrickKey] ? 
+              		{store.myTricks[popupTrickKey] && authStore.user ? 
               		<div>
               			<label>Catches: </label><br/>
               			{uiStore.popupCatchEditable ?
-              			<input defaultValue = {store.myTricks[popupTrickKey].catches} type="number" onChange={this.onCatchesChange}/> :
+              			<input type="number" 
+                           onChange={this.onCatchesChange}/> :
               			<span>{store.myTricks[popupTrickKey].catches}</span>}
 
 						<img src={editIcon} class="editCatchIcon" alt="toggleCatchEdit" 
