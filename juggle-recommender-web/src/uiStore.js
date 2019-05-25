@@ -214,7 +214,10 @@ class UIStore {
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			let label = rootTrick.name
 		 			if(involvedRoot == 3){
-		 				label = "★" + rootTrick.name
+		 				label = rootTrick.name
+		 				if (store.myTricks[trickKey]){
+		 					label = "★" + label
+		 				}
 		 			}
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,

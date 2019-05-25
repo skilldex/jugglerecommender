@@ -1,9 +1,6 @@
 
-
-
--clicking anywhere other than the input when catches are editable should make input not editable
-
-
+weird bug:
+	if not signed in and you have a few tricks selected and then you add a trick to my tricks, it unselects some of the selected tricks. If you are signed in it all works as desired.
 Next:
 	-make animation less crazy
 
@@ -30,7 +27,6 @@ POPUPS:
 -(maybe?) other tutorials/user content
 
 BUGS:
--adding number of catches when not logged in crashes it
 -clicking any sort button creates a popup at the 3 ball sort button
 -selecting a pattern in the 'all' list makes it big and stars it just like if it was a astarred pattern, maybe we should ditch the star but leave it big when it is selected?
 
