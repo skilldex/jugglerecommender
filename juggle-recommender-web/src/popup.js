@@ -10,13 +10,21 @@ import './popup.css';
 
 @observer
 class Popup extends Component {
+
 	onCatchesChange=(e)=>{
+
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
 	       const catches = e.target.value
 	   	   store.setCatches(catches, uiStore.popupTrick.id)
   	  	}
 	}
+
+  onCatchesKeyPress(target) {
+    if(target.charCode==13){  
+      uiStore.toggleCatchEdit()
+    } 
+  }
 
 	render() {
 		const graphDiv = document.getElementById("graphDiv")
@@ -38,6 +46,7 @@ class Popup extends Component {
               			<label>Catches: </label><br/>
               			{uiStore.popupCatchEditable ?
               			<input type="number" 
+                           onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
                            onChange={this.onCatchesChange}/> :
               			<span>{store.myTricks[popupTrickKey].catches}</span>}
 

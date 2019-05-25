@@ -79,7 +79,11 @@ class Store {
 		uiStore.updateRootTricks()
 	}
 	@action setCatches=(catches, trickKey)=>{
- 		this.myTricks[trickKey].catches = catches.replace(/^0+/,'');
+		if (catches.length>1){
+ 			catches = catches.replace(/^0+/,'');
+ 		}
+
+ 		this.myTricks[trickKey].catches = catches
  	}
 	@action addToMyTricks=(trickKey)=>{
 		var tricksToReselect = uiStore.selectedTricks

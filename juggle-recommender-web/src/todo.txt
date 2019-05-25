@@ -1,7 +1,7 @@
 
 
 
-
+-clicking anywhere other than the input when catches are editable should make input not editable
 
 
 Next:
