@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import store from "./store"
 import authStore from "./authStore"
 import "./App.css"
 import "./auth.css";

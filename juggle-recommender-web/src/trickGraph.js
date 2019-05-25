@@ -2,13 +2,10 @@ import React,{Component} from 'react'
 import store from './store'
 import uiStore from './uiStore'
 import Graph from 'vis-react'
-import {toJS} from "mobx"
 import './trickGraph.css';
 
 class TrickGraph extends Component {
     render() {
-      uiStore.nodes
-      uiStore.edges
       const nodes = JSON.parse(JSON.stringify(uiStore.nodes))
       const edges = JSON.parse(JSON.stringify(uiStore.edges))
     const data = {
@@ -22,7 +19,6 @@ class TrickGraph extends Component {
     const events = {
     select: function(event) {
         if (store.isMobile){uiStore.setListExpanded(false)}
-        var { nodes, edges } = event;
         uiStore.setPopupTrick({
           'id': event.nodes[0],
           'x' : event.pointer.DOM.x,

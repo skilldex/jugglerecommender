@@ -1,4 +1,4 @@
-import { action, configure, computed, observable, toJS} from "mobx"
+import { action, configure, computed, observable} from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import authStore from './authStore'
@@ -58,12 +58,8 @@ class Store {
 	@action getSavedTricks=()=>{
 		if(authStore.user){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
-	  	 	let myTricksKey = ""
 	  	 	myTricksRef.on('value', resp =>{
 	           const myTricksObject =this.snapshotToArray(resp)[0]
-	            if(myTricksObject){
-	            	myTricksKey = myTricksObject.key
-	            }
 	            if(myTricksObject && myTricksObject.myTricks){
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)

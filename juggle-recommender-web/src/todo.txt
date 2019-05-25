@@ -6,6 +6,7 @@ when logged in only, all tricks become unselected when I add a trick to my list:
 	**Somehow on or right around this line uiStore.selectedTricks.length gets reset to 0 
 
 Next:
+	-make a signout button next to 'signed in as..'
 	-make animation less crazy
 
 Refactor : 
@@ -32,11 +33,14 @@ BUGS:
 -clicking any sort button creates a popup at the 3 ball sort button
 
 MINOR:
--not all popups have the same width, i think it is because gifs are not a standard size
+-not all gifs are the same size
 -Make down arrow to show that scrolling is possible on cards
 	*should it go away when we are at the bottom?
 	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
 -(maybe?)Indicator for which view we are in
+-I can't delete myTricks for user a@a.com out of the prod db and it seems to be stuck with the old format where
+	tricks are just keys, not objects that hold catches as well
+
 
 Later :
 -make popups be draggable divs

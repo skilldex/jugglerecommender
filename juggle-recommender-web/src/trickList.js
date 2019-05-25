@@ -37,9 +37,9 @@ alphabeticalSortObject(data, attr) {
     });
     var result = {};
     for (var i=0, l=arr.length; i<l; i++) {
-        var obj = arr[i];
+        obj = arr[i];
         delete obj.tempSortName;
-        for (var prop in obj) {
+        for (prop in obj) {
             if (obj.hasOwnProperty(prop)) {
                 var id = prop;
             }
@@ -104,7 +104,7 @@ componentDidUpdate() {
 
 render() {
  	 window.onclick = function(event) {
- 	 	if (event.srcElement['alt'] != 'showSortMenu') {
+ 	 	if (event.srcElement['alt'] !== 'showSortMenu') {
  	 		if (document.getElementById("myDropdown")){
  				if (document.getElementById("myDropdown").classList.contains('show')){
  					uiStore.toggleSortTypeShow()
@@ -141,13 +141,13 @@ render() {
 				cardClass = 'selectedListCard'
 			}
 			if(uiStore.selectedList === "allTricks" || 
-				uiStore.selectedList === "myTricks" && store.myTricks[trickKey]
+				(uiStore.selectedList === "myTricks" && store.myTricks[trickKey])
 			){
 				tricks[trick.num.toString()].push(
 					<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
 						className={cardClass} 
 						key={trickKey + "div"} 
-						style={{backgroundColor: cardClass == 'listCard' ?
+						style={{backgroundColor: cardClass === 'listCard' ?
 						uiStore.getInvolvedNodeColor(trick.difficulty, 2).background : uiStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 						 {store.myTricks[trickKey] ? 
 	  					 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
@@ -169,7 +169,7 @@ render() {
 							<button className={uiStore.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("allTricks")}}>All</button>
 						</div>
 			 			<div className="search" >
-				 			<input value = {uiStore.searchInput} defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={uiStore.searchInputChange}/>
+				 			<input defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={uiStore.searchInputChange}/>
 				 		</div>
 			 		</div>
 	const sort = <div style={{"display" : "inline-block", "marginLeft" : "5px"}}>
@@ -198,7 +198,6 @@ render() {
 						{sort}
 						{uiStore.expandedSections["3"] ?
 							<div id='trickList3' 
-								defaultScrollTop = {this.state.expandedSectionsPositions["3"]}
 								className={tricks["3"].length > 1 ? "listSection" : ""}> 
 							{tricks["3"]}
 							</div> : null

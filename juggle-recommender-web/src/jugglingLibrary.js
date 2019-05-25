@@ -2535,13 +2535,8 @@ delete jugglingLibrary["Half-Box(441)"]
 jugglingLibrary["ss531"] = jugglingLibrary["531"]
 delete jugglingLibrary["531"]
 
-
-
-
-
 let trickNamesToKeys = {}
 let finalLibrary = {}
-let defaultTricks = []
 Object.keys(jugglingLibrary).forEach((trickKey, i) => {
     const trick = jugglingLibrary[trickKey]
     trickKey = trickKey.replace("-","")
@@ -2566,9 +2561,7 @@ Object.keys(jugglingLibrary).forEach((trickKey, i) => {
             }
     }
     trick.name = trick.name.trim()
-
     trick.gifUrl = trick.gifUrl.replace("'","")
-
     trickNamesToKeys[trick.name] = trickKey
     finalLibrary[trickKey] = trick
 })
@@ -2595,7 +2588,6 @@ Object.keys(finalLibrary).forEach((trickKey, i) => {
                         prereq = prereq + "(" + 5 + "b)"
                     }
             }
-
             prereq = prereq.trim()
             const prereqKey = trickNamesToKeys[prereq] ? trickNamesToKeys[prereq] : prereq
             if(!trickNamesToKeys[prereq]){

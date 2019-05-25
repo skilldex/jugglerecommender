@@ -1,4 +1,4 @@
-import { action, configure, computed, observable, toJS} from "mobx"
+import { action, configure, observable} from "mobx"
 import store from "./store"
 import {jugglingLibrary} from './jugglingLibrary.js'
 
@@ -89,7 +89,7 @@ class UIStore {
 	 	}else{
 		 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
 				if(this.selectedList === "allTricks" || 
-					this.selectedList === "myTricks" && store.myTricks[trickKey]
+					(this.selectedList === "myTricks" && store.myTricks[trickKey])
 				){
 					const trick = jugglingLibrary[trickKey]
 					let shouldPushTrick = false			
@@ -122,7 +122,7 @@ class UIStore {
 	@action getInvolvedNodeColor=(difficulty, involved)=>{
 		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 60%)"
       	let borderWidth = 1
-      	if(involved == 3){
+      	if(involved === 3){
       		borderWidth = 10
       	}
       	const color = {
@@ -142,21 +142,21 @@ class UIStore {
 
 	@action getInvolvedNodeSize=(involved)=>{
 		let size = 25 //default
-		if(involved == 3){
+		if(involved === 3){
 			size = 100
 		}
 		return size
 	}
 	@action getInvolvedNodeFont=(involved)=>{
 		let fontSize = 14 //default
-		if(involved == 3){
+		if(involved === 3){
 			fontSize = 24
 		}
 		return {size: fontSize}
 	}
 	@action getInvolvedNodeMass =(involved)=>{
 		let mass = 2
-		if(involved == 3){
+		if(involved === 3){
 			mass = 6
 		}
 		return mass
@@ -214,7 +214,7 @@ class UIStore {
 
 	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			let label = rootTrick.name
-		 			if(involvedRoot == 3){
+		 			if(involvedRoot === 3){
 		 				label = rootTrick.name
 		 				if (store.myTricks[trickKey]){
 		 					label = "★" + label
@@ -241,7 +241,7 @@ class UIStore {
 		 					tempNodes[prereqKey].involved > involvedPrereq
 		 				){
 		 					involvedPrereq = tempNodes[prereqKey].involved
-			 				if(involvedPrereq == 3){
+			 				if(involvedPrereq === 3){
 				 				label = "★" + prereq.name
 				 			}
 		 				}
@@ -265,7 +265,7 @@ class UIStore {
 		 				let label = dependent.name
 		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
 		 					involvedDependent = tempNodes[dependentKey].involved
-			 				if(involvedDependent == 3){
+			 				if(involvedDependent === 3){
 				 				label = "★" + dependent.name
 				 			}
 		 				}

@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import { observer } from "mobx-react"
-import {toJS} from "mobx"
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import Popup from './popup.js'
-import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
-import Swipe from 'react-easy-swipe';
 import Auth from './auth.js'
 import authStore from './authStore.js'
 import Modal from 'react-modal';
@@ -41,9 +38,7 @@ class App extends Component {
  		swipedList : false
 	}
 	componentDidMount(){
-		console.log("mounted")
 		store.getSavedTricks()	
-		console.log("finished loading")
 		Modal.setAppElement(this.el);
 		firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
@@ -70,8 +65,6 @@ class App extends Component {
  		console.log('startHandled')
  	}
  	render(){
- 		uiStore.nodes
- 		uiStore.edges
 		return (
 			<div className="App">
 				<div ref={ref => this.el = ref}>		            
