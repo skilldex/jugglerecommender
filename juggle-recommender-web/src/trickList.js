@@ -148,12 +148,16 @@ render() {
 			if(uiStore.selectedList === "allTricks" || 
 				(uiStore.selectedList === "myTricks" && store.myTricks[trickKey])
 			){
+				const cardColor = uiStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
+				uiStore.getInvolvedNodeColor(trick.difficulty, 2).border : uiStore.getInvolvedNodeColor(trick.difficulty, 2).background 
+				
 				tricks[trick.num.toString()].push(
 					<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
 						className={cardClass} 
 						key={trickKey + "div"} 
-						style={{backgroundColor: cardClass === 'listCard' ?
-						uiStore.getInvolvedNodeColor(trick.difficulty, 2).background : uiStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
+						style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
+							uiStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}
+					>
 						 {store.myTricks[trickKey] ? 
 	  					 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :
 						 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.addToMyTricks(trickKey);e.stopPropagation()}}>&#9734;</button>}

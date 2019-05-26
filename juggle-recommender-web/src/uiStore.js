@@ -179,7 +179,7 @@ class UIStore {
 
 	@action getInvolvedNodeBorderWidth=(involved)=>{
 		
-		return 1
+		return 2
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
