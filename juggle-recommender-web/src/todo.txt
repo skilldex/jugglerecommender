@@ -1,3 +1,6 @@
+v 0.9
+
+
 -get rid of popup when signin or insytructions slider are shown
 
 Easy:
@@ -7,8 +10,6 @@ Medium:
 	- switch from 3 lists to filter dropdown
 	- add tags to filter dropdown
 	- add balls to filter dropdown
-
-
 
 Unknown difficulty:
 	-make animation less crazy (vis.js is on archive.org)
