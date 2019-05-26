@@ -109,7 +109,9 @@ class App extends Component {
 					<div className="header">
 						<span className="title">Juggledex</span><span className="version"> v 0.7</span>
 				        <button className="headerButton" onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
-				        <button className="headerButton" onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>
+				        {authStore.user ? 
+				        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
+				        <button className="headerButton" onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>}
 					</div>
 					{!this.state.isPaneOpen && !this.state.isLoginPaneOpen ?
 						<TrickList 

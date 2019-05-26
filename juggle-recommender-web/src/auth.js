@@ -10,15 +10,7 @@ class Auth extends Component {
         error : ""
     }
 
-    signOut() {
-        return new Promise(resolve => {
-            firebase.auth().signOut().then(() => {
-                authStore.setUser(null)
-                console.log('anything')
-                resolve("signed out")
-            });
-        })
-    }
+
     signIn=()=>{        
         this.loginUser(this.state.username, this.state.password).then((response)=>{
             if(response.message){
