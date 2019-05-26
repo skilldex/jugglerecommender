@@ -8,8 +8,6 @@ Medium:
 	- add tags to filter dropdown
 	- add balls to filter dropdown
 
-
-
 Unknown difficulty:
 	-make animation less crazy (vis.js is on archive.org)
 	-make multi-termed search
