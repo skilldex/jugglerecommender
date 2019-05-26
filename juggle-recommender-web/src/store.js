@@ -26,6 +26,7 @@ class Store {
             if(myTricksObject){
             	myTricksKey = myTricksObject.key
             }
+            myTricksRef.off()
             if(myTricksKey){
 	            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
 		        userTricksRef.set({	        	
