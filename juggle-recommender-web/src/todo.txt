@@ -1,68 +1,56 @@
-v 0.9
-
-
--get rid of popup when signin or insytructions slider are shown
-
-Easy:
-	-setShowSignInDialog needs moved to uiStore
-
-Medium:
-	- switch from 3 lists to filter dropdown
-	- add tags to filter dropdown
-	- add balls to filter dropdown
-
-Unknown difficulty:
-	-make animation less crazy (vis.js is on archive.org)
+v 1.1:
 	-make multi-termed search
-	
-User Launch:
-	-allow users to add tricks
 	-toggle tricks by user added trick
 	-we will want usernames instead of just email so we can show them to other users
-	-if a pattern has no catches input, make it's background white, 
-		once it has catches, make its background filled
-	-find some coloring scheme based on catches
+	-make popups be draggable divs
 
-TAGS:
-	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
+v 1.0:
+
+	- add tags to filter dropdown
+	- add balls to filter dropdown
+	-allow users to add tricks
+	-(maybe?)Indicator for which view we are in (water mark star background)
+	-Make down arrow to show that scrolling is possible on cards
+	*should it go away when we are at the bottom?
+	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
+	- find some coloring scheme that will work for any case including user added
+
+v 0.9:
+_______
+	-make animation less crazy (vis.js is on archive.org)
+	- switch from 3 lists to filter dropdown
+	- move sort to search
+	- get rid of popup when signin or instructions slider are shown
+	- center selection especially when list is open (maybe make graph smaller)
+	
+v 0.8:
+______ 
+	-cross origin bug
+	- disable analytics from def
+
+==========
+refactor:
+	-setShowSignInDialog needs moved to uiStore
+	-make a graphStore to get stuff out of uiStore
 
 POPUPS:
 -(maybe?)list depends and prereqs
+- related 
 -(maybe?) other tutorials/user content
 
-BUGS:
--clicking any sort button creates a popup at the 3 ball sort button
-
-MINOR:
--not all gifs are the same size
--Make down arrow to show that scrolling is possible on cards
-	*should it go away when we are at the bottom?
-	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
--(maybe?)Indicator for which view we are in
--I can't delete myTricks for user a@a.com out of the prod db and it seems to be stuck with the old format where
-	tricks are just keys, not objects that hold catches as well
--make a graphStore to get stuff out of uiStore
-
+Disappears with filters
+	-clicking any sort button creates a popup at the 3 ball sort button
 
 Later :
--make popups be draggable divs
--(maybe?)scrape other tutorial links
 -Style expand arrows as icons
--(maybe?)add loading graphic
--(maybe?)make checkboxes for showing (related, depends, prereqs) in graph
--get more patterns brought in
+-Researching other data sources to inform user based tricks 
 -make a 2b section
+-compare gifs of different tricks side by side,
+- node size based on zoom
+- opacity based on closeness to qualify
 
-IDEAS:
-	-it would be nice to compare gifs of different tricks side by side,
-		to do this we would want to be able to show more than one popup
-		and maybe made the popups draggable so they can be put right next to each other
-	-2b stuff might be useful, the more different patterns the better so they can keep getting that sense of accomplishment. All the two ball steps from the various trucks could even be added with animations..
-
-COLORING IDEAS:
-- The predone difficulty color could be based on all user data
--  Once you have done a trick, it could be made solid with a color that is hooked up to your length. The range could go from 0(red) to users-longest-trick(green) <-- not sure though, this may be no good with one really long wrong screwing up all other colors. 
-
+May disappear with filter route:
+	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
 
 
