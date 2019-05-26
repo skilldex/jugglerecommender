@@ -119,16 +119,23 @@ class UIStore {
 	 	this.updateGraphData()
 	}
 
-	@action getInvolvedNodeColor=(difficulty, involved)=>{
+	@action getInvolvedNodeColor=(difficulty, involved, trickKey)=>{
 		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 60%)"
-      	let borderWidth = 1
-      	if(involved === 3){
-      		borderWidth = 10
-      	}
-      	const color = {
+
+      	let color = {
       		background : colorString,
             border:  'black',
-            borderWidth : borderWidth
+        }
+        if(store.myTricks[trickKey] && store.myTricks[trickKey].catches > 0){
+        	color = {
+				background : colorString,
+            	border:  'black',
+        	}
+        }else if (store.myTricks[trickKey] && store.myTricks[trickKey].catches == 0){
+        	color = {
+				background : "white",
+            	border:  colorString,
+        	}
         }
 		return color
 	}
@@ -161,6 +168,14 @@ class UIStore {
 		}
 		return mass
 	}
+
+	@action getInvolvedNodeBorderWidth=(involved)=>{
+		let borderWidth = 1
+		if(involved == 3){
+			borderWidth = 4
+		}
+		return borderWidth
+	}
 	@action updateGraphData=()=>{
  		let nodes = []
  		let tempNodes = {}
@@ -172,10 +187,11 @@ class UIStore {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: "★" + rootTrick.name,
-		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3, trickKey),
 		 				size : this.getInvolvedNodeSize(3),
 		 				font : this.getInvolvedNodeFont(3),
 		 				mass : this.getInvolvedNodeMass(3),
+		 				borderWidth : this.getInvolvedNodeBorderWidth(3)
 
 		 			}
 		 		}
@@ -186,7 +202,7 @@ class UIStore {
 			 				tempNodes[prereqKey] = {
 			 					id: prereqKey,
 			 					label: prereq.name,
-			 					color : this.getInvolvedNodeColor(prereq.difficulty, 1)
+			 					color : this.getInvolvedNodeColor(prereq.difficulty, 1, prereqKey)
 			 				}
 			 			}
 		 				edges.push({from: prereqKey, to: trickKey })
@@ -199,7 +215,7 @@ class UIStore {
 			 				tempNodes[dependentKey] = {
 			 					id: dependentKey,
 			 					label: dependent.name,
-			 					color : this.getInvolvedNodeColor(dependent.difficulty, 2)
+			 					color : this.getInvolvedNodeColor(dependent.difficulty, 2, dependentKey)
 			 				}
 			 			}
 		 				edges.push({from: trickKey, to: dependentKey })
@@ -223,11 +239,12 @@ class UIStore {
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: label,
-		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot),
+		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, involvedRoot, trickKey),
 		 				involved : involvedRoot,
 		 				size : this.getInvolvedNodeSize(involvedRoot),
 		 				font : this.getInvolvedNodeFont(involvedRoot),
 		 				mass : this.getInvolvedNodeMass(involvedRoot),
+		 				borderWidth : this.getInvolvedNodeBorderWidth(involvedRoot)
 		 			}	 			
 		 		}
 	 			if(rootTrick.prereqs){
@@ -249,11 +266,12 @@ class UIStore {
 		 				tempNodes[prereqKey] = {
 		 					id: prereqKey,
 		 					label: label,
-		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq),
+		 					color : this.getInvolvedNodeColor(prereq.difficulty, involvedPrereq, prereqKey),
 		 					involved : involvedPrereq,
 		 					size : this.getInvolvedNodeSize(involvedPrereq),
 		 					font : this.getInvolvedNodeFont(involvedPrereq),
 							mass : this.getInvolvedNodeMass(involvedPrereq),
+							borderWidth : this.getInvolvedNodeBorderWidth(involvedPrereq),
 		 				}
 		 				edges.push({from: prereqKey, to: trickKey })
 			 		})
@@ -273,12 +291,12 @@ class UIStore {
 		 				tempNodes[dependentKey] = {
 		 					id: dependentKey,
 		 					label: label,
-		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent),
+		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent, dependentKey),
 		 					involved : involvedDependent,
 		 					size : this.getInvolvedNodeSize(involvedDependent),
 		 			 		font : this.getInvolvedNodeFont(involvedDependent),
 		 			 		mass : this.getInvolvedNodeMass(involvedDependent),
-
+		 			 		borderWidth : this.getInvolvedNodeBorderWidth(involvedDependent),
 		 				}	
 		 				edges.push({from: trickKey , to: dependentKey })
 		 			})
