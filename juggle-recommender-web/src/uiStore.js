@@ -149,9 +149,9 @@ class UIStore {
 	}
 
 	@action getInvolvedNodeSize=(involved)=>{
-		let size = 25 //default
+		let size = 20 //default
 		if(involved === 3){
-			size = 100
+			size = 120
 		}
 		return size
 	}
