@@ -124,13 +124,13 @@ class UIStore {
 		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 60%)"
 
       	let color = {
-      		background : colorString,
-            border:  'black',
+      		background : "white",
+            border:  colorString,
         }
         if(store.myTricks[trickKey] && store.myTricks[trickKey].catches > 0){
         	color = {
 				background : colorString,
-            	border:  'black',
+            	border:  colorString,
         	}
         }else if (store.myTricks[trickKey] && store.myTricks[trickKey].catches == 0){
         	color = {
@@ -171,11 +171,8 @@ class UIStore {
 	}
 
 	@action getInvolvedNodeBorderWidth=(involved)=>{
-		let borderWidth = 1
-		if(involved == 3){
-			borderWidth = 4
-		}
-		return borderWidth
+		
+		return 5
 	}
 	@action updateGraphData=()=>{
  		let nodes = []

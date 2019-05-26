@@ -81,6 +81,7 @@ class Store {
  		}
 
  		this.myTricks[trickKey].catches = catches
+ 		uiStore.updateRootTricks()
  	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks[trickKey] = {
