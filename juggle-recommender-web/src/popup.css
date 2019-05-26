@@ -5,6 +5,16 @@
   border-radius: 5px;
   margin-right: 5px;
 }
+.addAndRemoveMyTricksButtonOnPopup{
+  font-size: 1.17em;
+  font-weight: bold;
+  box-shadow : 2px 0px 5px #888888;
+  padding : 0px;
+  border-radius: 5px;
+  margin-right: 5px;
+  width: 35px;
+  height: 35px;
+}
 .popupGif{
   width: 200px;
   height: 200px;

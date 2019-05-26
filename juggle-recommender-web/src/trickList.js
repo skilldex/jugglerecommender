@@ -12,6 +12,7 @@ import './App.css';
 class TrickList extends Component {
 	 	state = {
  		sortType: 'alphabetical',
+ 		listIsMinimized: false,
  		expandedSectionsPositions : {
 			'3' : 0,
 			'4' : 0,
@@ -75,9 +76,11 @@ recordScrollerPosition(nums){
 
 setListExpanded(){
 	if (uiStore.listExpanded){
-		this.recordScrollerPosition(['3','4','5'])	
+		this.recordScrollerPosition(['3','4','5'])
+		this.setState({'listIsMinimized':true})
 		uiStore.setListExpanded(!uiStore.listExpanded)
 	}else{
+		this.setState({'listIsMinimized':false})
 		uiStore.setListExpanded(!uiStore.listExpanded)
 	}						
 }
@@ -94,12 +97,14 @@ setScrollerPositions() {
 		}
 	    setTimeout(function() {
 	        setPositions();
-	    }, 10);
+	    }, 100);
 	}
 }
 
-componentDidUpdate() {
-  this.setScrollerPositions()
+componentDidUpdate(prevProps, prevState, snapshot) {
+	if (prevState.listIsMinimized && !this.state.listIsMinimized){
+	  this.setScrollerPositions()
+	}
 }
 
 render() {

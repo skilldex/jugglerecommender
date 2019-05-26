@@ -11,19 +11,22 @@ import './popup.css';
 class Popup extends Component {
 
 
-
+  state = {
+    catches : null
+  }
 	onCatchesChange=(e)=>{
 
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
 	       const catches = e.target.value
-	   	   store.setCatches(catches, uiStore.popupTrick.id)
+         this.setState({catches})
   	  	}
 	}
 
   onCatchesKeyPress(target) {
+    // If enter pressed
     if(target.charCode===13){  
-      uiStore.toggleCatchEdit()
+      uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
     } 
   }
 
@@ -39,23 +42,20 @@ class Popup extends Component {
         targetElement = targetElement.parentNode;
       } while (targetElement);
       if (uiStore.popupCatchEditable){
-        uiStore.toggleCatchEdit()
+        uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
       }
     });
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
-              		<button className="addAndRemoveMyTricksButton" style={{"marginBottom" : "10px"}} onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
- 		              <button className="addAndRemoveMyTricksButton" style={{"marginBottom" : "10px"}} onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
-		const selectTrickButton = uiStore.popupTrick && uiStore.selectedTricks.includes(uiStore.popupTrick.id) ? 
- 		              <button style={{"backgroundColor" : "darkgray", "marginBottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Unselect</button> :
- 		              <button style={{"backgroundColor" : "lightgray", "marginBottom" : "10px"}} onClick={()=>{uiStore.selectTricks([uiStore.popupTrick.id])}}>Select</button> 
+              		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
+ 		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
 		const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popup = uiStore.popupTrick && popupTrickKey ? 
 			    <div style={{left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
           					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
                        width : 260,}} 
               className="popupDiv">
-            <h3>{store.myTricks[popupTrickKey] ? "★" : ""}{jugglingLibrary[popupTrickKey].name}</h3> 
+            <h3>{addToMyTricksButton}{jugglingLibrary[popupTrickKey].name}</h3> 
             {store.myTricks[popupTrickKey] ? 
               <div>
           			<label>Catches: </label><br/>
@@ -66,12 +66,10 @@ class Popup extends Component {
                          onChange={this.onCatchesChange}/> :
             			<span>{store.myTricks[popupTrickKey].catches}</span>}
 						    <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-					 			     onClick={uiStore.toggleCatchEdit} height='15px'width='15px'/>
+					 			     onClick={()=>{uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)}} height='15px'width='15px'/>
               </div>: null}              		
             		<label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br/>
                 <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>
-          			{addToMyTricksButton}
-          			{selectTrickButton}
           			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
         				<a className="popupLink"
         				   href={jugglingLibrary[popupTrickKey].url} 
