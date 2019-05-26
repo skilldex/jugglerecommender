@@ -10,16 +10,17 @@ class Auth extends Component {
         error : ""
     }
 
-    SignOut() {
+    signOut() {
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {
-                window.sessionStorage.clear()
+                authStore.setUser(null)
+                console.log('anything')
                 resolve("signed out")
             });
         })
     }
     signIn=()=>{        
-        this.LoginUser(this.state.username, this.state.password).then((response)=>{
+        this.loginUser(this.state.username, this.state.password).then((response)=>{
             if(response.message){
                 this.setState({
                     error : response.message
@@ -27,7 +28,7 @@ class Auth extends Component {
             }
         }) 
     }
-    LoginUser(username, pass) {
+    loginUser(username, pass) {
         console.log("logging user", username, pass)
         return new Promise(resolve => {
             firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
@@ -39,7 +40,7 @@ class Auth extends Component {
         });
     }
     createAccount=()=>{
-        this.RegisterUser(this.state.username,this.state.password).then((response)=>{
+        this.registerUser(this.state.username,this.state.password).then((response)=>{
             console.log("user registered")
             if(response.message){
                 this.setState({
@@ -53,7 +54,7 @@ class Auth extends Component {
             }
         })
     }
-    RegisterUser(user, pass) {        
+    registerUser(user, pass) {        
         return new Promise(resolve => {
             firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
                 resolve("user created")
@@ -73,7 +74,10 @@ class Auth extends Component {
         return (   
                 <div className="auth">                    
                     {authStore.user ? 
-                        <div>Signed in as {authStore.user.username}</div> : 
+                        <div>
+                            <label>Signed in as {authStore.user.username}</label><br/>
+                            <button className="authButton"  onClick={this.signOut}>Sign Out</button>
+                        </div> : 
                         <div>
                             <label>email</label><br/><input style={inputStyle} onChange={this.userInputChange}/>
                             <br/>
