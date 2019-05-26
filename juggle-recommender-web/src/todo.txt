@@ -1,29 +1,22 @@
+-get rid of popup when signin or insytructions slider are shown
 
-when logged in only, all tricks become unselected when I add a trick to my list:
+Easy:
+	-setShowSignInDialog needs moved to uiStore
 
-	**This issue has been narrowed down to line ~30 of store.js
-			            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
-	**Somehow on or right around this line uiStore.selectedTricks.length gets reset to 0 
-
-Next:
-	-make a signout button next to 'signed in as..'
-	-make animation less crazy
-
-Refactor : 
-	Should break up store further?
+Unknown difficulty:
+	-make animation less crazy (vis.js is on archive.org)
+	-make multi-termed search
 	
 User Launch:
 	-allow users to add tricks
 	-toggle tricks by user added trick
 	-we will want usernames instead of just email so we can show them to other users
-	-if a trick has 0 catches, whether it is starred or not, make it white with a thick border colored based of default difficulty. If a trick has > 0 catches, then color it based on the number of catches where 1 is red and green is the most catches of any recorded trick with that number of balls
-		**this would be done in updateGraphData in uiStore, all through the function there are these:
-		color : this.getInvolvedNodeColor(rootTrick.difficulty, 3),
+	-if a pattern has no catches input, make it's background white, 
+		once it has catches, make its background filled
+	-find some coloring scheme based on catches
 
 TAGS:
-	-(maybe?) add style
-	-(maybe?) make it so when a tag is clicked, that tag is added to the current search
-	-(maybe?) make a checkbox next to search that is 'also search tags', this way if the user knows that the word 'multiplex' is in the name of the trick they seek, they don't have to manually search through all patterns that have multiplex as tag
+	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
 POPUPS:
 -(maybe?)list depends and prereqs
@@ -40,6 +33,7 @@ MINOR:
 -(maybe?)Indicator for which view we are in
 -I can't delete myTricks for user a@a.com out of the prod db and it seems to be stuck with the old format where
 	tricks are just keys, not objects that hold catches as well
+-make a graphStore to get stuff out of uiStore
 
 
 Later :
