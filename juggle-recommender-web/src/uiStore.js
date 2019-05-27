@@ -31,6 +31,11 @@ class UIStore {
 	 	this.popupCatchEditable = false
 	}
 
+	@action setPopupTrickToNull=()=>{
+	 	this.popupTrick = null
+
+	}
+
 	@action toggleCatchEdit=(catches, trickKey)=>{
 		this.popupCatchEditable = !this.popupCatchEditable
 		if (!this.popupCatchEditable){

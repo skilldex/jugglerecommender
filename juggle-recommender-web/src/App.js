@@ -60,6 +60,14 @@ class App extends Component {
  			filters : newFilters
  		})
  	} 	
+ 	openSlidingPane=(stateRef)=>{
+ 		uiStore.setPopupTrickToNull()
+ 		if (stateRef == 'isLoginPaneOpen'){
+	 		this.setState({ 'isLoginPaneOpen': true })
+	 	}else if(stateRef == 'isPaneOpen'){
+	 		this.setState({ 'isPaneOpen': true })
+	 	}
+ 	}
  	handleStart=()=>{
  		console.log('startHandled')
  	}
@@ -107,10 +115,10 @@ class App extends Component {
 		            </SlidingPane>
 					<div className="header">
 						<span className="title">Juggledex</span><span className="version"> v 0.7</span>
-				        <button className="headerButton" onClick={() => this.setState({ isPaneOpen: true })}>Instructions</button>
+				        <button className="headerButton" onClick={() => this.openSlidingPane('isPaneOpen')}>Instructions</button>
 				        {authStore.user ? 
 				        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
-				        <button className="headerButton" onClick={() => this.setState({ isLoginPaneOpen: true })}>Login</button>}
+				        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
 					</div>
 					{!this.state.isPaneOpen && !this.state.isLoginPaneOpen ?
 						<TrickList 
