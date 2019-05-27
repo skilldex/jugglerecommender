@@ -15,6 +15,8 @@ class AuthStore {
 	 }
 
 	 @action signOut=()=>{
+	 	console.log('{this.user.username}', this.user.username)
+	 	window.alert(this.user.username + " has been signed out.")
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {
                 authStore.setUser(null)

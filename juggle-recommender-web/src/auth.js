@@ -68,7 +68,7 @@ class Auth extends Component {
                     {authStore.user ? 
                         <div>
                             <label>Signed in as {authStore.user.username}</label><br/>
-                            <button className="authButton"  onClick={this.signOut}>Sign Out</button>
+                            <button className="authButton"  onClick={authStore.signOut}>Sign Out</button>
                         </div> : 
                         <div>
                             <label>email</label><br/><input style={inputStyle} onChange={this.userInputChange}/>

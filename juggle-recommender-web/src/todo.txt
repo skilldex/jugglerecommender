@@ -27,9 +27,6 @@ ______
 	- disable analytics from def
 
 ==========
-refactor:
-	-make a graphStore to get stuff out of uiStore
-
 POPUPS:
 -(maybe?)list depends and prereqs
 - related 
