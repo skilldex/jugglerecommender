@@ -6,6 +6,7 @@ import TrickList from './trickList.js'
 import Popup from './popup.js'
 import store from './store'
 import uiStore from './uiStore'
+import graphStore from './graphStore'
 import Auth from './auth.js'
 import authStore from './authStore.js'
 import Modal from 'react-modal';
@@ -129,8 +130,8 @@ class App extends Component {
 						: null}
 						<Popup/>
 					<TrickGraph 
-						nodes = {uiStore.nodes}
-						edges = {uiStore.edges}/>
+						nodes = {graphStore.nodes}
+						edges = {graphStore.edges}/>
 				</div>
 			</div>
 		);

@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import store from './store'
 import uiStore from './uiStore'
+import graphStore from './graphStore'
 import Graph from 'vis-react'
 import './trickGraph.css';
 
@@ -9,8 +10,8 @@ class TrickGraph extends Component {
       console.log("VIS",this.graph)
     }
     render() {
-      const nodes = JSON.parse(JSON.stringify(uiStore.nodes))
-      const edges = JSON.parse(JSON.stringify(uiStore.edges))
+      const nodes = JSON.parse(JSON.stringify(graphStore.nodes))
+      const edges = JSON.parse(JSON.stringify(graphStore.edges))
       const data = {
         nodes: nodes,
         edges: edges

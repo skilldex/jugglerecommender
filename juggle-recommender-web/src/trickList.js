@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
+import graphStore from './graphStore'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
 import sortIcon from './sortIcon.png'
@@ -148,15 +149,15 @@ render() {
 			if(uiStore.selectedList === "allTricks" || 
 				(uiStore.selectedList === "myTricks" && store.myTricks[trickKey])
 			){
-				const cardColor = uiStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
-				uiStore.getInvolvedNodeColor(trick.difficulty, 2).border : uiStore.getInvolvedNodeColor(trick.difficulty, 2).background 
+				const cardColor = graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
+				graphStore.getInvolvedNodeColor(trick.difficulty, 2).border : graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 
 				
 				tricks[trick.num.toString()].push(
 					<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
 						className={cardClass} 
 						key={trickKey + "div"} 
 						style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
-							uiStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}
+							graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}
 					>
 						 {store.myTricks[trickKey] ? 
 	  					 <button className="addAndRemoveMyTricksButton" onClick={(e)=>{store.removeFromMyTricks(trickKey);e.stopPropagation()}}>&#9733;</button> :

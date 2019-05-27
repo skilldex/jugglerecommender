@@ -20,12 +20,10 @@ _______
 	-make animation less crazy (vis.js is on archive.org)
 	- switch from 3 lists to filter dropdown
 	- move sort to search
-	- get rid of popup when signin or instructions slider are shown
 	- center selection especially when list is open (maybe make graph smaller)
 	
 v 0.8:
 ______ 
-	-cross origin bug
 	- disable analytics from def
 
 ==========
@@ -57,6 +55,14 @@ Minor:
 -make message that says they signed out
 
 FIlter/Sort Solution:
+	-A filter button gets rid of everything in the list column, 
+		puts an X in the corner to return to normal list view
+		There are various sections in this filter view
+			Tags
+			Search
+			Num of balls (thee should not be tags, they should be radiobuttons that if on can have
+				tricks in the root list)
+			Sort (A->Z, DIfficulty)
 	-Tags can be done with this:(put his in the render: minQueryLength={0} )
 		https://stackblitz.com/edit/react-tag-input-1nelrc
 
