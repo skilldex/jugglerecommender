@@ -36,7 +36,7 @@ class UIStore {
 		if (!this.popupCatchEditable){
 			store.setCatches(catches, trickKey)
 			store.updateTricksInDatabase()
- 			localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+ 			localStorage.setItem('myTricks', JSON.stringify(store.myTricks))
 		}
 	}
  	@action selectTricks=(clickedTrick)=>{

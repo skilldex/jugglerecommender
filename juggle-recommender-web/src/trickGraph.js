@@ -18,6 +18,7 @@ class TrickGraph extends Component {
       const options = {
         autoResize: true,
         interaction: {hover: true},
+        edges:{ color: 'black'}
       }
       const events = {
         select: function(event) {

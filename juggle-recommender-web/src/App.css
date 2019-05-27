@@ -19,6 +19,9 @@ input{
 
 @supports (-webkit-overflow-scrolling: touch) {  
 }
+.main{
+  background-color: white;
+}
 .info{
   font-size: 16px;
   color : #787878;

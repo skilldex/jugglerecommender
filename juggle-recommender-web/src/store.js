@@ -79,7 +79,6 @@ class Store {
 		if (catches.length>1){
  			catches = catches.replace(/^0+/,'');
  		}
-
  		this.myTricks[trickKey].catches = catches
  		uiStore.updateRootTricks()
  	}
@@ -90,7 +89,6 @@ class Store {
         this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		uiStore.updateRootTricks()
-
  	}
  	@action setMyTricks=(tricks)=>{
  		this.myTricks = tricks        
@@ -109,8 +107,7 @@ class Store {
  	}
 
 	@action snapshotToArray = snapshot => {
-	    let returnArr = [];
-	    
+	    let returnArr = [];	    
 	    snapshot.forEach(childSnapshot => {
 	        let item = childSnapshot.val();
 	        item.key = childSnapshot.key;

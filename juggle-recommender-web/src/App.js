@@ -67,7 +67,7 @@ class App extends Component {
  	render(){
 		return (
 			<div className="App">
-				<div ref={ref => this.el = ref}>		            
+				<div className="main" ref={ref => this.el = ref}>		            
 		            <SlidingPane
 		                className='some-custom-class'
 		                overlayClassName='some-custom-overlay-class'
