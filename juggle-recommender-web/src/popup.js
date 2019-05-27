@@ -82,8 +82,13 @@ class Popup extends Component {
             		<br></br><br/><br/>
             		{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
               		<label className="popupTags">
-              			TAGS: {jugglingLibrary[popupTrickKey].tags.join(', ')} 
+              			Tags: {jugglingLibrary[popupTrickKey].tags.join(', ')} 
               		</label> : null}
+                  <br></br>
+                {jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].related.length>0?
+                  <label className="popupTags">
+                    Related: {jugglingLibrary[popupTrickKey].related.join(', ')} 
+                  </label> : null}
           </div> : null
 		return(
 			<div>

@@ -47,11 +47,11 @@ May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
 Minor:
+-Current related tricks are non-logical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
-	it would changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
--make message that says they signed out
+	it would require changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
 
-FIlter/Sort Solution:
+Filter/Sort Solution:
 	-A filter button gets rid of everything in the list column, 
 		puts an X in the corner to return to normal list view
 		There are various sections in this filter view
