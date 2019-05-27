@@ -58,22 +58,6 @@ input{
   height: 100px;
 }
 
-.swipedDiv{
-  width : 25px;
-  box-shadow : 5px 10px 8px #888888;;
-  background-color : white;
-  border-radius: 8px;
-  height : 100%;
-  z-index: 3;
-  opacity : 100%;
-  border : 1px solid gray;
-  position: absolute;
-  -ms-touch-action: none;
-  touch-action: none;
-  font-size: 12pt;
-  padding-left: 10px;
-}
-
 .instructions{
   padding-left: 10px;
   margin-bottom: 15px;

@@ -6,15 +6,10 @@ configure({ enforceActions: "always" })
 class Store {
 
 	@observable myTricks = {}
-	@observable showSignInDialog = true
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
-	 //TODO: move to UI store
-	@action setShowSignInDialog=(shouldShow)=>{
-		this.showSignInDialog = shouldShow
-	}
 
 	@action updateTricksInDatabase=()=>{
 

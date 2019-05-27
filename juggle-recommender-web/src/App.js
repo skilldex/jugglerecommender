@@ -34,8 +34,7 @@ class App extends Component {
  		edges : [],
  		nodes : [],
  		isPaneOpen: false,
- 		isLoginPaneOpen: false,
- 		swipedList : false
+ 		isLoginPaneOpen: false
 	}
 	componentDidMount(){
 		store.getSavedTricks()	
