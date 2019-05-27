@@ -55,7 +55,6 @@ alphabeticalSortObject(data, attr) {
 sortClicked=(type)=>{
 	uiStore.toggleSortTypeShow()
 	this.setState({sortType : type})
-	console.log('doc',document.getElementById('trickList3').scrollTop)
 }
 
 toggleExpandedSection(num){
@@ -73,6 +72,7 @@ recordScrollerPosition(nums){
 		}
 	}
 	this.setState({'expandedSectionsPositions':expSecPos})
+	this.setState({listIsMinimized:true})
 }
 
 setListExpanded(){
@@ -100,6 +100,9 @@ setScrollerPositions() {
 	        setPositions();
 	    }, 100);
 	}
+}
+setListIsMinimzed(){
+
 }
 
 componentDidUpdate(prevProps, prevState, snapshot) {
@@ -194,7 +197,9 @@ render() {
 				</div>
 
 	return (	
-		<div className="listDiv">				
+		<div className="listDiv">
+		
+			{!uiStore.listExpanded && !this.state.listIsMinimized ? this.recordScrollerPosition(['3','4','5']) : null}				
 	 		{uiStore.listExpanded ? 
 				<div>
 				 	{buttons}
@@ -236,6 +241,7 @@ render() {
 					</div>
 				</div> : 
 				buttons
+				
 			}
 		</div>
 	)

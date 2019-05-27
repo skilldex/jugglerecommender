@@ -49,6 +49,11 @@ Minor:
 -Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
 	it would require changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
+-Clicking a popup or the list should bring either in front of the other
+-Maybe closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
+-if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the pop out, the list may be off screen, maybe the popup should be forced to stay on upper left but not on the header.
+-Make search clear gif
+-Gif fullscreen button
 
 Filter/Sort Plan:
 	-A filter button opens up a fullscreen window, 
@@ -63,7 +68,23 @@ Filter/Sort Plan:
 	-we can leave search outside of the filter and have it start with cascade typed in so there is not a huge list
 	Questions:
 		-should tags be 'ands' or 'ors'?
+	-Difficulty filter should be a slider
+	-Ball num should be a series of checkboxes
+	-Tags should have an 'any of' / 'all of' toggle
+	
 
+
+
+
+
+
+
+
+
+
+Bug:
+Autoscroll doesnt happen if a popup has been opened
+ 
 
 
 
