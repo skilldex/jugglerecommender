@@ -29,7 +29,6 @@ ______
 ==========
 POPUPS:
 -(maybe?)list depends and prereqs
-- related 
 -(maybe?) other tutorials/user content
 
 Disappears with filters
@@ -47,21 +46,23 @@ May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
 Minor:
--Current related tricks are non-logical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
 	it would require changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
 
-Filter/Sort Solution:
-	-A filter button gets rid of everything in the list column, 
-		puts an X in the corner to return to normal list view
+Filter/Sort Plan:
+	-A filter button opens up a fullscreen window, 
+		put an X in the corner to return to normal list view
 		There are various sections in this filter view
 			Tags
-			Search
 			Num of balls (thee should not be tags, they should be radiobuttons that if on can have
 				tricks in the root list)
 			Sort (A->Z, DIfficulty)
-	-Tags can be done with this:(put his in the render: minQueryLength={0} )
+	-Tags can be done with this:(put this in the render: minQueryLength={0} )
 		https://stackblitz.com/edit/react-tag-input-1nelrc
+	-we can leave search outside of the filter and have it start with cascade typed in so there is not a huge list
+	Questions:
+		-should tags be 'ands' or 'ors'?
 
 
 
