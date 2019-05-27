@@ -6,9 +6,7 @@ import Graph from 'vis-react'
 import './trickGraph.css';
 
 class TrickGraph extends Component {
-    componentDidUpdate(){
-      console.log("VIS",this.graph)
-    }
+
     render() {
       const nodes = JSON.parse(JSON.stringify(graphStore.nodes))
       const edges = JSON.parse(JSON.stringify(graphStore.edges))

@@ -80,6 +80,7 @@ class UIStore {
  			this.searchTrick = ""
  		}
  		this.performSearch()
+ 		this.popupTrick = null
  	}
  		
  	@action performSearch=()=>{

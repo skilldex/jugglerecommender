@@ -51,8 +51,7 @@ Minor:
 	it would require changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
 -Clicking a popup or the list should bring either in front of the other
 -Maybe closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
--if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the pop out, the list may be off screen, maybe the popup should be forced to stay on upper left but not on the header.
--Make search clear gif
+-if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen, maybe the popup should be forced to stay on upper left but not on the header.
 -Gif fullscreen button
 
 Filter/Sort Plan:
@@ -72,20 +71,3 @@ Filter/Sort Plan:
 	-Ball num should be a series of checkboxes
 	-Tags should have an 'any of' / 'all of' toggle
 	
-
-
-
-
-
-
-
-
-
-
-Bug:
-Autoscroll doesnt happen if a popup has been opened
- 
-
-
-
-

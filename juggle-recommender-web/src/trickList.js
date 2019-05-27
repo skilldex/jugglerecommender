@@ -101,9 +101,6 @@ setScrollerPositions() {
 	    }, 100);
 	}
 }
-setListIsMinimzed(){
-
-}
 
 componentDidUpdate(prevProps, prevState, snapshot) {
 	if (prevState.listIsMinimized && !this.state.listIsMinimized){
