@@ -157,10 +157,17 @@ class UIStore {
 	}
 	@action getInvolvedNodeFont=(involved)=>{
 		let fontSize = 14 //default
+		let strokeWidth = 0
 		if(involved === 3){
-			fontSize = 24
+			fontSize = 30
+			strokeWidth = 1
+
 		}
-		return {size: fontSize}
+		return {
+			size: fontSize,
+			strokeWidth :strokeWidth,
+			strokeColor: 'black'
+		}
 	}
 	@action getInvolvedNodeMass =(involved)=>{
 		let mass = 2
@@ -172,7 +179,7 @@ class UIStore {
 
 	@action getInvolvedNodeBorderWidth=(involved)=>{
 		
-		return 5
+		return 2
 	}
 	@action updateGraphData=()=>{
  		let nodes = []
