@@ -22,10 +22,6 @@ _______
 	- move sort to search
 	- center selection especially when list is open (maybe make graph smaller)
 	
-v 0.8:
-______ 
-	- disable analytics from def
-
 ==========
 POPUPS:
 -(maybe?)list depends and prereqs
