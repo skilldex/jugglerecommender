@@ -1,0 +1,17 @@
+export const TAGS = [
+  "common",
+  "one-throw",
+  "columns",
+  "crossed-arms",
+  "synch",
+  "wrist-drop",
+  "multiplex",
+  "body-throw",
+  "slam",
+  "claw",
+  "orbit",
+  "423",
+  "carry",
+  "underarm-catch",
+  "chop",
+];

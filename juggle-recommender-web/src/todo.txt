@@ -46,15 +46,19 @@ May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
 Minor:
--Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
 	it would require changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
 -Clicking a popup or the list should bring either in front of the other
 -Maybe closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
--if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen, maybe the popup should be forced to stay on upper left but not on the header.
+-if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen, maybe the minimized list should be forced to stay on upper left but not on the header.
 -Gif fullscreen button
 
 Filter/Sort Plan:
+NEXT:
+	-move the X to the other side of the top of the app
+	-put dividing lines between sections
+	-put something other than tags at the top of sort window so that it doesnt start selected(or find some other way to make it not start selected)
+	-introduce other widgets
 	-A filter button opens up a fullscreen window, 
 		put an X in the corner to return to normal list view
 		There are various sections in this filter view
@@ -65,9 +69,12 @@ Filter/Sort Plan:
 	-Tags can be done with this:(put this in the render: minQueryLength={0} )
 		https://stackblitz.com/edit/react-tag-input-1nelrc
 	-we can leave search outside of the filter and have it start with cascade typed in so there is not a huge list
-	Questions:
-		-should tags be 'ands' or 'ors'?
 	-Difficulty filter should be a slider
 	-Ball num should be a series of checkboxes
 	-Tags should have an 'any of' / 'all of' toggle
-	
+
+	IDEAS:
+		maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
+
+Notes:
+-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box

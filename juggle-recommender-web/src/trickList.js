@@ -8,18 +8,45 @@ import legendImg from './greenToRedFade.jpg'
 import sortIcon from './sortIcon.png'
 import './trickList.css';
 import './App.css';
+import {TAGS} from './tags';
+import { WithContext as ReactTags } from 'react-tag-input';
+
+const suggestions = TAGS.map((country) => {
+  return {
+    id: country,
+    text: country
+  }
+})
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13,
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 @observer
 class TrickList extends Component {
-	 	state = {
+  constructor(props) {
+    super(props);
+
+	 	this.state = {
  		sortType: 'alphabetical',
  		listIsMinimized: false,
+ 		filterVisible: false,
+ 		tags: [{ id: 'Common', text: 'Common' }],
+      	suggestions: suggestions,
  		expandedSectionsPositions : {
 			'3' : 0,
 			'4' : 0,
 			'5' : 0
 		}
 	}
+	this.handleDelete = this.handleDelete.bind(this);
+    this.handleAddition = this.handleAddition.bind(this);
+    this.handleDrag = this.handleDrag.bind(this);
+    this.handleTagClick = this.handleTagClick.bind(this);
+}
 	//TODO: move to general utility file
 alphabeticalSortObject(data, attr) {
     var arr = [];
@@ -72,7 +99,7 @@ recordScrollerPosition(nums){
 		}
 	}
 	this.setState({'expandedSectionsPositions':expSecPos})
-	this.setState({listIsMinimized:true})
+	this.setState({'listIsMinimized':true})
 }
 
 setListExpanded(){
@@ -108,7 +135,39 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 	}
 }
 
+toggleFilterDiv(){
+	this.setState({'filterVisible': !this.state.filterVisible})
+	console.log('this.state.filterVisible',this.state.filterVisible)
+}
+
+handleDelete(i) {
+    const { tags } = this.state;
+    this.setState({
+      tags: tags.filter((tag, index) => index !== i),
+    });
+  }
+
+  handleAddition(tag) {
+   this.setState(state => ({ tags: [...state.tags, tag] }));
+  }
+
+  handleDrag(tag, currPos, newPos) {
+    const tags = [...this.state.tags];
+    const newTags = tags.slice();
+
+    newTags.splice(currPos, 1);
+    newTags.splice(newPos, 0, tag);
+
+    // re-render
+    this.setState({ tags: newTags });
+  }
+
+  handleTagClick(index) {
+    console.log('The tag at index ' + index + ' was clicked');
+  }
+
 render() {
+	const { tags, suggestions } = this.state;
  	 window.onclick = function(event) {
  	 	if (event.srcElement['alt'] !== 'showSortMenu') {
  	 		if (document.getElementById("myDropdown")){
@@ -175,12 +234,21 @@ render() {
 										"display" : "block"}} 
 								onClick={() => this.setListExpanded()}>{uiStore.listExpanded ? "-" : "+"}</label>
 				 		<div className="listButtonDiv">
-							<button className={uiStore.selectedList === "myTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("myTricks")}}>★Starred</button>
-							<button className={uiStore.selectedList === "allTricks" ? "selectedListButton" : "unselectedListButton" } onClick={()=>{uiStore.setSelectedList("allTricks")}}>All</button>
+							<button className={uiStore.selectedList === "myTricks" ? 
+									"selectedListButton" : "unselectedListButton" } 
+									onClick={()=>{uiStore.setSelectedList("myTricks")}}>
+									★Starred</button>
+							<button className={uiStore.selectedList === "allTricks" ?
+								 "selectedListButton" : "unselectedListButton" } 
+								 onClick={()=>{uiStore.setSelectedList("allTricks")}}>
+								 All</button>
 						</div>
 			 			<div className="search" >
 				 			<input defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={uiStore.searchInputChange}/>
+				 			<button className="filterButton" onClick={()=>{this.toggleFilterDiv()}}>
+							 F</button>
 				 		</div>
+
 			 		</div>
 	const sort = <div style={{"display" : "inline-block", "marginLeft" : "5px"}}>
 					 <button >
@@ -193,53 +261,70 @@ render() {
 					  </div>
 				</div>
 
-	return (	
-		<div className="listDiv">
-		
-			{!uiStore.listExpanded && !this.state.listIsMinimized ? this.recordScrollerPosition(['3','4','5']) : null}				
-	 		{uiStore.listExpanded ? 
-				<div>
-				 	{buttons}
-					<div style={{height:"100%"}}>
-						<label style={{float:"left"}}>easy</label>
-						<label style={{float:"right", paddingRight:"16px"}}>hard</label>
-						<img src={legendImg} alt="legendImg" width="92%"/>						
-						<br></br>
-						<span onClick={()=>{this.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "-" : "+"}</span>
-						<h3 onClick={()=>{this.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
-						{sort}
-						{uiStore.expandedSections["3"] ?
-							<div id='trickList3' 
-								className={tricks["3"].length > 1 ? "listSection" : ""}> 
-							{tricks["3"]}
-							</div> : null
-						}
-						
-					</div>
+	return (
+		<div>	
+			<div className="listDiv">		
+				{!uiStore.listExpanded && !this.state.listIsMinimized ? this.recordScrollerPosition(['3','4','5']) : null}				
+		 		{uiStore.listExpanded ? 
 					<div>
-						<span onClick={()=>{this.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "-" : "+"}</span>
-						<h3 onClick={()=>{this.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
-						{sort}
-						{uiStore.expandedSections["4"] ?
-							<div  id='trickList4' className={tricks["4"].length > 1 ? "listSection" : ""}> 
-							{tricks["4"]}
-							</div> : null
-						}
-					</div>
-					<div>	
-						<span onClick={()=>{this.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "-" : "+"}</span>
-						<h3 onClick={()=>{this.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
-						{sort}
-						{uiStore.expandedSections["5"] ?
-							<div  id='trickList5' className={tricks["5"].length > 19 ? "listSection" : ""}> 
-							{tricks["5"]}
-							</div> : null
-						}
-					</div>
-				</div> : 
-				buttons
-				
-			}
+					 	{buttons}
+						<div style={{height:"100%"}}>
+							<label style={{float:"left"}}>easy</label>
+							<label style={{float:"right", paddingRight:"16px"}}>hard</label>
+							<img src={legendImg} alt="legendImg" width="92%"/>						
+							<br></br>
+							<span onClick={()=>{this.toggleExpandedSection("3")}}>{uiStore.expandedSections["3"] ? "-" : "+"}</span>
+							<h3 onClick={()=>{this.toggleExpandedSection("3")}} className="sectionHeader">3 Ball</h3>
+							{sort}
+							{uiStore.expandedSections["3"] ?
+								<div id='trickList3' 
+									className={tricks["3"].length > 1 ? "listSection" : ""}> 
+								{tricks["3"]}
+								</div> : null
+							}
+							
+						</div>
+						<div>
+							<span onClick={()=>{this.toggleExpandedSection("4")}}>{uiStore.expandedSections["4"] ? "-" : "+"}</span>
+							<h3 onClick={()=>{this.toggleExpandedSection("4")}} className="sectionHeader">4 Ball</h3>
+							{sort}
+							{uiStore.expandedSections["4"] ?
+								<div  id='trickList4' className={tricks["4"].length > 1 ? "listSection" : ""}> 
+								{tricks["4"]}
+								</div> : null
+							}
+						</div>
+						<div>	
+							<span onClick={()=>{this.toggleExpandedSection("5")}}>{uiStore.expandedSections["5"] ? "-" : "+"}</span>
+							<h3 onClick={()=>{this.toggleExpandedSection("5")}} className="sectionHeader">5 Ball</h3>
+							{sort}
+							{uiStore.expandedSections["5"] ?
+								<div  id='trickList5' className={tricks["5"].length > 19 ? "listSection" : ""}> 
+								{tricks["5"]}
+								</div> : null
+							}
+						</div>
+					</div> : 
+					buttons}
+			</div>
+			{this.state.filterVisible?
+			<div className="filterDiv">
+				<button className="filterButton" onClick={()=>{this.toggleFilterDiv()}}>
+				X</button>
+				<div>
+			        <ReactTags
+			          tags={tags}
+			          minQueryLength={0}
+			          suggestions={suggestions}
+			          delimiters={delimiters}
+			          handleDelete={this.handleDelete}
+			          handleAddition={this.handleAddition}
+			          handleDrag={this.handleDrag}
+			          handleTagClick={this.handleTagClick}
+			        />
+			    </div>
+			</div>
+			: null}
 		</div>
 	)
   }
