@@ -20,7 +20,6 @@ _______
 	-make animation less crazy (vis.js is on archive.org)
 	- switch from 3 lists to filter dropdown
 	- move sort to search
-	- center selection especially when list is open (maybe make graph smaller)
 	
 ==========
 POPUPS:
