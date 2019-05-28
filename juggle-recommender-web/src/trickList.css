@@ -72,27 +72,7 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
-.filterDiv{
-  padding-left : 5px;
-  padding-right : 5px;
-  width: 320px;
-  height: 100%;
-  max-height: 90vh;
-  border : 1px solid gray;
-  margin-left : 1px;
-  display: inline-block;
-  position: absolute;
-  z-index: 2;
-  opacity : 100%;
-  background-color : white;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
-  -ms-touch-action: none;
-  touch-action: none;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling : touch;
-}
+
 .sectionHeader{
   display: inline-block;
   cursor: pointer;

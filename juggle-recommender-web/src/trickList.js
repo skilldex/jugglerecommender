@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
+import filterStore from './filterStore'
 import graphStore from './graphStore'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
@@ -10,6 +11,7 @@ import './trickList.css';
 import './App.css';
 import {TAGS} from './tags';
 import { WithContext as ReactTags } from 'react-tag-input';
+import Filter from './filter.js'
 
 const suggestions = TAGS.map((country) => {
   return {
@@ -33,19 +35,13 @@ class TrickList extends Component {
 	 	this.state = {
  		sortType: 'alphabetical',
  		listIsMinimized: false,
- 		filterVisible: false,
- 		tags: [{ id: 'Common', text: 'Common' }],
-      	suggestions: suggestions,
  		expandedSectionsPositions : {
 			'3' : 0,
 			'4' : 0,
 			'5' : 0
 		}
 	}
-	this.handleDelete = this.handleDelete.bind(this);
-    this.handleAddition = this.handleAddition.bind(this);
-    this.handleDrag = this.handleDrag.bind(this);
-    this.handleTagClick = this.handleTagClick.bind(this);
+
 }
 	//TODO: move to general utility file
 alphabeticalSortObject(data, attr) {
@@ -135,36 +131,6 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 	}
 }
 
-toggleFilterDiv(){
-	this.setState({'filterVisible': !this.state.filterVisible})
-	console.log('this.state.filterVisible',this.state.filterVisible)
-}
-
-handleDelete(i) {
-    const { tags } = this.state;
-    this.setState({
-      tags: tags.filter((tag, index) => index !== i),
-    });
-  }
-
-  handleAddition(tag) {
-   this.setState(state => ({ tags: [...state.tags, tag] }));
-  }
-
-  handleDrag(tag, currPos, newPos) {
-    const tags = [...this.state.tags];
-    const newTags = tags.slice();
-
-    newTags.splice(currPos, 1);
-    newTags.splice(newPos, 0, tag);
-
-    // re-render
-    this.setState({ tags: newTags });
-  }
-
-  handleTagClick(index) {
-    console.log('The tag at index ' + index + ' was clicked');
-  }
 
 render() {
 	const { tags, suggestions } = this.state;
@@ -245,7 +211,7 @@ render() {
 						</div>
 			 			<div className="search" >
 				 			<input defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={uiStore.searchInputChange}/>
-				 			<button className="filterButton" onClick={()=>{this.toggleFilterDiv()}}>
+				 			<button onClick={()=>{filterStore.toggleFilterDiv()}}>
 							 F</button>
 				 		</div>
 
@@ -307,23 +273,8 @@ render() {
 					</div> : 
 					buttons}
 			</div>
-			{this.state.filterVisible?
-			<div className="filterDiv">
-				<button className="filterButton" onClick={()=>{this.toggleFilterDiv()}}>
-				X</button>
-				<div>
-			        <ReactTags
-			          tags={tags}
-			          minQueryLength={0}
-			          suggestions={suggestions}
-			          delimiters={delimiters}
-			          handleDelete={this.handleDelete}
-			          handleAddition={this.handleAddition}
-			          handleDrag={this.handleDrag}
-			          handleTagClick={this.handleTagClick}
-			        />
-			    </div>
-			</div>
+			{filterStore.filterVisible?
+			<Filter/>
 			: null}
 		</div>
 	)
