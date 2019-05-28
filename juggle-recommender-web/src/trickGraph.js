@@ -26,6 +26,10 @@ class TrickGraph extends Component {
             damping : .15,
             springLength : 120,
             springConstant : .06,
+          },
+          stabilization : {
+            enabled : true,
+            iterations : 300,
           }
         }
       }
@@ -37,12 +41,26 @@ class TrickGraph extends Component {
               'x' : event.pointer.DOM.x,
               'y' : event.pointer.DOM.y+140})
         }, 
-        afterDrawing: function(event) {
+        stabilizationIterationsDone: function(event) {
+          console.log("iterations" ,event)
           if(that.graph){
             that.graph.Network.fit()
           }
+        },
+        stabilized: function(event) {
+          console.log("stabilized")
+          if(that.graph){
+            console.log("fit and move")
+            that.graph.Network.moveTo(
+              {
+                position: {x:0, y:0},
+                scale: 1.0,
+                offset: {x:0, y:0}
+              }
+            )
+            that.graph.Network.fit()
+          }
         }
-
       } 
       return (
         <div className="graphDiv" id="graphDiv">
