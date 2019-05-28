@@ -8,6 +8,8 @@ import './filter.css';
 import './App.css';
 import {TAGS} from './tags';
 import { WithContext as ReactTags } from 'react-tag-input';
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 const suggestions = TAGS.map((country) => {
   return {
@@ -66,6 +68,13 @@ handleDelete(i) {
     console.log('The tag at index ' + index + ' was clicked');
   }
 
+  onDifficultyRangeChange(position){
+  	console.log('position',position)
+  }
+  numButtonClicked(element){
+  	console.log('numButtonClicked'+element)
+  }
+
 render() {
 	const { tags, suggestions } = this.state;
  	 window.onclick = function(event) {
@@ -89,17 +98,30 @@ render() {
  			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
  			//	how showSortMenu does it, but  alittle different
 
+ 	const numbersOfBalls = ['3','4','5']
+ 	const numButtons = []
+ 
+	numbersOfBalls.forEach(function(element) {
+				numButtons.push(
+					<button key={'numButton' + element} onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
+)
+				
+	},this);
+
+
+	
  	
 
 	return (
 		<div className="filterDiv">
 				<button className="filterButton" onClick={()=>{filterStore.toggleFilterDiv()}}>
-				X</button><br/><br/>
+				X</button>
 				<div className = "filterHeader">
 					<h3>Tags:</h3>
 				</div>				
-				<div>
+				<div style={{zIndex:1}}>
 			        <ReactTags
+			        autofocus = {false}
 			          inputFieldPosition="bottom"
 			          tags={tags}
 			          minQueryLength={0}
@@ -115,9 +137,25 @@ render() {
 				<div className = "filterHeader">
 					<h3>Number:</h3>
 				</div>
+				{numButtons}
 				<ColoredLine/>
 				<div className = "filterHeader">
 					<h3>Difficulty:</h3>
+					<div style={{zIndex:2,marginLeft:10, marginRight:10}}>
+						<Range min={1} 
+								max={10}
+								defaultValue={[1,10]}
+								onChange={(e)=>this.onDifficultyRangeChange(e)}
+								railStyle={{backgroundColor: 'black', borderColor: 'black'}}
+								trackStyle={{backgroundColor: 'black', borderColor: 'black'}}
+								handleStyle={{backgroundColor: 'black', borderColor: 'black'}}
+								dotStyle={{backgroundColor: 'black', borderColor: 'black'}}
+								activeDotStyle={{backgroundColor: 'lightblue', borderColor: 'lightblue'}}
+								handleStyle={{backgroundColor: 'black', borderColor: 'black'}} 
+								marks={{ 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10'}} 
+								step={null} /><br/>
+					</div>
+
 				</div>
 				<ColoredLine/>
 
