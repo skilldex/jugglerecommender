@@ -32,7 +32,11 @@ class Filter extends Component {
 
 	 	this.state = {
  		tags: [{ id: 'Common', text: 'Common' }],
-      	suggestions: suggestions
+      	suggestions: suggestions,
+      	filterNumberSelected: {'3':true,
+						      '4':false,
+						      '5':false,
+      	}
 
 	}
 	this.handleDelete = this.handleDelete.bind(this);
@@ -71,8 +75,11 @@ handleDelete(i) {
   onDifficultyRangeChange(position){
   	console.log('position',position)
   }
-  numButtonClicked(element){
-  	console.log('numButtonClicked'+element)
+  numButtonClicked(element){//TODO I just changed this to color up in state, need to keep doin that here
+  	console.log('thisElement',this.state.filterNumberSelected[element])
+  	let filtNumSelected = {...this.state.filterNumberSelected};
+  	filtNumSelected[element] = !filtNumSelected[element]
+  	this.setState({filterNumberSelected: filtNumSelected})
   }
 
 render() {
@@ -102,8 +109,13 @@ render() {
  	const numButtons = []
  
 	numbersOfBalls.forEach(function(element) {
-				numButtons.push(
-					<button key={'numButton' + element} onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
+				numButtons.push(//TODO figure out how to use this 
+					//conditional to determine the color of the buttons
+					//maybe their background as well
+					<button className={this.state.filterNumberSelected[element]?
+						'filterNumSelected':'filterNumUnselected'}
+					key={'numButton' + element} 
+					onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
 )
 				
 	},this);
@@ -119,7 +131,7 @@ render() {
 				<div className = "filterHeader">
 					<h3>Tags:</h3>
 				</div>				
-				<div style={{zIndex:1}}>
+				<div>
 			        <ReactTags
 			        autofocus = {false}
 			          inputFieldPosition="bottom"
@@ -135,23 +147,22 @@ render() {
 			    </div>
 			    <ColoredLine/>
 				<div className = "filterHeader">
-					<h3>Number:</h3>
+					<h3>Number of balls:</h3>
 				</div>
 				{numButtons}
 				<ColoredLine/>
 				<div className = "filterHeader">
 					<h3>Difficulty:</h3>
-					<div style={{zIndex:2,marginLeft:10, marginRight:10}}>
+					<div style={{marginLeft:10, marginRight:10}}>
 						<Range min={1} 
 								max={10}
 								defaultValue={[1,10]}
 								onChange={(e)=>this.onDifficultyRangeChange(e)}
-								railStyle={{backgroundColor: 'black', borderColor: 'black'}}
-								trackStyle={{backgroundColor: 'black', borderColor: 'black'}}
-								handleStyle={{backgroundColor: 'black', borderColor: 'black'}}
-								dotStyle={{backgroundColor: 'black', borderColor: 'black'}}
+								railStyle={{backgroundColor: 'darkgray', borderColor: 'darkgray'}}
+								trackStyle={{backgroundColor: 'gray', borderColor: 'gray'}}
+								handleStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
+								dotStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
 								activeDotStyle={{backgroundColor: 'lightblue', borderColor: 'lightblue'}}
-								handleStyle={{backgroundColor: 'black', borderColor: 'black'}} 
 								marks={{ 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10'}} 
 								step={null} /><br/>
 					</div>
