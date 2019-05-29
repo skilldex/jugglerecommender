@@ -55,24 +55,11 @@ Minor:
 
 Filter/Sort Plan:
 NEXT:
-	-move the X to the other side of the top of the app
-	-put dividing lines between sections
-	-put something other than tags at the top of sort window so that it doesnt start selected(or find some other way to make it not start selected)
-	-introduce other widgets
-	-A filter button opens up a fullscreen window, 
-		put an X in the corner to return to normal list view
-		There are various sections in this filter view
-			Tags
-			Num of balls (thee should not be tags, they should be radiobuttons that if on can have
-				tricks in the root list)
-			Sort (A->Z, DIfficulty)
-	-Tags can be done with this:(put this in the render: minQueryLength={0} )
-		https://stackblitz.com/edit/react-tag-input-1nelrc
+-get rid of sort and bull nums and stuff outside of filter, just a list out there
+-when apply is clicked, save the currently set settings
+-when filter loaded, load the set settings
+-make things happen when apply button clicked
 	-we can leave search outside of the filter and have it start with cascade typed in so there is not a huge list
-	-Difficulty filter should be a slider
-	-Ball num should be a series of checkboxes
-	-Tags should have an 'any of' / 'all of' toggle
-
 	IDEAS:
 		maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
 
