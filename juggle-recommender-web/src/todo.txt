@@ -56,10 +56,8 @@ Minor:
 Filter/Sort Plan:
 NEXT:
 -if there are no myTricks, we want to default to 3b, common tag, all difficulty
--make tags only default to common in the times when search was defaulting to common
 -get the checkbox for any/all tags working,
 	right now we are just defaulting to 'all' behavior
--hook up search
 -look into how to handle the apply to list&graph
 BUGS:
 -if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it
