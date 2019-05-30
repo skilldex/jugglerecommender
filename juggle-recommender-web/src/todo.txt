@@ -20,12 +20,14 @@ _______
 	-make animation less crazy (vis.js is on archive.org)
 	- switch from 3 lists to filter dropdown
 	- move sort to search
-	- center selection especially when list is open (maybe make graph smaller)
 	
+<<<<<<< HEAD
 v 0.8:
 ______ 
 	- disable analytics from dev
 
+=======
+>>>>>>> a3c1a1caecc75ee102718ddbc2b2506d68c85e06
 ==========
 POPUPS:
 -(maybe?)list depends and prereqs
