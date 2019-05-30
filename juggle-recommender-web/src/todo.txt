@@ -24,7 +24,7 @@ _______
 	
 v 0.8:
 ______ 
-	- disable analytics from def
+	- disable analytics from dev
 
 ==========
 POPUPS:
