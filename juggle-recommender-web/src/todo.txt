@@ -55,8 +55,14 @@ Minor:
 
 Filter/Sort Plan:
 NEXT:
--hook up tags
+-make search not say common
+-make tags only default to common in the times when search was defaulting to common
+-make tags be populated with previously chosen tag
+-get the checkbox for any/all tags working
 -hook up search
+-look into how to handle the apply to list&graph
+BUGS:
+-if no tags are selecetd, then you select 1 tag, 2 tags become selected
 IDEAS:
 	maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
 

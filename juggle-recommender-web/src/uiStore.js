@@ -120,6 +120,18 @@ class UIStore {
 	    }
 	    return result;
 	}
+	@action containsAny=(trickArray,filterArray)=>{
+		let containsAny = false
+		for (var i = 0; i < trickArray.length; i++) {
+		    if (filterArray.indexOf(trickArray[i]) > -1) {
+		        containsAny = true;
+		        break;
+		    }
+		}
+		return containsAny
+	}
+
+
 
  	@action updateRootTricks=(rootTricks)=>{
 	 	this.rootTricks = []
@@ -135,6 +147,7 @@ class UIStore {
 				const trick = sortedJugglingLibrary[trickKey]
 				if(parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
+				   [...filterStore.tags].every(elem => trick.tags.indexOf(elem) > -1) &&
 				   filterStore.numberOfBalls.includes(trick.num.toString())){
 					const cardColor = 
 						graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 

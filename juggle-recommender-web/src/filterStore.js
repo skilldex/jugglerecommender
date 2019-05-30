@@ -10,6 +10,11 @@ class FilterStore {
 	@observable sortType = 'alphabetical'
 	@observable difficultyRange = [1,10]
 	@observable numberOfBalls = ['3']
+	@observable tags = []
+
+	@action setTags=(tags)=>{
+		this.tags = tags
+	}
 
 	@action toggleFilterDiv=()=>{
 		this.filterVisible = !this.filterVisible

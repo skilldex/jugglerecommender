@@ -32,7 +32,7 @@ class Filter extends Component {
 	    super(props);
 		 	this.state = {
 		 	sortType: filterStore.sortType,
-	 		tags: [{ id: 'Common', text: 'Common' }],
+	 		tags: [{ id: 'common', text: 'common' }],
 	      	suggestions: suggestions,
 	      	numBalls: filterStore.numberOfBalls,
 	      	difficultyRange: filterStore.difficultyRange
@@ -73,20 +73,15 @@ class Filter extends Component {
 	}
 
 	handleSortRadioButtonChange(event){
-		console.log('radioBut', event.target.value)
 		this.setState({sortType: event.target.value});
-		//console.log(this.state.sortType)
 	}
   
 	onDifficultyRangeChange(range){
 		this.setState({difficultyRange: range});
-		console.log('range',range)
 	}
 
 	numButtonClicked(element){//TODO I just changed this to color up in state, need to keep doin that here
 		let tempNumBalls = [...this.state.numBalls]
-		console.log('{...this.state.numBalls}',{...this.state.numBalls})
-		console.log('this.state.numBalls',this.state.numBalls)
 		if (tempNumBalls.includes(element)){
 			for( var i = 0; i < tempNumBalls.length; i++){ 
 				if ( tempNumBalls[i] === element) {
@@ -101,9 +96,14 @@ class Filter extends Component {
 	}
 
 	filterApplyList(){
+		const tagsArray= []
+		this.state.tags.forEach(function (arrayItem) {
+		    tagsArray.push(arrayItem.id)
+		});
 		filterStore.setSortType(this.state.sortType)
 		filterStore.setDifficultyRange(this.state.difficultyRange)
 		filterStore.setNumberOfBalls(this.state.numBalls)
+		filterStore.setTags(tagsArray)
 		filterStore.toggleFilterDiv()
 		uiStore.updateRootTricks()
 	}

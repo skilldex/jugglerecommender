@@ -102,16 +102,10 @@ render() {
 
  	let tricks = []
 
-
- 	console.log('uiStore.rootTricks',uiStore.rootTricks)
-
  	const rootTricks = uiStore.rootTricks
 	for (var i = 0; i < rootTricks.length; i++) {
 		const trick = jugglingLibrary[rootTricks[i]]
 		const trickKey = rootTricks[i]
-		console.log('trick',trick)
-		console.log('trickKey',trickKey)
-		console.log('jugglingLibrary',jugglingLibrary)
 		var cardClass='listCard'
 		if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
 			cardClass = 'selectedListCard'
@@ -125,8 +119,7 @@ render() {
 				className={cardClass} 
 				key={trickKey + "div"} 
 				style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
-					graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}
-			>
+					graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 				 {store.myTricks[trickKey] ? 
 					 <button className="addAndRemoveMyTricksButton" 
 					 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
