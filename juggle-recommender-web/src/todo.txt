@@ -55,7 +55,7 @@ Minor:
 
 Filter/Sort Plan:
 NEXT:
--get rid of sort and bull nums and stuff outside of filter, just a list out there
+-get rid of sort and ball nums and stuff outside of filter, just a list out there
 -when apply is clicked, save the currently set settings
 -when filter loaded, load the set settings
 -make things happen when apply button clicked

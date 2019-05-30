@@ -127,19 +127,7 @@ class UIStore {
 
 
 
-	 @action showSortMenu=()=>{
-		if (document.getElementById("myDropdown")){
-	  		document.getElementById("myDropdown").classList.toggle("show");
-		}
- 	}
 
-	 @action hideSortMenu=()=>{
-		document.getElementById("myDropdown").classList['show'] = 'block';
-		
- 	} 	
- 	@action toggleSortTypeShow=()=>{
- 		document.getElementById("myDropdown").classList.toggle("show");
- 	}
 
  	@action toggleExpandedSection=(section)=>{
 	 	this.expandedSections[section] = !this.expandedSections[section]

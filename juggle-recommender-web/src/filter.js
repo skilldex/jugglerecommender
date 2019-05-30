@@ -11,11 +11,11 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-const suggestions = TAGS.map((country) => {
+const suggestions = TAGS.map((tag) => {
   return {
   	size: null,
-    id: country,
-    text: country
+    id: tag,
+    text: tag,
   }
 })
 
@@ -28,102 +28,102 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 @observer
 class Filter extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+	    super(props);
+		 	this.state = {
+		 	sortType: filterStore.sortType,
+	 		tags: [{ id: 'Common', text: 'Common' }],
+	      	suggestions: suggestions,
+	      	numBalls: filterStore.numberOfBalls,
+	      	difficultyRange: filterStore.difficultyRange
+	      	}
+		
+		this.handleDelete = this.handleDelete.bind(this);
+	    this.handleAddition = this.handleAddition.bind(this);
+	    this.handleDrag = this.handleDrag.bind(this);
+	    this.handleTagClick = this.handleTagClick.bind(this);
+	    this.handleSortRadioButtonChange = this.handleSortRadioButtonChange.bind(this);
+	}
 
-	 	this.state = {
-	 	sortType: 'alphabetical',
- 		tags: [{ id: 'Common', text: 'Common' }],
-      	suggestions: suggestions,
-      	filterNumberSelected: {'3':true,
-						      '4':false,
-						      '5':false,
-      	}
+	handleDelete(i) {
+		const { tags } = this.state;
+		this.setState({
+			tags: tags.filter((tag, index) => index !== i),
+		});
+	}
+
+	handleAddition(tag) {
+		this.setState(state => ({ tags: [...state.tags, tag] }));
+	}
+
+	handleDrag(tag, currPos, newPos) {
+		const tags = [...this.state.tags];
+		const newTags = tags.slice();
+		newTags.splice(currPos, 1);
+		newTags.splice(newPos, 0, tag);
+		this.setState({ tags: newTags });
+	}
+
+	handleTagClick(index) {
+		console.log('The tag at index ' + index + ' was clicked');
+	}
+
+	handleRequireAllCheckboxChange(checked){
 
 	}
-	this.handleDelete = this.handleDelete.bind(this);
-    this.handleAddition = this.handleAddition.bind(this);
-    this.handleDrag = this.handleDrag.bind(this);
-    this.handleTagClick = this.handleTagClick.bind(this);
-    this.handleSortRadioButtonChange = this.handleSortRadioButtonChange.bind(this);
-}
 
-
-handleDelete(i) {
-    const { tags } = this.state;
-    this.setState({
-      tags: tags.filter((tag, index) => index !== i),
-    });
-  }
-
-  handleAddition(tag) {
-   this.setState(state => ({ tags: [...state.tags, tag] }));
-  }
-
-  handleDrag(tag, currPos, newPos) {
-    const tags = [...this.state.tags];
-    const newTags = tags.slice();
-
-    newTags.splice(currPos, 1);
-    newTags.splice(newPos, 0, tag);
-
-    // re-render
-    this.setState({ tags: newTags });
-  }
-
-  handleTagClick(index) {
-    console.log('The tag at index ' + index + ' was clicked');
-  }
-
-  handleRequireAllCheckboxChange(checked){
-
-  }
-
-handleSortRadioButtonChange(event){
-  this.setState({
-    size: event.target.value
-  });
-		console.log(this.state.size)
-}
+	handleSortRadioButtonChange(event){
+		console.log('radioBut', event.target.value)
+		this.setState({sortType: event.target.value});
+		//console.log(this.state.sortType)
+	}
   
-  onDifficultyRangeChange(position){
-  	console.log('position',position)
-  }
+	onDifficultyRangeChange(range){
+		this.setState({difficultyRange: range});
+		console.log('range',range)
+	}
 
-  numButtonClicked(element){//TODO I just changed this to color up in state, need to keep doin that here
-  	console.log('thisElement',this.state.filterNumberSelected[element])
-  	let filtNumSelected = {...this.state.filterNumberSelected};
-  	filtNumSelected[element] = !filtNumSelected[element]
-  	this.setState({filterNumberSelected: filtNumSelected})
-  }
+	numButtonClicked(element){//TODO I just changed this to color up in state, need to keep doin that here
+		
+		let tempNumBalls = [...this.state.numBalls]
+		console.log('{...this.state.numBalls}',{...this.state.numBalls})
+		console.log('this.state.numBalls',this.state.numBalls)
+		if (tempNumBalls.includes(element)){
+			for( var i = 0; i < tempNumBalls.length; i++){ 
+				if ( tempNumBalls[i] === element) {
+				    tempNumBalls.splice(i, 1); 
+				    i--;
+			    }
+			}
+		}else{
+			tempNumBalls.push(element)
+		}
+		this.setState({numBalls: tempNumBalls})
+	}
 
-  filterApplyList(){
+	filterApplyList(){
+		filterStore.setSortType(this.state.sortType)
+		filterStore.setDifficultyRange(this.state.difficultyRange)
+		filterStore.setNumberOfBalls(this.state.numBalls)
+		filterStore.toggleFilterDiv()
+	}
 
-  }
+	filterApplyGraph(){
 
-  filterApplyGraph(){
-
-  }
+	}
 
 render() {
 	// const Checkbox = props => (
 	//   <input type="checkbox" {...props} />
 	// )
 	const { tags, suggestions } = this.state;
- 	 window.onclick = function(event) {
- 	 	if (event.srcElement['alt'] !== 'showSortMenu') {
- 	 		if (document.getElementById("myDropdown")){
- 				if (document.getElementById("myDropdown").classList.contains('show')){
- 					uiStore.toggleSortTypeShow()
- 				}
- 			}
- 		}
- 	}
+
  	const ColoredLine = () => (
     <hr
         style={{
             color: 'black',
             backgroundColor: 'white',
+            sortType: 'alphabetical',
             height: 2
         }}
     />
@@ -132,23 +132,14 @@ render() {
  			//	how showSortMenu does it, but  alittle different
 
  	const numbersOfBalls = ['3','4','5']
- 	const numButtons = []
- 
+ 	const numButtons = [] 
 	numbersOfBalls.forEach(function(element) {
-				numButtons.push(//TODO figure out how to use this 
-					//conditional to determine the color of the buttons
-					//maybe their background as well
-					<button className={this.state.filterNumberSelected[element]?
-						'filterNumSelected':'filterNumUnselected'}
-					key={'numButton' + element} 
-					onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
-)
-				
-	},this);
-
-
-	
- 	
+		numButtons.push(
+			<button className={this.state.numBalls.includes(element)?
+				'filterNumSelected':'filterNumUnselected'}
+			key={'numButton' + element} 
+			onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
+)},this);	
 
 	return (
 		<div className="filterDiv">
@@ -190,7 +181,7 @@ render() {
 				<div style={{marginLeft:10, marginRight:10}}>
 					<Range min={1} 
 							max={10}
-							defaultValue={[1,10]}
+							defaultValue={filterStore.difficultyRange}
 							onChange={(e)=>this.onDifficultyRangeChange(e)}
 							railStyle={{backgroundColor: 'darkgray', borderColor: 'darkgray'}}
 							trackStyle={{backgroundColor: 'gray', borderColor: 'gray'}}
@@ -208,7 +199,7 @@ render() {
 			            <input
 			              type="radio"
 			              value="alphabetical"
-			              checked={this.state.size === "alphabetical"}
+			              checked={this.state.sortType === "alphabetical"}
 			              onChange={this.handleSortRadioButtonChange}/>
 			            <div className = "sortRadioButtonsLabel">
 			            	<label>A->Z</label>
@@ -216,7 +207,7 @@ render() {
 				        <input
 			              type="radio"
 			              value="difficulty"
-			              checked={this.state.size === "difficulty"}
+			              checked={this.state.sortType === "difficulty"}
 			              onChange={this.handleSortRadioButtonChange}/>
 			            <div className = "sortRadioButtonsLabel">
 				        	<label>Difficulty</label>
