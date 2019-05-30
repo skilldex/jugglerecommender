@@ -144,15 +144,6 @@ render() {
 		<div className="filterDiv">
 			<button className="filterButton" onClick={()=>{filterStore.toggleFilterDiv()}}>
 			X</button><br/>
-			<div className='tagsCheckBox'>	
-				<input style={{float:'right',position:'absolute'}}
-						type="checkbox" 							
-						onChange={this.handleRequireAllCheckboxChange} 
-						defaultChecked={this.state.checked}/>
-				<div className ="tagsCheckBoxLabel">
-					<p style={{fontSize:"10px"}}>(require all)</p>	
-				</div>
-			</div>
 			<div className = "filterHeader">
 				<h3>Tags:</h3>
 			</div>	
@@ -215,8 +206,6 @@ render() {
 			</div><br/>
 			<button className='filterApplyButton'
 					onClick={()=>{this.filterApplyList()}}>Apply to list</button>
-			<button className='filterApplyButton'
-					onClick={()=>{this.filterApplyGraph()}}>Apply to list and graph</button>
 		</div>
 	)
   }
