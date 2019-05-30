@@ -154,7 +154,10 @@ class UIStore {
 				if(parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
 				   [...arrayOfFilterTags].every(elem => trick.tags.indexOf(elem) > -1) &&
-				   filterStore.numberOfBalls.includes(trick.num.toString())){
+				   filterStore.numberOfBalls.includes(trick.num.toString()) &&
+				   (this.searchTrick === '' || 
+				   (trick.name.includes(this.searchTrick)))){
+
 					const cardColor = 
 						graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
 						graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
