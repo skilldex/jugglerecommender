@@ -149,7 +149,7 @@ render() {
 								 All</button>
 						</div>
 			 			<div className="search" >
-				 			<input defaultValue = {Object.keys(store.myTricks).length > 0 ? "" : "common"}  onChange={uiStore.searchInputChange}/>
+				 			<input onChange={uiStore.searchInputChange}/>
 				 			<button onClick={()=>{filterStore.toggleFilterDiv()}}>
 							 F</button>
 				 		</div>

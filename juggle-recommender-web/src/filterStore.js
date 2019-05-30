@@ -11,7 +11,7 @@ class FilterStore {
 	@observable difficultyRange = [1,10]
 	@observable numberOfBalls = ['3']
 	@observable tags = []
-
+	 
 	@action setTags=(tags)=>{
 		this.tags = tags
 	}

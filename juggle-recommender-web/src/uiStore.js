@@ -141,13 +141,19 @@ class UIStore {
 		}else{
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
 		}
+		const arrayOfFilterTags= []
+		
+		filterStore.tags.forEach(function (arrayItem) {
+		    arrayOfFilterTags.push(arrayItem.id)
+		});
+		
 		Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 			if(this.selectedList === "allTricks" || 
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
 				const trick = sortedJugglingLibrary[trickKey]
 				if(parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
-				   [...filterStore.tags].every(elem => trick.tags.indexOf(elem) > -1) &&
+				   [...arrayOfFilterTags].every(elem => trick.tags.indexOf(elem) > -1) &&
 				   filterStore.numberOfBalls.includes(trick.num.toString())){
 					const cardColor = 
 						graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 

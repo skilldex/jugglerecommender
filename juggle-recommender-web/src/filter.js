@@ -32,7 +32,7 @@ class Filter extends Component {
 	    super(props);
 		 	this.state = {
 		 	sortType: filterStore.sortType,
-	 		tags: [{ id: 'common', text: 'common' }],
+	 		tags: filterStore.tags,
 	      	suggestions: suggestions,
 	      	numBalls: filterStore.numberOfBalls,
 	      	difficultyRange: filterStore.difficultyRange
@@ -43,6 +43,8 @@ class Filter extends Component {
 	    this.handleDrag = this.handleDrag.bind(this);
 	    this.handleTagClick = this.handleTagClick.bind(this);
 	    this.handleSortRadioButtonChange = this.handleSortRadioButtonChange.bind(this);
+
+
 	}
 
 	handleDelete(i) {
@@ -96,14 +98,11 @@ class Filter extends Component {
 	}
 
 	filterApplyList(){
-		const tagsArray= []
-		this.state.tags.forEach(function (arrayItem) {
-		    tagsArray.push(arrayItem.id)
-		});
 		filterStore.setSortType(this.state.sortType)
 		filterStore.setDifficultyRange(this.state.difficultyRange)
 		filterStore.setNumberOfBalls(this.state.numBalls)
-		filterStore.setTags(tagsArray)
+		//filterStore.setTags(tagsArray)
+		filterStore.setTags(this.state.tags)
 		filterStore.toggleFilterDiv()
 		uiStore.updateRootTricks()
 	}
