@@ -42,38 +42,6 @@ class TrickList extends Component {
 	}
 
 }
-	//TODO: move to general utility file
-alphabeticalSortObject(data, attr) {
-    var arr = [];
-    for (var prop in data) {
-
-        if (data.hasOwnProperty(prop)) {
-            var obj = {};
-            obj[prop] = data[prop];
-            obj.tempSortName = data[prop][attr];
-            arr.push(obj);
-        }
-    }
-    arr.sort(function(a, b) {
-        var at = a.tempSortName,
-            bt = b.tempSortName;
-        return at > bt ? 1 : ( at < bt ? -1 : 0 );
-    });
-    var result = {};
-    for (var i=0, l=arr.length; i<l; i++) {
-        obj = arr[i];
-        delete obj.tempSortName;
-        for (prop in obj) {
-            if (obj.hasOwnProperty(prop)) {
-                var id = prop;
-            }
-        }
-        var item = obj[id];
-        result[Object.keys(obj)] = item;
-    }
-    return result;
-}
-
 
 toggleExpandedSection(num){
 	if (uiStore.expandedSections[num]){
@@ -133,61 +101,44 @@ render() {
  			//	how showSortMenu does it, but  alittle different
 
  	let tricks = []
- 	let sortedJugglingLibrary
- 	if (filterStore.sortType === 'alphabetical'){
-	 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
-	}else{
-	 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
+
+
+ 	console.log('uiStore.rootTricks',uiStore.rootTricks)
+
+ 	const rootTricks = uiStore.rootTricks
+	for (var i = 0; i < rootTricks.length; i++) {
+		const trick = jugglingLibrary[rootTricks[i]]
+		const trickKey = rootTricks[i]
+		console.log('trick',trick)
+		console.log('trickKey',trickKey)
+		console.log('jugglingLibrary',jugglingLibrary)
+		var cardClass='listCard'
+		if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
+			cardClass = 'selectedListCard'
+		}
+		const cardColor = 
+			graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
+			graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
+		 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
+		tricks.push(
+			<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
+				className={cardClass} 
+				key={trickKey + "div"} 
+				style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
+					graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}
+			>
+				 {store.myTricks[trickKey] ? 
+					 <button className="addAndRemoveMyTricksButton" 
+					 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
+					 		e.stopPropagation()}}>&#9733;</button> :
+				 <button className="addAndRemoveMyTricksButton" 
+				 		onClick={(e)=>{store.addToMyTricks(trickKey);
+				 		e.stopPropagation()}}>&#9734;</button>}
+				 <span className="listCardName" title={trick.name}>{trick.name}</span>			
+			</div>
+		)	
 	}
 
- 	Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
-		const trick = sortedJugglingLibrary[trickKey]
-		var cardClass='listCard'
-		var fullStringToSearch = trick.name.toLowerCase()
-		trick.tags.forEach(function (tag, index) {
-			fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
-		});
-		if(fullStringToSearch.includes(uiStore.searchTrick.toLowerCase()) ){
-			if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
-				cardClass = 'selectedListCard'
-			}
-
-			if(uiStore.selectedList === "allTricks" || 
-			  (uiStore.selectedList === "myTricks" && store.myTricks[trickKey])){
-			  	console.log('trick being added to list1')
-			  	console.log('trick.difficulty',trick.difficulty)
-			  	console.log('filterStore.difficultyRange',filterStore.difficultyRange)
-			  	console.log('filterStore.numberOfBalls',filterStore.numberOfBalls)
-				console.log('trick.num',trick.num)
-				if(parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
-					parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
-					filterStore.numberOfBalls.includes(trick.num.toString())){
-						console.log('trick being added to list2')
-						const cardColor = 
-							graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
-							graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
-						 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
-						tricks.push(
-							<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
-								className={cardClass} 
-								key={trickKey + "div"} 
-								style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
-									graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}
-							>
-								 {store.myTricks[trickKey] ? 
-			  					 <button className="addAndRemoveMyTricksButton" 
-			  					 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
-			  					 		e.stopPropagation()}}>&#9733;</button> :
-								 <button className="addAndRemoveMyTricksButton" 
-								 		onClick={(e)=>{store.addToMyTricks(trickKey);
-								 		e.stopPropagation()}}>&#9734;</button>}
-								 <span className="listCardName" title={trick.name}>{trick.name}</span>			
-							</div>
-						)
-				}
-			}
-		}
-	})
  	const buttons = <div>
 					 	<label style={{"fontSize":"30px",
 										"textAlign" : "right", 

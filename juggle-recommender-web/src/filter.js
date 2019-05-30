@@ -84,7 +84,6 @@ class Filter extends Component {
 	}
 
 	numButtonClicked(element){//TODO I just changed this to color up in state, need to keep doin that here
-		
 		let tempNumBalls = [...this.state.numBalls]
 		console.log('{...this.state.numBalls}',{...this.state.numBalls})
 		console.log('this.state.numBalls',this.state.numBalls)
@@ -106,6 +105,7 @@ class Filter extends Component {
 		filterStore.setDifficultyRange(this.state.difficultyRange)
 		filterStore.setNumberOfBalls(this.state.numBalls)
 		filterStore.toggleFilterDiv()
+		uiStore.updateRootTricks()
 	}
 
 	filterApplyGraph(){

@@ -75,8 +75,14 @@ class GraphStore {
  		let nodes = []
  		let tempNodes = {}
  		let edges = []
+ 		const rootTricks = []
+ 		if (uiStore.selectedTricks.length > 0){
+	 		Array.prototype.push.apply(rootTricks, uiStore.selectedTricks);
+	 	}else{
+	 		Array.prototype.push.apply(rootTricks, uiStore.rootTricks);
+	 	}
 	 	if(uiStore.selectedList === "myTricks" ){
-	 		uiStore.rootTricks.forEach((trickKey)=>{
+	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			if(rootTrick.dependents || rootTrick.prereqs){
 		 			tempNodes[trickKey] = {
@@ -118,7 +124,7 @@ class GraphStore {
 		 		}
  			})
 	 	}else if(uiStore.selectedList === "allTricks"){
-	 		uiStore.rootTricks.forEach((trickKey)=>{
+	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = jugglingLibrary[trickKey]
 	 			const involvedRoot = store.myTricks[trickKey] || 
 	 							uiStore.selectedTricks.includes(trickKey) ? 3 : 0
@@ -209,6 +215,7 @@ class GraphStore {
 	 		}
 	 		nodes.push({...tempNodes[trickKey]})
 	 	})
+
 	 	this.nodes = nodes
 	 	this.edges = edges
  	}

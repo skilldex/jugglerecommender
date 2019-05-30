@@ -55,10 +55,6 @@ Minor:
 
 Filter/Sort Plan:
 NEXT:
--get rid of sort and ball nums and stuff outside of filter, just a list out there
--when apply is clicked, save the currently set settings
--when filter loaded, load the set settings
--make things happen when apply button clicked
 	-we can leave search outside of the filter and have it start with cascade typed in so there is not a huge list
 	IDEAS:
 		maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space

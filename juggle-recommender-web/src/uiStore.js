@@ -1,6 +1,7 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
+import filterStore from "./filterStore"
 import {jugglingLibrary} from './jugglingLibrary.js'
 
 configure({ enforceActions: "always" })
@@ -81,53 +82,70 @@ class UIStore {
  		}
  		this.performSearch()
  		this.popupTrick = null
- 	}
- 		
- 	@action performSearch=()=>{
- 		this.selectedTricks = []
- 		this.searchTrick = this.searchInput
- 		this.updateRootTricks()
- 	}
- 	@action updateRootTricks=()=>{
-	 	this.rootTricks = []
-	 	if (this.selectedTricks.length > 0){
-	 		Array.prototype.push.apply(this.rootTricks, this.selectedTricks);
-	 	}else{
-		 	Object.keys(jugglingLibrary).forEach((trickKey, i) => {
-				if(this.selectedList === "allTricks" || 
-					(this.selectedList === "myTricks" && store.myTricks[trickKey])
-				){
-					const trick = jugglingLibrary[trickKey]
-					let shouldPushTrick = false			
-					var fullStringToSearch = trick.name.toLowerCase()
-					trick.tags.forEach(function (tag, index) {
-						fullStringToSearch = fullStringToSearch + " " + tag.toLowerCase()
-					});
-					if (trick.num === 3 && this.expandedSections['3'] &&
-						(fullStringToSearch.toLowerCase().includes(this.searchTrick.toLowerCase()) || 
-							this.searchTrick === "")){
-						shouldPushTrick = true
-					}
-					if (trick.num === 4 && this.expandedSections['4']){
-						shouldPushTrick = true
-					}
-					if (trick.num === 5 && this.expandedSections['5']){
-						shouldPushTrick = true
-					}
-					if (shouldPushTrick){
-						this.rootTricks.push(
-							trickKey
-						)
-					}
-				}
-			})
 	 	}
-	 	graphStore.updateGraphData()
+	 		
+	 	@action performSearch=()=>{
+	 		this.selectedTricks = []
+	 		this.searchTrick = this.searchInput
+	 		this.updateRootTricks()
+	 	}
+
+		@action alphabeticalSortObject(data, attr) {
+	    var arr = [];
+	    for (var prop in data) {
+
+	        if (data.hasOwnProperty(prop)) {
+	            var obj = {};
+	            obj[prop] = data[prop];
+	            obj.tempSortName = data[prop][attr];
+	            arr.push(obj);
+	        }
+	    }
+	    arr.sort(function(a, b) {
+	        var at = a.tempSortName,
+	            bt = b.tempSortName;
+	        return at > bt ? 1 : ( at < bt ? -1 : 0 );
+	    });
+	    var result = {};
+	    for (var i=0, l=arr.length; i<l; i++) {
+	        obj = arr[i];
+	        delete obj.tempSortName;
+	        for (prop in obj) {
+	            if (obj.hasOwnProperty(prop)) {
+	                var id = prop;
+	            }
+	        }
+	        var item = obj[id];
+	        result[Object.keys(obj)] = item;
+	    }
+	    return result;
 	}
 
-
-
-
+ 	@action updateRootTricks=(rootTricks)=>{
+	 	this.rootTricks = []
+ 		let sortedJugglingLibrary
+	 	if (filterStore.sortType === 'alphabetical'){
+		 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+		}else{
+		 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
+		}
+		Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
+			if(this.selectedList === "allTricks" || 
+			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
+				const trick = sortedJugglingLibrary[trickKey]
+				if(parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
+				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
+				   filterStore.numberOfBalls.includes(trick.num.toString())){
+					const cardColor = 
+						graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
+						graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
+					 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
+					this.rootTricks.push(trickKey)
+				}
+			}
+		})			
+	graphStore.updateGraphData()
+	}
 
  	@action toggleExpandedSection=(section)=>{
 	 	this.expandedSections[section] = !this.expandedSections[section]
