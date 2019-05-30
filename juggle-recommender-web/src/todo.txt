@@ -55,9 +55,10 @@ Minor:
 
 Filter/Sort Plan:
 NEXT:
-	-we can leave search outside of the filter and have it start with cascade typed in so there is not a huge list
-	IDEAS:
-		maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
+-hook up tags
+-hook up search
+IDEAS:
+	maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
 
 Notes:
 -Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
