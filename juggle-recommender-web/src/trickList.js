@@ -31,13 +31,11 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 @observer
 class TrickList extends Component {
 	state = {
-			sortType: 'alphabetical',
-			listIsMinimized: false,
-			showSortMenu : false
+		listIsMinimized: false,
 	}
 
 	sortOptionClicked=(type)=>{
-		this.setState({sortType : type})
+		filterStore.setSortType(type)
 	}
 	toggleShowSort=()=>{
 		this.setState({showSortMenu:!this.state.showSortMenu})
@@ -90,13 +88,11 @@ class TrickList extends Component {
 
 
 render() {
+	//"this" gets redefined in window.onclick so use "that"
+	const that = this
 	 window.onclick = function(event) {
  	 	if (event.srcElement['alt'] !== 'showSortMenu') {
- 	 		if (document.getElementById("myDropdown")){
- 				if (document.getElementById("myDropdown").classList.contains('show')){
- 					uiStore.toggleSortTypeShow()
- 				}
- 			}
+ 	 		that.toggleShowSort()
  		}
  	}
 	const { tags, suggestions } = this.state;
