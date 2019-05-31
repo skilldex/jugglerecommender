@@ -18,14 +18,13 @@ v 1.0:
 v 0.9:
 _______
 	-make animation less crazy (vis.js is on archive.org)
-	- switch from 3 lists to filter dropdown
 	- move sort to search
-	
-BUGS:
-	-clicking on a trick to make a popup sometimes also clicks the link
-	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it
 	- with no data in app, "all tricks" list is empty 
-	- sort radio button gone, move the dropdown to be above list again
+	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it
+	-clicking on a trick to make a popup sometimes also clicks the link
+
+BUGS:
+	
 ==========
 POPUPS:
 -(maybe?)list depends and prereqs
