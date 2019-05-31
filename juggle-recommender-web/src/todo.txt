@@ -35,7 +35,8 @@ Later :
 May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
--are you sure popup should only show if you are in mytricks
+-'are you sure' popup should only show if you are in mytricks removing a trick
+-Autoscroll is broken
 
 Minor:
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
@@ -44,11 +45,17 @@ Minor:
 -Maybe closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
 -if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen, maybe the minimized list should be forced to stay on upper left but not on the header.
 -Gif fullscreen button
-
+-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
+-Background of filter button is gray, should it be?
+-Auto select input when catch edit is clicked
+-Make selected links not be highlighted when clicked inside delay
 
 IDEAS:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
 		 make it so if you slide it far enough it begins playing the trick backwards
+	-Maybe catches input should be automatically editable when a trick is added to my tricks
 
 Notes:
 -Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+-Why does website have red triangle explanation on url? as if our page is dangerous or something.
+-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, but I dont know what should be done about it
