@@ -91,7 +91,7 @@ render() {
 	//"this" gets redefined in window.onclick so use "that"
 	const that = this
 	 window.onclick = function(event) {
- 	 	if (event.srcElement['alt'] !== 'showSortMenu') {
+ 	 	if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
  	 		that.toggleShowSort()
  		}
  	}
