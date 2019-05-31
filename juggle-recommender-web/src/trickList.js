@@ -37,7 +37,10 @@ class TrickList extends Component {
 	}
 
 	sortOptionClicked=(type)=>{
-		this.setState({sortType : type})
+		console.log('type',type)
+		filterStore.setSortType(type)
+		uiStore.updateRootTricks()
+		this.toggleShowSort()
 	}
 	toggleShowSort=()=>{
 		this.setState({showSortMenu:!this.state.showSortMenu})
@@ -61,7 +64,8 @@ class TrickList extends Component {
 		}else{
 			this.setState({'listIsMinimized':false})
 			uiStore.setListExpanded(!uiStore.listExpanded)
-		}						
+		}	
+		this.setState({showSortMenu:false})					
 	}
 
 	setScrollerPositions=()=> {
@@ -90,22 +94,22 @@ class TrickList extends Component {
 
 
 render() {
-	 window.onclick = function(event) {
- 	 	if (event.srcElement['alt'] !== 'showSortMenu') {
- 	 		if (document.getElementById("myDropdown")){
- 				if (document.getElementById("myDropdown").classList.contains('show')){
- 					uiStore.toggleSortTypeShow()
- 				}
- 			}
- 		}
- 	}
+	 // window.onclick = function(event) = {
+ 	//  	if (this.state.showSortMenu && 
+ 	//  		event.srcElement['alt'] !== 'sortDropdownButtonDif' &&
+ 	//  		event.srcElement['alt'] !== 'sortDropdownButtonAlph') {
+ 	//  		this.setState({showSortMenu:!this.state.showSortMenu})
+ 	// 	}
+ 	// }
 	const { tags, suggestions } = this.state;
- 			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
- 			//	how showSortMenu does it, but  alittle different
  	const sortDropdown = this.state.showSortMenu ? 
  					<div title="sort" id="myDropdown" className="sortDropdown">
-				    	<button className="sortDropdownButtonDif" onClick={(e)=>this.sortOptionClicked('difficulty')}>Difficulty</button>
-				    	<button className="sortDropdownButtonAlph" onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
+				    	<button alt="sortDropdownButtonDif"
+				    			className="sortDropdownButtonDif" 
+				    			onClick={(e)=>this.sortOptionClicked('difficulty')}>Difficulty</button>
+				    	<button alt="sortDropdownButtonAlph"
+				    			className="sortDropdownButtonAlph" 
+				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
 					  </div> : null
 
 	const sort = <img src={sortIcon} alt="showSortMenu" 
