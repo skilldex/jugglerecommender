@@ -11,7 +11,7 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 
-const suggestions = TAGS.map((tag) => {
+const presetTags = TAGS.map((tag) => {
   return {
   	size: null,
     id: tag,
@@ -31,45 +31,34 @@ class Filter extends Component {
  	state = {
 	 	sortType: filterStore.sortType,
  		tags: filterStore.tags,
-      	suggestions: suggestions,
-      	numBalls: filterStore.numberOfBalls,
+      	presetTags: presetTags,
+      	numBalls: filterStore.numBalls,
       	difficultyRange: filterStore.difficultyRange
   	}
 	      
 
 	handleDelete=(i)=>{
-		const { tags } = this.state;
-		this.setState({
-			tags: tags.filter((tag, index) => index !== i),
-		});
+		filterStore.setTags(
+			filterStore.tags.filter((tag, index) => index !== i)
+		)
 	}
 
 	handleAddition=(tag)=>{
-		this.setState(state => ({ tags: [...state.tags, tag] }));
-	}
-
-	handleDrag=(tag, currPos, newPos)=> {
-		const tags = [...this.state.tags];
-		const newTags = tags.slice();
-		newTags.splice(currPos, 1);
-		newTags.splice(newPos, 0, tag);
-		this.setState({ tags: newTags });
-	}
-
-	handleTagClick=(index)=> {
-		console.log('The tag at index ' + index + ' was clicked');
+		filterStore.setTags(
+			 [...filterStore.tags, tag] 
+		);
 	}
 
 	handleSortRadioButtonChange=(event)=>{
-		this.setState({sortType: event.target.value});
+		filterStore.setSortType(event.target.value)
 	}
   
 	onDifficultyRangeChange=(range)=>{
-		this.setState({difficultyRange: range});
+		filterStore.setDifficultyRange(range)
 	}
 
 	numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
-		let tempNumBalls = [...this.state.numBalls]
+		let tempNumBalls = [...filterStore.numBalls]
 		if (tempNumBalls.includes(element)){
 			for( var i = 0; i < tempNumBalls.length; i++){ 
 				if ( tempNumBalls[i] === element) {
@@ -80,52 +69,38 @@ class Filter extends Component {
 		}else{
 			tempNumBalls.push(element)
 		}
-		this.setState({numBalls: tempNumBalls})
-	}
-
-	filterApplyList=()=>{
-		filterStore.setSortType(this.state.sortType)
-		filterStore.setDifficultyRange(this.state.difficultyRange)
-		filterStore.setNumberOfBalls(this.state.numBalls)
-		//filterStore.setTags(tagsArray)
-		filterStore.setTags(this.state.tags)
-		filterStore.toggleFilterDiv()
-		uiStore.updateRootTricks()
+		filterStore.setNumBalls(tempNumBalls)
 	}
 
 	render() {
-		// const Checkbox = props => (
-		//   <input type="checkbox" {...props} />
-		// )
-		const { tags, suggestions } = this.state;
 
-	 	const ColoredLine = () => (
-	    <hr
-	        style={{
-	            color: 'black',
-	            backgroundColor: 'white',
-	            sortType: 'alphabetical',
-	            height: 2
-	        }}
-	    />
-	);
-	 			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
-	 			//	how showSortMenu does it, but  alittle different
+	 	const ColoredLine = ()=>(
+			   <hr
+			        style={{
+			            color: 'black',
+			            backgroundColor: 'white',
+			            sortType: 'alphabetical',
+			            height: 2
+			        }}
+			   />
+				
+		 )
 
 	 	const numbersOfBalls = ['3','4','5']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
 			numButtons.push(
-				<button className={this.state.numBalls.includes(element)?
+				<button className={filterStore.numBalls.includes(element)?
 					'filterNumSelected':'filterNumUnselected'}
 				key={'numButton' + element} 
 				onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
-	)},this);	
+		)},this);	
 
 		return (
 			<div className="filterDiv">
 				<button className="filterButton" onClick={()=>{filterStore.toggleFilterDiv()}}>
-				X</button><br/>
+					X
+				</button><br/>
 				<div className = "filterHeader">
 					<h3>Tags:</h3>
 				</div>	
@@ -133,13 +108,12 @@ class Filter extends Component {
 			        <ReactTags
 			          autofocus = {false}
 			          inputFieldPosition="bottom"
-			          tags={tags}
+			          tags={filterStore.tags}
 			          minQueryLength={0}
-			          suggestions={suggestions}
+			          suggestions={presetTags}
 			          delimiters={delimiters}
 			          handleDelete={this.handleDelete}
 			          handleAddition={this.handleAddition}
-			          handleDrag={this.handleDrag}
 			          handleTagClick={this.handleTagClick}/>
 			    </div>
 			    <ColoredLine/>
@@ -167,27 +141,27 @@ class Filter extends Component {
 				<ColoredLine/>
 				<div className = "filterHeader">
 					<h3>Sort:</h3><br/>
-						{<ul className = 'sortRadioButtons'>
-				            <input
-				              type="radio"
-				              value="alphabetical"
-				              checked={this.state.sortType === "alphabetical"}
-				              onChange={this.handleSortRadioButtonChange}/>
-				            <div className = "sortRadioButtonsLabel">
-				            	<label>A->Z</label>
-				            </div><br/>
-					        <input
-				              type="radio"
-				              value="difficulty"
-				              checked={this.state.sortType === "difficulty"}
-				              onChange={this.handleSortRadioButtonChange}/>
-				            <div className = "sortRadioButtonsLabel">
-					        	<label>Difficulty</label>
-					        </div>
-			          	</ul>}
+						{
+							<ul className = 'sortRadioButtons'>
+					            <input
+					              type="radio"
+					              value="alphabetical"
+					              checked={filterStore.sortType === "alphabetical"}
+					              onChange={this.handlefSortRadioButtonChange}/>
+					            <div className = "sortRadioButtonsLabel">
+					            	<label>A->Z</label>
+					            </div><br/>
+						        <input
+					              type="radiof"
+					              value="difficulty"
+					              checked={filterStore.sortType === "difficulty"}
+					              onChange={this.handleSortRadioButtonChange}/>
+					            <div className = "sortRadioButtonsLabel">
+						        	<label>Difficulty</label>
+						        </div>
+				          	</ul>
+				          }
 				</div><br/>
-				<button className='filterApplyButton'
-						onClick={()=>{this.filterApplyList()}}>Apply to list</button>
 			</div>
 		)
 	  }

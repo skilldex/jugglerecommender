@@ -21,7 +21,11 @@ _______
 	- switch from 3 lists to filter dropdown
 	- move sort to search
 	
-
+BUGS:
+	-clicking on a trick to make a popup sometimes also clicks the link
+	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it
+	- with no data in app, "all tricks" list is empty 
+	- sort radio button gone, move the dropdown to be above list again
 ==========
 POPUPS:
 -(maybe?)list depends and prereqs
@@ -41,9 +45,7 @@ Later :
 May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
-BUGS:
-	-clicking on a trick to make a popup sometimes also clicks the link
-	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it
+
 
 Minor:
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
@@ -60,7 +62,7 @@ NEXT:
 	right now we are just defaulting to 'all' behavior
 -look into how to handle the apply to list&graph
 BUGS:
-
+	
 IDEAS:
 	maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
 
