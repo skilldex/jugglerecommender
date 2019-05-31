@@ -28,37 +28,27 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 @observer
 class Filter extends Component {
-	constructor(props) {
-	    super(props);
-		 	this.state = {
-		 	sortType: filterStore.sortType,
-	 		tags: filterStore.tags,
-	      	suggestions: suggestions,
-	      	numBalls: filterStore.numberOfBalls,
-	      	difficultyRange: filterStore.difficultyRange
-	      	}
-		
-		this.handleDelete = this.handleDelete.bind(this);
-	    this.handleAddition = this.handleAddition.bind(this);
-	    this.handleDrag = this.handleDrag.bind(this);
-	    this.handleTagClick = this.handleTagClick.bind(this);
-	    this.handleSortRadioButtonChange = this.handleSortRadioButtonChange.bind(this);
+ 	state = {
+	 	sortType: filterStore.sortType,
+ 		tags: filterStore.tags,
+      	suggestions: suggestions,
+      	numBalls: filterStore.numberOfBalls,
+      	difficultyRange: filterStore.difficultyRange
+  	}
+	      
 
-
-	}
-
-	handleDelete(i) {
+	handleDelete=(i)=>{
 		const { tags } = this.state;
 		this.setState({
 			tags: tags.filter((tag, index) => index !== i),
 		});
 	}
 
-	handleAddition(tag) {
+	handleAddition=(tag)=>{
 		this.setState(state => ({ tags: [...state.tags, tag] }));
 	}
 
-	handleDrag(tag, currPos, newPos) {
+	handleDrag=(tag, currPos, newPos)=> {
 		const tags = [...this.state.tags];
 		const newTags = tags.slice();
 		newTags.splice(currPos, 1);
@@ -66,23 +56,19 @@ class Filter extends Component {
 		this.setState({ tags: newTags });
 	}
 
-	handleTagClick(index) {
+	handleTagClick=(index)=> {
 		console.log('The tag at index ' + index + ' was clicked');
 	}
 
-	handleRequireAllCheckboxChange(checked){
-
-	}
-
-	handleSortRadioButtonChange(event){
+	handleSortRadioButtonChange=(event)=>{
 		this.setState({sortType: event.target.value});
 	}
   
-	onDifficultyRangeChange(range){
+	onDifficultyRangeChange=(range)=>{
 		this.setState({difficultyRange: range});
 	}
 
-	numButtonClicked(element){//TODO I just changed this to color up in state, need to keep doin that here
+	numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
 		let tempNumBalls = [...this.state.numBalls]
 		if (tempNumBalls.includes(element)){
 			for( var i = 0; i < tempNumBalls.length; i++){ 
@@ -97,7 +83,7 @@ class Filter extends Component {
 		this.setState({numBalls: tempNumBalls})
 	}
 
-	filterApplyList(){
+	filterApplyList=()=>{
 		filterStore.setSortType(this.state.sortType)
 		filterStore.setDifficultyRange(this.state.difficultyRange)
 		filterStore.setNumberOfBalls(this.state.numBalls)
@@ -107,109 +93,105 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
 
-	filterApplyGraph(){
+	render() {
+		// const Checkbox = props => (
+		//   <input type="checkbox" {...props} />
+		// )
+		const { tags, suggestions } = this.state;
 
-	}
+	 	const ColoredLine = () => (
+	    <hr
+	        style={{
+	            color: 'black',
+	            backgroundColor: 'white',
+	            sortType: 'alphabetical',
+	            height: 2
+	        }}
+	    />
+	);
+	 			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
+	 			//	how showSortMenu does it, but  alittle different
 
-render() {
-	// const Checkbox = props => (
-	//   <input type="checkbox" {...props} />
-	// )
-	const { tags, suggestions } = this.state;
+	 	const numbersOfBalls = ['3','4','5']
+	 	const numButtons = [] 
+		numbersOfBalls.forEach(function(element) {
+			numButtons.push(
+				<button className={this.state.numBalls.includes(element)?
+					'filterNumSelected':'filterNumUnselected'}
+				key={'numButton' + element} 
+				onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
+	)},this);	
 
- 	const ColoredLine = () => (
-    <hr
-        style={{
-            color: 'black',
-            backgroundColor: 'white',
-            sortType: 'alphabetical',
-            height: 2
-        }}
-    />
-);
- 			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
- 			//	how showSortMenu does it, but  alittle different
-
- 	const numbersOfBalls = ['3','4','5']
- 	const numButtons = [] 
-	numbersOfBalls.forEach(function(element) {
-		numButtons.push(
-			<button className={this.state.numBalls.includes(element)?
-				'filterNumSelected':'filterNumUnselected'}
-			key={'numButton' + element} 
-			onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
-)},this);	
-
-	return (
-		<div className="filterDiv">
-			<button className="filterButton" onClick={()=>{filterStore.toggleFilterDiv()}}>
-			X</button><br/>
-			<div className = "filterHeader">
-				<h3>Tags:</h3>
-			</div>	
-			<div>
-		        <ReactTags
-		          autofocus = {false}
-		          inputFieldPosition="bottom"
-		          tags={tags}
-		          minQueryLength={0}
-		          suggestions={suggestions}
-		          delimiters={delimiters}
-		          handleDelete={this.handleDelete}
-		          handleAddition={this.handleAddition}
-		          handleDrag={this.handleDrag}
-		          handleTagClick={this.handleTagClick}/>
-		    </div>
-		    <ColoredLine/>
-			<div className = "filterHeader">
-				<h3>Number of balls:</h3>
-			</div>
-			{numButtons}
-			<ColoredLine/>
-			<div className = "filterHeader">
-				<h3>Difficulty:</h3>
-				<div style={{marginLeft:10, marginRight:10}}>
-					<Range min={1} 
-							max={10}
-							defaultValue={filterStore.difficultyRange}
-							onChange={(e)=>this.onDifficultyRangeChange(e)}
-							railStyle={{backgroundColor: 'darkgray', borderColor: 'darkgray'}}
-							trackStyle={{backgroundColor: 'gray', borderColor: 'gray'}}
-							handleStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
-							dotStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
-							activeDotStyle={{backgroundColor: 'lightblue', borderColor: 'lightblue'}}
-							marks={{ 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10'}} 
-							step={null} /><br/>
+		return (
+			<div className="filterDiv">
+				<button className="filterButton" onClick={()=>{filterStore.toggleFilterDiv()}}>
+				X</button><br/>
+				<div className = "filterHeader">
+					<h3>Tags:</h3>
+				</div>	
+				<div>
+			        <ReactTags
+			          autofocus = {false}
+			          inputFieldPosition="bottom"
+			          tags={tags}
+			          minQueryLength={0}
+			          suggestions={suggestions}
+			          delimiters={delimiters}
+			          handleDelete={this.handleDelete}
+			          handleAddition={this.handleAddition}
+			          handleDrag={this.handleDrag}
+			          handleTagClick={this.handleTagClick}/>
+			    </div>
+			    <ColoredLine/>
+				<div className = "filterHeader">
+					<h3>Number of balls:</h3>
 				</div>
+				{numButtons}
+				<ColoredLine/>
+				<div className = "filterHeader">
+					<h3>Difficulty:</h3>
+					<div style={{marginLeft:10, marginRight:10}}>
+						<Range min={1} 
+								max={10}
+								defaultValue={filterStore.difficultyRange}
+								onChange={(e)=>this.onDifficultyRangeChange(e)}
+								railStyle={{backgroundColor: 'darkgray', borderColor: 'darkgray'}}
+								trackStyle={{backgroundColor: 'gray', borderColor: 'gray'}}
+								handleStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
+								dotStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
+								activeDotStyle={{backgroundColor: 'lightblue', borderColor: 'lightblue'}}
+								marks={{ 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10'}} 
+								step={null} /><br/>
+					</div>
+				</div>
+				<ColoredLine/>
+				<div className = "filterHeader">
+					<h3>Sort:</h3><br/>
+						{<ul className = 'sortRadioButtons'>
+				            <input
+				              type="radio"
+				              value="alphabetical"
+				              checked={this.state.sortType === "alphabetical"}
+				              onChange={this.handleSortRadioButtonChange}/>
+				            <div className = "sortRadioButtonsLabel">
+				            	<label>A->Z</label>
+				            </div><br/>
+					        <input
+				              type="radio"
+				              value="difficulty"
+				              checked={this.state.sortType === "difficulty"}
+				              onChange={this.handleSortRadioButtonChange}/>
+				            <div className = "sortRadioButtonsLabel">
+					        	<label>Difficulty</label>
+					        </div>
+			          	</ul>}
+				</div><br/>
+				<button className='filterApplyButton'
+						onClick={()=>{this.filterApplyList()}}>Apply to list</button>
 			</div>
-			<ColoredLine/>
-			<div className = "filterHeader">
-				<h3>Sort:</h3><br/>
-					{<ul className = 'sortRadioButtons'>
-			            <input
-			              type="radio"
-			              value="alphabetical"
-			              checked={this.state.sortType === "alphabetical"}
-			              onChange={this.handleSortRadioButtonChange}/>
-			            <div className = "sortRadioButtonsLabel">
-			            	<label>A->Z</label>
-			            </div><br/>
-				        <input
-			              type="radio"
-			              value="difficulty"
-			              checked={this.state.sortType === "difficulty"}
-			              onChange={this.handleSortRadioButtonChange}/>
-			            <div className = "sortRadioButtonsLabel">
-				        	<label>Difficulty</label>
-				        </div>
-		          	</ul>}
-			</div><br/>
-			<button className='filterApplyButton'
-					onClick={()=>{this.filterApplyList()}}>Apply to list</button>
-		</div>
-	)
-  }
-}
+		)
+	  }
+	}
 
 export default Filter
 
