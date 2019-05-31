@@ -13,10 +13,6 @@ v 1.0:
 	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
 	- find some coloring scheme that will work for any case including user added
 
-v 0.9:
-_______
-	- move sort to search (medium)
-
 
 BUGS:
 	

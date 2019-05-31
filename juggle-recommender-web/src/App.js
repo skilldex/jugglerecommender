@@ -115,7 +115,7 @@ class App extends Component {
 						</div><br/>
 		            </SlidingPane>
 					<div className="header">
-						<span className="title">Juggledex</span><span className="version"> v0.8</span>
+						<span className="title">Juggledex</span><span className="version"> v0.9</span>
 				        <button className="headerButton" onClick={() => this.openSlidingPane('isPaneOpen')}>Instructions</button>
 				        {authStore.user ? 
 				        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:

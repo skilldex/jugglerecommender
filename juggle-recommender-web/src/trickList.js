@@ -108,11 +108,11 @@ render() {
 				    	<button className="sortDropdownButtonAlph" onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
 					  </div> : null
 
-	const sort = <img src={sortIcon} alt="showSortMenu" 
-					 onClick={this.toggleShowSort} height='25px'width='25px'/>
+	const sort = <img src={sortIcon} className="filterButton"  alt="showSortMenu" 
+					 onClick={this.toggleShowSort}/>
 
-	const filter = <img src={filterIcon} alt="showFilterMenu" 
-					 onClick={()=>{filterStore.toggleFilterDiv()}} height='25px'width='25px'/>					 
+	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
+					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
 					 
 					  
 				
