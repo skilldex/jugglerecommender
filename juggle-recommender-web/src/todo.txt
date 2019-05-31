@@ -15,7 +15,6 @@ v 1.0:
 
 v 0.9:
 _______
-	- move sort to search (medium)
 
 
 BUGS:
@@ -24,9 +23,6 @@ BUGS:
 POPUPS:
 -(maybe?)list depends and prereqs
 -(maybe?) other tutorials/user content
-
-Disappears with filters
-	-clicking any sort button creates a popup at the 3 ball sort button
 
 Later :
 -Style expand arrows as icons
@@ -39,7 +35,7 @@ Later :
 May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
-
+-are you sure popup should only show if you are in mytricks
 
 Minor:
 -when the user clicks login it would be nice if the login sliderpane were to close, it looks like
@@ -49,18 +45,10 @@ Minor:
 -if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen, maybe the minimized list should be forced to stay on upper left but not on the header.
 -Gif fullscreen button
 
-Filter/Sort Plan:
-NEXT:
--if there are no myTricks, we want to default to 3b, common tag, all difficulty
--get the checkbox for any/all tags working,
-	right now we are just defaulting to 'all' behavior
--look into how to handle the apply to list&graph
-BUGS:
-	
+
 IDEAS:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
-		-make it so if you slide it far enough it begins playing the trick backwards
-	maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
+		 make it so if you slide it far enough it begins playing the trick backwards
 
 Notes:
 -Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
