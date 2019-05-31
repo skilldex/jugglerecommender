@@ -75,6 +75,7 @@ class UIStore {
  		this.performSearch()
  	}
 
+
  	@action	searchInputChange=(e)=>{
  		this.searchInput = e.target.value 		
  		if(e.target.value === ""){

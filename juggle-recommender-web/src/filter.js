@@ -109,7 +109,7 @@ class Filter extends Component {
 			          autofocus = {false}
 			          inputFieldPosition="bottom"
 			          tags={filterStore.tags}
-			          minQueryLength={0}
+			          minQueryLength={1}
 			          suggestions={presetTags}
 			          delimiters={delimiters}
 			          handleDelete={this.handleDelete}
@@ -138,30 +138,6 @@ class Filter extends Component {
 								step={null} /><br/>
 					</div>
 				</div>
-				<ColoredLine/>
-				<div className = "filterHeader">
-					<h3>Sort:</h3><br/>
-						{
-							<ul className = 'sortRadioButtons'>
-					            <input
-					              type="radio"
-					              value="alphabetical"
-					              checked={filterStore.sortType === "alphabetical"}
-					              onChange={this.handlefSortRadioButtonChange}/>
-					            <div className = "sortRadioButtonsLabel">
-					            	<label>A->Z</label>
-					            </div><br/>
-						        <input
-					              type="radiof"
-					              value="difficulty"
-					              checked={filterStore.sortType === "difficulty"}
-					              onChange={this.handleSortRadioButtonChange}/>
-					            <div className = "sortRadioButtonsLabel">
-						        	<label>Difficulty</label>
-						        </div>
-				          	</ul>
-				          }
-				</div><br/>
 			</div>
 		)
 	  }

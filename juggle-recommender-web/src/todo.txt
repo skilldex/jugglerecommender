@@ -19,9 +19,6 @@ v 0.9:
 _______
 	-make animation less crazy (vis.js is on archive.org)
 	- move sort to search (medium)
-	- with no data in app, "all tricks" list is empty (critical)
-	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it (low)
-	-only show tags when typing
 	-clicking on a trick to make a popup sometimes also clicks the link
 
 BUGS:
@@ -64,6 +61,8 @@ NEXT:
 BUGS:
 	
 IDEAS:
+	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
+		-make it so if you slide it far enough it begins playing the trick backwards
 	maybe a tag system that is more like the accomodations section of the hotel app would be better, it would take up less space
 
 Notes:

@@ -1,6 +1,7 @@
 import { action, configure, computed, observable} from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
+import filterStore from './filterStore'
 import authStore from './authStore'
 configure({ enforceActions: "always" })
 class Store {
@@ -37,15 +38,15 @@ class Store {
 	}
 
 	@action initializeTricks=()=>{
-		this.setMyTricks({"Cascade": { "catches":0}})
-		uiStore.setSearchInput('common')
-		uiStore.selectTricks(['Cascade'])
+		uiStore.setSelectedList("allTricks")
 	}
+
 	@action getTricksFromBrowser=()=>{
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
     	if(myTricks  && Object.keys(myTricks).length > 0){
     		this.setMyTricks(myTricks)
     		uiStore.setSelectedList("myTricks")
+    		filterStore.setTags([])
     	}else{
     		this.initializeTricks()
     	}

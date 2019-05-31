@@ -6,6 +6,8 @@ import filterStore from './filterStore'
 import graphStore from './graphStore'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
+import sortIcon from './sortIcon.png'
+import filterIcon from './filterIcon.png'
 import './trickList.css';
 import './App.css';
 import {TAGS} from './tags';
@@ -28,78 +30,92 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 
 @observer
 class TrickList extends Component {
-  constructor(props) {
-    super(props);
-
-	 	this.state = {
- 		sortType: 'alphabetical',
- 		listIsMinimized: false,
- 		expandedSectionsPositions : {
-			'3' : 0,
-			'4' : 0,
-			'5' : 0
-		}
+	state = {
+			sortType: 'alphabetical',
+			listIsMinimized: false,
+			showSortMenu : false
 	}
 
-}
-
-toggleExpandedSection(num){
-	if (uiStore.expandedSections[num]){
-		this.recordScrollerPosition([num])		
+	sortOptionClicked=(type)=>{
+		this.setState({sortType : type})
 	}
-	uiStore.toggleExpandedSection(num)	
-}
-
-recordScrollerPosition(nums){
-	let expSecPos = {...this.state.expandedSectionsPositions};
-	for (const num of nums){		
-		if(document.getElementById('trickList'+num)){
-			expSecPos[num] = document.getElementById('trickList'+num).scrollTop
-		}
+	toggleShowSort=()=>{
+		this.setState({showSortMenu:!this.state.showSortMenu})
 	}
-	this.setState({'expandedSectionsPositions':expSecPos})
-	this.setState({'listIsMinimized':true})
-}
-
-setListExpanded(){
-	if (uiStore.listExpanded){
-		this.recordScrollerPosition(['3','4','5'])
-		this.setState({'listIsMinimized':true})
-		uiStore.setListExpanded(!uiStore.listExpanded)
-	}else{
-		this.setState({'listIsMinimized':false})
-		uiStore.setListExpanded(!uiStore.listExpanded)
-	}						
-}
-
-setScrollerPositions() {
-	const nums = ['3','4','5']
-	for (var i = 0; i <3; i++){
-		const num = nums[i]
-	 	const expPos = this.state.expandedSectionsPositions[num]
-	    function setPositions() {
+	recordScrollerPosition=(nums)=>{
+		let expSecPos = {...this.state.expandedSectionsPositions};
+		for (const num of nums){		
 			if(document.getElementById('trickList'+num)){
-    			document.getElementById('trickList'+num).scrollTop = expPos
+				expSecPos[num] = document.getElementById('trickList'+num).scrollTop
 			}
 		}
-	    setTimeout(function() {
-	        setPositions();
-	    }, 100);
+		this.setState({'expandedSectionsPositions':expSecPos})
+		this.setState({'listIsMinimized':true})
 	}
-}
 
-componentDidUpdate(prevProps, prevState, snapshot) {
-	if (prevState.listIsMinimized && !this.state.listIsMinimized){
-	  this.setScrollerPositions()
+	setListExpanded=()=>{
+		if (uiStore.listExpanded){
+			this.recordScrollerPosition(['3','4','5'])
+			this.setState({'listIsMinimized':true})
+			uiStore.setListExpanded(!uiStore.listExpanded)
+		}else{
+			this.setState({'listIsMinimized':false})
+			uiStore.setListExpanded(!uiStore.listExpanded)
+		}						
 	}
-}
+
+	setScrollerPositions=()=> {
+		const nums = ['3','4','5']
+		for (var i = 0; i <3; i++){
+			const num = nums[i]
+		 	const expPos = this.state.expandedSectionsPositions[num]
+		    function setPositions() {
+				if(document.getElementById('trickList'+num)){
+	    			document.getElementById('trickList'+num).scrollTop = expPos
+				}
+			}
+		    setTimeout(function() {
+		        setPositions();
+		    }, 100);
+		}
+	}
+
+
+
+	componentDidUpdate=(prevProps, prevState, snapshot)=> {
+		if (prevState.listIsMinimized && !this.state.listIsMinimized){
+		  this.setScrollerPositions()
+		}
+	}
 
 
 render() {
+	 window.onclick = function(event) {
+ 	 	if (event.srcElement['alt'] !== 'showSortMenu') {
+ 	 		if (document.getElementById("myDropdown")){
+ 				if (document.getElementById("myDropdown").classList.contains('show')){
+ 					uiStore.toggleSortTypeShow()
+ 				}
+ 			}
+ 		}
+ 	}
 	const { tags, suggestions } = this.state;
  			//NEXT: can maybe use the stuff above to set the store. sort menu current state, like 
  			//	how showSortMenu does it, but  alittle different
+ 	const sortDropdown = this.state.showSortMenu ? 
+ 					<div title="sort" id="myDropdown" className="sortDropdown">
+				    	<button className="sortDropdownButtonDif" onClick={(e)=>this.sortOptionClicked('difficulty')}>Difficulty</button>
+				    	<button className="sortDropdownButtonAlph" onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
+					  </div> : null
 
+	const sort = <img src={sortIcon} alt="showSortMenu" 
+					 onClick={this.toggleShowSort} height='25px'width='25px'/>
+
+	const filter = <img src={filterIcon} alt="showFilterMenu" 
+					 onClick={()=>{filterStore.toggleFilterDiv()}} height='25px'width='25px'/>					 
+					 
+					  
+				
  	let tricks = []
 
  	const rootTricks = uiStore.rootTricks
@@ -149,11 +165,12 @@ render() {
 								 All</button>
 						</div>
 			 			<div className="search" >
-				 			<input onChange={uiStore.searchInputChange}/>
-				 			<button onClick={()=>{filterStore.toggleFilterDiv()}}>
-							 F</button>
-				 		</div>
+			 				<input onChange={uiStore.searchInputChange}/>
+				 			{filter}
+							{sort}
+							{sortDropdown}
 
+				 		</div>
 			 		</div>
 
 
@@ -166,8 +183,8 @@ render() {
 					 	{buttons}
 						<div style={{height:"100%"}}>
 							<label style={{float:"left"}}>easy</label>
-							<label style={{float:"right", paddingRight:"16px"}}>hard</label>
-							<img src={legendImg} alt="legendImg" width="92%"/>						
+							<label style={{float:"right", paddingRight:"5px"}}>hard</label>
+							<img style={{}}src={legendImg} alt="legendImg" width="97%"/>						
 							<br></br>							
 							<div id='trickList' 
 								className={tricks.length > 1 ? "listSection" : ""}> 
