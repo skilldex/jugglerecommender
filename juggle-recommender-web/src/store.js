@@ -91,10 +91,18 @@ class Store {
  		uiStore.updateRootTricks()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
-		var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
-		if (result){
+ 		var shouldDelete = false
+ 		if (uiStore.selectedList === 'myTricks'){
+			var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
+			if (result){
+				shouldDelete = true
+			}
+		}else{
+			shouldDelete = true
+		}
+		if (shouldDelete){
 			if (this.myTricks[trickKey]) {
-			  delete this.myTricks[trickKey]
+				delete this.myTricks[trickKey]
 			}
 			this.updateTricksInDatabase()
 	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))

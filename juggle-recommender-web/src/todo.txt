@@ -35,7 +35,6 @@ Later :
 May disappear with filter route:
 	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
 
--'are you sure' popup should only show if you are in mytricks removing a trick
 -Autoscroll is broken
 
 Minor:
