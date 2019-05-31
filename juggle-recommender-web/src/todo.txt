@@ -6,8 +6,6 @@ v 1.1:
 
 v 1.0:
 
-	- add tags to filter dropdown
-	- add balls to filter dropdown
 	-allow users to add tricks
 	-(maybe?)Indicator for which view we are in (water mark star background)
 	-Make down arrow to show that scrolling is possible on cards
