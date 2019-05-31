@@ -117,8 +117,8 @@ render() {
 
 	const filter = <img src={filterIcon} alt="showFilterMenu" 
 					 onClick={()=>{filterStore.toggleFilterDiv()}} height='25px'width='25px'/>					 
-					 
-					  
+	
+				  
 				
  	let tricks = []
 
@@ -173,15 +173,11 @@ render() {
 				 			{filter}
 							{sort}
 							{sortDropdown}
-
-				 		</div>
+						</div>
 			 		</div>
-
-
 	return (
 		<div>	
 			<div className="listDiv">		
-				{!uiStore.listExpanded && !this.state.listIsMinimized ? this.recordScrollerPosition(['3','4','5']) : null}				
 		 		{uiStore.listExpanded ? 
 					<div>
 					 	{buttons}
