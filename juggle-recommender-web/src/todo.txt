@@ -18,9 +18,10 @@ v 1.0:
 v 0.9:
 _______
 	-make animation less crazy (vis.js is on archive.org)
-	- move sort to search
-	- with no data in app, "all tricks" list is empty 
-	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it
+	- move sort to search (medium)
+	- with no data in app, "all tricks" list is empty (critical)
+	-if no tags are selected, then you select 1 tag, 2 tags become selected, the one you select and the one before it (low)
+	-only show tags when typing
 	-clicking on a trick to make a popup sometimes also clicks the link
 
 BUGS:
