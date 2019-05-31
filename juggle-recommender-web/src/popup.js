@@ -23,13 +23,17 @@ class Popup extends Component {
   	  	}
 	}
 
-  onCatchesKeyPress(target) {
+  onCatchesKeyPress=(target)=> {
     // If enter pressed
     if(target.charCode===13){  
       uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
     } 
   }
-
+  seeExplanation=(trickKey)=>{
+    if(!uiStore.popupTimer){
+        window.open(jugglingLibrary[trickKey].url)
+    }
+  }
 	render() {
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
@@ -64,31 +68,42 @@ class Popup extends Component {
                          type="number" 
                          onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
                          onChange={this.onCatchesChange}/> :
-            			<span>{store.myTricks[popupTrickKey].catches}</span>}
+            			<span>{store.myTricks[popupTrickKey].catches}</span>
+                }
 						    <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
 					 			     onClick={()=>{uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)}} height='15px'width='15px'/>
-              </div>: null}              		
+              </div>: null
+            }              		
             		<label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br/>
                 <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>
-          			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
-        				<a className="popupLink"
-        				   href={jugglingLibrary[popupTrickKey].url} 
-        				   target="_blank">See explanation</a> : null}
-          			{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
+          			{
+                  jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
+          				<span 
+                     onClick={()=>{this.seeExplanation(popupTrickKey)}}
+                     className="popupLink"
+          				>See explanation</span> : null
+                 }
+          			{
+                  jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
             		  <img width = '100' 
                        alt = ''
                        className="popupGif" 
-            			     src={jugglingLibrary[popupTrickKey].gifUrl}/> : null}
+            			     src={jugglingLibrary[popupTrickKey].gifUrl}/> : null
+                }
             		<br></br><br/><br/>
-            		{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
+            		{
+                  jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
               		<label className="popupTags">
               			Tags: {jugglingLibrary[popupTrickKey].tags.join(', ')} 
-              		</label> : null}
+              		</label> : null
+                }
                   <br></br>
-                {jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].related.length>0?
+                {
+                  jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].related.length>0 ?
                   <label className="popupTags">
                     Related: {jugglingLibrary[popupTrickKey].related.join(', ')} 
-                  </label> : null}
+                  </label> : null
+                }
           </div> : null
 		return(
 			<div>

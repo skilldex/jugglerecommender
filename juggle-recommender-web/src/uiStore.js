@@ -20,13 +20,18 @@ class UIStore {
 		'4' : false,
 		'5' : false
 	}
-
+	@observable popupTimer = null
 
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
-
+	@action clearTimer=()=>{
+		this.popupTimer = null
+	}
 	@action setPopupTrick=(clickedTrick)=>{
+		this.popupTimer = setTimeout(()=>{
+			this.clearTimer()
+		}, 500)
 	 	this.popupTrick = clickedTrick
 	 	this.popupCatchEditable = false
 	}

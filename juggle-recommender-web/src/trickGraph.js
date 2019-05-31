@@ -16,6 +16,12 @@ class TrickGraph extends Component {
         nodes: nodes,
         edges: edges
       }
+    /*
+      -Doing stabilization is orders of magnitude faster than displaying the network
+      -Edge type dynamic is more computing intensive than the rest
+      -The barnesHut solver is way slower than the other ones
+      -reducing 'timestep' in physics stresses out the processor less; it also makes for less nervous networks
+    */
       const options = {
         autoResize: true,
         interaction: {hover: true},
@@ -23,14 +29,16 @@ class TrickGraph extends Component {
         physics:{
           barnesHut : {
             centralGravity : .5,
-            damping : .15,
+            damping : .20,
             springLength : 120,
             springConstant : .06,
           },
           stabilization : {
             enabled : true,
             iterations : 300,
-          }
+            updateInterval: 25
+          },
+          timestep: 0.95,
         }
       }
       const events = {
