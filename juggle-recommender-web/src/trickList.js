@@ -27,13 +27,14 @@ const KeyCodes = {
 };
 
 const delimiters = [KeyCodes.comma, KeyCodes.enter];
-
+var scrollerPosition = 0
 @observer
 class TrickList extends Component {
 	state = {
 			sortType: 'alphabetical',
 			listIsMinimized: false,
-			showSortMenu : false
+			showSortMenu : false,
+			listScrollerPosition : 0
 	}
 
 	sortOptionClicked=(type)=>{
@@ -42,52 +43,44 @@ class TrickList extends Component {
 		uiStore.updateRootTricks()
 		this.toggleShowSort()
 	}
+	
 	toggleShowSort=()=>{
 		this.setState({showSortMenu:!this.state.showSortMenu})
 	}
-	recordScrollerPosition=(nums)=>{
-		let expSecPos = {...this.state.expandedSectionsPositions};
-		for (const num of nums){		
-			if(document.getElementById('trickList'+num)){
-				expSecPos[num] = document.getElementById('trickList'+num).scrollTop
+
+	recordScrollerPosition = e => {
+	    let element = e.target
+	    scrollerPosition = document.getElementById('trickList').scrollTop
+ 	}
+
+  	setScrollerPositions=()=> {
+ 		const scrollPos = scrollerPosition
+	    function setPositions() {
+	    	if (document.getElementById('trickList')){
+				document.getElementById('trickList').scrollTop = scrollPos  		
 			}
 		}
-		this.setState({'expandedSectionsPositions':expSecPos})
-		this.setState({'listIsMinimized':true})
+	    setTimeout(function() {
+	        setPositions();
+	    }, 100);		
 	}
 
 	setListExpanded=()=>{
 		if (uiStore.listExpanded){
-			this.recordScrollerPosition(['3','4','5'])
-			this.setState({'listIsMinimized':true})
+
 			uiStore.setListExpanded(!uiStore.listExpanded)
 		}else{
-			this.setState({'listIsMinimized':false})
+
 			uiStore.setListExpanded(!uiStore.listExpanded)
 		}	
 		this.setState({showSortMenu:false})					
 	}
 
-	setScrollerPositions=()=> {
-		const nums = ['3','4','5']
-		for (var i = 0; i <3; i++){
-			const num = nums[i]
-		 	const expPos = this.state.expandedSectionsPositions[num]
-		    function setPositions() {
-				if(document.getElementById('trickList'+num)){
-	    			document.getElementById('trickList'+num).scrollTop = expPos
-				}
-			}
-		    setTimeout(function() {
-		        setPositions();
-		    }, 100);
-		}
-	}
-
 
 
 	componentDidUpdate=(prevProps, prevState, snapshot)=> {
-		if (prevState.listIsMinimized && !this.state.listIsMinimized){
+		if (!prevState.listIsMinimized && uiStore.listExpanded){
+			console.log('setPos')
 		  this.setScrollerPositions()
 		}
 	}
@@ -179,6 +172,7 @@ render() {
 		<div>	
 			<div className="listDiv">		
 		 		{uiStore.listExpanded ? 
+
 					<div>
 					 	{buttons}
 						<div style={{height:"100%"}}>
@@ -187,7 +181,8 @@ render() {
 							<img style={{}}src={legendImg} alt="legendImg" width="97%"/>						
 							<br></br>							
 							<div id='trickList' 
-								className={tricks.length > 1 ? "listSection" : ""}> 
+								className={tricks.length > 1 ? "listSection" : ""}
+								onScroll = {this.recordScrollerPosition}> 
 							{tricks}
 							</div>						
 						</div>
