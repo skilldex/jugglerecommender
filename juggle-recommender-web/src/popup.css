@@ -30,6 +30,7 @@
   display: block;
   color : #0000EE;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 .popupDiv{
   overflow-y: scroll;
