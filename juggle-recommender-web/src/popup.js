@@ -34,6 +34,21 @@ class Popup extends Component {
         window.open(jugglingLibrary[trickKey].url)
     }
   }
+  handleEditButtonClick=()=>{
+    uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)
+    var input
+    function setFocus() {
+      if (document.getElementById('catchInput')){
+        input = document.getElementById("catchInput");   
+        input.focus();
+        input.select();   
+      }
+    }
+      setTimeout(function() {
+          setFocus();
+      }, 100);  
+}
+
 	render() {
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
@@ -71,8 +86,8 @@ class Popup extends Component {
             			<span>{store.myTricks[popupTrickKey].catches}</span>
                 }
 						    <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-					 			     onClick={()=>{uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)}} height='15px'width='15px'/>
-              </div>: null
+					 			     onClick={()=>{ this.handleEditButtonClick()}} height='15px'width='15px'/>
+              </div>: null 
             }              		
             		<label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br/>
                 <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>

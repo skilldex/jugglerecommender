@@ -45,7 +45,6 @@ Minor:
 -When list is expanded/collapsed change the size of the canvas so the center is the center of vision
 -Background of filter button is gray, should it be?
 -Auto select input when catch edit is clicked
--Make selected links not be highlighted when clicked inside delay
 
 IDEAS:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
