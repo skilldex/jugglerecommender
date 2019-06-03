@@ -5,52 +5,50 @@ v 1.1:
 	-make popups be draggable divs
 
 v 1.0:
-
 	-allow users to add tricks
-	-(maybe?)Indicator for which view we are in (water mark star background)
 	-Make down arrow to show that scrolling is possible on cards
-	*should it go away when we are at the bottom?
-	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
-	-find some coloring scheme that will work for any case including user added
+		*should it go away when we are at the bottom?
+		*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
+		IDEAS:
+			-this kind of arrow:
+			https://graphicdesign.stackexchange.com/questions/31104/what-is-the-best-way-to-indicate-that-you-can-scroll-in-an-area-when-the-area-do/31109
+			-no arrow solution, just have something half-revealed to make scrollability obvious:
+			https://uxdesign.cc/dear-web-designer-let-s-stop-breaking-the-affordance-of-scrolling-fe8bf258df7b
+	POSSIBLY AFFECTED IF WE SWITCH TO A DARK THEME:
+		-find some coloring scheme that will work for any case including user added
+		-(maybe?)Indicator for which view we are in (water mark star background)
 
-v 0.9:
-_______
-
-
-BUGS:
-	
 ==========
-POPUPS:
--(maybe?)list depends and prereqs
--(maybe?) other tutorials/user content
+Minor:
+-Clicking a popup or the list should bring either in front of the other
+-Background of filter button is gray, should it be?
+-even though I have pulled, I still see my old filter icon image instead of the one that is on the website
 
 Later :
 -Style expand arrows as icons
 -Researching other data sources to inform user based tricks 
 -make a 2b section
 -compare gifs of different tricks side by side,
-- node size based on zoom
-- opacity based on closeness to qualify
+-node size based on zoom
+-opacity based on closeness to qualify
 
-May disappear with filter route:
-	-(maybe?) make it so when a tag is clicked, that tag is added to the current search(or maybe becomes)
-
-Minor:
--when the user clicks login it would be nice if the login sliderpane were to close, it looks like
-	it would require changing app.isLoginPaneOpen from inside auth.js, so maybe it would involve refactoring things to put the two in the same file
--Clicking a popup or the list should bring either in front of the other
--Maybe closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
--if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen, maybe the minimized list should be forced to stay on upper left but not on the header.
--Gif fullscreen button
--(maybe?)When list is expanded/collapsed change the size of the canvas so the center is the center of vision
--Background of filter button is gray, should it be?
+MAYBE?:
+	-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
+	-the minimized list should be forced to stay on upper left but not on the header. The reason being that if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen
+	-remove minimize button from fullscreen gif and make a tap anywhere minimize
+	-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
+	-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
+	-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
+	POPUPS:
+		-list depends and prereqs
+		-other tutorials/user content
 
 IDEAS:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
 		 make it so if you slide it far enough it begins playing the trick backwards
 	-Maybe catches input should be automatically editable when a trick is added to my tricks
 
-Notes:
--Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
--Why does website have red triangle explanation on url? as if our page is dangerous or something.
--The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, but I dont know what should be done about it
+NOTES:
+	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+	-Why does website have red triangle explanation on url? as if our page is dangerous or something.
+	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, but I dont know what should be done about it

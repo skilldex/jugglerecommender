@@ -34,8 +34,7 @@ class App extends Component {
  		selectedList : "allTricks",
  		edges : [],
  		nodes : [],
- 		isPaneOpen: false,
- 		isLoginPaneOpen: false
+ 		isInstructionsPaneOpen: false
 	}
 	componentDidMount(){
 		store.getSavedTricks()	
@@ -64,9 +63,9 @@ class App extends Component {
  	openSlidingPane=(stateRef)=>{
  		uiStore.setPopupTrickToNull()
  		if (stateRef == 'isLoginPaneOpen'){
-	 		this.setState({ 'isLoginPaneOpen': true })
-	 	}else if(stateRef == 'isPaneOpen'){
-	 		this.setState({ 'isPaneOpen': true })
+	 		store.setIsLoginPaneOpen(true)
+	 	}else if(stateRef == 'isInstructionsPaneOpen'){
+	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}
  	}
  	handleStart=()=>{
@@ -79,10 +78,10 @@ class App extends Component {
 		            <SlidingPane
 		                className='some-custom-class'
 		                overlayClassName='some-custom-overlay-class'
-		                isOpen={ this.state.isPaneOpen }
+		                isOpen={ this.state.isInstructionsPaneOpen }
 		                title='Instructions'
 		                onRequestClose={ () => {
-		                    this.setState({ isPaneOpen: false });}}>
+		                    this.setState({ isInstructionsPaneOpen: false });}}>
 		                <div className="instructions">
 		                	<h2>Instructions</h2>
 							<span className="info">
@@ -100,10 +99,10 @@ class App extends Component {
 		            <SlidingPane
 		                className='some-custom-class'
 		                overlayClassName='some-custom-overlay-class'
-		                isOpen={ this.state.isLoginPaneOpen }
+		                isOpen={ store.isLoginPaneOpen }
 		                title='Login'
 		                onRequestClose={ () => {
-		                    this.setState({ isLoginPaneOpen: false });}}>
+		                    store.setIsLoginPaneOpen(false)}}>
 		                <div className="instructions">
 		                	<span className="info">
 		                		Create an account to: <br/> 
@@ -115,13 +114,13 @@ class App extends Component {
 						</div><br/>
 		            </SlidingPane>
 					<div className="header">
-						<span className="title">Juggledex</span><span className="version"> v0.8</span>
-				        <button className="headerButton" onClick={() => this.openSlidingPane('isPaneOpen')}>Instructions</button>
+						<span className="title">Juggledex</span><span className="version"> v0.9</span>
+				        <button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>Instructions</button>
 				        {authStore.user ? 
 				        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
 				        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
 					</div>
-					{!this.state.isPaneOpen && !this.state.isLoginPaneOpen ?
+					{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen ?
 						<TrickList 
 							myTricks={store.myTricks} 
 							selectedList={uiStore.selectedList}

@@ -7,10 +7,15 @@ configure({ enforceActions: "always" })
 class Store {
 
 	@observable myTricks = {}
+	@observable isLoginPaneOpen = false
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
+
+	@action setIsLoginPaneOpen=(isOpen)=>{
+		this.isLoginPaneOpen = isOpen
+	}
 
 	@action updateTricksInDatabase=()=>{
 

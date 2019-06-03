@@ -56,9 +56,7 @@ class TrickGraph extends Component {
           }
         },
         stabilized: function(event) {
-          console.log("stabilized")
           if(that.graph){
-            console.log("fit and move")
             that.graph.Network.moveTo(
               {
                 position: {x:0, y:0},

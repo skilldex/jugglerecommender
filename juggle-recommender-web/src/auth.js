@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import authStore from "./authStore"
+import store from './store'
 import "./App.css"
 import "./auth.css";
 import firebase from 'firebase' 
@@ -26,6 +27,7 @@ class Auth extends Component {
             firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
                 authStore.setUser({"username": username})
                 resolve("success")
+                store.setIsLoginPaneOpen(false)
             }).catch(error=>{
                 resolve(error)
             });

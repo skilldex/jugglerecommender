@@ -118,7 +118,7 @@ setGifFullscreen=()=>{
                     		>See explanation</span> : null
                       }
                       {gifSection}
-                      }<br></br><br/><br/>
+                      <br></br><br/><br/>
                       {jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
                     		<label className="popupTags">
                     			Tags: {jugglingLibrary[popupTrickKey].tags.join(', ')} 
