@@ -42,7 +42,6 @@
   position : absolute;
   background-color : white;
   z-index : 1200;
-  padding: 15px 10px 10px 15px;
   border : 1px solid gray;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
@@ -61,7 +60,9 @@
 }
 
 .editCatchIcon{
-  margin-left: 5px
+  margin-left: 5px;
+  height : 15px;
+  width : 15px;
 }
 .fullScreenIcon{
   margin-left: auto;

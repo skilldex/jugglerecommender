@@ -46,6 +46,7 @@ Later:
 	Misc:
 		-Researching other data sources to inform user based tricks 
 
+	- make expand list button clickable but not surrounding div
 Maybe?:
 	List:
 		-showing the current count of myTricks and allTricks would be nice

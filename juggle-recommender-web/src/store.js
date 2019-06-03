@@ -77,6 +77,9 @@ class Store {
 		uiStore.updateRootTricks()
 	}
 	@action setCatches=(catches, trickKey)=>{
+		if(!catches){
+			catches = 0
+		}
 		if (catches.length>1){
  			catches = catches.replace(/^0+/,'');
  		}

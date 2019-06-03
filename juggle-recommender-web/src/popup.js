@@ -73,9 +73,10 @@ toggleGifFullscreen=()=>{
         uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
       }
     });
+    const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
-      <label>Catches: </label><br/>
+      <label>Catches: </label>
       {uiStore.popupCatchEditable ?
         <input id = "catchInput"
                type="number" 
@@ -84,13 +85,13 @@ toggleGifFullscreen=()=>{
         <span>{store.myTricks[popupTrickKey].catches}</span>
       }
       <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-           onClick={()=>{ this.handleEditButtonClick()}} height='15px'width='15px'/>
+           onClick={()=>{ this.handleEditButtonClick()}}/>
     </div> : null
+    console.log("catches" , catchesSection)
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
-		const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
 
     const gifSection = jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
                         <div className = "gifDiv">
@@ -109,7 +110,7 @@ toggleGifFullscreen=()=>{
                       src={jugglingLibrary[popupTrickKey].gifUrl}/> 
               </div> 
              : null
-    const fullPopup = uiStore.popupTrick && popupTrickKey ? 
+    const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
                     					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
                                  width : 260,}} 
@@ -117,7 +118,11 @@ toggleGifFullscreen=()=>{
                       <h3>{addToMyTricksButton}{jugglingLibrary[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
                       <label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br/>
-                      <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>
+                      {jugglingLibrary[popupTrickKey].siteswap ? 
+                        <div>
+                          <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>
+                        </div> : null
+                      } 
                     	{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
                     		<span 
                          onClick={()=>{this.seeExplanation(popupTrickKey)}}
@@ -140,7 +145,7 @@ toggleGifFullscreen=()=>{
     
 		return(
       			<div>{this.state.gifFullscreen ?
-      				    gifFullScreenPopup : fullPopup
+      				    gifFullScreenPopup : popupCard
                 }
       			</div>
           )
