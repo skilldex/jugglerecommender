@@ -20,35 +20,48 @@ v 1.0:
 
 ==========
 Minor:
--Clicking a popup or the list should bring either in front of the other
--Background of filter button is gray, should it be?
--even though I have pulled, I still see my old filter icon image instead of the one that is on the website
+	-Clicking a popup or the list should bring either in front of the other
+	-Background of filter button is gray, is that intentional?
+	-even though I have pulled, I still see my old filter icon image instead of the one that is on the website
 
-Later :
--Style expand arrows as icons
--Researching other data sources to inform user based tricks 
--make a 2b section
--compare gifs of different tricks side by side,
--node size based on zoom
--opacity based on closeness to qualify
+Bugs:
+	-Ghost catches bug. To reproduce:
+		1)set the number of catches on a pattern
+		2)add a new trick to myTricks
+		3)make the catches on the new trick editable
+		4)make the catches on the new trick uneditable
+		BUG: the catches on the new trick will now be set to the catches of the original trick in 1)
 
-MAYBE?:
-	-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized by the opening of that box)
-	-the minimized list should be forced to stay on upper left but not on the header. The reason being that if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen
-	-remove minimize button from fullscreen gif and make a tap anywhere minimize
-	-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
-	-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
-	-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
-	POPUPS:
+Later:
+	List:
+		-Style expand arrows as icons
+		-make a 2b section
+		-make a 6b and 7b sections
+	Graph:
+		-node size based on zoom
+		-opacity based on closeness to qualify
+		-compare gifs of different tricks side by side,
+		-make divs draggable
+	Misc:
+		-Researching other data sources to inform user based tricks 
+
+Maybe?:
+	List:
+		-showing the current count of myTricks and allTricks would be nice
+		-the minimized list should be forced to stay on upper left but not on the header. The reason being that if 		you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the 			popup, the list may be off screen
+		-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
+	popup:
 		-list depends and prereqs
 		-other tutorials/user content
+		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
+		-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
+		-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized 	by the opening of that box)
+		-remove minimize button from fullscreen gif and make tapping anywhere minimize
 
-IDEAS:
+thoughts/ideas:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
 		 make it so if you slide it far enough it begins playing the trick backwards
 	-Maybe catches input should be automatically editable when a trick is added to my tricks
-
-NOTES:
-	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to 	Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 	-Why does website have red triangle explanation on url? as if our page is dangerous or something.
-	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, but I dont know what should be done about it
+	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, 	but I dont know what should be done about it
