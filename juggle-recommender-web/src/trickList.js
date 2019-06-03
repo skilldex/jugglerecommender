@@ -142,7 +142,7 @@ render() {
 										"textAlign" : "right", 
 										"paddingRight" : "15px",
 										"display" : "block"}} 
-								onClick={() => this.setListExpanded()}>{uiStore.listExpanded ? "-" : "+"}</label>
+								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label>
 				 		<div className="listButtonDiv">
 							<button className={uiStore.selectedList === "myTricks" ? 
 									"selectedListButton" : "unselectedListButton" } 
@@ -159,6 +159,7 @@ render() {
 							{sort}
 							{sortDropdown}
 						</div>
+						<button className="addTrickButton" onClick={uiStore.addTrick}>+ Add Trick</button>
 			 		</div>
 	return (
 		<div>	

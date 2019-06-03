@@ -21,7 +21,28 @@ class UIStore {
 		'5' : false
 	}
 	@observable popupTimer = null
+	@observable addingTrick = false
 
+	@action addTrick = ()=>{
+		console.log("adding")
+		this.addingTrick = true
+		//put library in db 
+		//store.addTrickToDatabase(trick)
+		//update available local tricks from database
+		//durring adding prereqs show list
+		//does anything have this as a prereq show list
+		/*trick = {
+			name : 
+			adder : 
+			video : ,
+			uploadedGif : ,
+			siteswap :  ,
+			dependents : (show list),
+			prereqs : (show list),
+			tags : (show list)
+		}
+		*/
+	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}

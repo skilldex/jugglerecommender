@@ -13,9 +13,21 @@ import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import firebase from 'firebase' 
-
+import AddTrickForm from './addTrickForm'
  // Your web app's Firebase configuration
-var firebaseConfig = {
+let firebaseConfig = {}
+if(!window.location.host.includes("localhost")){
+	firebaseConfig = {
+		apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
+		authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
+		databaseURL: "https://skilldex-dev-6c0ff.firebaseio.com",
+		projectId: "skilldex-dev-6c0ff",
+		storageBucket: "skilldex-dev-6c0ff.appspot.com",
+		messagingSenderId: "224766397892",
+		appId: "1:224766397892:web:80beef32563065c3"
+	};
+}else{
+	firebaseConfig = {
     apiKey: "AIzaSyCmnOtb4Wk5MObmo1UPhgEV2Cv3b_6nMuY",
     authDomain: "skilldex-4ebb4.firebaseapp.com",
     databaseURL: "https://skilldex-4ebb4.firebaseio.com",
@@ -24,6 +36,8 @@ var firebaseConfig = {
     messagingSenderId: "965128070479",
     appId: "1:965128070479:web:64af3cb91c057166"
   };
+}
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -121,16 +135,18 @@ class App extends Component {
 				        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
 					</div>
 					{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen ?
-						<TrickList 
-							myTricks={store.myTricks} 
-							selectedList={uiStore.selectedList}
-							selectedTricks={uiStore.selectedTricks}
-						/>
-						: null}
-						<Popup/>
+					<TrickList 
+						myTricks={store.myTricks} 
+						selectedList={uiStore.selectedList}
+						selectedTricks={uiStore.selectedTricks}
+					/>
+					: null}
+					<Popup/>
+					<AddTrickForm/>
 					<TrickGraph 
 						nodes = {graphStore.nodes}
-						edges = {graphStore.edges}/>
+						edges = {graphStore.edges}
+					/>
 				</div>
 			</div>
 		);
