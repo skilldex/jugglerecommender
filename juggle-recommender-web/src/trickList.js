@@ -43,7 +43,7 @@ class TrickList extends Component {
 		uiStore.updateRootTricks()
 		this.toggleShowSort()
 	}
-	
+
 	toggleShowSort=()=>{
 		this.setState({showSortMenu:!this.state.showSortMenu})
 	}
@@ -67,33 +67,20 @@ class TrickList extends Component {
 
 	setListExpanded=()=>{
 		if (uiStore.listExpanded){
-
 			uiStore.setListExpanded(!uiStore.listExpanded)
 		}else{
-
 			uiStore.setListExpanded(!uiStore.listExpanded)
 		}	
 		this.setState({showSortMenu:false})					
 	}
 
-
-
 	componentDidUpdate=(prevProps, prevState, snapshot)=> {
 		if (!prevState.listIsMinimized && uiStore.listExpanded){
-			console.log('setPos')
 		  this.setScrollerPositions()
 		}
 	}
 
-
 render() {
-	 // window.onclick = function(event) = {
- 	//  	if (this.state.showSortMenu && 
- 	//  		event.srcElement['alt'] !== 'sortDropdownButtonDif' &&
- 	//  		event.srcElement['alt'] !== 'sortDropdownButtonAlph') {
- 	//  		this.setState({showSortMenu:!this.state.showSortMenu})
- 	// 	}
- 	// }
 	const { tags, suggestions } = this.state;
  	const sortDropdown = this.state.showSortMenu ? 
  					<div title="sort" id="myDropdown" className="sortDropdown">
@@ -110,9 +97,7 @@ render() {
 
 	const filter = <img src={filterIcon} alt="showFilterMenu" 
 					 onClick={()=>{filterStore.toggleFilterDiv()}} height='25px'width='25px'/>					 
-	
-				  
-				
+					
  	let tricks = []
 
  	const rootTricks = uiStore.rootTricks

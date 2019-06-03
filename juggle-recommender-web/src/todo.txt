@@ -11,7 +11,7 @@ v 1.0:
 	-Make down arrow to show that scrolling is possible on cards
 	*should it go away when we are at the bottom?
 	*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
-	- find some coloring scheme that will work for any case including user added
+	-find some coloring scheme that will work for any case including user added
 
 v 0.9:
 _______
