@@ -9,12 +9,12 @@ v 1.0:
 	-Make down arrow to show that scrolling is possible on cards
 		*should it go away when we are at the bottom?
 		*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
-		IDEAS:
+		Ideas:
 			-this kind of arrow:
 			https://graphicdesign.stackexchange.com/questions/31104/what-is-the-best-way-to-indicate-that-you-can-scroll-in-an-area-when-the-area-do/31109
 			-no arrow solution, just have something half-revealed to make scrollability obvious:
 			https://uxdesign.cc/dear-web-designer-let-s-stop-breaking-the-affordance-of-scrolling-fe8bf258df7b
-	POSSIBLY AFFECTED IF WE SWITCH TO A DARK THEME:
+	Possibly affected by switching to dark theme:
 		-find some coloring scheme that will work for any case including user added
 		-(maybe?)Indicator for which view we are in (water mark star background)
 
@@ -65,3 +65,14 @@ thoughts/ideas:
 	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to 	Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 	-Why does website have red triangle explanation on url? as if our page is dangerous or something.
 	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, 	but I dont know what should be done about it
+	Potential pattern stats:
+		-number of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+	Potential general stats:
+		-users signed up
+		-users currently online
+
+to see dark theme:
+	1) in App.css, change  '.headerButton { background-color : white' to black
+	2) in trickGraph.css, change 'border: 1px solid black;' to white
+	*This isn't complete, but enough to see how it would look
