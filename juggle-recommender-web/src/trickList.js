@@ -40,7 +40,6 @@ class TrickList extends Component {
 	sortOptionClicked=(type)=>{
 		console.log('type',type)
 		filterStore.setSortType(type)
-		uiStore.updateRootTricks()
 		this.toggleShowSort()
 	}
 
@@ -81,6 +80,14 @@ class TrickList extends Component {
 	}
 
 render() {
+
+	//"this" gets redefined in window.onclick so use "that"
+	const that = this
+	window.onclick = function(event) {
+ 	 	if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
+ 	 		that.toggleShowSort()
+ 		}
+ 	}
 	const { tags, suggestions } = this.state;
  	const sortDropdown = this.state.showSortMenu ? 
  					<div title="sort" id="myDropdown" className="sortDropdown">
@@ -92,12 +99,12 @@ render() {
 				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
 					  </div> : null
 
-	const sort = <img src={sortIcon} alt="showSortMenu" 
-					 onClick={this.toggleShowSort} height='25px'width='25px'/>
+	const sort = <img src={sortIcon} className="filterButton"  alt="showSortMenu" 
+					 onClick={this.toggleShowSort}/>
 
-	const filter = <img src={filterIcon} alt="showFilterMenu" 
-					 onClick={()=>{filterStore.toggleFilterDiv()}} height='25px'width='25px'/>					 
-					
+	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
+					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
+
  	let tricks = []
 
  	const rootTricks = uiStore.rootTricks

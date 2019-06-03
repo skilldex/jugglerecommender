@@ -18,6 +18,7 @@ v 1.0:
 		-find some coloring scheme that will work for any case including user added
 		-(maybe?)Indicator for which view we are in (water mark star background)
 
+
 ==========
 Minor:
 	-Clicking a popup or the list should bring either in front of the other

@@ -98,7 +98,7 @@ class Filter extends Component {
 
 		return (
 			<div className="filterDiv">
-				<button className="filterButton" onClick={()=>{filterStore.toggleFilterDiv()}}>
+				<button className="closeFilter" onClick={()=>{filterStore.toggleFilterDiv()}}>
 					X
 				</button><br/>
 				<div className = "filterHeader">

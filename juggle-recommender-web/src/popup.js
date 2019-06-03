@@ -4,6 +4,9 @@ import store from './store'
 import uiStore from './uiStore'
 import { observer } from "mobx-react"
 import editIcon from './editIcon.png'
+import fullScreenIcon from './fullScreenIcon.png'
+import minimizeIcon from './minimizeIcon.png'
+
 import './App.css';
 import './popup.css';
 
@@ -13,7 +16,7 @@ class Popup extends Component {
 
   state = {
     catches : null,
-    setGifFullscreen : false
+    gifFullscreen : false
   }
 	onCatchesChange=(e)=>{
 
@@ -50,7 +53,7 @@ class Popup extends Component {
       }, 100);  
 }
 
-setGifFullscreen=()=>{
+toggleGifFullscreen=()=>{
   console.log('gifFullscreen')
   this.setState({'gifFullscreen':!this.state.gifFullscreen})
 }
@@ -72,36 +75,40 @@ setGifFullscreen=()=>{
     });
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
-                <label>Catches: </label><br/>
-                {uiStore.popupCatchEditable ?
-                  <input id = "catchInput"
-                         type="number" 
-                         onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
-                         onChange={this.onCatchesChange}/> :
-                  <span>{store.myTricks[popupTrickKey].catches}</span>
-                }
-                <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-                     onClick={()=>{ this.handleEditButtonClick()}} height='15px'width='15px'/>
-              </div> : null
+      <label>Catches: </label><br/>
+      {uiStore.popupCatchEditable ?
+        <input id = "catchInput"
+               type="number" 
+               onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
+               onChange={this.onCatchesChange}/> :
+        <span>{store.myTricks[popupTrickKey].catches}</span>
+      }
+      <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
+           onClick={()=>{ this.handleEditButtonClick()}} height='15px'width='15px'/>
+    </div> : null
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
 		const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
-    const fullScreenGifButton = 
-          <label style={{"fontSize":"30px",
-                          "textAlign" : "right", 
-                          "paddingRight" : "15px",
-                          "display" : "block"}} 
-                 onClick={() => this.setGifFullscreen()}>{this.state.gifFullscreen ? "-" : "+"}</label>
+
     const gifSection = jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
-                        <div>
-                          {fullScreenGifButton}
+                        <div className = "gifDiv">
+                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                           <img width = '100' 
                                alt = ''
                                className="popupGif" 
                                src={jugglingLibrary[popupTrickKey].gifUrl}/> 
                         </div> : null
+    const gifFullScreenPopup = 
+          jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].gifUrl?
+              <div className="fullScreenPopup">
+                <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+                <img  height = '90%'
+                      alt = ''                   
+                      src={jugglingLibrary[popupTrickKey].gifUrl}/> 
+              </div> 
+             : null
     const fullPopup = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
                     					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
@@ -130,20 +137,7 @@ setGifFullscreen=()=>{
                         </label> : null
                       }
                     </div> : null
-    const gifFullScreenPopup = 
-          jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url?
-            <div style={{left : 0,
-                     top : 0,
-                     width : '100%',
-                      height : '100%'}} 
-                  className="popupDiv">
-              <div>
-                {fullScreenGifButton}
-                <img  height = '90%'
-                      alt = ''                   
-                      src={jugglingLibrary[popupTrickKey].gifUrl}/> 
-              </div> : null
-            </div> : null
+    
 		return(
       			<div>{this.state.gifFullscreen ?
       				    gifFullScreenPopup : fullPopup
