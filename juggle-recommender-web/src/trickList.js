@@ -138,11 +138,8 @@ render() {
 	}
 
  	const buttons = <div>
-					 	<label style={{"fontSize":"30px",
-										"textAlign" : "right", 
-										"paddingRight" : "15px",
-										"display" : "block"}} 
-								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label>
+					 	<label className="listExpandCollapseButton"
+								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
 				 		<div className="listButtonDiv">
 							<button className={uiStore.selectedList === "myTricks" ? 
 									"selectedListButton" : "unselectedListButton" } 

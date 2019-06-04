@@ -22,16 +22,8 @@ v 1.0:
 ==========
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
-	-Background of filter button is gray, is that intentional?
-	-even though I have pulled, I still see my old filter icon image instead of the one that is on the website
 
 Bugs:
-	-Ghost catches bug. To reproduce:
-		1)set the number of catches on a pattern
-		2)add a new trick to myTricks
-		3)make the catches on the new trick editable
-		4)make the catches on the new trick uneditable
-		BUG: the catches on the new trick will now be set to the catches of the original trick in 1)
 
 Later:
 	List:
@@ -46,10 +38,9 @@ Later:
 	Misc:
 		-Researching other data sources to inform user based tricks 
 
-	- make expand list button clickable but not surrounding div
 Maybe?:
 	List:
-		-showing the current count of myTricks and allTricks would be nice
+		-showing the count for myTricks and allTricks
 		-the minimized list should be forced to stay on upper left but not on the header. The reason being that if 		you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the 			popup, the list may be off screen
 		-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
 	popup:
@@ -58,7 +49,6 @@ Maybe?:
 		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
 		-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
 		-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized 	by the opening of that box)
-		-remove minimize button from fullscreen gif and make tapping anywhere minimize
 
 thoughts/ideas:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 

@@ -38,6 +38,10 @@ class Popup extends Component {
         window.open(jugglingLibrary[trickKey].url)
     }
   }
+  addToMyTricks=()=>{
+    this.setState({"catches":0})
+    store.addToMyTricks(uiStore.popupTrick.id)
+  }
   handleEditButtonClick=()=>{
     uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)
     var input
@@ -87,11 +91,10 @@ toggleGifFullscreen=()=>{
       <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
            onClick={()=>{ this.handleEditButtonClick()}}/>
     </div> : null
-    console.log("catches" , catchesSection)
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
- 		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.addToMyTricks(uiStore.popupTrick.id)}}>&#9734;</button>
+ 		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
 
     const gifSection = jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
                         <div className = "gifDiv">
