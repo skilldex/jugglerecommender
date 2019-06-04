@@ -1,4 +1,4 @@
-import { action, configure, computed, observable} from "mobx"
+import { action, configure, computed, observable, toJS} from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import filterStore from './filterStore'
@@ -71,17 +71,19 @@ class Store {
 	}
 	@action setLibrary=(library)=>{
 		this.library = library
+		console.log(toJS(this.library))
 	}
 	@action addTrickToDatabase=()=>{
 
 		const trick = {
 			name : "newtrick",
+			num : 3,
+			difficulty : 5,
 			contributor : "jsmith", 
 			video : "https://www.instagram.com/p/ByQHRQNA3ss/",
 			siteswap :  "431(1x)[3]",
-			dependents : "Box",
-			prereqs : "Cascade",
-			tags : "multiplex"
+			prereqs : ["Cascade"],
+			tags : ["multiplex"]
 		}
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
