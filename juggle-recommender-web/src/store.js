@@ -75,7 +75,7 @@ class Store {
 	@action addTrickToDatabase=()=>{
 
 		const trick = {
-			name : "newtrick",
+			name : "newtricktj",
 			contributor : "jsmith", 
 			video : "https://www.instagram.com/p/ByQHRQNA3ss/",
 			siteswap :  "431(1x)[3]",

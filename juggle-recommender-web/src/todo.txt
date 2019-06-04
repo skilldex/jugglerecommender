@@ -69,5 +69,5 @@ to see dark theme:
 	2) in trickGraph.css, change 'border: 1px solid black;' to white
 	*This isn't complete, but enough to see how it would look
 
-Investigate:
+-calculate dependents for added tricks
 -why is update root tricks running 4 times?
