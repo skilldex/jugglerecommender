@@ -88,10 +88,6 @@ class Store {
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
-		//durring adding prereqs show list
-		//does anything have this as a prereq show list
-		/*
-		*/
 	}
 	@action getSavedTricks=()=>{
 		if(authStore.user){

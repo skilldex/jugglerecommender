@@ -1,5 +1,4 @@
 import React,{Component} from 'react'
-import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
 import { observer } from "mobx-react"
@@ -35,7 +34,7 @@ class Popup extends Component {
   }
   seeExplanation=(trickKey)=>{
     if(!uiStore.popupTimer){
-        window.open(jugglingLibrary[trickKey].url)
+        window.open(store.library[trickKey].url)
     }
   }
   addToMyTricks=()=>{
@@ -96,21 +95,28 @@ toggleGifFullscreen=()=>{
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
 
-    const gifSection = jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
+    const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                         <div className = "gifDiv">
                           <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                           <img width = '100' 
                                alt = ''
                                className="popupGif" 
-                               src={jugglingLibrary[popupTrickKey].gifUrl}/> 
+                               src={store.library[popupTrickKey].gifUrl}/> 
+                        </div> : null
+    const igSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
+                        <div className = "gifDiv">
+                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+                          <iframe 
+                               className="popupGif" 
+                               src={store.library[popupTrickKey].video + "embed"}></iframe> 
                         </div> : null
     const gifFullScreenPopup = 
-          jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].gifUrl?
+          store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
               <div className="fullScreenPopup">
                 <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                 <img  height = '90%'
                       alt = ''                   
-                      src={jugglingLibrary[popupTrickKey].gifUrl}/> 
+                      src={store.library[popupTrickKey].gifUrl}/> 
               </div> 
              : null
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
@@ -118,30 +124,31 @@ toggleGifFullscreen=()=>{
                     					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
                                  width : 260,}} 
                          className="popupDiv">
-                      <h3>{addToMyTricksButton}{jugglingLibrary[popupTrickKey].name}</h3>             
+                      <h3>{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
-                      <label>Difficulty: {jugglingLibrary[popupTrickKey].difficulty} / 10</label><br/>
-                      {jugglingLibrary[popupTrickKey].siteswap ? 
+                      <label>Difficulty: {store.library[popupTrickKey].difficulty} / 10</label><br/>
+                      {store.library[popupTrickKey].siteswap ? 
                         <div>
-                          <label>Siteswap: {jugglingLibrary[popupTrickKey].siteswap}</label><br/><br/>
+                          <label>Siteswap: {store.library[popupTrickKey].siteswap}</label><br/><br/>
                         </div> : null
                       } 
-                    	{jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].url? 
+                    	{store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                     		<span 
                          onClick={()=>{this.seeExplanation(popupTrickKey)}}
                          className="popupLink"
                     		>See explanation</span> : null
                       }
+                      {igSection}
                       {gifSection}
                       <br></br><br/><br/>
-                      {jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].tags?
+                      {store.library[popupTrickKey] && store.library[popupTrickKey].tags?
                     		<label className="popupTags">
-                    			Tags: {jugglingLibrary[popupTrickKey].tags.join(', ')} 
+                    			Tags: {store.library[popupTrickKey].tags.join(', ')} 
                     		</label> : null
                       }<br></br>
-                      {jugglingLibrary[popupTrickKey] && jugglingLibrary[popupTrickKey].related.length>0 ?
+                      {store.library[popupTrickKey] && store.library[popupTrickKey].related && store.library[popupTrickKey].related.length>0 ?
                         <label className="popupTags">
-                          Related: {jugglingLibrary[popupTrickKey].related.join(', ')} 
+                          Related: {store.library[popupTrickKey].related.join(', ')} 
                         </label> : null
                       }
                     </div> : null
