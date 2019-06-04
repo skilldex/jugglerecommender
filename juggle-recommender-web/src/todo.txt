@@ -5,7 +5,24 @@ v 1.1:
 	-make popups be draggable divs
 
 v 1.0:
+	- new user breaks
 	-allow users to add tricks
+		- Create form to add tricks
+			const trick = {
+				name : "newtrick",
+				num : 3,
+				difficulty : 5,
+				contributor : "jsmith", 
+				video : "https://www.instagram.com/p/ByQHRQNA3ss/",
+				siteswap :  "431(1x)[3]",
+				prereqs : ["Cascade"],
+				tags : ["multiplex"]
+			}
+		- Connect output of form to addTrickToDatabase
+		- change addingTrick boolean in uiStore to false on submit
+		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
+		- potentially allow youtube, gif radio
+		- potentially juggling tv
 	-Make down arrow to show that scrolling is possible on cards
 		*should it go away when we are at the bottom?
 		*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
