@@ -24,12 +24,6 @@ Minor:
 	-Clicking a popup or the list should bring either in front of the other
 
 Bugs:
-	-Ghost catches bug. To reproduce:
-		1)set the number of catches on a pattern
-		2)add a new trick to myTricks
-		3)make the catches on the new trick editable
-		4)make the catches on the new trick uneditable
-		BUG: the catches on the new trick will now be set to the catches of the original trick in 1)
 
 Later:
 	List:
