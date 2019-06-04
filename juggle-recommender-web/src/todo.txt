@@ -40,7 +40,7 @@ Later:
 
 Maybe?:
 	List:
-		-showing the current count of myTricks and allTricks would be nice
+		-showing the count for myTricks and allTricks
 		-the minimized list should be forced to stay on upper left but not on the header. The reason being that if 		you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the 			popup, the list may be off screen
 		-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
 	popup:
@@ -49,7 +49,6 @@ Maybe?:
 		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
 		-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
 		-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized 	by the opening of that box)
-		-remove minimize button from fullscreen gif and make tapping anywhere minimize
 
 thoughts/ideas:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
