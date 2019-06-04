@@ -16,7 +16,7 @@ import firebase from 'firebase'
 import AddTrickForm from './addTrickForm'
  // Your web app's Firebase configuration
 let firebaseConfig = {}
-if(!window.location.host.includes("localhost")){
+if(window.location.host.includes("localhost")){
 	firebaseConfig = {
 		apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
 		authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
@@ -50,6 +50,7 @@ class App extends Component {
  		nodes : [],
  		isInstructionsPaneOpen: false
 	}
+	
 	componentDidMount(){
 		store.getSavedTricks()	
 		// appElement={el}
@@ -61,6 +62,8 @@ class App extends Component {
             authStore.setUser({username : user.email})
           } 
         });
+		//store.initializeLibrary()
+		store.getLibraryFromDatabase()
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []

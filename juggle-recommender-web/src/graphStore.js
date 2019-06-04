@@ -1,7 +1,6 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
 import uiStore from "./uiStore"
-import {jugglingLibrary} from './jugglingLibrary.js'
 
 configure({ enforceActions: "always" })
 class GraphStore {
@@ -83,7 +82,7 @@ class GraphStore {
 	 	}
 	 	if(uiStore.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
-	 			const rootTrick = jugglingLibrary[trickKey]
+	 			const rootTrick = store.library[trickKey]
 	 			if(rootTrick.dependents || rootTrick.prereqs){
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
@@ -98,7 +97,7 @@ class GraphStore {
 		 		}
 		 		if(rootTrick.prereqs){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
-		 				const prereq = jugglingLibrary[prereqKey]
+		 				const prereq = store.library[prereqKey]
 		 				if(!tempNodes[prereqKey]){
 			 				tempNodes[prereqKey] = {
 			 					id: prereqKey,
@@ -111,7 +110,7 @@ class GraphStore {
 		 		}
 	 			if(rootTrick.dependents){
 		 			rootTrick.dependents.forEach((dependentKey)=>{
-		 				const dependent = jugglingLibrary[dependentKey]
+		 				const dependent = store.library[dependentKey]
 			 			if(!tempNodes[dependentKey]){
 			 				tempNodes[dependentKey] = {
 			 					id: dependentKey,
@@ -125,7 +124,7 @@ class GraphStore {
  			})
 	 	}else if(uiStore.selectedList === "allTricks"){
 	 		rootTricks.forEach((trickKey)=>{
-	 			const rootTrick = jugglingLibrary[trickKey]
+	 			const rootTrick = store.library[trickKey]
 	 			const involvedRoot = store.myTricks[trickKey] || 
 	 							uiStore.selectedTricks.includes(trickKey) ? 3 : 0
 
@@ -150,7 +149,7 @@ class GraphStore {
 		 		}
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
-		 				const prereq = jugglingLibrary[prereqKey]
+		 				const prereq = store.library[prereqKey]
 		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0
 		 				let label = prereq.name
 		 				
@@ -179,7 +178,7 @@ class GraphStore {
 	 			}
  				if(rootTrick.dependents){
  					rootTrick.dependents.forEach((dependentKey)=>{
-		 				const dependent = jugglingLibrary[dependentKey]
+		 				const dependent = store.library[dependentKey]
 		 				let involvedDependent = involvedRoot > 0 ? 2 : 0
 		 				let label = dependent.name
 		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
