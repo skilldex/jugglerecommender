@@ -32,6 +32,12 @@
   text-align: center;
   margin-top: 10px;
 }
+.listExpandCollapseButton{
+  font-size:30px;
+  float : right; 
+  padding-right : 15px;
+  padding-bottom : 5px;                    
+}
 .selectedListButton{
   font-size: 15px;
   border-radius: 5px;

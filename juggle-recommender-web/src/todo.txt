@@ -22,8 +22,6 @@ v 1.0:
 ==========
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
-	-Background of filter button is gray, is that intentional?
-	-even though I have pulled, I still see my old filter icon image instead of the one that is on the website
 
 Bugs:
 	-Ghost catches bug. To reproduce:
@@ -46,7 +44,6 @@ Later:
 	Misc:
 		-Researching other data sources to inform user based tricks 
 
-	- make expand list button clickable but not surrounding div
 Maybe?:
 	List:
 		-showing the current count of myTricks and allTricks would be nice
