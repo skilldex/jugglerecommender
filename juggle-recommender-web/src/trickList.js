@@ -1,5 +1,4 @@
 import React,{Component} from 'react'
-import {jugglingLibrary} from './jugglingLibrary.js'
 import store from './store'
 import uiStore from './uiStore'
 import filterStore from './filterStore'
@@ -108,35 +107,38 @@ render() {
  	let tricks = []
 
  	const rootTricks = uiStore.rootTricks
-	for (var i = 0; i < rootTricks.length; i++) {
-		const trick = jugglingLibrary[rootTricks[i]]
-		const trickKey = rootTricks[i]
-		var cardClass='listCard'
-		if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
-			cardClass = 'selectedListCard'
-		}
-		const cardColor = 
-			graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
-			graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
-		 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
-		tricks.push(
-			<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
-				className={cardClass} 
-				key={trickKey + "div"} 
-				style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
-					graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
-				 {store.myTricks[trickKey] ? 
+ 	if(Object.keys(store.library).length > 0){
+	 	
+		for (var i = 0; i < rootTricks.length; i++) {
+			const trick = store.library[rootTricks[i]]
+			const trickKey = rootTricks[i]
+			var cardClass='listCard'
+			if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
+				cardClass = 'selectedListCard'
+			}
+			const cardColor = 
+				graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
+				graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
+			 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
+			tricks.push(
+				<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
+					className={cardClass} 
+					key={trickKey + "div"} 
+					style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
+						graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
+					 {store.myTricks[trickKey] ? 
+						 <button className="addAndRemoveMyTricksButton" 
+						 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
+						 		e.stopPropagation()}}>&#9733;</button> :
 					 <button className="addAndRemoveMyTricksButton" 
-					 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
-					 		e.stopPropagation()}}>&#9733;</button> :
-				 <button className="addAndRemoveMyTricksButton" 
-				 		onClick={(e)=>{store.addToMyTricks(trickKey);
-				 		e.stopPropagation()}}>&#9734;</button>}
-				 <span className="listCardName" title={trick.name}>{trick.name}</span>			
-			</div>
-		)	
-	}
+					 		onClick={(e)=>{store.addToMyTricks(trickKey);
+					 		e.stopPropagation()}}>&#9734;</button>}
+					 <span className="listCardName" title={trick.name}>{trick.name}</span>			
+				</div>
+			)	
+		}
 
+	}
  	const buttons = <div>
 					 	<label className="listExpandCollapseButton"
 								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
