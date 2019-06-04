@@ -6,6 +6,7 @@ v 1.1:
 
 v 1.0:
 	- new user breaks
+	- pinch zoom sometimes resets zoom
 	-allow users to add tricks
 		- Create form to add tricks
 			const trick = {
@@ -32,7 +33,7 @@ v 1.0:
 			-no arrow solution, just have something half-revealed to make scrollability obvious:
 			https://uxdesign.cc/dear-web-designer-let-s-stop-breaking-the-affordance-of-scrolling-fe8bf258df7b
 	Possibly affected by switching to dark theme:
-		-find some coloring scheme that will work for any case including user added
+		-find some difficulty/coloring scheme that will work for any case including user added
 		-(maybe?)Indicator for which view we are in (water mark star background)
 
 
