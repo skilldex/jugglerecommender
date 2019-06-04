@@ -3,12 +3,14 @@ import firebase from 'firebase'
 import uiStore from './uiStore'
 import filterStore from './filterStore'
 import authStore from './authStore'
+import {jugglingLibrary} from './jugglingLibrary.js'
+
 configure({ enforceActions: "always" })
 class Store {
 
 	@observable myTricks = {}
 	@observable isLoginPaneOpen = false
-
+	@observable library = {}
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
@@ -45,7 +47,8 @@ class Store {
 	@action initializeTricks=()=>{
 		uiStore.setSelectedList("allTricks")
 	}
-
+	
+		
 	@action getTricksFromBrowser=()=>{
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
     	if(myTricks  && Object.keys(myTricks).length > 0){
@@ -56,7 +59,38 @@ class Store {
     		this.initializeTricks()
     	}
 	}
+	@action initializeLibrary=()=>{
+		let libraryRef = firebase.database().ref('library/')
+        libraryRef.set(jugglingLibrary);
+	}
+	@action getLibraryFromDatabase=()=>{
+		let libraryRef = firebase.database().ref('library/')
+		libraryRef.on('value', resp =>{
+        	this.setLibrary(this.snapshotToObject(resp))
+        })
+	}
+	@action setLibrary=(library)=>{
+		this.library = library
+	}
+	@action addTrickToDatabase=()=>{
 
+		const trick = {
+			name : "newtrick",
+			contributor : "jsmith", 
+			video : "https://www.instagram.com/p/ByQHRQNA3ss/",
+			siteswap :  "431(1x)[3]",
+			dependents : "Box",
+			prereqs : "Cascade",
+			tags : "multiplex"
+		}
+		const trickKey = trick.name
+		let newTrickRef = firebase.database().ref('library/'+trickKey)
+        newTrickRef.set(trick);
+		//durring adding prereqs show list
+		//does anything have this as a prereq show list
+		/*
+		*/
+	}
 	@action getSavedTricks=()=>{
 		if(authStore.user){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
@@ -117,8 +151,7 @@ class Store {
 	 		uiStore.updateRootTricks()
 		}
  	}
-
-	@action snapshotToArray = snapshot => {
+	@action snapshotToArray=(snapshot)=>{
 	    let returnArr = [];	    
 	    snapshot.forEach(childSnapshot => {
 	        let item = childSnapshot.val();
@@ -126,7 +159,15 @@ class Store {
 	        returnArr.push(item);
 	    });
 	    return returnArr;
-	};
+	}
+	@action snapshotToObject=(snapshot) => {
+	  let returnObj = {};
+	  //returnObj["key"] = Object.keys(snapshot.val())[0]
+	  snapshot.forEach(childSnapshot => {
+	      returnObj[childSnapshot.key] = childSnapshot.val()
+	  });
+	  return returnObj;
+	}
 }
 
 const store = new Store()

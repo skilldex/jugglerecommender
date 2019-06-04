@@ -1,7 +1,6 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
-import {jugglingLibrary} from './jugglingLibrary.js'
 import uiStore from "./uiStore"
 configure({ enforceActions: "always" })
 class FilterStore {

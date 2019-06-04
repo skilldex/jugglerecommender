@@ -2,7 +2,6 @@ import { action, configure, observable} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
 import filterStore from "./filterStore"
-import {jugglingLibrary} from './jugglingLibrary.js'
 
 configure({ enforceActions: "always" })
 class UIStore {
@@ -26,22 +25,7 @@ class UIStore {
 	@action addTrick = ()=>{
 		console.log("adding")
 		this.addingTrick = true
-		//put library in db 
-		//store.addTrickToDatabase(trick)
-		//update available local tricks from database
-		//durring adding prereqs show list
-		//does anything have this as a prereq show list
-		/*trick = {
-			name : 
-			adder : 
-			video : ,
-			uploadedGif : ,
-			siteswap :  ,
-			dependents : (show list),
-			prereqs : (show list),
-			tags : (show list)
-		}
-		*/
+		store.addTrickToDatabase()
 	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
@@ -161,18 +145,18 @@ class UIStore {
 
 
  	@action updateRootTricks=(rootTricks)=>{
+ 		if(Object.keys(store.library).length == 0){ return }
 	 	this.rootTricks = []
  		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
-		 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'name');
+		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'name');
 		}else{
-		 	sortedJugglingLibrary = this.alphabeticalSortObject(jugglingLibrary, 'difficulty');
+		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'difficulty');
 		}
 		const arrayOfFilterTags= []
 		filterStore.tags.forEach(function (arrayItem) {
 		    arrayOfFilterTags.push(arrayItem.id)
 		});
-		
 		Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 			if(this.selectedList === "allTricks" || 
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
@@ -192,8 +176,8 @@ class UIStore {
 					this.rootTricks.push(trickKey)
 				}
 			}
-		})			
-	graphStore.updateGraphData()
+		})		
+		graphStore.updateGraphData()
 	}
 
  	@action toggleExpandedSection=(section)=>{
