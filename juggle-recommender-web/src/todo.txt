@@ -68,3 +68,6 @@ to see dark theme:
 	1) in App.css, change  '.headerButton { background-color : white' to black
 	2) in trickGraph.css, change 'border: 1px solid black;' to white
 	*This isn't complete, but enough to see how it would look
+
+Investigate:
+-why is update root tricks running 4 times?

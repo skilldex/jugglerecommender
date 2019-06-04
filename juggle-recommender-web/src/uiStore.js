@@ -63,7 +63,9 @@ class UIStore {
 	}
 
 	@action toggleCatchEdit=(catches, trickKey)=>{
+
 		this.popupCatchEditable = !this.popupCatchEditable
+		
 		if (!this.popupCatchEditable){
 			store.setCatches(catches, trickKey)
 			store.updateTricksInDatabase()
