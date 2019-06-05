@@ -166,6 +166,7 @@ class UIStore {
 				if(
 				   parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
+				   trick.tags &&
 				   [...arrayOfFilterTags].every(elem => trick.tags.indexOf(elem) > -1) &&
 				   filterStore.numBalls.includes(trick.num.toString()) &&
 				   (this.searchTrick === '' || trick.name.includes(this.searchTrick))
