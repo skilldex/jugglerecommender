@@ -5,8 +5,9 @@ v 1.1:
 	-make popups be draggable divs
 
 v 1.0:
-	- new user breaks
-	- pinch zoom sometimes resets zoom
+	-new user breaks
+		-new user seems fine on Chrom Windows
+	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
 		- Create form to add tricks
 			const trick = {

@@ -1,12 +1,12 @@
 .form{
   overflow-y: scroll;
-  height:500px;
-  width : 200px;
+  height:250px;
+  width : 250px;
   position : absolute;
   background-color : white;
   z-index : 2500;
   border : 1px solid gray;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
-  text-align: center;
+  text-align: left;
 }
