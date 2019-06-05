@@ -42,6 +42,7 @@ class Popup extends Component {
     store.addToMyTricks(uiStore.popupTrick.id)
   }
   handleEditButtonClick=()=>{
+    this.setState({catches:store.myTricks[uiStore.popupTrick.id].catches})
     uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)
     var input
     function setFocus() {
