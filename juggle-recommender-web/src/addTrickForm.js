@@ -16,9 +16,7 @@ class AddTrickForm extends Component {
 		tags : []
 
 	}
-	submitForm =()=>{
-		console.log('submitForm')
-	}
+
 	handleNameChange=(e)=>{
 		this.setState({
 			name:e.target.value
@@ -44,8 +42,7 @@ class AddTrickForm extends Component {
 			siteSwap:e.target.value
 		})
 	}
-	submit=()=>{
-		
+	submit=()=>{		
 		const trick = {
 			name : this.state.name,
 			num : this.state.numBalls,
@@ -58,6 +55,9 @@ class AddTrickForm extends Component {
 		}
 		store.addTrickToDatabase(trick)
 	}
+	cancel=()=>{
+		
+	}
 	render (){
 		//TODO add prereqs and tags as react tags 
 
@@ -69,6 +69,7 @@ class AddTrickForm extends Component {
 							<label>Video URL</label><br/><input value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/>
 							<label>Siteswap</label><br/><input value={this.state.siteSwap} onChange={this.handleSSChange}/><br/>
 							<button onClick={this.submit}>submit</button>
+							<button onClick={uiStore.toggleAddingTrick}>cancel</button>
 						</div>
 
 		console.log("form", form)
