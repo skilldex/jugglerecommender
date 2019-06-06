@@ -75,9 +75,9 @@ class Store {
 		console.log(toJS(this.library))
 		uiStore.updateRootTricks()
 	}
-	@action addTrickToDatabase=()=>{
+	@action addTrickToDatabase=(trick)=>{
 
-		const trick = {
+		/*const trick = {
 			name : "newtrick",
 			num : 3,
 			difficulty : 5,
@@ -86,7 +86,7 @@ class Store {
 			siteswap :  "431(1x)[3]",
 			prereqs : ["Cascade"],
 			tags : ["multiplex"]
-		}
+		}*/
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);

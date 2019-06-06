@@ -20,7 +20,6 @@ class UIStore {
 	@action addTrick = ()=>{
 		console.log("adding")
 		this.addingTrick = true
-		store.addTrickToDatabase()
 	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
