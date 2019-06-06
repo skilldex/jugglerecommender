@@ -5,9 +5,8 @@ v 1.1:
 	-make popups be draggable divs
 
 v 1.0:
-	- test tricks for old users given new username functionality 
+	-test tricks for old users given new username functionality 
 	-pinch zoom sometimes resets zoom
-	-style tags on list include x 
 	-allow users to add tricks
 		- add cancel form button
 		- style add trick form
@@ -29,6 +28,10 @@ v 1.0:
 
 
 ==========
+Ask Ian:
+	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
+	-any reason not to make some kind of physical card to leave around juggling conventions, what should card say?
+		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent backgroound
