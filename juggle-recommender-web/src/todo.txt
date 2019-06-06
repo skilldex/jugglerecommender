@@ -7,7 +7,9 @@ v 1.1:
 v 1.0:
 	- test tricks for old users given new username functionality 
 	-pinch zoom sometimes resets zoom
+	-style tags on list include x 
 	-allow users to add tricks
+		- add cancel form button
 		- style add trick form
 		-tags and prereqs use tags library
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
