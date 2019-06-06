@@ -68,10 +68,12 @@ class Store {
 		libraryRef.on('value', resp =>{
         	this.setLibrary(this.snapshotToObject(resp))
         })
+
 	}
 	@action setLibrary=(library)=>{
 		this.library = library
 		console.log(toJS(this.library))
+		uiStore.updateRootTricks()
 	}
 	@action addTrickToDatabase=()=>{
 

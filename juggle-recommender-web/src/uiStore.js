@@ -14,11 +14,6 @@ class UIStore {
 	@observable listExpanded = true
 	@observable popupCatchEditable = false
 	@observable popupTrick = null
-	@observable expandedSections = {
-		'3' : true,
-		'4' : false,
-		'5' : false
-	}
 	@observable popupTimer = null
 	@observable addingTrick = false
 
@@ -98,6 +93,7 @@ class UIStore {
 	 	}
 	 		
 	 	@action performSearch=()=>{
+
 	 		this.selectedTricks = []
 	 		this.searchTrick = this.searchInput
 	 		this.updateRootTricks()
@@ -148,6 +144,7 @@ class UIStore {
 
  	@action updateRootTricks=(rootTricks)=>{
  		if(Object.keys(store.library).length == 0){ return }
+ 			console.log('rightAfter')
 	 	this.rootTricks = []
  		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
@@ -155,19 +152,24 @@ class UIStore {
 		}else{
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'difficulty');
 		}
-		const arrayOfFilterTags= []
+		const filterTagNames= []
 		filterStore.tags.forEach(function (arrayItem) {
-		    arrayOfFilterTags.push(arrayItem.id)
+		    filterTagNames.push(arrayItem.id)
 		});
 		Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
 			if(this.selectedList === "allTricks" || 
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
 				const trick = sortedJugglingLibrary[trickKey]
+				const tagsInFilter = trick.tags? trick.tags.filter((tag)=>{
+					if (filterTagNames.includes(tag)){
+						console.log('returned tag', tag)
+						return tag
+					}
+				}) : []
 				if(
 				   parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
-				   trick.tags &&
-				   [...arrayOfFilterTags].every(elem => trick.tags.indexOf(elem) > -1) &&
+				   tagsInFilter.length >= filterTagNames.length &&
 				   filterStore.numBalls.includes(trick.num.toString()) &&
 				   (this.searchTrick === '' || trick.name.includes(this.searchTrick))
 				 ){
@@ -182,11 +184,6 @@ class UIStore {
 		})		
 		graphStore.updateGraphData()
 	}
-
- 	@action toggleExpandedSection=(section)=>{
-	 	this.expandedSections[section] = !this.expandedSections[section]
-	 	this.updateRootTricks()
-	 }
 
 	 @action clearCatchInput=()=>{
 	 	this.catchInput = ''

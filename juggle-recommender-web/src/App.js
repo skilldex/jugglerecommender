@@ -64,6 +64,7 @@ class App extends Component {
         });
 		//store.initializeLibrary()
 		store.getLibraryFromDatabase()
+		
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []

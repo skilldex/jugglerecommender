@@ -38,6 +38,10 @@
   padding-right : 15px;
   padding-bottom : 5px;                    
 }
+
+.listTagsHeader{
+  float:left;
+}
 .selectedListButton{
   font-size: 15px;
   border-radius: 5px;

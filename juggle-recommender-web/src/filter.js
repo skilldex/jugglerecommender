@@ -10,6 +10,7 @@ import {TAGS} from './tags';
 import { WithContext as ReactTags } from 'react-tag-input';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import {toJS} from "mobx"
 
 const presetTags = TAGS.map((tag) => {
   return {
@@ -37,11 +38,7 @@ class Filter extends Component {
   	}
 	      
 
-	handleDelete=(i)=>{
-		filterStore.setTags(
-			filterStore.tags.filter((tag, index) => index !== i)
-		)
-	}
+
 
 	handleAddition=(tag)=>{
 		filterStore.setTags(
@@ -112,7 +109,7 @@ class Filter extends Component {
 			          minQueryLength={1}
 			          suggestions={presetTags}
 			          delimiters={delimiters}
-			          handleDelete={this.handleDelete}
+			          handleDelete={filterStore.handleDelete}
 			          handleAddition={this.handleAddition}
 			          handleTagClick={this.handleTagClick}/>
 			    </div>

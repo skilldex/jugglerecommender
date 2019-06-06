@@ -78,6 +78,8 @@ class TrickList extends Component {
 		}
 	}
 
+
+
 render() {
 
 	//"this" gets redefined in window.onclick so use "that"
@@ -103,6 +105,28 @@ render() {
 
 	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
 					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
+
+
+
+	let filterTags = []
+	let filterSection = null
+	if(filterStore.tags){
+		
+		filterStore.tags.forEach((tag,i)=>{
+			filterTags.push(
+									
+					<button onClick={()=>filterStore.handleDelete(i)}>{filterStore.tags[i].text}</button>
+				
+			)
+		})
+			console.log('filterTags',filterTags)
+		 filterSection = <div>
+		 					<label className="listTagsHeader">TAGS:&nbsp;</label>	{filterTags}
+		 				</div>
+	}
+
+	
+
 
  	let tricks = []
 
@@ -153,6 +177,7 @@ render() {
 								 All</button>
 						</div>
 			 			<div className="search" >
+			 				{filterSection}
 			 				<input onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}

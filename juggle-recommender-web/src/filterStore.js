@@ -2,6 +2,7 @@ import { action, configure, observable} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
 import uiStore from "./uiStore"
+import {toJS} from "mobx"
 configure({ enforceActions: "always" })
 class FilterStore {
 
@@ -17,7 +18,11 @@ class FilterStore {
 		this.tags = tags
 		uiStore.updateRootTricks()
 	}
-
+	@action handleDelete=(i)=>{
+		this.setTags(
+			this.tags.filter((tag, index) => index !== i)
+		)
+	}
 	@action toggleFilterDiv=()=>{
 		this.filterVisible = !this.filterVisible
 	}

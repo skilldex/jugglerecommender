@@ -41,8 +41,12 @@ v 1.0:
 ==========
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
-
+	-find sort button with transparent backgroound
 Bugs:
+
+Add tricks:
+	-add title
+	-tags and prereqs use tags library
 
 Later:
 	List:

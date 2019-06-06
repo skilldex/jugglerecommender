@@ -5,10 +5,12 @@ import { observer } from "mobx-react"
 
 @observer
 class AddTrickForm extends Component {
-	
+	submitForm =()=>{
+		console.log('submitForm')
+	}
 	render (){
-		const form = <div className="form">
-						<label className="listExpandCollapseButton">X</label><br/><br/>
+		const form = 
+					<form className="form" name="personal" onSubmit={this.submitForm}>
 						<label>Trick name</label><br/><input/><br/>
 						<label>Number of balls</label><br/><input/><br/>
 						<label>Difficulty</label><br/><input/><br/>
@@ -17,7 +19,9 @@ class AddTrickForm extends Component {
 						<label>Siteswap</label><br/><input/><br/>
 						<label>Prereqs</label><br/><input/><br/>
 						<label>Tags</label><br/><input/><br/>
-					</div>
+						<button type='submit'>submit</button>
+					</form>
+
 		console.log("form", form)
 		return(
 				<div>
@@ -27,3 +31,4 @@ class AddTrickForm extends Component {
 	}
 }
 export default AddTrickForm
+
