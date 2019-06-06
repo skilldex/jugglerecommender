@@ -114,9 +114,11 @@ render() {
 		
 		filterStore.tags.forEach((tag,i)=>{
 			filterTags.push(
-									
-					<button onClick={()=>filterStore.handleDelete(i)}>{filterStore.tags[i].text}</button>
-				
+						<div >
+							<button onClick={()=>filterStore.handleDelete(i)}>x</button>
+							<span>{filterStore.tags[i].text}</span>
+						</div>			
+
 			)
 		})
 			console.log('filterTags',filterTags)
