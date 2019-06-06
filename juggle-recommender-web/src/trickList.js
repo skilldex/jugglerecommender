@@ -106,17 +106,14 @@ render() {
 	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
 					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
 
-
-
 	let filterTags = []
 	let filterSection = null
-	if(filterStore.tags){
-		
+	if(filterStore.tags){		
 		filterStore.tags.forEach((tag,i)=>{
 			filterTags.push(
-						<div >
-							<button onClick={()=>filterStore.handleDelete(i)}>x</button>
-							<span>{filterStore.tags[i].text}</span>
+						<div className="listTagsDiv">
+							<span className="listTagsName">&nbsp;{filterStore.tags[i].text}</span>
+							<label className="listTagsX"onClick={()=>filterStore.handleDelete(i)}>&nbsp;x&nbsp;</label>
 						</div>			
 
 			)
@@ -179,7 +176,7 @@ render() {
 								 All</button>
 						</div>
 			 			<div className="search" >
-			 				{filterSection}
+			 				{filterSection}<br/>
 			 				<input onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}

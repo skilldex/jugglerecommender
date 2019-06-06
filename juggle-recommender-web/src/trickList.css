@@ -31,6 +31,7 @@
 .listButtonDiv{
   text-align: center;
   margin-top: 10px;
+
 }
 .listExpandCollapseButton{
   font-size:30px;
@@ -41,6 +42,33 @@
 
 .listTagsHeader{
   float:left;
+}
+
+.listTagsDiv{
+  margin: 6px;
+  text-align: left;
+  display:inline-block;
+  float:left;
+}
+
+.listTagsName{
+  background-color : lightgray;
+  border:1px solid darkgray;
+  border-right: none;
+  overflow: hidden;
+  text-overflow: hidden;
+  font-size: 12px;
+  float:left;
+}
+
+.listTagsX{
+  background-color : lightgray;
+  border:1px solid darkgray;
+  border-left: none;
+  color: #888888;
+  font-size: 12px;
+  float:left;
+
 }
 .selectedListButton{
   font-size: 15px;
