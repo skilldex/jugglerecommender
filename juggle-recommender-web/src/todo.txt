@@ -5,23 +5,11 @@ v 1.1:
 	-make popups be draggable divs
 
 v 1.0:
-	-new user breaks
-		-new user seems fine on Chrom Windows
+	- test tricks for old users given new username functionality 
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
-		- Create form to add tricks
-			const trick = {
-				name : "newtrick",
-				num : 3,
-				difficulty : 5,
-				contributor : "jsmith", 
-				video : "https://www.instagram.com/p/ByQHRQNA3ss/",
-				siteswap :  "431(1x)[3]",
-				prereqs : ["Cascade"],
-				tags : ["multiplex"]
-			}
-		- Connect output of form to addTrickToDatabase
-		- change addingTrick boolean in uiStore to false on submit
+		- style add trick form
+		-tags and prereqs use tags library
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
 		- potentially allow youtube, gif radio
 		- potentially juggling tv
@@ -44,9 +32,6 @@ Minor:
 	-find sort button with transparent backgroound
 Bugs:
 
-Add tricks:
-	-add title
-	-tags and prereqs use tags library
 
 Later:
 	List:

@@ -183,7 +183,7 @@ render() {
 							{sort}
 							{sortDropdown}
 						</div>
-						<button className="addTrickButton" onClick={uiStore.addTrick}>+ Add Trick</button>
+						<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Trick</button>
 			 		</div>
 	return (
 		<div>	

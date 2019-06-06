@@ -17,9 +17,9 @@ class UIStore {
 	@observable popupTimer = null
 	@observable addingTrick = false
 
-	@action addTrick = ()=>{
+	@action toggleAddingTrick = ()=>{
 		console.log("adding")
-		this.addingTrick = true
+		this.addingTrick = !this.addingTrick
 	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded

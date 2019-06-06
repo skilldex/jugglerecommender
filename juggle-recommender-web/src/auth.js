@@ -8,7 +8,10 @@ import firebase from 'firebase'
 class Auth extends Component {
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());
     state= {
-        error : ""
+        error : "",
+        email : "",
+        username : "",
+        password : ""
     }
 
 
@@ -23,18 +26,23 @@ class Auth extends Component {
     }
     loginUser(username, pass) {
         console.log("logging user", username, pass)
+        const usersRef = firebase.database().ref('users/').orderByChild('username').equalTo(username)
+        let user
         return new Promise(resolve => {
-            firebase.auth().signInWithEmailAndPassword(username, pass).then(data => {
-                authStore.setUser({"username": username})
-                resolve("success")
-                store.setIsLoginPaneOpen(false)
-            }).catch(error=>{
-                resolve(error)
-            });
+            usersRef.on("value", resp =>{
+                user = store.snapshotToArray(resp)[0]
+                firebase.auth().signInWithEmailAndPassword(user.email, pass).then(data => {
+                    authStore.setUser({"email": user.email,"username" : user.username})
+                    store.setIsLoginPaneOpen(false)
+                    resolve("success")
+                }).catch(error=>{
+                    resolve(error)
+                });
+            }) 
         });
     }
     createAccount=()=>{
-        this.registerUser(this.state.username,this.state.password).then((response)=>{
+        this.registerUser(this.state.email,this.state.password).then((response)=>{
             console.log("user registered")
             if(response.message){
                 this.setState({
@@ -44,6 +52,9 @@ class Auth extends Component {
                 const myTricksRef = firebase.database().ref('myTricks/')
                 let newData = myTricksRef.push();
                 newData.set({"username": this.state.username, "myTricks" : []});
+                const usersRef = firebase.database().ref('users/')
+                let newUser= usersRef.push();
+                newUser.set({"username": this.state.username, "email" : this.state.email});
                 this.signIn()
             }
         })
@@ -57,7 +68,10 @@ class Auth extends Component {
             });
         })
     }
-    userInputChange=(e)=>{
+    emailInputChange=(e)=>{
+        this.setState({email : e.target.value})
+    }
+    usernameInputChange=(e)=>{
         this.setState({username : e.target.value})
     }
     passwordInputChange=(e)=>{
@@ -73,9 +87,11 @@ class Auth extends Component {
                             <button className="authButton"  onClick={authStore.signOut}>Sign Out</button>
                         </div> : 
                         <div>
-                            <label>email</label><br/><input style={inputStyle} onChange={this.userInputChange}/>
+                            <label>userasdfasdfasd handle</label><br/><input style={inputStyle} onChange={this.usernameInputChange}/>
                             <br/>
-                            <label>password</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/>
+                            <label>email</label><br/><input style={inputStyle} onChange={this.emailInputChange}/>
+                            <br/>
+                            <label>passwasdfrd</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/>
                             <br/>
                             <div style={{color : "red"}}>{this.state.error}</div>
                             <br/>

@@ -76,20 +76,11 @@ class Store {
 		uiStore.updateRootTricks()
 	}
 	@action addTrickToDatabase=(trick)=>{
-
-		/*const trick = {
-			name : "newtrick",
-			num : 3,
-			difficulty : 5,
-			contributor : "jsmith", 
-			video : "https://www.instagram.com/p/ByQHRQNA3ss/",
-			siteswap :  "431(1x)[3]",
-			prereqs : ["Cascade"],
-			tags : ["multiplex"]
-		}*/
+		//https://www.instagram.com/p/ByQHRQNA3ss/
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
+        uiStore.toggleAddingTrick()
 	}
 	@action getSavedTricks=()=>{
 		if(authStore.user){
