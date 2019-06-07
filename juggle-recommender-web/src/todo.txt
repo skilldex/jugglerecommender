@@ -9,7 +9,6 @@ v 1.0:
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
 		- style add trick form
-		-tags and prereqs use tags library
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
 		- potentially allow youtube, gif radio
 		- potentially juggling tv
@@ -35,10 +34,12 @@ Ask Ian:
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent backgroound
+	-if the form is canceled, should it clear itself?
 Bugs:
+	-in form, clicking a tag/prereq clicked through into cancel button once
 	-we get this every time:
 		Warning: Each child in a list should have a unique "key" prop.
-	-chrashes if add new trick form insit completely filled in
+	-chrashes if add new trick form isnt completely filled in
 
 Later:
 	List:

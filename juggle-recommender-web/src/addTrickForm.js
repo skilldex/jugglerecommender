@@ -16,6 +16,8 @@ const presetTags = TAGS.map((tag) => {
   }
 })
 
+
+
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -61,6 +63,15 @@ class AddTrickForm extends Component {
 			siteSwap:e.target.value
 		})
 	}
+	handlePrereqAddition=(tag)=> {
+        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
+    }
+    handlePrereqDelete=(i)=> {
+        const { prereqs } = this.state;
+        this.setState({
+         prereqs: prereqs.filter((tag, index) => index !== i),
+        });
+    }
 
     handleTagAddition=(tag)=> {
         this.setState(state => ({ tags: [...state.tags, tag] }));
@@ -71,8 +82,12 @@ class AddTrickForm extends Component {
          tags: tags.filter((tag, index) => index !== i),
         });
     }
+
 	submit=()=>{
 		var tags = this.state.tags.map(function(item) {
+			return item['text'];
+		});
+		var prereqs = this.state.prereqs.map(function(item) {
 			return item['text'];
 		});
 				
@@ -83,16 +98,44 @@ class AddTrickForm extends Component {
 			contributor : authStore.user.username, 
 			video : this.state.videoURL,
 			siteswap :  this.state.siteSwap,
-			prereqs : ["Cascade"],
+			prereqs : prereqs,
 			tags : tags
 		}
 		store.addTrickToDatabase(trick)
 	}
-	cancel=()=>{
-		
-	}
+
 	render (){
 		//TODO add prereqs and tags as react tags 
+
+		const patternsObj = Object.keys(store.library).map((pattern) => {
+		  return {
+		  	size: null,
+		    id: pattern,
+		    text: pattern,
+		  }
+		})
+
+		const prereqsInput = <ReactTags
+					          autofocus = {false}
+					          inputFieldPosition="bottom"
+					          tags={this.state.prereqs}
+					          minQueryLength={1}
+					          suggestions={patternsObj}
+					          delimiters={delimiters}
+					          handleDelete={this.handlePrereqDelete}
+					          handleAddition={this.handlePrereqAddition}
+					          handleTagClick={this.handlePrereqClick}/>
+
+		const tagInput = <ReactTags
+					          autofocus = {false}
+					          inputFieldPosition="bottom"
+					          tags={this.state.tags}
+					          minQueryLength={1}
+					          suggestions={presetTags}
+					          delimiters={delimiters}
+					          handleDelete={this.handleTagDelete}
+					          handleAddition={this.handleTagAddition}
+					          handleTagClick={this.handleTagClick}/>
 
 		const form = 	
 						<div className="form">
@@ -101,16 +144,8 @@ class AddTrickForm extends Component {
 							<label>Difficulty</label><br/><input value={this.state.difficulty} onChange={this.handleDiffChange}/><br/>
 							<label>Video URL</label><br/><input value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/>
 							<label>Siteswap</label><br/><input value={this.state.siteSwap} onChange={this.handleSSChange}/><br/>
-							<ReactTags
-						          autofocus = {false}
-						          inputFieldPosition="bottom"
-						          tags={this.state.tags}
-						          minQueryLength={1}
-						          suggestions={presetTags}
-						          delimiters={delimiters}
-						          handleDelete={this.handleTagDelete}
-						          handleAddition={this.handleTagAddition}
-						          handleTagClick={this.handleTagClick}/>
+							{prereqsInput}
+							{tagInput}
 							<button onClick={this.submit}>submit</button>
 							<button onClick={uiStore.toggleAddingTrick}>cancel</button>
 						</div>
