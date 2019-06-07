@@ -4,6 +4,25 @@ import "./addTrickForm.css"
 import { observer } from "mobx-react"
 import authStore from "./authStore"
 import store from "./store"
+import { WithContext as ReactTags } from 'react-tag-input';
+import './filter.css';
+import {TAGS} from './tags';
+
+const presetTags = TAGS.map((tag) => {
+  return {
+  	size: null,
+    id: tag,
+    text: tag,
+  }
+})
+
+const KeyCodes = {
+  comma: 188,
+  enter: 13,
+};
+
+const delimiters = [KeyCodes.comma, KeyCodes.enter];
+
 @observer
 class AddTrickForm extends Component {
 	state = {
@@ -42,7 +61,21 @@ class AddTrickForm extends Component {
 			siteSwap:e.target.value
 		})
 	}
-	submit=()=>{		
+
+    handleTagAddition=(tag)=> {
+        this.setState(state => ({ tags: [...state.tags, tag] }));
+    }
+    handleTagDelete=(i)=> {
+        const { tags } = this.state;
+        this.setState({
+         tags: tags.filter((tag, index) => index !== i),
+        });
+    }
+	submit=()=>{
+		var tags = this.state.tags.map(function(item) {
+			return item['text'];
+		});
+				
 		const trick = {
 			name : this.state.name,
 			num : this.state.numBalls,
@@ -51,7 +84,7 @@ class AddTrickForm extends Component {
 			video : this.state.videoURL,
 			siteswap :  this.state.siteSwap,
 			prereqs : ["Cascade"],
-			tags : ["multiplex"]
+			tags : tags
 		}
 		store.addTrickToDatabase(trick)
 	}
@@ -68,6 +101,16 @@ class AddTrickForm extends Component {
 							<label>Difficulty</label><br/><input value={this.state.difficulty} onChange={this.handleDiffChange}/><br/>
 							<label>Video URL</label><br/><input value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/>
 							<label>Siteswap</label><br/><input value={this.state.siteSwap} onChange={this.handleSSChange}/><br/>
+							<ReactTags
+						          autofocus = {false}
+						          inputFieldPosition="bottom"
+						          tags={this.state.tags}
+						          minQueryLength={1}
+						          suggestions={presetTags}
+						          delimiters={delimiters}
+						          handleDelete={this.handleTagDelete}
+						          handleAddition={this.handleTagAddition}
+						          handleTagClick={this.handleTagClick}/>
 							<button onClick={this.submit}>submit</button>
 							<button onClick={uiStore.toggleAddingTrick}>cancel</button>
 						</div>

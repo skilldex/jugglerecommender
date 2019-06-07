@@ -8,12 +8,12 @@ v 1.0:
 	-test tricks for old users given new username functionality 
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
-		- add cancel form button
 		- style add trick form
 		-tags and prereqs use tags library
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
 		- potentially allow youtube, gif radio
 		- potentially juggling tv
+			-they do have embed
 	-Make down arrow to show that scrolling is possible on cards
 		*should it go away when we are at the bottom?
 		*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
@@ -30,19 +30,23 @@ v 1.0:
 ==========
 Ask Ian:
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
-	-any reason not to make some kind of physical card to leave around juggling conventions, what should card say?
+	-any reason not to make some kind of physical card to leave around juggling conventions? what should card say?
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent backgroound
 Bugs:
-
+	-we get this every time:
+		Warning: Each child in a list should have a unique "key" prop.
+	-chrashes if add new trick form insit completely filled in
 
 Later:
 	List:
 		-Style expand arrows as icons
 		-make a 2b section
 		-make a 6b and 7b sections
+		-allow users to edit tricks that they have contributed
+		-allow users to suggest new tags
 	Graph:
 		-node size based on zoom
 		-opacity based on closeness to qualify
