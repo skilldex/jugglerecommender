@@ -102,11 +102,11 @@ div.ReactTags__tagInput {
 }
 div.ReactTags__tagInput input.ReactTags__tagInputField,
 div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
-    height: 31px;
+    height: 22px;
     margin: 0;
     font-size: 12px;
-    width: 100%;
-    border: 1px solid #eee;
+    width: 112%;
+    border: 1px solid darkgray;
     padding: 0 4px;
 }
 

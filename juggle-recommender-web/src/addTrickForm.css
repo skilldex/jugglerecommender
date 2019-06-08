@@ -1,13 +1,44 @@
+h3{
+  font-weight: bold;
+  font-size: 24px;
+  color : darkgreen;
+}
 .form{
   overflow-y: scroll;
-  height:250px;
-  width : 250px;
+  height:100%;
+  width : 100%;
   position : absolute;
   background-color : white;
   z-index : 2500;
   border : 1px solid gray;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
-  text-align: center;
-
+  text-align: left;
+  float: center;
+  padding: 10px;
+  
 }
+.innerForm{
+  float: center;
+    font-size: 10px;
+  background-color : lightgray;
+  border: 1px solid darkgray;
+  width: 250px;
+  height: auto;
+  position:relative;
+  padding: 10px;
+}
+.formInputs{
+  width:92%;
+  border: 1px solid darkgray;
+}
+.formButtons{
+  color : green;
+  border-radius: 8px;
+  background-color: white;
+  border:1px solid darkgray;
+  font-size: 20px;
+}
+
+
+

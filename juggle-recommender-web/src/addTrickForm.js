@@ -5,7 +5,7 @@ import { observer } from "mobx-react"
 import authStore from "./authStore"
 import store from "./store"
 import { WithContext as ReactTags } from 'react-tag-input';
-import './filter.css';
+
 import {TAGS} from './tags';
 
 const presetTags = TAGS.map((tag) => {
@@ -117,6 +117,7 @@ class AddTrickForm extends Component {
 
 		const prereqsInput = <ReactTags
 					          autofocus = {false}
+					          placeholder = ''
 					          inputFieldPosition="bottom"
 					          tags={this.state.prereqs}
 					          minQueryLength={1}
@@ -128,6 +129,7 @@ class AddTrickForm extends Component {
 
 		const tagInput = <ReactTags
 					          autofocus = {false}
+					          placeholder = ''
 					          inputFieldPosition="bottom"
 					          tags={this.state.tags}
 					          minQueryLength={1}
@@ -139,15 +141,24 @@ class AddTrickForm extends Component {
 
 		const form = 	
 						<div className="form">
-							<label>Trick name</label><br/><input value={this.state.name} onChange={this.handleNameChange}/><br/>
-							<label>Number of balls</label><br/><input value={this.state.numBalls} onChange={this.handleNumBallsChange}/><br/>
-							<label>Difficulty</label><br/><input value={this.state.difficulty} onChange={this.handleDiffChange}/><br/>
-							<label>Video URL</label><br/><input value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/>
-							<label>Siteswap</label><br/><input value={this.state.siteSwap} onChange={this.handleSSChange}/><br/>
-							{prereqsInput}
-							{tagInput}
-							<button onClick={this.submit}>submit</button>
-							<button onClick={uiStore.toggleAddingTrick}>cancel</button>
+							<h3>Add A Trick</h3>
+							<div className="innerForm">
+								<label>Trick name</label><br/><input className="formInputs" value={this.state.name} onChange={this.handleNameChange}/><br/><br/>
+								<label>Tags</label>{tagInput}<br/>
+								<label>Prereqs</label>{prereqsInput}<br/>
+								<label>Number of balls</label><br/><input className="formInputs" value={this.state.numBalls} onChange={this.handleNumBallsChange}/><br/><br/>
+								<label>Difficulty</label><br/><input className="formInputs" value={this.state.difficulty} onChange={this.handleDiffChange}/><br/><br/>
+								<label>Video URL</label><br/><input className="formInputs" value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/><br/>
+								<label>Siteswap</label><br/><input className="formInputs" value={this.state.siteSwap} onChange={this.handleSSChange}/><br/><br/>
+							</div>
+								<br/>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+								<button className="formButtons"onClick={this.submit}>submit</button>
+								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+								<button className="formButtons"onClick={uiStore.toggleAddingTrick}>cancel</button>
 						</div>
 
 		console.log("form", form)

@@ -36,6 +36,7 @@ Minor:
 	-find sort button with transparent backgroound
 	-if the form is canceled, should it clear itself?
 Bugs:
+	-i think our localhost check for firebase in apps.js is messing with our ability to test on phone because url doesnt include localhost
 	-in form, clicking a tag/prereq clicked through into cancel button once
 	-we get this every time:
 		Warning: Each child in a list should have a unique "key" prop.
