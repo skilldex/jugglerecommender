@@ -8,11 +8,10 @@ v 1.0:
 	-test tricks for old users given new username functionality 
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
-		- style add trick form
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
-		- potentially allow youtube, gif radio
+		- potentially allow youtube, gif, IG, juggleTV radio
 		- potentially juggling tv
-			-they do have embed
+			-they do have embed(just announced that they are done working on site, but will stay up with no more new vids added)
 	-Make down arrow to show that scrolling is possible on cards
 		*should it go away when we are at the bottom?
 		*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
