@@ -7,13 +7,14 @@ import Popup from './popup.js'
 import store from './store'
 import uiStore from './uiStore'
 import graphStore from './graphStore'
-import Auth from './auth.js'
 import authStore from './authStore.js'
 import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import firebase from 'firebase' 
 import AddTrickForm from './addTrickForm'
+import Login from "./login"
+import CreateAccount from "./createAccount"
  // Your web app's Firebase configuration
 let firebaseConfig = {}
 if(window.location.host.includes("localhost")){
@@ -80,11 +81,13 @@ class App extends Component {
  			filters : newFilters
  		})
  	} 	
- 	openSlidingPane=(stateRef)=>{
+ 	openSlidingPane=(paneName)=>{
  		uiStore.setPopupTrickToNull()
- 		if (stateRef == 'isLoginPaneOpen'){
+ 		if (paneName == 'isLoginPaneOpen'){
 	 		store.setIsLoginPaneOpen(true)
-	 	}else if(stateRef == 'isInstructionsPaneOpen'){
+	 	}else if(paneName == 'isInstructionsPaneOpen'){
+	 		this.setState({ 'isInstructionsPaneOpen': true })
+	 	}else if(paneName == 'isCreateAccountPaneOpen'){
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}
  	}
@@ -119,16 +122,24 @@ class App extends Component {
 			                overlayClassName='some-custom-overlay-class'
 			                isOpen={ store.isLoginPaneOpen }
 			                title='Login'
-			                onRequestClose={ () => {
-			                    store.setIsLoginPaneOpen(false)}}>
+			                onRequestClose={ 
+			                	() => {store.setIsLoginPaneOpen(false)}
+			                }>
 			                <div className="instructions">
-			                	<span className="info">
-			                		Create an account to: <br/> 
-			                		• Access your tricks across devices <br/> 
-			                		• Add new tricks for the community to learn <br/> 
-			                		• Contribute your records to community statistics <br/> 
-								</span>
-			                	<Auth/><br/>
+			                	<Login/><br/>
+							</div><br/>
+			            </SlidingPane>
+
+		const createAccount = <SlidingPane
+			                className='some-custom-class'
+			                overlayClassName='some-custom-overlay-class'
+			                isOpen={ store.isCreateAccountPaneOpen }
+			                title='Create Account'
+			                onRequestClose={ 
+			                	() => {store.toggleCreateAccountPane()}
+			                }>
+			                <div className="instructions">
+			                	<CreateAccount/><br/>
 							</div><br/>
 			            </SlidingPane>
 		const header = <div className="header">
@@ -142,8 +153,9 @@ class App extends Component {
 			<div className="main" ref={ref => this.el = ref}>		            
 	            {instructions}
 	            {login}
+	            {createAccount}
 				{header}
-				{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen ?
+				{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen  && !store.isCreateAccountPaneOpen?
 					<TrickList 
 						myTricks={store.myTricks} 
 						selectedList={uiStore.selectedList}
