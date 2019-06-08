@@ -92,60 +92,64 @@ class App extends Component {
  		console.log('startHandled')
  	}
  	render(){
+ 		const instructions = <SlidingPane
+				                className='some-custom-class'
+				                overlayClassName='some-custom-overlay-class'
+				                isOpen={ this.state.isInstructionsPaneOpen }
+				                title='Instructions'
+				                onRequestClose={ () => {
+				                    this.setState({ isInstructionsPaneOpen: false });}}>
+				                <div className="instructions">
+				                	<h2>Instructions</h2>
+									<span className="info">
+										• ★ Star tricks you know to add to "Starred" tricks.<br/>
+										• Find new tricks to learn next that are related to tricks you starred ★.
+									</span>
+									<br/><br/>
+									<span className="info">Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
+									<br/>
+									<div className="info" >contact 
+										<a style={{"color":"blue"}}> skilldex.feedback@gmail.com</a>
+									</div>
+								</div><br/>
+				            </SlidingPane> 
+
+		const login = 	<SlidingPane
+			                className='some-custom-class'
+			                overlayClassName='some-custom-overlay-class'
+			                isOpen={ store.isLoginPaneOpen }
+			                title='Login'
+			                onRequestClose={ () => {
+			                    store.setIsLoginPaneOpen(false)}}>
+			                <div className="instructions">
+			                	<span className="info">
+			                		Create an account to: <br/> 
+			                		• Access your tricks across devices <br/> 
+			                		• Add new tricks for the community to learn <br/> 
+			                		• Contribute your records to community statistics <br/> 
+								</span>
+			                	<Auth/><br/>
+							</div><br/>
+			            </SlidingPane>
+		const header = <div className="header">
+							<span className="title">Juggledex</span><span className="version"> v0.9</span>
+					        <button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>Instructions</button>
+					        {authStore.user ? 
+					        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
+					        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
+						</div>
 		return (
 			<div className="main" ref={ref => this.el = ref}>		            
-	            <SlidingPane
-	                className='some-custom-class'
-	                overlayClassName='some-custom-overlay-class'
-	                isOpen={ this.state.isInstructionsPaneOpen }
-	                title='Instructions'
-	                onRequestClose={ () => {
-	                    this.setState({ isInstructionsPaneOpen: false });}}>
-	                <div className="instructions">
-	                	<h2>Instructions</h2>
-						<span className="info">
-							• ★ Star tricks you know to add to "Starred" tricks.<br/>
-							• Find new tricks to learn next that are related to tricks you starred ★.
-						</span>
-						<br/><br/>
-						<span className="info">Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
-						<br/>
-						<div className="info" >contact 
-							<a style={{"color":"blue"}}> skilldex.feedback@gmail.com</a>
-						</div>
-					</div><br/>
-	            </SlidingPane>
-	            <SlidingPane
-	                className='some-custom-class'
-	                overlayClassName='some-custom-overlay-class'
-	                isOpen={ store.isLoginPaneOpen }
-	                title='Login'
-	                onRequestClose={ () => {
-	                    store.setIsLoginPaneOpen(false)}}>
-	                <div className="instructions">
-	                	<span className="info">
-	                		Create an account to: <br/> 
-	                		• Access your tricks across devices <br/> 
-	                		• Add new tricks for the community to learn <br/> 
-	                		• Contribute your records to community statistics <br/> 
-						</span>
-	                	<Auth/><br/>
-					</div><br/>
-	            </SlidingPane>
-				<div className="header">
-					<span className="title">Juggledex</span><span className="version"> v0.9</span>
-			        <button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>Instructions</button>
-			        {authStore.user ? 
-			        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
-			        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
-				</div>
+	            {instructions}
+	            {login}
+				{header}
 				{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen ?
-				<TrickList 
-					myTricks={store.myTricks} 
-					selectedList={uiStore.selectedList}
-					selectedTricks={uiStore.selectedTricks}
-				/>
-				: null}
+					<TrickList 
+						myTricks={store.myTricks} 
+						selectedList={uiStore.selectedList}
+						selectedTricks={uiStore.selectedTricks}
+					/> : null
+				}
 				<Popup/>
 				<AddTrickForm/>
 				<TrickGraph 
