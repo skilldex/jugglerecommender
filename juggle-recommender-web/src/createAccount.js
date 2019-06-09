@@ -15,6 +15,7 @@ class CreateAccount extends Component {
 
 
     signIn=()=>{        
+        console.log('inCreateUsername',this.state.username)
         authStore.loginUser(this.state.username, this.state.password).then((response)=>{
             if(response.message){
                 this.setState({
@@ -38,6 +39,7 @@ class CreateAccount extends Component {
                 const usersRef = firebase.database().ref('users/')
                 let newUser= usersRef.push();
                 newUser.set({"username": this.state.username, "email" : this.state.email});
+                alert("User " + this.user.username + " created")
                 this.signIn()
             }
         })

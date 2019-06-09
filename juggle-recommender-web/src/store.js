@@ -20,7 +20,9 @@ class Store {
 		this.isLoginPaneOpen = isOpen
 	}
 	@action toggleCreateAccountPane=()=>{
+
 		this.isCreateAccountPaneOpen = !this.isCreateAccountPaneOpen
+		console.log('toggleCreateAccountPane', this.isCreateAccountPaneOpen)
 	}
 	@action updateTricksInDatabase=()=>{
 

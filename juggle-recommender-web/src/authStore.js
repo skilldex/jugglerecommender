@@ -30,12 +30,11 @@ class AuthStore {
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
                 user = store.snapshotToArray(resp)[0]
+                console.log('store.snapshotToArray(resp)',store.snapshotToArray(resp))
                 console.log("user", user)
                 firebase.auth().signInWithEmailAndPassword(user.email, pass).then(data => {
                     this.setUser({"email": user.email,"username" : user.username})
                     store.setIsLoginPaneOpen(false)
-                    store.toggleCreateAccountPane()
-                    alert("User " + user.username + " created")
                     resolve("success")
                 }).catch(error=>{
                     resolve(error)

@@ -49,7 +49,8 @@ class App extends Component {
  		selectedList : "allTricks",
  		edges : [],
  		nodes : [],
- 		isInstructionsPaneOpen: false
+ 		isInstructionsPaneOpen: false,
+ 		isCreateAccountPaneOpen: false
 	}
 	
 	componentDidMount(){
@@ -88,7 +89,8 @@ class App extends Component {
 	 	}else if(paneName == 'isInstructionsPaneOpen'){
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}else if(paneName == 'isCreateAccountPaneOpen'){
-	 		this.setState({ 'isInstructionsPaneOpen': true })
+	 		console.log('isCreateAccountPaneOpenBeingSet')
+	 		this.setState({ 'isCreateAccountPaneOpen': true })
 	 	}
  	}
  	handleStart=()=>{
