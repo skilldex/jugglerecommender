@@ -18,6 +18,7 @@ class UIStore {
 	@observable addingTrick = false
 
 	@action toggleAddingTrick = ()=>{
+		this.popupTrick = null
 		this.addingTrick = !this.addingTrick
 	}
 	@action setListExpanded=(expanded)=>{

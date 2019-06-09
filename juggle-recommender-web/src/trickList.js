@@ -115,19 +115,13 @@ render() {
 							<span className="listTagsName">&nbsp;{filterStore.tags[i].text}</span>
 							<label className="listTagsX"onClick={()=>filterStore.handleDelete(i)}>&nbsp;x&nbsp;</label>
 						</div>			
-
 			)
 		})
 		 filterSection = <div>
 		 					<label className="listTagsHeader">TAGS:&nbsp;</label>	{filterTags}
 		 				</div>
 	}
-
-	
-
-
  	let tricks = []
-
  	const rootTricks = uiStore.rootTricks
  	if(Object.keys(store.library).length > 0){
 	 	
