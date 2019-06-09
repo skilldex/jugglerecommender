@@ -40,7 +40,6 @@ Ask Ian:
 
 Minor:
 	-check to see in youtube fullscreen works
-	-add a trick popup should close normal popup
 	-left side of border inputs in create account is not there
 	-clear add trick form on subimt/cancel
 	-either dont show 'add trick' to users not signed in or show popup when they click it saying they

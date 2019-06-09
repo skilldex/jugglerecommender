@@ -102,6 +102,24 @@ class AddTrickForm extends Component {
 			tags : tags
 		}
 		store.addTrickToDatabase(trick)
+		this.clearState()
+
+	}
+	
+
+	cancel=()=>{
+		this.clearState()
+		uiStore.toggleAddingTrick()
+	}
+
+	clearState=()=>{
+		this.setState({name : ""})
+		this.setState({numBalls : ""})
+		this.setState({difficulty : ""})
+		this.setState({videoURL : ""})
+		this.setState({siteSwap : ""})
+		this.setState({prereqs : []})
+		this.setState({tags : []})
 	}
 
 	render (){
@@ -158,7 +176,7 @@ class AddTrickForm extends Component {
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<button className="formButtons"onClick={this.submit}>submit</button>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<button className="formButtons"onClick={uiStore.toggleAddingTrick}>cancel</button>
+								<button className="formButtons"onClick={this.cancel}>cancel</button>
 						</div>
 		return(
 				<div>
