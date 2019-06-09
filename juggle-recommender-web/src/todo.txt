@@ -49,12 +49,15 @@ Minor:
 	-make youtube videos infinite loop
 		-https://stackoverflow.com/questions/13041088/getting-an-embedded-youtube-video-to-auto-play-and-loop
 Bugs:
-	-instagram fullscreen doesn't work
-	-i think our localhost check for firebase in apps.js is messing with our ability to test on phone because url doesnt include localhost
+	-our fullscreen button doesnt work with instagram
+	-our fullscreen button doesnt work with youtube
+		-but youtube's built in fullscreen button does(at least on PC)
+	-i think our localhost check for firebase in apps.js is messing with our ability to test on 		phone because url doesnt include localhost
 	-in form, clicking a tag/prereq clicked through into cancel button once
 	-we get this every time:
 		Warning: Each child in a list should have a unique "key" prop.
 	-chrashes if add new trick form isnt completely filled in
+	-youtube videos giving errors, but seems to play fine
 
 Later:
 	List:

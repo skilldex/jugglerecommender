@@ -120,19 +120,28 @@ toggleGifFullscreen=()=>{
                                   
         }
         else if(store.library[popupTrickKey].video.includes("youtu")){
+          let usefulPart
           if (store.library[popupTrickKey].video.includes("youtube.com/watch")){
-            const usefulPart = store.library[popupTrickKey].video.split('youtube.com/watch?v=')
+            usefulPart = store.library[popupTrickKey].video.split('youtube.com/watch?v=')
+            usefulPart = usefulPart[usefulPart.length-1]
+            if (usefulPart.includes("&feature=youtu.be")){
+              usefulPart = usefulPart.replace("&feature=youtu.be","")
+            }
             //https://www.youtube.com/watch?v=Kr8LhLGjyiY
-            videoURLtoUse ="https://www.youtube.com/embed/" + usefulPart[usefulPart.length-1]
+            
+            
           }else if (store.library[popupTrickKey].video.includes("youtu.be/")){
             //https://youtu.be/Kr8LhLGjyiY
-            const usefulPart = store.library[popupTrickKey].video.split('youtu.be/')
-            videoURLtoUse ="https://www.youtube.com/embed/"+usefulPart[usefulPart.length-1]
+            usefulPart = store.library[popupTrickKey].video.split('youtu.be/')
+            usefulPart = usefulPart[usefulPart.length-1]
+            
           }
+          videoURLtoUse ="https://www.youtube.com/embed/"+usefulPart+
+                         "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart
+          console.log('videoURLtoUse',videoURLtoUse)
           videoIframe = <iframe width="260" 
                                 src={videoURLtoUse} 
-                                frameBorder="0" 
-                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                allow="autoplay"
                                 allowFullScreen></iframe>
         }
     }
