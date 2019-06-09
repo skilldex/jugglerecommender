@@ -10,6 +10,7 @@ class Store {
 
 	@observable myTricks = {}
 	@observable isLoginPaneOpen = false
+	@observable isCreateAccountPaneOpen = false
 	@observable library = {}
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
@@ -18,7 +19,9 @@ class Store {
 	@action setIsLoginPaneOpen=(isOpen)=>{
 		this.isLoginPaneOpen = isOpen
 	}
-
+	@action toggleCreateAccountPane=()=>{
+		this.isCreateAccountPaneOpen = !this.isCreateAccountPaneOpen
+	}
 	@action updateTricksInDatabase=()=>{
 
 		if(!authStore.user){return}
