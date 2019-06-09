@@ -75,11 +75,9 @@ class Store {
 	}
 	@action setLibrary=(library)=>{
 		this.library = library
-		console.log(toJS(this.library))
 		uiStore.updateRootTricks()
 	}
 	@action addTrickToDatabase=(trick)=>{
-		//https://www.instagram.com/p/ByQHRQNA3ss/
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);

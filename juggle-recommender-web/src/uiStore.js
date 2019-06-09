@@ -18,7 +18,6 @@ class UIStore {
 	@observable addingTrick = false
 
 	@action toggleAddingTrick = ()=>{
-		console.log("adding")
 		this.addingTrick = !this.addingTrick
 	}
 	@action setListExpanded=(expanded)=>{
@@ -143,7 +142,6 @@ class UIStore {
 
  	@action updateRootTricks=(rootTricks)=>{
  		if(Object.keys(store.library).length == 0){ return }
- 			console.log('rightAfter')
 	 	this.rootTricks = []
  		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
@@ -161,7 +159,6 @@ class UIStore {
 				const trick = sortedJugglingLibrary[trickKey]
 				const tagsInFilter = trick.tags? trick.tags.filter((tag)=>{
 					if (filterTagNames.includes(tag)){
-						console.log('returned tag', tag)
 						return tag
 					}
 				}) : []

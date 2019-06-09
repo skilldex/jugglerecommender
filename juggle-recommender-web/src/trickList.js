@@ -118,7 +118,6 @@ render() {
 
 			)
 		})
-			console.log('filterTags',filterTags)
 		 filterSection = <div>
 		 					<label className="listTagsHeader">TAGS:&nbsp;</label>	{filterTags}
 		 				</div>

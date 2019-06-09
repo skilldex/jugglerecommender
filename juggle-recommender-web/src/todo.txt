@@ -9,10 +9,15 @@ v 1.0:
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
-		- potentially allow youtube, gif, IG, juggleTV radio
-		- potentially juggling tv
-			-they do have embed(just announced that they are done working on site, but will stay up with no more new vids added)
+			-this is done, but what is the 'scrolling="no"'?
+			-bottom of instagram videos are cut off
+			-instagram videos play only once and then tell you to go to site to play again,
+				not sure if this can be beaten
+		- potentially add juggling tv(they do have embed)
+			-maybe good to add it because the kind of people who use a vid hosting site specifically for juggling may be likely to use juggledex
 	-Make down arrow to show that scrolling is possible on cards
+		-maybe this is avoided by only showing part of gif/vid so it is obvious that scrolling
+			is possible
 		*should it go away when we are at the bottom?
 		*as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room,
 		Ideas:
@@ -34,13 +39,18 @@ Ask Ian:
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
 
 Minor:
+	-check to see in youtube fullscreen works
+	-add a trick popup should close normal popup
+	-left side of border inputs in create account is not there
 	-clear add trick form on subimt/cancel
 	-either dont show 'add trick' to users not signed in or show popup when they click it saying they
 		must sign in
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent backgroound
-	-if the form is canceled, should it clear itself?
+	-make youtube videos infinite loop
+		-https://stackoverflow.com/questions/13041088/getting-an-embedded-youtube-video-to-auto-play-and-loop
 Bugs:
+	-instagram fullscreen doesn't work
 	-i think our localhost check for firebase in apps.js is messing with our ability to test on phone because url doesnt include localhost
 	-in form, clicking a tag/prereq clicked through into cancel button once
 	-we get this every time:

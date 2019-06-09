@@ -58,7 +58,6 @@ class Popup extends Component {
 }
 
 toggleGifFullscreen=()=>{
-  console.log('gifFullscreen')
   this.setState({'gifFullscreen':!this.state.gifFullscreen})
 }
 
@@ -107,7 +106,6 @@ toggleGifFullscreen=()=>{
                         </div> : null
     var videoURLtoUse
     var videoIframe
-    console.log('store.library[popupTrickKey]',store.library[popupTrickKey])
     if (store.library[popupTrickKey] && 
         store.library[popupTrickKey].video){
         if (store.library[popupTrickKey].video.includes("instagram.com")){
@@ -115,8 +113,11 @@ toggleGifFullscreen=()=>{
                 store.library[popupTrickKey].video.match
                 (new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
             videoURLtoUse = "https://www.instagram.com"+usefulPart+"embed"
-            videoIframe = <iframe className="popupGif" 
+            videoIframe = <iframe className="popupGif"
+                                  frameBorder="0"  
+                                  allowtransparency="true"
                                   src={videoURLtoUse}></iframe>
+                                  
         }
         else if(store.library[popupTrickKey].video.includes("youtu")){
           if (store.library[popupTrickKey].video.includes("youtube.com/watch")){

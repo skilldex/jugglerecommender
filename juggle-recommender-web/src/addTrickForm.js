@@ -148,7 +148,7 @@ class AddTrickForm extends Component {
 								<label>Prereqs</label>{prereqsInput}<br/>
 								<label>Number of balls</label><br/><input className="formInputs" value={this.state.numBalls} onChange={this.handleNumBallsChange}/><br/><br/>
 								<label>Difficulty</label><br/><input className="formInputs" value={this.state.difficulty} onChange={this.handleDiffChange}/><br/><br/>
-								<label>Video embed URL (Youtube or Instagram)</label><br/><input className="formInputs" value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/><br/>
+								<label>Video URL (Youtube or Instagram)</label><br/><input className="formInputs" value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/><br/>
 								<label>Siteswap</label><br/><input className="formInputs" value={this.state.siteSwap} onChange={this.handleSSChange}/><br/><br/>
 							</div>
 								<br/>
@@ -160,8 +160,6 @@ class AddTrickForm extends Component {
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<button className="formButtons"onClick={uiStore.toggleAddingTrick}>cancel</button>
 						</div>
-
-		console.log("form", form)
 		return(
 				<div>
 					{uiStore.addingTrick ? form : null}
