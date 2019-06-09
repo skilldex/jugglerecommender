@@ -41,6 +41,9 @@ Ask Ian:
 Minor:
 	-check to see in youtube fullscreen works
 	-left side of border inputs in create account is not there. same with search.
+		-this is not consistant, the border was just on all sides, now it is missing on top and left,
+			but all i did was close and open the login slider
+	-login inputs are not the same kind of inputs as createUser and Search inputs
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
 	-make youtube videos infinite loop
