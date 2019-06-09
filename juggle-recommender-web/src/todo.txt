@@ -27,10 +27,16 @@ v 1.0:
 
 ==========
 Ask Ian:
+	-Should we use some kind of try/catch setup in the form, for instance with the instagram urls if
+		they for some reason put in an instagram url without "/p/" in it then it will probably crash
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
 	-any reason not to make some kind of physical card to leave around juggling conventions? what should card say?
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
+
 Minor:
+	-clear add trick form on subimt/cancel
+	-either dont show 'add trick' to users not signed in or show popup when they click it saying they
+		must sign in
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent backgroound
 	-if the form is canceled, should it clear itself?

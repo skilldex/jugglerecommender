@@ -63,6 +63,7 @@ toggleGifFullscreen=()=>{
 }
 
 	render() {
+
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
@@ -104,12 +105,40 @@ toggleGifFullscreen=()=>{
                                className="popupGif" 
                                src={store.library[popupTrickKey].gifUrl}/> 
                         </div> : null
-    const igSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
+    var videoURLtoUse
+    var videoIframe
+    console.log('store.library[popupTrickKey]',store.library[popupTrickKey])
+    if (store.library[popupTrickKey] && 
+        store.library[popupTrickKey].video){
+        if (store.library[popupTrickKey].video.includes("instagram.com")){
+            const usefulPart = 
+                store.library[popupTrickKey].video.match
+                (new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
+            videoURLtoUse = "https://www.instagram.com"+usefulPart+"embed"
+            videoIframe = <iframe className="popupGif" 
+                                  src={videoURLtoUse}></iframe>
+        }
+        else if(store.library[popupTrickKey].video.includes("youtu")){
+          if (store.library[popupTrickKey].video.includes("youtube.com/watch")){
+            const usefulPart = store.library[popupTrickKey].video.split('youtube.com/watch?v=')
+            //https://www.youtube.com/watch?v=Kr8LhLGjyiY
+            videoURLtoUse ="https://www.youtube.com/embed/" + usefulPart[usefulPart.length-1]
+          }else if (store.library[popupTrickKey].video.includes("youtu.be/")){
+            //https://youtu.be/Kr8LhLGjyiY
+            const usefulPart = store.library[popupTrickKey].video.split('youtu.be/')
+            videoURLtoUse ="https://www.youtube.com/embed/"+usefulPart[usefulPart.length-1]
+          }
+          videoIframe = <iframe width="260" 
+                                src={videoURLtoUse} 
+                                frameBorder="0" 
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                                allowFullScreen></iframe>
+        }
+    }
+    const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
                         <div className = "gifDiv">
                           <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
-                          <iframe 
-                               className="popupGif" 
-                               src={store.library[popupTrickKey].video + "embed"}></iframe> 
+                          {videoIframe}
                         </div> : null
     const gifFullScreenPopup = 
           store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
@@ -139,7 +168,7 @@ toggleGifFullscreen=()=>{
                          className="popupLink"
                     		>See explanation</span> : null
                       }
-                      {igSection}
+                      {videoSection}
                       {gifSection}
                       <br></br><br/><br/>
                       {store.library[popupTrickKey] && store.library[popupTrickKey].tags?
