@@ -76,6 +76,7 @@ class AddTrickForm extends Component {
     handleTagAddition=(tag)=> {
         this.setState(state => ({ tags: [...state.tags, tag] }));
     }
+    
     handleTagDelete=(i)=> {
         const { tags } = this.state;
         this.setState({

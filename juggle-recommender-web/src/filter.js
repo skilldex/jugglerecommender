@@ -36,9 +36,6 @@ class Filter extends Component {
       	numBalls: filterStore.numBalls,
       	difficultyRange: filterStore.difficultyRange
   	}
-	      
-
-
 
 	handleAddition=(tag)=>{
 		filterStore.setTags(

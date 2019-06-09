@@ -2,6 +2,8 @@ import { action, configure, observable} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
 import filterStore from "./filterStore"
+import authStore from "./authStore"
+
 
 configure({ enforceActions: "always" })
 class UIStore {
@@ -18,8 +20,12 @@ class UIStore {
 	@observable addingTrick = false
 
 	@action toggleAddingTrick = ()=>{
-		this.popupTrick = null
-		this.addingTrick = !this.addingTrick
+		if (!authStore.user){
+			window.alert("You must be signed in to add a trick");
+		}else{
+			this.popupTrick = null
+			this.addingTrick = !this.addingTrick
+		}
 	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded

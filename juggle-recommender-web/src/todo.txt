@@ -40,12 +40,9 @@ Ask Ian:
 
 Minor:
 	-check to see in youtube fullscreen works
-	-left side of border inputs in create account is not there
-	-clear add trick form on subimt/cancel
-	-either dont show 'add trick' to users not signed in or show popup when they click it saying they
-		must sign in
+	-left side of border inputs in create account is not there. same with search.
 	-Clicking a popup or the list should bring either in front of the other
-	-find sort button with transparent backgroound
+	-find sort button with transparent background
 	-make youtube videos infinite loop
 		-https://stackoverflow.com/questions/13041088/getting-an-embedded-youtube-video-to-auto-play-and-loop
 Bugs:
