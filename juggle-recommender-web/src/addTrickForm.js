@@ -96,11 +96,7 @@ class AddTrickForm extends Component {
 			alertWarnings = "'Tricks name' is empty.\n"
 			allowSubmit = false
 		}
-		console.log('this.state.prereqs.length',this.state.prereqs.length)
-		if (this.state.prereqs.length < 1){
-			alertWarnings = "Choose at least one prereq.\n"
-			allowSubmit = false
-		}
+
 		if (isEmptyOrSpaces(this.state.numBalls)){
 			alertWarnings += "'Number of balls' is empty.\n"
 			allowSubmit = false
@@ -130,7 +126,7 @@ class AddTrickForm extends Component {
 			var prereqs = this.state.prereqs.map(function(item) {
 				return item['text'];
 			});		
-				
+
 			const trick = {
 				name : this.state.name,
 				num : this.state.numBalls,

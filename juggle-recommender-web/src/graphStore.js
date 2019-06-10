@@ -66,8 +66,7 @@ class GraphStore {
 		return mass
 	}
 
-	@action getInvolvedNodeBorderWidth=(involved)=>{
-		
+	@action getInvolvedNodeBorderWidth=(involved)=>{		
 		return 2
 	}
 	@action updateGraphData=()=>{
@@ -83,7 +82,7 @@ class GraphStore {
 	 	if(uiStore.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
-	 			if(rootTrick.dependents || rootTrick.prereqs){
+	 			
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: "★" + rootTrick.name,
@@ -94,7 +93,7 @@ class GraphStore {
 		 				borderWidth : this.getInvolvedNodeBorderWidth(3)
 
 		 			}
-		 		}
+		 		
 		 		if(rootTrick.prereqs){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
@@ -128,7 +127,7 @@ class GraphStore {
 	 			const involvedRoot = store.myTricks[trickKey] || 
 	 							uiStore.selectedTricks.includes(trickKey) ? 3 : 0
 
-	 			if((rootTrick.dependents || rootTrick.prereqs) && (!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
+	 			if((!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			let label = rootTrick.name
 		 			if(involvedRoot === 3){
 		 				label = rootTrick.name
