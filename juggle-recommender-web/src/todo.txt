@@ -2,12 +2,11 @@ v 1.1:
 	-make multi-termed search
 	-toggle tricks by user added trick
 	-make popups be draggable divs
+	-edit profile(maybe beyond 1.1)
 
 v 1.0:
-	-test tricks for old users given new username functionality 
-		-old tricks remain, just have to go into firebase and manually change username in myTricks 
-			from their email to their handle, so we would need to get a handle from them
-	-pinch zoom sometimes resets zoom
+	-there is nothing stopping a user from creating an account with someone elses handle
+	-pinch zoom sometimes resets zoom (test again)
 	-allow users to add tricks
 		-style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
 			-this is done, but what is the 'scrolling="no"'? it is left out for now, I noticed no difference.
@@ -51,7 +50,7 @@ Minor:
 
 Bugs:
 	Users
-		-there is nothing stopping a user from creating an account with someone elses handle
+		
 	Popup
 		Youtube
 			-youtube videos don't autoplay

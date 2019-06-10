@@ -17,7 +17,7 @@ import Login from "./login"
 import CreateAccount from "./createAccount"
  // Your web app's Firebase configuration
 let firebaseConfig = {}
-if(window.location.host.includes("localhost")){
+if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
 	firebaseConfig = {
 		apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
 		authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
