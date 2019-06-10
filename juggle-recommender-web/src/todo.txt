@@ -1,7 +1,6 @@
 v 1.1:
 	-make multi-termed search
 	-toggle tricks by user added trick
-	-we will want usernames instead of just email so we can show them to other users
 	-make popups be draggable divs
 
 v 1.0:
@@ -42,24 +41,22 @@ Ask Ian:
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
-	-4b box stacked is just named 'stacked vatiation'
+		-is this still needed?
 
 Bugs:
 	Popup
 		Youtube
 			-youtube videos don't autoplay
 			-youtube videos giving errors, but plays fine besides no autoplay
-			-our fullscreen button doesnt work with youtube
-				-but youtube's built in fullscreen button does(at least on PC)
-					-maybe just remove ours for youtube
+			-our fullscreen button doesnt work with youtube, but youtube's built in fullscreen 
+				button does(at least on PC) So maybe just remove ours and use theirs
 		Instagram
 			-bottom of instagram videos are cut off
 			-our fullscreen button doesnt work with instagram
 			-Instagram has no way to loop, they want you to go to their site to loop
 				A possible solution may be to check to see when the video ends and then reload the embed
 	Form
-		-in form, I clicked a tag clicked and the click clicked cancel because it was behind it
-		-chrashes if add new trick form isnt completely filled in
+		-in form, I clicked a tag clicked and the click clicked cancel because it was behind it. This has only happened once.
 	Misc
 		-login and create account inputs have the same className(as do all of their containing 
 			divs), but they look different. Search input has pretty much the same style as them, it looks like the create account style
@@ -68,7 +65,7 @@ Bugs:
 	Maybe unimportant
 		-we get this every time:
 			Warning: Each child in a list should have a unique "key" prop.
-		-Update root tricks running 4 times?
+		-Update root tricks is running 4 times
 Later:
 	List:
 		-Style expand arrows as icons
@@ -98,9 +95,11 @@ Maybe?:
 		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
 		-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
 		-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized 	by the opening of that box)
-	-Dont allow filters that would make graph empty?
-	-A 'clear all selected' button, maybe a 'select all button' and switch to only showing selected 
-		patterns in graph instead of showing all if none are selected. I feel like showing all tricks in graph is kinda overwhelming, maybe it would be best if they kinda got to do something to make that happen.
+	filter:
+		-make a tagsesque filter for contributors
+		-Dont allow filters that would make graph empty?
+		-A 'clear all selected' button, maybe a 'select all button' and switch to only showing 
+			selected patterns in graph instead of showing all if none are selected. I feel like showing all tricks in graph is kinda overwhelming, maybe it would be best if they kinda got to do something to make that happen.
 
 thoughts/ideas:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
