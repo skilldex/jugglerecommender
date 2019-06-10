@@ -53,13 +53,15 @@ input{
   padding : 0;
   color : #1E90FF;
 }
-
+.inputStyle{
+  width: 180px;
+  margin-right : 10px;
+}
 .instructions{
   padding-left: 10px;
   margin-bottom: 15px;
   z-index: 30
 }
-
 .textLink{
   background-color : white;
   border : none;

@@ -17,7 +17,7 @@ import Login from "./login"
 import CreateAccount from "./createAccount"
  // Your web app's Firebase configuration
 let firebaseConfig = {}
-if(window.location.host.includes("localhost")){
+if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
 	firebaseConfig = {
 		apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
 		authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
@@ -49,7 +49,8 @@ class App extends Component {
  		selectedList : "allTricks",
  		edges : [],
  		nodes : [],
- 		isInstructionsPaneOpen: false
+ 		isInstructionsPaneOpen: false,
+ 		isCreateAccountPaneOpen: false
 	}
 	
 	componentDidMount(){
@@ -60,7 +61,7 @@ class App extends Component {
 		firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             console.log("user auth changed", user)
-            authStore.setUser({username : user.email})
+            authStore.setUsername(user.email)
           } 
         });
 		//store.initializeLibrary()
@@ -88,7 +89,8 @@ class App extends Component {
 	 	}else if(paneName == 'isInstructionsPaneOpen'){
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}else if(paneName == 'isCreateAccountPaneOpen'){
-	 		this.setState({ 'isInstructionsPaneOpen': true })
+	 		console.log('isCreateAccountPaneOpenBeingSet')
+	 		this.setState({ 'isCreateAccountPaneOpen': true })
 	 	}
  	}
  	handleStart=()=>{

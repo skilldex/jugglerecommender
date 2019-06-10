@@ -118,7 +118,7 @@ render() {
 			)
 		})
 		 filterSection = <div>
-		 					<label className="listTagsHeader">TAGS:&nbsp;</label>	{filterTags}
+		 					<label className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</label>	{filterTags}
 		 				</div>
 	}
  	let tricks = []
@@ -170,7 +170,7 @@ render() {
 						</div>
 			 			<div className="search" >
 			 				{filterSection}<br/>
-			 				<input onChange={uiStore.searchInputChange}/>
+			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}
 							{sortDropdown}

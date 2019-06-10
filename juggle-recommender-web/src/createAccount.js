@@ -15,6 +15,7 @@ class CreateAccount extends Component {
 
 
     signIn=()=>{        
+        console.log('inCreateUsername',this.state.username)
         authStore.loginUser(this.state.username, this.state.password).then((response)=>{
             if(response.message){
                 this.setState({
@@ -38,6 +39,8 @@ class CreateAccount extends Component {
                 const usersRef = firebase.database().ref('users/')
                 let newUser= usersRef.push();
                 newUser.set({"username": this.state.username, "email" : this.state.email});
+                alert("User " + this.state.username + " created")
+                store.toggleCreateAccountPane()
                 this.signIn()
             }
         })
@@ -53,20 +56,16 @@ class CreateAccount extends Component {
         this.setState({password : e.target.value})
     }
     render(){
-        const inputStyle = {width: "180px", "marginRight" : "10px"}
-
         return (   
                 <div className="auth">                    
-                    
-                    <label>user handle</label><br/><input style={inputStyle} onChange={this.usernameInputChange}/><br/>
-                    <label>email</label><br/><input style={inputStyle} onChange={this.emailInputChange}/><br/>
-                    <label>password</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/><br/>
+                    <label>user handle</label><br/><input className="inputStyle" onChange={this.usernameInputChange}/><br/>
+                    <label>email</label><br/><input className="inputStyle" onChange={this.emailInputChange}/><br/>
+                    <label>password</label><br/><input type="password" className="inputStyle" onChange={this.passwordInputChange}/><br/>
                     <button className="authButton" onClick={this.createAccount}>Submit</button>
                     <div style={{color : "red"}}>{this.state.error}</div><br/>
-
                 </div>
-            )
-    }
+                )
+            }
 
 }
 export default CreateAccount

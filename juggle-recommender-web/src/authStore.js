@@ -9,9 +9,10 @@ class AuthStore {
 	@observable user = null
 
 	 @action setUser=(user)=>{
-	 	console.log('setUser', user)
+	 	
 	 	this.user = user
 	 	store.getSavedTricks()
+	 	console.log('setUser', user)
 	 }
 
 	 @action signOut=()=>{
@@ -23,6 +24,18 @@ class AuthStore {
             });
         })
     }
+    @action setUsername(email){
+    	const usersRef = firebase.database().ref('users/').orderByChild('email').equalTo(email)
+        let user
+        return new Promise(resolve => {
+            usersRef.on("value", resp =>{
+                user = store.snapshotToArray(resp)[0]
+                if (user){
+                	this.setUser({"email": user.email,"username" : user.username})
+                }
+            })
+        })
+    }
     @action loginUser(username, pass) {
         console.log("logging user", username, pass)
         const usersRef = firebase.database().ref('users/').orderByChild('username').equalTo(username)
@@ -30,16 +43,17 @@ class AuthStore {
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
                 user = store.snapshotToArray(resp)[0]
-                console.log("user", user)
-                firebase.auth().signInWithEmailAndPassword(user.email, pass).then(data => {
-                    this.setUser({"email": user.email,"username" : user.username})
-                    store.setIsLoginPaneOpen(false)
-                    store.toggleCreateAccountPane()
-                    alert("User " + user.username + " created")
-                    resolve("success")
-                }).catch(error=>{
-                    resolve(error)
-                });
+                if (user){
+	                firebase.auth().signInWithEmailAndPassword(user.email, pass).then(data => {
+	                    this.setUser({"email": user.email,"username" : user.username})
+	                    store.setIsLoginPaneOpen(false)
+	                    resolve("success")
+	                }).catch(error=>{
+	                    resolve(error)
+	                });
+	            }else{
+	            	alert(username+" does not exist")
+	            }
             }) 
         });
     }

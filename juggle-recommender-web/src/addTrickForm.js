@@ -16,8 +16,6 @@ const presetTags = TAGS.map((tag) => {
   }
 })
 
-
-
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -76,7 +74,7 @@ class AddTrickForm extends Component {
     handleTagAddition=(tag)=> {
         this.setState(state => ({ tags: [...state.tags, tag] }));
     }
-    
+
     handleTagDelete=(i)=> {
         const { tags } = this.state;
         this.setState({
@@ -84,26 +82,70 @@ class AddTrickForm extends Component {
         });
     }
 
+
 	submit=()=>{
-		var tags = this.state.tags.map(function(item) {
-			return item['text'];
-		});
-		var prereqs = this.state.prereqs.map(function(item) {
-			return item['text'];
-		});
-				
-		const trick = {
-			name : this.state.name,
-			num : this.state.numBalls,
-			difficulty : this.state.difficulty,
-			contributor : authStore.user.username, 
-			video : this.state.videoURL,
-			siteswap :  this.state.siteSwap,
-			prereqs : prereqs,
-			tags : tags
+		function isEmptyOrSpaces(str){
+		    return str === null || str.match(/^ *$/) !== null;
 		}
-		store.addTrickToDatabase(trick)
-		this.clearState()
+		function isOnlyDigits(str){
+		    return str.match(/^[0-9]+$/) === null;
+		}
+		let alertWarnings = "\n"
+		let allowSubmit = true
+		if (isEmptyOrSpaces(this.state.name)){
+			alertWarnings = "'Tricks name' is empty.\n"
+			allowSubmit = false
+		}
+		console.log('this.state.prereqs.length',this.state.prereqs.length)
+		if (this.state.prereqs.length < 1){
+			alertWarnings = "Choose at least one prereq.\n"
+			allowSubmit = false
+		}
+		if (isEmptyOrSpaces(this.state.numBalls)){
+			alertWarnings += "'Number of balls' is empty.\n"
+			allowSubmit = false
+		}else{
+			if (isOnlyDigits(this.state.numBalls)){
+				alertWarnings += "'Number of balls' must be a number.\n"
+				allowSubmit = false
+			}
+		}
+		if (isEmptyOrSpaces(this.state.difficulty)){
+			alertWarnings += "'Difficulty' is empty.\n"
+			allowSubmit = false
+		}else{
+			if (isOnlyDigits(this.state.difficulty)){
+				alertWarnings += "'Difficulty' must be a number.\n"
+				allowSubmit = false
+			}
+		}
+		if (isEmptyOrSpaces(this.state.videoURL)){
+			alertWarnings += "'Video URL' is empty.\n"
+			allowSubmit = false
+		}
+		if (allowSubmit){
+			var tags = this.state.tags.map(function(item) {
+				return item['text'];
+			});
+			var prereqs = this.state.prereqs.map(function(item) {
+				return item['text'];
+			});		
+				
+			const trick = {
+				name : this.state.name,
+				num : this.state.numBalls,
+				difficulty : this.state.difficulty,
+				contributor : authStore.user.username, 
+				video : this.state.videoURL,
+				siteswap :  this.state.siteSwap,
+				prereqs : prereqs,
+				tags : tags
+			}
+			store.addTrickToDatabase(trick)
+			this.clearState()
+		}else{
+			alert(alertWarnings)
+		}
 
 	}
 	
@@ -124,8 +166,6 @@ class AddTrickForm extends Component {
 	}
 
 	render (){
-		//TODO add prereqs and tags as react tags 
-
 		const patternsObj = Object.keys(store.library).map((pattern) => {
 		  return {
 		  	size: null,

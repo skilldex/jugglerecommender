@@ -113,7 +113,6 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
-
 .sectionHeader{
   display: inline-block;
   cursor: pointer;
@@ -123,7 +122,6 @@
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
-
 }
 .sortDropdownButtonDif{
   display : block;
@@ -165,5 +163,9 @@
   margin-bottom: 10px;
   margin-top: 10px;
   color : darkgreen;
+}
+.searchInput{
+  width: 90px;
+  margin-right : 10px;
 }
 
