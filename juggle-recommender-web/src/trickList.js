@@ -170,7 +170,7 @@ render() {
 						</div>
 			 			<div className="search" >
 			 				{filterSection}<br/>
-			 				<input onChange={uiStore.searchInputChange}/>
+			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}
 							{sortDropdown}

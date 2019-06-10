@@ -6,13 +6,11 @@ v 1.1:
 
 v 1.0:
 	-test tricks for old users given new username functionality 
+		-my tricks for tjthejuggler@gmail.com are still there
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
 			-this is done, but what is the 'scrolling="no"'?
-			-bottom of instagram videos are cut off
-			-instagram videos play only once and then tell you to go to site to play again,
-				not sure if this can be beaten
 		- potentially add juggling tv(they do have embed)
 			-maybe good to add it because the kind of people who use a vid hosting site specifically for juggling may be likely to use juggledex
 	-Make down arrow to show that scrolling is possible on cards
@@ -31,7 +29,10 @@ v 1.0:
 
 
 ==========
+-calculate dependents for added tricks
+
 Ask Ian:
+	-Auth.js seems to be completely unused now, can we delete it?
 	-Should we use some kind of try/catch setup in the form, for instance with the instagram urls if
 		they for some reason put in an instagram url without "/p/" in it then it will probably crash
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
@@ -39,26 +40,35 @@ Ask Ian:
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
 
 Minor:
-	-check to see in youtube fullscreen works
-	-left side of border inputs in create account is not there. same with search.
-		-this is not consistant, the border was just on all sides, now it is missing on top and left,
-			but all i did was close and open the login slider
-	-login inputs are not the same kind of inputs as createUser and Search inputs
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
-	-make youtube videos infinite loop
-		-https://stackoverflow.com/questions/13041088/getting-an-embedded-youtube-video-to-auto-play-and-loop
-Bugs:
-	-our fullscreen button doesnt work with instagram
-	-our fullscreen button doesnt work with youtube
-		-but youtube's built in fullscreen button does(at least on PC)
-	-i think our localhost check for firebase in apps.js is messing with our ability to test on 		phone because url doesnt include localhost
-	-in form, clicking a tag/prereq clicked through into cancel button once
-	-we get this every time:
-		Warning: Each child in a list should have a unique "key" prop.
-	-chrashes if add new trick form isnt completely filled in
-	-youtube videos giving errors, but seems to play fine
+	-4b box stacked is just named 'stacked vatiation'
 
+Bugs:
+	Popup
+		Youtube
+			-youtube videos don't autoplay
+			-youtube videos giving errors, but plays fine besides no autoplay
+			-our fullscreen button doesnt work with youtube
+				-but youtube's built in fullscreen button does(at least on PC)
+					-maybe just remove ours for youtube
+		Instagram
+			-bottom of instagram videos are cut off
+			-our fullscreen button doesnt work with instagram
+			-Instagram has no way to loop, they want you to go to their site to loop
+				A possible solution may be to check to see when the video ends and then reload the embed
+	Form
+		-in form, I clicked a tag clicked and the click clicked cancel because it was behind it
+		-chrashes if add new trick form isnt completely filled in
+	Misc
+		-login and create account inputs have the same className(as do all of their containing 
+			divs), but they look different. Search input has pretty much the same style as them, it looks like the create account style
+		-trick popup and header can both be used to zoom and position each other, but list cannot be 		used that why. What's up with that?
+		-Testing on phone isn't working, probably because when we check for localhost to determine 		prod or dev there is no localhost in the url on phone
+	Maybe unimportant
+		-we get this every time:
+			Warning: Each child in a list should have a unique "key" prop.
+		-Update root tricks running 4 times?
 Later:
 	List:
 		-Style expand arrows as icons
@@ -73,11 +83,14 @@ Later:
 		-make divs draggable
 	Misc:
 		-Researching other data sources to inform user based tricks 
+	Popup:
+		-A button that is 'more catches than I want to count' in the popups
+		-Keep track of date that catches was last updated
 
 Maybe?:
 	List:
 		-showing the count for myTricks and allTricks
-		-the minimized list should be forced to stay on upper left but not on the header. The reason being that if 		you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the 			popup, the list may be off screen
+		-the minimized list should be forced to stay on upper left but not on the header. The reason being that if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen
 		-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
 	popup:
 		-list depends and prereqs
@@ -85,25 +98,48 @@ Maybe?:
 		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
 		-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
 		-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized 	by the opening of that box)
+	-Dont allow filters that would make graph empty?
+	-A 'clear all selected' button, maybe a 'select all button' and switch to only showing selected 
+		patterns in graph instead of showing all if none are selected. I feel like showing all tricks in graph is kinda overwhelming, maybe it would be best if they kinda got to do something to make that happen.
 
 thoughts/ideas:
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
 		 make it so if you slide it far enough it begins playing the trick backwards
 	-Maybe catches input should be automatically editable when a trick is added to my tricks
-	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to 	Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 	-Why does website have red triangle explanation on url? as if our page is dangerous or something.
-	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, 	but I dont know what should be done about it
+	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, but I dont know what should be done about it
 	Potential pattern stats:
 		-number of users with records for a given trick
 		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
 	Potential general stats:
 		-users signed up
 		-users currently online
+	-May want to consider switching out 'pattern' for 'trick' since strictly speaking we are 			currently dealing with patterns, tricks are more like ass catches and piroquettes and 1 off 	things while patterns are continuously repeated things. For instance 555555597531555555 is 		and trick, 97531975319753197531 is a pattern. Not a real big deal, we could wait and see if 	anyone 	else says anything. It is a blurry line between the two since any trick it seems 		could be repeated to become a pattern, and any pattern could be done for 1 cycle to be a 		trick.
+	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
+		 bring them in by way of lots of 2 ball tricks so that nearly everyone can start doing things that are not too far beyond their current level. Something about knowing that you always have low hanging fruit so far as new patterns that you can do is very motivational in continuing to learn. It is not just for new jugglers either, it is for jugglers new to certain props, like clubs rings, with a balance, etc..
+	-A well thought out write up on what we are trying to do may be useful in getting other people 		on board with helping build up a good sized dayabase.
+	-Different kinds of visualizers that users can toggle between may be nice
+	-Other jughling props may be good to put in just as a radiobutton next to catches since there is
+		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
+	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
 
 to see dark theme:
 	1) in App.css, change  '.headerButton { background-color : white' to black
 	2) in trickGraph.css, change 'border: 1px solid black;' to white
 	*This isn't complete, but enough to see how it would look
 
--calculate dependents for added tricks
--why is update root tricks running 4 times?
+
+
+
+
+
+
+
+
+
+
+
+
+
+

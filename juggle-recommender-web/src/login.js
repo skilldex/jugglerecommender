@@ -31,8 +31,6 @@ class Login extends Component {
         this.setState({password : e.target.value})
     }
     render(){
-        const inputStyle = {width: "180px", "marginRight" : "10px"}
-
         return (   
                 <div className="auth">                    
                     {authStore.user ? 
@@ -41,9 +39,9 @@ class Login extends Component {
                             <button className="authButton"  onClick={authStore.signOut}>Sign Out</button>
                         </div> : 
                         <div>
-                            <label>user handle</label><br/><input style={inputStyle} onChange={this.usernameInputChange}/><br/>
+                            <label>user handle</label><br/><input className="inputStyle" onChange={this.usernameInputChange}/><br/>
                             <br/>
-                            <label>password</label><br/><input type="password" style={inputStyle} onChange={this.passwordInputChange}/>
+                            <label>password</label><br/><input type="password" className="inputStyle" onChange={this.passwordInputChange}/>
                             <br/>
                             <div style={{color : "red"}}>{this.state.error}</div>
                             <br/>
