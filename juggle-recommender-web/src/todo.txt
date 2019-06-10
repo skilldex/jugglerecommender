@@ -7,17 +7,16 @@ v 1.1:
 v 1.0:
 	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
     (Ian)-style instagram vid
-	(Ian)-there is nothing stopping a user from creating an account with someone elses handle
 	(Ian)-pinch zoom sometimes resets zoom (test again)
-	(TJ)-allow tricks with no prereqs(right now they dont show up in graph)
-		*look in update graphtricks		
 	-find some difficulty/coloring scheme that will work for any case including user added
 		-Possible color scheme: 
 			Add a 'more catches than i care to count button' and make those tricks green, then
 			all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
-	(Ian)-calculate dependents for added tricks
-
-
+	-add alert that trick was added
+	-make search case insensitive
+	-move form validation for requiered fields into message on form fields instead of alert and make submit button disabled if form is not filled in
+	-if videoURL is not in correct format when they unselect the input then give them a warning saying as much
+	-tell user to put in a perceived difficulty between 1 and 10
 
 ==========
 Ask Ian:
