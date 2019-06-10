@@ -5,27 +5,21 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
-	-there is nothing stopping a user from creating an account with someone elses handle
-	-pinch zoom sometimes resets zoom (test again)
-	-allow users to add tricks
-		-style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
-			-this is done, but what is the 'scrolling="no"'? it is left out for now, I noticed no difference.
-	-potentially add juggling tv(they do have embed)
-		-see juggling.tv notes section below
-	-Make down arrow to show that scrolling is possible on cards
-		-maybe this is avoided by only showing part of gif/vid so it is obvious that scrolling
-			is possible. If this is not the best solution, maybe the notes in the scrolling cards section below will be helpful
-	-Address popup and form bugs(in bugs section below)
-	-Possibly affected by switching to dark theme:
-		-find some difficulty/coloring scheme that will work for any case including user added
-			-Possible color scheme: 
-				Add a 'more catches than i care to count button' and make those tricks green, then
-				all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
-		-(maybe?)Indicator for which view we are in 
-			-Ideas: 
-				1)water mark star background
-				2)make selected list button much bigger than the unselected list button and put it above the other button. maybe even only have the unselected list as a button and the other as a header.
-	-calculate dependents for added tricks
+	(TJ)-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
+		*solution is either to limit height of dropdown or make a timer
+	(TJ)-lighten(slightly lighter than list background) tags, filter, sort buttons, but when sort dropdown is open, sort should be dark
+	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
+    (Ian)-style instagram vid
+	(Ian)-there is nothing stopping a user from creating an account with someone elses handle
+	(Ian)-pinch zoom sometimes resets zoom (test again)
+	(TJ)-allow tricks with no prereqs(right now they dont show up in graph)
+		*look in update graphtricks		
+	-find some difficulty/coloring scheme that will work for any case including user added
+		-Possible color scheme: 
+			Add a 'more catches than i care to count button' and make those tricks green, then
+			all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
+	(Ian)-calculate dependents for added tricks
+
 
 
 ==========
@@ -42,6 +36,13 @@ Ask Ian:
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
 	-any reason not to make some kind of physical card to leave around juggling conventions? what should card say?
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
+
+Refator:
+	-make a function that is 'getUsefulPart' of videoURL And this should only exist once in popup.js:
+	          videoIframe = <iframe width="260" 
+                                src={videoURLtoUse} 
+                                allow="autoplay"
+                                allowFullScreen></iframe> but should be a comination of both
 
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
@@ -65,7 +66,7 @@ Bugs:
 	Form
 		-if a trick has no prereqs then it shows up in list, but not in graph
 			-for now this is solved with a prereq check, is this ideal?
-		-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
+
 	Misc
 		-logout when 'add-a-trick' popup is open should close the 'add-a-trick' popup because once logged out cancel and submit buttons dont work
 		-login and create account inputs have the same className(as do all of their containing 
@@ -89,10 +90,13 @@ Later:
 		-compare gifs of different tricks side by side,
 		-make divs draggable
 	Misc:
-		-Researching other data sources to inform user based tricks 
+		-Researching other data sources to inform user based tricks
+		-maybe make a dark theme
+		-sort tricks by date catches updated
 	Popup:
 		-A button that is 'more catches than I want to count' in the popups
 		-Keep track of date that catches was last updated
+
 
 Maybe?:
 	List:
