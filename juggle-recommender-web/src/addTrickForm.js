@@ -16,8 +16,6 @@ const presetTags = TAGS.map((tag) => {
   }
 })
 
-
-
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -96,6 +94,11 @@ class AddTrickForm extends Component {
 		let allowSubmit = true
 		if (isEmptyOrSpaces(this.state.name)){
 			alertWarnings = "'Tricks name' is empty.\n"
+			allowSubmit = false
+		}
+		console.log('this.state.prereqs.length',this.state.prereqs.length)
+		if (this.state.prereqs.length < 1){
+			alertWarnings = "Choose at least one prereq.\n"
 			allowSubmit = false
 		}
 		if (isEmptyOrSpaces(this.state.numBalls)){

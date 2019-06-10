@@ -5,7 +5,8 @@ v 1.1:
 
 v 1.0:
 	-test tricks for old users given new username functionality 
-		-my tricks for tjthejuggler@gmail.com are still there
+		-old tricks remain, just have to go into firebase and manually change username in myTricks 
+			from email to handle
 	-pinch zoom sometimes resets zoom
 	-allow users to add tricks
 		- style ig embed ( frameborder="0" scrolling="no" allowtransparency="true")
@@ -22,9 +23,11 @@ v 1.0:
 			https://graphicdesign.stackexchange.com/questions/31104/what-is-the-best-way-to-indicate-that-you-can-scroll-in-an-area-when-the-area-do/31109
 			-no arrow solution, just have something half-revealed to make scrollability obvious:
 			https://uxdesign.cc/dear-web-designer-let-s-stop-breaking-the-affordance-of-scrolling-fe8bf258df7b
+	-Address popup and form bugs(in bugs section below)
 	Possibly affected by switching to dark theme:
 		-find some difficulty/coloring scheme that will work for any case including user added
 		-(maybe?)Indicator for which view we are in (water mark star background)
+
 
 
 ==========
@@ -32,8 +35,14 @@ v 1.0:
 
 Ask Ian:
 	-Auth.js seems to be completely unused now, can we delete it?
-	-Should we use some kind of try/catch setup in the form, for instance with the instagram urls if
-		they for some reason put in an instagram url without "/p/" in it then it will probably crash
+	-Should we use some kind of try/catch setup in the form for invalid videos?
+		completely garbage url or third party vid: 
+			trick goes in list, but no video
+		garbage url with 'www.youtube.com' in it: 
+			trick goes in list, youtube player, no vid
+		garbage url with 'www.instagram.com' in it:
+			trick goes in list, no player
+	-it may be unclear that they must choose tags from our list, if they type their own it will just be ignored, no crash.
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
 	-any reason not to make some kind of physical card to leave around juggling conventions? what should card say?
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
@@ -44,6 +53,8 @@ Minor:
 		-is this still needed?
 
 Bugs:
+	Users
+		-there is no check for creating a user with a handle that another user already has
 	Popup
 		Youtube
 			-youtube videos don't autoplay
@@ -56,8 +67,11 @@ Bugs:
 			-Instagram has no way to loop, they want you to go to their site to loop
 				A possible solution may be to check to see when the video ends and then reload the embed
 	Form
-		-in form, I clicked a tag clicked and the click clicked cancel because it was behind it. This has only happened once.
+		-if a trick has no prereqs then it shows up in list, but not in graph
+			-we could put a check in when submit is clicked to require prereqs  
+		-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
 	Misc
+		-logout when 'add-a-trick' popup is open should close the 'add-a-trick' popup because once logged out cancel and submit buttons dont work
 		-login and create account inputs have the same className(as do all of their containing 
 			divs), but they look different. Search input has pretty much the same style as them, it looks like the create account style
 		-trick popup and header can both be used to zoom and position each other, but list cannot be 		used that why. What's up with that?
