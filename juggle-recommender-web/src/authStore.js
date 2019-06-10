@@ -57,13 +57,23 @@ class AuthStore {
             }) 
         });
     }
-    @action registerUser(user, pass) {        
+    @action registerUser(email, pass,username) { 
+        const usersRef = firebase.database().ref('users/').orderByChild('username').equalTo(username)
+        
         return new Promise(resolve => {
-            firebase.auth().createUserWithEmailAndPassword(user, pass).then(data =>{
-                resolve("user created")
-            }).catch(function (error) {
-                resolve(error)
-            });
+            usersRef.on("value", resp =>{
+                const user = store.snapshotToArray(resp)[0]
+                console.log("userr f" , user, !user)
+                if(!user){
+                    firebase.auth().createUserWithEmailAndPassword(email, pass).then(data =>{
+                        resolve("user created")
+                    }).catch(function (error) {
+                        resolve(error)
+                    });
+                }else{
+                    resolve({message :"username already exists"})
+                }
+            })
         })
     }
 }
