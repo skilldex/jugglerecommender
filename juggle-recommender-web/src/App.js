@@ -61,7 +61,7 @@ class App extends Component {
 		firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             console.log("user auth changed", user)
-            authStore.setUser({username : user.email})
+            authStore.setUsername(user.email)
           } 
         });
 		//store.initializeLibrary()

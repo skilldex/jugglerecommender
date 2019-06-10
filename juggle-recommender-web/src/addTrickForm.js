@@ -129,7 +129,8 @@ class AddTrickForm extends Component {
 			});
 			var prereqs = this.state.prereqs.map(function(item) {
 				return item['text'];
-			});				
+			});		
+				
 			const trick = {
 				name : this.state.name,
 				num : this.state.numBalls,

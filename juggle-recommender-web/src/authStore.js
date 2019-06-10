@@ -9,9 +9,10 @@ class AuthStore {
 	@observable user = null
 
 	 @action setUser=(user)=>{
-	 	console.log('setUser', user)
+	 	
 	 	this.user = user
 	 	store.getSavedTricks()
+	 	console.log('setUser', user)
 	 }
 
 	 @action signOut=()=>{
@@ -21,6 +22,18 @@ class AuthStore {
                 this.setUser(null)
                 resolve("signed out")
             });
+        })
+    }
+    @action setUsername(email){
+    	const usersRef = firebase.database().ref('users/').orderByChild('email').equalTo(email)
+        let user
+        return new Promise(resolve => {
+            usersRef.on("value", resp =>{
+                user = store.snapshotToArray(resp)[0]
+                if (user){
+                	this.setUser({"email": user.email,"username" : user.username})
+                }
+            })
         })
     }
     @action loginUser(username, pass) {

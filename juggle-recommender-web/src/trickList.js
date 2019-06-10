@@ -118,7 +118,7 @@ render() {
 			)
 		})
 		 filterSection = <div>
-		 					<label className="listTagsHeader">TAGS:&nbsp;</label>	{filterTags}
+		 					<label className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</label>	{filterTags}
 		 				</div>
 	}
  	let tricks = []
