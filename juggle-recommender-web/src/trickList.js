@@ -5,7 +5,8 @@ import filterStore from './filterStore'
 import graphStore from './graphStore'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
-import sortIcon from './sortIcon.png'
+import sortIconSelected from './sortIconSelected.png'
+import sortIconUnselected from './sortIconUnselected.png'
 import filterIcon from './filterIcon.png'
 import './trickList.css';
 import './App.css';
@@ -100,7 +101,7 @@ render() {
 				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
 					  </div> : null
 
-	const sort = <img src={sortIcon} className="filterButton"  alt="showSortMenu" 
+	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 
 					 onClick={this.toggleShowSort}/>
 
 	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 

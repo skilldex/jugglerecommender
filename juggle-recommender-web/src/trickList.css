@@ -52,7 +52,7 @@
 }
 
 .listTagsName{
-  background-color : lightgray;
+  background-color : #eee;
   border:1px solid darkgray;
   border-right: none;
   overflow: hidden;
@@ -62,7 +62,7 @@
 }
 
 .listTagsX{
-  background-color : lightgray;
+  background-color : #eee;
   border:1px solid darkgray;
   border-left: none;
   color: #888888;

@@ -5,9 +5,6 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
-	(TJ)-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
-		*solution is either to limit height of dropdown or make a timer
-	(TJ)-lighten(slightly lighter than list background) tags, filter, sort buttons, but when sort dropdown is open, sort should be dark
 	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
     (Ian)-style instagram vid
 	(Ian)-there is nothing stopping a user from creating an account with someone elses handle
@@ -96,6 +93,9 @@ Later:
 	Popup:
 		-A button that is 'more catches than I want to count' in the popups
 		-Keep track of date that catches was last updated
+	Add Trick Form:
+		-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
+			*solution is either to limit height of dropdown or make a timer
 
 
 Maybe?:
