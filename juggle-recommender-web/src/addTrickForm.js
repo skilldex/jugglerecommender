@@ -223,46 +223,56 @@ class AddTrickForm extends Component {
 						<div className="form">
 							<h3>Add A Trick</h3>
 							<div className="innerForm">
-								<label className="redText">*</label>
-								<label>Trick name</label><br/>
-								<input className="formInputs" 
-										value={this.state.name} 
-										onBlur={this.handleNameChange}
-										onChange={this.handleNameChange}/><br/><br/>
-								<label>Tags</label>{tagInput}<br/>
-								<label>Prereqs</label>{prereqsInput}
-								<label className="redText">*</label>
-								<label>Number of balls</label><br/>
-								<label className="redText">{this.state.numBallsErrorMessage}</label>
-								<input className="formInputs" 
-										value={this.state.numBalls} 
-										onBlur={this.handleNumBallsChange}
-										onChange={this.handleNumBallsChange}/><br/>
-								<label className="redText">*</label>
-								<label>Difficulty</label><br/>
-								<label className="redText">{this.state.difficultyErrorMessage}</label>
-								<input className="formInputs" 
-										value={this.state.difficulty} 
-										onBlur={this.handleDiffChange}
-										onChange={this.handleDiffChange}/><br/>
-								<label className="redText">*</label>
-								<label>Video URL (Youtube or Instagram)</label><br/>
-								<label className="redText">{this.state.videoUrlErrorMessage}</label>
-								<input className="formInputs" 
-										value={this.state.videoURL} 
-										onBlur={this.handleVideoURLChange}
-										onChange={this.handleVideoURLChange}/><br/><br/>
-								<label>Siteswap</label><br/>
-								<input className="formInputs" 
-										value={this.state.siteSwap} 
-										onBlur={this.handleSSChange}
-										onChange={this.handleSSChange}/><br/><br/>
+								<div className="inputContainer">
+									<span className="redText">*</span>
+									<span className="inputLabel">Trick name</span><br/>
+									<input className="formInputs" 
+											value={this.state.name} 
+											onBlur={this.handleNameChange}
+											onChange={this.handleNameChange}/>
+								</div>
+								<div className="inputContainer">
+									<span className="inputLabel">Tags</span>{tagInput}
+								</div>
+								<div className="inputContainer">
+									<span className="inputLabel">Prereqs</span>{prereqsInput}
+								</div>
+
+								<div className="inputContainer">
+									<span className="redText">*</span>
+									<span className="inputLabel">Number of balls</span>
+									<span className="warning">{this.state.numBallsErrorMessage}</span>
+									<input className="formInputs" 
+											value={this.state.numBalls} 
+											onBlur={this.handleNumBallsChange}
+											onChange={this.handleNumBallsChange}/>
+								</div>
+								<div className="inputContainer">
+									<span className="redText">*</span>
+									<span className="inputLabel">Difficulty</span>
+									<span className="warning">{this.state.difficultyErrorMessage}</span>
+									<input className="formInputs" 
+											value={this.state.difficulty} 
+											onBlur={this.handleDiffChange}
+											onChange={this.handleDiffChange}/>
+								</div>
+								<div className="inputContainer">
+									<span className="redText">*</span>
+									<span className="inputLabel">Video URL (Youtube or Instagram)</span>
+									<span className="warning">{this.state.videoUrlErrorMessage}</span>
+									<input className="formInputs" 
+											value={this.state.videoURL} 
+											onBlur={this.handleVideoURLChange}
+											onChange={this.handleVideoURLChange}/>
+								</div>
+								<div className="inputContainer">
+									<span className="inputLabel">Siteswap</span>
+									<input className="formInputs" 
+											value={this.state.siteSwap} 
+											onBlur={this.handleSSChange}
+											onChange={this.handleSSChange}/>
+								</div>
 							</div>
-								<br/>
-								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<button id = "submitButton"
 										className="formButtons"
 										onClick={this.submit}>submit</button>
