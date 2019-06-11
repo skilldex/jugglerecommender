@@ -14,10 +14,8 @@ v 1.0:
 		-Possible color scheme: 
 			Add a 'more catches than i care to count button' and make those tricks green, then
 			all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
-	-add alert that trick was added
 	-make search case insensitive
-	-if videoURL is not in correct format when they unselect the input then give them a warning saying as much
-	-tell user to put in a perceived difficulty between 1 and 10
+
 
 ==========
 Ask Ian:

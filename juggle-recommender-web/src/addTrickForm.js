@@ -154,10 +154,8 @@ class AddTrickForm extends Component {
 				}
 				store.addTrickToDatabase(trick)
 				this.clearState()
-
+				alert(trick.name+" added!")
 		}
-
-
 	}
 	
 
