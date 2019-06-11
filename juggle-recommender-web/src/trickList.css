@@ -36,15 +36,21 @@
   padding-bottom : 5px;                    
 }
 
+.tagSection{
+  margin-top: 10px;
+}
 .listTagsHeader{
   float:left;
+  vertical-align: top;
+  font-size: 12px;
 }
 
 .listTagsDiv{
-  margin: 6px;
+  margin-left: 2px; 
   text-align: left;
   display:inline-block;
   float:left;
+  vertical-align: top;
 }
 
 .listTagsName{
@@ -55,6 +61,8 @@
   text-overflow: hidden;
   font-size: 12px;
   float:left;
+  vertical-align: middle;
+
 }
 
 .listTagsX{

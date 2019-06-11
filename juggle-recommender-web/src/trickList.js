@@ -111,7 +111,7 @@ render() {
 					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
 
 	let filterTags = []
-	let filterSection = null
+	let tagSection = null
 	if(filterStore.tags){		
 		filterStore.tags.forEach((tag,i)=>{
 			filterTags.push(
@@ -121,8 +121,9 @@ render() {
 						</div>			
 			)
 		})
-		 filterSection = <div>
-		 					<label className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</label>	{filterTags}
+		 tagSection = <div className="tagSection">
+		 					<span className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</span>	
+		 					{filterTags}
 		 				</div>
 	}
  	let tricks = []
@@ -179,8 +180,9 @@ render() {
 									onClick={()=>{uiStore.setSelectedList("allTricks")}}
 					 			alt=""/>
 						</div>
+						{tagSection}<br/>
 			 			<div className="search" >
-			 				{filterSection}<br/>
+			 				
 			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}
