@@ -24,6 +24,16 @@
   border : 1px solid gray;
   margin-top: 15px;
 }
+.instagramDiv{
+  height:420px;
+  border : 1px solid gray;
+  margin-top: 15px;
+}
+.instagramVideo{
+  width: 240px;
+  height:370px;
+  float: center;
+}
 .popupTags{
   float: left;
 }

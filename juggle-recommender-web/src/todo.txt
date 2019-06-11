@@ -5,16 +5,16 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
-	-make form submit check to see if url is valid, this may be better to do after refactoring
-		url stuff so we can reuse the function that gets made
 	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
-    (Ian)-style instagram vid
 	(Ian)-pinch zoom sometimes resets zoom (test again)
 	-find some difficulty/coloring scheme that will work for any case including user added
-		-Possible color scheme: 
-			Add a 'more catches than i care to count button' and make those tricks green, then
-			all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
-	-make search case insensitive
+		-Possible color scheme:
+			After user has input catches: 
+				Add a 'more catches than I care to count button' and make those tricks difficulty 1. Then all other tricks difficulty automatically set based on input number of catches with the tricks with the most catches being 1, and tricks with least being 10. Allow users to change the difficulty of their own tricks as they see fit.
+			Before user has input catches:
+				Use the average difficulty rating of all other users for that trick
+			Original difficulty of new tricks:
+				Set by contributor, but this is just used until an average from other users can be used
 
 ==========
 Ask Ian:

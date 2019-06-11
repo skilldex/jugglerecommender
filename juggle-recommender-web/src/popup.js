@@ -106,8 +106,8 @@ toggleGifFullscreen=()=>{
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
       videoURLtoUse = utilities.getUsableVideoURL(store.library[popupTrickKey].video)
     }
-    const videoIframe  = <iframe className="popupGif"
-                                  width="260" 
+    const videoIframe  = <iframe  className= {videoURLtoUse.includes('youtube')?
+                                                "popupGif":"instagramVideo"}
                                   frameBorder="0"
                                   allow="autoplay"  
                                   allowtransparency="true"
@@ -115,11 +115,12 @@ toggleGifFullscreen=()=>{
                                   src={videoURLtoUse}></iframe>
 
     const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
-                        <div className = "gifDiv">
+                        <div className = {videoURLtoUse.includes('youtube')?
+                                        "gifDiv":"instagramDiv"}>
                           <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                           {videoIframe}
                         </div> : null
-                        
+
     const gifFullScreenPopup = 
           store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
               <div className="fullScreenPopup">
