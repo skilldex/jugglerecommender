@@ -10,16 +10,9 @@ v 1.0:
 
 
 ==========
-
--dont allow user to use their own add tags
 -sign in name is not case sensitive
 
 Ask Ian:
-
-	-it may be unclear that they must choose tags from our list, if they type their own it will just 
-		be ignored, no crash.
-	-Should we make some initial popup explaining that this is early stages, and ask for feedback on 
-		bugs, possible features, explain that data may be lost etc
 	-any reason not to make some kind of physical card to leave around juggling conventions? what
 		 should card say?
 			-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
@@ -43,6 +36,7 @@ Bugs:
 		-we get this every time:
 			Warning: Each child in a list should have a unique "key" prop.
 		-Update root tricks is running 4 times
+		
 Later:
 	List:
 		-Style expand arrows as icons(Still an issue?)
