@@ -1,6 +1,7 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
-import firebase from 'firebase' 
+import firebase from 'firebase'
+import uiStore from './uiStore' 
 
 configure({ enforceActions: "always" })
 class AuthStore {
@@ -8,14 +9,14 @@ class AuthStore {
 
 	@observable user = null
 
-	 @action setUser=(user)=>{
-	 	
+	 @action setUser=(user)=>{	 	
 	 	this.user = user
 	 	store.getSavedTricks()
 	 	console.log('setUser', user)
 	 }
 
 	 @action signOut=()=>{
+	 	uiStore.closePopups()
 	 	window.alert(this.user.username + " has been signed out.")
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {

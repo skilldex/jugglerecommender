@@ -27,6 +27,10 @@ class UIStore {
 			this.addingTrick = !this.addingTrick
 		}
 	}
+	@action closePopups = ()=>{
+		this.popupTrick = null
+		this.addingTrick = false
+	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
@@ -174,7 +178,7 @@ class UIStore {
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
 				   tagsInFilter.length >= filterTagNames.length &&
 				   filterStore.numBalls.includes(trick.num.toString()) &&
-				   (this.searchTrick === '' || trick.name.includes(this.searchTrick))
+				   (this.searchTrick === '' || trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()))
 				 ){
 
 					const cardColor = 

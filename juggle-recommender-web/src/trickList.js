@@ -5,7 +5,14 @@ import filterStore from './filterStore'
 import graphStore from './graphStore'
 import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
-import sortIcon from './sortIcon.png'
+import sortIconSelected from './sortIconSelected.png'
+import sortIconUnselected from './sortIconUnselected.png'
+import allIconSelected from './allIconSelected.png'
+import allIconUnselected from './allIconUnselected.png'
+import mineIconSelected from './mineIconSelected.png'
+import mineIconUnselected from './mineIconUnselected.png'
+import starIcon from './starIcon.svg'
+
 import filterIcon from './filterIcon.png'
 import './trickList.css';
 import './App.css';
@@ -100,7 +107,7 @@ render() {
 				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
 					  </div> : null
 
-	const sort = <img src={sortIcon} className="filterButton"  alt="showSortMenu" 
+	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 
 					 onClick={this.toggleShowSort}/>
 
 	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
@@ -155,18 +162,28 @@ render() {
 		}
 
 	}
+	let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
+						 				"selectedListButton" :"unselectedListButton" 
+		myTricksButtonClass = myTricksButtonClass + " listButton"
  	const buttons = <div>
 					 	<label className="listExpandCollapseButton"
 								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
 				 		<div className="listButtonDiv">
-							<button className={uiStore.selectedList === "myTricks" ? 
-									"selectedListButton" : "unselectedListButton" } 
-									onClick={()=>{uiStore.setSelectedList("myTricks")}}>
-									★Starred</button>
-							<button className={uiStore.selectedList === "allTricks" ?
+				 			<img className={myTricksButtonClass}
+				 				src={starIcon}
+								onClick={()=>{uiStore.setSelectedList("myTricks")}}
+				 				alt=""
+				 			/>
+				 			<img className="listIcons"
+					 				src={uiStore.selectedList === "allTricks" ? 
+									allIconSelected : allIconUnselected } 
+									onClick={()=>{uiStore.setSelectedList("allTricks")}}
+					 				alt=""/><br/>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<label className={uiStore.selectedList === "allTricks" ?
 								 "selectedListButton" : "unselectedListButton" } 
 								 onClick={()=>{uiStore.setSelectedList("allTricks")}}>
-								 All</button>
+								 All</label>
 						</div>
 			 			<div className="search" >
 			 				{filterSection}<br/>

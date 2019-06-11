@@ -28,11 +28,7 @@
   cursor: pointer;
   vertical-align: middle;
 }
-.listButtonDiv{
-  text-align: center;
-  margin-top: 10px;
 
-}
 .listExpandCollapseButton{
   font-size:30px;
   float : right; 
@@ -52,7 +48,7 @@
 }
 
 .listTagsName{
-  background-color : lightgray;
+  background-color : #eee;
   border:1px solid darkgray;
   border-right: none;
   overflow: hidden;
@@ -62,7 +58,7 @@
 }
 
 .listTagsX{
-  background-color : lightgray;
+  background-color : #eee;
   border:1px solid darkgray;
   border-left: none;
   color: #888888;
@@ -70,20 +66,29 @@
   float:left;
 
 }
+.listButtonDiv{
+  margin-top: 10px;
+}
+.listButton{
+  width : 50px;
+  height: 50px;
+  cursor : pointer;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .selectedListButton{
-  font-size: 15px;
-  border-radius: 5px;
-  background-color : darkgray;
-  width : 80px;
-  box-shadow : 2px 0px 5px #888888;
-  padding : 0;
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 }
 .unselectedListButton{
-  font-size: 15px;
-  border-radius: 5px;
-  width : 80px;
-  box-shadow : 2px 0px 5px #888888;;
-  padding : 0;
+  filter:  grayscale(100%) brightness(60%) contrast(10000000%);
+  opacity: .2;
+}
+
+.listIcons{
+  margin-top:10px;
+  height : 25px;
+  width : 33px;
 }
 .search{
   margin-top : 20px;
@@ -113,6 +118,7 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
+
 .sectionHeader{
   display: inline-block;
   cursor: pointer;

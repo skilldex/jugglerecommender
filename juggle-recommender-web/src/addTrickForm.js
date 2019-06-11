@@ -5,7 +5,7 @@ import { observer } from "mobx-react"
 import authStore from "./authStore"
 import store from "./store"
 import { WithContext as ReactTags } from 'react-tag-input';
-
+import utilities from './utilities'
 import {TAGS} from './tags';
 
 const presetTags = TAGS.map((tag) => {
@@ -32,37 +32,46 @@ class AddTrickForm extends Component {
 		videoURL : "",
 		siteSwap : "",
 		prereqs : [],
-		tags : []
-
+		tags : [],
+		submitDisabled : true,
+		numBallsErrorMessage: "",
+		difficultyErrorMessage: "",
+		videoUrlErrorMessage: ""
 	}
 
 	handleNameChange=(e)=>{
 		this.setState({
 			name:e.target.value
 		})
+		this.checkIfFormIsSubmittable()
 	}
 	handleNumBallsChange=(e)=>{
 		this.setState({
 			numBalls:e.target.value
 		})
+		this.checkIfFormIsSubmittable()
 	}
 	handleDiffChange=(e)=>{
 		this.setState({
 			difficulty:e.target.value
 		})
+		this.checkIfFormIsSubmittable()
 	}
 	handleVideoURLChange=(e)=>{
 		this.setState({
 			videoURL:e.target.value
 		})
+		this.checkIfFormIsSubmittable()
 	}
 	handleSSChange=(e)=>{
 		this.setState({
 			siteSwap:e.target.value
 		})
+		this.checkIfFormIsSubmittable()
 	}
 	handlePrereqAddition=(tag)=> {
         this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
+        this.checkIfFormIsSubmittable()
     }
     handlePrereqDelete=(i)=> {
         const { prereqs } = this.state;
@@ -70,83 +79,91 @@ class AddTrickForm extends Component {
          prereqs: prereqs.filter((tag, index) => index !== i),
         });
     }
-
     handleTagAddition=(tag)=> {
         this.setState(state => ({ tags: [...state.tags, tag] }));
+        this.checkIfFormIsSubmittable()
     }
-
     handleTagDelete=(i)=> {
         const { tags } = this.state;
         this.setState({
          tags: tags.filter((tag, index) => index !== i),
         });
     }
+    checkIfFormIsSubmittable=()=>{
+    	this.setState({submitDisabled:false})
+    	if (this.isEmptyOrSpaces(this.state.name)){
+    		this.setState({submitDisabled:true})
+    	}
+    	if (this.isEmptyOrSpaces(this.state.numBalls)){
+    		this.setState({submitDisabled:true})
+    	}else{
+    		if (this.isNotOnlyDigits(this.state.numBalls)){
+				this.setState({numBallsErrorMessage:'must be a number.'})
+				this.setState({submitDisabled:true})
+			}else{
+				this.setState({numBallsErrorMessage:''})
+			}    		
+    	}
+    	if (this.isEmptyOrSpaces(this.state.difficulty)){
+    		this.setState({submitDisabled:true})
+    	}else{
+    		if (this.isNotOnlyDigits(this.state.difficulty) ||
+    			(this.state.difficulty<1 || this.state.difficulty>10)){    			
+					this.setState({difficultyErrorMessage:'must be a number (1-10).'})
+					this.setState({submitDisabled:true})
+				}else{
+					this.setState({difficultyErrorMessage:''})				 
+				}  		
+    	}
+    	if (this.isEmptyOrSpaces(this.state.videoURL)){
+			this.setState({submitDisabled:true})
+		}else{
+			if (utilities.getUsableVideoURL(this.state.videoURL)==='notValid'){
+				this.setState({videoUrlErrorMessage:'Not a valid URL.'})
+				this.setState({submitDisabled:true})
+			}else{
+				this.setState({videoUrlErrorMessage:''})
+			}
+		}
+
+    }
+
+    isEmptyOrSpaces=(str)=>{
+	    return str === null || str.match(/^ *$/) !== null;
+	}
+
+	isNotOnlyDigits(str){
+	    return str.match(/^[0-9]+$/) === null;
+	}
 
 
 	submit=()=>{
-		function isEmptyOrSpaces(str){
-		    return str === null || str.match(/^ *$/) !== null;
-		}
-		function isOnlyDigits(str){
-		    return str.match(/^[0-9]+$/) === null;
-		}
-		let alertWarnings = "\n"
-		let allowSubmit = true
-		if (isEmptyOrSpaces(this.state.name)){
-			alertWarnings = "'Tricks name' is empty.\n"
-			allowSubmit = false
-		}
-		console.log('this.state.prereqs.length',this.state.prereqs.length)
-		if (this.state.prereqs.length < 1){
-			alertWarnings = "Choose at least one prereq.\n"
-			allowSubmit = false
-		}
-		if (isEmptyOrSpaces(this.state.numBalls)){
-			alertWarnings += "'Number of balls' is empty.\n"
-			allowSubmit = false
-		}else{
-			if (isOnlyDigits(this.state.numBalls)){
-				alertWarnings += "'Number of balls' must be a number.\n"
-				allowSubmit = false
+			if (this.state.submitDisabled){
+				document.getElementById("submitButton").focus();
 			}
-		}
-		if (isEmptyOrSpaces(this.state.difficulty)){
-			alertWarnings += "'Difficulty' is empty.\n"
-			allowSubmit = false
-		}else{
-			if (isOnlyDigits(this.state.difficulty)){
-				alertWarnings += "'Difficulty' must be a number.\n"
-				allowSubmit = false
-			}
-		}
-		if (isEmptyOrSpaces(this.state.videoURL)){
-			alertWarnings += "'Video URL' is empty.\n"
-			allowSubmit = false
-		}
-		if (allowSubmit){
-			var tags = this.state.tags.map(function(item) {
-				return item['text'];
-			});
-			var prereqs = this.state.prereqs.map(function(item) {
-				return item['text'];
-			});		
-				
-			const trick = {
-				name : this.state.name,
-				num : this.state.numBalls,
-				difficulty : this.state.difficulty,
-				contributor : authStore.user.username, 
-				video : this.state.videoURL,
-				siteswap :  this.state.siteSwap,
-				prereqs : prereqs,
-				tags : tags
-			}
-			store.addTrickToDatabase(trick)
-			this.clearState()
-		}else{
-			alert(alertWarnings)
-		}
+			if (!this.state.submitDisabled){
+		
+				var tags = this.state.tags.map(function(item) {
+					return item['text'];
+				});
+				var prereqs = this.state.prereqs.map(function(item) {
+					return item['text'];
+				});		
 
+				const trick = {
+					name : this.state.name,
+					num : this.state.numBalls,
+					difficulty : this.state.difficulty,
+					contributor : authStore.user.username, 
+					video : this.state.videoURL,
+					siteswap :  this.state.siteSwap,
+					prereqs : prereqs,
+					tags : tags
+				}
+				store.addTrickToDatabase(trick)
+				this.clearState()
+				alert(trick.name+" added!")
+		}
 	}
 	
 
@@ -163,9 +180,13 @@ class AddTrickForm extends Component {
 		this.setState({siteSwap : ""})
 		this.setState({prereqs : []})
 		this.setState({tags : []})
+		this.setState({submitDisabled : false})
+		this.setState({numBallsErrorMessage : ""})
+		this.setState({difficultyErrorMessage : ""})
 	}
 
 	render (){
+
 		const patternsObj = Object.keys(store.library).map((pattern) => {
 		  return {
 		  	size: null,
@@ -202,20 +223,49 @@ class AddTrickForm extends Component {
 						<div className="form">
 							<h3>Add A Trick</h3>
 							<div className="innerForm">
-								<label>Trick name</label><br/><input className="formInputs" value={this.state.name} onChange={this.handleNameChange}/><br/><br/>
+								<label className="redText">*</label>
+								<label>Trick name</label><br/>
+								<input className="formInputs" 
+										value={this.state.name} 
+										onBlur={this.handleNameChange}
+										onChange={this.handleNameChange}/><br/><br/>
 								<label>Tags</label>{tagInput}<br/>
-								<label>Prereqs</label>{prereqsInput}<br/>
-								<label>Number of balls</label><br/><input className="formInputs" value={this.state.numBalls} onChange={this.handleNumBallsChange}/><br/><br/>
-								<label>Difficulty</label><br/><input className="formInputs" value={this.state.difficulty} onChange={this.handleDiffChange}/><br/><br/>
-								<label>Video URL (Youtube or Instagram)</label><br/><input className="formInputs" value={this.state.videoURL} onChange={this.handleVideoURLChange}/><br/><br/>
-								<label>Siteswap</label><br/><input className="formInputs" value={this.state.siteSwap} onChange={this.handleSSChange}/><br/><br/>
+								<label>Prereqs</label>{prereqsInput}
+								<label className="redText">*</label>
+								<label>Number of balls</label><br/>
+								<label className="redText">{this.state.numBallsErrorMessage}</label>
+								<input className="formInputs" 
+										value={this.state.numBalls} 
+										onBlur={this.handleNumBallsChange}
+										onChange={this.handleNumBallsChange}/><br/>
+								<label className="redText">*</label>
+								<label>Difficulty</label><br/>
+								<label className="redText">{this.state.difficultyErrorMessage}</label>
+								<input className="formInputs" 
+										value={this.state.difficulty} 
+										onBlur={this.handleDiffChange}
+										onChange={this.handleDiffChange}/><br/>
+								<label className="redText">*</label>
+								<label>Video URL (Youtube or Instagram)</label><br/>
+								<label className="redText">{this.state.videoUrlErrorMessage}</label>
+								<input className="formInputs" 
+										value={this.state.videoURL} 
+										onBlur={this.handleVideoURLChange}
+										onChange={this.handleVideoURLChange}/><br/><br/>
+								<label>Siteswap</label><br/>
+								<input className="formInputs" 
+										value={this.state.siteSwap} 
+										onBlur={this.handleSSChange}
+										onChange={this.handleSSChange}/><br/><br/>
 							</div>
 								<br/>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<button className="formButtons"onClick={this.submit}>submit</button>
+								<button id = "submitButton"
+										className="formButtons"
+										onClick={this.submit}>submit</button>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<button className="formButtons"onClick={this.cancel}>cancel</button>
 						</div>

@@ -99,6 +99,7 @@ div.ReactTags__tagInput {
     width: 200px;
     border-radius: 2px;
     display: inline-block;
+
 }
 div.ReactTags__tagInput input.ReactTags__tagInputField,
 div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
@@ -108,6 +109,7 @@ div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
     width: 112%;
     border: 1px solid darkgray;
     padding: 0 4px;
+
 }
 
 /* Styles for selected tags */
@@ -131,6 +133,7 @@ div.ReactTags__selected a.ReactTags__remove {
 div.ReactTags__suggestions {
     position: absolute;
     z-index: 1000;
+
 
 }
 div.ReactTags__suggestions ul {
