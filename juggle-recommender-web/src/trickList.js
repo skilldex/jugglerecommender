@@ -83,7 +83,6 @@ class TrickList extends Component {
 	}
 
 
-
 render() {
 
 	//"this" gets redefined in window.onclick so use "that"
@@ -187,7 +186,6 @@ render() {
 							{sort}
 							{sortDropdown}
 						</div>
-						<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 			 		</div>
 	return (
 		<div>	
@@ -196,6 +194,7 @@ render() {
 
 					<div>
 					 	{buttons}
+					 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 						<div style={{height:"100%"}}>
 							<label style={{float:"left"}}>easy</label>
 							<label style={{float:"right", paddingRight:"5px"}}>hard</label>

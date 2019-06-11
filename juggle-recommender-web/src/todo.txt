@@ -12,8 +12,7 @@ v 1.0:
 ==========
 
 -dont allow user to use their own add tags
--sign in name is case sensitive
-
+-sign in name is not case sensitive
 
 Ask Ian:
 	-is there any way to check to see if the video url is actually a video, if we change one 
