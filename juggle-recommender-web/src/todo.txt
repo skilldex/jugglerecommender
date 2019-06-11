@@ -46,7 +46,10 @@ Minor:
 		-is this still needed?
 
 Bugs:
-	Users
+	Form submit bugs:
+		-for wont submit if last thing done is a paste into a previously empty field
+		-difficulty needs a regex that can check if it is between 1-10
+		-video URL needs check to see if valid
 		
 	Popup
 		Youtube
