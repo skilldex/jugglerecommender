@@ -106,29 +106,49 @@ toggleGifFullscreen=()=>{
       videoURLtoUse = utilities.getUsableVideoURL(store.library[popupTrickKey].video)
     }
     const videoIframe  = <iframe  className= {videoURLtoUse.includes('youtube')?
-                                                "popupGif":"instagramVideo"}
-                                  frameBorder="0"
+                                                "popupGif":"instagramVideo"}                                  
                                   allow="autoplay"  
                                   allowtransparency="true"
-                                  allowFullScreen
                                   src={videoURLtoUse}></iframe>
-
+    const videoFullscreen  = <iframe  className= {videoURLtoUse.includes('youtube')?
+                                                "youtubeFullScreen" : "instagramFullScreen"}                                
+                                  allow="autoplay"  
+                                  allowtransparency="true"                                 
+                                  src={videoURLtoUse}></iframe>
     const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
                         <div className = {videoURLtoUse.includes('youtube')?
                                         "gifDiv":"instagramDiv"}>
                           <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                           {videoIframe}
                         </div> : null
-
-    const gifFullScreenPopup = 
+    const gifFullScreenPopupGif = 
           store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
               <div className="fullScreenPopup">
-                <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+                <img src={minimizeIcon} 
+                      className="fullScreenIcon" 
+                      alt="" onClick={this.toggleGifFullscreen} />
                 <img  height = '90%'
                       alt = ''                   
                       src={store.library[popupTrickKey].gifUrl}/> 
               </div> 
              : null
+    const gifFullScreenPopupVideo = 
+      store.library[popupTrickKey] && store.library[popupTrickKey].video?
+          <div className="fullScreenPopup">
+            <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+            {videoFullscreen}
+          </div> 
+         : null
+    let gifFullScreenPopup
+    if (store.library[popupTrickKey]){
+      if (store.library[popupTrickKey].gifUrl) {
+        gifFullScreenPopup = gifFullScreenPopupGif
+      }else{
+        if (store.library[popupTrickKey].video){
+          gifFullScreenPopup = gifFullScreenPopupVideo
+        }
+      }
+    }
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
                     					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
