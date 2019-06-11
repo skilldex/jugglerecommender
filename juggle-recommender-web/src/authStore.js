@@ -64,7 +64,6 @@ class AuthStore {
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
                 const user = store.snapshotToArray(resp)[0]
-                console.log("userr f" , user, !user)
                 if(!user){
                     firebase.auth().createUserWithEmailAndPassword(email, pass).then(data =>{
                         resolve("user created")

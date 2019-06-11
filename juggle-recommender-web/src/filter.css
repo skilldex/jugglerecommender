@@ -96,7 +96,7 @@ div.ReactTags__tags {
 
 /* Styles for the input */
 div.ReactTags__tagInput {
-    width: 200px;
+    width: 180px;
     border-radius: 2px;
     display: inline-block;
 
@@ -106,7 +106,7 @@ div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
     height: 22px;
     margin: 0;
     font-size: 12px;
-    width: 112%;
+    width: 100%;
     border: 1px solid darkgray;
     padding: 0 4px;
 

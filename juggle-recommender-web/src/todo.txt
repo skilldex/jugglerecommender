@@ -5,8 +5,16 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
+<<<<<<< HEAD
+	(TJ)-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
+		*solution is either to limit height of dropdown or make a timer
+	(TJ)-lighten(slightly lighter than list background) tags, filter, sort buttons, but when sort dropdown is open, sort should be dark
+	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
+    (Ian)-style instagram vid
+=======
 	-restyle list buttons(all/starred) or tell users to squint when they look over there
 		-feel free to change or do something completely different	
+>>>>>>> d380cc523d3a4f3fe438312af7314c565ab01545
 	(Ian)-pinch zoom sometimes resets zoom (test again)
 	-find some difficulty/coloring scheme that will work for any case including user added
 		-Possible color scheme:

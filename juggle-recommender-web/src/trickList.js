@@ -7,10 +7,9 @@ import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
 import sortIconSelected from './sortIconSelected.png'
 import sortIconUnselected from './sortIconUnselected.png'
-import allIconSelected from './allIconSelected.png'
-import allIconUnselected from './allIconUnselected.png'
-import mineIconSelected from './mineIconSelected.png'
-import mineIconUnselected from './mineIconUnselected.png'
+import starIcon from './starIcon.svg'
+import allIcon from './allIcon.svg'
+
 import filterIcon from './filterIcon.png'
 import './trickList.css';
 import './App.css';
@@ -112,7 +111,7 @@ render() {
 					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
 
 	let filterTags = []
-	let filterSection = null
+	let tagSection = null
 	if(filterStore.tags){		
 		filterStore.tags.forEach((tag,i)=>{
 			filterTags.push(
@@ -122,8 +121,9 @@ render() {
 						</div>			
 			)
 		})
-		 filterSection = <div>
-		 					<label className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</label>	{filterTags}
+		 tagSection = <div className="tagSection">
+		 					<span className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</span>	
+		 					{filterTags}
 		 				</div>
 	}
  	let tricks = []
@@ -148,7 +148,7 @@ render() {
 					style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
 						graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 					 {store.myTricks[trickKey] ? 
-						 <button className="addAndRemoveMyTricksButton" 
+					<button className="addAndRemoveMyTricksButton" 
 						 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
 						 		e.stopPropagation()}}>&#9733;</button> :
 					 <button className="addAndRemoveMyTricksButton" 
@@ -160,39 +160,35 @@ render() {
 		}
 
 	}
+	let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
+						 				"selectedListButton" :"unselectedListButton" 
+		myTricksButtonClass = myTricksButtonClass + " listButton"
+	let allTricksButtonClass = uiStore.selectedList === "allTricks" ? 
+						 				"selectedListButton" :"unselectedListButton" 
+		allTricksButtonClass = allTricksButtonClass + " listButton"
  	const buttons = <div>
 					 	<label className="listExpandCollapseButton"
 								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
 				 		<div className="listButtonDiv">
-				 			<img className="listIcons"
-					 				src={uiStore.selectedList === "myTricks" ? 
-									mineIconSelected : mineIconUnselected } 
-									onClick={()=>{uiStore.setSelectedList("myTricks")}}
-					 				alt=""/>
-				 			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-				 			<img className="listIcons"
-					 				src={uiStore.selectedList === "allTricks" ? 
-									allIconSelected : allIconUnselected } 
+				 			<img className={myTricksButtonClass}
+				 				src={starIcon}
+								onClick={()=>{uiStore.setSelectedList("myTricks")}}
+				 				alt=""
+				 			/>
+				 			<img className={allTricksButtonClass}
+					 				src={allIcon} 
 									onClick={()=>{uiStore.setSelectedList("allTricks")}}
-					 				alt=""/><br/>
-							<label className={uiStore.selectedList === "myTricks" ? 
-									"selectedListButton" : "unselectedListButton" } 
-									onClick={()=>{uiStore.setSelectedList("myTricks")}}>
-									Mine</label>
-							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							<label className={uiStore.selectedList === "allTricks" ?
-								 "selectedListButton" : "unselectedListButton" } 
-								 onClick={()=>{uiStore.setSelectedList("allTricks")}}>
-								 All</label>
+					 			alt=""/>
 						</div>
+						{tagSection}<br/>
 			 			<div className="search" >
-			 				{filterSection}<br/>
+			 				
 			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}
 							{sortDropdown}
 						</div>
-						<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Trick</button>
+						<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 			 		</div>
 	return (
 		<div>	
