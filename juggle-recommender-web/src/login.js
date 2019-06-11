@@ -20,6 +20,8 @@ class Login extends Component {
                 this.setState({
                     error : response.message
                 })
+            }else{
+                alert("Signed in as " + this.state.username)
             }
         }) 
     }
