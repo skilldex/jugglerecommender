@@ -72,9 +72,9 @@ class Filter extends Component {
 			   <hr
 			        style={{
 			            color: 'black',
-			            backgroundColor: 'white',
+			            backgroundColor: 'black',
 			            sortType: 'alphabetical',
-			            height: 2
+			            height: 1
 			        }}
 			   />
 				

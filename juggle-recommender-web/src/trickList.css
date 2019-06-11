@@ -99,10 +99,12 @@
   width : 33px;
 }
 .search{
+  margin:0;
   margin-top : 20px;
   margin-bottom : 10px;
   text-align: center;
   vertical-align: top;
+
 }
 .listDiv{
   padding-left : 5px;
@@ -180,6 +182,6 @@
 }
 .searchInput{
   width: 90px;
-  margin-right : 10px;
+  margin-right : 3px;
 }
 
