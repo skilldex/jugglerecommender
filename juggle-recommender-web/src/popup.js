@@ -5,20 +5,18 @@ import { observer } from "mobx-react"
 import editIcon from './editIcon.png'
 import fullScreenIcon from './fullScreenIcon.png'
 import minimizeIcon from './minimizeIcon.png'
+import utilities from './utilities'
 
 import './App.css';
 import './popup.css';
 
 @observer
 class Popup extends Component {
-
-
   state = {
     catches : null,
     gifFullscreen : false
   }
 	onCatchesChange=(e)=>{
-
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
 	       const catches = e.target.value
@@ -104,52 +102,24 @@ toggleGifFullscreen=()=>{
                                className="popupGif" 
                                src={store.library[popupTrickKey].gifUrl}/> 
                         </div> : null
-    var videoURLtoUse
-    var videoIframe
-    if (store.library[popupTrickKey] && 
-        store.library[popupTrickKey].video){
-        if (store.library[popupTrickKey].video.includes("instagram.com")){
-            const usefulPart = 
-                store.library[popupTrickKey].video.match
-                (new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
-            videoURLtoUse = "https://www.instagram.com"+usefulPart+"embed"
-            videoIframe = <iframe className="popupGif"
-                                  frameBorder="0"  
-                                  allowtransparency="true"
-                                  src={videoURLtoUse}></iframe>
-                                  
-        }
-        else if(store.library[popupTrickKey].video.includes("youtu")){
-          let usefulPart
-          if (store.library[popupTrickKey].video.includes("youtube.com/watch")){
-            usefulPart = store.library[popupTrickKey].video.split('youtube.com/watch?v=')
-            usefulPart = usefulPart[usefulPart.length-1]
-            if (usefulPart.includes("&feature=youtu.be")){
-              usefulPart = usefulPart.replace("&feature=youtu.be","")
-            }
-            //https://www.youtube.com/watch?v=Kr8LhLGjyiY
-            
-            
-          }else if (store.library[popupTrickKey].video.includes("youtu.be/")){
-            //https://youtu.be/Kr8LhLGjyiY
-            usefulPart = store.library[popupTrickKey].video.split('youtu.be/')
-            usefulPart = usefulPart[usefulPart.length-1]
-            
-          }
-          videoURLtoUse ="https://www.youtube.com/embed/"+usefulPart+
-                         "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart
-          console.log('videoURLtoUse',videoURLtoUse)
-          videoIframe = <iframe width="260" 
-                                src={videoURLtoUse} 
-                                allow="autoplay"
-                                allowFullScreen></iframe>
-        }
+    let videoURLtoUse = ''
+    if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
+      videoURLtoUse = utilities.getUsableVideoURL(store.library[popupTrickKey].video)
     }
+    const videoIframe  = <iframe className="popupGif"
+                                  width="260" 
+                                  frameBorder="0"
+                                  allow="autoplay"  
+                                  allowtransparency="true"
+                                  allowFullScreen
+                                  src={videoURLtoUse}></iframe>
+
     const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
                         <div className = "gifDiv">
                           <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                           {videoIframe}
                         </div> : null
+                        
     const gifFullScreenPopup = 
           store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
               <div className="fullScreenPopup">

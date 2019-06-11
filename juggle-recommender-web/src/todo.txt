@@ -19,7 +19,6 @@ v 1.0:
 
 ==========
 Ask Ian:
-	-Auth.js seems to be completely unused now, can we delete it?
 	-Should we use some kind of try/catch setup in the form for invalid videos?
 		completely garbage url or third party vid: 
 			trick goes in list, but no video
