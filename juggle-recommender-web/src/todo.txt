@@ -5,6 +5,8 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
+	-make form submit check to see if url is valid, this may be better to do after refactoring
+		url stuff so we can reuse the function that gets made
 	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
     (Ian)-style instagram vid
 	(Ian)-pinch zoom sometimes resets zoom (test again)
@@ -14,7 +16,6 @@ v 1.0:
 			all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
 	-add alert that trick was added
 	-make search case insensitive
-	-move form validation for requiered fields into message on form fields instead of alert and make submit button disabled if form is not filled in
 	-if videoURL is not in correct format when they unselect the input then give them a warning saying as much
 	-tell user to put in a perceived difficulty between 1 and 10
 
@@ -46,11 +47,6 @@ Minor:
 		-is this still needed?
 
 Bugs:
-	Form submit bugs:
-		-for wont submit if last thing done is a paste into a previously empty field
-		-difficulty needs a regex that can check if it is between 1-10
-		-video URL needs check to see if valid
-		
 	Popup
 		Youtube
 			-youtube videos don't autoplay
