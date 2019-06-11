@@ -27,7 +27,6 @@ class CreateAccount extends Component {
 
     createAccount=()=>{
         authStore.registerUser(this.state.email,this.state.password, this.state.username).then((response)=>{
-            console.log("finished registering ", response)
             if(response.message){
                 this.setState({
                     error : response.message

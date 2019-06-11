@@ -73,6 +73,7 @@ class Store {
         })
 
 	}
+	
 	@action setLibrary=(library)=>{
 		this.library = library
 		uiStore.updateRootTricks()
@@ -81,7 +82,23 @@ class Store {
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
+        this.addDependents(trick)
         uiStore.toggleAddingTrick()
+	}
+	@action addDependents=(trick)=>{
+		if(trick.prereqs){
+			trick.prereqs.forEach((prereq)=>{
+				console.log("depeds" ,toJS(this.library[prereq]))
+				if(this.library[prereq].dependents){
+					this.library[prereq].dependents.push(trick.name)
+				}{
+					this.library[prereq].dependents = [trick.name]
+				}
+				console.log(toJS(this.library[prereq].dependents))
+				let prereqRef = firebase.database().ref('library/'+prereq)
+        		prereqRef.set(this.library[prereq]);
+			})
+		}
 	}
 	@action getSavedTricks=()=>{
 		if(authStore.user){
