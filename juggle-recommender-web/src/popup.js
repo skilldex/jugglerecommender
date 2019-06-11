@@ -120,7 +120,7 @@ toggleGifFullscreen=()=>{
                           {videoIframe}
                         </div> : null
 
-    const gifFullScreenPopup = 
+    const gifFullScreenPopupGif = 
           store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
               <div className="fullScreenPopup">
                 <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
@@ -129,6 +129,25 @@ toggleGifFullscreen=()=>{
                       src={store.library[popupTrickKey].gifUrl}/> 
               </div> 
              : null
+    const gifFullScreenPopupVideo = 
+      store.library[popupTrickKey] && store.library[popupTrickKey].video?
+          <div className="fullScreenPopup">
+            <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+            <img  height = '90%'
+                  alt = ''                   
+                  src={videoIframe}/> 
+          </div> 
+         : null
+    let gifFullScreenPopup
+    if (store.library[popupTrickKey]){
+      if (store.library[popupTrickKey].gifUrl) {
+        gifFullScreenPopup = gifFullScreenPopupGif
+      }else{
+        if (store.library[popupTrickKey].video){
+          gifFullScreenPopup = gifFullScreenPopupVideo
+        }
+      }
+    }
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
                     					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
