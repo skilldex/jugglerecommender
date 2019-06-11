@@ -27,6 +27,10 @@ class UIStore {
 			this.addingTrick = !this.addingTrick
 		}
 	}
+	@action closePopups = ()=>{
+		this.popupTrick = null
+		this.addingTrick = false
+	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
