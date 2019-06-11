@@ -181,8 +181,7 @@ render() {
 					 			alt=""/>
 						</div>
 						{tagSection}<br/>
-			 			<div className="search" >
-			 				
+			 			<div className="search" >			 				
 			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
 				 			{filter}
 							{sort}

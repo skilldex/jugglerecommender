@@ -157,6 +157,7 @@ toggleGifFullscreen=()=>{
                       <h3>{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
                       <label>Difficulty: {store.library[popupTrickKey].difficulty} / 10</label><br/>
+                      <label>Number of Balls: {store.library[popupTrickKey].num}</label><br/>
                       {store.library[popupTrickKey].siteswap ? 
                         <div>
                           <label>Siteswap: {store.library[popupTrickKey].siteswap}</label><br/><br/>
