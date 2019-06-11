@@ -221,7 +221,7 @@ class AddTrickForm extends Component {
 
 		const form = 	
 						<div className="form">
-							<h3>Add A Trick</h3>
+							<h3>Add Pattern</h3>
 							<div className="innerForm">
 								<div className="inputContainer">
 									<span className="redText">*</span>
