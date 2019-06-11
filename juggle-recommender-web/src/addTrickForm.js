@@ -5,7 +5,7 @@ import { observer } from "mobx-react"
 import authStore from "./authStore"
 import store from "./store"
 import { WithContext as ReactTags } from 'react-tag-input';
-
+import utilities from './utilities'
 import {TAGS} from './tags';
 
 const presetTags = TAGS.map((tag) => {
@@ -35,7 +35,8 @@ class AddTrickForm extends Component {
 		tags : [],
 		submitDisabled : true,
 		numBallsErrorMessage: "",
-		difficultyErrorMessage: ""
+		difficultyErrorMessage: "",
+		videoUrlErrorMessage: ""
 	}
 
 	handleNameChange=(e)=>{
@@ -116,6 +117,13 @@ class AddTrickForm extends Component {
     	}
     	if (this.isEmptyOrSpaces(this.state.videoURL)){
 			this.setState({submitDisabled:true})
+		}else{
+			if (utilities.getUsableVideoURL(this.state.videoURL)==='notValid'){
+				this.setState({videoUrlErrorMessage:'Not a valid URL.'})
+				this.setState({submitDisabled:true})
+			}else{
+				this.setState({videoUrlErrorMessage:''})
+			}
 		}
 
     }
@@ -239,6 +247,7 @@ class AddTrickForm extends Component {
 										onChange={this.handleDiffChange}/><br/>
 								<label className="redText">*</label>
 								<label>Video URL (Youtube or Instagram)</label><br/>
+								<label className="redText">{this.state.videoUrlErrorMessage}</label>
 								<input className="formInputs" 
 										value={this.state.videoURL} 
 										onBlur={this.handleVideoURLChange}

@@ -3,7 +3,7 @@ import { action, configure, computed, observable, toJS} from "mobx"
 configure({ enforceActions: "always" })
 class Utilities{
     @action getUsableVideoURL=(userProvidedURL)=>{
-      let videoURLtoUse = ""
+      let videoURLtoUse = "notValid"
       if (userProvidedURL.includes("instagram.com")){
           const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
           videoURLtoUse = "https://www.instagram.com"+usefulPart+"embed"                                  

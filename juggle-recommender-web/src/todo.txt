@@ -16,7 +16,6 @@ v 1.0:
 			all other tricks colored on a spectrum from 1(red) to trick with most catches(just shy of pure green)
 	-make search case insensitive
 
-
 ==========
 Ask Ian:
 	-Should we use some kind of try/catch setup in the form for invalid videos?
@@ -30,13 +29,6 @@ Ask Ian:
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
 	-any reason not to make some kind of physical card to leave around juggling conventions? what should card say?
 		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
-
-Refator:
-	-make a function that is 'getUsefulPart' of videoURL And this should only exist once in popup.js:
-	          videoIframe = <iframe width="260" 
-                                src={videoURLtoUse} 
-                                allow="autoplay"
-                                allowFullScreen></iframe> but should be a comination of both
 
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
