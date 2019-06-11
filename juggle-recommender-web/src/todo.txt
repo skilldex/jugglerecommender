@@ -5,7 +5,8 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
-	-restyle list buttons(all/starred) or tell users to squint when they look over there	
+	-restyle list buttons(all/starred) or tell users to squint when they look over there
+		-feel free to change or do something completely different	
 	(Ian)-pinch zoom sometimes resets zoom (test again)
 	-find some difficulty/coloring scheme that will work for any case including user added
 		-Possible color scheme:
@@ -18,17 +19,15 @@ v 1.0:
 
 ==========
 Ask Ian:
-	-Should we use some kind of try/catch setup in the form for invalid videos?
-		completely garbage url or third party vid: 
-			trick goes in list, but no video
-		garbage url with 'www.youtube.com' in it: 
-			trick goes in list, youtube player, no vid
-		garbage url with 'www.instagram.com' in it:
-			trick goes in list, no player
-	-it may be unclear that they must choose tags from our list, if they type their own it will just be ignored, no crash.
-	-Should we make some initial popup explaining that this is early stages, and ask for feedback on bugs, possible features, explain that data may be lost etc
-	-any reason not to make some kind of physical card to leave around juggling conventions? what should card say?
-		-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
+	-is there any way to check to see if the video url is actually a video, if we change one 
+		character in the unique part of the link then it will give us a dead player, and will not be caught by our checker. Our checker just revolves around the site name of the URL.
+	-it may be unclear that they must choose tags from our list, if they type their own it will just 
+		be ignored, no crash.
+	-Should we make some initial popup explaining that this is early stages, and ask for feedback on 
+		bugs, possible features, explain that data may be lost etc
+	-any reason not to make some kind of physical card to leave around juggling conventions? what
+		 should card say?
+			-www.skilldex.org, @ARflowarts, @tjthejuggler, @ianbreal, anything else? graphics?
 
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
@@ -47,10 +46,6 @@ Bugs:
 			-our fullscreen button doesnt work with instagram
 			-Instagram has no way to loop, they want you to go to their site to loop
 				A possible solution may be to check to see when the video ends and then reload the embed
-	Form
-		-if a trick has no prereqs then it shows up in list, but not in graph
-			-for now this is solved with a prereq check, is this ideal?
-
 	Misc
 		-logout when 'add-a-trick' popup is open should close the 'add-a-trick' popup because once logged out cancel and submit buttons dont work
 		-login and create account inputs have the same className(as do all of their containing 
