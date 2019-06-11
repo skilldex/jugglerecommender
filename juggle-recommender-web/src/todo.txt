@@ -1,6 +1,6 @@
 v 1.1:
 	-make multi-termed search
-	-toggle tricks by user added trick
+	-toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
 	-make popups be draggable divs
 	-edit profile(maybe beyond 1.1)
 
@@ -47,18 +47,16 @@ Bugs:
 			-Instagram has no way to loop, they want you to go to their site to loop
 				A possible solution may be to check to see when the video ends and then reload the embed
 	Misc
-		-logout when 'add-a-trick' popup is open should close the 'add-a-trick' popup because once logged out cancel and submit buttons dont work
 		-login and create account inputs have the same className(as do all of their containing 
 			divs), but they look different. Search input has pretty much the same style as them, it looks like the create account style
 		-trick popup and header can both be used to zoom and position each other, but list cannot be 		used that why. What's up with that?
-		-Testing on phone isn't working, probably because when we check for localhost to determine 		prod or dev there is no localhost in the url on phone
 	Maybe unimportant
 		-we get this every time:
 			Warning: Each child in a list should have a unique "key" prop.
 		-Update root tricks is running 4 times
 Later:
 	List:
-		-Style expand arrows as icons
+		-Style expand arrows as icons(Still an issue?)
 		-make a 2b section
 		-make a 6b and 7b sections
 		-allow users to edit tricks that they have contributed
@@ -74,48 +72,56 @@ Later:
 		-sort tricks by date catches updated
 	Popup:
 		-A button that is 'more catches than I want to count' in the popups
-		-Keep track of date that catches was last updated
 	Add Trick Form:
-		-in form, I clicked a tag and the click clicked cancel because it was behind it. This has only happened once, maybe i double clicked without realising.
-			*solution is either to limit height of dropdown or make a timer
-
-
+		-in form, I clicked a tag and the click clicked cancel because it was behind it. This has 
+			only happened once, maybe i double clicked without realising.
+				*solution is either to limit height(seems like library has no option for this, either make our own tags or edit library) of dropdown or make a timer(even if we do this we still have a mile long list, we could limit list length by requiring more than 1 letter to show suggestions)
 Maybe?:
 	List:
-		-showing the count for myTricks and allTricks
-		-the minimized list should be forced to stay on upper left but not on the header. The reason being that if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen
-		-When list is expanded/collapsed change the size of the canvas so the center is the center of vision
+		-show count of myTricks and allTricks
+		-the minimized list should be forced to stay on upper left but not on the header. The reason 
+			being that if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen
+		-When list is expanded/collapsed change the size of the canvas so the center is the center
+			 of vision
 	popup:
 		-list depends and prereqs
 		-other tutorials/user content
-		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces the current tags)
-		-make related tricks in popup clickable(although i dont know exactly what clicking them should do)
-		-closing a popup should reopen the list(furthermore, maybe it should only do this if the list was minimized 	by the opening of that box)
+		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces 
+			the current tags)
+		-make related tricks in popup clickable(although i dont know exactly what clicking them 
+			should do)
+		-closing a popup should reopen the list(furthermore, maybe it should only do this if the
+			 list was minimized by the opening of that popup)
 	filter:
-		-make a tagsesque filter for contributors
-		-Dont allow filters that would make graph empty?
-		-A 'clear all selected' button, maybe a 'select all button' and switch to only showing 
-			selected patterns in graph instead of showing all if none are selected. I feel like showing all tricks in graph is kinda overwhelming, maybe it would be best if they kinda got to do something to make that happen.
+		-make a tagsesque filter for contributors so users can choose to only see tricks contributed 	by specific users or original tricks
+		-Dont allow filters that would make graph empty? (probably not necessary)
+
 
 thoughts/ideas:
+	-A 'clear all selected' button, maybe a 'select all button' and switch to only showing 
+		selected patterns in graph instead of showing all if none are selected. I feel like showing all tricks in graph is kinda overwhelming, maybe it would be best if they kinda got to do something to make that happen.
 	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
-		 make it so if you slide it far enough it begins playing the trick backwards
+		 make it so if you slide it far enough it begins playing the trick backwards(This would be incredibly useful, it would be great if it were somehow possible with videos as well)
 	-Maybe catches input should be automatically editable when a trick is added to my tricks
-	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox
+		 which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
 	-Why does website have red triangle explanation on url? as if our page is dangerous or something.
-	-The animation that happens as a reult of going from one selected trick to none selected is a bit overwhelming, but I dont know what should be done about it
+	-The animation that happens as a reult of going from one selected trick to none selected is a
+		 bit overwhelming, but I dont know what should be done about it
 	Potential pattern stats:
 		-number of users with records for a given trick
 		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
 	Potential general stats:
 		-users signed up
 		-users currently online
+		-number of all tricks
+		-number of my tricks
 	-May want to consider switching out 'pattern' for 'trick' since strictly speaking we are 			currently dealing with patterns, tricks are more like ass catches and piroquettes and 1 off 	things while patterns are continuously repeated things. For instance 555555597531555555 is 		and trick, 97531975319753197531 is a pattern. Not a real big deal, we could wait and see if 	anyone 	else says anything. It is a blurry line between the two since any trick it seems 		could be repeated to become a pattern, and any pattern could be done for 1 cycle to be a 		trick.
 	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
 		 bring them in by way of lots of 2 ball tricks so that nearly everyone can start doing things that are not too far beyond their current level. Something about knowing that you always have low hanging fruit so far as new patterns that you can do is very motivational in continuing to learn. It is not just for new jugglers either, it is for jugglers new to certain props, like clubs rings, with a balance, etc..
 	-A well thought out write up on what we are trying to do may be useful in getting other people 		on board with helping build up a good sized dayabase.
 	-Different kinds of visualizers that users can toggle between may be nice
-	-Other jughling props may be good to put in just as a radiobutton next to catches since there is
+	-Other juggling props may be good to put in just as a radiobutton next to catches since there is
 		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
 	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
 
@@ -133,7 +139,7 @@ Juggling.tv notes:
 	Associated embed
 		<embed src="http://juggling.tv/nvplayer.swf?config=http://juggling.tv/nuevo/econfig.php?key=d705ee69c42ee0ac833b" width="480" height="370" allowscriptaccess="always" allowfullscreen="true" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" /></embed>						<br /><font face="Verdana, Arial, Helvetica, sans-serif" size="-2"><a href="http://juggling.tv/17201" target="_blank">Kepulat magnetic sticks 22.1.2019</a> <-- Please go to JTV for iOS playback</font>
 
-Scrolling cards:
+Arrow for indicating the scrollability of cards: (this is most likely not necesaary)
 	-should it go away when we are at the bottom?
 	-as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room
 	Ideas:
