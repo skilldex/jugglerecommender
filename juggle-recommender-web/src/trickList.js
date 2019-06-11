@@ -7,11 +7,8 @@ import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
 import sortIconSelected from './sortIconSelected.png'
 import sortIconUnselected from './sortIconUnselected.png'
-import allIconSelected from './allIconSelected.png'
-import allIconUnselected from './allIconUnselected.png'
-import mineIconSelected from './mineIconSelected.png'
-import mineIconUnselected from './mineIconUnselected.png'
 import starIcon from './starIcon.svg'
+import allIcon from './allIcon.svg'
 
 import filterIcon from './filterIcon.png'
 import './trickList.css';
@@ -150,7 +147,7 @@ render() {
 					style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
 						graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 					 {store.myTricks[trickKey] ? 
-						 <button className="addAndRemoveMyTricksButton" 
+					<button className="addAndRemoveMyTricksButton" 
 						 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
 						 		e.stopPropagation()}}>&#9733;</button> :
 					 <button className="addAndRemoveMyTricksButton" 
@@ -165,6 +162,9 @@ render() {
 	let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
 						 				"selectedListButton" :"unselectedListButton" 
 		myTricksButtonClass = myTricksButtonClass + " listButton"
+	let allTricksButtonClass = uiStore.selectedList === "allTricks" ? 
+						 				"selectedListButton" :"unselectedListButton" 
+		allTricksButtonClass = allTricksButtonClass + " listButton"
  	const buttons = <div>
 					 	<label className="listExpandCollapseButton"
 								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
@@ -174,16 +174,10 @@ render() {
 								onClick={()=>{uiStore.setSelectedList("myTricks")}}
 				 				alt=""
 				 			/>
-				 			<img className="listIcons"
-					 				src={uiStore.selectedList === "allTricks" ? 
-									allIconSelected : allIconUnselected } 
+				 			<img className={allTricksButtonClass}
+					 				src={allIcon} 
 									onClick={()=>{uiStore.setSelectedList("allTricks")}}
-					 				alt=""/><br/>
-							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							<label className={uiStore.selectedList === "allTricks" ?
-								 "selectedListButton" : "unselectedListButton" } 
-								 onClick={()=>{uiStore.setSelectedList("allTricks")}}>
-								 All</label>
+					 			alt=""/>
 						</div>
 			 			<div className="search" >
 			 				{filterSection}<br/>
