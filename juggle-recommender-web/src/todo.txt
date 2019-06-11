@@ -15,8 +15,7 @@ v 1.0:
 -sign in name is not case sensitive
 
 Ask Ian:
-	-is there any way to check to see if the video url is actually a video, if we change one 
-		character in the unique part of the link then it will give us a dead player, and will not be caught by our checker. Our checker just revolves around the site name of the URL.
+
 	-it may be unclear that they must choose tags from our list, if they type their own it will just 
 		be ignored, no crash.
 	-Should we make some initial popup explaining that this is early stages, and ask for feedback on 
@@ -35,16 +34,10 @@ Bugs:
 		Youtube
 			-youtube videos don't autoplay
 			-youtube videos giving errors, but plays fine besides no autoplay
-			-our fullscreen button doesnt work with youtube, but youtube's built in fullscreen 
-				button does(at least on PC) So maybe just remove ours and use theirs
 		Instagram
-			-bottom of instagram videos are cut off
-			-our fullscreen button doesnt work with instagram
 			-Instagram has no way to loop, they want you to go to their site to loop
 				A possible solution may be to check to see when the video ends and then reload the embed
 	Misc
-		-login and create account inputs have the same className(as do all of their containing 
-			divs), but they look different. Search input has pretty much the same style as them, it looks like the create account style
 		-trick popup and header can both be used to zoom and position each other, but list cannot be 		used that why. What's up with that?
 	Maybe unimportant
 		-we get this every time:

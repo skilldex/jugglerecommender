@@ -38,9 +38,11 @@ class Filter extends Component {
   	}
 
 	handleAddition=(tag)=>{
-		filterStore.setTags(
-			 [...filterStore.tags, tag] 
-		);
+		if (TAGS.include(tag.id)){
+			filterStore.setTags(
+				 [...filterStore.tags, tag] 
+			);
+		}
 	}
 
 	handleSortRadioButtonChange=(event)=>{

@@ -70,8 +70,10 @@ class AddTrickForm extends Component {
 		this.checkIfFormIsSubmittable()
 	}
 	handlePrereqAddition=(tag)=> {
-        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
-        this.checkIfFormIsSubmittable()
+		if (store.library[tag.id]){
+	        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
+	        this.checkIfFormIsSubmittable()
+	    }
     }
     handlePrereqDelete=(i)=> {
         const { prereqs } = this.state;
@@ -80,8 +82,11 @@ class AddTrickForm extends Component {
         });
     }
     handleTagAddition=(tag)=> {
-        this.setState(state => ({ tags: [...state.tags, tag] }));
-        this.checkIfFormIsSubmittable()
+
+    	if (TAGS.includes(tag.id)){
+	        this.setState(state => ({ tags: [...state.tags, tag] }));
+	        this.checkIfFormIsSubmittable()
+	    }
     }
     handleTagDelete=(i)=> {
         const { tags } = this.state;
