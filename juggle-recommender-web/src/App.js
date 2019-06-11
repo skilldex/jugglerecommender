@@ -101,7 +101,7 @@ class App extends Component {
 				                className='some-custom-class'
 				                overlayClassName='some-custom-overlay-class'
 				                isOpen={ this.state.isInstructionsPaneOpen }
-				                title='Instructions'
+				                title='About'
 				                onRequestClose={ () => {
 				                    this.setState({ isInstructionsPaneOpen: false });}}>
 				                <div className="instructions">
@@ -145,8 +145,8 @@ class App extends Component {
 							</div><br/>
 			            </SlidingPane>
 		const header = <div className="header">
-							<span className="title">Juggledex</span><span className="version"> v0.9</span>
-					        <button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>Instructions</button>
+							<span className="title">Juggledex</span><span className="version"> v1.0 Beta</span>
+					        <button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
 					        {authStore.user ? 
 					        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
 					        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
