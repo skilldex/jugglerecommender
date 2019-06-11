@@ -5,7 +5,7 @@ v 1.1:
 	-edit profile(maybe beyond 1.1)
 
 v 1.0:
-	(TJ)-restyle list buttons(all/starred) to make selected one more promonent	
+	-restyle list buttons(all/starred) or tell users to squint when they look over there	
 	(Ian)-pinch zoom sometimes resets zoom (test again)
 	-find some difficulty/coloring scheme that will work for any case including user added
 		-Possible color scheme:

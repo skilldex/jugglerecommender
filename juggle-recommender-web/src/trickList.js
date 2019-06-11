@@ -7,6 +7,10 @@ import { observer } from "mobx-react"
 import legendImg from './greenToRedFade.jpg'
 import sortIconSelected from './sortIconSelected.png'
 import sortIconUnselected from './sortIconUnselected.png'
+import allIconSelected from './allIconSelected.png'
+import allIconUnselected from './allIconUnselected.png'
+import mineIconSelected from './mineIconSelected.png'
+import mineIconUnselected from './mineIconUnselected.png'
 import filterIcon from './filterIcon.png'
 import './trickList.css';
 import './App.css';
@@ -160,14 +164,26 @@ render() {
 					 	<label className="listExpandCollapseButton"
 								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
 				 		<div className="listButtonDiv">
-							<button className={uiStore.selectedList === "myTricks" ? 
+				 			<img className="listIcons"
+					 				src={uiStore.selectedList === "myTricks" ? 
+									mineIconSelected : mineIconUnselected } 
+									onClick={()=>{uiStore.setSelectedList("myTricks")}}
+					 				alt=""/>
+				 			<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				 			<img className="listIcons"
+					 				src={uiStore.selectedList === "allTricks" ? 
+									allIconSelected : allIconUnselected } 
+									onClick={()=>{uiStore.setSelectedList("allTricks")}}
+					 				alt=""/><br/>
+							<label className={uiStore.selectedList === "myTricks" ? 
 									"selectedListButton" : "unselectedListButton" } 
 									onClick={()=>{uiStore.setSelectedList("myTricks")}}>
-									★Starred</button>
-							<button className={uiStore.selectedList === "allTricks" ?
+									Mine</label>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<label className={uiStore.selectedList === "allTricks" ?
 								 "selectedListButton" : "unselectedListButton" } 
 								 onClick={()=>{uiStore.setSelectedList("allTricks")}}>
-								 All</button>
+								 All</label>
 						</div>
 			 			<div className="search" >
 			 				{filterSection}<br/>

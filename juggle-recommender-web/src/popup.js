@@ -60,7 +60,6 @@ toggleGifFullscreen=()=>{
 }
 
 	render() {
-
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
