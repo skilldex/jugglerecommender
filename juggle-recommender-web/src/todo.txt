@@ -13,8 +13,6 @@ v 1.0:
 ==========
 
 
-
-
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
