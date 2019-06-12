@@ -9,8 +9,6 @@ import sortIconSelected from './sortIconSelected.png'
 import sortIconUnselected from './sortIconUnselected.png'
 import starIcon from './starIcon.svg'
 import allIcon from './allIcon.svg'
-
-import filterIcon from './filterIcon.png'
 import './trickList.css';
 import './App.css';
 import {TAGS} from './tags';
@@ -106,8 +104,7 @@ render() {
 	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 
 					 onClick={this.toggleShowSort}/>
 
-	const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
-					 onClick={()=>{filterStore.toggleFilterDiv()}}/>					 
+					 
 
 	let filterTags = []
 	let tagSection = null
@@ -179,10 +176,9 @@ render() {
 									onClick={()=>{uiStore.setSelectedList("allTricks")}}
 					 			alt=""/>
 						</div>
-						{tagSection}<br/>
+						
 			 			<div className="search" >			 				
 			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
-				 			{filter}
 							{sort}
 							{sortDropdown}
 						</div>

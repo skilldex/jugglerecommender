@@ -1,4 +1,5 @@
 .graphDiv{
+	position :absolute;
   display: inline-block;
   vertical-align: top;
   height : 90vh;

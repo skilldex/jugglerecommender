@@ -6,11 +6,11 @@ import graphStore from './graphStore'
 import { observer } from "mobx-react"
 import './filter.css';
 import './App.css';
-import {TAGS} from './tags';
 import { WithContext as ReactTags } from 'react-tag-input';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {toJS} from "mobx"
+import {TAGS} from './tags';
 
 const presetTags = TAGS.map((tag) => {
   return {
@@ -38,7 +38,7 @@ class Filter extends Component {
   	}
 
 	handleAddition=(tag)=>{
-		if (TAGS.include(tag.id)){
+		if (TAGS.includes(tag.id)){
 			filterStore.setTags(
 				 [...filterStore.tags, tag] 
 			);

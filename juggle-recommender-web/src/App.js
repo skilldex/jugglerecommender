@@ -3,6 +3,8 @@ import { observer } from "mobx-react"
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
+import filterStore from './filterStore'
+import filterIcon from './filterIcon.png'
 import Popup from './popup.js'
 import store from './store'
 import uiStore from './uiStore'
@@ -15,6 +17,7 @@ import firebase from 'firebase'
 import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
+
  // Your web app's Firebase configuration
 let firebaseConfig = {}
 if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
@@ -151,12 +154,36 @@ class App extends Component {
 					        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
 					        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
 						</div>
+		const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
+					 		onClick={()=>{filterStore.toggleFilterDiv()}}/>
+		let filterTags = []
+		let tagSection = null
+		if(filterStore.tags){		
+			filterStore.tags.forEach((tag,i)=>{
+				filterTags.push(
+							<div className="mainTagsDiv">
+								<span className="mainTagsName">&nbsp;{filterStore.tags[i].text}</span>
+								<label className="mainTagsX"onClick={()=>filterStore.handleDelete(i)}>&nbsp;x&nbsp;</label>
+							</div>			
+				)
+			})
+			 tagSection = <div className="tagSection">
+			 					{filter}
+			 					<span className="mainTagsHeader">{filterStore.tags.length>0?"TAGS: ":"TAGS: none"}</span>	
+			 					<div className="mainTagsButtonsDiv">
+			 						{filterTags}
+			 					</div>
+			 				</div>
+		}
 		return (
-			<div className="main" ref={ref => this.el = ref}>		            
+			<div className="main" ref={ref => this.el = ref}>	            
 	            {instructions}
 	            {login}
 	            {createAccount}
 				{header}
+				<div className="mainTagsFullDiv">
+					{tagSection}
+				</div>
 				{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen  && !store.isCreateAccountPaneOpen?
 					<TrickList 
 						myTricks={store.myTricks} 
