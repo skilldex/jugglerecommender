@@ -1,27 +1,8 @@
 import React,{Component} from 'react'
 import filterStore from './filterStore'
-import filterIcon from './filterIcon.png'
+import filterIcon from './images/filterIcon.png'
 import './mainTagsBar.css';
-
-
-import { observer } from "mobx-react"
-import './App.css';
-import TrickGraph from './trickGraph.js'
-import TrickList from './trickList.js'
-import Popup from './popup.js'
-import store from './store'
-import uiStore from './uiStore'
-import graphStore from './graphStore'
-import authStore from './authStore.js'
-import Modal from 'react-modal';
-import SlidingPane from 'react-sliding-pane';
-import 'react-sliding-pane/dist/react-sliding-pane.css';
-import firebase from 'firebase' 
-import AddTrickForm from './addTrickForm'
-import Login from "./login"
-import CreateAccount from "./createAccount"
 import mainTagsBar from "./mainTagsBar"
-
 
 class MainTagsBar extends Component {
     state={
@@ -46,23 +27,32 @@ class MainTagsBar extends Component {
               onClick={()=>{filterStore.toggleFilterDiv()}}/>
     let filterTags = []
     let tagSection = null
-    if(filterStore.tags){   
-      filterStore.tags.forEach((tag,i)=>{
-        filterTags.push(
-              <div className="mainTagsDiv">
-                <span className="mainTagsName">&nbsp;{filterStore.tags[i].text}</span>
-                <label className="mainTagsX"onClick={()=>filterStore.handleDelete(i)}>&nbsp;x&nbsp;</label>
-              </div>      
-        )
-      })
-
-    }
     if(filterStore.numBalls){   
       filterStore.numBalls.forEach((numBall,i)=>{
         filterTags.push(
               <div className="mainTagsDiv">
                 <span className="mainTagsName">&nbsp;{filterStore.numBalls[i]}&nbsp;Balls</span>
                 <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.numBalls[i])}>&nbsp;x&nbsp;</label>
+              </div>      
+        )
+      })
+    }
+    if(filterStore.difficultyRange[0] !=1 && filterStore.difficultyRange[0] !=10 ){
+      console.log('ya',filterStore.difficultyRange[0] ,filterStore.difficultyRange[1] )
+      filterTags.push(
+            <div className="mainTagsDiv">
+              <span className="mainTagsName">&nbsp;Difficulty&nbsp;
+                      {filterStore.difficultyRange[0]}-{filterStore.difficultyRange[1]}</span>
+              <label className="mainTagsX"onClick={filterStore.resetDifficultyRange()}>&nbsp;x&nbsp;</label>
+            </div>      
+      )
+    }
+    if(filterStore.tags){   
+      filterStore.tags.forEach((tag,i)=>{
+        filterTags.push(
+              <div className="mainTagsDiv">
+                <span className="mainTagsName">&nbsp;{filterStore.tags[i].text}</span>
+                <label className="mainTagsX"onClick={()=>filterStore.handleDelete(i)}>&nbsp;x&nbsp;</label>
               </div>      
         )
       })

@@ -13,7 +13,9 @@ class FilterStore {
 	@observable tags = [
 		{'id' : 'common','text':'common'}
 	]
-	 
+	@action resetDifficultyRange=()=>{
+		this.difficultyRange = [1,10]
+	}
 	@action setTags=(tags)=>{
 		this.tags = tags
 		uiStore.updateRootTricks()

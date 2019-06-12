@@ -2,9 +2,9 @@ import React,{Component} from 'react'
 import store from './store'
 import uiStore from './uiStore'
 import { observer } from "mobx-react"
-import editIcon from './editIcon.png'
-import fullScreenIcon from './fullScreenIcon.png'
-import minimizeIcon from './minimizeIcon.png'
+import editIcon from './images/editIcon.png'
+import fullScreenIcon from './images/fullScreenIcon.png'
+import minimizeIcon from './images/minimizeIcon.png'
 import utilities from './utilities'
 
 import './App.css';

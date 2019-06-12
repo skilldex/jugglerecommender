@@ -4,11 +4,11 @@ import uiStore from './uiStore'
 import filterStore from './filterStore'
 import graphStore from './graphStore'
 import { observer } from "mobx-react"
-import legendImg from './greenToRedFade.jpg'
-import sortIconSelected from './sortIconSelected.png'
-import sortIconUnselected from './sortIconUnselected.png'
-import starIcon from './starIcon.svg'
-import allIcon from './allIcon.svg'
+import legendImg from './images/greenToRedFade.jpg'
+import sortIconSelected from './images/sortIconSelected.png'
+import sortIconUnselected from './images/sortIconUnselected.png'
+import starIcon from './images/starIcon.svg'
+import allIcon from './images/allIcon.svg'
 import './trickList.css';
 import './App.css';
 import {TAGS} from './tags';
