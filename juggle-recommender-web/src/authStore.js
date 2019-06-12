@@ -39,7 +39,7 @@ class AuthStore {
     }
     @action loginUser(username, pass) {
         console.log("logging user", username, pass)
-        const usersRef = firebase.database().ref('users/').orderByChild('username').equalTo(username)
+        const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
         let user
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
@@ -59,7 +59,7 @@ class AuthStore {
         });
     }
     @action registerUser(email, pass,username) { 
-        const usersRef = firebase.database().ref('users/').orderByChild('username').equalTo(username)
+        const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
         
         return new Promise(resolve => {
             usersRef.on("value", resp =>{

@@ -35,9 +35,14 @@ class CreateAccount extends Component {
                 const myTricksRef = firebase.database().ref('myTricks/')
                 let newData = myTricksRef.push();
                 newData.set({"username": this.state.username, "myTricks" : []});
+
                 const usersRef = firebase.database().ref('users/')
                 let newUser= usersRef.push();
-                newUser.set({"username": this.state.username, "email" : this.state.email});
+                newUser.set({
+                    "username": this.state.username, 
+                    "email" : this.state.email,
+                    "lowerCaseUsername" : this.state.username.toLowerCase()
+                });
                 alert("User " + this.state.username + " created")
                 store.toggleCreateAccountPane()
                 this.signIn()
