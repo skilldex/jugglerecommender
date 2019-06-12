@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
-import store from './store'
-import uiStore from './uiStore'
+import store from './stores/store'
+import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
 import fullScreenIcon from './images/fullScreenIcon.png'

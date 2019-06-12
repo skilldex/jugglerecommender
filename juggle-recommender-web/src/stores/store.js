@@ -3,7 +3,7 @@ import firebase from 'firebase'
 import uiStore from './uiStore'
 import filterStore from './filterStore'
 import authStore from './authStore'
-import {jugglingLibrary} from './jugglingLibrary.js'
+import {jugglingLibrary} from '../jugglingLibrary.js'
 
 configure({ enforceActions: "always" })
 class Store {

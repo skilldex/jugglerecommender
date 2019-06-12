@@ -1,5 +1,5 @@
 import React,{Component} from 'react'
-import filterStore from './filterStore'
+import filterStore from './stores/filterStore'
 import filterIcon from './images/filterIcon.png'
 import './mainTagsBar.css';
 import mainTagsBar from "./mainTagsBar"

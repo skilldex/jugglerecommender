@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import authStore from "./authStore"
-import store from './store'
+import authStore from "./stores/authStore"
+import store from './stores/store'
 import "./App.css"
 import "./auth.css";
 import firebase from 'firebase' 

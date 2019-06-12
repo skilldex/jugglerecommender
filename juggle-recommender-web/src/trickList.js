@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
-import store from './store'
-import uiStore from './uiStore'
-import filterStore from './filterStore'
-import graphStore from './graphStore'
+import store from './stores/store'
+import uiStore from './stores/uiStore'
+import filterStore from './stores/filterStore'
+import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
 import sortIconSelected from './images/sortIconSelected.png'

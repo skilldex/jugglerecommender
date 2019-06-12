@@ -4,10 +4,10 @@ import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import Popup from './popup.js'
-import store from './store'
-import uiStore from './uiStore'
-import graphStore from './graphStore'
-import authStore from './authStore.js'
+import store from './stores/store'
+import uiStore from './stores/uiStore'
+import graphStore from './stores/graphStore'
+import authStore from './stores/authStore.js'
 import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';

@@ -76,10 +76,10 @@ to see dark theme:
 			SOLUTION: see 'LESS CLUTTERED UI' section below
 
 		-Unable to filter tricks based on how well I can do them
-			SOLUTION: see 'ALTERNATIVE TO STARRED' section below
+			SOLUTION: see 'FILTER BY CATCHES' section below
 
 		-Defaulting to graphs that show lots of tricks is overwhelming, unuseful, laggy, tacky
-			SOLUTION: see 'ALTERNATIVE TO STARRED' section below
+			SOLUTION: see 'FILTER BY CATCHES' section below
 
 		-youtube videos must loop entire video
 			SOLUTION: -https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
@@ -110,7 +110,7 @@ to see dark theme:
 			3)tricks I can do pretty well
 			4)tricks I can do really well
 		(If I am only interested in one of the above lists, I am out of luck, I must manually go through the full list every time and look for ones that fit what I am interested in)
-	-ALTERNATIVE TO STARRED:
+	-FILTER BY CATCHES
 		-If we can sort by number of catches(similarly to current difficulty setup) then we can easily get any one of those lists on their own which is so much more useful
 			-What about tricks I want to mark for later learning, but don't feel like trying now?
 				-This is probably very rare, but they can simply set those tricks to 1 catch and then filter out all the others

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import uiStore from "./uiStore"
+import uiStore from "./stores/uiStore"
 import "./addTrickForm.css"
 import { observer } from "mobx-react"
-import authStore from "./authStore"
-import store from "./store"
+import authStore from "./stores/authStore"
+import store from "./stores/store"
 import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
 import {TAGS} from './tags';

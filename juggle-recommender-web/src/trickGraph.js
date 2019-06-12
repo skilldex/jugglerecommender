@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-import store from './store'
-import uiStore from './uiStore'
-import graphStore from './graphStore'
+import store from './stores/store'
+import uiStore from './stores/uiStore'
+import graphStore from './stores/graphStore'
 import Graph from 'vis-react'
 import './trickGraph.css';
 
