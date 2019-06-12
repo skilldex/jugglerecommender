@@ -1,0 +1,132 @@
+
+
+
+Most desired new features:
+	-Loop YouTube videos from specific time to specific time, see email for how to do this
+		-https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
+	-The ability to see related tricks in graph
+
+When a single pattern is selected, it would be nice to have the option to only show dependents, prereqs, and related tricks that are not myTricks. Right now it is not super important, but as more tricks get added and it gets cluttered it would be very useful.
+
+
+
+Ideally the difficulty of tricks that I have not yet attempted should be catered to which tricks I can do, but I havnt yet envisioned an algorithm that can accomplish this. It would would be great to know that I can always look at my app and quickly watch a trick being done that I have never done before and just be able to do it. I think that the feeling of struggling to learn a new trick is completely avoidable without having to sacrifice learning new tricks. At first the new tricks may be fairly simple, but they will naturally become more difficult with time.
+
+
+
+
+
+Maybe?:
+	List:
+		-show count of myTricks and allTricks
+		-the minimized list should be forced to stay on upper left but not on the header. The reason 
+			being that if you have a popup open and zoom in to make gif fullscreen then you dont zoom out before closing the popup, the list may be off screen
+		-When list is expanded/collapsed change the size of the canvas so the center is the center
+			 of vision
+	popup:
+		-list depends and prereqs
+		-other tutorials/user content
+		-make it so when a tag is clicked, that tag is added to the current tags(or maybe replaces 
+			the current tags)
+		-make related tricks in popup clickable(although i dont know exactly what clicking them 
+			should do)
+		-closing a popup should reopen the list(furthermore, maybe it should only do this if the
+			 list was minimized by the opening of that popup)
+	filter:
+		-make a tagsesque filter for contributors so users can choose to only see tricks contributed 	by specific users or original tricks
+		-Dont allow filters that would make graph empty? (probably not necessary)
+
+
+thoughts/ideas:
+	-get something like x-gif hooked up to a slider to control the speed of the gifs, 
+		 make it so if you slide it far enough it begins playing the trick backwards(This would be incredibly useful, it would be great if it were somehow possible with videos as well)
+	-Maybe catches input should be automatically editable when a trick is added to my tricks
+	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox
+		 which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
+	-Why does website have red triangle explanation on url? as if our page is dangerous or something.
+	-The animation that happens as a reult of going from one selected trick to none selected is a
+		 bit overwhelming, but I dont know what should be done about it
+	Potential pattern stats:
+		-number of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+	Potential general stats:
+		-users signed up
+		-users currently online
+		-number of all tricks
+		-number of my tricks
+	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
+		 bring them in by way of lots of 2 ball tricks so that nearly everyone can start doing things that are not too far beyond their current level. Something about knowing that you always have low hanging fruit so far as new patterns that you can do is very motivational in continuing to learn. It is not just for new jugglers either, it is for jugglers new to certain props, like clubs rings, with a balance, etc..
+	-A well thought out write up on what we are trying to do may be useful in getting other people 		on board with helping build up a good sized dayabase.
+	-Different kinds of visualizers that users can toggle between may be nice
+	-Other juggling props may be good to put in just as a radiobutton next to catches since there is
+		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
+	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
+
+to see dark theme:
+	1) in App.css, change  '.headerButton { background-color : white' to black
+	2) in trickGraph.css, change 'border: 1px solid black;' to white
+	*This isn't complete, but enough to see how it would look
+
+
+
+
+	Things to fix before next release:
+	-Problems that need solved
+		-Getting lost in a sea of graph due to zoom/sliding
+			SOLUTION: see 'LESS CLUTTERED UI' section below
+
+		-Unable to filter tricks based on how well I can do them
+			SOLUTION: see 'ALTERNATIVE TO STARRED' section below
+
+		-Defaulting to graphs that show lots of tricks is overwhelming, unuseful, laggy, tacky
+			SOLUTION: see 'ALTERNATIVE TO STARRED' section below
+
+		-youtube videos must loop entire video
+			SOLUTION: -https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
+
+
+	-LESS CLUTTERED UI:
+		
+		-tags listed all the way across the top under the header with 'position absolute'
+		-list all tags (ballnum, difficulty range, everything..)
+		-on mobile, resize list height so it is never behind keyboard.
+
+			-they should be 'position: absolute' so that they are always visible, right now if we open a popup, zoom into it, and then close the popup, we can easily get lost in sea of white graph, even refreshing the page doesn't free us from there. The only way out is to play around with graph zoom/slide until you find a node, open the popup, and then use the popup to zoom/slide your way back to having list/tag/search access
+		
+		-allow filtering by number of catches (see 'ALTERNATIVE TO STARRED' section below)
+	 
+
+		
+	-New tags/list setup
+		-with the (described below) ability to filter by number of catches we can remove allTricks/myTricks
+		-filter button/tags can be listed all the way across the top under the header
+		-the minimized list can be just a search input and expand button
+		-header/tags/search can be 'position: absolute' so it is impossible to get lost in a sea of graph
+
+	-What does a list of starred tricks give me?
+		-It is a single list of tricks that lumps together the following:
+			1)tricks I want to learn
+			2)tricks I can barely do
+			3)tricks I can do pretty well
+			4)tricks I can do really well
+		(If I am only interested in one of the above lists, I am out of luck, I must manually go through the full list every time and look for ones that fit what I am interested in)
+	-ALTERNATIVE TO STARRED:
+		-If we can sort by number of catches(similarly to current difficulty setup) then we can easily get any one of those lists on their own which is so much more useful
+			-What about tricks I want to mark for later learning, but don't feel like trying now?
+				-This is probably very rare, but they can simply set those tricks to 1 catch and then filter out all the others
+			-downsides:
+				-people like stars and are used to favoriting and liking things, this takes that ability away from them
+				-if anyone does find themself in a position of wanting to mark a trick for later learning, and they don't think to set it 1 catch
+					SOLUTION: make a tips section in about
+				-we have to delete some of our work
+			-extra benefits:
+				-we can remove the problem of the overwhelming, unuseful original graph by defaulting to several tags.
+				-The ability to have a list of tricks that are 'tricks I have not looked at yet'
+				-we can completely remove the clutter/confusion of allTricks/myTricks from the code/UI
+
+
+
+
+	-The top of the list can be made less cluttered if we allow filtering by number of catches, that way instead of myTricks and allTricks buttons, the user could just choose 
+	-A 'clear all selected' button, maybe a 'select all button' and switch to only showing 
+		selected patterns in graph instead of showing all if none are selected. 
