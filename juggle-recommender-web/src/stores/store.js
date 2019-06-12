@@ -9,6 +9,7 @@ configure({ enforceActions: "always" })
 class Store {
 
 	@observable myTricks = {}
+	@observable highestCatches = 0
 	@observable isLoginPaneOpen = false
 	@observable isCreateAccountPaneOpen = false
 	@observable library = {}
@@ -61,6 +62,7 @@ class Store {
     	}else{
     		this.initializeTricks()
     	}
+
 	}
 	@action initializeLibrary=()=>{
 		let libraryRef = firebase.database().ref('library/')
@@ -137,9 +139,17 @@ class Store {
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		uiStore.updateRootTricks()
  	}
+ 	@action findHighestCatches=()=>{
+	    for(var trick in store.myTricks) {
+	        if(store.myTricks[trick].catches>this.highestCatches){
+	          this.highestCatches = parseInt(store.myTricks[trick].catches)
+	        }       
+	    }
+ 	}
  	@action setMyTricks=(tricks)=>{
  		this.myTricks = tricks        
  		uiStore.updateRootTricks()
+ 		this.findHighestCatches()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
  		var shouldDelete = false

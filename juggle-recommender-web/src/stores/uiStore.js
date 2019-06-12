@@ -173,14 +173,19 @@ class UIStore {
 						return tag
 					}
 				}) : []
+				let thisTricksCatches = 0
+				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
+					thisTricksCatches = parseInt(store.myTricks[trickKey].catches)
+				}
 				if(
 				   parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
 				   tagsInFilter.length >= filterTagNames.length &&
 				   filterStore.numBalls.includes(trick.num.toString()) &&
+				   thisTricksCatches >= parseInt(filterStore.minCatches) &&
+				   thisTricksCatches <= parseInt(filterStore.maxCatches) &&
 				   (this.searchTrick === '' || trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()))
 				 ){
-
 					const cardColor = 
 						graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
 						graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :

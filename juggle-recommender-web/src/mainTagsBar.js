@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import filterStore from './stores/filterStore'
+import store from './stores/store'
 import filterIcon from './images/filterIcon.png'
 import './mainTagsBar.css';
 import mainTagsBar from "./mainTagsBar"
@@ -38,12 +39,21 @@ class MainTagsBar extends Component {
       })
     }
     if(filterStore.difficultyRange[0] !=1 && filterStore.difficultyRange[0] !=10 ){
-      console.log('ya',filterStore.difficultyRange[0] ,filterStore.difficultyRange[1] )
       filterTags.push(
             <div className="mainTagsDiv">
               <span className="mainTagsName">&nbsp;Difficulty&nbsp;
                       {filterStore.difficultyRange[0]}-{filterStore.difficultyRange[1]}</span>
-              <label className="mainTagsX"onClick={filterStore.resetDifficultyRange()}>&nbsp;x&nbsp;</label>
+              <label className="mainTagsX"onClick={()=>filterStore.resetDifficultyRange()}>&nbsp;x&nbsp;</label>
+            </div>      
+      )
+    }
+    if(filterStore.minCatches !=0 || filterStore.maxCatches <store.highestCatches ){
+      filterTags.push(
+            <div className="mainTagsDiv">
+              <span className="mainTagsName">
+                      {filterStore.minCatches}-{filterStore.maxCatches}
+                      &nbsp;Catches&nbsp;</span>
+              <label className="mainTagsX"onClick={()=>filterStore.resetCatches()}>&nbsp;x&nbsp;</label>
             </div>      
       )
     }

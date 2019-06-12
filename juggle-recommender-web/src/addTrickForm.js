@@ -96,23 +96,23 @@ class AddTrickForm extends Component {
     }
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
-    	if (this.isEmptyOrSpaces(this.state.name)){
+    	if (utilities.isEmptyOrSpaces(this.state.name)){
     		this.setState({submitDisabled:true})
     	}
-    	if (this.isEmptyOrSpaces(this.state.numBalls)){
+    	if (utilities.isEmptyOrSpaces(this.state.numBalls)){
     		this.setState({submitDisabled:true})
     	}else{
-    		if (this.isNotOnlyDigits(this.state.numBalls)){
+    		if (utilities.isNotOnlyDigits(this.state.numBalls)){
 				this.setState({numBallsErrorMessage:'must be a number.'})
 				this.setState({submitDisabled:true})
 			}else{
 				this.setState({numBallsErrorMessage:''})
 			}    		
     	}
-    	if (this.isEmptyOrSpaces(this.state.difficulty)){
+    	if (utilities.isEmptyOrSpaces(this.state.difficulty)){
     		this.setState({submitDisabled:true})
     	}else{
-    		if (this.isNotOnlyDigits(this.state.difficulty) ||
+    		if (utilities.isNotOnlyDigits(this.state.difficulty) ||
     			(this.state.difficulty<1 || this.state.difficulty>10)){    			
 					this.setState({difficultyErrorMessage:'must be a number (1-10).'})
 					this.setState({submitDisabled:true})
@@ -120,7 +120,7 @@ class AddTrickForm extends Component {
 					this.setState({difficultyErrorMessage:''})				 
 				}  		
     	}
-    	if (this.isEmptyOrSpaces(this.state.videoURL)){
+    	if (utilities.isEmptyOrSpaces(this.state.videoURL)){
 			this.setState({submitDisabled:true})
 		}else{
 			if (utilities.getUsableVideoURL(this.state.videoURL)==='notValid'){
@@ -130,17 +130,7 @@ class AddTrickForm extends Component {
 				this.setState({videoUrlErrorMessage:''})
 			}
 		}
-
     }
-
-    isEmptyOrSpaces=(str)=>{
-	    return str === null || str.match(/^ *$/) !== null;
-	}
-
-	isNotOnlyDigits(str){
-	    return str.match(/^[0-9]+$/) === null;
-	}
-
 
 	submit=()=>{
 			if (this.state.submitDisabled){

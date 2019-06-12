@@ -13,6 +13,22 @@ class FilterStore {
 	@observable tags = [
 		{'id' : 'common','text':'common'}
 	]
+	@observable minCatches = 0
+	@observable maxCatches = 10000000
+
+	@action setMinCatches=(minCatches)=>{
+		this.minCatches = parseInt(minCatches)
+		uiStore.updateRootTricks()
+	}
+	@action setMaxCatches=(maxCatches)=>{
+		this.maxCatches = parseInt(maxCatches)
+		uiStore.updateRootTricks()
+	}
+	@action resetCatches=()=>{
+		this.minCatches = 0
+		this.maxCatches = store.highestCatches
+		uiStore.updateRootTricks()
+	}
 	@action resetDifficultyRange=()=>{
 		this.difficultyRange = [1,10]
 	}
@@ -27,6 +43,9 @@ class FilterStore {
 	}
 	@action toggleFilterDiv=()=>{
 		this.filterVisible = !this.filterVisible
+		if(this.filterVisible){
+			filterStore.setMaxCatches(store.highestCatches)
+		}
 	}
 	@action setSortType=(type)=>{
 		this.sortType = type

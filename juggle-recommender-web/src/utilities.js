@@ -27,8 +27,16 @@ class Utilities{
       }
       return videoURLtoUse
     }
+  
+  @action isEmptyOrSpaces=(str)=>{
+      return str === null || str.match(/^ *$/) !== null;
   }
 
+  @action isNotOnlyDigits=(str)=>{
+      return str.match(/^[0-9]+$/) === null;
+  }
+
+}
 
 const utilites = new Utilities()
 

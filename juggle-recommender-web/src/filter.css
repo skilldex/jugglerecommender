@@ -21,7 +21,7 @@
 }
 
 .filterHeader{
-      float: 'center',
+  margin:7px;
 }
 
 .closeFilter {
@@ -88,6 +88,15 @@
   margin-left:-35px;
   position:relative;
   display: inline-block;
+}
+
+.filterCatchesInput{
+  width: 86px;
+  border: 1px solid darkgray;
+  display: inline-block;
+  margin-right: auto;
+  font-size: 12px;
+  height: 16px;
 }
 
 div.ReactTags__tags {
