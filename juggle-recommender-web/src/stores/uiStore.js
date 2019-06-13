@@ -78,6 +78,14 @@ class UIStore {
 	 	this.popupCatchEditable = false
 	 	
  	}
+ 	@action selectLastUpdated=()=>{
+		if(this.lastTrickUpdated){
+	    	console.log("it was this one")
+		  	this.toggleSelectTrick([this.lastTrickUpdated])
+    	}else{
+    		this.toggleSelectTrick(['Cascade'])
+    	}
+	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType
  		this.popupTrick = null
@@ -86,14 +94,12 @@ class UIStore {
  			filterStore.setTags([])
  			filterStore.setNumBalls([])
  		}
- 		store.setLastTrickUpdated()
  	}
 
  	@action setSearchInput=(newInput)=>{
  		this.searchInput = newInput
  		this.performSearch()
  	}
-
 
  	@action	searchInputChange=(e)=>{
  		this.searchInput = e.target.value 		

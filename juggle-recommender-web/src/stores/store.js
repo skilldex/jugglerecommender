@@ -10,14 +10,23 @@ class Store {
 
 	@observable myTricks = {}
 	@observable highestCatches = 0
-	@observable lastTrickUpdated
 	@observable isLoginPaneOpen = false
 	@observable isCreateAccountPaneOpen = false
 	@observable library = {}
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
-
+	@computed get lastTrickUpdated(){
+		let mostRecentTime = 0
+		let lastTrickUpdated = ""
+ 		for(var trick in this.myTricks) {
+	        if(this.myTricks[trick].lastUpdated && this.myTricks[trick].lastUpdated>mostRecentTime){
+	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated)
+	          lastTrickUpdated = trick
+	        }       
+	    }
+	    return lastTrickUpdated
+	}
 	@action setIsLoginPaneOpen=(isOpen)=>{
 		this.isLoginPaneOpen = isOpen
 	}
@@ -46,13 +55,8 @@ class Store {
                 newData.set({"username": authStore.user.username, "myTricks" : []});
             }            
         })
-	}
-
-	@action initializeTricks=()=>{
-		uiStore.setSelectedList("allTricks")
-	}
+	}	
 	
-		
 	@action getTricksFromBrowser=()=>{
 		console.log("tricks from brwoser")
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
@@ -61,8 +65,8 @@ class Store {
     		uiStore.setSelectedList("myTricks")
     		console.log("selected ", uiStore.selectedTricks)
     	}else{
-    		this.initializeTricks()
-    		uiStore.selectTricks(['Cascade'])
+    		uiStore.setSelectedList("allTricks")
+    		uiStore.toggleSelectTrick('Cascade')
     	}
 	}
 	@action initializeLibrary=()=>{
@@ -115,17 +119,14 @@ class Store {
 	            	}
 	            	uiStore.setSearchInput('')
 	            	console.log("had tricks")
-	            	this.setLastTrickUpdated()
 	            }else{
 	            	console.log("had no tricks")
 	            	this.getTricksFromBrowser()
-	            	this.setLastTrickUpdated()
 	            }	           
 	        })
 	  	 }else{
 	  	 	console.log("saved no user")
 	  	 	this.getTricksFromBrowser()
-	  	 	//this.setLastTrickUpdated()
 	  	 }	  
 	}
 	@action setCatches=(catches, trickKey)=>{
@@ -139,25 +140,8 @@ class Store {
  		const date = new Date()
  		this.myTricks[trickKey].lastUpdated = date.getTime()
  		uiStore.updateRootTricks()
- 		this.setLastTrickUpdated()
  	}
- 	@action setLastTrickUpdated=()=>{
- 		let mostRecentTime = 0
- 		for(var trick in this.myTricks) {
-	        if(this.myTricks[trick].lastUpdated && this.myTricks[trick].lastUpdated>mostRecentTime){
-	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated)
-	          this.lastTrickUpdated = trick
-	        }       
-	    }
-	    console.log("last trick", this.lastTrickUpdated)
-	    if(this.lastTrickUpdated){
-	    	console.log("it was this one")
-		  	uiStore.selectTricks([this.lastTrickUpdated])
-    	}else{
-    		uiStore.selectTricks(['Cascade'])
-    	}
-    	console.log("selected trick", toJS(uiStore.selectedTricks))
- 	}
+
 	@action addToMyTricks=(trickKey)=>{
 		const date = new Date()
  		this.myTricks[trickKey] = {
