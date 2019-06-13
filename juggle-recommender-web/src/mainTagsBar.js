@@ -38,7 +38,7 @@ class MainTagsBar extends Component {
           )
         })
       }
-      if(filterStore.difficultyRange[0] !=1 && filterStore.difficultyRange[0] !=10 ){
+      if(filterStore.difficultyRange[0] !=1 || filterStore.difficultyRange[1] !=10 ){
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"> Difficulty 

@@ -96,7 +96,7 @@ class UIStore {
 			}
 		    setTimeout(function() {
 		        selectLastUpdatedTrick();
-		    }, 3000);
+		    }, 4000);
     	}else{
     		uiStore.selectTricks(['Cascade'])
     	}
@@ -173,7 +173,7 @@ class UIStore {
  		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'name');
-		}else{
+		}else if (filterStore.sortType === 'difficulty'){
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'difficulty');
 		}
 		const filterTagNames= []
