@@ -4,13 +4,18 @@
   font-size : 15px;
   cursor: pointer;
   text-align: left;
+  height : 25px;
+  display : flex;
+  align-items : center;
 }
 .selectedListCard{
-  border : 2px solid black;
+  border : 3px solid black;
+  border-right: 6px solid black;
   width : 97%;
-  font-size : 15px;
+  font-size : 20px;
   cursor: pointer;
   text-align: left;
+  height : 35px;
 }
 .addAndRemoveMyTricksButton{
   font-size: 14px;

@@ -54,10 +54,12 @@ class Store {
 	
 		
 	@action getTricksFromBrowser=()=>{
+		console.log("tricks from brwoser")
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
     	if(myTricks  && Object.keys(myTricks).length > 0){
     		this.setMyTricks(myTricks)
     		uiStore.setSelectedList("myTricks")
+    		console.log("selected ", uiStore.selectedTricks)
     	}else{
     		this.initializeTricks()
     		uiStore.selectTricks(['Cascade'])
@@ -113,17 +115,17 @@ class Store {
 	            	}
 	            	uiStore.setSearchInput('')
 	            	console.log("had tricks")
-	            	store.setLastTrickUpdated()
+	            	this.setLastTrickUpdated()
 	            }else{
 	            	console.log("had no tricks")
 	            	this.getTricksFromBrowser()
-	            	store.setLastTrickUpdated()
+	            	this.setLastTrickUpdated()
 	            }	           
 	        })
 	  	 }else{
 	  	 	console.log("saved no user")
 	  	 	this.getTricksFromBrowser()
-	  	 	store.setLastTrickUpdated()
+	  	 	//this.setLastTrickUpdated()
 	  	 }	  
 	}
 	@action setCatches=(catches, trickKey)=>{
@@ -149,11 +151,12 @@ class Store {
 	    }
 	    console.log("last trick", this.lastTrickUpdated)
 	    if(this.lastTrickUpdated){
+	    	console.log("it was this one")
 		  	uiStore.selectTricks([this.lastTrickUpdated])
     	}else{
     		uiStore.selectTricks(['Cascade'])
     	}
-    	console.log("selected trick", uiStore.selectedTricks)
+    	console.log("selected trick", toJS(uiStore.selectedTricks))
  	}
 	@action addToMyTricks=(trickKey)=>{
 		const date = new Date()

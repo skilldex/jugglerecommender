@@ -30,7 +30,7 @@ class GraphStore {
 		return color
 	}
 	@action getSelectedInvolvedNodeColor=(difficulty, involved)=>{
-		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 30%)"
+		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 60%)"
       	const color = {
       		background : colorString,
         }

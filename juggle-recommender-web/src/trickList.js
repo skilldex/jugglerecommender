@@ -131,7 +131,7 @@ render() {
 			const trickKey = rootTricks[i]
 			var cardClass='listCard'
 			if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
-				cardClass = 'selectedListCard'
+				cardClass = cardClass + ' selectedListCard'
 			}
 			const cardColor = 
 				graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 

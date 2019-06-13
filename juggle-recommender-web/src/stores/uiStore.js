@@ -84,6 +84,7 @@ class UIStore {
  		this.popupCatchEditable = false
  		if(listType == "myTricks"){
  			filterStore.setTags([])
+ 			filterStore.setNumBalls([])
  		}
  		store.setLastTrickUpdated()
  	}
