@@ -78,12 +78,16 @@ class UIStore {
 	 	this.popupCatchEditable = false	 	
  	}
  	@action selectLastUpdated=()=>{
-		if(this.lastTrickUpdated){
-	    	console.log("it was this one")
-		  	this.toggleSelectTrick([this.lastTrickUpdated])
+ 		console.log("lsat updatd")
+		if(store.lastTrickUpdated){
+	    	console.log("it was this one", store.lastTrickUpdated )
+		  	this.selectTrick(store.lastTrickUpdated)
     	}else{
-    		this.toggleSelectTrick(['Cascade'])
+    		this.selectTrick('Cascade')
     	}
+	}
+	@action selectTrick=(trick)=>{
+		this.selectedTricks = [trick]
 	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType
@@ -93,6 +97,7 @@ class UIStore {
  			filterStore.setTags([])
  			filterStore.setNumBalls([])
  		}
+ 		this.selectLastUpdated()
  	}
 
  	@action setSearchInput=(newInput)=>{
@@ -101,22 +106,22 @@ class UIStore {
  	}
 
  	@action	searchInputChange=(e)=>{
- 		this.searchInput = e.target.value 		
- 		if(e.target.value === ""){
- 			this.searchTrick = ""
- 		}
- 		this.performSearch()
- 		this.popupTrick = null
-	 	}
-	 		
-	 	@action performSearch=()=>{
+		this.searchInput = e.target.value 		
+		if(e.target.value === ""){
+			this.searchTrick = ""
+		}
+		this.performSearch()
+		this.popupTrick = null
+ 	}
+ 		
+ 	@action performSearch=()=>{
 
-	 		this.selectedTricks = []
-	 		this.searchTrick = this.searchInput
-	 		this.updateRootTricks()
-	 	}
+ 		this.selectedTricks = []
+ 		this.searchTrick = this.searchInput
+ 		this.updateRootTricks()
+ 	}
 
-		@action alphabeticalSortObject(data, attr) {
+	@action alphabeticalSortObject(data, attr) {
 	    var arr = [];
 	    for (var prop in data) {
 

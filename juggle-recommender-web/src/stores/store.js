@@ -66,7 +66,7 @@ class Store {
     		console.log("selected ", uiStore.selectedTricks)
     	}else{
     		uiStore.setSelectedList("allTricks")
-    		uiStore.toggleSelectTrick('Cascade')
+    		uiStore.toggleSelectedTrick('Cascade')
     	}
 	}
 	@action initializeLibrary=()=>{
@@ -118,15 +118,21 @@ class Store {
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
 	            	uiStore.setSearchInput('')
+	            	uiStore.selectLastUpdated()
+	            	uiStore.updateRootTricks()
 	            	console.log("had tricks")
 	            }else{
 	            	console.log("had no tricks")
 	            	this.getTricksFromBrowser()
+	            	uiStore.selectLastUpdated()
+					uiStore.updateRootTricks()
 	            }	           
 	        })
 	  	 }else{
 	  	 	console.log("saved no user")
 	  	 	this.getTricksFromBrowser()
+	  	 	uiStore.selectLastUpdated()
+	  	 	uiStore.updateRootTricks()
 	  	 }	  
 	}
 	@action setCatches=(catches, trickKey)=>{
