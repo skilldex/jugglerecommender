@@ -12,13 +12,18 @@ v 1.0:
 
 ==========
 
+bugs:
+
+
+
+
 Add trick issues that need addressed:
 
 MOST IMPORTANT:
 
 You and I need to have a way to add tags without needing to deploy, probably move our tags list to fb. I want to add some 'collisions tricks from my Instagram, but cant tag them with 'collisions'
 
-Tricks can be overwritten by any user, they should only be able to overwrite their own
+
 
 LESS IMPORTANT:
 

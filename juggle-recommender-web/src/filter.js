@@ -44,14 +44,20 @@ class Filter extends Component {
 				 [...filterStore.tags, tag] 
 			);
 		}
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 
 	handleSortRadioButtonChange=(event)=>{
 		filterStore.setSortType(event.target.value)
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
   
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 
 	numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
@@ -67,6 +73,8 @@ class Filter extends Component {
 			tempNumBalls.push(element)
 		}
 		filterStore.setNumBalls(tempNumBalls)
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 
 	handleMinCatchesChange=(e)=>{
@@ -78,6 +86,8 @@ class Filter extends Component {
 			newMin = 0
 		}
 		filterStore.setMinCatches(newMin)
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 
 	handleMaxCatchesChange=(e)=>{
@@ -89,6 +99,8 @@ class Filter extends Component {
 			newMax = Math.max(0,filterStore.minCatches)
 		}
 		filterStore.setMaxCatches(newMax)
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 
 	render() {

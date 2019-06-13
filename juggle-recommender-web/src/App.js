@@ -64,6 +64,7 @@ class App extends Component {
             authStore.setUsername(user.email)
           } 
         });
+
 		//store.initializeLibrary()
 		store.getLibraryFromDatabase()
 		

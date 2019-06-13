@@ -93,11 +93,12 @@ class UIStore {
  		this.selectedList = listType
  		this.popupTrick = null
  		this.popupCatchEditable = false
- 		if(listType == "myTricks"){
- 			filterStore.setTags([])
- 			filterStore.setNumBalls([])
- 		}
+ 		// if(listType == "myTricks"){
+ 		// 	filterStore.setTags([])
+ 		// 	filterStore.setNumBalls([])
+ 		// }
  		this.selectLastUpdated()
+ 		this.updateRootTricks()
  	}
 
  	@action setSearchInput=(newInput)=>{
@@ -112,6 +113,7 @@ class UIStore {
 		}
 		this.performSearch()
 		this.popupTrick = null
+		uiStore.selectLastUpdated()
  	}
  		
  	@action performSearch=()=>{
@@ -206,7 +208,8 @@ class UIStore {
 					this.rootTricks.push(trickKey)
 				}
 			}
-		})		
+		})	
+
 		graphStore.updateGraphData()
 	}
 

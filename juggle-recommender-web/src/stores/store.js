@@ -19,12 +19,23 @@ class Store {
 	@computed get lastTrickUpdated(){
 		let mostRecentTime = 0
 		let lastTrickUpdated = ""
+		
+		let rootTricks = []
+		for(var key in uiStore.rootTricks) {
+		    rootTricks.push(uiStore.rootTricks[key])
+		}
+		console.log('rootTricks',rootTricks)
+
  		for(var trick in this.myTricks) {
-	        if(this.myTricks[trick].lastUpdated && this.myTricks[trick].lastUpdated>mostRecentTime){
+	        if(this.myTricks[trick].lastUpdated && 
+	        	this.myTricks[trick].lastUpdated>mostRecentTime &&
+	        	rootTricks.includes(trick)){
+	        	console.log('trick',trick)
 	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated)
 	          lastTrickUpdated = trick
 	        }       
 	    }
+	    console.log('lastTrickUpdated',lastTrickUpdated)
 	    return lastTrickUpdated
 	}
 	@action setIsLoginPaneOpen=(isOpen)=>{
