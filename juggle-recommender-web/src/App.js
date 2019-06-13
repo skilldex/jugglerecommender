@@ -70,6 +70,7 @@ class App extends Component {
 		if(window.location.host.includes("localhost")){
 			//store.initializeTags()
 		}
+		store.initializeTags()
 		store.getLibraryFromDatabase()
 		store.getTagsFromDatabase()
 		
