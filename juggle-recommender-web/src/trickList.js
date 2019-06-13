@@ -138,7 +138,7 @@ render() {
 				graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
 			 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
 			tricks.push(
-				<div onClick={()=>{uiStore.selectTricks([trickKey])}} 
+				<div onClick={()=>{uiStore.toggleSelectedTrick(trickKey)}} 
 					className={cardClass} 
 					key={trickKey + "div"} 
 					style={{backgroundColor: cardClass === 'listCard' ? cardColor : 

@@ -35,6 +35,7 @@ Maybe?:
 	filter:
 		-make a tagsesque filter for contributors so users can choose to only see tricks contributed 	by specific users or original tricks
 		-Dont allow filters that would make graph empty? (probably not necessary)
+		-Make a filter for number of generations away from root
 
 
 thoughts/ideas:
@@ -61,6 +62,9 @@ thoughts/ideas:
 	-Other juggling props may be good to put in just as a radiobutton next to catches since there is
 		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
 	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
+	-If we end up doing some sort of incentivised competition it should come after we devise a method of community voting on best representation of tricks that way people really try to post high quality shit so their video stays as the official demo. Maybe an 'other videos' section that lists all the others for posterity.
+
+
 
 to see dark theme:
 	1) in App.css, change  '.headerButton { background-color : white' to black
