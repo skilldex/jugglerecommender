@@ -1,52 +1,48 @@
 
-.mainTagsFullDiv{
-  height: 60px;
-  width: 100%;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color:white;
-}
-.mainTagsButtonsDiv{
-  position: absolute;
-  left:80px;
-  margin-top:-26px;
-}
+
 .tagSection{
   margin-top: 10px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color:white;
+  padding : 10px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .mainTagsHeader{
   margin-left:10px;
-  vertical-align: top;
+  vertical-align: middle;
   font-size: 12px;
 }
 
-.mainTagsDiv{
+.tagDiv{
   margin-left: 2px; 
   text-align: left;
   display:inline-block;
-  vertical-align: top;
+  vertical-align: middle;
+  cursor: pointer;
+  padding : 5px;
+  border :1px solid darkgray;
+  border-radius: 2px;
+  background-color : #eee;
+  height: 20px;
+  margin-top: 5px;
 }
 
 .mainTagsName{
-  background-color : #eee;
-  border:1px solid darkgray;
-  border-right: none;
   overflow: hidden;
   text-overflow: hidden;
   font-size: 12px;
-  float:left;
   vertical-align: middle;
-
 }
 
 .mainTagsX{
-  background-color : #eee;
-  border:1px solid darkgray;
-  border-left: none;
+  padding-left: 3px;
+  padding-right: 3px;
   color: #888888;
   font-size: 12px;
-  float:left;
-
+  vertical-align: middle;
 }
 
 

@@ -33,12 +33,8 @@
   font-size:30px;
   float : right; 
   padding-right : 15px;
-  padding-bottom : 5px;                    
 }
 
-.listButtonDiv{
-  margin-top: 10px;
-}
 .listButton{
   width : 50%;
   height: 50px;

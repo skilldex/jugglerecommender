@@ -17,7 +17,8 @@ Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
 		-is this still needed?
-
+	-Moving max difficulty in filters doesn't add tag
+	-Add trick form should disappear on click off 
 Bugs:
 	Popup
 		Youtube

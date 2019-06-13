@@ -17,6 +17,7 @@ input{
   width : 100px;
   border : 1px solid lightgray;
   border-radius: 5px;
+  padding-left: 3px;
 }
 
 @supports (-webkit-overflow-scrolling: touch) {  
@@ -33,55 +34,11 @@ input{
   margin-top: 15px;
   margin-bottom: 15px;  
 }
-.mainTagsFullDiv{
-  height: 60px;
-  width: 100%;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color:white;
-}
-.mainTagsButtonsDiv{
-  position: absolute;
-  left:80px;
-  margin-top:-26px;
-}
+
 .tagSection{
   margin-top: 10px;
 }
-.mainTagsHeader{
-  margin-left:10px;
-  vertical-align: top;
-  font-size: 12px;
-}
 
-.mainTagsDiv{
-  margin-left: 2px; 
-  text-align: left;
-  display:inline-block;
-  vertical-align: top;
-}
-
-.mainTagsName{
-  background-color : #eee;
-  border:1px solid darkgray;
-  border-right: none;
-  overflow: hidden;
-  text-overflow: hidden;
-  font-size: 12px;
-  float:left;
-  vertical-align: middle;
-
-}
-
-.mainTagsX{
-  background-color : #eee;
-  border:1px solid darkgray;
-  border-left: none;
-  color: #888888;
-  font-size: 12px;
-  float:left;
-
-}
 .version{
   vertical-align: middle;
   margin-left: 5px;

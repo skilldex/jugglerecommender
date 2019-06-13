@@ -73,7 +73,6 @@ class Filter extends Component {
 		let newMin = e.target.value
 		if (newMin > filterStore.maxCatches){
 			newMin = filterStore.maxCatches
-			document.getElementById("minCatchesInput").value = newMin
 		}
 		if(utilities.isEmptyOrSpaces(newMin)){
 			newMin = 0
@@ -85,7 +84,6 @@ class Filter extends Component {
 		let newMax = e.target.value
 		if (newMax < filterStore.minCatches){
 			newMax = filterStore.minCatches
-			document.getElementById("maxCatchesInput").value = newMax
 		}
 		if(utilities.isEmptyOrSpaces(newMax)){
 			newMax = Math.max(0,filterStore.minCatches)
@@ -98,22 +96,21 @@ class Filter extends Component {
 	 	const ColoredLine = ()=>(
 			   <hr
 			        style={{
-			            color: 'black',
-			            backgroundColor: 'black',
-			            sortType: 'alphabetical',
+			            color: 'lightgray',
+			            backgroundColor: 'lightgray',
 			            height: 1
 			        }}
 			   />				
 		 )
 	 	const tagSection =  <div>
 		 						<div>
-									<h3 className="filterHeader">Tags:</h3>
+									<h3 className="filterHeader">Select Tags</h3>
 								</div>	
 								<div>
 							        <ReactTags
 							          autofocus = {false}
 							          inputFieldPosition="bottom"
-							          tags={filterStore.tags}
+							          placeholder = ""
 							          minQueryLength={1}
 							          suggestions={presetTags}
 							          delimiters={delimiters}
@@ -133,12 +130,12 @@ class Filter extends Component {
 		)},this);	
 		const numSection = <div>
 								<div>
-									<h3 className="filterHeader">Number of balls:</h3>
+									<h3 className="filterHeader">Number of balls</h3>
 								</div>
 								{numButtons}
 							</div>
 		const difficultySection =<div>
-									<h3 className="filterHeader">Difficulty:</h3>
+									<h3 className="filterHeader">Difficulty</h3>
 									<div style={{marginLeft:10, marginRight:10}}>
 										<Range min={1} 
 												max={10}
@@ -149,33 +146,30 @@ class Filter extends Component {
 												handleStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
 												dotStyle={{backgroundColor: 'lightgray', borderColor: 'lightgray'}}
 												activeDotStyle={{backgroundColor: 'lightblue', borderColor: 'lightblue'}}
-												marks={{ 1: '1', 2: '2', 3: '3', 4: '4', 5: '5', 6: '6', 7: '7', 8: '8', 9: '9', 10: '10'}} 
+												marks={{ 1: '1', 2: '', 3: '', 4: '', 5: '', 6: '', 7: '', 8: '', 9: '', 10: '10'}} 
 												step={null} /><br/>
 									</div>
 								</div>
 
 		const catchesSection = <div>
-									<h3 className="filterHeader">Catches:</h3>
-									<div style={{display:'inline'}}>
-										<span>Min:</span>
-										<input className="filterCatchesInput" 
-												type = "number"
-												id = "minCatchesInput"
-												max = {filterStore.maxCatches}
-												defaultValue={filterStore.minCatches} 
-												value={filterStore.minCatches} 
-												onChange={(e)=>this.handleMinCatchesChange(e)}/>
-									</div>
-									<div style={{display:'block'}}>
-										<span>Max:</span>
-										<input className="filterCatchesInput" 
-												id = "maxCatchesInput"
-												min = {filterStore.minCatches}
-												type = "number"
-												defaultValue={filterStore.maxCatches} 
-												value={filterStore.maxCatches} 
-												onChange={(e)=>this.handleMaxCatchesChange(e)}/>
-									</div>
+									<h3 className="filterHeader">Catches</h3>
+									<span>Min</span>
+									<input className="catchesInput" 
+											type = "number"
+											id = "minCatchesInput"
+											max = {filterStore.maxCatches}
+											defaultValue={filterStore.minCatches} 
+											value={filterStore.minCatches} 
+											onChange={(e)=>this.handleMinCatchesChange(e)}/>
+									<span>Max</span>
+									<input className="catchesInput" 
+											id = "maxCatchesInput"
+											min = {filterStore.minCatches}
+											type = "number"
+											defaultValue={filterStore.maxCatches} 
+											value={filterStore.maxCatches} 
+											onChange={(e)=>this.handleMaxCatchesChange(e)}
+									/>
 								</div>
 
 		return (

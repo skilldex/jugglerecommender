@@ -1,7 +1,7 @@
 .filterDiv{
   padding-left : 5px;
   padding-right : 5px;
-  width: 320px;
+  width: 190px;
   height: 100%;
   max-height: 90vh;
   border : 1px solid gray;
@@ -22,6 +22,7 @@
 
 .filterHeader{
   margin:7px;
+  font-size: 16px;
 }
 
 .closeFilter {
@@ -90,11 +91,12 @@
   display: inline-block;
 }
 
-.filterCatchesInput{
-  width: 86px;
+.catchesInput{
+  width: 30px;
   border: 1px solid darkgray;
   display: inline-block;
-  margin-right: auto;
+  margin-right: 5px;
+  margin-left: 5px;
   font-size: 12px;
   height: 16px;
 }
@@ -105,7 +107,7 @@ div.ReactTags__tags {
 
 /* Styles for the input */
 div.ReactTags__tagInput {
-    width: 180px;
+    width: 140px;
     border-radius: 2px;
     display: inline-block;
 
