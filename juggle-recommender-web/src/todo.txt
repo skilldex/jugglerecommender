@@ -17,18 +17,18 @@ Minor:
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
 		-is this still needed?
-	-Moving max difficulty in filters doesn't add tag
-	-Add trick form should disappear on click off 
+	-make filter button change colors when selected, this involves gettin it as svg
+	-Add trick form should disappear on click off
+	-add 'since last updated' to sort
 Bugs:
 	Popup
 		Youtube
 			-youtube videos don't autoplay
-			-youtube videos giving errors, but plays fine besides no autoplay
 		Instagram
 			-Instagram has no way to loop, they want you to go to their site to loop
 				A possible solution may be to check to see when the video ends and then reload the embed
 	Misc
-		-trick popup and header can both be used to zoom and position each other, but list cannot be 		used that why. What's up with that?
+		-trick popup and header can both be used to zoom and position each other, but list cannot be used that why. What's up with that?
 	Maybe unimportant
 		-we get this every time:
 			Warning: Each child in a list should have a unique "key" prop.
@@ -45,7 +45,6 @@ Later:
 		-node size based on zoom
 		-opacity based on closeness to qualify
 		-compare gifs of different tricks side by side,
-		-make divs draggable
 	Misc:
 		-Researching other data sources to inform user based tricks(what does this mean?)
 		-maybe make a dark theme
