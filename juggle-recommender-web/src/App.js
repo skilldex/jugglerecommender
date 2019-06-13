@@ -148,11 +148,16 @@ class App extends Component {
 							</div><br/>
 			            </SlidingPane>
 		const header = <div className="header">
-							<span className="title">Juggledex</span><span className="version"> v1.0 Beta</span>
-					        <button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
-					        {authStore.user ? 
-					        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
-					        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>}
+							<div>
+								<span className="title">Juggledex</span><span className="version"> v1.0 Beta</span>
+						    </div>
+						    <div>
+						    	<button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
+							     {authStore.user ? 
+							        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
+							        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>
+							   	}
+						    </div>
 						</div>
 
 		return (
