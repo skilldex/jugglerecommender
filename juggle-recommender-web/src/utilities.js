@@ -29,6 +29,7 @@ class Utilities{
     }
   
   @action isEmptyOrSpaces=(str)=>{
+      str = toString(str)
       return str === null || str.match(/^ *$/) !== null;
   }
 

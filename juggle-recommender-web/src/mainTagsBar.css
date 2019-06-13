@@ -27,14 +27,14 @@
   border-radius: 2px;
   background-color : #eee;
   height: 20px;
-  margin-top: 5px;
+
 }
 
 .mainTagsName{
   overflow: hidden;
   text-overflow: hidden;
   font-size: 12px;
-  vertical-align: middle;
+
 }
 
 .mainTagsX{
@@ -42,7 +42,7 @@
   padding-right: 3px;
   color: #888888;
   font-size: 12px;
-  vertical-align: middle;
+
 }
 
 
