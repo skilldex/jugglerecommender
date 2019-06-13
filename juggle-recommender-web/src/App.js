@@ -64,7 +64,7 @@ class App extends Component {
             authStore.setUsername(user.email)
           } 
         });
-		if(window.location.host.includes("localhost"){
+		if(window.location.host.includes("localhost")){
 			store.initializeLibrary()
 		}
 		store.getLibraryFromDatabase()
