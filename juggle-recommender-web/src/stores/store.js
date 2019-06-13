@@ -10,6 +10,7 @@ class Store {
 
 	@observable myTricks = {}
 	@observable highestCatches = 0
+	@observable lastTrickUpdated
 	@observable isLoginPaneOpen = false
 	@observable isCreateAccountPaneOpen = false
 	@observable library = {}
@@ -24,7 +25,6 @@ class Store {
 		this.isCreateAccountPaneOpen = !this.isCreateAccountPaneOpen
 	}
 	@action updateTricksInDatabase=()=>{
-
 		if(!authStore.user){return}
 		let myTricksKey = ""
  		let myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
@@ -59,8 +59,20 @@ class Store {
     		this.setMyTricks(myTricks)
     		uiStore.setSelectedList("myTricks")
     		filterStore.setTags([])
+    		store.setLastTrickUpdated()
+    		if(store.lastTrickUpdated){
+			    function selectLastUpdatedTrick() {
+	    			uiStore.selectTricks([store.lastTrickUpdated])
+				}
+			    setTimeout(function() {
+			        selectLastUpdatedTrick();
+			    }, 3000);
+	    	}else{
+	    		uiStore.selectTricks(['Cascade'])
+	    	}
     	}else{
     		this.initializeTricks()
+    		uiStore.selectTricks(['Cascade'])
     	}
 
 	}
@@ -73,7 +85,6 @@ class Store {
 		libraryRef.on('value', resp =>{
         	this.setLibrary(this.snapshotToObject(resp))
         })
-
 	}
 	
 	@action setLibrary=(library)=>{
@@ -132,6 +143,16 @@ class Store {
  		const date = new Date()
  		this.myTricks[trickKey].lastUpdated = date.getTime()
  		uiStore.updateRootTricks()
+ 		this.setLastTrickUpdated()
+ 	}
+ 	@action setLastTrickUpdated=()=>{
+ 		let mostRecentTime = 0
+ 		for(var trick in this.myTricks) {
+	        if(this.myTricks[trick].lastUpdated && this.myTricks[trick].lastUpdated>mostRecentTime){
+	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated)
+	          this.lastTrickUpdated = trick
+	        }       
+	    }
  	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks[trickKey] = {
@@ -143,9 +164,9 @@ class Store {
  		uiStore.updateRootTricks()
  	}
  	@action findHighestCatches=()=>{
-	    for(var trick in store.myTricks) {
-	        if(store.myTricks[trick].catches>this.highestCatches){
-	          this.highestCatches = parseInt(store.myTricks[trick].catches)
+	    for(var trick in this.myTricks) {
+	        if(this.myTricks[trick].catches>this.highestCatches){
+	          this.highestCatches = parseInt(this.myTricks[trick].catches)
 	        }       
 	    }
  	}
