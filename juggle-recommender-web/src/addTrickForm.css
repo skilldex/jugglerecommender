@@ -52,12 +52,16 @@ div.ReactTags__tagInputField {
     display: inline-block;
 }
 
-.formButtons{
+.formButton{
   color : green;
   border-radius: 8px;
   background-color: white;
   border:1px solid darkgray;
   font-size: 20px;
+}
+.disabledSubmitButton{
+  background-color : lightgray;
+  opacity: .5;
 }
 .redText{
   color : red;

@@ -34,6 +34,7 @@ class AddTrickForm extends Component {
 		prereqs : [],
 		tags : [],
 		submitDisabled : true,
+		nameErrorMessage: "",
 		numBallsErrorMessage: "",
 		difficultyErrorMessage: "",
 		videoUrlErrorMessage: ""
@@ -95,9 +96,17 @@ class AddTrickForm extends Component {
         });
     }
     checkIfFormIsSubmittable=()=>{
+    	const suffix = this.state.numBalls == 3 ? '' : " ("+this.state.numBalls+"b)"
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
     		this.setState({submitDisabled:true})
+    	}else{
+    		if(store.library[this.state.name+suffix]){
+				this.setState({nameErrorMessage:'Pattern already exists.'})
+				this.setState({submitDisabled:true})
+			}else{
+				this.setState({nameErrorMessage:''})
+			} 
     	}
     	if (utilities.isEmptyOrSpaces(this.state.numBalls)){
     		this.setState({submitDisabled:true})
@@ -137,16 +146,17 @@ class AddTrickForm extends Component {
 				document.getElementById("submitButton").focus();
 			}
 			if (!this.state.submitDisabled){
-		
+				
 				var tags = this.state.tags.map(function(item) {
 					return item['text'];
 				});
 				var prereqs = this.state.prereqs.map(function(item) {
 					return item['text'];
 				});		
+				const suffix = this.state.numBalls == 3 ? '' : " ("+this.state.numBalls+")"
 
 				const trick = {
-					name : this.state.name,
+					name : this.state.name+suffix,
 					num : this.state.numBalls,
 					difficulty : this.state.difficulty,
 					contributor : authStore.user.username, 
@@ -155,6 +165,7 @@ class AddTrickForm extends Component {
 					prereqs : prereqs,
 					tags : tags
 				}
+
 				store.addTrickToDatabase(trick)
 				this.clearState()
 				alert(trick.name+" added!")
@@ -221,6 +232,7 @@ class AddTrickForm extends Component {
 								<div className="inputContainer">
 									<span className="redText">*</span>
 									<span className="inputLabel">Trick name</span><br/>
+									<span className="warning">{this.state.nameErrorMessage}</span>
 									<input className="formInputs" 
 											value={this.state.name} 
 											onBlur={this.handleNameChange}
@@ -269,10 +281,11 @@ class AddTrickForm extends Component {
 								</div>
 							</div>
 								<button id = "submitButton"
-										className="formButtons"
+										className={this.state.submitDisabled?
+											"formButton" + " disabledSubmitButton":"formButton"}
 										onClick={this.submit}>submit</button>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<button className="formButtons"onClick={this.cancel}>cancel</button>
+								<button className="formButton"onClick={this.cancel}>cancel</button>
 						</div>
 		return(
 				<div>
