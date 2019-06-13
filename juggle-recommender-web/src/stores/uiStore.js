@@ -60,23 +60,22 @@ class UIStore {
  			localStorage.setItem('myTricks', JSON.stringify(store.myTricks))
 		}
 	}
- 	@action selectTricks=(clickedTrick)=>{
- 		if (this.selectedTricks.includes(clickedTrick[0])){
+ 	@action toggleSelectedTrick=(clickedTrick)=>{
+ 		if (this.selectedTricks.includes(clickedTrick)){
  			for (var i=this.selectedTricks.length-1; i>=0; i--) {
-			    if (this.selectedTricks[i] === clickedTrick[0]) {
+			    if (this.selectedTricks[i] === clickedTrick) {
 			        this.selectedTricks.splice(i, 1);
 			    }
 			}
  		}else{
-	 		this.selectedTricks.push(clickedTrick[0])
+	 		this.selectedTricks.push(clickedTrick)
 	 	}
 	 	this.updateRootTricks()
-	 	if(!clickedTrick.includes(clickedTrick[0])){
+	 	if(!clickedTrick.includes(clickedTrick)){
 	 		this.popupTrick = null
 	 	}
 	 	this.popupTrick = null
-	 	this.popupCatchEditable = false
-	 	
+	 	this.popupCatchEditable = false	 	
  	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType

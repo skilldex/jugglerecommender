@@ -62,7 +62,7 @@ class Store {
     		console.log("selected ", uiStore.selectedTricks)
     	}else{
     		this.initializeTricks()
-    		uiStore.selectTricks(['Cascade'])
+    		uiStore.selectTrick('Cascade')
     	}
 	}
 	@action initializeLibrary=()=>{
