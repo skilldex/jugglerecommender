@@ -157,16 +157,15 @@ class Filter extends Component {
 									<input className="catchesInput" 
 											type = "number"
 											id = "minCatchesInput"
-											max = {filterStore.maxCatches}
-											defaultValue={filterStore.minCatches} 
+											min = {0}
+											max = {filterStore.maxCatches} 
 											value={filterStore.minCatches} 
 											onChange={(e)=>this.handleMinCatchesChange(e)}/>
 									<span>Max</span>
 									<input className="catchesInput" 
 											id = "maxCatchesInput"
 											min = {filterStore.minCatches}
-											type = "number"
-											defaultValue={filterStore.maxCatches} 
+											type = "number" 
 											value={filterStore.maxCatches} 
 											onChange={(e)=>this.handleMaxCatchesChange(e)}
 									/>

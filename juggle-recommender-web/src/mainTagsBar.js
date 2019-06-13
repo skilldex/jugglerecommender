@@ -51,8 +51,7 @@ class MainTagsBar extends Component {
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName">
-                        {filterStore.minCatches}-{filterStore.maxCatches}
-                         Catches </span>
+                        {filterStore.minCatches}-{filterStore.maxCatches} Catches </span>
                 <label className="mainTagsX"onClick={()=>filterStore.resetCatches()}> x </label>
               </div>      
         )
