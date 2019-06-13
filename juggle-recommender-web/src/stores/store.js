@@ -108,19 +108,19 @@ class Store {
 		tagRef.on('value', resp =>{
         	this.setTagsSuggestions(this.snapshotToArray(resp))
 			console.log('store.tagsSuggestions2',store.tagsSuggestions)
-			this.presetTags = this.tagsSuggestions.map((tag) => {
-				  return {
-				  	size: null,
-				    id: tag,
-				    text: tag,
-				  }
-				})
+			
         })
 	}
 	@action setTagsSuggestions=(tagsSuggestions)=>{
 		this.tagsSuggestions = tagsSuggestions
+		this.presetTags = this.tagsSuggestions.map((tag) => {
+		  return {
+		  	size: null,
+		    id: tag,
+		    text: tag,
+		  }
+		})
 	}	
-
 	@action addTrickToDatabase=(trick)=>{
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
