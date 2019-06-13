@@ -60,16 +60,7 @@ class Store {
     		uiStore.setSelectedList("myTricks")
     		filterStore.setTags([])
     		store.setLastTrickUpdated()
-    		if(store.lastTrickUpdated){
-			    function selectLastUpdatedTrick() {
-	    			uiStore.selectTricks([store.lastTrickUpdated])
-				}
-			    setTimeout(function() {
-			        selectLastUpdatedTrick();
-			    }, 3000);
-	    	}else{
-	    		uiStore.selectTricks(['Cascade'])
-	    	}
+    		uiStore.selectTrickOnListLoad()
     	}else{
     		this.initializeTricks()
     		uiStore.selectTricks(['Cascade'])
@@ -155,9 +146,10 @@ class Store {
 	    }
  	}
 	@action addToMyTricks=(trickKey)=>{
+		const date = new Date()
  		this.myTricks[trickKey] = {
  			"catches" : 0,
- 			"lastUpdated" : new Date()
+ 			"lastUpdated" : date.getTime()
  		}
         this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))

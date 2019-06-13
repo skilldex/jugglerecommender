@@ -217,10 +217,7 @@ class GraphStore {
 	 	this.nodes = nodes
 	 	this.edges = edges
 
-console.log('graph')
  	}
-
-
 }
 
 const graphStore = new GraphStore()

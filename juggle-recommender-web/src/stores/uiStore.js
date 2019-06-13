@@ -61,7 +61,6 @@ class UIStore {
 		}
 	}
  	@action selectTricks=(clickedTrick)=>{
- 		console.log('sel')
  		if (this.selectedTricks.includes(clickedTrick[0])){
  			for (var i=this.selectedTricks.length-1; i>=0; i--) {
 			    if (this.selectedTricks[i] === clickedTrick[0]) {
@@ -77,18 +76,32 @@ class UIStore {
 	 	}
 	 	this.popupTrick = null
 	 	this.popupCatchEditable = false
-	 	console.log('clickedTrick',clickedTrick)
 	 	
  	}
  	@action setSelectedList=(listType)=>{
- 		console.log('uiStore.setSelectedList')
  		this.selectedTricks = []
  		this.selectedList = listType
  		this.updateRootTricks()
  		this.popupTrick = null
  		this.popupCatchEditable = false
+ 		this.selectTrickOnListLoad()
+
  		
  	}
+
+ 	@action selectTrickOnListLoad=()=>{
+ 		 if(store.lastTrickUpdated){
+		    function selectLastUpdatedTrick() {
+    			uiStore.selectTricks([store.lastTrickUpdated])
+			}
+		    setTimeout(function() {
+		        selectLastUpdatedTrick();
+		    }, 3000);
+    	}else{
+    		uiStore.selectTricks(['Cascade'])
+    	}
+ 	}
+
  	@action setSearchInput=(newInput)=>{
  		this.searchInput = newInput
  		this.performSearch()
@@ -198,7 +211,6 @@ class UIStore {
 			}
 		})		
 		graphStore.updateGraphData()
-		console.log('updateGraphData')
 	}
 
 	 @action clearCatchInput=()=>{
