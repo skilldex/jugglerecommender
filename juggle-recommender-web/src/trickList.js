@@ -11,11 +11,10 @@ import starIcon from './images/starIcon.svg'
 import allIcon from './images/allIcon.svg'
 import './trickList.css';
 import './App.css';
-import {TAGS} from './tags';
 import { WithContext as ReactTags } from 'react-tag-input';
 import Filter from './filter.js'
 
-const suggestions = TAGS.map((country) => {
+const suggestions = store.tagsSuggestions.map((country) => {
   return {
     id: country,
     text: country

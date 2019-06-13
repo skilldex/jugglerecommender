@@ -10,16 +10,9 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import Slider, { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import {toJS} from "mobx"
-import {TAGS} from './tags';
 import utilities from './utilities'
 
-const presetTags = TAGS.map((tag) => {
-  return {
-  	size: null,
-    id: tag,
-    text: tag,
-  }
-})
+
 
 const KeyCodes = {
   comma: 188,
@@ -33,13 +26,13 @@ class Filter extends Component {
  	state = {
 	 	sortType: filterStore.sortType,
  		tags: filterStore.tags,
-      	presetTags: presetTags,
+      	presetTags: store.presetTags,
       	numBalls: filterStore.numBalls,
       	difficultyRange: filterStore.difficultyRange
   	}
 
 	handleAddition=(tag)=>{
-		if (TAGS.includes(tag.id)){
+		if (store.tagsSuggestions.includes(tag.id)){
 			filterStore.setTags(
 				 [...filterStore.tags, tag] 
 			);
@@ -114,6 +107,7 @@ class Filter extends Component {
 			        }}
 			   />				
 		 )
+	 	console.log('store.presetTags',store.presetTags)
 	 	const tagSection =  <div>
 		 						<div>
 									<h3 className="filterHeader">Select Tags</h3>
@@ -124,7 +118,7 @@ class Filter extends Component {
 							          inputFieldPosition="bottom"
 							          placeholder = ""
 							          minQueryLength={1}
-							          suggestions={presetTags}
+							          suggestions={store.presetTags}
 							          delimiters={delimiters}
 							          handleDelete={filterStore.handleDelete}
 							          handleAddition={this.handleAddition}

@@ -6,15 +6,8 @@ import authStore from "./stores/authStore"
 import store from "./stores/store"
 import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
-import {TAGS} from './tags';
 
-const presetTags = TAGS.map((tag) => {
-  return {
-  	size: null,
-    id: tag,
-    text: tag,
-  }
-})
+
 
 const KeyCodes = {
   comma: 188,
@@ -84,7 +77,7 @@ class AddTrickForm extends Component {
     }
     handleTagAddition=(tag)=> {
 
-    	if (TAGS.includes(tag.id)){
+    	if (store.tagsSuggestions.includes(tag.id)){
 	        this.setState(state => ({ tags: [...state.tags, tag] }));
 	        this.checkIfFormIsSubmittable()
 	    }
@@ -219,7 +212,7 @@ class AddTrickForm extends Component {
 					          inputFieldPosition="bottom"
 					          tags={this.state.tags}
 					          minQueryLength={1}
-					          suggestions={presetTags}
+					          suggestions={store.presetTags}
 					          delimiters={delimiters}
 					          handleDelete={this.handleTagDelete}
 					          handleAddition={this.handleTagAddition}

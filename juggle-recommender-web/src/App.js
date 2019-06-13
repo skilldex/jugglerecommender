@@ -65,9 +65,13 @@ class App extends Component {
           } 
         });
 		if(window.location.host.includes("localhost")){
-			store.initializeLibrary()
+			//store.initializeLibrary()
+		}
+		if(window.location.host.includes("localhost")){
+			store.initializeTags()
 		}
 		store.getLibraryFromDatabase()
+		store.getTagsFromDatabase()
 		
 	}
  	toggleFilter =(filter)=>{

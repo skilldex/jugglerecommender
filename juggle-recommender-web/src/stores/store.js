@@ -4,6 +4,7 @@ import uiStore from './uiStore'
 import filterStore from './filterStore'
 import authStore from './authStore'
 import {jugglingLibrary} from '../jugglingLibrary.js'
+import {TAGS} from '../tags';
 
 configure({ enforceActions: "always" })
 class Store {
@@ -13,6 +14,8 @@ class Store {
 	@observable isLoginPaneOpen = false
 	@observable isCreateAccountPaneOpen = false
 	@observable library = {}
+	@observable tagsSuggestions = []
+	@observable presetTags = {}
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	 }
@@ -90,11 +93,34 @@ class Store {
         	this.setLibrary(this.snapshotToObject(resp))
         })
 	}
-	
 	@action setLibrary=(library)=>{
 		this.library = library
 		uiStore.updateRootTricks()
 	}
+
+	@action initializeTags=()=>{
+		console.log('initializeTags')
+		let tagRef = firebase.database().ref('tags/')
+        tagRef.set(TAGS);
+	}
+	@action getTagsFromDatabase=()=>{
+		let tagRef = firebase.database().ref('tags/')
+		tagRef.on('value', resp =>{
+        	this.setTagsSuggestions(this.snapshotToArray(resp))
+			console.log('store.tagsSuggestions2',store.tagsSuggestions)
+			this.presetTags = this.tagsSuggestions.map((tag) => {
+				  return {
+				  	size: null,
+				    id: tag,
+				    text: tag,
+				  }
+				})
+        })
+	}
+	@action setTagsSuggestions=(tagsSuggestions)=>{
+		this.tagsSuggestions = tagsSuggestions
+	}	
+
 	@action addTrickToDatabase=(trick)=>{
 		const trickKey = trick.name
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
@@ -203,8 +229,8 @@ class Store {
 	@action snapshotToArray=(snapshot)=>{
 	    let returnArr = [];	    
 	    snapshot.forEach(childSnapshot => {
-	        let item = childSnapshot.val();
-	        item.key = childSnapshot.key;
+	    	let item = childSnapshot.val();
+	        
 	        returnArr.push(item);
 	    });
 	    return returnArr;

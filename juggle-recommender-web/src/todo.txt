@@ -19,37 +19,28 @@ bugs:
 
 Add trick issues that need addressed:
 
-MOST IMPORTANT:
-
-You and I need to have a way to add tags without needing to deploy, probably move our tags list to fb. I want to add some 'collisions tricks from my Instagram, but cant tag them with 'collisions'
-
 
 
 LESS IMPORTANT:
 
-An input in form for dependents
+We are neglecting related, and I think it is important because people will probably tend to list related tricks as prereqs just so that they can be associated on the map, maybe they should just be shown with lines with no arrows and all three, prereqs, depends and related should be filterable. Not sure.
 
 A way to make associations, related, prereqs even for tricks not uploaded by the user is needed
 	-we currently have lots of very similar tricks that are not connected on graph
 
-We are neglecting related, and I think it is important because people will probably tend to list related tricks as prereqs just so that they can be associated on the map, maybe they should just be shown with lines with no arrows and all three, prereqs, depends and related should be filterable. Not sure.
-
 I'm unclear on the note 'add trick form should disappear on click off', it is pretty much full screen, click of where exactly? On the header?
 
+An input in form for dependents
 
 
 
-
-
-
+SIMPLISH
 
 get rid of warnings
 
 find highest catches should be only run when it is actually used
 
 Make one-up two-out tag
-
-popup closes when editable is toggled
 
 
 
