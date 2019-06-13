@@ -12,6 +12,41 @@ v 1.0:
 
 ==========
 
+Add trick issues that need addressed:
+
+
+I added 'Infinity Collisions' and now has exactly that as it's key, all other keys are single words, we should probably automatically make the key a single word.
+
+You and I need to have a way to add tags without needing to deploy, probably move our tags list to fb. I want to add some 'collisions tricks from my Instagram, but cant tag them with 'collisions'
+
+We are neglecting related, and I think it is important because people will probably tend to list related tricks as prereqs just so that they can be associated on the map, maybe they should just be shown with lines with no arrows and all three, prereqs, depends and related should be filterable. Not sure.
+
+A way for users to add associations after uploading, or in the very least delete so they can remake. I just forgot a simple prereq but my trick is added so it would be set in stone if I were not me.
+
+I'm unclear on the note 'add trick form should disappear on click off', it is pretty much full screen, click of where exactly? On the header?
+
+My setup for auto selecting a single trick may not be the best possible version of itself, it still explodes before, then does its selecting. I dont know though, maybe it has a certain charm to it, kinda briefly showing some other tricks to give a sense of many, then giving something digestible to work with.
+
+If we end up doing some sort of incentivised competition it should come after we devise a method of community voting on best representation of tricks that way people really try to post high quality shit so their video stays as the official demo. Maybe an 'other videos' section that lists all the others for posterity.
+
+Make one-up two-out tag
+
+Make a filter for number of generations away from root
+
+When I go in to add a trick the form is small so I zoom in, after I submit my trick i return to main screen all zoomed in and have no access to header, list, or anything but graph, so i have to find a node, open a popup, and use that to zoom my way back to having controls, this isnt good.
+
+An input in form for dependents
+
+A way to make associations, related, prereqs even for tricks not uploaded by the user is needed
+
+Worth noting that on Instagram there is only one 1 url for all videos in a single post so uploading several related tricks at once doesnt work.
+
+
+
+
+
+
+
 
 Minor:
 	-Clicking a popup or the list should bring either in front of the other
