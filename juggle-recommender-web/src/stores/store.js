@@ -129,11 +129,14 @@ class Store {
  			catches = catches.replace(/^0+/,'');
  		}
  		this.myTricks[trickKey].catches = catches
+ 		const date = new Date()
+ 		this.myTricks[trickKey].lastUpdated = date.getTime()
  		uiStore.updateRootTricks()
  	}
 	@action addToMyTricks=(trickKey)=>{
  		this.myTricks[trickKey] = {
- 			"catches" : 0
+ 			"catches" : 0,
+ 			"lastUpdated" : new Date()
  		}
         this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
