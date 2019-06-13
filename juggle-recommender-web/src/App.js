@@ -57,8 +57,6 @@ class App extends Component {
 	
 	componentDidMount(){
 		store.getSavedTricks()	
-		// appElement={el}
-		// ariaHideApp={false}
 		Modal.setAppElement(this.el);
 		firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
@@ -66,7 +64,7 @@ class App extends Component {
             authStore.setUsername(user.email)
           } 
         });
-		store.initializeLibrary()
+		//store.initializeLibrary()
 		store.getLibraryFromDatabase()
 		
 	}

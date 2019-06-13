@@ -79,27 +79,13 @@ class UIStore {
 	 	
  	}
  	@action setSelectedList=(listType)=>{
- 		this.selectedTricks = []
  		this.selectedList = listType
- 		this.updateRootTricks()
  		this.popupTrick = null
  		this.popupCatchEditable = false
- 		this.selectTrickOnListLoad()
-
- 		
- 	}
-
- 	@action selectTrickOnListLoad=()=>{
- 		 if(store.lastTrickUpdated){
-		    function selectLastUpdatedTrick() {
-    			uiStore.selectTricks([store.lastTrickUpdated])
-			}
-		    setTimeout(function() {
-		        selectLastUpdatedTrick();
-		    }, 4000);
-    	}else{
-    		uiStore.selectTricks(['Cascade'])
-    	}
+ 		if(listType == "myTricks"){
+ 			filterStore.setTags([])
+ 		}
+ 		store.setLastTrickUpdated()
  	}
 
  	@action setSearchInput=(newInput)=>{
@@ -196,8 +182,8 @@ class UIStore {
 				if(
 				   parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
-				   tagsInFilter.length >= filterTagNames.length &&
-				   filterStore.numBalls.includes(trick.num.toString()) &&
+				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length == 0) &&
+				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length == 0) &&
 				   thisTricksCatches >= parseInt(filterStore.minCatches) &&
 				   thisTricksCatches <= parseInt(filterStore.maxCatches) &&
 				   (this.searchTrick === '' || trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()))

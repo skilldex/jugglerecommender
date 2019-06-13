@@ -58,14 +58,10 @@ class Store {
     	if(myTricks  && Object.keys(myTricks).length > 0){
     		this.setMyTricks(myTricks)
     		uiStore.setSelectedList("myTricks")
-    		filterStore.setTags([])
-    		store.setLastTrickUpdated()
-    		uiStore.selectTrickOnListLoad()
     	}else{
     		this.initializeTricks()
     		uiStore.selectTricks(['Cascade'])
     	}
-
 	}
 	@action initializeLibrary=()=>{
 		let libraryRef = firebase.database().ref('library/')
@@ -106,22 +102,29 @@ class Store {
 	}
 	@action getSavedTricks=()=>{
 		if(authStore.user){
+			console.log("saved user")
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
 	  	 	myTricksRef.on('value', resp =>{
+	  	 		console.log("my tricks data")
 	           const myTricksObject =this.snapshotToArray(resp)[0]
 	            if(myTricksObject && myTricksObject.myTricks){
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
 	            	uiStore.setSearchInput('')
+	            	console.log("had tricks")
+	            	store.setLastTrickUpdated()
 	            }else{
+	            	console.log("had no tricks")
 	            	this.getTricksFromBrowser()
-	            }	            
+	            	store.setLastTrickUpdated()
+	            }	           
 	        })
 	  	 }else{
+	  	 	console.log("saved no user")
 	  	 	this.getTricksFromBrowser()
-	  	 }
-		uiStore.updateRootTricks()
+	  	 	store.setLastTrickUpdated()
+	  	 }	  
 	}
 	@action setCatches=(catches, trickKey)=>{
 		if(!catches){
@@ -144,6 +147,13 @@ class Store {
 	          this.lastTrickUpdated = trick
 	        }       
 	    }
+	    console.log("last trick", this.lastTrickUpdated)
+	    if(this.lastTrickUpdated){
+		  	uiStore.selectTricks([this.lastTrickUpdated])
+    	}else{
+    		uiStore.selectTricks(['Cascade'])
+    	}
+    	console.log("selected trick", uiStore.selectedTricks)
  	}
 	@action addToMyTricks=(trickKey)=>{
 		const date = new Date()

@@ -34,6 +34,7 @@ class FilterStore {
 	}
 	@action setTags=(tags)=>{
 		this.tags = tags
+		console.log("setting tags")
 		uiStore.updateRootTricks()
 	}
 	@action handleDelete=(i)=>{

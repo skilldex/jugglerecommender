@@ -14,9 +14,7 @@ import './popup.css';
 class Popup extends Component {
   state = {
     catches : null,
-    gifFullscreen : false,
-    vidURL : "",
-    previewURL : ""
+    gifFullscreen : false
   }
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
@@ -25,23 +23,6 @@ class Popup extends Component {
          this.setState({catches})
   	  	}
 	}
-  loadIframe=()=>{
-    console.log("loaded iframe")
-    /*const timer = setInterval(()=>{
-      const vids = window.frames.document.getElementsByTagName('video')
-      console.log(vids[0].src)
-      if(vids[0].src != this.state.vidURL){
-        this.setState({
-          vidURL : vids[0].src,
-          previewURL : vids[0].poster
-        })
-      }
-      if(vids[0].src && !vids[0].src.includes("local")){
-        console.log("clearing ",vids[0].src )
-        clearInterval(timer)
-      }
-    },100)*/
-  }
   onCatchesKeyPress=(target)=> {
     // If enter pressed
     if(target.charCode===13){  
@@ -71,12 +52,18 @@ class Popup extends Component {
       setTimeout(function() {
           setFocus();
       }, 100);  
-}
+  }
 
-toggleGifFullscreen=()=>{
-  this.setState({'gifFullscreen':!this.state.gifFullscreen})
-}
-
+  toggleGifFullscreen=()=>{
+    this.setState({'gifFullscreen':!this.state.gifFullscreen})
+  }
+  onLoadIframe=()=>{
+    setTimeout(()=>{
+      const entries = performance.getEntries()
+      console.log(entries)
+    },100)
+    
+  }
 	render() {
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
@@ -128,16 +115,8 @@ toggleGifFullscreen=()=>{
                                   allow="autoplay"  
                                   allowtransparency="true"
                                   src={videoURLtoUse}
-        x                          onLoad={this.loadIframe}
-                        ></iframe>
-
-    let video = <video  className= {videoURLtoUse.includes('youtube')?
-                                                "popupGif":"instagramVideo"} playsInline="" poster={this.state.previewURL} 
-                                preload="none" src={this.state.vidURL}
-                                controls
-                                loop
-                                type="video/mp4"
-                ></video>
+                                  onLoad={this.onLoadIframe}></iframe>
+    
     const videoFullscreen  = <iframe  className= {videoURLtoUse.includes('youtube')?
                                                 "youtubeFullScreen" : "instagramFullScreen"}                                
                                   allow="autoplay"  

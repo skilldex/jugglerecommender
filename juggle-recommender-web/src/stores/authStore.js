@@ -9,11 +9,7 @@ class AuthStore {
 
 	@observable user = null
 
-	 @action setUser=(user)=>{	 	
-	 	this.user = user
-	 	store.getSavedTricks()
-	 	console.log('setUser', user)
-	 }
+	 
 
 	 @action signOut=()=>{
 	 	uiStore.closePopups()
@@ -37,6 +33,11 @@ class AuthStore {
             })
         })
     }
+    @action setUser=(user)=>{       
+        this.user = user
+        store.getSavedTricks()
+        console.log('setUser', user)
+     }
     @action loginUser(username, pass) {
         console.log("logging user", username, pass)
         const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
