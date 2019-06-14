@@ -35,19 +35,20 @@ class Filter extends Component {
 				 [...filterStore.tags, tag] 
 			);
 		}
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+
 	}
 
 	handleSortRadioButtonChange=(event)=>{
 		filterStore.setSortType(event.target.value)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
   
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
@@ -64,7 +65,7 @@ class Filter extends Component {
 			tempNumBalls.push(element)
 		}
 		filterStore.setNumBalls(tempNumBalls)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
@@ -77,7 +78,7 @@ class Filter extends Component {
 			newMin = 0
 		}
 		filterStore.setMinCatches(newMin)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
@@ -90,7 +91,7 @@ class Filter extends Component {
 			newMax = Math.max(0,filterStore.minCatches)
 		}
 		filterStore.setMaxCatches(newMax)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 

@@ -77,18 +77,22 @@ class UIStore {
 	 	this.popupTrick = null
 	 	this.popupCatchEditable = false	 	
  	}
- 	@action selectLastUpdated=()=>{
-		if(store.lastTrickUpdated){
-		  	this.selectTrick(store.lastTrickUpdated)
-    	}else{
-    		let rootTricks = []
-			for(var key in uiStore.rootTricks) {
-			    rootTricks.push(uiStore.rootTricks[key])
+
+	@action resetSelectedTrick=()=>{
+		for(let i = 0; i<this.selectedTricks.length; i++){
+			const trick = this.selectedTricks[i]
+			if (!uiStore.rootTricks.includes(trick)){
+				this.selectedTricks.splice(i, 1);
 			}
-	        if (rootTricks.includes('Cascade')){
-	    		this.selectTrick('Cascade')
-	    	}
-    	}
+		}
+		if (this.selectedTricks.length<1){
+			this.selectTopTrick()
+		}
+	}
+	@action selectTopTrick=()=>{
+		if (uiStore.rootTricks.length>0){
+			this.selectedTricks = [uiStore.rootTricks[0]]
+		}
 	}
 	@action selectTrick=(trick)=>{
 		this.selectedTricks = [trick]
@@ -97,7 +101,7 @@ class UIStore {
  		this.selectedList = listType
  		this.popupTrick = null
  		this.popupCatchEditable = false
- 		this.selectLastUpdated()
+ 		this.resetSelectedTrick()
  		this.updateRootTricks()
  	}
 
@@ -113,7 +117,7 @@ class UIStore {
 		}
 		this.performSearch()
 		//this.popupTrick = null
-		uiStore.selectLastUpdated()
+		this.resetSelectedTrick()
  	}
  		
  	@action performSearch=()=>{
@@ -203,7 +207,7 @@ class UIStore {
 				}
 			}
 		})	
-
+		
 		graphStore.updateGraphData()
 	}
 

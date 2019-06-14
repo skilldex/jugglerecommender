@@ -7,44 +7,42 @@ class FilterStore {
 	@observable filterVisible = false
 	@observable sortType = 'alphabetical'
 	@observable difficultyRange = [1,10]
-	@observable numBalls = ['3']
-	@observable tags = [
-		{'id' : 'common','text':'common'}
-	]
+	@observable numBalls = []
+	@observable tags = []
 	@observable minCatches = 0
 	@observable maxCatches = 10000000
 
 	@action setMinCatches=(minCatches)=>{
 		this.minCatches = parseInt(minCatches, 10)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action setMaxCatches=(maxCatches)=>{
 		this.maxCatches = parseInt(maxCatches, 10)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action resetCatches=()=>{
 		this.minCatches = 0
 		this.maxCatches = store.highestCatches
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action resetDifficultyRange=()=>{
 		this.difficultyRange = [1,10]
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action setTags=(tags)=>{
 		this.tags = tags
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action handleDelete=(i)=>{
 		this.setTags(
 			this.tags.filter((tag, index) => index !== i)
 		)
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action toggleFilterDiv=()=>{
@@ -59,12 +57,12 @@ class FilterStore {
 	}
 	@action setDifficultyRange=(difficultyRange)=>{
 		this.difficultyRange = difficultyRange
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	@action setNumBalls=(numBalls)=>{
 		this.numBalls = numBalls
-		uiStore.selectLastUpdated()
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 }

@@ -82,7 +82,6 @@ class GraphStore {
 	 	if(uiStore.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
-	 			
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
 		 				label: "★" + rootTrick.name,
@@ -110,6 +109,7 @@ class GraphStore {
 	 			if(rootTrick.dependents){
 		 			rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = store.library[dependentKey]
+		 				if (!dependent){return}
 			 			if(!tempNodes[dependentKey]){
 			 				tempNodes[dependentKey] = {
 			 					id: dependentKey,
@@ -177,32 +177,32 @@ class GraphStore {
 	 			}
  				if(rootTrick.dependents){
  					rootTrick.dependents.forEach((dependentKey)=>{
- 						if (store.library[dependentKey]){
-			 				const dependent = store.library[dependentKey]
-			 				let involvedDependent = involvedRoot > 0 ? 2 : 0
-			 				let label
-			 				
-			 				label = dependent.name
-			 				 
-			 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
-			 					involvedDependent = tempNodes[dependentKey].involved
-				 				if(involvedDependent === 3){
-					 				label = "★" + dependent.name
-					 			}
-			 				}
-			 				
-			 				tempNodes[dependentKey] = {
-			 					id: dependentKey,
-			 					label: label,
-			 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent, dependentKey),
-			 					involved : involvedDependent,
-			 					size : this.getInvolvedNodeSize(involvedDependent),
-			 			 		font : this.getInvolvedNodeFont(involvedDependent),
-			 			 		mass : this.getInvolvedNodeMass(involvedDependent),
-			 			 		borderWidth : this.getInvolvedNodeBorderWidth(involvedDependent),
-			 				}	
-			 				edges.push({from: trickKey , to: dependentKey })
-			 			}
+		 				const dependent = store.library[dependentKey]
+		 				if (!dependent){return}
+		 				let involvedDependent = involvedRoot > 0 ? 2 : 0
+		 				let label
+		 				
+		 				label = dependent.name
+		 				 
+		 				if(tempNodes[dependentKey] && tempNodes[dependentKey].involved > involvedDependent){
+		 					involvedDependent = tempNodes[dependentKey].involved
+			 				if(involvedDependent === 3){
+				 				label = "★" + dependent.name
+				 			}
+		 				}
+		 				
+		 				tempNodes[dependentKey] = {
+		 					id: dependentKey,
+		 					label: label,
+		 					color : this.getInvolvedNodeColor(dependent.difficulty, involvedDependent, dependentKey),
+		 					involved : involvedDependent,
+		 					size : this.getInvolvedNodeSize(involvedDependent),
+		 			 		font : this.getInvolvedNodeFont(involvedDependent),
+		 			 		mass : this.getInvolvedNodeMass(involvedDependent),
+		 			 		borderWidth : this.getInvolvedNodeBorderWidth(involvedDependent),
+		 				}	
+		 				edges.push({from: trickKey , to: dependentKey })
+		 			
 		 			})
  				}
 	

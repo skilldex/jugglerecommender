@@ -1,4 +1,4 @@
-import { action, configure, computed, observable, toJS} from "mobx"
+import { action, configure, computed, observable } from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import authStore from './authStore'
@@ -129,7 +129,6 @@ class Store {
 				}{
 					this.library[prereq].dependents = [trick.name]
 				}
-				console.log(toJS(this.library[prereq].dependents))
 				let prereqRef = firebase.database().ref('library/'+prereq)
         		prereqRef.set(this.library[prereq]);
 			})
@@ -145,17 +144,17 @@ class Store {
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
 	            	uiStore.setSearchInput('')
-	            	uiStore.selectLastUpdated()
+	            	uiStore.resetSelectedTrick()
 	            	uiStore.updateRootTricks()
 	            }else{
 	            	this.getTricksFromBrowser()
-	            	uiStore.selectLastUpdated()
+	            	uiStore.resetSelectedTrick()
 					uiStore.updateRootTricks()
 	            }	           
 	        })
 	  	 }else{
 	  	 	this.getTricksFromBrowser()
-	  	 	uiStore.selectLastUpdated()
+	  	 	uiStore.resetSelectedTrick()
 	  	 	uiStore.updateRootTricks()
 	  	 }	  
 	}
