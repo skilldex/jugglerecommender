@@ -188,6 +188,8 @@ class UIStore {
 				const tagsInFilter = trick.tags? trick.tags.filter((tag)=>{
 					if (filterTagNames.includes(tag)){
 						return tag
+					}else{
+						return ''
 					}
 				}) : []
 				let thisTricksCatches = 0

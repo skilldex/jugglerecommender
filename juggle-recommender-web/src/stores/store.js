@@ -126,7 +126,7 @@ class Store {
 			trick.prereqs.forEach((prereq)=>{
 				if(this.library[prereq].dependents){
 					this.library[prereq].dependents.push(trick.name)
-				}{
+				}else{
 					this.library[prereq].dependents = [trick.name]
 				}
 				let prereqRef = firebase.database().ref('library/'+prereq)
