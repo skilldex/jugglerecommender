@@ -16,28 +16,36 @@ class FilterStore {
 
 	@action setMinCatches=(minCatches)=>{
 		this.minCatches = parseInt(minCatches, 10)
+		uiStore.selectLastUpdated()
 		uiStore.updateRootTricks()
 	}
 	@action setMaxCatches=(maxCatches)=>{
 		this.maxCatches = parseInt(maxCatches, 10)
+		uiStore.selectLastUpdated()
 		uiStore.updateRootTricks()
 	}
 	@action resetCatches=()=>{
 		this.minCatches = 0
 		this.maxCatches = store.highestCatches
+		uiStore.selectLastUpdated()
 		uiStore.updateRootTricks()
 	}
 	@action resetDifficultyRange=()=>{
 		this.difficultyRange = [1,10]
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 	@action setTags=(tags)=>{
 		this.tags = tags
+		uiStore.selectLastUpdated()
 		uiStore.updateRootTricks()
 	}
 	@action handleDelete=(i)=>{
 		this.setTags(
 			this.tags.filter((tag, index) => index !== i)
 		)
+		uiStore.selectLastUpdated()
+		uiStore.updateRootTricks()
 	}
 	@action toggleFilterDiv=()=>{
 		this.filterVisible = !this.filterVisible
@@ -51,10 +59,12 @@ class FilterStore {
 	}
 	@action setDifficultyRange=(difficultyRange)=>{
 		this.difficultyRange = difficultyRange
+		uiStore.selectLastUpdated()
 		uiStore.updateRootTricks()
 	}
 	@action setNumBalls=(numBalls)=>{
 		this.numBalls = numBalls
+		uiStore.selectLastUpdated()
 		uiStore.updateRootTricks()
 	}
 }

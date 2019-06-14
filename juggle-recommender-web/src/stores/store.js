@@ -21,7 +21,6 @@ class Store {
 	@computed get lastTrickUpdated(){
 		let mostRecentTime = 0
 		let lastTrickUpdated = ""
-		
 		let rootTricks = []
 		for(var key in uiStore.rootTricks) {
 		    rootTricks.push(uiStore.rootTricks[key])

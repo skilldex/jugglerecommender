@@ -81,7 +81,13 @@ class UIStore {
 		if(store.lastTrickUpdated){
 		  	this.selectTrick(store.lastTrickUpdated)
     	}else{
-    		this.selectTrick('Cascade')
+    		let rootTricks = []
+			for(var key in uiStore.rootTricks) {
+			    rootTricks.push(uiStore.rootTricks[key])
+			}
+	        if (rootTricks.includes('Cascade')){
+	    		this.selectTrick('Cascade')
+	    	}
     	}
 	}
 	@action selectTrick=(trick)=>{
@@ -91,10 +97,6 @@ class UIStore {
  		this.selectedList = listType
  		this.popupTrick = null
  		this.popupCatchEditable = false
- 		// if(listType == "myTricks"){
- 		// 	filterStore.setTags([])
- 		// 	filterStore.setNumBalls([])
- 		// }
  		this.selectLastUpdated()
  		this.updateRootTricks()
  	}

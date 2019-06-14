@@ -16,12 +16,11 @@ new bugs:
 	search doesn't search the (ballnum) part of search
 		-this is tru for the most part, for example searching 4 does find shower(4b), but not anything else
 		-if it did, and if we put (3b) after 3b tricks, it would be an easy way to filter by ballnum
-	when search is empty it needs a space + backspace to act like it is empty
 	-editing a trick num makes it so that clicking on graph doesnt close current popup
 		-but only sometimes, and not very often
 
 warning
-	store.js 130 nested store is redundant; I don't know what it does or what it should do
+	store.js 130 nested store is redundant; I don't know what it does or how it should be
 
 
 Add trick issues that need addressed:
@@ -41,9 +40,7 @@ An input in form for dependents
 
 
 
-SIMPLISH
-
-get rid of warnings
+Simplish / not super important:
 
 find highest catches should be only run when it is actually used
 
