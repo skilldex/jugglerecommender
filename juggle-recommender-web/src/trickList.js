@@ -70,7 +70,7 @@ class TrickList extends Component {
 		}else{
 			uiStore.setListExpanded(!uiStore.listExpanded)
 		}	
-		this.setState({showSortMenu:false})					
+		//this.setState({showSortMenu:false})					
 	}
 
 	componentDidUpdate=(prevProps, prevState, snapshot)=> {
@@ -177,7 +177,9 @@ render() {
 						</div>
 						
 			 			<div className="search" >			 				
-			 				<input className="searchInput" onChange={uiStore.searchInputChange}/>
+			 				<input className="searchInput" 
+			 						value={uiStore.searchInput}
+			 						onChange={uiStore.searchInputChange}/>
 							{sort}
 							{sortDropdown}
 						</div>
@@ -186,7 +188,6 @@ render() {
 		<div>	
 			<div className="listDiv">		
 		 		{uiStore.listExpanded ? 
-
 					<div>
 					 	{buttons}
 					 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>

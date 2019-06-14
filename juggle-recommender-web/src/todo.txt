@@ -12,7 +12,10 @@ v 1.0:
 
 ==========
 
-bugs:
+new bugs:
+	making popups clears the search
+	expanding list clears search
+	when search is empty it needs a space + backspace to act like it is empty
 
 
 

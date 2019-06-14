@@ -107,12 +107,12 @@ class UIStore {
  	}
 
  	@action	searchInputChange=(e)=>{
-		this.searchInput = e.target.value 		
+		uiStore.searchInput = e.target.value 		
 		if(e.target.value === ""){
 			this.searchTrick = ""
 		}
 		this.performSearch()
-		this.popupTrick = null
+		//this.popupTrick = null
 		uiStore.selectLastUpdated()
  	}
  		
