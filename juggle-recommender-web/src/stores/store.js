@@ -48,25 +48,44 @@ class Store {
 		this.isCreateAccountPaneOpen = !this.isCreateAccountPaneOpen
 	}
 	@action updateTricksInDatabase=()=>{
+		console.log('updateTricksInDatabase')
 		if(!authStore.user){return}
 		let myTricksKey = ""
- 		let myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
+ 		let myTricksRef = firebase.database()
+ 									.ref('myTricks/')
+ 									.orderByChild('username')
+ 									.equalTo(authStore.user.username)
+ 		console.log('authStore.user',authStore.user)
+  	 	console.log('myTricksRef',myTricksRef)
   	 	myTricksRef.on('value', resp =>{
-           const myTricksObject =this.snapshotToArray(resp)[0]
+           const myTricksObject =this.snapshotToArrayWithKey(resp)[0]
+
+           console.log('this.snapshotToArrayWithKey(resp)',this.snapshotToArrayWithKey(resp))
+           console.log('resp',resp)
+           console.log('myTricksObject',myTricksObject)
             if(myTricksObject){
+            	console.log('myTricksObject.key',myTricksObject.key)
             	myTricksKey = myTricksObject.key
             }
+            console.log('myTricksKey',myTricksKey)
             myTricksRef.off()
+            console.log('myTricksRef.off() doesnt terminate ref')
             if(myTricksKey){
+      			console.log('myTricksKey exists')
 	            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
+	            console.log('userTricksRef1',userTricksRef)
 		        userTricksRef.set({	        	
 		        		'username': authStore.user.username,
 		        		'myTricks' : this.myTricks        	
-		        })	
+		        })
+		        console.log('userTricksRef2',userTricksRef)
             }else{
             	myTricksRef = firebase.database().ref('myTricks/')
+            	console.log('myTricksRef2',myTricksRef)
                 let newData = myTricksRef.push();
+                console.log('newData1',newData)
                 newData.set({"username": authStore.user.username, "myTricks" : []});
+                console.log('newData2',newData)
             }            
         })
 	}	
@@ -180,6 +199,7 @@ class Store {
  		this.myTricks[trickKey].catches = catches
  		const date = new Date()
  		this.myTricks[trickKey].lastUpdated = date.getTime()
+ 		this.updateTricksInDatabase()
  		uiStore.updateRootTricks()
  	}
 
@@ -229,6 +249,15 @@ class Store {
 	    snapshot.forEach(childSnapshot => {
 	    	let item = childSnapshot.val();
 	        
+	        returnArr.push(item);
+	    });
+	    return returnArr;
+	}
+	@action snapshotToArrayWithKey=(snapshot)=>{
+	    let returnArr = [];	    
+	    snapshot.forEach(childSnapshot => {
+	        let item = childSnapshot.val();
+	        item.key = childSnapshot.key;
 	        returnArr.push(item);
 	    });
 	    return returnArr;

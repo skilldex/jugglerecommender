@@ -13,9 +13,12 @@ v 1.0:
 ==========
 
 new bugs:
-	making popups clears the search
-	expanding list clears search
+	search doesn't search the (ballnum) part of search
+		-this is tru for the most part, for example searching 4 does find shower(4b), but not anything else
+		-if it did, and if we put (3b) after 3b tricks, it would be an easy way to filter by ballnum
 	when search is empty it needs a space + backspace to act like it is empty
+	-editing a trick num makes it so that clicking on graph doesnt close current popup
+		-but only sometimes, and not very ofter
 
 
 
