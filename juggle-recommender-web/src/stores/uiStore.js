@@ -79,6 +79,7 @@ class UIStore {
  	}
 
 	@action resetSelectedTrick=()=>{
+		uiStore.updateRootTricks()
 		for(let i = 0; i<this.selectedTricks.length; i++){
 			const trick = this.selectedTricks[i]
 			if (!uiStore.rootTricks.includes(trick)){

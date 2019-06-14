@@ -90,6 +90,9 @@ class Store {
 	}
 	@action setLibrary=(library)=>{
 		this.library = library
+		//TODO clean this up
+		uiStore.updateRootTricks() 
+		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
@@ -147,12 +150,14 @@ class Store {
 	            	uiStore.resetSelectedTrick()
 	            	uiStore.updateRootTricks()
 	            }else{
+	            	//For when we delete data for existing users
 	            	this.getTricksFromBrowser()
 	            	uiStore.resetSelectedTrick()
 					uiStore.updateRootTricks()
 	            }	           
 	        })
 	  	 }else{
+	  	 	//Not logged in
 	  	 	this.getTricksFromBrowser()
 	  	 	uiStore.resetSelectedTrick()
 	  	 	uiStore.updateRootTricks()
