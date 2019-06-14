@@ -152,7 +152,7 @@ class App extends Component {
 			            </SlidingPane>
 		const header = <div className="header">
 							<div>
-								<span className="title">Juggledex</span><span className="version"> v1.0 Beta</span>
+								<span className="title">Juggledex</span><span className="version"> v1.1 Beta</span>
 						    </div>
 						    <div>
 						    	<button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
