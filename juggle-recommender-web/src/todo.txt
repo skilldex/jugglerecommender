@@ -12,49 +12,25 @@ v 1.0:
 
 ==========
 
-new bugs:
+New version bugs:
 	search doesn't search the (ballnum) part of search
 		-this is tru for the most part, for example searching 4 does find shower(4b), but not anything else
 		-if it did, and if we put (3b) after 3b tricks, it would be an easy way to filter by ballnum
-	-editing a trick num makes it so that clicking on graph doesnt close current popup
-		-but only sometimes, and not very often
-
-warning
-	store.js 130 nested store is redundant; I don't know what it does or how it should be
-
-
-Add trick issues that need addressed:
-
-
-
-LESS IMPORTANT:
-
-We are neglecting related, and I think it is important because people will probably tend to list related tricks as prereqs just so that they can be associated on the map, maybe they should just be shown with lines with no arrows and all three, prereqs, depends and related should be filterable. Not sure.
-
-A way to make associations, related, prereqs even for tricks not uploaded by the user is needed
-	-we currently have lots of very similar tricks that are not connected on graph
-
-I'm unclear on the note 'add trick form should disappear on click off', it is pretty much full screen, click of where exactly? On the header?
-
-An input in form for dependents
-
-
-
-Simplish / not super important:
-
-find highest catches should be only run when it is actually used
-
-Make one-up two-out tag
-
-
 
 Minor:
+	-clicking filter should set focus on tag input
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
 		-is this still needed?
 	-make filter button change colors when selected, this involves gettin it as svg
 	-Add trick form should disappear on click off
 	-add 'since last updated' to sort
+	-find highest catches should be only run when it is actually used
+	-An input in form for dependents
+		-it should also update the library entry for the dependent with the appropriate prereq
+	-maybe put updateRootTricks() in selectLastUpdated()
+		-just make sure they are always used together first
+
 Bugs:
 	Popup
 		Youtube

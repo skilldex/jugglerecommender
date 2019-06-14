@@ -1,4 +1,11 @@
 
+New version observations:
+-Since there is only prereqs input in form, it is very tempting to put prereqs, depends, and related tricks all in there just so they end up associated in graph.
+	-A way to solve this issue is to make 3 dropdowns in the form for each of the 3 types of associations
+-related should be shown on graph with lines with no arrows
+-A way to make associations even for tricks not uploaded by the user is needed
+	-we currently have lots of very similar tricks that are not connected on graph
+
 
 
 Most desired new features:
