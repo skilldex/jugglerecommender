@@ -185,7 +185,6 @@ class UIStore {
 					if (filterTagNames.includes(tag)){
 						return tag
 					}
-					return [] //return [] here to remove a warning, if bug, remove
 				}) : []
 				let thisTricksCatches = 0
 				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
