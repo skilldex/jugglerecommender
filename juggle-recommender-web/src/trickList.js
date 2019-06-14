@@ -11,22 +11,8 @@ import starIcon from './images/starIcon.svg'
 import allIcon from './images/allIcon.svg'
 import './trickList.css';
 import './App.css';
-import { WithContext as ReactTags } from 'react-tag-input';
 import Filter from './filter.js'
 
-const suggestions = store.tagsSuggestions.map((country) => {
-  return {
-    id: country,
-    text: country
-  }
-})
-
-const KeyCodes = {
-  comma: 188,
-  enter: 13,
-};
-
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
 var scrollerPosition = 0
 @observer
 class TrickList extends Component {
@@ -48,7 +34,6 @@ class TrickList extends Component {
 	}
 
 	recordScrollerPosition = e => {
-	    let element = e.target
 	    scrollerPosition = document.getElementById('trickList').scrollTop
  	}
 
@@ -89,7 +74,6 @@ render() {
  	 		that.toggleShowSort()
  		}
  	}
-	const { tags, suggestions } = this.state;
  	const sortDropdown = this.state.showSortMenu ? 
  					<div title="sort" id="myDropdown" className="sortDropdown">
 				    	<button alt="sortDropdownButtonDif"
@@ -102,25 +86,6 @@ render() {
 
 	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 
 					 onClick={this.toggleShowSort}/>
-
-					 
-
-	let filterTags = []
-	let tagSection = null
-	if(filterStore.tags){		
-		filterStore.tags.forEach((tag,i)=>{
-			filterTags.push(
-						<div className="listTagsDiv">
-							<span className="listTagsName">&nbsp;{filterStore.tags[i].text}</span>
-							<label className="listTagsX"onClick={()=>filterStore.handleDelete(i)}>&nbsp;x&nbsp;</label>
-						</div>			
-			)
-		})
-		 tagSection = <div className="tagSection">
-		 					<span className="listTagsHeader">{filterStore.tags.length>0?"TAGS: ":""}</span>	
-		 					{filterTags}
-		 				</div>
-	}
  	let tricks = []
  	const rootTricks = uiStore.rootTricks
  	if(Object.keys(store.library).length > 0){
@@ -133,7 +98,7 @@ render() {
 				cardClass = cardClass + ' selectedListCard'
 			}
 			const cardColor = 
-				graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
+				graphStore.getInvolvedNodeColor(trick.difficulty, 2).background === "white" ? 
 				graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
 			 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
 			tricks.push(

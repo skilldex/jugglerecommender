@@ -3,7 +3,6 @@ import filterStore from './stores/filterStore'
 import store from './stores/store'
 import filterIcon from './images/filterIcon.png'
 import './mainTagsBar.css';
-import mainTagsBar from "./mainTagsBar"
 
 class MainTagsBar extends Component {
     state={
@@ -38,7 +37,7 @@ class MainTagsBar extends Component {
           )
         })
       }
-      if(filterStore.difficultyRange[0] !=1 || filterStore.difficultyRange[1] !=10 ){
+      if(filterStore.difficultyRange[0] !==1 || filterStore.difficultyRange[1] !==10 ){
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"> Difficulty 
@@ -47,7 +46,7 @@ class MainTagsBar extends Component {
               </div>      
         )
       }
-      if(filterStore.minCatches !=0 || filterStore.maxCatches <store.highestCatches ){
+      if(filterStore.minCatches !==0 || filterStore.maxCatches <store.highestCatches ){
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName">

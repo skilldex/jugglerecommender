@@ -21,7 +21,7 @@ class GraphStore {
 				background : colorString,
             	border:  colorString,
         	}
-        }else if (store.myTricks[trickKey] && store.myTricks[trickKey].catches == 0){
+        }else if (store.myTricks[trickKey] && store.myTricks[trickKey].catches === 0){
         	color = {
 				background : "white",
             	border:  colorString,

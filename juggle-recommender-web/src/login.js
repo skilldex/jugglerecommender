@@ -2,8 +2,7 @@ import React, {Component} from 'react';
 import authStore from "./stores/authStore"
 import store from './stores/store'
 import "./App.css"
-import "./auth.css";
-import firebase from 'firebase' 
+import "./auth.css"; 
 
 class Login extends Component {
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());

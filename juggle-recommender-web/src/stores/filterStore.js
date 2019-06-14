@@ -1,8 +1,6 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
-import graphStore from "./graphStore"
 import uiStore from "./uiStore"
-import {toJS} from "mobx"
 configure({ enforceActions: "always" })
 class FilterStore {
 
@@ -17,11 +15,11 @@ class FilterStore {
 	@observable maxCatches = 10000000
 
 	@action setMinCatches=(minCatches)=>{
-		this.minCatches = parseInt(minCatches)
+		this.minCatches = parseInt(minCatches, 10)
 		uiStore.updateRootTricks()
 	}
 	@action setMaxCatches=(maxCatches)=>{
-		this.maxCatches = parseInt(maxCatches)
+		this.maxCatches = parseInt(maxCatches, 10)
 		uiStore.updateRootTricks()
 	}
 	@action resetCatches=()=>{
@@ -34,7 +32,6 @@ class FilterStore {
 	}
 	@action setTags=(tags)=>{
 		this.tags = tags
-		console.log("setting tags")
 		uiStore.updateRootTricks()
 	}
 	@action handleDelete=(i)=>{

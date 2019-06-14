@@ -110,7 +110,9 @@ class Popup extends Component {
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
       videoURLtoUse = utilities.getUsableVideoURL(store.library[popupTrickKey].video)
     }
-    let videoIframe  = <iframe name="vidFrame" className= {videoURLtoUse.includes('youtube')?
+    let videoIframe  = <iframe name="vidFrame" 
+                                title="UniqueTitleForVideoIframeToStopWarning"
+                                className= {videoURLtoUse.includes('youtube')?
                                                 "popupGif":"instagramVideo"}                                  
                                   allow="autoplay"  
                                   allowtransparency="true"
@@ -118,7 +120,8 @@ class Popup extends Component {
                                   onLoad={this.onLoadIframe}></iframe>
     
     const videoFullscreen  = <iframe  className= {videoURLtoUse.includes('youtube')?
-                                                "youtubeFullScreen" : "instagramFullScreen"}                                
+                                                "youtubeFullScreen" : "instagramFullScreen"}   
+                                  title="UniqueTitleForvideoFullscreenToStopWarning"                             
                                   allow="autoplay"  
                                   allowtransparency="true"                                 
                                   src={videoURLtoUse}></iframe>

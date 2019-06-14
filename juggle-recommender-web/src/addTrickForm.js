@@ -89,7 +89,7 @@ class AddTrickForm extends Component {
         });
     }
     checkIfFormIsSubmittable=()=>{
-    	const suffix = this.state.numBalls == 3 ? '' : " ("+this.state.numBalls+"b)"
+    	const suffix = this.state.numBalls === 3 ? '' : " ("+this.state.numBalls+"b)"
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
     		this.setState({submitDisabled:true})
@@ -146,7 +146,7 @@ class AddTrickForm extends Component {
 				var prereqs = this.state.prereqs.map(function(item) {
 					return item['text'];
 				});		
-				const suffix = this.state.numBalls == 3 ? '' : " ("+this.state.numBalls+")"
+				const suffix = this.state.numBalls === 3 ? '' : " ("+this.state.numBalls+")"
 
 				const trick = {
 					name : this.state.name+suffix,
@@ -275,7 +275,7 @@ class AddTrickForm extends Component {
 							</div>
 								<button id = "submitButton"
 										className={this.state.submitDisabled?
-											"formButton" + " disabledSubmitButton":"formButton"}
+											"formButton disabledSubmitButton":"formButton"}
 										onClick={this.submit}>submit</button>
 								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 								<button className="formButton"onClick={this.cancel}>cancel</button>

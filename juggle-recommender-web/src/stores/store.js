@@ -1,7 +1,6 @@
 import { action, configure, computed, observable, toJS} from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
-import filterStore from './filterStore'
 import authStore from './authStore'
 import {jugglingLibrary} from '../jugglingLibrary.js'
 import {TAGS} from '../tags';
@@ -27,18 +26,14 @@ class Store {
 		for(var key in uiStore.rootTricks) {
 		    rootTricks.push(uiStore.rootTricks[key])
 		}
-		console.log('rootTricks',rootTricks)
-
  		for(var trick in this.myTricks) {
 	        if(this.myTricks[trick].lastUpdated && 
 	        	this.myTricks[trick].lastUpdated>mostRecentTime &&
 	        	rootTricks.includes(trick)){
-	        	console.log('trick',trick)
-	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated)
+	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated, 10)
 	          lastTrickUpdated = trick
 	        }       
 	    }
-	    console.log('lastTrickUpdated',lastTrickUpdated)
 	    return lastTrickUpdated
 	}
 	@action setIsLoginPaneOpen=(isOpen)=>{
@@ -48,55 +43,37 @@ class Store {
 		this.isCreateAccountPaneOpen = !this.isCreateAccountPaneOpen
 	}
 	@action updateTricksInDatabase=()=>{
-		console.log('updateTricksInDatabase')
 		if(!authStore.user){return}
 		let myTricksKey = ""
  		let myTricksRef = firebase.database()
  									.ref('myTricks/')
  									.orderByChild('username')
  									.equalTo(authStore.user.username)
- 		console.log('authStore.user',authStore.user)
-  	 	console.log('myTricksRef',myTricksRef)
   	 	myTricksRef.on('value', resp =>{
            const myTricksObject =this.snapshotToArrayWithKey(resp)[0]
-
-           console.log('this.snapshotToArrayWithKey(resp)',this.snapshotToArrayWithKey(resp))
-           console.log('resp',resp)
-           console.log('myTricksObject',myTricksObject)
             if(myTricksObject){
-            	console.log('myTricksObject.key',myTricksObject.key)
             	myTricksKey = myTricksObject.key
             }
-            console.log('myTricksKey',myTricksKey)
             myTricksRef.off()
-            console.log('myTricksRef.off() doesnt terminate ref')
             if(myTricksKey){
-      			console.log('myTricksKey exists')
 	            const userTricksRef = firebase.database().ref('myTricks/'+myTricksKey)
-	            console.log('userTricksRef1',userTricksRef)
 		        userTricksRef.set({	        	
 		        		'username': authStore.user.username,
 		        		'myTricks' : this.myTricks        	
 		        })
-		        console.log('userTricksRef2',userTricksRef)
             }else{
             	myTricksRef = firebase.database().ref('myTricks/')
-            	console.log('myTricksRef2',myTricksRef)
                 let newData = myTricksRef.push();
-                console.log('newData1',newData)
                 newData.set({"username": authStore.user.username, "myTricks" : []});
-                console.log('newData2',newData)
             }            
         })
 	}	
 	
 	@action getTricksFromBrowser=()=>{
-		console.log("tricks from brwoser")
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
     	if(myTricks  && Object.keys(myTricks).length > 0){
     		this.setMyTricks(myTricks)
     		uiStore.setSelectedList("myTricks")
-    		console.log("selected ", uiStore.selectedTricks)
     	}else{
     		uiStore.setSelectedList("allTricks")
     		uiStore.toggleSelectedTrick('Cascade')
@@ -148,7 +125,6 @@ class Store {
 	@action addDependents=(trick)=>{
 		if(trick.prereqs){
 			trick.prereqs.forEach((prereq)=>{
-				console.log("depeds" ,toJS(this.library[prereq]))
 				if(this.library[prereq].dependents){
 					this.library[prereq].dependents.push(trick.name)
 				}{
@@ -162,10 +138,8 @@ class Store {
 	}
 	@action getSavedTricks=()=>{
 		if(authStore.user){
-			console.log("saved user")
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
 	  	 	myTricksRef.on('value', resp =>{
-	  	 		console.log("my tricks data")
 	           const myTricksObject =this.snapshotToArray(resp)[0]
 	            if(myTricksObject && myTricksObject.myTricks){
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
@@ -174,16 +148,13 @@ class Store {
 	            	uiStore.setSearchInput('')
 	            	uiStore.selectLastUpdated()
 	            	uiStore.updateRootTricks()
-	            	console.log("had tricks")
 	            }else{
-	            	console.log("had no tricks")
 	            	this.getTricksFromBrowser()
 	            	uiStore.selectLastUpdated()
 					uiStore.updateRootTricks()
 	            }	           
 	        })
 	  	 }else{
-	  	 	console.log("saved no user")
 	  	 	this.getTricksFromBrowser()
 	  	 	uiStore.selectLastUpdated()
 	  	 	uiStore.updateRootTricks()
@@ -216,7 +187,7 @@ class Store {
  	@action findHighestCatches=()=>{
 	    for(var trick in this.myTricks) {
 	        if(this.myTricks[trick].catches>this.highestCatches){
-	          this.highestCatches = parseInt(this.myTricks[trick].catches)
+	          this.highestCatches = parseInt(this.myTricks[trick].catches, 10)
 	        }       
 	    }
  	}

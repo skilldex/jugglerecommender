@@ -78,9 +78,7 @@ class UIStore {
 	 	this.popupCatchEditable = false	 	
  	}
  	@action selectLastUpdated=()=>{
- 		console.log("lsat updatd")
 		if(store.lastTrickUpdated){
-	    	console.log("it was this one", store.lastTrickUpdated )
 		  	this.selectTrick(store.lastTrickUpdated)
     	}else{
     		this.selectTrick('Cascade')
@@ -164,10 +162,8 @@ class UIStore {
 		return containsAny
 	}
 
-
-
  	@action updateRootTricks=(rootTricks)=>{
- 		if(Object.keys(store.library).length == 0){ return }
+ 		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
  		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
@@ -187,24 +183,21 @@ class UIStore {
 					if (filterTagNames.includes(tag)){
 						return tag
 					}
+					return [] //return [] here to remove a warning, if bug, remove
 				}) : []
 				let thisTricksCatches = 0
 				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
-					thisTricksCatches = parseInt(store.myTricks[trickKey].catches)
+					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
 				}
 				if(
-				   parseInt(trick.difficulty) >= filterStore.difficultyRange[0] && 
-				   parseInt(trick.difficulty) <= filterStore.difficultyRange[1] &&
-				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length == 0) &&
-				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length == 0) &&
-				   thisTricksCatches >= parseInt(filterStore.minCatches) &&
-				   thisTricksCatches <= parseInt(filterStore.maxCatches) &&
+				   parseInt(trick.difficulty, 10) >= filterStore.difficultyRange[0] && 
+				   parseInt(trick.difficulty, 10) <= filterStore.difficultyRange[1] &&
+				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length === 0) &&
+				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length === 0) &&
+				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
+				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) &&
 				   (this.searchTrick === '' || trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()))
 				 ){
-					const cardColor = 
-						graphStore.getInvolvedNodeColor(trick.difficulty, 2).background == "white" ? 
-						graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
-					 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
 					this.rootTricks.push(trickKey)
 				}
 			}

@@ -2,14 +2,12 @@ import React,{Component} from 'react'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
 import filterStore from './stores/filterStore'
-import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
 import './filter.css';
 import './App.css';
 import { WithContext as ReactTags } from 'react-tag-input';
-import Slider, { Range } from 'rc-slider';
+import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import {toJS} from "mobx"
 import utilities from './utilities'
 
 
@@ -107,7 +105,6 @@ class Filter extends Component {
 			        }}
 			   />				
 		 )
-	 	console.log('store.presetTags',store.presetTags)
 	 	const tagSection =  <div>
 		 						<div>
 									<h3 className="filterHeader">Select Tags</h3>

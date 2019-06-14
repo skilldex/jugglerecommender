@@ -70,7 +70,6 @@ class App extends Component {
 		if(window.location.host.includes("localhost")){
 			//store.initializeTags()
 		}
-		store.initializeTags()
 		store.getLibraryFromDatabase()
 		store.getTagsFromDatabase()
 		
@@ -91,12 +90,11 @@ class App extends Component {
  	} 	
  	openSlidingPane=(paneName)=>{
  		uiStore.setPopupTrickToNull()
- 		if (paneName == 'isLoginPaneOpen'){
+ 		if (paneName === 'isLoginPaneOpen'){
 	 		store.setIsLoginPaneOpen(true)
-	 	}else if(paneName == 'isInstructionsPaneOpen'){
+	 	}else if(paneName === 'isInstructionsPaneOpen'){
 	 		this.setState({ 'isInstructionsPaneOpen': true })
-	 	}else if(paneName == 'isCreateAccountPaneOpen'){
-	 		console.log('isCreateAccountPaneOpenBeingSet')
+	 	}else if(paneName === 'isCreateAccountPaneOpen'){
 	 		this.setState({ 'isCreateAccountPaneOpen': true })
 	 	}
  	}
