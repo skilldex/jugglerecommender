@@ -16,6 +16,7 @@ class Popup extends Component {
     catches : null,
     gifFullscreen : false
   }
+
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
@@ -64,7 +65,19 @@ class Popup extends Component {
     },100)
     
   }
+  onBlur(event) {
+    console.log("blur", event)
+      // currentTarget refers to this component.
+      // relatedTarget refers to the element where the user clicked (or focused) which
+      // triggered this event.
+      // So in effect, this condition checks if the user clicked outside the component.
+      if (!event.currentTarget.contains(event.relatedTarget)) {
+          // do your thing.
+          uiStore.setPopupTrick(null)
+      }
+  }
 	render() {
+    if(this.outerDiv){this.outerDiv.focus()}
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
@@ -209,7 +222,7 @@ class Popup extends Component {
                     </div> : null
     
 		return(
-      			<div>{this.state.gifFullscreen ?
+      			<div ref={(div)=> {this.outerDiv = div}} tabIndex="0" onBlur={this.onBlur}>{this.state.gifFullscreen ?
       				    gifFullScreenPopup : popupCard
                 }
       			</div>

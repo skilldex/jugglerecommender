@@ -48,7 +48,8 @@ class TrickGraph extends Component {
             uiStore.setPopupTrick({
               'id': event.nodes[0],
               'x' : event.pointer.DOM.x,
-              'y' : event.pointer.DOM.y+140})
+              'y' : event.pointer.DOM.y+140
+            })
         }, 
         stabilizationIterationsDone: function(event) {
           console.log("iterations" ,event)

@@ -89,7 +89,6 @@ class App extends Component {
  		})
  	} 	
  	openSlidingPane=(paneName)=>{
- 		uiStore.setPopupTrick(null)
  		if (paneName === 'isLoginPaneOpen'){
 	 		store.setIsLoginPaneOpen(true)
 	 	}else if(paneName === 'isInstructionsPaneOpen'){
@@ -177,7 +176,7 @@ class App extends Component {
 						selectedTricks={uiStore.selectedTricks}
 					/> : null
 				}
-				<Popup id = "popup"/>
+				<Popup/>
 				<AddTrickForm/>
 				<TrickGraph 
 					nodes = {graphStore.nodes}
