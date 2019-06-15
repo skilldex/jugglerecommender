@@ -1,68 +1,29 @@
 
-V1.2 bugs:	
-	-Added tricks are just getting (#) after them, not (#B), and for some reason it is even doing 
-		(3), but I dunno, maybe that is better
-	-search doesn't search the (ballnum) part of search
-		-this is tru for the most part, for example searching 4 does find shower(4b), but not anything else
-		-if it did, and if we put (3b) after 3b tricks, it would be an easy way to filter by ballnum
-	-With no filters, 
-		search coll
-		Remove an L
-		It has the top trick in list selected, but the graph shows all tricks in list
-
-	-reditor said they didn't understand the meaning of the edges between patterns
-	-i dont think most people know what 'prereqs' means
-
-Filtering:
-	-Filter for user added
-	-Make a filter for number of generations away from root
-		-maybe not needed if we make it easier to select tricks that are shouwn in graph
-	-Filter out myTricks from allTricks so that I can only see relateds/prereqs/depends that are not
-		myTricks
-
-Association Issues:
-	-Since there is only prereqs input in form, it is very tempting to put prereqs, depends, and 
-	related tricks all in there just so they end up associated in graph.
-		-A way to solve this issue is to make 3 dropdowns in the form for each of the 3 types of associations
-		-or just make 1 that is related and have the colors indicate what ought to be learned first
-			-related should be shown on graph with lines with no arrows
-				-it feels kinda strange that my collision tricks are not connected on the graph, 
-	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox
-		 which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
-
-Editing patterns:
--It is hard to remember what patterns might be prereqs while adding patterns, especially since there all we have is names in the list and many patterns have lots of different names in general
--A way to make associations even for tricks not uploaded by the user is needed
-	-we currently have lots of very similar tricks that are not connected on graph
-		-if anyone can help create associations it will probably help fix this problem
-
-Adding Patterns:
-	-if tags exist that are the same as words in the name of the input pattern, they should be recommended somehow
-	-A 'recommended related' list 
-		-tricks with the same siteswap
-		-a word in common in the title
-		-prereq/related in common
-	-It would be nice if there was a way to see all tags instead of needing to go through and type each letter to get a bunch of different partial lists. It is very time consuming.
-		-Tags dont have universal names so it is tough to know what tags names are being used.
-
-Tags:
-	-Users should be allowed to add tags
-		-we are nowhere near being cluttered. 
-		-The kinds of tricks people will be most motivated to add are ones that are fairly unique to them so they will have tags that we already have. Being unable to tag your pattern is annoying.
-
-List:
-	-on mobile, resize list height so it is never behind keyboard.
-	-Filter by catches does everything myTricks does and much more, if we want simpler code/UI experience we could consider removing myTricks 
-
-Graph:
-	-It is hard to go 2 generations out of related tricks because you must look through whole list to select other patterns.
-		-Maybe clicking a node should select it and clicking a selected node should open its popup
-	-The ability to see related tricks in graph
-
 Popup:
-	-Popup should show contributor, and clicking contributor should make it a  tag
-	-youtube videos must loop entire video
-		SOLUTION: -https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
+	If contributor is an instagram account or website, itr should be a link, it should be a link, if it is a website
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------
 
 Stats:
 	Potential pattern stats:
@@ -75,22 +36,11 @@ Stats:
 		-number of my tricks
 
 Awesome but maybe difficult things:
-	-I don't know if it would be possible, but it would be so sweet to be able to have a share 
-		button that gives a link to the page with a series of tags already input so I could easily share all my collision patterns
 	-Automated instagram uploading if the info(tags, prereqs, ball num..) was in the description
-	-Instagram Looping
-	-Loop YouTube videos from specific time to specific time, see email for how to do this
-		-https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
-	-get something like x-gif hooked up to a slider to control the speed of the gifs(videos too would be awesome), make it so if you slide it far enough it begins playing the trick backwards(This would be incredibly useful, it would be great if it were somehow possible with videos as well)
+
 
 Difficulty Coloring Issue:
 	-Ideally the difficulty of tricks that I have not yet attempted should be catered to which tricks I can do, but I havnt yet envisioned an algorithm that can accomplish this. It would would be great to know that I can always look at my app and quickly watch a trick being done that I have never done before and just be able to do it. 
-
-
-
-		
-
-
 
 thoughts/ideas:
 	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
@@ -101,28 +51,6 @@ thoughts/ideas:
 	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
 	-If we end up doing some sort of incentivised competition it should come after we devise a method of community voting on best representation of tricks that way people really try to post high quality shit so their video stays as the official demo. Maybe an 'other videos' section that lists all the others for posterity.
 
-	
-Thought process on removing myTricks:
-	-What does myTricks give me?
-		-It is a single list of tricks that lumps together the following:
-			1)tricks I want to learn
-			2)tricks I can barely do
-			3)tricks I can do pretty well
-			4)tricks I can do really well
-		-Is there anything else that the myTricks/allTricks makes possible?
-	-Filter catches easily does this, as well as allows me to see any of those list individually	
-		-What about tricks I want to mark for later learning, but don't feel like trying now?
-			-This is probably very rare, but they can simply set those tricks to 1 catch and then filter out all the others
-		-downsides:
-			-people like stars and are used to favoriting and liking things, this takes that ability away from them
-			-if anyone does find themself in a position of wanting to mark a trick for later learning, and they don't think to set it 1 catch
-				SOLUTION: make a tips section in about
-			-we have to delete some of our work
-		-extra benefits:
-			-we can remove the problem of the overwhelming, unuseful original graph by defaulting to several tags.
-			-The ability to have a list of tricks that are 'tricks I have not looked at yet'
-			-we can completely remove the clutter/confusion of allTricks/myTricks from the code/UI
-	-another reason we may want to steer away from a whole special section for tricks that we have input catches for is that we may want to have a whole seperate section for contributed tricks which probably more warrants its own section
 
 
 

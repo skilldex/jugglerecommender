@@ -24,7 +24,6 @@ v 1.2:
 		-explain edges
 		-talk about adding tricks
 	-sort tricks by date catches updated
-	-show contributor on popup
 	-make filter button change colors when selected, this involves gettin it as svg
 	- A button that is 'more catches than I want to count' in the popups
 

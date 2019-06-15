@@ -66,13 +66,7 @@ class Popup extends Component {
     
   }
   onBlur(event) {
-    console.log("blur", event)
-      // currentTarget refers to this component.
-      // relatedTarget refers to the element where the user clicked (or focused) which
-      // triggered this event.
-      // So in effect, this condition checks if the user clicked outside the component.
       if (!event.currentTarget.contains(event.relatedTarget)) {
-          // do your thing.
           uiStore.setPopupTrick(null)
       }
   }
@@ -197,9 +191,12 @@ class Popup extends Component {
                       <label>Number of Balls: {store.library[popupTrickKey].num}</label><br/>
                       {store.library[popupTrickKey].siteswap ? 
                         <div>
-                          <label>Siteswap: {store.library[popupTrickKey].siteswap}</label><br/><br/>
+                          <label>Siteswap: {store.library[popupTrickKey].siteswap}</label><br/>
                         </div> : null
-                      } 
+                      }
+                      <label>Contributor: {store.library[popupTrickKey].contributor ? 
+                        store.library[popupTrickKey].contributor : 'www.libraryOfJuggling.com'}</label><br/><br/>
+                      
                     	{store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                     		<span 
                          onClick={()=>{this.seeExplanation(popupTrickKey)}}
