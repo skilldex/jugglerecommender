@@ -206,7 +206,7 @@ class Popup extends Component {
                     </div> : null
     
 		return(
-      			<div ref={(div)=> {this.outerDiv = div}} tabIndex="0" onBlur={this.onBlur}>{this.state.gifFullscreen ?
+      			<div ref={(div)=> {this.outerDiv = div}} tabIndex="0">{this.state.gifFullscreen ?
       				    gifFullScreenPopup : popupCard
                 }
       			</div>
