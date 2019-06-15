@@ -79,6 +79,20 @@ class Popup extends Component {
         uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
       }
     });
+    document.addEventListener("click", (evt) => {
+      const inputElement = document.getElementById("catchInput");
+      const buttonElement = document.getElementById("editCatchButton");
+      let targetElement = evt.target;
+      do {
+        if (targetElement === inputElement || targetElement === buttonElement) {
+          return;
+        }
+        targetElement = targetElement.parentNode;
+      } while (targetElement);
+      if (uiStore.popupCatchEditable){
+        uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
+      }
+    });
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>

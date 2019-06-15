@@ -119,6 +119,7 @@ class UIStore {
 		this.performSearch()
 		//this.popupTrick = null
 		this.resetSelectedTrick()
+		this.updateRootTricks()
  	}
  		
  	@action performSearch=()=>{

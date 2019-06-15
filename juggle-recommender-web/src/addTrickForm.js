@@ -146,7 +146,7 @@ class AddTrickForm extends Component {
 				var prereqs = this.state.prereqs.map(function(item) {
 					return item['text'];
 				});		
-				const suffix = this.state.numBalls === 3 ? '' : " ("+this.state.numBalls+")"
+				const suffix = "("+this.state.numBalls+"b)"
 
 				const trick = {
 					name : this.state.name+suffix,
