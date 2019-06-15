@@ -126,10 +126,27 @@ render() {
 	let allTricksButtonClass = uiStore.selectedList === "allTricks" ? 
 						 				"selectedListButton" :"unselectedListButton" 
 		allTricksButtonClass = allTricksButtonClass + " listButton"
- 	const buttons = <div>
+ 	const listExpandCollapseButton = 
+			 					<div >
+								 	<label className="listExpandCollapseButton"
+											onClick={this.setListExpanded}>
+											{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
+						 		</div>
+	const minimizedList = 
+					<div>
+						<img className='selectedListMinimizedIndicator'
+			 				 src={uiStore.selectedList === 'allTricks' ? allIcon : starIcon }
+			 				 alt=""
+				 		/>						
 					 	<label className="listExpandCollapseButton"
-								onClick={this.setListExpanded}>{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
-				 		<div className="listButtonDiv">
+								onClick={this.setListExpanded}>
+								{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
+					</div>
+
+	const maximizedList =
+					<div>
+					 	{listExpandCollapseButton}
+					 	<div className="listButtonDiv">
 				 			<img className={myTricksButtonClass}
 				 				src={starIcon}
 								onClick={()=>{uiStore.setSelectedList("myTricks")}}
@@ -148,13 +165,6 @@ render() {
 							{sort}
 							{sortDropdown}
 						</div>
-			 		</div>
-	return (
-		<div>	
-			<div className="listDiv">		
-		 		{uiStore.listExpanded ? 
-					<div>
-					 	{buttons}
 					 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 						<div style={{height:"100%"}}>
 							<label style={{float:"left"}}>easy</label>
@@ -167,8 +177,11 @@ render() {
 							{tricks}
 							</div>						
 						</div>
-					</div> : 
-					buttons}
+					</div>
+	return (
+		<div>	
+			<div className= {uiStore.listExpanded ? "listDiv" : "listDiv minimizedListDiv"}>		
+		 		{uiStore.listExpanded ? maximizedList : minimizedList}
 			</div>
 			{filterStore.filterVisible?
 			<Filter/>

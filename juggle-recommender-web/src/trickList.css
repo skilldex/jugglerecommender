@@ -39,7 +39,6 @@
   float : right; 
   padding-right : 15px;
 }
-
 .listButton{
   width : 50%;
   height: 50px;
@@ -47,6 +46,17 @@
   display: inline-block;
   margin-left: auto;
   margin-right: auto;
+}
+.selectedListMinimizedIndicator{
+  width : 50%;
+  height: 40px;
+  cursor : pointer;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 }
 .selectedListButton{
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
@@ -91,6 +101,10 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
+.minimizedListDiv{
+  height: 60px;
+  width: 100px;
+  }
 
 .sectionHeader{
   display: inline-block;
