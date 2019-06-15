@@ -12,12 +12,10 @@ v 1.0:
 
 ==========
 
-New version bugs:
-	search doesn't search the (ballnum) part of search
-		-this is tru for the most part, for example searching 4 does find shower(4b), but not anything else
-		-if it did, and if we put (3b) after 3b tricks, it would be an easy way to filter by ballnum
+
 
 Minor:
+	-show contributor on popup
 	-clicking filter should set focus on tag input
 	-Clicking a popup or the list should bring either in front of the other
 	-find sort button with transparent background
