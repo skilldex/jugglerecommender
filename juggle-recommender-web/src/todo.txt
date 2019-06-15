@@ -1,139 +1,60 @@
-
-
+v 1.4
+	- shareable filter links
+	- make popups be draggable divs 
+	- add related relationship
+	- add related filter
+	- way to view contributed tricks (probably filter)/by contributor
+	- slow/reverse gif
 v 1.3:
+	-it should also update the library entry for the dependent with the appropriate prereq
+	- move search and sort to top bar
+	- edit trick
+	- log in firebase for a tricks edited by noncontributor
+	- instagram looping/player
+	- clicking unselected selects, popup only for selected 
+	- youtube videos don't autoplay
+	- autocomplete name of added trick to avoid redundant tricks
+	- show all tags during add trick
 
 v 1.2:
+	- suggest to upload videos that only contain the trick or tutorial
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
-	-make popups be draggable divs
+	- hide all in minimize list, except some small indicator of which list is being viewed 
 	-enhance about section
 		-explain edges
 		-talk about adding tricks
 	-sort tricks by date catches updated
 	-show contributor on popup
-
-v 1.1:
-	
-
-	
-	
-
-
-
+	-make filter button change colors when selected, this involves gettin it as svg
+	- A button that is 'more catches than I want to count' in the popups
 
 ==========
-
 
 -edit profile(maybe beyond 1.1)
 -toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
 
 -make multi-termed search
+- filter by num balls 2, 6, 7 or range/even odd
+- allow users to add new tags
 
+-find sort button with transparent background
+	-is this still needed?
+-Allow cancel add pattern with escape button
+-find highest catches should be only run when it is actually used
+-just make sure they are always used together first
+-Update root tricks is running 4 times
 
-Minor:	
+- can't pinch zoom on list (android)
+-filter for unstarred tricks
+- recommend tags based on trick name
+- recommended related list 
+	-tricks with the same siteswap
+	-a word in common in the title
+	-prereq/related in common
+-on mobile, resize list height so it is never behind keyboard.
+-The ability to see related tricks in graph
 
-	-Clicking a popup or the list should bring either in front of the other
-	-find sort button with transparent background
-		-is this still needed?
-	-make filter button change colors when selected, this involves gettin it as svg
-	-Add trick form should disappear on click off
-	-add 'since last updated' to sort
-	-find highest catches should be only run when it is actually used
-	-An input in form for dependents
-		-it should also update the library entry for the dependent with the appropriate prereq
-	-maybe put updateRootTricks() in selectLastUpdated()
-		-just make sure they are always used together first
-
-Bugs:
-	Popup
-		Youtube
-			-youtube videos don't autoplay
-		Instagram
-			-Instagram has no way to loop, they want you to go to their site to loop
-				A possible solution may be to check to see when the video ends and then reload the embed
-	Misc
-		-trick popup and header can both be used to zoom and position each other, but list cannot be used that why. What's up with that?
-	Maybe unimportant
-		-we get this every time:
-			Warning: Each child in a list should have a unique "key" prop.
-		-Update root tricks is running 4 times
-
-Later:
-	List:
-		-Style expand arrows as icons(Still an issue?)
-		-make a 2b section
-		-make a 6b and 7b sections
-		-allow users to edit tricks that they have contributed
-		-allow users to suggest new tags
-	Graph:
-		-node size based on zoom
-		-opacity based on closeness to qualify
-		-compare gifs of different tricks side by side,
-	Misc:
-		-Researching other data sources to inform user based tricks(what does this mean?)
-		-maybe make a dark theme
-	Popup:
-		-A button that is 'more catches than I want to count' in the popups
-	Add Trick Form:
-		-in form, I clicked a tag and the click clicked cancel because it was behind it. This has 
-			only happened once, maybe i double clicked without realising.
-				*solution is either to limit height(seems like library has no option for this, either make our own tags or edit library) of dropdown or make a timer(even if we do this we still have a mile long list, we could limit list length by requiring more than 1 letter to show suggestions)
-
-----------------
-
-V1.2 bugs:	
-	-reditor said they didn't understand the meaning of the edges between patterns
-	-i dont think most people know what 'prereqs' means
-
-Filtering:
-	-Filter for user added
-	-Make a filter for number of generations away from root
-		-maybe not needed if we make it easier to select tricks that are shouwn in graph
-	-Filter out myTricks from allTricks so that I can only see relateds/prereqs/depends that are not
-		myTricks
-
-Association Issues:
-	-Since there is only prereqs input in form, it is very tempting to put prereqs, depends, and 
-	related tricks all in there just so they end up associated in graph.
-		-A way to solve this issue is to make 3 dropdowns in the form for each of the 3 types of associations
-		-or just make 1 that is related and have the colors indicate what ought to be learned first
-			-related should be shown on graph with lines with no arrows
-				-it feels kinda strange that my collision tricks are not connected on the graph, 
-	-Current related tricks equivalence is non-symmetrical, for example: Box is related to NBox
-		 which is related to Luke's shuffle, but Luke's shuffle is not related to NBox which is not related to Box
-
-Editing patterns:
--It is hard to remember what patterns might be prereqs while adding patterns, especially since there all we have is names in the list and many patterns have lots of different names in general
--A way to make associations even for tricks not uploaded by the user is needed
-	-we currently have lots of very similar tricks that are not connected on graph
-		-if anyone can help create associations it will probably help fix this problem
-
-Adding Patterns:
-	-if tags exist that are the same as words in the name of the input pattern, they should be recommended somehow
-	-A 'recommended related' list 
-		-tricks with the same siteswap
-		-a word in common in the title
-		-prereq/related in common
-	-It would be nice if there was a way to see all tags instead of needing to go through and type each letter to get a bunch of different partial lists. It is very time consuming.
-		-Tags dont have universal names so it is tough to know what tags names are being used.
-
-Tags:
-	-Users should be allowed to add tags
-		-we are nowhere near being cluttered. 
-		-The kinds of tricks people will be most motivated to add are ones that are fairly unique to them so they will have tags that we already have. Being unable to tag your pattern is annoying.
-
-List:
-	-on mobile, resize list height so it is never behind keyboard.
-	-Filter by catches does everything myTricks does and much more, if we want simpler code/UI experience we could consider removing myTricks 
-
-Graph:
-	-It is hard to go 2 generations out of related tricks because you must look through whole list to select other patterns.
-		-Maybe clicking a node should select it and clicking a selected node should open its popup
-	-The ability to see related tricks in graph
-
-Popup:
-	-Popup should show contributor, and clicking contributor should make it a  tag
-	-youtube videos must loop entire video
-		SOLUTION: -https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
+- clicking contributor should make it a  tag
 
 Stats:
 	Potential pattern stats:
@@ -145,61 +66,8 @@ Stats:
 		-number of all tricks
 		-number of my tricks
 
-Awesome but maybe difficult things:
-	-I don't know if it would be possible, but it would be so sweet to be able to have a share 
-		button that gives a link to the page with a series of tags already input so I could easily share all my collision patterns
-	-Automated instagram uploading if the info(tags, prereqs, ball num..) was in the description
-	-Instagram Looping
-	-Loop YouTube videos from specific time to specific time, see email for how to do this
-		-https://webapps.stackexchange.com/questions/45884/have-an-embedded-youtube-video-loop-end-at-specified-time-every-time-it-plays
-	-get something like x-gif hooked up to a slider to control the speed of the gifs(videos too would be awesome), make it so if you slide it far enough it begins playing the trick backwards(This would be incredibly useful, it would be great if it were somehow possible with videos as well)
-
-Difficulty Coloring Issue:
-	-Ideally the difficulty of tricks that I have not yet attempted should be catered to which tricks I can do, but I havnt yet envisioned an algorithm that can accomplish this. It would would be great to know that I can always look at my app and quickly watch a trick being done that I have never done before and just be able to do it. 
+		
+-compare gifs of different tricks side by side,
+-opacity based on closeness to qualify
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Juggling.tv notes:
-	-maybe good to add it because the kind of people who use a vid hosting site specifically for juggling may be likely to use juggledex
-	-maybe not good to add it because it looks like their embed says it wont work for iOS
-
-	VideoURL 
-		 http://juggling.tv/17201
-	Associated embed
-		<embed src="http://juggling.tv/nvplayer.swf?config=http://juggling.tv/nuevo/econfig.php?key=d705ee69c42ee0ac833b" width="480" height="370" allowscriptaccess="always" allowfullscreen="true" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" /></embed>						<br /><font face="Verdana, Arial, Helvetica, sans-serif" size="-2"><a href="http://juggling.tv/17201" target="_blank">Kepulat magnetic sticks 22.1.2019</a> <-- Please go to JTV for iOS playback</font>
-
-Arrow for indicating the scrollability of cards: (this is most likely not necesaary)
-	-should it go away when we are at the bottom?
-	-as is an arrow would overlap our tags sometimes, maybe we could not show tags on an edge to leave room
-	Ideas:
-		-this kind of arrow:
-		https://graphicdesign.stackexchange.com/questions/31104/what-is-the-best-way-to-indicate-that-you-can-scroll-in-an-area-when-the-area-do/31109
-		-no arrow solution, just have something half-revealed to make scrollability obvious:
-		https://uxdesign.cc/dear-web-designer-let-s-stop-breaking-the-affordance-of-scrolling-fe8bf258df7b
-
-	-find some difficulty/coloring scheme that will work for any case including user added
-		-Possible color scheme:
-			After user has input catches: 
-				Add a 'more catches than I care to count button' and make those tricks difficulty 1. Then all other tricks difficulty automatically set based on input number of catches with the tricks with the most catches being 1, and tricks with least being 10. Allow users to change the difficulty of their own tricks as they see fit.
-			Before user has input catches:
-				Use the average difficulty rating of all other users for that trick
-			Original difficulty of new tricks:
-				Set by contributor, but this is just used until an average from other users can be used
