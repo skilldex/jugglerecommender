@@ -178,6 +178,17 @@ class UIStore {
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'name');
 		}else if (filterStore.sortType === 'difficulty'){
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'difficulty');
+		}else if (filterStore.sortType === 'lastUpdated'){
+			let tempLibraryWithTimes = store.library
+			let trick
+			for (trick in tempLibraryWithTimes){
+				if (store.myTricks[trick] && store.myTricks[trick].lastUpdated){
+					tempLibraryWithTimes[trick].lastUpdated = 999999999999 - store.myTricks[trick].lastUpdated
+				}else{
+					tempLibraryWithTimes[trick].lastUpdated = 0
+				}
+				sortedJugglingLibrary = this.alphabeticalSortObject(tempLibraryWithTimes, 'lastUpdated');
+			}
 		}
 		const filterTagNames= []
 		filterStore.tags.forEach(function (arrayItem) {

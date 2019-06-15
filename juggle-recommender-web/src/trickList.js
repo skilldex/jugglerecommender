@@ -66,7 +66,6 @@ class TrickList extends Component {
 
 
 render() {
-
 	//"this" gets redefined in window.onclick so use "that"
 	const that = this
 	window.onclick = function(event) {
@@ -82,6 +81,9 @@ render() {
 				    	<button alt="sortDropdownButtonAlph"
 				    			className="sortDropdownButtonAlph" 
 				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
+				    	<button alt="sortDropdownButtonLastUpdated"
+				    			className="sortDropdownButtonLastUpdated" 
+				    			onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Updated</button>
 					  </div> : null
 
 	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 

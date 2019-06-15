@@ -18,14 +18,14 @@ v 1.3:
 
 v 1.2:
 	-suggest to upload videos that only contain the trick or tutorial
-		*should this be in about pane or in add trick form?
+		*should this be in 'about' or in 'add trick' form?
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	-enhance about section
 		-explain edges
 		-talk about adding tricks
-	-sort tricks by date catches updated
 	-make filter button change colors when selected, this involves getting it as svg
 	-A button that is 'more catches than I want to count' in the popups
+		*what do we put in the db when it is clicked?
 
 ==========
 

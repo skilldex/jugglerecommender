@@ -39,13 +39,7 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 
 	}
-
-	handleSortRadioButtonChange=(event)=>{
-		filterStore.setSortType(event.target.value)
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
-	}
-  
+ 
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
 		uiStore.resetSelectedTrick()
