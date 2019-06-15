@@ -71,7 +71,7 @@ class Popup extends Component {
       }
   }
 	render() {
-    if(this.outerDiv){this.outerDiv.focus()}
+    //if(this.outerDiv){this.outerDiv.focus()}
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
