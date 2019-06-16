@@ -17,7 +17,9 @@
 }
 .popupLabel{
   margin-bottom : 10px;
+  margin-right: 5px;
   display: inline-block;
+  font-weight: bold;
 }
 .popupGif{
   width: 240px;

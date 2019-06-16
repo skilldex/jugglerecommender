@@ -182,15 +182,19 @@ class Popup extends Component {
                     >
                       <h3>{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
-                      <label className="popupLabel">Difficulty: {store.library[popupTrickKey].difficulty} / 10</label><br/>
-                      <label className="popupLabel">Number of Balls: {store.library[popupTrickKey].num}</label><br/>
+                      <label className="popupLabel">Difficulty: </label>{store.library[popupTrickKey].difficulty} / 10<br/>
+                      <label className="popupLabel">Number of Balls: </label>{store.library[popupTrickKey].num}<br/>
                       {store.library[popupTrickKey].siteswap ? 
                         <div>
-                          <label className="popupLabel">Siteswap: {store.library[popupTrickKey].siteswap}</label><br/>
+                          <label className="popupLabel">Siteswap: </label>{store.library[popupTrickKey].siteswap}<br/>
                         </div> : null
                       }
-                      <label className="popupLabel">Contributor: {store.library[popupTrickKey].contributor ? 
-                        store.library[popupTrickKey].contributor : 'www.libraryOfJuggling.com'}</label><br/><br/>
+                      <label className="popupLabel">Contributor: </label>
+                      {
+                        store.library[popupTrickKey].contributor ? 
+                        store.library[popupTrickKey].contributor : 'www.libraryOfJuggling.com'
+                      }
+                      <br/><br/>
                       
                     	{store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                     		<span 
