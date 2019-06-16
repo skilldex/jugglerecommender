@@ -135,12 +135,9 @@ render() {
 											{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
 						 		</div>
 	const minimizedList = 
-					<div>
-						<img className='selectedListMinimizedIndicator'
-			 				 src={uiStore.selectedList === 'allTricks' ? allIcon : starIcon }
-			 				 alt=""
-				 		/>						
-					 	<label className="listExpandCollapseButton"
+					<div className="minimizedListDiv">
+				 		<span className="expandText">click to expand</span>					
+					 	<label className="minimizedListButton"
 								onClick={this.setListExpanded}>
 								{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
 					</div>
@@ -182,7 +179,7 @@ render() {
 					</div>
 	return (
 		<div>	
-			<div className= {uiStore.listExpanded ? "listDiv" : "listDiv minimizedListDiv"}>		
+			<div className= {uiStore.listExpanded ? "listDiv" : ""}>		
 		 		{uiStore.listExpanded ? maximizedList : minimizedList}
 			</div>
 			{filterStore.filterVisible?
