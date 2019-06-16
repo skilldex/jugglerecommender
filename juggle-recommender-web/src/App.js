@@ -128,16 +128,27 @@ _handleKeyDown = (event) => {
 				                onRequestClose={ () => {
 				                    this.setState({ isInstructionsPaneOpen: false });}}>
 				                <div className="instructions">
+				                	<h2>About Skilldex</h2>
+										<span className="info">
+											• Find new trick to learn<br/>
+											• Track catches for tricks you know<br/>
+											• Share new tricks with the Skilldex community
+										</span>
+									<br/>
 				                	<h2>Instructions</h2>
 									<span className="info">
+										• Tricks and their relationships are represented by a graph<br/>
+										• An arrow connecting two tricks shows that the first trick is prerequisite for the second<br/>
 										• ★ Star tricks you know to add to "Starred" tricks.<br/>
-										• Find new tricks to learn next that are related to tricks you starred ★.
+										• Find new tricks to learn next that are related to tricks you starred.
 									</span>
-									<br/><br/>
+									<br/>
 									<span className="info">Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
 									<br/>
-									<div className="info" >contact 
-										<a style={{"color":"blue"}}> skilldex.feedback@gmail.com</a>
+									<h2>Contact</h2>
+									<div className="info" >
+										<a style={{"color":"blue"}}>www.instagram.com/skilldex.app/</a><br/>
+										<a style={{"color":"blue"}}>skilldex.feedback@gmail.com</a>
 									</div>
 								</div><br/>
 				            </SlidingPane> 
