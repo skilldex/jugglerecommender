@@ -1,6 +1,8 @@
 import React,{Component} from 'react'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
+import { toJS } from "mobx"
+
 import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
 import fullScreenIcon from './images/fullScreenIcon.png'
@@ -119,27 +121,48 @@ class Popup extends Component {
                                className="popupGif" 
                                src={store.library[popupTrickKey].gifUrl}/> 
                         </div> : null
-    let videoURLtoUse = ''
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
-      videoURLtoUse = utilities.getUsableVideoURL(store.library[popupTrickKey].video)
+      store.getUsableVideoURL(store.library[popupTrickKey].video)
     }
-    let videoIframe  = <iframe name="vidFrame" 
+    if(store.igData){
+      console.log("profile img", toJS(store.igData.picURL))
+    }
+    let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
+                          <div className="instagramHeader">
+                            <img className="profileImage" src={store.igData.picURL}/>
+                            <span>{store.igData.username}</span>
+                            <button className="instagramViewProfileButton" onClick={()=>{window.open(store.igData.profileURL)}}>View Profile</button>
+                          </div> : null
+    let videoIframe  = store.popupVideoURL.includes('youtube') ? 
+                        <iframe name="vidFrame" 
                                 title="UniqueTitleForVideoIframeToStopWarning"
-                                className= {videoURLtoUse.includes('youtube')?
+                                className= {store.popupVideoURL.includes('youtube')?
                                                 "popupGif":"instagramVideo"}                                  
                                   allow="autoplay"  
                                   allowtransparency="true"
-                                  src={videoURLtoUse}
-                                  onLoad={this.onLoadIframe}></iframe>
-    
-    const videoFullscreen  = <iframe  className= {videoURLtoUse.includes('youtube')?
+                                  src={store.popupVideoURL}      
+                        ></iframe> : store.popupVideoURL.includes('instagram') ? 
+                        <video 
+                          ref={(video)=> {this.popupVideo = video}}
+                          name="vidFrame" 
+                          title="UniqueTitleForVideoIframeToStopWarning"
+                          className= {store.popupVideoURL.includes('youtube')?
+                          "popupGif":"instagramVideo"}                                  
+                          autoPlay
+                          playsInline
+                          controls  
+                          loop
+                          src={store.popupVideoURL}
+                        ></video> : null
+
+    const videoFullscreen  = <iframe  className= {store.popupVideoURL.includes('youtube')?
                                                 "youtubeFullScreen" : "instagramFullScreen"}   
                                   title="UniqueTitleForvideoFullscreenToStopWarning"                             
                                   allow="autoplay"  
                                   allowtransparency="true"                                 
-                                  src={videoURLtoUse}></iframe>
+                                  src={store.popupVideoURL}></iframe>
     const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
-                        <div className = {videoURLtoUse.includes('youtube')?
+                        <div className = {store.popupVideoURL.includes('youtube')?
                                         "gifDiv":"instagramDiv"}>
                           <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
                           {videoIframe}
@@ -202,6 +225,7 @@ class Popup extends Component {
                          className="popupLink"
                     		>See explanation</span> : null
                       }
+                      {igHeader}
                       {videoSection}
                       {gifSection}
                       <br></br>

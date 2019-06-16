@@ -39,10 +39,32 @@
   border : 1px solid gray;
   margin-top: 15px;
 }
+.profileImage{
+  width: 50px;
+  height:50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.instagramHeader{
+  font-weight: bold;
+  display : flex;
+  align-items: center;
+}
 .instagramVideo{
   width: 240px;
   height:370px;
   float: center;
+}
+.instagramViewProfileButton{
+  background-color : #0868CE;
+  color : white;
+  margin-left: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  height : 40px;
 }
 .popupTags{
   float: left;

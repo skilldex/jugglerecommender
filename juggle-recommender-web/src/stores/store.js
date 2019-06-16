@@ -15,26 +15,58 @@ class Store {
 	@observable library = {}
 	@observable tagsSuggestions = []
 	@observable presetTags = {}
+	@observable popupVideoURL = ""
+	@observable igData = null
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
-	 }
-	@computed get lastTrickUpdated(){
-		let mostRecentTime = 0
-		let lastTrickUpdated = ""
-		let rootTricks = []
-		for(var key in uiStore.rootTricks) {
-		    rootTricks.push(uiStore.rootTricks[key])
-		}
- 		for(var trick in this.myTricks) {
-	        if(this.myTricks[trick].lastUpdated && 
-	        	this.myTricks[trick].lastUpdated>mostRecentTime &&
-	        	rootTricks.includes(trick)){
-	          mostRecentTime = parseInt(this.myTricks[trick].lastUpdated, 10)
-	          lastTrickUpdated = trick
-	        }       
-	    }
-	    return lastTrickUpdated
 	}
+	@action setPopupVideoURL=(url)=>{
+		this.popupVideoURL = url
+	}
+	@action setIGData=(data)=>{
+		if(!this.igData){
+			this.igData = {
+				username : data.graphql.shortcode_media.owner.username,
+				picURL :  data.graphql.shortcode_media.owner.profile_pic_url,
+				profileURL : "https://www.instagram.com/"+data.graphql.shortcode_media.owner.username
+			}
+		}
+	}
+	@action getUsableVideoURL=(userProvidedURL)=>{
+      let videoURLtoUse = "notValid"
+      if (userProvidedURL.includes("instagram.com")){
+	    const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
+	    videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
+	    const url = "https://www.instagram.com"+usefulPart+"?__a=1"
+        fetch(url).then(
+            response => response.json()
+        ).then(
+            (data) => {
+            console.log(data)
+              this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
+              this.setIGData(data)
+            }
+        );                                
+      }
+      else if(userProvidedURL.includes("youtu")){
+        let usefulPart
+        if (userProvidedURL.includes("youtube.com/watch")){
+          usefulPart = userProvidedURL.split('youtube.com/watch?v=')
+          usefulPart = usefulPart[usefulPart.length-1]
+          if (usefulPart.includes("&feature=youtu.be")){
+            usefulPart = usefulPart.replace("&feature=youtu.be","")
+          }
+          //https://www.youtube.com/watch?v=Kr8LhLGjyiY            
+        }else if (userProvidedURL.includes("youtu.be/")){
+          //https://youtu.be/Kr8LhLGjyiY
+          usefulPart = userProvidedURL.split('youtu.be/')
+          usefulPart = usefulPart[usefulPart.length-1]            
+        }
+        this.setPopupVideoURL("https://www.youtube.com/embed/"+usefulPart+
+                       "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
+      }
+      
+    }
 	@action setIsLoginPaneOpen=(isOpen)=>{
 		this.isLoginPaneOpen = isOpen
 	}
