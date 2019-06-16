@@ -146,8 +146,6 @@ class UIStore {
 	            bt = b.tempSortName;
 	        return at > bt ? 1 : ( at < bt ? -1 : 0 );
 	    });
-	    console.log('arr',arr)
-
 	    return arr;
 	}
 	@action containsAny=(trickArray,filterArray)=>{

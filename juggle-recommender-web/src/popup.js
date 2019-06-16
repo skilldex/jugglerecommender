@@ -180,7 +180,7 @@ class Popup extends Component {
                         }} 
                          className="popupDiv"
                     >
-                      <div classname = "popupHeader">{addToMyTricksButton}{store.library[popupTrickKey].name}</div>             
+                      <h3 className="popupHeader">{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
                       <label className="popupLabel">Difficulty: </label>{store.library[popupTrickKey].difficulty} / 10<br/>
                       <label className="popupLabel">Number of Balls: </label>{store.library[popupTrickKey].num}<br/>
@@ -192,7 +192,7 @@ class Popup extends Component {
                       <label className="popupLabel">Contributor: </label>
                       {
                         store.library[popupTrickKey].contributor ? 
-                        store.library[popupTrickKey].contributor : 'www.libraryOfJuggling.com'
+                        store.library[popupTrickKey].contributor : <a target="_" href='http://libraryOfJuggling.com'>libraryOfJuggling.com</a>
                       }
                       <br/><br/>
                       
