@@ -91,7 +91,7 @@ class Popup extends Component {
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
-      <label>Catches: </label>
+      <label className="popupLabel">Catches: </label>
       {uiStore.popupCatchEditable ?
         <input 
               ref={(input)=> {this.catchInput = input}}
@@ -182,14 +182,14 @@ class Popup extends Component {
                     >
                       <h3>{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
-                      <label>Difficulty: {store.library[popupTrickKey].difficulty} / 10</label><br/>
-                      <label>Number of Balls: {store.library[popupTrickKey].num}</label><br/>
+                      <label className="popupLabel">Difficulty: {store.library[popupTrickKey].difficulty} / 10</label><br/>
+                      <label className="popupLabel">Number of Balls: {store.library[popupTrickKey].num}</label><br/>
                       {store.library[popupTrickKey].siteswap ? 
                         <div>
-                          <label>Siteswap: {store.library[popupTrickKey].siteswap}</label><br/>
+                          <label className="popupLabel">Siteswap: {store.library[popupTrickKey].siteswap}</label><br/>
                         </div> : null
                       }
-                      <label>Contributor: {store.library[popupTrickKey].contributor ? 
+                      <label className="popupLabel">Contributor: {store.library[popupTrickKey].contributor ? 
                         store.library[popupTrickKey].contributor : 'www.libraryOfJuggling.com'}</label><br/><br/>
                       
                     	{store.library[popupTrickKey] && store.library[popupTrickKey].url? 
@@ -200,7 +200,7 @@ class Popup extends Component {
                       }
                       {videoSection}
                       {gifSection}
-                      <br></br><br/><br/>
+                      <br></br>
                       {store.library[popupTrickKey] && store.library[popupTrickKey].tags?
                     		<label className="popupTags">
                     			Tags: {store.library[popupTrickKey].tags.join(', ')} 
