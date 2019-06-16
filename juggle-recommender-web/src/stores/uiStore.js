@@ -140,24 +140,15 @@ class UIStore {
 	            arr.push(obj);
 	        }
 	    }
+
 	    arr.sort(function(a, b) {
 	        var at = a.tempSortName,
 	            bt = b.tempSortName;
 	        return at > bt ? 1 : ( at < bt ? -1 : 0 );
 	    });
-	    var result = {};
-	    for (var i=0, l=arr.length; i<l; i++) {
-	        obj = arr[i];
-	        delete obj.tempSortName;
-	        for (prop in obj) {
-	            if (obj.hasOwnProperty(prop)) {
-	                var id = prop;
-	            }
-	        }
-	        var item = obj[id];
-	        result[Object.keys(obj)] = item;
-	    }
-	    return result;
+	    console.log('arr',arr)
+
+	    return arr;
 	}
 	@action containsAny=(trickArray,filterArray)=>{
 		let containsAny = false
@@ -185,7 +176,7 @@ class UIStore {
 				}
 			}
 			sortedJugglingLibrary = this.alphabeticalSortObject(tempLibraryWithTimes, 'lastUpdated');
-			console.log(toJS(sortedJugglingLibrary))
+			
 		}
 		return sortedJugglingLibrary
 	}
@@ -197,10 +188,11 @@ class UIStore {
 		filterStore.tags.forEach(function (arrayItem) {
 		    filterTagNames.push(arrayItem.id)
 		});
-		Object.keys(sortedJugglingLibrary).forEach((trickKey, i) => {
+		sortedJugglingLibrary.forEach((trickObj, i) => {
+			const trickKey = Object.keys(trickObj)[0]
+			const trick = trickObj[trickKey]
 			if(this.selectedList === "allTricks" || 
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
-				const trick = sortedJugglingLibrary[trickKey]
 				const tagsInFilter = trick.tags? trick.tags.filter((tag)=>{
 					if (filterTagNames.includes(tag)){
 						return tag

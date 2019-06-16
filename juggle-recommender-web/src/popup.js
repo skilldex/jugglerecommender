@@ -180,7 +180,7 @@ class Popup extends Component {
                         }} 
                          className="popupDiv"
                     >
-                      <h3>{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
+                      <div classname = "popupHeader">{addToMyTricksButton}{store.library[popupTrickKey].name}</div>             
                       {catchesSection}                         		
                       <label className="popupLabel">Difficulty: </label>{store.library[popupTrickKey].difficulty} / 10<br/>
                       <label className="popupLabel">Number of Balls: </label>{store.library[popupTrickKey].num}<br/>
@@ -218,7 +218,7 @@ class Popup extends Component {
                     </div> : null
     
 		return(
-      			<div ref={(div)=> {this.outerDiv = div}} onBlur={this.onBlur} tabIndex="0">
+      			<div ref={(div)=> {this.outerDiv = div}} tabIndex="0">
               {this.state.gifFullscreen ? gifFullScreenPopup : popupCard}
       			</div>
           )
