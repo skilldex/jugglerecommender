@@ -14,21 +14,26 @@ import './popup.css';
 class Popup extends Component {
   state = {
     catches : null,
-    gifFullscreen : false
+    gifFullscreen : false,
+    changingInput : false,
   }
 
 	onCatchesChange=(e)=>{
+    console.log("change")
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
 	       const catches = e.target.value
          this.setState({catches})
-  	  	}
+  	  }
+
 	}
   onCatchesKeyPress=(target)=> {
     // If enter pressed
+    console.log("caught", target)
     if(target.charCode===13){  
       uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
-    } 
+      this.outerDiv.focus()   
+    }
   }
   seeExplanation=(trickKey)=>{
     if(!uiStore.popupTimer){
@@ -42,36 +47,31 @@ class Popup extends Component {
   handleEditButtonClick=()=>{
     this.setState({catches:store.myTricks[uiStore.popupTrick.id].catches})
     uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)
-    var input
-    function setFocus() {
-      if (document.getElementById('catchInput')){
-        input = document.getElementById("catchInput");   
-        input.focus();
-        input.select();   
+    //focus after render
+    setTimeout(function() {
+      if (this.catchInput){
+        this.catchInput.focus();
+        this.catchInput.select();
       }
-    }
-      setTimeout(function() {
-          setFocus();
-      }, 100);  
+    }, 100);  
   }
 
   toggleGifFullscreen=()=>{
     this.setState({'gifFullscreen':!this.state.gifFullscreen})
   }
-  onLoadIframe=()=>{
-    setTimeout(()=>{
-      const entries = performance.getEntries()
-      console.log(entries)
-    },100)
-    
-  }
+
   onBlur(event) {
-      if (!event.currentTarget.contains(event.relatedTarget)) {
-          uiStore.setPopupTrick(null)
-      }
+    console.log("blur div",event.currentTarget,event.relatedTarget)
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+        uiStore.setPopupTrick(null)
+    }
   }
 	render() {
-    //if(this.outerDiv){this.outerDiv.focus()}
+    //set focus for outer div for onblur closing
+    if(this.outerDiv){this.outerDiv.focus()}
+    //set focus to compensate for onblur function
+    if(this.catchInput){this.catchInput.focus()}
+
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
@@ -92,14 +92,18 @@ class Popup extends Component {
     <div>
       <label>Catches: </label>
       {uiStore.popupCatchEditable ?
-        <input id = "catchInput"
+        <input 
+              ref={(input)=> {this.catchInput = input}}
+              id = "catchInput"
                type="number" 
                onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
-               onChange={this.onCatchesChange}/> :
+               onChange={this.onCatchesChange}
+        /> :
         <span>{store.myTricks[popupTrickKey].catches}</span>
       }
       <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-           onClick={()=>{ this.handleEditButtonClick()}}/>
+           onClick={()=>{ this.handleEditButtonClick()}}
+      />
     </div> : null
 		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
@@ -206,9 +210,8 @@ class Popup extends Component {
                     </div> : null
     
 		return(
-      			<div ref={(div)=> {this.outerDiv = div}} tabIndex="0">{this.state.gifFullscreen ?
-      				    gifFullScreenPopup : popupCard
-                }
+      			<div ref={(div)=> {this.outerDiv = div}} onBlur={this.onBlur} tabIndex="0">
+              {this.state.gifFullscreen ? gifFullScreenPopup : popupCard}
       			</div>
           )
     }
