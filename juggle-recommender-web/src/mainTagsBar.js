@@ -1,9 +1,11 @@
 import React,{Component} from 'react'
+import { observer } from "mobx-react"
 import filterStore from './stores/filterStore'
 import store from './stores/store'
-import filterIcon from './images/filterIcon.png'
+import filterIcon from './images/filterIcon.svg'
 import './mainTagsBar.css';
 
+@observer
 class MainTagsBar extends Component {
     state={ }
     numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
@@ -21,7 +23,10 @@ class MainTagsBar extends Component {
       filterStore.setNumBalls(tempNumBalls)
     }
     render() {
-      const filter = <img className="filterButton" src={filterIcon} alt="showFilterMenu" 
+      let filterButtonClass = filterStore.filterVisible?
+                    "selectedfilterButton" : "unselectedfilterButton" 
+                filterButtonClass = "filterButton "+ filterButtonClass 
+      const filter = <img className={filterButtonClass} src={filterIcon} alt="showFilterMenu" 
                 onClick={()=>{filterStore.toggleFilterDiv()}}/>
       let filterTags = []
       let tagSection = null

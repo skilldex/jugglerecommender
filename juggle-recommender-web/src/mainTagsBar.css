@@ -27,14 +27,12 @@
   border-radius: 2px;
   background-color : #eee;
   height: 20px;
-
 }
 
 .mainTagsName{
   overflow: hidden;
   text-overflow: hidden;
   font-size: 12px;
-
 }
 
 .mainTagsX{
@@ -42,10 +40,27 @@
   padding-right: 3px;
   color: #888888;
   font-size: 12px;
-
 }
 
+.filterButton{
+  height : 23px;
+  width : 23px;
+  cursor : pointer;
+  display: inline-block;
+  vertical-align: top;
+  margin : 0;
+  margin-left : 2px;
+  margin-right : 2px;
+  border : 1px solid gray;
+  border-radius: 3px;
+}
+.selectedfilterButton{
+  filter:  brightness(70%);
+}
+.unselectedfilterButton{
+  filter:  brightness(100%) ;
 
+}
 
 
 

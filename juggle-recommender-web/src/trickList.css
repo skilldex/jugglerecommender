@@ -39,14 +39,6 @@
   float : right; 
   padding-right : 15px;
 }
-.listButton{
-  width : 50%;
-  height: 50px;
-  cursor : pointer;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
 .selectedListMinimizedIndicator{
   width : 50%;
   height: 40px;
@@ -58,6 +50,14 @@
 
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 }
+.listButton{
+  width : 50%;
+  height: 50px;
+  cursor : pointer;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
 .selectedListButton{
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 }
@@ -65,7 +65,6 @@
   filter:  grayscale(100%) brightness(60%) contrast(10000000%);
   opacity: .2;
 }
-
 .listIcons{
   margin-top:10px;
   height : 25px;
@@ -141,18 +140,6 @@
   position : relative;
   margin-right : 85px;
   float : right;
-}
-.filterButton{
-  height : 23px;
-  width : 23px;
-  display: inline-block;
-  vertical-align: top;
-  margin : 0;
-  margin-left : 2px;
-  margin-right : 2px;
-  border : 1px solid gray;
-  border-radius: 3px;
-  background-color : lightgray;
 }
 .addTrickButton{
   border: 1px solid black;

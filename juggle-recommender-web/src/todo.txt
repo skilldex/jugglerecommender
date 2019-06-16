@@ -23,7 +23,6 @@ v 1.2:
 	-enhance about section
 		-explain edges
 		-talk about adding tricks
-	-make filter button change colors when selected, this involves getting it as svg
 	-A button that is 'more catches than I want to count' in the popups
 		*what do we put in the db when it is clicked?
 
