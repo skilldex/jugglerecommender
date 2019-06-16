@@ -18,7 +18,6 @@ v 1.3:
 	- move gif and iframes to separate components
 v 1.2:
 	- sort by recently added
-	-on add trick form suggest to upload videos that only contain the trick or tutorial
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	-A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
 		
