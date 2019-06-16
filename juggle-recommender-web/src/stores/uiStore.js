@@ -1,4 +1,4 @@
-import { action, configure, observable} from "mobx"
+import { action, configure, observable, toJS} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
 import filterStore from "./filterStore"
@@ -169,27 +169,30 @@ class UIStore {
 		}
 		return containsAny
 	}
-
- 	@action updateRootTricks=(rootTricks)=>{
- 		if(Object.keys(store.library).length === 0){ return }
-	 	this.rootTricks = []
- 		let sortedJugglingLibrary
+	@action sortLibrary=()=>{
+		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'name');
 		}else if (filterStore.sortType === 'difficulty'){
 		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'difficulty');
 		}else if (filterStore.sortType === 'lastUpdated'){
 			let tempLibraryWithTimes = store.library
-			let trick
-			for (trick in tempLibraryWithTimes){
+			for (let trick in tempLibraryWithTimes){
 				if (store.myTricks[trick] && store.myTricks[trick].lastUpdated){
 					tempLibraryWithTimes[trick].lastUpdated = 999999999999 - store.myTricks[trick].lastUpdated
 				}else{
 					tempLibraryWithTimes[trick].lastUpdated = 0
 				}
-				sortedJugglingLibrary = this.alphabeticalSortObject(tempLibraryWithTimes, 'lastUpdated');
 			}
+			sortedJugglingLibrary = this.alphabeticalSortObject(tempLibraryWithTimes, 'lastUpdated');
+			console.log(toJS(sortedJugglingLibrary))
 		}
+		return sortedJugglingLibrary
+	}
+ 	@action updateRootTricks=(rootTricks)=>{
+ 		if(Object.keys(store.library).length === 0){ return }
+	 	this.rootTricks = []
+ 		const sortedJugglingLibrary = this.sortLibrary()
 		const filterTagNames= []
 		filterStore.tags.forEach(function (arrayItem) {
 		    filterTagNames.push(arrayItem.id)
