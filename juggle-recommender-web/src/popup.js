@@ -32,6 +32,7 @@ class Popup extends Component {
     console.log("caught", target)
     if(target.charCode===13){  
       uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
+      //set focus back to outer div
       this.outerDiv.focus()   
     }
   }
@@ -61,8 +62,8 @@ class Popup extends Component {
   }
 
   onBlur(event) {
-    console.log("blur div",event.currentTarget,event.relatedTarget)
-    if (!event.currentTarget.contains(event.relatedTarget)) {
+    //detect click outside, but avoid cases where popup has just opened
+    if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
         uiStore.setPopupTrick(null)
     }
   }
@@ -172,10 +173,13 @@ class Popup extends Component {
       }
     }
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
-          			    <div style={{left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
-                    					   top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
-                                 width : 260,}} 
-                         className="popupDiv">
+          			    <div style={{
+                          left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
+                      		top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
+                          width : 260
+                        }} 
+                         className="popupDiv"
+                    >
                       <h3>{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
                       {catchesSection}                         		
                       <label>Difficulty: {store.library[popupTrickKey].difficulty} / 10</label><br/>
