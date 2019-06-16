@@ -24,7 +24,7 @@ class Store {
 		this.popupVideoURL = url
 	}
 	@action setIGData=(data)=>{
-		if(!this.igData){
+		if(!this.igData || !uiStore.popupTrick){
 			this.igData = {
 				username : data.graphql.shortcode_media.owner.username,
 				picURL :  data.graphql.shortcode_media.owner.profile_pic_url,
@@ -65,7 +65,7 @@ class Store {
         this.setPopupVideoURL("https://www.youtube.com/embed/"+usefulPart+
                        "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
       }
-      
+      return videoURLtoUse
     }
 	@action setIsLoginPaneOpen=(isOpen)=>{
 		this.isLoginPaneOpen = isOpen

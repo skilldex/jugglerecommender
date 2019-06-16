@@ -2,7 +2,6 @@ import {action, configure} from "mobx"
 
 configure({ enforceActions: "always" })
 class Utilities{
-  
   @action isEmptyOrSpaces=(str)=>{
       str = toString(str)
       return str === null || str.match(/^ *$/) !== null;
