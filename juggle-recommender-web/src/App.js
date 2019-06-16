@@ -41,6 +41,8 @@ if(window.location.host.includes("localhost") || window.location.host.match(/(\.
   };
 }
 
+const ESCAPE_KEY = 27;
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -55,7 +57,23 @@ class App extends Component {
  		isCreateAccountPaneOpen: false
 	}
 	
+
+
+_handleKeyDown = (event) => {
+    switch( event.keyCode ) {
+        case ESCAPE_KEY:
+            if (uiStore.addingTrick){
+            	uiStore.toggleAddingTrick()
+            }
+            break;
+        default: 
+            break;
+    }
+}
+
+
 	componentDidMount(){
+		    document.addEventListener("keydown", this._handleKeyDown);
 		store.getSavedTricks()	
 		Modal.setAppElement(this.el);
 		firebase.auth().onAuthStateChanged(function(user) {
