@@ -151,34 +151,40 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
-.sortDropdownButton{
-  display : block;
+.sortDropdown{
   position : absolute;
-  width : 80px;
+  margin-top: 143px;
+  margin-left: 116px;
+  padding-top: 7px;
+  padding-left: 7px;
+  width: 200px;
+  height: 260px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  opacity: .95;
+  margin-right : 85px;
+  z-index: 1300;
+}
+.sortDropdownButton{
+  font-weight: bold;
+  display : block;
+  border: none;
+  background-color: white;
+  color: darkgray;
+  text-align: left;
+  font-size: 14px;
+  z-index: 1200;
+  width : 95%;
   height : 30px;
+  outline: 0;
+  box-shadow: none!important;
 }
 .sortDropdownButtonSelected{
-  background-color: darkgray;
+  color: black;
 }
-.sortDropdownButtonDif{
-  margin-top: 0px;
-}
-.sortDropdownButtonAlph{
-  margin-top: 25px;
-}
-.sortDropdownButtonTimeSubmitted{
-  margin-top: 50px;
-}
-.sortDropdownButtonCatches{
-  margin-top: 75px;
-}
-.sortDropdownButtonLastUpdated{
-  margin-top: 100px;
-}
-.sortDropdown{
-  position : relative;
-  margin-right : 85px;
-  float : right;
+.divdingLine{
+  margin-right: 6px;
 }
 .addTrickButton{
   border: 1px solid black;

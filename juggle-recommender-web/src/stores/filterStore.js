@@ -6,6 +6,7 @@ class FilterStore {
 
 	@observable filterVisible = false
 	@observable sortType = 'alphabetical'
+	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
 	@observable tags = []
@@ -53,6 +54,10 @@ class FilterStore {
 	}
 	@action setSortType=(type)=>{
 		this.sortType = type
+		uiStore.updateRootTricks()
+	}
+	@action setSortDirection=(direction)=>{
+		this.sortDirection = direction
 		uiStore.updateRootTricks()
 	}
 	@action setDifficultyRange=(difficultyRange)=>{

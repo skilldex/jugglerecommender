@@ -177,12 +177,15 @@ class UIStore {
 			const tempLibraryWithSubmitted = store.library
 			for (let trick in tempLibraryWithSubmitted){
 				if (!tempLibraryWithSubmitted[trick].timeSubmitted){
-					tempLibraryWithSubmitted[trick].timeSubmitted = 9999999999999
+					tempLibraryWithSubmitted[trick].timeSubmitted = 0
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithSubmitted, 'timeSubmitted');
 		}
-console.log('sortedJugglingLibrary',sortedJugglingLibrary)
+
+		if(filterStore.sortDirection==='descending'){
+			sortedJugglingLibrary.reverse()
+		}
 		return sortedJugglingLibrary
 
 	}

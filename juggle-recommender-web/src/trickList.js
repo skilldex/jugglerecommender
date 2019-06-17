@@ -14,6 +14,7 @@ import './App.css';
 import Filter from './filter.js'
 
 var scrollerPosition = 0
+var mouseOverSort = true
 @observer
 class TrickList extends Component {
 	state = {
@@ -24,11 +25,11 @@ class TrickList extends Component {
 	}
 
 	sortOptionClicked=(type)=>{
-		console.log('type',type)
 		filterStore.setSortType(type)
-		this.toggleShowSort()
 	}
-
+	sortDirectionClicked=(direction)=>{
+		filterStore.setSortDirection(direction)
+	}
 	toggleShowSort=()=>{
 		this.setState({showSortMenu:!this.state.showSortMenu})
 	}
@@ -63,43 +64,67 @@ class TrickList extends Component {
 		  this.setScrollerPositions()
 		}
 	}
+mouseEnterSortDiv=()=>{
+	mouseOverSort = true
+}
 
+mouseLeaveSortDiv=()=>{
+	mouseOverSort = false
+}
 
 render() {
 	//"this" gets redefined in window.onclick so use "that"
 	const that = this
 	window.onclick = function(event) {
  	 	if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
- 	 		that.toggleShowSort()
+ 	 		if (!mouseOverSort){
+ 	 			that.toggleShowSort()
+ 	 		}
  		}
  	}
  	const sortDropdown = this.state.showSortMenu ? 
- 					<div title="sort" id="myDropdown" className="sortDropdown">
+ 					<div onMouseEnter = {()=>this.mouseEnterSortDiv()}
+ 						 onMouseLeave = {()=>this.mouseLeaveSortDiv()}
+ 					     title="sort" 
+ 						 alt="showSortMenu" 
+ 						 id="myDropdown" 
+ 						 className="sortDropdown">
 				    	<button alt="sortDropdownButtonDif"
 				    			className={filterStore.sortType === 'difficulty' ?
-				    			"sortDropdownButton sortDropdownButtonDif sortDropdownButtonSelected" :
-				    			"sortDropdownButton sortDropdownButtonDif"}
-				    			onClick={(e)=>this.sortOptionClicked('difficulty')}>Difficulty</button>
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortOptionClicked('difficulty')}>Pattern Difficulty</button>
 				    	<button alt="sortDropdownButtonAlph"
 				    			className={filterStore.sortType === 'alphabetical' ?
-				    			"sortDropdownButton sortDropdownButtonAlph sortDropdownButtonSelected" :
-				    			"sortDropdownButton sortDropdownButtonAlph"}
-				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>Alphabetically</button>
 					    <button alt="sortDropdownButtonTimeSubmitted"
 				    			className={filterStore.sortType === 'timeSubmitted' ?
-				    			"sortDropdownButton sortDropdownButtonTimeSubmitted sortDropdownButtonSelected" :
-				    			"sortDropdownButton sortDropdownButtonTimeSubmitted"}
-				    			onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Submitted</button>
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Date Submitted</button>
 				    	<button alt="sortDropdownButtonCatches"
 				    			className={filterStore.sortType === 'catches' ?
-				    			"sortDropdownButton sortDropdownButtonCatches sortDropdownButtonSelected" :
-				    			"sortDropdownButton sortDropdownButtonCatches"}
-				    			onClick={(e)=>this.sortOptionClicked('catches')}>Catches</button>				    			
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortOptionClicked('catches')}>Number of Catches</button>	    			
 				    	<button alt="sortDropdownButtonLastUpdated"
 				    			className={filterStore.sortType === 'lastUpdated' ?
-				    			"sortDropdownButton sortDropdownButtonLastUpdated sortDropdownButtonSelected" :
-				    			"sortDropdownButton sortDropdownButtonLastUpdated"}
-				    			onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Updated</button>
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Catches Last Updated</button>
+					    <hr className="divdingLine"/>
+					    <button alt="sortDropdownButtonCatches"
+				    			className={filterStore.sortDirection === 'ascending' ?
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortDirectionClicked('ascending')}>Ascending</button>	    			
+				    	<button alt="sortDropdownButtonLastUpdated"
+				    			className={filterStore.sortDirection === 'descending' ?
+				    			"sortDropdownButton  sortDropdownButtonSelected" :
+				    			"sortDropdownButton "}
+				    			onClick={(e)=>this.sortDirectionClicked('descending')}>Descending</button>
 					  </div> : null
 
 	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 
@@ -178,8 +203,9 @@ render() {
 			 						value={uiStore.searchInput}
 			 						onChange={uiStore.searchInputChange}/>
 							{sort}
-							{sortDropdown}
+							
 						</div>
+
 					 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 						<div style={{height:"100%"}}>
 							<label style={{float:"left"}}>easy</label>
@@ -192,6 +218,7 @@ render() {
 							{tricks}
 							</div>						
 						</div>
+
 					</div>
 	return (
 		<div>	
@@ -201,6 +228,7 @@ render() {
 			{filterStore.filterVisible?
 			<Filter/>
 			: null}
+			{sortDropdown}
 		</div>
 	)
   }
