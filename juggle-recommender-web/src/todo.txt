@@ -26,6 +26,9 @@ v 1.2:
 
 ==========
 
+-move alph sort to utilities
+-make video stuff into a component
+
 -edit profile(maybe beyond 1.1)
 -toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
 

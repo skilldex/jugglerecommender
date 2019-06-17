@@ -151,26 +151,23 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
-.sortDropdownButtonDif{
+.sortDropdownButton{
   display : block;
   position : absolute;
   width : 80px;
   height : 30px;
+}
+.sortDropdownButtonDif{
   margin-top: 0px;
 }
 .sortDropdownButtonLastUpdated{
-  display : block;
-  position : absolute;
-  width : 80px;
-  height : 30px;
   margin-top: 50px;
 }
 .sortDropdownButtonAlph{
-  display : block;
-  position : absolute;
-  width : 80px;
-  height : 30px;
   margin-top: 25px;
+}
+.sortDropdownButtonTimSubmitted{
+  margin-top: 75px;
 }
 .sortDropdown{
   position : relative;

@@ -3,6 +3,7 @@ import store from "./store"
 import graphStore from "./graphStore"
 import filterStore from "./filterStore"
 import authStore from "./authStore"
+import utilities from '../utilities'
 
 
 configure({ enforceActions: "always" })
@@ -129,25 +130,6 @@ class UIStore {
  		this.updateRootTricks()
  	}
 
-	@action alphabeticalSortObject(data, attr) {
-	    var arr = [];
-	    for (var prop in data) {
-
-	        if (data.hasOwnProperty(prop)) {
-	            var obj = {};
-	            obj[prop] = data[prop];
-	            obj.tempSortName = data[prop][attr];
-	            arr.push(obj);
-	        }
-	    }
-
-	    arr.sort(function(a, b) {
-	        var at = a.tempSortName,
-	            bt = b.tempSortName;
-	        return at > bt ? 1 : ( at < bt ? -1 : 0 );
-	    });
-	    return arr;
-	}
 	@action containsAny=(trickArray,filterArray)=>{
 		let containsAny = false
 		for (var i = 0; i < trickArray.length; i++) {
@@ -161,9 +143,9 @@ class UIStore {
 	@action sortLibrary=()=>{
 		let sortedJugglingLibrary
 	 	if (filterStore.sortType === 'alphabetical'){
-		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'name');
+		 	sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'name');
 		}else if (filterStore.sortType === 'difficulty'){
-		 	sortedJugglingLibrary = this.alphabeticalSortObject(store.library, 'difficulty');
+		 	sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'difficulty');
 		}else if (filterStore.sortType === 'lastUpdated'){
 			let tempLibraryWithTimes = store.library
 			for (let trick in tempLibraryWithTimes){
@@ -173,9 +155,21 @@ class UIStore {
 					tempLibraryWithTimes[trick].lastUpdated = 0
 				}
 			}
-			sortedJugglingLibrary = this.alphabeticalSortObject(tempLibraryWithTimes, 'lastUpdated');
-			
+			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'lastUpdated');
+		}else if (filterStore.sortType === 'timeSubmitted'){
+			let tempLibraryWithTimes = store.library
+			for (let trick in tempLibraryWithTimes){
+				if (!tempLibraryWithTimes[trick].timeSubmitted){
+					tempLibraryWithTimes[trick].timeSubmitted = 0
+				}else{
+					tempLibraryWithTimes[trick].timeSubmitted = 
+						999999999999 - tempLibraryWithTimes[trick].timeSubmitted
+				}
+			}
+			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'timeSubmitted');
+			console.log('sortedJugglingLibrary',sortedJugglingLibrary)
 		}
+
 		return sortedJugglingLibrary
 	}
  	@action updateRootTricks=(rootTricks)=>{

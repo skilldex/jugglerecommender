@@ -147,7 +147,7 @@ class AddTrickForm extends Component {
 					return item['text'];
 				});		
 				const suffix = "("+this.state.numBalls+"b)"
-
+				const date = new Date()
 				const trick = {
 					name : this.state.name+suffix,
 					num : this.state.numBalls,
@@ -156,7 +156,8 @@ class AddTrickForm extends Component {
 					video : this.state.videoURL,
 					siteswap :  this.state.siteSwap,
 					prereqs : prereqs,
-					tags : tags
+					tags : tags,
+					timeSubmitted : date.getTime()
 				}
 
 				store.addTrickToDatabase(trick)
