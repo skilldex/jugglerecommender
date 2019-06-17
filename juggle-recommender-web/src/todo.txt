@@ -11,14 +11,13 @@ v 1.3:
 	- edit trick
 	- log in firebase for a tricks edited by noncontributor
 	- clicking unselected selects, popup only for selected 
-	- youtube videos don't autoplay
 	- autocomplete name of added trick to avoid redundant tricks
 	- show all tags during add trick
-	- move gif and iframes to separate components
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	- remove all button
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
-v 1.2:
+
+I NEED TO GET SET UP TO DEPLOY
 
 ==========
 

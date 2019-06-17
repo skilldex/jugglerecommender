@@ -163,29 +163,28 @@ class UIStore {
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'lastUpdated');
 		}else if (filterStore.sortType === 'catches'){
-			let tempLibraryWithTimes = store.library
-			for (let trick in tempLibraryWithTimes){
+			let tempLibraryWithCatches = store.library
+			for (let trick in tempLibraryWithCatches){
 				if (store.myTricks[trick] && store.myTricks[trick].catches){
-					tempLibraryWithTimes[trick].catches = store.myTricks[trick].catches
+					tempLibraryWithCatches[trick].catches = store.myTricks[trick].catches
 				}else{
-					tempLibraryWithTimes[trick].catches = 0
+					tempLibraryWithCatches[trick].catches = 0
 				}
 			}
-			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'catches');
+			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithCatches, 'catches');
 		}else if (filterStore.sortType === 'timeSubmitted'){
-			let tempLibraryWithTimes = store.library
-			for (let trick in tempLibraryWithTimes){
-				if (!tempLibraryWithTimes[trick].timeSubmitted){
-					tempLibraryWithTimes[trick].timeSubmitted = 999999999999
-				}else{
-					tempLibraryWithTimes[trick].timeSubmitted = 
-						999999999999 - tempLibraryWithTimes[trick].timeSubmitted
+			console.log('insub')
+			const tempLibraryWithSubmitted = store.library
+			for (let trick in tempLibraryWithSubmitted){
+				if (!tempLibraryWithSubmitted[trick].timeSubmitted){
+					tempLibraryWithSubmitted[trick].timeSubmitted = 9999999999999
 				}
 			}
-			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'timeSubmitted');
+			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithSubmitted, 'timeSubmitted');
 		}
-
+console.log('sortedJugglingLibrary',sortedJugglingLibrary)
 		return sortedJugglingLibrary
+
 	}
  	@action updateRootTricks=(rootTricks)=>{
  		if(Object.keys(store.library).length === 0){ return }
