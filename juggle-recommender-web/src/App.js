@@ -16,7 +16,7 @@ import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
 import MainTagsBar from "./mainTagsBar"
-import PopupDemoSection from './popupDemoSection'
+import PopupDemo from './popupDemo'
 
 
  // Your web app's Firebase configuration
@@ -192,7 +192,7 @@ _handleKeyDown = (event) => {
 							   	}
 						    </div>
 						</div>
-		const popup = uiStore.popupFullScreen ? <PopupDemoSection/> : <Popup/>
+		const popup = uiStore.popupFullScreen ? <PopupDemo/> : <Popup/>
 		return (
 			<div className="main" ref={ref => this.el = ref}>	            
 	            {instructions}

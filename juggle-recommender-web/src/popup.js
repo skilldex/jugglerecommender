@@ -8,7 +8,7 @@ import editIcon from './images/editIcon.png'
 import fullScreenIcon from './images/fullScreenIcon.png'
 import minimizeIcon from './images/minimizeIcon.png'
 import utilities from './utilities'
-import PopupDemoSection from './popupDemoSection'
+import PopupDemo from './popupDemo'
 
 import './App.css';
 import './popup.css';
@@ -162,7 +162,7 @@ class Popup extends Component {
                          className="popupLink"
                     		>See explanation</span> : null
                       }
-                      <PopupDemoSection/>
+                      <PopupDemo/>
                       <br></br>
                       {store.library[popupTrickKey] && store.library[popupTrickKey].tags?
                     		<label className="popupTags">

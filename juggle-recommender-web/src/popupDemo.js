@@ -11,10 +11,10 @@ import utilities from './utilities'
 
 import './App.css';
 
-import './popupDemoSection.css';
+import './popupDemo.css';
 
 @observer
-class PopupDemoSection extends Component {
+class PopupDemo extends Component {
 	render() {
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
@@ -76,4 +76,4 @@ class PopupDemoSection extends Component {
     }
   }
 
-export default PopupDemoSection
+export default PopupDemo
