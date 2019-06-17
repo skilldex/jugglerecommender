@@ -81,12 +81,15 @@ render() {
 				    	<button alt="sortDropdownButtonAlph"
 				    			className="sortDropdownButton sortDropdownButtonAlph" 
 				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
+					    <button alt="sortDropdownButtonTimeSubmitted"
+				    			className="sortDropdownButton sortDropdownButtonTimeSubmitted" 
+				    			onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Submitted</button>
+				    	<button alt="sortDropdownButtonCatches"
+				    			className="sortDropdownButton sortDropdownButtonCatches" 
+				    			onClick={(e)=>this.sortOptionClicked('catches')}>Catches</button>				    			
 				    	<button alt="sortDropdownButtonLastUpdated"
 				    			className="sortDropdownButton sortDropdownButtonLastUpdated" 
 				    			onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Updated</button>
-				    	<button alt="sortDropdownButtonTimSubmitted"
-				    			className="sortDropdownButton sortDropdownButtonTimSubmitted" 
-				    			onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Submitted</button>
 					  </div> : null
 
 	const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} className="filterButton"  alt="showSortMenu" 

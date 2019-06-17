@@ -156,6 +156,16 @@ class UIStore {
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'lastUpdated');
+		}else if (filterStore.sortType === 'catches'){
+			let tempLibraryWithTimes = store.library
+			for (let trick in tempLibraryWithTimes){
+				if (store.myTricks[trick] && store.myTricks[trick].catches){
+					tempLibraryWithTimes[trick].catches = store.myTricks[trick].catches
+				}else{
+					tempLibraryWithTimes[trick].catches = 999999999999
+				}
+			}
+			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'catches');
 		}else if (filterStore.sortType === 'timeSubmitted'){
 			let tempLibraryWithTimes = store.library
 			for (let trick in tempLibraryWithTimes){
@@ -167,7 +177,6 @@ class UIStore {
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'timeSubmitted');
-			console.log('sortedJugglingLibrary',sortedJugglingLibrary)
 		}
 
 		return sortedJugglingLibrary

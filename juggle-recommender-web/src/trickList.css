@@ -160,14 +160,17 @@
 .sortDropdownButtonDif{
   margin-top: 0px;
 }
-.sortDropdownButtonLastUpdated{
-  margin-top: 50px;
-}
 .sortDropdownButtonAlph{
   margin-top: 25px;
 }
-.sortDropdownButtonTimSubmitted{
+.sortDropdownButtonTimeSubmitted{
+  margin-top: 50px;
+}
+.sortDropdownButtonLastUpdated{
   margin-top: 75px;
+}
+.sortDropdownButtonCatches{
+  margin-top: 100px;
 }
 .sortDropdown{
   position : relative;
