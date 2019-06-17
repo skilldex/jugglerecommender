@@ -176,7 +176,7 @@ class UIStore {
 			let tempLibraryWithTimes = store.library
 			for (let trick in tempLibraryWithTimes){
 				if (!tempLibraryWithTimes[trick].timeSubmitted){
-					tempLibraryWithTimes[trick].timeSubmitted = 0
+					tempLibraryWithTimes[trick].timeSubmitted = 999999999999
 				}else{
 					tempLibraryWithTimes[trick].timeSubmitted = 
 						999999999999 - tempLibraryWithTimes[trick].timeSubmitted
