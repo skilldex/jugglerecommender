@@ -10,8 +10,6 @@ import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
 
-
-
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -117,12 +115,12 @@ class Filter extends Component {
 							          handleTagClick={this.handleTagClick}/>
 							    </div>
 							</div>
-	 	const numbersOfBalls = ['3','4','5']
+	 	const numbersOfBalls = ['3','4','5','6','7']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
 			numButtons.push(
 				<button className={filterStore.numBalls.includes(element)?
-					'filterNumSelected':'filterNumUnselected'}
+					'filterNum':'filterNum filterNumUnselected'}
 				key={'numButton' + element} 
 				onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
 		)},this);	

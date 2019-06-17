@@ -55,19 +55,15 @@
   
 }
 
-.filterNumUnselected{
+.filterNum{
   color: black;
   border-radius: 8px;
-  margin: 10px;
+  margin: 6px;
   outline: none;
 }
 
 .filterNumSelected{
-  color: black;
   background-color: lightblue;
-  border-radius: 8px;
-  margin: 10px;
-  outline: none;
 }
 
 .filterApplyButton{
