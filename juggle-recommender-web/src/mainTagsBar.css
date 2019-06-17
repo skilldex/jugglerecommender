@@ -59,7 +59,54 @@
 }
 .unselectedfilterButton{
   filter:  brightness(100%) ;
+}
+.search{
+  margin:0;
+  margin-left: 8px;
+  margin-right: 18px;
+  margin-top : 0px;
+  margin-bottom : 0px;
+  text-align: center;
+  vertical-align: top;
 
+}
+.searchInput{
+  width: 90px;
+  margin-right : 3px;
+}
+.sortDropdown{
+  position : absolute;
+  margin-top: 150px;
+  margin-left: 2px;
+  padding-top: 9px;
+  padding-left: 7px;
+  width: 200px;
+  height: 260px;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: white;
+  opacity: .95;
+  z-index: 1300;
+}
+.sortDropdownButton{
+  font-weight: bold;
+  display : block;
+  border: none;
+  background-color: white;
+  color: darkgray;
+  text-align: left;
+  font-size: 14px;
+  z-index: 1200;
+  width : 95%;
+  height : 30px;
+  outline: 0;
+  box-shadow: none!important;
+}
+.sortDropdownButtonSelected{
+  color: black;
+}
+.divdingLine{
+  margin-right: 6px;
 }
 
 
