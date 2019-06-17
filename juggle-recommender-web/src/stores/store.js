@@ -42,7 +42,6 @@ class Store {
             response => response.json()
         ).then(
             (data) => {
-            console.log(data)
               this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
               this.setIGData(data)
             }

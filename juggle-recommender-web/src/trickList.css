@@ -157,6 +157,9 @@
   width : 80px;
   height : 30px;
 }
+.sortDropdownButtonSelected{
+  background-color: darkgray;
+}
 .sortDropdownButtonDif{
   margin-top: 0px;
 }

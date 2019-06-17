@@ -76,19 +76,29 @@ render() {
  	const sortDropdown = this.state.showSortMenu ? 
  					<div title="sort" id="myDropdown" className="sortDropdown">
 				    	<button alt="sortDropdownButtonDif"
-				    			className="sortDropdownButton sortDropdownButtonDif" 
+				    			className={filterStore.sortType === 'difficulty' ?
+				    			"sortDropdownButton sortDropdownButtonDif sortDropdownButtonSelected" :
+				    			"sortDropdownButton sortDropdownButtonDif"}
 				    			onClick={(e)=>this.sortOptionClicked('difficulty')}>Difficulty</button>
 				    	<button alt="sortDropdownButtonAlph"
-				    			className="sortDropdownButton sortDropdownButtonAlph" 
+				    			className={filterStore.sortType === 'alphabetical' ?
+				    			"sortDropdownButton sortDropdownButtonAlph sortDropdownButtonSelected" :
+				    			"sortDropdownButton sortDropdownButtonAlph"}
 				    			onClick={(e)=>this.sortOptionClicked('alphabetical')}>A->Z</button>
 					    <button alt="sortDropdownButtonTimeSubmitted"
-				    			className="sortDropdownButton sortDropdownButtonTimeSubmitted" 
+				    			className={filterStore.sortType === 'timeSubmitted' ?
+				    			"sortDropdownButton sortDropdownButtonTimeSubmitted sortDropdownButtonSelected" :
+				    			"sortDropdownButton sortDropdownButtonTimeSubmitted"}
 				    			onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Submitted</button>
 				    	<button alt="sortDropdownButtonCatches"
-				    			className="sortDropdownButton sortDropdownButtonCatches" 
+				    			className={filterStore.sortType === 'catches' ?
+				    			"sortDropdownButton sortDropdownButtonCatches sortDropdownButtonSelected" :
+				    			"sortDropdownButton sortDropdownButtonCatches"}
 				    			onClick={(e)=>this.sortOptionClicked('catches')}>Catches</button>				    			
 				    	<button alt="sortDropdownButtonLastUpdated"
-				    			className="sortDropdownButton sortDropdownButtonLastUpdated" 
+				    			className={filterStore.sortType === 'lastUpdated' ?
+				    			"sortDropdownButton sortDropdownButtonLastUpdated sortDropdownButtonSelected" :
+				    			"sortDropdownButton sortDropdownButtonLastUpdated"}
 				    			onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Updated</button>
 					  </div> : null
 
