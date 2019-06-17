@@ -19,14 +19,15 @@ v 1.3:
 	- remove all button
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
 v 1.2:
-	- sort by recently added
-	- sort by catches
-	
-		
-
+	New instagram video bugs:
+		-our fullScreen button makes the video smaller
+		-our fullScreen button makes the builtin options button close the video
+		-built in fullScreen closes video
+		-inside built in picture in picture, the 'back to tab' button makes video not
+			visible, but audio continues. Opening popup again makes it play overtop itself. Must refresh page to get rid of it.
 ==========
 
--move alph sort to utilities
+
 -make video stuff into a component
 
 -edit profile(maybe beyond 1.1)
