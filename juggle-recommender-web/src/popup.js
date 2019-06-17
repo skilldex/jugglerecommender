@@ -13,6 +13,8 @@ import PopupDemoSection from './popupDemoSection'
 import './App.css';
 import './popup.css';
 
+let mouseInPopupDiv = true
+
 @observer
 class Popup extends Component {
   state = {
@@ -20,6 +22,7 @@ class Popup extends Component {
     gifFullScreen : false,
     changingInput : false,
   }
+
 
 	onCatchesChange=(e)=>{
     console.log("change")
@@ -59,12 +62,31 @@ class Popup extends Component {
       }
     }, 100);  
   }
+  onMouseEnter(event){
+    //this.setState({mouseInPopupDiv:true})
+    mouseInPopupDiv = true
+    console.log('mouseInPopupDiv',mouseInPopupDiv)
+  }
+
+  onMouseLeave(event){
+    //this.setState({mouseInPopupDiv:false})
+    mouseInPopupDiv = false
+    console.log('mouseInPopupDiv',mouseInPopupDiv)
+  }
+
 
   onBlur(event) {
+
     //detect click outside, but avoid cases where popup has just opened
-    if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
+    //if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
+ if (!uiStore.popupTimer) {
+
+      if(!mouseInPopupDiv){
         uiStore.setPopupTrick(null)
+      }
+
     }
+
   }
 	render() {
     //set focus for outer div for onblur closing
@@ -154,8 +176,12 @@ class Popup extends Component {
                       }
                     </div> : null
 		return(
-      //
-      			<div onBlur={this.onBlur} ref={(div)=> {this.outerDiv = div}}  tabIndex="0">
+      
+      			<div onMouseEnter={this.onMouseEnter} 
+                 onMouseLeave={this.onMouseLeave}
+                 onBlur={this.onBlur} 
+                 ref={(div)=> {this.outerDiv = div}}  
+                 tabIndex="0">
               {popupCard}
       			</div>
           )

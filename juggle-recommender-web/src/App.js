@@ -145,7 +145,7 @@ _handleKeyDown = (event) => {
 										• Find new tricks to learn next that are related to tricks you starred.
 									</span>
 									<br/>
-									<span className="info">Seeded from <a href="libraryofjuggling.com">libraryofjuggling.com</a></span>
+									<span className="info">Seeded from <a target="_" href="http://www.libraryofjuggling.com">libraryofjuggling.com</a></span>
 									<br/>
 									<h2>Contact</h2>
 									<div className="info" >
