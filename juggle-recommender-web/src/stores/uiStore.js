@@ -168,7 +168,7 @@ class UIStore {
 				if (store.myTricks[trick] && store.myTricks[trick].catches){
 					tempLibraryWithTimes[trick].catches = store.myTricks[trick].catches
 				}else{
-					tempLibraryWithTimes[trick].catches = 999999999999
+					tempLibraryWithTimes[trick].catches = 0
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithTimes, 'catches');
