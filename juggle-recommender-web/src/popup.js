@@ -114,88 +114,8 @@ class Popup extends Component {
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
 
-    const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
-                        <div className = "gifDiv">
-                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
-                          <img width = '100' 
-                               alt = ''
-                               className="popupGif" 
-                               src={store.library[popupTrickKey].gifUrl}/> 
-                        </div> : null
-    if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
-      store.getUsableVideoURL(store.library[popupTrickKey].video)
-    }
-    if(store.igData){
-      console.log("profile img", toJS(store.igData.picURL))
-    }
-    let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
-                          <div className="instagramHeader">
-                            <img className="profileImage" src={store.igData.picURL}/>
-                            <span>{store.igData.username}</span>
-                            <button className="instagramViewProfileButton" onClick={()=>{window.open(store.igData.profileURL)}}>View Profile</button>
-                          </div> : null
-    let videoIframe  = store.popupVideoURL.includes('youtube') ? 
-                        <iframe name="vidFrame" 
-                                title="UniqueTitleForVideoIframeToStopWarning"
-                                className= {store.popupVideoURL.includes('youtube')?
-                                                "popupGif":"instagramVideo"}                                  
-                                  allow="autoplay"  
-                                  allowtransparency="true"
-                                  src={store.popupVideoURL}      
-                        ></iframe> : store.popupVideoURL.includes('instagram') ? 
-                        <video 
-                          ref={(video)=> {this.popupVideo = video}}
-                          name="vidFrame" 
-                          title="UniqueTitleForVideoIframeToStopWarning"
-                          className= {store.popupVideoURL.includes('youtube')?
-                          "popupGif":"instagramVideo"}                                  
-                          autoPlay
-                          playsInline
-                          controls  
-                          loop
-                          src={store.popupVideoURL}
-                        ></video> : null
+    let fullScreenPopup = <PopupDemoSection/>
 
-    const videoFullscreen  = <iframe  className= {store.popupVideoURL.includes('youtube')?
-                                                "youtubeFullScreen" : "instagramFullScreen"}   
-                                  title="UniqueTitleForvideoFullscreenToStopWarning"                             
-                                  allow="autoplay"  
-                                  allowtransparency="true"                                 
-                                  src={store.popupVideoURL}></iframe>
-    const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
-                        <div className = {store.popupVideoURL.includes('youtube')?
-                                        "gifDiv":"instagramDiv"}>
-                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
-                          {videoIframe}
-                        </div> : null
-    const gifFullScreenPopupGif = 
-          store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
-              <div className="fullScreenPopup">
-                <img src={minimizeIcon} 
-                      className="fullScreenIcon" 
-                      alt="" onClick={this.toggleGifFullscreen} />
-                <img  height = '90%'
-                      alt = ''                   
-                      src={store.library[popupTrickKey].gifUrl}/> 
-              </div> 
-             : null
-    const gifFullScreenPopupVideo = 
-      store.library[popupTrickKey] && store.library[popupTrickKey].video?
-          <div className="fullScreenPopup">
-            <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
-            {videoFullscreen}
-          </div> 
-         : null
-    let gifFullScreenPopup
-    if (store.library[popupTrickKey]){
-      if (store.library[popupTrickKey].gifUrl) {
-        gifFullScreenPopup = gifFullScreenPopupGif
-      }else{
-        if (store.library[popupTrickKey].video){
-          gifFullScreenPopup = gifFullScreenPopupVideo
-        }
-      }
-    }
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{
                           left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
@@ -242,7 +162,7 @@ class Popup extends Component {
     
 		return(
       			<div ref={(div)=> {this.outerDiv = div}} onBlur={this.onBlur} tabIndex="0">
-              {this.state.gifFullscreen ? gifFullScreenPopup : popupCard}
+              {uiStore.gifFullscreen ? fullScreenPopup : popupCard}
       			</div>
           )
     }

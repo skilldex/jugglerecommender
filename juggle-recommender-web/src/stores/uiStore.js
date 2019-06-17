@@ -19,6 +19,12 @@ class UIStore {
 	@observable popupTrick = null
 	@observable popupTimer = null
 	@observable addingTrick = false
+	@observable gifFullscreen = false
+
+	@action toggleGifFullscreen=()=>{
+    	this.gifFullscreen = !this.gifFullscreen
+    	console.log('this.gifFullscreen',this.gifFullscreen)
+  	}
 
 	@action toggleAddingTrick = ()=>{
 		if (!authStore.user){

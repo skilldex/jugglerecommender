@@ -22,7 +22,7 @@ class PopupDemoSection extends Component {
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                         <div className = "gifDiv">
-                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
                           <img width = '100' 
                                alt = ''
                                className="popupGif" 
@@ -66,20 +66,20 @@ class PopupDemoSection extends Component {
                                                 "youtubeFullScreen" : "instagramFullScreen"}   
                                   title="UniqueTitleForvideoFullscreenToStopWarning"                             
                                   allow="autoplay"  
-                                  allowtransparency="true"                                 
+                                  allowtransparency="true" 
                                   src={store.popupVideoURL}></iframe>
     const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
                         <div className = {store.popupVideoURL.includes('youtube')?
                                         "gifDiv":"instagramDiv"}>
-                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
                           {videoIframe}
                         </div> : null
     const gifFullScreenPopupGif = 
           store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
-              <div className="fullScreenPopup">
+              <div>
                 <img src={minimizeIcon} 
                       className="fullScreenIcon" 
-                      alt="" onClick={this.toggleGifFullscreen} />
+                      alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
                 <img  height = '90%'
                       alt = ''                   
                       src={store.library[popupTrickKey].gifUrl}/> 
@@ -87,27 +87,27 @@ class PopupDemoSection extends Component {
              : null
     const gifFullScreenPopupVideo = 
       store.library[popupTrickKey] && store.library[popupTrickKey].video?
-          <div className="fullScreenPopup">
-            <img src={minimizeIcon} className="fullScreenIcon" alt="" onClick={this.toggleGifFullscreen} />
+          <div>
+            <img src={minimizeIcon} 
+                className="fullScreenIcon" 
+                alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
             {videoFullscreen}
           </div> 
          : null
-    let gifFullScreenPopup
-    if (store.library[popupTrickKey]){
-      if (store.library[popupTrickKey].gifUrl) {
-        gifFullScreenPopup = gifFullScreenPopupGif
-      }else{
-        if (store.library[popupTrickKey].video){
-          gifFullScreenPopup = gifFullScreenPopupVideo
-        }
-      }
-    }
+    const fullScreenDemo = <div className = "fullScreenPopup">
+                            {gifFullScreenPopupVideo}
+                            {gifFullScreenPopupGif}
+                           </div>
+
+    const popupDemo = <div>
+                        {igHeader}
+                        {videoSection}
+                        {gifSection}
+                      </div>
     
 		return(
       			<div>
-              {igHeader}
-              {videoSection}
-              {gifSection}
+              {uiStore.gifFullscreen ? fullScreenDemo : popupDemo}
       			</div>
           )
     }

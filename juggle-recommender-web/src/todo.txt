@@ -27,9 +27,6 @@ v 1.2:
 			visible, but audio continues. Opening popup again makes it play overtop itself. Must refresh page to get rid of it.
 ==========
 
-
--make video stuff into a component
-
 -edit profile(maybe beyond 1.1)
 -toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
 
