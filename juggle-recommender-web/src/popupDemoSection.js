@@ -19,7 +19,9 @@ class PopupDemoSection extends Component {
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
       store.getUsableVideoURL(store.library[popupTrickKey].video)
-    } 
+    } else {
+      store.setPopupVideoURL('')
+    }
     const demoClass = uiStore.popupFullScreen ? "fullScreenDemo" : "demo"
     const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                           <img 
