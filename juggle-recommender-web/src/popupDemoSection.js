@@ -10,7 +10,8 @@ import minimizeIcon from './images/minimizeIcon.png'
 import utilities from './utilities'
 
 import './App.css';
-import './popup.css';
+
+import './popupDemoSection.css';
 
 @observer
 class PopupDemoSection extends Component {
