@@ -16,6 +16,8 @@ import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
 import MainTagsBar from "./mainTagsBar"
+import PopupDemoSection from './popupDemoSection'
+
 
  // Your web app's Firebase configuration
 let firebaseConfig = {}
@@ -190,7 +192,7 @@ _handleKeyDown = (event) => {
 							   	}
 						    </div>
 						</div>
-
+		const popup = uiStore.popupFullScreen ? <PopupDemoSection/> : <Popup/>
 		return (
 			<div className="main" ref={ref => this.el = ref}>	            
 	            {instructions}
@@ -205,7 +207,7 @@ _handleKeyDown = (event) => {
 						selectedTricks={uiStore.selectedTricks}
 					/> : null
 				}
-				<Popup/>
+				{popup}
 				<AddTrickForm/>
 				<TrickGraph 
 					nodes = {graphStore.nodes}

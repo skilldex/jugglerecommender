@@ -17,7 +17,7 @@ import './popup.css';
 class Popup extends Component {
   state = {
     catches : null,
-    gifFullscreen : false,
+    gifFullScreen : false,
     changingInput : false,
   }
 
@@ -58,10 +58,6 @@ class Popup extends Component {
         this.catchInput.select();
       }
     }, 100);  
-  }
-
-  toggleGifFullscreen=()=>{
-    this.setState({'gifFullscreen':!this.state.gifFullscreen})
   }
 
   onBlur(event) {
@@ -114,8 +110,6 @@ class Popup extends Component {
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
 
-    let fullScreenPopup = <PopupDemoSection/>
-
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{
                           left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
@@ -159,10 +153,10 @@ class Popup extends Component {
                         </label> : null
                       }
                     </div> : null
-    
 		return(
-      			<div ref={(div)=> {this.outerDiv = div}} onBlur={this.onBlur} tabIndex="0">
-              {uiStore.gifFullscreen ? fullScreenPopup : popupCard}
+      //
+      			<div onBlur={this.onBlur} ref={(div)=> {this.outerDiv = div}}  tabIndex="0">
+              {popupCard}
       			</div>
           )
     }

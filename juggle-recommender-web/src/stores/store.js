@@ -61,6 +61,8 @@ class Store {
           usefulPart = userProvidedURL.split('youtu.be/')
           usefulPart = usefulPart[usefulPart.length-1]            
         }
+        videoURLtoUse = "https://www.youtube.com/embed/"+usefulPart+
+                       "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart
         this.setPopupVideoURL("https://www.youtube.com/embed/"+usefulPart+
                        "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
       }

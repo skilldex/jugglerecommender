@@ -15,100 +15,59 @@ import './popupDemoSection.css';
 
 @observer
 class PopupDemoSection extends Component {
-  state = {
-
-  }
-
 	render() {
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
-    const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
-                        <div className = "gifDiv">
-                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
-                          <img width = '100' 
-                               alt = ''
-                               className="popupGif" 
-                               src={store.library[popupTrickKey].gifUrl}/> 
-                        </div> : null
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
       store.getUsableVideoURL(store.library[popupTrickKey].video)
-    }
-    if(store.igData){
-      console.log("profile img", toJS(store.igData.picURL))
-    }
+    } 
+    const demoClass = uiStore.popupFullScreen ? "fullScreenDemo" : "demo"
+    const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
+                          <img 
+                             alt = ''
+                             className={demoClass} 
+                             src={store.library[popupTrickKey].gifUrl}
+                          /> : null
+    
+
     let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" src={store.igData.picURL}/>
                             <span>{store.igData.username}</span>
                             <button className="instagramViewProfileButton" onClick={()=>{window.open(store.igData.profileURL)}}>View Profile</button>
                           </div> : null
-    let videoIframe  = store.popupVideoURL.includes('youtube') ? 
-                        <iframe name="vidFrame" 
-                                title="UniqueTitleForVideoIframeToStopWarning"
-                                className= {store.popupVideoURL.includes('youtube')?
-                                                "popupGif":"instagramVideo"}                                  
-                                  allow="autoplay"  
-                                  allowtransparency="true"
-                                  src={store.popupVideoURL}      
+    let video  = store.popupVideoURL.includes('youtube') ? 
+                        <iframe 
+                          name="vidFrame" 
+                          title="UniqueTitleForVideoIframeToStopWarning"
+                          className= {demoClass}                                  
+                          allow="autoplay"  
+                          allowtransparency="true"
+                          src={store.popupVideoURL}      
                         ></iframe> : store.popupVideoURL.includes('instagram') ? 
                         <video 
                           ref={(video)=> {this.popupVideo = video}}
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
-                          className= {store.popupVideoURL.includes('youtube')?
-                          "popupGif":"instagramVideo"}                                  
+                          className= {demoClass}                                  
                           autoPlay
                           playsInline
                           controls  
                           loop
                           src={store.popupVideoURL}
                         ></video> : null
-
-    const videoFullscreen  = <iframe  className= {store.popupVideoURL.includes('youtube')?
-                                                "youtubeFullScreen" : "instagramFullScreen"}   
-                                  title="UniqueTitleForvideoFullscreenToStopWarning"                             
-                                  allow="autoplay"  
-                                  allowtransparency="true" 
-                                  src={store.popupVideoURL}></iframe>
-    const videoSection = store.library[popupTrickKey] && store.library[popupTrickKey].video ?
-                        <div className = {store.popupVideoURL.includes('youtube')?
-                                        "gifDiv":"instagramDiv"}>
-                          <img src={fullScreenIcon} className="fullScreenIcon" alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
-                          {videoIframe}
-                        </div> : null
-    const gifFullScreenPopupGif = 
-          store.library[popupTrickKey] && store.library[popupTrickKey].gifUrl?
-              <div>
-                <img src={minimizeIcon} 
-                      className="fullScreenIcon" 
-                      alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
-                <img  height = '90%'
-                      alt = ''                   
-                      src={store.library[popupTrickKey].gifUrl}/> 
-              </div> 
-             : null
-    const gifFullScreenPopupVideo = 
-      store.library[popupTrickKey] && store.library[popupTrickKey].video?
-          <div>
-            <img src={minimizeIcon} 
-                className="fullScreenIcon" 
-                alt="" onClick={()=>{uiStore.toggleGifFullscreen()}} />
-            {videoFullscreen}
-          </div> 
-         : null
-    const fullScreenDemo = <div className = "fullScreenPopup">
-                            {gifFullScreenPopupVideo}
-                            {gifFullScreenPopupGif}
-                           </div>
-
-    const popupDemo = <div>
-                        {igHeader}
-                        {videoSection}
-                        {gifSection}
-                      </div>
-    
+    console.log("popup " ,uiStore.popupFullScreen, store.popupVideoURL, store.igData)
+    const outerDiv = uiStore.popupFullScreen ? "fullScreenOuterDiv" : "outerDiv"
 		return(
-      			<div>
-              {uiStore.gifFullscreen ? fullScreenDemo : popupDemo}
+      			<div className={outerDiv}>
+              <img 
+                src={fullScreenIcon} 
+                className="fullScreenIcon" 
+                alt="" 
+                onClick={()=>{uiStore.togglePopupFullScreen()}} 
+              />
+              {igHeader}
+              {video}
+              {gifSection}
       			</div>
           )
     }
