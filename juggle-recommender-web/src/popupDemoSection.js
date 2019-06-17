@@ -23,10 +23,11 @@ class PopupDemoSection extends Component {
       store.setPopupVideoURL('')
     }
     const demoClass = uiStore.popupFullScreen ? "fullScreenDemo" : "demo"
+    const gifClass = uiStore.popupFullScreen ? "gifFullScreenDemo" : "gifDemo"
     const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
                           <img 
                              alt = ''
-                             className={demoClass} 
+                             className={gifClass} 
                              src={store.library[popupTrickKey].gifUrl}
                           /> : null
     

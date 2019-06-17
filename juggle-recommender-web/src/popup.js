@@ -113,7 +113,7 @@ class Popup extends Component {
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{
                           left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
-                      		top : Math.min(graphDiv.clientHeight-460,uiStore.popupTrick.y),
+                      		top : Math.min(graphDiv.clientHeight-400,uiStore.popupTrick.y),
                           width : 260
                         }} 
                          className="popupDiv"
