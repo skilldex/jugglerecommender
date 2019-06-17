@@ -212,7 +212,7 @@ class AddTrickForm extends Component {
 					          placeholder = ''
 					          inputFieldPosition="bottom"
 					          tags={this.state.tags}
-					          minQueryLength={1}
+					          minQueryLength={0}
 					          suggestions={store.presetTags}
 					          delimiters={delimiters}
 					          handleDelete={this.handleTagDelete}

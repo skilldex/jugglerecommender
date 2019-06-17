@@ -7,7 +7,6 @@ v 1.4
 	- slow/reverse gif
 v 1.3:
 	-it should also update the library entry for the dependent with the appropriate prereq
-	- move search and sort to top bar
 	- edit trick
 	- log in firebase for a tricks edited by noncontributor
 	- clicking unselected selects, popup only for selected 
@@ -16,8 +15,6 @@ v 1.3:
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	- remove all button
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
-
-I NEED TO GET SET UP TO DEPLOY
 
 ==========
 
