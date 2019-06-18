@@ -6,6 +6,8 @@ import uiStore from './stores/uiStore'
 import sortIconSelected from './images/sortIconSelected.png'
 import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
+import searchIcon from './images/searchIcon.png'
+
 import './mainTagsBar.css';
 
 var mouseOverSort = true
@@ -61,8 +63,6 @@ class MainTagsBar extends Component {
       let filterButtonClass = filterStore.filterVisible?
                     "selectedfilterButton" : "unselectedfilterButton" 
                 filterButtonClass = "filterButton "+ filterButtonClass 
-      const filter = <img className={filterButtonClass} src={filterIcon} alt="showFilterMenu" 
-                onClick={()=>{filterStore.toggleFilterDiv()}}/>
       let filterTags = []
       let tagSection = null
       if(filterStore.numBalls){   
@@ -151,20 +151,29 @@ class MainTagsBar extends Component {
                   "sortDropdownButton  sortDropdownButtonSelected" :
                   "sortDropdownButton "}
                   onClick={(e)=>this.sortDirectionClicked('descending')}>Descending</button>
-            </div> : null
-
-            const search = <div className="search" >             
-                        <input className="searchInput" 
-                            value={uiStore.searchInput}
-                            onChange={uiStore.searchInputChange}/>
-                     </div>
+            </div> : null                        
 
       return (
         <div className="tagSection">
+          <img 
+            className="searchIcon" 
+            src={searchIcon} 
+            alt="searchIcon" 
+            onClick={()=>{this.searchInput.focus()}}
+          />
+          <input 
+            className="searchInput" 
+            value={uiStore.searchInput}
+            onChange={uiStore.searchInputChange}
+            ref={ref => this.searchInput = ref}
+          />
           {sort}
-          {search}
           {sortDropdown}
-          {filter}
+          <img 
+            className={filterButtonClass} 
+            src={filterIcon} alt="showFilterMenu" 
+            onClick={()=>{filterStore.toggleFilterDiv()}}
+          />
           <span className="mainTagsHeader">{filterTags.length>0?"":"no filters selected"}</span> 
           {filterTags}
           {tagSection}
