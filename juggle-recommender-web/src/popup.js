@@ -5,6 +5,7 @@ import { toJS } from "mobx"
 
 import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
+import editCardIcon from './images/cardEditIcon.png'
 import fullScreenIcon from './images/fullScreenIcon.png'
 import minimizeIcon from './images/minimizeIcon.png'
 import utilities from './utilities'
@@ -51,7 +52,7 @@ class Popup extends Component {
     this.setState({"catches":0})
     store.addToMyTricks(uiStore.popupTrick.id)
   }
-  handleEditButtonClick=()=>{
+  handleEditCatchButtonClick=()=>{
     this.setState({catches:store.myTricks[uiStore.popupTrick.id].catches})
     uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)
     //focus after render
@@ -117,7 +118,7 @@ class Popup extends Component {
         <span>{store.myTricks[popupTrickKey].catches}</span>
       }
       <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-           onClick={()=>{ this.handleEditButtonClick()}}
+           onClick={()=>{ this.handleEditCatchButtonClick()}}
       />
     </div> : null
 		const graphDiv = document.getElementById("graphDiv")
@@ -126,9 +127,10 @@ class Popup extends Component {
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
     console.log("popup trick", popupTrick,uiStore.popupTrick)
     const editTrickButton  = 
-      popupTrick && popupTrick.contributor == authStore.user.username ?  
-      <button onClick={uiStore.editPopupTrick}>Edit</button> :
-      null
+      popupTrick && popupTrick.contributor == authStore.user.username ? 
+      <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
+           onClick={()=>{uiStore.editPopupTrick()}}
+      /> : null
     
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{

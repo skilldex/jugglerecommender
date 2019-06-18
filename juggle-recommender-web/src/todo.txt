@@ -18,6 +18,10 @@ v 1.3:
 
 ==========
 
+Edit bugs:
+-changing name adds a new trick
+-number is not put in () on edited trick
+
 -edit profile(maybe beyond 1.1)
 -toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
 

@@ -192,7 +192,8 @@ _handleKeyDown = (event) => {
 							   	}
 						    </div>
 						</div>
-		const popup = uiStore.popupFullScreen ? <PopupDemo/> : <Popup/>
+		const popup = uiStore.editingPopupTrick ? null : 
+						uiStore.popupFullScreen ? <PopupDemo/> : <Popup/>
 		return (
 			<div className="main" ref={ref => this.el = ref}>	            
 	            {instructions}

@@ -34,8 +34,6 @@ class AddTrickForm extends Component {
 	}
 
 	componentDidMount=()=>{
-		console.log("mounted", {...store.library[uiStore.popupTrick.id]} )
-		
 		if(uiStore.editingPopupTrick){
 			let trick = {...store.library[uiStore.popupTrick.id]}
 
