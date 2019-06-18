@@ -20,28 +20,57 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 class AddTrickForm extends Component {
 	state = {
 		name : "",
-		numBalls : "",
+		num : "",
 		difficulty : "",
-		videoURL : "",
+		video : "",
 		siteSwap : "",
 		prereqs : [],
 		tags : [],
 		submitDisabled : true,
 		nameErrorMessage: "",
-		numBallsErrorMessage: "",
+		numErrorMessage: "",
 		difficultyErrorMessage: "",
-		videoUrlErrorMessage: ""
+		videoErrorMessage: ""
 	}
 
+	componentDidMount=()=>{
+		console.log("mounted", {...store.library[uiStore.popupTrick.id]} )
+		
+		if(uiStore.editingPopupTrick){
+			let trick = {...store.library[uiStore.popupTrick.id]}
+
+			//convert tag strings to tag objects
+			if(trick.tags){
+				trick.tags = trick.tags.map((tag)=>{
+					return {
+						id : tag,
+						text : tag
+					}
+				})
+			}
+			//convert prereq strings to tag objects
+			if(trick.prereqs){
+				trick.prereqs = trick.prereqs.map((prereq)=>{
+					return {
+						id : prereq,
+						text : prereq
+					}
+				})	
+			}
+			this.setState({...trick})
+
+		}
+		this.setState({submitDisabled : false,})
+	}
 	handleNameChange=(e)=>{
 		this.setState({
 			name:e.target.value
 		})
 		this.checkIfFormIsSubmittable()
 	}
-	handleNumBallsChange=(e)=>{
+	handleNumChange=(e)=>{
 		this.setState({
-			numBalls:e.target.value
+			num:e.target.value
 		})
 		this.checkIfFormIsSubmittable()
 	}
@@ -51,9 +80,9 @@ class AddTrickForm extends Component {
 		})
 		this.checkIfFormIsSubmittable()
 	}
-	handleVideoURLChange=(e)=>{
+	handleVideoChange=(e)=>{
 		this.setState({
-			videoURL:e.target.value
+			video:e.target.value
 		})
 		this.checkIfFormIsSubmittable()
 	}
@@ -89,7 +118,7 @@ class AddTrickForm extends Component {
         });
     }
     checkIfFormIsSubmittable=()=>{
-    	const suffix = this.state.numBalls === 3 ? '' : " ("+this.state.numBalls+"b)"
+    	const suffix = this.state.num === 3 ? '' : " ("+this.state.num+"b)"
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
     		this.setState({submitDisabled:true})
@@ -101,14 +130,14 @@ class AddTrickForm extends Component {
 				this.setState({nameErrorMessage:''})
 			} 
     	}
-    	if (utilities.isEmptyOrSpaces(this.state.numBalls)){
+    	if (utilities.isEmptyOrSpaces(this.state.num)){
     		this.setState({submitDisabled:true})
     	}else{
-    		if (utilities.isNotOnlyDigits(this.state.numBalls)){
-				this.setState({numBallsErrorMessage:'must be a number.'})
+    		if (utilities.isNotOnlyDigits(this.state.num)){
+				this.setState({numErrorMessage:'must be a number.'})
 				this.setState({submitDisabled:true})
 			}else{
-				this.setState({numBallsErrorMessage:''})
+				this.setState({numErrorMessage:''})
 			}    		
     	}
     	if (utilities.isEmptyOrSpaces(this.state.difficulty)){
@@ -122,14 +151,14 @@ class AddTrickForm extends Component {
 					this.setState({difficultyErrorMessage:''})				 
 				}  		
     	}
-    	if (utilities.isEmptyOrSpaces(this.state.videoURL)){
+    	if (utilities.isEmptyOrSpaces(this.state.video)){
 			this.setState({submitDisabled:true})
 		}else{
-			if (store.getUsableVideoURL(this.state.videoURL)==='notValid'){
-				this.setState({videoUrlErrorMessage:'Not a valid URL.'})
+			if (store.getUsableVideoURL(this.state.video)==='notValid'){
+				this.setState({videoErrorMessage:'Not a valid URL.'})
 				this.setState({submitDisabled:true})
 			}else{
-				this.setState({videoUrlErrorMessage:''})
+				this.setState({videoErrorMessage:''})
 			}
 		}
     }
@@ -146,20 +175,24 @@ class AddTrickForm extends Component {
 				var prereqs = this.state.prereqs.map(function(item) {
 					return item['text'];
 				});		
-				const suffix = "("+this.state.numBalls+"b)"
+				const suffix = uiStore.editingPopupTrick ? "" : "("+this.state.num+"b)"
 				const date = new Date()
 				const trick = {
 					name : this.state.name+suffix,
-					num : this.state.numBalls,
+					num : this.state.num,
 					difficulty : this.state.difficulty,
 					contributor : authStore.user.username, 
-					video : this.state.videoURL,
+					video : this.state.video,
 					siteswap :  this.state.siteSwap,
 					prereqs : prereqs,
 					tags : tags,
-					timeSubmitted : date.getTime()
+					
 				}
-
+				if(uiStore.editingPopupTrick){
+					trick["timeSubmitted"] = date.getTime()
+				}
+				trick["timeUpdated"] = date.getTime()
+				
 				store.addTrickToDatabase(trick)
 				this.clearState()
 				alert(trick.name+" added!")
@@ -174,14 +207,14 @@ class AddTrickForm extends Component {
 
 	clearState=()=>{
 		this.setState({name : ""})
-		this.setState({numBalls : ""})
+		this.setState({num : ""})
 		this.setState({difficulty : ""})
-		this.setState({videoURL : ""})
+		this.setState({video : ""})
 		this.setState({siteSwap : ""})
 		this.setState({prereqs : []})
 		this.setState({tags : []})
 		this.setState({submitDisabled : false})
-		this.setState({numBallsErrorMessage : ""})
+		this.setState({numErrorMessage : ""})
 		this.setState({difficultyErrorMessage : ""})
 	}
 
@@ -217,11 +250,12 @@ class AddTrickForm extends Component {
 					          delimiters={delimiters}
 					          handleDelete={this.handleTagDelete}
 					          handleAddition={this.handleTagAddition}
-					          handleTagClick={this.handleTagClick}/>
-
+					          handleTagClick={this.handleTagClick}
+					     />
+		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
 		const form = 	
 						<div className="form">
-							<h3>Add Pattern</h3>
+							<h3>{titleText}</h3>
 							<div className="innerForm">
 								<div className="inputContainer">
 									<span className="redText">*</span>
@@ -242,11 +276,11 @@ class AddTrickForm extends Component {
 								<div className="inputContainer">
 									<span className="redText">*</span>
 									<span className="inputLabel">Number of balls</span>
-									<span className="warning">{this.state.numBallsErrorMessage}</span>
+									<span className="warning">{this.state.numErrorMessage}</span>
 									<input className="formInputs" 
-											value={this.state.numBalls} 
-											onBlur={this.handleNumBallsChange}
-											onChange={this.handleNumBallsChange}/>
+											value={this.state.num} 
+											onBlur={this.handleNumChange}
+											onChange={this.handleNumChange}/>
 								</div>
 								<div className="inputContainer">
 									<span className="redText">*</span>
@@ -260,11 +294,11 @@ class AddTrickForm extends Component {
 								<div className="inputContainer">
 									<span className="redText">*</span>
 									<span className="inputLabel">Instagram or Youtube Video <br/>(only containing added trick)</span>
-									<span className="warning">{this.state.videoUrlErrorMessage}</span>
+									<span className="warning">{this.state.videoErrorMessage}</span>
 									<input className="formInputs" 
-											value={this.state.videoURL} 
-											onBlur={this.handleVideoURLChange}
-											onChange={this.handleVideoURLChange}
+											value={this.state.video} 
+											onBlur={this.handleVideoChange}
+											onChange={this.handleVideoChange}
 									/>
 								</div>
 								<div className="inputContainer">

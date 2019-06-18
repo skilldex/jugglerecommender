@@ -208,7 +208,7 @@ _handleKeyDown = (event) => {
 					/> : null
 				}
 				{popup}
-				<AddTrickForm/>
+				{uiStore.addingTrick ? <AddTrickForm/> : null}
 				<TrickGraph 
 					nodes = {graphStore.nodes}
 					edges = {graphStore.edges}

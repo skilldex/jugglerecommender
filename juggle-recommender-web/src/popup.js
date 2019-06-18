@@ -9,7 +9,7 @@ import fullScreenIcon from './images/fullScreenIcon.png'
 import minimizeIcon from './images/minimizeIcon.png'
 import utilities from './utilities'
 import PopupDemo from './popupDemo'
-
+import authStore from "./stores/authStore"
 import './App.css';
 import './popup.css';
 
@@ -65,35 +65,26 @@ class Popup extends Component {
   onMouseEnter(event){
     //this.setState({mouseInPopupDiv:true})
     mouseInPopupDiv = true
-    console.log('mouseInPopupDiv',mouseInPopupDiv)
   }
 
   onMouseLeave(event){
     //this.setState({mouseInPopupDiv:false})
     mouseInPopupDiv = false
-    console.log('mouseInPopupDiv',mouseInPopupDiv)
   }
 
 
   onBlur(event) {
-
     //detect click outside, but avoid cases where popup has just opened
     //if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
- if (!uiStore.popupTimer) {
-
-      if(!mouseInPopupDiv){
-        uiStore.setPopupTrick(null)
-      }
-
+    if (!uiStore.popupTimer && !mouseInPopupDiv) {
+      uiStore.setPopupTrick(null)
     }
-
   }
 	render() {
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
     //set focus to compensate for onblur function
     if(this.catchInput){this.catchInput.focus()}
-
     document.addEventListener("click", (evt) => {
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
@@ -110,6 +101,8 @@ class Popup extends Component {
     });
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
+    const popupTrick = store.library[popupTrickKey]
+
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
       <label className="popupLabel">Catches: </label>
@@ -131,7 +124,12 @@ class Popup extends Component {
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
-
+    console.log("popup trick", popupTrick,uiStore.popupTrick)
+    const editTrickButton  = 
+      popupTrick && popupTrick.contributor == authStore.user.username ?  
+      <button onClick={uiStore.editPopupTrick}>Edit</button> :
+      null
+    
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{
                           left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
@@ -140,23 +138,24 @@ class Popup extends Component {
                         }} 
                          className="popupDiv"
                     >
-                      <h3 className="popupHeader">{addToMyTricksButton}{store.library[popupTrickKey].name}</h3>             
+                      {editTrickButton}
+                      <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
                       {catchesSection}                         		
-                      <label className="popupLabel">Difficulty: </label>{store.library[popupTrickKey].difficulty} / 10<br/>
-                      <label className="popupLabel">Number of Balls: </label>{store.library[popupTrickKey].num}<br/>
-                      {store.library[popupTrickKey].siteswap ? 
+                      <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
+                      <label className="popupLabel">Number of Balls: </label>{popupTrick.num}<br/>
+                      {popupTrick.siteswap ? 
                         <div>
-                          <label className="popupLabel">Siteswap: </label>{store.library[popupTrickKey].siteswap}<br/>
+                          <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
                         </div> : null
                       }
                       <label className="popupLabel">Contributor: </label>
                       {
-                        store.library[popupTrickKey].contributor ? 
-                        store.library[popupTrickKey].contributor : <a target="_" href='http://libraryOfJuggling.com'>libraryOfJuggling.com</a>
+                        popupTrick.contributor ? 
+                        popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>libraryOfJuggling.com</a>
                       }
                       <br/><br/>
                       
-                    	{store.library[popupTrickKey] && store.library[popupTrickKey].url? 
+                    	{popupTrick && popupTrick.url? 
                     		<span 
                          onClick={()=>{this.seeExplanation(popupTrickKey)}}
                          className="popupLink"
@@ -164,14 +163,14 @@ class Popup extends Component {
                       }
                       <PopupDemo/>
                       <br></br>
-                      {store.library[popupTrickKey] && store.library[popupTrickKey].tags?
+                      {popupTrick && popupTrick.tags?
                     		<label className="popupTags">
-                    			Tags: {store.library[popupTrickKey].tags.join(', ')} 
+                    			Tags: {popupTrick.tags.join(', ')} 
                     		</label> : null
                       }<br></br>
-                      {store.library[popupTrickKey] && store.library[popupTrickKey].related && store.library[popupTrickKey].related.length>0 ?
+                      {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
                         <label className="popupTags">
-                          Related: {store.library[popupTrickKey].related.join(', ')} 
+                          Related: {popupTrick.related.join(', ')} 
                         </label> : null
                       }
                     </div> : null

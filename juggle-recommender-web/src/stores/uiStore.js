@@ -20,18 +20,25 @@ class UIStore {
 	@observable popupTimer = null
 	@observable addingTrick = false
 	@observable popupFullScreen = false
-
+	@observable editingPopupTrick = false
 	@action togglePopupFullScreen=()=>{
     	this.popupFullScreen = !this.popupFullScreen
     	console.log('this.popupFullScreen',this.popupFullScreen)
   	}
-
+  	@action editPopupTrick=()=>{
+  		this.editingPopupTrick = true
+  		//shows form
+  		this.addingTrick = true
+  	}
 	@action toggleAddingTrick = ()=>{
 		if (!authStore.user){
 			window.alert("You must be signed in to add a trick");
 		}else{
 			this.popupTrick = null
 			this.addingTrick = !this.addingTrick
+		}
+		if(!this.addingTrick){
+			this.editingPopupTrick = false
 		}
 	}
 	@action closePopups = ()=>{
