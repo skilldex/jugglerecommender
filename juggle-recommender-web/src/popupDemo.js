@@ -36,7 +36,7 @@ class PopupDemo extends Component {
                           <div className="instagramHeader">
                             <img className="profileImage" src={store.igData.picURL}/>
                             <span>{store.igData.username}</span>
-                            <button className="instagramViewProfileButton" onClick={()=>{window.open(store.igData.profileURL)}}>View Profile</button>
+                            <button className="instagramViewProfileButton" onClick={()=>{window.open(store.library[popupTrickKey].video)}}>View on Instagram</button>
                           </div> : null
     let video  = store.popupVideoURL.includes('youtube') ? 
                         <iframe 
