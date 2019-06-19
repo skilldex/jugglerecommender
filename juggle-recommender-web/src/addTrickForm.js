@@ -55,6 +55,7 @@ class AddTrickForm extends Component {
 					}
 				})	
 			}
+			console.log(trick)
 			this.setState({...trick})
 
 		}
@@ -191,7 +192,7 @@ class AddTrickForm extends Component {
 					trick["timeSubmitted"] = date.getTime()
 				}
 				trick["timeUpdated"] = date.getTime()
-				
+				console.log(trick)
 				store.addTrickToDatabase(trick)
 				this.clearState()
 				alert(trick.name+" added!")
