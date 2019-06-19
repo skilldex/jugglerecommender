@@ -195,7 +195,11 @@ class AddTrickForm extends Component {
 				console.log(trick)
 				store.addTrickToDatabase(trick)
 				this.clearState()
-				alert(trick.name+" added!")
+				if(uiStore.editingPopupTrick){
+					alert(trick.name+" edited!")
+				}else{
+					alert(trick.name+" added!")
+				}
 		}
 	}
 	
