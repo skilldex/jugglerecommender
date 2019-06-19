@@ -1,0 +1,13 @@
+As non-logged in user with cleared data:
+-open/close about
+-Use all filters
+-Use all sorts
+-toggle lists
+-star a trick
+-open a popup
+-input catches
+-Create user
+-Do all of the above now that signed in
+-add a pattern
+-edit pattern
+-sign out
