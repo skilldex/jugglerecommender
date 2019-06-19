@@ -28,16 +28,37 @@ class Filter extends Component {
   	}
 
 	handleAddition=(tag)=>{
-		if (store.tagsSuggestions.includes(tag.id)){
+ 		let canAdd = true
+ 		filterStore.tags.forEach(function (arrayItem) {
+		    if (arrayItem.id === tag.id){
+		    	canAdd = false
+		    }
+		});
+		if (store.tagsSuggestions.includes(tag.id) && canAdd){
 			filterStore.setTags(
 				 [...filterStore.tags, tag] 
 			);
 		}
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
-
 	}
- 
+ 	
+ 	handleContributorTagAddition=(contributor)=>{
+ 		let canAdd = true
+ 		filterStore.contributors.forEach(function (arrayItem) {
+		    if (arrayItem.id === contributor.id){
+		    	canAdd = false
+		    }
+		});
+		if (store.contributors.includes(contributor.id) && canAdd){
+			filterStore.setContributors(
+				 [...filterStore.contributors, contributor] 
+			);
+		}
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+ 	}								         
+									          
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
 		uiStore.resetSelectedTrick()
@@ -115,6 +136,23 @@ class Filter extends Component {
 							          handleTagClick={this.handleTagClick}/>
 							    </div>
 							</div>
+		const contributorSection = <div>
+				 						<div>
+											<h3 className="filterHeader">Contributors</h3>
+										</div>	
+										<div>
+									        <ReactTags
+									          autofocus = {false}
+									          inputFieldPosition="bottom"
+									          placeholder = ""
+									          minQueryLength={0}
+									          suggestions={store.contributorTags}
+									          delimiters={delimiters}
+									          handleDelete={filterStore.handleContributorTagDelete}
+									          handleAddition={this.handleContributorTagAddition}
+									          handleTagClick={this.handleContributorTagClick}/>
+									    </div>
+									</div>
 	 	const numbersOfBalls = ['3','4','5','6','7']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
@@ -166,19 +204,21 @@ class Filter extends Component {
 											onChange={(e)=>this.handleMaxCatchesChange(e)}
 									/>
 								</div>
-
 		return (
 			<div className="filterDiv">
 				<button className="closeFilter" onClick={()=>{filterStore.toggleFilterDiv()}}>
 					X
 				</button><br/>
 				{tagSection}
+				<ColoredLine/>
+				{contributorSection}
 			    <ColoredLine/>
 			    {numSection}
 				<ColoredLine/>
 				{difficultySection}
 				<ColoredLine/>
 				{catchesSection}
+
 
 			</div>
 		)

@@ -79,6 +79,17 @@ class MainTagsBar extends Component {
           )
         })
       }
+      if(filterStore.contributors){   
+        filterStore.contributors.forEach((contributor,i)=>{
+          filterTags.push(
+                <div className="tagDiv">
+                  <span className="mainTagsName">Contributed by '{filterStore.contributors[i].text}'</span>
+                  <label className="mainTagsX"onClick={()=>filterStore.removeContributor(i)}> x </label>
+                </div>      
+          )
+        })
+      }
+
       if(filterStore.difficultyRange[0] !==1 || filterStore.difficultyRange[1] !==10 ){
         filterTags.push(
               <div className="tagDiv">

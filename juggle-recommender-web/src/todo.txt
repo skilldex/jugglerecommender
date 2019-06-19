@@ -13,7 +13,7 @@ v 1.3:
 	- remove all button
 		*remove all what?
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
-	- way to view contributed tricks (probably filter)/by contributor
+
 
 ==========
 

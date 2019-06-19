@@ -10,6 +10,7 @@ class FilterStore {
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
 	@observable tags = []
+	@observable contributors = []
 	@observable minCatches = 0
 	@observable maxCatches = 10000000
 
@@ -38,6 +39,19 @@ class FilterStore {
 		this.tags = tags
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+	}
+	@action setContributors=(contributors)=>{
+		this.contributors = contributors
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+	@action removeContributor=(i)=>{
+		console.log('i',i)
+		this.setContributors(
+			this.contributors.filter((contributor, index) => index !== i)
+		)
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()		
 	}
 	@action handleDelete=(i)=>{
 		this.setTags(

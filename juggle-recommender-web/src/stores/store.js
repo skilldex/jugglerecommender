@@ -14,11 +14,36 @@ class Store {
 	@observable isCreateAccountPaneOpen = false
 	@observable library = {}
 	@observable tagsSuggestions = []
+	@observable contributors = []
 	@observable presetTags = {}
 	@observable popupVideoURL = ""
 	@observable igData = null
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
+	}
+	@computed get contributorTags(){
+		const contributors = []
+		for (let trick in this.library){
+  			if (this.library[trick].contributor && 
+  				!contributors.includes(this.library[trick].contributor)){
+  					contributors.push(this.library[trick].contributor)
+			}
+  		}
+  		contributors.push('Library Of Juggling')
+  		console.log('contributors',contributors)
+  		this.setContributors(contributors)
+  		
+ 		const contributorTags = contributors.map((contributor) => {
+		  return {
+		  	size: null,
+		    id: contributor,
+		    text: contributor,
+		  }
+		})
+		return contributorTags
+	}
+	@action setContributors=(contributors)=>{
+		this.contributors = contributors
 	}
 	@action setPopupVideoURL=(url)=>{
 		this.popupVideoURL = url

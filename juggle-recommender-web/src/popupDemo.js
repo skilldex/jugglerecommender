@@ -32,7 +32,7 @@ class PopupDemo extends Component {
                           /> : null
     
 
-    var igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
+    let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" src={store.igData.picURL}/>
                             <span>{store.igData.username}</span>

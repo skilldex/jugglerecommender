@@ -215,11 +215,27 @@ class UIStore {
 						return ''
 					}
 				}) : []
+				let passesContributorFilter = false
+				let overRideContributorFilter = false
+				if (filterStore.contributors.length===0){
+					passesContributorFilter = true
+				}else{
+					filterStore.contributors.forEach(function (arrayItem) {
+					    if (trick.contributor === arrayItem.id ){
+					    	passesContributorFilter = true
+					    }
+					    if (trick.contributor == null && 
+					    	arrayItem.id === "Library Of Juggling"){
+					    	passesContributorFilter = true
+					    }
+					})
+				}
 				let thisTricksCatches = 0
 				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
 					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
 				}
 				if(
+				   passesContributorFilter &&
 				   parseInt(trick.difficulty, 10) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty, 10) <= filterStore.difficultyRange[1] &&
 				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length === 0) &&
