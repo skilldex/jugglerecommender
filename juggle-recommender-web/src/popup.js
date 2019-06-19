@@ -127,7 +127,7 @@ class Popup extends Component {
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
     console.log("popup trick", popupTrick,uiStore.popupTrick)
     const editTrickButton  = 
-      popupTrick && popupTrick.contributor == authStore.user.username ? 
+      popupTrick && authStore.user && popupTrick.contributor == authStore.user.username ? 
       <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
            onClick={()=>{uiStore.editPopupTrick()}}
       /> : null
