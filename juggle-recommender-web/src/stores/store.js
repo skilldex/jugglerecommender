@@ -1,4 +1,4 @@
-import { action, configure, computed, observable } from "mobx"
+import { action, configure, computed, observable, toJS } from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import authStore from './authStore'
@@ -150,15 +150,32 @@ class Store {
 		  }
 		})
 	}	
+	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
+		const oldTrick = this.library[oldTrickKey]
+		if(oldTrick.prereqs){
+			let stalePrereqs = oldTrick.prereqs.filter(x => !newTrickData.prereqs.includes(x))
+			stalePrereqs.forEach((prereq)=>{
+				const trick = this.library[prereq]
+				const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
+				trick.dependents = newDependents
+				//update prereq's dependents in db
+				let newTrickRef = firebase.database().ref('library/'+prereq)
+        		newTrickRef.set(trick);
+			})
+		}
+	}
 	@action addTrickToDatabase=(trick)=>{
 		const trickKey = trick.name
-		
+		const oldTrickKey = uiStore.popupTrick.id
+		if(uiStore.editingPopupTrick){
+			this.removeOldDependents(trick,oldTrickKey)
+		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
         //if name changed, delete old reference in firebase
         //delete in mytricks and selected tricks, swap with new key
+        
         if(uiStore.editingPopupTrick && trickKey != uiStore.popupTrick.id){
-        	const oldTrickKey = uiStore.popupTrick.id
         	if(uiStore.selectedTricks.includes(oldTrickKey)){
     			uiStore.toggleSelectedTrick(oldTrickKey)
     			uiStore.toggleSelectedTrick(trickKey)
@@ -171,8 +188,8 @@ class Store {
         	}
         	let oldTrickRef = firebase.database().ref('library/'+oldTrickKey)
 			oldTrickRef.remove()
-
 		}
+
         this.addDependents(trick)
         uiStore.toggleAddingTrick()
 	}
