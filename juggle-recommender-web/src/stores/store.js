@@ -24,7 +24,9 @@ class Store {
 		this.popupVideoURL = url
 	}
 	@action setIGData=(data)=>{
-		if(!this.igData || !uiStore.popupTrick){
+		if(!this.igData || 
+			!uiStore.popupTrick || 
+			this.igData.username !== data.graphql.shortcode_media.owner.username){
 			this.igData = {
 				username : data.graphql.shortcode_media.owner.username,
 				picURL :  data.graphql.shortcode_media.owner.profile_pic_url,
@@ -166,8 +168,9 @@ class Store {
 	}
 	@action addTrickToDatabase=(trick)=>{
 		const trickKey = trick.name
-		const oldTrickKey = uiStore.popupTrick.id
+		let oldTrickKey
 		if(uiStore.editingPopupTrick){
+			oldTrickKey = uiStore.popupTrick.id
 			this.removeOldDependents(trick,oldTrickKey)
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)

@@ -3,11 +3,9 @@ v 1.4
 	- make popups be draggable divs 
 	- add related relationship
 	- add related filter
-	- way to view contributed tricks (probably filter)/by contributor
 	- slow/reverse gif
 v 1.3:
 	-it should also update the library entry for the dependent with the appropriate prereq
-	- edit trick
 	- log in firebase for a tricks edited by noncontributor
 	- clicking unselected selects, popup only for selected 
 	- autocomplete name of added trick to avoid redundant tricks
@@ -15,16 +13,15 @@ v 1.3:
 	- remove all button
 		*remove all what?
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
+	- way to view contributed tricks (probably filter)/by contributor
 
 ==========
-
-*********We should probably move Contributor filter down to v1.3 so we can have a way to show all these contributors their tricks easily instead of needing to list them out in messages. Then they can also easily direct their fanbase to their stuff.
 
 Add pattern form bugs:
 -either name or siteswap doesnt allow []
 
-Edit bugs:
--changing name adds a new trick
+-tags dont show up on bottom of most instagram videos
+
 
 -edit profile(maybe beyond 1.1)
 -toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
@@ -66,4 +63,26 @@ Stats:
 -compare gifs of different tricks side by side,
 -opacity based on closeness to qualify
 
+
+
+
+
+
+
+
+Multiple users edited tag Bugs
+z edited trick name
+z set catches to 6666
+duplicated tab
+created x account
+x had catches from z account
+whenever z edits catches they get set to 0
+x edits catches and it works as expected
+
+(name 2 is in seperate, because in incognito)If account 2 has trick open at the time, it crashes them.
+	once they referesh, they do not have a record with the changed trick name
+
+
+
+check for duplicates in add patterns by comparing video being submitted with all current videos
 
