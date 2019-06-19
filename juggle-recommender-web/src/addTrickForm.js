@@ -175,8 +175,9 @@ class AddTrickForm extends Component {
 				});		
 				const suffix = uiStore.editingPopupTrick ? "" : "("+this.state.num+"b)"
 				const date = new Date()
+				const name = this.state.name+suffix
 				const trick = {
-					name : this.state.name+suffix,
+					name : name,
 					num : this.state.num,
 					difficulty : this.state.difficulty,
 					contributor : authStore.user.username, 

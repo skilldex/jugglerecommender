@@ -152,8 +152,21 @@ class Store {
 	}	
 	@action addTrickToDatabase=(trick)=>{
 		const trickKey = trick.name
+		
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
+        //if name changed, delete old reference in firebase
+        if(uiStore.editingPopupTrick && trickKey != uiStore.popupTrick.id){
+        	const oldTrickKey = uiStore.popupTrick.id
+        	if(this.myTricks[oldTrickKey]){
+        		this.myTricks[trickKey] = this.myTricks[oldTrickKey]
+        		delete this.myTricks[oldTrickKey]
+        		this.updateTricksInDatabase()
+		 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+        	}
+        	let oldTrickRef = firebase.database().ref('library/'+uiStore.popupTrick.id)
+			oldTrickRef.remove()
+		}
         this.addDependents(trick)
         uiStore.toggleAddingTrick()
 	}
