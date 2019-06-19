@@ -84,7 +84,6 @@ class UIStore {
  		}else{
 	 		this.selectedTricks.push(clickedTrick)
 	 	}
-	 	this.updateRootTricks()
 	 	if(!clickedTrick.includes(clickedTrick)){
 	 		this.popupTrick = null
 	 	}

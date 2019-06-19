@@ -156,16 +156,22 @@ class Store {
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
         //if name changed, delete old reference in firebase
+        //delete in mytricks and selected tricks, swap with new key
         if(uiStore.editingPopupTrick && trickKey != uiStore.popupTrick.id){
         	const oldTrickKey = uiStore.popupTrick.id
+        	if(uiStore.selectedTricks.includes(oldTrickKey)){
+    			uiStore.toggleSelectedTrick(oldTrickKey)
+    			uiStore.toggleSelectedTrick(trickKey)
+    		}
         	if(this.myTricks[oldTrickKey]){
         		this.myTricks[trickKey] = this.myTricks[oldTrickKey]
         		delete this.myTricks[oldTrickKey]
         		this.updateTricksInDatabase()
 		 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
         	}
-        	let oldTrickRef = firebase.database().ref('library/'+uiStore.popupTrick.id)
+        	let oldTrickRef = firebase.database().ref('library/'+oldTrickKey)
 			oldTrickRef.remove()
+
 		}
         this.addDependents(trick)
         uiStore.toggleAddingTrick()
