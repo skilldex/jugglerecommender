@@ -11,3 +11,23 @@ As non-logged in user with cleared data:
 -add a pattern
 -edit pattern
 -sign out
+
+
+
+z edited trick name
+z set catches to 6666
+duplicated tab
+created x account
+x had catches from z account
+whenever z edits catches they get set to 0
+x edits catches and it works as expected
+
+to try: 
+what happens when account 1 makes trick, account 2 stars and sets catches, then account 1 changes name?
+
+(name 2 is in seperate, because in incognito)If account 2 has trick open at the time, it crashes them.
+	once they referesh, they do not have a record with the changed trick name
+
+
+tags dont show up on bottom of instagram videos
+check for duplicates by comparing video being submitted with all current videos 
