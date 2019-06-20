@@ -192,7 +192,7 @@ class Store {
 		}
 	}
 	@action addTrickToDatabase=(trick)=>{
-		const trickKey = trick.name
+		const trickKey = trick.name.replace('[','({').replace(']','})')
 		let oldTrickKey
 		if(uiStore.editingPopupTrick){
 			oldTrickKey = uiStore.popupTrick.id
