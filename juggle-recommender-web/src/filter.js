@@ -128,7 +128,7 @@ class Filter extends Component {
 							          autofocus = {false}
 							          inputFieldPosition="bottom"
 							          placeholder = ""
-							          minQueryLength={1}
+							          minQueryLength={0}
 							          suggestions={store.presetTags}
 							          delimiters={delimiters}
 							          handleDelete={filterStore.handleDelete}
