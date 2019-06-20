@@ -9,24 +9,15 @@ v 1.4
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
 		*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
 	-color swatches to indicate difficulty instead of entire background
+	-resizable div
 v 1.3:
-
+	-duplicate name warning needs fixed
 	-get rid of all button, and move star to right of search
-	-Chage select Logic
-		-remove multiselected tricks
-		-clicking unselected on list, selects and shows popup
+	-Change select Logic
 		-clicking unselected in graph selects
 		-clicking selected in graph shows popup
-	-filter, sort, search should expand list
-	-too easy to accidentally bump star and delete catches record
-		-we could ask if they are sure they want to unstar it like we do in myTricks list
-
-	-resizable div
-	-autocomplete name of added trick to avoid redundant tricks
-		*more info down below
-	
-
-
+	-filter, sort, search should expand list	
+	-ask if they are sure they want to unstar trick in allTricks and popup
 ==========
 
 
@@ -39,9 +30,6 @@ v 1.3:
 
 
 -to avoid pattern submission duplicates:
-	-Name AutoComplete
-		-cascade
-		-suggestions should not have any of the ball num parenthesis afterwards,
 	-check for videoURL duplicates
 		-an extra level of this is just checking if unique part is a duplicate
 
