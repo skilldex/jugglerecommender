@@ -1,0 +1,21 @@
+.options{
+	position : absolute;
+	background : white;
+	opacity : 95%;
+	z-index: 2;
+}
+.option {
+	padding : 5px;
+	padding-left: 40px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-top : 1px solid black;
+ }
+ .option:hover { 
+ 	border : 2px solid gray;
+ 	cursor: pointer;
+  }
+ .match { 
+ 	font-weight: bold;
+ 	text-decoration: underline;
+  }
