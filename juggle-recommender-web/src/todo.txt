@@ -13,21 +13,34 @@ v 1.3:
 	-autocomplete name of added trick to avoid redundant tricks
 		*more info down below
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
-	- remove all button
+	-remove all button
 		*remove all what? Im thinking maybe 'unselect all', but not sure
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
 		*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
 ==========
 
 
--to easy to accidentally bump star and delete catches record
+
+-too easy to accidentally bump star and delete catches record
+	-we could keep track of catches even when they unstar it
+	-we could ask if they are sure they want to unstar it like we do in myTricks list
 -Can't add multiplex siteswaps, restricted symbols are ".", "#", "$", "[", or "]"
 -fix constantly collapsing list
 	-no need for any auto collapse on pc
-	-typing in search should expand list
--editing a tricks name(and probably number, and maybe other fields) deletes it's timeSubmitted field from db
--in filter, number of balls don't change colors when selected
--filter button could look more like sort button
+	-filter, sort, search should expand list
+-editing a tricks name deletes it's timeSubmitted field from db
+	(probably true of editing number, and maybe other fields)
+-filter button could look more like sort button, its lines are so thin
+
+This situation needs fixed:
+-go to all
+-sort by recently submitted
+-click a new trick you want to learn on the list
+-there are now about 25 nodes on a small phone screen
+-manually search through all those tricks on a tiny screen.
+-again click the trick they want to learn
+-this situation is only going to get worse with more and more tricks
+***Showing the popup when clicked on the list is so much simpler, if they happen to not want the popup, they quickly close it.
 
 -to avoid pattern submission duplicates:
 	-Name AutoComplete
