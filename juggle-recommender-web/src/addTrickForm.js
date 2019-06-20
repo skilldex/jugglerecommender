@@ -36,7 +36,7 @@ class AddTrickForm extends Component {
 	componentDidMount=()=>{
 		if(uiStore.editingPopupTrick){
 			let trick = {...store.library[uiStore.popupTrick.id]}
-
+			trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 			//convert tag strings to tag objects
 			if(trick.tags){
 				trick.tags = trick.tags.map((tag)=>{
@@ -174,7 +174,7 @@ class AddTrickForm extends Component {
 				var prereqs = this.state.prereqs.map(function(item) {
 					return item['text'];
 				});		
-				const suffix = uiStore.editingPopupTrick ? "" : "("+this.state.num+"b)"
+				const suffix = "("+this.state.num+"b)"
 				const date = new Date()
 				const name = this.state.name+suffix
 				const trick = {
