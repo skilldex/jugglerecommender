@@ -158,7 +158,7 @@ class Filter extends Component {
 		numbersOfBalls.forEach(function(element) {
 			numButtons.push(
 				<button className={filterStore.numBalls.includes(element)?
-					'filterNum':'filterNum filterNumUnselected'}
+					'filterNum filterNumSelected':'filterNum'}
 				key={'numButton' + element} 
 				onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
 		)},this);	
