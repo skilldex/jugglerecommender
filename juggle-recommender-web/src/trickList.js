@@ -144,16 +144,13 @@ class TrickList extends Component {
 
 						</div>
 		return (
-			<Resizable
+			<div
 				className= {uiStore.listExpanded ? "listDiv" : ""}
-				defaultSize={{
-			      width: '170px',
-			      height: "90vh"
-			    }}
+				
 			>	
 			 		{uiStore.listExpanded ? maximizedList : minimizedList}
 				
-			</Resizable>
+			</div>
 		)
 	  }
 }
