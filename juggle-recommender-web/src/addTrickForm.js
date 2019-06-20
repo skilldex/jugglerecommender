@@ -6,7 +6,7 @@ import authStore from "./stores/authStore"
 import store from "./stores/store"
 import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
-
+import AutoComplete from './autoComplete'
 
 
 const KeyCodes = {
@@ -31,7 +31,8 @@ class AddTrickForm extends Component {
 		numErrorMessage: "",
 		difficultyErrorMessage: "",
 		videoErrorMessage: "",
-		timeSubmitted : ""
+		timeSubmitted : "",
+		autoCompletedName : false 
 	}
 
 	componentDidMount=()=>{
@@ -64,7 +65,8 @@ class AddTrickForm extends Component {
 	}
 	handleNameChange=(e)=>{
 		this.setState({
-			name:e.target.value
+			name:e.target.value,
+			autoCompletedName : false
 		})
 		this.checkIfFormIsSubmittable()
 	}
@@ -221,7 +223,12 @@ class AddTrickForm extends Component {
 		this.setState({numErrorMessage : ""})
 		this.setState({difficultyErrorMessage : ""})
 	}
-
+	setAutoCompletedName=(name)=>{
+		this.setState({
+			name : name,
+			autoCompletedName : true
+		})
+	}
 	render (){
 
 		const patternsObj = Object.keys(store.library).map((pattern) => {
@@ -257,6 +264,11 @@ class AddTrickForm extends Component {
 					          handleTagClick={this.handleTagClick}
 					     />
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
+		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
+			<AutoComplete 
+				setAutoCompletedName={this.setAutoCompletedName} 
+				input={this.state.name}
+			/> : null
 		const form = 	
 						<div className="form">
 							<h3>{titleText}</h3>
@@ -269,6 +281,7 @@ class AddTrickForm extends Component {
 											value={this.state.name} 
 											onBlur={this.handleNameChange}
 											onChange={this.handleNameChange}/>
+									{autoComplete}
 								</div>
 								<div className="inputContainer">
 									<span className="inputLabel">Tags</span>{tagInput}
