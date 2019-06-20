@@ -4,47 +4,42 @@ v 1.4
 	- add related relationship
 	- add related filter
 	- slow/reverse gif
-v 1.3:
-	-it should also update the library entry for the dependent with the appropriate prereq
-		*this is finished, right?
 	-a log in firebase for a tricks edited by noncontributor
-	- clicking unselected selects, popup only for selected 
-		*not sure about this, it adds yet another click to get to the popup, if anything less clicks to get to popup would be nice
-	-autocomplete name of added trick to avoid redundant tricks
-		*more info down below
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
-	-remove all button
-		*remove all what? Im thinking maybe 'unselect all', but not sure
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
 		*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
+v 1.3:
+
+	-get rid of all button, and move star to right of search
+	-Chage select Logic
+		-remove multiselected tricks
+		-clicking unselected on list, selects and shows popup
+		-clicking unselected in graph selects
+		-clicking selected in graph shows popup
+	-filter, sort, search should expand list
+	-too easy to accidentally bump star and delete catches record
+		-we could ask if they are sure they want to unstar it like we do in myTricks list
+
+	-resizable div
+	-autocomplete name of added trick to avoid redundant tricks
+		*more info down below
+	
+
+
 ==========
 
 
+	
 
--too easy to accidentally bump star and delete catches record
-	-we could keep track of catches even when they unstar it
-	-we could ask if they are sure they want to unstar it like we do in myTricks list
--Can't add multiplex siteswaps, restricted symbols are ".", "#", "$", "[", or "]"
--fix constantly collapsing list
-	-no need for any auto collapse on pc
-	-filter, sort, search should expand list
--editing a tricks name deletes it's timeSubmitted field from db
-	(probably true of editing number, and maybe other fields)
--filter button could look more like sort button, its lines are so thin
+-thin lines on sort button
 
-This situation needs fixed:
--go to all
--sort by recently submitted
--click a new trick you want to learn on the list
--there are now about 25 nodes on a small phone screen
--manually search through all those tricks on a tiny screen.
--again click the trick they want to learn
--this situation is only going to get worse with more and more tricks
-***Showing the popup when clicked on the list is so much simpler, if they happen to not want the popup, they quickly close it.
+
+
+
 
 -to avoid pattern submission duplicates:
 	-Name AutoComplete
-		-it should be like autocomplete for prereqs except it doesnt make a tag, it just fills in the input
+		-cascade
 		-suggestions should not have any of the ball num parenthesis afterwards,
 	-check for videoURL duplicates
 		-an extra level of this is just checking if unique part is a duplicate
