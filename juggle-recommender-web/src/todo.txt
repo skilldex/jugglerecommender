@@ -27,7 +27,9 @@ Is this intentional? In the bottom of submit() in addTrickForm, we have:
 Should timeUpdated and timeSubmitted not be switched?
 
 Add pattern form bugs:
--either name or siteswap doesnt allow []
+-either name or siteswap doesnt allow [], probably both
+-# also can't be added.
+-looks like restricted symbols are ".", "#", "$", "[", or "]"
 
 
 
