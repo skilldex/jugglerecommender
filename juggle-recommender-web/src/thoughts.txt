@@ -20,36 +20,7 @@ Difficulty Rating systems:
 
 
 
-Autocomplete Names of New tricks to avoid repeats:
-	it should be like autocomplete for prereqs except it doesnt make a tag, it just fills in the input
-	it should not have any of the ball num parenthesis afterwards, this way the repeat name checker works once the number of balls have been input
-
-
-
-clear console.logs
-make deployment checklist
-find out if tags in add tricks are set to show all on click, maybe i just did it on the bar tags? maybe it doesnt work with '0'?
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+the follow and follow are probably the same pattern, can be combined or deleted or something
 
 
 -------------------------------------

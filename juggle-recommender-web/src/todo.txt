@@ -10,26 +10,31 @@ v 1.3:
 	-a log in firebase for a tricks edited by noncontributor
 	- clicking unselected selects, popup only for selected 
 		*not sure about this, it adds yet another click to get to the popup, if anything less clicks to get to popup would be nice
-	- autocomplete name of added trick to avoid redundant tricks
+	-autocomplete name of added trick to avoid redundant tricks
+		*more info down below
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	- remove all button
 		*remove all what? Im thinking maybe 'unselect all', but not sure
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
+		*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
 ==========
 
-Is this intentional? In the bottom of submit() in addTrickForm, we have: 
-				if(uiStore.editingPopupTrick){
-					...
-					trick["timeSubmitted"] = date.getTime()
-					...
-				}
-				trick["timeUpdated"] = date.getTime()
-Should timeUpdated and timeSubmitted not be switched?
 
-Add pattern form bugs:
--either name or siteswap doesnt allow [], probably both
--# also can't be added.
--looks like restricted symbols are ".", "#", "$", "[", or "]"
+-to easy to accidentally bump star and delete catches record
+-Can't add multiplex siteswaps, restricted symbols are ".", "#", "$", "[", or "]"
+-fix constantly collapsing list
+	-no need for any auto collapse on pc
+	-typing in search should expand list
+-editing a tricks name(and probably number, and maybe other fields) deletes it's timeSubmitted field from db
+-in filter, number of balls don't change colors when selected
+-filter button could look more like sort button
+
+-to avoid pattern submission duplicates:
+	-Name AutoComplete
+		-it should be like autocomplete for prereqs except it doesnt make a tag, it just fills in the input
+		-suggestions should not have any of the ball num parenthesis afterwards,
+	-check for videoURL duplicates
+		-an extra level of this is just checking if unique part is a duplicate
 
 
 
@@ -43,8 +48,7 @@ Add pattern form bugs:
 - filter by num balls 2, 6, 7 or range/even odd
 - allow users to add new tags
 
--find sort button with transparent background
-	-is this still needed?
+
 -Allow cancel add pattern with escape button
 -find highest catches should be only run when it is actually used
 -just make sure they are always used together first
@@ -60,7 +64,7 @@ Add pattern form bugs:
 -on mobile, resize list height so it is never behind keyboard.
 -The ability to see related tricks in graph
 
-- clicking contributor should make it a  tag
+- clicking contributor should make it a tag
 
 Stats:
 	Potential pattern stats:
