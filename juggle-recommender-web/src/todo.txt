@@ -6,21 +6,32 @@ v 1.4
 	- slow/reverse gif
 v 1.3:
 	-it should also update the library entry for the dependent with the appropriate prereq
-	- log in firebase for a tricks edited by noncontributor
+		*this is finished, right?
+	-a log in firebase for a tricks edited by noncontributor
 	- clicking unselected selects, popup only for selected 
+		*not sure about this, it adds yet another click to get to the popup, if anything less clicks to get to popup would be nice
 	- autocomplete name of added trick to avoid redundant tricks
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	- remove all button
-		*remove all what?
+		*remove all what? Im thinking maybe 'unselect all', but not sure
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
-
-
 ==========
+
+Is this intentional? In the bottom of submit() in addTrickForm, we have: 
+				if(uiStore.editingPopupTrick){
+					...
+					trick["timeSubmitted"] = date.getTime()
+					...
+				}
+				trick["timeUpdated"] = date.getTime()
+Should timeUpdated and timeSubmitted not be switched?
 
 Add pattern form bugs:
 -either name or siteswap doesnt allow []
 
--tags dont show up on bottom of most instagram videos
+
+
+
 
 
 -edit profile(maybe beyond 1.1)

@@ -1,6 +1,9 @@
 
-Popup:
-	If contributor is an instagram account or website, itr should be a link, it should be a link, if it is a website
+IJA starts in 4 days, and Hungary fest is in a week, we should probably super focus on user experience before then:
+	get individualized tutorials put together
+	search for bugs so we know it is clean
+	gets more tricks added by popular IGers
+	
 
 
 Difficulty Rating systems:
@@ -15,7 +18,6 @@ Difficulty Rating systems:
 		mrawa: 2-7 objects:			6
 
 
-We don't link to instavideos, just the user
 
 
 Autocomplete Names of New tricks to avoid repeats:
