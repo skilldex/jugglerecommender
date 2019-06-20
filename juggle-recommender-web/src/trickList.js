@@ -1,7 +1,6 @@
 import React,{Component} from 'react'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
-import filterStore from './stores/filterStore'
 import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
@@ -9,7 +8,7 @@ import starIcon from './images/starIcon.svg'
 import allIcon from './images/allIcon.svg'
 import './trickList.css';
 import './App.css';
-import Filter from './filter.js'
+import { Resizable } from "re-resizable";
 
 var scrollerPosition = 0
 
@@ -145,15 +144,16 @@ class TrickList extends Component {
 
 						</div>
 		return (
-			<div>	
-				<div className= {uiStore.listExpanded ? "listDiv" : ""}>		
+			<Resizable
+				className= {uiStore.listExpanded ? "listDiv" : ""}
+				defaultSize={{
+			      width: '170px',
+			      height: "90vh"
+			    }}
+			>	
 			 		{uiStore.listExpanded ? maximizedList : minimizedList}
-				</div>
-				{filterStore.filterVisible?
-				<Filter/>
-				: null}
 				
-			</div>
+			</Resizable>
 		)
 	  }
 }

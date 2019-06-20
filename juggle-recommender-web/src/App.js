@@ -17,6 +17,8 @@ import Login from "./login"
 import CreateAccount from "./createAccount"
 import MainTagsBar from "./mainTagsBar"
 import PopupDemo from './popupDemo'
+import Filter from './filter.js'
+import filterStore from './stores/filterStore'
 
 
  // Your web app's Firebase configuration
@@ -208,6 +210,7 @@ _handleKeyDown = (event) => {
 						selectedTricks={uiStore.selectedTricks}
 					/> : null
 				}
+				{filterStore.filterVisible?<Filter/>: null}
 				{popup}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 				<TrickGraph 
