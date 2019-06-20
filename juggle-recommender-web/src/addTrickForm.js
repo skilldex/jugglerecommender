@@ -30,7 +30,8 @@ class AddTrickForm extends Component {
 		nameErrorMessage: "",
 		numErrorMessage: "",
 		difficultyErrorMessage: "",
-		videoErrorMessage: ""
+		videoErrorMessage: "",
+		timeSubmitted : ""
 	}
 
 	componentDidMount=()=>{
@@ -186,11 +187,11 @@ class AddTrickForm extends Component {
 					siteswap :  this.state.siteSwap,
 					prereqs : prereqs,
 					tags : tags,
-					
+					timeUpdated : date.getTime()
 				}
 				if(uiStore.editingPopupTrick){
-					trick["timeUpdated"] = date.getTime()
 					alert(trick.name+" edited!")
+					trick["timeSubmitted"] = this.state.timeSubmitted
 				}else{
 					alert(trick.name+" added!")
 					trick["timeSubmitted"] = date.getTime()

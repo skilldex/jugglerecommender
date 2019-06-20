@@ -1,15 +1,16 @@
 .filterDiv{
   padding-left : 5px;
   padding-right : 5px;
+  left : 0;
   width: 190px;
-  height: 100%;
+  height: 400px;
+  margin-left: 130px;
   max-height: 90vh;
   border : 1px solid gray;
-  margin-left : 1px;
   display: inline-block;
   position: absolute;
   z-index: 2;
-  opacity : 100%;
+  opacity : 95%;
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;

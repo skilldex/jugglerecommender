@@ -197,7 +197,9 @@ _handleKeyDown = (event) => {
 		const popup = uiStore.editingPopupTrick ? null : 
 						uiStore.popupFullScreen ? <PopupDemo/> : <Popup/>
 		return (
-			<div className="main" ref={ref => this.el = ref}>	            
+			<div
+				touchMove={(e)=>{e.preventDefault()}} 
+				className="main" ref={ref => this.el = ref}>	            
 	            {instructions}
 	            {login}
 	            {createAccount}
