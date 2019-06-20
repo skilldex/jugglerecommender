@@ -204,7 +204,7 @@ class Store {
         //delete in mytricks and selected tricks, swap with new key
         
         if(uiStore.editingPopupTrick && trickKey != uiStore.popupTrick.id){
-        	if(uiStore.selectedTricks.includes(oldTrickKey)){
+        	if(uiStore.selectedTrick === oldTrickKey){
     			uiStore.toggleSelectedTrick(oldTrickKey)
     			uiStore.toggleSelectedTrick(trickKey)
     		}

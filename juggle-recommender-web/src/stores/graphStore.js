@@ -73,14 +73,9 @@ class GraphStore {
  		let nodes = []
  		let tempNodes = {}
  		let edges = []
- 		const rootTricks = []
- 		if (uiStore.selectedTricks.length > 0){
-	 		Array.prototype.push.apply(rootTricks, uiStore.selectedTricks);
-	 	}else{
-	 		Array.prototype.push.apply(rootTricks, uiStore.rootTricks);
-	 	}
+
 	 	if(uiStore.selectedList === "myTricks" ){
-	 		rootTricks.forEach((trickKey)=>{
+	 		uiStore.rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
@@ -122,10 +117,10 @@ class GraphStore {
 		 		}
  			})
 	 	}else if(uiStore.selectedList === "allTricks"){
-	 		rootTricks.forEach((trickKey)=>{
+	 		uiStore.rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
 	 			const involvedRoot = store.myTricks[trickKey] || 
-	 							uiStore.selectedTricks.includes(trickKey) ? 3 : 0
+	 							uiStore.selectedTrick === trickKey ? 3 : 0
 
 	 			if((!tempNodes[trickKey]||tempNodes[trickKey].involved < involvedRoot)){
 		 			let label = rootTrick.name

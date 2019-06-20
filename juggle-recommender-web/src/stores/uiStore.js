@@ -9,7 +9,7 @@ import utilities from '../utilities'
 configure({ enforceActions: "always" })
 class UIStore {
 
-	@observable selectedTricks = []
+	@observable selectedTrick = null
 	@observable selectedList = "allTricks"
 	@observable rootTricks = []
 	@observable searchInput = ''
@@ -75,41 +75,34 @@ class UIStore {
 		}
 	}
  	@action toggleSelectedTrick=(clickedTrick)=>{
- 		if (this.selectedTricks.includes(clickedTrick)){
- 			for (var i=this.selectedTricks.length-1; i>=0; i--) {
-			    if (this.selectedTricks[i] === clickedTrick) {
-			        this.selectedTricks.splice(i, 1);
-			    }
-			}
+ 		if (this.selectedTrick === clickedTrick){
+ 			this.selectedTrick = null
+ 			console.log('this.selectedTrick',this.selectedTrick)
+ 			this.popupCatchEditable = false
  		}else{
-	 		this.selectedTricks.push(clickedTrick)
-	 	}
-	 	if(!clickedTrick.includes(clickedTrick)){
-	 		this.popupTrick = null
-	 	}
-	 	this.popupTrick = null
-	 	this.popupCatchEditable = false	 	
+	 		this.selectedTrick = clickedTrick
+	 		console.log('clickedTrick2',clickedTrick)
+	 	}	
+	 	//uiStore.updateRootTricks() 	
+	 	//graphStore.updateGraphData()	 	
  	}
 
 	@action resetSelectedTrick=()=>{
 		uiStore.updateRootTricks()
-		for(let i = 0; i<this.selectedTricks.length; i++){
-			const trick = this.selectedTricks[i]
-			if (!uiStore.rootTricks.includes(trick)){
-				this.selectedTricks.splice(i, 1);
-			}
-		}
-		if (this.selectedTricks.length<1){
+		if (!uiStore.rootTricks.includes(this.selectedTrick)){
+			console.log('resetSelectedTrick')
 			this.selectTopTrick()
 		}
 	}
 	@action selectTopTrick=()=>{
+		console.log('selectTopTrick')
 		if (uiStore.rootTricks.length>0){
-			this.selectedTricks = [uiStore.rootTricks[0]]
+			this.selectedTrick = [uiStore.rootTricks[0]]
 		}
 	}
 	@action selectTrick=(trick)=>{
-		this.selectedTricks = [trick]
+		console.log('selectTrick')
+		this.selectedTrick = [trick]
 	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType
@@ -136,8 +129,7 @@ class UIStore {
  	}
  		
  	@action performSearch=()=>{
-
- 		this.selectedTricks = []
+ 		this.selectedTrick = null
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
  	}
@@ -195,6 +187,7 @@ class UIStore {
 
 	}
  	@action updateRootTricks=(rootTricks)=>{
+ 		console.log('updateRootTricks')
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
  		const sortedJugglingLibrary = this.sortLibrary()

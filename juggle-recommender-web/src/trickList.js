@@ -20,8 +20,6 @@ class TrickList extends Component {
 			listScrollerPosition : 0
 	}
 
-
-
 	recordScrollerPosition = e => {
 	    scrollerPosition = document.getElementById('trickList').scrollTop
  	}
@@ -53,8 +51,15 @@ class TrickList extends Component {
 		}
 	}
 	clickTrick=(trickKey)=>{
+		console.log('uiStore.selectedTrick',uiStore.selectedTrick)
+		console.log('trickKey',trickKey)
 		uiStore.toggleSelectedTrick(trickKey)
 		uiStore.updateRootTricks()
+		if (uiStore.selectedTrick === null){
+			this.popupTrick = null
+		}else{
+			this.popupTrick = trickKey
+		} 			
 	}
 
 	render() {
@@ -66,7 +71,7 @@ class TrickList extends Component {
 				const trick = store.library[rootTricks[i]]
 				const trickKey = rootTricks[i]
 				var cardClass='listCard'
-				if(this.props.selectedTricks && this.props.selectedTricks.includes(trickKey)){
+				if(this.props.selectedTrick && this.props.selectedTrick === trickKey){
 					cardClass = cardClass + ' selectedListCard'
 				}
 				const cardColor = 
@@ -126,9 +131,6 @@ class TrickList extends Component {
 										onClick={()=>{uiStore.setSelectedList("allTricks")}}
 						 			alt=""/>
 							</div>
-							
-
-
 						 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 							<div style={{height:"100%"}}>
 								<label style={{float:"left"}}>easy</label>

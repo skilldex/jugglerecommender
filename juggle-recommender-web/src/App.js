@@ -209,7 +209,7 @@ _handleKeyDown = (event) => {
 					<TrickList 
 						myTricks={store.myTricks} 
 						selectedList={uiStore.selectedList}
-						selectedTricks={uiStore.selectedTricks}
+						selectedTrick={uiStore.selectedTrick}
 					/> : null
 				}
 				{filterStore.filterVisible?<Filter/>: null}
