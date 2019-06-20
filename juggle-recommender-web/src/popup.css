@@ -45,7 +45,7 @@
 }
 .popupDiv{
   overflow-y: scroll;
-  height:380px;
+  height:600px;
   position : absolute;
   background-color : white;
   z-index : 1200;

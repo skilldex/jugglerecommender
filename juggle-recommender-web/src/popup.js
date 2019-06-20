@@ -103,7 +103,7 @@ class Popup extends Component {
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]
-
+    console.log("library",store.library,popupTrickKey)
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
       <label className="popupLabel">Catches: </label>

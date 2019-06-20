@@ -56,9 +56,13 @@ class TrickList extends Component {
 		uiStore.toggleSelectedTrick(trickKey)
 		uiStore.updateRootTricks()
 		if (uiStore.selectedTrick === null){
-			this.popupTrick = null
+			uiStore.setPopupTrick(null)
 		}else{
-			this.popupTrick = trickKey
+			const popupTrick = {...store.library[trickKey]}
+			popupTrick.x = 400
+			popupTrick.y = 400
+			popupTrick.id = trickKey
+			uiStore.setPopupTrick(popupTrick)
 		} 			
 	}
 

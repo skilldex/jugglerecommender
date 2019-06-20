@@ -82,9 +82,7 @@ class UIStore {
  		}else{
 	 		this.selectedTrick = clickedTrick
 	 		console.log('clickedTrick2',clickedTrick)
-	 	}	
-	 	//uiStore.updateRootTricks() 	
-	 	//graphStore.updateGraphData()	 	
+	 	}	 	
  	}
 
 	@action resetSelectedTrick=()=>{
@@ -97,12 +95,12 @@ class UIStore {
 	@action selectTopTrick=()=>{
 		console.log('selectTopTrick')
 		if (uiStore.rootTricks.length>0){
-			this.selectedTrick = [uiStore.rootTricks[0]]
+			this.selectedTrick = uiStore.rootTricks[0]
 		}
 	}
 	@action selectTrick=(trick)=>{
 		console.log('selectTrick')
-		this.selectedTrick = [trick]
+		this.selectedTrick = trick
 	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType

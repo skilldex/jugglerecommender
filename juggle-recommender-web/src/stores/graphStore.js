@@ -73,9 +73,13 @@ class GraphStore {
  		let nodes = []
  		let tempNodes = {}
  		let edges = []
-
+ 		let rootTricks = uiStore.rootTricks
+ 		if(uiStore.selectedTrick){
+ 			rootTricks=[uiStore.selectedTrick]
+ 		}
+ 		console.log("updating graphs",rootTricks, uiStore.selectedTrick)
 	 	if(uiStore.selectedList === "myTricks" ){
-	 		uiStore.rootTricks.forEach((trickKey)=>{
+	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
 		 			tempNodes[trickKey] = {
 		 				id: trickKey,
@@ -117,7 +121,7 @@ class GraphStore {
 		 		}
  			})
 	 	}else if(uiStore.selectedList === "allTricks"){
-	 		uiStore.rootTricks.forEach((trickKey)=>{
+	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
 	 			const involvedRoot = store.myTricks[trickKey] || 
 	 							uiStore.selectedTrick === trickKey ? 3 : 0
