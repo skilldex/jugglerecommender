@@ -190,12 +190,13 @@ class AddTrickForm extends Component {
 				}
 				if(uiStore.editingPopupTrick){
 					console.log('workin')
-					trick["timeSubmitted"] = date.getTime()
+					trick["timeUpdated"] = date.getTime()
 					alert(trick.name+" edited!")
 				}else{
 					alert(trick.name+" added!")
+					trick["timeSubmitted"] = date.getTime()
 				}
-				trick["timeUpdated"] = date.getTime()
+				
 				store.addTrickToDatabase(trick)
 				this.clearState()
 
