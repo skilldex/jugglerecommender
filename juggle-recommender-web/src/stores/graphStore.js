@@ -77,7 +77,6 @@ class GraphStore {
  		if(uiStore.selectedTrick){
  			rootTricks=[uiStore.selectedTrick]
  		}
- 		console.log("updating graphs",rootTricks, uiStore.selectedTrick)
 	 	if(uiStore.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
@@ -89,9 +88,7 @@ class GraphStore {
 		 				font : this.getInvolvedNodeFont(3),
 		 				mass : this.getInvolvedNodeMass(3),
 		 				borderWidth : this.getInvolvedNodeBorderWidth(3)
-
-		 			}
-		 		
+		 			}		 		
 		 		if(rootTrick.prereqs){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]

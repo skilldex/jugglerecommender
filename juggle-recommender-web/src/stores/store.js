@@ -298,15 +298,8 @@ class Store {
  	}
  	@action removeFromMyTricks=(trickKey)=>{
  		var shouldDelete = false
- 		if (uiStore.selectedList === 'myTricks'){
-			var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
-			if (result){
-				shouldDelete = true
-			}
-		}else{
-			shouldDelete = true
-		}
-		if (shouldDelete){
+		var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
+		if (result){
 			if (this.myTricks[trickKey]) {
 				delete this.myTricks[trickKey]
 			}
