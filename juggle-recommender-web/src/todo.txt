@@ -11,7 +11,6 @@ v 1.4
 	-color swatches to indicate difficulty instead of entire background
 	-resizable div
 v 1.3:
-	-name autocomplete capitalization needs fixed, 'C' gets no matches
 	-duplicate name warning needs fixed
 ==========	
 

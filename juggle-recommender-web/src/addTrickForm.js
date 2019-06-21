@@ -227,6 +227,13 @@ class AddTrickForm extends Component {
 			autoCompletedName : true
 		})
 	}
+	nameKeyPressed=(e)=> {
+		console.log('e.keyCode',e)
+    //See notes about 'which' and 'key'
+    if (e.keyCode == 13) {
+        console.log('enterPressed2')
+    }
+}
 	render (){
 
 		const patternsObj = Object.keys(store.library).map((pattern) => {
@@ -275,7 +282,8 @@ class AddTrickForm extends Component {
 									<span className="redText">*</span>
 									<span className="inputLabel">Trick name</span><br/>
 									<span className="warning">{this.state.nameErrorMessage}</span>
-									<input className="formInputs" 
+									<input className="formInputs"
+											onKeyPress= {(e)=>{this.nameKeyPressed(e)} }
 											value={this.state.name} 
 											onBlur={this.handleNameChange}
 											onChange={this.handleNameChange}/>
