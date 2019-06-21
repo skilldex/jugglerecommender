@@ -77,29 +77,24 @@ class UIStore {
  	@action toggleSelectedTrick=(clickedTrick)=>{
  		if (this.selectedTrick === clickedTrick){
  			this.selectedTrick = null
- 			console.log('this.selectedTrick',this.selectedTrick)
  			this.popupCatchEditable = false
  		}else{
 	 		this.selectedTrick = clickedTrick
-	 		console.log('clickedTrick2',clickedTrick)
 	 	}	 	
  	}
 
 	@action resetSelectedTrick=()=>{
 		uiStore.updateRootTricks()
 		if (!uiStore.rootTricks.includes(this.selectedTrick)){
-			console.log('resetSelectedTrick')
 			this.selectTopTrick()
 		}
 	}
 	@action selectTopTrick=()=>{
-		console.log('selectTopTrick')
 		if (uiStore.rootTricks.length>0){
 			this.selectedTrick = uiStore.rootTricks[0]
 		}
 	}
 	@action selectTrick=(trick)=>{
-		console.log('selectTrick')
 		this.selectedTrick = trick
 	}
  	@action setSelectedList=(listType)=>{

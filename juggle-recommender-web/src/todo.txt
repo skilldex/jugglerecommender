@@ -26,6 +26,7 @@ v 1.3:
 -just make sure they are always used together first
 -Update root tricks is running 4 times
 
+-filter catches are allowed to be empty in which case no patterns are shown
 - can't pinch zoom on list (android)
 -filter for unstarred tricks
 - recommend tags based on trick name
