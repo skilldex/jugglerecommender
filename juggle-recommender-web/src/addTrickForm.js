@@ -118,17 +118,55 @@ class AddTrickForm extends Component {
         });
     }
     checkIfFormIsSubmittable=()=>{
-    	const suffix = this.state.num === 3 ? '' : " ("+this.state.num+"b)"
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
     		this.setState({submitDisabled:true})
     	}else{
-    		if(store.library[this.state.name+suffix]){
+    		let tricksInLibraryKeys = []
+			let tricksInLibraryModifiedKey = []
+			let tricksInLibraryNames = []
+			let tricksInLibraryModifiedName = []
+			for (let key in store.library) {
+				let modifiedKey = key.toLowerCase()
+				if (modifiedKey.includes("b)")){
+					modifiedKey = modifiedKey.substr(0,modifiedKey.lastIndexOf("("))
+				}
+				let modifiedName = store.library[key].name.toLowerCase()
+				if (modifiedName.includes("b)")){
+					modifiedName = modifiedName.substr(0,modifiedName.lastIndexOf("("))
+				}
+			    tricksInLibraryKeys.push(key)
+			    tricksInLibraryNames.push(store.library[key].name)
+				tricksInLibraryModifiedName.push(modifiedName)
+			    tricksInLibraryModifiedKey.push(modifiedKey)
+			};
+			let indecesToCheck = []
+			const stateName = this.state.name
+			tricksInLibraryModifiedName.forEach(function (item, index) {
+    			if(item == stateName.toLowerCase()){
+    				indecesToCheck.push(index)
+    			}
+			});
+			tricksInLibraryModifiedKey.forEach(function (item, index) {
+    			if(item == stateName.toLowerCase()){
+    				indecesToCheck.push(index)
+    			}
+			});
+    		const stateNum = this.state.num
+    		let showNameWarning = false
+    		if (indecesToCheck.length>0){
+    			indecesToCheck.forEach(function (item, index) {
+	    			if (stateNum == store.library[tricksInLibraryKeys[item]].num ||
+	    				store.library[tricksInLibraryKeys[item]+"("+stateNum+"b)"]){
+	    				showNameWarning = true
+					}
+				});
+    		}if (showNameWarning){
 				this.setState({nameErrorMessage:'Pattern already exists.'})
 				this.setState({submitDisabled:true})
-			}else{
+    		}else{
 				this.setState({nameErrorMessage:''})
-			} 
+    		}			
     	}
     	if (utilities.isEmptyOrSpaces(this.state.num)){
     		this.setState({submitDisabled:true})
@@ -227,13 +265,6 @@ class AddTrickForm extends Component {
 			autoCompletedName : true
 		})
 	}
-	nameKeyPressed=(e)=> {
-		console.log('e.keyCode',e)
-    //See notes about 'which' and 'key'
-    if (e.keyCode == 13) {
-        console.log('enterPressed2')
-    }
-}
 	render (){
 
 		const patternsObj = Object.keys(store.library).map((pattern) => {
@@ -282,8 +313,7 @@ class AddTrickForm extends Component {
 									<span className="redText">*</span>
 									<span className="inputLabel">Trick name</span><br/>
 									<span className="warning">{this.state.nameErrorMessage}</span>
-									<input className="formInputs"
-											onKeyPress= {(e)=>{this.nameKeyPressed(e)} }
+									<input className="formInputs" 
 											value={this.state.name} 
 											onBlur={this.handleNameChange}
 											onChange={this.handleNameChange}/>
