@@ -27,11 +27,10 @@ class AutoComplete extends Component {
 			 				<span className="match">{lowerCaseInput}</span>
 			 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>
 	 					</div>
-
 	 		}
 	 	})
 		return (
-			<div className = "options">{options}</div>
+			<div className = "options">{matchedNames.length>1?options:null}</div>
 		)
 	  }
 }

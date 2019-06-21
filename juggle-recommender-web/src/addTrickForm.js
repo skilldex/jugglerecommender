@@ -300,6 +300,7 @@ class AddTrickForm extends Component {
 					          handleTagClick={this.handleTagClick}
 					     />
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
+		//if (uiStore.editingPopupTrick){this.state.autoCompletedName = this.state.name}
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
 				setAutoCompletedName={this.setAutoCompletedName} 
