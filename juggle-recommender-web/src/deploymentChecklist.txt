@@ -4,7 +4,8 @@ As non-logged in user with cleared data:
 -Use all sorts
 -toggle lists
 -star a trick
--open a popup
+-open a popup with list
+-open a popup in graph
 -input catches
 -Create user
 -Do all of the above now that signed in

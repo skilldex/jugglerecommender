@@ -184,7 +184,7 @@ _handleKeyDown = (event) => {
 			            </SlidingPane>
 		const header = <div className="header">
 							<div>
-								<span className="title">Juggledex</span><span className="version"> v1.2 Beta</span>
+								<span className="title">Juggledex</span><span className="version"> v1.3 Beta</span>
 						    </div>
 						    <div>
 						    	<button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
