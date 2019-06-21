@@ -70,6 +70,20 @@
   margin-top : 0px;
   margin-bottom : 0px;
 }
+.listButton{
+  width : 30px;
+  height: 30px;
+  cursor : pointer;
+  margin-left: 3px;
+
+}
+.selectedListButton{
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
+}
+.unselectedListButton{
+  filter:  grayscale(100%) brightness(60%) contrast(10000000%);
+  opacity: .2;
+}
 .sortDropdown{
   position : absolute;
   margin-top: 145px;

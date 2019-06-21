@@ -4,8 +4,6 @@ import uiStore from './stores/uiStore'
 import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
-import starIcon from './images/starIcon.svg'
-import allIcon from './images/allIcon.svg'
 import './trickList.css';
 import './App.css';
 import { Resizable } from "re-resizable";
@@ -69,8 +67,7 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 	 	const rootTricks = uiStore.rootTricks
-	 	if(Object.keys(store.library).length > 0){
-		 	
+	 	if(Object.keys(store.library).length > 0){		 	
 			for (var i = 0; i < rootTricks.length; i++) {
 				const trick = store.library[rootTricks[i]]
 				const trickKey = rootTricks[i]
@@ -99,14 +96,7 @@ class TrickList extends Component {
 					</div>
 				)	
 			}
-
 		}
-		let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
-							 				"selectedListButton" :"unselectedListButton" 
-			myTricksButtonClass = myTricksButtonClass + " listButton"
-		let allTricksButtonClass = uiStore.selectedList === "allTricks" ? 
-							 				"selectedListButton" :"unselectedListButton" 
-			allTricksButtonClass = allTricksButtonClass + " listButton"
 	 	const listExpandCollapseButton = 
 				 					<div >
 									 	<label className="listExpandCollapseButton"
@@ -124,17 +114,6 @@ class TrickList extends Component {
 		const maximizedList =
 						<div>
 						 	{listExpandCollapseButton}
-						 	<div className="listButtonDiv">
-					 			<img className={myTricksButtonClass}
-					 				src={starIcon}
-									onClick={()=>{uiStore.setSelectedList("myTricks")}}
-					 				alt=""
-					 			/>
-					 			<img className={allTricksButtonClass}
-						 				src={allIcon} 
-										onClick={()=>{uiStore.setSelectedList("allTricks")}}
-						 			alt=""/>
-							</div>
 						 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
 							<div style={{height:"100%"}}>
 								<label style={{float:"left"}}>easy</label>

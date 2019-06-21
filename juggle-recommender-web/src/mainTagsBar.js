@@ -7,6 +7,7 @@ import sortIconSelected from './images/sortIconSelected.png'
 import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
 import searchIcon from './images/searchIcon.png'
+import starIcon from './images/starIcon.svg'
 
 import './mainTagsBar.css';
 
@@ -19,13 +20,11 @@ class MainTagsBar extends Component {
     toggleShowSort=()=>{
       if(!this.state.showSortMenu){
         uiStore.setListExpanded(true)
-      }
-      if(!this.state.showSortMenu && filterStore.filterVisible){
-        filterStore.toggleFilterDiv()
+        if(filterStore.filterVisible){
+          filterStore.toggleFilterDiv()
+        }
       }
       this.setState({showSortMenu:!this.state.showSortMenu})
-
-      
     }
     numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
       let tempNumBalls = [...filterStore.numBalls]
@@ -122,6 +121,15 @@ class MainTagsBar extends Component {
         })
 
       }
+        let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
+                      "selectedListButton" :"unselectedListButton" 
+            myTricksButtonClass = myTricksButtonClass + " listButton"
+        const myTricks =  <img className={myTricksButtonClass}
+                               src={starIcon}
+                               onClick={()=>{uiStore.toggleSelectedList()}}
+                               alt=""
+                          />
+
         const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
@@ -186,6 +194,7 @@ class MainTagsBar extends Component {
             onChange={uiStore.searchInputChange}
             ref={ref => this.searchInput = ref}
           />
+          {myTricks}
           {sort}
           {sortDropdown}
           <img 

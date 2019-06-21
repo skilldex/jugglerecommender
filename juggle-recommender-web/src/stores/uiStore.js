@@ -109,6 +109,14 @@ class UIStore {
  		this.resetSelectedTrick()
  		this.updateRootTricks()
  	}
+ 	@action toggleSelectedList(){
+ 		if (this.selectedList === 'myTricks'){
+ 			this.setSelectedList('allTricks')
+ 		}else{
+ 			this.setSelectedList('myTricks')
+ 		}
+ 	}
+
 
  	@action setSearchInput=(newInput)=>{
  		this.searchInput = newInput
@@ -183,10 +191,8 @@ class UIStore {
 			sortedJugglingLibrary.reverse()
 		}
 		return sortedJugglingLibrary
-
 	}
  	@action updateRootTricks=(rootTricks)=>{
- 		console.log('updateRootTricks')
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
  		const sortedJugglingLibrary = this.sortLibrary()

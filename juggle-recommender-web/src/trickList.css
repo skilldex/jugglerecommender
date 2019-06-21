@@ -90,21 +90,7 @@
 
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 }
-.listButton{
-  width : 50%;
-  height: 50px;
-  cursor : pointer;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.selectedListButton{
-  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
-}
-.unselectedListButton{
-  filter:  grayscale(100%) brightness(60%) contrast(10000000%);
-  opacity: .2;
-}
+
 .listIcons{
   margin-top:10px;
   height : 25px;
