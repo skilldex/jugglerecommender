@@ -86,10 +86,10 @@ class TrickList extends Component {
 						style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
 							graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
 						 {store.myTricks[trickKey] ? 
-						<button className="addAndRemoveMyTricksButton" 
+						<button className="addAndRemoveMyTricksButtonList" 
 							 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
 							 		e.stopPropagation()}}>&#9733;</button> :
-						 <button className="addAndRemoveMyTricksButton" 
+						 <button className="addAndRemoveMyTricksButtonList" 
 						 		onClick={(e)=>{store.addToMyTricks(trickKey);
 						 		e.stopPropagation()}}>&#9734;</button>}
 						 <span className="listCardName" title={trick.name}>{trick.name}</span>			

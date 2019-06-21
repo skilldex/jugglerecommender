@@ -74,11 +74,11 @@ class Popup extends Component {
 
 
   onBlur(event) {
-    //detect click outside, but avoid cases where popup has just opened
-    //if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
-    if (!uiStore.popupTimer && !mouseInPopupDiv) {
-      uiStore.setPopupTrick(null)
-    }
+    // //detect click outside, but avoid cases where popup has just opened
+    // //if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
+    // if (!uiStore.popupTimer && !mouseInPopupDiv) {
+    //   uiStore.setPopupTrick(null)
+    // }
   }
 	render() {
     //set focus for outer div for onblur closing
