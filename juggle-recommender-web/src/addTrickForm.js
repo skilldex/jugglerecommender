@@ -59,7 +59,9 @@ class AddTrickForm extends Component {
 			}
 			this.setState({...trick})
 		}
-		this.setState({submitDisabled : false,})
+		if(uiStore.editingPopupTrick){
+			this.setState({submitDisabled : false,})
+		}	
 	}
 	handleNameChange=(e)=>{
 		this.setState({
@@ -215,7 +217,7 @@ class AddTrickForm extends Component {
 				});		
 				const suffix = "("+this.state.num+"b)"
 				const date = new Date()
-				const name = this.state.name+suffix
+				const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
 				const trick = {
 					name : name,
 					num : this.state.num,
