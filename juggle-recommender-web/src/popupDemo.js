@@ -43,7 +43,7 @@ class PopupDemo extends Component {
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           className= {demoClass}        
-                          muted="true"                          
+                          muted={true}                          
                           allow="autoplay"  
                           allowtransparency="true"
                           src={store.popupVideoURL}      
@@ -54,7 +54,7 @@ class PopupDemo extends Component {
                           title="UniqueTitleForVideoIframeToStopWarning"
                           className= {demoClass}                                  
                           autoPlay
-                          muted="true"
+                          muted={true}
                           playsInline
                           controls  
                           loop
