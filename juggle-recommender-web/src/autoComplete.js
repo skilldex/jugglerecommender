@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import store from "./stores/store"
+import uiStore from "./stores/uiStore"
 import './App.css';
 import './autoComplete.css'
 
@@ -30,7 +31,9 @@ class AutoComplete extends Component {
 	 		}
 	 	})
 		return (
-			<div className = "options">{matchedNames.length>1?options:null}</div>
+			<div className = "options">
+				{uiStore.editingPopupTrick && matchedNames.length<2?null:options}
+			</div>
 		)
 	  }
 }

@@ -41,6 +41,7 @@ class AddTrickForm extends Component {
 			let trick = {...store.library[uiStore.popupTrick.id]}
 			trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 			this.setState({trickNameBeingEdited:trick.name})
+			console.log('trick.name')
 			//convert tag strings to tag objects
 			if(trick.tags){
 				trick.tags = trick.tags.map((tag)=>{
@@ -163,7 +164,7 @@ class AddTrickForm extends Component {
 	    				showNameWarning = true
 					}
 				});
-			if (this.state.trickNameBeingEdited.toLowerCase() == this.state.name){
+			if (this.state.trickNameBeingEdited.toLowerCase() == this.state.name.toLowerCase()){
 				showNameWarning = false
 			}
     		}if (showNameWarning){
