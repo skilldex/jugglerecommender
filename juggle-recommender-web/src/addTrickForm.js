@@ -57,9 +57,7 @@ class AddTrickForm extends Component {
 					}
 				})	
 			}
-			console.log(trick)
 			this.setState({...trick})
-
 		}
 		this.setState({submitDisabled : false,})
 	}

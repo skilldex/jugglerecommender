@@ -63,6 +63,7 @@ class FilterStore {
 	@action toggleFilterDiv=()=>{
 		this.filterVisible = !this.filterVisible
 		if(this.filterVisible){
+			uiStore.setListExpanded(true)
 			filterStore.setMaxCatches(store.highestCatches)
 		}
 	}

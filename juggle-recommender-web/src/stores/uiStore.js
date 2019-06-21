@@ -120,6 +120,7 @@ class UIStore {
 		if(e.target.value === ""){
 			this.searchTrick = ""
 		}
+		uiStore.setListExpanded(true)
 		this.performSearch()
 		//this.popupTrick = null
 		this.resetSelectedTrick()

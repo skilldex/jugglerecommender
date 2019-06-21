@@ -36,7 +36,6 @@ class Popup extends Component {
 	}
   onCatchesKeyPress=(target)=> {
     // If enter pressed
-    console.log("caught", target)
     if(target.charCode===13){  
       uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
       //set focus back to outer div
@@ -103,7 +102,6 @@ class Popup extends Component {
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]
-    console.log("library",store.library,popupTrickKey)
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
       <label className="popupLabel">Catches: </label>
@@ -125,7 +123,6 @@ class Popup extends Component {
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
-    console.log("popup trick", popupTrick,uiStore.popupTrick)
     const editTrickButton  = 
       popupTrick && authStore.user && popupTrick.contributor == authStore.user.username ? 
       <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 

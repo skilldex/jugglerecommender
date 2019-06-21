@@ -17,10 +17,14 @@ class MainTagsBar extends Component {
           showSortMenu : false,
     }
     toggleShowSort=()=>{
+      if(!this.state.showSortMenu){
+        uiStore.setListExpanded(true)
+      }
       if(!this.state.showSortMenu && filterStore.filterVisible){
         filterStore.toggleFilterDiv()
       }
       this.setState({showSortMenu:!this.state.showSortMenu})
+
       
     }
     numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here

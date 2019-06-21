@@ -60,7 +60,6 @@ class PopupDemo extends Component {
                           loop
                           src={store.popupVideoURL}
                         ></video> : null
-    console.log("popup " ,uiStore.popupFullScreen, store.popupVideoURL, store.igData)
     const outerDiv = uiStore.popupFullScreen ? "fullScreenOuterDiv" : "outerDiv"
 		return(
       			<div className={outerDiv}>
