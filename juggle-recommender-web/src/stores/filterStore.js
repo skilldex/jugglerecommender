@@ -5,7 +5,7 @@ configure({ enforceActions: "always" })
 class FilterStore {
 
 	@observable filterVisible = false
-	@observable sortType = 'alphabetical'
+	@observable sortType = 'difficulty'
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []

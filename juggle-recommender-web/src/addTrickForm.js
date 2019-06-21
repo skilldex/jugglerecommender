@@ -124,7 +124,6 @@ class AddTrickForm extends Component {
     	}else{
     		let tricksInLibraryKeys = []
 			let tricksInLibraryModifiedKey = []
-			let tricksInLibraryNames = []
 			let tricksInLibraryModifiedName = []
 			for (let key in store.library) {
 				let modifiedKey = key.toLowerCase()
@@ -136,7 +135,6 @@ class AddTrickForm extends Component {
 					modifiedName = modifiedName.substr(0,modifiedName.lastIndexOf("("))
 				}
 			    tricksInLibraryKeys.push(key)
-			    tricksInLibraryNames.push(store.library[key].name)
 				tricksInLibraryModifiedName.push(modifiedName)
 			    tricksInLibraryModifiedKey.push(modifiedKey)
 			};

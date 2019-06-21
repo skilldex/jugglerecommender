@@ -11,24 +11,17 @@ v 1.4
 	-color swatches to indicate difficulty instead of entire background
 	-resizable div
 v 1.3:
-	-duplicate name warning needs fixed
+	-test and deploy!!
 ==========	
 
 -thin lines on sort button
 
--to avoid pattern submission duplicates:
-	-check for videoURL duplicates
-		-an extra level of this is just checking if unique part is a duplicate
-
 -edit profile(maybe beyond 1.1)
--toggle tricks by user added trick(a tab-esque filter for contributors handles this nicely and makes it possible see specific contributors tricks)
 
 -make multi-termed search
 - filter by num balls 2, 6, 7 or range/even odd
 - allow users to add new tags
 
-
--Allow cancel add pattern with escape button
 -find highest catches should be only run when it is actually used
 -just make sure they are always used together first
 -Update root tricks is running 4 times

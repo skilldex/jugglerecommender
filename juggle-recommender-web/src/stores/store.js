@@ -132,7 +132,7 @@ class Store {
 		const myTricks = JSON.parse(localStorage.getItem("myTricks"))
     	if(myTricks  && Object.keys(myTricks).length > 0){
     		this.setMyTricks(myTricks)
-    		uiStore.setSelectedList("myTricks")
+    		//uiStore.setSelectedList("myTricks")
     	}else{
     		uiStore.setSelectedList("allTricks")
     		uiStore.toggleSelectedTrick('Cascade')

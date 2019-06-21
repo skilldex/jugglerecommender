@@ -186,9 +186,14 @@ class UIStore {
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithSubmitted, 'timeSubmitted');
 		}
-
-		if(filterStore.sortDirection==='descending'){
-			sortedJugglingLibrary.reverse()
+		if (filterStore.sortType === 'timeSubmitted'){
+			if(filterStore.sortDirection==='ascending'){
+				sortedJugglingLibrary.reverse()
+			}
+		}else{
+			if(filterStore.sortDirection==='descending'){
+				sortedJugglingLibrary.reverse()
+			}
 		}
 		return sortedJugglingLibrary
 	}
