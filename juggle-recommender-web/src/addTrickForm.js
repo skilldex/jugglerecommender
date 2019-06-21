@@ -32,13 +32,15 @@ class AddTrickForm extends Component {
 		difficultyErrorMessage: "",
 		videoErrorMessage: "",
 		timeSubmitted : "",
-		autoCompletedName : false 
+		autoCompletedName : false,
+		trickNameBeingEdited: ""
 	}
 
 	componentDidMount=()=>{
 		if(uiStore.editingPopupTrick){
 			let trick = {...store.library[uiStore.popupTrick.id]}
 			trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
+			this.setState({trickNameBeingEdited:trick.name})
 			//convert tag strings to tag objects
 			if(trick.tags){
 				trick.tags = trick.tags.map((tag)=>{
@@ -124,51 +126,52 @@ class AddTrickForm extends Component {
     	if (utilities.isEmptyOrSpaces(this.state.name)){
     		this.setState({submitDisabled:true})
     	}else{
-    		if (!uiStore.editingPopupTrick){
-	    		let tricksInLibraryKeys = []
-				let tricksInLibraryModifiedKey = []
-				let tricksInLibraryModifiedName = []
-				for (let key in store.library) {
-					let modifiedKey = key.toLowerCase()
-					if (modifiedKey.includes("b)")){
-						modifiedKey = modifiedKey.substr(0,modifiedKey.lastIndexOf("("))
+    		let tricksInLibraryKeys = []
+			let tricksInLibraryModifiedKey = []
+			let tricksInLibraryModifiedName = []
+			for (let key in store.library) {
+				let modifiedKey = key.toLowerCase()
+				if (modifiedKey.includes("b)")){
+					modifiedKey = modifiedKey.substr(0,modifiedKey.lastIndexOf("("))
+				}
+				let modifiedName = store.library[key].name.toLowerCase()
+				if (modifiedName.includes("b)")){
+					modifiedName = modifiedName.substr(0,modifiedName.lastIndexOf("("))
+				}
+			    tricksInLibraryKeys.push(key)
+				tricksInLibraryModifiedName.push(modifiedName)
+			    tricksInLibraryModifiedKey.push(modifiedKey)
+			};
+			let indecesToCheck = []
+			const stateName = this.state.name
+			tricksInLibraryModifiedName.forEach(function (item, index) {
+    			if(item == stateName.toLowerCase()){
+    				indecesToCheck.push(index)
+    			}
+			});
+			tricksInLibraryModifiedKey.forEach(function (item, index) {
+    			if(item == stateName.toLowerCase()){
+    				indecesToCheck.push(index)
+    			}
+			});
+    		const stateNum = this.state.num
+    		let showNameWarning = false
+    		if (indecesToCheck.length>0){
+    			indecesToCheck.forEach(function (item, index) {
+	    			if (stateNum == store.library[tricksInLibraryKeys[item]].num ||
+	    				store.library[tricksInLibraryKeys[item]+"("+stateNum+"b)"]){
+	    				showNameWarning = true
 					}
-					let modifiedName = store.library[key].name.toLowerCase()
-					if (modifiedName.includes("b)")){
-						modifiedName = modifiedName.substr(0,modifiedName.lastIndexOf("("))
-					}
-				    tricksInLibraryKeys.push(key)
-					tricksInLibraryModifiedName.push(modifiedName)
-				    tricksInLibraryModifiedKey.push(modifiedKey)
-				};
-				let indecesToCheck = []
-				const stateName = this.state.name
-				tricksInLibraryModifiedName.forEach(function (item, index) {
-	    			if(item == stateName.toLowerCase()){
-	    				indecesToCheck.push(index)
-	    			}
 				});
-				tricksInLibraryModifiedKey.forEach(function (item, index) {
-	    			if(item == stateName.toLowerCase()){
-	    				indecesToCheck.push(index)
-	    			}
-				});
-	    		const stateNum = this.state.num
-	    		let showNameWarning = false
-	    		if (indecesToCheck.length>0){
-	    			indecesToCheck.forEach(function (item, index) {
-		    			if (stateNum == store.library[tricksInLibraryKeys[item]].num ||
-		    				store.library[tricksInLibraryKeys[item]+"("+stateNum+"b)"]){
-		    				showNameWarning = true
-						}
-					});
-	    		}if (showNameWarning){
-					this.setState({nameErrorMessage:'Pattern already exists.'})
-					this.setState({submitDisabled:true})
-	    		}else{
-					this.setState({nameErrorMessage:''})
-	    		}		
-	    	}	
+			if (this.state.trickNameBeingEdited.toLowerCase() == this.state.name){
+				showNameWarning = false
+			}
+    		}if (showNameWarning){
+				this.setState({nameErrorMessage:'Pattern already exists.'})
+				this.setState({submitDisabled:true})
+    		}else{
+				this.setState({nameErrorMessage:''})
+    		}		    		
     	}
     	if (utilities.isEmptyOrSpaces(this.state.num)){
     		this.setState({submitDisabled:true})
@@ -268,7 +271,6 @@ class AddTrickForm extends Component {
 		})
 	}
 	render (){
-
 		const patternsObj = Object.keys(store.library).map((pattern) => {
 		  return {
 		  	size: null,
