@@ -60,22 +60,17 @@ class App extends Component {
  		isInstructionsPaneOpen: false,
  		isCreateAccountPaneOpen: false
 	}
-	
-
-
-_handleKeyDown = (event) => {
-    switch( event.keyCode ) {
-        case ESCAPE_KEY:
-            if (uiStore.addingTrick){
-            	uiStore.toggleAddingTrick()
-            }
-            break;
-        default: 
-            break;
-    }
-}
-
-
+	_handleKeyDown = (event) => {
+	    switch( event.keyCode ) {
+	        case ESCAPE_KEY:
+	            if (uiStore.addingTrick){
+	            	uiStore.toggleAddingTrick()
+	            }
+	            break;
+	        default: 
+	            break;
+	    }
+	}
 	componentDidMount(){
 		document.addEventListener("keydown", this._handleKeyDown);
 		store.getSavedTricks()	
@@ -184,7 +179,7 @@ _handleKeyDown = (event) => {
 			            </SlidingPane>
 		const header = <div className="header">
 							<div>
-								<span className="title">Juggledex</span><span className="version"> v1.3 Beta</span>
+								<span className="title">Juggledex</span><span className="version"> v1.31 Beta</span>
 						    </div>
 						    <div>
 						    	<button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
