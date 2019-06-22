@@ -77,7 +77,7 @@ _handleKeyDown = (event) => {
 
 
 	componentDidMount(){
-		    document.addEventListener("keydown", this._handleKeyDown);
+		document.addEventListener("keydown", this._handleKeyDown);
 		store.getSavedTricks()	
 		Modal.setAppElement(this.el);
 		firebase.auth().onAuthStateChanged(function(user) {

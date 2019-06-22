@@ -66,7 +66,6 @@ class AddTrickForm extends Component {
 		}	
 	}
 	handleNameChange=(e)=>{
-		console.log('handlenamechaneg')
 		this.setState({
 			name:e.target.value,
 			autoCompletedName : false
@@ -314,8 +313,6 @@ class AddTrickForm extends Component {
 					          handleTagClick={this.handleTagClick}
 					     />
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
-		//if (uiStore.editingPopupTrick){this.state.autoCompletedName = this.state.name}
-				console.log('render',this.state.autoCompletedName, this.state.name)
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
 				setAutoCompletedName={this.setAutoCompletedName} 
