@@ -66,6 +66,7 @@ class AddTrickForm extends Component {
 		}	
 	}
 	handleNameChange=(e)=>{
+		console.log('handlenamechaneg')
 		this.setState({
 			name:e.target.value,
 			autoCompletedName : false
@@ -270,7 +271,16 @@ class AddTrickForm extends Component {
 			autoCompletedName : true
 		})
 	}
+	 onNameInputKeyPress=(target)=> {
+	    // If enter pressed
+	    if(target.charCode===13){  
+			this.setState({
+				autoCompletedName : true
+			})
+	    }
+	}
 	render (){
+
 		const patternsObj = Object.keys(store.library).map((pattern) => {
 		  return {
 		  	size: null,
@@ -305,6 +315,7 @@ class AddTrickForm extends Component {
 					     />
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
 		//if (uiStore.editingPopupTrick){this.state.autoCompletedName = this.state.name}
+				console.log('render',this.state.autoCompletedName, this.state.name)
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
 				setAutoCompletedName={this.setAutoCompletedName} 
@@ -319,8 +330,9 @@ class AddTrickForm extends Component {
 									<span className="inputLabel">Trick name</span><br/>
 									<span className="warning">{this.state.nameErrorMessage}</span>
 									<input className="formInputs" 
+											onKeyPress={this.onNameInputKeyPress}
 											value={this.state.name} 
-											onBlur={this.handleNameChange}
+
 											onChange={this.handleNameChange}/>
 									{autoComplete}
 								</div>
