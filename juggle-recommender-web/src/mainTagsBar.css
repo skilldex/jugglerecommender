@@ -11,8 +11,9 @@
   flex-wrap: wrap;
 }
 .mainTagsHeader{
-  margin-left:10px;
+  margin-left: 5px;
   font-size: 12px;
+  font-style: italic;
 }
 
 .tagDiv{
@@ -43,16 +44,39 @@
   width : 23px;
   display: inline-block;
 }
+.shareButton{
+  height : 23px;
+  width : 23px;
+  cursor : pointer;
+  display: inline-block;
+  margin : 0;
+  margin-left : 3px;
+  margin-right : 3px;
+}
 .filterButton{
   height : 23px;
   width : 23px;
   cursor : pointer;
   display: inline-block;
   margin : 0;
-  margin-left : 2px;
-  margin-right : 2px;
+  margin-left : 3px;
+  margin-right : 3px;
   border : 1px solid gray;
   border-radius: 3px;
+}
+.listButton{
+  width : 27px;
+  height: 27px;
+  cursor : pointer;
+  margin-left : 3px;
+  margin-right : 3px;
+}
+.selectedListButton{
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
+}
+.unselectedListButton{
+  filter:  grayscale(100%) brightness(60%) contrast(10000000%);
+  opacity: .2;
 }
 .selectedfilterButton{
   filter:  brightness(70%);
@@ -70,21 +94,7 @@
   margin-top : 0px;
   margin-bottom : 0px;
 }
-.listButton{
-  width : 27px;
-  height: 27px;
-  cursor : pointer;
-  margin-left: 8px;
-  margin-right: 8px;
 
-}
-.selectedListButton{
-  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
-}
-.unselectedListButton{
-  filter:  grayscale(100%) brightness(60%) contrast(10000000%);
-  opacity: .2;
-}
 .sortDropdown{
   position : absolute;
   margin-top: 145px;

@@ -2,6 +2,15 @@ import { action, configure, observable} from "mobx"
 import store from "./store"
 import uiStore from "./uiStore"
 configure({ enforceActions: "always" })
+console.log("filters " ,window.location)
+
+const urlQuery = window.location.search.match(/\?contributor=(.+)/)
+const contributor = urlQuery ? [{
+									id: urlQuery[1],
+									text: urlQuery[1]
+								}] : [] 
+
+console.log("contributors " ,contributor)
 class FilterStore {
 
 	@observable filterVisible = false
@@ -10,7 +19,7 @@ class FilterStore {
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
 	@observable tags = []
-	@observable contributors = []
+	@observable contributors = contributor
 	@observable minCatches = 0
 	@observable maxCatches = 10000000
 
@@ -41,6 +50,7 @@ class FilterStore {
 		uiStore.updateRootTricks()
 	}
 	@action setContributors=(contributors)=>{
+
 		this.contributors = contributors
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()

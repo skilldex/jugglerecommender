@@ -7,8 +7,9 @@ import sortIconSelected from './images/sortIconSelected.png'
 import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
 import searchIcon from './images/searchIcon.png'
+import shareIcon from './images/shareIcon.png'
 import starIcon from './images/starIcon.svg'
-
+import authStore from "./stores/authStore"
 import './mainTagsBar.css';
 
 var mouseOverSort = true
@@ -16,6 +17,20 @@ var mouseOverSort = true
 class MainTagsBar extends Component {
     state={
           showSortMenu : false,
+    }
+    copyContributorURL=()=>{
+      console.log("copying uril")
+      const textField = document.createElement('textarea')
+      const url = window.location.origin + "/?contributor=" + authStore.user.username 
+      textField.innerText = url
+      document.body.appendChild(textField)
+      var range = document.createRange();  
+      range.selectNode(textField);  
+      window.getSelection().addRange(range);  
+      document.execCommand('copy')
+      textField.remove()
+
+      alert("Link for your contributed tricks copied to clipboard\n" + url)
     }
     toggleShowSort=()=>{
       if(!this.state.showSortMenu){
@@ -124,17 +139,23 @@ class MainTagsBar extends Component {
         let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
                       "selectedListButton" :"unselectedListButton" 
             myTricksButtonClass = myTricksButtonClass + " listButton"
-        const myTricks =  <img className={myTricksButtonClass}
-                               src={starIcon}
-                               onClick={()=>{uiStore.toggleSelectedList()}}
-                               alt=""
-                          />
-
+        const myTricksButton =  <img className={myTricksButtonClass}
+                                     src={starIcon}
+                                     onClick={()=>{uiStore.toggleSelectedList()}}
+                                     alt=""
+                                />
+        const shareButton = authStore.user ? <img 
+                                 className="shareButton"
+                                 src={shareIcon}
+                                 onClick={this.copyContributorURL}
+                                 alt=""
+                                 title="share your contributed tricks"
+                            /> : null
         const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
                           onClick={this.toggleShowSort}/>
-                      
+          
         const sortDropdown = this.state.showSortMenu ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
              onMouseLeave = {()=>this.mouseLeaveSortDiv()}
@@ -194,7 +215,8 @@ class MainTagsBar extends Component {
             onChange={uiStore.searchInputChange}
             ref={ref => this.searchInput = ref}
           />
-          {myTricks}
+          {shareButton}
+          {myTricksButton}
           {sort}
           {sortDropdown}
           <img 
@@ -202,7 +224,7 @@ class MainTagsBar extends Component {
             src={filterIcon} alt="showFilterMenu" 
             onClick={()=>{filterStore.toggleFilterDiv()}}
           />
-          <span className="mainTagsHeader">{filterTags.length>0?"":"no filters selected"}</span> 
+          <span className="mainTagsHeader">{filterTags.length>0?"":"no filters set"}</span> 
           {filterTags}
           {tagSection}
         </div>
