@@ -1,16 +1,10 @@
 import React,{Component} from 'react'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
-import { toJS } from "mobx"
-
+//import { toJS } from "mobx"
 import { observer } from "mobx-react"
-import editIcon from './images/editIcon.png'
 import fullScreenIcon from './images/fullScreenIcon.png'
-import minimizeIcon from './images/minimizeIcon.png'
-import utilities from './utilities'
-
 import './App.css';
-
 import './popupDemo.css';
 
 @observer
@@ -34,7 +28,9 @@ class PopupDemo extends Component {
 
     let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
-                            <img className="profileImage" src={store.igData.picURL}/>
+                            <img className="profileImage" 
+                                  alt=""
+                                  src={store.igData.picURL}/>
                             <span>{store.igData.username}</span>
                             <button className="instagramViewProfileButton" onClick={()=>{window.open(store.library[popupTrickKey].video)}}>View on Instagram</button>
                           </div> : null

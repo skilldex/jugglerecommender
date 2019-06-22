@@ -1,4 +1,4 @@
-import { action, configure, computed, observable, toJS } from "mobx"
+import { action, configure, computed, observable} from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import authStore from './authStore'
@@ -30,9 +30,7 @@ class Store {
 			}
   		}
   		contributors.push('Library Of Juggling')
-  		console.log('contributors',contributors)
   		this.setContributors(contributors)
-  		
  		const contributorTags = contributors.map((contributor) => {
 		  return {
 		  	size: null,
@@ -148,8 +146,18 @@ class Store {
         	this.setLibrary(this.snapshotToObject(resp))
         })
 	}
+	@action ObjectLength=(object)=> {
+	    var length = 0;
+	    for( var key in object ) {
+	        if( object.hasOwnProperty(key) ) {
+	            ++length;
+	        }
+	    }
+	    return length;
+	}
 	@action setLibrary=(library)=>{
 		this.library = library
+		console.log('Pattern count: ',this.ObjectLength(library))
 		//TODO clean this up
 		uiStore.updateRootTricks() 
 		uiStore.resetSelectedTrick()
@@ -204,7 +212,7 @@ class Store {
         //if name changed, delete old reference in firebase
         //delete in mytricks and selected tricks, swap with new key
         
-        if(uiStore.editingPopupTrick && trickKey != uiStore.popupTrick.id){
+        if(uiStore.editingPopupTrick && trickKey !== uiStore.popupTrick.id){
         	if(uiStore.selectedTrick === oldTrickKey){
     			uiStore.toggleSelectedTrick(oldTrickKey)
     			uiStore.toggleSelectedTrick(trickKey)
@@ -298,7 +306,6 @@ class Store {
  		this.findHighestCatches()
  	}
  	@action removeFromMyTricks=(trickKey)=>{
- 		var shouldDelete = false
 		var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
 		if (result){
 			if (this.myTricks[trickKey]) {

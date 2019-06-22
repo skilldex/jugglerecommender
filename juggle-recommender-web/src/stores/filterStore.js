@@ -46,7 +46,6 @@ class FilterStore {
 		uiStore.updateRootTricks()
 	}
 	@action removeContributor=(i)=>{
-		console.log('i',i)
 		this.setContributors(
 			this.contributors.filter((contributor, index) => index !== i)
 		)
