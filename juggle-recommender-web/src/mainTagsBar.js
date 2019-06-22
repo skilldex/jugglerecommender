@@ -16,10 +16,9 @@ var mouseOverSort = true
 @observer
 class MainTagsBar extends Component {
     state={
-          showSortMenu : false,
+         
     }
     copyContributorURL=()=>{
-      console.log("copying uril")
       const textField = document.createElement('textarea')
       const url = window.location.origin + "/?contributor=" + authStore.user.username 
       textField.innerText = url
@@ -33,15 +32,7 @@ class MainTagsBar extends Component {
 
       alert("Link for your contributed tricks copied to clipboard\n" + url)
     }
-    toggleShowSort=()=>{
-      if(!this.state.showSortMenu){
-        uiStore.setListExpanded(true)
-        if(filterStore.filterVisible){
-          filterStore.toggleFilterDiv()
-        }
-      }
-      this.setState({showSortMenu:!this.state.showSortMenu})
-    }
+
     numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
       let tempNumBalls = [...filterStore.numBalls]
       if (tempNumBalls.includes(element)){
@@ -64,23 +55,23 @@ class MainTagsBar extends Component {
     }
 
     mouseEnterSortDiv=()=>{
-      mouseOverSort = true
+      uiStore.setMouseInSortDiv(true)
     }
 
     mouseLeaveSortDiv=()=>{
-      mouseOverSort = false
+      uiStore.setMouseInSortDiv(false)
     }
 
     render() {
       //"this" gets redefined in window.onclick so use "that"
-      const that = this
-      window.onclick = function(event) {
-        if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
-          if (!mouseOverSort){
-            that.toggleShowSort()
-          }
-        }
-      }
+      // const that = this
+      // window.onclick = function(event) {
+      //   if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
+      //     if (!mouseOverSort){
+      //       that.toggleShowSort()
+      //     }
+      //   }
+      // }
 
 
       let filterButtonClass = filterStore.filterVisible?
@@ -152,12 +143,12 @@ class MainTagsBar extends Component {
                                  alt=""
                                  title="share your contributed tricks"
                             /> : null
-        const sort = <img src={this.state.showSortMenu? sortIconSelected:sortIconUnselected} 
+        const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
-                          onClick={this.toggleShowSort}/>
-          
-        const sortDropdown = this.state.showSortMenu ? 
+                          onClick={()=>uiStore.toggleShowSort()}/>
+        console.log('showSortDIvMain',uiStore.showSortDiv)
+        const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
              onMouseLeave = {()=>this.mouseLeaveSortDiv()}
                title="sort" 

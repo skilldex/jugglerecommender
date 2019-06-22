@@ -9,8 +9,6 @@ import authStore from "./stores/authStore"
 import './App.css';
 import './popup.css';
 
-let mouseInPopupDiv = false
-
 @observer
 class Popup extends Component {
   state = {
@@ -18,7 +16,6 @@ class Popup extends Component {
     gifFullScreen : false,
     changingInput : false,
   }
-
 
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
@@ -57,19 +54,19 @@ class Popup extends Component {
     }, 100);  
   }
   onMouseEnter=(event)=>{
-    mouseInPopupDiv = true
+    uiStore.setMouseInPopupDiv(true)
   }
 
   onMouseLeave=(event)=>{
-    mouseInPopupDiv = false
+    uiStore.setMouseInPopupDiv(false)
   }
 
-  onBlur=(event)=> {
-    //detect click outside, but avoid cases where popup has just opened
-    if (!uiStore.popupTimer && !mouseInPopupDiv) {
-      uiStore.setPopupTrick(null)
-    }
-  }
+  // onBlur=(event)=> {
+  //   //detect click outside, but avoid cases where popup has just opened
+  //   if (!uiStore.popupTimer && !mouseInPopupDiv) {
+  //     uiStore.setPopupTrick(null)
+  //   }
+  // }
 	render() {
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
@@ -90,14 +87,14 @@ class Popup extends Component {
       }
     });
 
-    const that = this
-      window.onclick = function(event) {
-        if (uiStore.popupTrick && !mouseInPopupDiv && !uiStore.popupTimer) {
-            //mouseInPopupDiv = false
-            uiStore.setPopupTrick(null)
+    // const that = this
+    //   window.onclick = function(event) {
+    //     if (uiStore.popupTrick && !mouseInPopupDiv && !uiStore.popupTimer) {
+    //         //mouseInPopupDiv = false
+    //         uiStore.setPopupTrick(null)
          
-        }
-      }
+    //     }
+    //   }
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]

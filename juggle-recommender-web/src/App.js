@@ -119,6 +119,21 @@ class App extends Component {
  	}
 
  	render(){
+	    window.onclick = function(event) {
+	        if (uiStore.popupTrick && !uiStore.mouseInPopupDiv && !uiStore.popupTimer) {
+	            //mouseInPopupDiv = false
+	            uiStore.setPopupTrick(null)
+	         
+	        }
+
+	        //if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
+	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
+	            uiStore.setShowSortDiv(false)
+	        
+	        }
+	    }
+      
+	      
  		const instructions = <SlidingPane
 				                className='some-custom-class'
 				                overlayClassName='some-custom-overlay-class'
