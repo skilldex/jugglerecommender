@@ -1,5 +1,4 @@
 v 1.4
-	- shareable filter links
 	- make popups be draggable divs 
 	- add related relationship
 	- add related filter
@@ -14,8 +13,6 @@ v 1.4
 ==========	
 
 Bugs:
--on PC, if a popup is opened with the list, then clicking the white part of the graph doesnt close it
--no way to close autocomplete if the trick you are inputing is a substring of another trick.
 -In prereqs, 'Double NBox' didn't suggest DoubleNBox
 
 

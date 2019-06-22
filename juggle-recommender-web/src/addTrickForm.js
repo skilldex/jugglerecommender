@@ -322,71 +322,71 @@ class AddTrickForm extends Component {
 				input={this.state.name}
 			/> : null
 		const form = 	
-						<div className="form">
-							<h3>{titleText}</h3>
-							<div className="innerForm">
-								<div className="inputContainer">
-									<span className="redText">*</span>
-									<span className="inputLabel">Trick name</span><br/>
-									<span className="warning">{this.state.nameErrorMessage}</span>
-									<input className="formInputs" 
-											onKeyPress={this.onNameInputKeyPress}
-											value={this.state.name} 
+					<div className="form">
+						<h3>{titleText}</h3>
+						<div className="innerForm">
+							<div className="inputContainer">
+								<span className="redText">*</span>
+								<span className="inputLabel">Trick name</span><br/>
+								<span className="warning">{this.state.nameErrorMessage}</span>
+								<input className="formInputs" 
+										onKeyPress={this.onNameInputKeyPress}
+										value={this.state.name} 
 
-											onChange={this.handleNameChange}/>
-									{autoComplete}
-								</div>
-								<div className="inputContainer">
-									<span className="inputLabel">Tags</span>{tagInput}
-								</div>
-								<div className="inputContainer">
-									<span className="inputLabel">Prereqs</span>{prereqsInput}
-								</div>
-
-								<div className="inputContainer">
-									<span className="redText">*</span>
-									<span className="inputLabel">Number of balls</span>
-									<span className="warning">{this.state.numErrorMessage}</span>
-									<input className="formInputs" 
-											value={this.state.num} 
-											onBlur={this.handleNumChange}
-											onChange={this.handleNumChange}/>
-								</div>
-								<div className="inputContainer">
-									<span className="redText">*</span>
-									<span className="inputLabel">Difficulty</span>
-									<span className="warning">{this.state.difficultyErrorMessage}</span>
-									<input className="formInputs" 
-											value={this.state.difficulty} 
-											onBlur={this.handleDiffChange}
-											onChange={this.handleDiffChange}/>
-								</div>
-								<div className="inputContainer">
-									<span className="redText">*</span>
-									<span className="inputLabel">Instagram or Youtube Video <br/>(only containing added trick)</span>
-									<span className="warning">{this.state.videoErrorMessage}</span>
-									<input className="formInputs" 
-											value={this.state.video} 
-											onBlur={this.handleVideoChange}
-											onChange={this.handleVideoChange}
-									/>
-								</div>
-								<div className="inputContainer">
-									<span className="inputLabel">Siteswap</span>
-									<input className="formInputs" 
-											value={this.state.siteSwap} 
-											onBlur={this.handleSSChange}
-											onChange={this.handleSSChange}
-									/>
-								</div>
+										onChange={this.handleNameChange}/>
+								{autoComplete}
 							</div>
-								<button id = "submitButton"
-										className={this.state.submitDisabled?
-											"formButton disabledSubmitButton":"formButton"}
-										onClick={this.submit}>submit</button>
-								<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-								<button className="formButton"onClick={this.cancel}>cancel</button>
+							<div className="inputContainer">
+								<span className="inputLabel">Tags</span>{tagInput}
+							</div>
+							<div className="inputContainer">
+								<span className="inputLabel">Prereqs</span>{prereqsInput}
+							</div>
+
+							<div className="inputContainer">
+								<span className="redText">*</span>
+								<span className="inputLabel">Number of balls</span>
+								<span className="warning">{this.state.numErrorMessage}</span>
+								<input className="formInputs" 
+										value={this.state.num} 
+										onBlur={this.handleNumChange}
+										onChange={this.handleNumChange}/>
+							</div>
+							<div className="inputContainer">
+								<span className="redText">*</span>
+								<span className="inputLabel">Difficulty</span>
+								<span className="warning">{this.state.difficultyErrorMessage}</span>
+								<input className="formInputs" 
+										value={this.state.difficulty} 
+										onBlur={this.handleDiffChange}
+										onChange={this.handleDiffChange}/>
+							</div>
+							<div className="inputContainer">
+								<span className="redText">*</span>
+								<span className="inputLabel">Instagram or Youtube Video <br/>(only containing added trick)</span>
+								<span className="warning">{this.state.videoErrorMessage}</span>
+								<input className="formInputs" 
+										value={this.state.video} 
+										onBlur={this.handleVideoChange}
+										onChange={this.handleVideoChange}
+								/>
+							</div>
+							<div className="inputContainer">
+								<span className="inputLabel">Siteswap</span>
+								<input className="formInputs" 
+										value={this.state.siteSwap} 
+										onBlur={this.handleSSChange}
+										onChange={this.handleSSChange}
+								/>
+							</div>
 						</div>
+							<button id = "submitButton"
+									className={this.state.submitDisabled?
+										"formButton disabledSubmitButton":"formButton"}
+									onClick={this.submit}>submit</button>
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+							<button className="formButton"onClick={this.cancel}>cancel</button>
+					</div>
 		return(
 				<div>
 					{uiStore.addingTrick ? form : null}

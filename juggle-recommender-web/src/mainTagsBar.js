@@ -27,6 +27,7 @@ class MainTagsBar extends Component {
       var range = document.createRange();  
       range.selectNode(textField);  
       window.getSelection().addRange(range);  
+      textField.select()
       document.execCommand('copy')
       textField.remove()
 
