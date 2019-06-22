@@ -214,10 +214,8 @@ class GraphStore {
 	 		}
 	 		nodes.push({...tempNodes[trickKey]})
 	 	})
-
 	 	this.nodes = nodes
 	 	this.edges = edges
-
  	}
 }
 

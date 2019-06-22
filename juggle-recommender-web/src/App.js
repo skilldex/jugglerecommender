@@ -20,8 +20,6 @@ import PopupDemo from './popupDemo'
 import Filter from './filter.js'
 import filterStore from './stores/filterStore'
 
-
- // Your web app's Firebase configuration
 let firebaseConfig = {}
 if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
 	firebaseConfig = {
@@ -44,10 +42,8 @@ if(window.location.host.includes("localhost") || window.location.host.match(/(\.
     appId: "1:965128070479:web:64af3cb91c057166"
   };
 }
-
 const ESCAPE_KEY = 27;
 
-// Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
 @observer
@@ -121,19 +117,13 @@ class App extends Component {
  	render(){
 	    window.onclick = function(event) {
 	        if (uiStore.popupTrick && !uiStore.mouseInPopupDiv && !uiStore.popupTimer) {
-	            //mouseInPopupDiv = false
 	            uiStore.setPopupTrick(null)
-	         
 	        }
-
-	        //if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
 	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
 	            uiStore.setShowSortDiv(false)
-	        
 	        }
 	    }
-      
-	      
+     
  		const instructions = <SlidingPane
 				                className='some-custom-class'
 				                overlayClassName='some-custom-overlay-class'

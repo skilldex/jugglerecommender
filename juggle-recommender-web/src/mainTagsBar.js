@@ -63,17 +63,6 @@ class MainTagsBar extends Component {
     }
 
     render() {
-      //"this" gets redefined in window.onclick so use "that"
-      // const that = this
-      // window.onclick = function(event) {
-      //   if (event.srcElement['alt'] !== 'showSortMenu' && that.state.showSortMenu) {
-      //     if (!mouseOverSort){
-      //       that.toggleShowSort()
-      //     }
-      //   }
-      // }
-
-
       let filterButtonClass = filterStore.filterVisible?
                     "selectedfilterButton" : "unselectedfilterButton" 
                 filterButtonClass = "filterButton "+ filterButtonClass 

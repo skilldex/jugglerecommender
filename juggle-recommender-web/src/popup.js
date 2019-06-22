@@ -60,13 +60,6 @@ class Popup extends Component {
   onMouseLeave=(event)=>{
     uiStore.setMouseInPopupDiv(false)
   }
-
-  // onBlur=(event)=> {
-  //   //detect click outside, but avoid cases where popup has just opened
-  //   if (!uiStore.popupTimer && !mouseInPopupDiv) {
-  //     uiStore.setPopupTrick(null)
-  //   }
-  // }
 	render() {
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
@@ -86,15 +79,6 @@ class Popup extends Component {
         uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
       }
     });
-
-    // const that = this
-    //   window.onclick = function(event) {
-    //     if (uiStore.popupTrick && !mouseInPopupDiv && !uiStore.popupTimer) {
-    //         //mouseInPopupDiv = false
-    //         uiStore.setPopupTrick(null)
-         
-    //     }
-    //   }
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]

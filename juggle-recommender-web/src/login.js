@@ -11,8 +11,7 @@ class Login extends Component {
         username : "",
         password : "",
     }
-
-
+    
     signIn=()=>{        
         authStore.loginUser(this.state.username, this.state.password).then((response)=>{
             if(response.message){

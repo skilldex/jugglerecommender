@@ -5,13 +5,8 @@ import uiStore from './uiStore'
 
 configure({ enforceActions: "always" })
 class AuthStore {
-
-
 	@observable user = null
-
-	 
-
-	 @action signOut=()=>{
+    @action signOut=()=>{
 	 	uiStore.closePopups()
 	 	window.alert(this.user.username + " has been signed out.")
         return new Promise(resolve => {
@@ -61,7 +56,6 @@ class AuthStore {
     }
     @action registerUser(email, pass,username) { 
         const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
-        
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
                 const user = store.snapshotToArray(resp)[0]
