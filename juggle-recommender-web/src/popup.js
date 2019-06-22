@@ -9,7 +9,7 @@ import authStore from "./stores/authStore"
 import './App.css';
 import './popup.css';
 
-let mouseInPopupDiv = true
+let mouseInPopupDiv = false
 
 @observer
 class Popup extends Component {
@@ -64,7 +64,6 @@ class Popup extends Component {
     mouseInPopupDiv = false
   }
 
-
   onBlur=(event)=> {
     //detect click outside, but avoid cases where popup has just opened
     if (!uiStore.popupTimer && !mouseInPopupDiv) {
@@ -90,6 +89,15 @@ class Popup extends Component {
         uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
       }
     });
+
+    const that = this
+      window.onclick = function(event) {
+        if (uiStore.popupTrick && !mouseInPopupDiv && !uiStore.popupTimer) {
+            //mouseInPopupDiv = false
+            uiStore.setPopupTrick(null)
+         
+        }
+      }
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]
