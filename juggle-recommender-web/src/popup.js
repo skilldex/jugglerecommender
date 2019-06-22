@@ -62,23 +62,20 @@ class Popup extends Component {
       }
     }, 100);  
   }
-  onMouseEnter(event){
-    //this.setState({mouseInPopupDiv:true})
+  onMouseEnter=(event)=>{
     mouseInPopupDiv = true
   }
 
-  onMouseLeave(event){
-    //this.setState({mouseInPopupDiv:false})
+  onMouseLeave=(event)=>{
     mouseInPopupDiv = false
   }
 
 
-  onBlur(event) {
-    // //detect click outside, but avoid cases where popup has just opened
-    // //if (!event.currentTarget.contains(event.relatedTarget) && !uiStore.popupTimer) {
-    // if (!uiStore.popupTimer && !mouseInPopupDiv) {
-    //   uiStore.setPopupTrick(null)
-    // }
+  onBlur=(event)=> {
+    //detect click outside, but avoid cases where popup has just opened
+    if (!uiStore.popupTimer && !mouseInPopupDiv) {
+      uiStore.setPopupTrick(null)
+    }
   }
 	render() {
     //set focus for outer div for onblur closing
