@@ -1,14 +1,9 @@
 import React,{Component} from 'react'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
-import { toJS } from "mobx"
-
 import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
 import editCardIcon from './images/cardEditIcon.png'
-import fullScreenIcon from './images/fullScreenIcon.png'
-import minimizeIcon from './images/minimizeIcon.png'
-import utilities from './utilities'
 import PopupDemo from './popupDemo'
 import authStore from "./stores/authStore"
 import './App.css';
@@ -26,7 +21,6 @@ class Popup extends Component {
 
 
 	onCatchesChange=(e)=>{
-    console.log("change")
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
 	       const catches = e.target.value
@@ -63,12 +57,10 @@ class Popup extends Component {
     }, 100);  
   }
   onMouseEnter=(event)=>{
-    console.log('enter')
     mouseInPopupDiv = true
   }
 
   onMouseLeave=(event)=>{
-    console.log('leave')
     mouseInPopupDiv = false
   }
 
@@ -123,10 +115,12 @@ class Popup extends Component {
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
     const editTrickButton  = 
-      popupTrick && authStore.user && (popupTrick.contributor == authStore.user.username || authStore.user.username == "tjthejuggler") ? 
-      <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
-           onClick={()=>{uiStore.editPopupTrick()}}
-      /> : null
+      popupTrick && authStore.user && 
+      (popupTrick.contributor === authStore.user.username || 
+      authStore.user.username === "tjthejuggler") ? 
+        <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
+             onClick={()=>{uiStore.editPopupTrick()}}
+        /> : null
 
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{

@@ -6,7 +6,7 @@ import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
 import './trickList.css';
 import './App.css';
-import { Resizable } from "re-resizable";
+//import { Resizable } from "re-resizable";
 
 var scrollerPosition = 0
 
@@ -49,8 +49,6 @@ class TrickList extends Component {
 		}
 	}
 	clickTrick=(trickKey)=>{
-		console.log('uiStore.selectedTrick',uiStore.selectedTrick)
-		console.log('trickKey',trickKey)
 		uiStore.toggleSelectedTrick(trickKey)
 		uiStore.updateRootTricks()
 		if (uiStore.selectedTrick === null){

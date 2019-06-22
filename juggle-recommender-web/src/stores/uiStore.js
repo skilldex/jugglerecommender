@@ -1,4 +1,4 @@
-import { action, configure, observable, toJS} from "mobx"
+import { action, configure, observable} from "mobx"
 import store from "./store"
 import graphStore from "./graphStore"
 import filterStore from "./filterStore"
@@ -23,7 +23,6 @@ class UIStore {
 	@observable editingPopupTrick = false
 	@action togglePopupFullScreen=()=>{
     	this.popupFullScreen = !this.popupFullScreen
-    	console.log('this.popupFullScreen',this.popupFullScreen)
   	}
   	@action editPopupTrick=()=>{
   		this.editingPopupTrick = true
@@ -213,7 +212,6 @@ class UIStore {
 					}
 				}) : []
 				let passesContributorFilter = false
-				let overRideContributorFilter = false
 				if (filterStore.contributors.length===0){
 					passesContributorFilter = true
 				}else{
