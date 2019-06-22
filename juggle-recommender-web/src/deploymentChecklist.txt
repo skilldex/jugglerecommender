@@ -4,13 +4,16 @@ As non-logged in user with cleared data:
 -Use all sorts
 -toggle lists
 -star a trick
--open a popup with list
--open a popup in graph
+-open popup with list
+-close popup from list
+-open popup in graph
+-close popup from graph
 -input catches
 -Create user
 -Do all of the above now that signed in
 -add a pattern
 -edit pattern
 -sign out
+-do everything on pc as well as phone
 
 

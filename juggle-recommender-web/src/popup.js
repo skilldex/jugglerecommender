@@ -63,10 +63,12 @@ class Popup extends Component {
     }, 100);  
   }
   onMouseEnter=(event)=>{
+    console.log('enter')
     mouseInPopupDiv = true
   }
 
   onMouseLeave=(event)=>{
+    console.log('leave')
     mouseInPopupDiv = false
   }
 
