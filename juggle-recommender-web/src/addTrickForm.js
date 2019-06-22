@@ -216,7 +216,7 @@ class AddTrickForm extends Component {
 					return item['text'];
 				});
 				var prereqs = this.state.prereqs.map(function(item) {
-					return item['text'];
+					return item['id'];
 				});		
 				const suffix = "("+this.state.num+"b)"
 				const date = new Date()
@@ -284,7 +284,7 @@ class AddTrickForm extends Component {
 		  return {
 		  	size: null,
 		    id: pattern,
-		    text: pattern,
+		    text: store.library[pattern].name,
 		  }
 		})
 

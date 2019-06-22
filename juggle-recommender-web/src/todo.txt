@@ -14,6 +14,8 @@ v 1.4
 
 Bugs:
 -In prereqs, 'Double NBox' didn't suggest DoubleNBox
+-logout should close filter
+-prereq dropdown should show names, not keys
 
 
 
