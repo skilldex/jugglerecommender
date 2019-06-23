@@ -55,12 +55,8 @@
 }
 
 .showInfo{
-  font-size: 14px;
+  font-size: 13px;
   color: blue;
-  position: absolute;
-  left: 0;
-  margin-top:20px;
-  margin-left:10px;
 }
 
 .editCatchIcon{

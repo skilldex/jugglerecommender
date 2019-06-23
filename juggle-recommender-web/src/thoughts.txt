@@ -9,10 +9,7 @@ My Mod Account:
 	-make sure submitter name isnt changed when i edit a trick
 
 -maybe showing the popup of the trick that was just added so they can be sure it is how they want it
--we need spacing continuity in names (ex: some mills messes are 1 words, some are 2)
-	*maybe this is fixed now that we are showing names instead of keys in prereqs
 
-patterns that need name fixed	
 
 
 Difficulty Rating systems:

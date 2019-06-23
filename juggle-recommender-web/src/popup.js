@@ -160,14 +160,10 @@ class Popup extends Component {
                             }
                           </div>:null
                         }
-
-                          <label className="showInfo"
-                                  onClick={()=>this.toggleShowMoreInformation()}>
-                            {this.state.showMoreInformation?"(less info)":"(more info)"}
-                          </label> 
-                          <br/> <br/> 
-                        
-                      </div>                      
+                      </div>   
+                        <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
+                          {this.state.showMoreInformation?"(less info)":"(more info)"}
+                        </label>                    
                       <PopupDemo/>                      
                     </div> : null
 		return(
