@@ -4,6 +4,7 @@ import uiStore from './stores/uiStore'
 //import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import fullScreenIcon from './images/fullScreenIcon.png'
+import instagramLogoIcon from "./images/instagramLogo.png"
 import './App.css';
 import './popupDemo.css';
 
@@ -25,14 +26,18 @@ class PopupDemo extends Component {
                              src={store.library[popupTrickKey].gifUrl}
                           /> : null
     
-
+    const instagramLogo = <img 
+                             alt = ''
+                             className="instagramLogo"
+                             src={instagramLogoIcon}
+                          />
     let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
                                   alt=""
                                   src={store.igData.picURL}/>
-                            <span>{store.igData.username}</span>
-                            <button className="instagramViewProfileButton" onClick={()=>{window.open(store.library[popupTrickKey].video)}}>View on Instagram</button>
+                            <span className="instagramUsername">{store.igData.username}</span>
+                            <div className="instagramViewProfileButton" onClick={()=>{window.open(store.library[popupTrickKey].video)}}>View {instagramLogo}</div>
                           </div> : null
     let video  = store.popupVideoURL.includes('youtube') ? 
                         <iframe 

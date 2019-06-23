@@ -1,24 +1,33 @@
 
 .addAndRemoveMyTricksButtonOnPopup{
-    line-height: -0px;
+  line-height: -0px;
   font-size: 20px;
   box-shadow : 2px 0px 5px #888888;
   padding : 2px;
   border-radius: 5px;
-  margin-right: 5px;
+  margin-right: 10px;
   height: 24px;
   width: 24px;
 
 }
 .popupHeader{
+  margin-top: 15px ;
   margin-bottom: 15px ;
-
+}
+.popupInfoDiv{
+  text-align: left;
+  padding-left:  10px;
+  white-space: nowrap;      /*keep text on one line */
+  overflow: hidden;         /*prevent text from being shown outside the border */
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
 }
 .popupLabel{
   margin-bottom : 5px;
   margin-right: 5px;
-  display: inline-block;
+  display: inline-flex;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .popupTags{

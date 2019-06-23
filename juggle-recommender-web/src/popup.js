@@ -121,21 +121,32 @@ class Popup extends Component {
                     >
                       {editTrickButton}
                       <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
-                      {catchesSection}                         		
-                      <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
-                      <label className="popupLabel">Number of Balls: </label>{popupTrick.num}<br/>
-                      {popupTrick.siteswap ? 
-                        <div>
-                          <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
-                        </div> : null
-                      }
-                      <label className="popupLabel">Contributor: </label>
-                      {
-                        popupTrick.contributor ? 
-                        popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>libraryOfJuggling.com</a>
-                      }
-                      <br/><br/>
-                      
+                      <div className="popupInfoDiv">
+                        {catchesSection}                         		
+                        <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
+                        <label className="popupLabel">Number of Balls: </label>{popupTrick.num}<br/>
+                        {popupTrick.siteswap ? 
+                          <div>
+                            <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
+                          </div> : null
+                        }
+                        <label className="popupLabel">Contributor: </label>
+                        {
+                          popupTrick.contributor ? 
+                          popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
+                        }
+                        {popupTrick && popupTrick.tags?
+                          <div>
+                            <label className="popupLabel popupTags">Tags:</label>
+                            {popupTrick.tags.join(', ')}<br/>
+                          </div> : null
+                        }
+                        {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
+                          <label className="popupTags">
+                            Related: {popupTrick.related.join(', ')} 
+                          </label> : null
+                        }
+                      </div>                      
                     	{popupTrick && popupTrick.url? 
                     		<span 
                          onClick={()=>{this.seeExplanation(popupTrickKey)}}
@@ -143,17 +154,7 @@ class Popup extends Component {
                     		>See explanation</span> : null
                       }
                       <PopupDemo/>
-                      <br></br>
-                      {popupTrick && popupTrick.tags?
-                    		<label className="popupTags">
-                    			Tags: {popupTrick.tags.join(', ')} 
-                    		</label> : null
-                      }<br></br>
-                      {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
-                        <label className="popupTags">
-                          Related: {popupTrick.related.join(', ')} 
-                        </label> : null
-                      }
+                      
                     </div> : null
 		return(
       
