@@ -15,6 +15,7 @@ class Popup extends Component {
     catches : null,
     gifFullScreen : false,
     changingInput : false,
+    showMoreInformation: false,
   }
 
 	onCatchesChange=(e)=>{
@@ -59,6 +60,9 @@ class Popup extends Component {
 
   onMouseLeave=(event)=>{
     uiStore.setMouseInPopupDiv(false)
+  }
+  toggleShowMoreInformation=()=>{
+    this.setState({showMoreInformation:!this.state.showMoreInformation})
   }
 	render() {
     //set focus for outer div for onblur closing
@@ -113,8 +117,8 @@ class Popup extends Component {
 
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{
-                          left : Math.min(graphDiv.clientWidth-260,uiStore.popupTrick.x),
-                      		top : Math.min(graphDiv.clientHeight-400,uiStore.popupTrick.y),
+                          left : graphDiv.clientWidth-260,
+                      		top : 104,
                           width : 260
                         }} 
                          className="popupDiv"
@@ -122,39 +126,49 @@ class Popup extends Component {
                       {editTrickButton}
                       <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
                       <div className="popupInfoDiv">
-                        {catchesSection}                         		
-                        <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
-                        <label className="popupLabel">Number of Balls: </label>{popupTrick.num}<br/>
-                        {popupTrick.siteswap ? 
-                          <div>
-                            <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
-                          </div> : null
-                        }
+                        {catchesSection}
                         <label className="popupLabel">Contributor: </label>
                         {
                           popupTrick.contributor ? 
                           popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
+                        }<br/>
+                        {this.state.showMoreInformation?
+                          <div>                		
+                            <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
+                            <label className="popupLabel">Number of Balls: </label>{popupTrick.num}<br/>
+                            {popupTrick.siteswap ? 
+                              <div>
+                                <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
+                              </div> : null
+                            }
+                            {popupTrick && popupTrick.url ?
+                              <label className="popupLabel">Tutorial: </label> : null
+                            }
+                            {popupTrick && popupTrick.url ?
+                              <a target="_" href={popupTrick.url}>Library Of Juggling</a> : null
+                            } 
+                            {popupTrick && popupTrick.tags?
+                              <div>
+                                <label className="popupLabel popupTags">Tags:</label>
+                                {popupTrick.tags.join(', ')}<br/>
+                              </div> : null
+                            }
+                            {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
+                              <label className="popupTags">
+                                Related: {popupTrick.related.join(', ')} 
+                              </label> : null
+                            }
+                          </div>:null
                         }
-                        {popupTrick && popupTrick.tags?
-                          <div>
-                            <label className="popupLabel popupTags">Tags:</label>
-                            {popupTrick.tags.join(', ')}<br/>
-                          </div> : null
-                        }
-                        {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
-                          <label className="popupTags">
-                            Related: {popupTrick.related.join(', ')} 
-                          </label> : null
-                        }
+
+                          <label className="showInfo"
+                                  onClick={()=>this.toggleShowMoreInformation()}>
+                            {this.state.showMoreInformation?"(less info)":"(more info)"}
+                          </label> 
+                          <br/> <br/> 
+                        
                       </div>                      
-                    	{popupTrick && popupTrick.url? 
-                    		<span 
-                         onClick={()=>{this.seeExplanation(popupTrickKey)}}
-                         className="popupLink"
-                    		>See explanation</span> : null
-                      }
-                      <PopupDemo/>
-                      
+                      <PopupDemo/>                      
                     </div> : null
 		return(
       
