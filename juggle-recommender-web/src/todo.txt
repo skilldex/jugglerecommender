@@ -15,6 +15,10 @@ v 1.4
 Bugs:
 -clicking off filter doesnt close filter
 
+
+
+
+
 -restyle popup information, make collapsable
 -thin lines on sort button
 

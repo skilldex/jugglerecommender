@@ -19,12 +19,15 @@ class UIStore {
 	@observable popupTrick = null
 	@observable popupTimer = null
 	@observable sortTimer = null
+	@observable filterTimer = null
 	@observable addingTrick = false
 	@observable popupFullScreen = false
 	@observable editingPopupTrick = false
 	@observable mouseInPopupDiv = false
 	@observable mouseInSortDiv = false
+	@observable mouseInFilterDiv = false
 	@observable showSortDiv = false
+	@observable showFilterDiv = false
 	@action togglePopupFullScreen=()=>{
     	this.popupFullScreen = !this.popupFullScreen
   	}
@@ -60,6 +63,14 @@ class UIStore {
 		}, 500)
 	 	this.popupTrick = clickedTrick
 	 	this.popupCatchEditable = false
+	 	if (this.popupTrick){
+	        if(this.showFilterDiv){
+	        	this.toggleFilterDiv()
+	        }
+	        if(this.showSortDiv){
+	        	this.toggleSortDiv()
+	        }
+	 	}
 	}
 
 	@action setPopupTrickToNull=()=>{
@@ -114,31 +125,29 @@ class UIStore {
  			this.setSelectedList('myTricks')
  		}
  	}
-	@action setMouseInPopupDiv=(inPopupDiv)=>{
-		this.mouseInPopupDiv = inPopupDiv
+	@action setMouseInPopupDiv=(inDiv)=>{
+		this.mouseInPopupDiv = inDiv
 	}
-	@action setMouseInSortDiv=(inPopupDiv)=>{
-		this.mouseInSortDiv = inPopupDiv
+	@action setMouseInSortDiv=(inDiv)=>{
+		this.mouseInSortDiv = inDiv
 	}
-
-	@action toggleShowSort=()=>{
-		console.log('toggleshowsort')
+	@action setMouseInFilterDiv=(inDiv)=>{
+		this.mouseInFilterDiv = inDiv
+	}
+    @action clearSortTimer=()=>{
+		this.sortTimer = null
+	}
+	@action toggleSortDiv=()=>{
       if(!this.showSortDiv){
-      	console.log('toggleshowsortSortFalse')
       	this.setShowSortDiv(true)
-      	console.log('this.showSortDiv',this.showSortDiv)
         this.setListExpanded(true)
-        if(filterStore.filterVisible){
-          filterStore.toggleFilterDiv()
+        if(this.showFilterDiv){
+          this.toggleFilterDiv()
         }
       }else{
       	this.setShowSortDiv(false)
       }
     }
-
-    @action clearSortTimer=()=>{
-		this.sortTimer = null
-	}
 	@action setShowSortDiv=(showDiv)=>{
 		this.sortTimer = setTimeout(()=>{
 			this.clearSortTimer()
@@ -146,11 +155,29 @@ class UIStore {
 		this.showSortDiv=showDiv
 	}
 
+ 	@action clearFilterTimer=()=>{
+		this.filterTimer = null
+	}
+	@action toggleFilterDiv=()=>{
+		if(!this.showFilterDiv){
+	      	this.setShowFilterDiv(true)
+	        this.setListExpanded(true)
+			filterStore.setMaxCatches(store.highestCatches)
+	    }else{
+	    	this.setShowFilterDiv(false)
+	    }
+	}
+	@action setShowFilterDiv=(showDiv)=>{
+		this.filterTimer = setTimeout(()=>{
+			this.clearFilterTimer()
+		}, 500)
+		this.showFilterDiv=showDiv
+	}	
+
  	@action setSearchInput=(newInput)=>{
  		this.searchInput = newInput
  		this.performSearch()
  	}
-
  	@action	searchInputChange=(e)=>{
 		uiStore.searchInput = e.target.value 		
 		if(e.target.value === ""){
@@ -158,7 +185,6 @@ class UIStore {
 		}
 		uiStore.setListExpanded(true)
 		this.performSearch()
-		//this.popupTrick = null
 		this.resetSelectedTrick()
 		this.updateRootTricks()
  	}

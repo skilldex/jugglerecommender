@@ -108,8 +108,15 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
 
-	render() {
+	mouseEnterFilterDiv=()=>{
+      uiStore.setMouseInFilterDiv(true)
+    }
 
+    mouseLeaveFilterDiv=()=>{
+      uiStore.setMouseInFilterDiv(false)
+    }
+
+	render() {
 	 	const ColoredLine = ()=>(
 			   <hr
 			        style={{
@@ -205,7 +212,10 @@ class Filter extends Component {
 									/>
 								</div>
 		return (
-			<div className="filterDiv">
+			<div className="filterDiv"
+				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
+	             onMouseLeave = {()=>this.mouseLeaveFilterDiv()}
+	        >
 				<button className="closeFilter" onClick={()=>{filterStore.toggleFilterDiv()}}>
 					X
 				</button><br/>
@@ -218,8 +228,6 @@ class Filter extends Component {
 				{difficultySection}
 				<ColoredLine/>
 				{catchesSection}
-
-
 			</div>
 		)
 	  }

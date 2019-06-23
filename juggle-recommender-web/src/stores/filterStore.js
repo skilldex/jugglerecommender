@@ -13,7 +13,7 @@ const contributor = urlQuery ? [{
 console.log("contributors " ,contributor)
 class FilterStore {
 
-	@observable filterVisible = false
+
 	@observable sortType = 'difficulty'
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
@@ -68,13 +68,6 @@ class FilterStore {
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
-	}
-	@action toggleFilterDiv=()=>{
-		this.filterVisible = !this.filterVisible
-		if(this.filterVisible){
-			uiStore.setListExpanded(true)
-			filterStore.setMaxCatches(store.highestCatches)
-		}
 	}
 	@action setSortType=(type)=>{
 		this.sortType = type

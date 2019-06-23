@@ -63,7 +63,7 @@ class MainTagsBar extends Component {
     }
 
     render() {
-      let filterButtonClass = filterStore.filterVisible?
+      let filterButtonClass = uiStore.showFilterDiv?
                     "selectedfilterButton" : "unselectedfilterButton" 
                 filterButtonClass = "filterButton "+ filterButtonClass 
       let filterTags = []
@@ -135,51 +135,57 @@ class MainTagsBar extends Component {
         const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
-                          onClick={()=>uiStore.toggleShowSort()}/>
-        console.log('showSortDIvMain',uiStore.showSortDiv)
+                          onClick={()=>uiStore.toggleSortDiv()}/>
+        const filter = <img 
+                         className={filterButtonClass} 
+                         src={filterIcon} 
+                         alt="showFilterMenu" 
+                         onClick={()=>{uiStore.toggleFilterDiv()}}
+                       />
         const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
-             onMouseLeave = {()=>this.mouseLeaveSortDiv()}
+               onMouseLeave = {()=>this.mouseLeaveSortDiv()}
                title="sort" 
-             alt="showSortMenu" 
-             id="myDropdown" 
-             className="sortDropdown">
+               alt="showSortMenu" 
+               id="myDropdown" 
+               className="sortDropdown"
+          >
               <button alt="sortDropdownButtonDif"
-                  className={filterStore.sortType === 'difficulty' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortOptionClicked('difficulty')}>Pattern Difficulty</button>
+                      className={filterStore.sortType === 'difficulty' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortOptionClicked('difficulty')}>Pattern Difficulty</button>
               <button alt="sortDropdownButtonAlph"
-                  className={filterStore.sortType === 'alphabetical' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortOptionClicked('alphabetical')}>Alphabetically</button>
+                      className={filterStore.sortType === 'alphabetical' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortOptionClicked('alphabetical')}>Alphabetically</button>
               <button alt="sortDropdownButtonTimeSubmitted"
-                  className={filterStore.sortType === 'timeSubmitted' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Date Submitted</button>
+                      className={filterStore.sortType === 'timeSubmitted' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortOptionClicked('timeSubmitted')}>Date Submitted</button>
               <button alt="sortDropdownButtonCatches"
-                  className={filterStore.sortType === 'catches' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortOptionClicked('catches')}>Number of Catches</button>           
+                      className={filterStore.sortType === 'catches' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortOptionClicked('catches')}>Number of Catches</button>           
               <button alt="sortDropdownButtonLastUpdated"
-                  className={filterStore.sortType === 'lastUpdated' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Catches Last Updated</button>
+                      className={filterStore.sortType === 'lastUpdated' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Catches Last Updated</button>
               <hr className="divdingLine"/>
               <button alt="sortDropdownButtonCatches"
-                  className={filterStore.sortDirection === 'ascending' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortDirectionClicked('ascending')}>Ascending</button>            
+                      className={filterStore.sortDirection === 'ascending' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortDirectionClicked('ascending')}>Ascending</button>            
               <button alt="sortDropdownButtonLastUpdated"
-                  className={filterStore.sortDirection === 'descending' ?
-                  "sortDropdownButton  sortDropdownButtonSelected" :
-                  "sortDropdownButton "}
-                  onClick={(e)=>this.sortDirectionClicked('descending')}>Descending</button>
+                      className={filterStore.sortDirection === 'descending' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortDirectionClicked('descending')}>Descending</button>
             </div> : null                        
 
       return (
@@ -200,11 +206,7 @@ class MainTagsBar extends Component {
           {myTricksButton}
           {sort}
           {sortDropdown}
-          <img 
-            className={filterButtonClass} 
-            src={filterIcon} alt="showFilterMenu" 
-            onClick={()=>{filterStore.toggleFilterDiv()}}
-          />
+          {filter}
           <span className="mainTagsHeader">{filterTags.length>0?"":"no filters set"}</span> 
           {filterTags}
           {tagSection}
