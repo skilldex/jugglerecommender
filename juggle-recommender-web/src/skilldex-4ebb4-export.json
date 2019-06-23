@@ -108,6 +108,18 @@
       "timeUpdated" : 1561294239135,
       "video" : "https://www.instagram.com/p/BjPi21rDwgU/"
     },
+    "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "5",
+      "name" : "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)",
+      "num" : "3",
+      "prereqs" : [ "Backcrosses" ],
+      "siteswap" : "",
+      "tags" : [ "1up2up", "body-throw" ],
+      "timeSubmitted" : 1561315415363,
+      "timeUpdated" : 1561315415363,
+      "video" : "https://www.instagram.com/p/yOW2YzlwYo/"
+    },
     "1up-3down(3b)" : {
       "contributor" : "artifaxiom",
       "difficulty" : "7",
@@ -158,6 +170,7 @@
     },
     "423 Armpit Throw(3b)" : {
       "contributor" : "stefanlethra_",
+      "dependents" : [ "Behind the Neck + Armpit + Penguin(3b)" ],
       "difficulty" : "6",
       "name" : "423 Armpit Throw(3b)",
       "num" : "3",
@@ -540,7 +553,7 @@
       "video" : "https://www.instagram.com/p/BrtYQUmA2Hb/"
     },
     "Backcrosses" : {
-      "dependents" : [ "Blind Behind the Back Cascade(3b)" ],
+      "dependents" : [ "Blind Behind the Back Cascade(3b)", "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)", "Backcrosses + Neckthrows(3b)" ],
       "difficulty" : "7",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/backcrosses.gif",
       "name" : "Backcrosses",
@@ -549,6 +562,19 @@
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Backcrosses.html"
+    },
+    "Backcrosses + Neckthrows(3b)" : {
+      "contributor" : "lucasadverse_",
+      "dependents" : [ "Behind the Neck Elbow-Bounce Shower(3b)", "Behind the Neck + Armpit + Penguin(3b)" ],
+      "difficulty" : "5",
+      "name" : "Backcrosses + Neckthrows(3b)",
+      "num" : "3",
+      "prereqs" : [ "Backcrosses" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1561317015039,
+      "timeUpdated" : 1561317015039,
+      "video" : "https://www.instagram.com/p/6lWtC_lwRP/"
     },
     "Backwards Z(3b)" : {
       "contributor" : "nycjuggler_",
@@ -573,6 +599,31 @@
       "timeSubmitted" : 1561296930271,
       "timeUpdated" : 1561296930271,
       "video" : "https://www.instagram.com/p/BmTOdg_AwqK/"
+    },
+    "Behind the Neck + Armpit + Penguin(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "6",
+      "name" : "Behind the Neck + Armpit + Penguin(3b)",
+      "num" : "3",
+      "prereqs" : [ "423 Armpit Throw(3b)", "Penguins(3b)", "Backcrosses + Neckthrows(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1561318582799,
+      "timeUpdated" : 1561318582799,
+      "video" : "https://www.instagram.com/p/BupBropgJJl/"
+    },
+    "Behind the Neck Elbow-Bounce Shower(3b)" : {
+      "contributor" : "lucasadverse_",
+      "dependents" : [ "Elbow-bounce Behind the Neck Box(3b)" ],
+      "difficulty" : "5",
+      "name" : "Behind the Neck Elbow-Bounce Shower(3b)",
+      "num" : "3",
+      "prereqs" : [ "Backcrosses + Neckthrows(3b)" ],
+      "siteswap" : "51",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1561317261116,
+      "timeUpdated" : 1561317261116,
+      "video" : "https://www.instagram.com/p/-j9g75FwWT/"
     },
     "Bent Into a Pretzel(3b)" : {
       "contributor" : "noslowerdna_",
@@ -1445,6 +1496,18 @@
       "timeUpdated" : 1561078837826,
       "video" : "https://www.instagram.com/p/BmQjCdnAmAL/"
     },
+    "Distorted Sunny Side Up(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "5",
+      "name" : "Distorted Sunny Side Up(3b)",
+      "num" : "3",
+      "prereqs" : [ "Shower" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw" ],
+      "timeSubmitted" : 1561317332874,
+      "timeUpdated" : 1561317332874,
+      "video" : "https://www.instagram.com/p/_XekJ1lwf7/"
+    },
     "Dots with an Inverted Throw(4b)" : {
       "contributor" : "artifaxiom",
       "difficulty" : "7",
@@ -1551,6 +1614,18 @@
       "timeSubmitted" : 1561299238200,
       "timeUpdated" : 1561299238200,
       "video" : "https://www.instagram.com/p/BvCT2i1AEzs/"
+    },
+    "Elbow-bounce Behind the Neck Box(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "6",
+      "name" : "Elbow-bounce Behind the Neck Box(3b)",
+      "num" : "3",
+      "prereqs" : [ "Behind the Neck Elbow-Bounce Shower(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw", "body-throw" ],
+      "timeSubmitted" : 1561318443014,
+      "timeUpdated" : 1561318443014,
+      "video" : "https://www.instagram.com/p/BtO-L8wgXyZ/"
     },
     "Evolved Pendulum(3b)" : {
       "contributor" : "nycjuggler_",
@@ -1865,6 +1940,18 @@
       "timeSubmitted" : 1561078749126,
       "timeUpdated" : 1561079729196,
       "video" : "https://www.instagram.com/p/Bjn4Je_jCCI/"
+    },
+    "Funky Arm Bouncy Shuffle(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "6",
+      "name" : "Funky Arm Bouncy Shuffle(3b)",
+      "num" : "3",
+      "prereqs" : [ "Shuffle" ],
+      "siteswap" : "",
+      "tags" : [ "slam" ],
+      "timeSubmitted" : 1561318731334,
+      "timeUpdated" : 1561318731334,
+      "video" : "https://www.instagram.com/p/BwPv5q6hE7H/"
     },
     "Gattoplex with Extra Throw(5b)" : {
       "contributor" : "nycjuggler_",
@@ -2839,6 +2926,7 @@
     },
     "Penguins(3b)" : {
       "contributor" : "taylor_tries_",
+      "dependents" : [ "Behind the Neck + Armpit + Penguin(3b)" ],
       "difficulty" : "3",
       "name" : "Penguins(3b)",
       "num" : "3",
@@ -3237,7 +3325,7 @@
       "difficulty" : "6",
       "name" : "Rewind Snatch Box(3b)",
       "num" : "3",
-      "prereqs" : [ "Karas'Box" ],
+      "prereqs" : [ "Karas' Box(3b)" ],
       "siteswap" : "(4,2T)(4x,2T)(4x,2x)*",
       "tags" : [ "one-throw", "claw" ],
       "timeSubmitted" : 1561148893231,
@@ -3358,7 +3446,7 @@
       "video" : "https://www.instagram.com/p/BwlSg5mAH_j/"
     },
     "Shower" : {
-      "dependents" : [ "Box", "ColumnShowVar", "David'sDilemma", "FlyingDiscoDrop", "HandsOfTime", "MillsMessShower", "BrokenShower", "CrossedArmShower", "HighLowShower", "ReverseCrossedArmShower", "ShowerSwapVariation", "UnderarmShower", "ShowerCascade", "Shuffle", "Snake", "Triazzle", "Shower(4b)", "ss5551(4b)", "ss531", "Hopscotch(3b)", "Butterfly Shower(3b)", "Shower + Fake Mess(3b)", "Mills Mess + Shower(3b)", "Double Box(3b)", "Box + Shower(3b)", "Newton(3b)" ],
+      "dependents" : [ "Box", "ColumnShowVar", "David'sDilemma", "FlyingDiscoDrop", "HandsOfTime", "MillsMessShower", "BrokenShower", "CrossedArmShower", "HighLowShower", "ReverseCrossedArmShower", "ShowerSwapVariation", "UnderarmShower", "ShowerCascade", "Shuffle", "Snake", "Triazzle", "Shower(4b)", "ss5551(4b)", "ss531", "Hopscotch(3b)", "Butterfly Shower(3b)", "Shower + Fake Mess(3b)", "Mills Mess + Shower(3b)", "Double Box(3b)", "Box + Shower(3b)", "Newton(3b)", "Distorted Sunny Side Up(3b)" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shower.gif",
       "name" : "Shower",
@@ -3384,7 +3472,7 @@
       "video" : "https://www.instagram.com/p/BPexP77jPi0/"
     },
     "Shower(4b)" : {
-      "dependents" : [ "Shower(5b)", "Double Yolked Egg(4b)" ],
+      "dependents" : [ "Shower(5b)", "Double Yolked Egg(4b)", "Sunny Side Up(4b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballshower.gif",
       "name" : "Shower(4b)",
@@ -3427,7 +3515,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/ShowerSwapVariation.html"
     },
     "Shuffle" : {
-      "dependents" : [ "ArrowofAsai", "BostonShuffle", "Luke'sShuffle", "NBox", "LowShuffle", "Kimuras Star(3b)", "Double NBox(3b)", "Slams(3b)" ],
+      "dependents" : [ "ArrowofAsai", "BostonShuffle", "Luke'sShuffle", "NBox", "LowShuffle", "Kimuras Star(3b)", "Double NBox(3b)", "Slams(3b)", "Funky Arm Bouncy Shuffle(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shuffle.gif",
       "name" : "Shuffle",
@@ -3503,9 +3591,21 @@
       "siteswap" : "6",
       "url" : "http://www.libraryofjuggling.com/Tricks/6balltricks/SixBallFountain.html"
     },
+    "Slammed Fork(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "5",
+      "name" : "Slammed Fork(3b)",
+      "num" : "3",
+      "prereqs" : [ "Slams(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "slam" ],
+      "timeSubmitted" : 1561318909149,
+      "timeUpdated" : 1561318909149,
+      "video" : "https://www.instagram.com/p/BwuqRQLgHEn/"
+    },
     "Slams(3b)" : {
       "contributor" : "jameschance_",
-      "dependents" : [ "Pacman(3b)" ],
+      "dependents" : [ "Pacman(3b)", "Slammed Fork(3b)" ],
       "difficulty" : "5",
       "name" : "Slams(3b)",
       "num" : "3",
@@ -3649,7 +3749,7 @@
       "difficulty" : "7",
       "name" : "Staggered Rewound Snatch Box(3b)",
       "num" : "3",
-      "prereqs" : [ "Karas'Box", "Rewind Snatch Box(3b)" ],
+      "prereqs" : [ "Karas' Box(3b)", "Rewind Snatch Box(3b)" ],
       "siteswap" : "",
       "tags" : [ "one-throw", "claw" ],
       "timeSubmitted" : 1561151092173,
@@ -3664,6 +3764,19 @@
       "prereqs" : [ "HalfShower" ],
       "siteswap" : "3",
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/StatueofLiberty.html"
+    },
+    "Sunny Side Up(4b)" : {
+      "contributor" : "lucasadverse_",
+      "dependents" : [ "Symmetric Sunny Side Up(3b)" ],
+      "difficulty" : "6",
+      "name" : "Sunny Side Up(4b)",
+      "num" : "4",
+      "prereqs" : [ "Shower(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw" ],
+      "timeSubmitted" : 1561317149458,
+      "timeUpdated" : 1561317149458,
+      "video" : "https://www.instagram.com/p/9Orr5WFwWx/"
     },
     "SwapBox" : {
       "difficulty" : "6",
@@ -3720,6 +3833,18 @@
       "tags" : [ "columns", "one-throw" ],
       "timeSubmitted" : 999999999999,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/SwitchedBox.html"
+    },
+    "Symmetric Sunny Side Up(3b)" : {
+      "contributor" : "lucasadverse_",
+      "difficulty" : "6",
+      "name" : "Symmetric Sunny Side Up(3b)",
+      "num" : "3",
+      "prereqs" : [ "Sunny Side Up(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw" ],
+      "timeSubmitted" : 1561319076696,
+      "timeUpdated" : 1561319076696,
+      "video" : "https://www.instagram.com/p/BxisXJpgP6x/"
     },
     "SymmetricGeorgianScuffle" : {
       "difficulty" : "6",
@@ -4083,7 +4208,7 @@
       "difficulty" : "7",
       "name" : "Toss Box(3b)",
       "num" : "3",
-      "prereqs" : [ "Karas'Box", "Rewind Snatch Box(3b)" ],
+      "prereqs" : [ "Karas' Box(3b)", "Rewind Snatch Box(3b)" ],
       "siteswap" : "",
       "tags" : [ "one-throw", "claw", "underarm-catch" ],
       "timeSubmitted" : 1561150893848,
@@ -5825,6 +5950,9 @@
     },
     "-Li3KoKcaMdsZEdpgObE" : {
       "username" : "nycjuggler_"
+    },
+    "-Li4dCNxGhScneklfKI_" : {
+      "username" : "lucasadverse_"
     }
   },
   "tags" : [ "common", "one-throw", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid" ],
@@ -5889,11 +6017,6 @@
       "lowerCaseUsername" : "stefanlethra_",
       "username" : "stefanlethra_"
     },
-    "-LhiA4Ys75zdCxo8VNdH" : {
-      "email" : "tjstemp@taylortries.com",
-      "lowerCaseUsername" : "taylortries_",
-      "username" : "taylortries_"
-    },
     "-Lho_jb8TXcfgteHPiz5" : {
       "email" : "tjstemp@3ballpatterns.com",
       "lowerCaseUsername" : "3ballpatterns_",
@@ -5903,11 +6026,6 @@
       "email" : "Yantro3000@hotmail.de",
       "lowerCaseUsername" : "taybor",
       "username" : "Taybor"
-    },
-    "-LhrPEffwgWVpjDbK5qI" : {
-      "email" : "tjtemp@artifaxiom.com",
-      "lowerCaseUsername" : "artifaxiom_",
-      "username" : "artifaxiom_"
     },
     "-Lhrq3Ux6KDgH-YmGc4y" : {
       "email" : "artifaxiom@gmail.com",
@@ -5943,6 +6061,11 @@
       "email" : "tjstemp@nycjuggler.com",
       "lowerCaseUsername" : "nycjuggler_",
       "username" : "nycjuggler_"
+    },
+    "-Li4dCO-ru26CG1vfbmO" : {
+      "email" : "tjstemp@lucasadverse.com",
+      "lowerCaseUsername" : "lucasadverse_",
+      "username" : "lucasadverse_"
     }
   }
 }
