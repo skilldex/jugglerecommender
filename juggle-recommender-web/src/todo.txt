@@ -10,14 +10,10 @@ v 1.4
 	-color swatches to indicate difficulty instead of entire background
 	-resizable div
 
-==========	
+=========
 
 Bugs:
--In prereqs, 'Double NBox' didn't suggest DoubleNBox
--logout should close filter
--prereq dropdown should show names, not keys
-
-
+-clicking off filter doesnt close filter
 
 -restyle popup information, make collapsable
 -thin lines on sort button
@@ -25,15 +21,15 @@ Bugs:
 -edit profile(maybe beyond 1.1)
 
 -make multi-termed search
-- filter by num balls 2, 6, 7 or range/even odd
-- allow users to add new tags
+-filter by num balls 2, 6, 7 or range/even odd
+-allow users to add new tags
 
 -find highest catches should be only run when it is actually used
 -just make sure they are always used together first
 -Update root tricks is running 4 times
 
 -filter catches are allowed to be empty in which case no patterns are shown
-- can't pinch zoom on list (android)
+-can't pinch zoom on list (android)
 -filter for unstarred tricks
 - recommend tags based on trick name
 - recommended related list 
