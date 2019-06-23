@@ -13,6 +13,9 @@ v 1.4
 
 =========
 
+Minor:
+	make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
+
 Bugs:
 	-Autocomplete should show actual capitaliztion instead of making all lower case(but keep logic the same). So users can see the capitalization convention when naming tricks
 

@@ -11,21 +11,22 @@ class AutoComplete extends Component {
 		const lowerCaseInput = this.props.input.toLowerCase()
 		let matchedNames = []
 	 	const options = Object.keys(store.library).map((key)=>{
-	 		let name = store.library[key].name.toLowerCase()
+	 		const name = store.library[key].name
+	 		let lowerCaseName = store.library[key].name.toLowerCase()
 	 		//ends with ball num
-	 		const ballMatch = name.match(/\(\d+b\)$/)
+	 		const ballMatch = lowerCaseName.match(/\(\d+b\)$/)
 	 		if(ballMatch){
-	 			name = name.slice(0,ballMatch.index)
+	 			lowerCaseName = lowerCaseName.slice(0,ballMatch.index)
 	 		}
 	 		//avoid duplicates
-	 		if(name.includes(lowerCaseInput) && !matchedNames.includes(name)){
-	 			const matchIndex = name.indexOf(lowerCaseInput)
-	 			matchedNames.push(name)
+	 		if(lowerCaseName.includes(lowerCaseInput) && !matchedNames.includes(lowerCaseName)){
+	 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
+	 			matchedNames.push(lowerCaseName)
 	 			return <div className="option" 
 	 						onClick={()=>{this.props.setAutoCompletedName
-	 								(input+name.substring(input.length))}}>
+	 								(input+lowerCaseName.substring(input.length))}}>
 			 				<span>{name.slice(0,matchIndex)}</span>
-			 				<span className="match">{lowerCaseInput}</span>
+			 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
 			 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>
 	 					</div>
 	 		}
