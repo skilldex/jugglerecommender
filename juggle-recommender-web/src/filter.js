@@ -216,7 +216,7 @@ class Filter extends Component {
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
 	             onMouseLeave = {()=>this.mouseLeaveFilterDiv()}
 	        >
-				<button className="closeFilter" onClick={()=>{filterStore.toggleFilterDiv()}}>
+				<button className="closeFilter" onClick={()=>{uiStore.toggleFilterDiv()}}>
 					X
 				</button><br/>
 				{tagSection}
