@@ -123,7 +123,6 @@ class App extends Component {
 	            uiStore.setShowSortDiv(false)
 	        }
 	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
-	        	console.log('uiStore.mouseInFilterDiv',uiStore.mouseInFilterDiv)
 	            uiStore.setShowFilterDiv(false)
 	        }
 	    }
@@ -200,7 +199,6 @@ class App extends Component {
 						</div>
 		const popup = uiStore.editingPopupTrick ? null : 
 						uiStore.popupFullScreen ? <PopupDemo/> : <Popup/>
-		console.log('uiStore.showFilterDivApps',uiStore.showFilterDiv)
 		return (
 			<div
 				touchMove={(e)=>{e.preventDefault()}} 

@@ -1,6 +1,7 @@
 v 1.4
 	- make popups be draggable divs 
 	- add related relationship
+		*how to connect on graph?
 	- add related filter
 	- slow/reverse gif
 	-a log in firebase for a tricks edited by noncontributor
@@ -13,11 +14,7 @@ v 1.4
 =========
 
 Bugs:
--clicking off filter doesnt close filter
-
-
-
-
+	-Autocomplete should show actual capitaliztion instead of making all lower case(but keep logic the same). So users can see the capitalization convention when naming tricks
 
 -restyle popup information, make collapsable
 -thin lines on sort button
