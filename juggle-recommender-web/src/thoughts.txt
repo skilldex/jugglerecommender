@@ -4,9 +4,10 @@ IJA starts in 4 days, and Hungary fest is in a week, we should probably super fo
 	search for bugs so we know it is clean
 	gets more tricks added by popular IGers
 
+My Mod Account:
+	-editing libraryofjuggling patterns results in name being empty, so submitting deletes them. Only an issue for my 'mod' account
+	-make sure submitter name isnt changed when i edit a trick
 
-Move To Thoughts:
--may be better to show capitalization exactly as is in autocomplete instead of making all lower case(but keep logic the same)
 -maybe showing the popup of the trick that was just added so they can be sure it is how they want it
 -we need spacing continuity in names (ex: some mills messes are 1 words, some are 2)
 	*maybe this is fixed now that we are showing names instead of keys in prereqs
