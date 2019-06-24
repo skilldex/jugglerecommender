@@ -22,6 +22,8 @@ class AddTrickForm extends Component {
 		num : "",
 		difficulty : "",
 		video : "",
+		videoStartTime: "-1",
+		videoEndTime: "-1",
 		siteSwap : "",
 		prereqs : [],
 		tags : [],
@@ -96,6 +98,18 @@ class AddTrickForm extends Component {
 		})
 		this.checkIfFormIsSubmittable()
 	}
+	handleStartTimeChange=(e)=>{
+		this.setState({
+			videoStartTime:e.target.value
+		})
+		this.checkIfFormIsSubmittable()
+	}
+	handleEndTimeChange=(e)=>{		
+		this.setState({
+			videoEndTime:e.target.value
+		})
+		this.checkIfFormIsSubmittable()
+	}
 	handlePrereqAddition=(tag)=> {
 		if (store.library[tag.id]){
 	        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
@@ -120,6 +134,7 @@ class AddTrickForm extends Component {
          tags: tags.filter((tag, index) => index !== i),
         });
     }
+
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
     	console.log('this.state.name',this.state.name)
@@ -234,6 +249,8 @@ class AddTrickForm extends Component {
 				difficulty : this.state.difficulty,
 				contributor : authStore.user.username, 
 				video : this.state.video,
+				videoStartTime: this.state.videoStartTime,
+				videoEndTime: this.state.videoEndTime,
 				siteswap :  this.state.siteSwap,
 				prereqs : prereqs,
 				tags : tags,
@@ -334,7 +351,6 @@ class AddTrickForm extends Component {
 								<input className="formInputs" 
 										onKeyPress={this.onNameInputKeyPress}
 										value={this.state.name} 
-
 										onChange={this.handleNameChange}/>
 								{autoComplete}
 							</div>
@@ -382,14 +398,14 @@ class AddTrickForm extends Component {
 									<span className="timeLabel">Start</span>
 									<span className="timeLabel">End</span>
 									<input className="timeInput" 
-											value={this.state.video} 
-											onBlur={this.handleVideoChange}
-											onChange={this.handleVideoChange}
+											value={this.state.videoStartTime} 
+											onBlur={this.handleStartTimeChange}
+											onChange={this.handleStartTimeChange}
 									/>								
 									<input className="timeInput" 
-											value={this.state.video} 
-											onBlur={this.handleVideoChange}
-											onChange={this.handleVideoChange}
+											value={this.state.videoEndTime} 
+											onBlur={this.handleEndTimeChange}
+											onChange={this.handleEndTimeChange}
 									/>
 								</div>
 							:null}

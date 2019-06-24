@@ -21,12 +21,9 @@ use default style for dekstop and use @media to override for mobile
 }
 
 -style popup
-	-deskptop on the right
+	-desktop on the right
 	-mobile covering entire graph but not list
 	-full height in both cases
-	-move edit button to left
-	-finish making delete button
-	-make popup X on right corner
 -start/end time loop video
 	yt === ? start=sec&end=sec;
 	Instagram smallerLoop ===  #t=sec,sec

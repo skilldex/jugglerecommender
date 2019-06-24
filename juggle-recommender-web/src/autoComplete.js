@@ -23,8 +23,7 @@ class AutoComplete extends Component {
 	 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
 	 			matchedNames.push(lowerCaseName)
 	 			return <div className="option" 
-	 						onClick={()=>{this.props.setAutoCompletedName
-	 								(input+lowerCaseName.substring(input.length))}}>
+	 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
 			 				<span>{name.slice(0,matchIndex)}</span>
 			 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
 			 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>

@@ -11,6 +11,23 @@ import './popupDemo.css';
 @observer
 class PopupDemo extends Component {
 	render() {
+    var instVideo
+    var getIdInterval = setInterval(function() {
+        if (!instVideo) {
+            instVideo = document.getElementById("instagramVideo");              
+       }else{
+        instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
+        clearInterval(getIdInterval)
+       }
+    },100);
+    var loopVideoInterval =setInterval(function() {
+        if (!uiStore.popupTrick){
+          clearInterval(loopVideoInterval)
+       }else if (instVideo && instVideo.currentTime > parseInt(uiStore.popupTrick.videoEndTime)) {
+          instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
+       }
+    },100);
+
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
       store.getUsableVideoURL(store.library[popupTrickKey].video)
@@ -50,6 +67,7 @@ class PopupDemo extends Component {
                           src={store.popupVideoURL}      
                         ></iframe> : store.popupVideoURL.includes('instagram') ? 
                         <video 
+                          id="instagramVideo"
                           ref={(video)=> {this.popupVideo = video}}
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
@@ -61,6 +79,7 @@ class PopupDemo extends Component {
                           loop
                           src={store.popupVideoURL}
                         ></video> : null
+
     const outerDiv = uiStore.popupFullScreen ? "fullScreenOuterDiv" : "outerDiv"
 		return(
       			<div className={outerDiv}>
