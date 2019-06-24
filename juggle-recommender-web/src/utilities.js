@@ -3,8 +3,14 @@ import {action, configure} from "mobx"
 configure({ enforceActions: "always" })
 class Utilities{
   @action isEmptyOrSpaces=(str)=>{
-      str = toString(str)
-      return str === null || str.match(/^ *$/) !== null;
+    console.log('str',str)
+    let strEmpty = false
+    if (str === null){
+      strEmpty = true
+    }else if(!str.replace(/\s/g, '').length){
+      strEmpty = true
+    }
+    return strEmpty
   }
 
   @action isNotOnlyDigits=(str)=>{

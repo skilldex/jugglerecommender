@@ -1,5 +1,6 @@
 
 IJA starts in 4 days, and Hungary fest is in a week, we should probably super focus on user experience before then:
+	fix bugs
 	get individualized tutorials put together
 	search for bugs so we know it is clean
 	gets more tricks added by popular IGers
@@ -10,6 +11,12 @@ My Mod Account:
 
 -maybe showing the popup of the trick that was just added so they can be sure it is how they want it
 
+From discussion with lucasadverse:
+-#b should go before trick not after (#b) since the ... pretty much always hides it until they click
+-no need to have 3b before tricks, that is assumed
+-request for facebook videos
+-request for loop small sections of youtube videos since lots of his tricks live there in bigger videos
+-request for loop smaller sections of ig videos
 
 
 Difficulty Rating systems:

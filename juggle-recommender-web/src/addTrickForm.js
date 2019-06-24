@@ -123,7 +123,9 @@ class AddTrickForm extends Component {
     }
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
+    	console.log('this.state.name',this.state.name)
     	if (utilities.isEmptyOrSpaces(this.state.name)){
+    		console.log('nameEMpty')
     		this.setState({submitDisabled:true})
     	}else{
     		let tricksInLibraryKeys = []
@@ -207,42 +209,40 @@ class AddTrickForm extends Component {
     }
 
 	submit=()=>{
-			if (this.state.submitDisabled){
-				document.getElementById("submitButton").focus();
+		if (this.state.submitDisabled){
+			document.getElementById("submitButton").focus();
+		}
+		if (!this.state.submitDisabled){
+			
+			var tags = this.state.tags.map(function(item) {
+				return item['text'];
+			});
+			var prereqs = this.state.prereqs.map(function(item) {
+				return item['id'];
+			});		
+			const suffix = "("+this.state.num+"b)"
+			const date = new Date()
+			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
+			const trick = {
+				name : name,
+				num : this.state.num,
+				difficulty : this.state.difficulty,
+				contributor : authStore.user.username, 
+				video : this.state.video,
+				siteswap :  this.state.siteSwap,
+				prereqs : prereqs,
+				tags : tags,
+				timeUpdated : date.getTime()
 			}
-			if (!this.state.submitDisabled){
-				
-				var tags = this.state.tags.map(function(item) {
-					return item['text'];
-				});
-				var prereqs = this.state.prereqs.map(function(item) {
-					return item['id'];
-				});		
-				const suffix = "("+this.state.num+"b)"
-				const date = new Date()
-				const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
-				const trick = {
-					name : name,
-					num : this.state.num,
-					difficulty : this.state.difficulty,
-					contributor : authStore.user.username, 
-					video : this.state.video,
-					siteswap :  this.state.siteSwap,
-					prereqs : prereqs,
-					tags : tags,
-					timeUpdated : date.getTime()
-				}
-				if(uiStore.editingPopupTrick){
-					alert(trick.name+" edited!")
-					trick["timeSubmitted"] = this.state.timeSubmitted
-				}else{
-					alert(trick.name+" added!")
-					trick["timeSubmitted"] = date.getTime()
-				}
-				
-				store.addTrickToDatabase(trick)
-				this.clearState()
-
+			if(uiStore.editingPopupTrick){
+				alert(trick.name+" edited!")
+				trick["timeSubmitted"] = this.state.timeSubmitted
+			}else{
+				alert(trick.name+" added!")
+				trick["timeSubmitted"] = date.getTime()
+			}			
+			store.addTrickToDatabase(trick)
+			this.clearState()
 		}
 	}
 	
