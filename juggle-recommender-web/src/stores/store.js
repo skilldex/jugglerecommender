@@ -67,8 +67,14 @@ class Store {
             response => response.json()
         ).then(
             (data) => {
-              this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
-              this.setIGData(data)
+            	if(data.graphql.shortcode_media.video_url){
+            		console.log
+					this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
+					this.setIGData(data)
+	            }else{
+	            	console.log('NO video_url')
+	            	videoURLtoUse = "notValid"
+	            }
             }
         );                                
       }

@@ -109,7 +109,6 @@ class AddTrickForm extends Component {
         });
     }
     handleTagAddition=(tag)=> {
-
     	if (store.tagsSuggestions.includes(tag.id)){
 	        this.setState(state => ({ tags: [...state.tags, tag] }));
 	        this.checkIfFormIsSubmittable()
@@ -198,8 +197,10 @@ class AddTrickForm extends Component {
     	}
     	if (utilities.isEmptyOrSpaces(this.state.video)){
 			this.setState({submitDisabled:true})
-		}else{
+		}else{console.log('store.getUsableVideoURL(this.state.video)',store.getUsableVideoURL(this.state.video))
+				
 			if (store.getUsableVideoURL(this.state.video)==='notValid'){
+				console.log('store.getUsableVideoURL(this.state.video)2',store.getUsableVideoURL(this.state.video))
 				this.setState({videoErrorMessage:'Not a valid URL.'})
 				this.setState({submitDisabled:true})
 			}else{
