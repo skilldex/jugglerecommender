@@ -11,12 +11,13 @@ class AutoComplete extends Component {
 		const lowerCaseInput = this.props.input.toLowerCase()
 		let matchedNames = []
 	 	const options = Object.keys(store.library).map((key)=>{
-	 		const name = store.library[key].name
+	 		let name = store.library[key].name
 	 		let lowerCaseName = store.library[key].name.toLowerCase()
 	 		//ends with ball num
 	 		const ballMatch = lowerCaseName.match(/\(\d+b\)$/)
 	 		if(ballMatch){
 	 			lowerCaseName = lowerCaseName.slice(0,ballMatch.index)
+	 			name = name.slice(0,ballMatch.index)
 	 		}
 	 		//avoid duplicates
 	 		if(lowerCaseName.includes(lowerCaseInput) && !matchedNames.includes(lowerCaseName)){

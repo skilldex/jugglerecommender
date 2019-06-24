@@ -1,27 +1,16 @@
 
-IJA starts in 4 days, and Hungary fest is in a week, we should probably super focus on user experience before then:
-	fix bugs
-	get individualized tutorials put together
-	search for bugs so we know it is clean
-	gets more tricks added by popular IGers
-
 My Mod Account:
 	-editing libraryofjuggling patterns results in name being empty, so submitting deletes them. Only an issue for my 'mod' account
 	-make sure submitter name isnt changed when i edit a trick
 
--maybe showing the popup of the trick that was just added so they can be sure it is how they want it
+-maybe show the popup of the trick that was just added so they can be sure it is how they want it
+-on desktop, when popup is howing, would be nice if rootnode gravitated towards open space
 
-From discussion with lucasadverse:
--#b should go before trick not after (#b) since the ... pretty much always hides it until they click
--no need to have 3b before tricks, that is assumed
--request for facebook videos
--request for loop small sections of youtube videos since lots of his tricks live there in bigger videos
--request for loop smaller sections of ig videos
--request for suggest info change of other users tricks
 _______________________________________________
 Unrestrict catch inputting from starred tricks:
 -----------------------------------------------
 PROS:
+	-Would make starred tricks more special, because then they are actually tricks that the user wants set aside, not every trick they want to record catches for
 	-One less click to input catches
 	-Not intuitive that clicking a star will enable the ability to input catches
 	-A starred trick list is far too broad to be usefull(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
