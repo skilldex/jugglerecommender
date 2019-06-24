@@ -393,7 +393,6 @@ class AddTrickForm extends Component {
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
-								{toggleTimeInputsButton}
 							</div> 
 	                        {this.state.showTimeInputs?
 								<div className="videoTimeInputsDiv">
