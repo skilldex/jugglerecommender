@@ -43,7 +43,7 @@ class TrickGraph extends Component {
       }
       const events = {
         select: function(event) {
-            if (store.isMobile){uiStore.setListExpanded(false)}
+            //if (store.isMobile){uiStore.setListExpanded(false)}
             if (uiStore.selectedTrick===event.nodes[0]){  
               uiStore.setPopupTrick({
                 'id': event.nodes[0],
