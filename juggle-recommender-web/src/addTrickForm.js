@@ -200,7 +200,7 @@ class AddTrickForm extends Component {
 		}else{console.log('store.getUsableVideoURL(this.state.video)',store.getUsableVideoURL(this.state.video))
 				
 			if (store.getUsableVideoURL(this.state.video)==='notValid'){
-				console.log('store.getUsableVideoURL(this.state.video)2',store.getUsableVideoURL(this.state.video))
+				console.log('store.getUsableVideoURL(this.state.video)',store.getUsableVideoURL(this.state.video))
 				this.setState({videoErrorMessage:'Not a valid URL.'})
 				this.setState({submitDisabled:true})
 			}else{

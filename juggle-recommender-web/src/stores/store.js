@@ -195,17 +195,40 @@ class Store {
 	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
 		const oldTrick = this.library[oldTrickKey]
 		if(oldTrick.prereqs){
-			let stalePrereqs = oldTrick.prereqs.filter(x => !newTrickData.prereqs.includes(x))
+			let stalePrereqs
+			if(newTrickData){
+				stalePrereqs = oldTrick.prereqs.filter(x => !newTrickData.prereqs.includes(x))
+			}else{//for the case of deleting a trick
+				stalePrereqs = oldTrick.prereqs
+			}
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
-				const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
-				trick.dependents = newDependents
-				//update prereq's dependents in db
-				let newTrickRef = firebase.database().ref('library/'+prereq)
-        		newTrickRef.set(trick);
+				if(trick){
+					const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
+					trick.dependents = newDependents
+					//update prereq's dependents in db
+					let newTrickRef = firebase.database().ref('library/'+prereq)
+	        		newTrickRef.set(trick);
+	        	}
 			})
 		}
 	}
+	@action removeTrickFromDatabase=(oldTrickKey)=>{
+    	let oldTrickRef = firebase.database().ref('library/'+oldTrickKey)
+		oldTrickRef.remove()
+	}
+	@action deleteTrick=()=>{
+		var result = window.confirm("Are you sure you want to permanently delete this pattern?");
+		if (result){
+			const trickToDelete = uiStore.popupTrick.id
+			uiStore.selectTopTrick()
+			uiStore.popupTrick = null
+		    this.removeOldDependents(null,trickToDelete)
+		    this.removeTrickFromDatabase(trickToDelete)
+		}
+
+
+	 }
 	@action addTrickToDatabase=(trick)=>{
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')

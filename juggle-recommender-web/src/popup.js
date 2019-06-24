@@ -3,6 +3,7 @@ import store from './stores/store'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
+import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
 import PopupDemo from './popupDemo'
 import authStore from "./stores/authStore"
@@ -107,6 +108,16 @@ class Popup extends Component {
  		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
+    const deleteTrickButton = 
+      popupTrick && authStore.user && 
+      (popupTrick.contributor === authStore.user.username || 
+      authStore.user.username === "tjthejuggler") ?
+        <img id="deleteTrickButton" 
+              src={deleteTrickIcon} 
+              className="editCardIcon" 
+              alt="deleteTrick" 
+             onClick={()=>{store.deleteTrick()}}
+        /> : null      
     const editTrickButton  = 
       popupTrick && authStore.user && 
       (popupTrick.contributor === authStore.user.username || 
@@ -123,6 +134,7 @@ class Popup extends Component {
                         }} 
                          className="popupDiv"
                     >
+                      {deleteTrickButton}
                       {editTrickButton}
                       <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
                       <div className="popupInfoDiv">
