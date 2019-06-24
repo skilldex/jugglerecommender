@@ -67,6 +67,7 @@ class Popup extends Component {
     this.setState({showMoreInformation:!this.state.showMoreInformation})
   }
 	render() {
+    document.body.style.overflow = 'hidden'
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
     //set focus to compensate for onblur function
@@ -131,13 +132,7 @@ class Popup extends Component {
              onClick={()=>{uiStore.setPopupTrick(null)}}
         />
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
-          			    <div style={{
-                          left : graphDiv.clientWidth-260,
-                      		top : 104,
-                          width : 260
-                        }} 
-                         className="popupDiv"
-                    >
+          			    <div className="popupDiv">
                       {deleteTrickButton}
                       {editTrickButton}
                       {closeButton}

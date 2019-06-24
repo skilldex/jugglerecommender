@@ -12,21 +12,9 @@ v 1.4
 	-resizable div
 
 =========
-use default style for dekstop and use @media to override for mobile
-(max-width: 600px)
-@media screen and (min-width: 992px) {
-	.video-container{
 
-	}
-}
-
--style popup
-	-desktop on the right
-	-mobile covering entire graph but not list
-	-full height in both cases
 -start/end time loop video
 	yt === ? start=sec&end=sec;
-	Instagram smallerLoop ===  #t=sec,sec
 Minor:
 	make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 

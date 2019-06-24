@@ -12,21 +12,27 @@ import './popupDemo.css';
 class PopupDemo extends Component {
 	render() {
     var instVideo
-    var getIdInterval = setInterval(function() {
-        if (!instVideo) {
-            instVideo = document.getElementById("instagramVideo");              
-       }else{
-        instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
-        clearInterval(getIdInterval)
-       }
-    },100);
-    var loopVideoInterval =setInterval(function() {
-        if (!uiStore.popupTrick){
-          clearInterval(loopVideoInterval)
-       }else if (instVideo && instVideo.currentTime > parseInt(uiStore.popupTrick.videoEndTime)) {
+    var getIdForVideoLoop
+    var loopVideoInterval
+    if(uiStore.popupTrick && 
+        uiStore.popupTrick.videoStartTime && 
+        uiStore.popupTrick.videoEndTime){
+      getIdForVideoLoop = setInterval(function() {
+          if (!instVideo) {
+              instVideo = document.getElementById("instagramVideo");              
+         }else{
           instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
-       }
-    },100);
+          clearInterval(getIdForVideoLoop)
+         }
+      },100);
+      loopVideoInterval =setInterval(function() {
+          if (!uiStore.popupTrick){
+            clearInterval(loopVideoInterval)
+         }else if (instVideo && instVideo.currentTime > parseInt(uiStore.popupTrick.videoEndTime)) {
+            instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
+         }
+      },100);
+    }
 
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
