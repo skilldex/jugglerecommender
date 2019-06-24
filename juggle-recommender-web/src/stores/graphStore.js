@@ -92,6 +92,7 @@ class GraphStore {
 		 		if(rootTrick.prereqs){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
+		 				if (!prereq){return}
 		 				if(!tempNodes[prereqKey]){
 			 				tempNodes[prereqKey] = {
 			 					id: prereqKey,
@@ -145,6 +146,7 @@ class GraphStore {
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
+		 				if (!prereq){return}
 		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0
 		 				let label = prereq.name
 		 				
