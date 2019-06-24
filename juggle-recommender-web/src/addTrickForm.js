@@ -340,6 +340,11 @@ class AddTrickForm extends Component {
 				setAutoCompletedName={this.setAutoCompletedName} 
 				input={this.state.name}
 			/> : null
+		const toggleTimeInputsButton =
+							<label className="toggleShowTimeInputs" 
+								onClick={()=>this.toggleShowTimeInputs()}>
+								{this.state.showTimeInputs?"(hide times)":"(add times)"}
+							</label>
 		const form = 	
 					<div className="form">
 						<h3>{titleText}</h3>
@@ -388,10 +393,7 @@ class AddTrickForm extends Component {
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
-								<label className="toggleShowTimeInputs" 
-										onClick={()=>this.toggleShowTimeInputs()}>
-		                            {this.state.showTimeInputs?"(hide times)":"(add times)"}
-		                        </label>  
+								{toggleTimeInputsButton}
 							</div> 
 	                        {this.state.showTimeInputs?
 								<div className="videoTimeInputsDiv">

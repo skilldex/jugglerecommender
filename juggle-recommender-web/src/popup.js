@@ -67,7 +67,7 @@ class Popup extends Component {
     this.setState({showMoreInformation:!this.state.showMoreInformation})
   }
 	render() {
-    document.body.style.overflow = 'hidden'
+//    document.body.style.overflow = 'hidden'
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
     //set focus to compensate for onblur function

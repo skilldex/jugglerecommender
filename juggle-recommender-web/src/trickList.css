@@ -137,7 +137,7 @@
   cursor: pointer;
 }
 .listSection{
-  max-height: 65vh;
+  max-height: 57vh;
   overflow-y: scroll;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
