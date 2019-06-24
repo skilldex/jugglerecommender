@@ -137,9 +137,7 @@ class AddTrickForm extends Component {
 
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
-    	console.log('this.state.name',this.state.name)
     	if (utilities.isEmptyOrSpaces(this.state.name)){
-    		console.log('nameEMpty')
     		this.setState({submitDisabled:true})
     	}else{
     		let tricksInLibraryKeys = []
@@ -212,10 +210,8 @@ class AddTrickForm extends Component {
     	}
     	if (utilities.isEmptyOrSpaces(this.state.video)){
 			this.setState({submitDisabled:true})
-		}else{console.log('store.getUsableVideoURL(this.state.video)',store.getUsableVideoURL(this.state.video))
-				
+		}else{
 			if (store.getUsableVideoURL(this.state.video)==='notValid'){
-				console.log('store.getUsableVideoURL(this.state.video)',store.getUsableVideoURL(this.state.video))
 				this.setState({videoErrorMessage:'Not a valid URL.'})
 				this.setState({submitDisabled:true})
 			}else{

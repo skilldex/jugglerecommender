@@ -3,7 +3,6 @@ import {action, configure} from "mobx"
 configure({ enforceActions: "always" })
 class Utilities{
   @action isEmptyOrSpaces=(str)=>{
-    console.log('str',str)
     let strEmpty = false
     if (str === null){
       strEmpty = true
