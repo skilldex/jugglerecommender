@@ -361,15 +361,30 @@ class AddTrickForm extends Component {
 							</div>
 							<div className="inputContainer">
 								<span className="redText">*</span>
-								<span className="inputLabel">Instagram or Youtube Video <br/>(only containing added trick)</span>
+								<span className="inputLabel">Instagram or Youtube Video</span>
 								<span className="warning">{this.state.videoErrorMessage}</span>
 								<input className="formInputs" 
 										value={this.state.video} 
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
+							<label className="toggleShowTimeInputs" />
 							</div>
-							<div className="inputContainer">
+							<div className="videoTimeInputsDiv">
+								<span className="timeLabel">Start</span>
+								<span className="timeLabel">End</span>
+								<input className="timeInput" 
+										value={this.state.video} 
+										onBlur={this.handleVideoChange}
+										onChange={this.handleVideoChange}
+								/>								
+								<input className="timeInput" 
+										value={this.state.video} 
+										onBlur={this.handleVideoChange}
+										onChange={this.handleVideoChange}
+								/>
+							</div>
+							<div className="inputContainer">								
 								<span className="inputLabel">Siteswap</span>
 								<input className="formInputs" 
 										value={this.state.siteSwap} 
@@ -377,6 +392,7 @@ class AddTrickForm extends Component {
 										onChange={this.handleSSChange}
 								/>
 							</div>
+
 						</div>
 							<button id = "submitButton"
 									className={this.state.submitDisabled?

@@ -39,6 +39,25 @@ h3{
   font-size: 12px;
   height: 16px;
 }
+.videoTimeInputsDiv{
+  display: inline-block;
+  padding-bottom: 10px;
+  text-align: left;
+
+  
+}
+.timeLabel{
+float: left;
+margin-right: 40px;
+  width: 40px;
+}
+.timeInput{
+   text-align: left;
+float: left;
+margin-right: 20px;
+  width: 40px;
+  height: 16px;
+}
 
 div.ReactTags__tagInput {
     width: 180px;
