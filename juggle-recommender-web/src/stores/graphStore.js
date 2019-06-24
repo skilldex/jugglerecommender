@@ -141,7 +141,7 @@ class GraphStore {
 		 				mass : this.getInvolvedNodeMass(involvedRoot),
 		 				borderWidth : this.getInvolvedNodeBorderWidth(involvedRoot)
 		 			}	 			
-		 		}	
+		 		}	//console.log(rootTrick)
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
