@@ -67,13 +67,14 @@ class Store {
             response => response.json()
         ).then(
             (data) => {
-            	if(data.graphql.shortcode_media.video_url){
-            		console.log
-					this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
+            	console.log('data.graphql',data.graphql)
+            	if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
+            		console.log('GraphSidecar')
+					this.setPopupVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url)
 					this.setIGData(data)
 	            }else{
-	            	console.log('NO video_url')
-	            	videoURLtoUse = "notValid"
+	            	this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
+	            	this.setIGData(data)
 	            }
             }
         );                                
