@@ -41,24 +41,29 @@ h3{
 }
 .videoTimeInputsDiv{
   display: inline-block;
-  padding-bottom: 10px;
-  text-align: left;
-
-  
+  padding-bottom: 5px;
+  padding-top: 0px;
+  text-align: left;  
 }
 .timeLabel{
-float: left;
-margin-right: 40px;
+  float: left;
+  margin-right: 40px;
   width: 40px;
 }
 .timeInput{
-   text-align: left;
-float: left;
-margin-right: 20px;
+  text-align: left;
+  border: 1px solid darkgray;
+  float: left;
+  margin-right: 30px;
   width: 40px;
   height: 16px;
 }
-
+.toggleShowTimeInputs{
+  text-align: left;
+  font-size: 10px;
+  color: blue;
+  padding-bottom: 0px;
+}
 div.ReactTags__tagInput {
     width: 180px;
     border-radius: 2px;

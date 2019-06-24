@@ -15,7 +15,6 @@ const KeyCodes = {
 };
 
 const delimiters = [KeyCodes.comma, KeyCodes.enter];
-
 @observer
 class AddTrickForm extends Component {
 	state = {
@@ -33,7 +32,8 @@ class AddTrickForm extends Component {
 		videoErrorMessage: "",
 		timeSubmitted : "",
 		autoCompletedName : false,
-		trickNameBeingEdited: ""
+		trickNameBeingEdited: "",
+		showTimeInputs: false
 	}
 
 	componentDidMount=()=>{
@@ -209,6 +209,10 @@ class AddTrickForm extends Component {
 		}
     }
 
+    toggleShowTimeInputs=()=>{
+    	this.setState({showTimeInputs:!this.state.showTimeInputs})
+  	}
+
 	submit=()=>{
 		if (this.state.submitDisabled){
 			document.getElementById("submitButton").focus();
@@ -368,22 +372,27 @@ class AddTrickForm extends Component {
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
-							<label className="toggleShowTimeInputs" />
-							</div>
-							<div className="videoTimeInputsDiv">
-								<span className="timeLabel">Start</span>
-								<span className="timeLabel">End</span>
-								<input className="timeInput" 
-										value={this.state.video} 
-										onBlur={this.handleVideoChange}
-										onChange={this.handleVideoChange}
-								/>								
-								<input className="timeInput" 
-										value={this.state.video} 
-										onBlur={this.handleVideoChange}
-										onChange={this.handleVideoChange}
-								/>
-							</div>
+								<label className="toggleShowTimeInputs" 
+										onClick={()=>this.toggleShowTimeInputs()}>
+		                            {this.state.showTimeInputs?"(hide times)":"(add times)"}
+		                        </label>  
+							</div> 
+	                        {this.state.showTimeInputs?
+								<div className="videoTimeInputsDiv">
+									<span className="timeLabel">Start</span>
+									<span className="timeLabel">End</span>
+									<input className="timeInput" 
+											value={this.state.video} 
+											onBlur={this.handleVideoChange}
+											onChange={this.handleVideoChange}
+									/>								
+									<input className="timeInput" 
+											value={this.state.video} 
+											onBlur={this.handleVideoChange}
+											onChange={this.handleVideoChange}
+									/>
+								</div>
+							:null}
 							<div className="inputContainer">								
 								<span className="inputLabel">Siteswap</span>
 								<input className="formInputs" 
