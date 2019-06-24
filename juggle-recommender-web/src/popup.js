@@ -5,6 +5,7 @@ import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
 import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
+import closeIcon from './images/closeIcon.svg'
 import PopupDemo from './popupDemo'
 import authStore from "./stores/authStore"
 import './App.css';
@@ -114,7 +115,7 @@ class Popup extends Component {
       authStore.user.username === "tjthejuggler") ?
         <img id="deleteTrickButton" 
               src={deleteTrickIcon} 
-              className="editCardIcon" 
+              className="deleteTrickIcon" 
               alt="deleteTrick" 
              onClick={()=>{store.deleteTrick()}}
         /> : null      
@@ -125,7 +126,10 @@ class Popup extends Component {
         <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
              onClick={()=>{uiStore.editPopupTrick()}}
         /> : null
-
+    const closeButton  = 
+        <img id="closeButton" src={closeIcon} className="closePopupIcon" alt="closeIcon" 
+             onClick={()=>{uiStore.setPopupTrick(null)}}
+        />
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div style={{
                           left : graphDiv.clientWidth-260,
@@ -136,6 +140,7 @@ class Popup extends Component {
                     >
                       {deleteTrickButton}
                       {editTrickButton}
+                      {closeButton}
                       <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
                       <div className="popupInfoDiv">
                         {catchesSection}

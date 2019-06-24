@@ -10,9 +10,10 @@
   width: 24px;
 
 }
-.popupHeader{
-  margin-top: 15px ;
+.popupHeader{  
+  margin-top: 35px ;
   margin-bottom: 15px ;
+  border-top: 1px solid gray;
 }
 .popupInfoDiv{
   text-align: left;
@@ -64,10 +65,25 @@
   height : 15px;
   width : 15px;
 }
+.deleteTrickIcon{
+  height : 20px;
+  width : 20px;
+  float : left;
+  margin-left: 8px;
+  margin-right : 8px;
+  margin-top : 8px;
+}
 .editCardIcon{
   height : 20px;
   width : 20px;
   float : left;
+  margin-right : 8px;
+  margin-top : 8px;
+}
+.closePopupIcon{
+  height : 24px;
+  width : 24px;
+  float : right;
   margin-right : 8px;
   margin-top : 8px;
 }

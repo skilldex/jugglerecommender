@@ -17,6 +17,40 @@ From discussion with lucasadverse:
 -request for facebook videos
 -request for loop small sections of youtube videos since lots of his tricks live there in bigger videos
 -request for loop smaller sections of ig videos
+-request for suggest info change of other users tricks
+_______________________________________________
+Unrestrict catch inputting from starred tricks:
+-----------------------------------------------
+PROS:
+	-One less click to input catches
+	-Not intuitive that clicking a star will enable the ability to input catches
+	-A starred trick list is far too broad to be usefull(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
+CONS:
+
+______________________________________________
+
+
+_______________________________________________
+Increase number of difficulty scores:
+-----------------------------------------------
+PROS:
+	-There are many more than 10 levels of difficulty tricks in juggling
+	-Nearly all jugglers online who discuss difficulty rating online suggest more than 10
+CONS:
+
+______________________________________________
+
+
+_______________________________________________
+Increase number of difficulty colors:
+-----------------------------------------------
+PROS:
+	-There are many more than 4 levels(Green, Yellow, Orange, Red) of juggling difficulty,
+		it would be nice to be able to see various levels at a glance
+CONS:
+
+______________________________________________
+
 
 
 Difficulty Rating systems:
