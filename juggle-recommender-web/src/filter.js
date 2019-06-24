@@ -9,6 +9,7 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
+import closeIcon from './images/closeIcon.svg'
 
 const KeyCodes = {
   comma: 188,
@@ -216,9 +217,9 @@ class Filter extends Component {
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
 	             onMouseLeave = {()=>this.mouseLeaveFilterDiv()}
 	        >
-				<button className="closeFilter" onClick={()=>{uiStore.toggleFilterDiv()}}>
-					X
-				</button><br/>
+	            <img id="closeButton" src={closeIcon} className="closeFilter" alt="closeIcon" 
+             		onClick={()=>{uiStore.toggleFilterDiv()}}
+        		/><br/>
 				{tagSection}
 				<ColoredLine/>
 				{contributorSection}
