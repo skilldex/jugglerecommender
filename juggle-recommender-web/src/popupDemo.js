@@ -7,46 +7,39 @@ import fullScreenIcon from './images/fullScreenIcon.png'
 import instagramLogoIcon from "./images/instagramLogo.png"
 import './App.css';
 import './popupDemo.css';
-
+import YouTube from 'react-youtube';
 @observer
 class PopupDemo extends Component {
+  youtubeEnded = (data) => {
+    console.log(this.popupVideo)
+    if(store.library[uiStore.popupTrick.id].videoStartTime > -1){
+      const popupTrick = store.library[uiStore.popupTrick.id]
+      this.popupVideo.internalPlayer.seekTo(popupTrick.videoStartTime)
+    }
+  }
+  instagramEnded = (data) => {
+    if(this.popupVideo.currentTime >= parseInt(uiStore.popupTrick.videoEndTime)){
+      this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
+      this.popupVideo.load()
+    }
+  }
 	render() {
-    var instVideo
-    // var getIdForVideoLoop
-    // var loopVideoInterval
-    // if(uiStore.popupTrick && 
-    //     uiStore.popupTrick.videoStartTime && 
-    //     uiStore.popupTrick.videoEndTime){
-    //   getIdForVideoLoop = setInterval(function() {
-    //       if (!instVideo) {
-    //           instVideo = document.getElementById("instagramVideo");              
-    //      }else{
-    //       instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
-    //       clearInterval(getIdForVideoLoop)
-    //      }
-    //   },100);
-    //   loopVideoInterval =setInterval(function() {
-    //       if (!uiStore.popupTrick){
-    //         clearInterval(loopVideoInterval)
-    //      }else if (instVideo && instVideo.currentTime > parseInt(uiStore.popupTrick.videoEndTime)) {
-    //         instVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
-    //      }
-    //   },100);
-    // }
 
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
-    if (store.library[popupTrickKey] && store.library[popupTrickKey].video){
-      store.getUsableVideoURL(store.library[popupTrickKey].video)
+    const popupTrick = store.library[popupTrickKey]
+    if (popupTrick && popupTrick.video){
+      store.getUsableVideoURL(popupTrick.video)
     } else {
       store.setPopupVideoURL('')
     }
+
     const demoClass = uiStore.popupFullScreen ? "fullScreenDemo" : "demo"
     const gifClass = uiStore.popupFullScreen ? "gifFullScreenDemo" : "gifDemo"
-    const gifSection = store.library[popupTrickKey] && store.library[popupTrickKey].url? 
+    const gifSection = popupTrick && popupTrick.url? 
                           <img 
                              alt = ''
                              className={gifClass} 
-                             src={store.library[popupTrickKey].gifUrl}
+                             src={popupTrick.gifUrl}
                           /> : null
     
     const instagramLogo = <img 
@@ -60,18 +53,35 @@ class PopupDemo extends Component {
                                   alt=""
                                   src={store.igData.picURL}/>
                             <span className="instagramUsername">{store.igData.username}</span>
-                            <div className="instagramViewProfileButton" onClick={()=>{window.open(store.library[popupTrickKey].video)}}>View {instagramLogo}</div>
+                            <div className="instagramViewProfileButton" onClick={()=>{window.open(popupTrick.video)}}>View {instagramLogo}</div>
                           </div> : null
+    const youtubeOpts = {
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        mute : true,
+        loop : 1,
+      }
+    }
+    if(popupTrick.videoStartTime > -1){
+      youtubeOpts.playerVars.start = popupTrick.videoStartTime
+      youtubeOpts.playerVars.end = popupTrick.videoEndTime
+    }else{
+      youtubeOpts.playerVars.playlist = store.youtubeId
+    }
     let video  = store.popupVideoURL.includes('youtube') ? 
-                        <iframe 
+                        <YouTube 
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
-                          className= {demoClass}        
+                          videoId={store.youtubeId}
+                          className= {demoClass} 
+                          opts={youtubeOpts}      
                           muted={true}                          
                           allow="autoplay"  
                           allowtransparency="true"
-                          src={store.popupVideoURL}      
-                        ></iframe> : store.popupVideoURL.includes('instagram') ? 
+                          src={store.popupVideoURL}
+                          onEnd={this.youtubeEnded}
+                          ref={(video)=> {this.popupVideo = video}}  
+                        ></YouTube> : store.popupVideoURL.includes('instagram') ? 
                         <video 
                           id="instagramVideo"
                           ref={(video)=> {this.popupVideo = video}}
@@ -83,6 +93,7 @@ class PopupDemo extends Component {
                           playsInline
                           controls  
                           loop
+                          onPause={this.instagramEnded}
                           src={store.popupVideoURL}
                         ></video> : null
 

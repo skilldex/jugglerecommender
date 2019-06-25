@@ -18,6 +18,7 @@ class Store {
 	@observable presetTags = {}
 	@observable popupVideoURL = ""
 	@observable igData = null
+	@observable youtubeId = null
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -45,6 +46,20 @@ class Store {
 	}
 	@action setPopupVideoURL=(url)=>{
 		this.popupVideoURL = url
+		if (uiStore.popupTrick &&
+			store.library[uiStore.popupTrick.id].videoStartTime && 
+			store.library[uiStore.popupTrick.id].videoEndTime
+		){
+			const startTime = store.library[uiStore.popupTrick.id].videoStartTime
+			const endTime = store.library[uiStore.popupTrick.id].videoEndTime
+			if (
+				parseInt(startTime)>-1 &&
+				parseInt(endTime)>-1 && 
+				url.includes("instagram.com")
+			){
+				this.popupVideoURL = url+"#t="+startTime+","+endTime
+			}
+		}	
 	}
 	@action setIGData=(data)=>{
 		if(!this.igData || 
@@ -91,10 +106,10 @@ class Store {
           usefulPart = userProvidedURL.split('youtu.be/')
           usefulPart = usefulPart[usefulPart.length-1]            
         }
-        videoURLtoUse = "https://www.youtube.com/embed/"+usefulPart+
-                       "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart
+        videoURLtoUse = usefulPart
         this.setPopupVideoURL("https://www.youtube.com/embed/"+usefulPart+
                        "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
+        this.youtubeId = usefulPart
       }
       return videoURLtoUse
     }
