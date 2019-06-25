@@ -9,7 +9,8 @@ Possible todos:
 	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
 	-on desktop, when popup is howing, would be nice if rootnode gravitated towards open space
 	-scrollbars in chrom on desktop look tacky
-
+	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
+		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
 
 _______________________________________________
 Unrestrict catch inputting from starred tricks
