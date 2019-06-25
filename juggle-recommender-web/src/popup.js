@@ -189,7 +189,7 @@ class Popup extends Component {
                         }
                       </div>   
                         <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
-                          {uiStore.showMoreInformation?"(less info)":"(more info)"}
+                          {uiStore.showMoreInformation?"less info":"more info"}
                         </label>                    
                       <PopupDemo/>                      
                     </div> : null

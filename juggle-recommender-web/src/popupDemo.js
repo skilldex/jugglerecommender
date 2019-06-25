@@ -11,30 +11,24 @@ import YouTube from 'react-youtube';
 @observer
 class PopupDemo extends Component {
   youtubeEnded = (data) => {
-    console.log(this.popupVideo)
     if(store.library[uiStore.popupTrick.id].videoStartTime > -1){
       const popupTrick = store.library[uiStore.popupTrick.id]
       this.popupVideo.internalPlayer.seekTo(popupTrick.videoStartTime)
     }
   }
   instagramPaused = (data) => {
-    console.log('pause')
     if(this.popupVideo.currentTime >= parseInt(uiStore.popupTrick.videoEndTime)){
       this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
       this.popupVideo.load()
     }
   }
   instagramTimeUpdate = (data) => {
-    console.log('uiStore.popupTrick',uiStore.popupTrick)
-    console.log('timeups',this.popupVideo.currentTime,parseInt(uiStore.popupTrick.videoStartTime))
-
     if(this.popupVideo.currentTime < parseInt(uiStore.popupTrick.videoStartTime)){
       this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
       this.popupVideo.load()
     }
   }
 	render() {
-
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]
     if (popupTrick && popupTrick.video){

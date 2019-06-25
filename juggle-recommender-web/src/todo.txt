@@ -21,13 +21,6 @@ Bugs:
 Arrangment Ideas:
 	Star goes on top popup bar
 
-
--start/end time loop video
-	yt === ? start=sec&end=sec;
-
-
-	
-
 Minor:
 	-thin lines on sort button
 

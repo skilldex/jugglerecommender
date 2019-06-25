@@ -244,7 +244,7 @@ class AddTrickForm extends Component {
 		if(timesAreValid && startSeconds<endSeconds){
 			this.setState({videoTimeErrorMessage:''})
 		}else{
-			this.setState({videoTimeErrorMessage:'Invalid timestamp. (seconds or m:s)'})
+			this.setState({videoTimeErrorMessage:'Invalid timestamps.'})
 			this.setState({submitDisabled:true})			
 		}
     }
@@ -289,7 +289,6 @@ class AddTrickForm extends Component {
 				tags : tags,
 				timeUpdated : date.getTime()
 			}
-			console.log('trick',trick)
 			if(uiStore.editingPopupTrick){
 				alert(trick.name+" edited!")
 				trick["timeSubmitted"] = this.state.timeSubmitted
@@ -377,7 +376,7 @@ class AddTrickForm extends Component {
 		const toggleTimeInputsButton =
 							<label className="toggleShowTimeInputs" 
 								onClick={()=>this.toggleShowTimeInputs()}>
-								{this.state.showTimeInputs?"hide times":"show times"}
+								{this.state.showTimeInputs?"hide times (seconds or m:s)":"show times"}
 							</label>
 		const form = 	
 					<div className="form">
