@@ -1,37 +1,43 @@
 
 My Mod Account:
-	-editing libraryofjuggling patterns results in name being empty, so submitting deletes them. Only an issue for my 'mod' account
-	-make sure submitter name isnt changed when i edit a trick
+	-names are empty when editing libraryofjuggling patterns
+	-contributor name is changed to mine
 
--maybe show the popup of the trick that was just added so they can be sure it is how they want it
--on desktop, when popup is howing, would be nice if rootnode gravitated towards open space
+Possible todos:
+	-put line for tutorial in add tricks
+	-on mobile, clicking graph should minimize list
+	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
+	-on desktop, when popup is howing, would be nice if rootnode gravitated towards open space
+	-scrollbars in chrom on desktop look tacky
+
 
 _______________________________________________
-Unrestrict catch inputting from starred tricks:
+Unrestrict catch inputting from starred tricks
 -----------------------------------------------
 PROS:
-	-Would make starred tricks more special, because then they are actually tricks that the user wants set aside, not every trick they want to record catches for
+	-Would make starred tricks more special, because then they are actually tricks that the user wants set aside, not every pattern they want to record catches for
 	-One less click to input catches
 	-Not intuitive that clicking a star will enable the ability to input catches
-	-A starred trick list is far too broad to be usefull(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
+	-Current starred trick list is far too broad to be useful(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
 CONS:
 
 ______________________________________________
 
 
 _______________________________________________
-Increase number of difficulty scores:
+Increase number of difficulty scores
 -----------------------------------------------
 PROS:
 	-There are many more than 10 levels of difficulty tricks in juggling
 	-Nearly all jugglers online who discuss difficulty rating online suggest more than 10
+		(See Difficulty discussion sections below)
 CONS:
 
 ______________________________________________
 
 
 _______________________________________________
-Increase number of difficulty colors:
+Increase number of difficulty colors
 -----------------------------------------------
 PROS:
 	-There are many more than 4 levels(Green, Yellow, Orange, Red) of juggling difficulty,
@@ -39,6 +45,79 @@ PROS:
 CONS:
 
 ______________________________________________
+
+
+_______________________________________________
+Stats
+-----------------------------------------------
+	Potential pattern stats:
+		-# of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+	Potential general stats:
+		-users signed up
+		-users currently online
+		-# of all tricks
+	Potential User Stats:
+		-# of tricks with catches input
+		-# of contributed tricks
+		-# of contributed tricks that other users have catches for
+______________________________________________
+
+
+
+
+_______________________________________________
+Difficult Discussion section:
+-----------------------------------------------
+Difficulty Rating systems:
+	-https://www.libraryofjuggling.com
+		3-6 objects: 				10
+	-https://www.jugglingedge.com/pdf/BenBeeversGuidetoJugglingPatterns.pdf
+		any number of objects: 		100
+	-https://jugglingedge.com/forum.php?ThreadID=2077
+		the Void: 					1 per object
+		7b_wizard: 2-9 objects: 	77
+		Jared Davis: 3-7 object:	75
+		mrawa: 2-7 objects:			6
+
+https://www.reddit.com/r/juggling/comments/c0n1ti/skilldexorg_now_has_pattern_submission/
+________________________________________________
+
+
+
+
+-------------------------------------
+
+the follow and follow are probably the same pattern, can be combined or deleted or something
+
+Stats:
+
+
+Awesome but maybe difficult things:
+	-a way to save videos for offline viewing
+	-Automated instagram uploading if the info(tags, prereqs, ball num..) was in the description
+
+
+Difficulty Coloring Issue:
+	-Ideally the difficulty of tricks that I have not yet attempted should be catered to which tricks I can do, but I havnt yet envisioned an algorithm that can accomplish this. It would would be great to know that I can always look at my app and quickly watch a trick being done that I have never done before and just be able to do it. 
+
+thoughts/ideas:
+	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
+		 bring them in by way of lots of 2 ball tricks so that nearly everyone can start doing things that are not too far beyond their current level. Something about knowing that you always have low hanging fruit so far as new patterns that you can do is very motivational in continuing to learn. It is not just for new jugglers either, it is for jugglers new to certain props, like clubs rings, with a balance, etc..
+	-Different kinds of visualizers that users can toggle between may be nice
+	-Other juggling props may be good to put in just as a radiobutton next to catches since there is
+		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
+	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
+	-If we end up doing some sort of incentivised competition it should come after we devise a method of community voting on best representation of tricks that way people really try to post high quality shit so their video stays as the official demo. Maybe an 'other videos' section that lists all the others for posterity.
+
+
+
+
+to see dark theme:
+	1) in App.css, change  '.headerButton { background-color : white' to black
+	2) in trickGraph.css, change 'border: 1px solid black;' to white
+	*This isn't complete, but enough to see how it would look
+
 
 
 
@@ -62,61 +141,3 @@ ______________________________________________
 			this.popupVideoURL = url
 		}		
 	}
-
-
-
-
-Difficulty Rating systems:
-	-https://www.libraryofjuggling.com
-		3-6 objects: 				10
-	-https://www.jugglingedge.com/pdf/BenBeeversGuidetoJugglingPatterns.pdf
-		any number of objects: 		100
-	-https://jugglingedge.com/forum.php?ThreadID=2077
-		the Void: 					1 per object
-		7b_wizard: 2-9 objects: 	77
-		Jared Davis: 3-7 object:	75
-		mrawa: 2-7 objects:			6
-
-https://www.reddit.com/r/juggling/comments/c0n1ti/skilldexorg_now_has_pattern_submission/
-
-
-
-
-
--------------------------------------
-
-the follow and follow are probably the same pattern, can be combined or deleted or something
-
-Stats:
-	Potential pattern stats:
-		-number of users with records for a given trick
-		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
-	Potential general stats:
-		-users signed up
-		-users currently online
-		-number of all tricks
-		-number of my tricks
-
-Awesome but maybe difficult things:
-	-Automated instagram uploading if the info(tags, prereqs, ball num..) was in the description
-
-
-Difficulty Coloring Issue:
-	-Ideally the difficulty of tricks that I have not yet attempted should be catered to which tricks I can do, but I havnt yet envisioned an algorithm that can accomplish this. It would would be great to know that I can always look at my app and quickly watch a trick being done that I have never done before and just be able to do it. 
-
-thoughts/ideas:
-	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
-		 bring them in by way of lots of 2 ball tricks so that nearly everyone can start doing things that are not too far beyond their current level. Something about knowing that you always have low hanging fruit so far as new patterns that you can do is very motivational in continuing to learn. It is not just for new jugglers either, it is for jugglers new to certain props, like clubs rings, with a balance, etc..
-	-Different kinds of visualizers that users can toggle between may be nice
-	-Other juggling props may be good to put in just as a radiobutton next to catches since there is
-		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
-	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
-	-If we end up doing some sort of incentivised competition it should come after we devise a method of community voting on best representation of tricks that way people really try to post high quality shit so their video stays as the official demo. Maybe an 'other videos' section that lists all the others for posterity.
-
-
-
-
-to see dark theme:
-	1) in App.css, change  '.headerButton { background-color : white' to black
-	2) in trickGraph.css, change 'border: 1px solid black;' to white
-	*This isn't complete, but enough to see how it would look
