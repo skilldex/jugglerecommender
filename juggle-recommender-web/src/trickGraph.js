@@ -45,23 +45,26 @@ class TrickGraph extends Component {
         select: function(event) {
             //if (store.isMobile){uiStore.setListExpanded(false)}
             if (uiStore.selectedTrick===event.nodes[0]){  
-              uiStore.setPopupTrick({
-                'id': event.nodes[0],
-                'x' : event.pointer.DOM.x,
-                'y' : event.pointer.DOM.y+140
-              })
+              const popupTrick = {...store.library[event.nodes[0]]}
+              popupTrick.x = 400
+              popupTrick.y = 400
+              popupTrick.id = event.nodes[0]
+              uiStore.setPopupTrick(popupTrick)
             }else if(event.nodes[0]!=null){
               uiStore.toggleSelectedTrick(event.nodes[0])
               uiStore.setPopupTrick(null)
               uiStore.updateRootTricks()
             }else{
-              uiStore.setPopupTrick({
-                'id': event.nodes[0],
-                'x' : event.pointer.DOM.x,
-                'y' : event.pointer.DOM.y+140
-              })              
+              const popupTrick = {...store.library[event.nodes[0]]}
+              popupTrick.x = 400
+              popupTrick.y = 400
+              popupTrick.id = event.nodes[0]
+              uiStore.setPopupTrick(popupTrick)          
             }
         }, 
+
+
+        
         stabilizationIterationsDone: function(event) {
           console.log("iterations" ,event)
           if(that.graph){

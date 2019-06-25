@@ -234,7 +234,13 @@ class AddTrickForm extends Component {
 			timesAreValid = false
 		}else{
 			endSeconds = utilities.formatSeconds(this.state.videoEndTime)
-		}	
+		}
+		if(utilities.isEmptyOrSpaces(this.state.videoStartTime)){
+			startSeconds = 1
+		}
+		if(utilities.isEmptyOrSpaces(this.state.videoEndTime)){
+			endSeconds = 999999
+		}			
 		if(timesAreValid && startSeconds<endSeconds){
 			this.setState({videoTimeErrorMessage:''})
 		}else{
@@ -262,11 +268,11 @@ class AddTrickForm extends Component {
 			const suffix = "("+this.state.num+"b)"
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
-			let videoStartTime = -1
+			let videoStartTime = 0
 			if (!utilities.isEmptyOrSpaces(this.state.videoStartTime)){
 				videoStartTime = utilities.formatSeconds(this.state.videoStartTime)
 			}
-			let videoEndTime = -1
+			let videoEndTime = 999999
 			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
@@ -283,6 +289,7 @@ class AddTrickForm extends Component {
 				tags : tags,
 				timeUpdated : date.getTime()
 			}
+			console.log('trick',trick)
 			if(uiStore.editingPopupTrick){
 				alert(trick.name+" edited!")
 				trick["timeSubmitted"] = this.state.timeSubmitted

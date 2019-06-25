@@ -25,6 +25,9 @@ class PopupDemo extends Component {
     }
   }
   instagramTimeUpdate = (data) => {
+    console.log('uiStore.popupTrick',uiStore.popupTrick)
+    console.log('timeups',this.popupVideo.currentTime,parseInt(uiStore.popupTrick.videoStartTime))
+
     if(this.popupVideo.currentTime < parseInt(uiStore.popupTrick.videoStartTime)){
       this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
       this.popupVideo.load()
