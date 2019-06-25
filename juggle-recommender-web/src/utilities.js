@@ -32,11 +32,16 @@ class Utilities{
 
   @action formatSeconds=(str)=>{
     str = str.toString()
+    let toReturn
     if (str.includes(":")){
-      return (parseInt(str.split(":")[0])*60)+(parseInt(str.split(":")[1]))
+      toReturn = (parseInt(str.split(":")[0])*60)+(parseInt(str.split(":")[1]))
     }else{
-      return parseInt(str)
+      toReturn = parseInt(str)
     }
+    if (toReturn === 0){
+      toReturn = 1
+    }
+    return toReturn
   }
 
   @action sortObjectByAttribute(data, attr) {

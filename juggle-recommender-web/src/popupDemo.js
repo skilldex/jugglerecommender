@@ -17,8 +17,15 @@ class PopupDemo extends Component {
       this.popupVideo.internalPlayer.seekTo(popupTrick.videoStartTime)
     }
   }
-  instagramEnded = (data) => {
+  instagramPaused = (data) => {
+    console.log('pause')
     if(this.popupVideo.currentTime >= parseInt(uiStore.popupTrick.videoEndTime)){
+      this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
+      this.popupVideo.load()
+    }
+  }
+  instagramTimeUpdate = (data) => {
+    if(this.popupVideo.currentTime < parseInt(uiStore.popupTrick.videoStartTime)){
       this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
       this.popupVideo.load()
     }
@@ -93,7 +100,8 @@ class PopupDemo extends Component {
                           playsInline
                           controls  
                           loop
-                          onPause={this.instagramEnded}
+                          onTimeUpdate={this.instagramTimeUpdate}
+                          onPause={this.instagramPaused}
                           src={store.popupVideoURL}
                         ></video> : null
 
