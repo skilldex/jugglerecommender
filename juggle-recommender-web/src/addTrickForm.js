@@ -376,7 +376,7 @@ class AddTrickForm extends Component {
 		const toggleTimeInputsButton =
 							<label className="toggleShowTimeInputs" 
 								onClick={()=>this.toggleShowTimeInputs()}>
-								{this.state.showTimeInputs?"hide times (seconds or m:s)":"show times"}
+								{this.state.showTimeInputs?"hide times":"show times"}
 							</label>
 		const form = 	
 					<div className="form">
@@ -427,10 +427,17 @@ class AddTrickForm extends Component {
 										onChange={this.handleVideoChange}
 								/>
 								{toggleTimeInputsButton}
+								<span className="timeFormatInfo">
+									{this.state.videoTimeErrorMessage==""&&this.state.showTimeInputs?
+										"Seconds or mm:ss":null
+									}
+								</span>
+								<span className="warning">
+									{this.state.showTimeInputs?this.state.videoTimeErrorMessage:null}
+								</span>
 							</div> 
 	                        {this.state.showTimeInputs?
-	                        	<div className="videoTimeInputsDiv">
-	                        		<span className="warning">{this.state.videoTimeErrorMessage}</span>
+	                        	<div className="videoTimeInputsDiv">	                        		
 									<span className="timeLabel">Start</span>
 									<span className="timeLabel">End</span>
 									<input className="timeInput" 

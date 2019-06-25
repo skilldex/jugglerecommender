@@ -98,5 +98,11 @@ div.ReactTags__tagInputField {
   vertical-align: middle;
   display: block;
 }
+.timeFormatInfo{
+  color : black;
+  font-size: 10px;
+  vertical-align: middle;
+  display: block;
+}
 
 
