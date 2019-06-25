@@ -40,6 +40,7 @@
   display : flex;
   flex-wrap: wrap;
   font-size: 13px;
+  margin-bottom:  10px;
 }
 .popupTag{
   margin-right: 3px;

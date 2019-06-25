@@ -28,6 +28,10 @@ class UIStore {
 	@observable mouseInFilterDiv = false
 	@observable showSortDiv = false
 	@observable showFilterDiv = false
+	@observable showMoreInformation = false
+	@action toggleShowMoreInformation=()=>{
+		this.showMoreInformation = !this.showMoreInformation
+	}
 	@action togglePopupFullScreen=()=>{
     	this.popupFullScreen = !this.popupFullScreen
   	}
@@ -58,6 +62,9 @@ class UIStore {
 		this.popupTimer = null
 	}
 	@action setPopupTrick=(clickedTrick)=>{
+		if(this.showMoreInformation){
+			this.toggleShowMoreInformation()
+		}
 		this.popupTimer = setTimeout(()=>{
 			this.clearPopupTimer()
 		}, 500)
@@ -72,12 +79,6 @@ class UIStore {
 	        }
 	 	}
 	}
-
-	@action setPopupTrickToNull=()=>{
-	 	this.popupTrick = null
-
-	}
-
 	@action toggleCatchEdit=(catches, trickKey)=>{
 
 		this.popupCatchEditable = !this.popupCatchEditable

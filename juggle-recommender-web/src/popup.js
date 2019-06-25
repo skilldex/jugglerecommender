@@ -17,7 +17,6 @@ class Popup extends Component {
     catches : null,
     gifFullScreen : false,
     changingInput : false,
-    showMoreInformation: false,
   }
 
 	onCatchesChange=(e)=>{
@@ -64,7 +63,7 @@ class Popup extends Component {
     uiStore.setMouseInPopupDiv(false)
   }
   toggleShowMoreInformation=()=>{
-    this.setState({showMoreInformation:!this.state.showMoreInformation})
+    uiStore.toggleShowMoreInformation()
   }
 	render() {
 //    document.body.style.overflow = 'hidden'
@@ -131,8 +130,16 @@ class Popup extends Component {
         <img id="closeButton" src={closeIcon} className="closePopupIcon" alt="closeIcon" 
              onClick={()=>{uiStore.setPopupTrick(null)}}
         />
-    const tags =  popupTrick ? popupTrick.tags.sort().map((tag,i)=>{
+
+    const tags =  popupTrick && popupTrick.tags ? popupTrick.tags.sort().map((tag,i)=>{
                     if(i < popupTrick.tags.length-1){
+                      return <span className="popupTag">{tag + ","}</span>
+                    }else{
+                      return <span className="popupTag">{tag}</span>
+                    }
+                  }) : null
+    const related =  popupTrick && popupTrick.related ? popupTrick.related.sort().map((tag,i)=>{
+                    if(i < popupTrick.related.length-1){
                       return <span className="popupTag">{tag + ","}</span>
                     }else{
                       return <span className="popupTag">{tag}</span>
@@ -151,7 +158,7 @@ class Popup extends Component {
                           popupTrick.contributor ? 
                           popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
                         }<br/>
-                        {this.state.showMoreInformation?
+                        {uiStore.showMoreInformation?
                           <div className="moreInfoDiv">                		
                             <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
                             <label className="popupLabel"># of Balls: </label>{popupTrick.num}<br/>
@@ -169,20 +176,20 @@ class Popup extends Component {
                             {popupTrick && popupTrick.tags?
                               <div>
                                 <label className="popupLabel">Tags:</label><br/>
-                                <div className="popupTags">{tags}
-                                </div>
+                                <div className="popupTags">{tags}</div>
                               </div> : null
                             }
                             {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
-                              <label className="popupTags">
-                                Related: {popupTrick.related.join(', ')} 
-                              </label> : null
+                              <div>
+                                <label className="popupLabel">Related:</label><br/>
+                                <div className="popupTags">{related}</div>
+                              </div> : null
                             }
                           </div>:null
                         }
                       </div>   
                         <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
-                          {this.state.showMoreInformation?"(less info)":"(more info)"}
+                          {uiStore.showMoreInformation?"(less info)":"(more info)"}
                         </label>                    
                       <PopupDemo/>                      
                     </div> : null
