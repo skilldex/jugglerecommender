@@ -22,8 +22,8 @@ class AddTrickForm extends Component {
 		num : "",
 		difficulty : "",
 		video : "",
-		videoStartTime: "-1",
-		videoEndTime: "-1",
+		videoStartTime: "",
+		videoEndTime: "",
 		siteSwap : "",
 		prereqs : [],
 		tags : [],
@@ -239,14 +239,22 @@ class AddTrickForm extends Component {
 			const suffix = "("+this.state.num+"b)"
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
+			let videoStartTime = -1
+			if (!utilities.isEmptyOrSpaces(this.state.videoStartTime)){
+				videoStartTime = this.state.videoStartTime
+			}
+			let videoEndTime = -1
+			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
+				videoEndTime = this.state.videoEndTime
+			}
 			const trick = {
 				name : name,
 				num : this.state.num,
 				difficulty : this.state.difficulty,
 				contributor : authStore.user.username, 
 				video : this.state.video,
-				videoStartTime: this.state.videoStartTime,
-				videoEndTime: this.state.videoEndTime,
+				videoStartTime: videoStartTime,
+				videoEndTime: videoEndTime,
 				siteswap :  this.state.siteSwap,
 				prereqs : prereqs,
 				tags : tags,
@@ -298,7 +306,7 @@ class AddTrickForm extends Component {
 	}
 	render (){
 
-		const patternsObj = Object.keys(store.library).map((pattern) => {
+		let patternsObj = Object.keys(store.library).map((pattern) => {
 		  return {
 		  	size: null,
 		    id: pattern,
@@ -389,6 +397,7 @@ class AddTrickForm extends Component {
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
+								{toggleTimeInputsButton}
 							</div> 
 	                        {this.state.showTimeInputs?
 								<div className="videoTimeInputsDiv">
