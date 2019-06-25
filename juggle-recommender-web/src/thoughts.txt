@@ -1,20 +1,29 @@
-Possible todos:
+Most important new todos:
 	-a comments section where anyone can put descriptions/tips/observations
+	-we should show the currently logged in account up top. (see REASONS section)
+
+New todos:
 	-'suggest a change' form so we dont have to use instagram comments or other methods
-	-put line for tutorial in add tricks
-	-on mobile, clicking graph should minimize list
-	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
+	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
+
+Minor new todos:
+	-on mobile, clicking graph where there is no node should minimize list	
 	-on desktop, when popup is showing, would be nice if rootnode gravitated towards open space
+	-put input for tutorial in add tricks
 	-scrollbars in chrom on desktop look tacky
+
+Maybe new todos:
+	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
-
-Tricks need changed:
-	-if machine and factory are the same thing, then we should put (machine) after factory, or vice versa
-
-My Mod Powers:
-	-names are empty when editing libraryofjuggling patterns
-	-contributor name is changed to mine
+_______________________________________________
+REASONS
+-----------------------------------------------
+-we should show the currently logged in account up top.
+	-if you switch tabs to log into a new account, the original tab switches automatically to the new account
+	-someone might do this for another prop account
+	-thinking you are setting catches for one account when you are actually doing so in another is annoying
+_______________________________________________
 
 _______________________________________________
 Increase number of difficulty scores
@@ -27,6 +36,10 @@ PROS:
 	-It will be easier to get accurate averages once we start using user input to determine ratings
 	-It makes more room for 2 ball stuff as well as for 8,9,10,11 instead of just bunching everything up at the ends
 CONS:
+
+
+
+
 
 PROPOSED METHODS:
 	-Add 1 decimal place. It is a smooth transition from what we already have, and creates plenty of levels of difficulty, it is very unlikely that we would end up wanting more later.
@@ -43,6 +56,10 @@ PROS:
 	-Not intuitive that clicking a star will enable the ability to input catches
 	-Current starred trick list is far too broad to be useful(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
 CONS:
+	-current users are getting used to current setup
+
+
+
 
 ______________________________________________
 
@@ -55,6 +72,10 @@ PROS:
 	-There are many more than 4 levels(Green, Yellow, Orange, Red) of juggling difficulty,
 		it would be nice to be able to see various levels at a glance
 CONS:
+	-confusing to remember the difficulty ordering for new users
+
+
+
 
 ______________________________________________
 
@@ -101,7 +122,12 @@ ________________________________________________
 -------------------------------------
 
 
+Tricks need changed:
+	-if machine and factory are the same thing, then we should put (machine) after factory, or vice versa
 
+My Mod Powers:
+	-names are empty when editing libraryofjuggling patterns
+	-contributor name is changed to mine
 
 Awesome but maybe difficult things:
 	-a way to save videos for offline viewing
