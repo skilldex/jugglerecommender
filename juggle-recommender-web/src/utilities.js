@@ -3,6 +3,7 @@ import {action, configure} from "mobx"
 configure({ enforceActions: "always" })
 class Utilities{
   @action isEmptyOrSpaces=(str)=>{
+    str = str.toString()
     let strEmpty = false
     if (str === null){
       strEmpty = true
@@ -18,6 +19,7 @@ class Utilities{
 
   @action isValidTime=(str)=>{
     let isValid = false
+    str = str.toString()
     if (str.match(/^[0-9]+$/) === null){
       if (str.match(/^.+:\d+$/)){
         isValid = true
@@ -29,6 +31,7 @@ class Utilities{
   }
 
   @action formatSeconds=(str)=>{
+    str = str.toString()
     if (str.includes(":")){
       return (parseInt(str.split(":")[0])*60)+(parseInt(str.split(":")[1]))
     }else{
