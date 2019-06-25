@@ -181,7 +181,7 @@ class Store {
         })
 	}
 	@action setTagsSuggestions=(tagsSuggestions)=>{
-		this.tagsSuggestions = tagsSuggestions
+		this.tagsSuggestions = tagsSuggestions.sort()
 		this.presetTags = this.tagsSuggestions.map((tag) => {
 		  return {
 		  	size: null,

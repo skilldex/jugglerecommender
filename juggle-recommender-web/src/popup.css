@@ -10,6 +10,9 @@
   width: 24px;
 
 }
+.moreInfoDiv{
+  width: 100%;
+}
 .popupHeader{  
   margin-top: 35px ;
   margin-bottom: 15px ;
@@ -29,10 +32,17 @@
   display: inline-flex;
   font-weight: bold;
   font-size: 14px;
+  width: 90px; 
 }
 
 .popupTags{
-  float: left;
+  width:100%;
+  display : flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+.popupTag{
+  margin-right: 3px;
 }
 .popupLink{
   padding : 0;
