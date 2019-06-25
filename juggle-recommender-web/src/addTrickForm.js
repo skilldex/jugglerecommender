@@ -32,6 +32,7 @@ class AddTrickForm extends Component {
 		numErrorMessage: "",
 		difficultyErrorMessage: "",
 		videoErrorMessage: "",
+		videoTimeErrorMessage:'',
 		timeSubmitted : "",
 		autoCompletedName : false,
 		trickNameBeingEdited: "",
@@ -218,6 +219,28 @@ class AddTrickForm extends Component {
 				this.setState({videoErrorMessage:''})
 			}
 		}
+		let timesAreValid = true
+		let startSeconds
+		let endSeconds
+		if (!utilities.isEmptyOrSpaces(this.state.videoStartTime) &&
+			!utilities.isValidTime(this.state.videoStartTime)){
+			timesAreValid = false
+		}else{
+			startSeconds = utilities.formatSeconds(this.state.videoStartTime)
+		}
+		
+		if (!utilities.isEmptyOrSpaces(this.state.videoEndTime) &&
+			!utilities.isValidTime(this.state.videoEndTime)){
+			timesAreValid = false
+		}else{
+			endSeconds = utilities.formatSeconds(this.state.videoEndTime)
+		}	
+		if(timesAreValid && startSeconds<endSeconds){
+			this.setState({videoTimeErrorMessage:''})
+		}else{
+			this.setState({videoTimeErrorMessage:'Invalid timestamp. (seconds or m:s)'})
+			this.setState({submitDisabled:true})			
+		}
     }
 
     toggleShowTimeInputs=()=>{
@@ -241,11 +264,11 @@ class AddTrickForm extends Component {
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
 			let videoStartTime = -1
 			if (!utilities.isEmptyOrSpaces(this.state.videoStartTime)){
-				videoStartTime = this.state.videoStartTime
+				videoStartTime = utilities.formatSeconds(this.state.videoStartTime)
 			}
 			let videoEndTime = -1
 			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
-				videoEndTime = this.state.videoEndTime
+				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
 			const trick = {
 				name : name,
@@ -347,7 +370,7 @@ class AddTrickForm extends Component {
 		const toggleTimeInputsButton =
 							<label className="toggleShowTimeInputs" 
 								onClick={()=>this.toggleShowTimeInputs()}>
-								{this.state.showTimeInputs?"(hide times)":"(add times)"}
+								{this.state.showTimeInputs?"hide times":"show times"}
 							</label>
 		const form = 	
 					<div className="form">
@@ -400,7 +423,8 @@ class AddTrickForm extends Component {
 								{toggleTimeInputsButton}
 							</div> 
 	                        {this.state.showTimeInputs?
-								<div className="videoTimeInputsDiv">
+	                        	<div className="videoTimeInputsDiv">
+	                        		<span className="warning">{this.state.videoTimeErrorMessage}</span>
 									<span className="timeLabel">Start</span>
 									<span className="timeLabel">End</span>
 									<input className="timeInput" 

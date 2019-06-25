@@ -16,6 +16,26 @@ class Utilities{
       return str.match(/^[0-9]+$/) === null;
   }
 
+  @action isValidTime=(str)=>{
+    let isValid = false
+    if (str.match(/^[0-9]+$/) === null){
+      if (str.match(/^.+:\d+$/)){
+        isValid = true
+      }
+    }else{
+      isValid = true
+    }
+    return isValid
+  }
+
+  @action formatSeconds=(str)=>{
+    if (str.includes(":")){
+      return (parseInt(str.split(":")[0])*60)+(parseInt(str.split(":")[1]))
+    }else{
+      return parseInt(str)
+    }
+  }
+
   @action sortObjectByAttribute(data, attr) {
     var arr = [];
     for (var prop in data) {

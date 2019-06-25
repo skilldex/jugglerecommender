@@ -70,7 +70,11 @@ div.ReactTags__tagInput {
     display: inline-block;
     font-size: 12px;
 }
-
+div.ReactTags__tagInputField {
+    width: 180px;
+    border-radius: 2px;
+    display: inline-block;
+}
 
 .formButton{
   color : green;
