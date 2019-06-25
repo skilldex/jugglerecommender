@@ -1,16 +1,38 @@
-
-My Mod Account:
-	-names are empty when editing libraryofjuggling patterns
-	-contributor name is changed to mine
-
 Possible todos:
+	-a comments section where anyone can put descriptions/tips/observations
+	-'suggest a change' form so we dont have to use instagram comments or other methods
 	-put line for tutorial in add tricks
 	-on mobile, clicking graph should minimize list
 	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
-	-on desktop, when popup is howing, would be nice if rootnode gravitated towards open space
+	-on desktop, when popup is showing, would be nice if rootnode gravitated towards open space
 	-scrollbars in chrom on desktop look tacky
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
+
+Tricks need changed:
+	-if machine and factory are the same thing, then we should put (machine) after factory, or vice versa
+
+My Mod Powers:
+	-names are empty when editing libraryofjuggling patterns
+	-contributor name is changed to mine
+
+_______________________________________________
+Increase number of difficulty scores
+-----------------------------------------------
+PROS:
+	-There are many more than 10 levels of difficulty tricks in juggling
+	-When scoring tricks, it is hard to remember where cutoffs are between difficulty ratings since we have to have such a wide range of tricks represented by each number
+	-Nearly all jugglers online who discuss difficulty rating online suggest more than 10
+		(See Difficulty online discussion sections below)
+	-It will be easier to get accurate averages once we start using user input to determine ratings
+	-It makes more room for 2 ball stuff as well as for 8,9,10,11 instead of just bunching everything up at the ends
+CONS:
+
+PROPOSED METHODS:
+	-Add 1 decimal place. It is a smooth transition from what we already have, and creates plenty of levels of difficulty, it is very unlikely that we would end up wanting more later.
+
+______________________________________________
+
 
 _______________________________________________
 Unrestrict catch inputting from starred tricks
@@ -24,17 +46,6 @@ CONS:
 
 ______________________________________________
 
-
-_______________________________________________
-Increase number of difficulty scores
------------------------------------------------
-PROS:
-	-There are many more than 10 levels of difficulty tricks in juggling
-	-Nearly all jugglers online who discuss difficulty rating online suggest more than 10
-		(See Difficulty discussion sections below)
-CONS:
-
-______________________________________________
 
 
 _______________________________________________
@@ -68,7 +79,7 @@ ______________________________________________
 
 
 _______________________________________________
-Difficult Discussion section:
+Difficult online discussion section:
 -----------------------------------------------
 Difficulty Rating systems:
 	-https://www.libraryofjuggling.com
@@ -89,9 +100,7 @@ ________________________________________________
 
 -------------------------------------
 
-the follow and follow are probably the same pattern, can be combined or deleted or something
 
-Stats:
 
 
 Awesome but maybe difficult things:

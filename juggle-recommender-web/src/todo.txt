@@ -3,7 +3,7 @@ v 1.4
 	- add related relationship
 		*how to connect on graph?
 	- add related filter
-	- slow/reverse gif
+	- slow/reverse gif (video would be more useful since gifs are now minority)
 	-a log in firebase for a tricks edited by noncontributor
 	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	- A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
@@ -17,7 +17,13 @@ v 1.4
 	yt === ? start=sec&end=sec;
 
 Bugs:
+	-crashes if you have  apopup open when someone elses edits the trick
+	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
 	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something
+
+Arrangment Ideas:
+	Star goes on top popup bar
+	Catches gets disconnected from star
 
 Minor:
 	-thin lines on sort button
