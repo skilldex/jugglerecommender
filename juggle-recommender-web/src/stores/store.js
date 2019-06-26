@@ -177,7 +177,6 @@ class Store {
 	}
 	@action setLibrary=(library)=>{
 		this.library = library
-		console.log('Pattern count: ',this.ObjectLength(library))
 		//TODO clean this up
 		uiStore.updateRootTricks() 
 		uiStore.resetSelectedTrick()
@@ -185,7 +184,6 @@ class Store {
 	}
 
 	@action initializeTags=()=>{
-		console.log('initializeTags')
 		let tagRef = firebase.database().ref('tags/')
         tagRef.set(TAGS);
 	}
