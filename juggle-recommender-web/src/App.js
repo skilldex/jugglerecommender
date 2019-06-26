@@ -72,7 +72,7 @@ class App extends Component {
 		store.getSavedTricks()	
 		Modal.setAppElement(this.el);
 		firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
+          if (user && !authStore.user) {
             console.log("user auth changed", user)
             authStore.setUsername(user.email)
           } 
@@ -124,6 +124,9 @@ class App extends Component {
 	        }
 	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
 	            uiStore.setShowFilterDiv(false)
+	        }
+	        if (event.target.localName==="canvas" && store.isMobile){
+	        	uiStore.setListExpanded(false)
 	        }
 	    }
      

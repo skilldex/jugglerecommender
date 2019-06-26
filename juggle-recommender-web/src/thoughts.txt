@@ -1,22 +1,16 @@
 
-Most important new todos:
-	-a comments section where anyone can put descriptions/tips/observations
-	-we should show the currently logged in account up top. (see REASONS section, #1)
-		-'suggest a change' form so we dont have to use instagram comments or other methods
+
 
 New todos:
-	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
-	-Make text size/maybe even a second line be based on the size of the trick name so all names
-		fit. Or maybe most names.
-	-Tag's like 'contortion' could automatically add 'body-throw', another exampleis 'underarm-catch' automatically adding 'crossed-arms'
+
+	-Tag's like 'contortion' could automatically add 'body-throw', another examples 'underarm-catch' automatically adding 'crossed-arms'
+		-possibly posed as suggested
 	-A way to automatically add tags retrospectively based on pattern name, for instance, give every pattern with machine in the name the tag 'machine'
 		-an alternative to this is if tags also worked as search querries, for instance if the 'machine' tag is chosen it list all patterns tagged 'machine' or with 'machine' in their name
+	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
 
-Minor new todos:
-	-on mobile, clicking graph where there is no node should minimize list	
-	-on desktop, when popup is showing, would be nice if rootnode gravitated towards open space
-	-put input for tutorial in add tricks
-	-scrollbars in chrome on desktop look tacky
+
+
 
 Maybe new todos:
 	-maybe show the popup of the trick that was just added so they can be sure it is how they want it

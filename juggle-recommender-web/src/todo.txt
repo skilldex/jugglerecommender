@@ -1,21 +1,25 @@
 v 1.4
-	-make popups be draggable divs 
 	-add related relationship
-		*how to connect on graph? line with no arrow?
+		-make input in add trick
+		-dashed line on graph
 	-add related filter
-	-slow/reverse gif (video would be more useful since gifs are now minority)
-	-A log in firebase for a tricks edited by noncontributor
-	-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
-	-A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
-		*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
-	-color swatches to indicate difficulty instead of entire background
-	-resizable div
+		-make toggle that is "show related in addition to prereqs/depends"
+	-make demonstartion type filter
+		-all, user video or juggling lab
+	-make new file called migration scripts
+	-an expandable explanation
+	-on mobile, clicking graph where there is no node should minimize list	
+	-put input for tutorial in add tricks
+	-add sort type that is random
+	-scrollbars in chrome on desktop look tacky
 
 =========
+Bug:
+	open filter should close popup
 
 Bugs:
 	-Sometimes when I edit a tricks catches and unenable by clicking the popup, it puts an old number of catches in, not what I just edited. It acts normal if i click the pencil.
-	-crashes if you have a popup open when someone elses edits the trick
+		-figure out how to reproduce this
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
 	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something
 
@@ -25,8 +29,21 @@ Arrangment Ideas:
 Minor:
 	-thin lines on sort button
 
--edit profile(maybe beyond 1.1)
 
+-'suggest a change' form so we dont have to use instagram comments or other methods
+	-email through firebase or setup webtask
+	https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
+	-on desktop, when popup is showing, would be nice if rootnode gravitated towards open space
+		-shrink graph to end at popup
+-Google cloud function for changing database to make all 3ball tricks have (3b) after their names
+-we should show the currently logged in account up top. (see REASONS section, #1)	
+-A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
+	*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
+-slow/reverse gif (video would be more useful since gifs are now minority)
+-edit profile(maybe beyond 1.1)
+	-color swatches to indicate difficulty instead of entire background
+-put ingstagram icon on list
+-allow contributors to upload pics
 -make multi-termed search
 -filter by num balls 2, 6, 7 or range/even odd
 -allow users to add new tags

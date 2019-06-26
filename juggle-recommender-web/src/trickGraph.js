@@ -43,13 +43,14 @@ class TrickGraph extends Component {
       }
       const events = {
         select: function(event) {
-            //if (store.isMobile){uiStore.setListExpanded(false)}
+            if(store.isMobile){uiStore.setListExpanded(false)}
             if (uiStore.selectedTrick===event.nodes[0]){  
               const popupTrick = {...store.library[event.nodes[0]]}
               popupTrick.x = 400
               popupTrick.y = 400
               popupTrick.id = event.nodes[0]
               uiStore.setPopupTrick(popupTrick)
+              if (store.isMobile){uiStore.setListExpanded(true)}
             }else if(event.nodes[0]!=null){
               uiStore.toggleSelectedTrick(event.nodes[0])
               uiStore.setPopupTrick(null)
@@ -59,12 +60,12 @@ class TrickGraph extends Component {
               popupTrick.x = 400
               popupTrick.y = 400
               popupTrick.id = event.nodes[0]
-              uiStore.setPopupTrick(popupTrick)          
+              uiStore.setPopupTrick(popupTrick)   
+              if (store.isMobile){uiStore.setListExpanded(true)}       
             }
         }, 
 
 
-        
         stabilizationIterationsDone: function(event) {
           console.log("iterations" ,event)
           if(that.graph){
