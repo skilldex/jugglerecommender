@@ -80,15 +80,16 @@ class GraphStore {
 	 	if(uiStore.selectedList === "myTricks" ){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
-		 			tempNodes[trickKey] = {
-		 				id: trickKey,
-		 				label: "★" + rootTrick.name,
-		 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3, trickKey),
-		 				size : this.getInvolvedNodeSize(3),
-		 				font : this.getInvolvedNodeFont(3),
-		 				mass : this.getInvolvedNodeMass(3),
-		 				borderWidth : this.getInvolvedNodeBorderWidth(3)
-		 			}		 		
+	 			if(!rootTrick){return}
+	 			tempNodes[trickKey] = {
+	 				id: trickKey,
+	 				label: "★" + rootTrick.name,
+	 				color : this.getInvolvedNodeColor(rootTrick.difficulty, 3, trickKey),
+	 				size : this.getInvolvedNodeSize(3),
+	 				font : this.getInvolvedNodeFont(3),
+	 				mass : this.getInvolvedNodeMass(3),
+	 				borderWidth : this.getInvolvedNodeBorderWidth(3)
+	 			}		 		
 		 		if(rootTrick.prereqs){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
@@ -121,6 +122,7 @@ class GraphStore {
 	 	}else if(uiStore.selectedList === "allTricks"){
 	 		rootTricks.forEach((trickKey)=>{
 	 			const rootTrick = store.library[trickKey]
+	 			if(!rootTrick){return}
 	 			const involvedRoot = store.myTricks[trickKey] || 
 	 							uiStore.selectedTrick === trickKey ? 3 : 0
 
@@ -142,7 +144,7 @@ class GraphStore {
 		 				mass : this.getInvolvedNodeMass(involvedRoot),
 		 				borderWidth : this.getInvolvedNodeBorderWidth(involvedRoot)
 		 			}	 			
-		 		}	//console.log(rootTrick)
+		 		}	
 	 			if(rootTrick.prereqs){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
