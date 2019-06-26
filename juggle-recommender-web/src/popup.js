@@ -152,7 +152,6 @@ class Popup extends Component {
     let tutorialSite
     //TODO could be replaced with regex that gets everything between first two .s
     if (popupTrick && popupTrick.url && popupTrick.url.includes('.')){
-      console.log('popupTrick.url2',popupTrick.url)
       tutorialSite = popupTrick.url.split('.')[1]
       if (tutorialSite.includes('.')){
         tutorialSite = tutorialSite.split('.')[0]

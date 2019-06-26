@@ -9,7 +9,6 @@ v 1.4
 	-make new file called migration scripts
 	-add sort type that is random
 	-scrollbars in chrome on desktop look tacky
-	-kill our fullscreen button for videos
 
 =========
 

@@ -240,6 +240,8 @@ class UIStore {
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithSubmitted, 'timeSubmitted');
+		}else if (filterStore.sortType === 'random'){
+			sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'random');
 		}
 		if (filterStore.sortType === 'timeSubmitted'){
 			if(filterStore.sortDirection==='ascending'){

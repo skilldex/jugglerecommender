@@ -51,7 +51,11 @@ class Utilities{
         if (data.hasOwnProperty(prop)) {
             var obj = {};
             obj[prop] = data[prop];
-            obj.tempSortName = data[prop][attr];
+            if (attr === "random"){
+              obj.tempSortName = Math.floor((Math.random() * 1000000));
+            }else{
+              obj.tempSortName = data[prop][attr];
+            }
             arr.push(obj);
         }
     }
