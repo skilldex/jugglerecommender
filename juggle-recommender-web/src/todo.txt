@@ -14,6 +14,7 @@ v 1.4
 =========
 
 Bugs:
+	-Sometimes when I edit a tricks catches and unenable by clicking the popup, it puts an old number of catches in, not what I just edited. It acts normal if i click the pencil.
 	-crashes if you have a popup open when someone elses edits the trick
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
 	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something

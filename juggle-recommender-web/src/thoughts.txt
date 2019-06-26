@@ -1,9 +1,10 @@
+
 Most important new todos:
 	-a comments section where anyone can put descriptions/tips/observations
 	-we should show the currently logged in account up top. (see REASONS section, #1)
+		-'suggest a change' form so we dont have to use instagram comments or other methods
 
 New todos:
-	-'suggest a change' form so we dont have to use instagram comments or other methods
 	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
 	-Make text size/maybe even a second line be based on the size of the trick name so all names
 		fit. Or maybe most names.
@@ -21,6 +22,14 @@ Maybe new todos:
 	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
+
+Database:
+4440522 needs new name
+5344 needs a new name
+36 catches of 753
+
+Add contortion tag to all contrition tricks
+
 
 _______________________________________________
 REASONS (for some stuff above)
