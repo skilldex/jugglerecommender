@@ -149,6 +149,15 @@ class Popup extends Component {
                       return <span className="popupTag">{tag}</span>
                     }
                   }) : null
+    let tutorialSite
+    //TODO could be replaced with regex that gets everything between first two .s
+    if (popupTrick && popupTrick.url && popupTrick.url.includes('.')){
+      console.log('popupTrick.url2',popupTrick.url)
+      tutorialSite = popupTrick.url.split('.')[1]
+      if (tutorialSite.includes('.')){
+        tutorialSite = tutorialSite.split('.')[0]
+      }
+    }
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div className="popupDiv">
                       {deleteTrickButton}
@@ -175,7 +184,7 @@ class Popup extends Component {
                               <label className="popupLabel">Tutorial: </label> : null
                             }
                             {popupTrick && popupTrick.url ?
-                              <a target="_" href={popupTrick.url}>Library Of Juggling</a> : null
+                              <a target="_" href={popupTrick.url}>{tutorialSite}</a> : null
                             } 
                             {popupTrick && popupTrick.tags?
                               <div>

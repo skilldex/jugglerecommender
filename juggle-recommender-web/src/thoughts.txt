@@ -1,8 +1,5 @@
-
-
-
 New todos:
-
+	-selecting a node on graph should autoscroll to the selected trick on the list
 	-Tag's like 'contortion' could automatically add 'body-throw', another examples 'underarm-catch' automatically adding 'crossed-arms'
 		-possibly posed as suggested
 	-A way to automatically add tags retrospectively based on pattern name, for instance, give every pattern with machine in the name the tag 'machine'

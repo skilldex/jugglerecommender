@@ -21,16 +21,19 @@ class AddTrickForm extends Component {
 		name : "",
 		num : "",
 		difficulty : "",
+		url : "",
 		video : "",
 		videoStartTime: "",
 		videoEndTime: "",
 		siteSwap : "",
 		prereqs : [],
+		relateds : [],
 		tags : [],
 		submitDisabled : true,
 		nameErrorMessage: "",
 		numErrorMessage: "",
 		difficultyErrorMessage: "",
+		tutorialErrorMessage: "",
 		videoErrorMessage: "",
 		videoTimeErrorMessage:'',
 		timeSubmitted : "",
@@ -62,6 +65,15 @@ class AddTrickForm extends Component {
 					}
 				})	
 			}
+			//convert prereq strings to tag objects
+			if(trick.relateds){
+				trick.relateds = trick.relateds.map((related)=>{
+					return {
+						id : related,
+						text : related
+					}
+				})	
+			}
 			this.setState({...trick})
 		}
 		if(uiStore.editingPopupTrick){
@@ -84,6 +96,12 @@ class AddTrickForm extends Component {
 	handleDiffChange=(e)=>{
 		this.setState({
 			difficulty:e.target.value
+		})
+		this.checkIfFormIsSubmittable()
+	}
+	handleTutorialChange=(e)=>{
+		this.setState({
+			url:e.target.value
 		})
 		this.checkIfFormIsSubmittable()
 	}
@@ -111,18 +129,6 @@ class AddTrickForm extends Component {
 		})
 		this.checkIfFormIsSubmittable()
 	}
-	handlePrereqAddition=(tag)=> {
-		if (store.library[tag.id]){
-	        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
-	        this.checkIfFormIsSubmittable()
-	    }
-    }
-    handlePrereqDelete=(i)=> {
-        const { prereqs } = this.state;
-        this.setState({
-         prereqs: prereqs.filter((tag, index) => index !== i),
-        });
-    }
     handleTagAddition=(tag)=> {
     	if (store.tagsSuggestions.includes(tag.id)){
 	        this.setState(state => ({ tags: [...state.tags, tag] }));
@@ -135,7 +141,30 @@ class AddTrickForm extends Component {
          tags: tags.filter((tag, index) => index !== i),
         });
     }
-
+	handlePrereqAddition=(tag)=> {
+		if (store.library[tag.id]){
+	        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
+	        this.checkIfFormIsSubmittable()
+	    }
+    }
+    handlePrereqDelete=(i)=> {
+        const { prereqs } = this.state;
+        this.setState({
+         prereqs: prereqs.filter((tag, index) => index !== i),
+        });
+    }
+	handleRelatedAddition=(tag)=> {
+		if (store.library[tag.id]){
+	        this.setState(state => ({ relateds: [...state.relateds, tag] }));
+	        this.checkIfFormIsSubmittable()
+	    }
+    }
+    handleRelatedDelete=(i)=> {
+        const { relateds } = this.state;
+        this.setState({
+         relateds: relateds.filter((tag, index) => index !== i),
+        });
+    }
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
@@ -198,6 +227,16 @@ class AddTrickForm extends Component {
 				this.setState({numErrorMessage:''})
 			}    		
     	}
+    	if (!utilities.isEmptyOrSpaces(this.state.url)){
+    		console.log('not empty')
+			if(this.state.url.includes('http') && 
+				this.state.url.includes('.')){
+					this.setState({tutorialErrorMessage:''})
+				}else{
+					this.setState({tutorialErrorMessage:'Not a valid tutorial URL.'})
+					this.setState({submitDisabled:true})					
+				}
+		}
     	if (utilities.isEmptyOrSpaces(this.state.difficulty)){
     		this.setState({submitDisabled:true})
     	}else{
@@ -264,7 +303,10 @@ class AddTrickForm extends Component {
 			});
 			var prereqs = this.state.prereqs.map(function(item) {
 				return item['id'];
-			});		
+			});
+			var relateds = this.state.relateds.map(function(item) {
+				return item['id'];
+			});				
 			const suffix = "("+this.state.num+"b)"
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
@@ -276,16 +318,22 @@ class AddTrickForm extends Component {
 			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
+			let tutorialURL = this.state.url
+			if (!this.state.url.includes('https://')){
+				tutorialURL = 'https://' + tutorialURL
+			}
 			const trick = {
 				name : name,
 				num : this.state.num,
 				difficulty : this.state.difficulty,
+				url : tutorialURL,
 				contributor : authStore.user.username, 
 				video : this.state.video,
 				videoStartTime: videoStartTime,
 				videoEndTime: videoEndTime,
 				siteswap :  this.state.siteSwap,
 				prereqs : prereqs,
+				relateds : relateds,
 				tags : tags,
 				timeUpdated : date.getTime()
 			}
@@ -311,9 +359,11 @@ class AddTrickForm extends Component {
 		this.setState({name : ""})
 		this.setState({num : ""})
 		this.setState({difficulty : ""})
+		this.setState({url : ""})
 		this.setState({video : ""})
 		this.setState({siteSwap : ""})
 		this.setState({prereqs : []})
+		this.setState({relateds : []})
 		this.setState({tags : []})
 		this.setState({submitDisabled : false})
 		this.setState({numErrorMessage : ""})
@@ -342,19 +392,6 @@ class AddTrickForm extends Component {
 		    text: store.library[pattern].name,
 		  }
 		})
-
-		const prereqsInput = <ReactTags
-					          autofocus = {false}
-					          placeholder = ''
-					          inputFieldPosition="bottom"
-					          tags={this.state.prereqs}
-					          minQueryLength={1}
-					          suggestions={patternsObj}
-					          delimiters={delimiters}
-					          handleDelete={this.handlePrereqDelete}
-					          handleAddition={this.handlePrereqAddition}
-					          handleTagClick={this.handlePrereqClick}/>
-
 		const tagInput = <ReactTags
 					          autofocus = {false}
 					          placeholder = ''
@@ -367,6 +404,28 @@ class AddTrickForm extends Component {
 					          handleAddition={this.handleTagAddition}
 					          handleTagClick={this.handleTagClick}
 					     />
+		const prereqsInput = <ReactTags
+					          autofocus = {false}
+					          placeholder = ''
+					          inputFieldPosition="bottom"
+					          tags={this.state.prereqs}
+					          minQueryLength={1}
+					          suggestions={patternsObj}
+					          delimiters={delimiters}
+					          handleDelete={this.handlePrereqDelete}
+					          handleAddition={this.handlePrereqAddition}
+					          handleTagClick={this.handlePrereqClick}/>
+		const relatedsInput = <ReactTags
+					          autofocus = {false}
+					          placeholder = ''
+					          inputFieldPosition="bottom"
+					          tags={this.state.relateds}
+					          minQueryLength={1}
+					          suggestions={patternsObj}
+					          delimiters={delimiters}
+					          handleDelete={this.handleRelatedDelete}
+					          handleAddition={this.handleRelatedAddition}
+					          handleTagClick={this.handleRelatedClick}/>
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
@@ -398,7 +457,9 @@ class AddTrickForm extends Component {
 							<div className="inputContainer">
 								<span className="inputLabel">Prereqs</span>{prereqsInput}
 							</div>
-
+							<div className="inputContainer">
+								<span className="inputLabel">Related</span>{relatedsInput}
+							</div>
 							<div className="inputContainer">
 								<span className="redText">*</span>
 								<span className="inputLabel">Number of balls</span>
@@ -416,6 +477,14 @@ class AddTrickForm extends Component {
 										value={this.state.difficulty} 
 										onBlur={this.handleDiffChange}
 										onChange={this.handleDiffChange}/>
+							</div>
+							<div className="inputContainer">
+								<span className="inputLabel">Tutorial URL</span>
+								<span className="warning">{this.state.tutorialErrorMessage}</span>
+								<input className="formInputs" 
+										value={this.state.url} 
+										onBlur={this.handleTutorialChange}
+										onChange={this.handleTutorialChange}/>
 							</div>
 							<div className="inputContainer">
 								<span className="redText">*</span>
