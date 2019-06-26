@@ -88,6 +88,11 @@ class Popup extends Component {
    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]
+    if (popupTrickKey && !popupTrick){
+        alert("Sorry, this pattern has been deleted or renamed.")
+        uiStore.setPopupTrick(null)
+        return(<div/>)
+    }
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
       <label className="popupLabel">Catches: </label>
