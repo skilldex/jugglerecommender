@@ -1,25 +1,31 @@
 Most important new todos:
 	-a comments section where anyone can put descriptions/tips/observations
-	-we should show the currently logged in account up top. (see REASONS section)
+	-we should show the currently logged in account up top. (see REASONS section, #1)
 
 New todos:
 	-'suggest a change' form so we dont have to use instagram comments or other methods
 	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
+	-Make text size/maybe even a second line be based on the size of the trick name so all names
+		fit. Or maybe most names.
+	-Tag's like 'contortion' could automatically add 'body-throw', another exampleis 'underarm-catch' automatically adding 'crossed-arms'
+	-A way to automatically add tags retrospectively based on pattern name, for instance, give every pattern with machine in the name the tag 'machine'
+		-an alternative to this is if tags also worked as search querries, for instance if the 'machine' tag is chosen it list all patterns tagged 'machine' or with 'machine' in their name
 
 Minor new todos:
 	-on mobile, clicking graph where there is no node should minimize list	
 	-on desktop, when popup is showing, would be nice if rootnode gravitated towards open space
 	-put input for tutorial in add tricks
-	-scrollbars in chrom on desktop look tacky
+	-scrollbars in chrome on desktop look tacky
 
 Maybe new todos:
 	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
+
 _______________________________________________
-REASONS
+REASONS (for some stuff above)
 -----------------------------------------------
--we should show the currently logged in account up top.
+1)We should show the currently logged in account up top.
 	-if you switch tabs to log into a new account, the original tab switches automatically to the new account
 	-someone might do this for another prop account
 	-thinking you are setting catches for one account when you are actually doing so in another is annoying
@@ -56,10 +62,8 @@ PROS:
 	-Not intuitive that clicking a star will enable the ability to input catches
 	-Current starred trick list is far too broad to be useful(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
 CONS:
+	-scrolling through list would no longer give visual indication of which tricks have catches recorded
 	-current users are getting used to current setup
-
-
-
 
 ______________________________________________
 
@@ -73,7 +77,6 @@ PROS:
 		it would be nice to be able to see various levels at a glance
 CONS:
 	-confusing to remember the difficulty ordering for new users
-
 
 
 
