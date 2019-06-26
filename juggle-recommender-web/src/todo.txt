@@ -7,7 +7,6 @@ v 1.4
 	-make demonstartion type filter
 		-all, user video or juggling lab
 	-make new file called migration scripts
-	-add sort type that is random
 	-scrollbars in chrome on desktop look tacky
 
 =========
@@ -18,8 +17,6 @@ Bugs:
 		-figure out how to reproduce this
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
 	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something
-
-
 
 
 Arrangment Ideas:

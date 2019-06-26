@@ -10,6 +10,8 @@ import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
 import closeIcon from './images/closeIcon.svg'
+import Toggle from 'react-toggle'
+
 
 const KeyCodes = {
   comma: 188,
@@ -212,6 +214,17 @@ class Filter extends Component {
 											onChange={(e)=>this.handleMaxCatchesChange(e)}
 									/>
 								</div>
+		const relatedToggle = 	<div>
+									<div>
+										<h3 className="filterHeader">Related in Graph</h3>
+									</div>
+									<Toggle
+										className = "relatedToggle"
+										defaultChecked={this.state.tofuIsReady}
+										icons={false}
+										onChange={this.handleTofuChange} 
+									/>
+								</div>
 		return (
 			<div className="filterDiv"
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
@@ -229,6 +242,8 @@ class Filter extends Component {
 				{difficultySection}
 				<ColoredLine/>
 				{catchesSection}
+				<ColoredLine/>
+				{relatedToggle}
 			</div>
 		)
 	  }
