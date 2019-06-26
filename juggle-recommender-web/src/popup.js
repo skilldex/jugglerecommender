@@ -91,7 +91,7 @@ class Popup extends Component {
     if (popupTrickKey && !popupTrick){
         alert("Sorry, this pattern has been deleted or renamed.")
         uiStore.setPopupTrick(null)
-        return(<div/>)
+        uiStore.selectTopTrick()
     }
     const catchesSection = store.myTricks[popupTrickKey] ?
     <div>
