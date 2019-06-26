@@ -51,6 +51,13 @@ class PopupDemo extends Component {
                              className="instagramLogo"
                              src={instagramLogoIcon}
                           />
+    const fullScreenButton = popupTrick && popupTrick.gifUrl?
+                                <img 
+                                  src={fullScreenIcon} 
+                                  className="fullScreenIcon" 
+                                  alt="" 
+                                  onClick={()=>{uiStore.togglePopupFullScreen()}} 
+                                /> : null
     let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
@@ -105,12 +112,7 @@ class PopupDemo extends Component {
     const outerDiv = uiStore.popupFullScreen ? "fullScreenOuterDiv" : "outerDiv"
 		return(
       			<div className={outerDiv}>
-              <img 
-                src={fullScreenIcon} 
-                className="fullScreenIcon" 
-                alt="" 
-                onClick={()=>{uiStore.togglePopupFullScreen()}} 
-              />
+              {fullScreenButton}
               {igHeader}
               {video}
               {gifSection}

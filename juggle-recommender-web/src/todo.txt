@@ -1,6 +1,5 @@
 v 1.4
 	-an expandable explanation
-	-put input for tutorial in add tricks
 	-add related relationship
 		-dashed line on graph
 	-add related filter
@@ -21,6 +20,9 @@ Bugs:
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
 	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something
 
+
+
+
 Arrangment Ideas:
 	Star goes on top popup bar
 
@@ -28,6 +30,8 @@ Minor:
 	-thin lines on sort button
 
 Restyling:
+	-if related are shown in graph, should we remove them from popup?
+		-if not, then should we add prereqs and dependents to popup?
 	-clicking search or anything else on top bar closes popup, but leaves the trick selected in the list
 	-put ingstagram icon on list
 	-allow contributors to upload pics
