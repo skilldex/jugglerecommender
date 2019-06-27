@@ -2,11 +2,6 @@ v 1.4
 	-an expandable explanation
 	-add related relationship
 		-dashed line on graph
-	-add related filter
-		-make toggle that is "show related in addition to prereqs/depends"
-	-make demonstartion type filter
-		-all, user video or juggling lab
-	-make new file called migration scripts
 	-scrollbars in chrome on desktop look tacky
 
 =========
@@ -18,9 +13,11 @@ Bugs:
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
 	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something
 
-
-Arrangment Ideas:
-	Star goes on top popup bar
+Stuff To Go Into Migration Scripts:
+	-initialize library
+	-#b moved to begining of name from end (#b)
+	-tags added based on name
+	-tags changed
 
 Minor:
 	-thin lines on sort button
@@ -33,6 +30,9 @@ Restyling:
 	-allow contributors to upload pics
 	-we should show the currently logged in account up top.
 	-slow/reverse gif (video would be more useful since gifs are now minority)
+
+
+
 
 
 -'suggest a change' form so we dont have to use instagram comments or other methods

@@ -6,9 +6,6 @@ New todos:
 		-an alternative to this is if tags also worked as search querries, for instance if the 'machine' tag is chosen it list all patterns tagged 'machine' or with 'machine' in their name
 	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
 
-
-
-
 Maybe new todos:
 	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph

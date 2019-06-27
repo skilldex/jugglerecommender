@@ -34,12 +34,15 @@ class AddTrickForm extends Component {
 		numErrorMessage: "",
 		difficultyErrorMessage: "",
 		tutorialErrorMessage: "",
+		siteswapErrorMessage: "",
 		videoErrorMessage: "",
 		videoTimeErrorMessage:'',
 		timeSubmitted : "",
 		autoCompletedName : false,
 		trickNameBeingEdited: "",
-		showTimeInputs: false
+		showTimeInputs: false,
+		text: '',
+        height: 0
 	}
 
 	componentDidMount=()=>{
@@ -87,6 +90,13 @@ class AddTrickForm extends Component {
 		})
 		this.checkIfFormIsSubmittable()
 	}
+	handleExplanationChange=(e)=>{
+		this.setState({
+			text:e.target.value,
+		})	
+		this.checkIfFormIsSubmittable()	
+	}
+
 	handleNumChange=(e)=>{
 		this.setState({
 			num:e.target.value
@@ -165,6 +175,7 @@ class AddTrickForm extends Component {
          relateds: relateds.filter((tag, index) => index !== i),
         });
     }
+
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
@@ -228,7 +239,6 @@ class AddTrickForm extends Component {
 			}    		
     	}
     	if (!utilities.isEmptyOrSpaces(this.state.url)){
-    		console.log('not empty')
 			if(this.state.url.includes('http') && 
 				this.state.url.includes('.')){
 					this.setState({tutorialErrorMessage:''})
@@ -242,7 +252,7 @@ class AddTrickForm extends Component {
     	}else{
     		if (utilities.isNotOnlyDigits(this.state.difficulty) ||
     			(this.state.difficulty<1 || this.state.difficulty>10)){    			
-					this.setState({difficultyErrorMessage:'must be a number (1-10).'})
+					this.setState({difficultyErrorMessage:'must be (1-10).'})
 					this.setState({submitDisabled:true})
 				}else{
 					this.setState({difficultyErrorMessage:''})				 
@@ -383,6 +393,7 @@ class AddTrickForm extends Component {
 			})
 	    }
 	}
+
 	render (){
 
 		let patternsObj = Object.keys(store.library).map((pattern) => {
@@ -393,6 +404,7 @@ class AddTrickForm extends Component {
 		  }
 		})
 		const tagInput = <ReactTags
+							  classNames={{tagInputField: 'myReactTags',}}
 					          autofocus = {false}
 					          placeholder = ''
 					          inputFieldPosition="bottom"
@@ -405,6 +417,7 @@ class AddTrickForm extends Component {
 					          handleTagClick={this.handleTagClick}
 					     />
 		const prereqsInput = <ReactTags
+		                      classNames={{tagInputField: 'myReactTags',}}
 					          autofocus = {false}
 					          placeholder = ''
 					          inputFieldPosition="bottom"
@@ -416,7 +429,9 @@ class AddTrickForm extends Component {
 					          handleAddition={this.handlePrereqAddition}
 					          handleTagClick={this.handlePrereqClick}/>
 		const relatedsInput = <ReactTags
+							  classNames={{tagInputField: 'myReactTags',}}
 					          autofocus = {false}
+					          style = {{width:"300px"}}
 					          placeholder = ''
 					          inputFieldPosition="bottom"
 					          tags={this.state.relateds}
@@ -427,6 +442,7 @@ class AddTrickForm extends Component {
 					          handleAddition={this.handleRelatedAddition}
 					          handleTagClick={this.handleRelatedClick}/>
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
+		const explanationInput = <textarea className="textarea"/>
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
 				setAutoCompletedName={this.setAutoCompletedName} 
@@ -451,6 +467,66 @@ class AddTrickForm extends Component {
 										onChange={this.handleNameChange}/>
 								{autoComplete}
 							</div>
+							<div className="videoInputContainer">
+								<span className="redText">*</span>
+								<span className="inputLabel">Instagram or Youtube Video</span>
+								<span className="warning">{this.state.videoErrorMessage}</span>
+								<input className="formInputs" 
+										value={this.state.video} 
+										onBlur={this.handleVideoChange}
+										onChange={this.handleVideoChange}
+								/>
+								{toggleTimeInputsButton}
+								<span className="warning">
+									{this.state.showTimeInputs?this.state.videoTimeErrorMessage:null}
+								</span>
+							</div> 
+	                        {this.state.showTimeInputs?
+	                        	<div className="videoTimeInputsDiv">
+									<span className="timeLabel">Start</span>
+									<span className="timeLabel">End</span><br/>
+									<input className="timeInput" 
+											placeholder="mm:ss"
+											value={this.state.videoStartTime} 
+											onBlur={this.handleStartTimeChange}
+											onChange={this.handleStartTimeChange}
+									/>															
+									<input className="timeInput"
+											placeholder="mm:ss"
+											value={this.state.videoEndTime} 
+											onBlur={this.handleEndTimeChange}
+											onChange={this.handleEndTimeChange}
+									/><br/><br/>									
+								</div>:null}
+							<div className="smallInputsDiv">
+								<div className="inputContainer1">
+									<span className="redText">*</span>
+									<span className="inputLabel">Number of balls</span>
+									<span className="warning">{this.state.numErrorMessage}</span>							
+									<input className="smallInput" 
+											value={this.state.num} 
+											onBlur={this.handleNumChange}
+											onChange={this.handleNumChange}/>
+								</div>
+									<div className="inputContainer2">
+									<span className="redText">*</span>
+									<span className="inputLabel">Difficulty</span>
+									<span className="warning">{this.state.difficultyErrorMessage}</span>							
+									<input className="smallInput" 
+											value={this.state.difficulty} 
+											onBlur={this.handleDiffChange}
+											onChange={this.handleDiffChange}/>
+								</div>
+								<div className="inputContainer3">										
+									<span className="inputLabel">Siteswap</span>	
+									<span className="warning">{this.state.siteswapErrorMessage}</span>													
+									<input className="smallInput" 
+											value={this.state.siteSwap} 
+											onBlur={this.handleSSChange}
+											onChange={this.handleSSChange}
+									/>
+								</div>
+							</div>
 							<div className="inputContainer">
 								<span className="inputLabel">Tags</span>{tagInput}
 							</div>
@@ -461,24 +537,6 @@ class AddTrickForm extends Component {
 								<span className="inputLabel">Related</span>{relatedsInput}
 							</div>
 							<div className="inputContainer">
-								<span className="redText">*</span>
-								<span className="inputLabel">Number of balls</span>
-								<span className="warning">{this.state.numErrorMessage}</span>
-								<input className="formInputs" 
-										value={this.state.num} 
-										onBlur={this.handleNumChange}
-										onChange={this.handleNumChange}/>
-							</div>
-							<div className="inputContainer">
-								<span className="redText">*</span>
-								<span className="inputLabel">Difficulty</span>
-								<span className="warning">{this.state.difficultyErrorMessage}</span>
-								<input className="formInputs" 
-										value={this.state.difficulty} 
-										onBlur={this.handleDiffChange}
-										onChange={this.handleDiffChange}/>
-							</div>
-							<div className="inputContainer">
 								<span className="inputLabel">Tutorial URL</span>
 								<span className="warning">{this.state.tutorialErrorMessage}</span>
 								<input className="formInputs" 
@@ -487,49 +545,9 @@ class AddTrickForm extends Component {
 										onChange={this.handleTutorialChange}/>
 							</div>
 							<div className="inputContainer">
-								<span className="redText">*</span>
-								<span className="inputLabel">Instagram or Youtube Video</span>
-								<span className="warning">{this.state.videoErrorMessage}</span>
-								<input className="formInputs" 
-										value={this.state.video} 
-										onBlur={this.handleVideoChange}
-										onChange={this.handleVideoChange}
-								/>
-								{toggleTimeInputsButton}
-								<span className="timeFormatInfo">
-									{this.state.videoTimeErrorMessage==""&&this.state.showTimeInputs?
-										"Seconds or mm:ss":null
-									}
-								</span>
-								<span className="warning">
-									{this.state.showTimeInputs?this.state.videoTimeErrorMessage:null}
-								</span>
-							</div> 
-	                        {this.state.showTimeInputs?
-	                        	<div className="videoTimeInputsDiv">	                        		
-									<span className="timeLabel">Start</span>
-									<span className="timeLabel">End</span>
-									<input className="timeInput" 
-											value={this.state.videoStartTime} 
-											onBlur={this.handleStartTimeChange}
-											onChange={this.handleStartTimeChange}
-									/>								
-									<input className="timeInput" 
-											value={this.state.videoEndTime} 
-											onBlur={this.handleEndTimeChange}
-											onChange={this.handleEndTimeChange}
-									/>
-								</div>
-							:null}
-							<div className="inputContainer">								
-								<span className="inputLabel">Siteswap</span>
-								<input className="formInputs" 
-										value={this.state.siteSwap} 
-										onBlur={this.handleSSChange}
-										onChange={this.handleSSChange}
-								/>
+								<span className="inputLabel">Explanation</span><br/>
+								{explanationInput}
 							</div>
-
 						</div>
 							<button id = "submitButton"
 									className={this.state.submitDisabled?
