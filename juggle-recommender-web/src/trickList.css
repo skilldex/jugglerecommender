@@ -127,7 +127,7 @@
   border-radius: 8px;
   -ms-touch-action: none;
   touch-action: none;
-  overflow-y: scroll;
+  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
@@ -138,7 +138,7 @@
 }
 .listSection{
   max-height: 57vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }

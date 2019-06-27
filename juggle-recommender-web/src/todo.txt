@@ -1,9 +1,6 @@
 v 1.4
-	-an expandable explanation
 	-add related relationship
 		-dashed line on graph
-	-scrollbars in chrome on desktop look tacky
-
 =========
 
 Bugs:
