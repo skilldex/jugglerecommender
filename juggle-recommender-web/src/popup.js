@@ -197,6 +197,12 @@ class Popup extends Component {
                                 <div className="popupTags">{related}</div>
                               </div> : null
                             }
+                            {popupTrick && popupTrick.explanation?
+                              <div>
+                                <label className="popupLabel">Explanation:</label><br/>
+                                <body className="explanation">{popupTrick.explanation}</body>
+                              </div> : null
+                            }
                           </div>:null
                         }
                       </div>   

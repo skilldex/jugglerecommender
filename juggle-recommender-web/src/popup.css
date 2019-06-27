@@ -13,6 +13,11 @@
 .moreInfoDiv{
   width: 100%;
 }
+.explanation{
+
+  word-break: break-all;
+
+}
 .popupHeader{  
   margin-top: 35px ;
   margin-bottom: 15px ;

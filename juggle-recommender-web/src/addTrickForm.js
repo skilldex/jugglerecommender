@@ -41,8 +41,7 @@ class AddTrickForm extends Component {
 		autoCompletedName : false,
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
-		text: '',
-        height: 0
+		explanation: '',
 	}
 
 	componentDidMount=()=>{
@@ -92,7 +91,7 @@ class AddTrickForm extends Component {
 	}
 	handleExplanationChange=(e)=>{
 		this.setState({
-			text:e.target.value,
+			explanation:e.target.value,
 		})	
 		this.checkIfFormIsSubmittable()	
 	}
@@ -345,7 +344,8 @@ class AddTrickForm extends Component {
 				prereqs : prereqs,
 				relateds : relateds,
 				tags : tags,
-				timeUpdated : date.getTime()
+				timeUpdated : date.getTime(),
+				explanation : this.state.explanation,
 			}
 			if(uiStore.editingPopupTrick){
 				alert(trick.name+" edited!")
@@ -378,6 +378,7 @@ class AddTrickForm extends Component {
 		this.setState({submitDisabled : false})
 		this.setState({numErrorMessage : ""})
 		this.setState({difficultyErrorMessage : ""})
+		this.setState({explanation : ""})
 	}
 	setAutoCompletedName=(name)=>{
 		this.setState({
@@ -442,7 +443,8 @@ class AddTrickForm extends Component {
 					          handleAddition={this.handleRelatedAddition}
 					          handleTagClick={this.handleRelatedClick}/>
 		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
-		const explanationInput = <textarea className="textarea"/>
+		const explanationInput = <textarea className="textarea" 
+											onChange={this.handleExplanationChange}/>
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
 				setAutoCompletedName={this.setAutoCompletedName} 
