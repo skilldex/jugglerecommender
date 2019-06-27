@@ -115,7 +115,7 @@ class PopupDemo extends Component {
               {fullScreenButton}
               {igHeader}
               {video}
-              {gifSection}
+              {video? null:gifSection}
       			</div>
           )
     }

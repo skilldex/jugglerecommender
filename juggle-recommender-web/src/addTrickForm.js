@@ -245,6 +245,8 @@ class AddTrickForm extends Component {
 					this.setState({tutorialErrorMessage:'Not a valid tutorial URL.'})
 					this.setState({submitDisabled:true})					
 				}
+		}else{
+			this.setState({tutorialErrorMessage:''})
 		}
     	if (utilities.isEmptyOrSpaces(this.state.difficulty)){
     		this.setState({submitDisabled:true})
@@ -328,7 +330,7 @@ class AddTrickForm extends Component {
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
 			let tutorialURL = this.state.url
-			if (!this.state.url.includes('https://')){
+			if (this.state.url && !this.state.url.includes('https://')){
 				tutorialURL = 'https://' + tutorialURL
 			}
 			const trick = {

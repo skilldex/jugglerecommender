@@ -10,27 +10,34 @@
   width: 24px;
 
 }
+.popupInfoDiv{
+  text-align: left;
+  padding-left:  10px;
+  white-space: nowrap;      /*keep text on one line */
+  margin-bottom: 10px;
+}
 .moreInfoDiv{
-  width: 100%;
+  width: 200px;
+
+}
+.explanationSection{
+  height: auto;
+  width: 110%;
+
 }
 .explanation{
-
-  word-break: break-all;
-
+  font-size: 12px;
+  width : 90%;
+  display : block;
+  height: auto;
+  white-space: normal;
 }
 .popupHeader{  
   margin-top: 35px ;
   margin-bottom: 15px ;
   border-top: 1px solid gray;
 }
-.popupInfoDiv{
-  text-align: left;
-  padding-left:  10px;
-  white-space: nowrap;      /*keep text on one line */
-  overflow: hidden;         /*prevent text from being shown outside the border */
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-}
+
 .popupLabel{
   margin-bottom : 5px;
   margin-right: 5px;
@@ -60,7 +67,7 @@
   -webkit-tap-highlight-color: transparent;
 }
 .popupDiv{
-  overflow-y: scroll;
+  overflow-y: auto;
   position : absolute;
   left: 182px;
   width: 35vw;
@@ -72,6 +79,7 @@
   border-radius: 8px;
   text-align: center;
   height: 85vh;
+  overflow-x:hidden;
 }
 
 @media screen and (max-width: 700px) {

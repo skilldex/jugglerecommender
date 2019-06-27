@@ -29,9 +29,14 @@ class UIStore {
 	@observable showSortDiv = false
 	@observable showFilterDiv = false
 	@observable showMoreInformation = false
+	@observable showExplanation = false
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
 	}
+	@action toggleShowExplanation=()=>{
+		this.showExplanation = !this.showExplanation
+	}
+	
 	@action togglePopupFullScreen=()=>{
     	this.popupFullScreen = !this.popupFullScreen
   	}

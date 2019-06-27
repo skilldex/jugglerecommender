@@ -65,6 +65,9 @@ class Popup extends Component {
   toggleShowMoreInformation=()=>{
     uiStore.toggleShowMoreInformation()
   }
+  toggleShowExplanation=()=>{
+    uiStore.toggleShowExplanation()
+  }
 	render() {
 //    document.body.style.overflow = 'hidden'
     //set focus for outer div for onblur closing
@@ -157,6 +160,7 @@ class Popup extends Component {
         tutorialSite = tutorialSite.split('.')[0]
       }
     }
+    console.log('popupTrick',popupTrick)
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div className="popupDiv">
                       {deleteTrickButton}
@@ -198,9 +202,12 @@ class Popup extends Component {
                               </div> : null
                             }
                             {popupTrick && popupTrick.explanation?
-                              <div>
-                                <label className="popupLabel">Explanation:</label><br/>
-                                <body className="explanation">{popupTrick.explanation}</body>
+                              <div className="explanationSection">
+                                <label className="popupLabel">Explanation:</label>
+                                <label className="showInfo" onClick={()=>this.toggleShowExplanation()}>
+                                  {uiStore.showExplanation?"hide":"show"}
+                                </label> <br/>
+                                {uiStore.showExplanation?<label className="explanation">{popupTrick.explanation}</label>:null}
                               </div> : null
                             }
                           </div>:null
