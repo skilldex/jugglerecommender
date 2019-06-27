@@ -158,25 +158,3 @@ to see dark theme:
 	*This isn't complete, but enough to see how it would look
 
 
-
-
-	@action setPopupVideoURL=(url)=>{
-		if (uiStore.popupTrick &&
-			store.library[uiStore.popupTrick.id].videoStartTime && 
-			store.library[uiStore.popupTrick.id].videoEndTime){
-			const startTime = store.library[uiStore.popupTrick.id].videoStartTime
-			const endTime = store.library[uiStore.popupTrick.id].videoEndTime
-			if (parseInt(startTime)>-1 &&
-				parseInt(endTime)>-1){
-				if (url.includes("instagram.com")){
-					this.popupVideoURL = url+"#t="+startTime+","+endTime
-					console.log("instaGramthis.popupVideoURL",this.popupVideoURL)
-				}else{//TODO check to see if these url additions are actually chaging the video
-					this.popupVideoURL = url+"?start="+startTime+"&end="+endTime
-					console.log('YouTUBEthis.popupVideoURL',this.popupVideoURL)
-				}
-			}
-		}else{
-			this.popupVideoURL = url
-		}		
-	}

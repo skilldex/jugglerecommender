@@ -13,8 +13,8 @@ const contributor = urlQuery ? [{
 console.log("contributors " ,contributor)
 class FilterStore {
 
-
 	@observable sortType = 'difficulty'
+	@observable demoType = 'All'
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
@@ -22,6 +22,10 @@ class FilterStore {
 	@observable contributors = contributor
 	@observable minCatches = 0
 	@observable maxCatches = 10000000
+
+	@action setDemoType=(demoType)=>{
+		this.demoType = demoType
+	}
 
 	@action setMinCatches=(minCatches)=>{
 		this.minCatches = parseInt(minCatches, 10)
@@ -68,6 +72,11 @@ class FilterStore {
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+	}
+	@action handleDemoTypeDelete=()=>{
+		this.demoType = "All"
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()		
 	}
 	@action setSortType=(type)=>{
 		this.sortType = type

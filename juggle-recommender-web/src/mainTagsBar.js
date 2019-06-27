@@ -115,7 +115,14 @@ class MainTagsBar extends Component {
                 </div>      
           )
         })
-
+      }
+      if(filterStore.demoType !== 'All'){   
+        filterTags.push(
+              <div className="tagDiv">
+                <span className="mainTagsName"> Demo Type: {filterStore.demoType}</span>
+                <label className="mainTagsX"onClick={()=>filterStore.handleDemoTypeDelete()}> x </label>
+              </div>      
+        )
       }
         let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
                       "selectedListButton" :"unselectedListButton" 

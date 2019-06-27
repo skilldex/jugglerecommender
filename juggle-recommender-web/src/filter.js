@@ -27,9 +27,13 @@ class Filter extends Component {
  		tags: filterStore.tags,
       	presetTags: store.presetTags,
       	numBalls: filterStore.numBalls,
-      	difficultyRange: filterStore.difficultyRange
+      	difficultyRange: filterStore.difficultyRange,
+      	demoTypesTags: [
+		   {size: null, id: 'All',          text: 'All',},
+		   {size: null, id: 'User Video',   text: 'User Video',},
+		   {size: null, id: 'Juggling Lab', text: 'Juggling Lab',},
+		]
   	}
-
 	handleAddition=(tag)=>{
  		let canAdd = true
  		filterStore.tags.forEach(function (arrayItem) {
@@ -60,7 +64,16 @@ class Filter extends Component {
 		}
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
- 	}								         
+ 	}	
+
+ 	 handleDemoTypeTagAddition=(demoTypeToAdd)=>{
+ 	 	if (filterStore.DemoType !== demoTypeToAdd.id){
+ 	 		filterStore.setDemoType(demoTypeToAdd.id)
+ 	 		uiStore.resetSelectedTrick()
+			uiStore.updateRootTricks()
+ 	 	}
+
+ 	}									         
 									          
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
@@ -146,23 +159,24 @@ class Filter extends Component {
 							          handleTagClick={this.handleTagClick}/>
 							    </div>
 							</div>
-		const contributorSection = <div>
-				 						<div>
-											<h3 className="filterHeader">Contributors</h3>
-										</div>	
-										<div>
-									        <ReactTags
-									          autofocus = {false}
-									          inputFieldPosition="bottom"
-									          placeholder = ""
-									          minQueryLength={0}
-									          suggestions={store.contributorTags}
-									          delimiters={delimiters}
-									          handleDelete={filterStore.handleContributorTagDelete}
-									          handleAddition={this.handleContributorTagAddition}
-									          handleTagClick={this.handleContributorTagClick}/>
-									    </div>
-									</div>
+		const contributorSection = 
+				<div>
+					<div>
+						<h3 className="filterHeader">Contributors</h3>
+					</div>	
+					<div>
+				        <ReactTags
+				          autofocus = {false}
+				          inputFieldPosition="bottom"
+				          placeholder = ""
+				          minQueryLength={0}
+				          suggestions={store.contributorTags}
+				          delimiters={delimiters}
+				          handleDelete={filterStore.handleContributorTagDelete}
+				          handleAddition={this.handleContributorTagAddition}
+				          handleTagClick={this.handleContributorTagClick}/>
+				    </div>
+				</div>
 	 	const numbersOfBalls = ['3','4','5','6','7']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
@@ -214,17 +228,36 @@ class Filter extends Component {
 											onChange={(e)=>this.handleMaxCatchesChange(e)}
 									/>
 								</div>
-		const relatedToggle = 	<div>
-									<div>
-										<h3 className="filterHeader">Related in Graph</h3>
-									</div>
-									<Toggle
-										className = "relatedToggle"
-										defaultChecked={this.state.tofuIsReady}
-										icons={false}
-										onChange={this.handleTofuChange} 
-									/>
-								</div>
+		const demoTypeSection = 
+				<div>
+					<div>
+						<h3 className="filterHeader">Demo Type</h3>
+					</div>	
+					<div>
+				        <ReactTags
+				          autofocus = {false}
+				          inputFieldPosition="bottom"
+				          placeholder = ""
+				          minQueryLength={0}
+				          suggestions={this.state.demoTypesTags}
+				          delimiters={delimiters}
+				          handleDelete={filterStore.handleDemoTypeTagDelete}
+				          handleAddition={this.handleDemoTypeTagAddition}
+				          handleTagClick={this.handleDemoTypeTagClick}/>
+				    </div>
+				</div>
+		const relatedToggleSection = 	
+				<div>
+					<div>
+						<h3 className="filterHeader">Show related in graph</h3>
+					</div>
+					<Toggle
+						className = "relatedToggle"
+						defaultChecked={this.state.tofuIsReady}
+						icons={false}
+						onChange={this.handleTofuChange} 
+					/>
+				</div>
 		return (
 			<div className="filterDiv"
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
@@ -243,7 +276,9 @@ class Filter extends Component {
 				<ColoredLine/>
 				{catchesSection}
 				<ColoredLine/>
-				{relatedToggle}
+				{demoTypeSection}
+				<ColoredLine/>
+				{relatedToggleSection}
 			</div>
 		)
 	  }

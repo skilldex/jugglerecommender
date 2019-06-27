@@ -288,12 +288,27 @@ class UIStore {
 					    }
 					})
 				}
+				let passesDemoTypeFilter = false
+				if (filterStore.demoType === "All"){
+					passesDemoTypeFilter = true
+				}else{
+				    if(trick.contributor == null && 
+				    	filterStore.demoType === "Juggling Lab" ){
+				    	passesDemoTypeFilter = true
+				    }
+				    else if(trick.contributor != null && filterStore.demoType === "User Video" ){
+				    	passesDemoTypeFilter = true
+				    }
+				    else{
+				    	passesDemoTypeFilter = false
+				    }
+				}
 				let thisTricksCatches = 0
 				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
 					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
 				}
 				if(
-				   passesContributorFilter &&
+				   passesContributorFilter && passesDemoTypeFilter &&
 				   parseInt(trick.difficulty, 10) >= filterStore.difficultyRange[0] && 
 				   parseInt(trick.difficulty, 10) <= filterStore.difficultyRange[1] &&
 				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length === 0) &&
