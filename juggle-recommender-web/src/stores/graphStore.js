@@ -118,6 +118,23 @@ class GraphStore {
 		 				edges.push({from: trickKey, to: dependentKey })
 		 			})
 		 		}
+		 		if(rootTrick.related){
+		 			rootTrick.related.forEach((relatedKey)=>{
+		 				relatedKey = relatedKey.replace("-","")
+ 						relatedKey = relatedKey.replace(" ","")
+		 				const related = store.library[relatedKey]
+		 				if (!related){return}
+			 			if(!tempNodes[relatedKey]){
+			 				tempNodes[relatedKey] = {
+			 					id: relatedKey,
+			 					label: related.name,
+			 					color : this.getInvolvedNodeColor(related.difficulty, 2, relatedKey)
+			 				}
+			 			}
+
+		 				edges.push({arrows : {to : false}, from: trickKey, to: relatedKey, dashes: true })
+		 			})
+		 		}
  			})
 	 	}else if(uiStore.selectedList === "allTricks"){
 	 		rootTricks.forEach((trickKey)=>{
@@ -202,6 +219,40 @@ class GraphStore {
 		 			 		borderWidth : this.getInvolvedNodeBorderWidth(involvedDependent),
 		 				}	
 		 				edges.push({from: trickKey , to: dependentKey })
+		 			
+		 			})
+ 				}
+ 				if(rootTrick.related){
+ 					rootTrick.related.forEach((relatedKey)=>{
+ 						//TODO: fix in library
+ 						relatedKey = relatedKey.replace("-","")
+ 						relatedKey = relatedKey.replace(" ","")
+
+		 				const related = store.library[relatedKey]
+		 				if (!related){return}
+		 				let involvedRelated = involvedRoot > 0 ? 2 : 0
+		 				let label
+		 				
+		 				label = related.name
+		 				 
+		 				if(tempNodes[relatedKey] && tempNodes[relatedKey].involved > involvedRelated){
+		 					involvedRelated = tempNodes[relatedKey].involved
+			 				if(involvedRelated === 3){
+				 				label = "★" + related.name
+				 			}
+		 				}
+		 				
+		 				tempNodes[relatedKey] = {
+		 					id: relatedKey,
+		 					label: label,
+		 					color : this.getInvolvedNodeColor(related.difficulty, involvedRelated, relatedKey),
+		 					involved : involvedRelated,
+		 					size : this.getInvolvedNodeSize(involvedRelated),
+		 			 		font : this.getInvolvedNodeFont(involvedRelated),
+		 			 		mass : this.getInvolvedNodeMass(involvedRelated),
+		 			 		borderWidth : this.getInvolvedNodeBorderWidth(involvedRelated),
+		 				}	
+		 				edges.push({arrows : {to : false},from: trickKey , to: relatedKey , dashes: true})
 		 			
 		 			})
  				}
