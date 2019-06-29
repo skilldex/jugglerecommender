@@ -48,17 +48,12 @@ class Store {
 		this.popupVideoURL = url
 		if (uiStore.popupTrick &&
 			store.library[uiStore.popupTrick.id].videoStartTime && 
-			store.library[uiStore.popupTrick.id].videoEndTime
+			store.library[uiStore.popupTrick.id].videoEndTime &&
+			url.includes("instagram.com")
 		){
 			const startTime = store.library[uiStore.popupTrick.id].videoStartTime
 			const endTime = store.library[uiStore.popupTrick.id].videoEndTime
-			if (
-				parseInt(startTime)>-1 &&
-				parseInt(endTime)>-1 && 
-				url.includes("instagram.com")
-			){
-				this.popupVideoURL = url+"#t="+startTime+","+endTime
-			}
+			this.popupVideoURL = url+"#t="+startTime+","+endTime
 		}	
 	}
 	@action setIGData=(data)=>{

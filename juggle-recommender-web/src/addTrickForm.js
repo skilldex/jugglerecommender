@@ -321,11 +321,11 @@ class AddTrickForm extends Component {
 			const suffix = "("+this.state.num+"b)"
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
-			let videoStartTime = 0
+			let videoStartTime = null
 			if (!utilities.isEmptyOrSpaces(this.state.videoStartTime)){
 				videoStartTime = utilities.formatSeconds(this.state.videoStartTime)
 			}
-			let videoEndTime = 999999
+			let videoEndTime = null
 			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}

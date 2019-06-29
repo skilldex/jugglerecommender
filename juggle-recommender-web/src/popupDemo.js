@@ -11,7 +11,7 @@ import YouTube from 'react-youtube';
 @observer
 class PopupDemo extends Component {
   youtubeEnded = (data) => {
-    if(store.library[uiStore.popupTrick.id].videoStartTime > -1){
+    if(store.library[uiStore.popupTrick.id].videoStartTime){
       const popupTrick = store.library[uiStore.popupTrick.id]
       this.popupVideo.internalPlayer.seekTo(popupTrick.videoStartTime)
     }
