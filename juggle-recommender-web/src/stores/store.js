@@ -264,6 +264,7 @@ class Store {
 		}
 
         this.addDependents(trick)
+        this.addEquivalentRelated(trick)
         uiStore.toggleAddingTrick()
 	}
 	@action addDependents=(trick)=>{
@@ -276,6 +277,19 @@ class Store {
 				}
 				let prereqRef = firebase.database().ref('library/'+prereq)
         		prereqRef.set(this.library[prereq]);
+			})
+		}
+	}
+	@action addEquivalentRelated=(trick)=>{
+		if(trick.related){
+			trick.related.forEach((relatedTrick)=>{
+				if(this.library[relatedTrick].related){
+					this.library[relatedTrick].related.push(trick.name)
+				}else{
+					this.library[relatedTrick].related = [trick.name]
+				}
+				let relatedRef = firebase.database().ref('library/'+relatedTrick)
+        		relatedRef.set(this.library[relatedTrick]);
 			})
 		}
 	}

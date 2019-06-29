@@ -348,7 +348,7 @@ class AddTrickForm extends Component {
 				videoEndTime: videoEndTime,
 				siteswap :  this.state.siteSwap,
 				prereqs : prereqs,
-				relateds : relateds,
+				related : relateds,
 				tags : tags,
 				timeUpdated : date.getTime(),
 				explanation : this.state.explanation,
