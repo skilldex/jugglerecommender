@@ -98,6 +98,23 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
 
+	associationButtonClicked=(element)=>{
+		let tempAssociations = [...filterStore.associationTypes]
+		if (tempAssociations.includes(element)){
+			for( var i = 0; i < tempAssociations.length; i++){ 
+				if ( tempAssociations[i] === element) {
+				    tempAssociations.splice(i, 1); 
+				    i--;
+			    }
+			}
+		}else{
+			tempAssociations.push(element)
+		}
+		filterStore.setAssociationTypes(tempAssociations)
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()		
+	}
+
 	handleMinCatchesChange=(e)=>{
 		let newMin = e.target.value
 		if (newMin > filterStore.maxCatches){
@@ -246,18 +263,21 @@ class Filter extends Component {
 				          handleTagClick={this.handleDemoTypeTagClick}/>
 				    </div>
 				</div>
-		const relatedToggleSection = 	
-				<div>
-					<div>
-						<h3 className="filterHeader">Show related in graph</h3>
-					</div>
-					<Toggle
-						className = "relatedToggle"
-						defaultChecked={this.state.tofuIsReady}
-						icons={false}
-						onChange={this.handleTofuChange} 
-					/>
-				</div>
+	 	const associationTypes = ['prereqs','postreqs','related']
+	 	const associationButtons = [] 
+		associationTypes.forEach(function(element) {
+			associationButtons.push(
+				<button className={filterStore.associationTypes.includes(element)?
+					'filterNum filterNumSelected':'filterNum'}
+				key={'numButton' + element} 
+				onClick={()=>{this.associationButtonClicked(element)}}>{element}</button>
+		)},this);	
+		const associationSection =  <div>
+										<div>
+											<h3 className="filterHeader">Graph associations</h3>
+										</div>
+										{associationButtons}
+									</div>
 		return (
 			<div className="filterDiv"
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
@@ -278,7 +298,7 @@ class Filter extends Component {
 				<ColoredLine/>
 				{demoTypeSection}
 				<ColoredLine/>
-				{relatedToggleSection}
+				{associationSection}
 			</div>
 		)
 	  }

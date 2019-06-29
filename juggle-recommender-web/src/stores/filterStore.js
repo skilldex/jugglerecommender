@@ -18,6 +18,7 @@ class FilterStore {
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
+	@observable associationTypes = []
 	@observable tags = []
 	@observable contributors = contributor
 	@observable minCatches = 0
@@ -93,6 +94,11 @@ class FilterStore {
 	}
 	@action setNumBalls=(numBalls)=>{
 		this.numBalls = numBalls
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+	@action setAssociationTypes=(associationTypes)=>{
+		this.associationTypes = associationTypes
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}

@@ -171,7 +171,7 @@ class Popup extends Component {
                       <div className="popupInfoDiv">
                         <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
                           {uiStore.showMoreInformation?"less info":"more info"}
-                        </label> 
+                        </label><br/>
                         {catchesSection}
                         <label className="popupLabel">Contributor: </label>
                         {

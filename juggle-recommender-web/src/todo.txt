@@ -16,6 +16,11 @@ Stuff To Go Into Migration Scripts:
 	-tags added based on name
 	-tags changed
 
+Code Cleaning:
+	-do the spacing in addTrickForm without using "\u00A0"
+	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
+	-updateGraphData seperated into small functions
+
 Minor:
 	-thin lines on sort button
 
