@@ -64,6 +64,8 @@ h3{
     width: 280px;
     border-radius: 4px;
     border-color: darkgray;
+    font-size: 12px;
+    height: 16px;
 }
 .formInputs{
   width: 280px;
@@ -105,6 +107,7 @@ h3{
   margin-right: 30px;
   width: 70px;
   height: 16px;
+  font-size: 12px;
 }
 
 .toggleShowTimeInputs{
@@ -151,7 +154,7 @@ h3{
   display: inline;
 }
 .textarea {
-    font-size: 16px;
+    font-size: 12px;
     resize: both;
     min-height: 10px;
     height: 80px;
