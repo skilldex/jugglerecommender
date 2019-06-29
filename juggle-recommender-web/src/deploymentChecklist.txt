@@ -2,7 +2,6 @@ As non-logged in user with cleared data:
 -open/close about
 -Use all filters
 -Use all sorts
--toggle lists
 -star a trick
 -open popup with list
 -close popup from list

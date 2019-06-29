@@ -2,7 +2,6 @@ v 1.4
 =========
 
 Bugs:
-	-library of juggling tutorial for 'TheW' is broken, remove link from library
 	-Sometimes when I edit a tricks catches and unenable by clicking the popup, it puts an old number of catches in, not what I just edited. It acts normal if i click the pencil.
 		-figure out how to reproduce this
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
@@ -33,6 +32,9 @@ Restyling:
 	-slow/reverse gif (video would be more useful since gifs are now minority)
 	-In filter, maybe label difficulty/ ball num as filtering list
 	-maybe reorder filter sections
+	-if all ball nums or all associations are chosen in graph then it is just like none are, should we not show all those tags? should we make the buttons in filter all go gray?
+	-gray out catches filter if not logged in?
+	-hide/make unclickable catches sorting if not logged in?
 
 
 

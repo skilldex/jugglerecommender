@@ -44,10 +44,13 @@ class Utilities{
     return toReturn
   }
 
+  @action sortNumber(a, b) {
+    return a - b;
+  }
+
   @action sortObjectByAttribute(data, attr) {
     var arr = [];
     for (var prop in data) {
-
         if (data.hasOwnProperty(prop)) {
             var obj = {};
             obj[prop] = data[prop];
@@ -59,12 +62,19 @@ class Utilities{
             arr.push(obj);
         }
     }
-
-    arr.sort(function(a, b) {
-        var at = a.tempSortName,
-            bt = b.tempSortName;
-        return at > bt ? 1 : ( at < bt ? -1 : 0 );
-    });
+    if(attr === "catches"){//If time sorts start acting weird, they should probably be put with catches
+      arr.sort(function(a, b) {
+          var at = parseInt(a.tempSortName),
+              bt = parseInt(b.tempSortName);
+          return at > bt ? 1 : ( at < bt ? -1 : 0 );
+      });
+    }else{
+      arr.sort(function(a, b) {
+          var at = a.tempSortName,
+              bt = b.tempSortName;
+          return at > bt ? 1 : ( at < bt ? -1 : 0 );
+      });
+    }
     return arr;
   }
 

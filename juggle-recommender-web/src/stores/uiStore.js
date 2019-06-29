@@ -237,6 +237,7 @@ class UIStore {
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithCatches, 'catches');
+			console.log('sortedJugglingLibrary',sortedJugglingLibrary)
 		}else if (filterStore.sortType === 'timeSubmitted'){
 			const tempLibraryWithSubmitted = store.library
 			for (let trick in tempLibraryWithSubmitted){
@@ -248,7 +249,8 @@ class UIStore {
 		}else if (filterStore.sortType === 'random'){
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'random');
 		}
-		if (filterStore.sortType === 'timeSubmitted'){
+		if (filterStore.sortType === 'timeSubmitted' || 
+			filterStore.sortType === 'catches'){
 			if(filterStore.sortDirection==='ascending'){
 				sortedJugglingLibrary.reverse()
 			}
