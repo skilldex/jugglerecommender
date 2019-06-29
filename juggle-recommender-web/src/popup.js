@@ -165,8 +165,9 @@ class Popup extends Component {
           			    <div className="popupDiv">
                       {deleteTrickButton}
                       {editTrickButton}
+                      {addToMyTricksButton}
                       {closeButton}
-                      <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
+                      <h3 className="popupHeader">{popupTrick.name}</h3>             
                       <div className="popupInfoDiv">
                         <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
                           {uiStore.showMoreInformation?"less info":"more info"}
