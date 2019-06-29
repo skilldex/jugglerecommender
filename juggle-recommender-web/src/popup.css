@@ -23,8 +23,8 @@
   white-space: normal;
 }
 .popupHeader{  
-  margin-top: 35px ;
   margin-bottom: 15px ;
+  margin-top:  5px;
   border-top: 1px solid gray;
   font-size: 18px;
 }
@@ -80,11 +80,20 @@
   }
 }
 
-.showInfo{
+.moreInfoLabelDiv{
+  width : 100%;
+  text-align:  center;
+  margin-bottom: 5px;
+}
+.moreInfoLabel{
+  font-size: 13px;
+  color: blue;
+  margin : 0 auto;
+}
+.showExplanation{
   font-size: 13px;
   color: blue;
 }
-
 .editCatchIcon{
   margin-left: 5px;
   height : 15px;
@@ -93,35 +102,38 @@
 .addAndRemoveMyTricksButtonOnPopup{
   line-height: -0px;
   font-size: 20px;
-  box-shadow : 2px 0px 5px #888888;
   padding : 2px;
-  border-radius: 5px;
-  margin-right: 10px;
+  border-radius: 15px;
   height: 24px;
   width: 24px;
   float : left;
   margin-top : 8px;
-
+  margin-left: 5px;
+  margin-right : 2px;
+  background-color: white;
 }
 .deleteTrickIcon{
   height : 20px;
   width : 20px;
   float : left;
-  margin-left: 8px;
-  margin-right : 8px;
+  margin-right : 2px;
   margin-top : 8px;
 }
 .editCardIcon{
   height : 20px;
   width : 20px;
   float : left;
-  margin-right : 8px;
+  margin-right : 2px;
   margin-top : 8px;
+}
+.topButtons{
+  display: flex;
+  align-items: center;
 }
 .closePopupIcon{
   height : 24px;
   width : 24px;
-  float : right;
   margin-right : 8px;
   margin-top : 8px;
+  margin-left:  auto;
 }

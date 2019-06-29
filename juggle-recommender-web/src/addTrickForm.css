@@ -90,7 +90,9 @@ h3{
   margin-left:-186px;
   margin-right: 64px;
 }
-
+.inputLabel{
+  margin-bottom: 2px;
+}
 .timeInput{
   text-align: left;
   border: 1px solid darkgray;
@@ -135,16 +137,17 @@ h3{
 }
 .warning{
   color : red;
-  font-size: 10px;
+  font-size: 7px;
   vertical-align: middle;
   display: block;
+  margin-top: 0px
 }
 .timeWarning{
-  margin-left:-266px;
   color : red;
-  font-size: 10px;
+  font-size: 7px;
   vertical-align: middle;
   display: block;
+  text-align: left;
 }
 .timeFormatInfo{
   color : black;
