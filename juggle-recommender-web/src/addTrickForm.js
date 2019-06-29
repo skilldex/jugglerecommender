@@ -76,10 +76,12 @@ class AddTrickForm extends Component {
 					}
 				})	
 			}
+			if(trick.videoStartTime || trick.videoEndTime){
+				this.setState({showTimeInputs : true})
+			}			
 			this.setState({...trick})
-		}
-		if(uiStore.editingPopupTrick){
 			this.setState({submitDisabled : false,})
+
 		}	
 	}
 	handleNameChange=(e)=>{
@@ -455,7 +457,7 @@ class AddTrickForm extends Component {
 		const toggleTimeInputsButton =
 							<label className="toggleShowTimeInputs" 
 								onClick={()=>this.toggleShowTimeInputs()}>
-								{this.state.showTimeInputs?"hide times":"show times"}
+								{this.state.showTimeInputs?null:"specificy trick time range"}
 							</label>
 		const form = 	
 					<div className="form">
