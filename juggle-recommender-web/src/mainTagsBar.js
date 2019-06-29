@@ -82,7 +82,7 @@ class MainTagsBar extends Component {
         filterStore.contributors.forEach((contributor,i)=>{
           filterTags.push(
                 <div className="tagDiv">
-                  <span className="mainTagsName">Contributed by '{filterStore.contributors[i].text}'</span>
+                  <span className="mainTagsName">By '{filterStore.contributors[i].text}'</span>
                   <label className="mainTagsX"onClick={()=>filterStore.removeContributor(i)}> x </label>
                 </div>      
           )
