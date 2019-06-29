@@ -27,7 +27,7 @@ class AddTrickForm extends Component {
 		videoEndTime: "",
 		siteSwap : "",
 		prereqs : [],
-		relateds : [],
+		related : [],
 		tags : [],
 		submitDisabled : true,
 		nameErrorMessage: "",
@@ -68,8 +68,8 @@ class AddTrickForm extends Component {
 				})	
 			}
 			//convert prereq strings to tag objects
-			if(trick.relateds){
-				trick.relateds = trick.relateds.map((related)=>{
+			if(trick.related){
+				trick.related = trick.related.map((related)=>{
 					return {
 						id : related,
 						text : related
@@ -166,14 +166,14 @@ class AddTrickForm extends Component {
     }
 	handleRelatedAddition=(tag)=> {
 		if (store.library[tag.id]){
-	        this.setState(state => ({ relateds: [...state.relateds, tag] }));
+	        this.setState(state => ({ related: [...state.related, tag] }));
 	        this.checkIfFormIsSubmittable()
 	    }
     }
     handleRelatedDelete=(i)=> {
-        const { relateds } = this.state;
+        const { related } = this.state;
         this.setState({
-         relateds: relateds.filter((tag, index) => index !== i),
+         related: related.filter((tag, index) => index !== i),
         });
     }
 
@@ -319,7 +319,7 @@ class AddTrickForm extends Component {
 			var prereqs = this.state.prereqs.map(function(item) {
 				return item['id'];
 			});
-			var relateds = this.state.relateds.map(function(item) {
+			var related = this.state.related.map(function(item) {
 				return item['id'];
 			});				
 			const suffix = "("+this.state.num+"b)"
@@ -348,7 +348,7 @@ class AddTrickForm extends Component {
 				videoEndTime: videoEndTime,
 				siteswap :  this.state.siteSwap,
 				prereqs : prereqs,
-				related : relateds,
+				related : related,
 				tags : tags,
 				timeUpdated : date.getTime(),
 				explanation : this.state.explanation,
@@ -379,7 +379,7 @@ class AddTrickForm extends Component {
 		this.setState({video : ""})
 		this.setState({siteSwap : ""})
 		this.setState({prereqs : []})
-		this.setState({relateds : []})
+		this.setState({related : []})
 		this.setState({tags : []})
 		this.setState({submitDisabled : false})
 		this.setState({numErrorMessage : ""})
@@ -435,13 +435,13 @@ class AddTrickForm extends Component {
 					          handleDelete={this.handlePrereqDelete}
 					          handleAddition={this.handlePrereqAddition}
 					          handleTagClick={this.handlePrereqClick}/>
-		const relatedsInput = <ReactTags
+		const relatedInput = <ReactTags
 							  classNames={{tagInputField: 'myReactTags',}}
 					          autofocus = {false}
 					          style = {{width:"300px"}}
 					          placeholder = ''
 					          inputFieldPosition="bottom"
-					          tags={this.state.relateds}
+					          tags={this.state.related}
 					          minQueryLength={1}
 					          suggestions={patternsObj}
 					          delimiters={delimiters}
@@ -547,7 +547,7 @@ class AddTrickForm extends Component {
 								<span className="inputLabel">Prereqs</span><br/><br/>{prereqsInput}
 							</div>
 							<div className="inputContainer">
-								<span className="inputLabel">Related</span><br/><br/>{relatedsInput}
+								<span className="inputLabel">Related</span><br/><br/>{relatedInput}
 							</div>
 							<div className="inputContainer">
 								<span className="inputLabel">Tutorial URL</span>

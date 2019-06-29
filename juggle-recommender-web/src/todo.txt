@@ -2,6 +2,7 @@ v 1.4
 =========
 
 Bugs:
+	-can only drag top bars into view with tricks in list, so if list is empty top bars can get lost out of view
 	-Sometimes when I edit a tricks catches and unenable by clicking the popup, it puts an old number of catches in, not what I just edited. It acts normal if i click the pencil.
 		-figure out how to reproduce this
 	-when clicking a tag in add trick, the tag stays up as a selection until you click it again

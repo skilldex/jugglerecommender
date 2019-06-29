@@ -237,7 +237,6 @@ class UIStore {
 				}
 			}
 			sortedJugglingLibrary = utilities.sortObjectByAttribute(tempLibraryWithCatches, 'catches');
-			console.log('sortedJugglingLibrary',sortedJugglingLibrary)
 		}else if (filterStore.sortType === 'timeSubmitted'){
 			const tempLibraryWithSubmitted = store.library
 			for (let trick in tempLibraryWithSubmitted){

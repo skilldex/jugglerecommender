@@ -5,7 +5,7 @@
   width: 230px;
   height: 400px;
   margin-left: 130px;
-  max-height: 90vh;
+  max-height: 400px;
   border : 1px solid gray;
   display: inline-block;
   position: absolute;
@@ -14,9 +14,7 @@
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
-  -ms-touch-action: none;
-  touch-action: none;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }

@@ -125,8 +125,6 @@
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
-  -ms-touch-action: none;
-  touch-action: none;
   overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;

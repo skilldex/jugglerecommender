@@ -11,6 +11,10 @@ Maybe new todos:
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
 
+catches bug:
+	add/remove catches in every whay possible, check after each wa if it caused the bug
+
+
 Database:
 4440522 needs new name
 5344 needs a new name
