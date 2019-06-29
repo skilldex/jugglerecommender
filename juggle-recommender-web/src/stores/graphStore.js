@@ -9,7 +9,6 @@ class GraphStore {
 	@observable nodes = []
 	@observable edges = []
 
-
 	@action getInvolvedNodeColor=(difficulty, involved, trickKey)=>{
 		let	colorString = "hsl(" + 150*(10-difficulty-2)/10   + ",100%, 60%)"
 

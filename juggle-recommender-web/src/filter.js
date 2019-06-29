@@ -286,19 +286,20 @@ class Filter extends Component {
 	            <img id="closeButton" src={closeIcon} className="closeFilter" alt="closeIcon" 
              		onClick={()=>{uiStore.toggleFilterDiv()}}
         		/><br/>
+        		<ColoredLine/>
+				{associationSection}
+			    <ColoredLine/>
+			    {numSection}
+				<ColoredLine/>
 				{tagSection}
 				<ColoredLine/>
 				{contributorSection}
-			    <ColoredLine/>
-			    {numSection}
 				<ColoredLine/>
 				{difficultySection}
 				<ColoredLine/>
 				{catchesSection}
 				<ColoredLine/>
 				{demoTypeSection}
-				<ColoredLine/>
-				{associationSection}
 			</div>
 		)
 	  }

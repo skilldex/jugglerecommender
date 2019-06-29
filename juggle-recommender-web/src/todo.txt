@@ -1,8 +1,5 @@
 v 1.4
-	-add related relationship
-		-dashed line on graph
 =========
-When related is added to a trick, the opposite related needs to be added as well
 
 Bugs:
 	-library of juggling tutorial for 'TheW' is broken, remove link from library
