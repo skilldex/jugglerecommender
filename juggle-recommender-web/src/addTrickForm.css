@@ -136,6 +136,13 @@ h3{
   vertical-align: middle;
   display: block;
 }
+.timeWarning{
+  margin-left:-266px;
+  color : red;
+  font-size: 10px;
+  vertical-align: middle;
+  display: block;
+}
 .timeFormatInfo{
   color : black;
   font-size: 10px;

@@ -180,8 +180,10 @@ class AddTrickForm extends Component {
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
-    		this.setState({submitDisabled:true})
+			this.setState({nameErrorMessage:'Pattern name blank.'})
+			this.setState({submitDisabled:true})
     	}else{
+    		this.setState({nameErrorMessage:''})
     		let tricksInLibraryKeys = []
 			let tricksInLibraryModifiedKey = []
 			let tricksInLibraryModifiedName = []
@@ -211,18 +213,18 @@ class AddTrickForm extends Component {
     			}
 			});
     		const stateNum = this.state.num
-    		let showNameWarning = false
+    		let patternAlreadyExists = false
     		if (indecesToCheck.length>0){
     			indecesToCheck.forEach(function (item, index) {
 	    			if (stateNum == store.library[tricksInLibraryKeys[item]].num ||
 	    				store.library[tricksInLibraryKeys[item]+"("+stateNum+"b)"]){
-	    				showNameWarning = true
+	    				patternAlreadyExists = true
 					}
 				});
 			if (this.state.trickNameBeingEdited.toLowerCase() === this.state.name.toLowerCase()){
-				showNameWarning = false
+				patternAlreadyExists = false
 			}
-    		}if (showNameWarning){
+    		}if (patternAlreadyExists){
 				this.setState({nameErrorMessage:'Pattern already exists.'})
 				this.setState({submitDisabled:true})
     		}else{
@@ -466,7 +468,7 @@ class AddTrickForm extends Component {
 							<div className="inputContainer">
 								<span className="redText">*</span>
 								<span className="inputLabel">Trick name</span><br/>
-								<span className="warning">{this.state.nameErrorMessage}</span>
+								<span className="warning">{this.state.nameErrorMessage? this.state.nameErrorMessage:"\u00A0"}</span>
 								<input className="formInputs" 
 										onKeyPress={this.onNameInputKeyPress}
 										value={this.state.name} 
@@ -476,21 +478,21 @@ class AddTrickForm extends Component {
 							<div className="videoInputContainer">
 								<span className="redText">*</span>
 								<span className="inputLabel">Instagram or Youtube Video</span>
-								<span className="warning">{this.state.videoErrorMessage}</span>
+								<span className="warning">{this.state.videoErrorMessage? this.state.videoErrorMessage:"\u00A0"}</span>
 								<input className="formInputs" 
 										value={this.state.video} 
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
 								{toggleTimeInputsButton}
-								<span className="warning">
-									{this.state.showTimeInputs?this.state.videoTimeErrorMessage:null}
-								</span>
 							</div> 
 	                        {this.state.showTimeInputs?
 	                        	<div className="videoTimeInputsDiv">
 									<span className="startTimeLabel">Start</span>
 									<span>End</span><br/>
+									<span className="timeWarning">
+										{this.state.showTimeInputs && this.state.videoTimeErrorMessage? this.state.videoTimeErrorMessage:"\u00A0"}
+									</span>
 									<input className="timeInput" 
 											placeholder="mm:ss"
 											value={this.state.videoStartTime} 
@@ -502,13 +504,13 @@ class AddTrickForm extends Component {
 											value={this.state.videoEndTime} 
 											onBlur={this.handleEndTimeChange}
 											onChange={this.handleEndTimeChange}
-									/><br/><br/>									
+									/><br/><br/><br/>								
 								</div>:null}
 							<div className="smallInputsDiv">
 								<div className="inputContainer1">
 									<span className="redText">*</span>
 									<span className="inputLabel">Number of balls</span>
-									<span className="warning">{this.state.numErrorMessage}</span>							
+									<span className="warning">{this.state.numErrorMessage? this.state.numErrorMessage:"\u00A0"}</span>							
 									<input className="smallInput" 
 											value={this.state.num} 
 											onBlur={this.handleNumChange}
@@ -517,7 +519,7 @@ class AddTrickForm extends Component {
 									<div className="inputContainer2">
 									<span className="redText">*</span>
 									<span className="inputLabel">Difficulty</span>
-									<span className="warning">{this.state.difficultyErrorMessage}</span>							
+									<span className="warning">{this.state.difficultyErrorMessage? this.state.difficultyErrorMessage:"\u00A0"}</span>						
 									<input className="smallInput" 
 											value={this.state.difficulty} 
 											onBlur={this.handleDiffChange}
@@ -525,33 +527,33 @@ class AddTrickForm extends Component {
 								</div>
 								<div className="inputContainer3">										
 									<span className="inputLabel">Siteswap</span>	
-									<span className="warning">{this.state.siteswapErrorMessage}</span>													
+									<span className="warning">{this.state.siteswapErrorMessage? this.state.siteswapErrorMessage:"\u00A0"}</span>													
 									<input className="smallInput" 
 											value={this.state.siteSwap} 
 											onBlur={this.handleSSChange}
 											onChange={this.handleSSChange}
-									/>
+									/><br/><br/>
 								</div>
 							</div>
 							<div className="inputContainer">
-								<span className="inputLabel">Tags</span>{tagInput}
+								<span className="inputLabel">Tags</span><br/><br/>{tagInput}
 							</div>
 							<div className="inputContainer">
-								<span className="inputLabel">Prereqs</span>{prereqsInput}
+								<span className="inputLabel">Prereqs</span><br/><br/>{prereqsInput}
 							</div>
 							<div className="inputContainer">
-								<span className="inputLabel">Related</span>{relatedsInput}
+								<span className="inputLabel">Related</span><br/><br/>{relatedsInput}
 							</div>
 							<div className="inputContainer">
 								<span className="inputLabel">Tutorial URL</span>
-								<span className="warning">{this.state.tutorialErrorMessage}</span>
+								<span className="warning">{this.state.tutorialErrorMessage? this.state.tutorialErrorMessage:"\u00A0"}</span>
 								<input className="formInputs" 
 										value={this.state.url} 
 										onBlur={this.handleTutorialChange}
 										onChange={this.handleTutorialChange}/>
 							</div>
 							<div className="inputContainer">
-								<span className="inputLabel">Explanation</span><br/>
+								<span className="inputLabel">Explanation</span><br/><br/>
 								{explanationInput}
 							</div>
 						</div>
