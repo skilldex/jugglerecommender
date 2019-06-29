@@ -163,15 +163,19 @@ class Popup extends Component {
     console.log('popupTrick',popupTrick)
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div className="popupDiv">
-                      {deleteTrickButton}
-                      {editTrickButton}
-                      {addToMyTricksButton}
-                      {closeButton}
+                      <div className="topButtons">
+                        {addToMyTricksButton}
+                        {deleteTrickButton}
+                        {editTrickButton}
+                        {closeButton}
+                      </div>
                       <h3 className="popupHeader">{popupTrick.name}</h3>             
                       <div className="popupInfoDiv">
-                        <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
-                          {uiStore.showMoreInformation?"less info":"more info"}
-                        </label><br/>
+                        <div className="moreInfoLabelDiv">
+                          <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
+                            {uiStore.showMoreInformation?"less info":"more info"}
+                          </label><br/>
+                        </div>
                         {catchesSection}
                         <label className="popupLabel">Contributor: </label>
                         {
@@ -208,7 +212,7 @@ class Popup extends Component {
                             {popupTrick && popupTrick.explanation?
                               <div className="explanationSection">
                                 <label className="popupLabel">Explanation:</label>
-                                <label className="showInfo" onClick={()=>this.toggleShowExplanation()}>
+                                <label className="showExplanation" onClick={()=>this.toggleShowExplanation()}>
                                   {uiStore.showExplanation?"hide":"show"}
                                 </label> <br/>
                                 {uiStore.showExplanation?<label className="explanation">{popupTrick.explanation}</label>:null}
