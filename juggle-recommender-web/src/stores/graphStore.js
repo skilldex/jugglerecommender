@@ -90,7 +90,9 @@ class GraphStore {
 	 				mass : this.getInvolvedNodeMass(3),
 	 				borderWidth : this.getInvolvedNodeBorderWidth(3)
 	 			}		 		
-		 		if(rootTrick.prereqs && filterStore.associations.includes('prereqs')){
+		 		if(rootTrick.prereqs && 
+		 			(filterStore.associations.includes('prereqs') ||
+		 			 filterStore.associations.length === 0)){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
 		 				if (!prereq){return}
@@ -104,7 +106,9 @@ class GraphStore {
 		 				edges.push({from: prereqKey, to: trickKey })
 		 			})
 		 		}
-	 			if(rootTrick.dependents && filterStore.associations.includes('postreqs')){
+	 			if(rootTrick.dependents && 
+		 			(filterStore.associations.includes('postreqs') ||
+		 			 filterStore.associations.length === 0)){
 		 			rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = store.library[dependentKey]
 		 				if (!dependent){return}
@@ -118,7 +122,9 @@ class GraphStore {
 		 				edges.push({from: trickKey, to: dependentKey })
 		 			})
 		 		}
-		 		if(rootTrick.related && filterStore.associations.includes('related')){
+		 		if(rootTrick.related && 
+		 			(filterStore.associations.includes('related') ||
+		 			 filterStore.associations.length === 0)){
 		 			rootTrick.related.forEach((relatedKey)=>{
 		 				relatedKey = relatedKey.replace("-","")
  						relatedKey = relatedKey.replace(" ","")
@@ -162,7 +168,9 @@ class GraphStore {
 		 				borderWidth : this.getInvolvedNodeBorderWidth(involvedRoot)
 		 			}	 			
 		 		}	
-	 			if(rootTrick.prereqs && filterStore.associations.includes('prereqs')){
+		 		if(rootTrick.prereqs && 
+		 			(filterStore.associations.includes('prereqs') ||
+		 			 filterStore.associations.length === 0)){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
 		 				if (!prereq){return}
@@ -192,7 +200,9 @@ class GraphStore {
 		 				edges.push({from: prereqKey, to: trickKey })
 			 		})
 	 			}
- 				if(rootTrick.dependents && filterStore.associations.includes('postreqs')){
+	 			if(rootTrick.dependents && 
+		 			(filterStore.associations.includes('postreqs') ||
+		 			 filterStore.associations.length === 0)){
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = store.library[dependentKey]
 		 				if (!dependent){return}
@@ -222,7 +232,9 @@ class GraphStore {
 		 			
 		 			})
  				}
- 				if(rootTrick.related && filterStore.associations.includes('related')){
+		 		if(rootTrick.related && 
+		 			(filterStore.associations.includes('related') ||
+		 			 filterStore.associations.length === 0)){
  					rootTrick.related.forEach((relatedKey)=>{
  						//TODO: fix in library
  						relatedKey = relatedKey.replace("-","")

@@ -31,6 +31,8 @@ Restyling:
 	-allow contributors to upload pics
 	-we should show the currently logged in account up top.
 	-slow/reverse gif (video would be more useful since gifs are now minority)
+	-In filter, maybe label difficulty/ ball num as filtering list
+	-maybe reorder filter sections
 
 
 
