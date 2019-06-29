@@ -1,6 +1,7 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
 import uiStore from "./uiStore"
+import filterStore from "./filterStore"
 
 configure({ enforceActions: "always" })
 class GraphStore {
@@ -90,7 +91,7 @@ class GraphStore {
 	 				mass : this.getInvolvedNodeMass(3),
 	 				borderWidth : this.getInvolvedNodeBorderWidth(3)
 	 			}		 		
-		 		if(rootTrick.prereqs){
+		 		if(rootTrick.prereqs && filterStore.associations.includes('prereqs')){
 		 			rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
 		 				if (!prereq){return}
@@ -104,7 +105,7 @@ class GraphStore {
 		 				edges.push({from: prereqKey, to: trickKey })
 		 			})
 		 		}
-	 			if(rootTrick.dependents){
+	 			if(rootTrick.dependents && filterStore.associations.includes('postreqs')){
 		 			rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = store.library[dependentKey]
 		 				if (!dependent){return}
@@ -118,7 +119,7 @@ class GraphStore {
 		 				edges.push({from: trickKey, to: dependentKey })
 		 			})
 		 		}
-		 		if(rootTrick.related){
+		 		if(rootTrick.related && filterStore.associations.includes('related')){
 		 			rootTrick.related.forEach((relatedKey)=>{
 		 				relatedKey = relatedKey.replace("-","")
  						relatedKey = relatedKey.replace(" ","")
@@ -162,7 +163,7 @@ class GraphStore {
 		 				borderWidth : this.getInvolvedNodeBorderWidth(involvedRoot)
 		 			}	 			
 		 		}	
-	 			if(rootTrick.prereqs){
+	 			if(rootTrick.prereqs && filterStore.associations.includes('prereqs')){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
 		 				if (!prereq){return}
@@ -192,7 +193,7 @@ class GraphStore {
 		 				edges.push({from: prereqKey, to: trickKey })
 			 		})
 	 			}
- 				if(rootTrick.dependents){
+ 				if(rootTrick.dependents && filterStore.associations.includes('postreqs')){
  					rootTrick.dependents.forEach((dependentKey)=>{
 		 				const dependent = store.library[dependentKey]
 		 				if (!dependent){return}
@@ -222,7 +223,7 @@ class GraphStore {
 		 			
 		 			})
  				}
- 				if(rootTrick.related){
+ 				if(rootTrick.related && filterStore.associations.includes('related')){
  					rootTrick.related.forEach((relatedKey)=>{
  						//TODO: fix in library
  						relatedKey = relatedKey.replace("-","")

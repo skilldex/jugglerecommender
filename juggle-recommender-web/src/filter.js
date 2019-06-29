@@ -99,7 +99,7 @@ class Filter extends Component {
 	}
 
 	associationButtonClicked=(element)=>{
-		let tempAssociations = [...filterStore.associationTypes]
+		let tempAssociations = [...filterStore.associations]
 		if (tempAssociations.includes(element)){
 			for( var i = 0; i < tempAssociations.length; i++){ 
 				if ( tempAssociations[i] === element) {
@@ -110,7 +110,7 @@ class Filter extends Component {
 		}else{
 			tempAssociations.push(element)
 		}
-		filterStore.setAssociationTypes(tempAssociations)
+		filterStore.setAssociations(tempAssociations)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()		
 	}
@@ -263,11 +263,11 @@ class Filter extends Component {
 				          handleTagClick={this.handleDemoTypeTagClick}/>
 				    </div>
 				</div>
-	 	const associationTypes = ['prereqs','postreqs','related']
+	 	const associations = ['prereqs','postreqs','related']
 	 	const associationButtons = [] 
-		associationTypes.forEach(function(element) {
+		associations.forEach(function(element) {
 			associationButtons.push(
-				<button className={filterStore.associationTypes.includes(element)?
+				<button className={filterStore.associations.includes(element)?
 					'filterNum filterNumSelected':'filterNum'}
 				key={'numButton' + element} 
 				onClick={()=>{this.associationButtonClicked(element)}}>{element}</button>

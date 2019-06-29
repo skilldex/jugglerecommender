@@ -18,7 +18,7 @@ class FilterStore {
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
-	@observable associationTypes = []
+	@observable associations = ['prereqs','postreqs']
 	@observable tags = []
 	@observable contributors = contributor
 	@observable minCatches = 0
@@ -97,8 +97,8 @@ class FilterStore {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
-	@action setAssociationTypes=(associationTypes)=>{
-		this.associationTypes = associationTypes
+	@action setAssociations=(associations)=>{
+		this.associations = associations
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
