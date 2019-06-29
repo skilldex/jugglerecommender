@@ -489,8 +489,8 @@ class AddTrickForm extends Component {
 							</div> 
 	                        {this.state.showTimeInputs?
 	                        	<div className="videoTimeInputsDiv">
-									<span className="timeLabel">Start</span>
-									<span className="timeLabel">End</span><br/>
+									<span className="startTimeLabel">Start</span>
+									<span>End</span><br/>
 									<input className="timeInput" 
 											placeholder="mm:ss"
 											value={this.state.videoStartTime} 

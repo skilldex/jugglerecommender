@@ -83,13 +83,12 @@ h3{
 }
 .videoTimeInputsDiv{
   display: inline;
-  
 }
-.timeLabel{
-  float: left;
-  margin-right: 54px;
-  width: 40px;
+.startTimeLabel{
+  margin-left:-186px;
+  margin-right: 64px;
 }
+
 .timeInput{
   text-align: left;
   border: 1px solid darkgray;
