@@ -457,10 +457,14 @@ class AddTrickForm extends Component {
 				input={this.state.name}
 			/> : null
 		const toggleTimeInputsButton =
-							<label className="toggleShowTimeInputs" 
-								onClick={()=>this.toggleShowTimeInputs()}>
-								{this.state.showTimeInputs?null:"specificy trick time range"}
-							</label>
+								<div>
+									<label className="toggleShowTimeInputs" 
+										onClick={()=>this.toggleShowTimeInputs()}>
+										specify trick time range
+									</label>
+									<br/>
+								</div>
+
 		const form = 	
 					<div className="form">
 						<h3>{titleText}</h3>
@@ -484,7 +488,8 @@ class AddTrickForm extends Component {
 										onBlur={this.handleVideoChange}
 										onChange={this.handleVideoChange}
 								/>
-								{toggleTimeInputsButton}
+								{this.state.showTimeInputs?null:toggleTimeInputsButton}
+								<br/>
 							</div> 
 	                        {this.state.showTimeInputs?
 	                        	<div className="videoTimeInputsDiv">
