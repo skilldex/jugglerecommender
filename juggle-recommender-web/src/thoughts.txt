@@ -12,7 +12,7 @@ Maybe new todos:
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
 
 catches bug:
-	add/remove catches in every whay possible, check after each wa if it caused the bug
+	add/remove catches in every way possible, check after each wa if it caused the bug
 
 
 Database:
