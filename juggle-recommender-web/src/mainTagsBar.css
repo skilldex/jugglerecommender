@@ -25,12 +25,15 @@
   border :1px solid darkgray;
   border-radius: 2px;
   background-color : #eee;
-  height: 20px;
+  height: 14px;
+  line-height: 10px;
 }
 
 .mainTagsName{
   overflow: hidden;
   font-size: 12px;
+  vertical-align: middle;
+  margin-top: -10px;
 }
 
 .mainTagsX{
