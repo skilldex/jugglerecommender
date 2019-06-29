@@ -168,6 +168,9 @@ class Popup extends Component {
                       {closeButton}
                       <h3 className="popupHeader">{addToMyTricksButton}{popupTrick.name}</h3>             
                       <div className="popupInfoDiv">
+                        <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
+                          {uiStore.showMoreInformation?"less info":"more info"}
+                        </label> 
                         {catchesSection}
                         <label className="popupLabel">Contributor: </label>
                         {
@@ -213,9 +216,6 @@ class Popup extends Component {
                           </div>:null
                         }
                       </div>   
-                        <label className="showInfo" onClick={()=>this.toggleShowMoreInformation()}>
-                          {uiStore.showMoreInformation?"less info":"more info"}
-                        </label>                    
                       <PopupDemo/>                      
                     </div> : null
 		return(
