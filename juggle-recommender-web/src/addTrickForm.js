@@ -25,7 +25,7 @@ class AddTrickForm extends Component {
 		video : "",
 		videoStartTime: "",
 		videoEndTime: "",
-		siteSwap : "",
+		siteswap : "",
 		prereqs : [],
 		related : [],
 		tags : [],
@@ -124,7 +124,7 @@ class AddTrickForm extends Component {
 	}
 	handleSSChange=(e)=>{
 		this.setState({
-			siteSwap:e.target.value
+			siteswap:e.target.value
 		})
 		this.checkIfFormIsSubmittable()
 	}
@@ -346,7 +346,7 @@ class AddTrickForm extends Component {
 				video : this.state.video,
 				videoStartTime: videoStartTime,
 				videoEndTime: videoEndTime,
-				siteswap :  this.state.siteSwap,
+				siteswap :  this.state.siteswap,
 				prereqs : prereqs,
 				related : related,
 				tags : tags,
@@ -377,7 +377,7 @@ class AddTrickForm extends Component {
 		this.setState({difficulty : ""})
 		this.setState({url : ""})
 		this.setState({video : ""})
-		this.setState({siteSwap : ""})
+		this.setState({siteswap : ""})
 		this.setState({prereqs : []})
 		this.setState({related : []})
 		this.setState({tags : []})
@@ -534,7 +534,7 @@ class AddTrickForm extends Component {
 									<span className="inputLabel">Siteswap</span>	
 									<span className="warning">{this.state.siteswapErrorMessage? this.state.siteswapErrorMessage:"\u00A0"}</span>													
 									<input className="smallInput" 
-											value={this.state.siteSwap} 
+											value={this.state.siteswap} 
 											onBlur={this.handleSSChange}
 											onChange={this.handleSSChange}
 									/><br/><br/>
