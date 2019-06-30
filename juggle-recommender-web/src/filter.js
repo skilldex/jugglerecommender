@@ -116,26 +116,30 @@ class Filter extends Component {
 	}
 
 	handleMinCatchesChange=(e)=>{
-		let newMin = e.target.value
+		const inputElement = document.getElementById("minCatchesInput");
+		let newMin = +e.target.value
 		if (newMin > filterStore.maxCatches){
 			newMin = filterStore.maxCatches
 		}
 		if(utilities.isEmptyOrSpaces(newMin)){
 			newMin = 0
 		}
+		inputElement.value = newMin
 		filterStore.setMinCatches(newMin)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
 	handleMaxCatchesChange=(e)=>{
-		let newMax = e.target.value
+		const inputElement = document.getElementById("maxCatchesInput");
+		let newMax = +e.target.value
 		if (newMax < filterStore.minCatches){
 			newMax = filterStore.minCatches
 		}
 		if(utilities.isEmptyOrSpaces(newMax)){
 			newMax = Math.max(0,filterStore.minCatches)
 		}
+		inputElement.value = newMax
 		filterStore.setMaxCatches(newMax)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
