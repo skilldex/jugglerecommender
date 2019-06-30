@@ -49,17 +49,25 @@ class TrickList extends Component {
 		}
 	}
 	clickTrick=(trickKey)=>{
-		uiStore.toggleSelectedTrick(trickKey)
-		uiStore.updateRootTricks()
-		if (uiStore.selectedTrick === null){
-			uiStore.setPopupTrick(null)
-		}else{
+		if(uiStore.selectedTrick === trickKey && uiStore.popupTrick === null){
 			const popupTrick = {...store.library[trickKey]}
 			popupTrick.x = 400
 			popupTrick.y = 400
 			popupTrick.id = trickKey
 			uiStore.setPopupTrick(popupTrick)
-		} 			
+		}else{
+			uiStore.toggleSelectedTrick(trickKey)
+			uiStore.updateRootTricks()
+			if (uiStore.selectedTrick === null){
+				uiStore.setPopupTrick(null)
+			}else{
+				const popupTrick = {...store.library[trickKey]}
+				popupTrick.x = 400
+				popupTrick.y = 400
+				popupTrick.id = trickKey
+				uiStore.setPopupTrick(popupTrick)
+			} 
+		}			
 	}
 
 	render() {
