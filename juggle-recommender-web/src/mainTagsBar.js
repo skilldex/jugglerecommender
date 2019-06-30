@@ -86,7 +86,7 @@ class MainTagsBar extends Component {
         filterStore.numBalls.forEach((numBall,i)=>{
           filterTags.push(
                 <div className="tagDiv">
-                  <span className="mainTagsName"> {filterStore.numBalls[i]} Balls</span>
+                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.numBalls[i]} Balls</span>
                   <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.numBalls[i])}> x </label>
                 </div>      
           )
@@ -96,7 +96,7 @@ class MainTagsBar extends Component {
         filterStore.associations.forEach((association,i)=>{
           filterTags.push(
                 <div className="tagDiv">
-                  <span className="mainTagsName"> {filterStore.associations[i]}</span>
+                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.associations[i]}</span>
                   <label className="mainTagsX"onClick={()=>this.associationClicked(filterStore.associations[i])}> x </label>
                 </div>      
           )
@@ -106,7 +106,8 @@ class MainTagsBar extends Component {
         filterStore.contributors.forEach((contributor,i)=>{
           filterTags.push(
                 <div className="tagDiv">
-                  <span className="mainTagsName">By '{filterStore.contributors[i].text}'</span>
+                  <span className="mainTagsName"
+                        onClick={()=>{uiStore.toggleFilterDiv()}}>By '{filterStore.contributors[i].text}'</span>
                   <label className="mainTagsX"onClick={()=>filterStore.removeContributor(i)}> x </label>
                 </div>      
           )
@@ -116,7 +117,8 @@ class MainTagsBar extends Component {
       if(filterStore.difficultyRange[0] !==1 || filterStore.difficultyRange[1] !==10 ){
         filterTags.push(
               <div className="tagDiv">
-                <span className="mainTagsName"> Difficulty {filterStore.difficultyRange[0]}-{filterStore.difficultyRange[1]}</span>
+                <span className="mainTagsName"
+                      onClick={()=>{uiStore.toggleFilterDiv()}}> Difficulty {filterStore.difficultyRange[0]}-{filterStore.difficultyRange[1]}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.resetDifficultyRange()}> x </label>
               </div>      
         )
@@ -124,7 +126,8 @@ class MainTagsBar extends Component {
       if(filterStore.minCatches !==0 || filterStore.maxCatches <store.highestCatches ){
         filterTags.push(
               <div className="tagDiv">
-                <span className="mainTagsName">
+                <span className="mainTagsName"
+                      onClick={()=>{uiStore.toggleFilterDiv()}}>
                         {filterStore.minCatches}-{filterStore.maxCatches} Catches </span>
                 <label className="mainTagsX"onClick={()=>filterStore.resetCatches()}> x </label>
               </div>      
@@ -134,7 +137,8 @@ class MainTagsBar extends Component {
         filterStore.tags.forEach((tag,i)=>{
           filterTags.push(
                 <div className="tagDiv">
-                  <span className="mainTagsName"> {filterStore.tags[i].text}</span>
+                  <span className="mainTagsName"
+                        onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.tags[i].text}</span>
                   <label className="mainTagsX"onClick={()=>filterStore.handleDelete(i)}> x </label>
                 </div>      
           )
@@ -143,7 +147,8 @@ class MainTagsBar extends Component {
       if(filterStore.demoType !== 'All'){   
         filterTags.push(
               <div className="tagDiv">
-                <span className="mainTagsName"> Demo Type: {filterStore.demoType}</span>
+                <span className="mainTagsName"
+                      onClick={()=>{uiStore.toggleFilterDiv()}}> Demo Type: {filterStore.demoType}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.handleDemoTypeDelete()}> x </label>
               </div>      
         )
