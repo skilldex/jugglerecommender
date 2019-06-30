@@ -168,7 +168,9 @@ class UIStore {
 		if(!this.showFilterDiv){
 	      	this.setShowFilterDiv(true)
 	        this.setListExpanded(true)
-			filterStore.setMaxCatches(store.highestCatches)
+	        if (filterStore.maxCatches > store.highestCatches){
+				filterStore.setMaxCatches(store.highestCatches)
+			}
 	    }else{
 	    	this.setShowFilterDiv(false)
 	    }
