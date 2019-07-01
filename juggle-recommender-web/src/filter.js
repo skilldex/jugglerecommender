@@ -272,13 +272,13 @@ class Filter extends Component {
 		associations.forEach(function(element) {
 			associationButtons.push(
 				<button className={filterStore.associations.includes(element)?
-					'filterNum filterNumSelected':'filterNum'}
-				key={'numButton' + element} 
+					'relationshipButton relationshipButtonSelected':'relationshipButton'}
+				key={'relationshipButton' + element} 
 				onClick={()=>{this.associationButtonClicked(element)}}>{element}</button>
 		)},this);	
 		const associationSection =  <div>
 										<div>
-											<h3 className="filterHeader">Graph associations</h3>
+											<h3 className="filterHeader">Graph relationships</h3>
 										</div>
 										{associationButtons}
 									</div>

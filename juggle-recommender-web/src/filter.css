@@ -72,6 +72,17 @@
   background-color: lightblue;
 }
 
+.relationshipButton{
+  color: black;
+  border-radius: 8px;
+  margin: 2px;
+  outline: none;
+}
+
+.relationshipButtonSelected{
+  background-color: lightblue;
+}
+
 .filterApplyButton{
   width: 100%;
   height: 50px;

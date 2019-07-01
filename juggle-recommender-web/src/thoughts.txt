@@ -24,16 +24,19 @@ Add contortion tag to all contrition tricks
 
 
 _______________________________________________
-REASONS (for some stuff above)
+Two difficulty ratings: Contributor defined, User Average
 -----------------------------------------------
-1)We should show the currently logged in account up top.
-	-if you switch tabs to log into a new account, the original tab switches automatically to the new account
-	-someone might do this for another prop account
-	-thinking you are setting catches for one account when you are actually doing so in another is annoying
-_______________________________________________
+PROS:
+	-User based difficulty probably more likely than any individual user 
+CONS:
+	-Users may be more likely to exagerate what they think the difficulty is to make their vote more sway the shown difficulty in the direction they think it should be
+Consideration:
+	-We need to indicate what the user is to be setting difficulty based on, their personal difficulty or some sort of imagined global difficulty. For instance, should a 9b juggler put 5b as a 5 or as a 1?
+
+______________________________________________
 
 _______________________________________________
-Increase number of difficulty scores
+Increase number of difficulty numbers
 -----------------------------------------------
 PROS:
 	-There are many more than 10 levels of difficulty tricks in juggling
@@ -43,10 +46,6 @@ PROS:
 	-It will be easier to get accurate averages once we start using user input to determine ratings
 	-It makes more room for 2 ball stuff as well as for 8,9,10,11 instead of just bunching everything up at the ends
 CONS:
-
-
-
-
 
 PROPOSED METHODS:
 	-Add 1 decimal place. It is a smooth transition from what we already have, and creates plenty of levels of difficulty, it is very unlikely that we would end up wanting more later.
@@ -64,7 +63,7 @@ PROS:
 	-Current starred trick list is far too broad to be useful(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
 CONS:
 	-scrolling through list would no longer give visual indication of which tricks have catches recorded
-	-current users are getting used to current setup
+		-this CON can be countered by having a seperate icon that shows that catches have been input as well. 
 
 ______________________________________________
 

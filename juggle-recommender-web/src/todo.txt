@@ -24,21 +24,14 @@ Minor:
 	-thin lines on sort button
 
 Restyling:
-	-if related are shown in graph, should we remove them from popup?
-		-if not, then should we add prereqs and dependents to popup?
-	-clicking search or anything else on top bar closes popup, but leaves the trick selected in the list
+
 	-put ingstagram icon on list
 	-allow contributors to upload pics
 	-we should show the currently logged in account up top.
-	-slow/reverse gif (video would be more useful since gifs are now minority)
-	-In filter, maybe label difficulty/ ball num as filtering list
+	-slow video/gif
+	-frame by frame button
 	-maybe reorder filter sections
 	-if all ball nums or all associations are chosen in graph then it is just like none are, should we not show all those tags? should we make the buttons in filter all go gray?
-	-gray out catches filter if not logged in?
-	-hide/make unclickable catches sorting if not logged in?
-
-
-
 
 
 -'suggest a change' form so we dont have to use instagram comments or other methods
