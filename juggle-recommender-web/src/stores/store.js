@@ -227,7 +227,6 @@ class Store {
 		var result = window.confirm("Are you sure you want to permanently delete this pattern?");
 		if (result){
 			const trickToDelete = uiStore.popupTrick.id
-			uiStore.selectTopTrick()
 			uiStore.popupTrick = null
 		    this.removeOldDependents(null,trickToDelete)
 		    this.removeTrickFromDatabase(trickToDelete)

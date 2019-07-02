@@ -69,6 +69,14 @@ class TrickList extends Component {
 			} 
 		}			
 	}
+	openPopup=(trickKey)=>{
+		console.log('uiStore.selectedTrick',uiStore.selectedTrick)
+		const popupTrick = {...store.library[trickKey]}
+		popupTrick.x = 400
+		popupTrick.y = 400
+		popupTrick.id = trickKey
+		uiStore.setPopupTrick(popupTrick)		
+	}
 
 	render() {
 	 	let tricks = []
@@ -78,28 +86,52 @@ class TrickList extends Component {
 				const trick = store.library[rootTricks[i]]
 				const trickKey = rootTricks[i]
 				var cardClass='listCard'
-				if(this.props.selectedTrick && this.props.selectedTrick === trickKey){
-					cardClass = cardClass + ' selectedListCard'
-				}
+				const tags = trick && trick.tags ? trick.tags.sort().map((tag,i)=>{
+                    if(i < trick.tags.length-1){
+                      return <span>{tag + ","}</span>
+                    }else{
+                      return <span>{tag}</span>
+                    }
+                  }) : null
 				const cardColor = 
 					graphStore.getInvolvedNodeColor(trick.difficulty, 2).background === "white" ? 
 					graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
-				 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 					
+				 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 
 				tricks.push(
-					<div onClick={()=>{this.clickTrick(trickKey)}} 
-						className={cardClass} 
-						key={trickKey + "div"} 
-						style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
+					<div className={cardClass} 
+						 key={trickKey + "div"} 
+						 style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
 							graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
-						 {store.myTricks[trickKey] ? 
-						<button className="addAndRemoveMyTricksButtonList" 
-							 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
-							 		e.stopPropagation()}}>&#9733;</button> :
-						 <button className="addAndRemoveMyTricksButtonList" 
-						 		onClick={(e)=>{store.addToMyTricks(trickKey);
-						 		e.stopPropagation()}}>&#9734;</button>}
-						 <span className="listCardName" title={trick.name}>{trick.name}</span>			
-					</div>
+						 <div className = "topRow">	
+							 {store.myTricks[trickKey] ? 
+							 <button className="addAndRemoveMyTricksButtonList" 
+								 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
+								 		e.stopPropagation()}}>&#9733;</button> :
+							 <button className="addAndRemoveMyTricksButtonList" 
+							 		onClick={(e)=>{store.addToMyTricks(trickKey);
+							 		e.stopPropagation()}}>&#9734;</button>}
+							 <span className="listCardName" 
+								  onClick={(e)=>{this.openPopup(trickKey)}}
+								  title={trick.name}>{trick.name}</span>
+							 {this.props.selectedTrick && this.props.selectedTrick === trickKey ? 
+							 <button className="selectTrickButton" 
+								 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
+								 		e.stopPropagation()}}>-</button> :
+							 <button className="selectTrickButton" 
+							 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
+							 		e.stopPropagation()}}>+</button>}<br/>
+						</div>
+						{uiStore.selectedTrick === trickKey ?
+						null :
+						<div className = "bottomRow">	
+							<span className="bottomRowTags">
+								Tags: {tags}
+							</span>	
+							<span className="bottomRowSS">
+								SS: {trick.siteswap}
+							</span>	
+						</div>}				
+					</div>	
 				)	
 			}
 		}

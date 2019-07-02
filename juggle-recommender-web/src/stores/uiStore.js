@@ -105,15 +105,8 @@ class UIStore {
 
 	@action resetSelectedTrick=()=>{
 		uiStore.updateRootTricks()
-		if (!uiStore.rootTricks.includes(this.selectedTrick)){
-			this.selectTopTrick()
-		}
 	}
-	@action selectTopTrick=()=>{
-		if (uiStore.rootTricks.length>0){
-			this.selectedTrick = uiStore.rootTricks[0]
-		}
-	}
+
 	@action selectTrick=(trick)=>{
 		this.selectedTrick = trick
 	}

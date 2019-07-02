@@ -221,10 +221,6 @@ class App extends Component {
 				{uiStore.showFilterDiv?<Filter/>: null}
 				{popup}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
-				<TrickGraph 
-					nodes = {graphStore.nodes}
-					edges = {graphStore.edges}
-				/>
 			</div>
 		);
 	}

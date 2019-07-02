@@ -60,23 +60,22 @@
 .popupDiv{
   overflow-y: auto;
   position : absolute;
-  left: 182px;
-  width: 35vw;
-  max-width: 240px;
+  left: 0px;
+  width: 100%;
+  max-width: 400px;
+  height: 90%;
   background-color : white;
   z-index : 1200;
   border : 1px solid gray;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
   text-align: center;
-  height: 85vh;
   overflow-x:hidden;
 }
 
 @media screen and (max-width: 700px) {
   .popupDiv{
-    left: 182px;
-    width: calc(100% - 182px) ;
+
   }
 }
 

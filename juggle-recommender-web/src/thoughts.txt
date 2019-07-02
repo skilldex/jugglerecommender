@@ -1,3 +1,16 @@
+New UI:
+	Do we want to limit to 1 expanded tricklist trick at a time?
+		if not, we will make multiple mini video players
+		if so, we cant compare tricks as easily(maybe no bd)
+
+
+
+
+
+
+
+
+
 New todos:
 	-selecting a node on graph should autoscroll to the selected trick on the list
 	-Tag's like 'contortion' could automatically add 'body-throw', another examples 'underarm-catch' automatically adding 'crossed-arms'
