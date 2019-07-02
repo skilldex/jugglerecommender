@@ -11,40 +11,40 @@ import YouTube from 'react-youtube';
 @observer
 class PopupDemo extends Component {
   youtubeEnded = (data) => {
-    if(store.library[uiStore.popupTrick.id].videoStartTime){
-      const popupTrick = store.library[uiStore.popupTrick.id]
-      this.popupVideo.internalPlayer.seekTo(popupTrick.videoStartTime)
+    if(store.library[this.props.trickKey].videoStartTime){
+      const trick = store.library[this.props.trickKey]
+      this.video.internalPlayer.seekTo(trick.videoStartTime)
     }
   }
   instagramPaused = (data) => {
-    if(this.popupVideo.currentTime >= parseInt(uiStore.popupTrick.videoEndTime)){
-      this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
-      this.popupVideo.load()
+    if(this.video.currentTime >= parseInt(store.library[this.props.trickKey].videoEndTime)){
+      this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime);
+      this.video.load()
     }
   }
   instagramTimeUpdate = (data) => {
-    if(this.popupVideo.currentTime < parseInt(uiStore.popupTrick.videoStartTime)){
-      this.popupVideo.currentTime = parseInt(uiStore.popupTrick.videoStartTime);
-      this.popupVideo.load()
+    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime)){
+      this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime);
+      this.video.load()
     }
   }
 	render() {
     
-    const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
-    const popupTrick = store.library[popupTrickKey]
-    if (popupTrick && popupTrick.video){
-      store.getUsableVideoURL(popupTrick.video)
+    const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
+    const trick = store.library[trickKey]
+    if (trick && trick.video){
+      store.getUsableVideoURL(trick.video, trickKey)
     } else {
-      store.setPopupVideoURL('')
+      store.setVideoURL('','')
     }
 
     const demoClass = uiStore.popupFullScreen ? "fullScreenDemo" : "demo"
     const gifClass = uiStore.popupFullScreen ? "gifFullScreenDemo" : "gifDemo"
-    const gifSection = popupTrick && popupTrick.url? 
+    const gifSection = trick && trick.url? 
                           <img 
                              alt = ''
                              className={gifClass} 
-                             src={popupTrick.gifUrl}
+                             src={trick.gifUrl}
                           /> : null
     
     const instagramLogo = <img 
@@ -52,20 +52,20 @@ class PopupDemo extends Component {
                              className="instagramLogo"
                              src={instagramLogoIcon}
                           />
-    const fullScreenButton = popupTrick && popupTrick.gifUrl?
+    const fullScreenButton = trick && trick.gifUrl?
                                 <img 
                                   src={fullScreenIcon} 
                                   className="fullScreenIcon" 
                                   alt="" 
                                   onClick={()=>{uiStore.togglePopupFullScreen()}} 
                                 /> : null
-    let igHeader = store.popupVideoURL.includes('instagram') && store.igData ? 
+    let igHeader = store.videoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
                                   alt=""
                                   src={store.igData.picURL}/>
                             <span className="instagramUsername">{store.igData.username}</span>
-                            <div className="instagramViewProfileButton" onClick={()=>{window.open(popupTrick.video)}}>View {instagramLogo}</div>
+                            <div className="instagramViewProfileButton" onClick={()=>{window.open(trick.video)}}>View {instagramLogo}</div>
                           </div> : null
     const youtubeOpts = {
       playerVars: { // https://developers.google.com/youtube/player_parameters
@@ -74,13 +74,13 @@ class PopupDemo extends Component {
         loop : 1,
       }
     }
-    if(popupTrick.videoStartTime > -1){
-      youtubeOpts.playerVars.start = popupTrick.videoStartTime
-      youtubeOpts.playerVars.end = popupTrick.videoEndTime
+    if(trick && trick.videoStartTime > -1){
+      youtubeOpts.playerVars.start = trick.videoStartTime
+      youtubeOpts.playerVars.end = trick.videoEndTime
     }else{
       youtubeOpts.playerVars.playlist = store.youtubeId
     }
-    let video  = store.popupVideoURL.includes('youtube') ? 
+    let video  = store.videoURL.includes('youtube') ? 
                         <YouTube 
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
@@ -90,13 +90,13 @@ class PopupDemo extends Component {
                           muted={true}                          
                           allow="autoplay"  
                           allowtransparency="true"
-                          src={store.popupVideoURL}
+                          src={store.videoURL}
                           onEnd={this.youtubeEnded}
-                          ref={(video)=> {this.popupVideo = video}}  
-                        ></YouTube> : store.popupVideoURL.includes('instagram') ? 
+                          ref={(video)=> {this.video = video}}  
+                        ></YouTube> : store.videoURL.includes('instagram') ? 
                         <video 
                           id="instagramVideo"
-                          ref={(video)=> {this.popupVideo = video}}
+                          ref={(video)=> {this.video = video}}
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           className= {demoClass}                                  
@@ -107,7 +107,7 @@ class PopupDemo extends Component {
                           loop
                           onTimeUpdate={this.instagramTimeUpdate}
                           onPause={this.instagramPaused}
-                          src={store.popupVideoURL}
+                          src={store.videoURL}
                         ></video> : null
 
     const outerDiv = uiStore.popupFullScreen ? "fullScreenOuterDiv" : "outerDiv"

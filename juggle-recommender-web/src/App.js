@@ -202,7 +202,7 @@ class App extends Component {
 						    </div>
 						</div>
 		const popup = uiStore.editingPopupTrick ? null : 
-						uiStore.popupFullScreen ? <PopupDemo/> : <Popup/>
+						uiStore.popupFullScreen ? <PopupDemo trickKey={uiStore.popupTrick.id}/> : <Popup/>
 		return (
 			<div
 				touchMove={(e)=>{e.preventDefault()}} 

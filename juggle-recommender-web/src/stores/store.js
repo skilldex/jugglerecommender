@@ -16,7 +16,7 @@ class Store {
 	@observable tagsSuggestions = []
 	@observable contributors = []
 	@observable presetTags = {}
-	@observable popupVideoURL = ""
+	@observable videoURL = ""
 	@observable igData = null
 	@observable youtubeId = null
 	@computed get isMobile(){
@@ -44,21 +44,21 @@ class Store {
 	@action setContributors=(contributors)=>{
 		this.contributors = contributors
 	}
-	@action setPopupVideoURL=(url)=>{
-		this.popupVideoURL = url
-		if (uiStore.popupTrick &&
-			store.library[uiStore.popupTrick.id].videoStartTime && 
-			store.library[uiStore.popupTrick.id].videoEndTime &&
+	@action setVideoURL=(url, trickKey)=>{
+		this.videoURL = url
+		if (this.library[trickKey] &&
+			this.library[trickKey].videoStartTime && 
+			this.library[trickKey].videoEndTime &&
 			url.includes("instagram.com")
 		){
-			const startTime = store.library[uiStore.popupTrick.id].videoStartTime
-			const endTime = store.library[uiStore.popupTrick.id].videoEndTime
-			this.popupVideoURL = url+"#t="+startTime+","+endTime
+			const startTime = this.library[trickKey].videoStartTime
+			const endTime = this.library[trickKey].videoEndTime
+			this.videoURL = url+"#t="+startTime+","+endTime
 		}	
 	}
-	@action setIGData=(data)=>{
+	@action setIGData=(data, trickKey)=>{
 		if(!this.igData || 
-			!uiStore.popupTrick || 
+			!this.library[trickKey] || 
 			this.igData.username !== data.graphql.shortcode_media.owner.username){
 			this.igData = {
 				username : data.graphql.shortcode_media.owner.username,
@@ -67,7 +67,7 @@ class Store {
 			}
 		}
 	}
-	@action getUsableVideoURL=(userProvidedURL)=>{
+	@action getUsableVideoURL=(userProvidedURL, trickKey)=>{
       let videoURLtoUse = "notValid"
       if (userProvidedURL.includes("instagram.com")){
 	    const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
@@ -78,11 +78,11 @@ class Store {
         ).then(
             (data) => {
             	if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
-					this.setPopupVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url)
-					this.setIGData(data)
+					this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
+					this.setIGData(data, trickKey)
 	            }else{
-	            	this.setPopupVideoURL(data.graphql.shortcode_media.video_url)
-	            	this.setIGData(data)
+	            	this.setVideoURL(data.graphql.shortcode_media.video_url, trickKey)
+	            	this.setIGData(data, trickKey)
 	            }
             }
         );                                
@@ -102,7 +102,7 @@ class Store {
           usefulPart = usefulPart[usefulPart.length-1]            
         }
         videoURLtoUse = usefulPart
-        this.setPopupVideoURL("https://www.youtube.com/embed/"+usefulPart+
+        this.setVideoURL("https://www.youtube.com/embed/"+usefulPart+
                        "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
         this.youtubeId = usefulPart
       }

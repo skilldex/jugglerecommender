@@ -94,7 +94,8 @@ class TrickList extends Component {
                 }
               }) : null
 
-			const expandedSection = uiStore.selectedTrick === trickKey ? <PopupDemo/>:null
+			const expandedSection = uiStore.selectedTrick === trickKey ? 
+				<PopupDemo trickKey = {trickKey}/>:null
 			tricks.push(
 				<div className={cardClass} 
 					 key={trickKey + "div"} 

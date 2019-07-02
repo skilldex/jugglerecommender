@@ -266,7 +266,7 @@ class AddTrickForm extends Component {
     	if (utilities.isEmptyOrSpaces(this.state.video)){
 			this.setState({submitDisabled:true})
 		}else{
-			if (store.getUsableVideoURL(this.state.video)==='notValid'){
+			if (store.getUsableVideoURL(this.state.video, '')==='notValid'){
 				this.setState({videoErrorMessage:'Not a valid URL.'})
 				this.setState({submitDisabled:true})
 			}else{
