@@ -39,9 +39,12 @@
 .listCard{
   display : block;
   border : 1px solid black;
+  margin-bottom : 5px;
+  box-shadow :   2px 0px 5px #888888;
+  border-radius: 3px;
+  padding : 3px;
 }
 .topRow{
-  border : 1px solid black;
   width : 100%;
   font-size : 13px;
   text-align: left;

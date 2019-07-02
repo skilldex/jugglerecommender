@@ -105,6 +105,7 @@ class App extends Component {
  		if (paneName === 'isLoginPaneOpen'){
 	 		store.setIsLoginPaneOpen(true)
 	 	}else if(paneName === 'isInstructionsPaneOpen'){
+	 		window.history.pushState("list", "list page", "localhost:3000/list")
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}else if(paneName === 'isCreateAccountPaneOpen'){
 	 		this.setState({ 'isCreateAccountPaneOpen': true })

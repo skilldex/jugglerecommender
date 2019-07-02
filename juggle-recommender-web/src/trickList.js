@@ -93,15 +93,11 @@ class TrickList extends Component {
                       return <span>{tag}</span>
                     }
                   }) : null
-				const cardColor = 
-					graphStore.getInvolvedNodeColor(trick.difficulty, 2).background === "white" ? 
-					graphStore.getInvolvedNodeColor(trick.difficulty, 2).border :
-				 	graphStore.getInvolvedNodeColor(trick.difficulty, 2).background 
+
 				tricks.push(
 					<div className={cardClass} 
 						 key={trickKey + "div"} 
-						 style={{backgroundColor: cardClass === 'listCard' ? cardColor : 
-							graphStore.getSelectedInvolvedNodeColor(trick.difficulty, 2).background}}>
+					>
 						 <div className = "topRow">	
 							 {store.myTricks[trickKey] ? 
 							 <button className="addAndRemoveMyTricksButtonList" 
@@ -150,22 +146,15 @@ class TrickList extends Component {
 						</div>
 
 		const maximizedList =
-						<div>
-						 	{listExpandCollapseButton}
-						 	<button className="addTrickButton" onClick={uiStore.toggleAddingTrick}>+ Add Pattern</button>
-							<div style={{height:"100%"}}>
-								<label style={{float:"left"}}>easy</label>
-								<label style={{float:"right", paddingRight:"5px"}}>hard</label>
-								<img style={{}}src={legendImg} alt="legendImg" width="97%"/>						
-								<br></br>							
-								<div id='trickList' 
-									className={tricks.length > 1 ? "listSection" : ""}
-									onScroll = {this.recordScrollerPosition}> 
+							<div 
+								style={{height:"100%"}} 
+								id='trickList' 
+								className={tricks.length > 1 ? "listSection" : ""}
+								onScroll = {this.recordScrollerPosition}
+							>
 								{tricks}
-								</div>						
 							</div>
 
-						</div>
 		return (
 			<div
 				className= {uiStore.listExpanded ? "listDiv" : ""}
