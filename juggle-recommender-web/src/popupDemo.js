@@ -29,6 +29,7 @@ class PopupDemo extends Component {
     }
   }
 	render() {
+    
     const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
     const popupTrick = store.library[popupTrickKey]
     if (popupTrick && popupTrick.video){

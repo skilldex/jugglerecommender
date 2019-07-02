@@ -4,6 +4,7 @@ import uiStore from './stores/uiStore'
 import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
+import PopupDemo from './popupDemo'
 import './trickList.css';
 import './App.css';
 //import { Resizable } from "re-resizable";
@@ -75,62 +76,61 @@ class TrickList extends Component {
 		popupTrick.x = 400
 		popupTrick.y = 400
 		popupTrick.id = trickKey
-		uiStore.setPopupTrick(popupTrick)		
+		uiStore.setPopupTrick(popupTrick)	
 	}
-
+	
+							
 	render() {
 	 	let tricks = []
-	 	const rootTricks = uiStore.rootTricks
-	 	if(Object.keys(store.library).length > 0){		 	
-			for (var i = 0; i < rootTricks.length; i++) {
-				const trick = store.library[rootTricks[i]]
-				const trickKey = rootTricks[i]
-				var cardClass='listCard'
-				const tags = trick && trick.tags ? trick.tags.sort().map((tag,i)=>{
-                    if(i < trick.tags.length-1){
-                      return <span>{tag + ","}</span>
-                    }else{
-                      return <span>{tag}</span>
-                    }
-                  }) : null
+		uiStore.rootTricks.forEach((trickKey)=>{
+			const trick = store.library[trickKey]
+			var cardClass='listCard'
 
-				tricks.push(
-					<div className={cardClass} 
-						 key={trickKey + "div"} 
-					>
-						 <div className = "topRow">	
-							 {store.myTricks[trickKey] ? 
-							 <button className="addAndRemoveMyTricksButtonList" 
-								 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
-								 		e.stopPropagation()}}>&#9733;</button> :
-							 <button className="addAndRemoveMyTricksButtonList" 
-							 		onClick={(e)=>{store.addToMyTricks(trickKey);
-							 		e.stopPropagation()}}>&#9734;</button>}
-							 <span className="listCardName" 
-								  onClick={(e)=>{this.openPopup(trickKey)}}
-								  title={trick.name}>{trick.name}</span>
-							 {this.props.selectedTrick && this.props.selectedTrick === trickKey ? 
-							 <button className="selectTrickButton" 
-								 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
-								 		e.stopPropagation()}}>-</button> :
-							 <button className="selectTrickButton" 
+			const tags = trick && trick.tags ? trick.tags.slice().sort().map((tag,i)=>{
+                if(i < trick.tags.length-1){
+                  return <span>{tag + ","}</span>
+                }else{
+                  return <span>{tag}</span>
+                }
+              }) : null
+
+			const expandedSection = uiStore.selectedTrick === trickKey ? <PopupDemo/>:null
+			tricks.push(
+				<div className={cardClass} 
+					 key={trickKey + "div"} 
+				>
+					 <div className = "topRow">	
+						 {store.myTricks[trickKey] ? 
+						 <button className="addAndRemoveMyTricksButtonList" 
+							 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
+							 		e.stopPropagation()}}>&#9733;</button> :
+						 <button className="addAndRemoveMyTricksButtonList" 
+						 		onClick={(e)=>{store.addToMyTricks(trickKey);
+						 		e.stopPropagation()}}>&#9734;</button>}
+						 <span className="listCardName" 
+							  onClick={(e)=>{this.openPopup(trickKey)}}
+							  title={trick.name}>{trick.name}</span>
+						 {this.props.selectedTrick && this.props.selectedTrick === trickKey ? 
+						 <button className="selectTrickButton" 
 							 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
-							 		e.stopPropagation()}}>+</button>}<br/>
-						</div>
-						{uiStore.selectedTrick === trickKey ?
-						null :
-						<div className = "bottomRow">	
-							<span className="bottomRowTags">
-								Tags: {tags}
-							</span>	
-							<span className="bottomRowSS">
-								SS: {trick.siteswap}
-							</span>	
-						</div>}				
-					</div>	
-				)	
-			}
-		}
+							 		e.stopPropagation()}}>-</button> :
+						 <button className="selectTrickButton" 
+						 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
+						 		e.stopPropagation()}}>+</button>}<br/>
+					</div>
+					<div className = "bottomRow">	
+						<span className="bottomRowTags">
+							Tags: {tags}
+						</span>	
+						<span className="bottomRowSS">
+							SS: {trick.siteswap}
+						</span>	
+					</div>
+					{expandedSection}			
+					
+				</div>	
+			)
+		})	
 	 	const listExpandCollapseButton = 
 				 					<div >
 									 	<label className="listExpandCollapseButton"
@@ -152,7 +152,9 @@ class TrickList extends Component {
 								className={tricks.length > 1 ? "listSection" : ""}
 								onScroll = {this.recordScrollerPosition}
 							>
-								{tricks}
+								{tricks.length > 0 ? tricks : 
+									<div className="noResultsDiv" >No results found</div>
+								}
 							</div>
 
 		return (

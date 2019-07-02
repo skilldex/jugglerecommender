@@ -1,3 +1,26 @@
+.listDiv{
+  padding-bottom : 5px;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  border : 1px solid gray;
+  margin-left : 1px;
+  text-align: center;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  opacity : 100%;
+  background-color : white;
+  box-shadow : 5px 10px 8px #888888;;
+  border-radius: 8px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling : touch;
+}
+.noResultsDiv{
+  padding-top: 15px;
+  font-style : italic;
+}
 .expandText{
   font-style: italic;
   font-size: 12px;
@@ -40,7 +63,7 @@
   display : block;
   border : 1px solid black;
   margin-bottom : 5px;
-  box-shadow :   2px 0px 5px #888888;
+  box-shadow :   1px 0px 2px #888888;
   border-radius: 3px;
   padding : 3px;
 }
@@ -92,7 +115,7 @@
 .addAndRemoveMyTricksButtonList{
   cursor: pointer;
   line-height: -0px;
-  font-size: 16px;
+  font-size: 14px;
   box-shadow : 2px 0px 5px #888888;
   padding : 2px;
   border-radius: 5px;
@@ -147,25 +170,6 @@
   text-align: center;
   vertical-align: top;
 
-}
-.listDiv{
-  padding-bottom : 5px;
-  width: 100%;
-  max-width: 400px;
-  height: 90%;
-  border : 1px solid gray;
-  margin-left : 1px;
-  text-align: center;
-  display: inline-block;
-  position: absolute;
-  z-index: 1;
-  opacity : 100%;
-  background-color : white;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling : touch;
 }
 
 .sectionHeader{

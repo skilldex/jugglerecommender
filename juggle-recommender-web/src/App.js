@@ -206,7 +206,8 @@ class App extends Component {
 		return (
 			<div
 				touchMove={(e)=>{e.preventDefault()}} 
-				className="main" ref={ref => this.el = ref}>	            
+				className="main" 
+				ref={ref => this.el = ref}>	            
 	            {instructions}
 	            {login}
 	            {createAccount}
