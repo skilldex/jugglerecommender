@@ -47,20 +47,6 @@ class MainTagsBar extends Component {
       }
       filterStore.setNumBalls(tempNumBalls)
     }
-    associationClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
-      let associations = [...filterStore.associations]
-      if (associations.includes(element)){
-        for( var i = 0; i < associations.length; i++){ 
-          if ( associations[i] === element) {
-              associations.splice(i, 1); 
-              i--;
-            }
-        }
-      }else{
-        associations.push(element)
-      }
-      filterStore.setAssociations(associations)
-    }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
     }
@@ -92,16 +78,6 @@ class MainTagsBar extends Component {
           )
         })
       }
-      if(filterStore.associations){   
-        filterStore.associations.forEach((association,i)=>{
-          filterTags.push(
-                <div className="tagDiv">
-                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.associations[i]}</span>
-                  <label className="mainTagsX"onClick={()=>this.associationClicked(filterStore.associations[i])}> x </label>
-                </div>      
-          )
-        })
-      }
       if(filterStore.contributors){   
         filterStore.contributors.forEach((contributor,i)=>{
           filterTags.push(
@@ -113,7 +89,6 @@ class MainTagsBar extends Component {
           )
         })
       }
-
       if(filterStore.difficultyRange[0] !==1 || filterStore.difficultyRange[1] !==10 ){
         filterTags.push(
               <div className="tagDiv">

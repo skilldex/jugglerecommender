@@ -160,7 +160,60 @@ class Popup extends Component {
         tutorialSite = tutorialSite.split('.')[0]
       }
     }
-    console.log('popupTrick',popupTrick)
+    const infoSection = uiStore.popupTrick && popupTrickKey ?
+                          <div className="popupInfoDiv">
+                            <div className="moreInfoLabelDiv">
+                              <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
+                                {uiStore.showMoreInformation?"less info":"more info"}
+                              </label><br/>
+                            </div>
+                            {catchesSection}
+                            <label className="popupLabel">Contributor: </label>
+                            {
+                              popupTrick.contributor ? 
+                              popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
+                            }<br/>
+                            {uiStore.showMoreInformation?
+                              <div className="moreInfoDiv">                   
+                                <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
+                                <label className="popupLabel"># of Balls: </label>{popupTrick.num}<br/>
+                                {popupTrick.siteswap ? 
+                                  <div>
+                                    <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
+                                  </div> : null
+                                }
+                                {popupTrick && popupTrick.url ?
+                                  <label className="popupLabel">Tutorial: </label> : null
+                                }
+                                {popupTrick && popupTrick.url ?
+                                  <a target="_" href={popupTrick.url}>{tutorialSite}</a> : null
+                                } 
+                                {popupTrick && popupTrick.tags?
+                                  <div>
+                                    <label className="popupLabel">Tags:</label><br/>
+                                    <div className="popupTags">{tags}</div>
+                                  </div> : null
+                                }
+                                {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
+                                  <div>
+                                    <label className="popupLabel">Related:</label><br/>
+                                    <div className="popupTags">{related}</div>
+                                  </div> : null
+                                }
+                                {popupTrick && popupTrick.explanation?
+                                  <div className="explanationSection">
+                                    <label className="popupLabel">Explanation:</label>
+                                    <label className="showExplanation" onClick={()=>this.toggleShowExplanation()}>
+                                      {uiStore.showExplanation?"hide":"show"}
+                                    </label> <br/>
+                                    {uiStore.showExplanation?<label className="explanation">{popupTrick.explanation}</label>:null}
+                                  </div> : null
+                                }
+                              </div>:null
+                            }
+                          </div>:null
+    const relationshipsLists = null
+
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div className="popupDiv">
                       <div className="topButtons">
@@ -173,58 +226,9 @@ class Popup extends Component {
                       <PopupDemo 
                         trickKey = {uiStore.popupTrick.id}
                         demoLocation="popup"
-                      />           
-                      <div className="popupInfoDiv">
-                        <div className="moreInfoLabelDiv">
-                          <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
-                            {uiStore.showMoreInformation?"less info":"more info"}
-                          </label><br/>
-                        </div>
-                        {catchesSection}
-                        <label className="popupLabel">Contributor: </label>
-                        {
-                          popupTrick.contributor ? 
-                          popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
-                        }<br/>
-                        {uiStore.showMoreInformation?
-                          <div className="moreInfoDiv">                		
-                            <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
-                            <label className="popupLabel"># of Balls: </label>{popupTrick.num}<br/>
-                            {popupTrick.siteswap ? 
-                              <div>
-                                <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
-                              </div> : null
-                            }
-                            {popupTrick && popupTrick.url ?
-                              <label className="popupLabel">Tutorial: </label> : null
-                            }
-                            {popupTrick && popupTrick.url ?
-                              <a target="_" href={popupTrick.url}>{tutorialSite}</a> : null
-                            } 
-                            {popupTrick && popupTrick.tags?
-                              <div>
-                                <label className="popupLabel">Tags:</label><br/>
-                                <div className="popupTags">{tags}</div>
-                              </div> : null
-                            }
-                            {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
-                              <div>
-                                <label className="popupLabel">Related:</label><br/>
-                                <div className="popupTags">{related}</div>
-                              </div> : null
-                            }
-                            {popupTrick && popupTrick.explanation?
-                              <div className="explanationSection">
-                                <label className="popupLabel">Explanation:</label>
-                                <label className="showExplanation" onClick={()=>this.toggleShowExplanation()}>
-                                  {uiStore.showExplanation?"hide":"show"}
-                                </label> <br/>
-                                {uiStore.showExplanation?<label className="explanation">{popupTrick.explanation}</label>:null}
-                              </div> : null
-                            }
-                          </div>:null
-                        }
-                      </div>                     
+                      />
+                      {infoSection}
+                      {relationshipsLists}                
                     </div> : null
 		return(      
       			<div onMouseEnter={this.onMouseEnter} 

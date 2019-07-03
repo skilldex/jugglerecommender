@@ -2,24 +2,24 @@ v 1.4
 New trickList:
 	-difficulty added to topRow
 	-instagram circle/profile image?
+	-if too many tags to fit, we need a ...
 	Expanded Section:
-		-full list of tags shown
-		-tutorial shown
+		-show full list of tags
+		-show tutorial
 		-resize demo?
 New Popup:
-	-video moved to top
-	-list of prereqs, related, and postreqs shown
-	-height fixed
+	-since popup is now fullscreen, gif is also fullscreen, which makes fullscreen button not useful
+		-we could remove fullscreen button
+		-we could make gif smaller in popup, and push it to the side and use that area for info
+	-show list of prereqs, related, and postreqs
+		-exactly the same setup as trickList? if so, should probably reuse code
+	-Increase size of popup title font based on its length?
 Hamburger Menu:
-	-login/out
+	-home
+	-profile (maybe profile and home can be the same thing)
+	-add pattern
+	-login/logout
 	-about
-	-add trick
-	-profile
-Patterns to add(either video or gif):
-	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550
-	To learn 3b cacade: 300, 330
-		-can be done in any cascade pattern we want to have easier patterns to learn, 
-			reverse cascade, backcross, reverse backcross, over the head...
 Home Screen
 	-Most recently added trick?
 	-number of patterns on site
@@ -27,10 +27,15 @@ Home Screen
 Profile Screen
 	-share button to share users contributed
 	-upload image
+	-personal stats
 Filter
-	-share button to share currently set filters
+	-add a share button to share currently set filters
 	-move tags down to second line
-	-remove association tags completely
+Patterns to add(either video or gif):
+	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550
+	To learn 3b cacade: 300, 330
+		-can be done in any cascade pattern we want to have easier patterns to learn, 
+			reverse cascade, backcross, reverse backcross, over the head...
 =========
 
 

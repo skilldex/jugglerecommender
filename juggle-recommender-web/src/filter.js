@@ -98,23 +98,6 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
 
-	associationButtonClicked=(element)=>{
-		let tempAssociations = [...filterStore.associations]
-		if (tempAssociations.includes(element)){
-			for( var i = 0; i < tempAssociations.length; i++){ 
-				if ( tempAssociations[i] === element) {
-				    tempAssociations.splice(i, 1); 
-				    i--;
-			    }
-			}
-		}else{
-			tempAssociations.push(element)
-		}
-		filterStore.setAssociations(tempAssociations)
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()		
-	}
-
 	handleMinCatchesChange=(e)=>{
 		const inputElement = document.getElementById("minCatchesInput");
 		let newMin = +e.target.value
@@ -267,21 +250,7 @@ class Filter extends Component {
 				          handleTagClick={this.handleDemoTypeTagClick}/>
 				    </div>
 				</div>
-	 	const associations = ['prereqs','postreqs','related']
-	 	const associationButtons = [] 
-		associations.forEach(function(element) {
-			associationButtons.push(
-				<button className={filterStore.associations.includes(element)?
-					'relationshipButton relationshipButtonSelected':'relationshipButton'}
-				key={'relationshipButton' + element} 
-				onClick={()=>{this.associationButtonClicked(element)}}>{element}</button>
-		)},this);	
-		const associationSection =  <div>
-										<div>
-											<h3 className="filterHeader">Graph relationships</h3>
-										</div>
-										{associationButtons}
-									</div>
+
 		return (
 			<div className="filterDiv"
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
@@ -290,8 +259,6 @@ class Filter extends Component {
 	            <img id="closeButton" src={closeIcon} className="closeFilter" alt="closeIcon" 
              		onClick={()=>{uiStore.toggleFilterDiv()}}
         		/><br/>
-				{associationSection}
-			    <ColoredLine/>
 			    {numSection}
 				<ColoredLine/>
 				{tagSection}
