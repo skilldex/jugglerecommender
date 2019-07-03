@@ -4,6 +4,7 @@ import uiStore from './stores/uiStore'
 import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
+import downArrow from './images/down-arrow.svg'
 import Demo from './demo'
 import './trickList.css';
 import './App.css';
@@ -113,36 +114,32 @@ class TrickList extends Component {
 						demoLocation="expandedSection"
 					/>
 				</div>:null
+			const expandTrickButtonClass =  
+				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton" + " rotated90"
 			tricks.push(
 				<div className={cardClass} 
 					 key={trickKey + "div"} 
 				>
-					 <div className = "topRow">	
-						 {store.myTricks[trickKey] ? 
-						 <button className="addAndRemoveMyTricksButtonList" 
-							 		onClick={(e)=>{store.removeFromMyTricks(trickKey);
-							 		e.stopPropagation()}}>&#9733;</button> :
-						 <button className="addAndRemoveMyTricksButtonList" 
-						 		onClick={(e)=>{store.addToMyTricks(trickKey);
-						 		e.stopPropagation()}}>&#9734;</button>}
-						 <span className="listCardName" 
-							  onClick={(e)=>{this.openDetail(trickKey)}}
-							  title={trick.name}>{trick.name}</span>
-						 {this.props.selectedTrick && this.props.selectedTrick === trickKey ? 
-						 <button className="selectTrickButton" 
-							 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
-							 		e.stopPropagation()}}>-</button> :
-						 <button className="selectTrickButton" 
-						 		onClick={(e)=>{uiStore.toggleSelectedTrick(trickKey);
-						 		e.stopPropagation()}}>+</button>}<br/>
-					</div>
-					<div className = "bottomRow">	
-						<span className="bottomRowTags">
-							Tags: {tags}
-						</span>	
-						<span className="bottomRowSS">
-							SS: {trick.siteswap}
-						</span>	
+					<div className="mainCard">
+						 <div className = "cardInfo">	
+							 <div className="listCardName" 
+								  onClick={(e)=>{this.openDetail(trickKey)}}
+								  title={trick.name}>{trick.name}
+							</div>
+							 
+							<div className="bottomRowText difficultyValue">Difficulty: {trick.difficulty}</div>	
+							<div className="bottomRowText tags">
+								Tags: {tags}
+							</div>	
+							
+						</div>
+						<div class="expandButtonDiv">
+							<img 
+								className={expandTrickButtonClass}
+								onClick={()=>{uiStore.toggleSelectedTrick(trickKey)}}
+								src={downArrow}
+							/>	 		
+						</div>
 					</div>
 					{expandedSection}					
 				</div>	

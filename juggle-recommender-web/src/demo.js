@@ -115,7 +115,7 @@ class Demo extends Component {
     if (this.props.demoLocation === "detail"){
       outerDivClass = "demoOuterDivDetail"
     }else if(this.props.demoLocation === "expandedSection"){
-      outerDivClass = "demoOuterDivExpandeSection"
+      outerDivClass = "demoOuterDivExpandedSection"
     }
 		return(
       			<div className={outerDivClass}>

@@ -60,50 +60,52 @@
   border-radius : 0 10px 10px 0;
 }
 .listCard{
-  display : block;
+
   border : 1px solid black;
   margin-bottom : 5px;
   box-shadow :   1px 0px 2px #888888;
   border-radius: 3px;
   padding : 3px;
-}
-.topRow{
-  width : 100%;
-  font-size : 13px;
+  padding-left : 5px;
   text-align: left;
-  height : 25px;
-  display : flex;
-  align-items : center;  
 }
-.bottomRow{
-  width : 100%;
-  font-size : 10px;
-  text-align: left;
-  height : 17px;
-  display : flex-inline;
-  text-overflow: hidden;
-  white-space: nowrap;
-  overflow: hidden;
- 
+.expandButtonDiv{
+  display: inline-block;
+  margin-right : 5px;
+  margin-left: auto;
+  margin-bottom: 5px;
 }
-.bottomRowSS{
+.rotated90{
+    -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+    -moz-transform: rotate(-90deg);   /* Firefox */
+    -ms-transform: rotate(-90deg);   /* IE 9 */
+    -o-transform: rotate(-90deg);   /* Opera */
+    transform: rotate(-90deg);
+}
+.cardInfo{
+  display: inline-block;
+}
+.bottomRowText{
+  font-size : 11px;
+  display: inline-block;
+}
 
-}
-.bottomRowTags{
-  width: 180px;
-  max-height:17px;
-  max-width: 180px;
+.tags{
   margin-right: 5px;
-  vertical-align: baseline;
-  position: relative;
-  float: left;
-  left:0px;
   text-overflow: hidden;
   white-space: nowrap;
   overflow: hidden;
+  margin-left: 15px;
+  vertical-align: middle;
+}
+.mainCard{
+  width: 100%;
+  display : flex;
+  align-items : center;
 }
 .expandedSection{
   width: 100%;
+  display: block;
 }
 .selectedListCard{
   border : 3px solid black;
@@ -138,9 +140,10 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  display : inline-block;
   vertical-align: middle;
   color : #6666FF;
+  font-weight: bold;
+  font-size: 15px;
 }
 
 .listExpandCollapseButton{
@@ -218,9 +221,7 @@
 .sortDropdownButtonSelected{
   color: black;
 }
-.divdingLine{
-  margin-right: 6px;
-}
+
 .addTrickButton{
   border: 1px solid black;
   background-color : white;

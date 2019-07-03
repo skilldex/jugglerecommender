@@ -75,9 +75,8 @@
   z-index : 1200;
 }
 .demoOuterDivExpandedSection{
-  width: 50%;
-  z-index : 1200;
-  margin-left: auto;  
+  width: 60%;
+  margin: 0 auto;  
 }
 .fullScreenIcon{
   margin-left: auto;
