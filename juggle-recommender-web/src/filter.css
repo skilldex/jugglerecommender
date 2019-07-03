@@ -8,8 +8,9 @@
   max-height: 400px;
   border : 1px solid gray;
   display: inline-block;
+  z-index: 1200;
   position: absolute;
-  z-index: 2;
+  top:100px;
   opacity : 95%;
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;

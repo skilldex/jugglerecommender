@@ -17,7 +17,6 @@ import Login from "./login"
 import CreateAccount from "./createAccount"
 import MainTagsBar from "./mainTagsBar"
 import Demo from './demo'
-import Filter from './filter.js'
 import filterStore from './stores/filterStore'
 
 let firebaseConfig = {}
@@ -225,7 +224,6 @@ class App extends Component {
 						selectedTrick={uiStore.selectedTrick}
 					/> : null
 				}
-				{uiStore.showFilterDiv?<Filter/>: null}
 				{detail}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>

@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import { observer } from "mobx-react"
+import Filter from './filter.js'
 import filterStore from './stores/filterStore'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
@@ -223,6 +224,7 @@ class MainTagsBar extends Component {
           {sort}
           {sortDropdown}
           {filter}
+          {uiStore.showFilterDiv?<Filter/>: null}
           <span className="mainTagsHeader">{filterTags.length>0?"":"no filters set"}</span> 
           {filterTags}
           {tagSection}
