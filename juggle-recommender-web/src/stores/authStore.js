@@ -7,7 +7,7 @@ configure({ enforceActions: "always" })
 class AuthStore {
 	@observable user = null
     @action signOut=()=>{
-	 	uiStore.closePopups()
+	 	uiStore.closeDetails()
 	 	window.alert(this.user.username + " has been signed out.")
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {

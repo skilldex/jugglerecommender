@@ -226,8 +226,8 @@ class Store {
 	@action deleteTrick=()=>{
 		var result = window.confirm("Are you sure you want to permanently delete this pattern?");
 		if (result){
-			const trickToDelete = uiStore.popupTrick.id
-			uiStore.popupTrick = null
+			const trickToDelete = uiStore.detailTrick.id
+			uiStore.detailTrick = null
 		    this.removeOldDependents(null,trickToDelete)
 		    this.removeTrickFromDatabase(trickToDelete)
 		}
@@ -238,8 +238,8 @@ class Store {
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 		let oldTrickKey
-		if(uiStore.editingPopupTrick){
-			oldTrickKey = uiStore.popupTrick.id
+		if(uiStore.editingDetailTrick){
+			oldTrickKey = uiStore.detailTrick.id
 			this.removeOldDependents(trick,oldTrickKey)
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
@@ -247,7 +247,7 @@ class Store {
         //if name changed, delete old reference in firebase
         //delete in mytricks and selected tricks, swap with new key
         
-        if(uiStore.editingPopupTrick && trickKey !== uiStore.popupTrick.id){
+        if(uiStore.editingDetailTrick && trickKey !== uiStore.detailTrick.id){
         	if(uiStore.selectedTrick === oldTrickKey){
     			uiStore.toggleSelectedTrick(oldTrickKey)
     			uiStore.toggleSelectedTrick(trickKey)

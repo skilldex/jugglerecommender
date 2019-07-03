@@ -15,15 +15,15 @@ class UIStore {
 	@observable searchInput = ''
 	@observable searchTrick = ''
 	@observable listExpanded = true
-	@observable popupCatchEditable = false
-	@observable popupTrick = null
-	@observable popupTimer = null
+	@observable detailCatchEditable = false
+	@observable detailTrick = null
+	@observable detailTimer = null
 	@observable sortTimer = null
 	@observable filterTimer = null
 	@observable addingTrick = false
-	@observable popupFullScreen = false
-	@observable editingPopupTrick = false
-	@observable mouseInPopupDiv = false
+	@observable detailFullScreen = false
+	@observable editingDetailTrick = false
+	@observable mouseInDetailDiv = false
 	@observable mouseInSortDiv = false
 	@observable mouseInFilterDiv = false
 	@observable showSortDiv = false
@@ -37,11 +37,11 @@ class UIStore {
 		this.showExplanation = !this.showExplanation
 	}
 	
-	@action togglePopupFullScreen=()=>{
-    	this.popupFullScreen = !this.popupFullScreen
+	@action toggleDetailFullScreen=()=>{
+    	this.detailFullScreen = !this.detailFullScreen
   	}
-  	@action editPopupTrick=()=>{
-  		this.editingPopupTrick = true
+  	@action editDetailTrick=()=>{
+  		this.editingDetailTrick = true
   		//shows form
   		this.addingTrick = true
   	}
@@ -49,33 +49,33 @@ class UIStore {
 		if (!authStore.user){
 			window.alert("You must be signed in to add a trick");
 		}else{
-			this.popupTrick = null
+			this.detailTrick = null
 			this.addingTrick = !this.addingTrick
 		}
 		if(!this.addingTrick){
-			this.editingPopupTrick = false
+			this.editingDetailTrick = false
 		}
 	}
-	@action closePopups = ()=>{
-		this.popupTrick = null
+	@action closeDetails = ()=>{
+		this.detailTrick = null
 		this.addingTrick = false
 	}
 	@action setListExpanded=(expanded)=>{
 		this.listExpanded = expanded
 	}
-	@action clearPopupTimer=()=>{
-		this.popupTimer = null
+	@action clearDetailTimer=()=>{
+		this.detailTimer = null
 	}
-	@action setPopupTrick=(clickedTrick)=>{
+	@action setDetailTrick=(clickedTrick)=>{
 		if(this.showMoreInformation){
 			this.toggleShowMoreInformation()
 		}
-		this.popupTimer = setTimeout(()=>{
-			this.clearPopupTimer()
+		this.detailTimer = setTimeout(()=>{
+			this.clearDetailTimer()
 		}, 500)
-	 	this.popupTrick = clickedTrick
-	 	this.popupCatchEditable = false
-	 	if (this.popupTrick){
+	 	this.detailTrick = clickedTrick
+	 	this.detailCatchEditable = false
+	 	if (this.detailTrick){
 	        if(this.showFilterDiv){
 	        	this.toggleFilterDiv()
 	        }
@@ -86,9 +86,9 @@ class UIStore {
 	}
 	@action toggleCatchEdit=(catches, trickKey)=>{
 
-		this.popupCatchEditable = !this.popupCatchEditable
+		this.detailCatchEditable = !this.detailCatchEditable
 		
-		if (!this.popupCatchEditable){
+		if (!this.detailCatchEditable){
 			store.setCatches(catches, trickKey)
 			store.updateTricksInDatabase()
  			localStorage.setItem('myTricks', JSON.stringify(store.myTricks))
@@ -97,7 +97,7 @@ class UIStore {
  	@action toggleSelectedTrick=(clickedTrick)=>{
  		if (this.selectedTrick === clickedTrick){
  			this.selectedTrick = null
- 			this.popupCatchEditable = false
+ 			this.detailCatchEditable = false
  		}else{
 	 		this.selectedTrick = clickedTrick
 	 	}	 	
@@ -112,8 +112,8 @@ class UIStore {
 	}
  	@action setSelectedList=(listType)=>{
  		this.selectedList = listType
- 		this.popupTrick = null
- 		this.popupCatchEditable = false
+ 		this.detailTrick = null
+ 		this.detailCatchEditable = false
  		this.resetSelectedTrick()
  		this.updateRootTricks()
  	}
@@ -124,8 +124,8 @@ class UIStore {
  			this.setSelectedList('myTricks')
  		}
  	}
-	@action setMouseInPopupDiv=(inDiv)=>{
-		this.mouseInPopupDiv = inDiv
+	@action setMouseInDetailDiv=(inDiv)=>{
+		this.mouseInDetailDiv = inDiv
 	}
 	@action setMouseInSortDiv=(inDiv)=>{
 		this.mouseInSortDiv = inDiv

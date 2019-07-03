@@ -68,13 +68,13 @@
   height: auto;
   vertical-align: middle;
 }
-.popupOuterDiv{
+.demoOuterDivDetail{
   width: 100%;
   height: auto;
   border: 1px solid darkgray;
   z-index : 1200;
 }
-.expandedSectionOuterDiv{
+.demoOuterDivExpandedSection{
   width: 50%;
   z-index : 1200;
   margin-left: auto;  

@@ -140,6 +140,7 @@
   text-overflow: ellipsis;
   display : inline-block;
   vertical-align: middle;
+  color : #6666FF;
 }
 
 .listExpandCollapseButton{

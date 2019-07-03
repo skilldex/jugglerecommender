@@ -3,7 +3,7 @@ import { observer } from "mobx-react"
 import './App.css';
 import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
-import Popup from './popup.js'
+import Detail from './detail.js'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
 import graphStore from './stores/graphStore'
@@ -16,7 +16,7 @@ import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
 import MainTagsBar from "./mainTagsBar"
-import PopupDemo from './popupDemo'
+import Demo from './demo'
 import Filter from './filter.js'
 import filterStore from './stores/filterStore'
 
@@ -117,8 +117,8 @@ class App extends Component {
 
  	render(){
 	    window.onclick = function(event) {
-	        if (uiStore.popupTrick && !uiStore.mouseInPopupDiv && !uiStore.popupTimer) {
-	            uiStore.setPopupTrick(null)
+	        if (uiStore.detailTrick && !uiStore.mouseInDetailDiv && !uiStore.detailTimer) {
+	            uiStore.setDetailTrick(null)
 	        }
 	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
 	            uiStore.setShowSortDiv(false)
@@ -201,11 +201,11 @@ class App extends Component {
 							   	}
 						    </div>
 						</div>
-		let popup = uiStore.editingPopupTrick ? null : 
-						uiStore.popupFullScreen ? <PopupDemo 
-													trickKey={uiStore.popupTrick.id}
-													demoLocation="popup"
-												  /> : <Popup/>
+		let detail = uiStore.editingDetailTrick ? null : 
+						uiStore.detailFullScreen ? <Demo 
+													trickKey={uiStore.detailTrick.id}
+													demoLocation="detail"
+												  /> : <Detail/>
 		return (
 			<div
 				touchMove={(e)=>{e.preventDefault()}} 
@@ -219,14 +219,14 @@ class App extends Component {
 				{!this.state.isInstructionsPaneOpen && 
 					!store.isLoginPaneOpen  && 
 					!store.isCreateAccountPaneOpen && 
-					uiStore.popupTrick == null ?
+					uiStore.detailTrick == null ?
 					<TrickList 
 						tricksToList = {uiStore.rootTricks}
 						selectedTrick={uiStore.selectedTrick}
 					/> : null
 				}
 				{uiStore.showFilterDiv?<Filter/>: null}
-				{popup}
+				{detail}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>
 		);

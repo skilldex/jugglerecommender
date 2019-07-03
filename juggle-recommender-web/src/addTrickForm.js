@@ -45,8 +45,8 @@ class AddTrickForm extends Component {
 	}
 
 	componentDidMount=()=>{
-		if(uiStore.editingPopupTrick){
-			let trick = {...store.library[uiStore.popupTrick.id]}
+		if(uiStore.editingDetailTrick){
+			let trick = {...store.library[uiStore.detailTrick.id]}
 			trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 			this.setState({trickNameBeingEdited:trick.name})
 			//convert tag strings to tag objects
@@ -353,7 +353,7 @@ class AddTrickForm extends Component {
 				timeUpdated : date.getTime(),
 				explanation : this.state.explanation,
 			}
-			if(uiStore.editingPopupTrick){
+			if(uiStore.editingDetailTrick){
 				alert(trick.name+" edited!")
 				trick["timeSubmitted"] = this.state.timeSubmitted
 			}else{
@@ -448,7 +448,7 @@ class AddTrickForm extends Component {
 					          handleDelete={this.handleRelatedDelete}
 					          handleAddition={this.handleRelatedAddition}
 					          handleTagClick={this.handleRelatedClick}/>
-		const titleText = uiStore.editingPopupTrick ? "Edit Pattern" : "Add Pattern"
+		const titleText = uiStore.editingDetailTrick ? "Edit Pattern" : "Add Pattern"
 		const explanationInput = <textarea className="textarea" 
 											onChange={this.handleExplanationChange}/>
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 

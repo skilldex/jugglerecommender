@@ -1,4 +1,4 @@
-.popupDiv{
+.detailDiv{
   overflow-y: auto;
   position : absolute;
   left: 0px;
@@ -14,7 +14,7 @@
   overflow-x:hidden;
 }
 
-.popupInfoDiv{
+.detailInfoDiv{
   text-align: left;
   padding-left:  10px;
   white-space: nowrap;      /*keep text on one line */
@@ -36,14 +36,14 @@
   height: auto;
   white-space: normal;
 }
-.popupHeader{  
+.detailHeader{  
   margin-bottom: 15px ;
   margin-top:  5px;
   border-top: 1px solid gray;
   font-size: 18px;
 }
 
-.popupLabel{
+.detailLabel{
   margin-bottom : 5px;
   margin-right: 5px;
   display: inline-flex;
@@ -52,17 +52,17 @@
   width: 90px; 
 }
 
-.popupTags{
+.detailTags{
   width:100%;
   display : flex;
   flex-wrap: wrap;
   font-size: 13px;
   margin-bottom:  10px;
 }
-.popupTag{
+.detailTag{
   margin-right: 3px;
 }
-.popupLink{
+.detailLink{
   padding : 0;
   margin : 0 auto;
   width : 120px;
@@ -74,7 +74,7 @@
 
 
 @media screen and (max-width: 700px) {
-  .popupDiv{
+  .detailDiv{
 
   }
 }
@@ -98,7 +98,7 @@
   height : 15px;
   width : 15px;
 }
-.addAndRemoveMyTricksButtonOnPopup{
+.addAndRemoveMyTricksButtonOnDetail{
   line-height: -0px;
   font-size: 20px;
   padding : 2px;
@@ -129,7 +129,7 @@
   display: flex;
   align-items: center;
 }
-.closePopupIcon{
+.closeDetailIcon{
   height : 24px;
   width : 24px;
   margin-right : 8px;

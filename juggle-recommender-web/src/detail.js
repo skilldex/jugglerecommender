@@ -6,14 +6,14 @@ import editIcon from './images/editIcon.png'
 import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.svg'
-import PopupDemo from './popupDemo'
+import Demo from './demo'
 import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
 import './App.css';
-import './popup.css';
+import './detail.css';
 
 @observer
-class Popup extends Component {
+class Detail extends Component {
   state = {
     catches : null,
     gifFullScreen : false,
@@ -31,23 +31,23 @@ class Popup extends Component {
   onCatchesKeyPress=(target)=> {
     // If enter pressed
     if(target.charCode===13){  
-      uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
+      uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       //set focus back to outer div
       this.outerDiv.focus()   
     }
   }
   seeExplanation=(trickKey)=>{
-    if(!uiStore.popupTimer){
+    if(!uiStore.detailTimer){
         window.open(store.library[trickKey].url)
     }
   }
   addToMyTricks=()=>{
     this.setState({"catches":0})
-    store.addToMyTricks(uiStore.popupTrick.id)
+    store.addToMyTricks(uiStore.detailTrick.id)
   }
   handleEditCatchButtonClick=()=>{
-    this.setState({catches:store.myTricks[uiStore.popupTrick.id].catches})
-    uiStore.toggleCatchEdit(this.state.catches,uiStore.popupTrick.id)
+    this.setState({catches:store.myTricks[uiStore.detailTrick.id].catches})
+    uiStore.toggleCatchEdit(this.state.catches,uiStore.detailTrick.id)
     //focus after render
     setTimeout(function() {
       if (this.catchInput){
@@ -57,11 +57,11 @@ class Popup extends Component {
     }, 100);  
   }
   onMouseEnter=(event)=>{
-    uiStore.setMouseInPopupDiv(true)
+    uiStore.setMouseInDetailDiv(true)
   }
 
   onMouseLeave=(event)=>{
-    uiStore.setMouseInPopupDiv(false)
+    uiStore.setMouseInDetailDiv(false)
   }
   toggleShowMoreInformation=()=>{
     uiStore.toggleShowMoreInformation()
@@ -86,21 +86,21 @@ class Popup extends Component {
         }
         targetElement = targetElement.parentNode;
       } while (targetElement);
-      if (uiStore.popupCatchEditable){
-        uiStore.toggleCatchEdit(this.state.catches, uiStore.popupTrick.id)
+      if (uiStore.detailCatchEditable){
+        uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       }
     });
    
-    const popupTrickKey = uiStore.popupTrick ? uiStore.popupTrick.id : ""
-    const popupTrick = store.library[popupTrickKey]
-    if (popupTrickKey && !popupTrick){
+    const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
+    const detailTrick = store.library[detailTrickKey]
+    if (detailTrickKey && !detailTrick){
         alert("Sorry, this pattern has been deleted or renamed.")
-        uiStore.setPopupTrick(null)
+        uiStore.setDetailTrick(null)
     }
-    const catchesSection = store.myTricks[popupTrickKey] ?
+    const catchesSection = store.myTricks[detailTrickKey] ?
     <div>
-      <label className="popupLabel">Catches: </label>
-      {uiStore.popupCatchEditable ?
+      <label className="detailLabel">Catches: </label>
+      {uiStore.detailCatchEditable ?
         <input 
               ref={(input)=> {this.catchInput = input}}
               id = "catchInput"
@@ -108,19 +108,19 @@ class Popup extends Component {
                onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
                onChange={this.onCatchesChange}
         /> :
-        <span>{store.myTricks[popupTrickKey].catches}</span>
+        <span>{store.myTricks[detailTrickKey].catches}</span>
       }
       <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
            onClick={()=>{ this.handleEditCatchButtonClick()}}
       />
     </div> : null
 		const graphDiv = document.getElementById("graphDiv")
- 		const addToMyTricksButton = uiStore.popupTrick && store.myTricks[uiStore.popupTrick.id] ? 
-              		<button className="addAndRemoveMyTricksButtonOnPopup" onClick={()=>{store.removeFromMyTricks(uiStore.popupTrick.id)}}>&#9733;</button> :
- 		              <button className="addAndRemoveMyTricksButtonOnPopup" onClick={this.addToMyTricks}>&#9734;</button>
+ 		const addToMyTricksButton = uiStore.detailTrick && store.myTricks[uiStore.detailTrick.id] ? 
+              		<button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.removeFromMyTricks(uiStore.detailTrick.id)}}>&#9733;</button> :
+ 		              <button className="addAndRemoveMyTricksButtonOnDetail" onClick={this.addToMyTricks}>&#9734;</button>
     const deleteTrickButton = 
-      popupTrick && authStore.user && 
-      (popupTrick.contributor === authStore.user.username || 
+      detailTrick && authStore.user && 
+      (detailTrick.contributor === authStore.user.username || 
       authStore.user.username === "tjthejuggler") ?
         <img id="deleteTrickButton" 
               src={deleteTrickIcon} 
@@ -129,86 +129,86 @@ class Popup extends Component {
              onClick={()=>{store.deleteTrick()}}
         /> : null      
     const editTrickButton  = 
-      popupTrick && authStore.user && 
-      (popupTrick.contributor === authStore.user.username || 
+      detailTrick && authStore.user && 
+      (detailTrick.contributor === authStore.user.username || 
       authStore.user.username === "tjthejuggler") ? 
         <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
-             onClick={()=>{uiStore.editPopupTrick()}}
+             onClick={()=>{uiStore.editDetailTrick()}}
         /> : null
     const closeButton  = 
-        <img id="closeButton" src={closeIcon} className="closePopupIcon" alt="closeIcon" 
-             onClick={()=>{uiStore.setPopupTrick(null)}}
+        <img id="closeButton" src={closeIcon} className="closeDetailIcon" alt="closeIcon" 
+             onClick={()=>{uiStore.setDetailTrick(null)}}
         />
 
-    const tags =  popupTrick && popupTrick.tags ? popupTrick.tags.sort().map((tag,i)=>{
-                    if(i < popupTrick.tags.length-1){
-                      return <span className="popupTag">{tag + ","}</span>
+    const tags =  detailTrick && detailTrick.tags ? detailTrick.tags.sort().map((tag,i)=>{
+                    if(i < detailTrick.tags.length-1){
+                      return <span className="detailTag">{tag + ","}</span>
                     }else{
-                      return <span className="popupTag">{tag}</span>
+                      return <span className="detailTag">{tag}</span>
                     }
                   }) : null
-    const related =  popupTrick && popupTrick.related ? popupTrick.related.sort().map((tag,i)=>{
-                    if(i < popupTrick.related.length-1){
-                      return <span className="popupTag">{tag + ","}</span>
+    const related =  detailTrick && detailTrick.related ? detailTrick.related.sort().map((tag,i)=>{
+                    if(i < detailTrick.related.length-1){
+                      return <span className="detailTag">{tag + ","}</span>
                     }else{
-                      return <span className="popupTag">{tag}</span>
+                      return <span className="detailTag">{tag}</span>
                     }
                   }) : null
     let tutorialSite
     //TODO could be replaced with regex that gets everything between first two .s
-    if (popupTrick && popupTrick.url && popupTrick.url.includes('.')){
-      tutorialSite = popupTrick.url.split('.')[1]
+    if (detailTrick && detailTrick.url && detailTrick.url.includes('.')){
+      tutorialSite = detailTrick.url.split('.')[1]
       if (tutorialSite.includes('.')){
         tutorialSite = tutorialSite.split('.')[0]
       }
     }
-    const infoSection = uiStore.popupTrick && popupTrickKey ?
-                          <div className="popupInfoDiv">
+    const infoSection = uiStore.detailTrick && detailTrickKey ?
+                          <div className="detailInfoDiv">
                             <div className="moreInfoLabelDiv">
                               <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
                                 {uiStore.showMoreInformation?"less info":"more info"}
                               </label><br/>
                             </div>
                             {catchesSection}
-                            <label className="popupLabel">Contributor: </label>
+                            <label className="detailLabel">Contributor: </label>
                             {
-                              popupTrick.contributor ? 
-                              popupTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
+                              detailTrick.contributor ? 
+                              detailTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
                             }<br/>
                             {uiStore.showMoreInformation?
                               <div className="moreInfoDiv">                   
-                                <label className="popupLabel">Difficulty: </label>{popupTrick.difficulty} / 10<br/>
-                                <label className="popupLabel"># of Balls: </label>{popupTrick.num}<br/>
-                                {popupTrick.siteswap ? 
+                                <label className="detailLabel">Difficulty: </label>{detailTrick.difficulty} / 10<br/>
+                                <label className="detailLabel"># of Balls: </label>{detailTrick.num}<br/>
+                                {detailTrick.siteswap ? 
                                   <div>
-                                    <label className="popupLabel">Siteswap: </label>{popupTrick.siteswap}<br/>
+                                    <label className="detailLabel">Siteswap: </label>{detailTrick.siteswap}<br/>
                                   </div> : null
                                 }
-                                {popupTrick && popupTrick.url ?
-                                  <label className="popupLabel">Tutorial: </label> : null
+                                {detailTrick && detailTrick.url ?
+                                  <label className="detailLabel">Tutorial: </label> : null
                                 }
-                                {popupTrick && popupTrick.url ?
-                                  <a target="_" href={popupTrick.url}>{tutorialSite}</a> : null
+                                {detailTrick && detailTrick.url ?
+                                  <a target="_" href={detailTrick.url}>{tutorialSite}</a> : null
                                 } 
-                                {popupTrick && popupTrick.tags?
+                                {detailTrick && detailTrick.tags?
                                   <div>
-                                    <label className="popupLabel">Tags:</label><br/>
-                                    <div className="popupTags">{tags}</div>
+                                    <label className="detailLabel">Tags:</label><br/>
+                                    <div className="detailTags">{tags}</div>
                                   </div> : null
                                 }
-                                {popupTrick && popupTrick.related && popupTrick.related.length>0 ?
+                                {detailTrick && detailTrick.related && detailTrick.related.length>0 ?
                                   <div>
-                                    <label className="popupLabel">Related:</label><br/>
-                                    <div className="popupTags">{related}</div>
+                                    <label className="detailLabel">Related:</label><br/>
+                                    <div className="detailTags">{related}</div>
                                   </div> : null
                                 }
-                                {popupTrick && popupTrick.explanation?
+                                {detailTrick && detailTrick.explanation?
                                   <div className="explanationSection">
-                                    <label className="popupLabel">Explanation:</label>
+                                    <label className="detailLabel">Explanation:</label>
                                     <label className="showExplanation" onClick={()=>this.toggleShowExplanation()}>
                                       {uiStore.showExplanation?"hide":"show"}
                                     </label> <br/>
-                                    {uiStore.showExplanation?<label className="explanation">{popupTrick.explanation}</label>:null}
+                                    {uiStore.showExplanation?<label className="explanation">{detailTrick.explanation}</label>:null}
                                   </div> : null
                                 }
                               </div>:null
@@ -216,47 +216,47 @@ class Popup extends Component {
                           </div>:null
 
     const relationshipLists = 
-        popupTrick?
+        detailTrick?
         <div className ='relationshipLists'>
-          {popupTrick.prereqs ?
+          {detailTrick.prereqs ?
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Prereqs</h3>
             <TrickList 
-              tricksToList = {popupTrick.prereqs}
+              tricksToList = {detailTrick.prereqs}
               selectedTrick={uiStore.selectedTrick}
             /> 
           </div> : null}
-          {popupTrick.related ?
+          {detailTrick.related ?
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Related</h3>
             <TrickList 
-              tricksToList = {popupTrick.related}
+              tricksToList = {detailTrick.related}
               selectedTrick={uiStore.selectedTrick}
             />
           </div> : null}
-          {popupTrick.dependents ?
+          {detailTrick.dependents ?
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Postreqs</h3>
             <TrickList 
-              tricksToList = {popupTrick.dependents}
+              tricksToList = {detailTrick.dependents}
               selectedTrick={uiStore.selectedTrick}
             />
           </div> : null}
         </div> : null
         
 
-    const popupCard = uiStore.popupTrick && popupTrickKey ? 
-          			    <div className="popupDiv">
+    const detailCard = uiStore.detailTrick && detailTrickKey ? 
+          			    <div className="detailDiv">
                       <div className="topButtons">
                         {addToMyTricksButton}
                         {deleteTrickButton}
                         {editTrickButton}
                         {closeButton}
                       </div>
-                      <h3 className="popupHeader">{popupTrick.name}</h3>  
-                      <PopupDemo 
-                        trickKey = {uiStore.popupTrick.id}
-                        demoLocation="popup"
+                      <h3 className="detailHeader">{detailTrick.name}</h3>  
+                      <Demo 
+                        trickKey = {uiStore.detailTrick.id}
+                        demoLocation="detail"
                       />
                       {infoSection}
                       {relationshipLists}                
@@ -267,10 +267,10 @@ class Popup extends Component {
                  onBlur={this.onBlur} 
                  ref={(div)=> {this.outerDiv = div}}  
                  tabIndex="0">
-              {popupCard}
+              {detailCard}
       			</div>
           )
     }
   }
 
-export default Popup
+export default Detail

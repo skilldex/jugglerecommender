@@ -8,13 +8,13 @@ New trickList:
 		-resize demo?
 		-show full list of tags
 		-show tutorial
-New Popup:
-	-since popup is now fullscreen, gif is also fullscreen, so gif fullscreen button not useful
+New Detail:
+	-since detail is now fullscreen, gif is also fullscreen, so gif fullscreen button not useful
 		-we could remove gif fullscreen button
-		-we could make gif smaller in popup, and push it to the side and use other side for info
+		-we could make gif smaller in detail, and push it to the side and use other side for info
 	-show list of prereqs, related, and postreqs
 		-exactly the same setup as trickList? if so, should probably reuse code
-	-Increase size of popup title font based on its length?
+	-Increase size of detail title font based on its length?
 Hamburger Menu:
 	-home
 	-profile (maybe profile and home can be the same thing)
@@ -45,8 +45,8 @@ Bugs:
 	-We have a crash due to libraryofjuggling names and keys being different, select fake mess for example
 		-can be fixed with a script that sets all trickKeys to trick names
 		-can be fixed if we make a getTrickKeysFromTrickNames
-	-filter should either close popup or open in front of it
-	-it sometimes gets a number of catches stuck in its head and when I open a new popup and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
+	-filter should either close detail or open in front of it
+	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 
 Stuff To Go Into Migration Scripts:
 	-a script to make related tags go both directions
@@ -77,12 +77,12 @@ Restyling:
 -'suggest a change' form so we dont have to use instagram comments or other methods
 	-email through firebase or setup webtask
 	https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
-	-on desktop, when popup is showing, would be nice if rootnode gravitated towards open space
-		-shrink graph to end at popup
+	-on desktop, when detail is showing, would be nice if rootnode gravitated towards open space
+		-shrink graph to end at detail
 
 -Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	
--A button that is 'more catches than I want to count' in the popups, inserts -1 into the db
+-A button that is 'more catches than I want to count' in the details, inserts -1 into the db
 	*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
 
 -edit profile(maybe beyond 1.1)

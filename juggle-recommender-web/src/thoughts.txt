@@ -36,7 +36,7 @@ Concise TODO:
 	-Suggest a change could be done just like edit, except instead of adding it to the site it emails	/notifies the contributor.
 
 New UI:
-	-clicking ss in list could open a ss popup that has a link to a popup explanation as well as allow anyone to input a siteswap if it is blank, otherwise allow them to suggest a new one right there so that they dont have to have a whole big form for the whole trick. We probably want to avoid them going in there to suggest a new siteswap and then decide they want to suggest other things
+	-clicking ss in list could open a ss detail that has a link to a detail explanation as well as allow anyone to input a siteswap if it is blank, otherwise allow them to suggest a new one right there so that they dont have to have a whole big form for the whole trick. We probably want to avoid them going in there to suggest a new siteswap and then decide they want to suggest other things
 	-Each relationship list could have an +add trick to this list button which either allows user to go directly to add trick form with appropriate relationship filled out, OR to a form with a dropdown that let's them pick a pattern that already exists
 	-a way to programatically add gifs would be great, see if there is a website that allows siteswap in url to make gif automatically. If we can get this, then we can even add siteswaps automatically as users look for some that aren't there.
 	GRAPH STUFF:
@@ -78,7 +78,7 @@ New todos:
 	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
 
 Maybe new todos:
-	-maybe show the popup of the trick that was just added so they can be sure it is how they want it
+	-maybe show the detail of the trick that was just added so they can be sure it is how they want it
 	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
 		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
 

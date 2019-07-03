@@ -6,10 +6,10 @@ import { observer } from "mobx-react"
 import fullScreenIcon from './images/fullScreenIcon.png'
 import instagramLogoIcon from "./images/instagramLogo.png"
 import './App.css';
-import './popupDemo.css';
+import './demo.css';
 import YouTube from 'react-youtube';
 @observer
-class PopupDemo extends Component {
+class Demo extends Component {
   youtubeEnded = (data) => {
     if(store.library[this.props.trickKey].videoStartTime){
       const trick = store.library[this.props.trickKey]
@@ -38,8 +38,8 @@ class PopupDemo extends Component {
       store.setVideoURL('','')
     }
 
-    const demoClass = uiStore.popupFullScreen ? "fullScreenDemo" : "demo"
-    const gifClass = uiStore.popupFullScreen ? "gifFullScreenDemo" : "gifDemo"
+    const demoClass = uiStore.detailFullScreen ? "fullScreenDemo" : "demo"
+    const gifClass = uiStore.detailFullScreen ? "gifFullScreenDemo" : "gifDemo"
     const gifSection = trick && trick.url? 
                           <img 
                              alt = ''
@@ -58,7 +58,7 @@ class PopupDemo extends Component {
                                   src={fullScreenIcon} 
                                   className="fullScreenIcon" 
                                   alt="" 
-                                  onClick={()=>{uiStore.togglePopupFullScreen()}} 
+                                  onClick={()=>{uiStore.toggleDetailFullScreen()}} 
                                 /> : null
     let igHeader = this.props.demoLocation !== 'expandedSection' && store.videoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
@@ -112,11 +112,10 @@ class PopupDemo extends Component {
                         ></video> : null
 
     let outerDivClass
-    if (this.props.demoLocation === "popup"){
-      if(uiStore.popupFullScreen){outerDivClass = "fullScreenOuterDiv"}
-      else{outerDivClass = "popupOuterDiv"}
+    if (this.props.demoLocation === "detail"){
+      outerDivClass = "demoOuterDivDetail"
     }else if(this.props.demoLocation === "expandedSection"){
-      outerDivClass = "expandedSectionOuterDiv"
+      outerDivClass = "demoOuterDivExpandeSection"
     }
 		return(
       			<div className={outerDivClass}>
@@ -129,4 +128,4 @@ class PopupDemo extends Component {
     }
   }
 
-export default PopupDemo
+export default Demo

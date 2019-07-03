@@ -33,7 +33,7 @@ class AutoComplete extends Component {
 	 	})
 		return (
 			<div className = "options">
-				{uiStore.editingPopupTrick && matchedNames.length<2?null:options}
+				{uiStore.editingDetailTrick && matchedNames.length<2?null:options}
 			</div>
 		)
 	  }
