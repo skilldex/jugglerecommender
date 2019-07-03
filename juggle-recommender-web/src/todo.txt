@@ -21,19 +21,19 @@ v 1.5
 
 v 1.4
 	New trickList:
-		- gauge for difficulty 
+		-gauge for difficulty 
 		-for patterns with too many tags to fit, we need a ...
 	New Detail:
 		-we could remove gif fullscreen button
-		- Style sections 
+		-Style sections 
 	Hamburger Menu:
 		-add pattern
 		-login/logout
 		-about
 	Edit pattern :
-		fix
+		-fix
 	Filter
-		- fix and style 
+		-fix and style 
 		-add a share button to share currently set filters
 		-move tags down to second line
 

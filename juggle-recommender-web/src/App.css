@@ -20,6 +20,8 @@ input{
   padding-left: 3px;
 }
 
+
+
 @supports (-webkit-overflow-scrolling: touch) {  
 }
 .main{

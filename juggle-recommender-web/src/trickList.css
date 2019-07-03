@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 400px;
   height: auto;
+  max-height: 100vh;
   border : 1px solid gray;
   margin-left : 1px;
   text-align: center;
@@ -13,7 +14,7 @@
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
-  overflow-y: hidden;
+  overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }

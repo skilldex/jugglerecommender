@@ -84,7 +84,8 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 		this.props.tricksToList.forEach((trickKey)=>{
-			
+			console.log('this.props.tricksToList',this.props.tricksToList)
+			console.log('trickKey',trickKey)
 			let trick = store.library[trickKey]
 			if(!trick){
 				trickKey = trickKey.replace(/ /g, "")
