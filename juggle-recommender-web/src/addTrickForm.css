@@ -5,9 +5,10 @@ h3{
 }
 .form{
   overflow-y: scroll;
-  height: 100%;
-  width : 100%;
+  height: 110%;
+  width : 94%;
   position : absolute;
+  top:0px;
   background-color : white;
   z-index : 2500;
   border : 1px solid gray;
