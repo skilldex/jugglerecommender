@@ -218,7 +218,7 @@ class Detail extends Component {
         <div className ='relationshipLists'>
           {detailTrick.prereqs ?
           <div className = 'relationshipList'>
-            <h2 className = 'relationshipLabel'>Prereqs</h2>
+            <h3 className = 'relationshipLabel'>Prereqs</h3>
             <TrickList 
               tricksToList = {detailTrick.prereqs}
               selectedTrick={uiStore.selectedTrick}
@@ -226,7 +226,7 @@ class Detail extends Component {
           </div> : null}
           {detailTrick.related ?
           <div className = 'relationshipList'>
-            <h2 className = 'relationshipLabel'>Related</h2>
+            <h3 className = 'relationshipLabel'>Related</h3>
             <TrickList 
               tricksToList = {detailTrick.related}
               selectedTrick={uiStore.selectedTrick}
@@ -234,7 +234,7 @@ class Detail extends Component {
           </div> : null}
           {detailTrick.dependents ?
           <div className = 'relationshipList'>
-            <h2 className = 'relationshipLabel'>Postreqs</h2>
+            <h3 className = 'relationshipLabel'>Postreqs</h3>
             <TrickList 
               tricksToList = {detailTrick.dependents}
               selectedTrick={uiStore.selectedTrick}

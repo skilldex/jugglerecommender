@@ -141,16 +141,18 @@
   width: 100%;
   display:block;
   height: auto;
-
 }
 
 .relationshipList{
   text-align: left;
   display:block;
   height: auto;
-
 }
 
 .relationshipLabel{
   width: 100%;
+  margin: auto;
+  text-align: center;
+  padding-bottom: 6px;
+  font-size: 20px;
 }
