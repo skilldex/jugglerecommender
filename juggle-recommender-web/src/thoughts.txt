@@ -1,8 +1,76 @@
+DB changes:
+	4440522 needs new name
+	5344 needs a new name
+	413333333 needs new name
+	52 catches of 7b
+	130 half shower(5b)
+	Broken box+orkas mess video broken?
+	Fountain 4
+	Rev fountain 4 
+	Synch pistons 4
+	Slam diff to 4
+	Statue of liberty to 4
+	Tennessee waltz vid broken, maybe
+	Add contortion tag to all contrition tricks(script can do this)
+	Do we have a side by side pistons pattern?
+
+External:
+	-Film 4ball sunny side up for guy online
+	-tell guy about hungarian convention
+	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, 		specifically his tutorials as links in the tricks associated with them.
+
+Before working on general skilldex:
+	-finish new ui
+	-stats
+	-user suggestions/editing/comments
+
+Concise TODO:
+	-switch difficulty to x.x format
+	-demo toggle for gif/video in cases where there are both
+	-Help, about, send feedback, maybe combine 2 of these, but probably not all of them
+	-Notifications section(maybe in profile) so contributors can know if their tricks become prereqs or relateds, or if other users are setting catches for their tricks, or suggesting edits
+	-filter out straight siteswaps
+	-sitwsap before number on form, autofill number from siteswap if possible, copy code from formic
+	-Keep track of users tags so if they leave and come back, those tags are still there.
+		-only very important if we dont get routing figured out
+	-Suggest a change could be done just like edit, except instead of adding it to the site it emails	/notifies the contributor.
+
 New UI:
 	-clicking ss in list could open a ss popup that has a link to a popup explanation as well as allow anyone to input a siteswap if it is blank, otherwise allow them to suggest a new one right there so that they dont have to have a whole big form for the whole trick. We probably want to avoid them going in there to suggest a new siteswap and then decide they want to suggest other things
+	-Each relationship list could have an +add trick to this list button which either allows user to go directly to add trick form with appropriate relationship filled out, OR to a form with a dropdown that let's them pick a pattern that already exists
+	-a way to programatically add gifs would be great, see if there is a website that allows siteswap in url to make gif automatically. If we can get this, then we can even add siteswaps automatically as users look for some that aren't there.
+	GRAPH STUFF:
+		-each relationship list could have a 'view as graph' button that allows them to see a couple generations back
+		-there could be a 'make a graph'section where multiple patterns can be used as root nodes as common prereqs/postreqs/related can be seen
+	-instead of star, maybe use multiple flair type icons:
+		*Dream bubble for want to learn
+		*Baby for barely able to do trick
+		*Buddha for a master of a trick
+
+
+Reasons to get juggledex in really good shape before making general skilldex:
+	-Bigger userbase to help populate them with skills, we likely dont have a jol for other skills that can be easily scrapped, and I'm not likely able/willing to spend time filling out forms for other skills.
+	-the template will be better and we wont have to be adding features to both
+	-im much more motivated to make juggledex better than I am to work on general skilldex
+	-we only have a limited time before ejc, the better we can get it by then, the more likely we are to be able to hook users there.
+
+
+Difficulty situation:
+	-If we encourage users to input 0 or 1 or whatever even on tricks they cant do, it would help lower average number of user catches to make difficulty more accurate
+	-it would be nice if difficulty of prereqs/related were shown in add trick form
+
+
+
+	
+
+
+
+
+
+
+
 
 New todos:
-	-selecting a node on graph should autoscroll to the selected trick on the list
 	-Tag's like 'contortion' could automatically add 'body-throw', another examples 'underarm-catch' automatically adding 'crossed-arms'
 		-possibly posed as suggested
 	-A way to automatically add tags retrospectively based on pattern name, for instance, give every pattern with machine in the name the tag 'machine'
@@ -23,9 +91,17 @@ Database:
 5344 needs a new name
 36 catches of 753
 
-Add contortion tag to all contrition tricks
 
 
+--------
+Instead of comment section, there could just be a description section that is hooked up the 'suggest a change' button
+PRO
+-It would be much simpler to make.
+-Would be less cluttered in the UI.
+CON
+-doesnt work well if contributor is not active, this could be beat by having ignored suggestions be sent to mods. Furthermore contributor could turn this on/off so it goes directly to mods.
+-probably more work for mods
+-------
 _______________________________________________
 Two difficulty ratings: Contributor defined, User Average
 -----------------------------------------------

@@ -41,15 +41,9 @@ Patterns to add(either video or gif):
 			reverse cascade, backcross, reverse backcross, over the head...
 =========
 
-
-
-
 Bugs:
 	-filter should either close popup or open in front of it
-	-Sometimes when I edit a tricks catches and unenable by clicking the popup, it puts an old number of catches in, not what I just edited. It acts normal if i click the pencil.
-		-figure out how to reproduce this
-	-when clicking a tag in add trick, the tag stays up as a selection until you click it again
-	(minor, needs more research)-The thing that makes the graph freeze is sometimes acting strange, with 2 nodes sometimes it makes one frozen off the screen. Maybe now with the explosion less comon we dont need it? Maybe only do it if there are more than 100 nodes or something
+	-it sometimes gets a number of catches stuck in its head and when I open a new popup and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 
 Stuff To Go Into Migration Scripts:
 	-a script to make related tags go both directions
