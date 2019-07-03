@@ -1,5 +1,38 @@
 v 1.4
 =========
+New trickList:
+	-difficulty added to topRow
+	-instagram circle/profile image?
+	Expanded Section:
+		-full list of tags shown
+		-tutorial shown
+		-resize demo?
+New Popup:
+	-video moved to top
+	-list of prereqs, related, and postreqs shown
+	-height fixed
+Hamburger Menu:
+	-login/out
+	-about
+	-add trick
+	-profile
+Patterns to add(either video or gif):
+	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550
+Home Screen
+	-Most recently added trick?
+	-number of patterns on site
+	-number of users? total? currently online?
+Profile Screen
+	-share button to share users contributed
+	-upload image
+Filter
+	-share button to share currently set filters
+	-move tags down to second line
+	-remove association tags completely
+
+
+
+
 
 Bugs:
 	-filter should either close popup or open in front of it
