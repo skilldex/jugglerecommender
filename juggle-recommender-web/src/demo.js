@@ -3,7 +3,6 @@ import store from './stores/store'
 import uiStore from './stores/uiStore'
 //import { toJS } from "mobx"
 import { observer } from "mobx-react"
-import fullScreenIcon from './images/fullScreenIcon.png'
 import instagramLogoIcon from "./images/instagramLogo.png"
 import './App.css';
 import './demo.css';
@@ -37,13 +36,10 @@ class Demo extends Component {
     } else {
       store.setVideoURL('','')
     }
-
-    const demoClass = uiStore.detailFullScreen ? "fullScreenDemo" : "demo"
-    const gifClass = uiStore.detailFullScreen ? "gifFullScreenDemo" : "gifDemo"
     const gifSection = trick && trick.url? 
                           <img 
                              alt = ''
-                             className={gifClass} 
+                             className="gifDemo"
                              src={trick.gifUrl}
                           /> : null
     
@@ -52,14 +48,6 @@ class Demo extends Component {
                              className="instagramLogo"
                              src={instagramLogoIcon}
                           />
-    const fullScreenButton = trick && trick.gifUrl 
-                             && this.props.demoLocation !== 'expandedSection'?
-                                <img 
-                                  src={fullScreenIcon} 
-                                  className="fullScreenIcon" 
-                                  alt="" 
-                                  onClick={()=>{uiStore.toggleDetailFullScreen()}} 
-                                /> : null
     let igHeader = this.props.demoLocation !== 'expandedSection' && store.videoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
@@ -86,7 +74,7 @@ class Demo extends Component {
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           videoId={store.youtubeId}
-                          className= {demoClass} 
+                          className= "demo" 
                           opts={youtubeOpts}      
                           muted={true}                          
                           allow="autoplay"  
@@ -100,7 +88,7 @@ class Demo extends Component {
                           ref={(video)=> {this.video = video}}
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
-                          className= {demoClass}                                  
+                          className= "demo"                                  
                           autoPlay
                           muted={true}
                           playsInline
@@ -119,7 +107,6 @@ class Demo extends Component {
     }
 		return(
       			<div className={outerDivClass}>
-              {fullScreenButton}
               {igHeader}
               {video}
               {video? null:gifSection}
