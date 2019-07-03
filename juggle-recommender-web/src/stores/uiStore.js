@@ -30,6 +30,7 @@ class UIStore {
 	@observable showExplanation = false
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
+		console.log('showMoreInformation',this.showMoreInformation)
 	}
 	@action toggleShowExplanation=()=>{
 		this.showExplanation = !this.showExplanation
@@ -58,6 +59,7 @@ class UIStore {
 		this.detailTimer = null
 	}
 	@action setDetailTrick=(clickedTrick)=>{
+		console.log('setDetailTrick')
 		if(this.showMoreInformation){
 			this.toggleShowMoreInformation()
 		}

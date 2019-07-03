@@ -118,9 +118,6 @@ class App extends Component {
 
  	render(){
 	    window.onclick = function(event) {
-	        if (uiStore.detailTrick && !uiStore.mouseInDetailDiv && !uiStore.detailTimer) {
-	            uiStore.setDetailTrick(null)
-	        }
 	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
 	            uiStore.setShowSortDiv(false)
 	        }

@@ -63,6 +63,7 @@ class Detail extends Component {
     uiStore.setMouseInDetailDiv(false)
   }
   toggleShowMoreInformation=()=>{
+    console.log('tifwe')
     uiStore.toggleShowMoreInformation()
   }
   toggleShowExplanation=()=>{

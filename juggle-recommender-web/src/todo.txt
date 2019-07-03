@@ -23,8 +23,6 @@ v 1.4
 	New trickList:
 		-gauge for difficulty 
 		-for patterns with too many tags to fit, we need a ...
-	New Detail:
-		-Style sections 
 	Hamburger Menu:
 		-add pattern
 		-login/logout
