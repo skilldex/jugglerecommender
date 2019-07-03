@@ -169,7 +169,11 @@ class Popup extends Component {
                         {editTrickButton}
                         {closeButton}
                       </div>
-                      <h3 className="popupHeader">{popupTrick.name}</h3>             
+                      <h3 className="popupHeader">{popupTrick.name}</h3>  
+                      <PopupDemo 
+                        trickKey = {uiStore.popupTrick.id}
+                        demoLocation="popup"
+                      />           
                       <div className="popupInfoDiv">
                         <div className="moreInfoLabelDiv">
                           <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
@@ -220,14 +224,9 @@ class Popup extends Component {
                             }
                           </div>:null
                         }
-                      </div>   
-                      <PopupDemo 
-                        trickKey = {uiStore.popupTrick.id}
-                        demoLocation="popup"
-                      />                      
+                      </div>                     
                     </div> : null
-		return(
-      
+		return(      
       			<div onMouseEnter={this.onMouseEnter} 
                  onMouseLeave={this.onMouseLeave}
                  onBlur={this.onBlur} 

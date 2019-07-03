@@ -71,7 +71,7 @@
 .popupOuterDiv{
   width: 100%;
   height: auto;
-  border-top: 1px solid darkgray;
+  border: 1px solid darkgray;
   z-index : 1200;
 }
 .expandedSectionOuterDiv{
