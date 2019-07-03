@@ -29,11 +29,8 @@ v 1.4
 		-add pattern
 		-login/logout
 		-about
-	Edit pattern :
-		-fix
 	Filter
 		-add a share button to share currently set filters
-		-move tags down to second line
 
 =========
 

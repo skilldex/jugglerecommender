@@ -60,8 +60,7 @@
   border-radius : 0 10px 10px 0;
 }
 .listCard{
-
-  border : 1px solid black;
+  border : 1px solid gray;
   margin-bottom : 5px;
   box-shadow :   1px 0px 2px #888888;
   border-radius: 3px;
@@ -107,15 +106,7 @@
   width: 100%;
   display: block;
 }
-.selectedListCard{
-  border : 3px solid black;
-  border-right: 6px solid black;
-  width : 97%;
-  font-size : 20px;
-  cursor: pointer;
-  text-align: left;
-  height : 35px;
-}
+
 .addAndRemoveMyTricksButtonList{
   cursor: pointer;
   line-height: -0px;
@@ -197,7 +188,7 @@
   padding-left: 7px;
   width: 200px;
   height: 260px;
-  border: 2px solid black;
+  border: 2px solid gray;
   border-radius: 8px;
   background-color: white;
   opacity: .95;
@@ -219,19 +210,9 @@
   box-shadow: none!important;
 }
 .sortDropdownButtonSelected{
-  color: black;
+  color: gray;
 }
 
-.addTrickButton{
-  border: 1px solid black;
-  background-color : white;
-  font-weight: bold;
-  font-size: 14px;
-  border-radius: 3px;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  color : darkgreen;
-}
 .searchInput{
   width: 90px;
   margin-right : 3px;
