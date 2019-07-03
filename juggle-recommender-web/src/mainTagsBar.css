@@ -7,9 +7,14 @@
 .inputSection{
   background-color:white;
   padding : 10px;
+  padding-bottom: 4px;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+}
+.tagSection{
+  margin-bottom: 4px;
+  margin-top:0px;
 }
 .mainTagsHeader{
   margin-left: 5px;

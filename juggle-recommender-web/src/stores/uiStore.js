@@ -30,7 +30,6 @@ class UIStore {
 	@observable showExplanation = false
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
-		console.log('showMoreInformation',this.showMoreInformation)
 	}
 	@action toggleShowExplanation=()=>{
 		this.showExplanation = !this.showExplanation
@@ -59,7 +58,6 @@ class UIStore {
 		this.detailTimer = null
 	}
 	@action setDetailTrick=(clickedTrick)=>{
-		console.log('setDetailTrick')
 		if(this.showMoreInformation){
 			this.toggleShowMoreInformation()
 		}
@@ -151,18 +149,15 @@ class UIStore {
 	}
 	@action toggleFilterDiv=()=>{
 		if(!this.showFilterDiv){
-				        	console.log('renderfilter1')
 	      	this.setShowFilterDiv(true)
 	        if (filterStore.maxCatches > store.highestCatches){
 				filterStore.setMaxCatches(store.highestCatches)
 			}
 	    }else{
-	    		        	console.log('renderfilter2')
 	    	this.setShowFilterDiv(false)
 	    }
 	}
 	@action setShowFilterDiv=(showDiv)=>{
-			        	console.log('renderfilter3')
 		this.filterTimer = setTimeout(()=>{
 			this.clearFilterTimer()
 		}, 50)

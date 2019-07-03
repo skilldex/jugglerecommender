@@ -15,7 +15,6 @@ import firebase from 'firebase'
 import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
-import MainTagsBar from "./mainTagsBar"
 import Demo from './demo'
 import filterStore from './stores/filterStore'
 
@@ -206,7 +205,6 @@ class App extends Component {
 	            {login}
 	            {createAccount}
 				{header}
-				<MainTagsBar/>
 				{!this.state.isInstructionsPaneOpen && 
 					!store.isLoginPaneOpen  && 
 					!store.isCreateAccountPaneOpen && 

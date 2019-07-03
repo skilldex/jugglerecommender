@@ -6,6 +6,7 @@ import { observer } from "mobx-react"
 import legendImg from './images/greenToRedFade.jpg'
 import downArrow from './images/down-arrow.svg'
 import Demo from './demo'
+import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
 import './App.css';
 //import { Resizable } from "re-resizable";
@@ -145,8 +146,11 @@ class TrickList extends Component {
 			</div>
 
 		return (
-			<div className= "listDiv">	
-				{list}				
+			<div>
+				<MainTagsBar/>
+				<div className= "listDiv">	
+					{list}				
+				</div>
 			</div>
 		)
 	}
