@@ -52,14 +52,15 @@ class PopupDemo extends Component {
                              className="instagramLogo"
                              src={instagramLogoIcon}
                           />
-    const fullScreenButton = trick && trick.gifUrl?
+    const fullScreenButton = trick && trick.gifUrl 
+                             && this.props.demoLocation !== 'expandedSection'?
                                 <img 
                                   src={fullScreenIcon} 
                                   className="fullScreenIcon" 
                                   alt="" 
                                   onClick={()=>{uiStore.togglePopupFullScreen()}} 
                                 /> : null
-    let igHeader = store.videoURL.includes('instagram') && store.igData ? 
+    let igHeader = this.props.demoLocation !== 'expandedSection' && store.videoURL.includes('instagram') && store.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
                                   alt=""
@@ -110,9 +111,15 @@ class PopupDemo extends Component {
                           src={store.videoURL}
                         ></video> : null
 
-    const outerDiv = uiStore.popupFullScreen ? "fullScreenOuterDiv" : "outerDiv"
+    let outerDivClass
+    if (this.props.demoLocation === "popup"){
+      if(uiStore.popupFullScreen){outerDivClass = "fullScreenOuterDiv"}
+      else{outerDivClass = "popupOuterDiv"}
+    }else if(this.props.demoLocation === "expandedSection"){
+      outerDivClass = "expandedSectionOuterDiv"
+    }
 		return(
-      			<div className={outerDiv}>
+      			<div className={outerDivClass}>
               {fullScreenButton}
               {igHeader}
               {video}

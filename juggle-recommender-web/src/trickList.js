@@ -94,8 +94,13 @@ class TrickList extends Component {
                 }
               }) : null
 
-			const expandedSection = uiStore.selectedTrick === trickKey ? 
-				<PopupDemo trickKey = {trickKey}/>:null
+			const expandedSection = uiStore.selectedTrick === trickKey ?
+				<div className = "expandedSection">
+					<PopupDemo
+						trickKey = {trickKey}
+						demoLocation="expandedSection"
+					/>
+				</div>:null
 			tricks.push(
 				<div className={cardClass} 
 					 key={trickKey + "div"} 
@@ -127,8 +132,7 @@ class TrickList extends Component {
 							SS: {trick.siteswap}
 						</span>	
 					</div>
-					{expandedSection}			
-					
+					{expandedSection}					
 				</div>	
 			)
 		})	
@@ -159,14 +163,10 @@ class TrickList extends Component {
 							</div>
 
 		return (
-			<div
-				className= {uiStore.listExpanded ? "listDiv" : ""}
-				
-			>	
-			 		{uiStore.listExpanded ? maximizedList : minimizedList}
-				
+			<div className= {uiStore.listExpanded ? "listDiv" : ""}>	
+				{uiStore.listExpanded ? maximizedList : minimizedList}				
 			</div>
 		)
-	  }
+	}
 }
 export default TrickList

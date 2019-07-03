@@ -101,7 +101,9 @@
   text-overflow: hidden;
   white-space: nowrap;
   overflow: hidden;
-
+}
+.expandedSection{
+  width: 100%;
 }
 .selectedListCard{
   border : 3px solid black;

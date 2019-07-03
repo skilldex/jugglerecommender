@@ -221,7 +221,10 @@ class Popup extends Component {
                           </div>:null
                         }
                       </div>   
-                      <PopupDemo trickKey = {uiStore.popupTrick.id}/>                      
+                      <PopupDemo 
+                        trickKey = {uiStore.popupTrick.id}
+                        demoLocation="popup"
+                      />                      
                     </div> : null
 		return(
       
