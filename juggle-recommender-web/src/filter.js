@@ -158,7 +158,7 @@ class Filter extends Component {
 							          inputFieldPosition="bottom"
 							          placeholder = ""
 							          minQueryLength={0}
-							          suggestions={store.presetTags}
+							          suggestions={store.presetTags.length>0?store.presetTags:[]}
 							          delimiters={delimiters}
 							          handleDelete={filterStore.handleDelete}
 							          handleAddition={this.handleAddition}
@@ -176,7 +176,7 @@ class Filter extends Component {
 				          inputFieldPosition="bottom"
 				          placeholder = ""
 				          minQueryLength={0}
-				          suggestions={store.contributorTags}
+				          suggestions={store.contributorTags.length>0?store.contributorTags:[]}
 				          delimiters={delimiters}
 				          handleDelete={filterStore.handleContributorTagDelete}
 				          handleAddition={this.handleContributorTagAddition}
