@@ -1,45 +1,49 @@
-v 1.4
-New trickList:
-	-difficulty added to topRow
-		-get meter image and make it's color/indicator stick be set automatically
-	-instagram circle/profile image?
-	-for patterns with too many tags to fit, we need a ...
-	Expanded Section:
-		-resize demo?
-		-show full list of tags
-		-show tutorial
-New Detail:
-	-since detail is now fullscreen, gif is also fullscreen, so gif fullscreen button not useful
-		-we could remove gif fullscreen button
-		-we could make gif smaller in detail, and push it to the side and use other side for info
-	-show list of prereqs, related, and postreqs
-		-exactly the same setup as trickList? if so, should probably reuse code
-	-Increase size of detail title font based on its length?
-Hamburger Menu:
+v 1.5 
+	Hamburger Menu:
 	-home
 	-profile (maybe profile and home can be the same thing)
-	-add pattern
-	-login/logout
-	-about
 	-stats
 		-special page for stats not needed if we put personal stats in profile and a counter to trickList?
-Home Screen
+
+	Home Screen
 	-Most recently added trick?
 	-number of patterns on site
 	-number of users? total? currently online?
-Profile Screen
+
+
+	Profile Screen
 	-share button to share users contributed
 	-upload image
 	-personal stats
-Filter
-	-add a share button to share currently set filters
-	-move tags down to second line
+
+	Data fix scripts
+	Decide about my tricks:
+
+v 1.4
+	New trickList:
+		- gauge for difficulty 
+		-for patterns with too many tags to fit, we need a ...
+	New Detail:
+		-we could remove gif fullscreen button
+		- Style sections 
+	Hamburger Menu:
+		-add pattern
+		-login/logout
+		-about
+	Edit pattern :
+		fix
+	Filter
+		- fix and style 
+		-add a share button to share currently set filters
+		-move tags down to second line
+
+=========
+
 Patterns to add(either video or gif):
 	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550
 	To learn 3b cacade: 300, 330
 		-can be done in any cascade pattern we want to have easier patterns to learn, 
 			reverse cascade, backcross, reverse backcross, over the head...
-=========
 
 Bugs:
 	-We have a crash due to libraryofjuggling names and keys being different, select fake mess for example
@@ -122,11 +126,6 @@ Stats:
 		
 -compare gifs of different tricks side by side,
 -opacity based on closeness to qualify
-
-
-
-
-
 
 
 
