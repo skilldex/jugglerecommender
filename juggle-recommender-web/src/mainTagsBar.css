@@ -1,13 +1,10 @@
 .searchAndFilterSection{
   display:block;
   border-top: 1px solid black;
-  border-bottom: 1px solid black;
-    margin-top: 10px;
+  border-bottom: 1px solid black;  
 }
 
 .inputSection{
-
-
   background-color:white;
   padding : 10px;
   display: flex;

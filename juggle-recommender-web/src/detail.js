@@ -16,7 +16,6 @@ import './detail.css';
 class Detail extends Component {
   state = {
     catches : null,
-    gifFullScreen : false,
     changingInput : false,
   }
 

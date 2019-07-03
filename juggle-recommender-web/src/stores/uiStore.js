@@ -20,7 +20,6 @@ class UIStore {
 	@observable sortTimer = null
 	@observable filterTimer = null
 	@observable addingTrick = false
-	@observable detailFullScreen = false
 	@observable editingDetailTrick = false
 	@observable mouseInDetailDiv = false
 	@observable mouseInSortDiv = false
@@ -35,10 +34,6 @@ class UIStore {
 	@action toggleShowExplanation=()=>{
 		this.showExplanation = !this.showExplanation
 	}
-	
-	@action toggleDetailFullScreen=()=>{
-    	this.detailFullScreen = !this.detailFullScreen
-  	}
   	@action editDetailTrick=()=>{
   		this.editingDetailTrick = true
   		//shows form

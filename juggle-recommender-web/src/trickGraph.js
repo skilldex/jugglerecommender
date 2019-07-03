@@ -43,14 +43,12 @@ class TrickGraph extends Component {
       }
       const events = {
         select: function(event) {
-            if(store.isMobile){uiStore.setListExpanded(false)}
             if (uiStore.selectedTrick===event.nodes[0]){  
               const detailTrick = {...store.library[event.nodes[0]]}
               detailTrick.x = 400
               detailTrick.y = 400
               detailTrick.id = event.nodes[0]
               uiStore.setDetailTrick(detailTrick)
-              if (store.isMobile){uiStore.setListExpanded(true)}
             }else if(event.nodes[0]!=null){
               uiStore.toggleSelectedTrick(event.nodes[0])
               uiStore.setDetailTrick(null)
@@ -60,8 +58,7 @@ class TrickGraph extends Component {
               detailTrick.x = 400
               detailTrick.y = 400
               detailTrick.id = event.nodes[0]
-              uiStore.setDetailTrick(detailTrick)   
-              if (store.isMobile){uiStore.setListExpanded(true)}       
+              uiStore.setDetailTrick(detailTrick)       
             }
         }, 
 

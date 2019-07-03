@@ -32,33 +32,12 @@
   padding-left: 5px;
   padding-right: 5px;
   cursor: pointer;
-
 }
 .instagramLogo{
   width: 15px;
   height:15px;
   margin-left: 5px;
 }
-.fullScreenOuterDiv{
-  width: 100%;
-  text-align: center;
-  position: absolute;
-  height: 120%;
-  z-index : 1200;
-  background-color : white;
-  left : 0;
-  top : 0;
-}
-.fullScreenDemo{
-  width: 100%;
-  height: 70%;
-
-}
-.gifFullScreenDemo{
-  width: 80%;
-  height: 80%;
-}
-
 .demo{
   width: 100%;
   height: 224px;
@@ -78,12 +57,4 @@
   width: 60%;
   margin: 0 auto;  
 }
-.fullScreenIcon{
-  margin-left: auto;
-  display : block;
-  margin-right: 10px;
-  margin-top : 10px;
-  margin-bottom: 10px;
-  width: 20px;
-  height : 20px;
-}
+
