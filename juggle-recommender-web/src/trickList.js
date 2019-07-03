@@ -16,7 +16,6 @@ var scrollerPosition = 0
 class TrickList extends Component {
 	state = {
 			sortType: 'alphabetical',
-			listIsMinimized: false,
 			listScrollerPosition : 0
 	}
 
@@ -34,22 +33,9 @@ class TrickList extends Component {
 	    setTimeout(function() {
 	        setPositions();
 	    }, 100);		
-	}
+	}//todo get rid of lal listisminimized
+	//todo make time check to set begining message from no search found to loading
 
-	setListExpanded=()=>{
-		if (uiStore.listExpanded){
-			uiStore.setListExpanded(!uiStore.listExpanded)
-		}else{
-			uiStore.setListExpanded(!uiStore.listExpanded)
-		}	
-		//this.setState({showSortMenu:false})					
-	}
-
-	componentDidUpdate=(prevProps, prevState, snapshot)=> {
-		if (!prevState.listIsMinimized && uiStore.listExpanded){
-		  this.setScrollerPositions()
-		}
-	}
 	clickTrick=(trickKey)=>{
 		if(uiStore.selectedTrick === trickKey && uiStore.detailTrick === null){
 			const detailTrick = {...store.library[trickKey]}
@@ -143,34 +129,21 @@ class TrickList extends Component {
 				</div>	
 			)
 		})	
-	 	const listExpandCollapseButton = 
-				 					<div >
-									 	<label className="listExpandCollapseButton"
-												onClick={this.setListExpanded}>
-												{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
-							 		</div>
-		const minimizedList = 
-						<div className="minimizedListDiv">
-					 		<span className="expandText">click to expand</span>					
-						 	<label className="minimizedListButton"
-									onClick={this.setListExpanded}>
-									{uiStore.listExpanded ? "-" : "+"}</label><br/><br/>
-						</div>
 
-		const maximizedList =
-							<div  
-								id='trickList' 
-								className={tricks.length > 1 ? "listSection" : ""}
-								onScroll = {this.recordScrollerPosition}
-							>
-								{tricks.length > 0 ? tricks : 
-									<div className="noResultsDiv" >No results found</div>
-								}
-							</div>
+		const list =
+			<div  
+				id='trickList' 
+				className={tricks.length > 1 ? "listSection" : ""}
+				onScroll = {this.recordScrollerPosition}
+			>
+				{tricks.length > 0 ? tricks : 
+					<div className="noResultsDiv" >No results found</div>
+				}
+			</div>
 
 		return (
-			<div className= {uiStore.listExpanded ? "listDiv" : ""}>	
-				{uiStore.listExpanded ? maximizedList : minimizedList}				
+			<div className= "listDiv">	
+				{list}				
 			</div>
 		)
 	}
