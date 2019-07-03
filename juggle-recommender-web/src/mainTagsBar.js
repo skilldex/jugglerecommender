@@ -56,10 +56,12 @@ class MainTagsBar extends Component {
     }
 
     mouseEnterSortDiv=()=>{
+      uiStore.setShowSortDiv(true)
       uiStore.setMouseInSortDiv(true)
     }
 
     mouseLeaveSortDiv=()=>{
+      uiStore.setShowSortDiv(false)
       uiStore.setMouseInSortDiv(false)
     }
 
@@ -147,12 +149,17 @@ class MainTagsBar extends Component {
         const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
-                          onClick={()=>uiStore.toggleSortDiv()}/>
+                          onClick={()=>uiStore.toggleSortDiv()}
+                          onMouseEnter={()=>uiStore.setShowSortDiv(true)}
+                          onMouseLeave={()=>uiStore.setShowSortDiv(false)}
+                      />
         const filter = <img 
                          className={filterButtonClass} 
                          src={filterIcon} 
                          alt="showFilterMenu" 
                          onClick={()=>{uiStore.toggleFilterDiv()}}
+                         onMouseEnter={()=>uiStore.setShowFilterDiv(true)}
+                         onMouseLeave={()=>uiStore.setShowFilterDiv(false)}                         
                        />
         const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}

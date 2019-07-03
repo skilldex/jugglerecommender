@@ -130,10 +130,12 @@ class Filter extends Component {
 
 	mouseEnterFilterDiv=()=>{
       uiStore.setMouseInFilterDiv(true)
+      uiStore.setShowFilterDiv(true)
     }
 
     mouseLeaveFilterDiv=()=>{
       uiStore.setMouseInFilterDiv(false)
+      uiStore.setShowFilterDiv(false)
     }
 
 	render() {
