@@ -83,9 +83,10 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 		this.props.tricksToList.forEach((trickKey)=>{
-			const trick = store.library[trickKey]
+			let trick = store.library[trickKey]
+			//if trick is null at this point then it is becasue trickKey is actually 
+			//	the name of a trick from library of juggling
 			var cardClass='listCard'
-
 			const tags = trick && trick.tags ? trick.tags.slice().sort().map((tag,i)=>{
                 if(i < trick.tags.length-1){
                   return <span>{tag + ","}</span>
