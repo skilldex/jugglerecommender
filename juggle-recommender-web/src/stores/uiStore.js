@@ -325,6 +325,8 @@ class UIStore {
 		
 		graphStore.updateGraphData()
 	}
+  
+
 
 	 @action clearCatchInput=()=>{
 	 	this.catchInput = ''

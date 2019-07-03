@@ -216,10 +216,12 @@ class App extends Component {
 	            {createAccount}
 				{header}
 				<MainTagsBar/>
-				{!this.state.isInstructionsPaneOpen && !store.isLoginPaneOpen  && !store.isCreateAccountPaneOpen?
+				{!this.state.isInstructionsPaneOpen && 
+					!store.isLoginPaneOpen  && 
+					!store.isCreateAccountPaneOpen && 
+					uiStore.popupTrick == null ?
 					<TrickList 
-						myTricks={store.myTricks} 
-						selectedList={uiStore.selectedList}
+						tricksToList = {uiStore.rootTricks}
 						selectedTrick={uiStore.selectedTrick}
 					/> : null
 				}

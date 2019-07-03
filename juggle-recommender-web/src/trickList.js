@@ -82,7 +82,7 @@ class TrickList extends Component {
 							
 	render() {
 	 	let tricks = []
-		uiStore.rootTricks.forEach((trickKey)=>{
+		this.props.tricksToList.forEach((trickKey)=>{
 			const trick = store.library[trickKey]
 			var cardClass='listCard'
 
@@ -151,8 +151,7 @@ class TrickList extends Component {
 						</div>
 
 		const maximizedList =
-							<div 
-								style={{height:"100%"}} 
+							<div  
 								id='trickList' 
 								className={tricks.length > 1 ? "listSection" : ""}
 								onScroll = {this.recordScrollerPosition}

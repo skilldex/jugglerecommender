@@ -136,3 +136,21 @@
   margin-top : 8px;
   margin-left:  auto;
 }
+
+.relationshipLists{
+  width: 100%;
+  display:block;
+  height: auto;
+
+}
+
+.relationshipList{
+  text-align: left;
+  display:block;
+  height: auto;
+
+}
+
+.relationshipLabel{
+  width: 100%;
+}

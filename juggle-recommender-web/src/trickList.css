@@ -2,12 +2,12 @@
   padding-bottom : 5px;
   width: 100%;
   max-width: 400px;
-  height: 100%;
+  height: auto;
   border : 1px solid gray;
   margin-left : 1px;
   text-align: center;
   display: inline-block;
-  position: absolute;
+  
   z-index: 1;
   opacity : 100%;
   background-color : white;
@@ -179,7 +179,8 @@
   cursor: pointer;
 }
 .listSection{
-  height: 60vh;
+  height: auto;
+  max-height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;

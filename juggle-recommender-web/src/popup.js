@@ -8,6 +8,7 @@ import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.svg'
 import PopupDemo from './popupDemo'
 import authStore from "./stores/authStore"
+import TrickList from './trickList.js'
 import './App.css';
 import './popup.css';
 
@@ -68,6 +69,7 @@ class Popup extends Component {
   toggleShowExplanation=()=>{
     uiStore.toggleShowExplanation()
   }
+
 	render() {
 //    document.body.style.overflow = 'hidden'
     //set focus for outer div for onblur closing
@@ -212,7 +214,36 @@ class Popup extends Component {
                               </div>:null
                             }
                           </div>:null
-    const relationshipsLists = null
+
+    const relationshipLists = 
+        popupTrick?
+        <div className ='relationshipLists'>
+          {popupTrick.prereqs ?
+          <div className = 'relationshipList'>
+            <h3 className = 'relationshipLabel'>Prereqs</h3>
+            <TrickList 
+              tricksToList = {popupTrick.prereqs}
+              selectedTrick={uiStore.selectedTrick}
+            /> 
+          </div> : null}
+          {popupTrick.related ?
+          <div className = 'relationshipList'>
+            <h3 className = 'relationshipLabel'>Related</h3>
+            <TrickList 
+              tricksToList = {popupTrick.related}
+              selectedTrick={uiStore.selectedTrick}
+            />
+          </div> : null}
+          {popupTrick.dependents ?
+          <div className = 'relationshipList'>
+            <h3 className = 'relationshipLabel'>Postreqs</h3>
+            <TrickList 
+              tricksToList = {popupTrick.dependents}
+              selectedTrick={uiStore.selectedTrick}
+            />
+          </div> : null}
+        </div> : null
+        
 
     const popupCard = uiStore.popupTrick && popupTrickKey ? 
           			    <div className="popupDiv">
@@ -228,7 +259,7 @@ class Popup extends Component {
                         demoLocation="popup"
                       />
                       {infoSection}
-                      {relationshipsLists}                
+                      {relationshipLists}                
                     </div> : null
 		return(      
       			<div onMouseEnter={this.onMouseEnter} 

@@ -42,6 +42,8 @@ Patterns to add(either video or gif):
 =========
 
 Bugs:
+	-related patterns from LOJ scrape are names, we look for trickKeys, this causes crashes, see fake mess for example.
+		-can be fixed with a script that changes all keys to match names
 	-filter should either close popup or open in front of it
 	-it sometimes gets a number of catches stuck in its head and when I open a new popup and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 
