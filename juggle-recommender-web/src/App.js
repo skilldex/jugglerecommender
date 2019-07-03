@@ -200,7 +200,7 @@ class App extends Component {
 						    </div>
 						</div>
 		const detail = uiStore.editingDetailTrick ? null : <Detail/>
-		return (//todo get rid of black in main tags bar css
+		return (
 			<div
 				touchMove={(e)=>{e.preventDefault()}} 
 				className="main" 
