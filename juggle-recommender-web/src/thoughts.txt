@@ -1,15 +1,5 @@
 New UI:
-	Do we want to limit to 1 expanded tricklist trick at a time?
-		if not, we will make multiple mini video players
-		if so, we cant compare tricks as easily(maybe no bd)
-
-
-
-
-
-
-
-
+	-clicking ss in list could open a ss popup that has a link to a popup explanation as well as allow anyone to input a siteswap if it is blank, otherwise allow them to suggest a new one right there so that they dont have to have a whole big form for the whole trick. We probably want to avoid them going in there to suggest a new siteswap and then decide they want to suggest other things
 
 New todos:
 	-selecting a node on graph should autoscroll to the selected trick on the list
