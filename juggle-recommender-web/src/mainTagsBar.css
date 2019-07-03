@@ -1,9 +1,13 @@
-
-
-.tagSection{
-  margin-top: 10px;
+.searchAndFilterSection{
+  display:block;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
+    margin-top: 10px;
+}
+
+.inputSection{
+
+
   background-color:white;
   padding : 10px;
   display: flex;

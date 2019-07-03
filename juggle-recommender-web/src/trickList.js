@@ -72,7 +72,6 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
-		console.log('uiStore.selectedTrick',uiStore.selectedTrick)
 		const detailTrick = {...store.library[trickKey]}
 		detailTrick.x = 400
 		detailTrick.y = 400
@@ -84,8 +83,6 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 		this.props.tricksToList.forEach((trickKey)=>{
-			console.log('this.props.tricksToList',this.props.tricksToList)
-			console.log('trickKey',trickKey)
 			let trick = store.library[trickKey]
 			if(!trick){
 				trickKey = trickKey.replace(/ /g, "")

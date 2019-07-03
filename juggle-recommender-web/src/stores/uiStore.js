@@ -159,19 +159,22 @@ class UIStore {
 	}
 	@action toggleFilterDiv=()=>{
 		if(!this.showFilterDiv){
+				        	console.log('renderfilter1')
 	      	this.setShowFilterDiv(true)
 	        this.setListExpanded(true)
 	        if (filterStore.maxCatches > store.highestCatches){
 				filterStore.setMaxCatches(store.highestCatches)
 			}
 	    }else{
+	    		        	console.log('renderfilter2')
 	    	this.setShowFilterDiv(false)
 	    }
 	}
 	@action setShowFilterDiv=(showDiv)=>{
+			        	console.log('renderfilter3')
 		this.filterTimer = setTimeout(()=>{
 			this.clearFilterTimer()
-		}, 500)
+		}, 50)
 		this.showFilterDiv=showDiv
 	}	
 

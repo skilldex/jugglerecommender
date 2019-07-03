@@ -70,7 +70,6 @@ class MainTagsBar extends Component {
                     "selectedfilterButton" : "unselectedfilterButton" 
                 filterButtonClass = "filterButton "+ filterButtonClass 
       let filterTags = []
-      let tagSection = null
       if(filterStore.numBalls){   
         filterStore.numBalls.forEach((numBall,i)=>{
           filterTags.push(
@@ -150,16 +149,12 @@ class MainTagsBar extends Component {
                           className="filterButton"  
                           alt="showSortMenu" 
                           onClick={()=>uiStore.toggleSortDiv()}
-                          onMouseEnter={()=>uiStore.setShowSortDiv(true)}
-                          onMouseLeave={()=>uiStore.setShowSortDiv(false)}
                       />
         const filter = <img 
                          className={filterButtonClass} 
                          src={filterIcon} 
                          alt="showFilterMenu" 
                          onClick={()=>{uiStore.toggleFilterDiv()}}
-                         onMouseEnter={()=>uiStore.setShowFilterDiv(true)}
-                         onMouseLeave={()=>uiStore.setShowFilterDiv(false)}                         
                        />
         const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
@@ -213,28 +208,31 @@ class MainTagsBar extends Component {
             </div> : null                        
 
       return (
-        <div className="tagSection">
-          <img 
-            className="searchIcon" 
-            src={searchIcon} 
-            alt="searchIcon" 
-            onClick={()=>{this.searchInput.focus()}}
-          />
-          <input 
-            className="searchInput" 
-            value={uiStore.searchInput}
-            onChange={uiStore.searchInputChange}
-            ref={ref => this.searchInput = ref}
-          />
-          {shareButton}
-          {myTricksButton}
-          {sort}
-          {sortDropdown}
-          {filter}
-          {uiStore.showFilterDiv?<Filter/>: null}
-          <span className="mainTagsHeader">{filterTags.length>0?"":"no filters set"}</span> 
-          {filterTags}
-          {tagSection}
+        <div className="searchAndFilterSection">
+          <div className="inputSection">
+            <img 
+              className="searchIcon" 
+              src={searchIcon} 
+              alt="searchIcon" 
+              onClick={()=>{this.searchInput.focus()}}
+            />
+            <input 
+              className="searchInput" 
+              value={uiStore.searchInput}
+              onChange={uiStore.searchInputChange}
+              ref={ref => this.searchInput = ref}
+            />
+            {shareButton}
+            {myTricksButton}
+            {sort}
+            {sortDropdown}
+            {filter}
+            {uiStore.showFilterDiv?<Filter/>: null}
+            <span className="mainTagsHeader">{filterTags.length>0?"":"no filters set"}</span>
+          </div>
+          <div className="tagSection"> 
+            {filterTags}
+          </div>
         </div>
       )
     }

@@ -123,6 +123,7 @@ class App extends Component {
 	            uiStore.setShowSortDiv(false)
 	        }
 	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
+	        	console.log('renderfilter')
 	            uiStore.setShowFilterDiv(false)
 	        }
 	        if (event.target.localName==="canvas" && store.isMobile){
