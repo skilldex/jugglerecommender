@@ -33,7 +33,7 @@ class TrickList extends Component {
 	    setTimeout(function() {
 	        setPositions();
 	    }, 100);		
-	}//todo get rid of lal listisminimized
+	}
 	//todo make time check to set begining message from no search found to loading
 
 	clickTrick=(trickKey)=>{
@@ -129,15 +129,18 @@ class TrickList extends Component {
 				</div>	
 			)
 		})	
-
+		const date = new Date()
+		const currentTime = date.getTime()
 		const list =
 			<div  
 				id='trickList' 
 				className={tricks.length > 1 ? "listSection" : ""}
 				onScroll = {this.recordScrollerPosition}
 			>
-				{tricks.length > 0 ? tricks : 
-					<div className="noResultsDiv" >No results found</div>
+				{tricks.length > 0 ? tricks: 
+					<div className="noResultsDiv">
+						{store.startTime+10000<currentTime? "No results found" : "Loading tricks"}
+					</div>
 				}
 			</div>
 

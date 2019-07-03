@@ -67,6 +67,8 @@ class App extends Component {
 	    }
 	}
 	componentDidMount(){
+		const date = new Date()
+		store.setStartTime(date.getTime())
 		document.addEventListener("keydown", this._handleKeyDown);
 		store.getSavedTricks()	
 		Modal.setAppElement(this.el);
@@ -123,11 +125,7 @@ class App extends Component {
 	            uiStore.setShowSortDiv(false)
 	        }
 	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
-	        	console.log('renderfilter')
 	            uiStore.setShowFilterDiv(false)
-	        }
-	        if (event.target.localName==="canvas" && store.isMobile){
-	        	uiStore.setListExpanded(false)
 	        }
 	    }
      

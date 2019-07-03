@@ -14,7 +14,6 @@ class UIStore {
 	@observable rootTricks = []
 	@observable searchInput = ''
 	@observable searchTrick = ''
-	@observable listExpanded = true
 	@observable detailCatchEditable = false
 	@observable detailTrick = null
 	@observable detailTimer = null
@@ -59,9 +58,6 @@ class UIStore {
 	@action closeDetails = ()=>{
 		this.detailTrick = null
 		this.addingTrick = false
-	}
-	@action setListExpanded=(expanded)=>{
-		this.listExpanded = expanded
 	}
 	@action clearDetailTimer=()=>{
 		this.detailTimer = null
@@ -139,7 +135,6 @@ class UIStore {
 	@action toggleSortDiv=()=>{
       if(!this.showSortDiv){
       	this.setShowSortDiv(true)
-        this.setListExpanded(true)
         if(this.showFilterDiv){
           this.toggleFilterDiv()
         }
@@ -161,7 +156,6 @@ class UIStore {
 		if(!this.showFilterDiv){
 				        	console.log('renderfilter1')
 	      	this.setShowFilterDiv(true)
-	        this.setListExpanded(true)
 	        if (filterStore.maxCatches > store.highestCatches){
 				filterStore.setMaxCatches(store.highestCatches)
 			}
@@ -187,7 +181,6 @@ class UIStore {
 		if(e.target.value === ""){
 			this.searchTrick = ""
 		}
-		uiStore.setListExpanded(true)
 		this.performSearch()
 		this.resetSelectedTrick()
 		this.updateRootTricks()

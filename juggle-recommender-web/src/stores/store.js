@@ -8,6 +8,7 @@ import {TAGS} from '../tags';
 configure({ enforceActions: "always" })
 class Store {
 
+	@observable startTime = null
 	@observable myTricks = {}
 	@observable highestCatches = 0
 	@observable isLoginPaneOpen = false
@@ -40,6 +41,10 @@ class Store {
 		  }
 		})
 		return contributorTags
+	}
+	@action setStartTime=(startTime)=>{
+		this.startTime = startTime
+		console.log('startTime',startTime)
 	}
 	@action setContributors=(contributors)=>{
 		this.contributors = contributors
