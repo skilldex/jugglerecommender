@@ -59,6 +59,9 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
+		if (uiStore.selectedTrick){
+			uiStore.toggleSelectedTrick(null)
+		}
 		const detailTrick = {...store.library[trickKey]}
 		detailTrick.x = 400
 		detailTrick.y = 400

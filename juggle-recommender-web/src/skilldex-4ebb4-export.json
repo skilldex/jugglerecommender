@@ -1,7 +1,7 @@
 {
   "library" : {
     "423" : {
-      "dependents" : [ "FakeMess", "Weave", "TheW", "Creating a Magical Trick(3b)", "423 Armpit Throw(3b)", "Crossed 423 Fake Tennis(3b)", "Half Frostbite(3b)", "The Follow(3b)", "The Weave(3b)", "423 Tennis(3b)", "Fake Boston Shuffle(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "Windshield Wipersca(3b)", "Windshield Wipers(3b)", "Takeouts + Orbits(3b)", "42T3 Slam Tennis(3b)", "Takeouts + Box(3b)", "Fake Columns 2(3b)", "Reverse 423(3b)", "R+L YoYo(3b)", "The Tornado(3b)", "Windmill + Fakemess(3b)", "Columns Overthrow(3b)", "Clawed W(3b)", "Fake Boston Shuffle + Columns(3b)", "Fred's Thread(3b)", "423 Contortion Variation(3b)" ],
+      "dependents" : [ "FakeMess", "Weave", "TheW", "Creating a Magical Trick(3b)", "423 Armpit Throw(3b)", "Crossed 423 Fake Tennis(3b)", "Half Frostbite(3b)", "The Follow(3b)", "The Weave(3b)", "423 Tennis(3b)", "Fake Boston Shuffle(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "423 Contortion Variation(3b)", "Windshield Wipers(3b)", "Takeouts + Orbits(3b)", "42T3 Slam Tennis(3b)", "Takeouts + Box(3b)", "Fake Columns 2(3b)", "Reverse 423(3b)", "R+L YoYo(3b)", "The Tornado(3b)", "Windmill + Fakemess(3b)", "Columns Overthrow(3b)", "Clawed W(3b)", "Fake Boston Shuffle + Columns(3b)", "Fred's Thread(3b)", "423 Contortion Variation(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/423.gif",
       "name" : "423",
@@ -1246,7 +1246,7 @@
       "video" : "https://www.instagram.com/p/BvMai0sg31k/"
     },
     "Cascade" : {
-      "dependents" : [ "552(4b)", "Backcrosses", "BostonShuffle", "Takeouts", "HighLowCascade", "Chops", "CrossedArmCascade", "GeorgianShuffle", "HalfShower", "JugglersTennis", "Mangham'sMangle", "Olas", "Orka'sMess", "Ripley'sRainbow", "SandboxShuffle", "TennesseeWaltz(4b)", "Wimpy(4b)", "Cascade(5b)", "SplitMultiplexCascade(5b)", "StackedMultiplexCascade(5b)", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Penguins(3b)", "Blind Behind the Back Cascade(3b)", "Cascade on the Chest(3b)", "Clawed Reverse Cascade(3b)", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room(3b)", "Neck Pass Tennis(3b)" ],
+      "dependents" : [ "552(4b)", "Backcrosses", "BostonShuffle", "Takeouts", "HighLowCascade", "Chops", "CrossedArmCascade", "GeorgianShuffle", "HalfShower", "JugglersTennis", "Mangham'sMangle", "Olas", "Orka'sMess", "Ripley'sRainbow", "SandboxShuffle", "TennesseeWaltz(4b)", "Wimpy(4b)", "Cascade(5b)", "SplitMultiplexCascade(5b)", "StackedMultiplexCascade(5b)", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Penguins(3b)", "Blind Behind the Back Cascade(3b)", "Cascade on the Chest(3b)", "Clawed Reverse Cascade(3b)", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room(3b)", "Neck Pass Tennis(3b)", "Protostar(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/3ballcascade.gif",
       "name" : "Cascade",
@@ -2213,14 +2213,14 @@
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/fakecolumns.gif",
       "name" : "Fake Columns",
       "num" : 3,
-      "related" : [ "Yo-Yo" ],
+      "related" : [ "YoYo" ],
       "siteswap" : "(4,2)",
       "tags" : [ "columns", "carry" ],
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/FakeColumns.html"
     },
     "FakeMess" : {
-      "dependents" : [ "Burke'sBarrage", "Earl(3b)", "Windshield Wipersca(3b)", "Windshield Wipers(3b)", "Shower + Fake Mess(3b)", "Windmill + Fakemess(3b)", "Box + Fake Double Box(3b)" ],
+      "dependents" : [ "Burke'sBarrage", "Earl(3b)", "Windshield Wipersca(3b)", "Windshield Wipers(3b)", "Shower + Fake Mess(3b)", "Windmill + Fakemess(3b)" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/fakemess.gif",
       "name" : "Fake Mess",
@@ -2817,7 +2817,7 @@
       "name" : "Inverted Box Distorted By Inside Shapeshifter(3b)",
       "num" : "3",
       "prereqs" : [ "Box" ],
-      "siteswap" : "somewhere between (4,2)(2x,4)(4x,2x)(2,4x) and 441333",
+      "siteswap" : "",
       "tags" : [ "slam", "one-throw", "graphy" ],
       "timeSubmitted" : 10,
       "video" : "https://www.instagram.com/p/Bms3otej7Yv/?utm_source=ig_web_copy_link"
@@ -3806,6 +3806,20 @@
       "tags" : [ "columns" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Pistons.html"
     },
+    "Protostar(3b)" : {
+      "contributor" : "stefan",
+      "difficulty" : "3",
+      "explanation" : "",
+      "name" : "Protostar(3b)",
+      "num" : "3",
+      "prereqs" : [ "Cascade" ],
+      "siteswap" : "",
+      "tags" : [ "symmetric" ],
+      "timeSubmitted" : 1562091812226,
+      "timeUpdated" : 1562091812226,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BzbJdPbhV-F/?igshid=19ye683x0cu3p"
+    },
     "Puzzle Solving Craddle Ramps(4b)" : {
       "contributor" : "nycjuggler_",
       "difficulty" : "4",
@@ -3831,7 +3845,7 @@
     },
     "R+L Fake Columns(3b)" : {
       "contributor" : "3ballpatterns_",
-      "dependents" : [ "Windshield Wipersca(3b)", "Windshield Wipers(3b)" ],
+      "dependents" : [ "Windshield Wipers(3b)" ],
       "difficulty" : "3",
       "name" : "R+L Fake Columns(3b)",
       "num" : "3",
@@ -4053,7 +4067,7 @@
     },
     "ReverseCascade" : {
       "dependents" : [ "CrossedArmReverseCascade", "MillsMess", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Tracing the Perfect Path(3b)", "Karate(3b)", "Reverse Takeouts(3b)", "(0,4x)*(3b)", "Crossed Reverse Cascade(3b)", "(2x,0)(6,4)* Crossed(3b)", "(0,4x)* Crossed(3b)", "Moxie's Mess(3b)" ],
-      "difficulty" : "4",
+      "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversecascade.gif",
       "name" : "Reverse Cascade",
       "num" : 3,
@@ -5001,7 +5015,7 @@
     },
     "The Follow(3b)" : {
       "contributor" : "3ballpatterns_",
-      "dependents" : [ "Windshield Wipersca(3b)", "Windshield Wipers(3b)", "The Tornado(3b)", "Fake Boston Shuffle + Columns(3b)", "Drawing Blue Diagonal Lines in the Sky(3b)", "Relf'sRevenge" ],
+      "dependents" : [ "Relf'sRevenge", "Windshield Wipers(3b)", "The Tornado(3b)", "Fake Boston Shuffle + Columns(3b)", "Drawing Blue Diagonal Lines in the Sky(3b)" ],
       "difficulty" : "3",
       "name" : "The Follow(3b)",
       "num" : "3",
@@ -5129,7 +5143,7 @@
       "video" : "https://www.instagram.com/p/BKc_zQHDyTo/"
     },
     "TheW" : {
-      "dependents" : [ "BostonMess", "R+L Fake Columns(3b)", "Windshield Wipersca(3b)", "Windshield Wipers(3b)", "Fake Columns 2(3b)" ],
+      "dependents" : [ "BostonMess", "R+L Fake Columns(3b)", "Fake Columns 2(3b)", "Windshield Wipers(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/thew.gif",
       "name" : "The W",
@@ -5600,7 +5614,7 @@
       "video" : "https://www.instagram.com/p/BORu-nQDVM5/"
     },
     "YoYo" : {
-      "dependents" : [ null, "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)", "Crossed 423 Fake Tennis(3b)", "RL OyOy(3b)", "The Follow(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "Fake Columns 2(3b)", "YoYo + Boston Shuffle(3b)", "Carry the One(3b)", "Cross Drop Robot(3b)", "The Palindrome(3b)", "The Palindrome(3b)" ],
+      "dependents" : [ "The Palindrome(3b)", "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)", "Crossed 423 Fake Tennis(3b)", "RL OyOy(3b)", "The Follow(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "Fake Columns 2(3b)", "YoYo + Boston Shuffle(3b)", "Carry the One(3b)", "Cross Drop Robot(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/yoyo.gif",
       "name" : "YoYo",
