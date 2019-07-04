@@ -15,6 +15,8 @@ class Header extends Component {
 		console.log(paneFlag)
 		if(paneFlag == "addPattern"){
 			uiStore.toggleAddingTrick()
+		}else if(paneFlag == "logout"){
+			 authStore.signOut()
 		}else{
 			this.props.openSlidingPane(paneFlag)
 		}
@@ -22,9 +24,12 @@ class Header extends Component {
     render(){
     	const expandMenu = this.state.expandMenu ? 
 						<div className="expandedMenu">
-					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
-					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
+					        {authStore.user ? 
+						        <button className="dropDownButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
+						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
+						   	}
 					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
+					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    </div> : null
         return (   
         		<div>
@@ -35,11 +40,14 @@ class Header extends Component {
 					    <img className="hamburger" onClick={this.toggleExpandMenu} src={hamburger}/>
 					    
 					    <div className="fullHeader">
-					    	<button className="headerButton" onClick={() => this.props.openSlidingPane('isInstructionsPaneOpen')}>About</button>
-						     {authStore.user ? 
+						    {authStore.user ? 
 						        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
 						        <button className="headerButton" onClick={() => this.props.openSlidingPane('isLoginPaneOpen')}>Login</button>
+
 						   	}
+					    	<button className="headerButton" onClick={() => this.props.openSlidingPane('isInstructionsPaneOpen')}>About</button>
+					    	<button className="headerButton"  onClick={() => uiStore.toggleAddingTrick()}>Add Pattern</button>
+
 					    </div>
 					</div>
 					{expandMenu}
