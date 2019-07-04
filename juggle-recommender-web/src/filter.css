@@ -45,6 +45,14 @@
   margin-right : 8px;
   margin-top : 8px;
 }
+.shareFilterButton{
+  height : 20px;
+  width : 20px;
+  margin-right : 8px;
+  padding-top : 10px; 
+  margin-left: 72%;
+  align-items: right;
+}
 
 .tagsCheckBox{
   text-align:  left;

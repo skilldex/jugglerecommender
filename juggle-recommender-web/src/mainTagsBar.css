@@ -3,7 +3,6 @@
   border-top: 1px solid black;
   border-bottom: 1px solid black;  
 }
-
 .inputSection{
   background-color:white;
   padding : 10px;
@@ -21,7 +20,6 @@
   font-size: 12px;
   font-style: italic;
 }
-
 .tagDiv{
   margin-left: 2px; 
   text-align: left;

@@ -18,7 +18,7 @@ class FilterStore {
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = [1,10]
 	@observable numBalls = []
-	@observable associations = ['prereqs','postreqs']
+	@observable associations = []
 	@observable tags = []
 	@observable contributors = contributor
 	@observable minCatches = 0

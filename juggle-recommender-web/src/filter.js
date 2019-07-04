@@ -11,6 +11,7 @@ import 'rc-slider/assets/index.css';
 import utilities from './utilities'
 import closeIcon from './images/closeIcon.svg'
 import Toggle from 'react-toggle'
+import shareIcon from './images/shareIcon.png'
 
 
 const KeyCodes = {
@@ -137,6 +138,29 @@ class Filter extends Component {
       uiStore.setMouseInFilterDiv(false)
       uiStore.setShowFilterDiv(false)
     }
+	// @observable difficultyRange = [1,10]
+	// @observable numBalls = []
+	// @observable tags = []
+	// @observable contributors = contributor
+	// @observable minCatches = 0
+	// @observable maxCatches = 10000000
+	//todo we need to check for and then put each filter array or string into the url
+	//	-once we have our url made, we need to go over to filterstore and get the tags out of it
+	//		and set filter store state accordingly
+    copyFilterURL=()=>{
+      // const textField = document.createElement('textarea')
+      // const url = window.location.origin + "/?contributor=" + authStore.user.username 
+      // textField.innerText = url
+      // document.body.appendChild(textField)
+      // var range = document.createRange();  
+      // range.selectNode(textField);  
+      // window.getSelection().addRange(range);  
+      // textField.select()
+      // document.execCommand('copy')
+      // textField.remove()
+
+      alert("Link for your currently set filters copied to clipboard\n url")
+    }
 
 	render() {
 	 	const ColoredLine = ()=>(
@@ -258,6 +282,13 @@ class Filter extends Component {
 				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
 	             onMouseLeave = {()=>this.mouseLeaveFilterDiv()}
 	        >
+        		<img 
+	                 className="shareFilterButton"
+	                 src={shareIcon}
+	                 onClick={()=>this.copyFilterURL()}
+	                 alt=""
+	                 title="share your contributed tricks"
+	            />
 	            <img id="closeButton" src={closeIcon} className="closeFilter" alt="closeIcon" 
              		onClick={()=>{uiStore.toggleFilterDiv()}}
         		/><br/>

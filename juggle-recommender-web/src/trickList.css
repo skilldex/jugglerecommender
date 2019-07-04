@@ -20,6 +20,14 @@
   padding-top: 15px;
   font-style : italic;
 }
+.expandedCard{
+  height:42px;
+  transition: all 1s ease;
+}
+.expandedCard.expand {
+  height: 282px;
+  max-height: auto;
+}
 .listCard{
   border : 1px solid gray;
   margin-bottom : 5px;
