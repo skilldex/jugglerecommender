@@ -19,15 +19,14 @@
   padding-left:  10px;
   white-space: nowrap;      /*keep text on one line */
   margin-bottom: 10px;
+  margin-top: 15px;
 }
 .moreInfoDiv{
   width: 200px;
-
 }
 .explanationSection{
   height: auto;
   width: 110%;
-
 }
 .explanation{
   font-size: 12px;
@@ -40,7 +39,6 @@
   margin-bottom: 5px ;
   margin-top:  5px;
   padding-top: 5px;
-  border-top: 1px solid gray;
   font-size: 20px;
 }
 
@@ -74,24 +72,18 @@
 }
 
 
-@media screen and (max-width: 700px) {
-  .detailDiv{
-
-  }
-}
-
 .moreInfoLabelDiv{
   width : 100%;
   text-align:  center;
   margin-bottom: 5px;
 }
 .moreInfoLabel{
-  font-size: 13px;
+  font-size: 14px;
   color: blue;
   margin : 0 auto;
 }
 .showExplanation{
-  font-size: 13px;
+  font-size: 14px;
   color: blue;
 }
 .editCatchIcon{
@@ -108,7 +100,7 @@
   width: 24px;
   float : left;
   margin-top : 8px;
-  margin-left: 5px;
+  margin-left: 10px;
   margin-right : 2px;
   background-color: white;
 }
@@ -129,6 +121,7 @@
 .topButtons{
   display: flex;
   align-items: center;
+  margin-top: 5px;
 }
 .closeDetailIcon{
   height : 24px;
@@ -152,8 +145,7 @@
 
 .relationshipLabel{
   width: 100%;
-  margin: auto;
-  text-align: center;
-  padding-bottom: 6px;
+  margin-left : 10px;
   font-size: 20px;
+  margin-bottom : 10px;
 }

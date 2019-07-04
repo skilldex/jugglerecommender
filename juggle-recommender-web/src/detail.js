@@ -5,7 +5,7 @@ import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
 import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
-import closeIcon from './images/closeIcon.svg'
+import closeIcon from './images/closeIcon.jpg'
 import Demo from './demo'
 import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
@@ -162,11 +162,7 @@ class Detail extends Component {
     }
     const infoSection = uiStore.detailTrick && detailTrickKey ?
                           <div className="detailInfoDiv">
-                            <div className="moreInfoLabelDiv">
-                              <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
-                                {uiStore.showMoreInformation?"less info":"more info"}
-                              </label><br/>
-                            </div>
+                            
                             {catchesSection}
                             <label className="detailLabel">Contributor: </label>
                             {
@@ -188,18 +184,6 @@ class Detail extends Component {
                                 {detailTrick && detailTrick.url ?
                                   <a target="_" href={detailTrick.url}>{tutorialSite}</a> : null
                                 } 
-                                {detailTrick && detailTrick.tags?
-                                  <div>
-                                    <label className="detailLabel">Tags:</label><br/>
-                                    <div className="detailTags">{tags}</div>
-                                  </div> : null
-                                }
-                                {detailTrick && detailTrick.related && detailTrick.related.length>0 ?
-                                  <div>
-                                    <label className="detailLabel">Related:</label><br/>
-                                    <div className="detailTags">{related}</div>
-                                  </div> : null
-                                }
                                 {detailTrick && detailTrick.explanation?
                                   <div className="explanationSection">
                                     <label className="detailLabel">Explanation:</label>
@@ -209,8 +193,21 @@ class Detail extends Component {
                                     {uiStore.showExplanation?<label className="explanation">{detailTrick.explanation}</label>:null}
                                   </div> : null
                                 }
+                                
+                                {detailTrick && detailTrick.tags?
+                                  <div>
+                                    <label className="detailLabel">Tags:</label><br/>
+                                    <div className="detailTags">{tags}</div>
+                                  </div> : null
+                                }
+                                
                               </div>:null
                             }
+                            <div className="moreInfoLabelDiv">
+                              <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
+                                {uiStore.showMoreInformation?"less info":"more info"}
+                              </label><br/>
+                            </div>
                           </div>:null
     const relationshipLists = 
         detailTrick?
