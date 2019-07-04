@@ -131,8 +131,8 @@ class TrickList extends Component {
 					/>
 				</div>:null
 
-			const r = Math.floor(trick.difficulty * 25.5);
-		    const g = Math.floor(255 - (trick.difficulty * 25.5));
+			const r = Math.floor(trick.difficulty >= 5.5? 255:255-(trick.difficulty)* 51);
+		    const g = Math.floor(trick.difficulty <= 5.5? 255:255-(trick.difficulty-5.5)* 51);
 		    const b = 0;
 		    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
 		    const difficultyGauge = <Gauge 

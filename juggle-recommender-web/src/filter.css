@@ -11,7 +11,7 @@
   z-index: 1200;
   position: absolute;
   top:96px;
-  opacity : 95%;
+  opacity : .95;
   background-color : white;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
