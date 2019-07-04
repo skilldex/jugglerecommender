@@ -28,7 +28,6 @@ Before working on general skilldex:
 	-user suggestions/editing/comments
 
 Concise TODO:
-	-switch difficulty to x.x format
 	-demo toggle for gif/video in cases where there are both
 	-Help, about, send feedback, maybe combine 2 of these, but probably not all of them
 	-Notifications section(maybe in profile) so contributors can know if their tricks become prereqs or relateds, or if other users are setting catches for their tricks, or suggesting edits

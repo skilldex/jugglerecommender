@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import store from './stores/store'
+import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import downArrow from './images/down-arrow.svg'
@@ -130,9 +131,12 @@ class TrickList extends Component {
 						demoLocation="expandedSection"
 					/>
 				</div>:null
-
-			const r = Math.floor(trick.difficulty >= 5.5? 255:255-(trick.difficulty)* 51);
-		    const g = Math.floor(trick.difficulty <= 5.5? 255:255-(trick.difficulty-5.5)* 51);
+			const modifiedTrickDifficulty = 
+				((trick.difficulty-filterStore.difficultyRange[0]) /
+				(filterStore.difficultyRange[1]-filterStore.difficultyRange[0]))*10
+			console.log('difficulties',trick.difficulty,modifiedTrickDifficulty)
+			const r = Math.floor(modifiedTrickDifficulty >= 5.5? 255:255-(modifiedTrickDifficulty)* 51);
+		    const g = Math.floor(modifiedTrickDifficulty <= 5.5? 255:255-(modifiedTrickDifficulty-5.5)* 51);
 		    const b = 0;
 		    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
 		    const difficultyGauge = <Gauge 
@@ -140,7 +144,7 @@ class TrickList extends Component {
 		    							style={{overflow:'auto'}} 
 		    							color={colorHex}
 		    							label=""
-										min={1.0} max={10.0}
+										min={filterStore.difficultyRange[0]-.1} max={filterStore.difficultyRange[1]}
 										value={parseFloat(trick.difficulty).toFixed(1)} 
 										width={60} height={48} 
 									/>	

@@ -20,15 +20,10 @@ v 1.5
 	Decide about my tricks:
 
 v 1.4
-	New trickList:
-		-for patterns with too many tags to fit, we need a ...
 	Hamburger Menu:
 		-add pattern
 		-login/logout
 		-about
-	Filter
-		-add a share button to share currently set filters
-			-share button exists, but its functionality doesnt
 
 =========
 
@@ -39,7 +34,9 @@ Patterns to add(either video or gif):
 			reverse cascade, backcross, reverse backcross, over the head...
 
 Bugs:
+	-if page loaded with a shared url that has no results, it keeps saying 'loading'
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
+		-not sure if this still happens with new UI
 
 Stuff To Go Into Migration Scripts:
 	-a script to make related tags go both directions
@@ -47,6 +44,7 @@ Stuff To Go Into Migration Scripts:
 	-#b moved to begining of name from end (#b)
 	-tags added based on name
 	-tags changed
+	-set old juggling lab keys to be same as names
 
 Code Cleaning:
 	-do the spacing in addTrickForm without using "\u00A0"

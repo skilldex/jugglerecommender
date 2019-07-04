@@ -23,9 +23,8 @@ if (urlQueryNumBalls){
 }
 let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
 let demoType = "All"
-console.log('urlQueryDemoType',urlQueryDemoType[1])
-if (urlQueryDemoType[1] === "uservideo&"){demoType = "User Video"}
-if (urlQueryDemoType[1] === "jugglinglab&"){demoType = "Juggling Lab"}
+if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo&"){demoType = "User Video"}
+if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab&"){demoType = "Juggling Lab"}
 const urlQueryTags = window.location.search.match(/tags=(.+)/)
 const tags = urlQueryTags ? [{
 								id: urlQueryTags[1].split('&')[0].slice(0, -1),
