@@ -50,7 +50,7 @@
     -o-transform: rotate(-90deg);   /* Opera */
     transform: rotate(-90deg);
 }
-.difficultyGauge{
+.difficultyGauge{ 
   margin-top:-16px;
   vertical-align: top;
   display: inline-grid;
@@ -70,7 +70,7 @@
   margin-right: 5px;
   text-overflow: hidden;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: auto;
   vertical-align: middle;
 }
 .mainCard{
@@ -144,7 +144,7 @@
 .listSection{
   height: auto;
   max-height: 100%;
-  overflow-y: auto;
+  overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }

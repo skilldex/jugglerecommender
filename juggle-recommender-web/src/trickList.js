@@ -144,9 +144,10 @@ class TrickList extends Component {
 		    							style={{overflow:'auto'}} 
 		    							color={colorHex}
 		    							label=""
-										min={1} max={10}
+										min={1.0} max={10.0}
 										value={trick.difficulty} 
 										width={60} height={48} 
+										valueFormatter={value => `${value}.0`}
 									/>	
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton" + " rotated90"
