@@ -153,7 +153,7 @@ class TrickList extends Component {
 					<div className="expandedCard" id={trickKey+"expandedCard"}>
 						<div className="mainCard">
 							 <div className = "cardInfo">	
-								 <div className="listCardName" 
+								<div className="listCardName" 
 									  onClick={(e)=>{this.openDetail(trickKey)}}
 									  title={trick.name}>{trick.name}
 								</div>

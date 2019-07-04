@@ -43,21 +43,17 @@
   margin-left: auto;
   margin-bottom: 5px;
 }
+.expandTrickButton{
+  cursor: pointer;  
+}
 .rotated90{
-    -webkit-transform: rotate(-90deg); /* Safari and Chrome */
-    -moz-transform: rotate(-90deg);   /* Firefox */
-    -ms-transform: rotate(-90deg);   /* IE 9 */
-    -o-transform: rotate(-90deg);   /* Opera */
-    transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg); /* Safari and Chrome */
+  -moz-transform: rotate(-90deg);   /* Firefox */
+  -ms-transform: rotate(-90deg);   /* IE 9 */
+  -o-transform: rotate(-90deg);   /* Opera */
+  transform: rotate(-90deg);
 }
-.difficultyGauge{ 
-  margin-top:-16px;
-  vertical-align: top;
-  display: inline-grid;
-  font-size: 22px;
-  font-weight:none;
 
-}
 .loadingDiv{
   width: 100%;
   align-items: center;
@@ -138,6 +134,16 @@
   color : #6666FF;
   font-weight: bold;
   font-size: 15px;
+  z-index: 1300;
+}
+.difficultyGauge{ 
+  margin-top:-16px;
+  vertical-align: top;
+  display: inline-grid;
+  font-size: 22px;
+  font-weight:none;
+  z-index:1;
+  pointer-events: none;
 }
 
 .selectedListMinimizedIndicator{

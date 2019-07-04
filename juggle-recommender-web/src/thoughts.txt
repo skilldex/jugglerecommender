@@ -14,6 +14,9 @@ DB changes:
 	Add contortion tag to all contrition tricks(script can do this)
 	Do we have a side by side pistons pattern?
 
+Asthetics:
+	expand arrow should animatedly turn when popup expands
+
 External:
 	-Film 4ball sunny side up for guy online
 	-tell guy about hungarian convention
