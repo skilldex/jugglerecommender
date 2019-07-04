@@ -216,7 +216,8 @@ class AddTrickForm extends Component {
     		let patternAlreadyExists = false
     		if (indecesToCheck.length>0){
     			indecesToCheck.forEach(function (item, index) {
-	    			if (stateNum == store.library[tricksInLibraryKeys[item]].num ||
+	    			if (parseInt(stateNum,10) === 
+	    				parseInt(store.library[tricksInLibraryKeys[item]].num,10) ||
 	    				store.library[tricksInLibraryKeys[item]+"("+stateNum+"b)"]){
 	    				patternAlreadyExists = true
 					}

@@ -38,9 +38,9 @@ class Utilities{
     str = str.toString()
     let toReturn
     if (str.includes(":")){
-      toReturn = (parseInt(str.split(":")[0])*60)+(parseInt(str.split(":")[1]))
+      toReturn = (parseInt(str.split(":")[0],10)*60)+(parseInt(str.split(":")[1],10))
     }else{
-      toReturn = parseInt(str)
+      toReturn = parseInt(str,10)
     }
     if (toReturn === 0){
       toReturn = 1
@@ -72,7 +72,7 @@ class Utilities{
         at = a.tempSortName
         bt = b.tempSortName
       }else{
-        at = parseFloat(a.tempSortName)*10,
+        at = parseFloat(a.tempSortName)*10;
         bt = parseFloat(b.tempSortName)*10;
       }
       return at > bt ? 1 : ( at < bt ? -1 : 0 );               

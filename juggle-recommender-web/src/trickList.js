@@ -1,9 +1,7 @@
 import React,{Component} from 'react'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
-import graphStore from './stores/graphStore'
 import { observer } from "mobx-react"
-import legendImg from './images/greenToRedFade.jpg'
 import downArrow from './images/down-arrow.svg'
 import Demo from './demo'
 import MainTagsBar from "./mainTagsBar"
@@ -82,7 +80,6 @@ class TrickList extends Component {
 				}else{
 					uiStore.toggleSelectedTrick(trickKeyOfCurrentlyExpanded)
 				}
-	  		console.log('element',element)
 	  		element.classList.toggle("expand");
 			}
 		});
@@ -94,7 +91,6 @@ class TrickList extends Component {
 			uiStore.toggleSelectedTrick(trickKey)
 		}		
   		const element = document.getElementById(trickKey+"expandedCard");
-  		console.log('element',element)
   		element.classList.toggle("expand");
 	}
 				getHexColor=(value: number)=> {
@@ -112,7 +108,7 @@ class TrickList extends Component {
 				trickKey = trickKey.replace(/'/g, "")
 				trick = store.library[trickKey]
 				if(!trick){
-					console.log(trickKey)
+					console.log("there is something wrong with the trickKey ",trickKey)
 					return
 				}
 			}
@@ -121,9 +117,9 @@ class TrickList extends Component {
 			var cardClass='listCard'
 			const tags = trick && trick.tags ? trick.tags.slice().sort().map((tag,i)=>{
                 if(i < trick.tags.length-1){
-                  return <span>{tag + ","}</span>
+                  return <span key={tag}>{tag + ","}</span>
                 }else{
-                  return <span>{tag}</span>
+                  return <span key={tag}>{tag}</span>
                 }
               }) : null
 
@@ -149,7 +145,7 @@ class TrickList extends Component {
 										width={60} height={48} 
 									/>	
 			const expandTrickButtonClass =  
-				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton" + " rotated90"
+				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
 			tricks.push(
 				<div className={cardClass} 
 					 key={trickKey + "div"} 
@@ -169,8 +165,8 @@ class TrickList extends Component {
 								</div>	
 								
 							</div>
-							<div class="expandButtonDiv">
-								<img 
+							<div className="expandButtonDiv">
+								<img alt=""
 									className={expandTrickButtonClass}
 									onClick={()=>{this.expandCard(trickKey)}}
 									src={downArrow}

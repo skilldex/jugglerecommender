@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import store from './stores/store'
-import uiStore from './stores/uiStore'
 //import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import instagramLogoIcon from "./images/instagramLogo.png"
@@ -16,14 +15,14 @@ class Demo extends Component {
     }
   }
   instagramPaused = (data) => {
-    if(this.video.currentTime >= parseInt(store.library[this.props.trickKey].videoEndTime)){
-      this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime);
+    if(this.video.currentTime >= parseInt(store.library[this.props.trickKey].videoEndTime,10)){
+      this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime,10);
       this.video.load()
     }
   }
   instagramTimeUpdate = (data) => {
-    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime)){
-      this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime);
+    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime,10)){
+      this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime,10);
       this.video.load()
     }
   }

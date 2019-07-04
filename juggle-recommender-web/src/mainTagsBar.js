@@ -13,7 +13,6 @@ import starIcon from './images/starIcon.svg'
 import authStore from "./stores/authStore"
 import './mainTagsBar.css';
 
-var mouseOverSort = true
 @observer
 class MainTagsBar extends Component {
     state={

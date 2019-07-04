@@ -44,7 +44,6 @@ class Store {
 	}
 	@action setStartTime=(startTime)=>{
 		this.startTime = startTime
-		console.log('startTime',startTime)
 	}
 	@action setContributors=(contributors)=>{
 		this.contributors = contributors

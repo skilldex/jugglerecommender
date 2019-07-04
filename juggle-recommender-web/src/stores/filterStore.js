@@ -10,7 +10,6 @@ const contributor = urlQuery ? [{
 									text: urlQuery[1]
 								}] : [] 
 
-console.log("contributors " ,contributor)
 class FilterStore {
 
 	@observable sortType = 'difficulty'

@@ -10,7 +10,6 @@ import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
 import closeIcon from './images/closeIcon.svg'
-import Toggle from 'react-toggle'
 import shareIcon from './images/shareIcon.png'
 
 

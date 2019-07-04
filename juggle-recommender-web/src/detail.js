@@ -113,7 +113,6 @@ class Detail extends Component {
            onClick={()=>{ this.handleEditCatchButtonClick()}}
       />
     </div> : null
-		const graphDiv = document.getElementById("graphDiv")
  		const addToMyTricksButton = uiStore.detailTrick && store.myTricks[uiStore.detailTrick.id] ? 
               		<button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.removeFromMyTricks(uiStore.detailTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnDetail" onClick={this.addToMyTricks}>&#9734;</button>

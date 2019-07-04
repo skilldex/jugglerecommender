@@ -1,12 +1,10 @@
 import React, {Component} from 'react';
 import { observer } from "mobx-react"
 import './App.css';
-import TrickGraph from './trickGraph.js'
 import TrickList from './trickList.js'
 import Detail from './detail.js'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
-import graphStore from './stores/graphStore'
 import authStore from './stores/authStore.js'
 import Modal from 'react-modal';
 import SlidingPane from 'react-sliding-pane';
@@ -15,8 +13,6 @@ import firebase from 'firebase'
 import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
-import Demo from './demo'
-import filterStore from './stores/filterStore'
 
 let firebaseConfig = {}
 if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
@@ -203,7 +199,6 @@ class App extends Component {
 		const detail = uiStore.editingDetailTrick ? null : <Detail/>
 		return (
 			<div
-				touchMove={(e)=>{e.preventDefault()}} 
 				className="main" 
 				ref={ref => this.el = ref}>	            
 	            {instructions}

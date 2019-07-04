@@ -7,7 +7,6 @@ import './autoComplete.css'
 class AutoComplete extends Component {
 
 	render() {
-		const input = this.props.input
 		const lowerCaseInput = this.props.input.toLowerCase()
 		let matchedNames = []
 	 	const options = Object.keys(store.library).map((key)=>{
