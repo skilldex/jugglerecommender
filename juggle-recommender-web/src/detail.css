@@ -37,10 +37,11 @@
   white-space: normal;
 }
 .detailHeader{  
-  margin-bottom: 15px ;
+  margin-bottom: 5px ;
   margin-top:  5px;
+  padding-top: 5px;
   border-top: 1px solid gray;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .detailLabel{
