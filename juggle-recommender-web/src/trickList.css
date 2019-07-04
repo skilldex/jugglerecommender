@@ -1,6 +1,6 @@
 .listDiv{
   padding-bottom : 5px;
-  width: 100%;
+  width: 99%;
   max-width: 400px;
   height: auto;
   max-height: 100vh;
@@ -50,6 +50,14 @@
     -o-transform: rotate(-90deg);   /* Opera */
     transform: rotate(-90deg);
 }
+.difficultyGauge{
+  margin-top:-16px;
+  vertical-align: top;
+  display: inline-grid;
+  font-size: 22px;
+  font-weight:none;
+
+}
 .cardInfo{
   display: inline-block;
 }
@@ -63,7 +71,6 @@
   text-overflow: hidden;
   white-space: nowrap;
   overflow: hidden;
-  margin-left: 15px;
   vertical-align: middle;
 }
 .mainCard{

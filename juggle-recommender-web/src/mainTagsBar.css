@@ -1,7 +1,7 @@
 .searchAndFilterSection{
   display:block;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;  
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;  
 }
 .inputSection{
   background-color:white;

@@ -9,6 +9,7 @@ import Demo from './demo'
 import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
 import './App.css';
+import Gauge from 'react-svg-gauge';
 //import { Resizable } from "re-resizable";
 
 var scrollerPosition = 0
@@ -96,6 +97,10 @@ class TrickList extends Component {
   		console.log('element',element)
   		element.classList.toggle("expand");
 	}
+				getHexColor=(value: number)=> {
+			  let string = value.toString(16);
+			  return (string.length === 1) ? '0' + string : string;
+			}
 							
 	render() {
 	 	let tricks = []
@@ -129,6 +134,20 @@ class TrickList extends Component {
 						demoLocation="expandedSection"
 					/>
 				</div>:null
+
+			const r = Math.floor(trick.difficulty * 25.5);
+		    const g = Math.floor(255 - (trick.difficulty * 25.5));
+		    const b = 0;
+		    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
+		    const difficultyGauge = <Gauge 
+		    							valueLabelStyle ={{fontWeight:'none'}}
+		    							style={{overflow:'auto'}} 
+		    							color={colorHex}
+		    							label=""
+										min={1} max={10}
+										value={trick.difficulty} 
+										width={60} height={48} 
+									/>	
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton" + " rotated90"
 			tricks.push(
@@ -142,10 +161,11 @@ class TrickList extends Component {
 									  onClick={(e)=>{this.openDetail(trickKey)}}
 									  title={trick.name}>{trick.name}
 								</div>
-								 
-								<div className="bottomRowText difficultyValue">Difficulty: {trick.difficulty}</div>	
+								<div className="difficultyGauge">
+									{difficultyGauge}
+								</div>
 								<div className="bottomRowText tags">
-									Tags: {tags}
+									<b>Tags:</b> {tags}
 								</div>	
 								
 							</div>
