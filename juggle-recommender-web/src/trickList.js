@@ -156,9 +156,11 @@ class TrickList extends Component {
 					<div className="expandedCard" id={trickKey+"expandedCard"}>
 						<div className="mainCard">
 							 <div className = "cardInfo">	
-								<div className="listCardName" 
-									  onClick={(e)=>{this.openDetail(trickKey)}}
-									  title={trick.name}>{trick.name}
+								<div className="listCardNameDiv" title={trick.name}>
+									<span 
+									  	className="listCardNameSpan"
+									  	onClick={(e)=>{this.openDetail(trickKey)}}>{trick.name}
+									</span>
 								</div>
 								<div className="difficultyGauge">
 									{difficultyGauge}

@@ -10,7 +10,6 @@ v 1.5
 	-number of patterns on site
 	-number of users? total? currently online?
 
-
 	Profile Screen
 	-share button to share users contributed
 	-upload image
@@ -26,6 +25,9 @@ v 1.4
 		-about
 
 =========
+-limit clicking to pattern name
+-scroll up when new details is selected
+-fix double bottom border on detail lists
 
 Patterns to add(either video or gif):
 	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550

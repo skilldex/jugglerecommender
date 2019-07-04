@@ -127,8 +127,7 @@
   margin-right: 5px;
   border-radius: 5px;
 }
-.listCardName{
-  cursor: pointer;
+.listCardNameDiv{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -137,6 +136,9 @@
   font-weight: bold;
   font-size: 15px;
   z-index: 1300;
+}
+.listCardNameSpan{
+  cursor: pointer;
 }
 .difficultyGauge{ 
   margin-top:-10px;
