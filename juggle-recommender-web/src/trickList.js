@@ -192,7 +192,12 @@ class TrickList extends Component {
 			>
 				{tricks.length > 0 ? tricks: 
 					<div className="noResultsDiv">
-						{store.startTime+10000<currentTime? "No results found" : "Loading tricks"}
+						{store.startTime+10000<currentTime? "No results found" :
+							<div className="loadingDiv">
+								<div className="loader"></div> 
+								Loading tricks
+							</div>
+						}
 					</div>
 				}
 			</div>
