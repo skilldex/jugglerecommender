@@ -124,7 +124,7 @@ class MainTagsBar extends Component {
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"
-                      onClick={()=>{uiStore.toggleFilterDiv()}}> Demo Type: {filterStore.demoType}</span>
+                      onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.handleDemoTypeDelete()}> x </label>
               </div>      
         )

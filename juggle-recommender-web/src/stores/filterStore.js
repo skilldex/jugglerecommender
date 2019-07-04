@@ -4,24 +4,54 @@ import uiStore from "./uiStore"
 configure({ enforceActions: "always" })
 console.log("filters " ,window.location)
 
-const urlQuery = window.location.search.match(/\?contributor=(.+)/)
-const contributor = urlQuery ? [{
-									id: urlQuery[1],
-									text: urlQuery[1]
-								}] : [] 
+const urlQueryContributor = window.location.search.match(/\?contributor=(.+)/)
+const contributor = urlQueryContributor ? [{
+									id: urlQueryContributor[1].split('&')[0].slice(0, -1),
+									text: urlQueryContributor[1].split('&')[0].slice(0, -1)
+								}] : []
+let urlQueryDiff = window.location.search.match(/difficultyrange=(.+)/)	
+let difficultyRange	= [1,10]
+if (urlQueryDiff){					
+	difficultyRange[0] = urlQueryDiff[1].split('&')[0].split(',')[0]
+	difficultyRange[1] = urlQueryDiff[1].split('&')[0].split(',')[1]
+}
+let urlQueryNumBalls = window.location.search.match(/numballs=(.+)/)
+let numBalls = []
+if (urlQueryNumBalls){
+		numBalls = urlQueryNumBalls[1].split('&')[0].split(',')
+		numBalls = numBalls.filter(Boolean);
+}
+let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
+let demoType = "All"
+console.log('urlQueryDemoType',urlQueryDemoType[1])
+if (urlQueryDemoType[1] === "uservideo&"){demoType = "User Video"}
+if (urlQueryDemoType[1] === "jugglinglab&"){demoType = "Juggling Lab"}
+const urlQueryTags = window.location.search.match(/tags=(.+)/)
+const tags = urlQueryTags ? [{
+								id: urlQueryTags[1].split('&')[0].slice(0, -1),
+								text: urlQueryTags[1].split('&')[0].slice(0, -1)
+							}] : []
+let urlQueryCatches = window.location.search.match(/catches=(.+)/)	
+let minCatches = 0
+let maxCatches = 1000000
+if (urlQueryCatches){
+	urlQueryCatches = urlQueryCatches[1].split('&')[0]					
+	minCatches = urlQueryCatches.split(',')[0]
+	maxCatches = urlQueryCatches.split(',')[1]
+}
 
 class FilterStore {
 
 	@observable sortType = 'difficulty'
-	@observable demoType = 'All'
+	@observable demoType = demoType
 	@observable sortDirection = 'ascending'
-	@observable difficultyRange = [1,10]
-	@observable numBalls = []
+	@observable difficultyRange = difficultyRange
+	@observable numBalls = numBalls
 	@observable associations = []
-	@observable tags = []
+	@observable tags = tags
 	@observable contributors = contributor
-	@observable minCatches = 0
-	@observable maxCatches = 10000000
+	@observable minCatches = minCatches
+	@observable maxCatches = maxCatches
 
 	@action setDemoType=(demoType)=>{
 		this.demoType = demoType

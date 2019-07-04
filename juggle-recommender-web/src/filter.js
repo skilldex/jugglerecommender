@@ -137,28 +137,62 @@ class Filter extends Component {
       uiStore.setMouseInFilterDiv(false)
       uiStore.setShowFilterDiv(false)
     }
-	// @observable difficultyRange = [1,10]
-	// @observable numBalls = []
-	// @observable tags = []
-	// @observable contributors = contributor
-	// @observable minCatches = 0
-	// @observable maxCatches = 10000000
-	//todo we need to check for and then put each filter array or string into the url
-	//	-once we have our url made, we need to go over to filterstore and get the tags out of it
-	//		and set filter store state accordingly
     copyFilterURL=()=>{
-      // const textField = document.createElement('textarea')
-      // const url = window.location.origin + "/?contributor=" + authStore.user.username 
-      // textField.innerText = url
-      // document.body.appendChild(textField)
-      // var range = document.createRange();  
-      // range.selectNode(textField);  
-      // window.getSelection().addRange(range);  
-      // textField.select()
-      // document.execCommand('copy')
-      // textField.remove()
+    	let urlText = "/?"
+    	if (filterStore.contributors.length > 0){
+			urlText = urlText + "contributor="    		
+    		filterStore.contributors.forEach(contributor => {
+	    		urlText = urlText + contributor.id + ","
+			});
+			urlText.slice(0, -1);
+			urlText = urlText + "&"
+    	}  
+    	if (parseInt(filterStore.difficultyRange[0],10)!==1 || 
+    		parseInt(filterStore.difficultyRange[1],10)!==10){
+	    		urlText = urlText + "difficultyrange=" + 
+	    			filterStore.difficultyRange[0] + "," + filterStore.difficultyRange[1] + "&"
+    	}
+    	if (filterStore.numBalls.length > 0){
+			urlText = urlText + "numballs="    		
+    		filterStore.numBalls.forEach(numball => {
+	    		urlText = urlText + numball + ","
+			});
+			urlText.slice(0, -1);
+			urlText = urlText + "&"
+    	}
+    	if (filterStore.tags.length > 0){
+			urlText = urlText + "tags="   		
+    		filterStore.tags.forEach(tag => {
+	    		urlText = urlText + tag.id + ","
+			});
+			urlText.slice(0, -1);
+			urlText = urlText + "&"
+    	}
+    	if (parseInt(filterStore.minCatches,10)>0 || 
+    		parseInt(filterStore.maxCatches,10)<store.highestCatches){
+	    		urlText = urlText + "catches=" + 
+	    			filterStore.minCatches + "," + filterStore.maxCatches + "&"
+    	}
+    	if (filterStore.demoType !== "All"){
+			urlText = urlText + "demotype=" + filterStore.demoType.replace(" ","").toLowerCase() + "&"		
+    	}
 
-      alert("Link for your currently set filters copied to clipboard\n url")
+ 		if (urlText !== "/?"){
+			const textField = document.createElement('textarea')
+			const url = window.location.origin + urlText 
+			textField.innerText = url
+			document.body.appendChild(textField)
+			var range = document.createRange();  
+			range.selectNode(textField);  
+			window.getSelection().addRange(range);  
+			textField.select()
+			document.execCommand('copy')
+			textField.remove()
+
+			alert("Link for your currently set filters copied to clipboard\n" + url)
+		}else{
+			alert("Set filters to share.")
+		}
     }
 
 	render() {
