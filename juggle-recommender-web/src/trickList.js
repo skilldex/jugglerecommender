@@ -77,7 +77,7 @@ class TrickList extends Component {
 				if(uiStore.selectedTrick !== trickKeyOfCurrentlyExpanded){
 					this.showDemoAfterAnimationTimer = setTimeout(()=>{
 						uiStore.toggleSelectedTrick(trickKeyOfCurrentlyExpanded)
-					}, 1000)
+					}, 620)
 				}else{
 					uiStore.toggleSelectedTrick(trickKeyOfCurrentlyExpanded)
 				}
@@ -87,17 +87,17 @@ class TrickList extends Component {
 		if(uiStore.selectedTrick !== trickKey){
 			this.showDemoAfterAnimationTimer = setTimeout(()=>{
 				uiStore.toggleSelectedTrick(trickKey)
-			}, 1000)
+			}, 620)
 		}else{
 			uiStore.toggleSelectedTrick(trickKey)
 		}		
   		const element = document.getElementById(trickKey+"expandedCard");
   		element.classList.toggle("expand");
 	}
-				getHexColor=(value: number)=> {
-			  let string = value.toString(16);
-			  return (string.length === 1) ? '0' + string : string;
-			}
+	getHexColor=(value: number)=> {
+	  let string = value.toString(16);
+	  return (string.length === 1) ? '0' + string : string;
+	}
 							
 	render() {
 	 	let tricks = []
@@ -145,7 +145,7 @@ class TrickList extends Component {
 		    							label=""
 										min={filterStore.difficultyRange[0]-.1} max={filterStore.difficultyRange[1]}
 										value={parseFloat(trick.difficulty).toFixed(1)} 
-										width={60} height={48} 
+										width={55} height={44} 
 									/>	
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"

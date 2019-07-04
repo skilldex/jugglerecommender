@@ -16,13 +16,14 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
+
 .noResultsDiv{
   padding-top: 15px;
   font-style : italic;
 }
 .expandedCard{
   height:42px;
-  transition: all 1s ease;
+  transition: all .6s ease;
 }
 .expandedCard.expand {
   height: 301px;
@@ -83,6 +84,7 @@
 }
 .cardInfo{
   display: inline-block;
+  margin-bottom: 5px;
 }
 .bottomRowText{
   font-size : 11px;
@@ -137,8 +139,8 @@
   z-index: 1300;
 }
 .difficultyGauge{ 
-  margin-top:-16px;
-  vertical-align: top;
+  margin-top:-10px;
+  vertical-align: middle;
   display: inline-grid;
   font-size: 22px;
   font-weight:none;

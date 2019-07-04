@@ -33,36 +33,7 @@ input{
   color : #787878;
   width: 375px;
 }
-.header{
-  margin-top: 15px;
-  margin-bottom: 15px;  
-  display : flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
-
-.version{
-  vertical-align: middle;
-  margin-left: 5px;
-  font-size: 14px;
-}
-.title {
-  font-weight: bold;
-  font-size: 22px;
-  margin-left: 15px;
-  vertical-align: middle;
-}
-.headerButton {
-  background-color : white;
-  margin-right: 15px;
-  border : none;
-  font-size: 16px;
-  float: right;
-  display: inline-block;
-  padding : 0;
-  color : #1E90FF;
-}
 .inputStyle{
   width: 180px;
   margin-right : 10px;

@@ -13,7 +13,7 @@ import firebase from 'firebase'
 import AddTrickForm from './addTrickForm'
 import Login from "./login"
 import CreateAccount from "./createAccount"
-
+import Header from "./header"
 let firebaseConfig = {}
 if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
 	firebaseConfig = {
@@ -106,7 +106,7 @@ class App extends Component {
  		if (paneName === 'isLoginPaneOpen'){
 	 		store.setIsLoginPaneOpen(true)
 	 	}else if(paneName === 'isInstructionsPaneOpen'){
-	 		window.history.pushState("list", "list page", "localhost:3000/list")
+	 		//window.history.pushState("list", "list page", "localhost:3000/list")
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}else if(paneName === 'isCreateAccountPaneOpen'){
 	 		this.setState({ 'isCreateAccountPaneOpen': true })
@@ -184,18 +184,6 @@ class App extends Component {
 			                	<CreateAccount/><br/>
 							</div><br/>
 			            </SlidingPane>
-		const header = <div className="header">
-							<div>
-								<span className="title">Juggledex</span><span className="version"> v1.31 Beta</span>
-						    </div>
-						    <div>
-						    	<button className="headerButton" onClick={() => this.openSlidingPane('isInstructionsPaneOpen')}>About</button>
-							     {authStore.user ? 
-							        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
-							        <button className="headerButton" onClick={() => this.openSlidingPane('isLoginPaneOpen')}>Login</button>
-							   	}
-						    </div>
-						</div>
 		const detail = uiStore.editingDetailTrick ? null : <Detail/>
 		return (
 			<div
@@ -204,7 +192,7 @@ class App extends Component {
 	            {instructions}
 	            {login}
 	            {createAccount}
-				{header}
+				<Header openSlidingPane={this.openSlidingPane}/>
 				{!this.state.isInstructionsPaneOpen && 
 					!store.isLoginPaneOpen  && 
 					!store.isCreateAccountPaneOpen && 
