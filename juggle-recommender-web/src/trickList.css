@@ -25,7 +25,7 @@
   transition: all 1s ease;
 }
 .expandedCard.expand {
-  height: 282px;
+  height: 301px;
   max-height: auto;
 }
 .listCard{

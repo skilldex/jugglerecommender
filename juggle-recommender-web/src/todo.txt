@@ -21,7 +21,6 @@ v 1.5
 
 v 1.4
 	New trickList:
-		-gauge for difficulty 
 		-for patterns with too many tags to fit, we need a ...
 	Hamburger Menu:
 		-add pattern
@@ -29,6 +28,7 @@ v 1.4
 		-about
 	Filter
 		-add a share button to share currently set filters
+			-share button exists, but its functionality doesnt
 
 =========
 
@@ -39,10 +39,6 @@ Patterns to add(either video or gif):
 			reverse cascade, backcross, reverse backcross, over the head...
 
 Bugs:
-	-We have a crash due to libraryofjuggling names and keys being different, select fake mess for example
-		-can be fixed with a script that sets all trickKeys to trick names
-		-can be fixed if we make a getTrickKeysFromTrickNames
-	-filter should either close detail or open in front of it
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 
 Stuff To Go Into Migration Scripts:

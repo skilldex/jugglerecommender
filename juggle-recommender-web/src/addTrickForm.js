@@ -255,9 +255,9 @@ class AddTrickForm extends Component {
     	if (utilities.isEmptyOrSpaces(this.state.difficulty)){
     		this.setState({submitDisabled:true})
     	}else{
-    		if (utilities.isNotOnlyDigits(this.state.difficulty) ||
+    		if (utilities.isNotOnlyDigitsOrDecimal(this.state.difficulty) ||
     			(this.state.difficulty<1 || this.state.difficulty>10)){    			
-					this.setState({difficultyErrorMessage:'must be (1-10).'})
+					this.setState({difficultyErrorMessage:'must be (1.0-10.0).'})
 					this.setState({submitDisabled:true})
 				}else{
 					this.setState({difficultyErrorMessage:''})				 

@@ -16,6 +16,10 @@ class Utilities{
   @action isNotOnlyDigits=(str)=>{
       return str.match(/^[0-9]+$/) === null;
   }
+  @action isNotOnlyDigitsOrDecimal=(str)=>{
+      return str.match(/^\d+\.\d+$/) === null;
+  }
+  
 
   @action isValidTime=(str)=>{
     let isValid = false
@@ -68,8 +72,8 @@ class Utilities{
         at = a.tempSortName
         bt = b.tempSortName
       }else{
-        at = parseInt(a.tempSortName),
-        bt = parseInt(b.tempSortName);
+        at = parseFloat(a.tempSortName)*10,
+        bt = parseFloat(b.tempSortName)*10;
       }
       return at > bt ? 1 : ( at < bt ? -1 : 0 );               
     });    
