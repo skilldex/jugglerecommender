@@ -26,9 +26,6 @@ v 1.4
 
 =========
 Bugs to fix before deploy:
--restore collapse card functionality
--opening 'columns' detail causes crash in tempory replace fix, 94 of tricklist
-	-probably best to just fix database iwht a script
 -in Relf's Revenge 'Related' is shown with 'no results found' message
 -order of relationships lists are in no recognizable order, should probably be by difficulty
 
