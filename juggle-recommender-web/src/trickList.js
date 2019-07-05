@@ -59,6 +59,9 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
+
+
+
 		if (uiStore.selectedTrick){
 			uiStore.toggleSelectedTrick(null)
 		}
@@ -67,6 +70,16 @@ class TrickList extends Component {
 		detailTrick.y = 400
 		detailTrick.id = trickKey
 		uiStore.setDetailTrick(detailTrick)	
+
+				window.scrollTo(0,0);
+		console.log("document.getElementById('detailsOuterDiv')",document.getElementById('detailsOuterDiv'))
+    	if (document.getElementById('detailOuterDiv')){
+    		document.getElementById('detailOuterDiv').scrollTop = 0
+    	}
+    	
+    	if (document.getElementById('detailDiv')){
+	    	document.getElementById('detailDiv').scrollTop = 0
+	    }
 	}
 
 	expandCard=(trickKey)=> {

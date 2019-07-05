@@ -26,11 +26,12 @@ v 1.4
 
 =========
 Bugs to fix before deploy:
-	-fix double bottom border on detail lists
-		-we want to get rid of the listdiv border, but keep the border around the 'loading/no results found' messages. This can be seen in 'fake mess' in the prereqs/related lists.
-	-when mills mess is in a related list and it is expanded, site crashes(go to fake mess details to see)
-	-when tags are wider than phone width they go down to next line and overlap the next trick name
-	-should scroll up automatically when new details is opened
+-when already in details, and click a trick in relationships, should autoscroll to top of details
+-restore collapse card functionality
+-opening 'columns' detail causes crash in tempory replace fix, 94 of tricklist
+	-probably best to just fix database iwht a script
+-in Relf's Revenge 'Related' is shown with 'no results found' message
+-order of relationships lists are in no recognizable order, should probably be by difficulty
 
 Patterns to add(either video or gif):
 	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550

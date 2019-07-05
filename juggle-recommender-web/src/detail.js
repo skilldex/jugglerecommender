@@ -240,7 +240,7 @@ class Detail extends Component {
         
 
     const detailCard = uiStore.detailTrick && detailTrickKey ? 
-          			    <div className="detailDiv">
+          			    <div className="detailDiv" id="detailDiv">
                       <div className="topButtons">
                         {addToMyTricksButton}
                         {deleteTrickButton}
@@ -256,7 +256,8 @@ class Detail extends Component {
                       {relationshipLists}                
                     </div> : null
 		return(      
-      			<div onMouseEnter={this.onMouseEnter} 
+      			<div id="detailOuterDiv"
+                 onMouseEnter={this.onMouseEnter} 
                  onMouseLeave={this.onMouseLeave}
                  onBlur={this.onBlur} 
                  ref={(div)=> {this.outerDiv = div}}  
