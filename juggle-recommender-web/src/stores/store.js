@@ -152,7 +152,6 @@ class Store {
     		//uiStore.setSelectedList("myTricks")
     	}else{
     		uiStore.setSelectedList("allTricks")
-    		uiStore.toggleSelectedTrick('Cascade')
     	}
 	}
 	@action initializeLibrary=()=>{

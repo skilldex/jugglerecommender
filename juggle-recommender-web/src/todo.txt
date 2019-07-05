@@ -25,9 +25,6 @@ v 1.4
 		-about
 
 =========
-Bugs to fix before deploy:
--in Relf's Revenge 'Related' is shown with 'no results found' message
--order of relationships lists are in no recognizable order, should probably be by difficulty
 
 Patterns to add(either video or gif):
 	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550
@@ -36,6 +33,8 @@ Patterns to add(either video or gif):
 			reverse cascade, backcross, reverse backcross, over the head...
 
 Bugs:
+	-in Relf's Revenge 'Related' is shown with 'no results found' message
+		-this may be fixed automatically when we fix the name of the LOJ tricks
 	-if page loaded with a shared url that has no results, it keeps saying 'loading'
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI

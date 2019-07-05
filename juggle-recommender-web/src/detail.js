@@ -210,6 +210,7 @@ class Detail extends Component {
                               </label><br/>
                             </div>
                           </div>:null
+
     const relationshipLists = 
         detailTrick?
         <div className ='relationshipLists'>
@@ -217,7 +218,7 @@ class Detail extends Component {
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Prereqs</h3>
             <TrickList 
-              tricksToList = {detailTrick.prereqs}
+              tricksToList = {detailTrick.prereqs.sort()}
               selectedTrick={uiStore.selectedTrick}
             /> 
           </div> : null}
@@ -225,7 +226,7 @@ class Detail extends Component {
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Related</h3>
             <TrickList 
-              tricksToList = {detailTrick.related}
+              tricksToList = {detailTrick.related.sort()}
               selectedTrick={uiStore.selectedTrick}
             />
           </div> : null}
@@ -233,7 +234,7 @@ class Detail extends Component {
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Postreqs</h3>
             <TrickList 
-              tricksToList = {detailTrick.dependents}
+              tricksToList = {detailTrick.dependents.sort()}
               selectedTrick={uiStore.selectedTrick}
             />
           </div> : null}

@@ -17,6 +17,8 @@ DB changes:
 Asthetics:
 	expand arrow should animatedly turn when popup expands
 
+Desires:
+	When scanning through a list of tricks I want to be able to see at a glance if I have tricks inputted for them, probably a catch icon with a number next to it would be best
 
 Before working on general skilldex:
 	-finish new ui
