@@ -10,7 +10,7 @@ class Header extends Component {
 	}
 
 	clickMenuItem=(paneFlag)=>{
-		this.setState({expandMenu : !uiStore.showExpandedMenu})
+		uiStore.toggleExpandedMenu()
 		console.log(paneFlag)
 		if(paneFlag == "addPattern"){
 			uiStore.toggleAddingTrick()
