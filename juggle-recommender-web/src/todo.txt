@@ -26,7 +26,7 @@ v 1.4
 
 =========
 Bugs to fix before deploy:
-	-fix double bottom border on detail lists
+	-fix double bottom border on detail lists (fixed and I don't think we need borders around loading/no results)
 		-we want to get rid of the listdiv border, but keep the border around the 'loading/no results found' messages. This can be seen in 'fake mess' in the prereqs/related lists.
 	-when mills mess is in a related list and it is expanded, site crashes(go to fake mess details to see)
 	-when tags are wider than phone width they go down to next line and overlap the next trick name
