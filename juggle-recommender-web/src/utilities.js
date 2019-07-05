@@ -17,7 +17,11 @@ class Utilities{
       return str.match(/^[0-9]+$/) === null;
   }
   @action isNotOnlyDigitsOrDecimal=(str)=>{
-      return str.match(/^\d+\.\d+$/) === null;
+      let toReturn = true
+      
+      if (str.match(/^\d+\.\d+$/) === null){toReturn = false}
+      if (this.isNotOnlyDigits(str)){toReturn = false}
+      return toReturn;
   }
   
 
@@ -46,10 +50,6 @@ class Utilities{
       toReturn = 1
     }
     return toReturn
-  }
-
-  @action sortNumber(a, b) {
-    return a - b;
   }
 
   @action sortObjectByAttribute(data, attr) {

@@ -18,7 +18,8 @@ Asthetics:
 	expand arrow should animatedly turn when popup expands
 
 Desires:
-	When scanning through a list of tricks I want to be able to see at a glance if I have tricks inputted for them, probably a catch icon with a number next to it would be best
+	-When scanning through a list of tricks I want to be able to see at a glance if I have tricks inputted for them, probably a catch icon with a number next to it would be best
+	-A way to go back to the last details trick I was looking at
 
 Before working on general skilldex:
 	-finish new ui
@@ -30,7 +31,7 @@ Concise TODO:
 	-demo toggle for gif/video in cases where there are both
 	-Help, about, send feedback, maybe combine 2 of these, but probably not all of them
 	-Notifications section(maybe in profile) so contributors can know if their tricks become prereqs or relateds, or if other users are setting catches for their tricks, or suggesting edits
-	-filter out straight siteswaps
+	-filter for pure siteswaps
 	-sitwsap before number on form, autofill number from siteswap if possible, copy code from formic
 	-Keep track of users tags so if they leave and come back, those tags are still there.
 		-only very important if we dont get routing figured out
@@ -95,7 +96,7 @@ catches bug:
 Database:
 4440522 needs new name
 5344 needs a new name
-36 catches of 753
+
 
 
 

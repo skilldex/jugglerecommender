@@ -334,7 +334,6 @@ class UIStore {
 				}
 			}
 		})	
-		
 		graphStore.updateGraphData()
 	}
   

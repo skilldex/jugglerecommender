@@ -5,8 +5,6 @@ As non-logged in user with cleared data:
 -star a trick
 -open detail with list
 -close detail from list
--open detail in graph
--close detail from graph
 -input catches
 -Create user
 -Do all of the above now that signed in

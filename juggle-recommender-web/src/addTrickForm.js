@@ -261,7 +261,7 @@ class AddTrickForm extends Component {
 					this.setState({difficultyErrorMessage:'must be (1.0-10.0).'})
 					this.setState({submitDisabled:true})
 				}else{
-					this.setState({difficultyErrorMessage:''})				 
+					this.setState({difficultyErrorMessage:''})	
 				}  		
     	}
     	if (utilities.isEmptyOrSpaces(this.state.video)){
