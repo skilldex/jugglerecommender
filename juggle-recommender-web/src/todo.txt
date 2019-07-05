@@ -19,6 +19,16 @@ v 1.5
 	Decide about my tricks:
 
 =========
+-when already in details, and click a trick in relationships, should autoscroll to top of details
+-open sort should close hamburger
+-restore collapse card functionality
+-clicking off hamburger should close hamburger
+	
+
+-hamburger ideas:
+	-slide down menu instead of popup menu
+
+-put sort into filter
 
 Bugs:
 	-if page loaded with a shared url that has no results, it keeps saying 'loading'

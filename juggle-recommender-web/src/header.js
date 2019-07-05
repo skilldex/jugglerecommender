@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
+import { observer } from "mobx-react"
 import authStore from "./stores/authStore"
 import hamburger from "./images/menu_icon.svg"
 import "./header.css"
 import uiStore from "./stores/uiStore"
+@observer
 class Header extends Component {
 	state={
-		expandMenu : false
 	}
-	toggleExpandMenu=()=>{
-		this.setState({expandMenu : !this.state.expandMenu})
-	}
+
 	clickMenuItem=(paneFlag)=>{
 		this.setState({expandMenu : !this.state.expandMenu})
 		console.log(paneFlag)
@@ -21,9 +20,19 @@ class Header extends Component {
 			this.props.openSlidingPane(paneFlag)
 		}
 	}
+	mouseEnterExpandedMenu=()=>{
+      uiStore.setMouseInExpandedMenu(true)
+    }
+
+    mouseLeaveExpandedMenu=()=>{
+      uiStore.setMouseInExpandedMenu(false)
+    }
     render(){
-    	const expandMenu = this.state.expandMenu ? 
-						<div className="expandedMenu">
+    	const expandMenu = uiStore.showExpandedMenu ? 
+						<div className="expandedMenu"
+						     onMouseEnter = {()=>this.mouseEnterExpandedMenu()}
+				             onMouseLeave = {()=>this.mouseLeaveExpandedMenu()}
+						>
 					        {authStore.user ? 
 						        <button className="dropDownButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
 						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
@@ -37,7 +46,7 @@ class Header extends Component {
 						<div >
 							<span className="title">Juggledex</span><span className="version"> v1.4 Beta</span>
 					    </div>
-					    <img className="hamburger" onClick={this.toggleExpandMenu} src={hamburger}/>
+					    <img className="hamburger" onClick={() => uiStore.toggleExpandedMenu()} src={hamburger}/>
 					    
 					    <div className="fullHeader">
 						    {authStore.user ? 

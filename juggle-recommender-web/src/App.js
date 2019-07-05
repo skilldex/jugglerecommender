@@ -119,6 +119,10 @@ class App extends Component {
 	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
 	            uiStore.setShowFilterDiv(false)
 	        }
+	        if (uiStore.showExpandedMenu && 
+	        	!uiStore.mouseInExpandedMenu && !uiStore.expandedMenuTimer){
+	            uiStore.setShowExpandedMenu(false)
+	        }
 	    }
      
  		const instructions = <SlidingPane
