@@ -36,7 +36,6 @@ class TrickList extends Component {
 	        setPositions();
 	    }, 100);		
 	}
-	//todo make time check to set begining message from no search found to loading
 
 	clickTrick=(trickKey)=>{
 		if(uiStore.selectedTrick === trickKey && uiStore.detailTrick === null){
@@ -60,7 +59,6 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
-
 		if (uiStore.selectedTrick){
 			uiStore.toggleSelectedTrick(null)
 		}
@@ -69,13 +67,10 @@ class TrickList extends Component {
 		detailTrick.y = 400
 		detailTrick.id = trickKey
 		uiStore.setDetailTrick(detailTrick)	
-
-				window.scrollTo(0,0);
-		console.log("document.getElementById('detailsOuterDiv')",document.getElementById('detailsOuterDiv'))
-    	if (document.getElementById('detailOuterDiv')){
+		window.scrollTo(0,0);
+		if (document.getElementById('detailOuterDiv')){
     		document.getElementById('detailOuterDiv').scrollTop = 0
-    	}
-    	
+    	}    	
     	if (document.getElementById('detailDiv')){
 	    	document.getElementById('detailDiv').scrollTop = 0
 	    }
@@ -102,13 +97,17 @@ class TrickList extends Component {
 	 	let tricks = []
 		this.props.tricksToList.forEach((trickKey)=>{
 			let trick = store.library[trickKey]
+			if(!trickKey){
+				console.log("there is something wrong with the trickKey(before replaces) ",trickKey)
+				return				
+			}
 			if(!trick){
 				trickKey = trickKey.replace(/ /g, "")
 				trickKey = trickKey.replace(/-/g, "")
 				trickKey = trickKey.replace(/'/g, "")
 				trick = store.library[trickKey]
 				if(!trick){
-					console.log("there is something wrong with the trickKey ",trickKey)
+					console.log("there is something wrong with the trickKey(after replaces) ",trickKey)
 					return
 				}
 			}
