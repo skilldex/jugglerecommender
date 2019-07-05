@@ -21,8 +21,10 @@ v 1.5
 =========
 -when already in details, and click a trick in relationships, should autoscroll to top of details
 -restore collapse card functionality
--opening 'columns' detail causees crash in tempory replace fix, 94 of tricklist
+-opening 'columns' detail causes crash in tempory replace fix, 94 of tricklist
 	-probably best to just fix database iwht a script
+-in Relf's Revenge 'Related' is shown with 'no results found' message
+-order of relationships lists are in no recognizable order, should probably be by difficulty
 
 
 

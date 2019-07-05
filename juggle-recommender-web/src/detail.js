@@ -257,7 +257,7 @@ class Detail extends Component {
                       {relationshipLists}                
                     </div> : null
 		return(      
-      			<div id="detailsOuterDiv"
+      			<div
                  onMouseEnter={this.onMouseEnter} 
                  onMouseLeave={this.onMouseLeave}
                  onBlur={this.onBlur} 
