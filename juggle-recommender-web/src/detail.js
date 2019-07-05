@@ -70,6 +70,7 @@ class Detail extends Component {
   }
 
 	render() {
+
 //    document.body.style.overflow = 'hidden'
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
@@ -256,6 +257,7 @@ class Detail extends Component {
                       {relationshipLists}                
                     </div> : null
 		return(      
+
       			<div id="detailOuterDiv"
                  onMouseEnter={this.onMouseEnter} 
                  onMouseLeave={this.onMouseLeave}

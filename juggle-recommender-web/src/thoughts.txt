@@ -17,10 +17,6 @@ DB changes:
 Asthetics:
 	expand arrow should animatedly turn when popup expands
 
-External:
-	-Film 4ball sunny side up for guy online
-	-tell guy about hungarian convention
-	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, 		specifically his tutorials as links in the tricks associated with them.
 
 Before working on general skilldex:
 	-finish new ui
@@ -28,6 +24,7 @@ Before working on general skilldex:
 	-user suggestions/editing/comments
 
 Concise TODO:
+	-should be able to backup to previous detail
 	-demo toggle for gif/video in cases where there are both
 	-Help, about, send feedback, maybe combine 2 of these, but probably not all of them
 	-Notifications section(maybe in profile) so contributors can know if their tricks become prereqs or relateds, or if other users are setting catches for their tricks, or suggesting edits
@@ -48,6 +45,11 @@ New UI:
 		*Dream bubble for want to learn
 		*Baby for barely able to do trick
 		*Buddha for a master of a trick
+
+External:
+	-Film 4ball sunny side up for guy online
+	-tell guy about hungarian convention
+	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, 		specifically his tutorials as links in the tricks associated with them.
 
 
 Reasons to get juggledex in really good shape before making general skilldex:

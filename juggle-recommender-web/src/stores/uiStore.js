@@ -19,21 +19,25 @@ class UIStore {
 	@observable detailTimer = null
 	@observable sortTimer = null
 	@observable filterTimer = null
+	@observable expandedMenuTimer = null
 	@observable addingTrick = false
 	@observable editingDetailTrick = false
 	@observable mouseInDetailDiv = false
 	@observable mouseInSortDiv = false
 	@observable mouseInFilterDiv = false
+	@observable mouseInExpandedMenu = false
 	@observable showSortDiv = false
 	@observable showFilterDiv = false
 	@observable showMoreInformation = false
 	@observable showExplanation = false
+	@observable showExpandedMenu = false
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
 	}
 	@action toggleShowExplanation=()=>{
 		this.showExplanation = !this.showExplanation
 	}
+
   	@action editDetailTrick=()=>{
   		this.editingDetailTrick = true
   		//shows form
@@ -124,6 +128,9 @@ class UIStore {
 	@action setMouseInFilterDiv=(inDiv)=>{
 		this.mouseInFilterDiv = inDiv
 	}
+	@action setMouseInExpandedMenu=(inDiv)=>{
+		this.mouseInExpandedMenu = inDiv
+	}
     @action clearSortTimer=()=>{
 		this.sortTimer = null
 	}
@@ -163,6 +170,23 @@ class UIStore {
 		}, 50)
 		this.showFilterDiv=showDiv
 	}	
+
+	@action clearExpandedMenuTimer=()=>{
+		this.expandedMenuTimer = null
+	}
+	@action toggleExpandedMenu=()=>{
+		if(!this.showExpandedMenu){
+	      	this.setShowExpandedMenu(true)
+	    }else{
+	    	this.setShowExpandedMenu(false)
+	    }
+	}
+	@action setShowExpandedMenu=(showDiv)=>{
+		this.expandedMenuTimer = setTimeout(()=>{
+			this.clearExpandedMenuTimer()
+		}, 50)
+		this.showExpandedMenu=showDiv
+	}
 
  	@action setSearchInput=(newInput)=>{
  		this.searchInput = newInput

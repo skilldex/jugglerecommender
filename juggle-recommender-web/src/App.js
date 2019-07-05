@@ -52,11 +52,6 @@ class App extends Component {
 	}
 	_handleKeyDown = (event) => {
 	    switch( event.keyCode ) {
-	    	case 220:
-	    		if (!uiStore.addingTrick){
-	    			uiStore.toggleAddingTrick()
-	    		}
-	    		break;
 	        case ESCAPE_KEY:
 	            if (uiStore.addingTrick){
 	            	uiStore.toggleAddingTrick()
@@ -123,6 +118,10 @@ class App extends Component {
 	        }
 	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
 	            uiStore.setShowFilterDiv(false)
+	        }
+	        if (uiStore.showExpandedMenu && 
+	        	!uiStore.mouseInExpandedMenu && !uiStore.expandedMenuTimer){
+	            uiStore.setShowExpandedMenu(false)
 	        }
 	    }
      

@@ -17,7 +17,8 @@ var scrollerPosition = 0
 class TrickList extends Component {
 	state = {
 			sortType: 'alphabetical',
-			listScrollerPosition : 0
+			listScrollerPosition : 0,
+			expandDone : false
 	}
 
 	recordScrollerPosition = e => {
@@ -83,29 +84,15 @@ class TrickList extends Component {
 	}
 
 	expandCard=(trickKey)=> {
-		this.props.tricksToList.forEach((trickKeyOfCurrentlyExpanded)=>{
-			const element = document.getElementById(trickKeyOfCurrentlyExpanded+"expandedCard");
-			if(trickKeyOfCurrentlyExpanded!==trickKey &&
-				element.className === "expandedCard expand"){
-				if(uiStore.selectedTrick !== trickKeyOfCurrentlyExpanded){
-					this.showDemoAfterAnimationTimer = setTimeout(()=>{
-						uiStore.toggleSelectedTrick(trickKeyOfCurrentlyExpanded)
-					}, 620)
-				}else{
-					uiStore.toggleSelectedTrick(trickKeyOfCurrentlyExpanded)
-				}
-	  		element.classList.toggle("expand");
-			}
-		});
-		if(uiStore.selectedTrick !== trickKey){
-			this.showDemoAfterAnimationTimer = setTimeout(()=>{
-				uiStore.toggleSelectedTrick(trickKey)
-			}, 620)
-		}else{
-			uiStore.toggleSelectedTrick(trickKey)
-		}		
-  		const element = document.getElementById(trickKey+"expandedCard");
-  		element.classList.toggle("expand");
+		//reset expand state if trick is already selected so next
+		//expansion has correct state
+		if(uiStore.selectedTrick){
+			this.setState({expandDone : false})
+		}
+		uiStore.toggleSelectedTrick(trickKey)
+	}
+	transitionedExpand=(trickKey)=>{
+		this.setState({expandDone: true})
 	}
 	getHexColor=(value: number)=> {
 	  let string = value.toString(16);
@@ -128,7 +115,6 @@ class TrickList extends Component {
 			}
 			//if trick is null at this point then it is becasue trickKey is actually 
 			//	the name of a trick from library of juggling
-			var cardClass='listCard'
 			const tags = trick && trick.tags ? trick.tags.slice().sort().map((tag,i)=>{
                 if(i < trick.tags.length-1){
                   return <span key={tag}>{tag + ","}</span>
@@ -138,11 +124,16 @@ class TrickList extends Component {
               }) : null
 
 			const expandedSection = uiStore.selectedTrick === trickKey ?
-				<div className = "expandedSection">
-					<Demo
-						trickKey = {trickKey}
-						demoLocation="expandedSection"
-					/>
+				<div 
+					className="expandedSection" 
+					onAnimationEnd={()=>{this.transitionedExpand(trickKey)}}
+				>
+					{this.state.expandDone ? 
+						<Demo
+							trickKey = {trickKey}
+							demoLocation="expandedSection"
+						/> : null
+					}
 				</div>:null
 			const modifiedTrickDifficulty = 
 				((trick.difficulty-filterStore.difficultyRange[0]) /
@@ -163,10 +154,9 @@ class TrickList extends Component {
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
 			tricks.push(
-				<div className={cardClass} 
+				<div className="listCard" 
 					 key={trickKey + "div"} 
 				>	
-					<div className="expandedCard" id={trickKey+"expandedCard"}>
 						<div className="mainCard">
 							 <div className = "cardInfo">	
 								<div className="listCardNameDiv" title={trick.name}>
@@ -192,7 +182,6 @@ class TrickList extends Component {
 							</div>
 						</div>
 						{expandedSection}	
-					</div>				
 				</div>	
 			)
 		})	
