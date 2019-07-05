@@ -40,15 +40,16 @@
 .expandedSection{
   width: 100%;
   display: block;
-  max-height: auto;
+  height : 245px;
   animation: slide-down 0.5s ease;
+
 }
 @keyframes slide-down {
     0% {
         height : 0px;
     }
     100% {
-        height: 227px;
+        height: 245px;
     }
 }
 .expandButtonDiv{
