@@ -160,13 +160,14 @@ class TrickList extends Component {
 							</div>	
 							
 						</div>
+						{uiStore.detailTrick?null:
 						<div className="expandButtonDiv">
 							<img alt=""
 								className={expandTrickButtonClass}
 								onClick={()=>{this.expandCard(trickKey)}}
 								src={downArrow}
 							/>	 		
-						</div>
+						</div>}
 					</div>
 					{uiStore.selectedTrick === trickKey ? 
 						<Demo

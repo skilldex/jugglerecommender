@@ -30,6 +30,7 @@ class Demo extends Component {
     
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
     const trick = store.library[trickKey]
+    console.log('trick',trick)
     if (trick && trick.video){
       store.getUsableVideoURL(trick.video, trickKey)
     } else {
