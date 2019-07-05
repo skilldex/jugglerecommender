@@ -35,7 +35,7 @@
   transition: all .5s ease;
 }
 .listCard.expand {
-  height: 292px;
+  height: 305px;
   max-height: auto;
 }
 .mainCard{
