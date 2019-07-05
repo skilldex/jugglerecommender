@@ -60,6 +60,8 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
+		document.getElementById('detailsOuterDiv').scrollTop = -1000
+		document.body.scrollTop = document.documentElement.scrollTop = -1000;
 		if (uiStore.selectedTrick){
 			uiStore.toggleSelectedTrick(null)
 		}

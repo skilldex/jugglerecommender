@@ -20,10 +20,11 @@ v 1.5
 
 =========
 -when already in details, and click a trick in relationships, should autoscroll to top of details
--open sort should close hamburger
 -restore collapse card functionality
--clicking off hamburger should close hamburger
-	
+-opening 'columns' detail causees crash in tempory replace fix, 94 of tricklist
+	-probably best to just fix database iwht a script
+
+
 
 -hamburger ideas:
 	-slide down menu instead of popup menu
