@@ -61,8 +61,6 @@ class TrickList extends Component {
 	}
 	openDetail=(trickKey)=>{
 
-
-
 		if (uiStore.selectedTrick){
 			uiStore.toggleSelectedTrick(null)
 		}
@@ -86,14 +84,15 @@ class TrickList extends Component {
 	expandCard=(trickKey)=> {
 		//reset expand state if trick is already selected so next
 		//expansion has correct state
-		if(uiStore.selectedTrick){
-			this.setState({expandDone : false})
+		const previoslySelected = document.getElementById(uiStore.selectedTrick+"listCard");
+		const element = document.getElementById(trickKey+"listCard");
+		if(previoslySelected && previoslySelected !== element){
+			previoslySelected.classList.toggle("expand");
 		}
+		element.classList.toggle("expand");
 		uiStore.toggleSelectedTrick(trickKey)
 	}
-	transitionedExpand=(trickKey)=>{
-		this.setState({expandDone: true})
-	}
+
 	getHexColor=(value: number)=> {
 	  let string = value.toString(16);
 	  return (string.length === 1) ? '0' + string : string;
@@ -123,18 +122,6 @@ class TrickList extends Component {
                 }
               }) : null
 
-			const expandedSection = uiStore.selectedTrick === trickKey ?
-				<div 
-					className="expandedSection" 
-					onAnimationEnd={()=>{this.transitionedExpand(trickKey)}}
-				>
-					{this.state.expandDone ? 
-						<Demo
-							trickKey = {trickKey}
-							demoLocation="expandedSection"
-						/> : null
-					}
-				</div>:null
 			const modifiedTrickDifficulty = 
 				((trick.difficulty-filterStore.difficultyRange[0]) /
 				(filterStore.difficultyRange[1]-filterStore.difficultyRange[0]))*10
@@ -156,32 +143,38 @@ class TrickList extends Component {
 			tricks.push(
 				<div className="listCard" 
 					 key={trickKey + "div"} 
+					 id={trickKey + "listCard"}
 				>	
-						<div className="mainCard">
-							 <div className = "cardInfo">	
-								<div className="listCardNameDiv" title={trick.name}>
-									<span 
-									  	className="listCardNameSpan"
-									  	onClick={(e)=>{this.openDetail(trickKey)}}>{trick.name}
-									</span>
-								</div>
-								<div className="difficultyGauge">
-									{difficultyGauge}
-								</div>
-								<div className="bottomRowText tags">
-									<b>Tags:</b> {tags}
-								</div>	
-								
+					<div className="mainCard">
+						 <div className = "cardInfo">	
+							<div className="listCardNameDiv" title={trick.name}>
+								<span 
+								  	className="listCardNameSpan"
+								  	onClick={(e)=>{this.openDetail(trickKey)}}>{trick.name}
+								</span>
 							</div>
-							<div className="expandButtonDiv">
-								<img alt=""
-									className={expandTrickButtonClass}
-									onClick={()=>{this.expandCard(trickKey)}}
-									src={downArrow}
-								/>	 		
+							<div className="difficultyGauge">
+								{difficultyGauge}
 							</div>
+							<div className="bottomRowText tags">
+								<b>Tags:</b> {tags}
+							</div>	
+							
 						</div>
-						{expandedSection}	
+						<div className="expandButtonDiv">
+							<img alt=""
+								className={expandTrickButtonClass}
+								onClick={()=>{this.expandCard(trickKey)}}
+								src={downArrow}
+							/>	 		
+						</div>
+					</div>
+					{uiStore.selectedTrick === trickKey ? 
+						<Demo
+							trickKey = {trickKey}
+							demoLocation="expandedSection"
+						/> : null
+					}
 				</div>	
 			)
 		})	
