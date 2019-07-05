@@ -14,6 +14,12 @@ DB changes:
 	Add contortion tag to all contrition tricks(script can do this)
 	Do we have a side by side pistons pattern?
 
+Patterns to add(either video or gif):
+	To learn 5b cascade(easy to hard): 55500, 522, 720, 900, 50505, 552, 5551, 55550
+	To learn 3b cacade: 300, 330
+		-can be done in any cascade pattern we want to have easier patterns to learn, 
+			reverse cascade, backcross, reverse backcross, over the head...
+
 Asthetics:
 	expand arrow should animatedly turn when popup expands
 
