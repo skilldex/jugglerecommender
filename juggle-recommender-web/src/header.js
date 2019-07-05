@@ -44,7 +44,7 @@ class Header extends Component {
         		<div>
 	                <div className="header">
 						<div >
-							<span className="title">Juggledex</span><span className="version"> v1.4 Beta</span>
+							<span className="title">Juggledex</span><span className="version"> v1.5 Beta</span>
 					    </div>
 					    <img className="hamburger" onClick={() => uiStore.toggleExpandedMenu()} src={hamburger}/>
 					    

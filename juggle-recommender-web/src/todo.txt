@@ -1,4 +1,4 @@
-v 1.5 
+v 1.6
 	Hamburger Menu:
 	-home
 	-profile (maybe profile and home can be the same thing)
