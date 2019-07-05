@@ -115,7 +115,7 @@ class TrickList extends Component {
 			//	the name of a trick from library of juggling
 			const tags = trick && trick.tags ? trick.tags.slice().sort().map((tag,i)=>{
                 if(i < trick.tags.length-1){
-                  return <span key={tag}>{tag + ","}</span>
+                  return <span key={tag}>{tag + ", "}</span>
                 }else{
                   return <span key={tag}>{tag}</span>
                 }
