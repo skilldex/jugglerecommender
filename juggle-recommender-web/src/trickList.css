@@ -48,7 +48,7 @@
 }
 .expandButtonDiv{
   display: inline-block;
-  width: 50px;
+  width: 25px;
   margin-left: auto;
   height : 100%;
   text-align: right;
@@ -56,6 +56,14 @@
   align-items : center;
   justify-content: flex-end;
   padding-right: 10px;
+}
+
+.tags{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: auto;
+  vertical-align: middle;
+  width : 265px;
 }
 .expandTrickButton{
   cursor: pointer;
@@ -101,13 +109,6 @@
   display: inline-block;
 }
 
-.tags{
-  margin-right: 5px;
-  text-overflow: hidden;
-  white-space: nowrap;
-  overflow: auto;
-  vertical-align: middle;
-}
 
 .addAndRemoveMyTricksButtonList{
   cursor: pointer;
@@ -137,6 +138,7 @@
   font-weight: bold;
   font-size: 15px;
   z-index: 1300;
+  width: 320px;
 }
 
 .difficultyGauge{ 
