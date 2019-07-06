@@ -48,70 +48,7 @@ class Store {
 	@action setContributors=(contributors)=>{
 		this.contributors = contributors
 	}
-	@action setVideoURL=(url, trickKey)=>{
-		this.videoURL = url
-		if (this.library[trickKey] &&
-			this.library[trickKey].videoStartTime && 
-			this.library[trickKey].videoEndTime &&
-			url.includes("instagram.com")
-		){
-			const startTime = this.library[trickKey].videoStartTime
-			const endTime = this.library[trickKey].videoEndTime
-			this.videoURL = url+"#t="+startTime+","+endTime
-		}	
-	}
-	@action setIGData=(data, trickKey)=>{
-		if(!this.igData || 
-			!this.library[trickKey] || 
-			this.igData.username !== data.graphql.shortcode_media.owner.username){
-			this.igData = {
-				username : data.graphql.shortcode_media.owner.username,
-				picURL :  data.graphql.shortcode_media.owner.profile_pic_url,
-				profileURL : "https://www.instagram.com/"+data.graphql.shortcode_media.owner.username
-			}
-		}
-	}
-	@action getUsableVideoURL=(userProvidedURL, trickKey)=>{
-      let videoURLtoUse = "notValid"
-      if (userProvidedURL.includes("instagram.com")){
-	    const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
-	    videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
-	    const url = "https://www.instagram.com"+usefulPart+"?__a=1"
-        fetch(url).then(
-            response => response.json()
-        ).then(
-            (data) => {
-            	if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
-					this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
-					this.setIGData(data, trickKey)
-	            }else{
-	            	this.setVideoURL(data.graphql.shortcode_media.video_url, trickKey)
-	            	this.setIGData(data, trickKey)
-	            }
-            }
-        );                                
-      }
-      else if(userProvidedURL.includes("youtu")){
-        let usefulPart
-        if (userProvidedURL.includes("youtube.com/watch")){
-          usefulPart = userProvidedURL.split('youtube.com/watch?v=')
-          usefulPart = usefulPart[usefulPart.length-1]
-          if (usefulPart.includes("&feature=youtu.be")){
-            usefulPart = usefulPart.replace("&feature=youtu.be","")
-          }
-          //https://www.youtube.com/watch?v=Kr8LhLGjyiY            
-        }else if (userProvidedURL.includes("youtu.be/")){
-          //https://youtu.be/Kr8LhLGjyiY
-          usefulPart = userProvidedURL.split('youtu.be/')
-          usefulPart = usefulPart[usefulPart.length-1]            
-        }
-        videoURLtoUse = usefulPart
-        this.setVideoURL("https://www.youtube.com/embed/"+usefulPart+
-                       "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
-        this.youtubeId = usefulPart
-      }
-      return videoURLtoUse
-    }
+	
 	@action setIsLoginPaneOpen=(isOpen)=>{
 		this.isLoginPaneOpen = isOpen
 	}

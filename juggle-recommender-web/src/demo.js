@@ -8,6 +8,85 @@ import './demo.css';
 import YouTube from 'react-youtube';
 @observer
 class Demo extends Component {
+  state = {
+    igData : null,
+    videoURL : null,
+    youtubeId : null
+  }
+  componentDidMount(){
+    const trick = store.library[this.props.trickKey]
+    if(trick.video){
+      this.getUsableVideoURL(trick.video, this.props.trickKey)
+    }
+  }
+  setVideoURL=(url, trickKey)=>{
+    
+    if (store.library[trickKey] &&
+      store.library[trickKey].videoStartTime && 
+      store.library[trickKey].videoEndTime &&
+      url.includes("instagram.com")
+    ){
+      const startTime = store.library[trickKey].videoStartTime
+      const endTime = store.library[trickKey].videoEndTime
+      this.videoURL = url+"#t="+startTime+","+endTime
+    } 
+    this.setState({videoURL : url})
+  }
+  setIGData=(data, trickKey)=>{
+    if(!this.state.igData || 
+      !store.library[trickKey] || 
+      this.state.igData.username !== data.graphql.shortcode_media.owner.username
+    ){
+      this.setState({
+        igData : {
+          username : data.graphql.shortcode_media.owner.username,
+          picURL :  data.graphql.shortcode_media.owner.profile_pic_url,
+          profileURL : "https://www.instagram.com/"+data.graphql.shortcode_media.owner.username
+        }
+      })
+    }
+  }
+  getUsableVideoURL=(userProvidedURL, trickKey)=>{
+      let videoURLtoUse = "notValid"
+      if (userProvidedURL.includes("instagram.com")){
+      const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
+      videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
+      const url = "https://www.instagram.com"+usefulPart+"?__a=1"
+        fetch(url).then(
+            response => response.json()
+        ).then(
+            (data) => {
+              if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
+          this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
+          this.setIGData(data, trickKey)
+              }else{
+                this.setVideoURL(data.graphql.shortcode_media.video_url, trickKey)
+                this.setIGData(data, trickKey)
+              }
+            }
+        );                                
+      }
+      else if(userProvidedURL.includes("youtu")){
+        let usefulPart
+        if (userProvidedURL.includes("youtube.com/watch")){
+          usefulPart = userProvidedURL.split('youtube.com/watch?v=')
+          usefulPart = usefulPart[usefulPart.length-1]
+          if (usefulPart.includes("&feature=youtu.be")){
+            usefulPart = usefulPart.replace("&feature=youtu.be","")
+          }
+          //https://www.youtube.com/watch?v=Kr8LhLGjyiY            
+        }else if (userProvidedURL.includes("youtu.be/")){
+          //https://youtu.be/Kr8LhLGjyiY
+          usefulPart = userProvidedURL.split('youtu.be/')
+          usefulPart = usefulPart[usefulPart.length-1]            
+        }
+        videoURLtoUse = usefulPart
+        this.setVideoURL("https://www.youtube.com/embed/"+usefulPart+
+                       "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
+        this.setState({youtubeId : usefulPart})
+      }
+      return videoURLtoUse
+    }
   youtubeEnded = (data) => {
     if(store.library[this.props.trickKey].videoStartTime){
       const trick = store.library[this.props.trickKey]
@@ -29,13 +108,8 @@ class Demo extends Component {
 	render() {
     
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
+    console.log("demo", trickKey)
     const trick = store.library[trickKey]
-    console.log('trick',trick)
-    if (trick && trick.video){
-      store.getUsableVideoURL(trick.video, trickKey)
-    } else {
-      store.setVideoURL('','')
-    }
     const gifSection = trick && trick.url? 
                           <img 
                              alt = ''
@@ -48,12 +122,12 @@ class Demo extends Component {
                              className="instagramLogo"
                              src={instagramLogoIcon}
                           />
-    let igHeader = this.props.demoLocation !== 'expandedSection' && store.videoURL.includes('instagram') && store.igData ? 
+    let igHeader = this.state.videoURL && this.props.demoLocation !== 'expandedSection' && this.state.videoURL.includes('instagram') && this.state.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
                                   alt=""
-                                  src={store.igData.picURL}/>
-                            <span className="instagramUsername">{store.igData.username}</span>
+                                  src={this.state.igData.picURL}/>
+                            <span className="instagramUsername">{this.state.igData.username}</span>
                             <div className="instagramViewProfileButton" onClick={()=>{window.open(trick.video)}}>View {instagramLogo}</div>
                           </div> : null
     const youtubeOpts = {
@@ -67,22 +141,23 @@ class Demo extends Component {
       youtubeOpts.playerVars.start = trick.videoStartTime
       youtubeOpts.playerVars.end = trick.videoEndTime
     }else{
-      youtubeOpts.playerVars.playlist = store.youtubeId
+      youtubeOpts.playerVars.playlist = this.state.youtubeId
     }
-    let video  = store.videoURL.includes('youtube') ? 
+    console.log("VIDEO URL " ,this.state.videoURL )
+    let video  = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
                         <YouTube 
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
-                          videoId={store.youtubeId}
+                          videoId={this.state.youtubeId}
                           className= "demo" 
                           opts={youtubeOpts}      
                           muted={true}                          
                           allow="autoplay"  
                           allowtransparency="true"
-                          src={store.videoURL}
+                          src={this.state.videoURL}
                           onEnd={this.youtubeEnded}
                           ref={(video)=> {this.video = video}}  
-                        ></YouTube> : store.videoURL.includes('instagram') ? 
+                        ></YouTube> : this.state.videoURL && this.state.videoURL.includes('instagram') ? 
                         <video 
                           id="instagramVideo"
                           ref={(video)=> {this.video = video}}
@@ -96,8 +171,8 @@ class Demo extends Component {
                           loop
                           onTimeUpdate={this.instagramTimeUpdate}
                           onPause={this.instagramPaused}
-                          src={store.videoURL}
-                        ></video> : null
+                          src={this.state.videoURL}
+                        ></video> : null 
 
     let outerDivClass
     if (this.props.demoLocation === "detail"){

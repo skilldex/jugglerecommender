@@ -79,7 +79,17 @@ class Utilities{
     });    
     return arr;
   }
-}
+
+  @action isValidVideoURL(videoURL){
+    let isValid = false
+    if (videoURL.includes("instagram.com") || 
+        videoURL.includes("youtu")){
+      isValid = true                               
+    }
+    return isValid
+    }
+  }
+
 
 const utilites = new Utilities()
 

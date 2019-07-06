@@ -78,6 +78,7 @@ class UIStore {
 	        	this.toggleSortDiv()
 	        }
 	 	}
+
 	}
 	@action toggleCatchEdit=(catches, trickKey)=>{
 
