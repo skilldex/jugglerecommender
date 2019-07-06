@@ -47,8 +47,8 @@
   display: inline-block;
   margin-right : 5px;
   margin-left: auto;
-  margin-bottom: 5px;
-  padding : 5px;
+  margin-bottom: 10px;
+  padding : 10px;
 }
 .expandTrickButton{
   cursor: pointer;  
