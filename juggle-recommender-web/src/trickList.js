@@ -4,6 +4,7 @@ import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import downArrow from './images/down-arrow.svg'
+import catchesIcon from './images/catchesIcon.png'
 import Demo from './demo'
 import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
@@ -137,6 +138,7 @@ class TrickList extends Component {
 										value={parseFloat(trick.difficulty).toFixed(1)} 
 										width={55} height={44} 
 									/>	
+				
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
 			if(uiStore.selectedTrick === trickKey){
@@ -152,6 +154,10 @@ class TrickList extends Component {
 						 <div className = "cardInfo">	
 							<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
 							<div className="difficultyGauge">{difficultyGauge}</div>
+							{store.myTricks[trickKey] && store.myTricks[trickKey].catches ?
+							<img className="catchesIconList" alt="" src ={catchesIcon}/>:null}
+							{store.myTricks[trickKey] && store.myTricks[trickKey].catches ?
+							<span className="catchesSpan">{store.myTricks[trickKey].catches}</span>:null}
 							<div className="bottomRowText tags">
 								<b>Tags:</b> {tags}
 							</div>	
@@ -166,8 +172,7 @@ class TrickList extends Component {
 									}
 						>
 							<img alt=""
-								className={expandTrickButtonClass}
-								
+								className={expandTrickButtonClass}								
 								src={downArrow}
 							/>	 		
 						</div>

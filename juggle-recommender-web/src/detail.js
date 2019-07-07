@@ -6,6 +6,7 @@ import editIcon from './images/editIcon.png'
 import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.jpg'
+import catchesIcon from './images/catchesIcon.png'
 import Demo from './demo'
 import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
@@ -99,7 +100,8 @@ class Detail extends Component {
     }
     const catchesSection = store.myTricks[detailTrickKey] ?
     <div>
-      <label className="detailLabel">Catches: </label>
+      <img className="catchesIconDetail" alt="" src ={catchesIcon}/>
+      <label className="catchesLabel">Catches: </label>
       {uiStore.detailCatchEditable ?
         <input 
               ref={(input)=> {this.catchInput = input}}
