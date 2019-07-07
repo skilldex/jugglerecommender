@@ -15,14 +15,16 @@ v 1.6
 	-upload image
 	-personal stats
 
-	Data fix scripts
-	Decide about my tricks:
-	Seperate catch inputting from star
+	Data fix scripts(see list below)
+
+	Seperate catch inputting from star:
+		-if a trick has catches or is starred, it goes into myTricks
+		-if a trick is starred, it gets a new field in it's myTricks entry
 
 =========
 
+
 Bugs:
-	-when in details, clicking a pattern in the relationships list switches everything except the details video. This only happens sometimes, may be connected to poor internet.
 	-if page loaded with a shared url that has no results, it keeps saying 'loading'
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
@@ -31,15 +33,18 @@ Bugs:
 		-alphabetical sorts are done by trickKey, not name, so lists sometimes look weird
 
 Minor:
-	-8,9,10,11 all need buttons in ballNum filter
+	-8,9,10,11 all need buttons in ballNum filter, or we need a different way to handle ballNum filter
 
-Stuff To Go Into Migration Scripts:
+Data fix scripts:
 	-a script to make related tags go both directions
-	-initialize library
+		if x is listed as related for y, then y should be listed for x
 	-#b moved to begining of name from end (#b)
+		-remove the string '(3b)"' from entire db
+		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
 	-tags added based on name
+		-takes 1 input, if the input exists in a tricks name, then add "input" to it's list of tags
 	-tags changed
-	-set old juggling lab keys to be same as names
+		-takes 2 inputs: the tag to be changed, and what to change it to
 
 Code Cleaning:
 	-do the spacing in addTrickForm without using "\u00A0"
@@ -50,7 +55,6 @@ Minor:
 	-thin lines on sort button
 
 Restyling:
-
 	-put ingstagram icon on list
 	-allow contributors to upload pics
 	-we should show the currently logged in account up top.
