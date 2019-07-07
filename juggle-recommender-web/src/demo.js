@@ -14,8 +14,15 @@ class Demo extends Component {
     youtubeId : null
   }
   componentDidMount(){
+    console.log("mounted ", this.props.trickKey)
     const trick = store.library[this.props.trickKey]
     if(trick.video){
+      this.getUsableVideoURL(trick.video, this.props.trickKey)
+    }
+  }
+  componentDidUpdate(prevProps,prevState){
+    const trick = store.library[this.props.trickKey]
+    if(this.props.trickKey !== prevProps.trickKey && trick.video){
       this.getUsableVideoURL(trick.video, this.props.trickKey)
     }
   }
