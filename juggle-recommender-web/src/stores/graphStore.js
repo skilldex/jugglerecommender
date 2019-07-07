@@ -173,6 +173,9 @@ class GraphStore {
 		 			 filterStore.associations.length === 0)){
 	 				rootTrick.prereqs.forEach((prereqKey)=>{
 		 				const prereq = store.library[prereqKey]
+		 				if (!prereq){
+		 					console.log("!prereq-prereqKey: ",prereqKey +","+ trickKey)
+		 				}
 		 				if (!prereq){return}
 		 				let involvedPrereq = involvedRoot > 0 ? 1 : 0
 		 				let label = prereq.name
@@ -237,6 +240,9 @@ class GraphStore {
 		 			 filterStore.associations.length === 0)){
  					rootTrick.related.forEach((relatedKey)=>{
  						//TODO: fix in library
+ 		 				if (!store.library[relatedKey]){
+		 					console.log("!store.library[relatedKey]: ",relatedKey +","+ trickKey)
+		 				}
  						relatedKey = relatedKey.replace("-","")
  						relatedKey = relatedKey.replace(" ","")
 

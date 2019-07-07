@@ -104,12 +104,12 @@ class TrickList extends Component {
 				return				
 			}
 			if(!trick){
+				console.log("there is something wrong with the trickKey(after replaces) ",trickKey)
 				trickKey = trickKey.replace(/ /g, "")
 				trickKey = trickKey.replace(/-/g, "")
 				trickKey = trickKey.replace(/'/g, "")
 				trick = store.library[trickKey]
 				if(!trick){
-					console.log("there is something wrong with the trickKey(after replaces) ",trickKey)
 					return
 				}
 			}
