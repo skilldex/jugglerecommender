@@ -10,6 +10,7 @@ import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
 import './App.css';
 import Gauge from 'react-svg-gauge';
+import utilities from './utilities'
 //import { Resizable } from "re-resizable";
 
 var scrollerPosition = 0
@@ -154,10 +155,11 @@ class TrickList extends Component {
 						 <div className = "cardInfo">	
 							<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
 							<div className="difficultyGauge">{difficultyGauge}</div>
-							{store.myTricks[trickKey] && store.myTricks[trickKey].catches ?
-							<img className="catchesIconList" alt="" src ={catchesIcon}/>:null}
-							{store.myTricks[trickKey] && store.myTricks[trickKey].catches ?
-							<span className="catchesSpan">{store.myTricks[trickKey].catches}</span>:null}
+							<img className="catchesIconList" alt="" src ={catchesIcon}/>
+							<div className="bottomRowText catchesListLabel">
+								{store.myTricks[trickKey]? 
+								utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
+							</div>
 							<div className="bottomRowText tags">
 								<b>Tags:</b> {tags}
 							</div>	

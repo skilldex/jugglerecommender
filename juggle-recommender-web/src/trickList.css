@@ -62,9 +62,10 @@
   height: 14px;
   margin-bottom:-3px;
 }
-.catchesSpan{
+.catchesListLabel{
   font-size: 10px;
   margin-right: 4px;
+  width: 17px;
 }
 
 .tags{

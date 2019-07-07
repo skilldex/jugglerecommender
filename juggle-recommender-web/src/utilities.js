@@ -23,6 +23,22 @@ class Utilities{
       if (this.isNotOnlyDigits(str)){toReturn = false}
       return toReturn;
   }
+
+  @action formatListCatches(catches){    
+    if (!catches){
+      return '0'
+    }
+    catches = parseInt(catches,10)
+    if (catches<1000){
+      return catches
+    }
+    if (catches>999 && catches<10000){
+      return ((catches/1000).toFixed(1)+"K")
+    }
+    if (catches>10000){
+      return (parseInt(catches/1000)+"K")
+    }
+  }
   
 
   @action isValidTime=(str)=>{
