@@ -356,7 +356,7 @@
             "user": "tjthejuggler"
         },
         "Fake Columns": {
-            "catches": "200",
+            "catches": "996",
             "trick": "Fake Columns",
             "user": "tjthejuggler"
         },
@@ -416,7 +416,7 @@
             "user": "tjthejuggler"
         },
         "Half Shower": {
-            "catches": "100",
+            "catches": "6000",
             "trick": "Half Shower",
             "user": "tjthejuggler"
         },
@@ -456,7 +456,7 @@
             "user": "tjthejuggler"
         },
         "Juggler's Tennis": {
-            "catches": "600",
+            "catches": "800",
             "trick": "Juggler's Tennis",
             "user": "tjthejuggler"
         },
@@ -10212,8 +10212,8 @@
                     "starred": "true"
                 },
                 "423": {
-                    "catches": "332",
-                    "lastUpdated": 1562664406121,
+                    "catches": "299",
+                    "lastUpdated": 1562698140204,
                     "starred": "true"
                 },
                 "423 Contortion Variation(3b)": {
@@ -10420,7 +10420,8 @@
                     "starred": "true"
                 },
                 "Cascade": {
-                    "catches": "200",
+                    "catches": "600",
+                    "lastUpdated": 1562697873475,
                     "starred": "true"
                 },
                 "Cascade on the Chest(3b)": {
@@ -10556,8 +10557,8 @@
                     "starred": "true"
                 },
                 "Fake Columns": {
-                    "catches": "200",
-                    "lastUpdated": 1561880757530,
+                    "catches": "996",
+                    "lastUpdated": 1562683173078,
                     "starred": "true"
                 },
                 "Fake Columns 2(3b)": {
@@ -10607,7 +10608,8 @@
                     "starred": "true"
                 },
                 "Half Shower": {
-                    "catches": "100",
+                    "catches": "1",
+                    "lastUpdated": 1562680237252,
                     "starred": "true"
                 },
                 "Half Shower(4b)": {
@@ -10654,7 +10656,8 @@
                     "starred": "true"
                 },
                 "Juggler's Tennis": {
-                    "catches": "600",
+                    "catches": "700",
+                    "lastUpdated": 1562679089731,
                     "starred": "true"
                 },
                 "Juggler's Tennis Synch(4b)": {
@@ -12463,6 +12466,9 @@
             },
             "username": "ilia"
         }
+    },
+    "stats": {
+        "totalCatchCount": 46590
     },
     "tags": [
         "common",
