@@ -51,6 +51,7 @@ class Store {
 			randomTrick = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
 			console.log('randomTrick',randomTrick)
 			this.setRandomLeaderboardTrick(randomTrick)
+			leaderboardRef.off()
         })
 	}
 	@action setRandomLeaderboardTrick=(randomTrick)=>{
@@ -287,7 +288,60 @@ class Store {
  		this.myTricks[trickKey].lastUpdated = date.getTime()
  		this.updateTricksInDatabase()
  		uiStore.updateRootTricks()
+		console.log('preCompare1!',catches)
+		this.updateLeaderboard(trickKey,catches)
  	}
+ 	
+ 	@action updateLeaderboard=(trickKey,catches)=>{
+	   	let leaderboardRef = firebase.database().ref('leaderboard/')
+	   	let currentLeaderboardCatches
+	   	let newLeaderEntry = {}
+		leaderboardRef.on('value', resp =>{
+			let allLeaderBoardTricks = this.snapshotToObject(resp)
+			if(allLeaderBoardTricks[trickKey]){
+				currentLeaderboardCatches = parseInt(allLeaderBoardTricks[trickKey]['catches'],10)
+			}
+	 		if (parseInt(catches)<currentLeaderboardCatches &&
+	 			authStore.user.username === allLeaderBoardTricks[trickKey]['user']){
+	 			let allUsersMyTricksRef = firebase.database().ref('myTricks/')
+				allUsersMyTricksRef.on('value', resp =>{	 
+					let allUsersMyTricks = this.snapshotToObject(resp)
+					let userid
+						newLeaderEntry = {
+			 				user: authStore.user.username,
+			 				catches: catches,
+			 				trick: trickKey
+			 			}	
+					for (userid in allUsersMyTricks){
+						if (allUsersMyTricks[userid] &&
+							allUsersMyTricks[userid]['myTricks'] && 
+							allUsersMyTricks[userid]['myTricks'][trickKey] && 
+							allUsersMyTricks[userid]['myTricks'][trickKey]['catches'] &&
+							parseInt(allUsersMyTricks[userid]['myTricks'][trickKey]['catches'],10) >
+							newLeaderEntry.catches){
+								newLeaderEntry = {
+					 				user: allUsersMyTricks[userid]['username'],
+					 				catches: allUsersMyTricks[userid]['myTricks'][trickKey]['catches'],
+					 				trick: trickKey
+					 			}
+						}
+			 			let leaderboardTrickRef = firebase.database().ref('leaderboard/'+trickKey)
+		        		leaderboardTrickRef.set(newLeaderEntry);
+		        		leaderboardRef.off()
+					}
+				});			
+	 		}else if(parseInt(catches)>currentLeaderboardCatches){ 			
+	 			newLeaderEntry = {
+	 				user: authStore.user.username,
+	 				catches: catches,
+	 				trick: trickKey
+	 			}
+	 			let leaderboardTrickRef = firebase.database().ref('leaderboard/'+trickKey)
+        		leaderboardTrickRef.set(newLeaderEntry);
+        		leaderboardRef.off()
+	 		}
+        })
+	}
 
 	@action starTrick=(trickKey)=>{
 		if(!this.myTricks[trickKey]){

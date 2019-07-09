@@ -26,7 +26,7 @@ class HomeScreen extends Component {
 				<div className = "outerDiv">
 					<div>Random trick from leaderboard:</div>
 					<div>Name: {store.randomLeaderboardTrick.trick}</div>
-					<div>User: {store.randomLeaderboardTrick.user}</div>
+					<div>User: {store.randomLeaderboardTrick.user}</div>	
 					<div>Catches: {store.randomLeaderboardTrick.catches}</div>
 					<div onClick={()=>uiStore.toggleShowHomeScreen()}>GO TO LIST</div>
 				</div>
