@@ -101,7 +101,7 @@ What must be done to firebase-prod:
 	remove ' (Slams)' from everywhere
 	replace "Slams(3b)" with "Shuffle"
 	replace "Shuffle" with "Shuffle(Slams)"
-	replace "Stacked Cascade" with "Split Cascade(5b)"
+	replace "Stacked Cascade" with "Stacked Cascade(5b)"
 	replace "Reverse Five Ball Cascade" with "Reverse Cascade(5b)"
 	remove related from "Bizarre Box"
 	replace "ReverseCrossed Arm Shower" with "Reverse Crossed Arm Shower"
