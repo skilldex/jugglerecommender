@@ -18,6 +18,11 @@ v 1.6
 
 	Data fix scripts(see list below)
 
+	-when next deploying, make sure to run on prod db:
+		add_starred_field_to_myTricks.py
+		fill_leaderboard_from_mytricks.py
+		set_total_catch_count.py
+
 =========
 
 
