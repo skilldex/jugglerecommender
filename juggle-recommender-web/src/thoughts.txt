@@ -16,6 +16,21 @@ DB changes:
 
 Asthetics:
 	expand arrow could animatedly turn when popup expands
+	move hamburger to left side, and make it's menu a slide out
+	animate the hamburger button in a number of random ways so it turns into an X
+	Make About,Logic,Create account be screens, not a slider
+	Make sort be a part of filter, and make filter it's own screen
+
+Possible Home Screen Ideas:
+	Make many different types of featured patterns, randomly select a couple of them to display
+	Make a link to a complete stats page under the couple stats
+	Put a leader under each of the featured patterns and make a link to a more complete leader board
+
+Other screens:
+	Leaderboard page
+	Stats
+	Feedback Form
+
 
 Desires:
 	-A way to go back to the last details trick I was looking at

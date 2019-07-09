@@ -13,7 +13,6 @@ v 1.6
 	Style Home Screen
 
 	Home Screen
-	-Most recently added trick
 	-number of users currently online?
 	-number of users currently tracking tricks?
 
@@ -23,6 +22,7 @@ v 1.6
 
 
 Bugs:
+	-when details is entered via home, and then the details is X'd, it takes you to list, not back to home.
 	-if page loaded with a shared url that has no results, it keeps saying 'loading'
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
@@ -47,6 +47,8 @@ Data fix scripts:
 		-takes 2 inputs: the tag to be changed, and what to change it to
 
 Code Cleaning:
+	-get a better system of hiding/showing screens
+		-probably something like a function that hides everything and then just show the one you want shown.
 	-do the spacing in addTrickForm without using "\u00A0"
 	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
 	-updateGraphData seperated into small functions
