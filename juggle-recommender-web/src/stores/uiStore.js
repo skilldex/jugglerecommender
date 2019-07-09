@@ -31,11 +31,15 @@ class UIStore {
 	@observable showMoreInformation = false
 	@observable showExplanation = false
 	@observable showExpandedMenu = false
+	@observable showHomeScreen = true
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
 	}
 	@action toggleShowExplanation=()=>{
 		this.showExplanation = !this.showExplanation
+	}
+	@action toggleShowHomeScreen=()=>{
+		this.showHomeScreen = !this.showHomeScreen
 	}
 
   	@action editDetailTrick=()=>{

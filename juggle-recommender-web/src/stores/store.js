@@ -20,6 +20,7 @@ class Store {
 	@observable videoURL = ""
 	@observable igData = null
 	@observable youtubeId = null
+	@observable randomLeaderboardTrick = {}
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -41,6 +42,19 @@ class Store {
 		  }
 		})
 		return contributorTags
+	}
+	@action chooseRandomLeaderboardTrick(){
+	   	let leaderboardRef = firebase.database().ref('leaderboard/')
+	   	let randomTrick
+		leaderboardRef.on('value', resp =>{
+			let allLeaderBoardTricks = this.snapshotToArray(resp)
+			randomTrick = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
+			console.log('randomTrick',randomTrick)
+			this.setRandomLeaderboardTrick(randomTrick)
+        })
+	}
+	@action setRandomLeaderboardTrick=(randomTrick)=>{
+		this.randomLeaderboardTrick = randomTrick
 	}
 	@action setStartTime=(startTime)=>{
 		this.startTime = startTime

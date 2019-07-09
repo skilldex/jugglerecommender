@@ -52,11 +52,9 @@ class Header extends Component {
 						    {authStore.user ? 
 						        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
 						        <button className="headerButton" onClick={() => this.props.openSlidingPane('isLoginPaneOpen')}>Login</button>
-
 						   	}
 					    	<button className="headerButton" onClick={() => this.props.openSlidingPane('isInstructionsPaneOpen')}>About</button>
 					    	<button className="headerButton"  onClick={() => uiStore.toggleAddingTrick()}>Add Pattern</button>
-
 					    </div>
 					</div>
 					{expandMenu}

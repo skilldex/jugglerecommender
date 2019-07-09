@@ -1,4 +1,841 @@
 {
+    "leaderboard": {
+        "(3b)": {
+            "catches": "60",
+            "trick": "(3b)",
+            "user": "tjthejuggler"
+        },
+        "(6x,4)(4,2x)(4,6x)(2x,4)(4b)": {
+            "catches": "40",
+            "trick": "(6x,4)(4,2x)(4,6x)(2x,4)(4b)",
+            "user": "tjthejuggler"
+        },
+        "({33}) Mills Mess(6b)": {
+            "catches": "12",
+            "trick": "({33}) Mills Mess(6b)",
+            "user": "tjthejuggler"
+        },
+        "({54})({52})2 (6b)": {
+            "catches": "36",
+            "trick": "({54})({52})2 (6b)",
+            "user": "tjthejuggler"
+        },
+        "({54})51(4b)": {
+            "catches": "36",
+            "trick": "({54})51(4b)",
+            "user": "tjthejuggler"
+        },
+        "({64})41(5b)": {
+            "catches": "4",
+            "trick": "({64})41(5b)",
+            "user": "tjthejuggler"
+        },
+        "({75})21(5b)": {
+            "catches": "80",
+            "trick": "({75})21(5b)",
+            "user": "tjthejuggler"
+        },
+        "363 Mills Mess(4b)": {
+            "catches": "33",
+            "trick": "363 Mills Mess(4b)",
+            "user": "tjthejuggler"
+        },
+        "423": {
+            "catches": "333",
+            "trick": "423",
+            "user": "noslowerdna_"
+        },
+        "423 Contortion Variation(3b)": {
+            "catches": "60",
+            "trick": "423 Contortion Variation(3b)",
+            "user": "tjthejuggler"
+        },
+        "423 Tennis(3b)": {
+            "catches": "100",
+            "trick": "423 Tennis(3b)",
+            "user": "tjthejuggler"
+        },
+        "441": {
+            "catches": "30",
+            "trick": "441",
+            "user": "tjthejuggler"
+        },
+        "4b Statue of Liberty(4b)": {
+            "catches": "40",
+            "trick": "4b Statue of Liberty(4b)",
+            "user": "tjthejuggler"
+        },
+        "4b Sunny Side Up(4b)": {
+            "catches": "18",
+            "trick": "4b Sunny Side Up(4b)",
+            "user": "tjthejuggler"
+        },
+        "531 Contortion(3b)": {
+            "catches": "6",
+            "trick": "531 Contortion(3b)",
+            "user": "tjthejuggler"
+        },
+        "531 Mills Mess": {
+            "catches": "100",
+            "trick": "531 Mills Mess",
+            "user": "tjthejuggler"
+        },
+        "534(4b)": {
+            "catches": "150",
+            "trick": "534(4b)",
+            "user": "tjthejuggler"
+        },
+        "552(4b)": {
+            "catches": "200",
+            "trick": "552(4b)",
+            "user": "tjthejuggler"
+        },
+        "555003 Windmill(3b)": {
+            "catches": "20",
+            "trick": "555003 Windmill(3b)",
+            "user": "tjthejuggler"
+        },
+        "5551(4b)": {
+            "catches": "100",
+            "trick": "5551(4b)",
+            "user": "tjthejuggler"
+        },
+        "55550(4b)": {
+            "catches": "100",
+            "trick": "55550(4b)",
+            "user": "tjthejuggler"
+        },
+        "5b 3up 360(5b)": {
+            "catches": "6",
+            "trick": "5b 3up 360(5b)",
+            "user": "tjthejuggler"
+        },
+        "714(4b)": {
+            "catches": "100",
+            "trick": "714(4b)",
+            "user": "tjthejuggler"
+        },
+        "744(5b)": {
+            "catches": "30",
+            "trick": "744(5b)",
+            "user": "tjthejuggler"
+        },
+        "753(5b)": {
+            "catches": "36",
+            "trick": "753(5b)",
+            "user": "tjthejuggler"
+        },
+        "771(5b)": {
+            "catches": "33",
+            "trick": "771(5b)",
+            "user": "tjthejuggler"
+        },
+        "Al's Slide": {
+            "catches": "43",
+            "trick": "Al's Slide",
+            "user": "tjthejuggler"
+        },
+        "Alt Fake Columns(3b)": {
+            "catches": "120",
+            "trick": "Alt Fake Columns(3b)",
+            "user": "tjthejuggler"
+        },
+        "Arches(4b)": {
+            "catches": "28",
+            "trick": "Arches(4b)",
+            "user": "tjthejuggler"
+        },
+        "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)": {
+            "catches": "100",
+            "trick": "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)",
+            "user": "tjthejuggler"
+        },
+        "Atari(3b)": {
+            "catches": "102",
+            "trick": "Atari(3b)",
+            "user": "tjthejuggler"
+        },
+        "BOOMclawclaw(5b)": {
+            "catches": "54",
+            "trick": "BOOMclawclaw(5b)",
+            "user": "tjthejuggler"
+        },
+        "Backcrosses": {
+            "catches": "102",
+            "trick": "Backcrosses",
+            "user": "tjthejuggler"
+        },
+        "Boston Mess + Takeouts(3b)": {
+            "catches": "300",
+            "trick": "Boston Mess + Takeouts(3b)",
+            "user": "tjthejuggler"
+        },
+        "Box": {
+            "catches": "200",
+            "trick": "Box",
+            "user": "tjthejuggler"
+        },
+        "Box + Boston Shuffle(3b)": {
+            "catches": "250",
+            "trick": "Box + Boston Shuffle(3b)",
+            "user": "tjthejuggler"
+        },
+        "Box + Fake Double Box(3b)": {
+            "catches": "120",
+            "trick": "Box + Fake Double Box(3b)",
+            "user": "tjthejuggler"
+        },
+        "Box + Shower(3b)": {
+            "catches": "270",
+            "trick": "Box + Shower(3b)",
+            "user": "tjthejuggler"
+        },
+        "Box Takeouts(3b)": {
+            "catches": "60",
+            "trick": "Box Takeouts(3b)",
+            "user": "tjthejuggler"
+        },
+        "Box(4b)": {
+            "catches": "70",
+            "trick": "Box(4b)",
+            "user": "tjthejuggler"
+        },
+        "Burke's Slam": {
+            "catches": "99",
+            "trick": "Burke's Slam",
+            "user": "tjthejuggler"
+        },
+        "Burst Box": {
+            "catches": "104",
+            "trick": "Burst Box",
+            "user": "tjthejuggler"
+        },
+        "Camiplex(5b)": {
+            "catches": "96",
+            "trick": "Camiplex(5b)",
+            "user": "tjthejuggler"
+        },
+        "Carry the One(3b)": {
+            "catches": "200",
+            "trick": "Carry the One(3b)",
+            "user": "tjthejuggler"
+        },
+        "Cascade": {
+            "catches": 10000,
+            "trick": "Cascade",
+            "user": "Ianbreal"
+        },
+        "Cascade on the Chest(3b)": {
+            "catches": "100",
+            "trick": "Cascade on the Chest(3b)",
+            "user": "tjthejuggler"
+        },
+        "Cascade(5b)": {
+            "catches": "1200",
+            "trick": "Cascade(5b)",
+            "user": "ilia"
+        },
+        "Caterpillar(3b)": {
+            "catches": "60",
+            "trick": "Caterpillar(3b)",
+            "user": "tjthejuggler"
+        },
+        "Cherry Picker": {
+            "catches": "100",
+            "trick": "Cherry Picker",
+            "user": "tjthejuggler"
+        },
+        "Cherry Picker(3b)": {
+            "catches": "110",
+            "trick": "Cherry Picker(3b)",
+            "user": "tjthejuggler"
+        },
+        "Chops": {
+            "catches": "102",
+            "trick": "Chops",
+            "user": "tjthejuggler"
+        },
+        "Clawed Reverse Cascade(3b)": {
+            "catches": "100",
+            "trick": "Clawed Reverse Cascade(3b)",
+            "user": "tjthejuggler"
+        },
+        "Clawed W(3b)": {
+            "catches": "50",
+            "trick": "Clawed W(3b)",
+            "user": "tjthejuggler"
+        },
+        "Collision Columns (3b)": {
+            "catches": "33",
+            "trick": "Collision Columns (3b)",
+            "user": "tjthejuggler"
+        },
+        "Collision Columns Over The Top (3b)": {
+            "catches": "120",
+            "trick": "Collision Columns Over The Top (3b)",
+            "user": "tjthejuggler"
+        },
+        "Column Box Variation": {
+            "catches": "500",
+            "trick": "Column Box Variation",
+            "user": "tjthejuggler"
+        },
+        "Column Shower Variation": {
+            "catches": "100",
+            "trick": "Column Shower Variation",
+            "user": "tjthejuggler"
+        },
+        "Columns": {
+            "catches": "300",
+            "trick": "Columns",
+            "user": "tjthejuggler"
+        },
+        "Columns Overthrow(3b)": {
+            "catches": "300",
+            "trick": "Columns Overthrow(3b)",
+            "user": "tjthejuggler"
+        },
+        "Columns(4b)": {
+            "catches": "200",
+            "trick": "Columns(4b)",
+            "user": "tjthejuggler"
+        },
+        "Compressed Olas": {
+            "catches": "103",
+            "trick": "Compressed Olas",
+            "user": "tjthejuggler"
+        },
+        "Continuous Asscatches 1up2up(3b)": {
+            "catches": "12",
+            "trick": "Continuous Asscatches 1up2up(3b)",
+            "user": "tjthejuggler"
+        },
+        "Crossed Arm Cascade": {
+            "catches": "100",
+            "trick": "Crossed Arm Cascade",
+            "user": "tjthejuggler"
+        },
+        "Crossed Arm Factory (Machine)": {
+            "catches": "80",
+            "trick": "Crossed Arm Factory (Machine)",
+            "user": "tjthejuggler"
+        },
+        "Crossed Arm Reverse Cascade": {
+            "catches": "50",
+            "trick": "Crossed Arm Reverse Cascade",
+            "user": "tjthejuggler"
+        },
+        "Crossed Reverse Cascade(3b)": {
+            "catches": "100",
+            "trick": "Crossed Reverse Cascade(3b)",
+            "user": "tjthejuggler"
+        },
+        "Crossunder": {
+            "catches": "60",
+            "trick": "Crossunder",
+            "user": "tjthejuggler"
+        },
+        "Davenport Shuffle": {
+            "catches": "16",
+            "trick": "Davenport Shuffle",
+            "user": "tjthejuggler"
+        },
+        "Double Fake Box(3b)": {
+            "catches": "23",
+            "trick": "Double Fake Box(3b)",
+            "user": "tjthejuggler"
+        },
+        "Extended Box": {
+            "catches": "400",
+            "trick": "Extended Box",
+            "user": "tjthejuggler"
+        },
+        "Factory (Machine)": {
+            "catches": "102",
+            "trick": "Factory (Machine)",
+            "user": "tjthejuggler"
+        },
+        "Fake Columns": {
+            "catches": "200",
+            "trick": "Fake Columns",
+            "user": "tjthejuggler"
+        },
+        "Fake Columns 2(3b)": {
+            "catches": "100",
+            "trick": "Fake Columns 2(3b)",
+            "user": "tjthejuggler"
+        },
+        "Fake Mess": {
+            "catches": "206",
+            "trick": "Fake Mess",
+            "user": "tjthejuggler"
+        },
+        "Flipped Mess": {
+            "catches": "60",
+            "trick": "Flipped Mess",
+            "user": "tjthejuggler"
+        },
+        "Follow": {
+            "catches": "60",
+            "trick": "Follow",
+            "user": "noslowerdna_"
+        },
+        "Forky The Robot(3b)": {
+            "catches": "1",
+            "trick": "Forky The Robot(3b)",
+            "user": "tjthejuggler"
+        },
+        "Fountain(10b)": {
+            "catches": "44",
+            "trick": "Fountain(10b)",
+            "user": "tjthejuggler"
+        },
+        "Fountain(4b)": {
+            "catches": "400",
+            "trick": "Fountain(4b)",
+            "user": "tjthejuggler"
+        },
+        "Frantic Cascade": {
+            "catches": "32",
+            "trick": "Frantic Cascade",
+            "user": "tjthejuggler"
+        },
+        "Fred's Thread(3b)": {
+            "catches": "200",
+            "trick": "Fred's Thread(3b)",
+            "user": "tjthejuggler"
+        },
+        "Gattoplex(5b)": {
+            "catches": "39",
+            "trick": "Gattoplex(5b)",
+            "user": "tjthejuggler"
+        },
+        "Gilligan's Box": {
+            "catches": "100",
+            "trick": "Gilligan's Box",
+            "user": "tjthejuggler"
+        },
+        "Half Shower": {
+            "catches": "100",
+            "trick": "Half Shower",
+            "user": "tjthejuggler"
+        },
+        "Half Shower(4b)": {
+            "catches": "200",
+            "trick": "Half Shower(4b)",
+            "user": "tjthejuggler"
+        },
+        "Half Shower(5b)": {
+            "catches": "100",
+            "trick": "Half Shower(5b)",
+            "user": "tjthejuggler"
+        },
+        "Half Shower(6b)": {
+            "catches": "20",
+            "trick": "Half Shower(6b)",
+            "user": "tjthejuggler"
+        },
+        "HighLow Cascade": {
+            "catches": "80",
+            "trick": "HighLow Cascade",
+            "user": "tjthejuggler"
+        },
+        "Infinity": {
+            "catches": "100",
+            "trick": "Infinity",
+            "user": "tjthejuggler"
+        },
+        "Inverted Box": {
+            "catches": "100",
+            "trick": "Inverted Box",
+            "user": "tjthejuggler"
+        },
+        "Inverted Shower": {
+            "catches": "100",
+            "trick": "Inverted Shower",
+            "user": "tjthejuggler"
+        },
+        "Juggler's Tennis": {
+            "catches": "600",
+            "trick": "Juggler's Tennis",
+            "user": "tjthejuggler"
+        },
+        "Juggler's Tennis Synch(4b)": {
+            "catches": "40",
+            "trick": "Juggler's Tennis Synch(4b)",
+            "user": "tjthejuggler"
+        },
+        "Juggler's Tennis(4b)": {
+            "catches": "32",
+            "trick": "Juggler's Tennis(4b)",
+            "user": "tjthejuggler"
+        },
+        "Lisa(4b)": {
+            "catches": "28",
+            "trick": "Lisa(4b)",
+            "user": "tjthejuggler"
+        },
+        "Low Shuffle": {
+            "catches": "10",
+            "trick": "Low Shuffle",
+            "user": "tjthejuggler"
+        },
+        "Luke's Shuffle": {
+            "catches": "6",
+            "trick": "Luke's Shuffle",
+            "user": "Ianbreal"
+        },
+        "Mangham's Mangle": {
+            "catches": "36",
+            "trick": "Mangham's Mangle",
+            "user": "tjthejuggler"
+        },
+        "Martin(5b)": {
+            "catches": "100",
+            "trick": "Martin(5b)",
+            "user": "tjthejuggler"
+        },
+        "Mike's Mess": {
+            "catches": "20",
+            "trick": "Mike's Mess",
+            "user": "tjthejuggler"
+        },
+        "Mills Mess": {
+            "catches": "300",
+            "trick": "Mills Mess",
+            "user": "tjthejuggler"
+        },
+        "Mills Mess4b": {
+            "catches": "102",
+            "trick": "Mills Mess4b",
+            "user": "tjthejuggler"
+        },
+        "Mills MessShower": {
+            "catches": "100",
+            "trick": "Mills MessShower",
+            "user": "tjthejuggler"
+        },
+        "Multiplex Columns(5b)": {
+            "catches": "25",
+            "trick": "Multiplex Columns(5b)",
+            "user": "tjthejuggler"
+        },
+        "NBox": {
+            "catches": "50",
+            "trick": "NBox",
+            "user": "tjthejuggler"
+        },
+        "Olas": {
+            "catches": "100",
+            "trick": "Olas",
+            "user": "tjthejuggler"
+        },
+        "Oy-Oy": {
+            "catches": "200",
+            "trick": "Oy-Oy",
+            "user": "tjthejuggler"
+        },
+        "Pendulum Drop": {
+            "catches": "135",
+            "trick": "Pendulum Drop",
+            "user": "tjthejuggler"
+        },
+        "Penguins(3b)": {
+            "catches": "20",
+            "trick": "Penguins(3b)",
+            "user": "tjthejuggler"
+        },
+        "Phi(3b)": {
+            "catches": "225",
+            "trick": "Phi(3b)",
+            "user": "tjthejuggler"
+        },
+        "Pistons(4b)": {
+            "catches": "200",
+            "trick": "Pistons(4b)",
+            "user": "tjthejuggler"
+        },
+        "Puzzle Solving Craddle Ramps(4b)": {
+            "catches": "21",
+            "trick": "Puzzle Solving Craddle Ramps(4b)",
+            "user": "tjthejuggler"
+        },
+        "R+L Factory (Machine)(3b)": {
+            "catches": "120",
+            "trick": "R+L Factory (Machine)(3b)",
+            "user": "tjthejuggler"
+        },
+        "R+L Fake Columns(3b)": {
+            "catches": "200",
+            "trick": "R+L Fake Columns(3b)",
+            "user": "tjthejuggler"
+        },
+        "R+L Yo-Yo(3b)": {
+            "catches": "200",
+            "trick": "R+L Yo-Yo(3b)",
+            "user": "tjthejuggler"
+        },
+        "RL Oy-Oy(3b)": {
+            "catches": "100",
+            "trick": "RL Oy-Oy(3b)",
+            "user": "tjthejuggler"
+        },
+        "Rainbow Arches": {
+            "catches": "105",
+            "trick": "Rainbow Arches",
+            "user": "tjthejuggler"
+        },
+        "Rainbow Cross(4b)": {
+            "catches": "100",
+            "trick": "Rainbow Cross(4b)",
+            "user": "tjthejuggler"
+        },
+        "Reverse 423(3b)": {
+            "catches": "200",
+            "trick": "Reverse 423(3b)",
+            "user": "tjthejuggler"
+        },
+        "Reverse 441": {
+            "catches": "300",
+            "trick": "Reverse 441",
+            "user": "tjthejuggler"
+        },
+        "Reverse Cascade": {
+            "catches": "200",
+            "trick": "Reverse Cascade",
+            "user": "tjthejuggler"
+        },
+        "Reverse Cascade(5b)": {
+            "catches": "60",
+            "trick": "Reverse Cascade(5b)",
+            "user": "tjthejuggler"
+        },
+        "Reverse Chops": {
+            "catches": "70",
+            "trick": "Reverse Chops",
+            "user": "tjthejuggler"
+        },
+        "Reverse Fountain(4b)": {
+            "catches": "200",
+            "trick": "Reverse Fountain(4b)",
+            "user": "tjthejuggler"
+        },
+        "Reverse Infinity": {
+            "catches": "100",
+            "trick": "Reverse Infinity",
+            "user": "tjthejuggler"
+        },
+        "Reverse Synch Fountain(4b)": {
+            "catches": "100",
+            "trick": "Reverse Synch Fountain(4b)",
+            "user": "tjthejuggler"
+        },
+        "Reverse Windmill(3b)": {
+            "catches": "70",
+            "trick": "Reverse Windmill(3b)",
+            "user": "tjthejuggler"
+        },
+        "ReverseMills Mess": {
+            "catches": "210",
+            "trick": "ReverseMills Mess",
+            "user": "tjthejuggler"
+        },
+        "Ripley's Volcano(3b)": {
+            "catches": "236",
+            "trick": "Ripley's Volcano(3b)",
+            "user": "tjthejuggler"
+        },
+        "Shower": {
+            "catches": "200",
+            "trick": "Shower",
+            "user": "tjthejuggler"
+        },
+        "Shower(4b)": {
+            "catches": "100",
+            "trick": "Shower(4b)",
+            "user": "tjthejuggler"
+        },
+        "Shower(5b)": {
+            "catches": "26",
+            "trick": "Shower(5b)",
+            "user": "tjthejuggler"
+        },
+        "Shuffle(Slams)": {
+            "catches": "100",
+            "trick": "Shuffle(Slams)",
+            "user": "tjthejuggler"
+        },
+        "ShuffleSwitch": {
+            "catches": "200",
+            "trick": "ShuffleSwitch",
+            "user": "tjthejuggler"
+        },
+        "Silly Trick(3b)": {
+            "catches": "15",
+            "trick": "Silly Trick(3b)",
+            "user": "tjthejuggler"
+        },
+        "Six Ball Fountain(6b)": {
+            "catches": "40",
+            "trick": "Six Ball Fountain(6b)",
+            "user": "ilia"
+        },
+        "Snake": {
+            "catches": "300",
+            "trick": "Snake",
+            "user": "tjthejuggler"
+        },
+        "Split Cascade(5b)": {
+            "catches": "200",
+            "trick": "Split Cascade(5b)",
+            "user": "tjthejuggler"
+        },
+        "Sprung Cascade(4b)": {
+            "catches": "120",
+            "trick": "Sprung Cascade(4b)",
+            "user": "tjthejuggler"
+        },
+        "Stacked Box(4b)": {
+            "catches": "56",
+            "trick": "Stacked Box(4b)",
+            "user": "tjthejuggler"
+        },
+        "Stacked Box(4b)(4b)": {
+            "catches": "75",
+            "trick": "Stacked Box(4b)(4b)",
+            "user": "tjthejuggler"
+        },
+        "Stacked Cascade(5b)": {
+            "catches": "100",
+            "trick": "Stacked Cascade(5b)",
+            "user": "tjthejuggler"
+        },
+        "Stacked Multiplex Box(5b)": {
+            "catches": "30",
+            "trick": "Stacked Multiplex Box(5b)",
+            "user": "tjthejuggler"
+        },
+        "Statue of Liberty": {
+            "catches": "42",
+            "trick": "Statue of Liberty",
+            "user": "tjthejuggler"
+        },
+        "Sunny Side Up (David's Dilemma)": {
+            "catches": "60",
+            "trick": "Sunny Side Up (David's Dilemma)",
+            "user": "tjthejuggler"
+        },
+        "Synch Fountain Half Collisions(4b)": {
+            "catches": "100",
+            "trick": "Synch Fountain Half Collisions(4b)",
+            "user": "tjthejuggler"
+        },
+        "Synch Pistons(4b)": {
+            "catches": "200",
+            "trick": "Synch Pistons(4b)",
+            "user": "tjthejuggler"
+        },
+        "SynchFountain": {
+            "catches": "200",
+            "trick": "SynchFountain",
+            "user": "tjthejuggler"
+        },
+        "Takeouts": {
+            "catches": "200",
+            "trick": "Takeouts",
+            "user": "tjthejuggler"
+        },
+        "Takeouts + Box 2(3b)": {
+            "catches": "75",
+            "trick": "Takeouts + Box 2(3b)",
+            "user": "tjthejuggler"
+        },
+        "Takeouts + Orbits(3b)": {
+            "catches": "30",
+            "trick": "Takeouts + Orbits(3b)",
+            "user": "tjthejuggler"
+        },
+        "The Follow(3b)": {
+            "catches": "200",
+            "trick": "The Follow(3b)",
+            "user": "tjthejuggler"
+        },
+        "The W": {
+            "catches": "200",
+            "trick": "The W",
+            "user": "tjthejuggler"
+        },
+        "The Weave(3b)": {
+            "catches": "200",
+            "trick": "The Weave(3b)",
+            "user": "tjthejuggler"
+        },
+        "Threaded Box": {
+            "catches": "4",
+            "trick": "Threaded Box",
+            "user": "Ianbreal"
+        },
+        "Three in One": {
+            "catches": "54",
+            "trick": "Three in One",
+            "user": "tjthejuggler"
+        },
+        "Three in One Cascade(3b)": {
+            "catches": "21",
+            "trick": "Three in One Cascade(3b)",
+            "user": "tjthejuggler"
+        },
+        "Tilted Tennis(3b)": {
+            "catches": "120",
+            "trick": "Tilted Tennis(3b)",
+            "user": "tjthejuggler"
+        },
+        "Tommi's Catapult(3b)": {
+            "catches": "18",
+            "trick": "Tommi's Catapult(3b)",
+            "user": "tjthejuggler"
+        },
+        "Tommi's Lazy Mess(3b)": {
+            "catches": "160",
+            "trick": "Tommi's Lazy Mess(3b)",
+            "user": "tjthejuggler"
+        },
+        "Tommi's Trap(3b)": {
+            "catches": "40",
+            "trick": "Tommi's Trap(3b)",
+            "user": "tjthejuggler"
+        },
+        "Upcycling(3b)": {
+            "catches": "120",
+            "trick": "Upcycling(3b)",
+            "user": "tjthejuggler"
+        },
+        "Wimpy(4b)": {
+            "catches": "58",
+            "trick": "Wimpy(4b)",
+            "user": "tjthejuggler"
+        },
+        "Windmill(4b)": {
+            "catches": "30",
+            "trick": "Windmill(4b)",
+            "user": "tjthejuggler"
+        },
+        "Windshield Wipers(3b)": {
+            "catches": "40",
+            "trick": "Windshield Wipers(3b)",
+            "user": "tjthejuggler"
+        },
+        "Yo-Yo": {
+            "catches": "140",
+            "trick": "Yo-Yo",
+            "user": "tjthejuggler"
+        },
+        "stacked multiplex windmill(5b)": {
+            "catches": "20",
+            "trick": "stacked multiplex windmill(5b)",
+            "user": "tjthejuggler"
+        }
+    },
     "library": {
         "(6,4)(0,2x)*(3b)": {
             "contributor": "jameschance_",
@@ -9375,8 +10212,8 @@
                     "starred": "true"
                 },
                 "423": {
-                    "catches": "333",
-                    "lastUpdated": 1560638072149,
+                    "catches": "332",
+                    "lastUpdated": 1562664406121,
                     "starred": "true"
                 },
                 "423 Contortion Variation(3b)": {
@@ -9478,7 +10315,8 @@
                     "starred": "true"
                 },
                 "Al's Slide": {
-                    "catches": 0,
+                    "catches": "43",
+                    "lastUpdated": 1562664435466,
                     "starred": "true"
                 },
                 "Alt Fake Columns(3b)": {
@@ -9698,6 +10536,11 @@
                     "catches": "16",
                     "starred": "true"
                 },
+                "Double Fake Box(3b)": {
+                    "catches": "23",
+                    "lastUpdated": 1562664483434,
+                    "starred": "false"
+                },
                 "Double Yolked Sunny Side Up (version 1)(4b)": {
                     "catches": 0,
                     "lastUpdated": 1561488610783,
@@ -9735,6 +10578,10 @@
                     "catches": "1",
                     "lastUpdated": 1561746454090,
                     "starred": "true"
+                },
+                "Fountain(10b)": {
+                    "catches": "44",
+                    "lastUpdated": 1562664087579
                 },
                 "Fountain(4b)": {
                     "catches": "400",
@@ -9843,6 +10690,9 @@
                 "Mills Mess": {
                     "catches": "300",
                     "starred": "true"
+                },
+                "Mills Mess(7b)": {
+                    "starred": "false"
                 },
                 "Mills Mess4b": {
                     "catches": "102",
@@ -10207,7 +11057,7 @@
                     "starred": "true"
                 },
                 "Cascade": {
-                    "catches": 0,
+                    "catches": 10000,
                     "starred": "true"
                 },
                 "Cascade(5b)": {

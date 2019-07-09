@@ -11,6 +11,7 @@ import SlidingPane from 'react-sliding-pane';
 import 'react-sliding-pane/dist/react-sliding-pane.css';
 import firebase from 'firebase' 
 import AddTrickForm from './addTrickForm'
+import HomeScreen from './homeScreen'
 import Login from "./login"
 import CreateAccount from "./createAccount"
 import Header from "./header"
@@ -187,7 +188,8 @@ class App extends Component {
 		return (
 			<div
 				className="main" 
-				ref={ref => this.el = ref}>	            
+				ref={ref => this.el = ref}>
+				{uiStore.showHomeScreen ? <HomeScreen/> : null}	            
 	            {instructions}
 	            {login}
 	            {createAccount}

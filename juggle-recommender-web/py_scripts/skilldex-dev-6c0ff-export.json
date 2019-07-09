@@ -1,4 +1,7 @@
 {
+  "leaderboard" : {
+
+  },
   "library" : {
     "423" : {
       "dependents" : [ "Fake Mess", "Weave", "The W", "Creating a Magical Trick(3b)", "423 Armpit Throw(3b)", "Crossed 423 Fake Tennis(3b)", "Half Frostbite(3b)", "The Follow(3b)", "The Weave(3b)", "423 Tennis(3b)", "Fake Boston Shuffle(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "423 Contortion Variation(3b)", "Windshield Wipers(3b)", "Takeouts + Orbits(3b)", "42T3 Slam Tennis(3b)", "Takeouts + Box(3b)", "Fake Columns 2(3b)", "Reverse 423(3b)", "R+L Yo-Yo(3b)", "The Tornado(3b)", "Windmill + Fakemess(3b)", "Columns Overthrow(3b)", "Clawed W(3b)", "Fake Boston Shuffle + Columns(3b)", "Fred's Thread(3b)" ],
@@ -5669,650 +5672,842 @@
     "-Lfc2V0O5ry1rtchP79S" : {
       "myTricks" : {
         "423" : {
-          "catches" : "333",
-          "lastUpdated" : 1560638072149
+          "catches" : "332",
+          "lastUpdated" : 1562664406121,
+          "starred" : "true"
         },
         "441" : {
-          "catches" : "30"
+          "catches" : "30",
+          "starred" : "true"
         },
         "531" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "(3b)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "(6x,4)(4,2x)(4,6x)(2x,4)(4b)" : {
           "catches" : "40",
-          "lastUpdated" : 1561722110542
+          "lastUpdated" : 1561722110542,
+          "starred" : "true"
         },
         "({33}) Mills Mess(6b)" : {
           "catches" : "12",
-          "lastUpdated" : 1561890251534
+          "lastUpdated" : 1561890251534,
+          "starred" : "true"
         },
         "({54})({52})2 (6b)" : {
           "catches" : "36",
-          "lastUpdated" : 1561890067224
+          "lastUpdated" : 1561890067224,
+          "starred" : "true"
         },
         "({54})51(4b)" : {
           "catches" : "36",
-          "lastUpdated" : 1561725139573
+          "lastUpdated" : 1561725139573,
+          "starred" : "true"
         },
         "({64})41(5b)" : {
           "catches" : "4",
-          "lastUpdated" : 1561889213473
+          "lastUpdated" : 1561889213473,
+          "starred" : "true"
         },
         "({75})21(5b)" : {
           "catches" : "80",
-          "lastUpdated" : 1561888445116
+          "lastUpdated" : 1561888445116,
+          "starred" : "true"
         },
         "363 Mills Mess(4b)" : {
           "catches" : "33",
-          "lastUpdated" : 1561748312880
+          "lastUpdated" : 1561748312880,
+          "starred" : "true"
         },
         "423 Contortion Variation(3b)" : {
           "catches" : "60",
-          "lastUpdated" : 1561735900602
+          "lastUpdated" : 1561735900602,
+          "starred" : "true"
         },
         "423 Tennis(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561462203683
+          "lastUpdated" : 1561462203683,
+          "starred" : "true"
         },
         "441 Mills Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "4b Penguin Shower(4b)" : {
           "catches" : "0",
-          "lastUpdated" : 1561731894123
+          "lastUpdated" : 1561731894123,
+          "starred" : "true"
         },
         "4b Statue of Liberty(4b)" : {
           "catches" : "40",
-          "lastUpdated" : 1561725764404
+          "lastUpdated" : 1561725764404,
+          "starred" : "true"
         },
         "4b Sunny Side Up(4b)" : {
           "catches" : "18",
-          "lastUpdated" : 1561487971534
+          "lastUpdated" : 1561487971534,
+          "starred" : "true"
         },
         "531 Contortion(3b)" : {
           "catches" : "6",
-          "lastUpdated" : 1561841640509
+          "lastUpdated" : 1561841640509,
+          "starred" : "true"
         },
         "531 Mills Mess" : {
           "catches" : "100",
-          "lastUpdated" : 1561485922985
+          "lastUpdated" : 1561485922985,
+          "starred" : "true"
         },
         "534(4b)" : {
-          "catches" : "150"
+          "catches" : "150",
+          "starred" : "true"
         },
         "552 Mills Mess(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561748275266
+          "lastUpdated" : 1561748275266,
+          "starred" : "true"
         },
         "552(4b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "555003 Windmill(3b)" : {
           "catches" : "20",
-          "lastUpdated" : 1560971453253
+          "lastUpdated" : 1560971453253,
+          "starred" : "true"
         },
         "5551(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "55550(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "5b 3up 360(5b)" : {
           "catches" : "6",
-          "lastUpdated" : 1561836843610
+          "lastUpdated" : 1561836843610,
+          "starred" : "true"
         },
         "714(4b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561485683276
+          "lastUpdated" : 1561485683276,
+          "starred" : "true"
         },
         "744(5b)" : {
           "catches" : "30",
-          "lastUpdated" : 1560972333478
+          "lastUpdated" : 1560972333478,
+          "starred" : "true"
         },
         "753(5b)" : {
           "catches" : "36",
-          "lastUpdated" : 1561937129471
+          "lastUpdated" : 1561937129471,
+          "starred" : "true"
         },
         "771(5b)" : {
           "catches" : "33",
-          "lastUpdated" : 1561835804536
+          "lastUpdated" : 1561835804536,
+          "starred" : "true"
         },
         "Al's Slide" : {
-          "catches" : 0
+          "catches" : "43",
+          "lastUpdated" : 1562664435466,
+          "starred" : "true"
         },
         "Alt Fake Columns(3b)" : {
           "catches" : "120",
-          "lastUpdated" : 1561881187957
+          "lastUpdated" : 1561881187957,
+          "starred" : "true"
         },
         "Arches(4b)" : {
           "catches" : "28",
-          "lastUpdated" : 1561841861686
+          "lastUpdated" : 1561841861686,
+          "starred" : "true"
         },
         "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561486843333
+          "lastUpdated" : 1561486843333,
+          "starred" : "true"
         },
         "Atari(3b)" : {
           "catches" : "102",
-          "lastUpdated" : 1561822596985
+          "lastUpdated" : 1561822596985,
+          "starred" : "true"
         },
         "BOOMclawclaw(5b)" : {
           "catches" : "54",
-          "lastUpdated" : 1561836439375
+          "lastUpdated" : 1561836439375,
+          "starred" : "true"
         },
         "Backcrosses" : {
-          "catches" : "102"
+          "catches" : "102",
+          "starred" : "true"
         },
         "Boston Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Boston Mess + Takeouts(3b)" : {
           "catches" : "300",
-          "lastUpdated" : 1561822913384
+          "lastUpdated" : 1561822913384,
+          "starred" : "true"
         },
         "Boston Shuffle" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Box" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Box + Boston Shuffle(3b)" : {
           "catches" : "250",
-          "lastUpdated" : 1561823953381
+          "lastUpdated" : 1561823953381,
+          "starred" : "true"
         },
         "Box + Fake Double Box(3b)" : {
           "catches" : "120",
-          "lastUpdated" : 1561824378967
+          "lastUpdated" : 1561824378967,
+          "starred" : "true"
         },
         "Box + Shower(3b)" : {
           "catches" : "270",
-          "lastUpdated" : 1561842145395
+          "lastUpdated" : 1561842145395,
+          "starred" : "true"
         },
         "Box Takeouts(3b)" : {
           "catches" : "60",
-          "lastUpdated" : 1560971581485
+          "lastUpdated" : 1560971581485,
+          "starred" : "true"
         },
         "Box(4b)" : {
-          "catches" : "70"
+          "catches" : "70",
+          "starred" : "true"
         },
         "Broken Box" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Broken Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Burke's Barrage" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Burke's Slam" : {
-          "catches" : "99"
+          "catches" : "99",
+          "starred" : "true"
         },
         "Burst Box" : {
-          "catches" : "104"
+          "catches" : "104",
+          "starred" : "true"
         },
         "Camiplex(5b)" : {
           "catches" : "96",
-          "lastUpdated" : 1561836795328
+          "lastUpdated" : 1561836795328,
+          "starred" : "true"
         },
         "Carry the One(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561821525319
+          "lastUpdated" : 1561821525319,
+          "starred" : "true"
         },
         "Cascade" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Cascade on the Chest(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561462565211
+          "lastUpdated" : 1561462565211,
+          "starred" : "true"
         },
         "Cascade(5b)" : {
-          "catches" : "300"
+          "catches" : "300",
+          "starred" : "true"
         },
         "Caterpillar(3b)" : {
           "catches" : "60",
-          "lastUpdated" : 1561881829496
+          "lastUpdated" : 1561881829496,
+          "starred" : "true"
         },
         "Cherry Picker" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Cherry Picker(3b)" : {
           "catches" : "110",
-          "lastUpdated" : 1561129343866
+          "lastUpdated" : 1561129343866,
+          "starred" : "true"
         },
         "Chops" : {
-          "catches" : "102"
+          "catches" : "102",
+          "starred" : "true"
         },
         "Clawed Reverse Cascade(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561462622113
+          "lastUpdated" : 1561462622113,
+          "starred" : "true"
         },
         "Clawed W(3b)" : {
           "catches" : "50",
-          "lastUpdated" : 1561911398085
+          "lastUpdated" : 1561911398085,
+          "starred" : "true"
         },
         "Collision Columns (3b)" : {
           "catches" : "33",
-          "lastUpdated" : 1561882000824
+          "lastUpdated" : 1561882000824,
+          "starred" : "true"
         },
         "Collision Columns Over The Top (3b)" : {
           "catches" : "120",
-          "lastUpdated" : 1561882147421
+          "lastUpdated" : 1561882147421,
+          "starred" : "true"
         },
         "Collisioners Tennis (3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592287009
+          "lastUpdated" : 1560592287009,
+          "starred" : "true"
         },
         "Column Box Variation" : {
           "catches" : "500",
-          "lastUpdated" : 1561882311963
+          "lastUpdated" : 1561882311963,
+          "starred" : "true"
         },
         "Column Shower Variation" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "ColumnOverVar" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns" : {
           "catches" : "300",
-          "lastUpdated" : 1561882521034
+          "lastUpdated" : 1561882521034,
+          "starred" : "true"
         },
         "Columns Overthrow(3b)" : {
           "catches" : "300",
-          "lastUpdated" : 1561462744123
+          "lastUpdated" : 1561462744123,
+          "starred" : "true"
         },
         "Columns(4b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Compressed Olas" : {
-          "catches" : "103"
+          "catches" : "103",
+          "starred" : "true"
         },
         "Continuous Asscatches 1up2up(3b)" : {
           "catches" : "12",
-          "lastUpdated" : 1561937107441
+          "lastUpdated" : 1561937107441,
+          "starred" : "true"
         },
         "Crossed Arm Cascade" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Crossed Arm Factory (Machine)" : {
-          "catches" : "80"
+          "catches" : "80",
+          "starred" : "true"
         },
         "Crossed Arm Reverse Cascade" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Crossed Reverse Cascade(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561462831517
+          "lastUpdated" : 1561462831517,
+          "starred" : "true"
         },
         "Crossunder" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Davenport Shuffle" : {
-          "catches" : "16"
+          "catches" : "16",
+          "starred" : "true"
+        },
+        "Double Fake Box(3b)" : {
+          "catches" : "23",
+          "lastUpdated" : 1562664483434,
+          "starred" : "false"
         },
         "Double Yolked Sunny Side Up (version 1)(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561488610783
+          "lastUpdated" : 1561488610783,
+          "starred" : "true"
         },
         "Extended Box" : {
-          "catches" : "400"
+          "catches" : "400",
+          "starred" : "true"
         },
         "Factory (Machine)" : {
           "catches" : "102",
-          "lastUpdated" : 1561883820292
+          "lastUpdated" : 1561883820292,
+          "starred" : "true"
         },
         "Fake Columns" : {
           "catches" : "200",
-          "lastUpdated" : 1561880757530
+          "lastUpdated" : 1561880757530,
+          "starred" : "true"
         },
         "Fake Columns 2(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561462943508
+          "lastUpdated" : 1561462943508,
+          "starred" : "true"
         },
         "Fake Mess" : {
           "catches" : "206",
-          "lastUpdated" : 1561884510213
+          "lastUpdated" : 1561884510213,
+          "starred" : "true"
         },
         "Flipped Mess" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Forky The Robot(3b)" : {
           "catches" : "1",
-          "lastUpdated" : 1561746454090
+          "lastUpdated" : 1561746454090,
+          "starred" : "true"
+        },
+        "Fountain(10b)" : {
+          "catches" : "44",
+          "lastUpdated" : 1562664087579
         },
         "Fountain(4b)" : {
           "catches" : "400",
-          "lastUpdated" : 1561883963660
+          "lastUpdated" : 1561883963660,
+          "starred" : "true"
         },
         "Frantic Cascade" : {
-          "catches" : "32"
+          "catches" : "32",
+          "starred" : "true"
         },
         "Fred's Thread(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561549076450
+          "lastUpdated" : 1561549076450,
+          "starred" : "true"
         },
         "Gattoplex(5b)" : {
           "catches" : "39",
-          "lastUpdated" : 1561022147097
+          "lastUpdated" : 1561022147097,
+          "starred" : "true"
         },
         "Gilligan's Box" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower(4b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561130186550
+          "lastUpdated" : 1561130186550,
+          "starred" : "true"
         },
         "Half Shower(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower(6b)" : {
           "catches" : "20",
-          "lastUpdated" : 1561911900113
+          "lastUpdated" : 1561911900113,
+          "starred" : "true"
         },
         "Harrison's Hang" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "HighLow Cascade" : {
-          "catches" : "80"
+          "catches" : "80",
+          "starred" : "true"
         },
         "HighLow Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Infinity" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Infinity Collision (3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592287819
+          "lastUpdated" : 1560592287819,
+          "starred" : "true"
         },
         "Inverted Box" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Inverted Shower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
-          "catches" : "600"
+          "catches" : "600",
+          "starred" : "true"
         },
         "Juggler's Tennis Synch(4b)" : {
           "catches" : "40",
-          "lastUpdated" : 1560971716755
+          "lastUpdated" : 1560971716755,
+          "starred" : "true"
         },
         "Juggler's Tennis(4b)" : {
           "catches" : "32",
-          "lastUpdated" : 1560971823693
+          "lastUpdated" : 1560971823693,
+          "starred" : "true"
         },
         "Lisa(4b)" : {
-          "catches" : "28"
+          "catches" : "28",
+          "starred" : "true"
         },
         "Low Shuffle" : {
-          "catches" : "10"
+          "catches" : "10",
+          "starred" : "true"
         },
         "Mangham's Mangle" : {
-          "catches" : "36"
+          "catches" : "36",
+          "starred" : "true"
         },
         "Martin(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Mike's Mess" : {
-          "catches" : "20"
+          "catches" : "20",
+          "starred" : "true"
         },
         "Mills Mess" : {
-          "catches" : "300"
+          "catches" : "300",
+          "starred" : "true"
+        },
+        "Mills Mess(7b)" : {
+          "starred" : "false"
         },
         "Mills Mess4b" : {
           "catches" : "102",
-          "lastUpdated" : 1561890590814
+          "lastUpdated" : 1561890590814,
+          "starred" : "true"
         },
         "Mills MessShower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Multiplex Columns(5b)" : {
-          "catches" : "25"
+          "catches" : "25",
+          "starred" : "true"
         },
         "NBox" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Olas" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Oy-Oy" : {
           "catches" : "200",
-          "lastUpdated" : 1561849018338
+          "lastUpdated" : 1561849018338,
+          "starred" : "true"
         },
         "Pendulum Drop" : {
-          "catches" : "135"
+          "catches" : "135",
+          "starred" : "true"
         },
         "Penguin Shower(3b)" : {
           "catches" : "0",
-          "lastUpdated" : 1561731930307
+          "lastUpdated" : 1561731930307,
+          "starred" : "true"
         },
         "Penguins(3b)" : {
           "catches" : "20",
-          "lastUpdated" : 1560972433536
+          "lastUpdated" : 1560972433536,
+          "starred" : "true"
         },
         "Phi(3b)" : {
           "catches" : "225",
-          "lastUpdated" : 1561888066116
+          "lastUpdated" : 1561888066116,
+          "starred" : "true"
         },
         "Pistons(4b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561720065949
+          "lastUpdated" : 1561720065949,
+          "starred" : "true"
         },
         "Puzzle Solving Craddle Ramps(4b)" : {
           "catches" : "21",
-          "lastUpdated" : 1561720976005
+          "lastUpdated" : 1561720976005,
+          "starred" : "true"
         },
         "R+L Factory (Machine)(3b)" : {
           "catches" : "120",
-          "lastUpdated" : 1561463150381
+          "lastUpdated" : 1561463150381,
+          "starred" : "true"
         },
         "R+L Fake Columns(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561128987014
+          "lastUpdated" : 1561128987014,
+          "starred" : "true"
         },
         "R+L Yo-Yo(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561463416157
+          "lastUpdated" : 1561463416157,
+          "starred" : "true"
         },
         "RL Oy-Oy(3b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561463828877
+          "lastUpdated" : 1561463828877,
+          "starred" : "true"
         },
         "Rainbow Arches" : {
           "catches" : "105",
-          "lastUpdated" : 1561023442999
+          "lastUpdated" : 1561023442999,
+          "starred" : "true"
         },
         "Rainbow Cross(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Reverse 423(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561463918083
+          "lastUpdated" : 1561463918083,
+          "starred" : "true"
         },
         "Reverse 441" : {
           "catches" : "300",
-          "lastUpdated" : 1561820319912
+          "lastUpdated" : 1561820319912,
+          "starred" : "true"
         },
         "Reverse Cascade" : {
           "catches" : "200",
-          "lastUpdated" : 1561820402560
+          "lastUpdated" : 1561820402560,
+          "starred" : "true"
         },
         "Reverse Cascade(5b)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Reverse Chops" : {
-          "catches" : "70"
+          "catches" : "70",
+          "starred" : "true"
         },
         "Reverse Fountain(4b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561721054467
+          "lastUpdated" : 1561721054467,
+          "starred" : "true"
         },
         "Reverse Infinity" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Reverse Synch Fountain(4b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561721207951
+          "lastUpdated" : 1561721207951,
+          "starred" : "true"
         },
         "Reverse Windmill(3b)" : {
           "catches" : "70",
-          "lastUpdated" : 1561820862789
+          "lastUpdated" : 1561820862789,
+          "starred" : "true"
         },
         "ReverseMills Mess" : {
-          "catches" : "210"
+          "catches" : "210",
+          "starred" : "true"
         },
         "Ripley's Volcano(3b)" : {
           "catches" : "236",
-          "lastUpdated" : 1561549636426
+          "lastUpdated" : 1561549636426,
+          "starred" : "true"
         },
         "Shower" : {
           "catches" : "200",
-          "lastUpdated" : 1561130627355
+          "lastUpdated" : 1561130627355,
+          "starred" : "true"
         },
         "Shower(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Shower(5b)" : {
-          "catches" : "26"
+          "catches" : "26",
+          "starred" : "true"
         },
         "Shuffle(Slams)" : {
           "catches" : "100",
-          "lastUpdated" : 1561838510382
+          "lastUpdated" : 1561838510382,
+          "starred" : "true"
         },
         "ShuffleSwitch" : {
           "catches" : "200",
-          "lastUpdated" : 1561464019009
+          "lastUpdated" : 1561464019009,
+          "starred" : "true"
         },
         "Silly Trick(3b)" : {
           "catches" : "15",
-          "lastUpdated" : 1561022640985
+          "lastUpdated" : 1561022640985,
+          "starred" : "true"
         },
         "Snake" : {
           "catches" : "300",
-          "lastUpdated" : 1561839462182
+          "lastUpdated" : 1561839462182,
+          "starred" : "true"
         },
         "Split Cascade(5b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Sprung Cascade(4b)" : {
-          "catches" : "120"
+          "catches" : "120",
+          "starred" : "true"
         },
         "Stacked Box(4b)" : {
           "catches" : "56",
-          "lastUpdated" : 1561721454477
+          "lastUpdated" : 1561721454477,
+          "starred" : "true"
         },
         "Stacked Box(4b)(4b)" : {
-          "catches" : "75"
+          "catches" : "75",
+          "starred" : "true"
         },
         "Stacked Cascade(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Stacked Multiplex Box(5b)" : {
           "catches" : "30",
-          "lastUpdated" : 1561763987670
+          "lastUpdated" : 1561763987670,
+          "starred" : "true"
         },
         "Statue of Liberty" : {
           "catches" : "42",
-          "lastUpdated" : 1561839680499
+          "lastUpdated" : 1561839680499,
+          "starred" : "true"
         },
         "Sunny Side Up (David's Dilemma)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Sync Fountain Collisions (4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592292145
+          "lastUpdated" : 1560592292145,
+          "starred" : "true"
         },
         "Sync Fountain Half Collision (4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592292634
+          "lastUpdated" : 1560592292634,
+          "starred" : "true"
         },
         "Synch Fountain Half Collisions(4b)" : {
           "catches" : "100",
-          "lastUpdated" : 1561721620193
+          "lastUpdated" : 1561721620193,
+          "starred" : "true"
         },
         "Synch Pistons(4b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561839827246
+          "lastUpdated" : 1561839827246,
+          "starred" : "true"
         },
         "SynchFountain" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Takeouts" : {
           "catches" : "200",
-          "lastUpdated" : 1561022849158
+          "lastUpdated" : 1561022849158,
+          "starred" : "true"
         },
         "Takeouts + Box 2(3b)" : {
           "catches" : "75",
-          "lastUpdated" : 1561464399299
+          "lastUpdated" : 1561464399299,
+          "starred" : "true"
         },
         "Takeouts + Orbits(3b)" : {
           "catches" : "30",
-          "lastUpdated" : 1561051049554
+          "lastUpdated" : 1561051049554,
+          "starred" : "true"
         },
         "The Follow(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561464875609
+          "lastUpdated" : 1561464875609,
+          "starred" : "true"
         },
         "The W" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "The Weave(3b)" : {
           "catches" : "200",
-          "lastUpdated" : 1561465018957
+          "lastUpdated" : 1561465018957,
+          "starred" : "true"
         },
         "Three in One" : {
           "catches" : "54",
-          "lastUpdated" : 1561842480976
+          "lastUpdated" : 1561842480976,
+          "starred" : "true"
         },
         "Three in One Cascade(3b)" : {
           "catches" : "21",
-          "lastUpdated" : 1561842625025
+          "lastUpdated" : 1561842625025,
+          "starred" : "true"
         },
         "Tilted Tennis(3b)" : {
           "catches" : "120",
-          "lastUpdated" : 1561549858162
+          "lastUpdated" : 1561549858162,
+          "starred" : "true"
         },
         "Tommi's Catapult(3b)" : {
           "catches" : "18",
-          "lastUpdated" : 1561551046719
+          "lastUpdated" : 1561551046719,
+          "starred" : "true"
         },
         "Tommi's Lazy Mess(3b)" : {
           "catches" : "160",
-          "lastUpdated" : 1561840537122
+          "lastUpdated" : 1561840537122,
+          "starred" : "true"
         },
         "Tommi's Trap(3b)" : {
           "catches" : "40",
-          "lastUpdated" : 1561841332469
+          "lastUpdated" : 1561841332469,
+          "starred" : "true"
         },
         "Upcycling(3b)" : {
           "catches" : "120",
-          "lastUpdated" : 1561735599749
+          "lastUpdated" : 1561735599749,
+          "starred" : "true"
         },
         "Wimpy(4b)" : {
           "catches" : "58",
-          "lastUpdated" : 1561731107697
+          "lastUpdated" : 1561731107697,
+          "starred" : "true"
         },
         "Windmill(4b)" : {
           "catches" : "30",
-          "lastUpdated" : 1561731023697
+          "lastUpdated" : 1561731023697,
+          "starred" : "true"
         },
         "Windshield Wipers(3b)" : {
           "catches" : "40",
-          "lastUpdated" : 1561051226775
+          "lastUpdated" : 1561051226775,
+          "starred" : "true"
         },
         "Yo-Yo" : {
           "catches" : "140",
-          "lastUpdated" : 1561023289447
+          "lastUpdated" : 1561023289447,
+          "starred" : "true"
         },
         "stacked multiplex windmill(5b)" : {
           "catches" : "20",
-          "lastUpdated" : 1561022332340
+          "lastUpdated" : 1561022332340,
+          "starred" : "true"
         }
       },
       "username" : "tjthejuggler"
@@ -6323,7 +6518,8 @@
     "-LfeWrwOvu6uNhqkzz5v" : {
       "myTricks" : {
         "Cascade" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         }
       },
       "username" : "Karel.schuller@kpnmail.nl"
@@ -6331,96 +6527,125 @@
     "-LhL8IVRC5TDHQKYS_ce" : {
       "myTricks" : {
         "423" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "441" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "531" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Al's Slide" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Boston Mess" : {
           "catches" : 0,
-          "lastUpdated" : 1560518826449
+          "lastUpdated" : 1560518826449,
+          "starred" : "true"
         },
         "Boston Shuffle" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Box" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Cascade" : {
-          "catches" : 0
+          "catches" : 10000,
+          "starred" : "true"
         },
         "Cascade(5b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560518484200
+          "lastUpdated" : 1560518484200,
+          "starred" : "true"
         },
         "Chops" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Column Box Variation" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560518875479
+          "lastUpdated" : 1560518875479,
+          "starred" : "true"
         },
         "Crossed Arm Cascade" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Crossed Arm Reverse Cascade" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Fountain(4b)" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Frantic Cascade" : {
-          "catches" : "4"
+          "catches" : "4",
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Luke's Shuffle" : {
           "catches" : "6",
-          "lastUpdated" : 1561747944197
+          "lastUpdated" : 1561747944197,
+          "starred" : "true"
         },
         "Mills Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Reverse Cascade" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Ripley's Rainbow" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Shuffle(Slams)" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Split Cascade(5b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560518496628
+          "lastUpdated" : 1560518496628,
+          "starred" : "true"
         },
         "Stacked Cascade(5b)" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Threaded Box" : {
-          "catches" : "4"
+          "catches" : "4",
+          "starred" : "true"
         },
         "Wimpy(4b)" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Windmill" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         }
       },
       "username" : "Ianbreal"
@@ -6429,119 +6654,148 @@
       "myTricks" : {
         "423" : {
           "catches" : 0,
-          "lastUpdated" : 1560478025850
+          "lastUpdated" : 1560478025850,
+          "starred" : "true"
         },
         "441" : {
           "catches" : 0,
-          "lastUpdated" : 1560478027800
+          "lastUpdated" : 1560478027800,
+          "starred" : "true"
         },
         "531" : {
           "catches" : 0,
-          "lastUpdated" : 1560478028719
+          "lastUpdated" : 1560478028719,
+          "starred" : "true"
         },
         "423 Tennis(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561698458742
+          "lastUpdated" : 1561698458742,
+          "starred" : "true"
         },
         "Box" : {
           "catches" : 0,
-          "lastUpdated" : 1560478204169
+          "lastUpdated" : 1560478204169,
+          "starred" : "true"
         },
         "Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560478069013
+          "lastUpdated" : 1560478069013,
+          "starred" : "true"
         },
         "Chops" : {
           "catches" : 0,
-          "lastUpdated" : 1560478073921
+          "lastUpdated" : 1560478073921,
+          "starred" : "true"
         },
         "Column Box Variation" : {
           "catches" : 0,
-          "lastUpdated" : 1560514250868
+          "lastUpdated" : 1560514250868,
+          "starred" : "true"
         },
         "Columns" : {
           "catches" : 0,
-          "lastUpdated" : 1560478075883
+          "lastUpdated" : 1560478075883,
+          "starred" : "true"
         },
         "Crossed Arm Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560478080067
+          "lastUpdated" : 1560478080067,
+          "starred" : "true"
         },
         "Factory (Machine)" : {
           "catches" : 0,
-          "lastUpdated" : 1560478091986
+          "lastUpdated" : 1560478091986,
+          "starred" : "true"
         },
         "Fake Columns" : {
           "catches" : 0,
-          "lastUpdated" : 1560478091337
+          "lastUpdated" : 1560478091337,
+          "starred" : "true"
         },
         "Fake Mess" : {
           "catches" : 0,
-          "lastUpdated" : 1560478092917
+          "lastUpdated" : 1560478092917,
+          "starred" : "true"
         },
         "Follow" : {
           "catches" : 0,
-          "lastUpdated" : 1560775107746
+          "lastUpdated" : 1560775107746,
+          "starred" : "true"
         },
         "Georgian Shuffle" : {
           "catches" : 0,
-          "lastUpdated" : 1560478098209
+          "lastUpdated" : 1560478098209,
+          "starred" : "true"
         },
         "Half Shower" : {
           "catches" : 0,
-          "lastUpdated" : 1560478100100
+          "lastUpdated" : 1560478100100,
+          "starred" : "true"
         },
         "Half Shower(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560618233102
+          "lastUpdated" : 1560618233102,
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
           "catches" : 0,
-          "lastUpdated" : 1560478104964
+          "lastUpdated" : 1560478104964,
+          "starred" : "true"
         },
         "Mills Mess" : {
           "catches" : 0,
-          "lastUpdated" : 1560572845621
+          "lastUpdated" : 1560572845621,
+          "starred" : "true"
         },
         "Oy-Oy" : {
           "catches" : 0,
-          "lastUpdated" : 1560478114283
+          "lastUpdated" : 1560478114283,
+          "starred" : "true"
         },
         "Reverse 441" : {
           "catches" : 0,
-          "lastUpdated" : 1560514258969
+          "lastUpdated" : 1560514258969,
+          "starred" : "true"
         },
         "Reverse Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560478121600
+          "lastUpdated" : 1560478121600,
+          "starred" : "true"
         },
         "Reverse Chops" : {
           "catches" : 0,
-          "lastUpdated" : 1560478119615
+          "lastUpdated" : 1560478119615,
+          "starred" : "true"
         },
         "Reverse Factory (Machine)" : {
           "catches" : 0,
-          "lastUpdated" : 1560617602472
+          "lastUpdated" : 1560617602472,
+          "starred" : "true"
         },
         "Shower" : {
           "catches" : 0,
-          "lastUpdated" : 1560478126721
+          "lastUpdated" : 1560478126721,
+          "starred" : "true"
         },
         "Shuffle(Slams)" : {
           "catches" : 0,
-          "lastUpdated" : 1560478130630
+          "lastUpdated" : 1560478130630,
+          "starred" : "true"
         },
         "The W" : {
           "catches" : 0,
-          "lastUpdated" : 1560478133556
+          "lastUpdated" : 1560478133556,
+          "starred" : "true"
         },
         "Weave" : {
           "catches" : 0,
-          "lastUpdated" : 1560773897915
+          "lastUpdated" : 1560773897915,
+          "starred" : "true"
         },
         "Yo-Yo" : {
           "catches" : 0,
-          "lastUpdated" : 1560478527438
+          "lastUpdated" : 1560478527438,
+          "starred" : "true"
         }
       },
       "username" : "Don G"
@@ -6550,43 +6804,53 @@
       "myTricks" : {
         "441" : {
           "catches" : 0,
-          "lastUpdated" : 1560573083002
+          "lastUpdated" : 1560573083002,
+          "starred" : "true"
         },
         "Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560573106561
+          "lastUpdated" : 1560573106561,
+          "starred" : "true"
         },
         "Chops" : {
           "catches" : 0,
-          "lastUpdated" : 1560573150992
+          "lastUpdated" : 1560573150992,
+          "starred" : "true"
         },
         "Columns" : {
           "catches" : 0,
-          "lastUpdated" : 1560573207883
+          "lastUpdated" : 1560573207883,
+          "starred" : "true"
         },
         "Columns(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560573286061
+          "lastUpdated" : 1560573286061,
+          "starred" : "true"
         },
         "Fountain(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560573381026
+          "lastUpdated" : 1560573381026,
+          "starred" : "true"
         },
         "Infinity" : {
           "catches" : 0,
-          "lastUpdated" : 1560573244150
+          "lastUpdated" : 1560573244150,
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
           "catches" : 0,
-          "lastUpdated" : 1560573170489
+          "lastUpdated" : 1560573170489,
+          "starred" : "true"
         },
         "Rainbow Arches" : {
           "catches" : 0,
-          "lastUpdated" : 1560573222651
+          "lastUpdated" : 1560573222651,
+          "starred" : "true"
         },
         "Shower" : {
           "catches" : 0,
-          "lastUpdated" : 1560573184130
+          "lastUpdated" : 1560573184130,
+          "starred" : "true"
         }
       },
       "username" : "RayZoe"
@@ -6606,74 +6870,93 @@
     "-LhSPy9fSulq2RZgYDzD" : {
       "myTricks" : {
         "441" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Box" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Cascade" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560640548954
+          "lastUpdated" : 1560640548954,
+          "starred" : "true"
         },
         "Fake Columns" : {
           "catches" : 0,
-          "lastUpdated" : 1560640555921
+          "lastUpdated" : 1560640555921,
+          "starred" : "true"
         },
         "Fountain(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1560640560081
+          "lastUpdated" : 1560640560081,
+          "starred" : "true"
         },
         "Frantic Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560640562028
+          "lastUpdated" : 1560640562028,
+          "starred" : "true"
         },
         "Half Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Hands of Time" : {
           "catches" : 0,
-          "lastUpdated" : 1560640573377
+          "lastUpdated" : 1560640573377,
+          "starred" : "true"
         },
         "HighLow Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560640575292
+          "lastUpdated" : 1560640575292,
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Levels" : {
           "catches" : 0,
-          "lastUpdated" : 1560640584926
+          "lastUpdated" : 1560640584926,
+          "starred" : "true"
         },
         "Luke's Shuffle" : {
           "catches" : 0,
-          "lastUpdated" : 1560640588732
+          "lastUpdated" : 1560640588732,
+          "starred" : "true"
         },
         "Mills Mess" : {
           "catches" : 0,
-          "lastUpdated" : 1560640591752
+          "lastUpdated" : 1560640591752,
+          "starred" : "true"
         },
         "Nelson's Nemesis" : {
           "catches" : 0,
-          "lastUpdated" : 1560640599192
+          "lastUpdated" : 1560640599192,
+          "starred" : "true"
         },
         "Orka's Mess" : {
           "catches" : 0,
-          "lastUpdated" : 1560640600991
+          "lastUpdated" : 1560640600991,
+          "starred" : "true"
         },
         "Peter's Shuffle" : {
           "catches" : 0,
-          "lastUpdated" : 1560640611648
+          "lastUpdated" : 1560640611648,
+          "starred" : "true"
         },
         "Reverse Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1560640621250
+          "lastUpdated" : 1560640621250,
+          "starred" : "true"
         }
       },
       "username" : "Rondell"
@@ -6685,266 +6968,351 @@
       "myTricks" : {
         "423" : {
           "catches" : "333",
-          "lastUpdated" : 1560638072149
+          "lastUpdated" : 1560638072149,
+          "starred" : "true"
         },
         "441" : {
-          "catches" : "30"
+          "catches" : "30",
+          "starred" : "true"
         },
         "531" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "441 Mills Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "531 Mills Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "534(4b)" : {
-          "catches" : "150"
+          "catches" : "150",
+          "starred" : "true"
         },
         "552(4b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "5551(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "55550(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Al's Slide" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Backcrosses" : {
-          "catches" : "102"
+          "catches" : "102",
+          "starred" : "true"
         },
         "Boston Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Boston Shuffle" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Box" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Box(4b)" : {
-          "catches" : "70"
+          "catches" : "70",
+          "starred" : "true"
         },
         "Broken Box" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Broken Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Burke's Barrage" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Burke's Slam" : {
-          "catches" : "99"
+          "catches" : "99",
+          "starred" : "true"
         },
         "Burst Box" : {
-          "catches" : "104"
+          "catches" : "104",
+          "starred" : "true"
         },
         "Cascade" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Cascade(5b)" : {
-          "catches" : "300"
+          "catches" : "300",
+          "starred" : "true"
         },
         "Cherry Picker" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Chops" : {
-          "catches" : "102"
+          "catches" : "102",
+          "starred" : "true"
         },
         "Collision Columns (3)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592285121
+          "lastUpdated" : 1560592285121,
+          "starred" : "true"
         },
         "Collision Columns Over The Top (3)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592285904
+          "lastUpdated" : 1560592285904,
+          "starred" : "true"
         },
         "Collisioners Tennis (3)" : {
           "catches" : "0",
-          "lastUpdated" : 1560789358182
+          "lastUpdated" : 1560789358182,
+          "starred" : "true"
         },
         "Column Box Variation" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Column Shower Variation" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "ColumnOverVar" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns(4b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Compressed Olas" : {
-          "catches" : "103"
+          "catches" : "103",
+          "starred" : "true"
         },
         "Crossed Arm Cascade" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Crossed Arm Factory (Machine)" : {
-          "catches" : "80"
+          "catches" : "80",
+          "starred" : "true"
         },
         "Crossed Arm Reverse Cascade" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Crossunder" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Davenport Shuffle" : {
-          "catches" : "16"
+          "catches" : "16",
+          "starred" : "true"
         },
         "Extended Box" : {
-          "catches" : "400"
+          "catches" : "400",
+          "starred" : "true"
         },
         "Factory (Machine)" : {
-          "catches" : "90"
+          "catches" : "90",
+          "starred" : "true"
         },
         "Fake Columns" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Fake Mess" : {
           "catches" : "6",
-          "lastUpdated" : 1560638105282
+          "lastUpdated" : 1560638105282,
+          "starred" : "true"
         },
         "Flipped Mess" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Follow" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Frantic Cascade" : {
-          "catches" : "32"
+          "catches" : "32",
+          "starred" : "true"
         },
         "Gilligan's Box" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Harrison's Hang" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "HighLow Cascade" : {
-          "catches" : "80"
+          "catches" : "80",
+          "starred" : "true"
         },
         "HighLow Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Infinity" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Infinity Collision (3)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592287819
+          "lastUpdated" : 1560592287819,
+          "starred" : "true"
         },
         "Inverted Box" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Inverted Shower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
-          "catches" : "600"
+          "catches" : "600",
+          "starred" : "true"
         },
         "Lisa(4b)" : {
-          "catches" : "28"
+          "catches" : "28",
+          "starred" : "true"
         },
         "Low Shuffle" : {
-          "catches" : "10"
+          "catches" : "10",
+          "starred" : "true"
         },
         "Mangham's Mangle" : {
-          "catches" : "36"
+          "catches" : "36",
+          "starred" : "true"
         },
         "Martin(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Mike's Mess" : {
-          "catches" : "20"
+          "catches" : "20",
+          "starred" : "true"
         },
         "Mills Mess" : {
-          "catches" : "300"
+          "catches" : "300",
+          "starred" : "true"
         },
         "Mills Mess4b" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Mills MessShower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Multiplex Columns(5b)" : {
-          "catches" : "25"
+          "catches" : "25",
+          "starred" : "true"
         },
         "NBox" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Olas" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Oy-Oy" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Pendulum Drop" : {
-          "catches" : "135"
+          "catches" : "135",
+          "starred" : "true"
         },
         "Rainbow Cross(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Reverse Cascade(5b)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Reverse Chops" : {
-          "catches" : "70"
+          "catches" : "70",
+          "starred" : "true"
         },
         "Reverse Infinity" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "ReverseMills Mess" : {
-          "catches" : "210"
+          "catches" : "210",
+          "starred" : "true"
         },
         "Shower(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Shower(5b)" : {
-          "catches" : "26"
+          "catches" : "26",
+          "starred" : "true"
         },
         "Split Cascade(5b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Sprung Cascade(4b)" : {
-          "catches" : "120"
+          "catches" : "120",
+          "starred" : "true"
         },
         "Stacked Box(4b)(4b)" : {
-          "catches" : "75"
+          "catches" : "75",
+          "starred" : "true"
         },
         "Stacked Cascade(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Sunny Side Up (David's Dilemma)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Sync Fountain Collisions (4)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592292145
+          "lastUpdated" : 1560592292145,
+          "starred" : "true"
         },
         "Sync Fountain Half Collision (4)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592292634
+          "lastUpdated" : 1560592292634,
+          "starred" : "true"
         },
         "SynchFountain" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "The W" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         }
       },
       "username" : "noslowerdna_"
@@ -6971,267 +7339,352 @@
       "myTricks" : {
         "423" : {
           "catches" : "333",
-          "lastUpdated" : 1560638072149
+          "lastUpdated" : 1560638072149,
+          "starred" : "true"
         },
         "441" : {
-          "catches" : "30"
+          "catches" : "30",
+          "starred" : "true"
         },
         "531" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "441 Mills Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "531 Mills Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "534(4b)" : {
-          "catches" : "150"
+          "catches" : "150",
+          "starred" : "true"
         },
         "552(4b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "5551(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "55550(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Al's Slide" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Backcrosses" : {
-          "catches" : "102"
+          "catches" : "102",
+          "starred" : "true"
         },
         "Boston Mess" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Boston Shuffle" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Box" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Box(4b)" : {
-          "catches" : "70"
+          "catches" : "70",
+          "starred" : "true"
         },
         "Broken Box" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Broken Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Burke's Barrage" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Burke's Slam" : {
-          "catches" : "99"
+          "catches" : "99",
+          "starred" : "true"
         },
         "Burst Box" : {
-          "catches" : "104"
+          "catches" : "104",
+          "starred" : "true"
         },
         "Cascade" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Cascade(5b)" : {
-          "catches" : "300"
+          "catches" : "300",
+          "starred" : "true"
         },
         "Cherry Picker" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Chops" : {
-          "catches" : "102"
+          "catches" : "102",
+          "starred" : "true"
         },
         "Collision Columns (3)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592285121
+          "lastUpdated" : 1560592285121,
+          "starred" : "true"
         },
         "Collision Columns Over The Top (3)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592285904
+          "lastUpdated" : 1560592285904,
+          "starred" : "true"
         },
         "Collisioners Tennis (3)" : {
           "catches" : "0",
-          "lastUpdated" : 1560789358182
+          "lastUpdated" : 1560789358182,
+          "starred" : "true"
         },
         "Column Box Variation" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Column Shower Variation" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "ColumnOverVar" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Columns(4b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Compressed Olas" : {
-          "catches" : "103"
+          "catches" : "103",
+          "starred" : "true"
         },
         "Crossed Arm Cascade" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Crossed Arm Factory (Machine)" : {
-          "catches" : "80"
+          "catches" : "80",
+          "starred" : "true"
         },
         "Crossed Arm Reverse Cascade" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Crossunder" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Davenport Shuffle" : {
-          "catches" : "16"
+          "catches" : "16",
+          "starred" : "true"
         },
         "Extended Box" : {
-          "catches" : "400"
+          "catches" : "400",
+          "starred" : "true"
         },
         "Factory (Machine)" : {
-          "catches" : "90"
+          "catches" : "90",
+          "starred" : "true"
         },
         "Fake Columns" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Fake Mess" : {
           "catches" : "6",
-          "lastUpdated" : 1560638105282
+          "lastUpdated" : 1560638105282,
+          "starred" : "true"
         },
         "Flipped Mess" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Follow" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Frantic Cascade" : {
-          "catches" : "32"
+          "catches" : "32",
+          "starred" : "true"
         },
         "Gilligan's Box" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Half Shower(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Harrison's Hang" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "HighLow Cascade" : {
-          "catches" : "80"
+          "catches" : "80",
+          "starred" : "true"
         },
         "HighLow Shower" : {
-          "catches" : 0
+          "catches" : 0,
+          "starred" : "true"
         },
         "Infinity" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Infinity Collision (3)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592287819
+          "lastUpdated" : 1560592287819,
+          "starred" : "true"
         },
         "Inverted Box" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Inverted Shower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
-          "catches" : "600"
+          "catches" : "600",
+          "starred" : "true"
         },
         "Lisa(4b)" : {
-          "catches" : "28"
+          "catches" : "28",
+          "starred" : "true"
         },
         "Low Shuffle" : {
-          "catches" : "10"
+          "catches" : "10",
+          "starred" : "true"
         },
         "Mangham's Mangle" : {
-          "catches" : "36"
+          "catches" : "36",
+          "starred" : "true"
         },
         "Martin(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Mike's Mess" : {
-          "catches" : "20"
+          "catches" : "20",
+          "starred" : "true"
         },
         "Mills Mess" : {
-          "catches" : "300"
+          "catches" : "300",
+          "starred" : "true"
         },
         "Mills Mess4b" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Mills MessShower" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Multiplex Columns(5b)" : {
-          "catches" : "25"
+          "catches" : "25",
+          "starred" : "true"
         },
         "NBox" : {
-          "catches" : "50"
+          "catches" : "50",
+          "starred" : "true"
         },
         "Olas" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Oy-Oy" : {
           "catches" : "200",
-          "lastUpdated" : 1561161741451
+          "lastUpdated" : 1561161741451,
+          "starred" : "true"
         },
         "Pendulum Drop" : {
-          "catches" : "135"
+          "catches" : "135",
+          "starred" : "true"
         },
         "Rainbow Cross(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Reverse Cascade(5b)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Reverse Chops" : {
-          "catches" : "70"
+          "catches" : "70",
+          "starred" : "true"
         },
         "Reverse Infinity" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "ReverseMills Mess" : {
-          "catches" : "210"
+          "catches" : "210",
+          "starred" : "true"
         },
         "Shower(4b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Shower(5b)" : {
-          "catches" : "26"
+          "catches" : "26",
+          "starred" : "true"
         },
         "Split Cascade(5b)" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "Sprung Cascade(4b)" : {
-          "catches" : "120"
+          "catches" : "120",
+          "starred" : "true"
         },
         "Stacked Box(4b)(4b)" : {
-          "catches" : "75"
+          "catches" : "75",
+          "starred" : "true"
         },
         "Stacked Cascade(5b)" : {
-          "catches" : "100"
+          "catches" : "100",
+          "starred" : "true"
         },
         "Sunny Side Up (David's Dilemma)" : {
-          "catches" : "60"
+          "catches" : "60",
+          "starred" : "true"
         },
         "Sync Fountain Collisions (4)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592292145
+          "lastUpdated" : 1560592292145,
+          "starred" : "true"
         },
         "Sync Fountain Half Collision (4)" : {
           "catches" : 0,
-          "lastUpdated" : 1560592292634
+          "lastUpdated" : 1560592292634,
+          "starred" : "true"
         },
         "SynchFountain" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         },
         "The W" : {
-          "catches" : "200"
+          "catches" : "200",
+          "starred" : "true"
         }
       },
       "username" : "jameschance_"
@@ -7243,7 +7696,8 @@
       "myTricks" : {
         "Cascade" : {
           "catches" : "100",
-          "lastUpdated" : 1561263969920
+          "lastUpdated" : 1561263969920,
+          "starred" : "true"
         }
       },
       "username" : "CaptainsFancy"
@@ -7252,23 +7706,28 @@
       "myTricks" : {
         "(0,4x)*(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561283869460
+          "lastUpdated" : 1561283869460,
+          "starred" : "true"
         },
         "Follow" : {
           "catches" : 0,
-          "lastUpdated" : 1561285301033
+          "lastUpdated" : 1561285301033,
+          "starred" : "true"
         },
         "Reverse Windmill(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561286149255
+          "lastUpdated" : 1561286149255,
+          "starred" : "true"
         },
         "Sunny Side Up (David's Dilemma)" : {
           "catches" : 0,
-          "lastUpdated" : 1561291151529
+          "lastUpdated" : 1561291151529,
+          "starred" : "true"
         },
         "The Follow(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561283659167
+          "lastUpdated" : 1561283659167,
+          "starred" : "true"
         }
       },
       "username" : "Ezic"
@@ -7277,79 +7736,98 @@
       "myTricks" : {
         "(0,4x)* Crossed(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561488340185
+          "lastUpdated" : 1561488340185,
+          "starred" : "true"
         },
         "Alex" : {
           "catches" : 0,
-          "lastUpdated" : 1561490381497
+          "lastUpdated" : 1561490381497,
+          "starred" : "true"
         },
         "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561488425321
+          "lastUpdated" : 1561488425321,
+          "starred" : "true"
         },
         "Broken Box" : {
           "catches" : 0,
-          "lastUpdated" : 1561489866286
+          "lastUpdated" : 1561489866286,
+          "starred" : "true"
         },
         "Broken NBox Slam(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561488525207
+          "lastUpdated" : 1561488525207,
+          "starred" : "true"
         },
         "Cascade on the Chest(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561564102049
+          "lastUpdated" : 1561564102049,
+          "starred" : "true"
         },
         "DNI-Box(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561489272406
+          "lastUpdated" : 1561489272406,
+          "starred" : "true"
         },
         "Double NBox(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561488731234
+          "lastUpdated" : 1561488731234,
+          "starred" : "true"
         },
         "Earl(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561489312845
+          "lastUpdated" : 1561489312845,
+          "starred" : "true"
         },
         "Forklift" : {
           "catches" : 0,
-          "lastUpdated" : 1561489345608
+          "lastUpdated" : 1561489345608,
+          "starred" : "true"
         },
         "Inverted Box" : {
           "catches" : 0,
-          "lastUpdated" : 1561490453822
+          "lastUpdated" : 1561490453822,
+          "starred" : "true"
         },
         "Jeanne" : {
           "catches" : 0,
-          "lastUpdated" : 1561490057672
+          "lastUpdated" : 1561490057672,
+          "starred" : "true"
         },
         "Kimuras Star(3b)" : {
           "catches" : 0,
-          "lastUpdated" : 1561490071370
+          "lastUpdated" : 1561490071370,
+          "starred" : "true"
         },
         "Maka's Mess" : {
           "catches" : 0,
-          "lastUpdated" : 1561489462515
+          "lastUpdated" : 1561489462515,
+          "starred" : "true"
         },
         "Marden's Marvel" : {
           "catches" : 0,
-          "lastUpdated" : 1561490129438
+          "lastUpdated" : 1561490129438,
+          "starred" : "true"
         },
         "NBox" : {
           "catches" : 0,
-          "lastUpdated" : 1561489470744
+          "lastUpdated" : 1561489470744,
+          "starred" : "true"
         },
         "Relf's Revenge" : {
           "catches" : 0,
-          "lastUpdated" : 1561489574923
+          "lastUpdated" : 1561489574923,
+          "starred" : "true"
         },
         "Takearound" : {
           "catches" : 0,
-          "lastUpdated" : 1561490283345
+          "lastUpdated" : 1561490283345,
+          "starred" : "true"
         },
         "Threaded Box" : {
           "catches" : 0,
-          "lastUpdated" : 1561490338583
+          "lastUpdated" : 1561490338583,
+          "starred" : "true"
         }
       },
       "username" : "stefan"
@@ -7367,31 +7845,38 @@
       "myTricks" : {
         "423" : {
           "catches" : 0,
-          "lastUpdated" : 1561332134453
+          "lastUpdated" : 1561332134453,
+          "starred" : "true"
         },
         "Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1561332141564
+          "lastUpdated" : 1561332141564,
+          "starred" : "true"
         },
         "Compressed Olas" : {
           "catches" : 0,
-          "lastUpdated" : 1561332258804
+          "lastUpdated" : 1561332258804,
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
           "catches" : 0,
-          "lastUpdated" : 1561332147538
+          "lastUpdated" : 1561332147538,
+          "starred" : "true"
         },
         "Olas" : {
           "catches" : 0,
-          "lastUpdated" : 1561332256401
+          "lastUpdated" : 1561332256401,
+          "starred" : "true"
         },
         "The W" : {
           "catches" : 0,
-          "lastUpdated" : 1561332138736
+          "lastUpdated" : 1561332138736,
+          "starred" : "true"
         },
         "Yo-Yo" : {
           "catches" : 0,
-          "lastUpdated" : 1561332144360
+          "lastUpdated" : 1561332144360,
+          "starred" : "true"
         }
       },
       "username" : "tom"
@@ -7406,15 +7891,18 @@
       "myTricks" : {
         "423" : {
           "catches" : 0,
-          "lastUpdated" : 1561698363297
+          "lastUpdated" : 1561698363297,
+          "starred" : "true"
         },
         "Fake Columns" : {
           "catches" : 0,
-          "lastUpdated" : 1561698413683
+          "lastUpdated" : 1561698413683,
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
           "catches" : 0,
-          "lastUpdated" : 1561698429028
+          "lastUpdated" : 1561698429028,
+          "starred" : "true"
         }
       },
       "username" : "Sky534"
@@ -7423,27 +7911,33 @@
       "myTricks" : {
         "423" : {
           "catches" : 0,
-          "lastUpdated" : 1561851758464
+          "lastUpdated" : 1561851758464,
+          "starred" : "true"
         },
         "Cascade" : {
           "catches" : 0,
-          "lastUpdated" : 1561851763670
+          "lastUpdated" : 1561851763670,
+          "starred" : "true"
         },
         "Fake Columns" : {
           "catches" : 0,
-          "lastUpdated" : 1561851769562
+          "lastUpdated" : 1561851769562,
+          "starred" : "true"
         },
         "Half Shower" : {
           "catches" : 0,
-          "lastUpdated" : 1561851774416
+          "lastUpdated" : 1561851774416,
+          "starred" : "true"
         },
         "Juggler's Tennis" : {
           "catches" : 0,
-          "lastUpdated" : 1561851777087
+          "lastUpdated" : 1561851777087,
+          "starred" : "true"
         },
         "The W" : {
           "catches" : 0,
-          "lastUpdated" : 1561851784032
+          "lastUpdated" : 1561851784032,
+          "starred" : "true"
         }
       },
       "username" : "mthstng"
@@ -7452,15 +7946,18 @@
       "myTricks" : {
         "552(4b)" : {
           "catches" : 0,
-          "lastUpdated" : 1562044879695
+          "lastUpdated" : 1562044879695,
+          "starred" : "true"
         },
         "Cascade(5b)" : {
           "catches" : "1200",
-          "lastUpdated" : 1562045368158
+          "lastUpdated" : 1562045368158,
+          "starred" : "true"
         },
         "Six Ball Fountain(6b)" : {
           "catches" : "40",
-          "lastUpdated" : 1562045323685
+          "lastUpdated" : 1562045323685,
+          "starred" : "true"
         }
       },
       "username" : "ilia"

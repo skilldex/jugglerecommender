@@ -1,0 +1,14 @@
+.outerDiv{
+  display: block;
+  overflow-y: scroll;
+  height: 120%;
+  width : 94%;
+  position : absolute;
+  top:0px;
+  background-color : white;
+  z-index : 2501;
+  border : 1px solid gray;
+  box-shadow : 5px 10px 8px #888888;;
+  border-radius: 8px;
+  padding: 10px;
+}
