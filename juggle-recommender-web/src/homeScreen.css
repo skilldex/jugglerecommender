@@ -37,18 +37,27 @@
   width: 100%;
   display:block;
   height: auto;
+  border : 1px solid gray;
+  box-shadow : 5px 10px 8px #888888;;
+  border-radius: 8px;
 }
 
 .homeScreenTrickDiv{
-  text-align: center;
   display:block;
   height: auto;
 }
-
-.homeScreenTrickLabel{
+.homeScreenTrickMainLabel{
+  text-align: center;
   width: 100%;
   margin-left : 10px;
   font-size: 20px;
+  margin-bottom : 10px;
+}
+.homeScreenTrickSubLabel{
+  text-align: left;
+  width: 100%;
+  margin-left : 10px;
+  font-size: 14px;
   margin-bottom : 10px;
 }
 

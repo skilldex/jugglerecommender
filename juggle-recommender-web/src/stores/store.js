@@ -51,15 +51,11 @@ class Store {
 		let mostRecentlySubmittedTrickTime = 0
 		let trickKey
 		for (trickKey in this.library){
-			console.log(this.library[trickKey]['timeSubmitted'])
-			console.log('mostRecentlySubmittedTrickTime',mostRecentlySubmittedTrickTime)
 			if (parseInt(this.library[trickKey]['timeSubmitted'],10)>mostRecentlySubmittedTrickTime){
-				console.log('trickKey2',trickKey)
 				mostRecentlySubmittedTrickTime = parseInt(this.library[trickKey]['timeSubmitted'],10)
 				mostRecentlySubmittedTrickKey = trickKey
 			}
 		}
-		console.log('mostRecentlySubmittedTrickKey',mostRecentlySubmittedTrickKey)
 		return mostRecentlySubmittedTrickKey
 	}
 	@action chooseRandomLeaderboardTrick(){
@@ -80,11 +76,7 @@ class Store {
 	   	let currentTotalCatchCount
 		totalCatchCountRef.on('value', resp =>{
 			currentTotalCatchCount = this.snapshotToArray(resp)[0]
-			console.log('currentTotalCatchCount',currentTotalCatchCount)
         })
-        console.log('currentTotalCatchCount',currentTotalCatchCount)
-        console.log('amount',amount)
-		console.log('currentTotalCatchCount + amount',currentTotalCatchCount + amount)
 		let leaderboardTrickRef = firebase.database().ref('stats')
 		const updatedStats = {'totalCatchCount':currentTotalCatchCount + amount}
 		leaderboardTrickRef.set(updatedStats);
@@ -156,7 +148,6 @@ class Store {
 	@action getUserCountFromDatabase=()=>{
 		let libraryRef = firebase.database().ref('users/')
 		libraryRef.on('value', resp =>{
-			console.log(this.snapshotToArray(resp))
         	this.setUserCount(this.snapshotToArray(resp).length)
         })		
 	}
@@ -344,7 +335,6 @@ class Store {
  		this.myTricks[trickKey].lastUpdated = date.getTime()
  		this.updateTricksInDatabase()
  		uiStore.updateRootTricks()
-		console.log('preCompare1!',catches)
 		this.updateLeaderboard(trickKey,catches)
  	}
 

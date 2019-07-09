@@ -24,13 +24,14 @@ class HomeScreen extends Component {
 		if (!store.randomLeaderboardTrick.trick) {store.chooseRandomLeaderboardTrick()}
 		return(
 				<div className = "outerDiv">
-					<div>Jugglers Registered: {store.userCount}</div>
-					<div>Patterns Submitted: {store.patternCount}</div>
-					<div>Catches Counted: {store.totalCatchCount}</div>
+					<div><b>Jugglers Registered:</b> {store.userCount}</div>
+					<div><b>Patterns Submitted:</b> {store.patternCount}</div>
+					<div><b>Catches Counted:</b> {store.totalCatchCount}</div>
 					<div onClick={()=>uiStore.toggleShowHomeScreen()}>GO TO LIST</div>
 					<div className ='homeScreenTrickOuterDiv'>
+						<h3 className = 'homeScreenTrickMainLabel'>Featured Patterns</h3>
 						<div className = 'homeScreenTrickDiv'>
-				            <h3 className = 'homeScreenTrickLabel'>Random Challenge Pattern</h3>
+				            <h3 className = 'homeScreenTrickSubLabel'>Random Challenge Pattern</h3>
 				           	<div>Current Leader: {store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)</div>
 				            <TrickList 
 				              tricksToList = {[store.randomLeaderboardTrick.trick]}
@@ -38,7 +39,7 @@ class HomeScreen extends Component {
 				            />
 				        </div>
 						<div className = 'homeScreenTrickDiv'>
-				            <h3 className = 'homeScreenTrickLabel'>Newest Pattern</h3>
+				            <h3 className = 'homeScreenTrickSubLabel'>Newest Pattern</h3>
 				            <TrickList 
 				              tricksToList = {[store.getMostRecentlySubmittedTrick()]}
 				              selectedTrick={uiStore.selectedTrick}

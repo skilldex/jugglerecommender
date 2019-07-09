@@ -14,7 +14,6 @@ class Demo extends Component {
     youtubeId : null
   }
   componentDidMount(){
-    console.log("mounted ", this.props.trickKey)
     const trick = store.library[this.props.trickKey]
     if(trick.video){
       this.getUsableVideoURL(trick.video, this.props.trickKey)
@@ -115,7 +114,6 @@ class Demo extends Component {
 	render() {
     
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
-    console.log("demo", trickKey)
     const trick = store.library[trickKey]
     const gifSection = trick && trick.url? 
                           <img 
@@ -150,7 +148,6 @@ class Demo extends Component {
     }else{
       youtubeOpts.playerVars.playlist = this.state.youtubeId
     }
-    console.log("VIDEO URL " ,this.state.videoURL )
     let video  = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
                         <YouTube 
                           name="vidFrame" 

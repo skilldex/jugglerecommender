@@ -11,7 +11,6 @@ class Header extends Component {
 
 	clickMenuItem=(paneFlag)=>{
 		uiStore.toggleExpandedMenu()
-		console.log(paneFlag)
 		if(paneFlag == "addPattern"){
 			uiStore.toggleAddingTrick()
 			uiStore.setShowHomeScreen(false)
@@ -41,12 +40,10 @@ class Header extends Component {
 		}
 	}
 	mouseEnterExpandedMenu=()=>{
-		console.log('mouseenter')
       uiStore.setMouseInExpandedMenu(true)
     }
 
     mouseLeaveExpandedMenu=()=>{
-    	console.log('mouseleave')
       uiStore.setMouseInExpandedMenu(false)
     }
     render(){
