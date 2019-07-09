@@ -21,11 +21,9 @@ class HomeScreen extends Component {
 
 
 	render (){
-		console.log('store.randomLeaderboardTrick',store.randomLeaderboardTrick)
 		if (!store.randomLeaderboardTrick.trick) {store.chooseRandomLeaderboardTrick()}
 		return(
 				<div className = "outerDiv">
-					<div>Random trick from leaderboard:</div>
 					<div>Jugglers Registered: {store.userCount}</div>
 					<div>Patterns Submitted: {store.patternCount}</div>
 					<div>Catches Counted: {store.totalCatchCount}</div>
@@ -36,6 +34,13 @@ class HomeScreen extends Component {
 				           	<div>Current Leader: {store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)</div>
 				            <TrickList 
 				              tricksToList = {[store.randomLeaderboardTrick.trick]}
+				              selectedTrick={uiStore.selectedTrick}
+				            />
+				        </div>
+						<div className = 'homeScreenTrickDiv'>
+				            <h3 className = 'homeScreenTrickLabel'>Newest Pattern</h3>
+				            <TrickList 
+				              tricksToList = {[store.getMostRecentlySubmittedTrick()]}
 				              selectedTrick={uiStore.selectedTrick}
 				            />
 				        </div>

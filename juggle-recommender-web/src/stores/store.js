@@ -21,6 +21,7 @@ class Store {
 	@observable igData = null
 	@observable youtubeId = null
 	@observable randomLeaderboardTrick = {}
+	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""
 	@observable totalCatchCount = null
 	@computed get isMobile(){
@@ -45,13 +46,28 @@ class Store {
 		})
 		return contributorTags
 	}
+	@action getMostRecentlySubmittedTrick(){
+		let mostRecentlySubmittedTrickKey = ''
+		let mostRecentlySubmittedTrickTime = 0
+		let trickKey
+		for (trickKey in this.library){
+			console.log(this.library[trickKey]['timeSubmitted'])
+			console.log('mostRecentlySubmittedTrickTime',mostRecentlySubmittedTrickTime)
+			if (parseInt(this.library[trickKey]['timeSubmitted'],10)>mostRecentlySubmittedTrickTime){
+				console.log('trickKey2',trickKey)
+				mostRecentlySubmittedTrickTime = parseInt(this.library[trickKey]['timeSubmitted'],10)
+				mostRecentlySubmittedTrickKey = trickKey
+			}
+		}
+		console.log('mostRecentlySubmittedTrickKey',mostRecentlySubmittedTrickKey)
+		return mostRecentlySubmittedTrickKey
+	}
 	@action chooseRandomLeaderboardTrick(){
 	   	let leaderboardRef = firebase.database().ref('leaderboard/')
 	   	let randomTrick
 		leaderboardRef.on('value', resp =>{
 			let allLeaderBoardTricks = this.snapshotToArray(resp)
 			randomTrick = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
-			console.log('randomTrick',randomTrick)
 			this.setRandomLeaderboardTrick(randomTrick)
 			leaderboardRef.off()
         })
