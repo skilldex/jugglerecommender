@@ -194,7 +194,7 @@ class TrickList extends Component {
 		const list =
 			<div  
 				id='trickList' 
-				className={tricks.length > 1 ? "listSection" : ""}
+				className="listSection"
 				onScroll = {this.recordScrollerPosition}
 			>
 				{tricks.length > 0 ? tricks: 
@@ -211,7 +211,7 @@ class TrickList extends Component {
 
 		return (
 			<div>
-				{uiStore.detailTrick? null:<MainTagsBar/>}
+				{uiStore.detailTrick || uiStore.showHomeScreen? null:<MainTagsBar/>}
 				<div className= "listDiv">	
 					{list}				
 				</div>
