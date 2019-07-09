@@ -116,6 +116,10 @@ class App extends Component {
 
  	render(){
 	    window.onclick = function(event) {
+	    	console.log('click')
+	    	console.log('uiStore.showExpandedMenu',uiStore.showExpandedMenu)
+	    	console.log('uiStore.mouseInExpandedMenu',uiStore.mouseInExpandedMenu)
+	    	console.log('uiStore.expandedMenuTimer',uiStore.expandedMenuTimer)
 	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
 	            uiStore.setShowSortDiv(false)
 	        }

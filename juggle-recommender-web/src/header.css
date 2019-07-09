@@ -22,7 +22,7 @@
 .expandedMenu{
 	position : absolute;
 	opacity: 1;
-	z-index : 1400;
+	z-index : 3400;
 	width : 150px;
 	right : 0;
 	border : 2px solid gray;

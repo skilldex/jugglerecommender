@@ -61,6 +61,7 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
+		uiStore.setShowExpandedMenu(false)
 		if (uiStore.selectedTrick){
 			uiStore.toggleSelectedTrick(null)
 		}

@@ -41,6 +41,9 @@ class UIStore {
 	@action toggleShowHomeScreen=()=>{
 		this.showHomeScreen = !this.showHomeScreen
 	}
+	@action setShowHomeScreen=(bool)=>{
+		this.showHomeScreen = bool
+	}
 
   	@action editDetailTrick=()=>{
   		this.editingDetailTrick = true
@@ -140,6 +143,7 @@ class UIStore {
 		this.sortTimer = null
 	}
 	@action toggleSortDiv=()=>{
+	  this.setShowExpandedMenu(false)
       if(!this.showSortDiv){
       	this.setShowSortDiv(true)
         if(this.showFilterDiv){
@@ -160,6 +164,7 @@ class UIStore {
 		this.filterTimer = null
 	}
 	@action toggleFilterDiv=()=>{
+		this.setShowExpandedMenu(false)
 		if(!this.showFilterDiv){
 	      	this.setShowFilterDiv(true)
 	        if (filterStore.maxCatches > store.highestCatches){

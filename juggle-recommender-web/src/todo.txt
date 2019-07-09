@@ -15,21 +15,15 @@ v 1.6
 	Hamburger Menu:
 	-home
 
+	Style Home Screen
+
 	Home Screen
-	-link to list(find tricks to learn or something)
-	-Most recently added trick?
-	-number of patterns on site
-	-number of users? total? currently online?
-	-stats
-		number of users currently tracking tricks
-		name of random trick with current leader and their number of catches
+	-Most recently added trick
+	-number of users currently online?
+	-number of users currently tracking tricks?
 
 	Data fix scripts(see list below)
 
-	Seperate catch inputting from star:
-		-if a trick has catches or is starred, it goes into myTricks
-		-if a trick is starred, it gets a new field in it's myTricks entry
-		-python script to calculate the records
 =========
 
 

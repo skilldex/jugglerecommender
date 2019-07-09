@@ -14,17 +14,39 @@ class Header extends Component {
 		console.log(paneFlag)
 		if(paneFlag == "addPattern"){
 			uiStore.toggleAddingTrick()
+			uiStore.setShowHomeScreen(false)
+			uiStore.setShowExpandedMenu(false)
 		}else if(paneFlag == "logout"){
-			 authStore.signOut()
+			authStore.signOut()
+			uiStore.setShowHomeScreen(false)
+			if(uiStore.addingTrick){
+			 	uiStore.toggleAddingTrick
+			}
+			uiStore.setShowExpandedMenu(false)
+		}else if(paneFlag == "home"){
+			uiStore.setShowHomeScreen(true)
+			if(uiStore.addingTrick){
+			 	uiStore.toggleAddingTrick
+			}
+			uiStore.setShowExpandedMenu(false)
+		}else if(paneFlag == "list"){
+			 uiStore.setShowHomeScreen(false)
+			if(uiStore.addingTrick){
+			 	uiStore.toggleAddingTrick
+			}
+			uiStore.setShowExpandedMenu(false)
 		}else{
 			this.props.openSlidingPane(paneFlag)
+			uiStore.setShowExpandedMenu(false)
 		}
 	}
 	mouseEnterExpandedMenu=()=>{
+		console.log('mouseenter')
       uiStore.setMouseInExpandedMenu(true)
     }
 
     mouseLeaveExpandedMenu=()=>{
+    	console.log('mouseleave')
       uiStore.setMouseInExpandedMenu(false)
     }
     render(){
@@ -33,7 +55,9 @@ class Header extends Component {
 						     onMouseEnter = {()=>this.mouseEnterExpandedMenu()}
 				             onMouseLeave = {()=>this.mouseLeaveExpandedMenu()}
 						>
-					        {authStore.user ? 
+							<button className="dropDownButton" onClick={()=> this.clickMenuItem('home')}>Home</button>
+							<button className="dropDownButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
+					        {authStore.user ?
 						        <button className="dropDownButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
 						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
 						   	}
