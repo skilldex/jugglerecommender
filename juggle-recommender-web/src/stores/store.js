@@ -265,6 +265,9 @@ class Store {
 		if (catches.length>1){
  			catches = catches.replace(/^0+/,'');
  		}
+ 		if(!this.myTricks[trickKey]){
+			this.myTricks[trickKey] = {}
+		}		
  		this.myTricks[trickKey].catches = catches
  		const date = new Date()
  		this.myTricks[trickKey].lastUpdated = date.getTime()
@@ -272,13 +275,20 @@ class Store {
  		uiStore.updateRootTricks()
  	}
 
-	@action addToMyTricks=(trickKey)=>{
-		const date = new Date()
- 		this.myTricks[trickKey] = {
- 			"catches" : 0,
- 			"lastUpdated" : date.getTime()
- 		}
+	@action starTrick=(trickKey)=>{
+		if(!this.myTricks[trickKey]){
+			this.myTricks[trickKey] = {}
+		}
+ 		this.myTricks[trickKey].starred = 'true'
+ 		const date = new Date()
+ 		this.myTricks[trickKey].lastUpdated = date.getTime()
         this.updateTricksInDatabase()
+ 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+ 		uiStore.updateRootTricks()
+ 	}
+ 	@action unstarTrick=(trickKey)=>{
+ 		this.myTricks[trickKey].starred = 'false'
+		this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		uiStore.updateRootTricks()
  	}
@@ -294,17 +304,7 @@ class Store {
  		uiStore.updateRootTricks()
  		this.findHighestCatches()
  	}
- 	@action removeFromMyTricks=(trickKey)=>{
-		var result = window.confirm("Are you sure you want to remove this pattern and it's data from your list?");
-		if (result){
-			if (this.myTricks[trickKey]) {
-				delete this.myTricks[trickKey]
-			}
-			this.updateTricksInDatabase()
-	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
-	 		uiStore.updateRootTricks()
-		}
- 	}
+
 	@action snapshotToArray=(snapshot)=>{
 	    let returnArr = [];	    
 	    snapshot.forEach(childSnapshot => {

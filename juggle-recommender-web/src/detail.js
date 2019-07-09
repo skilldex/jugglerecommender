@@ -26,7 +26,6 @@ class Detail extends Component {
 	       const catches = e.target.value
          this.setState({catches})
   	  }
-
 	}
   onCatchesKeyPress=(target)=> {
     // If enter pressed
@@ -41,12 +40,13 @@ class Detail extends Component {
         window.open(store.library[trickKey].url)
     }
   }
-  addToMyTricks=()=>{
-    this.setState({"catches":0})
-    store.addToMyTricks(uiStore.detailTrick.id)
-  }
   handleEditCatchButtonClick=()=>{
-    this.setState({catches:store.myTricks[uiStore.detailTrick.id].catches})
+    let catches = "0"
+    if (store.myTricks[uiStore.detailTrick.id] &&
+        store.myTricks[uiStore.detailTrick.id]['catches']){
+      catches = store.myTricks[uiStore.detailTrick.id].catches
+    }
+    this.setState({catches:catches})
     uiStore.toggleCatchEdit(this.state.catches,uiStore.detailTrick.id)
     //focus after render
     setTimeout(function() {
@@ -98,27 +98,32 @@ class Detail extends Component {
         alert("Sorry, this pattern has been deleted or renamed.")
         uiStore.setDetailTrick(null)
     }
-    const catchesSection = store.myTricks[detailTrickKey] ?
-    <div>
-      <img className="catchesIconDetail" alt="" src ={catchesIcon}/>
-      <label className="catchesLabel">Catches: </label>
-      {uiStore.detailCatchEditable ?
-        <input 
-              ref={(input)=> {this.catchInput = input}}
-              id = "catchInput"
-               type="number" 
-               onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
-               onChange={this.onCatchesChange}
-        /> :
-        <span>{store.myTricks[detailTrickKey].catches}</span>
-      }
-      <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
-           onClick={()=>{ this.handleEditCatchButtonClick()}}
-      />
-    </div> : null
- 		const addToMyTricksButton = uiStore.detailTrick && store.myTricks[uiStore.detailTrick.id] ? 
-              		<button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.removeFromMyTricks(uiStore.detailTrick.id)}}>&#9733;</button> :
- 		              <button className="addAndRemoveMyTricksButtonOnDetail" onClick={this.addToMyTricks}>&#9734;</button>
+    const catchesSection = 
+      <div>
+        <img className="catchesIconDetail" alt="" src ={catchesIcon}/>
+        <label className="catchesLabel">Catches: </label>
+        {uiStore.detailCatchEditable ?
+          <input 
+                ref={(input)=> {this.catchInput = input}}
+                id = "catchInput"
+                 type="number" 
+                 onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
+                 onChange={this.onCatchesChange}
+          /> :
+          <span>{store.myTricks[detailTrickKey] && store.myTricks[detailTrickKey].catches? 
+                store.myTricks[detailTrickKey].catches:"0"}
+          </span>
+        }
+        <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
+             onClick={()=>{ this.handleEditCatchButtonClick()}}
+        />
+      </div>
+ 		const starTrickButton = uiStore.detailTrick && 
+                            store.myTricks[uiStore.detailTrick.id] &&
+                            store.myTricks[uiStore.detailTrick.id]['starred'] &&
+                            store.myTricks[uiStore.detailTrick.id]['starred'] === 'true'  ? 
+              		<button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.unstarTrick(uiStore.detailTrick.id)}}>&#9733;</button> :
+ 		              <button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.starTrick(uiStore.detailTrick.id)}}>&#9734;</button>
     const deleteTrickButton = 
       detailTrick && authStore.user && 
       (detailTrick.contributor === authStore.user.username || 
@@ -246,7 +251,7 @@ class Detail extends Component {
     const detailCard = uiStore.detailTrick && detailTrickKey ? 
           			    <div className="detailDiv" id="detailDiv">
                       <div className="topButtons">
-                        {addToMyTricksButton}
+                        {starTrickButton}
                         {deleteTrickButton}
                         {editTrickButton}
                         {closeButton}

@@ -11,9 +11,6 @@ v 1.7
 	-upload image
 	-personal stats
 
-
-
-
 v 1.6
 	Hamburger Menu:
 	-home
@@ -26,7 +23,6 @@ v 1.6
 	-stats
 		number of users currently tracking tricks
 		name of random trick with current leader and their number of catches
-
 
 	Data fix scripts(see list below)
 
@@ -47,10 +43,12 @@ Bugs:
 
 Minor:
 	-8,9,10,11 all need buttons in ballNum filter, or we need a different way to handle ballNum filter
+	-dev db has a trick called "(3b)", it is left over from when tricks could be editted into having no name, it might not mess with anything, but maybe want to get rid of it
 
 Data fix scripts:
 	-a script to make related tags go both directions
 		if x is listed as related for y, then y should be listed for x
+		-this can be done without a script, just replace '"currentTag"' for '"newTag"'
 	-#b moved to begining of name from end (#b)
 		-remove the string '(3b)"' from entire db
 		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
@@ -63,53 +61,6 @@ Code Cleaning:
 	-do the spacing in addTrickForm without using "\u00A0"
 	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
 	-updateGraphData seperated into small functions
-
-List of Naming Issues:
-
-
-What must be done to firebase-prod:
-	run replaceTrickKeyWithName
-	change jugglers tennis related 'Half-Shower' to 'Half Shower'
-	replace(case sensitive) every OyOy with Oy-Oy
-	replace(case sensitive) every YoYo with Yo-Yo
-	change Column Box Var related 'Shower Variation' to 'Column Show Var'
-	replace every instance of '"Column Show Var"' to '"Column Shower Variation"'
-	replace every instance of '"Column Box Var"' to '"Column Box Variation"'
-	remove Columns related
-	change Columns(4b) related 'Four Ball Rainbow Cross' to 'Rainbow Cross(4b)'
-	change Fountain(4b) related 'Reverse Fountain' to 'Reverse Fountain(4b)'
-	change rainbow arches related 'Overthrow var' to 'Columns Overthrow(3b)'
-	remove entire related property from shower
-	change "SynchPistons(4b)" key and name to "Synch Pistons(4b)"
-		and change it's related from "Pistons" to "Pistons(4b)"
-	change Pistons(4b) related from "Synchroneous Pistons" to "Synch Pistons(4b)"
-	change every instance of '"SynchPistons(4b)"' to '"Synch Pistons(4b)"'
-	remove "Sprung Cascade" from 5551(4b) related
-	replace every instance of '"HalfMess"' with '"Half Mess 1(3b)"'
-	replace '"N-Box"' with '"NBox"'
-	replace Crossed-Arm Reverse Cascade with Crossed Arm Reverse Cascade
-	replace Crossed-Arm Cascade with Crossed Arm Cascade
-	change every instance of '"SymmetricGeorgian Scuffle"' to '"Symmetric Georgian Scuffle"'
-	replace '"Box Variation"'' with '"Column Box Variation"'
-	delete Half Shower(4b) related
-	replace '"Relf's Revenge6"' with '"Relf's Revenge 6"'
-	replace 'Five Ball Shower' with 'Shower(5b)'
-	replace 'Four Ball Box' with 'Box(4b)'
-	delete windmill related
-	delete 5550(4b) related
-	replace Box(4b) related 'Stacked variation' with 'Stacked Box(4b)'
-	remove ' (Slams)' from everywhere
-	replace "Slams(3b)" with "Shuffle"
-	replace "Shuffle" with "Shuffle(Slams)"
-	replace "Stacked Cascade" with "Stacked Cascade(5b)"
-	replace "Reverse Five Ball Cascade" with "Reverse Cascade(5b)"
-	remove related from "Bizarre Box"
-	replace "ReverseCrossed Arm Shower" with "Reverse Crossed Arm Shower"
-	replace "Reverse Variation" with "Reverse Crossed Arm Shower"
-	replace "Crossed-Arm Shower" with "Crossed Arm Shower"
-	replace "Shuffler'sMess" with "Shuffler's Mess"
-	replace SymmetricGeorgian Shuffle" with "Symmetric Georgian Shuffle"
-
 
 Minor:
 	-thin lines on sort button

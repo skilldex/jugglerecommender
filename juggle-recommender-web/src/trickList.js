@@ -157,7 +157,7 @@ class TrickList extends Component {
 							<div className="difficultyGauge">{difficultyGauge}</div>
 							<img className="catchesIconList" alt="" src ={catchesIcon}/>
 							<div className="bottomRowText catchesListLabel">
-								{store.myTricks[trickKey]? 
+								{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
 								utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
 							</div>
 							<div className="bottomRowText tags">
