@@ -21,6 +21,8 @@ class Store {
 	@observable igData = null
 	@observable youtubeId = null
 	@observable randomLeaderboardTrick = {}
+	@observable userCount = ""
+	@observable totalCatchCount = null
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -56,6 +58,21 @@ class Store {
 	}
 	@action setRandomLeaderboardTrick=(randomTrick)=>{
 		this.randomLeaderboardTrick = randomTrick
+	}
+	@action updateTotalCatchCount(amount){
+	   	const totalCatchCountRef = firebase.database().ref('stats')
+	   	let currentTotalCatchCount
+		totalCatchCountRef.on('value', resp =>{
+			currentTotalCatchCount = this.snapshotToArray(resp)[0]
+			console.log('currentTotalCatchCount',currentTotalCatchCount)
+        })
+        console.log('currentTotalCatchCount',currentTotalCatchCount)
+        console.log('amount',amount)
+		console.log('currentTotalCatchCount + amount',currentTotalCatchCount + amount)
+		let leaderboardTrickRef = firebase.database().ref('stats')
+		const updatedStats = {'totalCatchCount':currentTotalCatchCount + amount}
+		leaderboardTrickRef.set(updatedStats);
+
 	}
 	@action setStartTime=(startTime)=>{
 		this.startTime = startTime
@@ -114,7 +131,30 @@ class Store {
 		let libraryRef = firebase.database().ref('library/')
 		libraryRef.on('value', resp =>{
         	this.setLibrary(this.snapshotToObject(resp))
+        	this.setPatternCount(this.snapshotToArray(resp).length)
         })
+	}
+	@action setPatternCount=(count)=>{
+		this.patternCount = count
+	}
+	@action getUserCountFromDatabase=()=>{
+		let libraryRef = firebase.database().ref('users/')
+		libraryRef.on('value', resp =>{
+			console.log(this.snapshotToArray(resp))
+        	this.setUserCount(this.snapshotToArray(resp).length)
+        })		
+	}
+	@action setUserCount=(count)=>{
+		this.userCount = count
+	}
+	@action getTotalCatchCountFromDatabase=()=>{
+		let libraryRef = firebase.database().ref('stats/')
+		libraryRef.on('value', resp =>{
+        	this.setTotalCatchCount(this.snapshotToArray(resp)[0])
+        })
+	}
+	@action setTotalCatchCount=(count)=>{
+		this.totalCatchCount = count
 	}
 	@action ObjectLength=(object)=> {
 	    var length = 0;
@@ -291,7 +331,7 @@ class Store {
 		console.log('preCompare1!',catches)
 		this.updateLeaderboard(trickKey,catches)
  	}
- 	
+
  	@action updateLeaderboard=(trickKey,catches)=>{
 	   	let leaderboardRef = firebase.database().ref('leaderboard/')
 	   	let currentLeaderboardCatches

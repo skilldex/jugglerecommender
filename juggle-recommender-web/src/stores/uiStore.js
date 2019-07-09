@@ -87,11 +87,13 @@ class UIStore {
 	@action toggleCatchEdit=(catches, trickKey)=>{
 		this.detailCatchEditable = !this.detailCatchEditable		
 		if (!this.detailCatchEditable){
+			store.updateTotalCatchCount(catches-store.myTricks[trickKey].catches)
 			store.setCatches(catches, trickKey)
 			store.updateTricksInDatabase()
  			localStorage.setItem('myTricks', JSON.stringify(store.myTricks))
 		}
 	}
+
  	@action toggleSelectedTrick=(clickedTrick)=>{
  		if (this.selectedTrick === clickedTrick){
  			this.selectedTrick = null

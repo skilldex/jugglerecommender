@@ -82,6 +82,8 @@ class App extends Component {
 		}
 		store.getLibraryFromDatabase()
 		store.getTagsFromDatabase()
+		store.getUserCountFromDatabase()
+		store.getTotalCatchCountFromDatabase()
 		
 	}
  	toggleFilter =(filter)=>{
@@ -188,8 +190,7 @@ class App extends Component {
 		return (
 			<div
 				className="main" 
-				ref={ref => this.el = ref}>
-				{uiStore.showHomeScreen ? <HomeScreen/> : null}	            
+				ref={ref => this.el = ref}>            
 	            {instructions}
 	            {login}
 	            {createAccount}
@@ -197,12 +198,14 @@ class App extends Component {
 				{!this.state.isInstructionsPaneOpen && 
 					!store.isLoginPaneOpen  && 
 					!store.isCreateAccountPaneOpen && 
+					!uiStore.showHomeScreen &&
 					uiStore.detailTrick == null ?
 					<TrickList 
 						tricksToList = {uiStore.rootTricks}
 						selectedTrick={uiStore.selectedTrick}
 					/> : null
 				}
+				{uiStore.showHomeScreen ? <HomeScreen/> : null}	
 				{detail}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>

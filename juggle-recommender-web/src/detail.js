@@ -59,7 +59,6 @@ class Detail extends Component {
   onMouseEnter=(event)=>{
     uiStore.setMouseInDetailDiv(true)
   }
-
   onMouseLeave=(event)=>{
     uiStore.setMouseInDetailDiv(false)
   }
@@ -98,6 +97,7 @@ class Detail extends Component {
         alert("Sorry, this pattern has been deleted or renamed.")
         uiStore.setDetailTrick(null)
     }
+
     const catchesSection = 
       <div>
         <img className="catchesIconDetail" alt="" src ={catchesIcon}/>

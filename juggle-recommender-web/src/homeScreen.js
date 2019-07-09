@@ -28,6 +28,9 @@ class HomeScreen extends Component {
 					<div>Name: {store.randomLeaderboardTrick.trick}</div>
 					<div>User: {store.randomLeaderboardTrick.user}</div>	
 					<div>Catches: {store.randomLeaderboardTrick.catches}</div>
+					<div>Jugglers Registered: {store.userCount}</div>
+					<div>Patterns Submitted: {store.patternCount}</div>
+					<div>Catches Counted: {store.totalCatchCount}</div>
 					<div onClick={()=>uiStore.toggleShowHomeScreen()}>GO TO LIST</div>
 				</div>
 			)
