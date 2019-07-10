@@ -2,55 +2,49 @@ import React, {Component} from 'react';
 import uiStore from "./stores/uiStore"
 import "./homeScreen.css"
 import { observer } from "mobx-react"
+import { toJS } from "mobx"
 import authStore from "./stores/authStore"
 import store from "./stores/store"
 import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
-
+import Demo from './demo'
 @observer
 class HomeScreen extends Component {
-	state = {
-
+	componentDidMount(){
+		store.chooseRandomLeaderboardTrick()
 	}
-
-	componentDidMount=()=>{
-
-	}
-
-
 	render (){
-		if (!store.randomLeaderboardTrick.trick) {store.chooseRandomLeaderboardTrick()}
 		return(
 				<div className = "outerDiv">
 					<div className ='homeScreenTrickOuterDiv'>
-						<h3 className = 'homeScreenTrickMainLabel'>Featured Patterns</h3>
-						<div className = 'homeScreenTrickDiv'>
-				            <h3 className = 'homeScreenTrickSubLabel'>Random Challenge</h3>
-				           	<div className = 'homeScreenTrickLeaderLabel'>Current Leader: {store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)</div>
-				            <TrickList 
-				              tricksToList = {[store.randomLeaderboardTrick.trick]}
-				              selectedTrick={uiStore.selectedTrick}
-				            />
-				        </div>
-						<div className = 'homeScreenTrickDiv'>
-				            <h3 className = 'homeScreenTrickSubLabel'>Most Recently Submitted</h3>
-				            <TrickList 
-				              tricksToList = {[store.getMostRecentlySubmittedTrick()]}
-				              selectedTrick={uiStore.selectedTrick}
-				            />
-				        </div>
+						<div className = 'statsLabel'>Users </div>{store.userCount}
+						<div className = 'statsLabel'>Patterns</div>{store.patternCount}
+						<div className = 'statsLabel'>Catches</div>{store.totalCatchCount}
 				    </div>
-					<div className ='homeScreenTrickOuterDiv'>
-						<h3 className = 'homeScreenTrickMainLabel'>Featured Stats</h3>
-						<div className = 'statsLabel'><b>Jugglers Registered:</b> {store.userCount}</div>
-						<div className = 'statsLabel'><b>Patterns Submitted:</b> {store.patternCount}</div>
-						<div className = 'statsLabel'><b>Catches Counted:</b> {store.totalCatchCount}</div>
-				    </div>
+				    {
+					    store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
+							<div className = 'homeScreenTrickDiv'>
+					            <h3 style={{marginBottom: "10px"}}>Trick of The Day</h3>
+					            <button className="detailButton" onClick = {
+						            	()=>{uiStore.setDetailTrick(
+						            		{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
+						            	)}
+					            	}
+					            >View Details</button>
+				            	<Demo 
+					            	trickKey={store.randomLeaderboardTrick.key}
+		                         	demoLocation="detail"
+		  						/> 
+					           	<span style={{marginTop: "5px"}} className='statsLabel'>Record</span> 
+					           	{store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)        
+					        </div>
+						: null
+					}
 					<button className = "patternListButton"
 							onClick={()=>uiStore.toggleShowHomeScreen()}>
-						View Pattern List
+						All Patterns
 					</button>				    
 				</div>
 			)

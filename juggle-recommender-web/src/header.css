@@ -18,6 +18,8 @@
   align-items: center;
   justify-content: space-between;
   position: relative;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
 }
 .expandedMenu{
 	position : absolute;

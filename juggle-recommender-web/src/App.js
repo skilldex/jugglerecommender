@@ -186,7 +186,9 @@ class App extends Component {
 			                	<CreateAccount/><br/>
 							</div><br/>
 			            </SlidingPane>
-		const detail = uiStore.editingDetailTrick ? null : <Detail/>
+		const detail = uiStore.editingDetailTrick ? null : 
+						uiStore.detailTrick ? <Detail/> : null
+						console.log("rerender app", uiStore.detailTrick, detail)
 		return (
 			<div
 				className="main" 
@@ -205,7 +207,7 @@ class App extends Component {
 						selectedTrick={uiStore.selectedTrick}
 					/> : null
 				}
-				{uiStore.showHomeScreen ? <HomeScreen/> : null}	
+				{uiStore.showHomeScreen && !uiStore.detailTrick ? <HomeScreen/> : null}	
 				{detail}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>

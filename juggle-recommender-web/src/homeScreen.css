@@ -1,20 +1,5 @@
 .outerDiv{
-  position : absolute;
-  display: block;
-
-  height: 100%;
-  width : 99%;
-  left: 0px;
-
-  background-color : white;
-  z-index : 2501;
-  border : 1px solid gray;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
-
   text-align: center;
-  overflow-x:hidden;
-  max-width: 400px;
 }
 
 .detailDiv{
@@ -26,19 +11,18 @@
   height: 100%;
   background-color : white;
   z-index : 1200;
-  border : 1px solid gray;
+  border : 1px solid y;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
   text-align: center;
   overflow-x:hidden;
 }
-
+.demo{
+  margin-bottom: 5px;
+}
 .homeScreenTrickOuterDiv{
-  width: 100%;
-  display:block;
-  height: auto;
-  border : 1px solid gray;
-  border-radius: 8px;
+  font-size: 12px;
+
 }
 
 .homeScreenTrickDiv{
@@ -69,25 +53,31 @@
 
 }
 .patternListButton{
-  width:100%;
-  font-size: 30px;
-  height: 40px;
+  width:200px;
+  margin-top: 20px;
+  font-size: 20px;
   background-color: #EE82EE;
+  border-radius: 5px;
   font-family: Futura;
   color:white;
 }
-
+.detailButton{
+  background-color: white;
+  color : #0000FF;
+  border : none;
+  font-size: 13px;
+}
 .statsLabel{
-  text-align: left;
-  width: 100%;
+  display : inline-block;
   margin-left : 10px;
-  font-size: 14px;
+  font-weight: bold;
+  margin-right: 5px;
 }
 
 .stats{
   text-align: left;
   width: 100%;
   margin-left : 10px;
-  font-size: 14px;
+  font-size: 12px;
 }
 

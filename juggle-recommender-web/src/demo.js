@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import store from './stores/store'
-//import { toJS } from "mobx"
+import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import instagramLogoIcon from "./images/instagramLogo.png"
 import './App.css';
@@ -112,7 +112,6 @@ class Demo extends Component {
     }
   }
 	render() {
-    
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
     const trick = store.library[trickKey]
     const gifSection = trick && trick.url? 
@@ -126,6 +125,7 @@ class Demo extends Component {
                              alt = ''
                              className="instagramLogo"
                              src={instagramLogoIcon}
+                             onClick={()=>{window.open(trick.video)}}
                           />
     let igHeader = this.state.videoURL && this.props.demoLocation !== 'expandedSection' && this.state.videoURL.includes('instagram') && this.state.igData ? 
                           <div className="instagramHeader">
@@ -133,7 +133,7 @@ class Demo extends Component {
                                   alt=""
                                   src={this.state.igData.picURL}/>
                             <span className="instagramUsername">{this.state.igData.username}</span>
-                            <div className="instagramViewProfileButton" onClick={()=>{window.open(trick.video)}}>View {instagramLogo}</div>
+                            {instagramLogo}
                           </div> : null
     const youtubeOpts = {
       playerVars: { // https://developers.google.com/youtube/player_parameters
@@ -186,9 +186,9 @@ class Demo extends Component {
     }
 		return(
       			<div className={outerDivClass}>
-              {igHeader}
               {video}
               {video? null:gifSection}
+              {igHeader}
       			</div>
           )
     }

@@ -67,8 +67,6 @@ class TrickList extends Component {
 			uiStore.toggleSelectedTrick(null)
 		}
 		const detailTrick = {...store.library[trickKey]}
-		detailTrick.x = 400
-		detailTrick.y = 400
 		detailTrick.id = trickKey
 		uiStore.setDetailTrick(detailTrick)	
 		window.scrollTo(0,0);
@@ -139,7 +137,7 @@ class TrickList extends Component {
 		    							label=""
 										min={filterStore.difficultyRange[0]-.1} max={filterStore.difficultyRange[1]}
 										value={parseFloat(trick.difficulty).toFixed(1)} 
-										width={55} height={44} 
+										width={50} height={44} 
 									/>	
 				
 			const expandTrickButtonClass =  
@@ -156,15 +154,17 @@ class TrickList extends Component {
 					<div className="mainCard">
 						 <div className = "cardInfo">	
 							<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
-							<div className="difficultyGauge">{difficultyGauge}</div>
-							<img className="catchesIconList" alt="" src ={catchesIcon}/>
-							<div className="bottomRowText catchesListLabel">
-								{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
-								utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
+							<div className="bottomRow">
+								<div className="difficultyGauge">{difficultyGauge}</div>
+								<img className="catchesIconList" alt="" src ={catchesIcon}/>
+								<div className="bottomRowText catchesListLabel">
+									{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
+									utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
+								</div>
+								<div className="bottomRowText tags">
+									<b>Tags:</b> {tags}
+								</div>	
 							</div>
-							<div className="bottomRowText tags">
-								<b>Tags:</b> {tags}
-							</div>	
 						</div>
 						<div 
 							className="expandButtonDiv"

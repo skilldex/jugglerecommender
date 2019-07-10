@@ -1,4 +1,4 @@
-import { action, configure, computed, observable} from "mobx"
+import { action, configure, computed, observable, toJS} from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import authStore from './authStore'
@@ -20,7 +20,7 @@ class Store {
 	@observable videoURL = ""
 	@observable igData = null
 	@observable youtubeId = null
-	@observable randomLeaderboardTrick = {}
+	@observable randomLeaderboardTrick = null
 	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""
 	@observable totalCatchCount = null
@@ -62,8 +62,9 @@ class Store {
 	   	let leaderboardRef = firebase.database().ref('leaderboard/')
 	   	let randomTrick
 		leaderboardRef.on('value', resp =>{
-			let allLeaderBoardTricks = this.snapshotToArray(resp)
+			let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
 			randomTrick = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
+			console.log("random trick", toJS(randomTrick))
 			this.setRandomLeaderboardTrick(randomTrick)
 			leaderboardRef.off()
         })
@@ -174,6 +175,7 @@ class Store {
 	}
 	@action setLibrary=(library)=>{
 		this.library = library
+		console.log("library set", this.library)
 		//TODO clean this up
 		uiStore.updateRootTricks() 
 		uiStore.resetSelectedTrick()
@@ -423,7 +425,6 @@ class Store {
 	    let returnArr = [];	    
 	    snapshot.forEach(childSnapshot => {
 	    	let item = childSnapshot.val();
-	        
 	        returnArr.push(item);
 	    });
 	    return returnArr;
