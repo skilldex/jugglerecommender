@@ -24,9 +24,6 @@ class HomeScreen extends Component {
 		if (!store.randomLeaderboardTrick.trick) {store.chooseRandomLeaderboardTrick()}
 		return(
 				<div className = "outerDiv">
-					<div><b>Jugglers Registered:</b> {store.userCount}</div>
-					<div><b>Patterns Submitted:</b> {store.patternCount}</div>
-					<div><b>Catches Counted:</b> {store.totalCatchCount}</div>
 					<div className ='homeScreenTrickOuterDiv'>
 						<h3 className = 'homeScreenTrickMainLabel'>Featured Patterns</h3>
 						<div className = 'homeScreenTrickDiv'>
@@ -45,11 +42,16 @@ class HomeScreen extends Component {
 				            />
 				        </div>
 				    </div>
+					<div className ='homeScreenTrickOuterDiv'>
+						<h3 className = 'homeScreenTrickMainLabel'>Featured Stats</h3>
+						<div className = 'statsLabel'><b>Jugglers Registered:</b> {store.userCount}</div>
+						<div className = 'statsLabel'><b>Patterns Submitted:</b> {store.patternCount}</div>
+						<div className = 'statsLabel'><b>Catches Counted:</b> {store.totalCatchCount}</div>
+				    </div>
 					<button className = "patternListButton"
 							onClick={()=>uiStore.toggleShowHomeScreen()}>
 						View Pattern List
-					</button>
-
+					</button>				    
 				</div>
 			)
 	}
