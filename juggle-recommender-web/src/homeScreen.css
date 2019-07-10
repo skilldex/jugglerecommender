@@ -68,4 +68,12 @@
   font-size: 12px;
 
 }
+.patternListButton{
+  width:100%;
+  font-size: 30px;
+  height: 40px;
+  background-color: #EE82EE;
+  font-family: Futura;
+  color:white;
+}
 

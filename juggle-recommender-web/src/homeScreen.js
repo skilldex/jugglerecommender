@@ -27,7 +27,6 @@ class HomeScreen extends Component {
 					<div><b>Jugglers Registered:</b> {store.userCount}</div>
 					<div><b>Patterns Submitted:</b> {store.patternCount}</div>
 					<div><b>Catches Counted:</b> {store.totalCatchCount}</div>
-					<div onClick={()=>uiStore.toggleShowHomeScreen()}>GO TO LIST</div>
 					<div className ='homeScreenTrickOuterDiv'>
 						<h3 className = 'homeScreenTrickMainLabel'>Featured Patterns</h3>
 						<div className = 'homeScreenTrickDiv'>
@@ -46,6 +45,10 @@ class HomeScreen extends Component {
 				            />
 				        </div>
 				    </div>
+					<button className = "patternListButton"
+							onClick={()=>uiStore.toggleShowHomeScreen()}>
+						View Pattern List
+					</button>
 
 				</div>
 			)
