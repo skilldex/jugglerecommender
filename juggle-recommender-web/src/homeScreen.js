@@ -37,12 +37,12 @@ class HomeScreen extends Component {
 					            	trickKey={store.randomLeaderboardTrick.key}
 		                         	demoLocation="detail"
 		  						/>
-		  						<div className = "stats">
-						           	<span className='statsLabel'>Pattern</span> 
+		  						<div className = "info">
+						           	<span className='infoLabel'>Pattern</span> 
 						           	{store.randomLeaderboardTrick.key} 
 						        </div>
-						        <div className = "stats">
-						           	<span className='statsLabel'>Record</span> 
+						        <div className = "info">
+						           	<span className='infoLabel'>Record</span> 
 						           	{store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches) 
 					           	</div>       
 					        </div>
