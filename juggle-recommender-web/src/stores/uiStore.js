@@ -90,7 +90,20 @@ class UIStore {
 	@action toggleCatchEdit=(catches, trickKey)=>{
 		this.detailCatchEditable = !this.detailCatchEditable		
 		if (!this.detailCatchEditable){
-			store.updateTotalCatchCount(catches-store.myTricks[trickKey].catches)
+			console.log('store.myTricks',store.myTricks)
+			if(!store.myTricks[trickKey]){
+				store.myTricks[trickKey] = {}
+		 		const date = new Date()
+		 		store.myTricks[trickKey].lastUpdated = date.getTime()
+		        store.updateTricksInDatabase()
+		 		localStorage.setItem('myTricks', JSON.stringify(store.myTricks))
+		 		uiStore.updateRootTricks()
+			}
+			let previousCatches = 0
+			if (store.myTricks[trickKey].catches){
+				previousCatches = store.myTricks[trickKey].catches
+			}
+			store.updateTotalCatchCount(catches-previousCatches)
 			store.setCatches(catches, trickKey)
 			store.updateTricksInDatabase()
  			localStorage.setItem('myTricks', JSON.stringify(store.myTricks))
