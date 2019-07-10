@@ -58,18 +58,51 @@ class Store {
 		}
 		return mostRecentlySubmittedTrickKey
 	}
-	@action chooseRandomLeaderboardTrick(){
-	   	let leaderboardRef = firebase.database().ref('leaderboard/')
-	   	let randomTrick
-		leaderboardRef.on('value', resp =>{
-			let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
-			randomTrick = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
-			console.log("random trick", toJS(randomTrick))
-			this.setRandomLeaderboardTrick(randomTrick)
-			leaderboardRef.off()
-        })
+	@action getTrickOfTheDay(){
+		console.log('sanity1')
+		let trickKeyToUse = null
+		const currentDate = new Date()
+		const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1).toString()
+		let trickOfTheDayReadRef = firebase.database().ref('trickOfTheDay/')
+		trickOfTheDayReadRef.on('value', resp =>{
+			let allTricksOfTheDay = this.snapshotToArrayWithKey(resp)
+			console.log('allTricksOfTheDay',allTricksOfTheDay)
+			let trickOfTheDay
+			for (trickOfTheDay in allTricksOfTheDay){
+				console.log(allTricksOfTheDay[trickOfTheDay]['date'])
+				console.log('formatted_date',formatted_date)
+				if (allTricksOfTheDay[trickOfTheDay]['date'] === formatted_date){
+					trickKeyToUse = allTricksOfTheDay[trickOfTheDay]['trick']
+				}
+			}
+		   	let leaderboardRef = firebase.database().ref('leaderboard/')
+		   	let trickToUse
+			leaderboardRef.on('value', resp =>{
+				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
+				if (trickKeyToUse){
+					console.log('trickKeyToUse',trickKeyToUse)
+					trickToUse = {...this.snapshotToObject(resp)[trickKeyToUse], key:trickKeyToUse}
+					console.log('trickToUse',trickKeyToUse)
+					console.log('allLeaderBoardTricks',allLeaderBoardTricks)
+				}else{
+					trickToUse = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
+					console.log('settingTrick',trickToUse['key'])
+					const trickToSet = {	
+						date: formatted_date,
+						trick: trickToUse['key'],
+					}		
+					let trickOfTheDayWriteRef = firebase.database().ref('trickOfTheDay/'+formatted_date)
+					trickOfTheDayWriteRef.set(trickToSet);
+				}
+				console.log("random trick", toJS(trickToUse))
+				this.setTrickOfTheDay(trickToUse)
+				leaderboardRef.off()
+				trickOfTheDayReadRef.off()
+    		})
+			trickOfTheDayReadRef.off()
+        }) 
 	}
-	@action setRandomLeaderboardTrick=(randomTrick)=>{
+	@action setTrickOfTheDay=(randomTrick)=>{
 		this.randomLeaderboardTrick = randomTrick
 	}
 	@action updateTotalCatchCount(amount){

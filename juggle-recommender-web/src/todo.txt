@@ -22,7 +22,7 @@ v 1.6
 		add_starred_field_to_myTricks.py
 		fill_leaderboard_from_mytricks.py
 		set_total_catch_count.py
-		clean up '"stacked multiplex windmill(5b)"', make sure it is all uppercase and remove dupes
+		get rid of (4b)(4b)
 
 =========
 

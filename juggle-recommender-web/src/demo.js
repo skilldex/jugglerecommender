@@ -15,7 +15,8 @@ class Demo extends Component {
   }
   componentDidMount(){
     const trick = store.library[this.props.trickKey]
-    if(trick.video){
+
+    if(trick && trick.video){
       this.getUsableVideoURL(trick.video, this.props.trickKey)
     }
   }

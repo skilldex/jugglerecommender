@@ -13,7 +13,7 @@ import Demo from './demo'
 @observer
 class HomeScreen extends Component {
 	componentDidMount(){
-		store.chooseRandomLeaderboardTrick()
+		store.getTrickOfTheDay()
 	}
 	render (){
 		return(
@@ -26,7 +26,7 @@ class HomeScreen extends Component {
 				    {
 					    store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
 							<div className = 'homeScreenTrickDiv'>
-					            <h3 style={{marginBottom: "10px"}}>Trick of The Day</h3>
+					            <h3 style={{marginBottom: "10px"}}>Pattern of The Day</h3>
 					            <button className="detailButton" onClick = {
 						            	()=>{uiStore.setDetailTrick(
 						            		{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
@@ -36,9 +36,15 @@ class HomeScreen extends Component {
 				            	<Demo 
 					            	trickKey={store.randomLeaderboardTrick.key}
 		                         	demoLocation="detail"
-		  						/> 
-					           	<span style={{marginTop: "5px"}} className='statsLabel'>Record</span> 
-					           	{store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)        
+		  						/>
+		  						<div>
+						           	<span style={{marginTop: "5px"}} className='statsLabel'>Pattern</span> 
+						           	{store.randomLeaderboardTrick.key} 
+						        </div>
+						        <div>
+						           	<span style={{marginTop: "5px"}} className='statsLabel'>Record</span> 
+						           	{store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches) 
+					           	</div>       
 					        </div>
 						: null
 					}
