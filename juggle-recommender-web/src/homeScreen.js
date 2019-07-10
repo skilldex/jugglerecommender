@@ -31,15 +31,15 @@ class HomeScreen extends Component {
 					<div className ='homeScreenTrickOuterDiv'>
 						<h3 className = 'homeScreenTrickMainLabel'>Featured Patterns</h3>
 						<div className = 'homeScreenTrickDiv'>
-				            <h3 className = 'homeScreenTrickSubLabel'>Random Challenge Pattern</h3>
-				           	<div>Current Leader: {store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)</div>
+				            <h3 className = 'homeScreenTrickSubLabel'>Random Challenge</h3>
+				           	<div className = 'homeScreenTrickLeaderLabel'>Current Leader: {store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches)</div>
 				            <TrickList 
 				              tricksToList = {[store.randomLeaderboardTrick.trick]}
 				              selectedTrick={uiStore.selectedTrick}
 				            />
 				        </div>
 						<div className = 'homeScreenTrickDiv'>
-				            <h3 className = 'homeScreenTrickSubLabel'>Newest Pattern</h3>
+				            <h3 className = 'homeScreenTrickSubLabel'>Most Recently Submitted</h3>
 				            <TrickList 
 				              tricksToList = {[store.getMostRecentlySubmittedTrick()]}
 				              selectedTrick={uiStore.selectedTrick}

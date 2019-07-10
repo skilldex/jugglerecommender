@@ -31,6 +31,9 @@ Other screens:
 	Stats
 	Feedback Form
 
+Small Touches:
+	returning to list from details should autoscroll back to where you were
+	
 
 Desires:
 	-A way to go back to the last details trick I was looking at
