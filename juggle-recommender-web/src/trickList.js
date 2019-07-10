@@ -142,9 +142,6 @@ class TrickList extends Component {
 				
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
-			if(uiStore.selectedTrick === trickKey){
-				console.log("selected",trickKey, store.library[trickKey])
-			}
 			tricks.push(
 				<div className="listCard" 
 					 key={trickKey + "div"} 

@@ -70,8 +70,6 @@ class Detail extends Component {
   }
 
 	render() {
-    console.log("in detail" ,uiStore.detailTrick)
-//    document.body.style.overflow = 'hidden'
     //set focus for outer div for onblur closing
     if(this.outerDiv){this.outerDiv.focus()}
     //set focus to compensate for onblur function
