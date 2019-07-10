@@ -24,6 +24,7 @@ class Header extends Component {
 			uiStore.setShowExpandedMenu(false)
 		}else if(paneFlag == "home"){
 			uiStore.setShowHomeScreen(true)
+			uiStore.setDetailTrick(null)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
@@ -65,7 +66,7 @@ class Header extends Component {
         		<div>
 	                <div className="header">
 						<div >
-							<span className="title">Juggledex</span><span className="version"> v1.5</span>
+							<span className="title">Juggledex</span><span className="version">v1.6</span>
 					    </div>
 					    <img className="hamburger" onClick={() => uiStore.toggleExpandedMenu()} src={hamburger}/>
 					    
