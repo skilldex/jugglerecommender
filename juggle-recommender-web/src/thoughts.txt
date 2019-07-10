@@ -13,6 +13,7 @@ DB changes:
 	Tennessee waltz vid broken, maybe
 	Add contortion tag to all contrition tricks(script can do this)
 	Do we have a side by side pistons pattern?
+	collision columns has collisioner's tennis as postreqs twice
 
 Asthetics:
 	expand arrow could animatedly turn when popup expands

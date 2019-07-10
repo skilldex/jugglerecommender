@@ -9,24 +9,13 @@ v 1.7
 	-upload image
 	-personal stats
 
-v 1.6
-	Style Home Screen
-
-	Home Screen
-	-number of users currently online?
-	-number of users currently tracking tricks?
-
 	Data fix scripts(see list below)
 
 	-when next deploying, make sure to run on prod db:
 		add_starred_field_to_myTricks.py
 		fill_leaderboard_from_mytricks.py
 		set_total_catch_count.py
-		get rid of (4b)(4b)
-		fix collision columns over the top
-		fix newton
-		fix infinity collisions
-		see if other patterns have a bunch of weavings
+
 
 =========
 
