@@ -26,14 +26,20 @@ Possible Home Screen Ideas:
 	Make a link to a complete stats page under the couple stats
 	Put a leader under each of the featured patterns and make a link to a more complete leader board
 
-Other screens:
+Other screens to add:
 	Leaderboard page
 	Stats
 	Feedback Form
 
 Small Touches:
 	returning to list from details should autoscroll back to where you were
-	
+	put stars on cards
+
+Screen changes:
+	make about, login its own screen
+	make expand menu a slider
+	put sort into filter
+	make filter its own screen
 
 Desires:
 	-A way to go back to the last details trick I was looking at

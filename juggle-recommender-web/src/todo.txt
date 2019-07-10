@@ -23,6 +23,10 @@ v 1.6
 		fill_leaderboard_from_mytricks.py
 		set_total_catch_count.py
 		get rid of (4b)(4b)
+		fix collision columns over the top
+		fix newton
+		fix infinity collisions
+		see if other patterns have a bunch of weavings
 
 =========
 
