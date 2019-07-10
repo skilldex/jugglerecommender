@@ -37,12 +37,12 @@ class HomeScreen extends Component {
 					            	trickKey={store.randomLeaderboardTrick.key}
 		                         	demoLocation="detail"
 		  						/>
-		  						<div>
-						           	<span style={{marginTop: "5px"}} className='statsLabel'>Pattern</span> 
+		  						<div className = "stats">
+						           	<span className='statsLabel'>Pattern</span> 
 						           	{store.randomLeaderboardTrick.key} 
 						        </div>
-						        <div>
-						           	<span style={{marginTop: "5px"}} className='statsLabel'>Record</span> 
+						        <div className = "stats">
+						           	<span className='statsLabel'>Record</span> 
 						           	{store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches) 
 					           	</div>       
 					        </div>

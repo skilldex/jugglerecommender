@@ -68,16 +68,19 @@
   font-size: 13px;
 }
 .statsLabel{
+  width: 60px;
+  text-align: left;
   display : inline-block;
-  margin-left : 10px;
+  margin-left : 16px;
   font-weight: bold;
   margin-right: 5px;
+  margin-top: 5px;
 }
 
 .stats{
   text-align: left;
   width: 100%;
   margin-left : 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
