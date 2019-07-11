@@ -14,6 +14,8 @@ import AddTrickForm from './addTrickForm'
 import HomeScreen from './homeScreen'
 import Login from "./login"
 import CreateAccount from "./createAccount"
+import ForgotPassword from "./forgotPassword"
+
 import Header from "./header"
 let firebaseConfig = {}
 if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
@@ -49,7 +51,8 @@ class App extends Component {
  		edges : [],
  		nodes : [],
  		isInstructionsPaneOpen: false,
- 		isCreateAccountPaneOpen: false
+ 		isCreateAccountPaneOpen: false,
+ 		isForgotPasswordPaneOpen : false,
 	}
 	_handleKeyDown = (event) => {
 	    switch( event.keyCode ) {
@@ -108,10 +111,9 @@ class App extends Component {
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}else if(paneName === 'isCreateAccountPaneOpen'){
 	 		this.setState({ 'isCreateAccountPaneOpen': true })
+	 	}else if(paneName === 'isForgotPasswordPaneOpen'){
+	 		store.toggleForgotPasswordPane()
 	 	}
- 	}
- 	handleStart=()=>{
- 		console.log('startHandled')
  	}
 
  	render(){
@@ -186,6 +188,18 @@ class App extends Component {
 			                	<CreateAccount/><br/>
 							</div><br/>
 			            </SlidingPane>
+		const forgotPassword = <SlidingPane
+					                className='some-custom-class'
+					                overlayClassName='some-custom-overlay-class'
+					                isOpen={ store.isForgotPasswordPaneOpen }
+					                title='Forgot Password'
+					                onRequestClose={ 
+					                	() => {store.toggleForgotPasswordPane()}
+					                }>
+					                <div className="instructions">
+					                	<ForgotPassword/><br/>
+									</div><br/>
+					            </SlidingPane>
 		const detail = uiStore.editingDetailTrick ? null : 
 						uiStore.detailTrick ? <Detail/> : null
 		return (
@@ -195,6 +209,7 @@ class App extends Component {
 	            {instructions}
 	            {login}
 	            {createAccount}
+	            {forgotPassword}
 				<Header openSlidingPane={this.openSlidingPane}/>
 				{!this.state.isInstructionsPaneOpen && 
 					!store.isLoginPaneOpen  && 

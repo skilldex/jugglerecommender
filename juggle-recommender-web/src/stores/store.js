@@ -13,6 +13,7 @@ class Store {
 	@observable highestCatches = 0
 	@observable isLoginPaneOpen = false
 	@observable isCreateAccountPaneOpen = false
+	@observable isForgotPasswordPaneOpen = false
 	@observable library = {}
 	@observable tagsSuggestions = []
 	@observable contributors = []
@@ -119,6 +120,9 @@ class Store {
 	}
 	@action toggleCreateAccountPane=()=>{
 		this.isCreateAccountPaneOpen = !this.isCreateAccountPaneOpen
+	}
+	@action toggleForgotPasswordPane=()=>{
+		this.isForgotPasswordPaneOpen = !this.isForgotPasswordPaneOpen
 	}
 	@action updateTricksInDatabase=()=>{
 		if(!authStore.user){return}

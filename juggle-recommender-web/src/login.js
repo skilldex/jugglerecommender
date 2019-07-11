@@ -46,7 +46,8 @@ class Login extends Component {
                             <div style={{color : "red"}}>{this.state.error}</div>
                             <br/>
                             <button className="authButton"  onClick={this.signIn}>Sign In</button><br/>
-                            Don't have an account yet? <button className="textLink" onClick={store.toggleCreateAccountPane}>Create Account</button>
+                            Don't have an account yet? <button className="textLink" onClick={store.toggleCreateAccountPane}>Create Account</button><br/><br/>
+                            Forgot Password? <button className="textLink" onClick={store.toggleForgotPasswordPane}>Reset Password</button>
                         </div>
                     }
                 </div>

@@ -4,6 +4,9 @@ import firebase from 'firebase'
 import uiStore from './uiStore' 
 
 configure({ enforceActions: "always" })
+const actionCodeSettings = {
+        url: 'www.skilldex.org/',
+    };
 class AuthStore {
 	@observable user = null
     @action signOut=()=>{
@@ -68,6 +71,13 @@ class AuthStore {
                 }else{
                     resolve({message :"username already exists"})
                 }
+            })
+        })
+    }
+    @action forgotPassword(email){
+        return new Promise(resolve => {
+            firebase.auth().sendPasswordResetEmail(email, this.actionCodeSettings).then(()=>{
+                resolve("password reset email sent")
             })
         })
     }
