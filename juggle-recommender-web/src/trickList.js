@@ -208,7 +208,7 @@ class TrickList extends Component {
 			</div>
 
 		return (
-			<div>
+			<div className="trickListOuterDiv">
 				{uiStore.detailTrick || uiStore.showHomeScreen? null:<MainTagsBar/>}
 				<div className= "listDiv">	
 					{list}				

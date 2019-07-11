@@ -17,7 +17,7 @@ class HomeScreen extends Component {
 	}
 	render (){
 		return(
-				<div className = "outerDiv">
+				<div className = "homeOuterDiv">
 					<div className ='homeScreenTrickOuterDiv'>
 						<div className = 'statsLabel'>Users </div>{store.userCount}
 						<div className = 'statsLabel'>Patterns</div>{store.patternCount}

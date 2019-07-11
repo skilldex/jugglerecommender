@@ -21,8 +21,15 @@ class Demo extends Component {
   }
   componentDidUpdate(prevProps,prevState){
     const trick = store.library[this.props.trickKey]
-    if(this.props.trickKey !== prevProps.trickKey && trick.video){
-      this.getUsableVideoURL(trick.video, this.props.trickKey)
+    if(this.props.trickKey !== prevProps.trickKey ){
+      this.setState({
+        igData : null,
+        videoURL : null,
+        youtubeId : null
+      })
+      if(trick.video){
+        this.getUsableVideoURL(trick.video, this.props.trickKey)
+      }
     }
   }
   setVideoURL=(url, trickKey)=>{
@@ -177,9 +184,6 @@ class Demo extends Component {
                           onPause={this.instagramPaused}
                           src={this.state.videoURL}
                         ></video> : null 
-    if (!trick.video){
-      video = null
-    }
     let outerDivClass
     if (this.props.demoLocation === "detail"){
       outerDivClass = "demoOuterDivDetail"

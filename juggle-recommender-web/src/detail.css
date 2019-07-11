@@ -1,18 +1,14 @@
 .detailDiv{
   overflow-y: auto;
-  position : absolute;
-  left: 0px;
-  width: 99%;
+  width: 100%;
   max-width: 400px;
   height: 100%;
   background-color : white;
-  z-index : 1200;
-  border : 1px solid gray;
-  box-shadow : 5px 10px 8px #888888;;
-  border-radius: 8px;
   text-align: center;
   overflow-x:hidden;
+  margin : 0 auto;
 }
+
 .catchesIconDetail{
   width: 17px;
   height: 17px;

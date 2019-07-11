@@ -246,32 +246,23 @@ class Detail extends Component {
         </div> : null
         
 
-    const detailCard = uiStore.detailTrick && detailTrickKey ? 
-          			    <div className="detailDiv" id="detailDiv">
-                      <div className="topButtons">
-                        {starTrickButton}
-                        {deleteTrickButton}
-                        {editTrickButton}
-                        {closeButton}
-                      </div>
-                      <h3 className="detailHeader">{detailTrick.name}</h3>  
-                      <Demo 
-                        trickKey = {uiStore.detailTrick.id}
-                        demoLocation="detail"
-                      />
-                      {infoSection}
-                      {relationshipLists}                
-                    </div> : null
 		return(      
 
-      			<div id="detailOuterDiv"
-                 onMouseEnter={this.onMouseEnter} 
-                 onMouseLeave={this.onMouseLeave}
-                 onBlur={this.onBlur} 
-                 ref={(div)=> {this.outerDiv = div}}  
-                 tabIndex="0">
-              {detailCard}
-      			</div>
+      			<div className="detailDiv" id="detailDiv">
+              <div className="topButtons">
+                {starTrickButton}
+                {deleteTrickButton}
+                {editTrickButton}
+                {closeButton}
+              </div>
+              <h3 className="detailHeader">{detailTrick.name}</h3>  
+              <Demo 
+                trickKey = {uiStore.detailTrick.id}
+                demoLocation="detail"
+              />
+              {infoSection}
+              {relationshipLists}                
+            </div> 
           )
     }
   }
