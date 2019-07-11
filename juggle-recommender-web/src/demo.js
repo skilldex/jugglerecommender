@@ -15,7 +15,6 @@ class Demo extends Component {
   }
   componentDidMount(){
     const trick = store.library[this.props.trickKey]
-
     if(trick && trick.video){
       this.getUsableVideoURL(trick.video, this.props.trickKey)
     }
@@ -27,7 +26,7 @@ class Demo extends Component {
     }
   }
   setVideoURL=(url, trickKey)=>{
-    
+ 
     if (store.library[trickKey] &&
       store.library[trickKey].videoStartTime && 
       store.library[trickKey].videoEndTime &&
@@ -149,7 +148,7 @@ class Demo extends Component {
     }else{
       youtubeOpts.playerVars.playlist = this.state.youtubeId
     }
-    let video  = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
+    let video = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
                         <YouTube 
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
@@ -178,7 +177,9 @@ class Demo extends Component {
                           onPause={this.instagramPaused}
                           src={this.state.videoURL}
                         ></video> : null 
-
+    if (!trick.video){
+      video = null
+    }
     let outerDivClass
     if (this.props.demoLocation === "detail"){
       outerDivClass = "demoOuterDivDetail"
