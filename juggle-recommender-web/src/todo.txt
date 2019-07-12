@@ -16,7 +16,10 @@ v 1.7
 		fill_leaderboard_from_mytricks.py
 		set_total_catch_count.py
 
-
+remove detail border
+realign filter inputs on desktop
+put success message for reset password
+move filters to own screen
 =========
 
 
