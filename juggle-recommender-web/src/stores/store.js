@@ -28,6 +28,13 @@ class Store {
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
+	@computed get isLocalHost(){
+		if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
+			return true
+		}else{
+			return false
+		}
+	}
 	@computed get contributorTags(){
 		const contributors = []
 		for (let trick in this.library){

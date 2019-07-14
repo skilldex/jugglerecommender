@@ -4,6 +4,7 @@ import graphStore from "./graphStore"
 import filterStore from "./filterStore"
 import authStore from "./authStore"
 import utilities from '../utilities'
+import ReactGA from 'react-ga';
 
 
 configure({ enforceActions: "always" })
@@ -184,6 +185,27 @@ class UIStore {
 				filterStore.setMaxCatches(store.highestCatches)
 			}
 	    }else{
+	    	if(store.isLocalHost){
+				const filterStrings = 
+					Object.keys(filterStore).map((key)=>{
+						console.log(key, filterStore[key])
+						let value = filterStore[key]
+						if(Array.isArray(filterStore[key])){
+							value = filterStore[key].map((object)=>{
+								return object.id + " , "
+							})
+						}
+						
+						return key + " : " + value
+					})
+				console.log("closed filter", filterStrings)
+				ReactGA.event({
+					  category: 'filter',
+					  action: "close filter",
+					  label : filterStrings.join(" | ")
+				});
+			}
+			console.log(filterStore)
 	    	this.setShowFilterDiv(false)
 	    }
 	}

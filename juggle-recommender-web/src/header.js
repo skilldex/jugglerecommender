@@ -4,6 +4,8 @@ import authStore from "./stores/authStore"
 import hamburger from "./images/menu_icon.svg"
 import "./header.css"
 import uiStore from "./stores/uiStore"
+import ReactGA from 'react-ga';
+import store from "./stores/store"
 @observer
 class Header extends Component {
 	state={
@@ -11,6 +13,13 @@ class Header extends Component {
 
 	clickMenuItem=(paneFlag)=>{
 		uiStore.toggleExpandedMenu()
+		if(store.isLocalHost){
+			console.log("opened detail")
+			ReactGA.event({
+				  category: 'header',
+				  action: paneFlag,
+			});
+		}
 		if(paneFlag == "addPattern"){
 			uiStore.toggleAddingTrick()
 			uiStore.setShowHomeScreen(false)
