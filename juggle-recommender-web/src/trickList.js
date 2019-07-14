@@ -12,6 +12,7 @@ import './App.css';
 import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
 //import { Resizable } from "re-resizable";
+import ReactGA from 'react-ga';
 
 var scrollerPosition = 0
 
@@ -61,6 +62,15 @@ class TrickList extends Component {
 		}			
 	}
 	openDetail=(trickKey)=>{
+		if(!store.isLocalHost){
+			console.log("opened detail")
+			ReactGA.event({
+			  category: 'List',
+			  action: 'opened detail ',
+			  label: trickKey
+			});
+		}
+		
 		uiStore.setShowHomeScreen(false)
 		uiStore.setShowExpandedMenu(false)
 		if (uiStore.selectedTrick){

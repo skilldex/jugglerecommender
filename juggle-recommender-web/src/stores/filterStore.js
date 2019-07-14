@@ -1,6 +1,8 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
 import uiStore from "./uiStore"
+import ReactGA from 'react-ga';
+
 configure({ enforceActions: "always" })
 console.log("filters " ,window.location)
 

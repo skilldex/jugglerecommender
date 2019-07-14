@@ -15,10 +15,11 @@ import HomeScreen from './homeScreen'
 import Login from "./login"
 import CreateAccount from "./createAccount"
 import ForgotPassword from "./forgotPassword"
-
 import Header from "./header"
+import ReactGA from 'react-ga';
+
 let firebaseConfig = {}
-if(window.location.host.includes("localhost") || window.location.host.match(/(\.\d+){3}/)){
+if(store.isLocalHost){
 	firebaseConfig = {
 		apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
 		authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
@@ -29,6 +30,9 @@ if(window.location.host.includes("localhost") || window.location.host.match(/(\.
 		appId: "1:224766397892:web:80beef32563065c3"
 	};
 }else{
+	ReactGA.initialize('UA-140392015-1');
+	ReactGA.pageview(window.location.pathname + window.location.search);
+	
 	firebaseConfig = {
     apiKey: "AIzaSyCmnOtb4Wk5MObmo1UPhgEV2Cv3b_6nMuY",
     authDomain: "skilldex-4ebb4.firebaseapp.com",

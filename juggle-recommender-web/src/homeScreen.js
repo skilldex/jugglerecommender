@@ -10,10 +10,21 @@ import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import Demo from './demo'
+import ReactGA from 'react-ga';
+
 @observer
 class HomeScreen extends Component {
 	componentDidMount(){
 		store.getTrickOfTheDay()
+	}
+	clickPatternList=()=>{
+		uiStore.toggleShowHomeScreen()
+		if(!store.isLocalHost){
+			ReactGA.event({
+				  category: 'home screen',
+				  action: "pattern list",
+			});
+		}
 	}
 	render (){
 		return(
@@ -49,7 +60,7 @@ class HomeScreen extends Component {
 						: null
 					}
 					<button className = "patternListButton"
-							onClick={()=>uiStore.toggleShowHomeScreen()}>
+							onClick={this.clickPatternList}>
 						All Patterns
 					</button>				    
 				</div>
