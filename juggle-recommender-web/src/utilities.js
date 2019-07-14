@@ -17,11 +17,8 @@ class Utilities{
       return str.match(/^[0-9]+$/) === null;
   }
   @action isNotOnlyDigitsOrDecimal=(str)=>{
-      let toReturn = true
-      
-      if (str.match(/^\d+\.\d+$/) === null){toReturn = false}
-      if (this.isNotOnlyDigits(str)){toReturn = false}
-      return toReturn;
+      var isNumber = /^\d*\.?\d+$/.test(str)
+      return !isNumber;
   }
 
   @action formatListCatches(catches){    

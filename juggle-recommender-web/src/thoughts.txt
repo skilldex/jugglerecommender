@@ -2,18 +2,8 @@ DB changes:
 	4440522 needs new name
 	5344 needs a new name
 	413333333 needs new name
-	52 catches of 7b
-	130 half shower(5b)
-	Broken box+orkas mess video broken?
-	Fountain 4
-	Rev fountain 4 
-	Synch pistons 4
-	Slam diff to 4
-	Statue of liberty to 4
-	Tennessee waltz vid broken, maybe
 	Add contortion tag to all contrition tricks(script can do this)
 	Do we have a side by side pistons pattern?
-	collision columns has collisioner's tennis as postreqs twice
 
 Asthetics:
 	expand arrow could animatedly turn when popup expands
@@ -42,6 +32,24 @@ Screen changes:
 	put sort into filter
 	make filter its own screen
 
+Gifs:
+	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for the gif.
+	-If a trick has a gif and a video then we should make a toggle between the two for the demos
+
+Stats:
+	Pattern stats:
+		-number of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+	Community stats:
+		-users signed up
+		-users currently online
+		-number of all tricks
+	User stats:
+		-number of tricks within a certain range
+		-number of catches
+		-consecutive days with record break
+		-consecutive days with catches input for a trick
+		-consecutive days with a trick contributed
 Desires:
 	-A way to go back to the last details trick I was looking at
 
