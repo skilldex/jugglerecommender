@@ -15,7 +15,6 @@ Asthetics:
 
 Other screens to add:
 	Leaderboard page
-	Stats
 	Feedback Form
 
 Screen changes:
@@ -23,6 +22,12 @@ Screen changes:
 	make expand menu a slider
 	put sort into filter
 	make filter its own screen
+
+Minor:
+	show add pattern warnings on blur, not onChange
+
+Search:
+	Relevence Sort after search happens
 
 Gifs:
 	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for the gif.

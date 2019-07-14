@@ -1,6 +1,5 @@
 import { action, configure, observable} from "mobx"
 import store from "./store"
-import graphStore from "./graphStore"
 import filterStore from "./filterStore"
 import authStore from "./authStore"
 import utilities from '../utilities'
@@ -368,8 +367,8 @@ class UIStore {
 				}
 				if(
 				   passesContributorFilter && passesDemoTypeFilter &&
-				   parseInt(trick.difficulty, 10) >= filterStore.difficultyRange[0] && 
-				   parseInt(trick.difficulty, 10) <= filterStore.difficultyRange[1] &&
+				   trick.difficulty >= filterStore.difficultyRange[0] && 
+				   trick.difficulty <= filterStore.difficultyRange[1] &&
 				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length === 0) &&
 				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length === 0) &&
 				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&

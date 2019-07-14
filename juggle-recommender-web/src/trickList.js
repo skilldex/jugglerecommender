@@ -143,8 +143,14 @@ class TrickList extends Component {
 			const modifiedTrickDifficulty = 
 				((trick.difficulty-filterStore.difficultyRange[0]) /
 				(filterStore.difficultyRange[1]-filterStore.difficultyRange[0]))*10
-			const r = Math.floor(modifiedTrickDifficulty >= 5.5? 255:255-(modifiedTrickDifficulty)* 51);
-		    const g = Math.floor(modifiedTrickDifficulty <= 5.5? 255:255-(modifiedTrickDifficulty-5.5)* 51);
+			if (trick.name.includes("58")){
+				console.log('trick.difficulty',trick.difficulty)
+				console.log('filterStore.difficultyRange[0]',filterStore.difficultyRange[0])
+				console.log('filterStore.difficultyRange[1]',filterStore.difficultyRange[1])
+				console.log(modifiedTrickDifficulty)
+			}
+			const r = Math.floor(modifiedTrickDifficulty >= 5? 255:255-(modifiedTrickDifficulty)* 51);
+		    const g = Math.floor(modifiedTrickDifficulty <= 5? 255:255-(modifiedTrickDifficulty-5)* 51);
 		    const b = 0;
 		    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
 		    const difficultyGauge = <Gauge 
