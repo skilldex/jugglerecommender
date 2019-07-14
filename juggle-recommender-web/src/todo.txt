@@ -30,6 +30,7 @@ Bugs:
 		-not sure if this still happens with new UI
 
 Minor:
+	-add trick doesnt fully cover div behind it
 	-8,9,10,11 all need buttons in ballNum filter, or we need a different way to handle ballNum filter
 	-dev db has a trick called "(3b)", it is left over from when tricks could be editted into having no name, it might not mess with anything, but maybe want to get rid of it
 
