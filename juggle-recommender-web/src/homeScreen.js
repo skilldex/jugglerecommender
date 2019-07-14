@@ -26,6 +26,17 @@ class HomeScreen extends Component {
 			});
 		}
 	}
+	openDetail=()=>{
+		uiStore.setDetailTrick(
+						       {...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
+		)
+		if(!store.isLocalHost){
+			ReactGA.event({
+			  category: 'home screen',
+			  action: "detail",
+			});
+		}
+	}
 	render (){
 		return(
 				<div className = "homeOuterDiv">
@@ -38,12 +49,7 @@ class HomeScreen extends Component {
 					    store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
 							<div className = 'homeScreenTrickDiv'>
 					            <h3 style={{marginBottom: "10px"}}>Pattern of The Day</h3>
-					            <button className="detailButton" onClick = {
-						            	()=>{uiStore.setDetailTrick(
-						            		{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
-						            	)}
-					            	}
-					            >View Details</button>
+					            <button className="detailButton" onClick = {this.openDetail}>View Details</button>
 				            	<Demo 
 					            	trickKey={store.randomLeaderboardTrick.key}
 		                         	demoLocation="detail"

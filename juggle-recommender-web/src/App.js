@@ -222,7 +222,7 @@ class App extends Component {
 					uiStore.detailTrick == null ?
 					<TrickList 
 						tricksToList = {uiStore.rootTricks}
-						selectedTrick={uiStore.selectedTrick}
+						listType = "main"
 					/> : null
 				}
 				{uiStore.showHomeScreen && !uiStore.detailTrick ? <HomeScreen/> : null}	

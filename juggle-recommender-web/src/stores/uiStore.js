@@ -185,11 +185,12 @@ class UIStore {
 				filterStore.setMaxCatches(store.highestCatches)
 			}
 	    }else{
-	    	if(store.isLocalHost){
+	    	if(!store.isLocalHost){
 				const filterStrings = 
 					Object.keys(filterStore).map((key)=>{
 						console.log(key, filterStore[key])
 						let value = filterStore[key]
+						//for tags and the like
 						if(Array.isArray(filterStore[key])){
 							value = filterStore[key].map((object)=>{
 								return object.id + " , "

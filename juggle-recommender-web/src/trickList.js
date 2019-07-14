@@ -65,9 +65,9 @@ class TrickList extends Component {
 		if(!store.isLocalHost){
 			console.log("opened detail")
 			ReactGA.event({
-			  category: 'List',
-			  action: 'opened detail ',
-			  label: trickKey
+			  category: 'list ' + this.props.listType,
+			  action: 'opened detail',
+			  label: 'list ' + this.props.listType + " " + trickKey 
 			});
 		}
 		
@@ -98,6 +98,13 @@ class TrickList extends Component {
 		}
 		element.classList.toggle("expand");
 		uiStore.toggleSelectedTrick(trickKey)
+		if(!store.isLocalHost && uiStore.selectedTrick == trickKey){
+			ReactGA.event({
+			  category: 'list ' + this.props.listType ,
+			  action: "expand",
+			  label : 'list ' + this.props.listType + " " + trickKey 
+			});
+		}
 	}
 
 	getHexColor=(value: number)=> {
