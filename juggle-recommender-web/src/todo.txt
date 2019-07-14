@@ -1,38 +1,59 @@
-v 1.7
+v 1.8
 	Hamburger Menu:
-	-profile (maybe profile and home can be the same thing)
-	-stats
-		-special page for stats not needed if we put personal stats in profile and a counter to trickList?
+	-profile
 
 	Profile Screen
 	-share button to share users contributed
 	-upload image
 	-personal stats
 
+	Flair
+
+v 1.7
+	Hamburger Menu:
+		Community stats:
+			-records broken today
+			-number of contributors
+			Patterns:
+				number of tricks with each tag
+				number of balls
+	-put success message for reset password
+	-move filters to own screen
+		-use back arrow, no apply button or X
+		-8,9,10,11 all need buttons in ballNum filter
+		-realign filter inputs on desktop(and mobile)
+		-increase size of filter inputs
+	-returning to list from details should autoscroll back to where you were
+	-add trick doesnt fully cover div behind it
+	-make shared url take user to list
+	-dont allow share url to be created if there are no results
+	-Postreqs in add trick
+	-Research back arrow 
+	-fix iphone zoom behavior on add form and filter
+		-may be fixed by increasing size
+	-number of results instead of 'no filters set'
+
 	Data fix scripts(see list below)
-
-	-when next deploying, make sure to run on prod db:
-		add_starred_field_to_myTricks.py
-		fill_leaderboard_from_mytricks.py
-		set_total_catch_count.py
-
-remove detail border
-realign filter inputs on desktop(and mobile)
-put success message for reset password
-move filters to own screen
 =========
 
-
 Bugs:
-	-when details is entered via home, and then the details is X'd, it takes you to list, not back to home.
-	-if page loaded with a shared url that has no results, it keeps saying 'loading'
+	-diff 5.6,5.7,5.8,5.9 result in black difficulty color
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
 
-Minor:
-	-add trick doesnt fully cover div behind it
-	-8,9,10,11 all need buttons in ballNum filter, or we need a different way to handle ballNum filter
-	-dev db has a trick called "(3b)", it is left over from when tricks could be editted into having no name, it might not mess with anything, but maybe want to get rid of it
+Stats:
+	Pattern stats (expandable in details):
+		-number of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+
+	User stats:
+		Pattern stats:
+			-number of tricks within a certain range
+			-number of catches
+			-consecutive days with record break
+			-consecutive days with catches input for a trick
+			-consecutive days with a trick contributed
+		aggregate stats:
 
 Data fix scripts:
 	-a script to make related tags go both directions

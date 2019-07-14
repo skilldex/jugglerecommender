@@ -4,6 +4,7 @@ DB changes:
 	413333333 needs new name
 	Add contortion tag to all contrition tricks(script can do this)
 	Do we have a side by side pistons pattern?
+	filter for pure siteswaps
 
 Asthetics:
 	expand arrow could animatedly turn when popup expands
@@ -12,19 +13,10 @@ Asthetics:
 	Make About,Logic,Create account be screens, not a slider
 	Make sort be a part of filter, and make filter it's own screen
 
-Possible Home Screen Ideas:
-	Make many different types of featured patterns, randomly select a couple of them to display
-	Make a link to a complete stats page under the couple stats
-	Put a leader under each of the featured patterns and make a link to a more complete leader board
-
 Other screens to add:
 	Leaderboard page
 	Stats
 	Feedback Form
-
-Small Touches:
-	returning to list from details should autoscroll back to where you were
-	put stars on cards
 
 Screen changes:
 	make about, login its own screen
@@ -35,21 +27,8 @@ Screen changes:
 Gifs:
 	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for the gif.
 	-If a trick has a gif and a video then we should make a toggle between the two for the demos
+	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
 
-Stats:
-	Pattern stats:
-		-number of users with records for a given trick
-		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
-	Community stats:
-		-users signed up
-		-users currently online
-		-number of all tricks
-	User stats:
-		-number of tricks within a certain range
-		-number of catches
-		-consecutive days with record break
-		-consecutive days with catches input for a trick
-		-consecutive days with a trick contributed
 Desires:
 	-A way to go back to the last details trick I was looking at
 
@@ -59,12 +38,8 @@ Before working on general skilldex:
 	-user suggestions/editing/comments
 
 Concise TODO:
-	-should be able to backup to previous detail
-	-demo toggle for gif/video in cases where there are both
-	-Help, about, send feedback, maybe combine 2 of these, but probably not all of them
 	-Notifications section(maybe in profile) so contributors can know if their tricks become prereqs or relateds, or if other users are setting catches for their tricks, or suggesting edits
-	-filter for pure siteswaps
-	-sitwsap before number on form, autofill number from siteswap if possible, copy code from formic
+	-sitewsap before number on form, autofill number from siteswap if possible, copy code from formic
 	-Keep track of users tags so if they leave and come back, those tags are still there.
 		-only very important if we dont get routing figured out
 	-Suggest a change could be done just like edit, except instead of adding it to the site it emails	/notifies the contributor.
@@ -83,8 +58,7 @@ New UI:
 
 External:
 	-Film 4ball sunny side up for guy online
-	-tell guy about hungarian convention
-	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, 		specifically his tutorials as links in the tricks associated with them.
+	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, specifically his tutorials as links in the tricks associated with them.
 
 
 Reasons to get juggledex in really good shape before making general skilldex:
