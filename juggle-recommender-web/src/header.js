@@ -13,7 +13,7 @@ class Header extends Component {
 
 	clickMenuItem=(paneFlag)=>{
 		uiStore.toggleExpandedMenu()
-		if(store.isLocalHost){
+		if(!store.isLocalHost){
 			console.log("opened detail")
 			ReactGA.event({
 				  category: 'header',
