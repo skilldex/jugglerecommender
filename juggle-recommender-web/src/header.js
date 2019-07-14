@@ -10,40 +10,42 @@ import store from "./stores/store"
 class Header extends Component {
 	state={
 	}
-
+	clearUI=()=>{
+		uiStore.setShowHomeScreen(false)
+		uiStore.setShowExpandedMenu(false)
+		uiStore.setDetailTrick(null)
+	}
 	clickMenuItem=(paneFlag)=>{
 		uiStore.toggleExpandedMenu()
 		if(!store.isLocalHost){
-			console.log("opened detail")
 			ReactGA.event({
 				  category: 'header',
 				  action: paneFlag,
 			});
 		}
+		
 		if(paneFlag == "addPattern"){
+			this.clearUI()
 			uiStore.toggleAddingTrick()
-			uiStore.setShowHomeScreen(false)
-			uiStore.setShowExpandedMenu(false)
 		}else if(paneFlag == "logout"){
 			authStore.signOut()
-			uiStore.setShowHomeScreen(false)
+			this.clearUI()
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
-			uiStore.setShowExpandedMenu(false)
+			
 		}else if(paneFlag == "home"){
+			this.clearUI()
 			uiStore.setShowHomeScreen(true)
-			uiStore.setDetailTrick(null)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
-			uiStore.setShowExpandedMenu(false)
+			
 		}else if(paneFlag == "list"){
-			 uiStore.setShowHomeScreen(false)
+			this.clearUI()
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
-			uiStore.setShowExpandedMenu(false)
 		}else{
 			this.props.openSlidingPane(paneFlag)
 			uiStore.setShowExpandedMenu(false)
