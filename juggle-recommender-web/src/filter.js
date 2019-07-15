@@ -51,7 +51,6 @@ class Filter extends Component {
 	}
  	
  	handleContributorTagAddition=(contributor)=>{
- 		console.log('once')
  		let canAdd = true
  		filterStore.contributors.forEach(function (arrayItem) {
 		    if (arrayItem.id === contributor.id){
@@ -68,7 +67,6 @@ class Filter extends Component {
  	}	
 
  	 handleDemoTypeTagAddition=(demoType)=>{
- 	 	console.log('demotype',demoType)
 		filterStore.setDemoType(
 			 [demoType] 
 		);		
@@ -129,7 +127,6 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
     copyFilterURL=()=>{
-    	console.log('uiStore.rootTricks',uiStore.rootTricks)
     	if (Object.keys(uiStore.rootTricks).length === 0){
     			alert("Unable to create share URL when no results found.") 
     			return

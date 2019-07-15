@@ -97,7 +97,6 @@ class UIStore {
 	@action toggleCatchEdit=(catches, trickKey)=>{
 		this.detailCatchEditable = !this.detailCatchEditable		
 		if (!this.detailCatchEditable){
-			console.log('store.myTricks',store.myTricks)
 			if(!store.myTricks[trickKey]){
 				store.myTricks[trickKey] = {}
 		 		const date = new Date()

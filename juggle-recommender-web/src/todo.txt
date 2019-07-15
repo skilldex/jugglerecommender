@@ -20,9 +20,6 @@ v 1.7
 	-Postreqs in add trick
 	-Research back arrow 
 	-clear consoles
-	-cards should have pointer
-	-header buttons should have pointers
-	-change pattern count to results
 	-width of filter should be wider
 	-arrow in tags change to little blue one and add word back
 
