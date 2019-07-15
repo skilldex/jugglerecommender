@@ -9,7 +9,7 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
-import closeIcon from './images/closeIcon.svg'
+import backIcon from './images/backIcon.png'
 import shareIcon from './images/shareIcon.png'
 
 
@@ -51,6 +51,7 @@ class Filter extends Component {
 	}
  	
  	handleContributorTagAddition=(contributor)=>{
+ 		console.log('once')
  		let canAdd = true
  		filterStore.contributors.forEach(function (arrayItem) {
 		    if (arrayItem.id === contributor.id){
@@ -66,13 +67,13 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
  	}	
 
- 	 handleDemoTypeTagAddition=(demoTypeToAdd)=>{
- 	 	if (filterStore.DemoType !== demoTypeToAdd.id){
- 	 		filterStore.setDemoType(demoTypeToAdd.id)
- 	 		uiStore.resetSelectedTrick()
-			uiStore.updateRootTricks()
- 	 	}
-
+ 	 handleDemoTypeTagAddition=(demoType)=>{
+ 	 	console.log('demotype',demoType)
+		filterStore.setDemoType(
+			 [demoType] 
+		);		
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
  	}									         
 									          
 	onDifficultyRangeChange=(range)=>{
@@ -127,16 +128,6 @@ class Filter extends Component {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
-
-	mouseEnterFilterDiv=()=>{
-      uiStore.setMouseInFilterDiv(true)
-      uiStore.setShowFilterDiv(true)
-    }
-
-    mouseLeaveFilterDiv=()=>{
-      uiStore.setMouseInFilterDiv(false)
-      uiStore.setShowFilterDiv(false)
-    }
     copyFilterURL=()=>{
     	console.log('uiStore.rootTricks',uiStore.rootTricks)
     	if (Object.keys(uiStore.rootTricks).length === 0){
@@ -222,6 +213,7 @@ class Filter extends Component {
 							          minQueryLength={0}
 							          suggestions={store.presetTags.length>0?store.presetTags:[]}
 							          delimiters={delimiters}
+							          tags={filterStore.tags}
 							          handleDelete={filterStore.handleDelete}
 							          handleAddition={this.handleAddition}
 							          handleTagClick={this.handleTagClick}/>
@@ -240,12 +232,13 @@ class Filter extends Component {
 				          minQueryLength={0}
 				          suggestions={store.contributorTags.length>0?store.contributorTags:[]}
 				          delimiters={delimiters}
+				          tags={filterStore.contributors}
 				          handleDelete={filterStore.handleContributorTagDelete}
 				          handleAddition={this.handleContributorTagAddition}
 				          handleTagClick={this.handleContributorTagClick}/>
 				    </div>
 				</div>
-	 	const numbersOfBalls = ['3','4','5','6','7']
+	 	const numbersOfBalls = ['3','4','5','6','7','8','9','10','11']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
 			numButtons.push(
@@ -308,40 +301,41 @@ class Filter extends Component {
 				          placeholder = ""
 				          minQueryLength={0}
 				          suggestions={this.state.demoTypesTags}
+				          tags={filterStore.demoType}
 				          delimiters={delimiters}
-				          handleDelete={filterStore.handleDemoTypeTagDelete}
+				          handleDelete={filterStore.handleDemoTypeDelete}
 				          handleAddition={this.handleDemoTypeTagAddition}
 				          handleTagClick={this.handleDemoTypeTagClick}/>
 				    </div>
 				</div>
 
 		return (
-			<div className="filterDiv"
-				 onMouseEnter = {()=>this.mouseEnterFilterDiv()}
-	             onMouseLeave = {()=>this.mouseLeaveFilterDiv()}
-	        >
-        		<img 
-	                 className="shareFilterButton"
-	                 src={shareIcon}
-	                 onClick={()=>this.copyFilterURL()}
-	                 alt=""
-	                 title="share your contributed tricks"
-	            />
-	            <img id="closeButton" src={closeIcon} className="closeFilter" alt="closeIcon" 
-             		onClick={()=>{uiStore.toggleFilterDiv()}}
-        		/><br/>
-			    {numSection}
-				<ColoredLine/>
-				{tagSection}
-				<ColoredLine/>
-				{contributorSection}
-				<ColoredLine/>
-				{demoTypeSection}
-				<ColoredLine/>
-				{difficultySection}
-				<ColoredLine/>
-				{catchesSection}
-				<br/>
+			<div className="outerFilterDiv">
+	        	<div className="filterDiv">
+	        		<div className="headerButtons">
+		        		<img 
+			                 className="shareFilterButton"
+			                 src={shareIcon}
+			                 onClick={()=>this.copyFilterURL()}
+			                 alt=""
+			                 title="share your contributed tricks"
+			            />
+			            <img id="backButton" src={backIcon} className="backButton" alt="backIcon" 
+		             		onClick={()=>{uiStore.toggleFilterDiv()}}/>
+		            </div>
+				    {numSection}
+					<ColoredLine/>
+					{tagSection}
+					<ColoredLine/>
+					{contributorSection}
+					<ColoredLine/>
+					{demoTypeSection}
+					<ColoredLine/>
+					{difficultySection}
+					<ColoredLine/>
+					{catchesSection}
+					<br/>
+				</div>
 			</div>
 		)
 	  }

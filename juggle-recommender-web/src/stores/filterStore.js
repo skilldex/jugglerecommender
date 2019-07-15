@@ -24,9 +24,17 @@ if (urlQueryNumBalls){
 		numBalls = numBalls.filter(Boolean);
 }
 let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
-let demoType = "All"
-if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo&"){demoType = "User Video"}
-if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab&"){demoType = "Juggling Lab"}
+let demoType = []
+if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo&"){demoType = [{
+																	id: "User Video",
+																	text: "User Video",
+																}]
+															}
+if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab&"){demoType = [{
+																	id: "Juggling Lab",
+																	text: "Juggling Lab",
+																}]
+															}
 const urlQueryTags = window.location.search.match(/tags=(.+)/)
 const tags = urlQueryTags ? [{
 								id: urlQueryTags[1].split('&')[0].slice(0, -1),
@@ -56,6 +64,8 @@ class FilterStore {
 
 	@action setDemoType=(demoType)=>{
 		this.demoType = demoType
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
 	}
 
 	@action setMinCatches=(minCatches)=>{
@@ -85,7 +95,6 @@ class FilterStore {
 		uiStore.updateRootTricks()
 	}
 	@action setContributors=(contributors)=>{
-
 		this.contributors = contributors
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
@@ -99,15 +108,24 @@ class FilterStore {
 	}
 	@action handleDelete=(i)=>{
 		this.setTags(
-			this.tags.filter((tag, index) => index !== i)
+			this.tags.filter((bob, index) => index !== i)
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
-	@action handleDemoTypeDelete=()=>{
-		this.demoType = "All"
+	@action handleContributorTagDelete=(i)=>{
+		this.setContributors(
+			this.contributors.filter((tag, index) => index !== i)
+		)
 		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()		
+		uiStore.updateRootTricks()
+	}
+	@action handleDemoTypeDelete=(i)=>{
+		this.setDemoType(
+			this.demoType.filter((tag, index) => index !== i)
+		)
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()	
 	}
 	@action setSortType=(type)=>{
 		this.sortType = type

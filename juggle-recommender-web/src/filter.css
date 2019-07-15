@@ -1,56 +1,45 @@
-.filterDiv{
-  padding-left : 5px;
-  padding-right : 5px;
-  left : 0;
-  width: 230px;
-  height: 400px;
-  margin-left: 70px;
-  max-height: 400px;
-  border : 1px solid gray;
-  display: inline-block;
-  z-index: 1200;
-  position: absolute;
-  top:96px;
-  opacity : .95;
+.outerFilterDiv{
+  overflow-y: scroll;
+  height: 130%;
+  width : 99%;
+  position : absolute;
+  top:0px;
   background-color : white;
+  z-index : 2501;
+  border : 1px solid gray;
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling : touch;
+  align-items: center;
+  padding: 10px;
 }
+
+.filterDiv{
+  margin: 0 auto;
+  width: 290px;
+  align-items: center;
+}
+
 
 .filterHeader{
   margin:7px;
   font-size: 16px;
 }
-
-.closeFilter2 {
-  background-color : white;
-  margin-right: 20px;
-  margin-top: 20px;
-  border : none;
-  font-size: 20px;
-  vertical-align: middle;
-  position: relative;
-  float: right;
-  z-index: 1000;
-  display: inline-block;
-  padding : 0;
+.headerButtons{
+  padding-bottom: 60px;
 }
-.closeFilter{
+
+.backButton{
   height : 24px;
   width : 24px;
-  float : right;
+  float : left;
   margin-right : 8px;
   margin-top : 8px;
 }
 .shareFilterButton{
   height : 20px;
   width : 20px;
-  margin-right : 4px;
-  padding-top : 10px; 
-  margin-left: 70%;
+  padding-top : 10px;
+  float: right; 
   align-items: right;
 }
 
@@ -73,7 +62,7 @@
 .filterNum{
   color: black;
   border-radius: 8px;
-  margin: 6px;
+  margin: 3px;
   outline: none;
 }
 
@@ -114,7 +103,7 @@
 }
 
 .catchesInput{
-  width: 40px;
+  width: 60px;
   border: 1px solid darkgray;
   display: inline-block;
   margin-right: 5px;
@@ -138,7 +127,7 @@ div.ReactTags__tagInput input.ReactTags__tagInputField,
 div.ReactTags__tagInput input.ReactTags__tagInputField:focus {
     height: 22px;
     margin: 0;
-    font-size: 12px;
+    font-size: 16px;
     width: 129%;
     border: 1px solid darkgray;
     padding: 0 4px;

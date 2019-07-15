@@ -24,7 +24,6 @@ class UIStore {
 	@observable editingDetailTrick = false
 	@observable mouseInDetailDiv = false
 	@observable mouseInSortDiv = false
-	@observable mouseInFilterDiv = false
 	@observable mouseInExpandedMenu = false
 	@observable showSortDiv = false
 	@observable showFilterDiv = false
@@ -351,14 +350,14 @@ class UIStore {
 					})
 				}
 				let passesDemoTypeFilter = false
-				if (filterStore.demoType === "All"){
+				if (filterStore.demoType.length===0){
 					passesDemoTypeFilter = true
 				}else{
 				    if(trick.contributor == null && 
-				    	filterStore.demoType === "Juggling Lab" ){
+				    	filterStore.demoType[0].id === "Juggling Lab" ){
 				    	passesDemoTypeFilter = true
 				    }
-				    else if(trick.contributor != null && filterStore.demoType === "User Video" ){
+				    else if(trick.contributor != null && filterStore.demoType[0].id === "User Video" ){
 				    	passesDemoTypeFilter = true
 				    }
 				    else{
@@ -384,7 +383,12 @@ class UIStore {
 			}
 		})	
 	}
-
+	@action clearUI=()=>{
+		this.setShowHomeScreen(false)
+		this.setShowExpandedMenu(false)
+		this.setDetailTrick(null)
+		this.setShowFilterDiv(false)
+	}
 	 @action clearCatchInput=()=>{
 	 	this.catchInput = ''
 	 }

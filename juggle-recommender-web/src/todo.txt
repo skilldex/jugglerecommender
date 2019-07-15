@@ -17,15 +17,10 @@ v 1.7
 			Patterns:
 				number of tricks with each tag
 				number of balls
-	-move filters to own screen
-		-use back arrow, no apply button or X
-		-8,9,10,11 all need buttons in ballNum filter
-		-realign filter inputs on desktop(and mobile)
-		-increase size of filter inputs
 	-Postreqs in add trick
 	-Research back arrow 
 	-fix iphone zoom behavior on add form and filter
-		-may be fixed by increasing size
+		-may be fixed by increasing size(it has been increased)
 
 	Data fix scripts(see list below)
 =========

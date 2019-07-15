@@ -412,7 +412,7 @@ class AddTrickForm extends Component {
 		  }
 		})
 		const tagInput = <ReactTags
-							  classNames={{tagInputField: 'myReactTags',}}
+							  classNames={{tagInputField: 'addTrickReactTags',}}
 					          autofocus = {false}
 					          placeholder = ''
 					          inputFieldPosition="bottom"
@@ -425,7 +425,7 @@ class AddTrickForm extends Component {
 					          handleTagClick={this.handleTagClick}
 					     />
 		const prereqsInput = <ReactTags
-		                      classNames={{tagInputField: 'myReactTags',}}
+		                      classNames={{tagInputField: 'addTrickReactTags',}}
 					          autofocus = {false}
 					          placeholder = ''
 					          inputFieldPosition="bottom"
@@ -437,7 +437,7 @@ class AddTrickForm extends Component {
 					          handleAddition={this.handlePrereqAddition}
 					          handleTagClick={this.handlePrereqClick}/>
 		const relatedInput = <ReactTags
-							  classNames={{tagInputField: 'myReactTags',}}
+							  classNames={{tagInputField: 'addTrickReactTags',}}
 					          autofocus = {false}
 					          style = {{width:"300px"}}
 					          placeholder = ''

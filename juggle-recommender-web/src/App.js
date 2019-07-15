@@ -17,6 +17,7 @@ import CreateAccount from "./createAccount"
 import ForgotPassword from "./forgotPassword"
 import Header from "./header"
 import ReactGA from 'react-ga';
+import Filter from './filter.js'
 
 let firebaseConfig = {}
 if(store.isLocalHost){
@@ -129,9 +130,6 @@ class App extends Component {
 	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
 	            uiStore.setShowSortDiv(false)
 	        }
-	        if (uiStore.showFilterDiv && !uiStore.mouseInFilterDiv && !uiStore.filterTimer){
-	            uiStore.setShowFilterDiv(false)
-	        }
 	        if (uiStore.showExpandedMenu && 
 	        	!uiStore.mouseInExpandedMenu && !uiStore.expandedMenuTimer){
 	            uiStore.setShowExpandedMenu(false)
@@ -231,6 +229,7 @@ class App extends Component {
 				}
 				{uiStore.showHomeScreen && !uiStore.detailTrick ? <HomeScreen/> : null}	
 				{detail}
+				{uiStore.showFilterDiv?<Filter/>: null}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>
 		);

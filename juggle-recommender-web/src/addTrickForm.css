@@ -61,11 +61,11 @@
   text-align: left;
 }
 /* Styles for the input */
-.myReactTags {
+.addTrickReactTags {
     width: 280px;
     border-radius: 4px;
     border-color: darkgray;
-    font-size: 12px;
+    font-size: 16px;
     height: 16px;
 }
 .formInputs{

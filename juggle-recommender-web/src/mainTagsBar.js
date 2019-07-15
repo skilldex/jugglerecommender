@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import { observer } from "mobx-react"
-import Filter from './filter.js'
 import filterStore from './stores/filterStore'
 import store from './stores/store'
 import uiStore from './stores/uiStore'
@@ -120,7 +119,7 @@ class MainTagsBar extends Component {
           )
         })
       }
-      if(filterStore.demoType !== 'All'){   
+      if(!filterStore.demoType===[]){   
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"
@@ -153,7 +152,7 @@ class MainTagsBar extends Component {
                          className={filterButtonClass} 
                          src={filterIcon} 
                          alt="showFilterMenu" 
-                         onClick={()=>{uiStore.toggleFilterDiv()}}
+                         onClick={()=>{uiStore.setShowFilterDiv(true)}}
                        />
         const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
@@ -226,7 +225,6 @@ class MainTagsBar extends Component {
             {sort}
             {sortDropdown}
             {filter}
-            {uiStore.showFilterDiv?<Filter/>: null}
             <span className="mainTagsHeader">Pattern Count: {Object.keys(uiStore.rootTricks).length}</span>
           </div>
           <div className="tagSection"> 
