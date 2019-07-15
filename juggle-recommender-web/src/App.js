@@ -16,8 +16,9 @@ import Login from "./login"
 import CreateAccount from "./createAccount"
 import ForgotPassword from "./forgotPassword"
 import Header from "./header"
-import ReactGA from 'react-ga';
-import Filter from './filter.js'
+import Stats from "./stats"
+import ReactGA from 'react-ga'
+import Filter from './filter'
 
 let firebaseConfig = {}
 if(store.isLocalHost){
@@ -221,14 +222,17 @@ class App extends Component {
 					!store.isLoginPaneOpen  && 
 					!store.isCreateAccountPaneOpen && 
 					!uiStore.showHomeScreen &&
+					!uiStore.showStatsScreen &&
 					uiStore.detailTrick == null ?
 					<TrickList 
 						tricksToList = {uiStore.rootTricks}
 						listType = "main"
 					/> : null
 				}
+				{uiStore.showStatsScreen?<Stats/>: null}
 				{uiStore.showHomeScreen && !uiStore.detailTrick ? <HomeScreen/> : null}	
 				{detail}
+				
 				{uiStore.showFilterDiv?<Filter/>: null}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>

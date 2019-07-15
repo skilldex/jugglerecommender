@@ -10,11 +10,7 @@ import store from "./stores/store"
 class Header extends Component {
 	state={
 	}
-	clearUI=()=>{
-		uiStore.setShowHomeScreen(false)
-		uiStore.setShowExpandedMenu(false)
-		uiStore.setDetailTrick(null)
-	}
+
 	clickMenuItem=(paneFlag)=>{
 		uiStore.toggleExpandedMenu()
 		if(!store.isLocalHost){
@@ -25,24 +21,31 @@ class Header extends Component {
 		}
 		
 		if(paneFlag == "addPattern"){
-			this.clearUI()
+			uiStore.clearUI()
 			uiStore.toggleAddingTrick()
 		}else if(paneFlag == "logout"){
 			authStore.signOut()
-			this.clearUI()
+			uiStore.clearUI()
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
 			
 		}else if(paneFlag == "home"){
-			this.clearUI()
-			uiStore.setShowHomeScreen(true)
+			uiStore.clearUI()
+			uiStore.setShowStatsScreen(true)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
 			
 		}else if(paneFlag == "list"){
-			this.clearUI()
+			uiStore.clearUI()
+			if(uiStore.addingTrick){
+			 	uiStore.toggleAddingTrick
+			}
+		}else if(paneFlag == "stats"){
+			console.log('statas')
+			uiStore.clearUI()
+			uiStore.setShowStatsScreen(true)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
@@ -70,6 +73,7 @@ class Header extends Component {
 						        <button className="dropDownButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
 						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
 						   	}
+						   	<button className="dropDownButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
 					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    </div> : null
@@ -87,6 +91,7 @@ class Header extends Component {
 						        <button className="headerButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
 						   	}
 					    	<button className="headerButton" onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
+					    	<button className="headerButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
 					    	<button className="headerButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('home')}>Home</button>

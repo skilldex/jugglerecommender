@@ -28,7 +28,7 @@ class HomeScreen extends Component {
 	}
 	openDetail=()=>{
 		uiStore.setDetailTrick(
-						       {...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
+			{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
 		)
 		if(!store.isLocalHost){
 			ReactGA.event({

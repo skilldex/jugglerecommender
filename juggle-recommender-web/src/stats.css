@@ -1,0 +1,90 @@
+.homeOuterDiv{
+  text-align: center;
+  width : 100%;
+}
+
+.demo{
+  margin-bottom: 5px;
+}
+.homeScreenTrickOuterDiv{
+  font-size: 12px;
+}
+
+.homeScreenTrickDiv{
+  display:block;
+  height: auto;
+  max-width: 345px;
+  margin : 0 auto;
+}
+.homeScreenTrickMainLabel{
+  text-align: center;
+  width: 100%;
+  margin-left : 10px;
+  font-size: 20px;
+
+}
+.homeScreenTrickSubLabel{
+  text-align: left;
+  width: 100%;
+  
+  font-size: 16px;
+  margin:3px;
+  margin-left : 10px;
+
+}
+.homeScreenTrickLeaderLabel{
+  text-align: left;
+  width: 100%;
+  margin-left : 10px;
+  font-size: 12px;
+
+}
+.patternListButton{
+  width:200px;
+  margin-top: 20px;
+  font-size: 20px;
+  background-color: #EE82EE;
+  border-radius: 5px;
+  font-family: Futura;
+  color:white;
+  margin-bottom:30px;
+}
+
+.detailButton{
+  background-color: white;
+  color : #0000FF;
+  border : none;
+  font-size: 13px;
+}
+
+.statsLabel{
+  text-align: left;
+  display : inline-block;
+  margin-left : 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.stats{
+  text-align: left;
+  width: 100%;
+  margin-left : 10px;
+  font-size: 15px;
+}
+
+.infoLabel{
+  width: 60px;
+  text-align: left;
+  display : inline-block;
+  margin-left : 16px;
+  font-weight: bold;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.info{
+  text-align: left;
+  width: 100%;
+  margin-left : 10px;
+  font-size: 15px;
+}

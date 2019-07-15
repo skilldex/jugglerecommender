@@ -31,6 +31,7 @@ class UIStore {
 	@observable showExplanation = false
 	@observable showExpandedMenu = false
 	@observable showHomeScreen = true
+	@observable showStatsScreen = false
 	@observable mainListScrollerPosition = null
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
@@ -43,6 +44,9 @@ class UIStore {
 	}
 	@action setShowHomeScreen=(bool)=>{
 		this.showHomeScreen = bool
+	}
+	@action setShowStatsScreen=(bool)=>{
+		this.showStatsScreen = bool
 	}
 
   	@action editDetailTrick=()=>{
@@ -388,6 +392,7 @@ class UIStore {
 		this.setShowExpandedMenu(false)
 		this.setDetailTrick(null)
 		this.setShowFilterDiv(false)
+		this.setShowStatsScreen(false)
 	}
 	 @action clearCatchInput=()=>{
 	 	this.catchInput = ''

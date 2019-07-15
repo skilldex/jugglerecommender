@@ -26,6 +26,7 @@ v 1.7
 =========
 
 Bugs:
+	-searching should collapse expanded tricks, it causes weirdness now
 	-ending timestamp isnt working for instagram(Crossed 2up 3up Multiplex(5b))
 	-tricks with []s in name dont show up in tricks dont show up in relationship lists
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
