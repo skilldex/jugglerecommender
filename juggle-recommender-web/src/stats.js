@@ -13,64 +13,78 @@ import TrickList from './trickList.js'
 import Demo from './demo'
 import ReactGA from 'react-ga';
 
-const contributorsCounter = []
-const ballNumCounter = []
-const tagsCounter = []
+
 @observer
 class Stats extends Component {
-
+	state={
+		 contributorsCounter : {},
+		 ballNumCounter : {},
+		 tagsCounter : {},
+	}
 	componentDidMount(){
+		let contributorsCounter = this.state.contributorsCounter
+		let ballNumCounter = this.state.ballNumCounter
+		let tagsCounter = this.state.tagsCounter
+
+
 		Object.keys(store.library).forEach((trick) => {
 			if (store.library[trick].contributor){
 				const contributor = store.library[trick].contributor
 				if (contributorsCounter[contributor]){
-					contributorsCounter[contributor]['count'] += 1
+					contributorsCounter[contributor] += 1
 				}else{
-					contributorsCounter[contributor] = {}
-					contributorsCounter[contributor]['count'] = 1
+					contributorsCounter[contributor] = 1
 				}
 			}
 			const ballNum = store.library[trick].num
 			if (ballNumCounter[ballNum]){
-				ballNumCounter[ballNum]['count'] += 1
+				ballNumCounter[ballNum] += 1
 			}else{
-				ballNumCounter[ballNum] = {}
-				ballNumCounter[ballNum]['count'] = 1
+				ballNumCounter[ballNum] = 1
 			}
 			if (store.library[trick].tags){
 				store.library[trick].tags.forEach((tag) =>{
 					if (tagsCounter[tag]){
-						tagsCounter[tag]['count'] += 1
+						tagsCounter[tag] += 1
 					}else{
-						tagsCounter[tag] = {}
-						tagsCounter[tag]['count'] = 1
+						tagsCounter[tag] = 1
 					}
 				})
 			}			
 		})
 
+		this.setState({contributorsCounter,ballNumCounter,tagsCounter})
 		 
 	}
 
 	render (){
-		var newObj = Object.assign({}, ...(ballNumCounter.map(item => ({ [item.key]: item.count }) )));
-console.log('ballNumCounter',ballNumCounter)
-console.log('contributorsCounter',contributorsCounter)
-console.log('tagsCounter',tagsCounter)
-console.log('newObj',newObj)
-ballNumCounter.forEach((trickKey)=>{
-	console.log(trickKey)
-})
 
+		const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
+			return <div><b>{key}</b>  {this.state.contributorsCounter[key]} </div>
+		})
 
+		const ballNumStats = Object.keys(this.state.ballNumCounter).map((key)=>{
+			return <div><b>{key} Balls</b>  {this.state.ballNumCounter[key]} </div>
+		})
+
+		const tagsStats = Object.keys(this.state.tagsCounter).map((key)=>{
+			return <div><b>{key}</b>  {this.state.tagsCounter[key]} </div>
+		})
 
 
 
 		return(
 			<div className = "homeOuterDiv">
 				<h3 style={{marginBottom: "10px"}}>Stats</h3>
-				<label>Number of Contributors: {store.contributorTags.length}</label>
-				<label>Ball Numbers:</label>
+				<h3>Number of Contributors </h3>
+				{store.contributorTags.length}
+				<h3>By Numbers of Balls</h3>
+				{ballNumStats}
+				<h3>By Contributor</h3>
+				{contributorsStats}
+				<h3>By Tag</h3>
+				{tagsStats}
+				
 			</div>
 		)
 	}
