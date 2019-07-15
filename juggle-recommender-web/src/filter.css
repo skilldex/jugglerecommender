@@ -10,14 +10,18 @@
   box-shadow : 5px 10px 8px #888888;;
   border-radius: 8px;
   align-items: center;
-  padding: 10px;
+
 }
 
 .filterDiv{
-  margin: 0 auto;
+  padding-top: 10px;
+    padding-left: 10px;
   width: 100%;
-  max-width: 400px;
+  max-width: 360px;
+  overflow-x: hidden;
+  margin: 0;
   align-items: center;
+  margin: 0 auto;
 }
 
 
@@ -29,17 +33,30 @@
   padding-bottom: 60px;
 }
 
+.rotated90{
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+
 .backButton{
-  height : 24px;
-  width : 24px;
+  height : 12px;
+  width : 12px;
   float : left;
-  margin-right : 8px;
   margin-top : 8px;
+  cursor: pointer;
+}
+.backButtonLabel{
+  color: #3090C7;
+  cursor: pointer;
 }
 .shareFilterButton{
   height : 20px;
   width : 20px;
   padding-top : 10px;
+  padding-right: 10px;
   float: right; 
   align-items: right;
 }

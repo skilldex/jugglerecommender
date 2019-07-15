@@ -76,8 +76,6 @@ class Stats extends Component {
 		return(
 			<div className = "homeOuterDiv">
 				<h3 style={{marginBottom: "10px"}}>Stats</h3>
-				<h3>Number of Contributors </h3>
-				{store.contributorTags.length}
 				<h3>By Numbers of Balls</h3>
 				{ballNumStats}
 				<h3>By Contributor</h3>

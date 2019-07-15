@@ -4,12 +4,12 @@ import uiStore from './stores/uiStore'
 import filterStore from './stores/filterStore'
 import { observer } from "mobx-react"
 import './filter.css';
+import downArrow from './images/down-arrow.svg'
 import './App.css';
 import { WithContext as ReactTags } from 'react-tag-input';
 import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
-import backIcon from './images/backIcon.png'
 import shareIcon from './images/shareIcon.png'
 
 
@@ -317,8 +317,14 @@ class Filter extends Component {
 			                 alt=""
 			                 title="share your contributed tricks"
 			            />
-			            <img id="backButton" src={backIcon} className="backButton" alt="backIcon" 
+			            <img id="backButton" 
+			            	src={downArrow} 
+			            	className="backButton rotated90" 
+			            	alt="backIcon" 
 		             		onClick={()=>{uiStore.toggleFilterDiv()}}/>
+		             	<label className="backButtonLabel" 
+		             		   onClick={()=>{uiStore.toggleFilterDiv()}}>Back
+		             	</label>
 		            </div>
 				    {numSection}
 					<ColoredLine/>
