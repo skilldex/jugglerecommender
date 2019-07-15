@@ -17,7 +17,6 @@ v 1.7
 			Patterns:
 				number of tricks with each tag
 				number of balls
-	-put success message for reset password
 	-move filters to own screen
 		-use back arrow, no apply button or X
 		-8,9,10,11 all need buttons in ballNum filter

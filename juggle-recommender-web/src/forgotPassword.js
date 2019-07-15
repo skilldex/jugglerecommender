@@ -10,18 +10,22 @@ class ForgotPassword extends Component {
         error : "",
         email : "",
     }
-
-
+    
     getPassword=()=>{        
-        console.log('forgot password',this.state.email)
+        let emailIsInvalid = true
         authStore.forgotPassword(this.state.email).then((response)=>{
-            console.log(response)
             if(response.message){
                 this.setState({
                     error : response.message
                 })
+            }else{
+                emailIsInvalid = false
+                alert("An email with instructions to reset your password has been sent.")
             }
         }) 
+        if(emailIsInvalid){
+            alert("No user found with that email address.")
+        }
     }
 
     emailInputChange=(e)=>{
