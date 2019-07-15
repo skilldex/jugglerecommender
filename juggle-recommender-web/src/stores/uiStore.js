@@ -32,6 +32,7 @@ class UIStore {
 	@observable showExplanation = false
 	@observable showExpandedMenu = false
 	@observable showHomeScreen = true
+	@observable mainListScrollerPosition = null
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
 	}
@@ -67,6 +68,9 @@ class UIStore {
 	}
 	@action clearDetailTimer=()=>{
 		this.detailTimer = null
+	}
+	@action setMainListScrollerPosition=(scrollPos)=>{
+		this.mainListScrollerPosition = scrollPos
 	}
 	@action setDetailTrick=(clickedTrick)=>{
 		if(this.showMoreInformation){

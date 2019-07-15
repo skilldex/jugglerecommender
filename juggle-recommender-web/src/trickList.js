@@ -14,25 +14,21 @@ import utilities from './utilities'
 //import { Resizable } from "re-resizable";
 import ReactGA from 'react-ga';
 
-var scrollerPosition = 0
-
 @observer
 class TrickList extends Component {
 	state = {
 			sortType: 'alphabetical',
-			listScrollerPosition : 0,
 			expandDone : false
 	}
-
-	recordScrollerPosition = e => {
-	    scrollerPosition = document.getElementById('trickList').scrollTop
- 	}
+	componentDidMount=()=>{
+		this.setScrollerPositions()
+	}
 
   	setScrollerPositions=()=> {
- 		const scrollPos = scrollerPosition
+  		const listType = this.props.listType
 	    function setPositions() {
-	    	if (document.getElementById('trickList')){
-				document.getElementById('trickList').scrollTop = scrollPos  		
+	    	if (document.getElementById('listDiv') && listType === "main"){
+				document.getElementById('listDiv').scrollTop = uiStore.mainListScrollerPosition	
 			}
 		}
 	    setTimeout(function() {
@@ -40,37 +36,15 @@ class TrickList extends Component {
 	    }, 100);		
 	}
 
-	clickTrick=(trickKey)=>{
-		if(uiStore.selectedTrick === trickKey && uiStore.detailTrick === null){
-			const detailTrick = {...store.library[trickKey]}
-			detailTrick.x = 400
-			detailTrick.y = 400
-			detailTrick.id = trickKey
-			uiStore.setDetailTrick(detailTrick)
-		}else{
-			uiStore.toggleSelectedTrick(trickKey)
-			uiStore.updateRootTricks()
-			if (uiStore.selectedTrick === null){
-				uiStore.setDetailTrick(null)
-			}else{
-				const detailTrick = {...store.library[trickKey]}
-				detailTrick.x = 400
-				detailTrick.y = 400
-				detailTrick.id = trickKey
-				uiStore.setDetailTrick(detailTrick)
-			} 
-		}			
-	}
 	openDetail=(trickKey)=>{
 		if(!store.isLocalHost){
-			console.log("opened detail")
 			ReactGA.event({
 			  category: 'list ' + this.props.listType,
 			  action: 'opened detail',
 			  label: 'list ' + this.props.listType + " " + trickKey 
 			});
 		}
-		
+		uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
 		uiStore.setShowHomeScreen(false)
 		uiStore.setShowExpandedMenu(false)
 		if (uiStore.selectedTrick){
@@ -207,11 +181,7 @@ class TrickList extends Component {
 		const date = new Date()
 		const currentTime = date.getTime()
 		const list =
-			<div  
-				id='trickList' 
-				className="listSection"
-				onScroll = {this.recordScrollerPosition}
-			>
+			<div  className="listSection">
 				{tricks.length > 0 ? tricks: 
 					<div className="noResultsDiv">
 						{store.startTime+10000<currentTime? "No results found" :
@@ -227,7 +197,9 @@ class TrickList extends Component {
 		return (
 			<div className="trickListOuterDiv">
 				{uiStore.detailTrick || uiStore.showHomeScreen? null:<MainTagsBar/>}
-				<div className= "listDiv">	
+				<div className= "listDiv"
+					 id='listDiv' 
+				>	
 					{list}				
 				</div>
 			</div>
