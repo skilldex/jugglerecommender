@@ -83,11 +83,11 @@ class Header extends Component {
 					    
 					    <div className="fullHeader">
 						    {authStore.user ? 
-						        <button className="headerButton" onClick={authStore.signOut}>Logout</button>:
-						        <button className="headerButton" onClick={() => this.props.openSlidingPane('isLoginPaneOpen')}>Login</button>
+						        <button className="headerButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
+						        <button className="headerButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
 						   	}
-					    	<button className="headerButton" onClick={() => this.props.openSlidingPane('isInstructionsPaneOpen')}>About</button>
-					    	<button className="headerButton"  onClick={() => uiStore.toggleAddingTrick()}>Add Pattern</button>
+					    	<button className="headerButton" onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
+					    	<button className="headerButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('home')}>Home</button>
 					    </div>
