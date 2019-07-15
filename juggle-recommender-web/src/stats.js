@@ -55,6 +55,8 @@ class Stats extends Component {
 	render (){
 		var newObj = Object.assign({}, ...(ballNumCounter.map(item => ({ [item.key]: item.count }) )));
 console.log('ballNumCounter',ballNumCounter)
+console.log('contributorsCounter',contributorsCounter)
+console.log('tagsCounter',tagsCounter)
 console.log('newObj',newObj)
 ballNumCounter.forEach((trickKey)=>{
 	console.log(trickKey)

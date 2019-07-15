@@ -948,7 +948,7 @@
   },
   "library" : {
     "423" : {
-      "dependents" : [ "Fake Mess", "Weave", "The W", "Creating a Magical Trick(3b)", "423 Armpit Throw(3b)", "Crossed 423 Fake Tennis(3b)", "Half Frostbite(3b)", "The Follow(3b)", "The Weave(3b)", "423 Tennis(3b)", "Fake Boston Shuffle(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "423 Contortion Variation(3b)", "Windshield Wipers(3b)", "Takeouts + Orbits(3b)", "42T3 Slam Tennis(3b)", "Takeouts + Box(3b)", "Fake Columns 2(3b)", "Reverse 423(3b)", "R+L Yo-Yo(3b)", "The Tornado(3b)", "Windmill + Fakemess(3b)", "Columns Overthrow(3b)", "Clawed W(3b)", "Fake Boston Shuffle + Columns(3b)", "Fred's Thread(3b)", "423 Contortion Variation(3b)", "423 Active 2 Variation(3b)" ],
+      "dependents" : [ "Fake Mess", "Weave", "The W", "Creating a Magical Trick(3b)", "423 Armpit Throw(3b)", "Crossed 423 Fake Tennis(3b)", "Half Frostbite(3b)", "The Follow(3b)", "The Weave(3b)", "423 Tennis(3b)", "Fake Boston Shuffle(3b)", "R+L Tornado(3b)", "R+L Fake Columns(3b)", "423 Contortion Variation(3b)", "Windshield Wipers(3b)", "Takeouts + Orbits(3b)", "42T3 Slam Tennis(3b)", "Takeouts + Box(3b)", "Fake Columns 2(3b)", "Reverse 423(3b)", "R+L Yo-Yo(3b)", "The Tornado(3b)", "Windmill + Fakemess(3b)", "Columns Overthrow(3b)", "Clawed W(3b)", "Fake Boston Shuffle + Columns(3b)", "Fred's Thread(3b)", "423 Contortion Variation(3b)", "423 Active 2 Variation(3b)", "423 with Reverse Backcross 3s(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/423.gif",
       "name" : "423",
@@ -971,7 +971,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Half-Box(441).html"
     },
     "531" : {
-      "dependents" : [ "534(4b)", "531 Mills Mess", "531 Contortion(3b)", "7531(4b)" ],
+      "dependents" : [ "534(4b)", "531 Mills Mess", "531 Contortion(3b)", "7531(4b)", "531 with Penguin 3s(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/531.gif",
       "name" : "531",
@@ -1064,6 +1064,19 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/Bbe4Y5ZBmdI/"
     },
+    "(6x,2)(6x,6x)*(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "6.1",
+      "explanation" : "",
+      "name" : "(6x,2)(6x,6x)*(5b)",
+      "num" : "5",
+      "siteswap" : "(6x,2)(6x,6x)*",
+      "tags" : [ "synch", "symmetric" ],
+      "timeSubmitted" : 1563173997670,
+      "timeUpdated" : 1563173997670,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Blp_74WgxXk/"
+    },
     "(6x,4)(4,2x)(4,6x)(2x,4)(4b)" : {
       "contributor" : "juggling_vegan_",
       "dependents" : [ "(6,4x)(2x,4)(4x,6)(4,2x) with the 2x's as slams(4b)" ],
@@ -1105,6 +1118,34 @@
       "timeUpdated" : 1561548397222,
       "video" : "https://www.instagram.com/p/BWZ7rjghxRB/"
     },
+    "({33})33 with Penguin Squeezes(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "[33]33 with Penguin Squeezes(4b)",
+      "num" : "4",
+      "prereqs" : [ "Penguins(3b)" ],
+      "siteswap" : "[33]33",
+      "tags" : [ "multiplex", "symmetric" ],
+      "timeSubmitted" : 1563142617525,
+      "timeUpdated" : 1563142617525,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcKRgx_BRNg/"
+    },
+    "({43})23 with ({43}) Backcrosses(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "[43]23 with [43] Backcrosses(4b)",
+      "num" : "4",
+      "prereqs" : [ "Backcrosses" ],
+      "siteswap" : "[43]23",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563142288128,
+      "timeUpdated" : 1563142288128,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bb4ZuJQBNlN/"
+    },
     "({54})({52})2 (6b)" : {
       "contributor" : "nycjuggler_",
       "difficulty" : "5",
@@ -1124,11 +1165,26 @@
       "name" : "[54]51(4b)",
       "num" : "5",
       "prereqs" : [ "Fountain(4b)" ],
+      "related" : [ "25[35]14(4b)" ],
       "siteswap" : "[54]51",
       "tags" : [ "multiplex" ],
       "timeSubmitted" : 1561294170951,
       "timeUpdated" : 1561294170951,
       "video" : "https://www.instagram.com/p/BjIsOVcD4oW/"
+    },
+    "({55})5555(6b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "[55]5555(6b)",
+      "num" : "6",
+      "prereqs" : [ "Stacked Cascade(5b)", "Stacked Cascade(6b)" ],
+      "siteswap" : "[55]5555",
+      "tags" : [ "multiplex" ],
+      "timeSubmitted" : 1563151620616,
+      "timeUpdated" : 1563151620616,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bg3ZY2XBcdc/"
     },
     "({64})41(5b)" : {
       "contributor" : "nycjuggler_",
@@ -1142,17 +1198,62 @@
       "timeUpdated" : 1561294239135,
       "video" : "https://www.instagram.com/p/BjPi21rDwgU/"
     },
+    "({74})333(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "[74]333(5b)",
+      "num" : "5",
+      "prereqs" : [ "Cascade(5b)" ],
+      "related" : [ "({75})21(5b)" ],
+      "siteswap" : "[74]333",
+      "tags" : [ "multiplex" ],
+      "timeSubmitted" : 1563144600124,
+      "timeUpdated" : 1563144600124,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BeDbbQeh7DI/"
+    },
     "({75})21(5b)" : {
       "contributor" : "jameschance_",
       "difficulty" : "5",
       "name" : "[75]21(5b)",
       "num" : "5",
       "prereqs" : [ "Stacked Cascade(6b)", "Stacked Cascade(5b)" ],
+      "related" : [ "[74]333(5b)" ],
       "siteswap" : "[75]21",
       "tags" : [ "multiplex", "one-throw" ],
       "timeSubmitted" : 1561460919908,
       "timeUpdated" : 1561460919908,
       "video" : "https://www.instagram.com/p/BKbCcZtjX7N/"
+    },
+    "1up 2up with 1 of 2up Reverse Backcrosses(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.1",
+      "explanation" : "",
+      "name" : "1up 2up with 1 of 2up Reverse Backcrosses(3b)",
+      "num" : "3",
+      "prereqs" : [ "Columns", "Reverse Backcrosses(3b)" ],
+      "related" : [ "Continuous Asscatches 1up2up(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "synch", "asymmetric" ],
+      "timeSubmitted" : 1563142737955,
+      "timeUpdated" : 1563142737955,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcSFV4iBCfb/"
+    },
+    "1up crossing 3up multiplex(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "dependents" : [ "Weaving 1up Crossing 3up Multiplex(4b)", "Crossed 2up 3up Multiplex(5b)", "Crossed 2up 3up Multiplex(5b)" ],
+      "difficulty" : "4.2",
+      "explanation" : "",
+      "name" : "1up crossing 3up multiplex(4b)",
+      "num" : "4",
+      "siteswap" : "([6x4x],6x)(0,2x)(4,2)*",
+      "tags" : [ "multiplex", "symmetric" ],
+      "timeSubmitted" : 1563142451535,
+      "timeUpdated" : 1563142451535,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcFkTNmBWCU/"
     },
     "1up-3down(3b)" : {
       "contributor" : "artifaxiom",
@@ -1190,12 +1291,42 @@
       "timeUpdated" : 1561242743281,
       "video" : "https://www.instagram.com/p/BJgmnZvDyeV/"
     },
+    "25({35})14(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.6",
+      "explanation" : "",
+      "name" : "25[35]14(4b)",
+      "num" : "4",
+      "related" : [ "({54})51(4b)" ],
+      "siteswap" : "25[35]14",
+      "tags" : [ "multiplex", "one-throw" ],
+      "timeSubmitted" : 1563142173763,
+      "timeUpdated" : 1563142173763,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bb1rhMvBuJb/"
+    },
+    "2up 3up Variation(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.7",
+      "explanation" : "",
+      "name" : "2up 3up Variation(5b)",
+      "num" : "5",
+      "related" : [ "Crossed 2up 3up Multiplex(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "symmetric" ],
+      "timeSubmitted" : 1563172756368,
+      "timeUpdated" : 1563172756368,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bk2WNbVA8ka/",
+      "videoStartTime" : 3
+    },
     "3-beat Reverse Slam Machine(3b)" : {
       "contributor" : "jameschance_",
       "difficulty" : "5",
       "name" : "3-beat Reverse Slam Machine(3b)",
       "num" : "3",
       "prereqs" : [ "Factory (Machine)" ],
+      "related" : [ "Quickbox Reverse Slams(3b)" ],
       "siteswap" : "",
       "tags" : [ "slam", "carry", "raised-hand" ],
       "timeSubmitted" : 1561149581927,
@@ -1228,11 +1359,13 @@
     },
     "423 Active 2 Variation(3b)" : {
       "contributor" : "noelyee",
+      "dependents" : [ "6622 with a 2 Around the Body(4b)" ],
       "difficulty" : "4",
       "explanation" : "This is an active 2 variation that uses a cross arm throw to native side catch.   \n\nhttps://www.youtube.com/watch?v=SphXcsPSSeU&t=272s",
       "name" : "423 Active 2 Variation(3b)",
       "num" : "3",
       "prereqs" : [ "423" ],
+      "related" : [ "423 with Reverse Backcross 3s(3b)" ],
       "siteswap" : "423",
       "tags" : [ "423" ],
       "timeSubmitted" : 1562938635006,
@@ -1247,6 +1380,7 @@
       "name" : "423 Armpit Throw(3b)",
       "num" : "3",
       "prereqs" : [ "423" ],
+      "related" : [ "423 with Reverse Backcross 3s(3b)", "Armberts(3b)" ],
       "siteswap" : "423",
       "tags" : [ "armpit-throw", "423" ],
       "timeSubmitted" : 1560862429991,
@@ -1254,7 +1388,7 @@
     },
     "423 Contortion Variation(3b)" : {
       "contributor" : "juggling_vegan_",
-      "dependents" : [ "Half-contortion neck pass tennis(3b)" ],
+      "dependents" : [ "Half-contortion neck pass tennis(3b)", "Asymmetric Multiplex to Straight Jacket Throw(3b)" ],
       "difficulty" : "4",
       "name" : "423 Contortion Variation(3b)",
       "num" : "3",
@@ -1267,7 +1401,7 @@
     },
     "423 Tennis(3b)" : {
       "contributor" : "3ballpatterns_",
-      "dependents" : [ "42T3 Slam Tennis(3b)", "42T3 Slam Tennis(3b)", "Columns Overthrow(3b)" ],
+      "dependents" : [ "42T3 Slam Tennis(3b)", "42T3 Slam Tennis(3b)", "Columns Overthrow(3b)", "423 with Reverse Backcross 3s(3b)" ],
       "difficulty" : "3",
       "name" : "423 Tennis(3b)",
       "num" : "3",
@@ -1276,6 +1410,21 @@
       "tags" : [ "423", "columns" ],
       "timeSubmitted" : 1561032485958,
       "video" : "https://www.instagram.com/p/BK6C-VhjJvX/"
+    },
+    "423 with Reverse Backcross 3s(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.1",
+      "explanation" : "",
+      "name" : "423 with Reverse Backcross 3s(3b)",
+      "num" : "3",
+      "prereqs" : [ "423", "423 Tennis(3b)" ],
+      "related" : [ "423 Active 2 Variation(3b)", "423 Armpit Throw(3b)" ],
+      "siteswap" : "423",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563143065121,
+      "timeUpdated" : 1563143065121,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcpLej7hHr0/"
     },
     "423ish Underarm Factory(3b)" : {
       "contributor" : "nycjuggler_",
@@ -1372,6 +1521,7 @@
       "name" : "4b Mills Multiplex Variation 1(4b)",
       "num" : "4",
       "prereqs" : [ "Mills Mess(4b)" ],
+      "related" : [ "Mills Multiplex Variation 2(4b)", "Mills Multiplex Variation 3(4b)" ],
       "siteswap" : "",
       "tags" : [ "crossed-arms", "underarm-catch", "multiplex" ],
       "timeSubmitted" : 1561546167835,
@@ -1380,6 +1530,7 @@
     },
     "4b Penguin Shower(4b)" : {
       "contributor" : "lucasadverse",
+      "dependents" : [ "Penguins(5b)" ],
       "difficulty" : "6",
       "name" : "4b Penguin Shower(4b)",
       "num" : "4",
@@ -1476,6 +1627,20 @@
       "timeSubmitted" : 999999999999,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/531MillsMess.html"
     },
+    "531 with Penguin 3s(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "531 with Penguin 3s(3b)",
+      "num" : "3",
+      "prereqs" : [ "531" ],
+      "related" : [ "Penguin Shower(3b)", "Penguin Box(3b)" ],
+      "siteswap" : "531",
+      "timeSubmitted" : 1563172410509,
+      "timeUpdated" : 1563172410509,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BkSRKhFDpkn/"
+    },
     "534 Mills Mess(4b)" : {
       "dependents" : [ "Semi-Forked Semi-Mess(4b)", "363 Mills Mess(4b)" ],
       "difficulty" : "5",
@@ -1517,6 +1682,7 @@
     },
     "534 with the 3s behind the neck(4b)" : {
       "contributor" : "tjthejuggler",
+      "dependents" : [ "Reverse BX, Shadow Pass, Shoulder Throw(3b)" ],
       "difficulty" : "5",
       "explanation" : "",
       "name" : "534 with the 3s behind the neck(4b)",
@@ -1659,6 +1825,7 @@
     },
     "64(5b)" : {
       "contributor" : "juggling_vegan_",
+      "dependents" : [ "Cross arm 64(5b)" ],
       "difficulty" : "5",
       "name" : "64(5b)",
       "num" : "5",
@@ -1679,6 +1846,20 @@
       "timeSubmitted" : 1561546280279,
       "timeUpdated" : 1561546280279,
       "video" : "https://www.instagram.com/p/BU9ME8uhcCB/"
+    },
+    "6622 with a 2 Around the Body(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "6622 with a 2 Around the Body(4b)",
+      "num" : "4",
+      "prereqs" : [ "423 Active 2 Variation(3b)" ],
+      "siteswap" : "6622",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563142965983,
+      "timeUpdated" : 1563142965983,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BckCTMRhl3k/"
     },
     "663M5(5b)" : {
       "contributor" : "jameschance_",
@@ -1755,6 +1936,7 @@
     },
     "771(5b)" : {
       "contributor" : "nycjuggler_",
+      "dependents" : [ "777771 With the 1 Behind the Neck(6b)" ],
       "difficulty" : "6",
       "name" : "771(5b)",
       "num" : "5",
@@ -1763,6 +1945,20 @@
       "timeSubmitted" : 1561294324303,
       "timeUpdated" : 1561294324303,
       "video" : "https://www.instagram.com/p/BjhefbOjtO-/"
+    },
+    "777771 With the 1 Behind the Neck(6b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "6.9",
+      "explanation" : "",
+      "name" : "777771 With the 1 Behind the Neck(6b)",
+      "num" : "6",
+      "prereqs" : [ "771(5b)" ],
+      "siteswap" : "777771",
+      "tags" : [ "body-throw", "one-throw" ],
+      "timeSubmitted" : 1563152087574,
+      "timeUpdated" : 1563152087574,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bh_cmKLDHFg/"
     },
     "8x6x4x0(6,6)* Semisolid(5b)" : {
       "contributor" : "jameschance_",
@@ -1814,6 +2010,7 @@
       "name" : "Alternating Cross Corner Machine(3b)",
       "num" : "3",
       "prereqs" : [ "Cross Corner Machine(3b)" ],
+      "related" : [ "Sync Symmetrical Machine Variation 1(3b)" ],
       "siteswap" : "",
       "tags" : [ "carry", "crossed-arms", "underarm-catch" ],
       "timeSubmitted" : 1561460387403,
@@ -1840,6 +2037,7 @@
       "name" : "Alternating Triplex Box(5b)",
       "num" : "5",
       "prereqs" : [ "Split Cascade(5b)", "Multiplex Columns(5b)" ],
+      "related" : [ "Triplex with Shadow Pass(5b)", "Triplex Machine Variant 1(5b)", "Half Slam Stacked Multiplex Box(5b)" ],
       "siteswap" : "",
       "tags" : [ "multiplex", "one-throw", "symmetric" ],
       "timeSubmitted" : 1561545614764,
@@ -1868,6 +2066,21 @@
       "tags" : [ "synch" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Arches.html"
     },
+    "Armberts(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Armberts(3b)",
+      "num" : "3",
+      "prereqs" : [ "Cascade" ],
+      "related" : [ "423 Armpit Throw(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563144499335,
+      "timeUpdated" : 1563144499335,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bd-RbMMhoew/"
+    },
     "Arrow of Asai" : {
       "difficulty" : "6",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/arrowofasai.gif",
@@ -1878,14 +2091,44 @@
       "tags" : [ "multiplex", "one-throw" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/ArrowofAsai.html"
     },
+    "Asymmetric Multiplex to Straight Jacket Throw(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Asymmetric Multiplex to Straight Jacket Throw(3b)",
+      "num" : "3",
+      "prereqs" : [ "423 Contortion Variation(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563151923880,
+      "timeUpdated" : 1563151923880,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BhY3rxkDe2N/"
+    },
+    "Asymmetric Penguin Multiplex 1(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Asymmetric Penguin Multiplex 1(4b)",
+      "num" : "4",
+      "prereqs" : [ "Penguins(3b)" ],
+      "related" : [ "Penguins Fountain(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "asymmetric" ],
+      "timeSubmitted" : 1563151042877,
+      "timeUpdated" : 1563151042877,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BgYj1zync19/"
+    },
     "Asymmetric Slam Box Variant(3b)" : {
       "contributor" : "juggling_vegan_",
+      "dependents" : [ "NoName Slam Box Thing(3b)", "Half Slam Stacked Multiplex Box(5b)" ],
       "difficulty" : "4.6",
       "explanation" : "",
       "name" : "Asymmetric Slam Box Variant(3b)",
       "num" : "3",
       "prereqs" : [ "NBox" ],
-      "related" : [ "Inverted Box", "Symmetric Slam Box Variant(3b)" ],
+      "related" : [ "Inverted Box", "Symmetric Slam Box Variant(3b)", "Asynch Slam Box Variation(3b)" ],
       "siteswap" : "",
       "tags" : [ "one-throw", "asymmetric" ],
       "timeSubmitted" : 1563105045748,
@@ -1919,6 +2162,21 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BaY2PN3hoSL/"
     },
+    "Asynch Slam Box Variation(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "3.9",
+      "explanation" : "",
+      "name" : "Asynch Slam Box Variation(3b)",
+      "num" : "3",
+      "prereqs" : [ "Box" ],
+      "related" : [ "Asymmetric Slam Box Variant(3b)", "Multiplex Threaded Slam Box Variation(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw", "slam" ],
+      "timeSubmitted" : 1563144282827,
+      "timeUpdated" : 1563144282827,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdsPVVHhnnY/"
+    },
     "Atari(3b)" : {
       "contributor" : "taylor_tries_",
       "difficulty" : "4",
@@ -1941,8 +2199,23 @@
       "timeUpdated" : 1561298692641,
       "video" : "https://www.instagram.com/p/BrtYQUmA2Hb/"
     },
+    "Backcross + Neck Throw(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.6",
+      "explanation" : "",
+      "name" : "Backcross + Neck Throw(3b)",
+      "num" : "3",
+      "prereqs" : [ "Backcrosses" ],
+      "related" : [ "Neck Throw Tennis(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563152160304,
+      "timeUpdated" : 1563152160304,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BiCR2FAD87p/"
+    },
     "Backcrosses" : {
-      "dependents" : [ "Blind Behind the Back Cascade(3b)", "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)", "Backcrosses + Neckthrows(3b)", "(3b)", "(3b)", "Reverse Backcrosses(3b)", "Reverse Backcross, Backcross Tennis(3b)" ],
+      "dependents" : [ "Blind Behind the Back Cascade(3b)", "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)", "Backcrosses + Neckthrows(3b)", "(3b)", "(3b)", "Reverse Backcrosses(3b)", "Reverse Backcross, Backcross Tennis(3b)", "[43]23 with [43] Backcrosses(4b)", "Multiplex Reverse Backcross Shadow Pass Combo(3b)", "Reverse BX, Shadow Pass, Shoulder Throw(3b)", "Backcross + Neck Throw(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/backcrosses.gif",
       "name" : "Backcrosses",
@@ -2035,7 +2308,7 @@
       "video" : "https://www.instagram.com/p/Bu2fpQ0gEUo/"
     },
     "Boston Mess" : {
-      "dependents" : [ "Cherry Picker", "Over the Undercover Thunder(3b)", "Bent Into a Pretzel(3b)", "Cherry Picker(3b)", "Boston Takeouts(3b)", "Boston Takeouts(3b)", "4440522(3b)" ],
+      "dependents" : [ "Cherry Picker", "Over the Undercover Thunder(3b)", "Bent Into a Pretzel(3b)", "Cherry Picker(3b)", "Boston Takeouts(3b)", "Boston Takeouts(3b)", "4440522(3b)", "Mindfuckery Reverse Machine(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/bostonmess.gif",
       "name" : "Boston Mess",
@@ -2098,7 +2371,7 @@
       "video" : "https://www.instagram.com/p/BwPv5q6hE7H/"
     },
     "Box" : {
-      "dependents" : [ "Bizarre Box", "Broken Box", "Extended Box", "Luke's Shuffle", "NBox", "Penman's Box", "Swap Box", "Switched Box", "Threaded Box", "True Box", "Underarm Box", "Shuffle(Slams)", "Box(4b)", "Stacked Box(4b)", "Sprung Cascade(4b)", "Inverted Box Distorted By Inside Shapeshifter(3b)", "Extended Shapeshifter Thing(3b)", "Lost in the Loop(3b)", "Box Takeouts(3b)", "Crossed 423 Fake Tennis(3b)", "Chops + Box(3b)", "Burke's Burrage + Box(3b)", "Double Box + NBox(3b)", "Double Yolked Egg(4b)", "Takeouts + Box(3b)", "Shower + Fake Mess(3b)", "Mills Mess + Shower(3b)", "Double Box(3b)", "Box + Fake Double Box(3b)", "Box + Shower(3b)", "Box + Boston Shuffle(3b)", "Newton(3b)", "Temple Box(4b)", "Temple Box(4b)", "Extended Box with Vertical 2xs(3b)", "Double Yolked Sunny Side Up (Version 2)(4b)", "Crossed Box(3b)", "Split plane rolling box(3b)", "Penguin Box(3b)", "Stacked Multiplex Box(5b)", "The Palindrome(3b)", "Box with a Lid(3b)" ],
+      "dependents" : [ "Bizarre Box", "Broken Box", "Extended Box", "Luke's Shuffle", "NBox", "Penman's Box", "Swap Box", "Switched Box", "Threaded Box", "True Box", "Underarm Box", "Shuffle(Slams)", "Box(4b)", "Stacked Box(4b)", "Sprung Cascade(4b)", "Inverted Box Distorted By Inside Shapeshifter(3b)", "Extended Shapeshifter Thing(3b)", "Lost in the Loop(3b)", "Box Takeouts(3b)", "Crossed 423 Fake Tennis(3b)", "Chops + Box(3b)", "Burke's Burrage + Box(3b)", "Double Box + NBox(3b)", "Double Yolked Egg(4b)", "Takeouts + Box(3b)", "Shower + Fake Mess(3b)", "Mills Mess + Shower(3b)", "Double Box(3b)", "Box + Fake Double Box(3b)", "Box + Shower(3b)", "Box + Boston Shuffle(3b)", "Newton(3b)", "Temple Box(4b)", "Temple Box(4b)", "Extended Box with Vertical 2xs(3b)", "Double Yolked Sunny Side Up (Version 2)(4b)", "Crossed Box(3b)", "Split plane rolling box(3b)", "Penguin Box(3b)", "Stacked Multiplex Box(5b)", "The Palindrome(3b)", "Box with a Lid(3b)", "Half Overhead Box with Slanted Bottom(3b)", "Asynch Slam Box Variation(3b)", "Box with [11] Bottom(4b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/box.gif",
       "name" : "Box",
@@ -2157,6 +2430,20 @@
       "tags" : [ "one-throw", "carry" ],
       "timeSubmitted" : 1560926342007,
       "video" : "https://www.instagram.com/p/BsUTSSIg08G/"
+    },
+    "Box with ({11}) Bottom(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.6",
+      "explanation" : "",
+      "name" : "Box with [11] Bottom(4b)",
+      "num" : "4",
+      "prereqs" : [ "Box" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw", "symmetric" ],
+      "timeSubmitted" : 1563172129366,
+      "timeUpdated" : 1563172129366,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bj7J_OeDNr2/"
     },
     "Box with a Lid(3b)" : {
       "contributor" : "juggling_vegan_",
@@ -2299,8 +2586,10 @@
       "name" : "Burke's Slam",
       "num" : 3,
       "prereqs" : [ "Boston Shuffle", "Takeouts" ],
+      "related" : [ "Slam Mills(3b)" ],
       "siteswap" : "52512*",
       "tags" : [ "crossed-arms", "slam", "claw", "one-throw" ],
+      "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Burke'sSlam.html"
     },
     "Burst Box" : {
@@ -2363,7 +2652,7 @@
       "video" : "https://www.instagram.com/p/BvMai0sg31k/"
     },
     "Cascade" : {
-      "dependents" : [ "552(4b)", "Backcrosses", "Boston Shuffle", "Takeouts", "HighLow Cascade", "Chops", "Crossed Arm Cascade", "Georgian Shuffle", "Half Shower", "Juggler's Tennis", "Mangham's Mangle", "Olas", "Orka's Mess", "Ripley's Rainbow", "Sandbox Shuffle", "Tennessee Waltz(4b)", "Wimpy(4b)", "Cascade(5b)", "Split Cascade(5b)", "Stacked Cascade(5b)", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Penguins(3b)", "Blind Behind the Back Cascade(3b)", "Cascade on the Chest(3b)", "Clawed Reverse Cascade(3b)", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room(3b)", "Neck Pass Tennis(3b)", "Protostar(3b)" ],
+      "dependents" : [ "552(4b)", "Backcrosses", "Boston Shuffle", "Takeouts", "HighLow Cascade", "Chops", "Crossed Arm Cascade", "Georgian Shuffle", "Half Shower", "Juggler's Tennis", "Mangham's Mangle", "Olas", "Orka's Mess", "Ripley's Rainbow", "Sandbox Shuffle", "Tennessee Waltz(4b)", "Wimpy(4b)", "Cascade(5b)", "Split Cascade(5b)", "Stacked Cascade(5b)", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Penguins(3b)", "Blind Behind the Back Cascade(3b)", "Cascade on the Chest(3b)", "Clawed Reverse Cascade(3b)", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room(3b)", "Neck Pass Tennis(3b)", "Protostar(3b)", "Delayed Juggler's Tennis(3b)", "Armberts(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/3ballcascade.gif",
       "name" : "Cascade",
@@ -2410,7 +2699,7 @@
       "video" : "https://youtu.be/YAtR1lTO8XA"
     },
     "Cascade(5b)" : {
-      "dependents" : [ "Reverse Cascade(5b)", "Half Shower(5b)", "Six Ball Fountain(6b)", "744(5b)", "8x6x4x0(6,6)* Semisolid(5b)", "Five-ball semisolid columns(5b)", "8x6x4x0(6,6)* Semisolid(5b)", "5b 3up 360(5b)", "Cascade(7b)" ],
+      "dependents" : [ "Reverse Cascade(5b)", "Half Shower(5b)", "Six Ball Fountain(6b)", "744(5b)", "8x6x4x0(6,6)* Semisolid(5b)", "Five-ball semisolid columns(5b)", "8x6x4x0(6,6)* Semisolid(5b)", "5b 3up 360(5b)", "Cascade(7b)", "[74]333(5b)" ],
       "difficulty" : "6",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballcascade.gif",
       "name" : "Cascade(5b)",
@@ -2683,7 +2972,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/ColumnShowVar.html"
     },
     "Columns" : {
-      "dependents" : [ "Column Box Variation", "Crossunder", "Infinity", "Rainbow Arches", "Reverse Crossunder", "Reverse Infinity", "Column Shower Variation", "Shuffle Switch", "Nelson's Nemesis", "Columns(4b)", "Multiplex Columns(5b)", "Collision Columns (3)", "Collision Columns Over The Top (3)", "Half Boston Mess(3b)", "Columns Mess 1(3b)", "R+L Fake Columns(3b)", "Stacked Columns(4b)", "Fake Columns 2(3b)", "Sing's Mess(3b)", "Reverse 423(3b)", "R+L Yo-Yo(3b)", "Columns Overthrow(3b)", "Fake Boston Shuffle + Columns(3b)", "Aquamarine(3b)" ],
+      "dependents" : [ "Column Box Variation", "Crossunder", "Infinity", "Rainbow Arches", "Reverse Crossunder", "Reverse Infinity", "Column Shower Variation", "Shuffle Switch", "Nelson's Nemesis", "Columns(4b)", "Multiplex Columns(5b)", "Collision Columns (3)", "Collision Columns Over The Top (3)", "Half Boston Mess(3b)", "Columns Mess 1(3b)", "R+L Fake Columns(3b)", "Stacked Columns(4b)", "Fake Columns 2(3b)", "Sing's Mess(3b)", "Reverse 423(3b)", "R+L Yo-Yo(3b)", "Columns Overthrow(3b)", "Fake Boston Shuffle + Columns(3b)", "Aquamarine(3b)", "1up 2up with 1 of 2up Reverse Backcrosses(3b)", "Sync Crossarm 1up 2up Tennis(3b)" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/columnsonehand.gif",
       "name" : "Columns",
@@ -2760,6 +3049,7 @@
       "name" : "Continuous Asscatches 1up2up(3b)",
       "num" : "3",
       "prereqs" : [ "Columns" ],
+      "related" : [ "1up 2up with 1 of 2up Reverse Backcrosses(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1561936856758,
@@ -2769,12 +3059,12 @@
     },
     "Continuous Machine(4b)" : {
       "contributor" : "juggling_vegan_",
-      "dependents" : [ "633M(4b)" ],
+      "dependents" : [ "633M(4b)", "Triplex Machine Variant 1(5b)" ],
       "difficulty" : "6",
       "name" : "Continuous Machine(4b)",
       "num" : "4",
       "prereqs" : [ "Factory (Machine)" ],
-      "related" : [ "Multiplex Squeeze Catch Machine Variation(4b)" ],
+      "related" : [ "Multiplex Squeeze Catch Machine Variation(4b)", "Multiplex/Squeeze Factory(4b)", "Sync Symmetrical Factory(4b)" ],
       "siteswap" : "",
       "tags" : [ "carry" ],
       "timeSubmitted" : 1561547266934,
@@ -2873,6 +3163,7 @@
       "name" : "Cross Corner Machine(3b)",
       "num" : "3",
       "prereqs" : [ "Factory (Machine)" ],
+      "related" : [ "Sync Symmetrical Machine Variation 1(3b)" ],
       "siteswap" : "",
       "tags" : [ "carry", "underarm-catch", "crossed-arms" ],
       "timeSubmitted" : 1561460296169,
@@ -2890,6 +3181,37 @@
       "timeSubmitted" : 1561300784021,
       "timeUpdated" : 1561300784021,
       "video" : "https://www.instagram.com/p/ByQHRQNA3ss/"
+    },
+    "Cross arm 64(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.5",
+      "explanation" : "",
+      "name" : "Cross arm 64(5b)",
+      "num" : "5",
+      "prereqs" : [ "64(5b)" ],
+      "siteswap" : "64",
+      "tags" : [ "asymmetric", "crossed-arms", "underarm-catch" ],
+      "timeSubmitted" : 1563150070140,
+      "timeUpdated" : 1563150070140,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BeX4-qSB9zu/"
+    },
+    "Crossed 2up 3up Multiplex(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.7",
+      "explanation" : "",
+      "name" : "Crossed 2up 3up Multiplex(5b)",
+      "num" : "5",
+      "prereqs" : [ "1up crossing 3up multiplex(4b)" ],
+      "related" : [ "2up 3up Variation(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "synch" ],
+      "timeSubmitted" : 1563150629517,
+      "timeUpdated" : 1563150689304,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be3OueRBrlQ/",
+      "videoEndTime" : 13,
+      "videoStartTime" : 2
     },
     "Crossed 423 Fake Tennis(3b)" : {
       "contributor" : "3ballpatterns_",
@@ -2921,7 +3243,7 @@
       "name" : "Crossed Arm Factory",
       "num" : 3,
       "prereqs" : [ "Factory (Machine)" ],
-      "related" : [ "423ish Underarm Factory(3b)", "FUF(3b)" ],
+      "related" : [ "423ish Underarm Factory(3b)", "FUF(3b)", "Sync Symmetrical Machine Variation 1(3b)", "Some Weird Machine Variant(3b)" ],
       "siteswap" : "(4,2)(4,2)(4x,2T)*",
       "tags" : [ "columns", "crossed-arms", "carry" ],
       "timeSubmitted" : 0,
@@ -3015,7 +3337,7 @@
       "name" : "Crossunder Factory(3b)",
       "num" : "3",
       "prereqs" : [ "Crossunder", "Factory (Machine)" ],
-      "related" : [ "423ish Underarm Factory(3b)", "FUF(3b)" ],
+      "related" : [ "423ish Underarm Factory(3b)", "FUF(3b)", "Some Weird Machine Variant(3b)" ],
       "siteswap" : "",
       "tags" : [ "synch", "crossed-arms", "carry", "claw", "symmetric" ],
       "timeSubmitted" : 1561415125848,
@@ -3077,6 +3399,21 @@
       "tags" : [ "one-throw" ],
       "timeSubmitted" : 1560860181440,
       "video" : "https://www.instagram.com/p/Bw-7rH5gAts/"
+    },
+    "Delayed Juggler's Tennis(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "3.2",
+      "explanation" : "",
+      "name" : "Delayed Juggler's Tennis(3b)",
+      "num" : "3",
+      "prereqs" : [ "Cascade", "Reverse Cascade" ],
+      "related" : [ "Juggler's Tennis" ],
+      "siteswap" : "3",
+      "tags" : [ "symmetric" ],
+      "timeSubmitted" : 1563143580460,
+      "timeUpdated" : 1563143580460,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdVS692hmxm/"
     },
     "Diagonal Line Freezes(3b)" : {
       "contributor" : "artifaxiom",
@@ -3295,7 +3632,7 @@
       "video" : "https://www.instagram.com/p/BbzRShnBM6E/"
     },
     "Factory (Machine)" : {
-      "dependents" : [ "Crossed Arm Factory", "Relf's Factory", "Reverse Factory", "Zebra Factory", "Inverted Shower", "R+L Factory(3b)", "R+L Fake Columns(3b)", "663M5(5b)", "3-beat Reverse Slam Machine(3b)", "Machined Windmill(3b)", "Half Waterfall(3b)", "Waterfall(3b)", "Alt Fake Columns(3b)", "The Magnet Factory(3b)", "625M263(4b)", "Cross Drop Robot(3b)", "Crossunder Factory(3b)", "Isa's Factory(3b)", "Contraption(3b)", "Triphammer (Alternating bisected multi-machine)(4b)", "Cross Corner Machine(3b)", "Phi(3b)", "Phi(3b)", "Crossunder Factory(3b)", "Isa's Factory(3b)", "Phi(3b)", "Continuous penguin machine (the wrist burner)(3b)", "Continuous Machine(4b)", "Multiplex Squeeze Catch Machine Variation(4b)", "423ish Underarm Factory(3b)", "FUF(3b)" ],
+      "dependents" : [ "Crossed Arm Factory", "Relf's Factory", "Reverse Factory", "Zebra Factory", "Inverted Shower", "R+L Factory(3b)", "R+L Fake Columns(3b)", "663M5(5b)", "3-beat Reverse Slam Machine(3b)", "Machined Windmill(3b)", "Half Waterfall(3b)", "Waterfall(3b)", "Alt Fake Columns(3b)", "The Magnet Factory(3b)", "625M263(4b)", "Cross Drop Robot(3b)", "Crossunder Factory(3b)", "Isa's Factory(3b)", "Contraption(3b)", "Triphammer (Alternating bisected multi-machine)(4b)", "Cross Corner Machine(3b)", "Phi(3b)", "Phi(3b)", "Crossunder Factory(3b)", "Isa's Factory(3b)", "Phi(3b)", "Continuous penguin machine (the wrist burner)(3b)", "Continuous Machine(4b)", "Multiplex Squeeze Catch Machine Variation(4b)", "423ish Underarm Factory(3b)", "FUF(3b)", "Multiplex/Squeeze Factory(4b)", "Sync Symmetrical Machine Variation 1(3b)", "Symmetric Machine + Slam(3b)", "Some Weird Machine Variant(3b)", "Sync Symmetrical Factory(4b)", "Mindfuckery Reverse Machine(3b)" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/factory.gif",
       "name" : "Factory (Machine)",
@@ -3391,6 +3728,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/FlippedMess.html"
     },
     "Flo's Mess" : {
+      "dependents" : [ "Stylized Flo's Bird Mess (3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/flosmess.gif",
       "name" : "Flo's Mess",
@@ -3399,6 +3737,7 @@
       "related" : [ "Windmill" ],
       "siteswap" : "3",
       "tags" : [ "crossed-arms" ],
+      "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Flo'sMess.html"
     },
     "Flying Around the World(3b)" : {
@@ -3482,7 +3821,7 @@
       "video" : "https://youtu.be/LY2qhGr73oc"
     },
     "Fountain(4b)" : {
-      "dependents" : [ "534(4b)", "Pistons(4b)", "Reverse Fountain(4b)", "SynchFountain", "Windmill(4b)", "Six Ball Fountain(6b)", "Reverse Fountain Through Dots(4b)", "Headplants with Underarm Catches(4b)", "[54]51(4b)", "Isolated Fountain(4b)", "64(5b)", "Reverse Shoulder Throws (occasional)(4b)" ],
+      "dependents" : [ "534(4b)", "Pistons(4b)", "Reverse Fountain(4b)", "SynchFountain", "Windmill(4b)", "Six Ball Fountain(6b)", "Reverse Fountain Through Dots(4b)", "Headplants with Underarm Catches(4b)", "[54]51(4b)", "Isolated Fountain(4b)", "64(5b)", "Reverse Shoulder Throws (occasional)(4b)", "Sync 4b Slam Variation(4b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fountain.gif",
       "name" : "Fountain(4b)",
@@ -3731,6 +4070,20 @@
       "tags" : [ "crossed-arms" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallHalf-Mess.html"
     },
+    "Half Overhead Box with Slanted Bottom(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.4",
+      "explanation" : "",
+      "name" : "Half Overhead Box with Slanted Bottom(3b)",
+      "num" : "3",
+      "prereqs" : [ "Box" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw" ],
+      "timeSubmitted" : 1563143942843,
+      "timeUpdated" : 1563143942843,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdZJVWkBSGU/"
+    },
     "Half Shower" : {
       "dependents" : [ "Reverse Cascade", "Shower", "Statue of Liberty", "Half Shower(4b)" ],
       "difficulty" : "2",
@@ -3775,6 +4128,21 @@
       "timeSubmitted" : 1561510178692,
       "timeUpdated" : 1561510178692,
       "video" : "https://www.instagram.com/p/BSLn3PDBygH/"
+    },
+    "Half Slam Stacked Multiplex Box(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.6",
+      "explanation" : "",
+      "name" : "Half Slam Stacked Multiplex Box(5b)",
+      "num" : "5",
+      "prereqs" : [ "Stacked Box(4b)", "Asymmetric Slam Box Variant(3b)" ],
+      "related" : [ "Alternating Triplex Box(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "slam" ],
+      "timeSubmitted" : 1563171906448,
+      "timeUpdated" : 1563171906448,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BjuRcnTDnLF/"
     },
     "Half Waterfall(3b)" : {
       "contributor" : "3ballpatterns_",
@@ -3951,6 +4319,22 @@
       "timeSubmitted" : 1561031667098,
       "video" : "https://www.instagram.com/p/BvUhPsoFaoh/"
     },
+    "Inside Outside Slams(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "dependents" : [ "Quickbox Reverse Slams(3b)" ],
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Inside Outside Slams(3b)",
+      "num" : "3",
+      "prereqs" : [ "NBox" ],
+      "related" : [ "Z + Backward Z Box(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "asymmetric" ],
+      "timeSubmitted" : 1563173216101,
+      "timeUpdated" : 1563173216101,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Blc1ORElTcQ/"
+    },
     "Inspired by the Stars(3b)" : {
       "contributor" : "noslowerdna_",
       "difficulty" : "7",
@@ -3981,7 +4365,7 @@
       "name" : "Inverted Box",
       "num" : 3,
       "prereqs" : [ "NBox", "Luke's Shuffle" ],
-      "related" : [ "Asymmetric Slam Box Variant(3b)" ],
+      "related" : [ "Asymmetric Slam Box Variant(3b)", "Z + Backward Z Box(3b)" ],
       "siteswap" : "(4,2x)(2x,4)",
       "tags" : [ "slam", "claw", "columns", "one-throw" ],
       "timeSubmitted" : 999999999999,
@@ -4119,13 +4503,13 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Jeanne.html"
     },
     "Juggler's Tennis" : {
-      "dependents" : [ "Reverse Cascade", "Half Shower", "4413333333(3b)", "Juggler's Tennis(4b)", "Juggler's Tennis Synch(4b)", "Crossed 423 Fake Tennis(3b)", "423 Tennis(3b)", "Open Handed Jugglers Tennis(3b)", "Collisioner's Tennis(3b)", "Collisioner's Tennis(3b)", "Tilted Tennis(3b)", "Headplant Tennis(3b)", "Collisioner's Tennis(3b)", "Collisioner's Tennis(3b)" ],
+      "dependents" : [ "Reverse Cascade", "Half Shower", "4413333333(3b)", "Juggler's Tennis(4b)", "Juggler's Tennis Synch(4b)", "Crossed 423 Fake Tennis(3b)", "423 Tennis(3b)", "Open Handed Jugglers Tennis(3b)", "Collisioner's Tennis(3b)", "Collisioner's Tennis(3b)", "Tilted Tennis(3b)", "Headplant Tennis(3b)", "Collisioner's Tennis(3b)", "Collisioner's Tennis(3b)", "Sync Crossarm 1up 2up Tennis(3b)", "Neck Throw Tennis(3b)" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/jugglerstennis.gif",
       "name" : "Juggler's Tennis",
       "num" : 3,
       "prereqs" : [ "Cascade" ],
-      "related" : [ "Half Shower" ],
+      "related" : [ "Half Shower", "Delayed Juggler's Tennis(3b)" ],
       "siteswap" : "3",
       "tags" : [ "common" ],
       "timeSubmitted" : 999999999999,
@@ -4282,6 +4666,21 @@
       "timeSubmitted" : 1561031904018,
       "video" : "https://www.instagram.com/p/BKTZoRrD3xR/"
     },
+    "Knee, How?(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Knee, How?(3b)",
+      "num" : "3",
+      "prereqs" : [ "Shuffle(Slams)" ],
+      "related" : [ "Under Leg Catch to Behind Back Catch(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw", "slam" ],
+      "timeSubmitted" : 1563174106537,
+      "timeUpdated" : 1563174106537,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bl5IxWVgtMu/"
+    },
     "Kraken" : {
       "dependents" : [ "Georgian Scuffle", "Symmetric Georgian Scuffle", "Icelandic Shuffle" ],
       "difficulty" : "6",
@@ -4293,6 +4692,20 @@
       "siteswap" : "3",
       "tags" : [ "crossed-arms", "columns" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Kraken.html"
+    },
+    "Late Horizontal Penguins(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Late Horizontal Penguins(3b)",
+      "num" : "3",
+      "prereqs" : [ "Penguins(3b)" ],
+      "siteswap" : "3",
+      "tags" : [ "symmetric" ],
+      "timeSubmitted" : 1563143168116,
+      "timeUpdated" : 1563143168116,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bc9w3Pxjfx0/"
     },
     "Levels" : {
       "dependents" : [ "Box + Boston Shuffle(3b)" ],
@@ -4448,7 +4861,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Mike'sMess.html"
     },
     "Mills Mess" : {
-      "dependents" : [ "Boston Mess", "Kraken", "441 Mills Mess", "531 Mills Mess", "Charley", "Flipped Mess", "Flo's Mess", "Half Mess 1(3b)", "Reverse Mills Mess", "Mills Mess Shower", "Rubenstein's Revenge", "Shuffler's Mess", "Windmill", "Cliff's Confusion(4b)", "Mills Mess(4b)", "552 Mills Mess(4b)", "(0,4x)*(3b)", "Mills Mess + Broken Shower(3b)", "Clawed Mills Mess(3b)", "Half Boston Mess(3b)", "Columns Mess 1(3b)", "(6,4)(0,2x)*(3b)", "Sing's Mess(3b)", "The Guitar(3b)", "Mills Mess + Shower(3b)", "Over the Arm Mill's Mess(3b)", "Fake Boston Shuffle + Columns(3b)", "504 Crossed Arm Cascade(3b)", "(2x,0)(6,4)* Crossed(3b)", "(0,4x)* Crossed(3b)", "Stacked Mess(3b)", "Catapult Mess(3b)", "Partial Penguin Mills(3b)", "[33] Mills Mess(6b)", "Moxie's Mess(3b)", "Mills Mess Slam Variation(3b)", "Half Mess 1(3b)" ],
+      "dependents" : [ "Boston Mess", "Kraken", "441 Mills Mess", "531 Mills Mess", "Charley", "Flipped Mess", "Flo's Mess", "Half Mess 1(3b)", "Reverse Mills Mess", "Mills Mess Shower", "Rubenstein's Revenge", "Shuffler's Mess", "Windmill", "Cliff's Confusion(4b)", "Mills Mess(4b)", "552 Mills Mess(4b)", "(0,4x)*(3b)", "Mills Mess + Broken Shower(3b)", "Clawed Mills Mess(3b)", "Half Boston Mess(3b)", "Columns Mess 1(3b)", "(6,4)(0,2x)*(3b)", "Sing's Mess(3b)", "The Guitar(3b)", "Mills Mess + Shower(3b)", "Over the Arm Mill's Mess(3b)", "Fake Boston Shuffle + Columns(3b)", "504 Crossed Arm Cascade(3b)", "(2x,0)(6,4)* Crossed(3b)", "(0,4x)* Crossed(3b)", "Stacked Mess(3b)", "Catapult Mess(3b)", "Partial Penguin Mills(3b)", "[33] Mills Mess(6b)", "Moxie's Mess(3b)", "Mills Mess Slam Variation(3b)", "Half Mess 1(3b)", "Mills Multiplex Variation 2(4b)", "Mills Multiplex Variation 3(4b)", "Slam Mills(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/millsmess.gif",
       "name" : "Mills Mess",
@@ -4561,6 +4974,51 @@
       "videoEndTime" : 102,
       "videoStartTime" : 92
     },
+    "Mills Multiplex Variation 2(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.2",
+      "explanation" : "",
+      "name" : "Mills Multiplex Variation 2(4b)",
+      "num" : "4",
+      "prereqs" : [ "Mills Mess" ],
+      "related" : [ "4b Mills Multiplex Variation 1(4b)", "Mills Multiplex Variation 3(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "crossed-arms", "underarm-catch" ],
+      "timeSubmitted" : 1563150005188,
+      "timeUpdated" : 1563150005188,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BeVuvgTFQ79/"
+    },
+    "Mills Multiplex Variation 3(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Mills Multiplex Variation 3(4b)",
+      "num" : "4",
+      "prereqs" : [ "Mills Mess" ],
+      "related" : [ "Mills Multiplex Variation 2(4b)", "4b Mills Multiplex Variation 1(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "crossed-arms", "underarm-catch" ],
+      "timeSubmitted" : 1563150323561,
+      "timeUpdated" : 1563150323561,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BenbIPThmts/"
+    },
+    "Mindfuckery Reverse Machine(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.0",
+      "explanation" : "",
+      "name" : "Mindfuckery Reverse Machine(3b)",
+      "num" : "3",
+      "prereqs" : [ "Boston Mess", "Factory (Machine)" ],
+      "related" : [ "Reverse Factory" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "carry", "underarm-catch" ],
+      "timeSubmitted" : 1563171736338,
+      "timeUpdated" : 1563171736338,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BjrrWxfjzKS/"
+    },
     "Mouthfull (Crossbody outside same hand slam box)(3b)" : {
       "contributor" : "jameschance_",
       "difficulty" : "6",
@@ -4598,6 +5056,20 @@
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallMultiplexColumns.html"
     },
+    "Multiplex Reverse Backcross Shadow Pass Combo(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.2",
+      "explanation" : "",
+      "name" : "Multiplex Reverse Backcross Shadow Pass Combo(3b)",
+      "num" : "3",
+      "prereqs" : [ "Backcrosses", "Neck Pass Tennis(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "body-throw" ],
+      "timeSubmitted" : 1563151150953,
+      "timeUpdated" : 1563151150953,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BggVEFUHySG/"
+    },
     "Multiplex Rubenstein Variation(4b)" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "6",
@@ -4609,6 +5081,21 @@
       "timeSubmitted" : 1561509410223,
       "timeUpdated" : 1561509410223,
       "video" : "https://www.instagram.com/p/BQnd2djBegt/"
+    },
+    "Multiplex Slam 1(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Multiplex Slam 1(4b)",
+      "num" : "4",
+      "prereqs" : [ "Shuffle(Slams)" ],
+      "related" : [ "Stacked Multiplex Box(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "slam", "symmetric" ],
+      "timeSubmitted" : 1563153023347,
+      "timeUpdated" : 1563153023347,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bi69BcvjzxR/"
     },
     "Multiplex Squeeze Catch Machine Variation(4b)" : {
       "contributor" : "juggling_vegan_",
@@ -4625,8 +5112,66 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BXP-V5VBVDS/"
     },
+    "Multiplex Stacked Penguin Box Variation(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Multiplex Stacked Penguin Box Variation(4b)",
+      "num" : "4",
+      "prereqs" : [ "Penguin Box(3b)", "Stacked Cascade(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex" ],
+      "timeSubmitted" : 1563172659973,
+      "timeUpdated" : 1563172659973,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BkxaEb3AiWc/"
+    },
+    "Multiplex Takeouts(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.5",
+      "explanation" : "",
+      "name" : "Multiplex Takeouts(4b)",
+      "num" : "4",
+      "prereqs" : [ "Takeouts" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "carry", "symmetric", "crossed-arms" ],
+      "timeSubmitted" : 1563143499597,
+      "timeUpdated" : 1563143499597,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdLRLPTBvw-/"
+    },
+    "Multiplex Threaded Slam Box Variation(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Multiplex Threaded Slam Box Variation(4b)",
+      "num" : "4",
+      "prereqs" : [ "Shuffle(Slams)" ],
+      "related" : [ "Slams(4b)", "Asynch Slam Box Variation(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "slam", "one-throw" ],
+      "timeSubmitted" : 1563144389609,
+      "timeUpdated" : 1563144389609,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdxQu4aBBF1/"
+    },
+    "Multiplex-Squeeze Factory(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.7",
+      "explanation" : "",
+      "name" : "Multiplex/Squeeze Factory(4b)",
+      "num" : "4",
+      "prereqs" : [ "Factory (Machine)" ],
+      "related" : [ "Continuous Machine(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "raised-hand", "carry", "asymmetric" ],
+      "timeSubmitted" : 1563142541830,
+      "timeUpdated" : 1563142541830,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcHt2vzhDxT/"
+    },
     "NBox" : {
-      "dependents" : [ "Inverted Box", "Zebra Factory", "Levels", "Kimuras Star(3b)", "Chops + NBox(3b)", "Double Box + NBox(3b)", "Boston Takeouts(3b)", "Takeouts + Box(3b)", "Double NBox(3b)", "Box + Boston Shuffle(3b)", "DNI-Box(3b)", "Backwards Z(3b)", "Asymmetric Slam Box Variant(3b)", "Symmetric Slam Box Variant(3b)" ],
+      "dependents" : [ "Inverted Box", "Zebra Factory", "Levels", "Kimuras Star(3b)", "Chops + NBox(3b)", "Double Box + NBox(3b)", "Boston Takeouts(3b)", "Takeouts + Box(3b)", "Double NBox(3b)", "Box + Boston Shuffle(3b)", "DNI-Box(3b)", "Backwards Z(3b)", "Asymmetric Slam Box Variant(3b)", "Symmetric Slam Box Variant(3b)", "Z + Backward Z Box(3b)", "Inside Outside Slams(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/nbox.gif",
       "name" : "NBox",
@@ -4652,16 +5197,46 @@
     },
     "Neck Pass Tennis(3b)" : {
       "contributor" : "juggling_vegan_",
-      "dependents" : [ "Neck Pass Penguin Tennis(3b)", "Crossed Arm Neck Pass(3b)", "Half-contortion neck pass tennis(3b)", "Shoulder Throw Neck Pass Combo(3b)" ],
+      "dependents" : [ "Neck Pass Penguin Tennis(3b)", "Crossed Arm Neck Pass(3b)", "Half-contortion neck pass tennis(3b)", "Shoulder Throw Neck Pass Combo(3b)", "Neck pass/catch combo(3b)", "Multiplex Reverse Backcross Shadow Pass Combo(3b)" ],
       "difficulty" : "5",
       "name" : "Neck Pass Tennis(3b)",
       "num" : "3",
       "prereqs" : [ "Cascade" ],
+      "related" : [ "Neck Throw Tennis(3b)" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1561545205147,
       "timeUpdated" : 1561545205147,
       "video" : "https://www.instagram.com/p/BToO8whhvaw/"
+    },
+    "Neck Throw Tennis(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.7",
+      "explanation" : "",
+      "name" : "Neck Throw Tennis(3b)",
+      "num" : "3",
+      "prereqs" : [ "Juggler's Tennis" ],
+      "related" : [ "Neck Pass Tennis(3b)", "Backcross + Neck Throw(3b)" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563172967137,
+      "timeUpdated" : 1563172967137,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BlVNhq5Ht1o/"
+    },
+    "Neck pass-catch combo(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.4",
+      "explanation" : "",
+      "name" : "Neck pass/catch combo(3b)",
+      "num" : "3",
+      "prereqs" : [ "Neck Pass Tennis(3b)" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563142820405,
+      "timeUpdated" : 1563142820405,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcXKwzrBKDk/"
     },
     "Neck-throw + Penguin + Armpit(3b)" : {
       "contributor" : "lucasadverse",
@@ -4699,6 +5274,20 @@
       "timeSubmitted" : 1561205373299,
       "timeUpdated" : 1561205373299,
       "video" : "https://www.instagram.com/p/BrX-mpQFMZa/"
+    },
+    "NoName Slam Box Thing(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "NoName Slam Box Thing(3b)",
+      "num" : "3",
+      "prereqs" : [ "Asymmetric Slam Box Variant(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw", "slam", "crossed-arms" ],
+      "timeSubmitted" : 1563144059036,
+      "timeUpdated" : 1563144059036,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdhyXQtBwhw/"
     },
     "Not an Unkown Knot(3b)" : {
       "contributor" : "noslowerdna_",
@@ -4850,11 +5439,12 @@
     },
     "Penguin Box(3b)" : {
       "contributor" : "juggling_vegan_",
+      "dependents" : [ "Multiplex Stacked Penguin Box Variation(4b)" ],
       "difficulty" : "5",
       "name" : "Penguin Box(3b)",
       "num" : "3",
       "prereqs" : [ "Penguins(3b)", "Box" ],
-      "related" : [ "Penguins Fountain(4b)" ],
+      "related" : [ "Penguins Fountain(4b)", "531 with Penguin 3s(3b)" ],
       "siteswap" : "",
       "tags" : [ "one-throw" ],
       "timeSubmitted" : 1561509649446,
@@ -4868,21 +5458,53 @@
       "name" : "Penguin Shower(3b)",
       "num" : "3",
       "prereqs" : [ "Penguins(3b)" ],
-      "related" : [ "Penguins Fountain(4b)", "534 with Penguin 5s(4b)" ],
+      "related" : [ "Penguins Fountain(4b)", "534 with Penguin 5s(4b)", "Penguin Slam Extension(3b)", "531 with Penguin 3s(3b)" ],
       "siteswap" : "51",
       "tags" : [ "one-throw" ],
       "timeSubmitted" : 1561547672271,
       "timeUpdated" : 1561547672271,
       "video" : "https://www.instagram.com/p/BVzgESZBlEt/"
     },
+    "Penguin Slam Extension(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Penguin Slam Extension(3b)",
+      "num" : "3",
+      "prereqs" : [ "Penguin Slams(3b)" ],
+      "related" : [ "Penguin Shower(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "asymmetric", "one-throw" ],
+      "timeSubmitted" : 1563150442156,
+      "timeUpdated" : 1563150442156,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Beny5bPh3iw/"
+    },
+    "Penguin Slams(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "dependents" : [ "Penguin Slam Extension(3b)" ],
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Penguin Slams(3b)",
+      "num" : "3",
+      "prereqs" : [ "Penguins(3b)", "Slams(4b)" ],
+      "siteswap" : "3",
+      "tags" : [ "slam", "one-throw" ],
+      "timeSubmitted" : 1563150176874,
+      "timeUpdated" : 1563150176874,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Beal82WBGcR/",
+      "videoStartTime" : 5
+    },
     "Penguins Fountain(4b)" : {
       "contributor" : "juggling_vegan_",
+      "dependents" : [ "Penguins(5b)" ],
       "difficulty" : "5",
       "explanation" : "",
       "name" : "Penguins Fountain(4b)",
       "num" : "4",
       "prereqs" : [ "Penguins(3b)" ],
-      "related" : [ "Penguin Box(3b)", "Penguin Shower(3b)", "534 with Penguin 5s(4b)" ],
+      "related" : [ "Penguin Box(3b)", "Penguin Shower(3b)", "534 with Penguin 5s(4b)", "Asymmetric Penguin Multiplex 1(4b)" ],
       "siteswap" : "4",
       "timeSubmitted" : 1561916997627,
       "timeUpdated" : 1561916997627,
@@ -4891,7 +5513,7 @@
     },
     "Penguins(3b)" : {
       "contributor" : "taylor_tries_",
-      "dependents" : [ "Behind the Neck + Armpit + Penguin(3b)", "Neck-throw + Penguin + Armpit(3b)", "Penguin Box(3b)", "Neck Pass Penguin Tennis(3b)", "Continuous penguin machine (the wrist burner)(3b)", "Penguin Shower(3b)", "Partial Penguin Mills(3b)", "Penguins Fountain(4b)", "534 with Penguin 5s(4b)", "Asymmetrical statue of liberty penguin variation(3b)" ],
+      "dependents" : [ "Behind the Neck + Armpit + Penguin(3b)", "Neck-throw + Penguin + Armpit(3b)", "Penguin Box(3b)", "Neck Pass Penguin Tennis(3b)", "Continuous penguin machine (the wrist burner)(3b)", "Penguin Shower(3b)", "Partial Penguin Mills(3b)", "Penguins Fountain(4b)", "534 with Penguin 5s(4b)", "Asymmetrical statue of liberty penguin variation(3b)", "[33]33 with Penguin Squeezes(4b)", "Late Horizontal Penguins(3b)", "Penguin Slams(3b)", "Asymmetric Penguin Multiplex 1(4b)", "Split Penguins(5b)" ],
       "difficulty" : "3",
       "name" : "Penguins(3b)",
       "num" : "3",
@@ -4899,6 +5521,19 @@
       "siteswap" : "3",
       "timeSubmitted" : 1560923198121,
       "video" : "https://www.instagram.com/p/Bv-jX0Vgd5v/"
+    },
+    "Penguins(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "6.9",
+      "explanation" : "",
+      "name" : "Penguins(5b)",
+      "num" : "5",
+      "prereqs" : [ "Penguins Fountain(4b)", "4b Penguin Shower(4b)" ],
+      "siteswap" : "",
+      "timeSubmitted" : 1563173086047,
+      "timeUpdated" : 1563173086047,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BlX5P6uHqgT/"
     },
     "Penman's Box" : {
       "dependents" : [ "Arrow of Asai" ],
@@ -5009,9 +5644,24 @@
       "timeUpdated" : 1561296108070,
       "video" : "https://www.instagram.com/p/Bls1HgrA1Ho/"
     },
+    "Quickbox Reverse Slams(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Quickbox Reverse Slams(3b)",
+      "num" : "3",
+      "prereqs" : [ "Inside Outside Slams(3b)", "Reverse Slams(3b)" ],
+      "related" : [ "3-beat Reverse Slam Machine(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "one-throw" ],
+      "timeSubmitted" : 1563173423297,
+      "timeUpdated" : 1563173423297,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BllGTk9gzpU/"
+    },
     "R+L Factory(3b)" : {
       "contributor" : "3ballpatterns_",
-      "dependents" : [ "Forky The Robot(3b)" ],
+      "dependents" : [ "Forky The Robot(3b)", "Some Weird Machine Variant(3b)" ],
       "difficulty" : "3",
       "name" : "R+L Factory(3b)",
       "num" : "3",
@@ -5195,6 +5845,21 @@
       "tags" : [ "common", "columns", "one-throw" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Reverse441(Half-Box).html"
     },
+    "Reverse BX, Shadow Pass, Shoulder Throw(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Reverse BX, Shadow Pass, Shoulder Throw(3b)",
+      "num" : "3",
+      "prereqs" : [ "Backcrosses", "534 with the 3s behind the neck(4b)" ],
+      "related" : [ "Shoulder Throw Neck Pass Combo(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563151773664,
+      "timeUpdated" : 1563151773664,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BhG4yThBpLi/"
+    },
     "Reverse Backcross, Backcross Tennis(3b)" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "4.3",
@@ -5211,7 +5876,7 @@
     },
     "Reverse Backcrosses(3b)" : {
       "contributor" : "juggling_vegan_",
-      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)", "Using My Best Asset(3b)", "Reverse Shoulder Throws (occasional)(4b)" ],
+      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)", "Using My Best Asset(3b)", "Reverse Shoulder Throws (occasional)(4b)", "1up 2up with 1 of 2up Reverse Backcrosses(3b)", "Split Reverse Shoulder Throws(5b)", "Under Leg Catch to Behind Back Catch(3b)" ],
       "difficulty" : "4.6",
       "explanation" : "",
       "name" : "Reverse Backcrosses(3b)",
@@ -5225,7 +5890,7 @@
       "video" : "https://www.instagram.com/p/BYkZkqaBpOO/"
     },
     "Reverse Cascade" : {
-      "dependents" : [ "Crossed Arm Reverse Cascade", "Mills Mess", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Tracing the Perfect Path(3b)", "Karate(3b)", "Reverse Takeouts(3b)", "(0,4x)*(3b)", "Crossed Reverse Cascade(3b)", "(2x,0)(6,4)* Crossed(3b)", "(0,4x)* Crossed(3b)", "Moxie's Mess(3b)" ],
+      "dependents" : [ "Crossed Arm Reverse Cascade", "Mills Mess", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Tracing the Perfect Path(3b)", "Karate(3b)", "Reverse Takeouts(3b)", "(0,4x)*(3b)", "Crossed Reverse Cascade(3b)", "(2x,0)(6,4)* Crossed(3b)", "(0,4x)* Crossed(3b)", "Moxie's Mess(3b)", "Delayed Juggler's Tennis(3b)" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversecascade.gif",
       "name" : "Reverse Cascade",
@@ -5287,9 +5952,10 @@
       "name" : "Reverse Factory",
       "num" : 3,
       "prereqs" : [ "Factory (Machine)" ],
-      "related" : [ "Inverted Shower" ],
+      "related" : [ "Inverted Shower", "Mindfuckery Reverse Machine(3b)" ],
       "siteswap" : "(4x,2x)(2,4)(2,4)",
       "tags" : [ "carry" ],
+      "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/ReverseFactory.html"
     },
     "Reverse Fountain Through Dots(4b)" : {
@@ -5361,6 +6027,21 @@
       "timeSubmitted" : 1561078273560,
       "timeUpdated" : 1561078273560,
       "video" : "https://www.instagram.com/p/Bdx5-gunMUY/"
+    },
+    "Reverse Slams(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "dependents" : [ "Quickbox Reverse Slams(3b)" ],
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Reverse Slams(3b)",
+      "num" : "3",
+      "prereqs" : [ "Shuffle(Slams)" ],
+      "siteswap" : "3",
+      "tags" : [ "slam", "one-throw" ],
+      "timeSubmitted" : 1563150915450,
+      "timeUpdated" : 1563150915450,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BgWP1N5HEVr/"
     },
     "Reverse Synch Fountain(4b)" : {
       "difficulty" : "4",
@@ -5568,6 +6249,7 @@
       "name" : "Shoulder Throw Neck Pass Combo(3b)",
       "num" : "3",
       "prereqs" : [ "Neck Pass Tennis(3b)" ],
+      "related" : [ "Reverse BX, Shadow Pass, Shoulder Throw(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563105758742,
@@ -5654,7 +6336,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Shuffle-Switch.html"
     },
     "Shuffle(Slams)" : {
-      "dependents" : [ "Arrow of Asai", "Boston Shuffle", "Luke's Shuffle", "NBox", "Low Shuffle", "Kimuras Star(3b)", "Double NBox(3b)", "Shuffle(Slams)", "Funky Arm Bouncy Shuffle(3b)", "Bouncy shuffle (3b)", "Bouncy shufflee(3b)", "Bouncy shuffle(3b)", "Slams(4b)", "Slam variation 1(3b)" ],
+      "dependents" : [ "Arrow of Asai", "Boston Shuffle", "Luke's Shuffle", "NBox", "Low Shuffle", "Kimuras Star(3b)", "Double NBox(3b)", "Shuffle(Slams)", "Funky Arm Bouncy Shuffle(3b)", "Bouncy shuffle (3b)", "Bouncy shufflee(3b)", "Bouncy shuffle(3b)", "Slams(4b)", "Slam variation 1(3b)", "Multiplex Threaded Slam Box Variation(4b)", "Sync 4b Slam Variation(4b)", "Reverse Slams(3b)", "Symmetric Machine + Slam(3b)", "Multiplex Slam 1(4b)", "Knee, How?(3b)" ],
       "difficulty" : "3.8",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shuffle.gif",
       "name" : "Shuffle(Slams)",
@@ -5719,6 +6401,22 @@
       "siteswap" : "6",
       "url" : "http://www.libraryofjuggling.com/Tricks/6balltricks/SixBallFountain.html"
     },
+    "Slam Mills(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Slam Mills(3b)",
+      "num" : "3",
+      "prereqs" : [ "Mills Mess", "Slams(4b)" ],
+      "related" : [ "Burke's Slam" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "crossed-arms", "underarm-catch" ],
+      "timeSubmitted" : 1563173870030,
+      "timeUpdated" : 1563173870030,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BlnPWvtAhaL/",
+      "videoStartTime" : 7
+    },
     "Slam variation 1(3b)" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "3.8",
@@ -5736,10 +6434,12 @@
     },
     "Slams(4b)" : {
       "contributor" : "jameschance_",
+      "dependents" : [ "Penguin Slams(3b)", "Slam Mills(3b)" ],
       "difficulty" : "5",
       "name" : "Slams(4b)",
       "num" : "4",
       "prereqs" : [ "Shuffle(Slams)" ],
+      "related" : [ "Multiplex Threaded Slam Box Variation(4b)", "Sync 4b Slam Variation(4b)" ],
       "siteswap" : "",
       "tags" : [ "slam" ],
       "timeSubmitted" : 1561242955893,
@@ -5792,8 +6492,23 @@
       "siteswap" : "50505",
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Snake.html"
     },
+    "Some Weird Machine Variant(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Some Weird Machine Variant(3b)",
+      "num" : "3",
+      "prereqs" : [ "Factory (Machine)", "R+L Factory(3b)" ],
+      "related" : [ "Crossed Arm Factory", "Crossunder Factory(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "carry", "machine", "crossed-arms", "underarm-catch", "asymmetric" ],
+      "timeSubmitted" : 1563152440265,
+      "timeUpdated" : 1563152440265,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BiMW_3DDXO-/"
+    },
     "Split Cascade(5b)" : {
-      "dependents" : [ "Three-Way Split Multiplex(7b)", "Symmetrical Pigtails(5b)", "BOOMclawclaw(5b)", "Overhead Split Multiplex(5b)", "Alternating Triplex Box(5b)" ],
+      "dependents" : [ "Three-Way Split Multiplex(7b)", "Symmetrical Pigtails(5b)", "BOOMclawclaw(5b)", "Overhead Split Multiplex(5b)", "Alternating Triplex Box(5b)", "Split Reverse Shoulder Throws(5b)", "Split Penguins(5b)" ],
       "difficulty" : "5",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballsplitmultiplexcascade.gif",
       "name" : "Split Cascade(5b)",
@@ -5804,6 +6519,36 @@
       "tags" : [ "multiplex" ],
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallSplitMultiplexCascade.html"
+    },
+    "Split Penguins(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Split Penguins(5b)",
+      "num" : "5",
+      "prereqs" : [ "Penguins(3b)", "Split Cascade(5b)" ],
+      "related" : [ "Split Reverse Shoulder Throws(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex" ],
+      "timeSubmitted" : 1563172321945,
+      "timeUpdated" : 1563172321945,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BkNOv2UjW4j/"
+    },
+    "Split Reverse Shoulder Throws(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.0",
+      "explanation" : "",
+      "name" : "Split Reverse Shoulder Throws(5b)",
+      "num" : "5",
+      "prereqs" : [ "Reverse Backcrosses(3b)", "Split Cascade(5b)" ],
+      "related" : [ "Split Penguins(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "body-throw" ],
+      "timeSubmitted" : 1563172230098,
+      "timeUpdated" : 1563172230098,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BkAPsx-jkW3/"
     },
     "Split plane rolling box(3b)" : {
       "contributor" : "jameschance_",
@@ -5856,6 +6601,7 @@
       "video" : "https://www.instagram.com/p/BYGIMvThKLN/"
     },
     "Stacked Box(4b)" : {
+      "dependents" : [ "Triplex with Shadow Pass(5b)", "Half Slam Stacked Multiplex Box(5b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballstackedbox.gif",
       "name" : "Stacked Box(4b)",
@@ -5864,10 +6610,11 @@
       "related" : [ "Box(4b)" ],
       "siteswap" : "(8,2x)(4,2x)*",
       "tags" : [ "one-throw" ],
+      "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallStackedBox(4b).html"
     },
     "Stacked Cascade(5b)" : {
-      "dependents" : [ "Stacked Multiplex Windmill(5b)", "Gattoplex(5b)", "24[64]4555(5b)", "Stacked Cascade(6b)", "[75]21(5b)", "Camiplex(5b)", "4[44]455[22](5b)", "44[44][44](6b)" ],
+      "dependents" : [ "Stacked Multiplex Windmill(5b)", "Gattoplex(5b)", "24[64]4555(5b)", "Stacked Cascade(6b)", "[75]21(5b)", "Camiplex(5b)", "4[44]455[22](5b)", "44[44][44](6b)", "[55]5555(6b)", "Multiplex Stacked Penguin Box Variation(4b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballstackedmultiplexcascade.gif",
       "name" : "Stacked Cascade(5b)",
@@ -5880,7 +6627,7 @@
     },
     "Stacked Cascade(6b)" : {
       "contributor" : "nycjuggler_",
-      "dependents" : [ "[75]21(5b)", "4[44]455[22](5b)", "[33] Mills Mess(6b)", "Alternating Synch 3up Multiplex(6b)" ],
+      "dependents" : [ "[75]21(5b)", "4[44]455[22](5b)", "[33] Mills Mess(6b)", "Alternating Synch 3up Multiplex(6b)", "[55]5555(6b)" ],
       "difficulty" : "5",
       "name" : "Stacked Cascade(6b)",
       "num" : "6",
@@ -5921,7 +6668,7 @@
       "name" : "Stacked Multiplex Box(5b)",
       "num" : "5",
       "prereqs" : [ "Multiplex Columns(5b)", "Box" ],
-      "related" : [ "44[44][44](6b)" ],
+      "related" : [ "44[44][44](6b)", "Multiplex Slam 1(4b)" ],
       "siteswap" : "",
       "tags" : [ "multiplex", "one-throw" ],
       "timeSubmitted" : 1561510795463,
@@ -5975,6 +6722,20 @@
       "timeSubmitted" : 1561468509137,
       "timeUpdated" : 1561470344710,
       "video" : "https://www.instagram.com/p/BoUQTZJgo3p/?utm_source=ig_web_copy_link"
+    },
+    "Stylized Flo's Bird Mess (3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Stylized Flo's Bird Mess (3b)",
+      "num" : "3",
+      "prereqs" : [ "Flo's Mess" ],
+      "siteswap" : "",
+      "tags" : [ "carry", "claw", "crossed-arms" ],
+      "timeSubmitted" : 1563152614360,
+      "timeUpdated" : 1563152614360,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BiPNmUOjghC/"
     },
     "Sunny Side Up (David's Dilemma)" : {
       "dependents" : [ "Switched Dilema(3b)", "Symmetrical Distorted Sunny Side Up(3b)" ],
@@ -6080,6 +6841,20 @@
       "tags" : [ "columns", "carry", "multiplex" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianShuffle.html"
     },
+    "Symmetric Machine + Slam(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.1",
+      "explanation" : "",
+      "name" : "Symmetric Machine + Slam(3b)",
+      "num" : "3",
+      "prereqs" : [ "Factory (Machine)", "Shuffle(Slams)" ],
+      "siteswap" : "",
+      "tags" : [ "machine", "slam", "carry", "raised-hand", "symmetric" ],
+      "timeSubmitted" : 1563152243139,
+      "timeUpdated" : 1563152243139,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BiEtyARD645/"
+    },
     "Symmetric Slam Box Variant(3b)" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "4.8",
@@ -6094,6 +6869,20 @@
       "timeUpdated" : 1563105120482,
       "url" : "",
       "video" : "https://www.instagram.com/p/Bbb6RvEhjG5/"
+    },
+    "Symmetric Zebra Factory(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.7",
+      "explanation" : "",
+      "name" : "Symmetric Zebra Factory(3b)",
+      "num" : "3",
+      "prereqs" : [ "Zebra Factory" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "one-throw", "carry", "machine" ],
+      "timeSubmitted" : 1563172538129,
+      "timeUpdated" : 1563172538129,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BkmwRkQDPuG/"
     },
     "Symmetrical Distorted Sunny Side Up(3b)" : {
       "contributor" : "lucasadverse",
@@ -6130,6 +6919,65 @@
       "timeSubmitted" : 1561318909149,
       "timeUpdated" : 1561330183742,
       "video" : "https://www.instagram.com/p/BwuqRQLgHEn/"
+    },
+    "Sync 4b Slam Variation(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Sync 4b Slam Variation(4b)",
+      "num" : "4",
+      "prereqs" : [ "Shuffle(Slams)", "Fountain(4b)" ],
+      "related" : [ "Slams(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "synch", "asymmetric", "slam", "one-throw" ],
+      "timeSubmitted" : 1563149888873,
+      "timeUpdated" : 1563149888873,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BeQOGnqhaJY/"
+    },
+    "Sync Crossarm 1up 2up Tennis(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "3.8",
+      "explanation" : "",
+      "name" : "Sync Crossarm 1up 2up Tennis(3b)",
+      "num" : "3",
+      "prereqs" : [ "Columns", "Juggler's Tennis" ],
+      "siteswap" : "(4,4)(4x,0)(4,4)(0,4x)",
+      "tags" : [ "1up2up", "synch", "crossed-arms" ],
+      "timeSubmitted" : 1563144174530,
+      "timeUpdated" : 1563144174530,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdkRDsIhXxl/"
+    },
+    "Sync Symmetrical Factory(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Sync Symmetrical Factory(4b)",
+      "num" : "4",
+      "prereqs" : [ "Factory (Machine)" ],
+      "related" : [ "Continuous Machine(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "synch", "symmetric", "machine" ],
+      "timeSubmitted" : 1563153177651,
+      "timeUpdated" : 1563153177651,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BjZh8xMj1C8/"
+    },
+    "Sync Symmetrical Machine Variation 1(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.4",
+      "explanation" : "",
+      "name" : "Sync Symmetrical Machine Variation 1(3b)",
+      "num" : "3",
+      "prereqs" : [ "Factory (Machine)" ],
+      "related" : [ "Crossed Arm Factory", "Cross Corner Machine(3b)", "Alternating Cross Corner Machine(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "carry", "crossed-arms", "underarm-catch", "symmetric" ],
+      "timeSubmitted" : 1563151485354,
+      "timeUpdated" : 1563151485354,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BgljhCJn5J6/"
     },
     "Synch Fountain Collisions(4b)" : {
       "contributor" : "tjthejuggler",
@@ -6200,7 +7048,7 @@
       "videoStartTime" : 1
     },
     "Takeouts" : {
-      "dependents" : [ "Burke's Slam", "Burke's Barrage", "Reverse Chops", "Takearound", "Takeouts(4b)", "Flying Around the World(3b)", "Windmill Takeouts(3b)", "Reverse Takeouts(3b)", "Box Takeouts(3b)", "Boston Takeouts(3b)", "Boston Takeouts(3b)", "Takeouts + Orbits(3b)", "Takeouts + Box(3b)", "Boston Mess + Takeouts(3b)", "The Tornado(3b)", "Orka's Mess 2(3b)", "Takeouts + Box 2(3b)", "Takeouts + Broken Box(3b)", "Takeouts + Broken Box 2(3b)", "Aquamarine(3b)", "Richie's Rocket(3b)", "Squeeze Takeout in Synch(4b)", "Boston Mess + Takeouts(3b)" ],
+      "dependents" : [ "Burke's Slam", "Burke's Barrage", "Reverse Chops", "Takearound", "Takeouts(4b)", "Flying Around the World(3b)", "Windmill Takeouts(3b)", "Reverse Takeouts(3b)", "Box Takeouts(3b)", "Boston Takeouts(3b)", "Boston Takeouts(3b)", "Takeouts + Orbits(3b)", "Takeouts + Box(3b)", "Boston Mess + Takeouts(3b)", "The Tornado(3b)", "Orka's Mess 2(3b)", "Takeouts + Box 2(3b)", "Takeouts + Broken Box(3b)", "Takeouts + Broken Box 2(3b)", "Aquamarine(3b)", "Richie's Rocket(3b)", "Squeeze Takeout in Synch(4b)", "Boston Mess + Takeouts(3b)", "Multiplex Takeouts(4b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/takeouts.gif",
       "name" : "Takeouts",
@@ -6673,6 +7521,36 @@
       "timeUpdated" : 1561459896030,
       "video" : "https://www.instagram.com/p/BKT3BTjjpc-/"
     },
+    "Triplex Machine Variant 1(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.3",
+      "explanation" : "",
+      "name" : "Triplex Machine Variant 1(5b)",
+      "num" : "5",
+      "prereqs" : [ "Continuous Machine(4b)" ],
+      "related" : [ "Alternating Triplex Box(5b)", "Triplex with Shadow Pass(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex", "carry", "machine", "raised-hand", "asymmetric" ],
+      "timeSubmitted" : 1563152881164,
+      "timeUpdated" : 1563152881164,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BizCLQkjvmR/"
+    },
+    "Triplex with Shadow Pass(5b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Triplex with Shadow Pass(5b)",
+      "num" : "5",
+      "prereqs" : [ "Stacked Box(4b)" ],
+      "related" : [ "Alternating Triplex Box(5b)", "Triplex Machine Variant 1(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "multiplex" ],
+      "timeSubmitted" : 1563152770116,
+      "timeUpdated" : 1563152770116,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Big9rwjAGks/"
+    },
     "True Box" : {
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/truebox.gif",
@@ -6736,6 +7614,21 @@
       "tags" : [ "arms-crossed", "one-throw" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/UnderarmShower.html"
     },
+    "Under Leg Catch to Behind Back Catch(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Under Leg Catch to Behind Back Catch(3b)",
+      "num" : "3",
+      "prereqs" : [ "Reverse Backcrosses(3b)" ],
+      "related" : [ "Knee, How?(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563172867493,
+      "timeUpdated" : 1563172867493,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bk46ZI_AcuM/"
+    },
     "Underarm Box" : {
       "difficulty" : "5",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/underarmbox.gif",
@@ -6785,6 +7678,19 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BZ0ywKBhOTO/"
     },
+    "Vertical Box(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "6.1",
+      "explanation" : "",
+      "name" : "Vertical Box(3b)",
+      "num" : "3",
+      "siteswap" : "",
+      "tags" : [ "one-throw" ],
+      "timeSubmitted" : 1563153346106,
+      "timeUpdated" : 1563153346106,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BjcEsJlDyjN/"
+    },
     "Waterfall(3b)" : {
       "contributor" : "3ballpatterns_",
       "difficulty" : "4",
@@ -6807,6 +7713,20 @@
       "siteswap" : "432",
       "tags" : [ "orbit", "carry" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Weave.html"
+    },
+    "Weaving 1up Crossing 3up Multiplex(4b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.7",
+      "explanation" : "",
+      "name" : "Weaving 1up Crossing 3up Multiplex(4b)",
+      "num" : "4",
+      "prereqs" : [ "1up crossing 3up multiplex(4b)" ],
+      "siteswap" : "([4x4],4)(0,4x)*",
+      "tags" : [ "synch", "symmetric", "multiplex" ],
+      "timeSubmitted" : 1563144731077,
+      "timeUpdated" : 1563144731077,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BeF58lIh7QS/"
     },
     "Weaving a Collided Triangle(4b)" : {
       "contributor" : "tjthejuggler",
@@ -6973,7 +7893,23 @@
       "timeUpdated" : 1561203259042,
       "video" : "https://www.instagram.com/p/BclE4L6DfZJ/"
     },
+    "Z + Backward Z Box(3b)" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.6",
+      "explanation" : "",
+      "name" : "Z + Backward Z Box(3b)",
+      "num" : "3",
+      "prereqs" : [ "NBox" ],
+      "related" : [ "Inverted Box", "Inside Outside Slams(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "one-throw", "slam" ],
+      "timeSubmitted" : 1563172044487,
+      "timeUpdated" : 1563172044487,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bj4ikpcDr17/"
+    },
     "Zebra Factory" : {
+      "dependents" : [ "Symmetric Zebra Factory(3b)" ],
       "difficulty" : "5",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/zebrafactory.gif",
       "name" : "Zebra Factory",
@@ -6981,6 +7917,7 @@
       "prereqs" : [ "Factory (Machine)", "NBox" ],
       "siteswap" : "(4x,2x)(2,4x)(2x,4)",
       "tags" : [ "carry" ],
+      "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/ZebraFactory.html"
     }
   },
@@ -7742,6 +8679,10 @@
           "catches" : "236",
           "lastUpdated" : 1561549636426,
           "starred" : "true"
+        },
+        "Sandbox Shuffle" : {
+          "catches" : "120",
+          "lastUpdated" : 1563110006747
         },
         "Shower" : {
           "catches" : "200",
@@ -8712,7 +9653,7 @@
     }
   },
   "stats" : {
-    "totalCatchCount" : 24650
+    "totalCatchCount" : 24770
   },
   "tags" : [ "common", "one-throw", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine" ],
   "trickOfTheDay" : {
@@ -8735,6 +9676,10 @@
     "715" : {
       "date" : "715",
       "trick" : "Alternating Triplex Box(5b)"
+    },
+    "716" : {
+      "date" : "716",
+      "trick" : "753(5b)"
     }
   },
   "users" : {

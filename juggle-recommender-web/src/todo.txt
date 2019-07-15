@@ -15,6 +15,7 @@ v 1.7
 			-records broken today
 			-number of contributors
 			Patterns:
+				number of tricks for each contributor
 				number of tricks with each tag
 				number of balls
 	-Postreqs in add trick
