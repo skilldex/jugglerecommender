@@ -227,7 +227,7 @@ class MainTagsBar extends Component {
             {sortDropdown}
             {filter}
             {uiStore.showFilterDiv?<Filter/>: null}
-            <span className="mainTagsHeader">{filterTags.length>0?"":"no filters set"}</span>
+            <span className="mainTagsHeader">Pattern Count: {Object.keys(uiStore.rootTricks).length}</span>
           </div>
           <div className="tagSection"> 
             {filterTags}

@@ -24,12 +24,10 @@ v 1.7
 		-realign filter inputs on desktop(and mobile)
 		-increase size of filter inputs
 	-returning to list from details should autoscroll back to where you were
-	-make shared url take user to list
 	-Postreqs in add trick
 	-Research back arrow 
 	-fix iphone zoom behavior on add form and filter
 		-may be fixed by increasing size
-	-number of results instead of 'no filters set'
 
 	Data fix scripts(see list below)
 =========
