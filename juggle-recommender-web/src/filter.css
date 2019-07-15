@@ -59,6 +59,7 @@
   padding-right: 10px;
   float: right; 
   align-items: right;
+  cursor: pointer;
 }
 
 .tagsCheckBox{

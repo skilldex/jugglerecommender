@@ -18,8 +18,6 @@ v 1.7
 		blue bold
 	-Postreqs in add trick
 	-Research back arrow 
-	-arrow in tags change to little blue one and add word back
-
 
 	Data fix scripts(see list below)
 =========
