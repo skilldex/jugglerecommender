@@ -8,26 +8,31 @@ v 1.8
 	-personal stats
 
 	Flair
+	Stats:
+		-records broken today
+		-add date to leaderboard
 
 v 1.7
-	Hamburger Menu:
-		Community stats:
-			-records broken today
-			-number of contributors
-			Patterns:
-				number of tricks for each contributor
-				number of tricks with each tag
-				number of balls
+	-get rid of for now: number of contributors
+	-stats
+		clickable and go to tricklist
+		blue bold
 	-Postreqs in add trick
 	-Research back arrow 
-	-fix iphone zoom behavior on add form and filter
-		-may be fixed by increasing size(it has been increased)
+	-clear consoles
+	-cards should have pointer
+	-header buttons should have pointers
+	-change pattern count to results
+	-width of filter should be wider
+	-arrow in tags change to little blue one and add word back
+
 
 	Data fix scripts(see list below)
 =========
 
 Bugs:
 	-searching should collapse expanded tricks, it causes weirdness now
+		set selected to null when search input
 	-ending timestamp isnt working for instagram(Crossed 2up 3up Multiplex(5b))
 	-tricks with []s in name dont show up in tricks dont show up in relationship lists
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.

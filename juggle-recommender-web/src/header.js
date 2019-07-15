@@ -32,7 +32,7 @@ class Header extends Component {
 			
 		}else if(paneFlag == "home"){
 			uiStore.clearUI()
-			uiStore.setShowStatsScreen(true)
+			uiStore.setShowHomeScreen(true)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
@@ -43,7 +43,6 @@ class Header extends Component {
 			 	uiStore.toggleAddingTrick
 			}
 		}else if(paneFlag == "stats"){
-			console.log('statas')
 			uiStore.clearUI()
 			uiStore.setShowStatsScreen(true)
 			if(uiStore.addingTrick){
