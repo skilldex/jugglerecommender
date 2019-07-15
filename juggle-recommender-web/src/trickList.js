@@ -88,6 +88,7 @@ class TrickList extends Component {
 							
 	render() {
 	 	let tricks = []
+	 	console.log('this.props.tricksToList',this.props.tricksToList)
 		this.props.tricksToList.forEach((trickKey)=>{
 			let trick = store.library[trickKey]
 			if(!trickKey){

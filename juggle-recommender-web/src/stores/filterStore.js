@@ -108,7 +108,7 @@ class FilterStore {
 	}
 	@action handleDelete=(i)=>{
 		this.setTags(
-			this.tags.filter((bob, index) => index !== i)
+			this.tags.filter((tag, index) => index !== i)
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
