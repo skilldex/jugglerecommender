@@ -20,7 +20,7 @@ class MainTagsBar extends Component {
     }
     copyContributorURL=()=>{
       const textField = document.createElement('textarea')
-      const url = window.location.origin + "/?contributor=" + authStore.user.username 
+      const url = window.location.origin + "/?contributor=" + authStore.user.username +",&"
       textField.innerText = url
       document.body.appendChild(textField)
       var range = document.createRange();  

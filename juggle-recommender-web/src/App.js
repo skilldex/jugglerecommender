@@ -43,6 +43,10 @@ if(store.isLocalHost){
     appId: "1:965128070479:web:64af3cb91c057166"
   };
 }
+//loaded with a shared URL
+if (window.location.search.includes("?")){
+	uiStore.setShowHomeScreen(false)
+}
 const ESCAPE_KEY = 27;
 
 firebase.initializeApp(firebaseConfig);
