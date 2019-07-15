@@ -138,6 +138,11 @@ class Filter extends Component {
       uiStore.setShowFilterDiv(false)
     }
     copyFilterURL=()=>{
+    	console.log('uiStore.rootTricks',uiStore.rootTricks)
+    	if (Object.keys(uiStore.rootTricks).length === 0){
+    			alert("Unable to create share URL when no results found.") 
+    			return
+    		}
     	let urlText = "/?"
     	if (filterStore.contributors.length > 0){
 			urlText = urlText + "contributor="    		
