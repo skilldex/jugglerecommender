@@ -83,17 +83,20 @@ class Store {
 		   	let trickToUse
 			leaderboardRef.on('value', resp =>{
 				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
-				if (trickKeyToUse){
-					trickToUse = {...this.snapshotToObject(resp)[trickKeyToUse], key:trickKeyToUse}
-				}else{
-					trickToUse = allLeaderBoardTricks[Math.floor(Math.random()*allLeaderBoardTricks.length)];
+				if (!trickKeyToUse){
+					console.log('this.library',this.library)
+					console.log('allLeaderBoardTricks',allLeaderBoardTricks)
+					console.log('uiStore.rootTricks',uiStore.rootTricks)
+					var keys = Object.keys(this.library)
+    				trickKeyToUse = keys[ keys.length * Math.random() << 0];
 					const trickToSet = {	
 						date: formatted_date,
-						trick: trickToUse['key'],
+						trick: trickKeyToUse,
 					}		
 					let trickOfTheDayWriteRef = firebase.database().ref('trickOfTheDay/'+formatted_date)
 					trickOfTheDayWriteRef.set(trickToSet);
 				}
+				trickToUse = {...this.snapshotToObject(resp)[trickKeyToUse], key:trickKeyToUse}
 				this.setTrickOfTheDay(trickToUse)
 				leaderboardRef.off()
 				trickOfTheDayReadRef.off()

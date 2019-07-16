@@ -58,10 +58,6 @@ class HomeScreen extends Component {
 						           	<span className='infoLabel'>Pattern</span> 
 						           	{store.randomLeaderboardTrick.key} 
 						        </div>
-						        <div className = "info">
-						           	<span className='infoLabel'>Record</span> 
-						           	{store.randomLeaderboardTrick.user} ({store.randomLeaderboardTrick.catches} catches) 
-					           	</div>       
 					        </div>
 						: null
 					}
