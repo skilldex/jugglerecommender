@@ -244,10 +244,19 @@ class UIStore {
  		this.performSearch()
  	}
  	@action	searchInputChange=(e)=>{
-		uiStore.searchInput = e.target.value 		
+ 		if (this.selectedTrick){
+			const previoslySelected = document.getElementById(this.selectedTrick+"listCard");
+			previoslySelected.classList.toggle("expand");
+		}
+
+
+		this.searchInput = e.target.value 		
 		if(e.target.value === ""){
 			this.searchTrick = ""
 		}
+
+
+
 		this.performSearch()
 		this.resetSelectedTrick()
 		this.updateRootTricks()
