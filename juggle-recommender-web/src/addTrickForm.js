@@ -28,6 +28,7 @@ class AddTrickForm extends Component {
 		siteswap : "",
 		prereqs : [],
 		related : [],
+		postreqs : [],
 		tags : [],
 		submitDisabled : true,
 		nameErrorMessage: "",
@@ -67,12 +68,21 @@ class AddTrickForm extends Component {
 					}
 				})	
 			}
-			//convert prereq strings to tag objects
+			//convert related strings to tag objects
 			if(trick.related){
 				trick.related = trick.related.map((related)=>{
 					return {
 						id : related,
 						text : related
+					}
+				})	
+			}
+			//convert postreq strings to tag objects
+			if(trick.dependents){
+				trick.dependents = trick.dependents.map((postreq)=>{
+					return {
+						id : postreq,
+						text : postreq
 					}
 				})	
 			}
@@ -149,7 +159,7 @@ class AddTrickForm extends Component {
     handleTagDelete=(i)=> {
         const { tags } = this.state;
         this.setState({
-         tags: tags.filter((tag, index) => index !== i),
+         	tags: tags.filter((tag, index) => index !== i),
         });
     }
 	handlePrereqAddition=(tag)=> {
@@ -161,7 +171,7 @@ class AddTrickForm extends Component {
     handlePrereqDelete=(i)=> {
         const { prereqs } = this.state;
         this.setState({
-         prereqs: prereqs.filter((tag, index) => index !== i),
+         	prereqs: prereqs.filter((tag, index) => index !== i),
         });
     }
 	handleRelatedAddition=(tag)=> {
@@ -173,10 +183,21 @@ class AddTrickForm extends Component {
     handleRelatedDelete=(i)=> {
         const { related } = this.state;
         this.setState({
-         related: related.filter((tag, index) => index !== i),
+         	related: related.filter((tag, index) => index !== i),
         });
     }
-
+	handlePostreqAddition=(tag)=> {
+		if (store.library[tag.id]){
+	        this.setState(state => ({ postreqs: [...state.postreqs, tag] }));
+	        this.checkIfFormIsSubmittable()
+	    }
+    }
+    handlePostreqDelete=(i)=> {
+        const { postreqs } = this.state;
+        this.setState({
+         	postreqs: postreqs.filter((tag, index) => index !== i),
+        });
+    }
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
@@ -322,7 +343,10 @@ class AddTrickForm extends Component {
 			});
 			var related = this.state.related.map(function(item) {
 				return item['id'];
-			});				
+			});	
+			var postreqs = this.state.postreqs.map(function(item) {
+				return item['id'];
+			});			
 			const suffix = "("+this.state.num+"b)"
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
@@ -350,6 +374,7 @@ class AddTrickForm extends Component {
 				siteswap :  this.state.siteswap,
 				prereqs : prereqs,
 				related : related,
+				dependents: postreqs,
 				tags : tags,
 				timeUpdated : date.getTime(),
 				explanation : this.state.explanation,
@@ -381,6 +406,7 @@ class AddTrickForm extends Component {
 		this.setState({siteswap : ""})
 		this.setState({prereqs : []})
 		this.setState({related : []})
+		this.setState({postreqs : []})
 		this.setState({tags : []})
 		this.setState({submitDisabled : false})
 		this.setState({numErrorMessage : ""})
@@ -425,30 +451,46 @@ class AddTrickForm extends Component {
 					          handleTagClick={this.handleTagClick}
 					     />
 		const prereqsInput = <ReactTags
-		                      classNames={{tagInputField: 'addTrickReactTags',}}
-					          autofocus = {false}
-					          placeholder = ''
-					          inputFieldPosition="bottom"
-					          tags={this.state.prereqs}
-					          minQueryLength={1}
-					          suggestions={patternsObj}
-					          delimiters={delimiters}
-					          handleDelete={this.handlePrereqDelete}
-					          handleAddition={this.handlePrereqAddition}
-					          handleTagClick={this.handlePrereqClick}/>
+			                      classNames={{tagInputField: 'addTrickReactTags',}}
+						          autofocus = {false}
+						          placeholder = ''
+						          inputFieldPosition="bottom"
+						          tags={this.state.prereqs}
+						          minQueryLength={1}
+						          suggestions={patternsObj}
+						          delimiters={delimiters}
+						          handleDelete={this.handlePrereqDelete}
+						          handleAddition={this.handlePrereqAddition}
+						          handleTagClick={this.handlePrereqClick}
+					          />
 		const relatedInput = <ReactTags
-							  classNames={{tagInputField: 'addTrickReactTags',}}
-					          autofocus = {false}
-					          style = {{width:"300px"}}
-					          placeholder = ''
-					          inputFieldPosition="bottom"
-					          tags={this.state.related}
-					          minQueryLength={1}
-					          suggestions={patternsObj}
-					          delimiters={delimiters}
-					          handleDelete={this.handleRelatedDelete}
-					          handleAddition={this.handleRelatedAddition}
-					          handleTagClick={this.handleRelatedClick}/>
+								  classNames={{tagInputField: 'addTrickReactTags',}}
+						          autofocus = {false}
+						          style = {{width:"300px"}}
+						          placeholder = ''
+						          inputFieldPosition="bottom"
+						          tags={this.state.related}
+						          minQueryLength={1}
+						          suggestions={patternsObj}
+						          delimiters={delimiters}
+						          handleDelete={this.handleRelatedDelete}
+						          handleAddition={this.handleRelatedAddition}
+						          handleTagClick={this.handleRelatedClick}
+					          />
+		const postreqsInput = <ReactTags
+								  classNames={{tagInputField: 'addTrickReactTags',}}
+						          autofocus = {false}
+						          style = {{width:"300px"}}
+						          placeholder = ''
+						          inputFieldPosition="bottom"
+						          tags={this.state.postreqs}
+						          minQueryLength={1}
+						          suggestions={patternsObj}
+						          delimiters={delimiters}
+						          handleDelete={this.handlePostreqDelete}
+						          handleAddition={this.handlePostreqAddition}
+						          handleTagClick={this.handlePostreqClick}
+					          />
 		const titleText = uiStore.editingDetailTrick ? "Edit Pattern" : "Add Pattern"
 		const explanationInput = <textarea className="textarea" 
 											onChange={this.handleExplanationChange}/>
@@ -549,6 +591,9 @@ class AddTrickForm extends Component {
 							</div>
 							<div className="inputContainer">
 								<span className="inputLabel">Related</span><br/><br/>{relatedInput}
+							</div>
+							<div className="inputContainer">
+								<span className="inputLabel">Postreqs</span><br/><br/>{postreqsInput}
 							</div>
 							<div className="inputContainer">
 								<span className="inputLabel">Tutorial URL</span>

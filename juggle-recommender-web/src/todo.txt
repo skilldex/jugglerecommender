@@ -13,10 +13,6 @@ v 1.8
 		-add date to leaderboard
 
 v 1.7
-	-stats
-		clickable and go to tricklist
-		blue bold
-	-Postreqs in add trick
 	-Research back arrow 
 
 	Data fix scripts(see list below)

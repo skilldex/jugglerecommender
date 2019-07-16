@@ -33,7 +33,7 @@ class Demo extends Component {
     }
   }
   setVideoURL=(url, trickKey)=>{
- 
+    let modifiedVideoURL = url
     if (store.library[trickKey] &&
       store.library[trickKey].videoStartTime && 
       store.library[trickKey].videoEndTime &&
@@ -41,9 +41,9 @@ class Demo extends Component {
     ){
       const startTime = store.library[trickKey].videoStartTime
       const endTime = store.library[trickKey].videoEndTime
-      this.videoURL = url+"#t="+startTime+","+endTime
+      modifiedVideoURL = url+"#t="+startTime+","+endTime
     } 
-    this.setState({videoURL : url})
+    this.setState({videoURL : modifiedVideoURL})
   }
   setIGData=(data, trickKey)=>{
     if(!this.state.igData || 

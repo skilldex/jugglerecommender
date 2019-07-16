@@ -300,11 +300,12 @@ class Store {
 			oldTrickRef.remove()
 		}
 
-        this.addDependents(trick)
+        this.addPostreqsFromPrereqs(trick)
         this.addEquivalentRelated(trick)
+        this.addPrereqsFromPostreqs(trick)
         uiStore.toggleAddingTrick()
 	}
-	@action addDependents=(trick)=>{
+	@action addPostreqsFromPrereqs=(trick)=>{
 		if(trick.prereqs){
 			trick.prereqs.forEach((prereq)=>{
 				if(this.library[prereq].dependents){
@@ -327,6 +328,19 @@ class Store {
 				}
 				let relatedRef = firebase.database().ref('library/'+relatedTrick)
         		relatedRef.set(this.library[relatedTrick]);
+			})
+		}
+	}
+	@action addPrereqsFromPostreqs=(trick)=>{
+		if(trick.dependents){
+			trick.dependents.forEach((dependent)=>{
+				if(this.library[dependent].prereqs){
+					this.library[dependent].prereqs.push(trick.name)
+				}else{
+					this.library[dependent].prereqs = [trick.name]
+				}
+				let dependentRef = firebase.database().ref('library/'+dependent)
+        		dependentRef.set(this.library[dependent]);
 			})
 		}
 	}
