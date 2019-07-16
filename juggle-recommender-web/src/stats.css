@@ -1,12 +1,8 @@
-.homeOuterDiv{
-  text-align: center;
-  width : 100%;
-}
-
 .statsOuterDiv{
   text-align: center;
   align-items: center;
   width : 100%;
+  margin-bottom: 60px;
 }
 .individualStatsDiv{
   width: 300px;
