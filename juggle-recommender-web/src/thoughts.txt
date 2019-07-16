@@ -42,7 +42,7 @@ Giveaway:
 			-It gets users signed up and uploading videos without us needing to worry about them doing lots of repeat tricks just to post which might be the case if we just reward contributing 
 			-It gives users something to be proud of/brag about
 		Cons:
-			-It would be very difficult to create/post videos of the length that many would be
+			-It would be very difficult to create/post videos of the length that many records would be
 			-It would be a whole lot of work for users to make videos/count 1000s of throws just to have videos that nobody else will ever want to watch
 			-Competition is not one of the main goals of the site, learning/sharing is, maybe we don't want to give out first impressions of competition/grunt work
 
