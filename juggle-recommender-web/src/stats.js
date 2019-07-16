@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import uiStore from "./stores/uiStore"
 import filterStore from "./stores/filterStore"
-import "./homeScreen.css"
+import "./stats.css"
 import { observer } from "mobx-react"
 import { toJS } from "mobx"
 import authStore from "./stores/authStore"
@@ -57,24 +57,62 @@ class Stats extends Component {
 		 
 	}
 
+	statsLabelButtonClicked=(tagType, key)=>{
+		uiStore.clearUI()
+		if (tagType === 'contributor'){
+			filterStore.setContributors([{id: key,text: key,}]);
+		}else if (tagType === 'ballNum'){
+			filterStore.setNumBalls([key])
+			
+		}else if (tagType === 'tags'){
+			filterStore.setTags([{id: key,text: key,}]);			
+		}
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+
 	render (){
 
 		const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
-			return <div><b>{key}</b>  {this.state.contributorsCounter[key]} </div>
+			return <div className = "individualStatsDiv">
+						<label className= "statsLabelButton"
+								onClick = {()=>this.statsLabelButtonClicked('contributor', key)}>
+							{key}
+						</label>  
+						<div className = "statsValues">
+							{this.state.contributorsCounter[key]}
+						</div>
+					</div>
 		})
 
 		const ballNumStats = Object.keys(this.state.ballNumCounter).map((key)=>{
-			return <div><b>{key} Balls</b>  {this.state.ballNumCounter[key]} </div>
+			return <div className = "individualStatsDiv">
+						<label className= "statsLabelButton"
+								onClick = {()=>this.statsLabelButtonClicked('ballNum', key)}>
+							{key} Balls
+						</label>  
+						<div className = "statsValues">
+							{this.state.ballNumCounter[key]} 
+						</div>
+					</div>
 		})
 
 		const tagsStats = Object.keys(this.state.tagsCounter).map((key)=>{
-			return <div><b>{key}</b>  {this.state.tagsCounter[key]} </div>
+			return <div className = "individualStatsDiv">
+						<label className= "statsLabelButton"
+								onClick = {()=>this.statsLabelButtonClicked('tags', key)}>
+							{key}
+						</label>  
+						<div className = "statsValues">
+							{this.state.tagsCounter[key]} 
+						</div>
+					</div>
 		})
 
 
 
 		return(
-			<div className = "homeOuterDiv">
+			<div className = "statsOuterDiv">
 				<h3 style={{marginBottom: "10px"}}>Stats</h3>
 				<h3>By Numbers of Balls</h3>
 				{ballNumStats}
