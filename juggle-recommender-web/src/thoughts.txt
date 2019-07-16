@@ -48,6 +48,7 @@ Giveaway:
 
 
 	Alternative giveaway Ideas:
+		-Tag us in a post that has something to do with 
 		-Uploading original content
 			-this could go along with making a way for users to report 2 tricks as being the same
 		-Making a share link to some sort of public profile

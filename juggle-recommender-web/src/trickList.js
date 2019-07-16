@@ -88,8 +88,8 @@ class TrickList extends Component {
 							
 	render() {
 	 	let tricks = []
-	 	console.log('this.props.tricksToList',this.props.tricksToList)
 		this.props.tricksToList.forEach((trickKey)=>{
+			trickKey = trickKey.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 			let trick = store.library[trickKey]
 			if(!trickKey){
 				console.log("there is something wrong with the trickKey(before replaces) ",trickKey)

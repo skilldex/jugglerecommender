@@ -215,7 +215,6 @@ class Detail extends Component {
                               </label><br/>
                             </div>
                           </div>:null
-    console.log('detailTrick.dependents',detailTrick.dependents)
     const relationshipLists = 
         detailTrick?
         <div className ='relationshipLists'>
