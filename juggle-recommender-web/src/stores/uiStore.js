@@ -365,7 +365,9 @@ class UIStore {
 				if (filterStore.demoType.length===0){
 					passesDemoTypeFilter = true
 				}else{
-				    if(trick.contributor == null && 
+					if(filterStore.demoType[0].id === "All"){
+						passesDemoTypeFilter = true
+					}else if(trick.contributor == null && 
 				    	filterStore.demoType[0].id === "Juggling Lab" ){
 				    	passesDemoTypeFilter = true
 				    }

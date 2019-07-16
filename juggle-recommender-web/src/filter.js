@@ -166,8 +166,9 @@ class Filter extends Component {
 	    		urlText = urlText + "catches=" + 
 	    			filterStore.minCatches + "," + filterStore.maxCatches + "&"
     	}
-    	if (filterStore.demoType !== "All"){
-			urlText = urlText + "demotype=" + filterStore.demoType.replace(" ","").toLowerCase() + "&"		
+    	console.log('filterStore.demoType',filterStore.demoType)
+    	if (filterStore.demoType.length > 0 && filterStore.demoType[0].id !== "All"){
+			urlText = urlText + "demotype=" + filterStore.demoType[0].id.replace(" ","").toLowerCase() + "&"		
     	}
 
  		if (urlText !== "/?"){

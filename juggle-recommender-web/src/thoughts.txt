@@ -1,4 +1,5 @@
 DB changes:
+	cherry picker needs combined with cherry picker (3b)
 	4440522 needs new name
 	5344 needs a new name
 	413333333 needs new name
@@ -63,6 +64,7 @@ Gifs:
 	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
 
 Desires:
+	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
 	-A way to go back to the last details trick I was looking at
 
 Before working on general skilldex:

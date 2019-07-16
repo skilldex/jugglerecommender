@@ -19,6 +19,7 @@ v 1.7
 =========
 
 Bugs:
+	-If at main list, go to add trick, hit submit, screen should be scrolled to the top
 	-if you go from home to add pattern and hit escape, it takes you to list
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
