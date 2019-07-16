@@ -6,12 +6,16 @@ DB changes:
 	Do we have a side by side pistons pattern?
 	filter for pure siteswaps
 
+Home Screen:
+	-only show the 'record' name for ones where a video has been posted of the record,
+		otherwise just link to details page, in details page there could be an expandable list of all users with catches input for that trick. 
+
 Asthetics:
-	expand arrow could animatedly turn when popup expands
-	move hamburger to left side, and make it's menu a slide out
-	animate the hamburger button in a number of random ways so it turns into an X
-	Make About,Logic,Create account be screens, not a slider
-	Make sort be a part of filter, and make filter it's own screen
+	-expand arrow could animatedly turn when popup expands
+	-move hamburger to left side, and make it's menu a slide out
+	-animate the hamburger button in a number of random ways so it turns into an X
+	-Make About,Logic,Create account be screens, not a slider
+	-Make sort be a part of filter, and make filter it's own screen
 
 Other screens to add:
 	Leaderboard page
@@ -28,6 +32,29 @@ Minor:
 
 Search:
 	Relevence Sort after search happens
+
+Giveaway:
+	Competition Based:
+		Research:
+			Archived Version of JugglingDB records:
+			https://web.archive.org/web/20120512143808/http://www.jugglingdb.com/records/
+		Pros:
+			-It gets users signed up and uploading videos without us needing to worry about them doing lots of repeat tricks just to post which might be the case if we just reward contributing 
+			-It gives users something to be proud of/brag about
+		Cons:
+			-It would be very difficult to create/post videos of the length that many would be
+			-It would be a whole lot of work for users to make videos/count 1000s of throws just to have videos that nobody else will ever want to watch
+			-Competition is not one of the main goals of the site, learning/sharing is, maybe we don't want to give out first impressions of competition/grunt work
+
+
+	Alternative giveaway Ideas:
+		-Uploading original content
+			-this could go along with making a way for users to report 2 tricks as being the same
+		-Making a share link to some sort of public profile
+		-Making a share link to their contributor tag
+		-Filling out a feedback form
+		-Screenshotting and posting their profile
+
 
 Gifs:
 	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for the gif.
