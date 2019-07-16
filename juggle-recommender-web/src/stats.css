@@ -4,29 +4,28 @@
   width : 100%;
   margin-bottom: 60px;
 }
+
 .individualStatsDiv{
   width: 300px;
   margin : 0 auto;
-text-align: right;
-display: flex;
-
+  text-align: right;
+  display: flex;
 }
 
 .statsLabelButton{
-
   font-weight: bold;
   cursor: pointer;
   color: blue;
   margin:0 auto;
-    text-align: left;
-    margin-right:10px;
-      align-items: right;
+  text-align: left;
+  margin-right:10px;
+  align-items: right;
 }
 
 .statsValues{
   align-items: right;
   color:black;
   width: 50px;
-    text-align: right;
-    padding-right: 110px;
+  text-align: right;
+  padding-right: 110px;
 }
