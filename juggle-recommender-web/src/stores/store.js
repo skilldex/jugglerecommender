@@ -84,9 +84,6 @@ class Store {
 			leaderboardRef.on('value', resp =>{
 				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
 				if (!trickKeyToUse){
-					console.log('this.library',this.library)
-					console.log('allLeaderBoardTricks',allLeaderBoardTricks)
-					console.log('uiStore.rootTricks',uiStore.rootTricks)
 					var keys = Object.keys(this.library)
     				trickKeyToUse = keys[ keys.length * Math.random() << 0];
 					const trickToSet = {	
@@ -311,7 +308,8 @@ class Store {
 	@action addPostreqsFromPrereqs=(trick)=>{
 		if(trick.prereqs){
 			trick.prereqs.forEach((prereq)=>{
-				if(this.library[prereq].dependents){
+				if(this.library[prereq].dependents && 
+					this.library[prereq].dependents.indexOf(trick.name) === -1){
 					this.library[prereq].dependents.push(trick.name)
 				}else{
 					this.library[prereq].dependents = [trick.name]
@@ -324,7 +322,8 @@ class Store {
 	@action addEquivalentRelated=(trick)=>{
 		if(trick.related){
 			trick.related.forEach((relatedTrick)=>{
-				if(this.library[relatedTrick].related){
+				if(this.library[relatedTrick].related && 
+					this.library[relatedTrick].related.indexOf(trick.name) === -1){
 					this.library[relatedTrick].related.push(trick.name)
 				}else{
 					this.library[relatedTrick].related = [trick.name]
@@ -337,7 +336,8 @@ class Store {
 	@action addPrereqsFromPostreqs=(trick)=>{
 		if(trick.dependents){
 			trick.dependents.forEach((dependent)=>{
-				if(this.library[dependent].prereqs){
+				if(this.library[dependent].prereqs && 
+					this.library[dependent].prereqs.indexOf(trick.name) === -1){
 					this.library[dependent].prereqs.push(trick.name)
 				}else{
 					this.library[dependent].prereqs = [trick.name]
