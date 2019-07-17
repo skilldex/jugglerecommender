@@ -18,6 +18,9 @@ v 1.8
 =========
 
 Bugs:
+	-postreqs are not there when a trick is edited
+	-creating an account when a list card is expanded causes weird behavior,
+		could be fixed by collapsing card when login/logout is clicked
 	-If at main list, go to add trick, hit submit, screen should be scrolled to the top
 	-if you go from home to add pattern and hit escape, it takes you to list
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.

@@ -48,6 +48,7 @@ class AddTrickForm extends Component {
 	componentDidMount=()=>{
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
+			console.log(trick)
 			trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 			this.setState({trickNameBeingEdited:trick.name})
 			//convert tag strings to tag objects
@@ -79,7 +80,7 @@ class AddTrickForm extends Component {
 			}
 			//convert postreq strings to tag objects
 			if(trick.dependents){
-				trick.dependents = trick.dependents.map((postreq)=>{
+				trick.postreqs = trick.dependents.map((postreq)=>{
 					return {
 						id : postreq,
 						text : postreq
