@@ -1010,6 +1010,38 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BymxcJIg0Cn/"
     },
+    "(4x,2x)(2,0) with a Wrist Drop 2x(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Asymmetric Lemming Drop(3b)", "Symmetric Lemming Drop(3b)" ],
+      "difficulty" : "3.4",
+      "explanation" : "",
+      "name" : "(4x,2x)(2,0) with a Wrist Drop 2x(2b)",
+      "num" : "2",
+      "related" : [ "312 with a Wrist Drop 1(2b)", "3122 with a Wrist Drop 1(2b)", "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" ],
+      "siteswap" : "(4x,2x)(2,0)",
+      "tags" : [ "wrist-drop", "one-throw" ],
+      "timeSubmitted" : 1563372610733,
+      "timeUpdated" : 1563372610733,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0BTnLcAQI1/",
+      "videoEndTime" : 46,
+      "videoStartTime" : 30
+    },
+    "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Asymmetric Lemming Drop(3b)", "Symmetric Lemming Drop(3b)" ],
+      "difficulty" : "3.5",
+      "explanation" : "",
+      "name" : "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)",
+      "num" : "2",
+      "related" : [ "312 with a Wrist Drop 1(2b)", "3122 with a Wrist Drop 1(2b)", "(4x,2x)(2,0) with a Wrist Drop 2x(2b)" ],
+      "siteswap" : "(4x,2x)(2,0)*",
+      "tags" : [ "wrist-drop", "symmetric", "synch" ],
+      "timeSubmitted" : 1563372696889,
+      "timeUpdated" : 1563372696889,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0BTnLcAQI1/"
+    },
     "(6,({64}))(6,6)(6,2)(6b)" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "5.9",
@@ -1669,6 +1701,39 @@
       "timeSubmitted" : 1561149581927,
       "timeUpdated" : 1561149581927,
       "video" : "https://www.instagram.com/p/BxLcxNiAsu6/"
+    },
+    "312 with a Wrist Drop 1(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Asymmetric Lemming Drop(3b)", "Symmetric Lemming Drop(3b)" ],
+      "difficulty" : "3.4",
+      "explanation" : "",
+      "name" : "312 with a Wrist Drop 1(2b)",
+      "num" : "2",
+      "related" : [ "3122 with a Wrist Drop 1(2b)", "(4x,2x)(2,0) with a Wrist Drop 2x(2b)", "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" ],
+      "siteswap" : "312",
+      "tags" : [ "wrist-drop", "symmetric", "one-throw" ],
+      "timeSubmitted" : 1563372477187,
+      "timeUpdated" : 1563372477187,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0BTnLcAQI1/",
+      "videoEndTime" : 30,
+      "videoStartTime" : 15
+    },
+    "3122 with a Wrist Drop 1(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Symmetric Lemming Drop(3b)", "Asymmetric Lemming Drop(3b)" ],
+      "difficulty" : "3.3",
+      "explanation" : "",
+      "name" : "3122 with a Wrist Drop 1(2b)",
+      "num" : "2",
+      "related" : [ "312 with a Wrist Drop 1(2b)", "(4x,2x)(2,0) with a Wrist Drop 2x(2b)", "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" ],
+      "siteswap" : "3122",
+      "tags" : [ "asymmetric", "wrist-drop" ],
+      "timeSubmitted" : 1563372386414,
+      "timeUpdated" : 1563372386414,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0BTnLcAQI1/",
+      "videoEndTime" : 15
     },
     "333({34})(4b)" : {
       "contributor" : "juggling_vegan_",
@@ -2703,9 +2768,9 @@
       "num" : "3",
       "prereqs" : [ "Box" ],
       "siteswap" : "",
-      "tags" : [ "2T", "slam", "underarm-catch", "crossed-arms" ],
+      "tags" : [ "2T", "slam", "underarm-catch", "crossed-arms", "downward 2T" ],
       "timeSubmitted" : 1563333811144,
-      "timeUpdated" : 1563339347130,
+      "timeUpdated" : 1563390532780,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=M1_0mEnwBpM",
       "videoEndTime" : 105,
@@ -2748,7 +2813,7 @@
       "explanation" : "",
       "name" : "Asymmetric Lemming Drop(3b)",
       "num" : "3",
-      "prereqs" : [ "Columns", "Flying Disco Drop" ],
+      "prereqs" : [ "Columns", "Flying Disco Drop", "3122 with a Wrist Drop 1(2b)", "312 with a Wrist Drop 1(2b)", "(4x,2x)(2,0) with a Wrist Drop 2x(2b)", "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" ],
       "siteswap" : "",
       "tags" : [ "wrist-drop" ],
       "timeSubmitted" : 1563334780090,
@@ -2868,6 +2933,7 @@
     },
     "Asymmetric Rising Disco(3b)" : {
       "contributor" : "jahvorsky_",
+      "dependents" : [ "Timing is Relative(3b)" ],
       "difficulty" : "5.6",
       "explanation" : "",
       "name" : "Asymmetric Rising Disco(3b)",
@@ -3193,7 +3259,7 @@
       "video" : "https://www.instagram.com/p/BwPv5q6hE7H/"
     },
     "Box" : {
-      "dependents" : [ "Asymmetric Active Crossover(3b)", "Asymmetric Rising Disco(3b)" ],
+      "dependents" : [ "Asymmetric Active Crossover(3b)" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/box.gif",
       "name" : "Box",
@@ -3663,6 +3729,21 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BTEiiINBSyq/"
     },
+    "Chiral Anomalies Exist(3b)" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.5",
+      "explanation" : "",
+      "name" : "Chiral Anomalies Exist(3b)",
+      "num" : "3",
+      "prereqs" : [ "Timing is Relative(3b)" ],
+      "related" : [ "Momentum Can Change(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "bounce-back", "2T", "claw", "self-slam" ],
+      "timeSubmitted" : 1563393098768,
+      "timeUpdated" : 1563394099262,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdMLly4Asph/"
+    },
     "Chop Shower" : {
       "difficulty" : "6",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/chopshower.gif",
@@ -3733,6 +3814,22 @@
       "timeUpdated" : 1563303951655,
       "url" : "",
       "video" : "https://www.instagram.com/p/BrPux47A8Xz/"
+    },
+    "Circles Reflect Eternity(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Timing is Relative(3b)" ],
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Circles Reflect Eternity(3b)",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover(3b)" ],
+      "related" : [ "Motion is Tranquility(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam" ],
+      "timeSubmitted" : 1563391417565,
+      "timeUpdated" : 1563394041454,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdG-xN0AV_F/"
     },
     "Clawed Mills Mess(3b)" : {
       "contributor" : "3ballpatterns_",
@@ -4432,6 +4529,22 @@
       "videoEndTime" : 8,
       "videoStartTime" : 1
     },
+    "Doing is a Quantum Leap From Imagining(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Momentum Can Change(3b)" ],
+      "difficulty" : "6.1",
+      "explanation" : "",
+      "name" : "Doing is a Quantum Leap From Imagining(3b)",
+      "num" : "3",
+      "prereqs" : [ "Matter Tells Space How To Bend(3b)" ],
+      "related" : [ "Inversion with Respect to Origin(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "claw", "self-slam" ],
+      "timeSubmitted" : 1563390890364,
+      "timeUpdated" : 1563394009866,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdD25zQgUmH/"
+    },
     "Dots with an Inverted Throw(4b)" : {
       "contributor" : "artifaxiom",
       "difficulty" : "7",
@@ -4578,6 +4691,22 @@
       "timeSubmitted" : 1561318443014,
       "timeUpdated" : 1561318443014,
       "video" : "https://www.instagram.com/p/BtO-L8wgXyZ/"
+    },
+    "Everything Has Rhythm(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Momentum Can Change(3b)" ],
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Everything Has Rhythm(3b)",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover(3b)" ],
+      "related" : [ "Motion is Tranquility(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "self-slam" ],
+      "timeSubmitted" : 1563391600351,
+      "timeUpdated" : 1563394056856,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdJbEYVg1Q-/"
     },
     "Evolved Pendulum(3b)" : {
       "contributor" : "nycjuggler_",
@@ -5473,6 +5602,21 @@
       "timeSubmitted" : 1560861103231,
       "video" : "https://www.instagram.com/p/BwuCIHrgTGO/"
     },
+    "Inversion with Respect to Origin(3b)" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Inversion with Respect to Origin(3b)",
+      "num" : "3",
+      "prereqs" : [ "Matter Tells Space How To Bend(3b)", "Nature's Long Threaded Motion Tapestry(3b)" ],
+      "related" : [ "Doing is a Quantum Leap From Imagining(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam" ],
+      "timeSubmitted" : 1563393340892,
+      "timeUpdated" : 1563394145173,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdOE7eLAOWv/"
+    },
     "Inverted Box" : {
       "dependents" : [ "Inspired by the Stars(3b)", "Deep in Alien Territory(3b)", "Silly Trick(3b)", "Inverted Sprung 312(3b)", "Upsidedown Shuffle(3b)", "Inside Inverted Switched Box(3b)", "Cross 2xed Inverted Box(3b)", "Shape Disruption of a Liked Orphan(3b)", "Inverted Sprung Cascade(4b)", "Reverse Slam with (2x,2x) above the High Throw(3b)", "Inverted Sprung Cascade(4b)", "Cross 2xed Inverted Box(3b)", "DNI-Box(3b)", "Wristburning Jambalaya(3b)", "Inverted Box Slam Combo(3b)", "Double Over the Top Slam(3b)", "Cross Slam Self Slam(3b)" ],
       "difficulty" : "7",
@@ -5978,6 +6122,22 @@
       "tags" : [ "columns", "crossed-arms", "synch" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Matt'sMess.html"
     },
+    "Matter Tells Space How To Bend(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Doing is a Quantum Leap From Imagining(3b)", "Inversion with Respect to Origin(3b)" ],
+      "difficulty" : "5.6",
+      "explanation" : "",
+      "name" : "Matter Tells Space How To Bend(3b)",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover(3b)" ],
+      "related" : [ "Nature's Long Threaded Motion Tapestry(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "crossed-arms", "underarm-catch", "self-slam" ],
+      "timeSubmitted" : 1563390518386,
+      "timeUpdated" : 1563393962331,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bc-254WAVSa/"
+    },
     "Mike's Mess" : {
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/mikesmess.gif",
@@ -6164,6 +6324,37 @@
       "timeUpdated" : 1563171736338,
       "url" : "",
       "video" : "https://www.instagram.com/p/BjrrWxfjzKS/"
+    },
+    "Momentum Can Change(3b)" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.3",
+      "explanation" : "",
+      "name" : "Momentum Can Change(3b)",
+      "num" : "3",
+      "prereqs" : [ "Doing is a Quantum Leap From Imagining(3b)", "Everything Has Rhythm(3b)" ],
+      "related" : [ "Timing is Relative(3b)", "Chiral Anomalies Exist(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "bounce-back", "self-slam", "swap" ],
+      "timeSubmitted" : 1563393787347,
+      "timeUpdated" : 1563394167189,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdRNNgUAw53/"
+    },
+    "Motion is Tranquility(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Timing is Relative(3b)" ],
+      "difficulty" : "5.6",
+      "explanation" : "",
+      "name" : "Motion is Tranquility(3b)",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover(3b)" ],
+      "related" : [ "Circles Reflect Eternity(3b)", "Everything Has Rhythm(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam" ],
+      "timeSubmitted" : 1563391322709,
+      "timeUpdated" : 1563394027037,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdERuolAnYk/"
     },
     "Mouthfull (Crossbody outside same hand slam box)(3b)" : {
       "contributor" : "jameschance_",
@@ -6406,6 +6597,22 @@
       "timeUpdated" : 1563307586663,
       "url" : "",
       "video" : "https://www.instagram.com/p/BuJM3VIgOOq/"
+    },
+    "Nature's Long Threaded Motion Tapestry(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Inversion with Respect to Origin(3b)" ],
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Nature's Long Threaded Motion Tapestry(3b)",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover(3b)" ],
+      "related" : [ "Matter Tells Space How To Bend(3b)", "Motion is Tranquility(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "self-slam" ],
+      "timeSubmitted" : 1563390715356,
+      "timeUpdated" : 1563393988488,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdBlIj_ATt2/"
     },
     "Neck Pass Penguin Tennis(3b)" : {
       "contributor" : "juggling_vegan_",
@@ -8172,6 +8379,7 @@
     },
     "Symmetric Active Crossover(3b)" : {
       "contributor" : "jahvorsky_",
+      "dependents" : [ "Matter Tells Space How To Bend(3b)", "Nature's Long Threaded Motion Tapestry(3b)", "Motion is Tranquility(3b)", "Circles Reflect Eternity(3b)", "Everything Has Rhythm(3b)" ],
       "difficulty" : "5.2",
       "explanation" : "",
       "name" : "Symmetric Active Crossover(3b)",
@@ -8179,9 +8387,9 @@
       "prereqs" : [ "Asymmetric Active Crossover(3b)" ],
       "related" : [ "Symmetric Reverse Shapeshifter(3b)" ],
       "siteswap" : "",
-      "tags" : [ "2T", "slam", "crossed-arms", "underarm-catch" ],
+      "tags" : [ "2T", "slam", "crossed-arms", "underarm-catch", "downward 2T" ],
       "timeSubmitted" : 1563333967128,
-      "timeUpdated" : 1563339382192,
+      "timeUpdated" : 1563390552174,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=M1_0mEnwBpM",
       "videoEndTime" : 122,
@@ -8231,7 +8439,7 @@
       "explanation" : "",
       "name" : "Symmetric Lemming Drop(3b)",
       "num" : "3",
-      "prereqs" : [ "Asymmetric Lemming Drop(3b)" ],
+      "prereqs" : [ "Asymmetric Lemming Drop(3b)", "3122 with a Wrist Drop 1(2b)", "312 with a Wrist Drop 1(2b)", "(4x,2x)(2,0) with a Wrist Drop 2x(2b)", "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" ],
       "siteswap" : "",
       "tags" : [ "wrist-drop", "symmetric", "crossed-arms", "underarm-catch" ],
       "timeSubmitted" : 1563334938438,
@@ -8275,7 +8483,7 @@
     "Symmetric Reverse Shapeshifter(3b)" : {
       "contributor" : "jahvorsky_",
       "dependents" : [ "Shapeshifting Rainbows in the Floating Forest(3b)", "Inverted Box Distorted By Inside Shapeshifter(3b)", "Shifting Some Sharp Shapes(3b)", "Extended Shapeshifter Thing(3b)" ],
-      "difficulty" : "5.5",
+      "difficulty" : "5.0",
       "explanation" : "",
       "name" : "Symmetric Reverse Shapeshifter(3b)",
       "num" : "3",
@@ -8284,7 +8492,7 @@
       "siteswap" : "",
       "tags" : [ "wrist-drop", "claw", "raised-hand" ],
       "timeSubmitted" : 1563333630745,
-      "timeUpdated" : 1563339452202,
+      "timeUpdated" : 1563394855285,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=M1_0mEnwBpM",
       "videoEndTime" : 65,
@@ -8844,6 +9052,22 @@
       "timeSubmitted" : 1561300528653,
       "timeUpdated" : 1561300528653,
       "video" : "https://www.instagram.com/p/BwpnNj7g8KW/"
+    },
+    "Timing is Relative(3b)" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Chiral Anomalies Exist(3b)" ],
+      "difficulty" : "6.2",
+      "explanation" : "",
+      "name" : "Timing is Relative(3b)",
+      "num" : "3",
+      "prereqs" : [ "Motion is Tranquility(3b)", "Circles Reflect Eternity(3b)" ],
+      "related" : [ "Momentum Can Change(3b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "bounce-back", "self-slam" ],
+      "timeSubmitted" : 1563392484198,
+      "timeUpdated" : 1563394074931,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdLpcKiA47k/"
     },
     "Tom's Trick" : {
       "difficulty" : "4",
@@ -9684,6 +9908,14 @@
           "lastUpdated" : 1561841861686,
           "starred" : "true"
         },
+        "Asymmetric Active Crossover(3b)" : {
+          "catches" : "80",
+          "lastUpdated" : 1563395741523
+        },
+        "Asymmetric Lemming Drop(3b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1563374011005
+        },
         "Asymmetric Yo-Yo Grafted onto Orka's Mess(3b)" : {
           "catches" : "100",
           "lastUpdated" : 1561486843333,
@@ -10319,6 +10551,10 @@
         "Sunny Side Up (David's Dilemma)" : {
           "catches" : "60",
           "starred" : "true"
+        },
+        "Symmetric Lemming Drop(3b)" : {
+          "catches" : "160",
+          "lastUpdated" : 1563374235128
         },
         "Sync Fountain Collisions (4b)" : {
           "catches" : 0,
@@ -11222,9 +11458,9 @@
     }
   },
   "stats" : {
-    "totalCatchCount" : 24770
+    "totalCatchCount" : 25060
   },
-  "tags" : [ "common", "one-throw", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back" ],
+  "tags" : [ "common", "one-throw", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap" ],
   "trickOfTheDay" : {
     "711" : {
       "date" : "711",

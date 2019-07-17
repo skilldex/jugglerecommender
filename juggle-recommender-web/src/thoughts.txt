@@ -27,7 +27,8 @@ Add Trick Form:
 	-sitewsap before number on form, autofill number from siteswap if possible, copy code from formic
 	-a way to see info/demo of tricks when deciding what to use as related
 	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
-
+	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for a gif. As well as automatically fill in siteswap and ballNum.
+	
 Search:
 	-Relevence Sort after search happens
 	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
@@ -50,9 +51,9 @@ Giveaway:
 			-It would be very difficult to create/post videos of the length that many records would be
 			-It would be a whole lot of work for users to make videos/count 1000s of throws just to have videos that nobody else will ever want to watch
 			-Competition is not one of the main goals of the site, learning/sharing is, maybe we don't want to give out first impressions of competition/grunt work
-
-
 	Alternative giveaway Ideas:
+		-Scavenger Hunt in the App, certain screens hold a code that is redeamable
+			for a set of juggling balls. We could tell people that they are hidden inside of normal usage for logged in users
 		-Tag us in a post that has something to do with 
 		-Uploading original content
 			-this could go along with making a way for users to report 2 tricks as being the same
@@ -62,7 +63,7 @@ Giveaway:
 		-Screenshotting and posting their profile
 
 Gifs:
-	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for the gif.
+	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for a gif. As well as automatically fill in siteswap and ballNum.
 	-If a trick has a gif and a video then we should make a toggle between the two for the demos
 	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
 
@@ -95,16 +96,21 @@ DB changes:
 		Headplant (also add to any tricks with head roll in name)
 		2T (add to any pattern with Active 2 in the title)
 
-Simple Tricks that need uploaded:
-	Tennis and Half Shower Versions of:(A few may be done already)
-		Backcross
-		Penguin
-		Reverse Backcross
-		Under the Leg
-		Neck Pass
-		Neck Throw
-		Headplant
-	1up 2up
+Tricks that need uploaded:
+	Simple:
+		Tennis and Half Shower Versions of:(A few may be done already)
+			Backcross
+			Penguin
+			Reverse Backcross
+			Under the Leg
+			Neck Pass
+			Neck Throw
+			Headplant
+		1up 2up
+	Less Simple:
+		Time reverse versions of the primier primer video
+		Time reverse of lemming drop
+
 
 Data fix scripts:
 	-a script to make related tags go both directions
