@@ -28,7 +28,7 @@ Add Trick Form:
 	-a way to see info/demo of tricks when deciding what to use as related
 	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
 	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for a gif. As well as automatically fill in siteswap and ballNum.
-	
+
 Search:
 	-Relevence Sort after search happens
 	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
@@ -80,21 +80,11 @@ External:
 	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, specifically his tutorials as links in the tricks associated with them.
 
 DB changes:
-	cherry picker needs combined with cherry picker (3b)
 	4440522 needs new name
 	5344 needs a new name
 	413333333 needs new name
 	Do we have a side by side pistons pattern?
 	filter for pure siteswaps
-	Tags to add (and automatedly retroactively add to patterns with them in their name):
-		Straight Siteswaps
-		Contortion
-		Penguins
-		Shoulder Throw
-		Neck Pass
-		Neck Throw
-		Headplant (also add to any tricks with head roll in name)
-		2T (add to any pattern with Active 2 in the title)
 
 Tricks that need uploaded:
 	Simple:
