@@ -1,38 +1,42 @@
-DB changes:
-	cherry picker needs combined with cherry picker (3b)
-	4440522 needs new name
-	5344 needs a new name
-	413333333 needs new name
-	Add contortion tag to all contrition tricks(script can do this)
-	Do we have a side by side pistons pattern?
-	filter for pure siteswaps
-
-Home Screen:
-	-only show the 'record' name for ones where a video has been posted of the record,
-		otherwise just link to details page, in details page there could be an expandable list of all users with catches input for that trick. 
+Biggest Desires:
+	-Make videos able to move frame by frame
+	-Keep track of users tags so if they leave and come back, those tags are still there.
+		-only very important if we dont get routing figured out
+	-Suggest a change could be done just like edit, except instead of adding it to the site it emails/notifies the contributor.
+	-ability to input siteswap for any trick without one listed(or something like this maybe)
+	-Either edit or suggest edit of other users tricks
 
 Asthetics:
 	-expand arrow could animatedly turn when popup expands
 	-move hamburger to left side, and make it's menu a slide out
 	-animate the hamburger button in a number of random ways so it turns into an X
-	-Make About,Logic,Create account be screens, not a slider
-	-Make sort be a part of filter, and make filter it's own screen
 
-Other screens to add:
-	Leaderboard page
-	Feedback Form
-
-Screen changes:
-	make about, login its own screen
-	make expand menu a slider
-	put sort into filter
-	make filter its own screen
+Screens:
+	To add:
+		Leaderboard page
+		Feedback Form
+		Notifications (Could be used in conjuction with a 'Watch' Flair)
+	To change:
+		make about, login its own screen
+		make expand menu a slider
 
 Minor:
 	show add pattern warnings on blur, not onChange
 
+Add Trick Form:
+	-sitewsap before number on form, autofill number from siteswap if possible, copy code from formic
+	-a way to see info/demo of tricks when deciding what to use as related
+	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
+
 Search:
-	Relevence Sort after search happens
+	-Relevence Sort after search happens
+	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
+
+Flair:
+	-'Watch', used in conjunction with notifications to find out if it gains related patterns or if other users are logging catches with it
+	-Dream bubble for want to learn
+	-Baby for barely able to do trick
+	-Buddha/Ninja for a master of a trick
 
 Giveaway:
 	Competition Based:
@@ -57,51 +61,74 @@ Giveaway:
 		-Filling out a feedback form
 		-Screenshotting and posting their profile
 
-
 Gifs:
 	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for the gif.
 	-If a trick has a gif and a video then we should make a toggle between the two for the demos
 	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
 
-Desires:
-	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
-	-A way to go back to the last details trick I was looking at
+Demos:
+	-video/gif toggle
+	-if a trick name is a valid siteswap it could automatically get a jugglinglab gif added to it, even right in the form, if the name is a valid siteswap, siteswap, ball and gif can all be done automatically onBlur
 
-Before working on general skilldex:
-	-finish new ui
-	-stats
-	-user suggestions/editing/comments
 
-Concise TODO:
-	-Notifications section(maybe in profile) so contributors can know if their tricks become prereqs or relateds, or if other users are setting catches for their tricks, or suggesting edits
-	-sitewsap before number on form, autofill number from siteswap if possible, copy code from formic
-	-Keep track of users tags so if they leave and come back, those tags are still there.
-		-only very important if we dont get routing figured out
-	-Suggest a change could be done just like edit, except instead of adding it to the site it emails	/notifies the contributor.
-
-New UI:
-	-clicking ss in list could open a ss detail that has a link to a detail explanation as well as allow anyone to input a siteswap if it is blank, otherwise allow them to suggest a new one right there so that they dont have to have a whole big form for the whole trick. We probably want to avoid them going in there to suggest a new siteswap and then decide they want to suggest other things
+Relationship Lists:
 	-Each relationship list could have an +add trick to this list button which either allows user to go directly to add trick form with appropriate relationship filled out, OR to a form with a dropdown that let's them pick a pattern that already exists
-	-a way to programatically add gifs would be great, see if there is a website that allows siteswap in url to make gif automatically. If we can get this, then we can even add siteswaps automatically as users look for some that aren't there.
-	GRAPH STUFF:
-		-each relationship list could have a 'view as graph' button that allows them to see a couple generations back
-		-there could be a 'make a graph'section where multiple patterns can be used as root nodes as common prereqs/postreqs/related can be seen
-	-instead of star, maybe use multiple flair type icons:
-		*Dream bubble for want to learn
-		*Baby for barely able to do trick
-		*Buddha for a master of a trick
 
 External:
 	-Film 4ball sunny side up for guy online
 	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, specifically his tutorials as links in the tricks associated with them.
 
+DB changes:
+	cherry picker needs combined with cherry picker (3b)
+	4440522 needs new name
+	5344 needs a new name
+	413333333 needs new name
+	Do we have a side by side pistons pattern?
+	filter for pure siteswaps
+	Tags to add (and automatedly retroactively add to patterns with them in their name):
+		Straight Siteswaps
+		Contortion
+		Penguins
+		Shoulder Throw
+		Neck Pass
+		Neck Throw
+		Headplant (also add to any tricks with head roll in name)
+		2T (add to any pattern with Active 2 in the title)
+
+Simple Tricks that need uploaded:
+	Tennis and Half Shower Versions of:(A few may be done already)
+		Backcross
+		Penguin
+		Reverse Backcross
+		Under the Leg
+		Neck Pass
+		Neck Throw
+		Headplant
+	1up 2up
+
+Data fix scripts:
+	-a script to make related tags go both directions
+		if x is listed as related for y, then y should be listed for x
+	-#b moved to begining of name from end (#b)
+		-remove the string '(3b)"' from entire db
+		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
+	-tags added based on name
+		-takes 1 input, if the input exists in a tricks name, then add "input" to it's list of tags
+	-tags changed
+		-takes 2 inputs: the tag to be changed, and what to change it to
+		-this can be done without a script, just replace '"currentTag"' for '"newTag"'
+
+Before working on general skilldex:
+	-finish new ui
+	-stats
+	-user suggestions/editing/comments
+	-make frame by frame video/gif control
 
 Reasons to get juggledex in really good shape before making general skilldex:
 	-Bigger userbase to help populate them with skills, we likely dont have a jol for other skills that can be easily scrapped, and I'm not likely able/willing to spend time filling out forms for other skills.
 	-the template will be better and we wont have to be adding features to both
 	-im much more motivated to make juggledex better than I am to work on general skilldex
 	-we only have a limited time before ejc, the better we can get it by then, the more likely we are to be able to hook users there.
-
 
 Difficulty situation:
 	-If we encourage users to input 0 or 1 or whatever even on tricks they cant do, it would help lower average number of user catches to make difficulty more accurate
@@ -111,37 +138,13 @@ Difficulty situation:
 
 	
 
-
-
-
-
-
-
-
-New todos:
-	-Tag's like 'contortion' could automatically add 'body-throw', another examples 'underarm-catch' automatically adding 'crossed-arms'
-		-possibly posed as suggested
-	-A way to automatically add tags retrospectively based on pattern name, for instance, give every pattern with machine in the name the tag 'machine'
-		-an alternative to this is if tags also worked as search querries, for instance if the 'machine' tag is chosen it list all patterns tagged 'machine' or with 'machine' in their name
-	-Unrestrict catch inputting from starred tricks (has a PROS/CONS section below)
-
 Maybe new todos:
 	-maybe show the detail of the trick that was just added so they can be sure it is how they want it
-	-make filter close when a contributor is selected since chances are they are only selecting one contributor and then going to the list/graph
-		-maybe not until we get a way to filter for video/gif, a way to only see tricks with videos was asked for and it would be annoying to click all contributors if it closed every time
-
-catches bug:
-	add/remove catches in every way possible, check after each wa if it caused the bug
 
 
-Database:
-4440522 needs new name
-5344 needs a new name
-
-
-
-
---------
+________________________________________
+Comments/Descriptions
+----------------------------------------
 Instead of comment section, there could just be a description section that is hooked up the 'suggest a change' button
 PRO
 -It would be much simpler to make.
@@ -149,7 +152,8 @@ PRO
 CON
 -doesnt work well if contributor is not active, this could be beat by having ignored suggestions be sent to mods. Furthermore contributor could turn this on/off so it goes directly to mods.
 -probably more work for mods
--------
+___________________________________________
+
 _______________________________________________
 Two difficulty ratings: Contributor defined, User Average
 -----------------------------------------------

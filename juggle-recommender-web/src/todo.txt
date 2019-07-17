@@ -11,11 +11,10 @@ v 1.8
 	Stats:
 		-records broken today
 		-add date to leaderboard
-
-v 1.7
 	-Research back arrow 
 
 	Data fix scripts(see list below)
+
 =========
 
 Bugs:
@@ -38,17 +37,6 @@ Stats:
 			-consecutive days with a trick contributed
 		aggregate stats:
 
-Data fix scripts:
-	-a script to make related tags go both directions
-		if x is listed as related for y, then y should be listed for x
-	-#b moved to begining of name from end (#b)
-		-remove the string '(3b)"' from entire db
-		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
-	-tags added based on name
-		-takes 1 input, if the input exists in a tricks name, then add "input" to it's list of tags
-	-tags changed
-		-takes 2 inputs: the tag to be changed, and what to change it to
-		-this can be done without a script, just replace '"currentTag"' for '"newTag"'
 
 Code Cleaning:
 	-get a better system of hiding/showing screens
@@ -56,6 +44,7 @@ Code Cleaning:
 	-do the spacing in addTrickForm without using "\u00A0"
 	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
 	-updateGraphData seperated into small functions
+	-trick of the day made cleaner now that it isnt so much focused on leader
 
 Minor:
 	-thin lines on sort button
@@ -64,7 +53,6 @@ Restyling:
 	-put ingstagram icon on list
 	-allow contributors to upload pics
 	-we should show the currently logged in account up top.
-	-slow video/gif
 	-frame by frame button
 	-maybe reorder filter sections
 	-if all ball nums or all associations are chosen in graph then it is just like none are, should we not show all those tags? should we make the buttons in filter all go gray?
@@ -76,7 +64,6 @@ Restyling:
 	-on desktop, when detail is showing, would be nice if rootnode gravitated towards open space
 		-shrink graph to end at detail
 
--Google cloud function for changing database to make all 3ball tricks have (3b) after their names
 	
 -A button that is 'more catches than I want to count' in the details, inserts -1 into the db
 	*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
