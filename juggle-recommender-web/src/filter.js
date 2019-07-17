@@ -236,7 +236,7 @@ class Filter extends Component {
 				          handleTagClick={this.handleContributorTagClick}/>
 				    </div>
 				</div>
-	 	const numbersOfBalls = ['3','4','5','6','7','8','9','10','11']
+	 	const numbersOfBalls = ['2','3','4','5','6','7','8','9','10','11']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
 			numButtons.push(
