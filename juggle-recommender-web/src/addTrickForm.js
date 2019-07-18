@@ -26,6 +26,8 @@ class AddTrickForm extends Component {
 		videoStartTime: "",
 		videoEndTime: "",
 		siteswap : "",
+		contributor: null,
+		gifUrl: null,
 		prereqs : [],
 		related : [],
 		postreqs : [],
@@ -46,10 +48,18 @@ class AddTrickForm extends Component {
 	}
 
 	componentDidMount=()=>{
+		this.setState({contributor: authStore.user.username})
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
 			console.log(trick)
-			trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
+			if (trick.name.includes("(")){
+				trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
+			}
+			if (trick.gifUrl){
+				this.setState({gifUrl: trick.gifUrl})
+				console.log(trick.gifUrl)
+			}
+			this.setState({contributor: trick.contributor})
 			this.setState({trickNameBeingEdited:trick.name})
 			//convert tag strings to tag objects
 			if(trick.tags){
@@ -286,10 +296,10 @@ class AddTrickForm extends Component {
 					this.setState({difficultyErrorMessage:''})	
 				}  		
     	}
-    	if (utilities.isEmptyOrSpaces(this.state.video)){
+    	if (utilities.isEmptyOrSpaces(this.state.video) && !this.state.gifUrl){
 			this.setState({submitDisabled:true})
 		}else{
-			if (utilities.isValidVideoURL(this.state.video)){
+			if (utilities.isValidVideoURL(this.state.video) || this.state.gifUrl){
 				this.setState({videoErrorMessage:''})
 			}else{
 				this.setState({videoErrorMessage:'Not a valid URL.'})
@@ -368,7 +378,8 @@ class AddTrickForm extends Component {
 				num : this.state.num,
 				difficulty : this.state.difficulty,
 				url : tutorialURL,
-				contributor : authStore.user.username, 
+				gifUrl : this.state.gifUrl,
+				contributor : this.state.contributor, 
 				video : this.state.video,
 				videoStartTime: videoStartTime,
 				videoEndTime: videoEndTime,
@@ -380,6 +391,10 @@ class AddTrickForm extends Component {
 				timeUpdated : date.getTime(),
 				explanation : this.state.explanation,
 			}
+			if(!this.state.contributor){
+				delete trick.contributor
+			}
+			console.log('trick',trick)
 			if(uiStore.editingDetailTrick){
 				alert(trick.name+" edited!")
 				trick["timeSubmitted"] = this.state.timeSubmitted

@@ -14,9 +14,11 @@ class Utilities{
   }
 
   @action isNotOnlyDigits=(str)=>{
+      str = str.toString()
       return str.match(/^[0-9]+$/) === null;
   }
   @action isNotOnlyDigitsOrDecimal=(str)=>{
+      str = str.toString()
       var isNumber = /^\d*\.?\d+$/.test(str)
       return !isNumber;
   }
