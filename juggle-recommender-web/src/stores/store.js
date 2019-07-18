@@ -306,7 +306,8 @@ class Store {
 	}
 	@action addPostreqsFromPrereqs=(trick)=>{
 		if(trick.prereqs){
-			trick.prereqs.forEach((prereq)=>{
+			trick.prereqs.forEach((item)=>{
+				const prereq = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
 				if(this.library[prereq].dependents && 
 					this.library[prereq].dependents.indexOf(trick.name) === -1){
 					this.library[prereq].dependents.push(trick.name)
@@ -320,7 +321,8 @@ class Store {
 	}
 	@action addEquivalentRelated=(trick)=>{
 		if(trick.related){
-			trick.related.forEach((relatedTrick)=>{
+			trick.related.forEach((item)=>{
+				const relatedTrick = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
 				if(this.library[relatedTrick].related && 
 					this.library[relatedTrick].related.indexOf(trick.name) === -1){
 					this.library[relatedTrick].related.push(trick.name)
@@ -333,8 +335,12 @@ class Store {
 		}
 	}
 	@action addPrereqsFromPostreqs=(trick)=>{
+		console.log("trick",trick)
 		if(trick.dependents){
-			trick.dependents.forEach((dependent)=>{
+			console.log("trick.dependents",trick.dependents)
+			trick.dependents.forEach((item)=>{
+				console.log('item',item)
+				const dependent = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 				if(this.library[dependent].prereqs && 
 					this.library[dependent].prereqs.indexOf(trick.name) === -1){
 					this.library[dependent].prereqs.push(trick.name)

@@ -344,7 +344,7 @@ class UIStore {
 					    	passesContributorFilter = true
 					    }
 					    if (trick.contributor == null && 
-					    	arrayItem.id === "Library Of Juggling"){
+					    	arrayItem.id === "libraryofjuggling.com"){
 					    	passesContributorFilter = true
 					    }
 					})
