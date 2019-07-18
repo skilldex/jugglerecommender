@@ -3068,18 +3068,18 @@
       "explanation" : "",
       "name" : "Backcross + Neck Throw(3b)",
       "num" : "3",
-      "prereqs" : [ "Backcrosses" ],
+      "prereqs" : [ "Backcross Tennis(3b)" ],
       "related" : [ "Neck Throw Tennis(3b)", "Continuous Around and On the Head(3b)", "Backcross Neck Throw Combo(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw", "neck-throw" ],
       "timeSubmitted" : 1563152160304,
-      "timeUpdated" : 1563152160304,
+      "timeUpdated" : 1563440853580,
       "url" : "",
       "video" : "https://www.instagram.com/p/BiCR2FAD87p/"
     },
     "Backcross + Normal Exchange(2b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Backcross Exchange(2b)", "Backcross Tennis(3b)", "Half Backcross Cascade(3b)" ],
+      "dependents" : [ "Backcross Exchange(2b)" ],
       "difficulty" : "2.1",
       "explanation" : "",
       "name" : "Backcross + Normal Exchange(2b)",
@@ -3096,6 +3096,7 @@
     },
     "Backcross Exchange(2b)" : {
       "contributor" : "tjthejuggler",
+      "dependents" : [ "Backcrosses" ],
       "difficulty" : "2.6",
       "explanation" : "",
       "name" : "Backcross Exchange(2b)",
@@ -3105,7 +3106,7 @@
       "siteswap" : "330",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563436788135,
-      "timeUpdated" : 1563436788135,
+      "timeUpdated" : 1563440756606,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
       "videoEndTime" : 46,
@@ -3118,8 +3119,8 @@
       "explanation" : "",
       "name" : "Backcross Neck Throw Combo(3b)",
       "num" : "3",
-      "prereqs" : [ "Backcrosses", "Neck Throw Tennis(3b)" ],
-      "related" : [ "Backcross + Neck Throw(3b)", "Neck-throw + Penguin + Armpit(3b)" ],
+      "prereqs" : [ "Backcrosses" ],
+      "related" : [ "Backcross + Neck Throw(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw", "neck-throw" ],
       "timeSubmitted" : 1563313628878,
@@ -3134,22 +3135,22 @@
       "explanation" : "",
       "name" : "Backcross Penguin Neck Throw(3b)",
       "num" : "3",
-      "prereqs" : [ "Backcrosses", "Backcross + Neck Throw(3b)", "Neck Throw Tennis(3b)", "Penguins(3b)", "Backcross Neck Throw Combo(3b)" ],
+      "prereqs" : [ "Backcross + Neck Throw(3b)", "Backcross Tennis(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw", "penguin", "neck-throw" ],
       "timeSubmitted" : 1563305644560,
-      "timeUpdated" : 1563305644560,
+      "timeUpdated" : 1563442091685,
       "url" : "",
       "video" : "https://www.instagram.com/p/BsxwDH3A_AM/"
     },
     "Backcross Tennis(3b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)", "Neck Throw Penguin + Contortion + Backcross(3b)", "Backcross Penguin Neck Throw(3b)", "Backcrosses"],
+      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)", "Backcross + Neck Throw(3b)", "Backcross Penguin Neck Throw(3b)" ],
       "difficulty" : "3.6",
       "explanation" : "",
       "name" : "Backcross Tennis(3b)",
       "num" : "3",
-      "related" : [ "Backcross Exchange(2b)", "Half Backcross Cascade(3b)" ],
+      "related" : [ "Backcross Exchange(2b)" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563436910172,
@@ -3160,16 +3161,19 @@
       "videoStartTime" : 48
     },
     "Backcrosses" : {
-      "dependents" : [ "Blind Behind the Back Cascade(3b)", "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)", "Backcrosses + Neckthrows(3b)", "(3b)", "(3b)", "Reverse Backcrosses(3b)", "Reverse Backcross, Backcross Tennis(3b)", "[43]23 with [43] Backcrosses(4b)", "Multiplex Reverse Backcross Shadow Pass Combo(3b)", "Reverse BX, Shadow Pass, Shoulder Throw(3b)", "Backcross + Neck Throw(3b)", "Backcross Penguin Neck Throw(3b)", "Backcross Neck Throw Combo(3b)", "Neck Throw Penguin + Contortion + Backcross(3b)" ],
+      "dependents" : [ "Blind Behind the Back Cascade(3b)", "Neck Throw Penguin + Contortion + Backcross(3b)", "Reverse BX, Shadow Pass, Shoulder Throw(3b)", "Backcross Neck Throw Combo(3b)", "Reverse Backcrosses(3b)", "[43]23 with [43] Backcrosses(4b)", "Multiplex Reverse Backcross Shadow Pass Combo(3b)" ],
       "difficulty" : "4",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/backcrosses.gif",
       "name" : "Backcrosses",
       "num" : 3,
-      "prereqs" : [ "Cascade" ],
+      "prereqs" : [ "Cascade", "Backcross Exchange(2b)" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 0,
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Backcrosses.html"
+      "timeUpdated" : 1563442174599,
+      "url" : "https://http://www.libraryofjuggling.com/Tricks/3balltricks/Backcrosses.html",
+      "video" : ""
     },
     "Backwards Z(3b)" : {
       "contributor" : "nycjuggler_",
@@ -3246,7 +3250,7 @@
       "difficulty" : "6",
       "name" : "Blind Behind the Back Cascade(3b)",
       "num" : "3",
-      "prereqs" : [ "Cascade", "Backcrosses" ],
+      "prereqs" : [ "Backcrosses" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1560923739397,
@@ -3629,7 +3633,7 @@
       "video" : "https://www.instagram.com/p/BvMai0sg31k/"
     },
     "Cascade" : {
-      "dependents" : [ "552(4b)", "Backcrosses", "Boston Shuffle", "Takeouts", "HighLow Cascade", "Chops", "Crossed Arm Cascade", "Georgian Shuffle", "Half Shower", "Juggler's Tennis", "Mangham's Mangle", "Olas", "Orka's Mess", "Ripley's Rainbow", "Sandbox Shuffle", "Tennessee Waltz(4b)", "Wimpy(4b)", "Cascade(5b)", "Split Cascade(5b)", "Stacked Cascade(5b)", "Hopscotch(3b)", "Shapeshifting Rainbows in the Floating Forest(3b)", "Penguins(3b)", "Blind Behind the Back Cascade(3b)", "Cascade on the Chest(3b)", "Clawed Reverse Cascade(3b)", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room(3b)", "Neck Pass Tennis(3b)", "Protostar(3b)", "Delayed Juggler's Tennis(3b)", "Armberts(3b)", "[13](4b)", "2 Ball Shower Under 1 Ball Cascade(3b)", "333[34](4b)" ],
+      "dependents" : [ "Backcrosses" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/3ballcascade.gif",
       "name" : "Cascade",
@@ -3748,7 +3752,7 @@
     },
     "Cherry Picker(3b)" : {
       "contributor" : "3ballpatterns_",
-      "dependents" : [ "Kraken", "Christmas Tree Ball Picker(4b)","Waterfall(3b)", "The Magnet Factory(3b)", "Cherrypicked time-reversed half mess(3b)", "Cherrypicked time-reversed half mess(3b)" ],
+      "dependents" : [ "Kraken", "Christmas Tree Ball Picker(4b)", "Waterfall(3b)", "The Magnet Factory(3b)", "Cherrypicked time-reversed half mess(3b)", "Cherrypicked time-reversed half mess(3b)" ],
       "difficulty" : "4",
       "name" : "Cherry Picker(3b)",
       "num" : "3",
@@ -3757,8 +3761,8 @@
       "siteswap" : "",
       "tags" : [ "claw", "raised-hand", "columns" ],
       "timeSubmitted" : 1561034104100,
-      "video" : "https://www.instagram.com/p/BLl_gI7jC6a/",
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/CherryPicker.html"
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/CherryPicker.html",
+      "video" : "https://www.instagram.com/p/BLl_gI7jC6a/"
     },
     "Cherrypicked time-reversed half mess(3b)" : {
       "contributor" : "juggling_vegan_",
@@ -6478,7 +6482,7 @@
       "explanation" : "",
       "name" : "Multiplex Reverse Backcross Shadow Pass Combo(3b)",
       "num" : "3",
-      "prereqs" : [ "Backcrosses", "Neck Pass Tennis(3b)" ],
+      "prereqs" : [ "Backcrosses" ],
       "siteswap" : "",
       "tags" : [ "multiplex", "body-throw" ],
       "timeSubmitted" : 1563151150953,
@@ -6711,7 +6715,7 @@
       "explanation" : "",
       "name" : "Neck Throw Penguin + Contortion + Backcross(3b)",
       "num" : "3",
-      "prereqs" : [ "Penguins(3b)", "Neck Throw Tennis(3b)", "Backcrosses", "Backcross Neck Throw Combo(3b)", "Backcross Penguin Neck Throw(3b)" ],
+      "prereqs" : [ "Backcross Penguin Neck Throw(3b)", "Backcrosses" ],
       "related" : [ "Gentoo(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw", "contortion", "penguin", "neck-throw" ],
@@ -6728,7 +6732,7 @@
       "name" : "Neck Throw Tennis(3b)",
       "num" : "3",
       "prereqs" : [ "Juggler's Tennis" ],
-      "related" : [ "Neck Pass Tennis(3b)", "Backcross + Neck Throw(3b)" ],
+      "related" : [ "Backcross + Neck Throw(3b)" ],
       "siteswap" : "3",
       "tags" : [ "body-throw", "neck-throw" ],
       "timeSubmitted" : 1563172967137,
@@ -6804,7 +6808,7 @@
     },
     "Normal + Backcross Exchange(2b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Backcross Exchange(2b)", "Backcross Tennis(3b)", "Half Backcross Cascade(3b)" ],
+      "dependents" : [ "Backcross Exchange(2b)" ],
       "difficulty" : "2.3",
       "explanation" : "",
       "name" : "Normal + Backcross Exchange(2b)",
@@ -7415,7 +7419,7 @@
       "explanation" : "",
       "name" : "Reverse BX, Shadow Pass, Shoulder Throw(3b)",
       "num" : "3",
-      "prereqs" : [ "Backcrosses", "534 with the 3s behind the neck(4b)" ],
+      "prereqs" : [ "Backcrosses" ],
       "related" : [ "Shoulder Throw Neck Pass Combo(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw", "shoulder-throw" ],
@@ -7430,17 +7434,17 @@
       "explanation" : "",
       "name" : "Reverse Backcross, Backcross Tennis(3b)",
       "num" : "3",
-      "prereqs" : [ "Backcrosses", "Reverse Backcrosses(3b)" ],
+      "prereqs" : [ "Reverse Backcrosses(3b)", "Backcross Tennis(3b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563104298134,
-      "timeUpdated" : 1563104298134,
+      "timeUpdated" : 1563440813254,
       "url" : "",
       "video" : "https://www.instagram.com/p/BZBTU10BMJ9/"
     },
     "Reverse Backcrosses(3b)" : {
       "contributor" : "juggling_vegan_",
-      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)", "Using My Best Asset(3b)", "Reverse Shoulder Throws (occasional)(4b)", "1up 2up with 1 of 2up Reverse Backcrosses(3b)", "Split Reverse Shoulder Throws(5b)", "Under Leg Catch to Behind Back Catch(3b)" ],
+      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)" ],
       "difficulty" : "4.6",
       "explanation" : "",
       "name" : "Reverse Backcrosses(3b)",
@@ -11540,7 +11544,7 @@
   "stats" : {
     "totalCatchCount" : 25060
   },
-  "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neck-pass", "neck-throw", "headplant"],
+  "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neck-pass", "neck-throw", "headplant" ],
   "trickOfTheDay" : {
     "711" : {
       "date" : "711",
@@ -11573,6 +11577,10 @@
     "718" : {
       "date" : "718",
       "trick" : "Asymmetric Slam Box Variant(3b)"
+    },
+    "719" : {
+      "date" : "719",
+      "trick" : "Penguins(3b)"
     }
   },
   "users" : {

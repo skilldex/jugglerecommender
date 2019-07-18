@@ -18,6 +18,8 @@ v 1.8
 =========
 
 Bugs:
+	-removing a prereq in edit doesnt remove the other tricks postreq of the edited trick,
+		and vice versa, probably with related as well
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
 	-Fixed automatically by back arrow setup:
@@ -47,12 +49,13 @@ Data fix scripts:
 		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
 
 Code Cleaning:
+	-can detail and filter timers now be removed since they are their own screens?
 	-do the spacing in addTrickForm without using "\u00A0"
 	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
 	-updateGraphData seperated into small functions
 	-trick of the day made cleaner now that it isnt so much focused on leader
-	-in filterStore there are alot fo functions like setTags, they could maybe be combined
-
+	-in filterStore these functions have similar functions that could prolly be combined: 		setTags
+		handleDelete
 Minor:
 	-thin lines on sort button
 
