@@ -16,6 +16,13 @@ Suggest a Change:
 	-could be done just like edit, except instead of adding it to the site it emails/notifies the contributor.
 	-if trick has no siteswap listed, maybe anyone should be able to input it directly
 
+Details:
+	-expandable stats section
+		-number of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+	-expandable catches inputted section
+		-show leader or maybe top few, but then everyone elses records go in expandable list
+
 Minor:
 	difficulty warning is 1 character behind, so when you type x.x it thinks you have x. and shows a warning. this is probably because it is using state which is laggy.
 
@@ -98,19 +105,6 @@ Tricks that need uploaded:
 	Less Simple:
 		Time reverse versions of the primier primer video
 		Time reverse of lemming drop
-
-
-Data fix scripts:
-	-a script to make related tags go both directions
-		if x is listed as related for y, then y should be listed for x
-	-#b moved to begining of name from end (#b)
-		-remove the string '(3b)"' from entire db
-		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
-	-tags added based on name
-		-takes 1 input, if the input exists in a tricks name, then add "input" to it's list of tags
-	-tags changed
-		-takes 2 inputs: the tag to be changed, and what to change it to
-		-this can be done without a script, just replace '"currentTag"' for '"newTag"'
 
 Before working on general skilldex:
 	-finish new ui

@@ -16,11 +16,8 @@ v 1.8
 	Data fix scripts(see list below)
 
 =========
-	-contributors need alphabetized
 
 Bugs:
-	-creating an account when a list card is expanded causes weird behavior,
-		could be fixed by collapsing card when login/logout is clicked
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
 	-Fixed automatically by back arrow setup:
@@ -38,23 +35,23 @@ Profile:
 		aggregate stats:
 	Notifications:(maybe done with email instead)
 		-contributed tricks get new related tricks
-		-contributed tricks get other users input catches 
-Stats:
-	Pattern stats (expandable in details):
-		-number of users with records for a given trick
-		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+		-contributed tricks get other users input catches
+	Settings:
+		-option to have catch records public or not(listed in details) 
 
-	User stats:
-
-
+Data fix scripts:
+	-a script to make related tags go both directions
+		if x is listed as related for y, then y should be listed for x
+	-#b moved to begining of name from end (#b)
+		-remove the string '(3b)' from entire db
+		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
 
 Code Cleaning:
-	-get a better system of hiding/showing screens
-		-probably something like a function that hides everything and then just show the one you want shown.
 	-do the spacing in addTrickForm without using "\u00A0"
 	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
 	-updateGraphData seperated into small functions
 	-trick of the day made cleaner now that it isnt so much focused on leader
+	-in filterStore there are alot fo functions like setTags, they could maybe be combined
 
 Minor:
 	-thin lines on sort button

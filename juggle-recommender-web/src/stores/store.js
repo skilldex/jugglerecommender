@@ -19,8 +19,6 @@ class Store {
 	@observable contributors = []
 	@observable presetTags = {}
 	@observable videoURL = ""
-	@observable igData = null
-	@observable youtubeId = null
 	@observable randomLeaderboardTrick = null
 	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""

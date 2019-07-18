@@ -56,12 +56,7 @@ class Detail extends Component {
       }
     }, 100);  
   }
-  onMouseEnter=(event)=>{
-    uiStore.setMouseInDetailDiv(true)
-  }
-  onMouseLeave=(event)=>{
-    uiStore.setMouseInDetailDiv(false)
-  }
+
   toggleShowMoreInformation=()=>{
     uiStore.toggleShowMoreInformation()
   }

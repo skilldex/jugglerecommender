@@ -23,8 +23,7 @@ class Header extends Component {
 				  category: 'header',
 				  action: paneFlag,
 			});
-		}
-		
+		}		
 		if(paneFlag == "addPattern"){
 			uiStore.clearUI()
 			uiStore.toggleAddingTrick()

@@ -22,7 +22,6 @@ class UIStore {
 	@observable expandedMenuTimer = null
 	@observable addingTrick = false
 	@observable editingDetailTrick = false
-	@observable mouseInDetailDiv = false
 	@observable mouseInSortDiv = false
 	@observable mouseInExpandedMenu = false
 	@observable showSortDiv = false
@@ -146,14 +145,8 @@ class UIStore {
  			this.setSelectedList('myTricks')
  		}
  	}
-	@action setMouseInDetailDiv=(inDiv)=>{
-		this.mouseInDetailDiv = inDiv
-	}
 	@action setMouseInSortDiv=(inDiv)=>{
 		this.mouseInSortDiv = inDiv
-	}
-	@action setMouseInFilterDiv=(inDiv)=>{
-		this.mouseInFilterDiv = inDiv
 	}
 	@action setMouseInExpandedMenu=(inDiv)=>{
 		this.mouseInExpandedMenu = inDiv
@@ -248,15 +241,10 @@ class UIStore {
 			const previoslySelected = document.getElementById(this.selectedTrick+"listCard");
 			previoslySelected.classList.toggle("expand");
 		}
-
-
 		this.searchInput = e.target.value 		
 		if(e.target.value === ""){
 			this.searchTrick = ""
 		}
-
-
-
 		this.performSearch()
 		this.resetSelectedTrick()
 		this.updateRootTricks()
