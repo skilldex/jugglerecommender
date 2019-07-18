@@ -18,8 +18,6 @@ v 1.8
 =========
 
 Bugs:
-	-removing a prereq in edit doesnt remove the other tricks postreq of the edited trick,
-		and vice versa, probably with related as well
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
 	-Fixed automatically by back arrow setup:
