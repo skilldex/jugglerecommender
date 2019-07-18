@@ -3077,6 +3077,40 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BiCR2FAD87p/"
     },
+    "Backcross + Normal Exchange(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Backcross Exchange(2b)", "Backcross Tennis(3b)", "Half Backcross Cascade(3b)" ],
+      "difficulty" : "2.1",
+      "explanation" : "",
+      "name" : "Backcross + Normal Exchange(2b)",
+      "num" : "2",
+      "related" : [ "Normal + Backcross Exchange(2b)" ],
+      "siteswap" : "330",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563436558514,
+      "timeUpdated" : 1563436622910,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
+      "videoEndTime" : 15,
+      "videoStartTime" : 1
+    },
+    "Backcross Exchange(2b)" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "2.6",
+      "explanation" : "",
+      "name" : "Backcross Exchange(2b)",
+      "num" : "2",
+      "prereqs" : [ "Backcross + Normal Exchange(2b)", "Normal + Backcross Exchange(2b)" ],
+      "related" : [ "Backcross Tennis(3b)" ],
+      "siteswap" : "330",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563436788135,
+      "timeUpdated" : 1563436788135,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
+      "videoEndTime" : 46,
+      "videoStartTime" : 32
+    },
     "Backcross Neck Throw Combo(3b)" : {
       "contributor" : "juggling_vegan_",
       "dependents" : [ "Backcross Penguin Neck Throw(3b)", "Neck Throw Penguin + Contortion + Backcross(3b)" ],
@@ -3107,6 +3141,23 @@
       "timeUpdated" : 1563305644560,
       "url" : "",
       "video" : "https://www.instagram.com/p/BsxwDH3A_AM/"
+    },
+    "Backcross Tennis(3b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Reverse Backcross, Backcross Tennis(3b)", "Neck Throw Penguin + Contortion + Backcross(3b)", "Backcross Penguin Neck Throw(3b)", "Backcrosses"],
+      "difficulty" : "3.6",
+      "explanation" : "",
+      "name" : "Backcross Tennis(3b)",
+      "num" : "3",
+      "related" : [ "Backcross Exchange(2b)", "Half Backcross Cascade(3b)" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563436910172,
+      "timeUpdated" : 1563437776128,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
+      "videoEndTime" : 66,
+      "videoStartTime" : 48
     },
     "Backcrosses" : {
       "dependents" : [ "Blind Behind the Back Cascade(3b)", "1up(Normal) 2up(Shoulder Throw, Backcross)(3b)", "Backcrosses + Neckthrows(3b)", "(3b)", "(3b)", "Reverse Backcrosses(3b)", "Reverse Backcross, Backcross Tennis(3b)", "[43]23 with [43] Backcrosses(4b)", "Multiplex Reverse Backcross Shadow Pass Combo(3b)", "Reverse BX, Shadow Pass, Shoulder Throw(3b)", "Backcross + Neck Throw(3b)", "Backcross Penguin Neck Throw(3b)", "Backcross Neck Throw Combo(3b)", "Neck Throw Penguin + Contortion + Backcross(3b)" ],
@@ -5204,6 +5255,24 @@
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Grace.html"
     },
+    "Half Backcross Cascade(3b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Backcrosses" ],
+      "difficulty" : "3.6",
+      "explanation" : "",
+      "name" : "Half Backcross Cascade(3b)",
+      "num" : "3",
+      "prereqs" : [ "Normal + Backcross Exchange(2b)", "Backcross + Normal Exchange(2b)" ],
+      "related" : [ "Backcross Tennis(3b)" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563437011594,
+      "timeUpdated" : 1563437011594,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
+      "videoEndTime" : 80,
+      "videoStartTime" : 68
+    },
     "Half Boston Mess(3b)" : {
       "contributor" : "3ballpatterns_",
       "dependents" : [ "Boston Mess + Takeouts(3b)", "Boston Mess + Takeouts(3b)" ],
@@ -6732,6 +6801,23 @@
       "timeUpdated" : 1563144059036,
       "url" : "",
       "video" : "https://www.instagram.com/p/BdhyXQtBwhw/"
+    },
+    "Normal + Backcross Exchange(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Backcross Exchange(2b)", "Backcross Tennis(3b)", "Half Backcross Cascade(3b)" ],
+      "difficulty" : "2.3",
+      "explanation" : "",
+      "name" : "Normal + Backcross Exchange(2b)",
+      "num" : "2",
+      "related" : [ "Backcross + Normal Exchange(2b)" ],
+      "siteswap" : "330",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563436730488,
+      "timeUpdated" : 1563436730488,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
+      "videoEndTime" : 30,
+      "videoStartTime" : 17
     },
     "Not an Unkown Knot(3b)" : {
       "contributor" : "noslowerdna_",

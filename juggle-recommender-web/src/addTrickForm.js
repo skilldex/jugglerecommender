@@ -358,7 +358,11 @@ class AddTrickForm extends Component {
 			var postreqs = this.state.postreqs.map(function(item) {
 				return item['id'];
 			});			
-			const suffix = "("+this.state.num+"b)"
+			let suffix = "("+this.state.num+"b)"
+			//if it is a library of juggling trick being edited, then 3b tricks dont have suffixes
+			if (this.state.num == "3" && !this.state.contributor){
+				suffix = ""
+			}
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
 			let videoStartTime = null
