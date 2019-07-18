@@ -36,14 +36,15 @@ class Store {
 		}
 	}
 	@computed get contributorTags(){
-		const contributors = []
+		let contributors = []
 		for (let trick in this.library){
   			if (this.library[trick].contributor && 
   				!contributors.includes(this.library[trick].contributor)){
   					contributors.push(this.library[trick].contributor)
 			}
   		}
-  		contributors.push('Library Of Juggling')
+  		contributors.push('libraryofjuggling.com')
+  		contributors = contributors.sort()
   		this.setContributors(contributors)
  		const contributorTags = contributors.map((contributor) => {
 		  return {
