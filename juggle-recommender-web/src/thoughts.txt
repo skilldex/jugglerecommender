@@ -1,10 +1,36 @@
 Biggest Desires:
 	-Make videos able to move frame by frame
+	-Improve Add Trick Form (see below)
+	-Suggest a change (see below)
 	-Keep track of users tags so if they leave and come back, those tags are still there.
-		-only very important if we dont get routing figured out
-	-Suggest a change could be done just like edit, except instead of adding it to the site it emails/notifies the contributor.
-	-ability to input siteswap for any trick without one listed(or something like this maybe)
-	-Either edit or suggest edit of other users tricks
+		-only very important if we dont get routing figured out because of accidental back arrowing.
+
+Add Trick Form:
+	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
+	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for a gif, fill in siteswap, ballNum, and 'pure-ss' tag. This should be done on onBlur.
+	-sitewsap before number on form, autofill number from siteswap if possible, copy code from formic
+	-a way to see info/demo of tricks when deciding what to use as related
+	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
+
+Suggest a Change:
+	-could be done just like edit, except instead of adding it to the site it emails/notifies the contributor.
+	-if trick has no siteswap listed, maybe anyone should be able to input it directly
+
+Minor:
+	difficulty warning is 1 character behind, so when you type x.x it thinks you have x. and shows a warning. this is probably because it is using state which is laggy.
+
+Demos:
+	-video/gif toggle
+
+Flair:
+	-'Watch', used in conjunction with notifications to find out if it gains related patterns or if other users are logging catches with it
+	-Dream bubble for want to learn
+	-Baby for barely able to do trick
+	-Buddha/Ninja for a master of a trick
+
+Search:
+	-Relevence Sort after search happens
+	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
 
 Asthetics:
 	-expand arrow could animatedly turn when popup expands
@@ -19,25 +45,6 @@ Screens:
 	To change:
 		make about, login its own screen
 		make expand menu a slider
-
-Minor:
-	show add pattern warnings on blur, not onChange
-
-Add Trick Form:
-	-sitewsap before number on form, autofill number from siteswap if possible, copy code from formic
-	-a way to see info/demo of tricks when deciding what to use as related
-	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
-	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for a gif. As well as automatically fill in siteswap and ballNum.
-
-Search:
-	-Relevence Sort after search happens
-	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
-
-Flair:
-	-'Watch', used in conjunction with notifications to find out if it gains related patterns or if other users are logging catches with it
-	-Dream bubble for want to learn
-	-Baby for barely able to do trick
-	-Buddha/Ninja for a master of a trick
 
 Giveaway:
 	Competition Based:
@@ -61,23 +68,13 @@ Giveaway:
 		-Making a share link to their contributor tag
 		-Filling out a feedback form
 		-Screenshotting and posting their profile
-
-Gifs:
-	-If a tricks name is a valid siteswap/juggling lab url, then we should automatically make the link for a gif. As well as automatically fill in siteswap and ballNum.
-	-If a trick has a gif and a video then we should make a toggle between the two for the demos
-	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
-
-Demos:
-	-video/gif toggle
-	-if a trick name is a valid siteswap it could automatically get a jugglinglab gif added to it, even right in the form, if the name is a valid siteswap, siteswap, ball and gif can all be done automatically onBlur
-
+		-Reward whoever uploads the 1000th pattern, or something like that
 
 Relationship Lists:
 	-Each relationship list could have an +add trick to this list button which either allows user to go directly to add trick form with appropriate relationship filled out, OR to a form with a dropdown that let's them pick a pattern that already exists
 
 External:
-	-Film 4ball sunny side up for guy online
-	-Contact that guy from the text doc of tricks waiting for names, ask about using his stuff, specifically his tutorials as links in the tricks associated with them.
+	-Contact jugglekraze_youtuber, ask about using his stuff, specifically his tutorials as links in the tricks associated with them.
 
 DB changes:
 	4440522 needs new name
@@ -96,6 +93,7 @@ Tricks that need uploaded:
 			Neck Pass
 			Neck Throw
 			Headplant
+		side by side pistons
 		1up 2up
 	Less Simple:
 		Time reverse versions of the primier primer video

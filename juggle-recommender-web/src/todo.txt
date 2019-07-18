@@ -21,17 +21,14 @@ v 1.8
 Bugs:
 	-creating an account when a list card is expanded causes weird behavior,
 		could be fixed by collapsing card when login/logout is clicked
-	-If at main list, go to add trick, hit submit, screen should be scrolled to the top
-	-if you go from home to add pattern and hit escape, it takes you to list
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
+	-Fixed automatically by back arrow setup:
+		-If at main list, go to add trick, hit submit, screen should be scrolled to the top
+		-if you go from home to add pattern and hit escape, it takes you to list
 
-Stats:
-	Pattern stats (expandable in details):
-		-number of users with records for a given trick
-		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
-
-	User stats:
+Profile:
+	Stats:
 		Pattern stats:
 			-number of tricks within a certain range
 			-number of catches
@@ -39,6 +36,16 @@ Stats:
 			-consecutive days with catches input for a trick
 			-consecutive days with a trick contributed
 		aggregate stats:
+	Notifications:(maybe done with email instead)
+		-contributed tricks get new related tricks
+		-contributed tricks get other users input catches 
+Stats:
+	Pattern stats (expandable in details):
+		-number of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+
+	User stats:
+
 
 
 Code Cleaning:

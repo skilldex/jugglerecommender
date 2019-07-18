@@ -33,7 +33,7 @@
   padding-bottom: 60px;
 }
 
-.rotated90{
+.rotatedNegative90{
   -webkit-transform: rotate(90deg); /* Safari and Chrome */
   -moz-transform: rotate(90deg);   /* Firefox */
   -ms-transform: rotate(90deg);   /* IE 9 */
