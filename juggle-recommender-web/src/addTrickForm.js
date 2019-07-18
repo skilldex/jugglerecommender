@@ -520,7 +520,8 @@ class AddTrickForm extends Component {
 								<input className="formInputs" 
 										onKeyPress={this.onNameInputKeyPress}
 										value={this.state.name} 
-										onChange={this.handleNameChange}/>
+										onChange={this.handleNameChange}
+										onBlur={this.handleNameChange}/>
 								{autoComplete}
 							</div>
 							<div className="videoInputContainer">
