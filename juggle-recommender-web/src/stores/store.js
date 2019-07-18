@@ -256,6 +256,48 @@ class Store {
 			})
 		}
 	}
+	@action removeOldPrereqs=(newTrickData, oldTrickKey)=>{
+		const oldTrick = this.library[oldTrickKey]
+		if(oldTrick.dependents){
+			let staleDependents
+			if(newTrickData){
+				staleDependents = oldTrick.dependents.filter(x => !newTrickData.dependents.includes(x))
+			}else{//for the case of deleting a trick
+				staleDependents = oldTrick.dependents
+			}
+			staleDependents.forEach((dependent)=>{
+				const trick = this.library[dependent]
+				if(trick){
+					const newPrereqs = trick.prereqs.filter((x)=> x !== oldTrickKey)
+					trick.prereqs = newPrereqs
+					//update dependent's dependents in db
+					let newTrickRef = firebase.database().ref('library/'+dependent)
+	        		newTrickRef.set(trick);
+	        	}
+			})
+		}
+	}
+	@action removeOldRelated=(newTrickData, oldTrickKey)=>{
+		const oldTrick = this.library[oldTrickKey]
+		if(oldTrick.related){
+			let staleRelated
+			if(newTrickData){
+				staleRelated = oldTrick.related.filter(x => !newTrickData.related.includes(x))
+			}else{//for the case of deleting a trick
+				staleRelated = oldTrick.related
+			}
+			staleRelated.forEach((relatedTrick)=>{
+				const trick = this.library[relatedTrick]
+				if(trick){
+					const newRelated = trick.related.filter((x)=> x !== oldTrickKey)
+					trick.related = newRelated
+					//update relatedTrick's related in db
+					let newTrickRef = firebase.database().ref('library/'+relatedTrick)
+	        		newTrickRef.set(trick);
+	        	}
+			})
+		}
+	}
 	@action removeTrickFromDatabase=(oldTrickKey)=>{
     	let oldTrickRef = firebase.database().ref('library/'+oldTrickKey)
 		oldTrickRef.remove()
@@ -266,6 +308,8 @@ class Store {
 			const trickToDelete = uiStore.detailTrick.id
 			uiStore.detailTrick = null
 		    this.removeOldDependents(null,trickToDelete)
+		    this.removeOldPrereqs(null,trickToDelete)
+		    this.removeOldRelated(null,trickToDelete)
 		    this.removeTrickFromDatabase(trickToDelete)
 		}
 
@@ -278,6 +322,8 @@ class Store {
 		if(uiStore.editingDetailTrick){
 			oldTrickKey = uiStore.detailTrick.id
 			this.removeOldDependents(trick,oldTrickKey)
+			this.removeOldPrereqs(trick,oldTrickKey)
+			this.removeOldRelated(trick,oldTrickKey)
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);

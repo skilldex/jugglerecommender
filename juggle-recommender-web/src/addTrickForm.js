@@ -345,7 +345,6 @@ class AddTrickForm extends Component {
 			document.getElementById("submitButton").focus();
 		}
 		if (!this.state.submitDisabled){
-			
 			var tags = this.state.tags.map(function(item) {
 				return item['text'];
 			});
@@ -357,11 +356,11 @@ class AddTrickForm extends Component {
 			});	
 			var postreqs = this.state.postreqs.map(function(item) {
 				return item['id'];
-			});			
-			let suffix = "("+this.state.num+"b)"
-			//if it is a library of juggling trick being edited, then 3b tricks dont have suffixes
-			if (this.state.num == "3" && !this.state.contributor){
-				suffix = ""
+			});		
+
+			let suffix = ""
+			if (this.state.num.toString() !== "3"){
+				suffix = "("+this.state.num+"b)"
 			}
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
