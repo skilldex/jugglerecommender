@@ -12,6 +12,11 @@ class Header extends Component {
 	}
 
 	clickMenuItem=(paneFlag)=>{
+		if (uiStore.selectedTrick){
+			const previoslySelected = document.getElementById(uiStore.selectedTrick+"listCard");
+			previoslySelected.classList.toggle("expand");
+			uiStore.selectTrick(null)
+		}
 		uiStore.toggleExpandedMenu()
 		if(!store.isLocalHost){
 			ReactGA.event({
