@@ -218,7 +218,7 @@ class Demo extends Component {
                                onClick = {() => this.frameStep('forward')}/>
                        </div> : null
     let outerDivClass
-    if (this.props.demoLocation === "detail"){
+    if (this.props.demoLocation === "detail" || this.props.demoLocation === "home"){
       outerDivClass = "demoOuterDivDetail"
     }else if(this.props.demoLocation === "expandedSection"){
       outerDivClass = "demoOuterDivExpandedSection"
