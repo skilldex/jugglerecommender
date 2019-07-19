@@ -3,6 +3,7 @@ import store from './stores/store'
 import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import instagramLogoIcon from "./images/instagramLogo.png"
+import frameIcon from "./images/frameIcon.png"
 import './App.css';
 import './demo.css';
 import YouTube from 'react-youtube';
@@ -208,8 +209,12 @@ class Demo extends Component {
                           src={this.state.videoURL}
                         ></video> : null 
     let frameButtons = <div className = "frameButtons">
-                          <label onClick = {() => this.frameStep('back')}>Back</label>
-                          <label onClick = {() => this.frameStep('forward')}>Forward</label>
+                          <img src = {frameIcon} 
+                               className = "frameIcon rotated180"
+                               onClick = {() => this.frameStep('back')}/>
+                          <img src = {frameIcon} 
+                               className = "frameIcon"
+                               onClick = {() => this.frameStep('forward')}/>
                        </div>
     let outerDivClass
     if (this.props.demoLocation === "detail"){

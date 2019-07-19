@@ -21,6 +21,19 @@
   margin-right: 5px;
 }
 
+.frameIcon{
+  width: 30px;
+  height:30px;
+  cursor: pointer;  
+}
+.rotated180{
+  -webkit-transform: rotate(180deg); /* Safari and Chrome */
+  -moz-transform: rotate(180deg);   /* Firefox */
+  -ms-transform: rotate(180deg);   /* IE 9 */
+  -o-transform: rotate(180deg);   /* Opera */
+  transform: rotate(180deg);
+}
+
 .instagramLogo{
   width: 30px;
   height:30px;
