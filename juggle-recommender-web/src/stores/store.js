@@ -171,11 +171,14 @@ class Store {
         libraryRef.set(jugglingLibrary);
 	}
 	@action getLibraryFromDatabase=()=>{
-		let libraryRef = firebase.database().ref('library/')
-		libraryRef.on('value', resp =>{
-        	this.setLibrary(this.snapshotToObject(resp))
-        	this.setPatternCount(this.snapshotToArray(resp).length)
-        })
+		return new Promise(resolve => {
+			let libraryRef = firebase.database().ref('library/')
+			libraryRef.on('value', resp =>{
+	        	this.setLibrary(this.snapshotToObject(resp))
+	        	this.setPatternCount(this.snapshotToArray(resp).length)
+	        	resolve()
+	        })
+	    })
 	}
 	@action setPatternCount=(count)=>{
 		this.patternCount = count
