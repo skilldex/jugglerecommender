@@ -12,6 +12,12 @@ import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
 import './App.css';
 import './detail.css';
+import history from "./history"
+const unlisten = history.listen((location, action) => {
+  // location is an object like window.location
+
+  console.log("listening" ,location.pathname, location.state, action);
+});
 
 @observer
 class Detail extends Component {
@@ -19,7 +25,9 @@ class Detail extends Component {
     catches : null,
     changingInput : false,
   }
-
+  componentDidUpdate(){
+    console.log("updated ", window.location.search)
+  }
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {

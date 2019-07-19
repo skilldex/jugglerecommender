@@ -13,7 +13,7 @@ import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
 //import { Resizable } from "re-resizable";
 import ReactGA from 'react-ga';
-
+import history from './history';
 @observer
 class TrickList extends Component {
 	state = {
@@ -44,6 +44,7 @@ class TrickList extends Component {
 			  label: 'list ' + this.props.listType + " " + trickKey 
 			});
 		}
+		history.push('/detail/'+trickKey, {detail : trickKey})
 		uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
 		uiStore.setShowHomeScreen(false)
 		uiStore.setShowExpandedMenu(false)

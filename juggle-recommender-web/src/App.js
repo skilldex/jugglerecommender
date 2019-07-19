@@ -19,6 +19,25 @@ import Header from "./header"
 import Stats from "./stats"
 import ReactGA from 'react-ga'
 import Filter from './filter'
+import { withRouter, Router } from 'react-router-dom';
+import history from "./history"
+
+const unlisten = history.listen((location, action) => {
+  // location is an object like window.location
+
+  if(location.state && location.state.detail != uiStore.detailTrick){
+  	const detailTrick = {...store.library[location.state.detail]}
+	detailTrick.id = location.state.detail
+  	uiStore.setDetailTrick(detailTrick)	
+  }
+  if(location.pathname == "/"){
+  	uiStore.clearUI()
+	uiStore.setShowHomeScreen(true)
+	if(uiStore.addingTrick){
+	 	uiStore.toggleAddingTrick
+	}
+  }
+});
 
 let firebaseConfig = {}
 if(store.isLocalHost){
@@ -85,7 +104,7 @@ class App extends Component {
           if (user && !authStore.user) {
             console.log("user auth changed", user)
             authStore.setUsername(user.email)
-          } 
+          }
         });
 		if(window.location.host.includes("localhost")){
 			//store.initializeLibrary()
@@ -93,7 +112,15 @@ class App extends Component {
 		if(window.location.host.includes("localhost")){
 			//store.initializeTags()
 		}
-		store.getLibraryFromDatabase()
+		store.getLibraryFromDatabase().then(()=>{
+			if(window.location.pathname.includes("detail")){
+			  	const match = window.location.pathname.match('/detail\/(.+)')
+			  	console.log("match " , match)
+			  	const detailTrick = {...store.library[match[1]]}
+				detailTrick.id = match[1]
+			  	uiStore.setDetailTrick(detailTrick)	
+			}	
+		})
 		store.getTagsFromDatabase()
 		store.getUserCountFromDatabase()
 		store.getTotalCatchCountFromDatabase()
@@ -224,10 +251,12 @@ class App extends Component {
 					!uiStore.showHomeScreen &&
 					!uiStore.showStatsScreen &&
 					uiStore.detailTrick == null ?
-					<TrickList 
-						tricksToList = {uiStore.rootTricks}
-						listType = "main"
-					/> : null
+					
+						<TrickList 
+							tricksToList = {uiStore.rootTricks}
+							listType = "main"
+						/>
+					 : null
 				}
 				{uiStore.showStatsScreen?<Stats/>: null}
 				{uiStore.showHomeScreen && !uiStore.detailTrick ? <HomeScreen/> : null}	
