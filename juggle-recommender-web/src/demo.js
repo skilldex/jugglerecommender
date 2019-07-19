@@ -208,14 +208,15 @@ class Demo extends Component {
                           onPause={this.instagramPaused}
                           src={this.state.videoURL}
                         ></video> : null 
-    let frameButtons = <div className = "frameButtons">
+    let frameButtons = this.props.demoLocation === "detail" ?
+                        <div className = "frameButtons">
                           <img src = {frameIcon} 
                                className = "frameIcon rotated180"
                                onClick = {() => this.frameStep('back')}/>
                           <img src = {frameIcon} 
                                className = "frameIcon"
                                onClick = {() => this.frameStep('forward')}/>
-                       </div>
+                       </div> : null
     let outerDivClass
     if (this.props.demoLocation === "detail"){
       outerDivClass = "demoOuterDivDetail"
