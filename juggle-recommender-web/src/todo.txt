@@ -18,6 +18,7 @@ v 1.8
 =========
 
 Bugs:
+	-expand a list card, go to details and come back, demo video shows but its card is collapsed. Furthermore, opening a card should close an opened card, not toggle it.
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
 	-Fixed automatically by back arrow setup:

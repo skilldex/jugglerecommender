@@ -1,9 +1,9 @@
 Biggest Desires:
 	-Make videos able to move frame by frame
 	-Improve Add Trick Form (see below)
-	-Suggest a change (see below)
 	-Keep track of users tags so if they leave and come back, those tags are still there.
 		-only very important if we dont get routing figured out because of accidental back arrowing.
+	-Suggest a change (see below)
 
 Add Trick Form:
 	-Add gif field to add trick form and allow for uploading tricks directly from juggling lab
@@ -13,7 +13,7 @@ Add Trick Form:
 	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
 
 Suggest a Change:
-	-could be done just like edit, except instead of adding it to the site it emails/notifies the contributor.
+	-could be done just like edit, but instead of adding it to the site it emails/notifies the contributor.
 	-if trick has no siteswap listed, maybe anyone should be able to input it directly
 
 Details:
