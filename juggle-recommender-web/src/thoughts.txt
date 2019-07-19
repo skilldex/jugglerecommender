@@ -1,5 +1,4 @@
 Biggest Desires:
-	-Make videos able to move frame by frame
 	-Improve Add Trick Form (see below)
 	-Keep track of users tags so if they leave and come back, those tags are still there.
 		-only very important if we dont get routing figured out because of accidental back arrowing.
@@ -25,15 +24,6 @@ Details:
 
 Minor:
 	difficulty warning is 1 character behind, so when you type x.x it thinks you have x. and shows a warning. this is probably because it is using state which is laggy.
-
-Demos:
-	-video/gif toggle
-
-Flair:
-	-'Watch', used in conjunction with notifications to find out if it gains related patterns or if other users are logging catches with it
-	-Dream bubble for want to learn
-	-Baby for barely able to do trick
-	-Buddha/Ninja for a master of a trick
 
 Search:
 	-Relevence Sort after search happens
