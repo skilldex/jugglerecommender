@@ -52,7 +52,7 @@ class HomeScreen extends Component {
 					            <button className="detailButton" onClick = {this.openDetail}>View Details</button>
 				            	<Demo 
 					            	trickKey={store.randomLeaderboardTrick.key}
-		                         	demoLocation="detail"
+		                         	demoLocation="home"
 		  						/>
 		  						<div className = "info">
 						           	<span className='infoLabel'>Pattern</span> 
