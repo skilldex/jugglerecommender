@@ -1,21 +1,30 @@
 v 1.8
+	-back arrow
+
 	Hamburger Menu:
-	-profile
+		-profile
 
-	Profile Screen
-	-share button to share users contributed
-	-upload image
-	-personal stats
+	Profile Screen: (Larger section below)
+		-share button to share users contributed
+		-upload image
+		-personal stats
 
-	Flair
-	Stats:
-		-records broken today
-		-add date to leaderboard
-	-Research back arrow 
+	-Make videos able to move frame by frame
+		-pause video, increase by assumed frame rate (probably 1/30 is good)
 
+	-Flair
+		-working on (Baby)
+		-got it (Ninja)
+
+	-add gif to add trick form
+	-show gif and video seperately in details for tricks that have both
+
+	-Think about leaderboard/details
 	Data fix scripts(see list below)
+		move (#b) to begining
 
 =========
+
 
 Bugs:
 	-expand a list card, go to details and come back, demo video shows but its card is collapsed. Furthermore, opening a card should close an opened card, not toggle it.
@@ -26,6 +35,7 @@ Bugs:
 		-if you go from home to add pattern and hit escape, it takes you to list
 
 Profile:
+	Upload Image
 	Stats:
 		Pattern stats:
 			-number of tricks within a certain range
@@ -37,15 +47,23 @@ Profile:
 	Notifications:(maybe done with email instead)
 		-contributed tricks get new related tricks
 		-contributed tricks get other users input catches
-	Settings:
+	Settings: (Maybe this eventualy its own section instead)
 		-option to have catch records public or not(listed in details) 
 
+
+
+Notifications:
+	-'Watch', type of flair to find out if it gains related patterns or if other users are logging catches with it
+
+	-Stats:
+		-records broken today
+
 Data fix scripts:
+	-script that lists tricks that have same trick as related and postreq
 	-a script to make related tags go both directions
 		if x is listed as related for y, then y should be listed for x
 	-#b moved to begining of name from end (#b)
-		-remove the string '(3b)' from entire db
-		-anywhere that has the string '(4b)"' should have the '(4b)' removed and '4b' added after the previous "  
+		-anywhere that has the string '(4b)' should have the '(4b)' removed and '4b' added after the previous "  
 
 Code Cleaning:
 	-can detail and filter timers now be removed since they are their own screens?
