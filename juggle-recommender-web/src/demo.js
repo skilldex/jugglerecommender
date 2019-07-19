@@ -59,6 +59,7 @@ class Demo extends Component {
       })
     }
   }
+
   getUsableVideoURL=(userProvidedURL, trickKey)=>{
       let videoURLtoUse = "notValid"
       if (userProvidedURL.includes("instagram.com")){
@@ -118,6 +119,27 @@ class Demo extends Component {
       this.video.load()
     }
   }
+  frameStep=(direction)=>{
+    if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+      const video = this.video.internalPlayer
+      video.getCurrentTime().then((time)=>{
+        video.pauseVideo()
+        if(direction === "back"){
+          video.seekTo(time - .033)
+        }else if (direction === "forward"){
+          video.seekTo(time + .033)
+        }
+      })
+    }else{
+      const video = document.getElementById("instagramVideo")
+      video.pause()
+      if(direction === "back"){
+        video.currentTime = video.currentTime - .033
+      }else if (direction === "forward"){
+        video.currentTime = video.currentTime + .033
+      }
+    }
+  }
 	render() {
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
     const trick = store.library[trickKey]
@@ -156,7 +178,8 @@ class Demo extends Component {
       youtubeOpts.playerVars.playlist = this.state.youtubeId
     }
     let video = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
-                        <YouTube 
+                        <YouTube
+                          id="YouTubeVideo"
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           videoId={this.state.youtubeId}
@@ -184,6 +207,10 @@ class Demo extends Component {
                           onPause={this.instagramPaused}
                           src={this.state.videoURL}
                         ></video> : null 
+    let frameButtons = <div className = "frameButtons">
+                          <label onClick = {() => this.frameStep('back')}>Back</label>
+                          <label onClick = {() => this.frameStep('forward')}>Forward</label>
+                       </div>
     let outerDivClass
     if (this.props.demoLocation === "detail"){
       outerDivClass = "demoOuterDivDetail"
@@ -193,7 +220,7 @@ class Demo extends Component {
 		return(
       			<div className={outerDivClass}>
               {video}
-              {video? null:gifSection}
+              {video? frameButtons:gifSection}
               {igHeader}
       			</div>
           )
