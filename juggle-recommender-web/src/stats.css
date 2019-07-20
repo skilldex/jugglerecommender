@@ -29,3 +29,24 @@
   text-align: right;
   padding-right: 110px;
 }
+
+.rotatedNegative90{
+  -webkit-transform: rotate(90deg); /* Safari and Chrome */
+  -moz-transform: rotate(90deg);   /* Firefox */
+  -ms-transform: rotate(90deg);   /* IE 9 */
+  -o-transform: rotate(90deg);   /* Opera */
+  transform: rotate(90deg);
+}
+.backButtonSurroundingDivStats{
+  width: 300px;
+  margin : 0 auto;
+  text-align: right;
+  display: flex;
+}
+.backButtonHome{
+  height : 12px;
+  width : 12px;
+  margin: auto 0;
+  margin-top : 8px;
+  cursor: pointer;
+}

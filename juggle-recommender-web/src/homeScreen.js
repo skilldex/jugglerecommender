@@ -12,6 +12,7 @@ import TrickList from './trickList.js'
 import Demo from './demo'
 import ReactGA from 'react-ga';
 import history from './history';
+import downArrow from './images/down-arrow.svg'
 
 @observer
 class HomeScreen extends Component {
@@ -38,17 +39,22 @@ class HomeScreen extends Component {
 			  action: "detail",
 			});
 		}
-	}
+	}		
 	render (){
+    const backButton = <img id="backButton" 
+                            src={downArrow} 
+                            className="backButtonHome rotatedNegative90" 
+                            alt="backIcon" 
+                            onClick={()=>{ uiStore.handleBackButtonClick()}}
+                        />
 		return(
-				<div className = "homeOuterDiv">
+				<div className = "homeOuterDiv">					
 					<div className ='homeScreenTrickOuterDiv'>
 						<div className = 'statsLabel'>Users </div>{store.userCount}
 						<div className = 'statsLabel'>Patterns</div>{store.patternCount}
 						<div className = 'statsLabel'>Catches</div>{store.totalCatchCount}
 				    </div>
-				    {
-					    store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
+				    {store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
 							<div className = 'homeScreenTrickDiv'>
 					            <h3 style={{marginBottom: "10px"}}>Pattern of The Day</h3>
 					            <button className="detailButton" onClick = {this.openDetail}>View Details</button>

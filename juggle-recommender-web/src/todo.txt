@@ -1,6 +1,4 @@
 v 1.8
-	Add our back arrow to all pages 
-
 	Profile Screen: (Larger section below)
 		-list contributed tricks
 			how so? Some sort of microlist?
@@ -16,7 +14,8 @@ v 1.8
 				-consecutive days with record break
 				-consecutive days with catches input for a trick
 				-consecutive days with a trick contributed
-
+				
+	-fix autoscroll when going back to details
 	-frame by frame to hide controls
 		-instagram works, not youtube
 

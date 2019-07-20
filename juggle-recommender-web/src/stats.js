@@ -13,6 +13,7 @@ import TrickList from './trickList.js'
 import Demo from './demo'
 import ReactGA from 'react-ga';
 import history from './history';
+import downArrow from './images/down-arrow.svg'
 @observer
 class Stats extends Component {
 	state={
@@ -74,7 +75,14 @@ class Stats extends Component {
 	}
 
 	render (){
-
+    const backButton = <div className = "backButtonSurroundingDivStats">
+	    					<img id="backButton" 
+	                            src={downArrow} 
+	                            className="backButtonHome rotatedNegative90" 
+	                            alt="backIcon" 
+	                            onClick={()=>{ uiStore.handleBackButtonClick()}}
+	                        />
+                        </div>
 		const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
 			return <div className = "individualStatsDiv">
 						<label className= "statsLabelButton"
@@ -115,6 +123,7 @@ class Stats extends Component {
 
 		return(
 			<div className = "statsOuterDiv">
+				{backButton}
 				<h3 style={{marginBottom: "10px"}}>Stats</h3>
 				<h3>By Numbers of Balls</h3>
 				{ballNumStats}

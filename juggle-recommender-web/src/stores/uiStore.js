@@ -4,7 +4,7 @@ import filterStore from "./filterStore"
 import authStore from "./authStore"
 import utilities from '../utilities'
 import ReactGA from 'react-ga';
-
+import history from '../history';
 
 configure({ enforceActions: "always" })
 class UIStore {
@@ -56,6 +56,10 @@ class UIStore {
   		//shows form
   		this.addingTrick = true
   	}
+  	@action	handleBackButtonClick=()=>{
+	    console.log('backButtonClick')
+	    history.go(-1);
+	  }
 	@action toggleAddingTrick = ()=>{
 		if (!authStore.user){
 			window.alert("You must be signed in to add a trick");

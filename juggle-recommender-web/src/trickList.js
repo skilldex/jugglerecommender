@@ -90,6 +90,14 @@ class TrickList extends Component {
 	}
 							
 	render() {
+    const backButton = <div className = "backButtonSurroundingDivList">
+							<img id="backButton" 
+		                        src={downArrow} 
+		                        className="backButtonHome rotatedNegative90" 
+		                        alt="backIcon" 
+		                        onClick={()=>{ uiStore.handleBackButtonClick()}}
+		                    />
+		                </div>
 	 	let tricks = []
 		this.props.tricksToList.forEach((trickKey)=>{
 			trickKey = trickKey.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')

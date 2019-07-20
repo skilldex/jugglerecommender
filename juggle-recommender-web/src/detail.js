@@ -79,11 +79,6 @@ class Detail extends Component {
   handleNinjaButtonClick=()=>{
     console.log('ninjaClicked')
   }
-  handleBackButtonClick=()=>{
-    console.log('backButtonClick')
-    history.go(-1);
-  }
-
   toggleShowMoreInformation=()=>{
     uiStore.toggleShowMoreInformation()
   }
@@ -160,7 +155,7 @@ class Detail extends Component {
                             src={downArrow} 
                             className="backButton rotatedNegative90" 
                             alt="backIcon" 
-                            onClick={()=>{ this.handleBackButtonClick()}}
+                            onClick={()=>{ uiStore.handleBackButtonClick()}}
                         />
     let hasStarFlair = false
     let hasBabyFlair = false

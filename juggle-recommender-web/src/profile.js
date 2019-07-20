@@ -13,12 +13,13 @@ import TrickList from './trickList.js'
 import shareIcon from './images/shareIcon.png'
 import Demo from './demo'
 import ReactGA from 'react-ga';
+import downArrow from './images/down-arrow.svg'
 
 
 @observer
 class Profile extends Component {
 	state={
-		
+
 	}
 	componentDidMount(){
 
@@ -42,6 +43,14 @@ class Profile extends Component {
 
 
 	render (){
+		const backButton = <div className = "backButtonSurroundingDivProfile">
+	    					<img id="backButton" 
+	                            src={downArrow} 
+	                            className="backButtonHome rotatedNegative90" 
+	                            alt="backIcon" 
+	                            onClick={()=>{ uiStore.handleBackButtonClick()}}
+	                        />
+                        </div>
         const shareButton = authStore.user ? <img 
                          className="shareButton"
                          src={shareIcon}
@@ -51,6 +60,7 @@ class Profile extends Component {
                     /> : null
 		return(
 			<div className = "profileOuterDiv">
+				{backButton}
 				{shareButton}
 				<h3 style={{marginBottom: "10px"}}>Profile</h3>		
 
