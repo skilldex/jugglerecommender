@@ -7,6 +7,7 @@ import store from "./stores/store"
 import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
 import AutoComplete from './autoComplete'
+import Validate from './siteswapValidator'
 
 
 const KeyCodes = {
@@ -145,6 +146,12 @@ class AddTrickForm extends Component {
 		this.setState({
 			siteswap:e.target.value
 		})
+		const validityChecker = Validate(e.target.value)
+		if (validityChecker === 'invalid'){
+			console.log('invalid')
+		}else{
+			console.log(validityChecker)
+		}
 		this.checkIfFormIsSubmittable()
 	}
 	handleStartTimeChange=(e)=>{
