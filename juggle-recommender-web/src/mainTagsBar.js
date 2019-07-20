@@ -7,7 +7,6 @@ import sortIconSelected from './images/sortIconSelected.png'
 import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
 import searchIcon from './images/searchIcon.png'
-import shareIcon from './images/shareIcon.png'
 import starIcon from './images/starIcon.svg'
 import authStore from "./stores/authStore"
 import './mainTagsBar.css';
@@ -136,13 +135,6 @@ class MainTagsBar extends Component {
                                      onClick={()=>{uiStore.toggleSelectedList()}}
                                      alt=""
                                 />
-        const shareButton = authStore.user ? <img 
-                                 className="shareButton"
-                                 src={shareIcon}
-                                 onClick={this.copyContributorURL}
-                                 alt=""
-                                 title="share your contributed tricks"
-                            /> : null
         const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
@@ -220,7 +212,6 @@ class MainTagsBar extends Component {
               onChange={uiStore.searchInputChange}
               ref={ref => this.searchInput = ref}
             />
-            {shareButton}
             {myTricksButton}
             {sort}
             {sortDropdown}

@@ -51,15 +51,7 @@
   width : 23px;
   display: inline-block;
 }
-.shareButton{
-  height : 23px;
-  width : 23px;
-  cursor : pointer;
-  display: inline-block;
-  margin : 0;
-  margin-left : 3px;
-  margin-right : 3px;
-}
+
 .filterButton{
   height : 23px;
   width : 23px;
