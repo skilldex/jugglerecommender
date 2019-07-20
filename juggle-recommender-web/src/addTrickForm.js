@@ -111,7 +111,8 @@ class AddTrickForm extends Component {
 			autoCompletedName : false
 		})
 		const siteswapValidityChecker = Validate(e.target.value)
-		if (this.state.gifUrl && !this.state.gifUrl.includes('library')){
+		if (!this.state.gifUrl || 
+			(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
 			if (siteswapValidityChecker === 'invalid'){
 				console.log('invalid')
 				this.setState({gifUrl: null})
@@ -119,7 +120,20 @@ class AddTrickForm extends Component {
 				this.setState({num : ''})
 				document.getElementById("numInput").disabled = false
 				this.setState({siteswap : ''})
-				this.setState({tags:[]});
+				const pureSStag = {
+						id : 'pure-ss',
+						text : 'pure-ss'
+					}
+
+		        const { tags } = this.state;
+		        console.log('pureSStag',pureSStag)
+		        console.log('tags',tags)
+		        //const i = tags.indexOf(pureSStag)
+		        const i = tags.findIndex(x => x.id ==="pure-ss")
+		        console.log('i',i)
+		        this.setState({
+		         	tags: tags.filter((tag, index) => index !== i),
+		        });
 				document.getElementById("siteswapInput").disabled = false
 
 			}else{
@@ -130,15 +144,15 @@ class AddTrickForm extends Component {
 				document.getElementById("numInput").disabled = true
 				this.setState({siteswap : e.target.value})
 				document.getElementById("siteswapInput").disabled = true	
-				this.setState(state => ({ tags: [...state.tags, 'pure-ss'] }));	
+				//this.setState(state => ({ tags: [...state.tags, 'pure-ss'] }));	
 				const pureSStag = {
-					id : 'pure-ss',
-					text : 'pure-ss'
+						id : 'pure-ss',
+						text : 'pure-ss'
 					}
-		    	if (store.tagsSuggestions.includes(pureSStag.id)){
-			        this.setState(state => ({ tags: [pureSStag] }));
-			        this.checkIfFormIsSubmittable()
+		    	if (!this.state.tags.includes(pureSStag.id)){
+			        this.setState(state => ({ tags: [...state.tags, pureSStag] }));
 			    }
+
 				console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
 			}
 		}
@@ -213,6 +227,7 @@ class AddTrickForm extends Component {
 	    }
     }
     handleTagDelete=(i)=> {
+    	console.log('i',i)
         const { tags } = this.state;
         this.setState({
          	tags: tags.filter((tag, index) => index !== i),
