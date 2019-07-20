@@ -88,20 +88,22 @@ iframe{
   height: auto;
   z-index : 1200;
   margin: auto;
-
 }
-.labDemoOuterDivDetail{
-    width: 100%;
+.demoOuterDivDetailLab{
+  width: 100%;
   max-width:400px;
   max-height: 270px;
   height: auto;
   z-index : 1200;
-
-
 }
 .demoOuterDivExpandedSection{
   width: 60%;
   margin: 0 auto;  
   margin-top: 10px;
+}
+.demoOuterDivExpandedSectionLab{
+  width: 60%;
+  margin: 0 auto;  
+  margin-left: 0px;
 }
 

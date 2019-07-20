@@ -238,13 +238,18 @@ class Demo extends Component {
     let outerDivClass
     if (this.props.demoLocation === "detail" || this.props.demoLocation === "home"){
 
-      outerDivClass = "demoOuterDivDetail"
+      
       if (trick.gifUrl && trick.gifUrl.includes('lab')){
-        console.log('labDetai')
-        outerDivClass = "labDemoOuterDivDetail"
+        outerDivClass = "demoOuterDivDetailLab"
+      }else{
+        outerDivClass = "demoOuterDivDetail"
       }
     }else if(this.props.demoLocation === "expandedSection"){
-      outerDivClass = "demoOuterDivExpandedSection"
+      if (trick.gifUrl && trick.gifUrl.includes('lab')){
+        outerDivClass = "demoOuterDivExpandedSectionLab"
+      }else{
+        outerDivClass = "demoOuterDivExpandedSection"
+      }
     }
 		return(
       			<div className={outerDivClass}>
