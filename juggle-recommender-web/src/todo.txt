@@ -24,7 +24,7 @@ v 1.8
 		-ran a script that looked for duplicates and only found 2, make a note of any seen
 
 =========
-
+-when a trick name gets edited, does it's name get updated in everyones 'myTricks'?
 
 Bugs:
 	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input

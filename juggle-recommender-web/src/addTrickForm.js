@@ -111,34 +111,36 @@ class AddTrickForm extends Component {
 			autoCompletedName : false
 		})
 		const siteswapValidityChecker = Validate(e.target.value)
-		if (siteswapValidityChecker === 'invalid'){
-			console.log('invalid')
-			this.setState({gifUrl: null})
-			this.setState({difficulty : ''})
-			this.setState({num : ''})
-			document.getElementById("numInput").disabled = false
-			this.setState({siteswap : ''})
-			this.setState({tags:[]});
-			document.getElementById("siteswapInput").disabled = false
+		if (!this.state.gifUrl.includes('library')){
+			if (siteswapValidityChecker === 'invalid'){
+				console.log('invalid')
+				this.setState({gifUrl: null})
+				this.setState({difficulty : ''})
+				this.setState({num : ''})
+				document.getElementById("numInput").disabled = false
+				this.setState({siteswap : ''})
+				this.setState({tags:[]});
+				document.getElementById("siteswapInput").disabled = false
 
-		}else{
-			this.setState({gifUrl : 'https://jugglinglab.org/anim?'+e.target.value})
-			const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
-			this.setState({difficulty : dif})
-			this.setState({num : siteswapValidityChecker[0]})
-			document.getElementById("numInput").disabled = true
-			this.setState({siteswap : e.target.value})
-			document.getElementById("siteswapInput").disabled = true	
-			this.setState(state => ({ tags: [...state.tags, 'pure-ss'] }));	
-			const pureSStag = {
-				id : 'pure-ss',
-				text : 'pure-ss'
-				}
-	    	if (store.tagsSuggestions.includes(pureSStag.id)){
-		        this.setState(state => ({ tags: [pureSStag] }));
-		        this.checkIfFormIsSubmittable()
-		    }
-			console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
+			}else{
+				this.setState({gifUrl : 'https://jugglinglab.org/anim?'+e.target.value})
+				const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
+				this.setState({difficulty : dif})
+				this.setState({num : siteswapValidityChecker[0]})
+				document.getElementById("numInput").disabled = true
+				this.setState({siteswap : e.target.value})
+				document.getElementById("siteswapInput").disabled = true	
+				this.setState(state => ({ tags: [...state.tags, 'pure-ss'] }));	
+				const pureSStag = {
+					id : 'pure-ss',
+					text : 'pure-ss'
+					}
+		    	if (store.tagsSuggestions.includes(pureSStag.id)){
+			        this.setState(state => ({ tags: [pureSStag] }));
+			        this.checkIfFormIsSubmittable()
+			    }
+				console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
+			}
 		}
 		this.checkIfFormIsSubmittable()
 	}

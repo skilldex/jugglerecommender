@@ -7460,7 +7460,7 @@
       "video" : "https://www.instagram.com/p/BYkZkqaBpOO/"
     },
     "Reverse Cascade" : {
-      "dependents" : [ "Crossed Arm Reverse Cascade", "Mills Mess", "Hopscotch", "Shapeshifting Rainbows in the Floating Forest", "Tracing the Perfect Path", "Karate", "Reverse Takeouts", "(0,4x)*", "Crossed Reverse Cascade", "(2x,0)(6,4)* Crossed", "(0,4x)* Crossed", "Moxie's Mess", "Delayed Juggler's Tennis" ],
+      "dependents" : [ "Crossed Arm Reverse Cascade", "Mills Mess", "Hopscotch", "Shapeshifting Rainbows in the Floating Forest", "Tracing the Perfect Path", "Karate", "Reverse Takeouts", "Delayed Juggler's Tennis", "Crossed Reverse Cascade", "Moxie's Mess" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/reversecascade.gif",
       "name" : "Reverse Cascade",
@@ -11308,15 +11308,15 @@
     },
     "-Li2l1JLsT3uxLYLlspc" : {
       "myTricks" : {
-        "(0,4x)*" : {
-          "catches" : 0,
-          "lastUpdated" : 1561283869460,
-          "starred" : "true"
-        },
         "Follow" : {
           "catches" : 0,
           "lastUpdated" : 1561285301033,
           "starred" : "true"
+        },
+        "Moxie's Mess" : {
+          "catches" : 0,
+          "lastUpdated" : 1561283869460,
+          "starred" : true
         },
         "Reverse Windmill" : {
           "catches" : 0,
@@ -11338,11 +11338,6 @@
     },
     "-Li2rFM_pEUBKHOq786z" : {
       "myTricks" : {
-        "(0,4x)* Crossed" : {
-          "catches" : 0,
-          "lastUpdated" : 1561488340185,
-          "starred" : "true"
-        },
         "423 Active 2 Variation" : {
           "lastUpdated" : 1562946973043,
           "starred" : "true"
@@ -11420,6 +11415,11 @@
           "catches" : 0,
           "lastUpdated" : 1561490129438,
           "starred" : "true"
+        },
+        "Moxie's Mess" : {
+          "catches" : 0,
+          "lastUpdated" : 1561488340185,
+          "starred" : true
         },
         "Multiplex Reverse Backcross Shadow Pass Combo" : {
           "lastUpdated" : 1563210312161,
@@ -11621,6 +11621,9 @@
         }
       },
       "username" : "maba"
+    },
+    "-LkD0P80PCCr0bfymuXz" : {
+      "username" : "Ran"
     }
   },
   "stats" : {
@@ -11823,6 +11826,11 @@
       "email" : "m.barnstorf@gmail.com",
       "lowerCaseUsername" : "maba",
       "username" : "maba"
+    },
+    "-LkD0P846TTebJP3bDfV" : {
+      "email" : "Rannewman@gmail.com",
+      "lowerCaseUsername" : "ran",
+      "username" : "Ran"
     }
   }
 }

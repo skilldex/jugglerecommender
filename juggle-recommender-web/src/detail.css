@@ -137,6 +137,7 @@
   float: right;
   margin-left: 6px;
   margin-top : 8px;
+  cursor: pointer;
 }
 .babyIcon{
   height : 24px;
@@ -155,6 +156,7 @@
   width : 20px;
   float: right;
   margin-top : 8px;
+  cursor: pointer;
 }
 .shareFilterButton{
   height : 20px;
