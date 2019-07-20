@@ -1,11 +1,9 @@
 import json
 with open('skilldex-4ebb4-export.json') as f:
     db = json.load(f)
-allTricks = ""
+
 for section in db:
 	if section == 'library':
-		for pattern in db[section]:
-			allTricks += pattern + ", "
 		print('Patterns:' + str(len(db[section])))
 	if section == 'users':
 		my_accounts = 0
@@ -19,5 +17,4 @@ for section in db:
 						real_accounts +=1
 		print('My Accounts:' + str(my_accounts))
 		print('Real Accounts:' + str(real_accounts))
-		print(allTricks)
 		
