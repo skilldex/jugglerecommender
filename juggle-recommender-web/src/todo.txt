@@ -15,8 +15,7 @@ v 1.8
 		-remove star flair?
 		-force baby/ninja to be mutually explusive?
 
-	-style juggling lab gif in list
-	-make expandable gif section in details for tricks with both demo types
+	-hook up lab gif to gif filter
 
 	-Think about leaderboard/details
 

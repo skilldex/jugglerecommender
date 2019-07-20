@@ -28,6 +28,7 @@ class Detail extends Component {
   state = {
     catches : null,
     changingInput : false,
+    showExtraGif : false,
   }
   componentDidUpdate(){
     console.log("updated ", window.location.search)
@@ -99,6 +100,9 @@ class Detail extends Component {
 
       alert("Link for the details page copied to clipboard\n" + url)
     
+  }
+  toggleExtraGif=()=>{
+    this.setState({showExtraGif: !this.state.showExtraGif})
   }
 
 	render() {
@@ -218,6 +222,19 @@ class Detail extends Component {
         tutorialSite = tutorialSite.split('.')[0]
       }
     }
+    const extraGifSection = detailTrick.video && detailTrick.gifUrl ?
+                            <div>
+                              <label onClick={()=>{this.toggleExtraGif()}}
+                                      className="toggleExtraGifLabel">
+                                {this.state.showExtraGif? "hide gif" : "show gif" }
+                              </label>
+                              {this.state.showExtraGif ? 
+                                <Demo 
+                                  trickKey = {uiStore.detailTrick.id}
+                                  demoLocation="detailExtraGif"
+                                />:null
+                              }
+                            </div>:null
     const infoSection = uiStore.detailTrick && detailTrickKey ?
                           <div className="detailInfoDiv">
                           <div className="flairDiv">
@@ -315,6 +332,7 @@ class Detail extends Component {
                 trickKey = {uiStore.detailTrick.id}
                 demoLocation="detail"
               />
+              {extraGifSection}
               {infoSection}
               {relationshipLists}                
             </div> 

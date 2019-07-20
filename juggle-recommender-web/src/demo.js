@@ -237,7 +237,6 @@ class Demo extends Component {
                        </div> : null
     let outerDivClass
     if (this.props.demoLocation === "detail" || this.props.demoLocation === "home"){
-
       
       if (trick.gifUrl && trick.gifUrl.includes('lab')){
         outerDivClass = "demoOuterDivDetailLab"
@@ -253,9 +252,9 @@ class Demo extends Component {
     }
 		return(
       			<div className={outerDivClass}>
-              {video}
+              {this.props.demoLocation === "detailExtraGif" ? gifSection:video}
               {video? frameButtons:gifSection}
-              {igHeader}
+              {this.props.demoLocation === "detailExtraGif" ? null:igHeader}
       			</div>
           )
     }
