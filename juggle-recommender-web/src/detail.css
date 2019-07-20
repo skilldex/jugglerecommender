@@ -169,6 +169,8 @@
 }
 .selectedFlair{
   opacity: 1;
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
+
 }
 .editCardIcon{
   height : 20px;
@@ -177,7 +179,7 @@
   margin-top : 8px;
   cursor: pointer;
 }
-.shareFilterButton{
+.shareFilterDetailButton{
   height : 20px;
   width : 20px;
   padding-top : 10px;

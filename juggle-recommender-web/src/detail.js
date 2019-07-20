@@ -7,7 +7,7 @@ import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.jpg'
 import catchesIcon from './images/catchesIcon.png'
-import babyIcon from './images/babyIcon.png'
+import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon2.png'
 import Demo from './demo'
 import authStore from "./stores/authStore"
@@ -208,7 +208,7 @@ class Detail extends Component {
              onClick={()=>{uiStore.editDetailTrick()}}
         /> : null
     const shareButton = <img 
-                           className="shareFilterButton"
+                           className="shareFilterDetailButton"
                            src={shareIcon}
                            onClick={()=>this.copyDetailUrl()}
                            alt=""
