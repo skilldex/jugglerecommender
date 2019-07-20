@@ -4,11 +4,22 @@ v 1.8
 
 	Profile Screen: (Larger section below)
 		-list contributed tricks
+			how so? Some sort of microlist?
 		-upload image
+			where to store the image?
+			where to show the image outside of profile?
 		-personal stats
+			Possible Stats:
+				-number of contributed tricks
+				-number of each flair
+				-number of tricks within a certain range
+				-number of catches
+				-consecutive days with record break
+				-consecutive days with catches input for a trick
+				-consecutive days with a trick contributed
 
 	-frame by frame to hide controls
-		-instagram works, no youtube
+		-instagram works, not youtube
 
 	-Flair
 		-how to indicate selected flair?
@@ -37,6 +48,8 @@ Profile:
 	Upload Image
 	Stats:
 		Pattern stats:
+			-number of contributed tricks
+			-number of each flair
 			-number of tricks within a certain range
 			-number of catches
 			-consecutive days with record break
