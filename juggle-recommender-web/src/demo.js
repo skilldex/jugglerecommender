@@ -133,6 +133,7 @@ class Demo extends Component {
       })
     }else{
       const video = document.getElementById("instagramVideo")
+      video.removeAttribute( 'controls' );
       video.pause()
       if(direction === "back"){
         video.currentTime = video.currentTime - .033
@@ -140,6 +141,10 @@ class Demo extends Component {
         video.currentTime = video.currentTime + .033
       }
     }
+  }
+  handleVideoClick=()=>{
+    const video = document.getElementById("instagramVideo")
+    video.setAttribute( 'controls', '' );
   }
 	render() {
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
@@ -198,7 +203,8 @@ class Demo extends Component {
                           ref={(video)=> {this.video = video}}
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
-                          className= "demo"                                  
+                          className= "demo"
+                          onClick = {() => this.handleVideoClick()}                                  
                           autoPlay
                           muted={true}
                           playsInline
