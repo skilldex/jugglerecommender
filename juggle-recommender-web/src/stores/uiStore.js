@@ -354,11 +354,11 @@ class UIStore {
 				}else{
 					if(filterStore.demoType[0].id === "All"){
 						passesDemoTypeFilter = true
-					}else if(trick.contributor == null && 
+					}else if(trick.video == null && 
 				    	filterStore.demoType[0].id === "Juggling Lab" ){
 				    	passesDemoTypeFilter = true
 				    }
-				    else if(trick.contributor != null && filterStore.demoType[0].id === "User Video" ){
+				    else if(trick.video && filterStore.demoType[0].id === "User Video" ){
 				    	passesDemoTypeFilter = true
 				    }
 				    else{

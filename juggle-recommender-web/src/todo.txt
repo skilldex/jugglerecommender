@@ -15,8 +15,6 @@ v 1.8
 		-remove star flair?
 		-force baby/ninja to be mutually explusive?
 
-	-hook up lab gif to gif filter
-
 	-Think about leaderboard/details
 
 	Data fix scripts(see list below)
