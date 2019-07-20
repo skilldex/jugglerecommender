@@ -30,7 +30,26 @@
   font-size: 16px;
 }
 .headerButtons{
-  padding-bottom: 60px;
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+
+}
+.backButtonFilter{
+  height : 15px;
+  width : 15px;
+  cursor: pointer;
+}
+.backButtonLabel{
+  color: #3090C7;
+  cursor: pointer;
+}
+.shareFilterButton{
+  height : 20px;
+  width : 20px;
+  margin-right: 20px;
+  margin-left : auto; 
+  cursor: pointer;
 }
 
 .rotatedNegative90{
@@ -41,26 +60,7 @@
   transform: rotate(90deg);
 }
 
-.backButton{
-  height : 12px;
-  width : 12px;
-  float : left;
-  margin-top : 8px;
-  cursor: pointer;
-}
-.backButtonLabel{
-  color: #3090C7;
-  cursor: pointer;
-}
-.shareFilterButton{
-  height : 20px;
-  width : 20px;
-  padding-top : 10px;
-  padding-right: 10px;
-  float: right; 
-  align-items: right;
-  cursor: pointer;
-}
+
 
 .tagsCheckBox{
   text-align:  left;

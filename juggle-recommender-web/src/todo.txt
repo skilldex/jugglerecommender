@@ -11,6 +11,7 @@ v 1.8
 				-number of each flair
 				-number of tricks within a certain range
 				-number of catches
+				-number of records
 				-consecutive days with record break
 				-consecutive days with catches input for a trick
 				-consecutive days with a trick contributed
@@ -29,6 +30,12 @@ v 1.8
 		-ran a script that looked for duplicates and only found 2, make a note of any seen
 
 =========
+nginx conf
+location / {
+        try_files /index.html =404;
+    }
+
+    
 -when a trick name gets edited, does it's name get updated in everyones 'myTricks'?
 
 Bugs:

@@ -310,21 +310,21 @@ class Filter extends Component {
 			<div className="outerFilterDiv">
 	        	<div className="filterDiv">
 	        		<div className="headerButtons">
-		        		<img 
+			            <img id="backButton" 
+			            	 src={downArrow} 
+			            	 className="backButtonFilter rotatedNegative90" 
+			            	 alt="backIcon" 
+		             		 onClick={()=>{uiStore.toggleFilterDiv()}}/>
+		             	<label className="backButtonLabel" 
+		             		   onClick={()=>{uiStore.toggleFilterDiv()}}>Back
+		             	</label>
+		             	<img 
 			                 className="shareFilterButton"
 			                 src={shareIcon}
 			                 onClick={()=>this.copyFilterURL()}
 			                 alt=""
 			                 title="share your contributed tricks"
 			            />
-			            <img id="backButton" 
-			            	 src={downArrow} 
-			            	 className="backButton rotatedNegative90" 
-			            	 alt="backIcon" 
-		             		 onClick={()=>{uiStore.toggleFilterDiv()}}/>
-		             	<label className="backButtonLabel" 
-		             		   onClick={()=>{uiStore.toggleFilterDiv()}}>Back
-		             	</label>
 		            </div>
 				    {numSection}
 					<ColoredLine/>
