@@ -3,7 +3,7 @@ import store from './stores/store'
 import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import instagramLogoIcon from "./images/instagramLogo.png"
-import frameIcon from "./images/frameIcon.png"
+import frameIcon from "./images/frameIcon.svg"
 import './App.css';
 import './demo.css';
 import YouTube from 'react-youtube';
