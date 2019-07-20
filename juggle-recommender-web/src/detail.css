@@ -128,12 +128,27 @@
   margin-right : 2px;
   background-color: white;
 }
+.flairDiv{
+  display:inline-block;
+}
 .deleteTrickIcon{
   height : 20px;
   width : 20px;
   float: right;
   margin-left: 6px;
   margin-top : 8px;
+}
+.babyIcon{
+  height : 24px;
+  width : 24px;
+  margin-left: 6px;
+  margin-top : 8px;  
+}
+.ninjaIcon{
+  height : 24px;
+  width : 24px;
+  margin-left: 6px;
+  margin-top : 8px;  
 }
 .editCardIcon{
   height : 20px;

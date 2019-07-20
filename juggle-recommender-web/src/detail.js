@@ -7,6 +7,8 @@ import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.jpg'
 import catchesIcon from './images/catchesIcon.png'
+import babyIcon from './images/babyIcon.png'
+import ninjaIcon from './images/ninjaIcon2.png'
 import Demo from './demo'
 import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
@@ -65,6 +67,12 @@ class Detail extends Component {
         this.catchInput.select();
       }
     }, 100);  
+  }
+  handleBabyButtonClick=()=>{
+    console.log('babyClicked')
+  }
+  handleNinjaButtonClick=()=>{
+    console.log('ninjaClicked')
   }
   handleBackButtonClick=()=>{
     console.log('backButtonClick')
@@ -152,6 +160,18 @@ class Detail extends Component {
                             store.myTricks[uiStore.detailTrick.id]['starred'] === 'true'  ? 
               		<button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.unstarTrick(uiStore.detailTrick.id)}}>&#9733;</button> :
  		              <button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.starTrick(uiStore.detailTrick.id)}}>&#9734;</button>
+    const babyFlairButton = <img id="babyButton" 
+                                  src={babyIcon} 
+                                  className="babyIcon" 
+                                  alt="babyIcon" 
+                                  onClick={()=>{ this.handleBabyButtonClick()}}
+                              />
+    const ninjaFlairButton = <img id="ninjaButton" 
+                                  src={ninjaIcon} 
+                                  className="ninjaIcon" 
+                                  alt="ninjaIcon" 
+                                  onClick={()=>{ this.handleNinjaButtonClick()}}
+                              />
     const deleteTrickButton = 
       detailTrick && authStore.user && 
       (detailTrick.contributor === authStore.user.username || 
@@ -200,7 +220,11 @@ class Detail extends Component {
     }
     const infoSection = uiStore.detailTrick && detailTrickKey ?
                           <div className="detailInfoDiv">
-                            
+                          <div className="flairDiv">
+                            {starTrickButton}
+                            {babyFlairButton}
+                            {ninjaFlairButton}
+                          </div>
                             {catchesSection}
                             <label className="detailLabel">Contributor: </label>
                             {
@@ -291,7 +315,6 @@ class Detail extends Component {
                 trickKey = {uiStore.detailTrick.id}
                 demoLocation="detail"
               />
-              {starTrickButton}
               {infoSection}
               {relationshipLists}                
             </div> 

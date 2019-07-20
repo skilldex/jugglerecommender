@@ -3,11 +3,12 @@ v 1.8
 		-screens other than details
 
 	Profile Screen: (Larger section below)
+		-list contributed tricks
 		-share button to share users contributed
 		-upload image
 		-personal stats
 
-	-frame by frame hides videos controls
+	-frame by frame to hide youtube controls(instagram works)
 
 	-Flair
 		-working on (Baby)
