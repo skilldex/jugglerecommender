@@ -127,19 +127,7 @@
   height : 15px;
   width : 15px;
 }
-.addAndRemoveMyTricksButtonOnDetail{
-  line-height: -0px;
-  font-size: 20px;
-  padding : 2px;
-  border-radius: 15px;
-  height: 24px;
-  width: 24px;
-  float : left;
-  margin-top : 8px;
-  margin-left: 10px;
-  margin-right : 2px;
-  background-color: white;
-}
+
 .flairDiv{
   display:inline-block;
 }
@@ -151,17 +139,36 @@
   margin-top : 8px;
   cursor: pointer;
 }
+.starButton{
+  line-height: -0px;
+  font-size: 20px;
+  padding : 2px;
+  border-radius: 15px;
+  height: 24px;
+  width: 24px;
+  float : left;
+  margin-top : 8px;
+  margin-left: 10px;
+  margin-right : 2px;
+  background-color: white;
+  opacity: .3;
+}
 .babyIcon{
   height : 24px;
   width : 24px;
   margin-left: 6px;
-  margin-top : 8px;  
+  margin-top : 8px;
+  opacity: .2;  
 }
 .ninjaIcon{
   height : 24px;
   width : 24px;
   margin-left: 6px;
-  margin-top : 8px;  
+  margin-top : 8px;
+  opacity: .2;
+}
+.selectedFlair{
+  opacity: 1;
 }
 .editCardIcon{
   height : 20px;

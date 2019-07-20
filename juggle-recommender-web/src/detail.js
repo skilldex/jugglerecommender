@@ -162,23 +162,38 @@ class Detail extends Component {
                             alt="backIcon" 
                             onClick={()=>{ this.handleBackButtonClick()}}
                         />
- 		const starTrickButton = uiStore.detailTrick && 
-                            store.myTricks[uiStore.detailTrick.id] &&
-                            store.myTricks[uiStore.detailTrick.id]['starred'] &&
-                            store.myTricks[uiStore.detailTrick.id]['starred'] === 'true'  ? 
-              		<button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.unstarTrick(uiStore.detailTrick.id)}}>&#9733;</button> :
- 		              <button className="addAndRemoveMyTricksButtonOnDetail" onClick={()=>{store.starTrick(uiStore.detailTrick.id)}}>&#9734;</button>
+    let hasStarFlair = false
+    let hasBabyFlair = false
+    let hasNinjaFlair = false
+    if (uiStore.detailTrick && 
+        store.myTricks[uiStore.detailTrick.id]){
+      if (store.myTricks[uiStore.detailTrick.id]['starred'] &&
+          store.myTricks[uiStore.detailTrick.id]['starred'] === 'true'){
+        hasStarFlair = true;
+      }if (store.myTricks[uiStore.detailTrick.id]['baby'] &&
+          store.myTricks[uiStore.detailTrick.id]['baby'] === 'true'){
+          hasBabyFlair = true;
+      }if (store.myTricks[uiStore.detailTrick.id]['ninja'] &&
+          store.myTricks[uiStore.detailTrick.id]['ninja'] === 'true'){
+          hasNinjaFlair = true;
+      }
+    } 
+ 		const starTrickButton = hasStarFlair  ? 
+              		<button className="starButton selectedFlair" 
+                          onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}>&#9733;</button> :
+ 		              <button className="starButton" 
+                          onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}>&#9734;</button>
     const babyFlairButton = <img id="babyButton" 
                                   src={babyIcon} 
-                                  className="babyIcon" 
+                                  className={hasBabyFlair?"babyIcon selectedFlair":"babyIcon" }
                                   alt="babyIcon" 
-                                  onClick={()=>{ this.handleBabyButtonClick()}}
+                                  onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'baby')}}
                               />
     const ninjaFlairButton = <img id="ninjaButton" 
                                   src={ninjaIcon} 
-                                  className="ninjaIcon" 
+                                  className={hasNinjaFlair?"ninjaIcon selectedFlair":"ninjaIcon" } 
                                   alt="ninjaIcon" 
-                                  onClick={()=>{ this.handleNinjaButtonClick()}}
+                                  onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'ninja')}}
                               />
     const deleteTrickButton = 
       detailTrick && authStore.user && 

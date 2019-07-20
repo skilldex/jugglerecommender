@@ -1,6 +1,6 @@
 v 1.8
-	Add our backk arrow to all pages 
-	
+	Add our back arrow to all pages 
+
 	Profile Screen: (Larger section below)
 		-list contributed tricks
 			how so? Some sort of microlist?
@@ -19,12 +19,6 @@ v 1.8
 
 	-frame by frame to hide controls
 		-instagram works, not youtube
-
-	-Flair
-		-how to indicate selected flair?
-			-make it green?
-		-remove star flair?
-		-force baby/ninja to be mutually exclusive?
 
 	-Think about leaderboard/details
 

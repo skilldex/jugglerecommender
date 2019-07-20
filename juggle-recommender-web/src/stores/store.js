@@ -493,22 +493,33 @@ class Store {
         })
 	}
 
-	@action starTrick=(trickKey)=>{
+	@action toggleFlair=(trickKey,flairType)=>{
+		console.log('toggleFl',trickKey,flairType)
 		if(!this.myTricks[trickKey]){
 			this.myTricks[trickKey] = {}
 		}
- 		this.myTricks[trickKey].starred = 'true'
- 		const date = new Date()
- 		this.myTricks[trickKey].lastUpdated = date.getTime()
-        this.updateTricksInDatabase()
- 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
- 		uiStore.updateRootTricks()
+		if (this.myTricks[trickKey][flairType] === 'false'){
+	 		this.myTricks[trickKey][flairType] = 'true'
+	 		const date = new Date()
+	 		this.myTricks[trickKey].lastUpdated = date.getTime()
+	        this.updateTricksInDatabase()
+	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+	 		uiStore.updateRootTricks()
+	 		if(flairType === "baby" && this.myTricks[trickKey]["ninja"] === 'true'){
+	 			this.toggleFlair(trickKey, "ninja")
+	 		}
+	 		if(flairType === "ninja" && this.myTricks[trickKey]["baby"] === 'true'){
+	 			this.toggleFlair(trickKey, "baby")
+	 		}
+	 	}else{
+	 		this.myTricks[trickKey][flairType] = 'false'
+			this.updateTricksInDatabase()
+	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+	 		uiStore.updateRootTricks()	 		
+	 	}
  	}
  	@action unstarTrick=(trickKey)=>{
- 		this.myTricks[trickKey].starred = 'false'
-		this.updateTricksInDatabase()
- 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
- 		uiStore.updateRootTricks()
+
  	}
  	@action findHighestCatches=()=>{
 	    for(var trick in this.myTricks) {
