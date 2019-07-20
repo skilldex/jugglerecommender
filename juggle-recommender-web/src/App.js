@@ -114,11 +114,14 @@ class App extends Component {
 			//store.initializeTags()
 		}
 		store.getLibraryFromDatabase().then(()=>{
+			console.log('ur')
 			if(window.location.pathname.includes("detail")){
-			  	const match = window.location.pathname.match('/detail\/(.+)')
-			  	console.log("match " , match)
-			  	const detailTrick = {...store.library[match[1]]}
-				detailTrick.id = match[1]
+				console.log('ur2')
+			  	let match = window.location.pathname.match('/detail\/(.+)')
+			  	const trickKey = match[1].replace(/%20/g, ' ')
+			  	console.log("trickKey " , trickKey)
+			  	const detailTrick = {...store.library[trickKey]}
+				detailTrick.id = trickKey
 			  	uiStore.setDetailTrick(detailTrick)	
 			}	
 		})

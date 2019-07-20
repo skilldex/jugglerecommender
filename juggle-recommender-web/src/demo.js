@@ -123,6 +123,7 @@ class Demo extends Component {
   frameStep=(direction)=>{
     if (this.state.videoURL && this.state.videoURL.includes('youtube')){
       const video = this.video.internalPlayer
+      //video.setAttribute("controls", 0)
       video.getCurrentTime().then((time)=>{
         video.pauseVideo()
         if(direction === "back"){
@@ -142,7 +143,12 @@ class Demo extends Component {
       }
     }
   }
-  handleVideoClick=()=>{
+  handleYoutubeVideoClick=()=>{
+    console.log('youtube clicked')
+    //const video = this.video.internalPlayer
+    //video.controls=1
+  }
+  handleInstagramVideoClick=()=>{
     const video = document.getElementById("instagramVideo")
     video.setAttribute( 'controls', '' );
   }
@@ -189,7 +195,8 @@ class Demo extends Component {
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           videoId={this.state.youtubeId}
-                          className= "demo" 
+                          className= "demo"
+                          onClick = {() => this.handleYoutubeVideoClick()}
                           opts={youtubeOpts}      
                           muted={true}                          
                           allow="autoplay"  
@@ -204,7 +211,7 @@ class Demo extends Component {
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           className= "demo"
-                          onClick = {() => this.handleVideoClick()}                                  
+                          onClick = {() => this.handleInstagramVideoClick()}                                  
                           autoPlay
                           muted={true}
                           playsInline
