@@ -227,7 +227,8 @@ class Detail extends Component {
       }
     }
     const extraGifSection = detailTrick.video && detailTrick.gifUrl ?
-                            <div>
+                            <div className = {detailTrick.gifUrl.includes("jugglinglab") ? 
+                              "extraGifSectionLab" : "extraGifSectionLibrary"}>
                               <label onClick={()=>{this.toggleExtraGif()}}
                                       className="toggleExtraGifLabel">
                                 {this.state.showExtraGif? "hide gif" : "show gif" }

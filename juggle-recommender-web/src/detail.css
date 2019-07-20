@@ -106,10 +106,17 @@
   color: blue;
   margin : 0 auto;
 }
+.extraGifSectionLab{
+  max-height: 270px;
+}
+.extraGifSectionLibrary{
+  max-height: 400px;
+}
 .toggleExtraGifLabel{
    font-size: 14px;
   color: blue;
   margin : 0 auto; 
+  display:block-inline;
 }
 .showExplanation{
   font-size: 14px;
