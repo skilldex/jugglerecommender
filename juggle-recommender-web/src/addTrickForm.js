@@ -124,11 +124,7 @@ class AddTrickForm extends Component {
 						id : 'pure-ss',
 						text : 'pure-ss'
 					}
-
 		        const { tags } = this.state;
-		        console.log('pureSStag',pureSStag)
-		        console.log('tags',tags)
-		        //const i = tags.indexOf(pureSStag)
 		        const i = tags.findIndex(x => x.id ==="pure-ss")
 		        console.log('i',i)
 		        this.setState({
@@ -144,15 +140,15 @@ class AddTrickForm extends Component {
 				document.getElementById("numInput").disabled = true
 				this.setState({siteswap : e.target.value})
 				document.getElementById("siteswapInput").disabled = true	
-				//this.setState(state => ({ tags: [...state.tags, 'pure-ss'] }));	
 				const pureSStag = {
 						id : 'pure-ss',
 						text : 'pure-ss'
 					}
-		    	if (!this.state.tags.includes(pureSStag.id)){
+		        const { tags } = this.state;
+		        const i = tags.findIndex(x => x.id ==="pure-ss")
+		    	if (i===-1 && !this.state.tags.includes(pureSStag.id)){
 			        this.setState(state => ({ tags: [...state.tags, pureSStag] }));
 			    }
-
 				console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
 			}
 		}
