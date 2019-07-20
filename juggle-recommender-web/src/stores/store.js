@@ -4,7 +4,7 @@ import uiStore from './uiStore'
 import authStore from './authStore'
 import {jugglingLibrary} from '../jugglingLibrary.js'
 import {TAGS} from '../tags';
-
+import ReactGA from 'react-ga'
 configure({ enforceActions: "always" })
 class Store {
 
@@ -438,6 +438,12 @@ class Store {
  		const date = new Date()
  		this.myTricks[trickKey].lastUpdated = date.getTime()
  		this.updateTricksInDatabase()
+ 		if(!this.isLocalHost){
+			ReactGA.event({
+				  category: 'catches',
+				  action: "set catches " + trickKey + " " + catches,
+			});
+		}	
  		uiStore.updateRootTricks()
 		this.updateLeaderboard(trickKey,catches)
  	}
