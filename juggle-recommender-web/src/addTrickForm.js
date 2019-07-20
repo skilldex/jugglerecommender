@@ -434,7 +434,7 @@ class AddTrickForm extends Component {
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
 			let tutorialURL = this.state.url
-			if (this.state.url && !this.state.url.includes('https://')){
+			if (this.state.url && !this.state.url.includes('http')){
 				tutorialURL = 'https://' + tutorialURL
 			}
 			const trick = {
