@@ -20,6 +20,25 @@
   margin-left: 5px;
   margin-right: 5px;
 }
+iframe{
+    margin-top: -100px;
+    margin-left:-40px;
+    overflow:hidden;
+    height:470px;
+    width:500px;
+    scroll-behavior: hidden;
+    border:none;
+    scroll-behavior: none;
+
+    -ms-transform: scale(0.50);
+    -moz-transform: scale(0.50);
+    -o-transform: scale(0.50);
+    -webkit-transform: scale(0.50);
+    transform: scale(0.50);
+
+
+}
+
 
 .frameIcon{
   width: 30px;
@@ -69,6 +88,15 @@
   height: auto;
   z-index : 1200;
   margin: auto;
+
+}
+.labDemoOuterDivDetail{
+    width: 100%;
+  max-width:400px;
+  max-height: 270px;
+  height: auto;
+  z-index : 1200;
+
 
 }
 .demoOuterDivExpandedSection{

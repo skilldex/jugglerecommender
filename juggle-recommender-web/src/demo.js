@@ -155,13 +155,18 @@ class Demo extends Component {
 	render() {
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
     const trick = store.library[trickKey]
-    const gifSection = trick && trick.url? 
+    const gifSection = trick && trick.gifUrl? trick.gifUrl.includes('library') ?
                           <img 
                              alt = ''
                              className="gifDemo"
                              src={trick.gifUrl}
-                          /> : null
-    
+                          /> :
+                          <iframe
+                            src={trick.gifUrl}
+                            scrolling="no"
+                          />
+                          : null
+    console.log('trick.gifUrl',trick.gifUrl)
     const instagramLogo = <img 
                              alt = ''
                              className="instagramLogo"
@@ -232,7 +237,12 @@ class Demo extends Component {
                        </div> : null
     let outerDivClass
     if (this.props.demoLocation === "detail" || this.props.demoLocation === "home"){
+
       outerDivClass = "demoOuterDivDetail"
+      if (trick.gifUrl && trick.gifUrl.includes('lab')){
+        console.log('labDetai')
+        outerDivClass = "labDemoOuterDivDetail"
+      }
     }else if(this.props.demoLocation === "expandedSection"){
       outerDivClass = "demoOuterDivExpandedSection"
     }

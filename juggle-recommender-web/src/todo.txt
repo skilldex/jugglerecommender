@@ -14,10 +14,8 @@ v 1.8
 		-remove star flair?
 		-force baby/ninja to be mutually explusive?
 
-	-add gif to add trick form
-		-make lab gif play as demo
-	-show gif and video seperately in details for tricks that have both
-		-make expandable gif section in details
+	-make lab gif play as demo
+	-make expandable gif section in details
 
 	-Think about leaderboard/details
 

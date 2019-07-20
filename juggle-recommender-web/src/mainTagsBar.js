@@ -16,21 +16,6 @@ class MainTagsBar extends Component {
     state={
          
     }
-    copyContributorURL=()=>{
-      const textField = document.createElement('textarea')
-      const url = window.location.origin + "/?contributor=" + authStore.user.username +",&"
-      textField.innerText = url
-      document.body.appendChild(textField)
-      var range = document.createRange();  
-      range.selectNode(textField);  
-      window.getSelection().addRange(range);  
-      textField.select()
-      document.execCommand('copy')
-      textField.remove()
-
-      alert("Link for your contributed tricks copied to clipboard\n" + url)
-    }
-
     numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
       let tempNumBalls = [...filterStore.numBalls]
       if (tempNumBalls.includes(element)){
