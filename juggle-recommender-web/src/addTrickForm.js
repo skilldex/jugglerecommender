@@ -51,13 +51,11 @@ class AddTrickForm extends Component {
 		this.setState({contributor: authStore.user.username})
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
-			console.log(trick)
 			if (trick.name.includes("(")){
 				trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 			}
 			if (trick.gifUrl){
 				this.setState({gifUrl: trick.gifUrl})
-				console.log(trick.gifUrl)
 			}
 			this.setState({contributor: trick.contributor})
 			this.setState({trickNameBeingEdited:trick.name})
@@ -397,7 +395,6 @@ class AddTrickForm extends Component {
 			if(!this.state.contributor){
 				delete trick.contributor
 			}
-			console.log('trick',trick)
 			if(uiStore.editingDetailTrick){
 				alert(trick.name+" edited!")
 				trick["timeSubmitted"] = this.state.timeSubmitted

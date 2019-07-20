@@ -384,11 +384,8 @@ class Store {
 		}
 	}
 	@action addPrereqsFromPostreqs=(trick)=>{
-		console.log("trick",trick)
 		if(trick.dependents){
-			console.log("trick.dependents",trick.dependents)
 			trick.dependents.forEach((item)=>{
-				console.log('item',item)
 				const dependent = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 				if(this.library[dependent].prereqs && 
 					this.library[dependent].prereqs.indexOf(trick.name) === -1){

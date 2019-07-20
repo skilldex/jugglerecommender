@@ -31,6 +31,7 @@ class UIStore {
 	@observable showExpandedMenu = false
 	@observable showHomeScreen = true
 	@observable showStatsScreen = false
+	@observable showProfileScreen = false
 	@observable mainListScrollerPosition = null
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
@@ -47,7 +48,9 @@ class UIStore {
 	@action setShowStatsScreen=(bool)=>{
 		this.showStatsScreen = bool
 	}
-
+	@action setShowProfileScreen=(bool)=>{
+		this.showProfileScreen = bool
+	}
   	@action editDetailTrick=()=>{
   		this.editingDetailTrick = true
   		//shows form
@@ -186,25 +189,21 @@ class UIStore {
 	    	if(!store.isLocalHost){
 				const filterStrings = 
 					Object.keys(filterStore).map((key)=>{
-						console.log(key, filterStore[key])
 						let value = filterStore[key]
 						//for tags and the like
 						if(Array.isArray(filterStore[key])){
 							value = filterStore[key].map((object)=>{
 								return object.id + " , "
 							})
-						}
-						
+						}						
 						return key + " : " + value
 					})
-				console.log("closed filter", filterStrings)
 				ReactGA.event({
 					  category: 'filter',
 					  action: "close filter",
 					  label : filterStrings.join(" | ")
 				});
 			}
-			console.log(filterStore)
 	    	this.setShowFilterDiv(false)
 	    }
 	}
@@ -391,6 +390,7 @@ class UIStore {
 		this.setDetailTrick(null)
 		this.setShowFilterDiv(false)
 		this.setShowStatsScreen(false)
+		this.setShowProfileScreen(false)
 	}
 	 @action clearCatchInput=()=>{
 	 	this.catchInput = ''

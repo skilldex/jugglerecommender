@@ -52,6 +52,12 @@ class Header extends Component {
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
+		}else if(paneFlag == "profile"){
+			uiStore.clearUI()
+			uiStore.setShowProfileScreen(true)
+			if(uiStore.addingTrick){
+			 	uiStore.toggleAddingTrick
+			}
 		}else{
 			this.props.openSlidingPane(paneFlag)
 			uiStore.setShowExpandedMenu(false)
@@ -77,6 +83,7 @@ class Header extends Component {
 						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
 						   	}
 						   	<button className="dropDownButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
+						   	<button className="dropDownButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>
 					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    </div> : null
@@ -95,6 +102,7 @@ class Header extends Component {
 						   	}
 					    	<button className="headerButton" onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    	<button className="headerButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
+					    	<button className="headerButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>
 					    	<button className="headerButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('home')}>Home</button>

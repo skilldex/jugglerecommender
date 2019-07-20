@@ -17,6 +17,7 @@ import CreateAccount from "./createAccount"
 import ForgotPassword from "./forgotPassword"
 import Header from "./header"
 import Stats from "./stats"
+import Profile from "./profile"
 import ReactGA from 'react-ga'
 import Filter from './filter'
 import { withRouter, Router } from 'react-router-dom';
@@ -250,6 +251,7 @@ class App extends Component {
 					!store.isCreateAccountPaneOpen && 
 					!uiStore.showHomeScreen &&
 					!uiStore.showStatsScreen &&
+					!uiStore.showProfileScreen &&
 					uiStore.detailTrick == null ?
 					
 						<TrickList 
@@ -258,7 +260,9 @@ class App extends Component {
 						/>
 					 : null
 				}
+				{uiStore.showProfileScreen?<Profile/>: null}
 				{uiStore.showStatsScreen?<Stats/>: null}
+				
 				{uiStore.showHomeScreen && !uiStore.detailTrick ? <HomeScreen/> : null}	
 				{detail}
 				
