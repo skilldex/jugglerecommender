@@ -18,10 +18,11 @@ import ReactGA from 'react-ga';
 @observer
 class Profile extends Component {
 	state={
-
+		
 	}
 	componentDidMount(){
 
+		console.log('profile mounted')
 		 
 	}
     copyContributorURL=()=>{

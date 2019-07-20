@@ -12,8 +12,7 @@ import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import Demo from './demo'
 import ReactGA from 'react-ga';
-
-
+import history from './history';
 @observer
 class Stats extends Component {
 	state={
@@ -22,11 +21,10 @@ class Stats extends Component {
 		 tagsCounter : {},
 	}
 	componentDidMount(){
+		console.log('stats mounted')
 		let contributorsCounter = this.state.contributorsCounter
 		let ballNumCounter = this.state.ballNumCounter
 		let tagsCounter = this.state.tagsCounter
-
-
 		Object.keys(store.library).forEach((trick) => {
 			if (store.library[trick].contributor){
 				const contributor = store.library[trick].contributor
@@ -56,8 +54,12 @@ class Stats extends Component {
 		this.setState({contributorsCounter,ballNumCounter,tagsCounter})
 		 
 	}
+	componentWillUnmount(){
+		console.log('stats will unmount')
+	}
 
 	statsLabelButtonClicked=(tagType, key)=>{
+		history.push('/tricklist')
 		uiStore.clearUI()
 		if (tagType === 'contributor'){
 			filterStore.setContributors([{id: key,text: key,}]);

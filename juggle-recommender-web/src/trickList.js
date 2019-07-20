@@ -14,6 +14,7 @@ import utilities from './utilities'
 //import { Resizable } from "re-resizable";
 import ReactGA from 'react-ga';
 import history from './history';
+
 @observer
 class TrickList extends Component {
 	state = {
@@ -21,6 +22,7 @@ class TrickList extends Component {
 			expandDone : false
 	}
 	componentDidMount=()=>{
+
 		this.setScrollerPositions()
 	}
 

@@ -6,6 +6,7 @@ import "./header.css"
 import uiStore from "./stores/uiStore"
 import ReactGA from 'react-ga';
 import store from "./stores/store"
+import history from './history';
 @observer
 class Header extends Component {
 	state={
@@ -35,6 +36,7 @@ class Header extends Component {
 			}
 			
 		}else if(paneFlag == "home"){
+			history.push('/home')
 			uiStore.clearUI()
 			uiStore.setShowHomeScreen(true)
 			if(uiStore.addingTrick){
@@ -42,17 +44,20 @@ class Header extends Component {
 			}
 			
 		}else if(paneFlag == "list"){
+			history.push('/tricklist')
 			uiStore.clearUI()
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
 		}else if(paneFlag == "stats"){
+			history.push('/stats')
 			uiStore.clearUI()
 			uiStore.setShowStatsScreen(true)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick
 			}
 		}else if(paneFlag == "profile"){
+			history.push('/profile')
 			uiStore.clearUI()
 			uiStore.setShowProfileScreen(true)
 			if(uiStore.addingTrick){

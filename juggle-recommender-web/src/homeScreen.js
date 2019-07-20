@@ -11,6 +11,7 @@ import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import Demo from './demo'
 import ReactGA from 'react-ga';
+import history from './history';
 
 @observer
 class HomeScreen extends Component {
@@ -30,6 +31,7 @@ class HomeScreen extends Component {
 		uiStore.setDetailTrick(
 			{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
 		)
+		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
 		if(!store.isLocalHost){
 			ReactGA.event({
 			  category: 'home screen',

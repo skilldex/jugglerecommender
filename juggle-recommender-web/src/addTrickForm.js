@@ -111,7 +111,7 @@ class AddTrickForm extends Component {
 			autoCompletedName : false
 		})
 		const siteswapValidityChecker = Validate(e.target.value)
-		if (!this.state.gifUrl.includes('library')){
+		if (this.state.gifUrl && !this.state.gifUrl.includes('library')){
 			if (siteswapValidityChecker === 'invalid'){
 				console.log('invalid')
 				this.setState({gifUrl: null})

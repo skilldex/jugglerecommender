@@ -25,19 +25,39 @@ import history from "./history"
 
 const unlisten = history.listen((location, action) => {
   // location is an object like window.location
-
+  console.log('location.pathname',location.pathname)
   if(location.state && location.state.detail != uiStore.detailTrick){
   	const detailTrick = {...store.library[location.state.detail]}
 	detailTrick.id = location.state.detail
   	uiStore.setDetailTrick(detailTrick)	
   }
-  if(location.pathname == "/"){
+  if(location.pathname == "/home"){
   	uiStore.clearUI()
 	uiStore.setShowHomeScreen(true)
 	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick
 	}
   }
+  if(location.pathname == "/tricklist"){
+  	uiStore.clearUI()
+	if(uiStore.addingTrick){
+	 	uiStore.toggleAddingTrick
+	}
+  } 
+    if(location.pathname == "/stats"){
+  	uiStore.clearUI()
+  	uiStore.setShowStatsScreen(true)
+	if(uiStore.addingTrick){
+	 	uiStore.toggleAddingTrick
+	}
+  }  
+    if(location.pathname == "/profile"){
+  	uiStore.clearUI()
+  	uiStore.setShowProfileScreen(true)
+	if(uiStore.addingTrick){
+	 	uiStore.toggleAddingTrick
+	}
+  }   
 });
 
 let firebaseConfig = {}

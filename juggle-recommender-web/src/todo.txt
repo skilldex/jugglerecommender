@@ -1,7 +1,4 @@
 v 1.8
-	-back arrow
-		-screens other than details
-
 	Profile Screen: (Larger section below)
 		-list contributed tricks
 			how so? Some sort of microlist?
@@ -9,7 +6,7 @@ v 1.8
 			where to store the image?
 			where to show the image outside of profile?
 		-personal stats
-			Possible Stats:
+			Possible Stats:????
 				-number of contributed tricks
 				-number of each flair
 				-number of tricks within a certain range
@@ -23,8 +20,9 @@ v 1.8
 
 	-Flair
 		-how to indicate selected flair?
+			-make it green?
 		-remove star flair?
-		-force baby/ninja to be mutually explusive?
+		-force baby/ninja to be mutually exclusive?
 
 	-Think about leaderboard/details
 

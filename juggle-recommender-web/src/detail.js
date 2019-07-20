@@ -30,6 +30,10 @@ class Detail extends Component {
     changingInput : false,
     showExtraGif : false,
   }
+  componentDidMount(){
+    console.log('details mounted',uiStore.detailTrick.id)
+
+  }
   componentDidUpdate(){
     console.log("updated ", window.location.search)
   }

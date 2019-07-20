@@ -3,11 +3,9 @@ if (!Array.prototype.indexOf)
   Array.prototype.indexOf=function(val/*,from*/)
     {
       var b=this.length;
-
       var a=Number(arguments[1]) || 0;
       if(a<0)
         a=0;
-
       for(;a<b;a++)
         {
           if(a in this && this[a]===val)
@@ -21,8 +19,6 @@ var Hex='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var SynchChars='(,)';
 var Feedback;
 var Type
-
-
 function getDifficulty(siteswap,Period){
   //Example Alg for ss441
   //D1 = 2 + √ ( ((4-2)squared + (4-2)squared + (1-2)squared)÷3 ) 
@@ -53,27 +49,16 @@ function getDifficulty(siteswap,Period){
   difficulty = difficulty + 2
   return (difficulty)
 }
-
-
 //function Validate()
 export default function Validate(toValidate)//TJ
 {
-
-
-  //var FullCode=document.form.Code.value.toUpperCase();
-  var FullCode=toValidate.toUpperCase();
-
-  
+  var FullCode=toValidate.toUpperCase();  
   FullCode=FullCode.replace(/\s/g,""); // remove all spaces
-
   if(FullCode=='') // nothing entered
     return ('invalid');
-
 // if pattern contains parentheses it should be synchronous
   var Synch=FullCode.search(/\(|\)/)!=-1;
-
 // Check syntax
-
   if(FullCode.match(/^[0-9A-Z]+$/))
     Type='Vanilla';
   else if(FullCode.match(/^([0-9A-Z]*(\[[1-9A-Z]{2,}\])+[0-9A-Z]*)+$/))
@@ -84,19 +69,13 @@ export default function Validate(toValidate)//TJ
     Type='Synchronous multiplex';
   else
     {
-
       return ('invalid');
     }
-
-
 // Syntax OK
-
-
 // If Synch SS ends with * mirror pairs of throws
   if(Synch && FullCode.charAt(FullCode.length-1)=='*')
     {
       FullCode=FullCode.substring(0,FullCode.length-1); // remove *
-
       var TempStr=FullCode.substring(1,FullCode.length-1);
       TempStr=TempStr.replace(/[\(\)]+/g,","); // replace () with ,
       var Mirror=TempStr.split(',');
@@ -109,14 +88,9 @@ export default function Validate(toValidate)//TJ
           FullCode+=')';
         }
     }
-
-
-
-
 // Code kindly suggested by Anto 2012-02-08
 // repeated siteswap sequences (eg 531531531) returned incorrect prime/symmetry info.
 // trim to smallest non repeating sequence to fix.
-
   // input=FullCode; 
   // var FullCode=input[0]; 
   // var tmp=[]; 
@@ -129,23 +103,17 @@ export default function Validate(toValidate)//TJ
   //       break; 
   //   } 
 
-
-
-
 // start validation
-
   var Chars=[];
   var Values=[];
   var Beat=[];
   var Destination=[];
-
   var a=0;
   var b=FullCode.length;
   var ThisChar;
   var SynchOffset=0;
   var ThisBeat=0;
   var InMultiplex=false;
-
   while(a<b)
     {
       ThisChar=FullCode.charAt(a);
@@ -156,8 +124,7 @@ export default function Validate(toValidate)//TJ
             SynchOffset=1;
           if(ThisChar==',')
             SynchOffset=-1;
-        }
-        
+        }        
       if(ThisChar.match(/^[0-9A-Z]+$/))
         {
           Chars[Chars.length]=ThisChar;
@@ -183,14 +150,11 @@ export default function Validate(toValidate)//TJ
               InMultiplex=false;
               ThisBeat++;
             }
-        }
-        
+        }        
       a++;
-    }
-    
+    }    
   var Period=ThisBeat;
-  var Total=0;
-  
+  var Total=0;  
   b=Values.length;
   for(a=0;a<b;a++)
     {
@@ -202,17 +166,14 @@ export default function Validate(toValidate)//TJ
           Total=Total+Values[a];
         }
     }
-
   var In=[];
   var Out=[];
-
   b=Period;
   for(a=0;a<b;a++)
     {
       In[a]=0;
       Out[a]=0;
     }
-
   b=Destination.length;
   for(a=0;a<b;a++)
     {
@@ -222,30 +183,14 @@ export default function Validate(toValidate)//TJ
           Out[Beat[a]]++;
         }
     }
-
   if(In.toString()==Out.toString() && Total/Period < 17)
     {
-
       const objects = Total/Period
       const difficulty = getDifficulty(toValidate,Period)
-      return [objects, difficulty] //TJ 
-
+      return [objects, difficulty]
     }
   else
     {
-      return ('invalid')//TJ
-
+      return ('invalid')
     }
-  
-// useful debug lines
-/*
-      Feedback.innerHTML+='<hr />';
-      Feedback.innerHTML+='<p>Chars: '+Chars+'</p>';
-      Feedback.innerHTML+='<p>Values: '+Values+'</p>';
-      Feedback.innerHTML+='<p>Beat: '+Beat+'</p>';
-      Feedback.innerHTML+='<p>Dest: '+Destination+'</p>';
-      Feedback.innerHTML+='<p>Orbits: '+Orbits+'</p>';
-      Feedback.innerHTML+='<p>In: '+In+'</p>';
-      Feedback.innerHTML+='<p>Out: '+Out+'</p>';
-*/
 }
