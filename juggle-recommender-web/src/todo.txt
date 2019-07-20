@@ -4,27 +4,31 @@ v 1.8
 
 	Profile Screen: (Larger section below)
 		-list contributed tricks
-		-share button to share users contributed
 		-upload image
 		-personal stats
 
 	-frame by frame to hide youtube controls(instagram works)
 
 	-Flair
-		-working on (Baby)
-		-got it (Ninja)
+		-how to indicate selected flair?
+		-remove star flair?
+		-force baby/ninja to be mutually explusive?
 
 	-add gif to add trick form
+		-make lab gif play as demo
 	-show gif and video seperately in details for tricks that have both
+		-make expandable gif section in details
 
 	-Think about leaderboard/details
-	Data fix scripts(see list below)
 
+	Data fix scripts(see list below)
+		-ran a script that looked for duplicates and only found 2, make a note of any seen
 
 =========
 
 
 Bugs:
+	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
 	-from home if i click the details of the trick of the day and then click 1 list item in there, wheni click either back button it takes me back to home, not to the original home details page
 	-details urls with spaces cause crash
 	-expand a list card, go to details and come back, demo video shows but its card is collapsed. Furthermore, opening a card should close an opened card, not toggle it.
@@ -59,7 +63,6 @@ Notifications:
 		-records broken today
 
 Data fix scripts:
-	-script that lists tricks that have same trick as related and postreq
 	-a script to make related tags go both directions
 		if x is listed as related for y, then y should be listed for x
 	-#b moved to begining of name from end (#b)

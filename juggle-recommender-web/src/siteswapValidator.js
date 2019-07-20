@@ -223,7 +223,7 @@ export default function Validate(toValidate)//TJ
         }
     }
 
-  if(In.toString()==Out.toString())
+  if(In.toString()==Out.toString() && Total/Period < 17)
     {
 
       const objects = Total/Period

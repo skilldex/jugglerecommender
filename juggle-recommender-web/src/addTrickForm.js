@@ -46,7 +46,7 @@ class AddTrickForm extends Component {
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
 		explanation: '',
-		jugglinglabURL: null
+		gifUrl: null
 	}
 
 	componentDidMount=()=>{
@@ -113,21 +113,31 @@ class AddTrickForm extends Component {
 		const siteswapValidityChecker = Validate(e.target.value)
 		if (siteswapValidityChecker === 'invalid'){
 			console.log('invalid')
-			this.setState({jugglinglabURL: null})
-			this.setState({difficulty : null})
-			this.setState({num : null})
-			document.getElementById("numInput").disabled = 'false'
-			this.setState({siteswap : null})
-			document.getElementById("siteswapInput").disabled = 'false'
+			this.setState({gifUrl: null})
+			this.setState({difficulty : ''})
+			this.setState({num : ''})
+			document.getElementById("numInput").disabled = false
+			this.setState({siteswap : ''})
+			this.setState({tags:[]});
+			document.getElementById("siteswapInput").disabled = false
+
 		}else{
-			this.setState({jugglinglabURL : 'https://jugglinglab.org/anim?'+e.target.value})
+			this.setState({gifUrl : 'https://jugglinglab.org/anim?'+e.target.value})
 			const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
 			this.setState({difficulty : dif})
 			this.setState({num : siteswapValidityChecker[0]})
-			document.getElementById("numInput").disabled = 'true'
+			document.getElementById("numInput").disabled = true
 			this.setState({siteswap : e.target.value})
-			document.getElementById("siteswapInput").disabled = 'true'
-			
+			document.getElementById("siteswapInput").disabled = true	
+			this.setState(state => ({ tags: [...state.tags, 'pure-ss'] }));	
+			const pureSStag = {
+				id : 'pure-ss',
+				text : 'pure-ss'
+				}
+	    	if (store.tagsSuggestions.includes(pureSStag.id)){
+		        this.setState(state => ({ tags: [pureSStag] }));
+		        this.checkIfFormIsSubmittable()
+		    }
 			console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
 		}
 		this.checkIfFormIsSubmittable()
@@ -167,11 +177,18 @@ class AddTrickForm extends Component {
 		this.setState({
 			siteswap:e.target.value
 		})
-		const validityChecker = Validate(e.target.value)
-		if (validityChecker === 'invalid'){
+		const siteswapValidityChecker = Validate(e.target.value)
+		if (siteswapValidityChecker === 'invalid'){
+			this.setState({num : ''})
+			document.getElementById("numInput").disabled = false
 			console.log('invalid')
+			this.setState({siteswapErrorMessage:'invalid siteswap.'})
+			this.setState({submitDisabled:true})
 		}else{
-			console.log(validityChecker[0],validityChecker[1])
+			this.setState({num : siteswapValidityChecker[0]})
+			document.getElementById("numInput").disabled = true
+			this.setState({siteswapErrorMessage:''})
+			console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
 		}
 		this.checkIfFormIsSubmittable()
 	}
@@ -301,8 +318,9 @@ class AddTrickForm extends Component {
 			}    		
     	}
     	if (!utilities.isEmptyOrSpaces(this.state.url)){
-			if(this.state.url.includes('http') && 
-				this.state.url.includes('.')){
+			if((this.state.url.includes('http') && 
+				this.state.url.includes('.')) ||
+				this.state.gifUrl){
 					this.setState({tutorialErrorMessage:''})
 				}else{
 					this.setState({tutorialErrorMessage:'Not a valid tutorial URL.'})
@@ -567,18 +585,18 @@ class AddTrickForm extends Component {
 										onBlur={this.handleNameChange}/>
 								{autoComplete}
 							</div>
-							{this.state.jugglinglabURL ?
+							{this.state.gifUrl ?
 								<div className="videoInputContainer">
 									<span className="inputLabel">Juggling Lab URL</span>
 									<input className="formInputsJugglingLab" 
-										   value={this.state.jugglinglabURL} 
+										   value={this.state.gifUrl} 
 										   disable = "true"
 									/>
 									<br/>
 								</div>:null
 							}
 							<div className="videoInputContainer">
-								<span className="redText">*</span>
+								{this.state.gifUrl ? null: <span className="redText">*</span>}
 								<span className="inputLabel">Instagram or Youtube Video</span>
 								<span className="warning">{this.state.videoErrorMessage? this.state.videoErrorMessage:"\u00A0"}</span>
 								<input className="formInputs" 
