@@ -8,7 +8,8 @@ import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.jpg'
 import catchesIcon from './images/catchesIcon.png'
 import babyIcon from './images/babyIcon.svg'
-import ninjaIcon from './images/ninjaIcon2.png'
+import ninjaIcon from './images/ninjaIcon.svg'
+import starIcon from './images/starIcon.svg'
 import Demo from './demo'
 import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
@@ -134,7 +135,7 @@ class Detail extends Component {
     const catchesSection = 
       <div>
         <img className="catchesIconDetail" alt="" src ={catchesIcon}/>
-        <label className="catchesLabel">Catches: </label>
+        <label className="catchesLabel">Catches </label>
         {uiStore.detailCatchEditable ?
           <input 
                 ref={(input)=> {this.catchInput = input}}
@@ -173,11 +174,12 @@ class Detail extends Component {
           hasNinjaFlair = true;
       }
     } 
- 		const starTrickButton = hasStarFlair  ? 
-              		<button className="starButton selectedFlair" 
-                          onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}>&#9733;</button> :
- 		              <button className="starButton" 
-                          onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}>&#9734;</button>
+ 		const starTrickButton = <img id="starButton" 
+                                  src={starIcon} 
+                                  className={hasStarFlair?"starIcon selectedFlair":"starIcon" }
+                                  alt="starIcon" 
+                                  onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}
+                              />
     const babyFlairButton = <img id="babyButton" 
                                   src={babyIcon} 
                                   className={hasBabyFlair?"babyIcon selectedFlair":"babyIcon" }
@@ -253,27 +255,28 @@ class Detail extends Component {
     const infoSection = uiStore.detailTrick && detailTrickKey ?
                           <div className="detailInfoDiv">
                           <div className="flairDiv">
+                          <label className="detailLabel">Flair </label>
                             {starTrickButton}
                             {babyFlairButton}
                             {ninjaFlairButton}
                           </div>
                             {catchesSection}
-                            <label className="detailLabel">Contributor: </label>
+                            <label className="detailLabel">Contributor </label>
                             {
                               detailTrick.contributor ? 
                               detailTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
                             }<br/>
                             {uiStore.showMoreInformation?
                               <div className="moreInfoDiv">                   
-                                <label className="detailLabel">Difficulty: </label>{detailTrick.difficulty} / 10<br/>
-                                <label className="detailLabel"># of Balls: </label>{detailTrick.num}<br/>
+                                <label className="detailLabel">Difficulty </label>{detailTrick.difficulty} / 10<br/>
+                                <label className="detailLabel"># of Balls </label>{detailTrick.num}<br/>
                                 {detailTrick.siteswap ? 
                                   <div>
                                     <label className="detailLabel">Siteswap: </label>{detailTrick.siteswap}<br/>
                                   </div> : null
                                 }
                                 {detailTrick && detailTrick.url ?
-                                  <label className="detailLabel">Tutorial: </label> : null
+                                  <label className="detailLabel">Tutorial </label> : null
                                 }
                                 {detailTrick && detailTrick.url ?
                                   <a target="_" href={detailTrick.url}>{tutorialSite}</a> : null
@@ -290,7 +293,7 @@ class Detail extends Component {
                                 
                                 {detailTrick && detailTrick.tags?
                                   <div>
-                                    <label className="detailLabel">Tags:</label><br/>
+                                    <label className="detailLabel">Tags</label><br/>
                                     <div className="detailTags">{tags}</div>
                                   </div> : null
                                 }
