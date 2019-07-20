@@ -14,6 +14,7 @@ import './App.css';
 import './detail.css';
 import history from "./history"
 import downArrow from './images/down-arrow.svg'
+import shareIcon from './images/shareIcon.png'
 const unlisten = history.listen((location, action) => {
   // location is an object like window.location
 
@@ -75,6 +76,21 @@ class Detail extends Component {
   }
   toggleShowExplanation=()=>{
     uiStore.toggleShowExplanation()
+  }
+  copyDetailUrl=()=>{
+      const textField = document.createElement('textarea')
+      const url = window.location.href 
+      textField.innerText = url
+      document.body.appendChild(textField)
+      var range = document.createRange();  
+      range.selectNode(textField);  
+      window.getSelection().addRange(range);  
+      textField.select()
+      document.execCommand('copy')
+      textField.remove()
+
+      alert("Link for the details page copied to clipboard\n" + url)
+    
   }
 
 	render() {
@@ -153,7 +169,13 @@ class Detail extends Component {
         <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
              onClick={()=>{uiStore.editDetailTrick()}}
         /> : null
-
+    const shareButton = <img 
+                           className="shareFilterButton"
+                           src={shareIcon}
+                           onClick={()=>this.copyDetailUrl()}
+                           alt=""
+                           title="share your contributed tricks"
+                        />
     const tags =  detailTrick && detailTrick.tags ? detailTrick.tags.sort().map((tag,i)=>{
                     if(i < detailTrick.tags.length-1){
                       return <span className="detailTag">{tag + ","}</span>
@@ -260,6 +282,7 @@ class Detail extends Component {
       			<div className="detailDiv" id="detailDiv">
               <div className="topButtons">
                 {backButton}
+                {shareButton}
                 {deleteTrickButton}
                 {editTrickButton}
               </div>

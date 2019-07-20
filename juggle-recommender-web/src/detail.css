@@ -141,6 +141,16 @@
   float: right;
   margin-top : 8px;
 }
+.shareFilterButton{
+  height : 20px;
+  width : 20px;
+  padding-top : 10px;
+  padding-right: 10px;
+  float: right; 
+  margin-left: 6px;
+  align-items: right;
+  cursor: pointer;
+}
 .topButtons{
   display: inline;
   margin-top: 5px;
