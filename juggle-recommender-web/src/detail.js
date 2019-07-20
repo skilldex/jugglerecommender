@@ -13,6 +13,7 @@ import TrickList from './trickList.js'
 import './App.css';
 import './detail.css';
 import history from "./history"
+import downArrow from './images/down-arrow.svg'
 const unlisten = history.listen((location, action) => {
   // location is an object like window.location
 
@@ -63,6 +64,10 @@ class Detail extends Component {
         this.catchInput.select();
       }
     }, 100);  
+  }
+  handleBackButtonClick=()=>{
+    console.log('backButtonClick')
+    history.go(-1);
   }
 
   toggleShowMoreInformation=()=>{
@@ -119,6 +124,12 @@ class Detail extends Component {
              onClick={()=>{ this.handleEditCatchButtonClick()}}
         />
       </div>
+    const backButton = <img id="backButton" 
+                            src={downArrow} 
+                            className="backButton rotatedNegative90" 
+                            alt="backIcon" 
+                            onClick={()=>{ this.handleBackButtonClick()}}
+                        />
  		const starTrickButton = uiStore.detailTrick && 
                             store.myTricks[uiStore.detailTrick.id] &&
                             store.myTricks[uiStore.detailTrick.id]['starred'] &&
@@ -142,10 +153,6 @@ class Detail extends Component {
         <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
              onClick={()=>{uiStore.editDetailTrick()}}
         /> : null
-    const closeButton  = 
-        <img id="closeButton" src={closeIcon} className="closeDetailIcon" alt="closeIcon" 
-             onClick={()=>{uiStore.setDetailTrick(null)}}
-        />
 
     const tags =  detailTrick && detailTrick.tags ? detailTrick.tags.sort().map((tag,i)=>{
                     if(i < detailTrick.tags.length-1){
@@ -252,16 +259,16 @@ class Detail extends Component {
 
       			<div className="detailDiv" id="detailDiv">
               <div className="topButtons">
-                {starTrickButton}
+                {backButton}
                 {deleteTrickButton}
                 {editTrickButton}
-                {closeButton}
               </div>
               <h3 className="detailHeader">{detailTrick.name}</h3>  
               <Demo 
                 trickKey = {uiStore.detailTrick.id}
                 demoLocation="detail"
               />
+              {starTrickButton}
               {infoSection}
               {relationshipLists}                
             </div> 

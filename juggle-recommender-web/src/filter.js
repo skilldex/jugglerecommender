@@ -318,10 +318,10 @@ class Filter extends Component {
 			                 title="share your contributed tricks"
 			            />
 			            <img id="backButton" 
-			            	src={downArrow} 
-			            	className="backButton rotatedNegative90" 
-			            	alt="backIcon" 
-		             		onClick={()=>{uiStore.toggleFilterDiv()}}/>
+			            	 src={downArrow} 
+			            	 className="backButton rotatedNegative90" 
+			            	 alt="backIcon" 
+		             		 onClick={()=>{uiStore.toggleFilterDiv()}}/>
 		             	<label className="backButtonLabel" 
 		             		   onClick={()=>{uiStore.toggleFilterDiv()}}>Back
 		             	</label>
