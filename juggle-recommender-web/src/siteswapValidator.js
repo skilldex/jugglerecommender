@@ -23,7 +23,36 @@ var Feedback;
 var Type
 
 
-
+function getDifficulty(siteswap,Period){
+  //Example Alg for ss441
+  //D1 = 2 + √ ( ((4-2)squared + (4-2)squared + (1-2)squared)÷3 ) 
+  //first step is is ((4-2)squared + (4-2)squared + (1-2)squared)
+  //at the end we divide by the period
+  let difficulty = 0
+  for (var i = 0; i < siteswap.length; i++) {
+    let thisChar = siteswap.charAt(i)
+    if(thisChar === 'a'){thisChar = 10}
+    if(thisChar === 'b'){thisChar = 11}
+    if(thisChar === 'c'){thisChar = 12}
+    if(thisChar === 'd'){thisChar = 13}
+    if(thisChar === 'e'){thisChar = 14}
+    if(thisChar === 'f'){thisChar = 15}
+    if(thisChar === 'g'){thisChar = 16}
+    if(thisChar === 'h'){thisChar = 17}
+    if(thisChar === 'i'){thisChar = 18}
+    if(thisChar === 'j'){thisChar = 19}
+    if(thisChar === 'k'){thisChar = 20}
+    if(thisChar === 'l'){thisChar = 21}      
+    if (!isNaN(parseInt(thisChar, 10))) {//check to see if this char is a digit
+      const thisNumber = parseInt(thisChar, 10)
+      difficulty += Math.pow((thisNumber - 2), 2)
+    }
+  }
+  difficulty = difficulty / Period
+  difficulty = Math.sqrt(difficulty)
+  difficulty = difficulty + 2
+  return (difficulty)
+}
 
 
 //function Validate()
@@ -197,8 +226,9 @@ export default function Validate(toValidate)//TJ
   if(In.toString()==Out.toString())
     {
 
-      
-      return (Total/Period) //TJ 
+      const objects = Total/Period
+      const difficulty = getDifficulty(toValidate,Period)
+      return [objects, difficulty] //TJ 
 
     }
   else

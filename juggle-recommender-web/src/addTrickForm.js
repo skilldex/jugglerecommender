@@ -46,6 +46,7 @@ class AddTrickForm extends Component {
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
 		explanation: '',
+		jugglinglabURL: null
 	}
 
 	componentDidMount=()=>{
@@ -109,6 +110,26 @@ class AddTrickForm extends Component {
 			name:e.target.value,
 			autoCompletedName : false
 		})
+		const siteswapValidityChecker = Validate(e.target.value)
+		if (siteswapValidityChecker === 'invalid'){
+			console.log('invalid')
+			this.setState({jugglinglabURL: null})
+			this.setState({difficulty : null})
+			this.setState({num : null})
+			document.getElementById("numInput").disabled = 'false'
+			this.setState({siteswap : null})
+			document.getElementById("siteswapInput").disabled = 'false'
+		}else{
+			this.setState({jugglinglabURL : 'https://jugglinglab.org/anim?'+e.target.value})
+			const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
+			this.setState({difficulty : dif})
+			this.setState({num : siteswapValidityChecker[0]})
+			document.getElementById("numInput").disabled = 'true'
+			this.setState({siteswap : e.target.value})
+			document.getElementById("siteswapInput").disabled = 'true'
+			
+			console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
+		}
 		this.checkIfFormIsSubmittable()
 	}
 	handleExplanationChange=(e)=>{
@@ -150,7 +171,7 @@ class AddTrickForm extends Component {
 		if (validityChecker === 'invalid'){
 			console.log('invalid')
 		}else{
-			console.log(validityChecker)
+			console.log(validityChecker[0],validityChecker[1])
 		}
 		this.checkIfFormIsSubmittable()
 	}
@@ -546,6 +567,16 @@ class AddTrickForm extends Component {
 										onBlur={this.handleNameChange}/>
 								{autoComplete}
 							</div>
+							{this.state.jugglinglabURL ?
+								<div className="videoInputContainer">
+									<span className="inputLabel">Juggling Lab URL</span>
+									<input className="formInputsJugglingLab" 
+										   value={this.state.jugglinglabURL} 
+										   disable = "true"
+									/>
+									<br/>
+								</div>:null
+							}
 							<div className="videoInputContainer">
 								<span className="redText">*</span>
 								<span className="inputLabel">Instagram or Youtube Video</span>
@@ -577,13 +608,15 @@ class AddTrickForm extends Component {
 											onBlur={this.handleEndTimeChange}
 											onChange={this.handleEndTimeChange}
 									/><br/><br/><br/>								
-								</div>:null}
+								</div>:null
+							}
 							<div className="smallInputsDiv">
 								<div className="inputContainer1">
 									<span className="redText">*</span>
 									<span className="inputLabel">Number of balls</span>
 									<span className="warning">{this.state.numErrorMessage? this.state.numErrorMessage:"\u00A0"}</span>							
 									<input className="smallInput" 
+											id="numInput"
 											value={this.state.num} 
 											onBlur={this.handleNumChange}
 											onChange={this.handleNumChange}/>
@@ -601,6 +634,7 @@ class AddTrickForm extends Component {
 									<span className="inputLabel">Siteswap</span>	
 									<span className="warning">{this.state.siteswapErrorMessage? this.state.siteswapErrorMessage:"\u00A0"}</span>													
 									<input className="smallInput" 
+											id = "siteswapInput"
 											value={this.state.siteswap} 
 											onBlur={this.handleSSChange}
 											onChange={this.handleSSChange}

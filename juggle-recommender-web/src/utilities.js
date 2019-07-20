@@ -3,11 +3,10 @@ import {action, configure} from "mobx"
 configure({ enforceActions: "always" })
 class Utilities{
   @action isEmptyOrSpaces=(str)=>{
-    str = str.toString()
     let strEmpty = false
     if (str === null){
       strEmpty = true
-    }else if(!str.replace(/\s/g, '').length){
+    }else if(!str.toString().replace(/\s/g, '').length){
       strEmpty = true
     }
     return strEmpty

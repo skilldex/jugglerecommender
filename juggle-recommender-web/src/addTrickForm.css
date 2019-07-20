@@ -76,6 +76,16 @@
   font-size: 12px;
   height: 16px;
 }
+.formInputsJugglingLab{
+  background-color: #eeee;
+  color: #666666;
+  width: 280px;
+  border: 1px solid darkgray;
+  display: block;
+  margin-right: auto;
+  font-size: 12px;
+  height: 16px;  
+}
 .formShortInputs{
   width: 60px;
   border: 1px solid darkgray;
