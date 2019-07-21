@@ -1,21 +1,24 @@
+v 1.9
+	Profile Screen
+		Stats
+			eventual
+				-chart that shows number of patterns in various ranges
+				-consecutive days with record break?
+				-consecutive days with catches input for a trick?
+				-consecutive days with a trick contributed?
+
 v 1.8
 	Profile Screen: (Larger section below)
 		-upload image
-			where to store the image?
-			where to show the image outside of profile?
+			ian has code for this
 		-personal stats
 			Possible Stats:????
 				-number of contributed tricks
 				-number of each flair
 				-number of catches
 				-number of records
-			eventual
-				-chart that shows number of patterns in various ranges
-				-consecutive days with record break
-				-consecutive days with catches input for a trick
-				-consecutive days with a trick contributed
 
-	-Add pattern should be added to history stack, right now it acts weird if youo  hit back arrow when in it it just does nothing and there is no x visible when you get there and cancel is out of view.
+	-Add pattern should be added to history stack, right now it acts weird if you hit back arrow when in it it just does nothing and there is no x visible when you get there and cancel is out of view.
 
 	-frame by frame to hide controls
 		-instagram works, not youtube
@@ -23,7 +26,6 @@ v 1.8
 	-Think about leaderboard/details
 
 	Data fix scripts(see list below)
-		-ran a script that looked for duplicates and only found 2, make a note of any seen
 
 =========
 nginx conf
@@ -56,10 +58,8 @@ Notifications:
 		-records broken today
 
 Data fix scripts:
-	-a script to make related tags go both directions
+	-a script to make related tricks go both directions
 		if x is listed as related for y, then y should be listed for x
-	-#b moved to begining of name from end (#b)
-		-anywhere that has the string '(4b)' should have the '(4b)' removed and '4b' added after the previous "  
 
 Code Cleaning:
 	-can detail and filter timers now be removed since they are their own screens?
@@ -71,13 +71,6 @@ Code Cleaning:
 		handleDelete
 Minor:
 	-thin lines on sort button
-
-Restyling:
-	-put ingstagram icon on list
-	-allow contributors to upload pics
-	-we should show the currently logged in account up top.
-	-frame by frame button
-	-maybe reorder filter sections
 	-if all ball nums or all associations are chosen in graph then it is just like none are, should we not show all those tags? should we make the buttons in filter all go gray?
 
 
