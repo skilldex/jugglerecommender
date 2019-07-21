@@ -69,6 +69,17 @@ class FilterStore {
 	@observable minCatches = minCatches
 	@observable maxCatches = maxCatches
 
+	@action resetAllFilters=()=>{
+		this.contributors = []
+		this.difficultyRange = [1,10]
+		this.numBalls = []
+		this.flair = []
+		this.demoType = []
+		this.tags = []
+		this.minCatches = 0
+		this.maxCatches = 1000000
+	}
+
 	@action setDemoType=(demoType)=>{
 		this.demoType = demoType
 		uiStore.resetSelectedTrick()

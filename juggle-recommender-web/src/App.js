@@ -143,9 +143,7 @@ class App extends Component {
 			//store.initializeTags()
 		}
 		store.getLibraryFromDatabase().then(()=>{
-			console.log('ur')
 			if(window.location.pathname.includes("detail")){
-				console.log('ur2')
 			  	let match = window.location.pathname.match('/detail\/(.+)')
 			  	let trickKey = 'error'
 			  	if(match.length>0){

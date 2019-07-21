@@ -30,3 +30,40 @@
   color: #3090C7;
   cursor: pointer;
 }
+.individualProfileStatsDiv{
+  width: 300px;
+  margin : 0 auto;
+  text-align: right;
+  display: flex;
+}
+
+.profileStatsLabelButton{
+  font-weight: bold;
+  cursor: pointer;
+  color: blue;
+  margin:0 auto;
+  text-align: left;
+  margin-top: 10px;
+  margin-right:10px;
+  align-items: right;
+}
+
+.iconProfile{
+  height : 24px;
+  width : 24px;
+  margin-left: 6px;
+  margin-top : 8px;
+  opacity: 1;
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg); 
+  opacity: 1; 
+  cursor: pointer;
+}
+
+.profileStatsValues{
+  align-items: right;
+  color:black;
+  width: 50px;
+   margin-top: 10px;
+  text-align: right;
+  padding-right: 110px;
+}
