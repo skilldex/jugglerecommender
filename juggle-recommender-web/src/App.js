@@ -147,7 +147,10 @@ class App extends Component {
 			if(window.location.pathname.includes("detail")){
 				console.log('ur2')
 			  	let match = window.location.pathname.match('/detail\/(.+)')
-			  	const trickKey = match[1].replace(/%20/g, ' ')
+			  	let trickKey = 'error'
+			  	if(match.length>0){
+				  	trickKey = match[1].replace(/%20/g, ' ')
+				}
 			  	console.log("trickKey " , trickKey)
 			  	if (store.library[trickKey]){
 				  	const detailTrick = {...store.library[trickKey]}
