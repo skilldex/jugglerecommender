@@ -23,6 +23,12 @@ if (urlQueryNumBalls){
 		numBalls = urlQueryNumBalls[1].split('&')[0].split(',')
 		numBalls = numBalls.filter(Boolean);
 }
+let urlQueryFlair = window.location.search.match(/flair=(.+)/)
+let flair = []
+if (urlQueryFlair){
+		flair = urlQueryFlair[1].split('&')[0].split(',')
+		flair = flair.filter(Boolean);
+}
 let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
 let demoType = []
 if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo&"){demoType = [{
@@ -56,6 +62,7 @@ class FilterStore {
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = difficultyRange
 	@observable numBalls = numBalls
+	@observable flair = flair
 	@observable associations = []
 	@observable tags = tags
 	@observable contributors = contributor
@@ -142,6 +149,11 @@ class FilterStore {
 	}
 	@action setNumBalls=(numBalls)=>{
 		this.numBalls = numBalls
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+	@action setFlair=(flair)=>{
+		this.flair = flair
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}

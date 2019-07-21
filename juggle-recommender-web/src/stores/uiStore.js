@@ -145,13 +145,7 @@ class UIStore {
  		this.resetSelectedTrick()
  		this.updateRootTricks()
  	}
- 	@action toggleSelectedList(){
- 		if (this.selectedList === 'myTricks'){
- 			this.setSelectedList('allTricks')
- 		}else{
- 			this.setSelectedList('myTricks')
- 		}
- 	}
+
 	@action setMouseInSortDiv=(inDiv)=>{
 		this.mouseInSortDiv = inDiv
 	}
@@ -368,7 +362,31 @@ class UIStore {
 				    else{
 				    	passesDemoTypeFilter = false
 				    }
+				}//give message if flair filter clicked and (!authStore.user)
+				let passesFlairFilter = false 
+				let myFlairForThisTrick = []
+				if (filterStore.flair.length === 0){
+					passesFlairFilter = true
+				}else{
+					if (store.myTricks[trickKey]){
+						if (store.myTricks[trickKey].starred === 'true'){
+							myFlairForThisTrick.push('starred')
+						} 
+						if (store.myTricks[trickKey].baby === 'true'){
+							myFlairForThisTrick.push('baby')
+						} 
+						if (store.myTricks[trickKey].ninja === 'true'){
+							myFlairForThisTrick.push('ninja')
+						} 
+						var flairOverlap = myFlairForThisTrick.filter(function(n) {
+						  if (filterStore.flair.indexOf(n) > -1){
+						  	passesFlairFilter = true
+						  }
+						})
+					}
 				}
+
+
 				let thisTricksCatches = 0
 				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
 					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
@@ -379,6 +397,7 @@ class UIStore {
 				   trick.difficulty <= filterStore.difficultyRange[1] &&
 				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length === 0) &&
 				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length === 0) &&
+				   passesFlairFilter &&
 				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
 				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) &&
 				   (this.searchTrick === '' || trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()))

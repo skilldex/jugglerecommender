@@ -16,7 +16,7 @@ class MainTagsBar extends Component {
     state={
          
     }
-    numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
+    numButtonClicked=(element)=>{
       let tempNumBalls = [...filterStore.numBalls]
       if (tempNumBalls.includes(element)){
         for( var i = 0; i < tempNumBalls.length; i++){ 
@@ -29,6 +29,20 @@ class MainTagsBar extends Component {
         tempNumBalls.push(element)
       }
       filterStore.setNumBalls(tempNumBalls)
+    }
+    flairClicked=(element)=>{
+      let tempFlair = [...filterStore.flair]
+      if (tempFlair.includes(element)){
+        for( var i = 0; i < tempFlair.length; i++){ 
+          if ( tempFlair[i] === element) {
+              tempFlair.splice(i, 1); 
+              i--;
+            }
+        }
+      }else{
+        tempFlair.push(element)
+      }
+      filterStore.setFlair(tempFlair)
     }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
@@ -58,6 +72,16 @@ class MainTagsBar extends Component {
                 <div className="tagDiv">
                   <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.numBalls[i]} Balls</span>
                   <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.numBalls[i])}> x </label>
+                </div>      
+          )
+        })
+      }
+      if(filterStore.flair){   
+        filterStore.flair.forEach((flair,i)=>{
+          filterTags.push(
+                <div className="tagDiv">
+                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.flair[i]} Balls</span>
+                  <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.flair[i])}> x </label>
                 </div>      
           )
         })
@@ -115,11 +139,6 @@ class MainTagsBar extends Component {
         let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
                       "selectedListButton" :"unselectedListButton" 
             myTricksButtonClass = myTricksButtonClass + " listButton"
-        const myTricksButton =  <img className={myTricksButtonClass}
-                                     src={starIcon}
-                                     onClick={()=>{uiStore.toggleSelectedList()}}
-                                     alt=""
-                                />
         const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
@@ -197,7 +216,6 @@ class MainTagsBar extends Component {
               onChange={uiStore.searchInputChange}
               ref={ref => this.searchInput = ref}
             />
-            {myTricksButton}
             {sort}
             {sortDropdown}
             {filter}

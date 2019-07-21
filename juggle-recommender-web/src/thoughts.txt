@@ -11,7 +11,7 @@ Suggest a Change:
 	-if trick has no siteswap listed, maybe anyone should be able to input it directly
 
 Details:
-	-expandable stats section
+	-expandable pattern stats section
 		-number of users with records for a given trick
 		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
 	-expandable catches inputted section

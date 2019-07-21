@@ -11,6 +11,9 @@ import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
 import shareIcon from './images/shareIcon.png'
+import babyIcon from './images/babyIcon.svg'
+import ninjaIcon from './images/ninjaIcon.svg'
+import starIcon from './images/starIcon.svg'
 
 
 const KeyCodes = {
@@ -27,6 +30,7 @@ class Filter extends Component {
  		tags: filterStore.tags,
       	presetTags: store.presetTags,
       	numBalls: filterStore.numBalls,
+      	filter: filterStore.flair,
       	difficultyRange: filterStore.difficultyRange,
       	demoTypesTags: [
 		   {size: null, id: 'All',          text: 'All',},
@@ -79,7 +83,22 @@ class Filter extends Component {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
-
+	flairButtonClicked=(flair)=>{//TODO I just changed this to color up in state, need to keep doin that here
+		let tempFlair = [...filterStore.flair]
+		if (tempFlair.includes(flair)){
+			for( var i = 0; i < tempFlair.length; i++){ 
+				if ( tempFlair[i] === flair) {
+				    tempFlair.splice(i, 1); 
+				    i--;
+			    }
+			}
+		}else{
+			tempFlair.push(flair)
+		}
+		filterStore.setFlair(tempFlair)
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
 	numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
 		let tempNumBalls = [...filterStore.numBalls]
 		if (tempNumBalls.includes(element)){
@@ -149,6 +168,14 @@ class Filter extends Component {
 			urlText = urlText + "numballs="    		
     		filterStore.numBalls.forEach(numball => {
 	    		urlText = urlText + numball + ","
+			});
+			urlText.slice(0, -1);
+			urlText = urlText + "&"
+    	}
+    	if (filterStore.flair.length > 0){
+			urlText = urlText + "flair="    		
+    		filterStore.flair.forEach(flairItem => {
+	    		urlText = urlText + flairItem + ","
 			});
 			urlText.slice(0, -1);
 			urlText = urlText + "&"
@@ -250,6 +277,30 @@ class Filter extends Component {
 								</div>
 								{numButtons}
 							</div>
+		const flairSection =<div>
+								<h3 className="filterHeader">Flair</h3>
+								<div style={{marginLeft:10, marginRight:10}}>
+									<img id="starButton" 
+		                                  src={starIcon} 
+		                                  className={filterStore.flair.includes('starred')?"starIconFilter selectedFlair":"starIconFilter" }
+		                                  alt="starIcon" 
+		                                  onClick={()=>{this.flairButtonClicked('starred')}}
+		                            />
+									<img id="babyButton" 
+		                                  src={babyIcon} 
+		                                  className={filterStore.flair.includes('baby')?"babyIconFilter selectedFlair":"babyIconFilter" }
+		                                  alt="babyIcon" 
+		                                  onClick={()=>{this.flairButtonClicked('baby')}}
+		                            />
+									<img id="ninjaButton" 
+		                                  src={ninjaIcon} 
+		                                  className={filterStore.flair.includes('ninja')?"ninjaIconFilter selectedFlair":"ninjaIconFilter" } 
+		                                  alt="ninjaIcon" 
+		                                  onClick={()=>{this.flairButtonClicked('ninja')}}
+		                            />									
+								</div>
+							</div>
+
 		const difficultySection =<div>
 									<h3 className="filterHeader">Difficulty</h3>
 									<div style={{marginLeft:10, marginRight:10}}>
@@ -333,6 +384,8 @@ class Filter extends Component {
 					{contributorSection}
 					<ColoredLine/>
 					{demoTypeSection}
+					<ColoredLine/>
+					{flairSection}
 					<ColoredLine/>
 					{difficultySection}
 					<ColoredLine/>

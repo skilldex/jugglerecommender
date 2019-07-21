@@ -84,7 +84,32 @@
   margin: 2px;
   outline: none;
 }
+.starIconFilter{
+  height : 24px;
+  width : 24px;
+  margin-left: 6px;
+  margin-top : 8px;
+  opacity: .2;    
+}
+.babyIconFilter{
+  height : 24px;
+  width : 24px;
+  margin-left: 6px;
+  margin-top : 8px;
+  opacity: .2;  
+}
+.ninjaIconFilter{
+  height : 24px;
+  width : 24px;
+  margin-left: 6px;
+  margin-top : 8px;
+  opacity: .2;
+}
+.selectedFlair{
+  opacity: 1;
+  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 
+}
 .filterNumSelected{
   background-color: lightblue;
 }

@@ -18,8 +18,6 @@ v 1.8
 				-number of catches
 				-number of tricks with catches
 
-	-Add pattern should be added to history stack, right now it acts weird if you hit back arrow when in it it just does nothing and there is no x visible when you get there and cancel is out of view.
-
 	-frame by frame to hide controls
 		-instagram works, not youtube
 
@@ -34,9 +32,6 @@ nginx conf
 location / {
         try_files /index.html =404;
     }
-
-    
--when a trick name gets edited, does it's name get updated in everyones 'myTricks'?
 
 Bugs:
 	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
@@ -64,6 +59,7 @@ Data fix scripts:
 		if x is listed as related for y, then y should be listed for x
 
 Code Cleaning:
+	-clean up any trace of allTricksList/myTricksList
 	-can detail and filter timers now be removed since they are their own screens?
 	-do the spacing in addTrickForm without using "\u00A0"
 	-in addTrickForm there are lots of functions that look like handleDiffChange, they can probably be 1 function
