@@ -16,7 +16,7 @@ v 1.8
 				-number of contributed tricks
 				-number of each flair
 				-number of catches
-				-number of records
+				-number of tricks with catches
 
 	-Add pattern should be added to history stack, right now it acts weird if you hit back arrow when in it it just does nothing and there is no x visible when you get there and cancel is out of view.
 
@@ -24,6 +24,8 @@ v 1.8
 		-instagram works, not youtube
 
 	-Think about leaderboard/details
+
+	-redirect broken details urls to home screen
 
 	Data fix scripts(see list below)
 

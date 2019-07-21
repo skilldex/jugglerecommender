@@ -301,6 +301,44 @@ class Store {
 			})
 		}
 	}
+	@action changeNameInAllUsersMyTricks=(newTrick,oldTrickKey)=>{
+		let allUsersMyTricks
+		let fullDBRef = firebase.database().ref()
+		console.log('fullDBRef',fullDBRef)
+		fullDBRef.on('value', resp =>{
+			console.log('inHereS')
+        	const fullDB = this.snapshotToArray(resp)
+        	console.log('fullDB',fullDB)
+        	allUsersMyTricks = fullDB[2]
+        	console.log('allUsersMyTricks1',allUsersMyTricks)
+        	Object.keys(allUsersMyTricks).forEach((user)=>{
+        		console.log('user',user)
+        		if (user['myTricks']){
+	        		console.log(user['myTricks'])
+					Object.keys(user['myTricks']).forEach((trickKey)=>{
+						console.log('trickKey',trickKey)
+						if (trickKey === oldTrickKey){	
+							console.log('newTrick',newTrick.name)
+							user['myTricks'][newTrick.name] = user['myTricks'][oldTrickKey]
+							console.log('allUsersMyTricks2',allUsersMyTricks)
+							delete user['myTricks'][oldTrickKey]
+							console.log('allUsersMyTricks3',allUsersMyTricks)
+						}
+					})
+				}
+			})
+		let newMyTricksRef = firebase.database().ref('myTricks/')	
+		console.log("newMyTricksRef",newMyTricksRef)	
+		newMyTricksRef.set(allUsersMyTricks)
+
+
+        })
+        
+
+		
+
+		
+	}
 	@action removeTrickFromDatabase=(oldTrickKey)=>{
     	let oldTrickRef = firebase.database().ref('library/'+oldTrickKey)
 		oldTrickRef.remove()
@@ -327,6 +365,7 @@ class Store {
 			this.removeOldDependents(trick,oldTrickKey)
 			this.removeOldPrereqs(trick,oldTrickKey)
 			this.removeOldRelated(trick,oldTrickKey)
+			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
