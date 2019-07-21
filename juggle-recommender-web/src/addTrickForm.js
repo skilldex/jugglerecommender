@@ -9,6 +9,7 @@ import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
 import downArrow from './images/down-arrow.svg'
+import history from "./history"
 
 
 const KeyCodes = {
@@ -455,7 +456,7 @@ class AddTrickForm extends Component {
 			}else{
 				alert(trick.name+" added!")
 				trick["timeSubmitted"] = date.getTime()
-			}			
+			}
 			store.addTrickToDatabase(trick)
 			this.clearState()
 		}
@@ -465,6 +466,7 @@ class AddTrickForm extends Component {
 	cancel=()=>{
 		this.clearState()
 		uiStore.toggleAddingTrick()
+		uiStore.handleBackButtonClick()
 	}
 
 	clearState=()=>{

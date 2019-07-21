@@ -24,6 +24,7 @@ location / {
 
 Bugs:
 	-there should not be a way for a trick to receive a prereq or postreq if it already has it
+		-maybe it isn't now, lets see if it keeps happening
 	-submitting an edit in myTricks should return you to that tricks edit page
 	-frame by frame doesnt hide controls on youtube
 	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input

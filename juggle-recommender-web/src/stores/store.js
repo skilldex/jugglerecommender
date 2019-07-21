@@ -5,6 +5,7 @@ import authStore from './authStore'
 import {jugglingLibrary} from '../jugglingLibrary.js'
 import {TAGS} from '../tags';
 import ReactGA from 'react-ga'
+import history from "../history"
 configure({ enforceActions: "always" })
 class Store {
 
@@ -372,6 +373,10 @@ class Store {
         this.addPostreqsFromPrereqs(trick)
         this.addEquivalentRelated(trick)
         this.addPrereqsFromPostreqs(trick)
+
+		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
+		history.push('/detail/'+trickKey, {detail : trickKey})
+		uiStore.handleBackButtonClick()	
         uiStore.toggleAddingTrick()
 	}
 	@action addPostreqsFromPrereqs=(trick)=>{
