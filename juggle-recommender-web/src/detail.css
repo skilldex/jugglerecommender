@@ -16,12 +16,17 @@
   transform: rotate(90deg);
 }
 
-.backButton{
-  height : 12px;
-  width : 12px;
+.backButtonDetails{
+  height : 15px;
+  width : 15px;
   float : left;
-  margin-top : 8px;
+  margin-top : 4px;
   cursor: pointer;
+}
+.backButtonLabelDetails{
+  color: #3090C7;
+  cursor: pointer;
+  float: left;
 }
 .catchesIconDetail{
   width: 17px;
@@ -137,8 +142,8 @@
   height : 20px;
   width : 20px;
   float: right;
+  padding-top : 3px;
   margin-left: 6px;
-  margin-top : 8px;
   cursor: pointer;
 }
 .starButton{
@@ -184,13 +189,13 @@
   height : 20px;
   width : 20px;
   float: right;
-  margin-top : 8px;
+  padding-top : 3px;
   cursor: pointer;
 }
 .shareFilterDetailButton{
   height : 20px;
   width : 20px;
-  padding-top : 10px;
+  padding-top : 3px;
   padding-right: 10px;
   float: right; 
   margin-left: 6px;

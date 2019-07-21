@@ -154,10 +154,13 @@ class Detail extends Component {
       </div>
     const backButton = <img id="backButton" 
                             src={downArrow} 
-                            className="backButton rotatedNegative90" 
+                            className="backButtonDetails rotatedNegative90" 
                             alt="backIcon" 
                             onClick={()=>{ uiStore.handleBackButtonClick()}}
                         />
+    const backLabel = <label className="backButtonLabelDetails" 
+                            onClick={()=>{uiStore.handleBackButtonClick()}}>Back
+                      </label>                    
     let hasStarFlair = false
     let hasBabyFlair = false
     let hasNinjaFlair = false
@@ -341,6 +344,7 @@ class Detail extends Component {
       			<div className="detailDiv" id="detailDiv">
               <div className="topButtons">
                 {backButton}
+                {backLabel}
                 {shareButton}
                 {deleteTrickButton}
                 {editTrickButton}

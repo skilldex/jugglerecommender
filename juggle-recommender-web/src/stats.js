@@ -78,10 +78,13 @@ class Stats extends Component {
     const backButton = <div className = "backButtonSurroundingDivStats">
 	    					<img id="backButton" 
 	                            src={downArrow} 
-	                            className="backButtonHome rotatedNegative90" 
+	                            className="backButtonStats rotatedNegative90" 
 	                            alt="backIcon" 
 	                            onClick={()=>{ uiStore.handleBackButtonClick()}}
 	                        />
+	                        <label className="backButtonStatsLabel" 
+		             		   onClick={()=>{ uiStore.handleBackButtonClick()}}>Back
+		             		</label>
                         </div>
 		const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
 			return <div className = "individualStatsDiv">

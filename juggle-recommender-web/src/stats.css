@@ -43,10 +43,14 @@
   text-align: right;
   display: flex;
 }
-.backButtonHome{
-  height : 12px;
-  width : 12px;
+.backButtonStats{
+  height : 15px;
+  width : 15px;
   margin: auto 0;
-  margin-top : 8px;
+  margin-top : 5px;
+  cursor: pointer;
+}
+.backButtonStatsLabel{
+  color: #3090C7;
   cursor: pointer;
 }

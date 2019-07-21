@@ -43,25 +43,27 @@ class Profile extends Component {
 
 
 	render (){
-		const backButton = <div className = "backButtonSurroundingDivProfile">
-	    					<img id="backButton" 
-	                            src={downArrow} 
-	                            className="backButtonHome rotatedNegative90" 
-	                            alt="backIcon" 
-	                            onClick={()=>{ uiStore.handleBackButtonClick()}}
-	                        />
-                        </div>
+
         const shareButton = authStore.user ? <img 
-                         className="shareButton"
-                         src={shareIcon}
-                         onClick={this.copyContributorURL}
-                         alt=""
-                         title="share your contributed tricks"
-                    /> : null
+			                 className="shareFilterButton"
+			                 src={shareIcon}
+			                 onClick={this.copyContributorURL}
+			                 alt=""
+			                 title="share your contributed tricks"
+			            /> : null
 		return(
 			<div className = "profileOuterDiv">
-				{backButton}
-				{shareButton}
+	        		<div className="backButtonSurroundingDivProfile">
+			            <img id="backButton" 
+			            	 src={downArrow} 
+			            	 className="backButtonProfile rotatedNegative90" 
+			            	 alt="backIcon" 
+		             		 onClick={()=>{ uiStore.handleBackButtonClick()}}/>
+		             	<label className="backButtonProfileLabel" 
+		             		   onClick={()=>{ uiStore.handleBackButtonClick()}}>Back
+		             	</label>
+		             	{shareButton}
+		            </div>
 				<h3 style={{marginBottom: "10px"}}>Profile</h3>		
 
 			</div>
