@@ -1,7 +1,5 @@
 v 1.8
 	Profile Screen: (Larger section below)
-		-list contributed tricks
-			this is just a link in profile stats
 		-upload image
 			where to store the image?
 			where to show the image outside of profile?
@@ -16,11 +14,7 @@ v 1.8
 				-consecutive days with catches input for a trick
 				-consecutive days with a trick contributed
 
-	-flair header
-	-put back label by back buttons
-	-allign back buttons
-	-fix auto siteswap tag bug
-	-fix autoscroll when going back to details
+
 	-frame by frame to hide controls
 		-instagram works, not youtube
 

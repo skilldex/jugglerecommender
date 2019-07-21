@@ -69,6 +69,7 @@
   color : #0000FF;
   border : none;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .statsLabel{
