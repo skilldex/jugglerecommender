@@ -11,8 +11,6 @@ v 1.8
 	Profile Screen: (Larger section below)
 		-upload image
 			ian has code for this
-		-personal stats
-			-number of catches			
 
 	-Think about leaderboard/details
 
