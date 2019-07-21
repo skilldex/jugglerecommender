@@ -7,13 +7,15 @@ v 1.8
 			Possible Stats:????
 				-number of contributed tricks
 				-number of each flair
-				-number of tricks within a certain range
 				-number of catches
 				-number of records
+			eventual
+				-chart that shows number of patterns in various ranges
 				-consecutive days with record break
 				-consecutive days with catches input for a trick
 				-consecutive days with a trick contributed
 
+	-Add pattern should be added to history stack, right now it acts weird if youo  hit back arrow when in it it just does nothing and there is no x visible when you get there and cancel is out of view.
 
 	-frame by frame to hide controls
 		-instagram works, not youtube
@@ -34,26 +36,11 @@ location / {
 
 Bugs:
 	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
-	-from home if i click the details of the trick of the day and then click 1 list item in there, when i click either back button it takes me back to home, not to the original home details page
-	-expand a list card, go to details and come back, demo video shows but its card is collapsed. Furthermore, opening a card should close an opened card, not toggle it.
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
-	-Fixed automatically by back arrow setup:
-		-If at main list, go to add trick, hit submit, screen should be scrolled to the top
-		-if you go from home to add pattern and hit escape, it takes you to list
+	-if you go from home to add pattern and hit escape, it takes you to list
 
 Profile:
-	Upload Image
-	Stats:
-		Pattern stats:
-			-number of contributed tricks
-			-number of each flair
-			-number of tricks within a certain range
-			-number of catches
-			-consecutive days with record break
-			-consecutive days with catches input for a trick
-			-consecutive days with a trick contributed
-		aggregate stats:
 	Notifications:(maybe done with email instead)
 		-contributed tricks get new related tricks
 		-contributed tricks get other users input catches
