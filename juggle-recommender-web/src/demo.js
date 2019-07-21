@@ -199,7 +199,7 @@ class Demo extends Component {
                           name="vidFrame" 
                           title="UniqueTitleForVideoIframeToStopWarning"
                           videoId={this.state.youtubeId}
-                          className= "demo"
+                          className= "youTubeDemo"
                           onClick = {() => this.handleYoutubeVideoClick()}
                           opts={youtubeOpts}      
                           muted={true}                          
