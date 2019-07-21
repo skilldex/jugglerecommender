@@ -18,11 +18,6 @@ import './detail.css';
 import history from "./history"
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
-const unlisten = history.listen((location, action) => {
-  // location is an object like window.location
-
-  console.log("listening" ,location.pathname, location.state, action);
-});
 
 @observer
 class Detail extends Component {
@@ -31,13 +26,7 @@ class Detail extends Component {
     changingInput : false,
     showExtraGif : false,
   }
-  componentDidMount(){
-    console.log('details mounted',uiStore.detailTrick.id)
 
-  }
-  componentDidUpdate(){
-    console.log("updated ", window.location.search)
-  }
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {

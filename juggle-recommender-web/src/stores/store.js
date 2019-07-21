@@ -542,9 +542,7 @@ class Store {
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		uiStore.updateRootTricks()
  	}
- 	@action unstarTrick=(trickKey)=>{
 
- 	}
  	@action findHighestCatches=()=>{
 	    for(var trick in this.myTricks) {
 	        if(this.myTricks[trick].catches>this.highestCatches){

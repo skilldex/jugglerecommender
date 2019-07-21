@@ -25,7 +25,6 @@ import history from "./history"
 
 const unlisten = history.listen((location, action) => {
   // location is an object like window.location
-  console.log('location.pathname',location.pathname)
   if(location.state && location.state.detail != uiStore.detailTrick){
   	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick()
@@ -149,7 +148,6 @@ class App extends Component {
 			  	if(match.length>0){
 				  	trickKey = match[1].replace(/%20/g, ' ')
 				}
-			  	console.log("trickKey " , trickKey)
 			  	if (store.library[trickKey]){
 				  	const detailTrick = {...store.library[trickKey]}
 					detailTrick.id = trickKey

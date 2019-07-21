@@ -166,7 +166,6 @@ class Demo extends Component {
                             scrolling="no"
                           />
                           : null
-    console.log('trick.gifUrl',trick.gifUrl)
     const instagramLogo = <img 
                              alt = ''
                              className="instagramLogo"

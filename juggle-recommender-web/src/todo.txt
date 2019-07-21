@@ -23,6 +23,8 @@ location / {
     }
 
 Bugs:
+	-there should not be a way for a trick to receive a prereq or postreq if it already has it
+	-submitting an edit in myTricks should return you to that tricks edit page
 	-frame by frame doesnt hide controls on youtube
 	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.

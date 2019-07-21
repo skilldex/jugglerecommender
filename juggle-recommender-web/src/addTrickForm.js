@@ -54,7 +54,7 @@ class AddTrickForm extends Component {
 		this.setState({contributor: authStore.user.username})
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
-			if (trick.name.includes("(")){
+			if (trick.name.endsWith("b)")){
 				trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 			}
 			if (trick.gifUrl){
@@ -115,7 +115,6 @@ class AddTrickForm extends Component {
 		if (!this.state.gifUrl || 
 			(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
 			if (siteswapValidityChecker === 'invalid'){
-				console.log('invalid')
 				this.setState({gifUrl: null})
 				this.setState({difficulty : ''})
 				this.setState({num : ''})
@@ -127,7 +126,6 @@ class AddTrickForm extends Component {
 					}
 		        const { tags } = this.state;
 		        const i = tags.findIndex(x => x.id ==="pure-ss")
-		        console.log('i',i)
 		        this.setState({
 		         	tags: tags.filter((tag, index) => index !== i),
 		        });
@@ -150,7 +148,6 @@ class AddTrickForm extends Component {
 		    	if (i===-1 && !this.state.tags.includes(pureSStag.id)){
 			        this.setState(state => ({ tags: [...state.tags, pureSStag] }));
 			    }
-				console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
 			}
 		}
 		this.checkIfFormIsSubmittable()
@@ -194,14 +191,12 @@ class AddTrickForm extends Component {
 		if (siteswapValidityChecker === 'invalid'){
 			this.setState({num : ''})
 			document.getElementById("numInput").disabled = false
-			console.log('invalid')
 			this.setState({siteswapErrorMessage:'invalid siteswap.'})
 			this.setState({submitDisabled:true})
 		}else{
 			this.setState({num : siteswapValidityChecker[0]})
 			document.getElementById("numInput").disabled = true
 			this.setState({siteswapErrorMessage:''})
-			console.log(siteswapValidityChecker[0],siteswapValidityChecker[1])
 		}
 		this.checkIfFormIsSubmittable()
 	}
@@ -224,7 +219,6 @@ class AddTrickForm extends Component {
 	    }
     }
     handleTagDelete=(i)=> {
-    	console.log('i',i)
         const { tags } = this.state;
         this.setState({
          	tags: tags.filter((tag, index) => index !== i),
