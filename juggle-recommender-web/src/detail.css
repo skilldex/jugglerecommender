@@ -149,13 +149,14 @@
 .starIcon{
   height : 24px;
   width : 24px;
+  margin-left: 6px;
   margin-top : 8px;
   opacity: .2;    
 }
 .babyIcon{
   height : 24px;
   width : 24px;
-  margin-left: 14px;
+  margin-left: 6px;
   margin-top : 8px;
   opacity: .2;  
 }

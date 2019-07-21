@@ -521,17 +521,14 @@ class Store {
 	}
 
 	@action toggleFlair=(trickKey,flairType)=>{
-		console.log('toggleFl',trickKey,flairType)
 		if(!this.myTricks[trickKey]){
 			this.myTricks[trickKey] = {}
 		}
-		if (this.myTricks[trickKey][flairType] === 'false'){
+		if (this.myTricks[trickKey][flairType] === 'false' || 
+			!this.myTricks[trickKey][flairType]){
 	 		this.myTricks[trickKey][flairType] = 'true'
 	 		const date = new Date()
 	 		this.myTricks[trickKey].lastUpdated = date.getTime()
-	        this.updateTricksInDatabase()
-	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
-	 		uiStore.updateRootTricks()
 	 		if(flairType === "baby" && this.myTricks[trickKey]["ninja"] === 'true'){
 	 			this.toggleFlair(trickKey, "ninja")
 	 		}
@@ -540,10 +537,10 @@ class Store {
 	 		}
 	 	}else{
 	 		this.myTricks[trickKey][flairType] = 'false'
-			this.updateTricksInDatabase()
-	 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
-	 		uiStore.updateRootTricks()	 		
 	 	}
+ 		this.updateTricksInDatabase()
+ 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
+ 		uiStore.updateRootTricks()
  	}
  	@action unstarTrick=(trickKey)=>{
 
