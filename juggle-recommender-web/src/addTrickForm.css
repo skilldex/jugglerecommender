@@ -18,6 +18,24 @@
   float: center;
   padding: 10px;
 }
+.backButtonSurroundingDivAddTrick{
+  width: 400px;
+  margin : 0 auto;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.backButtonAddTrick{
+  height : 15px;
+  width : 15px;
+  margin: auto 0;
+  margin-top : 5px;
+  cursor: pointer;
+}
+.backButtonAddTrickLabel{
+  color: #3090C7;
+  cursor: pointer;
+}
 .innerForm{
   font-size: 10px;
   background-color : #C1FFC1;

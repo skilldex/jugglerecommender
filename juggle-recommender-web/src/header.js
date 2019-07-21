@@ -26,13 +26,14 @@ class Header extends Component {
 			});
 		}		
 		if(paneFlag == "addPattern"){
+			history.push('/addpattern')
 			uiStore.clearUI()
 			uiStore.toggleAddingTrick()
 		}else if(paneFlag == "logout"){
 			authStore.signOut()
 			uiStore.clearUI()
 			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick
+			 	uiStore.toggleAddingTrick()
 			}
 			
 		}else if(paneFlag == "home"){
@@ -40,28 +41,28 @@ class Header extends Component {
 			uiStore.clearUI()
 			uiStore.setShowHomeScreen(true)
 			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick
+			 	uiStore.toggleAddingTrick()
 			}
 			
 		}else if(paneFlag == "list"){
 			history.push('/tricklist')
 			uiStore.clearUI()
 			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick
+			 	uiStore.toggleAddingTrick()
 			}
 		}else if(paneFlag == "stats"){
 			history.push('/stats')
 			uiStore.clearUI()
 			uiStore.setShowStatsScreen(true)
 			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick
+			 	uiStore.toggleAddingTrick()
 			}
 		}else if(paneFlag == "profile"){
 			history.push('/profile')
 			uiStore.clearUI()
 			uiStore.setShowProfileScreen(true)
 			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick
+			 	uiStore.toggleAddingTrick()
 			}
 		}else{
 			this.props.openSlidingPane(paneFlag)

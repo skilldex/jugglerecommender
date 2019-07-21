@@ -27,37 +27,46 @@ const unlisten = history.listen((location, action) => {
   // location is an object like window.location
   console.log('location.pathname',location.pathname)
   if(location.state && location.state.detail != uiStore.detailTrick){
+  	if(uiStore.addingTrick){
+	 	uiStore.toggleAddingTrick()
+	}
   	const detailTrick = {...store.library[location.state.detail]}
 	detailTrick.id = location.state.detail
   	uiStore.setDetailTrick(detailTrick)	
+
   }
-  if(location.pathname == "/home"){
+  if(location.pathname == "/home" || location.pathname == "/" ){
   	uiStore.clearUI()
 	uiStore.setShowHomeScreen(true)
 	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick
+	 	uiStore.toggleAddingTrick()
 	}
   }
   if(location.pathname == "/tricklist"){
   	uiStore.clearUI()
 	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick
+	 	uiStore.toggleAddingTrick()
 	}
   } 
     if(location.pathname == "/stats"){
   	uiStore.clearUI()
   	uiStore.setShowStatsScreen(true)
 	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick
+	 	uiStore.toggleAddingTrick()
 	}
   }  
     if(location.pathname == "/profile"){
   	uiStore.clearUI()
   	uiStore.setShowProfileScreen(true)
 	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick
+	 	uiStore.toggleAddingTrick()
 	}
-  }   
+  } if(location.pathname == "/addpattern"){
+	uiStore.clearUI()
+	if(uiStore.addingTrick){
+	 	uiStore.toggleAddingTrick()
+	}
+  }  
 });
 
 let firebaseConfig = {}
@@ -140,9 +149,18 @@ class App extends Component {
 			  	let match = window.location.pathname.match('/detail\/(.+)')
 			  	const trickKey = match[1].replace(/%20/g, ' ')
 			  	console.log("trickKey " , trickKey)
-			  	const detailTrick = {...store.library[trickKey]}
-				detailTrick.id = trickKey
-			  	uiStore.setDetailTrick(detailTrick)	
+			  	if (store.library[trickKey]){
+				  	const detailTrick = {...store.library[trickKey]}
+					detailTrick.id = trickKey
+				  	uiStore.setDetailTrick(detailTrick)				  		
+			  	}else{
+					alert("There is no page for that trick.")
+					uiStore.clearUI()
+					uiStore.setShowHomeScreen(true)
+					if(uiStore.addingTrick){
+					 	uiStore.toggleAddingTrick
+					}
+				}
 			}	
 		})
 		store.getTagsFromDatabase()

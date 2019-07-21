@@ -8,6 +8,7 @@ import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
+import downArrow from './images/down-arrow.svg'
 
 
 const KeyCodes = {
@@ -504,7 +505,17 @@ class AddTrickForm extends Component {
 	}
 
 	render (){
-
+	    const backButton = <div className = "backButtonSurroundingDivAddTrick">
+		    					<img id="backButton" 
+		                            src={downArrow} 
+		                            className="backButtonAddTrick rotatedNegative90" 
+		                            alt="backIcon" 
+		                            onClick={()=>{ uiStore.handleBackButtonClick()}}
+		                        />
+		                        <label className="backButtonAddTrickLabel" 
+			             		   onClick={()=>{ uiStore.handleBackButtonClick()}}>Back
+			             		</label>
+	                        </div>
 		let patternsObj = Object.keys(store.library).map((pattern) => {
 		  return {
 		  	size: null,
@@ -585,6 +596,7 @@ class AddTrickForm extends Component {
 
 		const form = 	
 					<div className="form">
+						{backButton}
 						<h3>{titleText}</h3>
 						<div className="innerForm">
 							<div className="inputContainer">
