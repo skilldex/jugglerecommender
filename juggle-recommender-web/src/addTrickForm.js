@@ -357,6 +357,7 @@ class AddTrickForm extends Component {
 				}  		
     	}
     	if (utilities.isEmptyOrSpaces(this.state.video) && !this.state.gifUrl){
+    		console.log('1')
 			this.setState({submitDisabled:true})
 		}else{
 			if (utilities.isValidVideoURL(this.state.video) || this.state.gifUrl){
@@ -394,6 +395,7 @@ class AddTrickForm extends Component {
 			this.setState({videoTimeErrorMessage:'Invalid timestamps.'})
 			this.setState({submitDisabled:true})			
 		}
+		console.log('this.state.gifUrl',this.state.gifUrl)
     }
 
     toggleShowTimeInputs=()=>{
@@ -611,6 +613,7 @@ class AddTrickForm extends Component {
 										onKeyPress={this.onNameInputKeyPress}
 										value={this.state.name} 
 										onChange={this.handleNameChange}
+										onBlur={this.checkIfFormIsSubmittable}
 								/>
 								{autoComplete}
 							</div>

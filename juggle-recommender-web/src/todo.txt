@@ -18,6 +18,7 @@ v 1.9
 	Data fix scripts(see list below)
 
 =========
+-get add trick can submit checker split into multiple functions
 -put catches flair in profile and filter
 -change ninja flair elsewhere(filter and profile)
 -details catches icon turn green when catches higher than 0
