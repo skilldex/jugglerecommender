@@ -508,6 +508,7 @@ class AddTrickForm extends Component {
 	}
 
 	render (){
+		console.log("autoComplete" , this.state.autoCompletedName, this.state.name)
 	    const backButton = <div className = "backButtonSurroundingDivAddTrick">
 		    					<img id="backButton" 
 		                            src={downArrow} 
@@ -610,7 +611,7 @@ class AddTrickForm extends Component {
 										onKeyPress={this.onNameInputKeyPress}
 										value={this.state.name} 
 										onChange={this.handleNameChange}
-										onBlur={this.handleNameChange}/>
+								/>
 								{autoComplete}
 							</div>
 							{this.state.gifUrl ?
