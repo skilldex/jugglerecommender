@@ -1,10 +1,5 @@
 Biggest Desires:
-	-Improve Add Trick Form (see below)
 	-Suggest a change (see below)
-
-Add Trick Form:
-	-a way to see info/demo of tricks when deciding what to use as related
-	-make consuming tags be added after they hit submit, for instance if they have backcross as a tag, then make a body throw tag be added automatically. Also allow them to do it manually if they wish. Other examples: cross arm/underarm catch, slam/one-throw
 
 Suggest a Change:
 	-could be done just like edit, but instead of adding it to the site it emails/notifies the contributor.
