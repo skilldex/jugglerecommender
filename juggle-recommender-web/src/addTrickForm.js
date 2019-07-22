@@ -506,6 +506,7 @@ class AddTrickForm extends Component {
 			this.setState({
 				autoCompletedName : true
 			})
+			this.checkIfFormIsSubmittable()
 	    }
 	}
 
