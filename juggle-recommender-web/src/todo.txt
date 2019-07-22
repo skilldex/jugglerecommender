@@ -1,46 +1,62 @@
 v 1.9
-	Profile Screen
-		Stats
-			eventual
-				-chart that shows number of patterns in various ranges
-				-consecutive days with record break?
-				-consecutive days with catches input for a trick?
-				-consecutive days with a trick contributed?
-
 	Profile Screen: (Larger section below)
 		-upload image
 			ian has code for this
+
+	-Fix list load time
+
+	-Add Trick Form:
+		-a way to see info/demo of tricks when deciding what to use as related
+		-make consuming tags be added automatically in the list
+
+	-Comments in details
+
+	-Email Notifications
 
 	-Think about leaderboard/details
 
 	Data fix scripts(see list below)
 
 =========
-nginx conf
-location / {
-        try_files /index.html =404;
-    }
+-get add trick can submit checker split into multiple functions
+-put catches flair in profile and filter
+-change ninja flair elsewhere(filter and profile)
+-details catches icon turn green when catches higher than 0
+-catches flair that is out of users control
+-put check for other pages in componentDidMount in app.js, but make it its own function
+	-invalid siteswaps in the name clear the ballnum and diff, this needs fixed
+		-maybe we just want to clear them if it was just previously a valid siteswap
+-there should not be a way for a trick to receive a prereq or postreq if it already has it
+		-maybe there isn't now, lets see if it keeps happening
+
+-get rid of profile buttons if not logged in
+	-if you go from home to add pattern and hit escape, it takes you to list
+		-maybe this is fixed by making esc do what the back arrow does
+new siteswap checker:
+	spit on space, check every word for validity, use largest valid siteswap to fill in
+		other fields
+	if multiple words dont do lab animation, and dont lock siteswap/ballNum inputs
+	never remove ballnum and siteswap autofillins
+
 
 -get hold down functionality for frame buttons
 	-put space above buttons
-	-onMouseDown set flag, then run function while flag is set, and onMouseUp remove flag
-	-onTouchHold
+	-onMouseDown set flag, then run function while flag is set, and onMouseUp remove flag and start a timer that keeps checking if mouseDown flag, if mouse not down, kill timer
+	-onTouchHold for mobile, maybe onTouchStart/onTouchEnd that just does the same as the onMouseDown setup
 
 Bugs:
-	-remove back arrow from main tricklist
 	-frame by frame doesnt hide controls on youtube
-	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
-	-invalid siteswaps in the name clear the ballnum and diff, this needs fixed
-		-maybe we just want to clear them if it was just previously a valid siteswap
-	-if you go from home to add pattern and hit escape, it takes you to list
-		-maybe this is fixed by making esc do what the back arrow does
-	-other page urls are broken on site
-	-there should not be a way for a trick to receive a prereq or postreq if it already has it
-		-maybe there isn't now, lets see if it keeps happening
 	-both timestamps shouldn't be required
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
-	
+
+Profile Screen
+	Stats
+		eventual
+			-chart that shows number of patterns in various ranges
+			-consecutive days with record break?
+			-consecutive days with catches input for a trick?
+			-consecutive days with a trick contributed?	
 
 Profile:
 	Notifications:(maybe done with email instead)
@@ -49,13 +65,14 @@ Profile:
 	Settings: (Maybe this eventualy its own section instead)
 		-option to have catch records public or not(listed in details) 
 
-
-
 Notifications:
-	-'Watch', type of flair to find out if it gains related patterns or if other users are logging catches with it
+	-'Watch', type of flair to find out if
+		-related patterns added
+		-users are logging catches with it
+		-comments added
 
-	-Stats:
-		-records broken today
+-Stats:
+	-records broken today
 
 Data fix scripts:
 	-a script to make related tricks go both directions
