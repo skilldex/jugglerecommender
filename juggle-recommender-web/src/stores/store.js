@@ -383,14 +383,19 @@ class Store {
 		if(trick.prereqs){
 			trick.prereqs.forEach((item)=>{
 				const prereq = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
-				if(this.library[prereq].dependents && 
-					this.library[prereq].dependents.indexOf(trick.name) === -1){
-					this.library[prereq].dependents.push(trick.name)
-				}else{
-					this.library[prereq].dependents = [trick.name]
+				if(!this.library[prereq]){
+					console.log("problem with ",prereq)
 				}
-				let prereqRef = firebase.database().ref('library/'+prereq)
-        		prereqRef.set(this.library[prereq]);
+				if(this.library[prereq]){
+					if( this.library[prereq].dependents && 
+						this.library[prereq].dependents.indexOf(trick.name) === -1){
+							this.library[prereq].dependents.push(trick.name)
+					}else{
+						this.library[prereq].dependents = [trick.name]
+					}
+					let prereqRef = firebase.database().ref('library/'+prereq)
+	        		prereqRef.set(this.library[prereq]);
+	        	}
 			})
 		}
 	}
@@ -398,14 +403,20 @@ class Store {
 		if(trick.related){
 			trick.related.forEach((item)=>{
 				const relatedTrick = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
-				if(this.library[relatedTrick].related && 
-					this.library[relatedTrick].related.indexOf(trick.name) === -1){
-					this.library[relatedTrick].related.push(trick.name)
-				}else{
-					this.library[relatedTrick].related = [trick.name]
+				if(!this.library[relatedTrick]){
+					console.log("problem with ",relatedTrick)
 				}
-				let relatedRef = firebase.database().ref('library/'+relatedTrick)
-        		relatedRef.set(this.library[relatedTrick]);
+				if(this.library[relatedTrick]){
+					if (this.library[relatedTrick].related && 
+						this.library[relatedTrick].related.indexOf(trick.name) === -1){
+							this.library[relatedTrick].related.push(trick.name)
+				
+					}else{
+						this.library[relatedTrick].related = [trick.name]
+					}
+					let relatedRef = firebase.database().ref('library/'+relatedTrick)
+	        		relatedRef.set(this.library[relatedTrick]);
+        		}
 			})
 		}
 	}
@@ -413,14 +424,19 @@ class Store {
 		if(trick.dependents){
 			trick.dependents.forEach((item)=>{
 				const dependent = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
-				if(this.library[dependent].prereqs && 
-					this.library[dependent].prereqs.indexOf(trick.name) === -1){
-					this.library[dependent].prereqs.push(trick.name)
-				}else{
-					this.library[dependent].prereqs = [trick.name]
+				if(!this.library[dependent]){
+					console.log("problem with ",dependent)
 				}
-				let dependentRef = firebase.database().ref('library/'+dependent)
-        		dependentRef.set(this.library[dependent]);
+				if(this.library[dependent]){
+					if(this.library[dependent].prereqs && 
+						this.library[dependent].prereqs.indexOf(trick.name) === -1){
+							this.library[dependent].prereqs.push(trick.name)
+					}else{
+						this.library[dependent].prereqs = [trick.name]
+					}
+					let dependentRef = firebase.database().ref('library/'+dependent)
+	        		dependentRef.set(this.library[dependent]);
+	        	}
 			})
 		}
 	}

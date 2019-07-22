@@ -18,6 +18,8 @@ v 1.9
 	Data fix scripts(see list below)
 
 =========
+-profile needs 'signed in as..'
+-make tags searchable
 -get add trick can submit checker split into multiple functions
 -put catches flair in profile and filter
 -change ninja flair elsewhere(filter and profile)
@@ -28,10 +30,10 @@ v 1.9
 		-maybe we just want to clear them if it was just previously a valid siteswap
 -there should not be a way for a trick to receive a prereq or postreq if it already has it
 		-maybe there isn't now, lets see if it keeps happening
-
 -get rid of profile buttons if not logged in
 	-if you go from home to add pattern and hit escape, it takes you to list
 		-maybe this is fixed by making esc do what the back arrow does
+
 new siteswap checker:
 	spit on space, check every word for validity, use largest valid siteswap to fill in
 		other fields

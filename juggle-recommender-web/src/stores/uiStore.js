@@ -385,6 +385,19 @@ class UIStore {
 						})
 					}
 				}
+				let passesSearch = false
+				if (this.searchTrick === '' || 
+					trick.name.toUpperCase().includes(this.searchTrick.toUpperCase())){
+					passesSearch = true					
+				}else{
+					if (trick.tags){
+						trick.tags.forEach((tag) => {
+							if (tag.toUpperCase().includes(this.searchTrick.toUpperCase())){
+								passesSearch = true
+							}
+						})
+					}
+				}
 
 
 				let thisTricksCatches = 0
@@ -400,7 +413,7 @@ class UIStore {
 				   passesFlairFilter &&
 				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
 				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) &&
-				   (this.searchTrick === '' || trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()))
+				   passesSearch
 				 ){
 					this.rootTricks.push(trickKey)
 				}
