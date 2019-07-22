@@ -31,7 +31,7 @@
 .catchesIconDetail{
   width: 17px;
   height: 17px;
-  margin-bottom:-2px;
+  vertical-align: middle;
 }
 
 .detailInfoDiv{
@@ -133,10 +133,12 @@
   margin-left: 5px;
   height : 15px;
   width : 15px;
+  vertical-align: middle;
 }
 
 .flairDiv{
-  display:inline-block;
+  display:flex;
+  align-items: center;
 }
 .deleteTrickIcon{
   height : 20px;
@@ -146,27 +148,13 @@
   margin-left: 6px;
   cursor: pointer;
 }
-.starIcon{
-  height : 24px;
-  width : 24px;
-  margin-left: 6px;
-  margin-top : 8px;
+.flairIcon{
+  height : 20px;
+  width : 20px;
+  margin-right: 6px;
   opacity: .2;    
 }
-.babyIcon{
-  height : 24px;
-  width : 24px;
-  margin-left: 6px;
-  margin-top : 8px;
-  opacity: .2;  
-}
-.ninjaIcon{
-  height : 24px;
-  width : 24px;
-  margin-left: 2px;
-  margin-top : 8px;
-  opacity: .2;
-}
+
 .selectedFlair{
   opacity: 1;
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
@@ -179,6 +167,7 @@
   padding-top : 3px;
   cursor: pointer;
 }
+
 .shareFilterDetailButton{
   height : 20px;
   width : 20px;

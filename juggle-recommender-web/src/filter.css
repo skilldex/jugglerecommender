@@ -88,22 +88,22 @@
   height : 24px;
   width : 24px;
   margin-left: 6px;
-  margin-top : 8px;
   opacity: .2;    
+  vertical-align: middle;
 }
 .babyIconFilter{
   height : 24px;
   width : 24px;
   margin-left: 6px;
-  margin-top : 8px;
-  opacity: .2;  
+  opacity: .2; 
+  vertical-align: middle; 
 }
 .ninjaIconFilter{
   height : 24px;
   width : 24px;
   margin-left: 6px;
-  margin-top : 8px;
   opacity: .2;
+  vertical-align: middle;
 }
 .selectedFlair{
   opacity: 1;
@@ -147,8 +147,7 @@
 }
 
 .catchesInput{
-  width: 60px;
-  border: 1px solid darkgray;
+  width: 40px;
   display: inline-block;
   margin-right: 5px;
   margin-left: 5px;

@@ -4,7 +4,7 @@ import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import downArrow from './images/down-arrow.svg'
-import catchesIcon from './images/catchesIcon.png'
+import catchesIcon from './images/catchesIcon.svg'
 import Demo from './demo'
 import MainTagsBar from "./mainTagsBar"
 import './trickList.css';

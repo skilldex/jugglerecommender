@@ -6,7 +6,7 @@ import editIcon from './images/editIcon.png'
 import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
 import closeIcon from './images/closeIcon.jpg'
-import catchesIcon from './images/catchesIcon.png'
+import catchesIcon from './images/catchesIcon.svg'
 import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
 import starIcon from './images/starIcon.svg'
@@ -123,17 +123,18 @@ class Detail extends Component {
 
     const catchesSection = 
       <div>
+        <label className="detailLabel">Catches </label>
         <img className="catchesIconDetail" alt="" src ={catchesIcon}/>
-        <label className="catchesLabel">Catches </label>
         {uiStore.detailCatchEditable ?
           <input 
+                className="catchesInput"
                 ref={(input)=> {this.catchInput = input}}
                 id = "catchInput"
                  type="number" 
                  onKeyPress = {(e)=>this.onCatchesKeyPress(e)}
                  onChange={this.onCatchesChange}
           /> :
-          <span>{store.myTricks[detailTrickKey] && store.myTricks[detailTrickKey].catches? 
+          <span className="catchesInput">{store.myTricks[detailTrickKey] && store.myTricks[detailTrickKey].catches? 
                 store.myTricks[detailTrickKey].catches:"0"}
           </span>
         }
@@ -168,19 +169,19 @@ class Detail extends Component {
     } 
  		const starTrickButton = <img id="starButton" 
                                   src={starIcon} 
-                                  className={hasStarFlair?"starIcon selectedFlair":"starIcon" }
+                                  className={hasStarFlair?"flairIcon selectedFlair":"flairIcon" }
                                   alt="starIcon" 
                                   onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}
                               />
     const babyFlairButton = <img id="babyButton" 
                                   src={babyIcon} 
-                                  className={hasBabyFlair?"babyIcon selectedFlair":"babyIcon" }
+                                  className={hasBabyFlair?"flairIcon selectedFlair":"flairIcon" }
                                   alt="babyIcon" 
                                   onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'baby')}}
                               />
     const ninjaFlairButton = <img id="ninjaButton" 
                                   src={ninjaIcon} 
-                                  className={hasNinjaFlair?"ninjaIcon selectedFlair":"ninjaIcon" } 
+                                  className={hasNinjaFlair?"flairIcon selectedFlair":"flairIcon" } 
                                   alt="ninjaIcon" 
                                   onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'ninja')}}
                               />
@@ -247,7 +248,7 @@ class Detail extends Component {
     const infoSection = uiStore.detailTrick && detailTrickKey ?
                           <div className="detailInfoDiv">
                           <div className="flairDiv">
-                          <label className="detailLabel">Flair </label>
+                            <label className="detailLabel">Flair </label>
                             {starTrickButton}
                             {babyFlairButton}
                             {ninjaFlairButton}
