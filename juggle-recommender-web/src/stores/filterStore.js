@@ -131,6 +131,18 @@ class FilterStore {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
+	@action setFlair=(flair)=>{
+		this.flair = flair
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+	@action handleFlairDelete=(i)=>{
+		this.setFlair(
+			this.flair.filter((tag, index) => index !== i)
+		)
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}	
 	@action handleContributorTagDelete=(i)=>{
 		this.setContributors(
 			this.contributors.filter((tag, index) => index !== i)

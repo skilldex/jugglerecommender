@@ -95,14 +95,14 @@ class Profile extends Component {
 			filterStore.setContributors([{id: authStore.user.username,text: authStore.user.username,}]);
 		}else if (label === 'catches'){
 			filterStore.setMinCatches(1)
-		}else if (label === 'starflair'){
-
+		}else if (label === 'star'){
+			filterStore.setFlair(['starred'])
 		}
-		else if (label === 'babyflair'){
-
+		else if (label === 'baby'){
+			filterStore.setFlair(['baby'])
 		}
-		else if (label === 'ninjaflair'){
-
+		else if (label === 'ninja'){
+			filterStore.setFlair(['ninja'])
 		}
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()

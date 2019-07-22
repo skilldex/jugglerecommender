@@ -80,8 +80,8 @@ class MainTagsBar extends Component {
         filterStore.flair.forEach((flair,i)=>{
           filterTags.push(
                 <div className="tagDiv">
-                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.flair[i]} Balls</span>
-                  <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.flair[i])}> x </label>
+                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.flair[i].replace('red','')} Flair</span>
+                  <label className="mainTagsX"onClick={()=>this.flairClicked(filterStore.flair[i])}> x </label>
                 </div>      
           )
         })
