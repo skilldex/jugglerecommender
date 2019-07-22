@@ -21,17 +21,22 @@ location / {
         try_files /index.html =404;
     }
 
+-get hold down functionality for frame buttons
+	-put space above buttons
+	-onMouseDown set flag, then run function while flag is set, and onMouseUp remove flag
+	-onTouchHold
+
 Bugs:
+	-remove back arrow from main tricklist
+	-frame by frame doesnt hide controls on youtube
+	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
 	-invalid siteswaps in the name clear the ballnum and diff, this needs fixed
 		-maybe we just want to clear them if it was just previously a valid siteswap
 	-if you go from home to add pattern and hit escape, it takes you to list
 		-maybe this is fixed by making esc do what the back arrow does
 	-other page urls are broken on site
-	-add tricks autocomplete for name pops up if the input is a substring of tricks in the list whenever you click another input
-	-'invalid siteswap' message shows for blank siteswaps and it clears the ball num field, it should never clear the ballnum field
 	-there should not be a way for a trick to receive a prereq or postreq if it already has it
 		-maybe there isn't now, lets see if it keeps happening
-	-frame by frame doesnt hide controls on youtube
 	-both timestamps shouldn't be required
 	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
 		-not sure if this still happens with new UI
