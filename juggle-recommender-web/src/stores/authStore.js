@@ -26,6 +26,7 @@ class AuthStore {
             usersRef.on("value", resp =>{
                 user = store.snapshotToArray(resp)[0]
                 if (user){
+                    console.log("found user", user)
                 	this.setUser({"email": user.email,"username" : user.username})
                 }
             })

@@ -26,7 +26,7 @@ class CreateAccount extends Component {
     }
 
     createAccount=()=>{
-        authStore.registerUser(this.state.email,this.state.password, this.state.username).then((response)=>{
+        authStore.registerUser(this.state.email.toLowerCase(),this.state.password, this.state.username).then((response)=>{
             if(response.message){
                 this.setState({
                     error : response.message
@@ -40,7 +40,7 @@ class CreateAccount extends Component {
                 let newUser= usersRef.push();
                 newUser.set({
                     "username": this.state.username, 
-                    "email" : this.state.email,
+                    "email" : this.state.email.toLowerCase(),
                     "lowerCaseUsername" : this.state.username.toLowerCase()
                 });
                 alert("User " + this.state.username + " created")
