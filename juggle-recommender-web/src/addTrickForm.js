@@ -9,7 +9,7 @@ import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
 import downArrow from './images/down-arrow.svg'
-import history from "./history"
+
 
 
 const KeyCodes = {
@@ -188,17 +188,24 @@ class AddTrickForm extends Component {
 		this.setState({
 			siteswap:e.target.value
 		})
-		const siteswapValidityChecker = Validate(e.target.value)
-		if (siteswapValidityChecker === 'invalid'){
-			this.setState({num : ''})
-			document.getElementById("numInput").disabled = false
-			this.setState({siteswapErrorMessage:'invalid siteswap.'})
-			this.setState({submitDisabled:true})
-		}else{
-			this.setState({num : siteswapValidityChecker[0]})
-			document.getElementById("numInput").disabled = true
+		if (utilities.isEmptyOrSpaces(e.target.value)){
 			this.setState({siteswapErrorMessage:''})
+			document.getElementById("numInput").disabled = false
+		}else{
+			const siteswapValidityChecker = Validate(e.target.value)
+			if (siteswapValidityChecker === 'invalid'){
+				console.log('handleSSChange')
+				this.setState({num : ''})
+				document.getElementById("numInput").disabled = false
+				this.setState({siteswapErrorMessage:'invalid siteswap.'})
+				this.setState({submitDisabled:true})
+			}else{
+				this.setState({num : siteswapValidityChecker[0]})
+				document.getElementById("numInput").disabled = true
+				this.setState({siteswapErrorMessage:''})
+			}
 		}
+
 		this.checkIfFormIsSubmittable()
 	}
 	handleStartTimeChange=(e)=>{
