@@ -143,6 +143,13 @@ class App extends Component {
 		if(window.location.host.includes("localhost")){
 			//store.initializeTags()
 		}
+		this.setPageBasedOnUrl()
+		store.getTagsFromDatabase()
+		store.getUserCountFromDatabase()
+		store.getTotalCatchCountFromDatabase()
+		
+	}
+	setPageBasedOnUrl=()=>{
 		store.getLibraryFromDatabase().then(()=>{
 			if(window.location.pathname.includes("detail")){
 			  	let match = window.location.pathname.match('/detail\/(.+)')
@@ -162,12 +169,59 @@ class App extends Component {
 					 	uiStore.toggleAddingTrick
 					}
 				}
-			}	
+			}
+			if(window.location.pathname.includes("home")){
+			  	uiStore.clearUI()
+				uiStore.setShowHomeScreen(true)
+				if(uiStore.addingTrick){
+				 	uiStore.toggleAddingTrick()
+				}
+			}
+			if(window.location.pathname.includes("tricklist")){
+			  	uiStore.clearUI()
+				if(uiStore.addingTrick){
+				 	uiStore.toggleAddingTrick()
+				}
+			} 
+			if(window.location.pathname.includes("stats")){
+			  	uiStore.clearUI()
+			  	uiStore.setShowStatsScreen(true)
+				if(uiStore.addingTrick){
+				 	uiStore.toggleAddingTrick()
+				}
+			}  
+		    if(window.location.pathname.includes("profile") && authStore.user){
+			    if (authStore.user){
+				  	uiStore.clearUI()
+				  	uiStore.setShowProfileScreen(true)
+					if(uiStore.addingTrick){
+					 	uiStore.toggleAddingTrick()
+					}
+				}else{
+					history.push('/home')
+					uiStore.clearUI()
+					uiStore.setShowHomeScreen(true)
+					if(uiStore.addingTrick){
+					 	uiStore.toggleAddingTrick()
+					}
+				}
+			}
+		  	if(window.location.pathname.includes("addpattern")){
+			    if (authStore.user){
+					uiStore.clearUI()
+					if(uiStore.addingTrick){
+					 	uiStore.toggleAddingTrick()
+					}
+		  		}else{
+					history.push('/home')
+					uiStore.clearUI()
+					uiStore.setShowHomeScreen(true)
+					if(uiStore.addingTrick){
+					 	uiStore.toggleAddingTrick()
+					}
+				}
+			}  	
 		})
-		store.getTagsFromDatabase()
-		store.getUserCountFromDatabase()
-		store.getTotalCatchCountFromDatabase()
-		
 	}
  	toggleFilter =(filter)=>{
  		let newFilters = []

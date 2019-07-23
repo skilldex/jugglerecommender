@@ -18,16 +18,13 @@ v 1.9
 	Data fix scripts(see list below)
 
 =========
--put check for other pages in componentDidMount in app.js, but make it its own function
 -there should not be a way for a trick to receive a prereq or postreq if it already has it
 	-maybe there isn't now, lets see if it keeps happening
 
 new siteswap checker:
 	split on space, check every word for validity, use largest valid siteswap to fill in
 		other fields
-	if multiple words dont do lab animation, and dont lock siteswap/ballNum inputs
-	never remove ballnum and siteswap autofillins
-
+	if there are multiple words dont do lab animation, and dont lock siteswap/ballNum inputs
 
 -get hold down functionality for frame buttons
 	-put space above buttons
