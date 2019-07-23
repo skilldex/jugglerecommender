@@ -57,7 +57,6 @@ class UIStore {
   		this.addingTrick = true
   	}
   	@action	handleBackButtonClick=()=>{
-	    console.log('backButtonClick')
 	    history.go(-1);
 	  }
 	@action toggleAddingTrick = ()=>{

@@ -22,7 +22,6 @@ class Stats extends Component {
 		 tagsCounter : {},
 	}
 	componentDidMount(){
-		console.log('stats mounted')
 		let contributorsCounter = this.state.contributorsCounter
 		let ballNumCounter = this.state.ballNumCounter
 		let tagsCounter = this.state.tagsCounter
@@ -54,9 +53,6 @@ class Stats extends Component {
 
 		this.setState({contributorsCounter,ballNumCounter,tagsCounter})
 		 
-	}
-	componentWillUnmount(){
-		console.log('stats will unmount')
 	}
 
 	statsLabelButtonClicked=(tagType, key)=>{
