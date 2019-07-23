@@ -19,10 +19,8 @@ v 1.9
 
 =========
 -profile needs 'signed in as..'
--make tags searchable
 -get add trick can submit checker split into multiple functions
 -put catches flair in profile and filter
--change ninja flair elsewhere(filter and profile)
 -details catches icon turn green when catches higher than 0
 -catches flair that is out of users control
 -put check for other pages in componentDidMount in app.js, but make it its own function
@@ -35,7 +33,7 @@ v 1.9
 		-maybe this is fixed by making esc do what the back arrow does
 
 new siteswap checker:
-	spit on space, check every word for validity, use largest valid siteswap to fill in
+	split on space, check every word for validity, use largest valid siteswap to fill in
 		other fields
 	if multiple words dont do lab animation, and dont lock siteswap/ballNum inputs
 	never remove ballnum and siteswap autofillins

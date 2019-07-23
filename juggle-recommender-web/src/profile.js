@@ -131,6 +131,11 @@ class Profile extends Component {
 		             	{shareButton}
 		            </div>
 				<h3 style={{marginBottom: "10px"}}>Profile</h3>
+					<div className = "signedInAsSection">
+						<b> Signed in as </b>
+						<span> {authStore.user.username}</span>
+						<span> ({authStore.user.email})</span>
+					</div>
 					<h3>Your Stats</h3>		
 					<div className = "individualProfileStatsDiv">
 						<label className= "profileStatsLabelButton"

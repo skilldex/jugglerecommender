@@ -30,6 +30,10 @@
   color: #3090C7;
   cursor: pointer;
 }
+.signedInAsSection{
+	text-align: left;
+	font-size: 14px;
+}
 .individualProfileStatsDiv{
   width: 300px;
   margin : 0 auto;

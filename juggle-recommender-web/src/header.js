@@ -89,7 +89,9 @@ class Header extends Component {
 						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
 						   	}
 						   	<button className="dropDownButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
-						   	<button className="dropDownButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>
+						   	{authStore.user ? 
+						   		<button className="dropDownButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>:null
+					      	}
 					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    </div> : null
@@ -108,7 +110,9 @@ class Header extends Component {
 						   	}
 					    	<button className="headerButton" onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    	<button className="headerButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
-					    	<button className="headerButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>
+					    	{authStore.user ? 
+					    		<button className="headerButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>:null
+					    	}
 					    	<button className="headerButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('home')}>Home</button>
