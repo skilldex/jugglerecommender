@@ -390,11 +390,9 @@ class Store {
 					if( this.library[prereq].dependents && 
 						this.library[prereq].dependents.indexOf(trick.name) === -1){
 							this.library[prereq].dependents.push(trick.name)
-					}else{
-						this.library[prereq].dependents = [trick.name]
-					}
-					let prereqRef = firebase.database().ref('library/'+prereq)
-	        		prereqRef.set(this.library[prereq]);
+							let prereqRef = firebase.database().ref('library/'+prereq)
+	        				prereqRef.set(this.library[prereq]);
+	        		}
 	        	}
 			})
 		}
@@ -410,12 +408,9 @@ class Store {
 					if (this.library[relatedTrick].related && 
 						this.library[relatedTrick].related.indexOf(trick.name) === -1){
 							this.library[relatedTrick].related.push(trick.name)
-				
-					}else{
-						this.library[relatedTrick].related = [trick.name]
-					}
-					let relatedRef = firebase.database().ref('library/'+relatedTrick)
-	        		relatedRef.set(this.library[relatedTrick]);
+							let relatedRef = firebase.database().ref('library/'+relatedTrick)
+	    		    		relatedRef.set(this.library[relatedTrick]);
+	    		    }
         		}
 			})
 		}
@@ -431,11 +426,9 @@ class Store {
 					if(this.library[dependent].prereqs && 
 						this.library[dependent].prereqs.indexOf(trick.name) === -1){
 							this.library[dependent].prereqs.push(trick.name)
-					}else{
-						this.library[dependent].prereqs = [trick.name]
-					}
-					let dependentRef = firebase.database().ref('library/'+dependent)
-	        		dependentRef.set(this.library[dependent]);
+							let dependentRef = firebase.database().ref('library/'+dependent)
+			        		dependentRef.set(this.library[dependent]);
+	        		}
 	        	}
 			})
 		}
