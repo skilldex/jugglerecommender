@@ -18,19 +18,9 @@ v 1.9
 	Data fix scripts(see list below)
 
 =========
--profile needs 'signed in as..'
--get add trick can submit checker split into multiple functions
--put catches flair in profile and filter
--details catches icon turn green when catches higher than 0
--catches flair that is out of users control
 -put check for other pages in componentDidMount in app.js, but make it its own function
-	-invalid siteswaps in the name clear the ballnum and diff, this needs fixed
-		-maybe we just want to clear them if it was just previously a valid siteswap
 -there should not be a way for a trick to receive a prereq or postreq if it already has it
-		-maybe there isn't now, lets see if it keeps happening
--get rid of profile buttons if not logged in
-	-if you go from home to add pattern and hit escape, it takes you to list
-		-maybe this is fixed by making esc do what the back arrow does
+	-maybe there isn't now, lets see if it keeps happening
 
 new siteswap checker:
 	split on space, check every word for validity, use largest valid siteswap to fill in
@@ -79,6 +69,7 @@ Data fix scripts:
 		if x is listed as related for y, then y should be listed for x
 
 Code Cleaning:
+	-get add trick can submit checker split into multiple functions
 	-clean up any trace of allTricksList/myTricksList
 	-can detail and filter timers now be removed since they are their own screens?
 	-do the spacing in addTrickForm without using "\u00A0"

@@ -117,6 +117,7 @@ class App extends Component {
 	        case ESCAPE_KEY:
 	            if (uiStore.addingTrick){
 	            	uiStore.toggleAddingTrick()
+					uiStore.handleBackButtonClick()
 	            }
 	            break;
 	        default: 
