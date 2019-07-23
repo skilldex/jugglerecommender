@@ -28,11 +28,7 @@
   cursor: pointer;
   float: left;
 }
-.catchesIconDetail{
-  width: 17px;
-  height: 17px;
-  vertical-align: middle;
-}
+
 
 .detailInfoDiv{
   text-align: left;
@@ -147,6 +143,18 @@
   padding-top : 3px;
   margin-left: 6px;
   cursor: pointer;
+}
+.catchesIconDetailSmall{
+  width: 17px;
+  height: 17px;
+  vertical-align: middle;
+  opacity: .2;
+}
+.catchesIconDetailLarge{
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  opacity: .2;
 }
 .flairIcon{
   height : 20px;

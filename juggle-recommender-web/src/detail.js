@@ -63,12 +63,7 @@ class Detail extends Component {
       }
     }, 100);  
   }
-  handleBabyButtonClick=()=>{
-    console.log('babyClicked')
-  }
-  handleNinjaButtonClick=()=>{
-    console.log('ninjaClicked')
-  }
+
   toggleShowMoreInformation=()=>{
     uiStore.toggleShowMoreInformation()
   }
@@ -124,7 +119,12 @@ class Detail extends Component {
     const catchesSection = 
       <div>
         <label className="detailLabel">Catches </label>
-        <img className="catchesIconDetail" alt="" src ={catchesIcon}/>
+        <img className= {store.myTricks[detailTrickKey] && 
+                          parseInt(store.myTricks[detailTrickKey].catches,10)>0?
+                        "catchesIconDetailSmall selectedFlair" :  "catchesIconDetailSmall"}
+              alt="" 
+              src ={catchesIcon}
+        />
         {uiStore.detailCatchEditable ?
           <input 
                 className="catchesInput"
@@ -185,6 +185,12 @@ class Detail extends Component {
                                   alt="ninjaIcon" 
                                   onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'ninja')}}
                               />
+    const catchesFlairIcon = <img className= {store.myTricks[detailTrickKey] && 
+                                              parseInt(store.myTricks[detailTrickKey].catches,10)>0?
+                                            "catchesIconDetailLarge selectedFlair" :  "catchesIconDetailLarge"}
+                                  alt="" 
+                                  src ={catchesIcon}
+                            />
     const deleteTrickButton = 
       detailTrick && authStore.user && 
       (detailTrick.contributor === authStore.user.username || 
@@ -252,6 +258,7 @@ class Detail extends Component {
                             {starTrickButton}
                             {babyFlairButton}
                             {ninjaFlairButton}
+                            {catchesFlairIcon}
                           </div>
                             {catchesSection}
                             <label className="detailLabel">Contributor </label>
