@@ -140,26 +140,38 @@ class AddTrickForm extends Component {
 		this.checkIfFormIsSubmittable()	
 	}
 	handleOnBlurName=(e)=>{
-		const siteswapValidityChecker = Validate(e.target.value)
-		if (!this.state.gifUrl || 
-			(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
-			if (siteswapValidityChecker !== 'invalid'){
-				this.setState({gifUrl : 'https://jugglinglab.org/anim?'+e.target.value})
-				const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
-				this.setState({difficulty : dif})
-				this.setState({num : siteswapValidityChecker[0]})
-				document.getElementById("numInput").disabled = true
-				this.setState({siteswap : e.target.value})
-				document.getElementById("siteswapInput").disabled = true	
-				const pureSStag = {
-						id : 'pure-ss',
-						text : 'pure-ss'
+		const wordsInName = e.target.value.split(" ")
+		console.log('wordsInName',wordsInName)
+		wordsInName.sort(function(a, b){
+		  return b.length - a.length;
+		});
+		console.log('wordsInName',wordsInName)
+		for (const name of wordsInName){
+			console.log('name',name)
+			if (!this.state.gifUrl || 
+				(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
+				const siteswapValidityChecker = Validate(name)
+				if (siteswapValidityChecker !== 'invalid'){
+					this.setState({num : siteswapValidityChecker[0]})
+					this.setState({siteswap : name})	
+					if (wordsInName.length === 1){
+						const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
+						this.setState({difficulty : dif})
+						this.setState({gifUrl : 'https://jugglinglab.org/anim?'+name})
+						document.getElementById("numInput").disabled = true
+						document.getElementById("siteswapInput").disabled = true
+						const pureSStag = {
+								id : 'pure-ss',
+								text : 'pure-ss'
+							}
+				        const { tags } = this.state;
+				        const i = tags.findIndex(x => x.id ==="pure-ss")
+				    	if (i===-1 && !this.state.tags.includes(pureSStag.id)){
+					        this.setState(state => ({ tags: [...state.tags, pureSStag] }));
+					    }
 					}
-		        const { tags } = this.state;
-		        const i = tags.findIndex(x => x.id ==="pure-ss")
-		    	if (i===-1 && !this.state.tags.includes(pureSStag.id)){
-			        this.setState(state => ({ tags: [...state.tags, pureSStag] }));
-			    }
+				break;
+				}
 			}
 		}
 		this.checkIfFormIsSubmittable()
@@ -514,7 +526,6 @@ class AddTrickForm extends Component {
 	}
 
 	render (){
-		console.log("autoComplete" , this.state.autoCompletedName, this.state.name)
 	    const backButton = <div className = "backButtonSurroundingDivAddTrick">
 		    					<img id="backButton" 
 		                            src={downArrow} 
