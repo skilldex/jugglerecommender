@@ -34,17 +34,15 @@ iframe{
     -o-transform: scale(0.50);
     -webkit-transform: scale(0.50);
     transform: scale(0.50);
-
-
 }
-
 
 .frameIcon{
   width: 20px;
   height:20px;
   margin-left: 20px;
   margin-right: 20px;
-  margin-top: 5px;
+  margin-top: 15px;
+  margin-bottom: 10px;
   cursor: pointer;  
 }
 .rotated180{

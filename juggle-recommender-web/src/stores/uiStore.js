@@ -10,6 +10,8 @@ configure({ enforceActions: "always" })
 class UIStore {
 
 	@observable selectedTrick = null
+	@observable mouseIsDownBackFrame = false
+	@observable mouseIsDownForwardFrame = false
 	@observable selectedList = "allTricks"
 	@observable rootTricks = []
 	@observable searchInput = ''
@@ -79,6 +81,12 @@ class UIStore {
 	}
 	@action setMainListScrollerPosition=(scrollPos)=>{
 		this.mainListScrollerPosition = scrollPos
+	}
+	@action setMouseIsDownBackFrame=(bool)=>{
+		this.mouseIsDownBackFrame = bool
+	}
+	@action setMouseIsDownForwardFrame=(bool)=>{
+		this.mouseIsDownForwardFrame = bool
 	}
 	@action setDetailTrick=(clickedTrick)=>{
 		if(this.showMoreInformation){

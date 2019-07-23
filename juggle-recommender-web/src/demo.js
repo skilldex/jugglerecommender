@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import store from './stores/store'
+import uiStore from './stores/uiStore'
 import { toJS } from "mobx"
 import { observer } from "mobx-react"
 import instagramLogoIcon from "./images/instagramLogo.png"
@@ -7,6 +8,8 @@ import frameIcon from "./images/frameIcon.svg"
 import './App.css';
 import './demo.css';
 import YouTube from 'react-youtube';
+
+
 @observer
 class Demo extends Component {
   state = {
@@ -143,6 +146,78 @@ class Demo extends Component {
       }
     }
   }
+
+
+
+
+loopBackFrame=()=> {
+  if (uiStore.mouseIsDownBackFrame) {
+    this.timer = setTimeout(()=>{
+      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+        const video = this.video.internalPlayer
+        video.getCurrentTime().then((time)=>{
+            video.seekTo(time - .033)
+        })
+      }else{
+        const video = document.getElementById("instagramVideo")
+        video.currentTime = video.currentTime - .033
+      }
+      this.loopBackFrame()
+    }, 150)
+  }
+}
+
+loopForwardFrame=()=> {
+  if (uiStore.mouseIsDownForwardFrame) {
+    this.timer = setTimeout(()=>{
+      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+        const video = this.video.internalPlayer
+        //video.setAttribute("controls", 0)
+        video.getCurrentTime().then((time)=>{
+            video.seekTo(time + .033)
+        })
+      }else{
+        const video = document.getElementById("instagramVideo")
+        video.currentTime = video.currentTime + .033
+      }
+      this.loopForwardFrame()
+    }, 250)
+  }
+}
+
+  handleOnMouseDownFrame=(direction)=>{
+    if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+      const video = this.video.internalPlayer
+      //video.setAttribute("controls", 0)
+      video.getCurrentTime().then((time)=>{
+        video.pauseVideo()
+      })
+    }else{
+      const video = document.getElementById("instagramVideo")
+      video.removeAttribute( 'controls' );
+      video.pause()
+    }
+    if (direction === "back"){
+        uiStore.setMouseIsDownBackFrame(true)
+        this.timer = setTimeout(()=>{this.loopBackFrame()}, 1000)
+    }
+    if (direction === "forward"){
+        uiStore.setMouseIsDownForwardFrame(true)
+        this.timer = setTimeout(()=>{this.loopForwardFrame()}, 1000)
+
+    }
+
+  }
+
+  handleOnMouseUpFrame=(direction)=>{
+    if (direction === "back"){
+      uiStore.setMouseIsDownBackFrame(false)
+    }
+    if (direction === "forward"){
+      uiStore.setMouseIsDownForwardFrame(false)
+    }
+  }
+
   handleYoutubeVideoClick=()=>{
     console.log('youtube clicked')
     //const video = this.video.internalPlayer
@@ -229,9 +304,17 @@ class Demo extends Component {
                         <div className = "frameButtons">
                           <img src = {frameIcon} 
                                className = "frameIcon rotated180"
+                               onMouseDown = {() => this.handleOnMouseDownFrame('back')}
+                               onTouchStart = {() => this.handleOnMouseDownFrame('back2')}
+                               onMouseUp = {() => this.handleOnMouseUpFrame('back')}
+                               onTouchEnd = {() => this.handleOnMouseUpFrame('back2')}
                                onClick = {() => this.frameStep('back')}/>
                           <img src = {frameIcon} 
                                className = "frameIcon"
+                               onMouseDown = {() => this.handleOnMouseDownFrame('forward')}
+                               onTouchStart = {() => this.handleOnMouseDownFrame('forward2')}
+                               onMouseUp = {() => this.handleOnMouseUpFrame('forward')}
+                               onTouchEnd = {() => this.handleOnMouseUpFrame('forward2')}
                                onClick = {() => this.frameStep('forward')}/>
                        </div> : null
     let outerDivClass
