@@ -26,6 +26,7 @@ function getDifficulty(siteswap,Period){
   //at the end we divide by the period
   let difficulty = 0
   for (var i = 0; i < siteswap.length; i++) {
+    siteswap = siteswap.toLowerCase()
     let thisChar = siteswap.charAt(i)
     if(thisChar === 'a'){thisChar = 10}
     if(thisChar === 'b'){thisChar = 11}

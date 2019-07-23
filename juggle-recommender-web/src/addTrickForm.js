@@ -117,10 +117,7 @@ class AddTrickForm extends Component {
 			(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
 			if (siteswapValidityChecker === 'invalid'){
 				this.setState({gifUrl: null})
-				this.setState({difficulty : ''})
-				this.setState({num : ''})
 				document.getElementById("numInput").disabled = false
-				this.setState({siteswap : ''})
 				const pureSStag = {
 						id : 'pure-ss',
 						text : 'pure-ss'
@@ -132,7 +129,21 @@ class AddTrickForm extends Component {
 		        });
 				document.getElementById("siteswapInput").disabled = false
 
-			}else{
+			}
+		}
+		this.checkIfFormIsSubmittable()
+	}
+	handleExplanationChange=(e)=>{
+		this.setState({
+			explanation:e.target.value,
+		})	
+		this.checkIfFormIsSubmittable()	
+	}
+	handleOnBlurName=(e)=>{
+		const siteswapValidityChecker = Validate(e.target.value)
+		if (!this.state.gifUrl || 
+			(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
+			if (siteswapValidityChecker !== 'invalid'){
 				this.setState({gifUrl : 'https://jugglinglab.org/anim?'+e.target.value})
 				const dif = Math.round( siteswapValidityChecker[1] * 10 ) / 10
 				this.setState({difficulty : dif})
@@ -152,12 +163,6 @@ class AddTrickForm extends Component {
 			}
 		}
 		this.checkIfFormIsSubmittable()
-	}
-	handleExplanationChange=(e)=>{
-		this.setState({
-			explanation:e.target.value,
-		})	
-		this.checkIfFormIsSubmittable()	
 	}
 
 	handleNumChange=(e)=>{
@@ -614,7 +619,7 @@ class AddTrickForm extends Component {
 										onKeyPress={this.onNameInputKeyPress}
 										value={this.state.name} 
 										onChange={this.handleNameChange}
-										onBlur={this.checkIfFormIsSubmittable}
+										onBlur={this.handleOnBlurName}
 								/>
 								{autoComplete}
 							</div>
