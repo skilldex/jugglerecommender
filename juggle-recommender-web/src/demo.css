@@ -44,6 +44,7 @@ iframe{
   margin-top: 15px;
   margin-bottom: 10px;
   cursor: pointer;  
+  -webkit-touch-callout: none;
 }
 .rotated180{
   -webkit-transform: rotate(180deg); /* Safari and Chrome */
