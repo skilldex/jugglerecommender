@@ -15,7 +15,9 @@ class Demo extends Component {
   state = {
     igData : null,
     videoURL : null,
-    youtubeId : null
+    youtubeId : null,
+    mouseDown : false,
+    timer : null
   }
   componentDidMount(){
     const trick = store.library[this.props.trickKey]
@@ -148,43 +150,6 @@ class Demo extends Component {
   }
 
 
-
-
-loopBackFrame=()=> {
-  if (uiStore.mouseIsDownBackFrame) {
-    this.timer = setTimeout(()=>{
-      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-        const video = this.video.internalPlayer
-        video.getCurrentTime().then((time)=>{
-            video.seekTo(time - .033)
-        })
-      }else{
-        const video = document.getElementById("instagramVideo")
-        video.currentTime = video.currentTime - .033
-      }
-      this.loopBackFrame()
-    }, 150)
-  }
-}
-
-loopForwardFrame=()=> {
-  if (uiStore.mouseIsDownForwardFrame) {
-    this.timer = setTimeout(()=>{
-      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-        const video = this.video.internalPlayer
-        //video.setAttribute("controls", 0)
-        video.getCurrentTime().then((time)=>{
-            video.seekTo(time + .033)
-        })
-      }else{
-        const video = document.getElementById("instagramVideo")
-        video.currentTime = video.currentTime + .033
-      }
-      this.loopForwardFrame()
-    }, 250)
-  }
-}
-
   handleOnMouseDownFrame=(direction)=>{
     if (this.state.videoURL && this.state.videoURL.includes('youtube')){
       const video = this.video.internalPlayer
@@ -197,32 +162,25 @@ loopForwardFrame=()=> {
       video.removeAttribute( 'controls' );
       video.pause()
     }
-    if (direction === "back"){
-        uiStore.setMouseIsDownBackFrame(true)
-        this.timer = setTimeout(()=>{this.loopBackFrame()}, 1000)
-    }
-    if (direction === "forward"){
-        uiStore.setMouseIsDownForwardFrame(true)
-        this.timer = setTimeout(()=>{this.loopForwardFrame()}, 1000)
-
-    }
-
+    this.setState({mouseDown: true},()=>{
+      this.state.timer = setInterval(()=>{
+        if(this.state.mouseDown){
+          this.frameStep(direction)
+        }
+      }, 500)
+    })
   }
 
   handleOnMouseUpFrame=(direction)=>{
-    if (direction === "back"){
-      uiStore.setMouseIsDownBackFrame(false)
-    }
-    if (direction === "forward"){
-      uiStore.setMouseIsDownForwardFrame(false)
-    }
+    console.log("mouse up ", direction)
+    clearInterval(this.state.timer)
+    this.setState({
+      mouseDown : false,
+      timer : null
+    })
+    
   }
 
-  handleYoutubeVideoClick=()=>{
-    console.log('youtube clicked')
-    //const video = this.video.internalPlayer
-    //video.controls=1
-  }
   handleInstagramVideoClick=()=>{
     const video = document.getElementById("instagramVideo")
     video.setAttribute( 'controls', '' );
@@ -305,17 +263,21 @@ loopForwardFrame=()=> {
                           <img src = {frameIcon} 
                                className = "frameIcon rotated180"
                                onMouseDown = {() => this.handleOnMouseDownFrame('back')}
-                               onTouchStart = {() => this.handleOnMouseDownFrame('back2')}
+                               onTouchStart = {() => this.handleOnMouseDownFrame('back')}
                                onMouseUp = {() => this.handleOnMouseUpFrame('back')}
-                               onTouchEnd = {() => this.handleOnMouseUpFrame('back2')}
-                               onClick = {() => this.frameStep('back')}/>
+                               onTouchEnd = {() => this.handleOnMouseUpFrame('back')}
+                               onClick = {() => this.frameStep('back')}
+                               onContextMenu={(e) => e.preventDefault()}
+                          />
                           <img src = {frameIcon} 
                                className = "frameIcon"
                                onMouseDown = {() => this.handleOnMouseDownFrame('forward')}
-                               onTouchStart = {() => this.handleOnMouseDownFrame('forward2')}
+                               onTouchStart = {() => this.handleOnMouseDownFrame('forward')}
                                onMouseUp = {() => this.handleOnMouseUpFrame('forward')}
-                               onTouchEnd = {() => this.handleOnMouseUpFrame('forward2')}
-                               onClick = {() => this.frameStep('forward')}/>
+                               onTouchEnd = {() => this.handleOnMouseUpFrame('forward')}
+                               onClick = {() => this.frameStep('forward')}
+                               onContextMenu={(e) => e.preventDefault()}
+                          />
                        </div> : null
     let outerDivClass
     if (this.props.demoLocation === "detail" || this.props.demoLocation === "home"){
