@@ -20,6 +20,9 @@ v 1.9
 
 	-Get better frame by frame 
 
+	-BUG: details showing postreqs it shouldn't
+		TO REPRODUCE: list -> Straight Across (ss1) (1b) details -> Postreq 'Box' Details -> Back arrow (to Straight Across (ss1) (1b)). Now there are postreqs there shouldn't be, they are not in the db for Straight Across (ss1) (1b).
+
 	Data fix scripts(see list below)
 
 =========

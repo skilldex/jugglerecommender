@@ -2,6 +2,7 @@ Todo:
 	-catches icon added to profile and filter
 
 Minor Bugs:
+	-deleting a pattern doesnt remove it from the stack
 	-hitting cancel on edit trick form doesnt go back to the would-be edited trick, it goes back 1 further 
 	-demos that loop should restrict user to only seeing the looping trick 
 	-old gif shows while new gif is loading
@@ -10,37 +11,7 @@ Minor Bugs:
 	-if you ever get the message 'sorry this trick has been deleted', then details forward and back dont work.
 		-now that rename bug fixed, this message is more rare
 
--Database changes to be carefully made through app:
-	-delete (2x,2x)
-	-fix the name of over the arm mill's mess
-	-edit neck throw tennis to neckcross tennis
-	-423 tennis has duplicate postreq
-	-edit and submit all 1b stuff
-		-normal inside cross should have name changed to normal(but make sure name changes everywhere, and new associations made and old ones removed)
-		-normal outside cross should have name changed to normal reverse(give same check as above note)
-	-infinity has the same postreq 3 times
-	-remove 4440522 as prereq from 4440 mills mess
-
 Missing associations:
-"363 Mills Mess(4b)" : {
-      "prereqs" : [ "Mills Mess(4b)", "441 Mills Mess", "531 Mills Mess", "534 Mills Mess(4b)", "552 Mills Mess(4b)" ],
-      "related = 642 mills mess"
-
-441 Mills Lemming -- needs some associations
-
-534 Mills Mess(4b)
-      "dependents" : [ "Semi-Forked Semi-Mess(4b)", "363 Mills Mess(4b)" ],
-      "prereqs" : [ "Mills Mess(4b)", "534(4b)", "531 Mills Mess" ],
-      "tags" : [ "crossed-arms" ],
-Atari
-"tags" : [ "multiplex", "raised-hand", "claw" ],
-
-Butterfly
-"tags" : [ "contact", "one-throw" ],
-
-
-
-
 
 -fix video for single throw columns
 

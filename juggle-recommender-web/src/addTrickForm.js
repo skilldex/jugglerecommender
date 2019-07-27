@@ -141,13 +141,10 @@ class AddTrickForm extends Component {
 	}
 	handleOnBlurName=(e)=>{
 		const wordsInName = e.target.value.split(" ")
-		console.log('wordsInName',wordsInName)
 		wordsInName.sort(function(a, b){
 		  return b.length - a.length;
 		});
-		console.log('wordsInName',wordsInName)
 		for (const name of wordsInName){
-			console.log('name',name)
 			if (!this.state.gifUrl || 
 				(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
 				const siteswapValidityChecker = Validate(name)
@@ -184,7 +181,6 @@ class AddTrickForm extends Component {
 		this.checkIfFormIsSubmittable()
 	}
 	handleDiffChange=(e)=>{
-		console.log('handleDiffChange')
 		this.setState({
 			difficulty:e.target.value
 		}, this.checkIfFormIsSubmittable)
@@ -212,7 +208,6 @@ class AddTrickForm extends Component {
 		}else{
 			const siteswapValidityChecker = Validate(e.target.value)
 			if (siteswapValidityChecker === 'invalid'){
-				console.log('handleSSChange')
 				this.setState({num : ''})
 				document.getElementById("numInput").disabled = false
 				this.setState({siteswapErrorMessage:'invalid siteswap.'})
@@ -287,7 +282,6 @@ class AddTrickForm extends Component {
         });
     }
     checkIfFormIsSubmittable=()=>{
-    	console.log('checkIfFormIsSubmittable',this.state.difficulty)
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
 			this.setState({nameErrorMessage:'Pattern name blank.'})
@@ -369,7 +363,6 @@ class AddTrickForm extends Component {
     	}else{
     		if (utilities.isNotOnlyDigitsOrDecimal(this.state.difficulty) ||
     			(this.state.difficulty<1 || this.state.difficulty>10)){    	
-    			console.log('isNotOnlyDigitsOrDecimalTRUE')		
 					this.setState({difficultyErrorMessage:'must be (1.0-10.0).'})
 					this.setState({submitDisabled:true})
 				}else{
