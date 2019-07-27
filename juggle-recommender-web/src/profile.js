@@ -18,6 +18,7 @@ import downArrow from './images/down-arrow.svg'
 import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
 import starIcon from './images/starIcon.svg'
+import catchesIcon from './images/catchesIcon.svg'
 
 
 @observer
@@ -192,6 +193,12 @@ class Profile extends Component {
 						</div>
 					</div>
 					<div className = "individualProfileStatsDiv">
+						<img id="cathcesButton" 
+                              src={catchesIcon} 
+                              className="iconProfile"
+                              alt="catchesIcon" 
+                              onClick={()=>this.handleStatsLabelClicked('catches')}
+                        />	
 						<label className= "profileStatsLabelButton"
 								onClick = {()=>this.handleStatsLabelClicked('catches')}>
 							With Catches

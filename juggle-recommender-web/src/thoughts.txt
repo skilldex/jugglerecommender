@@ -1,6 +1,4 @@
 Todo:
-	-move back word down in details
-	-flair in filter moved to the left
 	-catches icon added to profile and filter
 
 Bugs:
