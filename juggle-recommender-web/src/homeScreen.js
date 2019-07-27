@@ -16,11 +16,16 @@ import downArrow from './images/down-arrow.svg'
 
 @observer
 class HomeScreen extends Component {
+	state ={
+		
+	}
 	componentDidMount(){
 		store.getTrickOfTheDay()
 	}
 	clickPatternList=()=>{
-		uiStore.toggleShowHomeScreen()
+			history.push('/tricklist')
+			uiStore.clearUI()
+		//uiStore.toggleShowHomeScreen()
 		if(!store.isLocalHost){
 			ReactGA.event({
 				  category: 'home screen',

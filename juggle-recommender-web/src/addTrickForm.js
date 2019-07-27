@@ -184,10 +184,11 @@ class AddTrickForm extends Component {
 		this.checkIfFormIsSubmittable()
 	}
 	handleDiffChange=(e)=>{
+		console.log('handleDiffChange')
 		this.setState({
 			difficulty:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		}, this.checkIfFormIsSubmittable)
+		
 	}
 	handleTutorialChange=(e)=>{
 		this.setState({
@@ -286,6 +287,7 @@ class AddTrickForm extends Component {
         });
     }
     checkIfFormIsSubmittable=()=>{
+    	console.log('checkIfFormIsSubmittable',this.state.difficulty)
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
 			this.setState({nameErrorMessage:'Pattern name blank.'})
@@ -366,7 +368,8 @@ class AddTrickForm extends Component {
     		this.setState({submitDisabled:true})
     	}else{
     		if (utilities.isNotOnlyDigitsOrDecimal(this.state.difficulty) ||
-    			(this.state.difficulty<1 || this.state.difficulty>10)){    			
+    			(this.state.difficulty<1 || this.state.difficulty>10)){    	
+    			console.log('isNotOnlyDigitsOrDecimalTRUE')		
 					this.setState({difficultyErrorMessage:'must be (1.0-10.0).'})
 					this.setState({submitDisabled:true})
 				}else{

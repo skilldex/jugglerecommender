@@ -15,6 +15,13 @@ v 1.9
 
 	-Think about leaderboard/details
 
+	-fix back arrow on profile
+		-reproduce: go to details, profile, back arrow
+
+	-fix bugs that wipes out entire association lists for tricks on edit(or maybe when new trick added)
+
+		-Get better frame by frame 
+
 	Data fix scripts(see list below)
 
 =========

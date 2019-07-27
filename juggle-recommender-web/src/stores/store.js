@@ -241,6 +241,8 @@ class Store {
 	}	
 	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
 		const oldTrick = this.library[oldTrickKey]
+		console.log('oldTrickKey',oldTrickKey)
+		console.log('oldTrick.prereqs',oldTrick.prereqs)
 		if(oldTrick.prereqs){
 			let stalePrereqs
 			if(newTrickData){
@@ -248,6 +250,7 @@ class Store {
 			}else{//for the case of deleting a trick
 				stalePrereqs = oldTrick.prereqs
 			}
+			console.log('stalePrereqs',stalePrereqs)
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
 				if(trick){
@@ -374,10 +377,9 @@ class Store {
         this.addEquivalentRelated(trick)
         this.addPrereqsFromPostreqs(trick)
         uiStore.toggleAddingTrick()
-console.log('history1',history)
 		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
         history.replace('/detail/'+trickKey, {detail : trickKey})
-        console.log('history2',history)
+
         
 	}
 	@action addPostreqsFromPrereqs=(trick)=>{

@@ -2,24 +2,21 @@ Todo:
 	-catches icon added to profile and filter
 
 Bugs:
-	-make error message not show when difficulty is #.#
-	-back arrow on profile is broken
-	-when pattern name is edited, user shouldn't get message saying the pattern had been deleted, they should go to the new patterns url
-	-if you go multiple levels into details, when you get back to tricklist it doesnt autoscroll to where you were
-	-click off edit bug still happening
-	-when a pattern name is edited, it's old name should be removed from its associated patterns.
-	-all patterns button on home doesnt change url
-	-if you ever get the message 'sorry this trick has been deleted', then details forward and back dont work
-	-frame hold only works for a little bit, like 15 frames and then locks up.
-	-repeatedly tapping works for a few times but then starts doing some super fast thing that seems like it goes to the beginning and then rapidly catches up.
+
+	-'all patterns' button on home doesnt change url
+
+
+
 
 Minor Bugs:
+	-demos that loop should restrict user to only seeing the looping trick 
 	-old gif shows while new gif is loading
+	-if you go multiple levels into details, when you get back to tricklist it doesnt autoscroll to where you were
+	-click off catch edit bug still happening
+	-if you ever get the message 'sorry this trick has been deleted', then details forward and back dont work.
+		-now that rename bug fixed, this message is more rare
 
 -Database changes to be carefully made through app:
-	-name edit didnt work for neck throw tennis
-	-check if any users have records for '423 with reverse backcross 3s', If so, change the 3s to 2s
-	-fix the name of over the arm mill's mess
 	-normal inside cross should have name changed to normal(but make sure name changes everywhere, and new associations made and old ones removed)
 	-normal outside cross should have name changed to normal reverse(give same check as above note)
 	-infinity has the same postreq 3 times
@@ -30,6 +27,11 @@ Minor Bugs:
 	-363 mills mess needs its associations back
 	-re-test adding tricks that have box, columns, shuffle(slams) as pre/post req and related
 	-remove 4440522 as prereq from 4440 mills mess
+
+-fix video for single throw columns
+
+Set aside databse oddities:
+	-check if any users have records for '423 with reverse backcross 3s', If so, change the 3s to 2s
 
 Quick DB changes to be done offline:
 	-change neckthrow tag to neckcross
