@@ -22,11 +22,13 @@
   float : left;
   margin-top : 4px;
   cursor: pointer;
+  vertical-align: center;
 }
 .backButtonLabelDetails{
   color: #3090C7;
   cursor: pointer;
   float: left;
+  vertical-align: center;
 }
 
 
