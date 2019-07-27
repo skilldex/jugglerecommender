@@ -15,26 +15,19 @@ v 1.9
 
 	-Think about leaderboard/details
 
-	-fix back arrow on profile
-		-reproduce: go to details, profile, back arrow
-
 	-Get better frame by frame 
 
-	-BUG: details showing postreqs it shouldn't
+	BUGS:
+	-details showing postreqs it shouldn't
 		TO REPRODUCE: list -> Straight Across (ss1) (1b) details -> Postreq 'Box' Details -> Back arrow (to Straight Across (ss1) (1b)). Now there are postreqs there shouldn't be, they are not in the db for Straight Across (ss1) (1b).
+	-deleting a pattern doesnt remove it from the stack, crashes when backed up into
+		TO REPRODUCE: delete a pattern, click a pattern in list, hit back arrow, crash/get message saying pattern doesn't exist, and back/forward arrows don't work(they never work after that message)
+	-fix back arrow on profile
+		TO REPRODUCE: go to details, profile, back arrow
 
 	Data fix scripts(see list below)
 
 =========
--there should not be a way for a trick to receive a prereq or postreq if it already has it
-	-maybe there isn't now, lets see if it keeps happening
-
-Bugs:
-	-frame by frame doesnt hide controls on youtube
-	-both timestamps shouldn't be required in add pattern
-	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
-		-not sure if this still happens with new UI
-
 Profile Screen
 	Stats
 		eventual
