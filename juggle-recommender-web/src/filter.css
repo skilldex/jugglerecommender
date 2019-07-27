@@ -104,6 +104,13 @@
   opacity: .2;
   vertical-align: middle;
 }
+.catchesIconFilter{
+  height : 24px;
+  width : 24px;
+  margin-left: 2px;
+  opacity: .2;
+  vertical-align: middle;
+}
 .selectedFlair{
   opacity: 1;
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);

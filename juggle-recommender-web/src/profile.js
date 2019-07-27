@@ -95,7 +95,7 @@ class Profile extends Component {
 		if (label === 'contributed'){
 			filterStore.setContributors([{id: authStore.user.username,text: authStore.user.username,}]);
 		}else if (label === 'catches'){
-			filterStore.setMinCatches(1)
+			filterStore.setFlair(['catches'])
 		}else if (label === 'star'){
 			filterStore.setFlair(['starred'])
 		}

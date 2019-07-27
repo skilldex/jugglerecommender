@@ -14,6 +14,7 @@ import shareIcon from './images/shareIcon.png'
 import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
 import starIcon from './images/starIcon.svg'
+import catchesIcon from './images/catchesIcon.svg'
 
 
 const KeyCodes = {
@@ -297,7 +298,13 @@ class Filter extends Component {
 		                                  className={filterStore.flair.includes('ninja')?"ninjaIconFilter selectedFlair":"ninjaIconFilter" } 
 		                                  alt="ninjaIcon" 
 		                                  onClick={()=>{this.flairButtonClicked('ninja')}}
-		                            />									
+		                            />
+		                            <img id="catchesButton" 
+		                                  src={catchesIcon} 
+		                                  className={filterStore.flair.includes('catches')?"catchesIconFilter selectedFlair":"catchesIconFilter" } 
+		                                  alt="catchesIcon" 
+		                                  onClick={()=>{this.flairButtonClicked('catches')}}
+		                            />											
 								</div>
 							</div>
 
