@@ -18,19 +18,13 @@ v 1.9
 	-fix back arrow on profile
 		-reproduce: go to details, profile, back arrow
 
-	-fix bugs that wipes out entire association lists for tricks on edit(or maybe when new trick added)
-
-		-Get better frame by frame 
+	-Get better frame by frame 
 
 	Data fix scripts(see list below)
 
 =========
 -there should not be a way for a trick to receive a prereq or postreq if it already has it
 	-maybe there isn't now, lets see if it keeps happening
-
--get hold down functionality for frame buttons
-	-onMouseDown set flag, then run function while flag is set, and onMouseUp remove flag and start a timer that keeps checking if mouseDown flag, if mouse not down, kill timer
-	-onTouchHold for mobile, maybe onTouchStart/onTouchEnd that just does the same as the onMouseDown setup
 
 Bugs:
 	-frame by frame doesnt hide controls on youtube
