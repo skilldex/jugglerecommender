@@ -373,11 +373,12 @@ class Store {
         this.addPostreqsFromPrereqs(trick)
         this.addEquivalentRelated(trick)
         this.addPrereqsFromPostreqs(trick)
-
-		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
-		history.push('/detail/'+trickKey, {detail : trickKey})
-		uiStore.handleBackButtonClick()	
         uiStore.toggleAddingTrick()
+console.log('history1',history)
+		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
+        history.replace('/detail/'+trickKey, {detail : trickKey})
+        console.log('history2',history)
+        
 	}
 	@action addPostreqsFromPrereqs=(trick)=>{
 		if(trick.prereqs){
