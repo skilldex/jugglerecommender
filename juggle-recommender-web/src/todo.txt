@@ -19,7 +19,8 @@ v 1.9
 
 	BUGS:
 	-details showing postreqs it shouldn't
-		TO REPRODUCE: list -> Straight Across (ss1) (1b) details -> Postreq 'Box' Details -> Back arrow (to Straight Across (ss1) (1b)). Now there are postreqs there shouldn't be, they are not in the db for Straight Across (ss1) (1b).
+		TO REPRODUCE: list -> Straight Across (ss1) (1b) details -> Postreq 'Box' Details -> Back arrow (to Straight Across (ss1) (1b)). Now there are postreqs there shouldn't be(temple box & crossed 423 Fake tennis), they are not in the db for Straight Across (ss1) (1b).
+		UPDATE: discovered that Box has duplicates of both temple box & crossed 423 Fake tennis
 	-deleting a pattern doesnt remove it from the stack, crashes when backed up into
 		TO REPRODUCE: delete a pattern, click a pattern in list, hit back arrow, crash/get message saying pattern doesn't exist, and back/forward arrows don't work(they never work after that message)
 	-fix back arrow on profile

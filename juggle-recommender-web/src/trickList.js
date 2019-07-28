@@ -39,6 +39,7 @@ class TrickList extends Component {
 	}
 
 	openDetail=(trickKey)=>{
+		console.log('openDetail')
 		if(!store.isLocalHost){
 			ReactGA.event({
 			  category: 'list ' + this.props.listType,
@@ -47,7 +48,7 @@ class TrickList extends Component {
 			});
 		}
 		history.push('/detail/'+trickKey, {detail : trickKey})
-		if (listType === "main"){
+		if (this.props.listType && this.props.listType === "main"){
 			uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
 		}
 		uiStore.setShowHomeScreen(false)
