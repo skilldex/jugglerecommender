@@ -6,9 +6,7 @@ Minor Bugs:
 	-old gif shows while new gif is loading
 	-frame by frame doesnt hide controls for youtube 
 	-when a pattern name is edited, the old pattern stays in other patterns association lists
-
-Quick DB changes to be done offline:
-	-change neckthrow tag to neckcross
+		-a way to fix this is to delete any associated trickKeys if they do not have actuall tricks in the library whenevr a list is made
 
 Frame by Frame / Slomo:
 	-possible better playback option is a slider that you set the play speed at, if you want frame by frame then you can set the slider very slow and pause/play as you wish, but generally a very slow speed will

@@ -348,12 +348,14 @@ class Store {
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 		let oldTrickKey
+		let shouldBackUpBecauseEditing = false
 		if(uiStore.editingDetailTrick){
 			oldTrickKey = uiStore.detailTrick.id
 			this.removeOldDependents(trick,oldTrickKey)
 			this.removeOldPrereqs(trick,oldTrickKey)
 			this.removeOldRelated(trick,oldTrickKey)
 			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
+			shouldBackUpBecauseEditing = true
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
@@ -381,6 +383,9 @@ class Store {
         uiStore.toggleAddingTrick()
 		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
         history.replace('/detail/'+trickKey, {detail : trickKey})
+        if(shouldBackUpBecauseEditing){
+        	uiStore.handleBackButtonClick()
+        }
 
         
 	}
