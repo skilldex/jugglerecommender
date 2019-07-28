@@ -113,6 +113,18 @@ class Demo extends Component {
       this.video.internalPlayer.seekTo(trick.videoStartTime)
     }
   }
+  youtubeStateChange = (data) => {
+    const video = this.video.internalPlayer
+      //video.setAttribute("controls", 0)
+      video.getCurrentTime().then((time)=>{
+        if (time < store.library[this.props.trickKey].videoStartTime ||
+            time > store.library[this.props.trickKey].videoEndTime){
+              video.seekTo(store.library[this.props.trickKey].videoStartTime)
+              video.playVideo()
+        }
+      })
+
+  }
   instagramPaused = (data) => {
     if(this.video.currentTime >= parseInt(store.library[this.props.trickKey].videoEndTime,10)){
       this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime,10);
@@ -120,7 +132,8 @@ class Demo extends Component {
     }
   }
   instagramTimeUpdate = (data) => {
-    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime,10)){
+    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime,10) ||
+      this.video.currentTime > parseInt(store.library[this.props.trickKey].videoEndTime,10)){
       this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime,10);
       this.video.load()
     }
@@ -239,6 +252,7 @@ class Demo extends Component {
                           allow="autoplay"  
                           allowtransparency="true"
                           src={this.state.videoURL}
+                          onStateChange={this.youtubeStateChange}
                           onEnd={this.youtubeEnded}
                           ref={(video)=> {this.video = video}}  
                         ></YouTube> : this.state.videoURL && this.state.videoURL.includes('instagram') ? 

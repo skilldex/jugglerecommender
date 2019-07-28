@@ -7,7 +7,6 @@ Minor Bugs:
 	-if only one timestamp is put into add pattern time range it ignores it
 	-old gif shows while new gif is loading
 	-frame by frame doesnt hide controls on youtube
-	-hitting cancel on edit trick form doesnt go back to the would-be edited trick, it goes back 1 further 
 	-demos that loop should restrict user to only seeing the looping trick 
 	-if you ever get the message 'sorry this trick has been deleted', then details forward and back dont work.
 		-now that rename bug fixed, this message is more rare
