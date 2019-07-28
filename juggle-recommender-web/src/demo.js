@@ -107,7 +107,7 @@ class Demo extends Component {
       }
       return videoURLtoUse
     }
-  youtubeEnded = (data) => {
+  youtubeEnded = (data) => {//when i set the end time in add trick, i should set a 0 start time if none is given
     if(store.library[this.props.trickKey].videoStartTime){
       const trick = store.library[this.props.trickKey]
       this.video.internalPlayer.seekTo(trick.videoStartTime)
@@ -119,7 +119,11 @@ class Demo extends Component {
       video.getCurrentTime().then((time)=>{
         if (time < store.library[this.props.trickKey].videoStartTime ||
             time > store.library[this.props.trickKey].videoEndTime){
-              video.seekTo(store.library[this.props.trickKey].videoStartTime)
+              if (store.library[this.props.trickKey].videoStartTime){
+                video.seekTo(store.library[this.props.trickKey].videoStartTime)
+              }else{
+                video.seekTo(store.library[this.props.trickKey].videoStartTime)
+              }
               video.playVideo()
         }
       })
