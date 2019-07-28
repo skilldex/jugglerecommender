@@ -23,8 +23,6 @@ v 1.9
 		UPDATE: discovered that Box has duplicates of both temple box & crossed 423 Fake tennis
 		FIXED HACKILY: put 'key={Math.random()+"listSection"}' into tricklist.js line 195
 		FIXED BETTER: dissalow duplicates from being shown in lists even if they are in the db twice. done with 'pushedTrickkeys' in tricklist.js
-	-deleting a pattern doesnt remove it from the stack, crashes when backed up into
-		TO REPRODUCE: delete a pattern, click a pattern in list, hit back arrow, crash/get message saying pattern doesn't exist, and back/forward arrows don't work(they never work after that message)
 	-fix back arrow on profile
 		TO REPRODUCE: go to details, profile, back arrow
 
