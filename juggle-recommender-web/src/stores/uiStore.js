@@ -52,9 +52,12 @@ class UIStore {
 		this.showProfileScreen = bool
 	}
   	@action editDetailTrick=()=>{
-  		this.editingDetailTrick = true
-  		//shows form
-  		this.addingTrick = true
+  		const tempDetailTrick = this.detailTrick
+		history.push('/addpattern')
+		this.clearUI()
+		this.toggleAddingTrick()
+		this.detailTrick = tempDetailTrick
+		this.editingDetailTrick = true
   	}
   	@action	handleBackButtonClick=()=>{
 	    history.go(-1);

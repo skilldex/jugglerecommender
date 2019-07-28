@@ -1,5 +1,8 @@
+Maybes:
+	-give edit trick its own url/ga
+	-make a ga for delete trick click
+
 Minor Bugs:
-	-if you go multiple levels into details, when you get back to tricklist it doesnt autoscroll to where you were
 	-click off catch edit bug still happening
 	-if only one timestamp is put into add pattern time range it ignores it
 	-old gif shows while new gif is loading

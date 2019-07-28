@@ -484,8 +484,6 @@ class AddTrickForm extends Component {
 	
 
 	cancel=()=>{
-		this.clearState()
-		uiStore.toggleAddingTrick()
 		uiStore.handleBackButtonClick()
 	}
 

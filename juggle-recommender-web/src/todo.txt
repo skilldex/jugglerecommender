@@ -20,7 +20,7 @@ v 1.9
 	BUGS:
 	-details showing postreqs it shouldn't
 		TO REPRODUCE: list -> Straight Across (ss1) (1b) details -> Postreq 'Box' Details -> Back arrow (to Straight Across (ss1) (1b)). Now there are postreqs there shouldn't be(temple box & crossed 423 Fake tennis), they are not in the db for Straight Across (ss1) (1b).
-		UPDATE: discovered that Box has duplicates of both temple box & crossed 423 Fake tennis
+		UPDATE: discovered that Box has duplicates of both temple box & crossed 423 Fake tennis, somehow they make their way into the Straight Across (ss1) (1b) list
 		FIXED HACKILY: put 'key={Math.random()+"listSection"}' into tricklist.js line 195
 		FIXED BETTER: (hack fix removed)dissalow duplicates from being shown in lists even if they are in the db twice. done with 'pushedTrickkeys' in tricklist.js
 

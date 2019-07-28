@@ -62,9 +62,9 @@ const unlisten = history.listen((location, action) => {
 	}
   } if(location.pathname == "/addpattern"){
 	uiStore.clearUI()
-	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
+	// if(uiStore.addingTrick){
+	//  	uiStore.toggleAddingTrick()
+	// }
   }  
 });
 
