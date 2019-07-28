@@ -160,7 +160,8 @@ class App extends Component {
 			  	if (store.library[trickKey]){
 				  	const detailTrick = {...store.library[trickKey]}
 					detailTrick.id = trickKey
-				  	uiStore.setDetailTrick(detailTrick)				  		
+				  	uiStore.setDetailTrick(detailTrick)			
+			  		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})	  		
 			  	}else{
 					alert("There is no page for that trick.")
 					uiStore.clearUI()
@@ -197,6 +198,7 @@ class App extends Component {
 					if(uiStore.addingTrick){
 					 	uiStore.toggleAddingTrick()
 					}
+					history.push('/home')
 				}else{
 					history.push('/home')
 					uiStore.clearUI()
@@ -212,6 +214,7 @@ class App extends Component {
 					if(uiStore.addingTrick){
 					 	uiStore.toggleAddingTrick()
 					}
+					history.push('/addpattern')
 		  		}else{
 					history.push('/home')
 					uiStore.clearUI()

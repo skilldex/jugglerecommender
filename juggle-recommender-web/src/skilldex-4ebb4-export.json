@@ -10245,17 +10245,20 @@
       "videoStartTime" : 1
     },
     "Takeouts" : {
-      "dependents" : [ "Burke's Slam", "Burke's Barrage", "Reverse Chops", "Takearound", "Takeouts(4b)", "Flying Around the World", "Windmill Takeouts", "Reverse Takeouts", "Box Takeouts", "Boston Takeouts", "Boston Takeouts", "Takeouts + Orbits", "Takeouts + Box", "Boston Mess + Takeouts", "The Tornado", "Orka's Mess 2", "Takeouts + Box 2", "Takeouts + Broken Box", "Takeouts + Broken Box 2", "Aquamarine", "Richie's Rocket", "Squeeze Takeout in Synch(4b)", "Boston Mess + Takeouts", "Multiplex Takeouts(4b)" ],
+      "dependents" : [ "Burke's Slam", "Burke's Barrage", "Reverse Chops", "Takearound", "Takeouts(4b)", "Flying Around the World", "Windmill Takeouts", "Reverse Takeouts", "Box Takeouts", "Boston Takeouts", "Takeouts + Orbits", "Takeouts + Box", "Boston Mess + Takeouts", "The Tornado", "Orka's Mess 2", "Takeouts + Box 2", "Takeouts + Broken Box", "Takeouts + Broken Box 2", "Aquamarine", "Richie's Rocket", "Squeeze Takeout in Synch(4b)", "Multiplex Takeouts(4b)" ],
       "difficulty" : "4",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/takeouts.gif",
       "name" : "Takeouts",
       "num" : 3,
       "prereqs" : [ "Cascade", "Takeouts  (1b)" ],
-      "related" : [ "Burke's Barrage", "Around the World(1b)" ],
+      "related" : [ "Around the World(1b)" ],
       "siteswap" : "423",
       "tags" : [ "crossed-arms", "423", "carry" ],
       "timeSubmitted" : 999999999999,
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Takeouts.html"
+      "timeUpdated" : 1564296334014,
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Takeouts.html",
+      "video" : ""
     },
     "Takeouts  (1b)" : {
       "contributor" : "tjthejuggler",
@@ -12040,6 +12043,10 @@
           "catches" : "60",
           "starred" : "true"
         },
+        "Flying Disco Drop" : {
+          "catches" : "120",
+          "lastUpdated" : 1564308952749
+        },
         "Forky The Robot" : {
           "catches" : "1",
           "lastUpdated" : 1561746454090,
@@ -12107,6 +12114,10 @@
         "Half Waterfall" : {
           "catches" : "40",
           "lastUpdated" : 1563997813355
+        },
+        "Hands of Time" : {
+          "catches" : "400",
+          "lastUpdated" : 1564307252293
         },
         "Harrison's Hang" : {
           "catches" : 0,
@@ -12250,6 +12261,10 @@
         "Olas" : {
           "catches" : "100",
           "starred" : "true"
+        },
+        "Orka's Mess" : {
+          "catches" : "4",
+          "lastUpdated" : 1564309588168
         },
         "Over the Arm Mills Mess" : {
           "catches" : "120",
@@ -12779,7 +12794,7 @@
           "starred" : "true"
         },
         "Takeouts" : {
-          "baby" : "true",
+          "baby" : "false",
           "catches" : "6",
           "lastUpdated" : 1564194129138,
           "starred" : "true"
@@ -13492,7 +13507,7 @@
     }
   },
   "stats" : {
-    "totalCatchCount" : 47500
+    "totalCatchCount" : 48048
   },
   "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neck-pass", "neck-throw", "headplant" ],
   "trickOfTheDay" : {
