@@ -95,7 +95,6 @@ class Detail extends Component {
 
       if (uiStore.detailCatchEditable && targetElement !== inputElement && targetElement !== buttonElement
         ){
-        console.log('clickOff')
         uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       }
   }

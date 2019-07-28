@@ -166,6 +166,10 @@ class Demo extends Component {
     }
   }
 
+  // toggleSlowMoPlayback=(direction)=>{
+
+  // }
+
 
   handleOnMouseDownFrame=(direction)=>{
     if (this.state.videoURL && this.state.videoURL.includes('youtube')){
@@ -189,7 +193,6 @@ class Demo extends Component {
   }
 
   handleOnMouseUpFrame=(direction)=>{
-    console.log("mouse up ", direction)
     clearInterval(this.state.timer)
     this.setState({
       mouseDown : false,
