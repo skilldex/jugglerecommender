@@ -48,7 +48,7 @@ class TrickList extends Component {
 			});
 		}
 		history.push('/detail/'+trickKey, {detail : trickKey})
-		if (this.props.listType && this.props.listType === "main"){
+		if (this.props.listType === "main"){
 			uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
 		}
 		uiStore.setShowHomeScreen(false)
@@ -140,6 +140,7 @@ class TrickList extends Component {
 				
 			const expandTrickButtonClass =  
 				uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
+			console.log('tricks',tricks)
 			tricks.push(
 				<div className="listCard" 
 					 key={trickKey + "div"} 
@@ -187,8 +188,11 @@ class TrickList extends Component {
 		})	
 		const date = new Date()
 		const currentTime = date.getTime()
-		const list =
-			<div  className="listSection">
+		let list = null
+		console.log('list',list)
+		console.log('tricks',tricks)
+		list =
+			<div key={Math.random()+"listSection"} className="listSection">
 				{tricks.length > 0 ? tricks: 
 					<div className="noResultsDiv">
 						{store.startTime+10000<currentTime? "No results found" :
@@ -200,7 +204,7 @@ class TrickList extends Component {
 					</div>
 				}
 			</div>
-
+		console.log('list',list)
 		return (
 			<div className="trickListOuterDiv">
 				{uiStore.detailTrick || uiStore.showHomeScreen? null:<MainTagsBar/>}
