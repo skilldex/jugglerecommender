@@ -47,7 +47,9 @@ class TrickList extends Component {
 			});
 		}
 		history.push('/detail/'+trickKey, {detail : trickKey})
-		uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
+		if (listType === "main"){
+			uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
+		}
 		uiStore.setShowHomeScreen(false)
 		uiStore.setShowExpandedMenu(false)
 		if (uiStore.selectedTrick){
