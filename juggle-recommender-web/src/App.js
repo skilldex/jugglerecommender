@@ -29,10 +29,10 @@ const unlisten = history.listen((location, action) => {
   	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick()
 	}
+	uiStore.clearUI()
   	const detailTrick = {...store.library[location.state.detail]}
 	detailTrick.id = location.state.detail
   	uiStore.setDetailTrick(detailTrick)	
-
   }
   if(location.pathname == "/home" || location.pathname == "/" ){
   	uiStore.clearUI()
