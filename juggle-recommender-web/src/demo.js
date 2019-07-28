@@ -184,7 +184,7 @@ class Demo extends Component {
         if(this.state.mouseDown){
           this.frameStep(direction)
         }
-      }, 500)
+      }, 100)
     })
   }
 
