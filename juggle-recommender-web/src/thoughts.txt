@@ -4,9 +4,7 @@ Maybes:
 
 Minor Bugs:
 	-old gif shows while new gif is loading
-	-frame by frame doesnt hide controls on jugglekraze_youtuber 
-	-if you ever get the message 'sorry this trick has been deleted', then details forward and back dont work.
-		-now that rename bug fixed, this message is more rare
+	-frame by frame doesnt hide controls for youtube 
 	-when a pattern name is edited, the old pattern stays in other patterns association lists
 
 Quick DB changes to be done offline:

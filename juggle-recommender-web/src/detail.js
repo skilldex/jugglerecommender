@@ -107,6 +107,7 @@ class Detail extends Component {
     if (detailTrickKey && !detailTrick){
         alert("Sorry, this pattern has been deleted or renamed.")
         uiStore.setDetailTrick(null)
+        uiStore.handleBackButtonClick()
     }
 
     const catchesSection = 
