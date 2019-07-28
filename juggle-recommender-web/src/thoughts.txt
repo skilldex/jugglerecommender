@@ -3,7 +3,6 @@ Maybes:
 	-make a ga for delete trick click
 
 Minor Bugs:
-	-click off catch edit bug still happening
 	-if only one timestamp is put into add pattern time range it ignores it
 	-old gif shows while new gif is loading
 	-frame by frame doesnt hide controls on jugglekraze_youtuber 
@@ -17,10 +16,6 @@ Quick DB changes to be done offline:
 Frame by Frame / Slomo:
 	-possible better playback option is a slider that you set the play speed at, if you want frame by frame then you can set the slider very slow and pause/play as you wish, but generally a very slow speed will
 
-Eventuals/ Needs sorted:
-	-an alternative names section where users can vote/submit a name for voting
-		-Maybe multiple URLs for same tricks in instances where tricks have multiple popular names
-
 Possible optimization: 
 	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a tricknsme changes we can more quickly update everyone's database.
 
@@ -30,6 +25,8 @@ Biggest Desires:
 Suggest a Change:
 	-could be done just like edit, but instead of adding it to the site it emails/notifies the contributor.
 	-if trick has no siteswap listed, maybe anyone should be able to input it directly
+	-an alternative names section where users can vote/submit a name for voting
+		-Maybe multiple URLs for same tricks in instances where tricks have multiple popular names
 
 Details:
 	-expandable pattern stats section

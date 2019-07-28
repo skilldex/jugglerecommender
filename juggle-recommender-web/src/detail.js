@@ -39,7 +39,7 @@ class Detail extends Component {
     if(target.charCode===13){  
       uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       //set focus back to outer div
-      this.outerDiv.focus()   
+      //this.outerDiv.focus()   
     }
   }
   seeExplanation=(trickKey)=>{
@@ -88,26 +88,19 @@ class Detail extends Component {
   toggleExtraGif=()=>{
     this.setState({showExtraGif: !this.state.showExtraGif})
   }
-
-	render() {
-    //set focus for outer div for onblur closing
-    if(this.outerDiv){this.outerDiv.focus()}
-    //set focus to compensate for onblur function
-    if(this.catchInput){this.catchInput.focus()}
-    document.addEventListener("click", (evt) => {
+  handleDetailDivClick=(evt)=>{
       const inputElement = document.getElementById("catchInput");
       const buttonElement = document.getElementById("editCatchButton");
-      let targetElement = evt.target;
-      do {
-        if (targetElement === inputElement || targetElement === buttonElement) {
-          return;
-        }
-        targetElement = targetElement.parentNode;
-      } while (targetElement);
-      if (uiStore.detailCatchEditable){
+      const targetElement = evt.target;
+
+      if (uiStore.detailCatchEditable && targetElement !== inputElement && targetElement !== buttonElement
+        ){
+        console.log('clickOff')
         uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       }
-    });
+  }
+
+	render() {
    
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
@@ -138,7 +131,10 @@ class Detail extends Component {
                 store.myTricks[detailTrickKey].catches:"0"}
           </span>
         }
-        <img id="editCatchButton" src={editIcon} className="editCatchIcon" alt="toggleCatchEdit" 
+        <img id="editCatchButton"
+              src={editIcon} 
+              className="editCatchIcon" 
+              alt="toggleCatchEdit" 
              onClick={()=>{ this.handleEditCatchButtonClick()}}
         />
       </div>
@@ -338,7 +334,9 @@ class Detail extends Component {
 
 		return(      
 
-      			<div className="detailDiv" id="detailDiv">
+      			<div className="detailDiv" 
+                  id="detailDiv" 
+                  onClick={this.handleDetailDivClick}>
               <div className="topButtons">
                 {backButton}
                 {backLabel}
