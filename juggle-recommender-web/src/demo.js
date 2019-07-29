@@ -147,7 +147,7 @@ class Demo extends Component {
       const video = this.video.internalPlayer
       //video.setAttribute("controls", 0)
       video.getCurrentTime().then((time)=>{
-        video.pauseVideo()
+        //video.pauseVideo()
         if(direction === "back"){
           video.seekTo(time - .033)
         }else if (direction === "forward"){
@@ -166,30 +166,72 @@ class Demo extends Component {
     }
   }
 
-  // toggleSlowMoPlayback=(direction)=>{
-
-  // }
+   toggleSlowmoPlayback=(direction)=>{
+      let toSetPlaybackTo
+      const video = document.getElementById("instagramVideo") 
+      video.removeAttribute( 'controls' );
+      if (direction === "back"){
+        if (this.state.slowmoPlayback === "back"){
+          toSetPlaybackTo = null
+        }else{
+          toSetPlaybackTo = "back"
+          video.pause();
+        }
+      }else if(direction === "forward"){
+        if (this.state.slowmoPlayback === "forward"){
+          toSetPlaybackTo = null
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.play();
+          toSetPlaybackTo = "forward"
+        }
+      }
+      this.setState({slowmoPlayback: toSetPlaybackTo},()=>{
+        if(this.state.slowmoPlayback){
+            if(this.state.slowmoPlayback === "forward"){
+              video.playbackRate = .1
+            }else if(this.state.slowmoPlayback === "back"){
+              this.state.intervalRewind = setInterval(function(){
+                 if(video.currentTime == 0){
+                     video.currentTime = video.duration;
+                 }
+                 else{
+                  video.play();
+                  video.removeAttribute( 'controls' );
+                     video.currentTime += -.035;
+                     
+                     video.pause();
+                 }
+              },200);
+            }
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.playbackRate = 1.0
+          video.pause();
+        }
+      })
+   }
 
 
   handleOnMouseDownFrame=(direction)=>{
-    if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-      const video = this.video.internalPlayer
-      //video.setAttribute("controls", 0)
-      video.getCurrentTime().then((time)=>{
-        video.pauseVideo()
-      })
-    }else{
-      const video = document.getElementById("instagramVideo")
-      video.removeAttribute( 'controls' );
-      video.pause()
-    }
-    this.setState({mouseDown: true},()=>{
-      this.state.timer = setInterval(()=>{
-        if(this.state.mouseDown){
-          this.frameStep(direction)
-        }
-      }, 100)
-    })
+    // if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+    //   const video = this.video.internalPlayer
+    //   //video.setAttribute("controls", 0)
+    //   video.getCurrentTime().then((time)=>{
+    //     video.pauseVideo()
+    //   })
+    // }else{
+    //   const video = document.getElementById("instagramVideo")
+    //   video.removeAttribute( 'controls' );
+    //   video.pause()
+    // }
+    // this.setState({mouseDown: true},()=>{
+    //   this.state.timer = setInterval(()=>{
+    //     if(this.state.mouseDown){
+    //       this.frameStep(direction)
+    //     }
+    //   }, 100)
+    // })
   }
 
   handleOnMouseUpFrame=(direction)=>{
@@ -282,21 +324,13 @@ class Demo extends Component {
     let frameButtons = this.props.demoLocation === "detail" ?
                         <div className = "frameButtons">
                           <img src = {frameIcon} 
-                               className = "frameIcon rotated180"
-                               onMouseDown = {() => this.handleOnMouseDownFrame('back')}
-                               onTouchStart = {() => this.handleOnMouseDownFrame('back')}
-                               onMouseUp = {() => this.handleOnMouseUpFrame('back')}
-                               onTouchEnd = {() => this.handleOnMouseUpFrame('back')}
-                               onClick = {() => this.frameStep('back')}
+                               className = {this.state.slowmoPlayback === "back" ? "frameIcon rotated180 selectedFlair" : "frameIcon rotated180"}
+                               onClick = {() => this.toggleSlowmoPlayback('back')}
                                onContextMenu={(e) => e.preventDefault()}
                           />
                           <img src = {frameIcon} 
-                               className = "frameIcon"
-                               onMouseDown = {() => this.handleOnMouseDownFrame('forward')}
-                               onTouchStart = {() => this.handleOnMouseDownFrame('forward')}
-                               onMouseUp = {() => this.handleOnMouseUpFrame('forward')}
-                               onTouchEnd = {() => this.handleOnMouseUpFrame('forward')}
-                               onClick = {() => this.frameStep('forward')}
+                               className = {this.state.slowmoPlayback === "forward" ? "frameIcon selectedFlair" : "frameIcon"}
+                               onClick = {() => this.toggleSlowmoPlayback('forward')}
                                onContextMenu={(e) => e.preventDefault()}
                           />
                        </div> : null

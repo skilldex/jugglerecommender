@@ -280,7 +280,8 @@ class Detail extends Component {
                                 {detailTrick && detailTrick.explanation?
                                   <div className="explanationSection">
                                     <label className="detailLabel">Explanation:</label>
-                                    <label className="showExplanation" onClick={()=>this.toggleShowExplanation()}>
+                                    <label className="showExplanation" 
+                                            onClick={()=>this.toggleShowExplanation()}>
                                       {uiStore.showExplanation?"hide":"show"}
                                     </label> <br/>
                                     {uiStore.showExplanation?<label className="explanation">{detailTrick.explanation}</label>:null}
@@ -297,7 +298,8 @@ class Detail extends Component {
                               </div>:null
                             }
                             <div className="moreInfoLabelDiv">
-                              <label className="moreInfoLabel" onClick={()=>this.toggleShowMoreInformation()}>
+                              <label className="moreInfoLabel" 
+                                      onClick={()=>this.toggleShowMoreInformation()}>
                                 {uiStore.showMoreInformation?"less info":"more info"}
                               </label><br/>
                             </div>
