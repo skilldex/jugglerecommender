@@ -412,18 +412,27 @@ class Store {
 	@action addEquivalentRelated=(trick)=>{
 		if(trick.related){
 			trick.related.forEach((item)=>{
+				console.log('item',item)
 				const relatedTrick = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
 				if(!this.library[relatedTrick]){
 					console.log("problem with ",relatedTrick)
 				}
+				console.log('relatedTrick',relatedTrick)
 				if(this.library[relatedTrick]){
+					console.log('this.library[relatedTrick]',this.library[relatedTrick])
 					if (!this.library[relatedTrick].related){
+						console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
 						this.library[relatedTrick].related = []	
 					}
 					if (this.library[relatedTrick].related.indexOf(trick.name) === -1){
+							console.log('this.library[relatedTrick].related.indexOf(trick.name)',this.library[relatedTrick].related.indexOf(trick.name))
+							console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
 							this.library[relatedTrick].related.push(trick.name)
+							console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
 							let relatedRef = firebase.database().ref('library/'+relatedTrick)
+	    		    		console.log('this.library[relatedTrick]1',this.library[relatedTrick])
 	    		    		relatedRef.set(this.library[relatedTrick]);
+	    		    		console.log('this.library[relatedTrick]2',this.library[relatedTrick])
 	    		    }
         		}
 			})

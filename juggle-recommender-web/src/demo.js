@@ -8,6 +8,7 @@ import frameIcon from "./images/frameIcon.svg"
 import './App.css';
 import './demo.css';
 import YouTube from 'react-youtube';
+import ReactGA from 'react-ga'
 
 
 @observer
@@ -261,6 +262,18 @@ class Demo extends Component {
     const video = document.getElementById("instagramVideo")
     video.setAttribute( 'controls', '' );
   }
+  handleInstagramLogoClick=()=>{
+    if(!store.isLocalHost){
+      ReactGA.event({
+          category: 'demo',
+          action: 'instagram link',
+      });
+    } 
+    if (store.library[this.props.trickKey]){
+      const trick = store.library[this.props.trickKey]
+      window.open(trick.video)
+    }
+  }
 	render() {
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
     const trick = store.library[trickKey]
@@ -279,7 +292,7 @@ class Demo extends Component {
                              alt = ''
                              className="instagramLogo"
                              src={instagramLogoIcon}
-                             onClick={()=>{window.open(trick.video)}}
+                             onClick={()=>{this.handleInstagramLogoClick()}}
                           />
     let igHeader = this.state.videoURL && this.props.demoLocation !== 'expandedSection' && this.state.videoURL.includes('instagram') && this.state.igData ? 
                           <div className="instagramHeader">

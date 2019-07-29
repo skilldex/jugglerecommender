@@ -3,8 +3,6 @@ v 1.9
 		-upload image
 			ian has code for this
 
-	-Fix list load time
-
 	-Add Trick Form:
 		-a way to see info/demo of tricks when deciding what to use as related
 		-make consuming tags be added automatically in the list
@@ -14,8 +12,6 @@ v 1.9
 	-Email Notifications
 
 	-Think about leaderboard/details
-
-	-Get better frame by frame 
 
 	Data fix scripts(see list below)
 
@@ -49,6 +45,7 @@ Data fix scripts:
 		if x is listed as related for y, then y should be listed for x
 
 Code Cleaning:
+	-break up main render function in details.js
 	-get add trick can submit checker split into multiple functions
 	-clean up any trace of allTricksList/myTricksList
 	-can detail and filter timers now be removed since they are their own screens?

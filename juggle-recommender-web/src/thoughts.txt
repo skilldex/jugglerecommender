@@ -5,6 +5,7 @@ Maybes:
 Minor Bugs:
 	-old gif shows while new gif is loading
 	-frame by frame doesnt hide controls for youtube 
+	
 	-when a pattern name is edited, the old pattern stays in other patterns association lists
 		-a way to fix this is to delete any associated trickKeys if they do not have actuall tricks in the library whenevr a list is made
 
