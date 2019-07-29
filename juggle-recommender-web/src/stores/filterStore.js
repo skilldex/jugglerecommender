@@ -57,7 +57,7 @@ if (urlQueryCatches){
 
 class FilterStore {
 
-	@observable sortType = 'difficulty'
+	@observable sortType = 'timeSubmitted'
 	@observable demoType = demoType
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = difficultyRange

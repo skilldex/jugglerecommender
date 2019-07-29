@@ -142,31 +142,9 @@ class Demo extends Component {
       this.video.load()
     }
   }
-  frameStep=(direction)=>{
-    if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-      const video = this.video.internalPlayer
-      //video.setAttribute("controls", 0)
-      video.getCurrentTime().then((time)=>{
-        //video.pauseVideo()
-        if(direction === "back"){
-          video.seekTo(time - .033)
-        }else if (direction === "forward"){
-          video.seekTo(time + .033)
-        }
-      })
-    }else{
-      const video = document.getElementById("instagramVideo")
-      video.removeAttribute( 'controls' );
-      video.pause()
-      if(direction === "back"){
-        video.currentTime = video.currentTime - .033
-      }else if (direction === "forward"){
-        video.currentTime = video.currentTime + .033
-      }
-    }
-  }
-
-   toggleSlowmoPlayback=(direction)=>{
+    toggleInstagramSlowmoPlayback=(direction)=>{
+      const videoStartTime = store.library[this.props.trickKey].videoStartTime
+      const videoEndTime = store.library[this.props.trickKey].videoEndTime
       let toSetPlaybackTo
       const video = document.getElementById("instagramVideo") 
       video.removeAttribute( 'controls' );
@@ -192,15 +170,14 @@ class Demo extends Component {
               video.playbackRate = .1
             }else if(this.state.slowmoPlayback === "back"){
               this.state.intervalRewind = setInterval(function(){
-                 if(video.currentTime == 0){
-                     video.currentTime = video.duration;
+                 if(video.currentTime <= Math.max(videoStartTime, 0)){
+                    video.currentTime = Math.min(videoEndTime, video.duration);                  
                  }
                  else{
                   video.play();
                   video.removeAttribute( 'controls' );
-                     video.currentTime += -.035;
-                     
-                     video.pause();
+                  video.currentTime += -.035;
+                  video.pause();
                  }
               },200);
             }
@@ -209,39 +186,76 @@ class Demo extends Component {
           video.playbackRate = 1.0
           video.pause();
         }
+      })      
+    }
+
+    toggleYoutubeSlowmoPlayback=(direction)=>{
+      const video = this.video.internalPlayer
+      const videoStartTime = store.library[this.props.trickKey].videoStartTime
+      const videoEndTime = store.library[this.props.trickKey].videoEndTime
+      let videoDuration
+      video.getDuration().then((duration)=>{
+        videoDuration = duration
       })
+      const thisVideo = document.getElementById("YouTubeVideo")
+      thisVideo.opts = {
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        mute : true,
+        loop : 1,
+        controls : 0,
+      }
+    }
+      let toSetPlaybackTo
+      if (direction === "back"){
+        if (this.state.slowmoPlayback === "back"){
+          toSetPlaybackTo = null
+        }else{
+          toSetPlaybackTo = "back"
+          video.pauseVideo()
+        }
+      }else if(direction === "forward"){
+        if (this.state.slowmoPlayback === "forward"){
+          toSetPlaybackTo = null
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.playVideo()
+          toSetPlaybackTo = "forward"
+        }
+      }
+      this.setState({slowmoPlayback: toSetPlaybackTo},()=>{
+        if(this.state.slowmoPlayback){
+            if(this.state.slowmoPlayback === "forward"){
+              video.setPlaybackRate(0.25)
+            }else if(this.state.slowmoPlayback === "back"){
+              this.state.intervalRewind = setInterval(function(){
+                 video.getCurrentTime().then((currentTime)=>{
+                   if(currentTime <= Math.max(videoStartTime, 0)){
+                      video.seekTo(Math.min(videoEndTime, videoDuration));                  
+                   }
+                   else{
+                    video.playVideo()
+                    video.seekTo(currentTime - .033)
+                    video.pauseVideo()
+                   }
+                 })
+              },400);
+            }
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.setPlaybackRate(1)
+          video.pauseVideo()
+        }
+      })      
+    }
+
+   toggleSlowmoPlayback=(direction)=>{
+      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+        this.toggleYoutubeSlowmoPlayback(direction)
+      }else{
+        this.toggleInstagramSlowmoPlayback(direction)
+      }
    }
-
-
-  handleOnMouseDownFrame=(direction)=>{
-    // if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-    //   const video = this.video.internalPlayer
-    //   //video.setAttribute("controls", 0)
-    //   video.getCurrentTime().then((time)=>{
-    //     video.pauseVideo()
-    //   })
-    // }else{
-    //   const video = document.getElementById("instagramVideo")
-    //   video.removeAttribute( 'controls' );
-    //   video.pause()
-    // }
-    // this.setState({mouseDown: true},()=>{
-    //   this.state.timer = setInterval(()=>{
-    //     if(this.state.mouseDown){
-    //       this.frameStep(direction)
-    //     }
-    //   }, 100)
-    // })
-  }
-
-  handleOnMouseUpFrame=(direction)=>{
-    clearInterval(this.state.timer)
-    this.setState({
-      mouseDown : false,
-      timer : null
-    })
-    
-  }
 
   handleInstagramVideoClick=()=>{
     const video = document.getElementById("instagramVideo")
