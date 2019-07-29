@@ -241,6 +241,8 @@ class Store {
 	}	
 	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
 		const oldTrick = this.library[oldTrickKey]
+		console.log('oldTrickKey',oldTrickKey)
+		console.log('oldTrick.prereqs',oldTrick.prereqs)
 		if(oldTrick.prereqs){
 			let stalePrereqs
 			if(newTrickData){
@@ -248,6 +250,7 @@ class Store {
 			}else{//for the case of deleting a trick
 				stalePrereqs = oldTrick.prereqs
 			}
+			console.log('stalePrereqs',stalePrereqs)
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
 				if(trick){
@@ -329,12 +332,14 @@ class Store {
 	@action deleteTrick=()=>{
 		var result = window.confirm("Are you sure you want to permanently delete this pattern?");
 		if (result){
+
 			const trickToDelete = uiStore.detailTrick.id
 			uiStore.detailTrick = null
 		    this.removeOldDependents(null,trickToDelete)
 		    this.removeOldPrereqs(null,trickToDelete)
 		    this.removeOldRelated(null,trickToDelete)
 		    this.removeTrickFromDatabase(trickToDelete)
+		    history.go(-1);
 		}
 
 
@@ -343,12 +348,14 @@ class Store {
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 		let oldTrickKey
+		let shouldBackUpBecauseEditing = false
 		if(uiStore.editingDetailTrick){
 			oldTrickKey = uiStore.detailTrick.id
 			this.removeOldDependents(trick,oldTrickKey)
 			this.removeOldPrereqs(trick,oldTrickKey)
 			this.removeOldRelated(trick,oldTrickKey)
 			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
+			shouldBackUpBecauseEditing = true
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
@@ -373,11 +380,14 @@ class Store {
         this.addPostreqsFromPrereqs(trick)
         this.addEquivalentRelated(trick)
         this.addPrereqsFromPostreqs(trick)
-
-		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
-		history.push('/detail/'+trickKey, {detail : trickKey})
-		uiStore.handleBackButtonClick()	
         uiStore.toggleAddingTrick()
+		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
+        history.replace('/detail/'+trickKey, {detail : trickKey})
+        if(shouldBackUpBecauseEditing){
+        	uiStore.handleBackButtonClick()
+        }
+
+        
 	}
 	@action addPostreqsFromPrereqs=(trick)=>{
 		if(trick.prereqs){
@@ -387,8 +397,10 @@ class Store {
 					console.log("problem with ",prereq)
 				}
 				if(this.library[prereq]){
-					if( this.library[prereq].dependents && 
-						this.library[prereq].dependents.indexOf(trick.name) === -1){
+					if (!this.library[prereq].dependents){
+						this.library[prereq].dependents = []	
+					}
+					if(	this.library[prereq].dependents.indexOf(trick.name) === -1){
 							this.library[prereq].dependents.push(trick.name)
 							let prereqRef = firebase.database().ref('library/'+prereq)
 	        				prereqRef.set(this.library[prereq]);
@@ -405,8 +417,10 @@ class Store {
 					console.log("problem with ",relatedTrick)
 				}
 				if(this.library[relatedTrick]){
-					if (this.library[relatedTrick].related && 
-						this.library[relatedTrick].related.indexOf(trick.name) === -1){
+					if (!this.library[relatedTrick].related){
+						this.library[relatedTrick].related = []	
+					}
+					if (this.library[relatedTrick].related.indexOf(trick.name) === -1){
 							this.library[relatedTrick].related.push(trick.name)
 							let relatedRef = firebase.database().ref('library/'+relatedTrick)
 	    		    		relatedRef.set(this.library[relatedTrick]);
@@ -423,8 +437,10 @@ class Store {
 					console.log("problem with ",dependent)
 				}
 				if(this.library[dependent]){
-					if(this.library[dependent].prereqs && 
-						this.library[dependent].prereqs.indexOf(trick.name) === -1){
+					if (!this.library[dependent].prereqs){
+						this.library[dependent].prereqs = []	
+					}
+					if(	this.library[dependent].prereqs.indexOf(trick.name) === -1){
 							this.library[dependent].prereqs.push(trick.name)
 							let dependentRef = firebase.database().ref('library/'+dependent)
 			        		dependentRef.set(this.library[dependent]);

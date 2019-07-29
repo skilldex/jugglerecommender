@@ -15,22 +15,11 @@ v 1.9
 
 	-Think about leaderboard/details
 
+	-Get better frame by frame 
+
 	Data fix scripts(see list below)
 
 =========
--there should not be a way for a trick to receive a prereq or postreq if it already has it
-	-maybe there isn't now, lets see if it keeps happening
-
--get hold down functionality for frame buttons
-	-onMouseDown set flag, then run function while flag is set, and onMouseUp remove flag and start a timer that keeps checking if mouseDown flag, if mouse not down, kill timer
-	-onTouchHold for mobile, maybe onTouchStart/onTouchEnd that just does the same as the onMouseDown setup
-
-Bugs:
-	-frame by frame doesnt hide controls on youtube
-	-both timestamps shouldn't be required in add pattern
-	-it sometimes gets a number of catches stuck in its head and when I open a new detail and edit the catches and click on whitespace of card, it sets the catches to the original number. Once it starts doing this it keeps doing it with that same stuck number.
-		-not sure if this still happens with new UI
-
 Profile Screen
 	Stats
 		eventual

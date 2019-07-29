@@ -107,11 +107,27 @@ class Demo extends Component {
       }
       return videoURLtoUse
     }
-  youtubeEnded = (data) => {
+  youtubeEnded = (data) => {//when i set the end time in add trick, i should set a 0 start time if none is given
     if(store.library[this.props.trickKey].videoStartTime){
       const trick = store.library[this.props.trickKey]
       this.video.internalPlayer.seekTo(trick.videoStartTime)
     }
+  }
+  youtubeStateChange = (data) => {
+    const video = this.video.internalPlayer
+      //video.setAttribute("controls", 0)
+      video.getCurrentTime().then((time)=>{
+        if (time < store.library[this.props.trickKey].videoStartTime ||
+            time > store.library[this.props.trickKey].videoEndTime){
+              if (store.library[this.props.trickKey].videoStartTime){
+                video.seekTo(store.library[this.props.trickKey].videoStartTime)
+              }else{
+                video.seekTo(store.library[this.props.trickKey].videoStartTime)
+              }
+              video.playVideo()
+        }
+      })
+
   }
   instagramPaused = (data) => {
     if(this.video.currentTime >= parseInt(store.library[this.props.trickKey].videoEndTime,10)){
@@ -120,66 +136,126 @@ class Demo extends Component {
     }
   }
   instagramTimeUpdate = (data) => {
-    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime,10)){
+    if(this.video.currentTime < parseInt(store.library[this.props.trickKey].videoStartTime,10) ||
+      this.video.currentTime > parseInt(store.library[this.props.trickKey].videoEndTime,10)){
       this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime,10);
       this.video.load()
     }
   }
-  frameStep=(direction)=>{
-    if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-      const video = this.video.internalPlayer
-      //video.setAttribute("controls", 0)
-      video.getCurrentTime().then((time)=>{
-        video.pauseVideo()
-        if(direction === "back"){
-          video.seekTo(time - .033)
-        }else if (direction === "forward"){
-          video.seekTo(time + .033)
-        }
-      })
-    }else{
-      const video = document.getElementById("instagramVideo")
+    toggleInstagramSlowmoPlayback=(direction)=>{
+      const videoStartTime = store.library[this.props.trickKey].videoStartTime
+      const videoEndTime = store.library[this.props.trickKey].videoEndTime
+      let toSetPlaybackTo
+      const video = document.getElementById("instagramVideo") 
       video.removeAttribute( 'controls' );
-      video.pause()
-      if(direction === "back"){
-        video.currentTime = video.currentTime - .033
-      }else if (direction === "forward"){
-        video.currentTime = video.currentTime + .033
+      if (direction === "back"){
+        if (this.state.slowmoPlayback === "back"){
+          toSetPlaybackTo = null
+        }else{
+          toSetPlaybackTo = "back"
+          video.pause();
+        }
+      }else if(direction === "forward"){
+        if (this.state.slowmoPlayback === "forward"){
+          toSetPlaybackTo = null
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.play();
+          toSetPlaybackTo = "forward"
+        }
+      }
+      this.setState({slowmoPlayback: toSetPlaybackTo},()=>{
+        if(this.state.slowmoPlayback){
+            if(this.state.slowmoPlayback === "forward"){
+              video.playbackRate = .1
+            }else if(this.state.slowmoPlayback === "back"){
+              this.state.intervalRewind = setInterval(function(){
+                 if(video.currentTime <= Math.max(videoStartTime, 0)){
+                    video.currentTime = Math.min(videoEndTime, video.duration);                  
+                 }
+                 else{
+                  video.play();
+                  video.removeAttribute( 'controls' );
+                  video.currentTime += -.035;
+                  video.pause();
+                 }
+              },200);
+            }
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.playbackRate = 1.0
+          video.pause();
+        }
+      })      
+    }
+
+    toggleYoutubeSlowmoPlayback=(direction)=>{
+      const video = this.video.internalPlayer
+      const videoStartTime = store.library[this.props.trickKey].videoStartTime
+      const videoEndTime = store.library[this.props.trickKey].videoEndTime
+      let videoDuration
+      video.getDuration().then((duration)=>{
+        videoDuration = duration
+      })
+      const thisVideo = document.getElementById("YouTubeVideo")
+      thisVideo.opts = {
+      playerVars: { // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+        mute : true,
+        loop : 1,
+        controls : 0,
       }
     }
-  }
-
-
-  handleOnMouseDownFrame=(direction)=>{
-    if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-      const video = this.video.internalPlayer
-      //video.setAttribute("controls", 0)
-      video.getCurrentTime().then((time)=>{
-        video.pauseVideo()
-      })
-    }else{
-      const video = document.getElementById("instagramVideo")
-      video.removeAttribute( 'controls' );
-      video.pause()
-    }
-    this.setState({mouseDown: true},()=>{
-      this.state.timer = setInterval(()=>{
-        if(this.state.mouseDown){
-          this.frameStep(direction)
+      let toSetPlaybackTo
+      if (direction === "back"){
+        if (this.state.slowmoPlayback === "back"){
+          toSetPlaybackTo = null
+        }else{
+          toSetPlaybackTo = "back"
+          video.pauseVideo()
         }
-      }, 500)
-    })
-  }
+      }else if(direction === "forward"){
+        if (this.state.slowmoPlayback === "forward"){
+          toSetPlaybackTo = null
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.playVideo()
+          toSetPlaybackTo = "forward"
+        }
+      }
+      this.setState({slowmoPlayback: toSetPlaybackTo},()=>{
+        if(this.state.slowmoPlayback){
+            if(this.state.slowmoPlayback === "forward"){
+              video.setPlaybackRate(0.25)
+            }else if(this.state.slowmoPlayback === "back"){
+              this.state.intervalRewind = setInterval(function(){
+                 video.getCurrentTime().then((currentTime)=>{
+                   if(currentTime <= Math.max(videoStartTime, 0)){
+                      video.seekTo(Math.min(videoEndTime, videoDuration));                  
+                   }
+                   else{
+                    video.playVideo()
+                    video.seekTo(currentTime - .033)
+                    video.pauseVideo()
+                   }
+                 })
+              },400);
+            }
+        }else{
+          clearInterval(this.state.intervalRewind);
+          video.setPlaybackRate(1)
+          video.pauseVideo()
+        }
+      })      
+    }
 
-  handleOnMouseUpFrame=(direction)=>{
-    console.log("mouse up ", direction)
-    clearInterval(this.state.timer)
-    this.setState({
-      mouseDown : false,
-      timer : null
-    })
-    
-  }
+   toggleSlowmoPlayback=(direction)=>{
+      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+        this.toggleYoutubeSlowmoPlayback(direction)
+      }else{
+        this.toggleInstagramSlowmoPlayback(direction)
+      }
+   }
 
   handleInstagramVideoClick=()=>{
     const video = document.getElementById("instagramVideo")
@@ -239,6 +315,7 @@ class Demo extends Component {
                           allow="autoplay"  
                           allowtransparency="true"
                           src={this.state.videoURL}
+                          onStateChange={this.youtubeStateChange}
                           onEnd={this.youtubeEnded}
                           ref={(video)=> {this.video = video}}  
                         ></YouTube> : this.state.videoURL && this.state.videoURL.includes('instagram') ? 
@@ -261,21 +338,13 @@ class Demo extends Component {
     let frameButtons = this.props.demoLocation === "detail" ?
                         <div className = "frameButtons">
                           <img src = {frameIcon} 
-                               className = "frameIcon rotated180"
-                               onMouseDown = {() => this.handleOnMouseDownFrame('back')}
-                               onTouchStart = {() => this.handleOnMouseDownFrame('back')}
-                               onMouseUp = {() => this.handleOnMouseUpFrame('back')}
-                               onTouchEnd = {() => this.handleOnMouseUpFrame('back')}
-                               onClick = {() => this.frameStep('back')}
+                               className = {this.state.slowmoPlayback === "back" ? "frameIcon rotated180 selectedFlair" : "frameIcon rotated180"}
+                               onClick = {() => this.toggleSlowmoPlayback('back')}
                                onContextMenu={(e) => e.preventDefault()}
                           />
                           <img src = {frameIcon} 
-                               className = "frameIcon"
-                               onMouseDown = {() => this.handleOnMouseDownFrame('forward')}
-                               onTouchStart = {() => this.handleOnMouseDownFrame('forward')}
-                               onMouseUp = {() => this.handleOnMouseUpFrame('forward')}
-                               onTouchEnd = {() => this.handleOnMouseUpFrame('forward')}
-                               onClick = {() => this.frameStep('forward')}
+                               className = {this.state.slowmoPlayback === "forward" ? "frameIcon selectedFlair" : "frameIcon"}
+                               onClick = {() => this.toggleSlowmoPlayback('forward')}
                                onContextMenu={(e) => e.preventDefault()}
                           />
                        </div> : null

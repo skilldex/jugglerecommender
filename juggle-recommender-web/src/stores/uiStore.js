@@ -52,9 +52,12 @@ class UIStore {
 		this.showProfileScreen = bool
 	}
   	@action editDetailTrick=()=>{
-  		this.editingDetailTrick = true
-  		//shows form
-  		this.addingTrick = true
+  		const tempDetailTrick = this.detailTrick
+		history.push('/addpattern')
+		this.clearUI()
+		this.toggleAddingTrick()
+		this.detailTrick = tempDetailTrick
+		this.editingDetailTrick = true
   	}
   	@action	handleBackButtonClick=()=>{
 	    history.go(-1);
@@ -362,7 +365,12 @@ class UIStore {
 				    else{
 				    	passesDemoTypeFilter = false
 				    }
-				}//give message if flair filter clicked and (!authStore.user)
+				}
+				let thisTricksCatches = 0
+				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
+					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
+				}
+				//give message if flair filter clicked and (!authStore.user)
 				let passesFlairFilter = false 
 				let myFlairForThisTrick = []
 				if (filterStore.flair.length === 0){
@@ -377,6 +385,9 @@ class UIStore {
 						} 
 						if (store.myTricks[trickKey].ninja === 'true'){
 							myFlairForThisTrick.push('ninja')
+						} 
+						if (thisTricksCatches>0){
+							passesFlairFilter = true	
 						} 
 						var flairOverlap = myFlairForThisTrick.filter(function(n) {
 						  if (filterStore.flair.indexOf(n) > -1){
@@ -400,10 +411,7 @@ class UIStore {
 				}
 
 
-				let thisTricksCatches = 0
-				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
-					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
-				}
+
 				if(
 				   passesContributorFilter && passesDemoTypeFilter &&
 				   trick.difficulty >= filterStore.difficultyRange[0] && 

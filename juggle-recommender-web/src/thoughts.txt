@@ -1,9 +1,29 @@
+Maybes:
+	-give edit trick its own url/ga
+	-make a ga for delete trick click
+
+Minor Bugs:
+	-old gif shows while new gif is loading
+	-frame by frame doesnt hide controls for youtube 
+	-when a pattern name is edited, the old pattern stays in other patterns association lists
+		-a way to fix this is to delete any associated trickKeys if they do not have actuall tricks in the library whenevr a list is made
+
+Frame by Frame / Slomo:
+	-should loop while in slomo whether it is going forward or backward
+	-should not need to hold down to get continuous playback
+	-possible better playback option is a slider that you set the play speed at, if you want frame by frame then you can set the slider very slow and pause/play as you wish, but generally a very slow speed will
+
+Possible optimization: 
+	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a tricknsme changes we can more quickly update everyone's database.
+
 Biggest Desires:
 	-Suggest a change (see below)
 
 Suggest a Change:
 	-could be done just like edit, but instead of adding it to the site it emails/notifies the contributor.
 	-if trick has no siteswap listed, maybe anyone should be able to input it directly
+	-an alternative names section where users can vote/submit a name for voting
+		-Maybe multiple URLs for same tricks in instances where tricks have multiple popular names
 
 Details:
 	-expandable pattern stats section
@@ -20,9 +40,13 @@ Search:
 	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
 
 Asthetics:
+	-in tricklist, details, maybe all screens that can be scrolled down low, top header bars should hide if scrolling downward, and show when scrolling upward, this way back arrow can always be easily gotten to
+	-loading animation for home screen
+	-I think 'all patterns' button should stand out more since it is the main thing in the app, that may explain some of the bounces. It didnt even stick out to either of us enough to think to add it to the stack(maybe not ga either)
 	-expand arrow could animatedly turn when popup expands
 	-move hamburger to left side, and make it's menu a slide out
 	-animate the hamburger button in a number of random ways so it turns into an X
+	-consider moving name and version into an about screen
 
 Screens:
 	To add:
@@ -32,6 +56,8 @@ Screens:
 	To change:
 		make about, login its own screen
 		make expand menu a slider
+	Possible:
+		-might be cool to show realtime ga data somewhere, like daily users or a map with daily country data or something on site, looks like there is an api for that
 
 Giveaway:
 	Competition Based:

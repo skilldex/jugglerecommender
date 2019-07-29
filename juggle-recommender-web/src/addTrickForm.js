@@ -141,13 +141,10 @@ class AddTrickForm extends Component {
 	}
 	handleOnBlurName=(e)=>{
 		const wordsInName = e.target.value.split(" ")
-		console.log('wordsInName',wordsInName)
 		wordsInName.sort(function(a, b){
 		  return b.length - a.length;
 		});
-		console.log('wordsInName',wordsInName)
 		for (const name of wordsInName){
-			console.log('name',name)
 			if (!this.state.gifUrl || 
 				(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
 				const siteswapValidityChecker = Validate(name)
@@ -186,8 +183,8 @@ class AddTrickForm extends Component {
 	handleDiffChange=(e)=>{
 		this.setState({
 			difficulty:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		}, this.checkIfFormIsSubmittable)
+		
 	}
 	handleTutorialChange=(e)=>{
 		this.setState({
@@ -211,7 +208,6 @@ class AddTrickForm extends Component {
 		}else{
 			const siteswapValidityChecker = Validate(e.target.value)
 			if (siteswapValidityChecker === 'invalid'){
-				console.log('handleSSChange')
 				this.setState({num : ''})
 				document.getElementById("numInput").disabled = false
 				this.setState({siteswapErrorMessage:'invalid siteswap.'})
@@ -366,7 +362,7 @@ class AddTrickForm extends Component {
     		this.setState({submitDisabled:true})
     	}else{
     		if (utilities.isNotOnlyDigitsOrDecimal(this.state.difficulty) ||
-    			(this.state.difficulty<1 || this.state.difficulty>10)){    			
+    			(this.state.difficulty<1 || this.state.difficulty>10)){    	
 					this.setState({difficultyErrorMessage:'must be (1.0-10.0).'})
 					this.setState({submitDisabled:true})
 				}else{
@@ -447,6 +443,7 @@ class AddTrickForm extends Component {
 			}
 			let videoEndTime = null
 			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
+				videoStartTime = 0
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
 			let tutorialURL = this.state.url
@@ -488,8 +485,6 @@ class AddTrickForm extends Component {
 	
 
 	cancel=()=>{
-		this.clearState()
-		uiStore.toggleAddingTrick()
 		uiStore.handleBackButtonClick()
 	}
 

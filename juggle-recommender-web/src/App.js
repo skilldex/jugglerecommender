@@ -29,10 +29,10 @@ const unlisten = history.listen((location, action) => {
   	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick()
 	}
+	uiStore.clearUI()
   	const detailTrick = {...store.library[location.state.detail]}
 	detailTrick.id = location.state.detail
   	uiStore.setDetailTrick(detailTrick)	
-
   }
   if(location.pathname == "/home" || location.pathname == "/" ){
   	uiStore.clearUI()
@@ -62,9 +62,9 @@ const unlisten = history.listen((location, action) => {
 	}
   } if(location.pathname == "/addpattern"){
 	uiStore.clearUI()
-	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
+	// if(uiStore.addingTrick){
+	//  	uiStore.toggleAddingTrick()
+	// }
   }  
 });
 
@@ -160,7 +160,8 @@ class App extends Component {
 			  	if (store.library[trickKey]){
 				  	const detailTrick = {...store.library[trickKey]}
 					detailTrick.id = trickKey
-				  	uiStore.setDetailTrick(detailTrick)				  		
+				  	uiStore.setDetailTrick(detailTrick)			
+			  		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})	  		
 			  	}else{
 					alert("There is no page for that trick.")
 					uiStore.clearUI()
@@ -197,6 +198,7 @@ class App extends Component {
 					if(uiStore.addingTrick){
 					 	uiStore.toggleAddingTrick()
 					}
+					history.push('/home')
 				}else{
 					history.push('/home')
 					uiStore.clearUI()
@@ -212,6 +214,7 @@ class App extends Component {
 					if(uiStore.addingTrick){
 					 	uiStore.toggleAddingTrick()
 					}
+					history.push('/addpattern')
 		  		}else{
 					history.push('/home')
 					uiStore.clearUI()
