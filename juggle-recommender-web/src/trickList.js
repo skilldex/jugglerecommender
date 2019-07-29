@@ -14,15 +14,17 @@ import utilities from './utilities'
 //import { Resizable } from "re-resizable";
 import ReactGA from 'react-ga';
 import history from './history';
+import InfiniteScroll from 'react-infinite-scroller';
+const paginationSize = 20
 
 @observer
 class TrickList extends Component {
 	state = {
 			sortType: 'alphabetical',
-			expandDone : false
+			expandDone : false,
+			
 	}
 	componentDidMount=()=>{
-
 		this.setScrollerPositions()
 	}
 
@@ -39,7 +41,6 @@ class TrickList extends Component {
 	}
 
 	openDetail=(trickKey)=>{
-		console.log('openDetail')
 		if(!store.isLocalHost){
 			ReactGA.event({
 			  category: 'list ' + this.props.listType,
@@ -95,7 +96,10 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
-		this.props.tricksToList.forEach((trickKey)=>{
+		this.props.tricksToList.forEach((trickKey, index)=>{
+			if(index > paginationSize * uiStore.pageNumber){
+				return
+			}
 			trickKey = trickKey.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 			if (!pushedTrickkeys.includes(trickKey)){
 				let trick = store.library[trickKey]
@@ -206,15 +210,32 @@ class TrickList extends Component {
 				}
 			</div>
 		return (
-			<div className="trickListOuterDiv">
-				{uiStore.detailTrick || uiStore.showHomeScreen? null:<MainTagsBar/>}
-				<div className= "listDiv"
-					 id='listDiv' 
-				>	
-					{list}				
-				</div>
+			<div style={{ overflow:"auto"}} className="trickListOuterDiv">
+				{uiStore.detailTrick ? null:<MainTagsBar/>}
+				{uiStore.detailTrick ?
+					<div className= "listDiv"
+							 id='listDiv' 
+						>	
+							{list}				
+					</div>: 
+					<InfiniteScroll
+						id='listDiv' 
+						pageStart={0}
+						hasMore={true}
+						threshold={10}
+	    				loadMore={()=>{
+	    					uiStore.setPageNumber(uiStore.pageNumber + 1)
+	    				}}
+					 	loader={<div style={{paddingTop:"15px", fontStyle:"italic"}} key={0}>Loading ...</div>}
+					>
+							{list}				
+					</InfiniteScroll>
+				}
 			</div>
 		)
 	}
 }
+/*
+
+*/
 export default TrickList

@@ -33,6 +33,10 @@ class UIStore {
 	@observable showStatsScreen = false
 	@observable showProfileScreen = false
 	@observable mainListScrollerPosition = null
+	@observable pageNumber = 0
+	@action setPageNumber=(page)=>{
+		this.pageNumber = page
+	}
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
 	}
