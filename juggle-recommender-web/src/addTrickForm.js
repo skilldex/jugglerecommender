@@ -443,7 +443,9 @@ class AddTrickForm extends Component {
 			}
 			let videoEndTime = null
 			if (!utilities.isEmptyOrSpaces(this.state.videoEndTime)){
-				videoStartTime = 0
+				if (utilities.isEmptyOrSpaces(this.state.videoStartTime)){
+					videoStartTime = 0
+				}
 				videoEndTime = utilities.formatSeconds(this.state.videoEndTime)
 			}
 			let tutorialURL = this.state.url
