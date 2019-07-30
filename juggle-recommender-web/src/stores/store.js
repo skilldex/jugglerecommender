@@ -403,7 +403,8 @@ class Store {
 					if(	this.library[prereq].dependents.indexOf(trick.name) === -1){
 							this.library[prereq].dependents.push(trick.name)
 							let prereqRef = firebase.database().ref('library/'+prereq)
-	        				prereqRef.set(this.library[prereq]);
+							let newData = prereqRef.push();
+	    		    		newData.set(this.library[prereq]);
 	        		}
 	        	}
 			})
@@ -431,8 +432,11 @@ class Store {
 							console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
 							let relatedRef = firebase.database().ref('library/'+relatedTrick)
 	    		    		console.log('this.library[relatedTrick]1',this.library[relatedTrick])
-	    		    		relatedRef.set(this.library[relatedTrick]);
+	    		    		let newData = relatedRef.push();
+	    		    		newData.set(this.library[relatedTrick]);
 	    		    		console.log('this.library[relatedTrick]2',this.library[relatedTrick])
+
+
 	    		    }
         		}
 			})
@@ -452,7 +456,8 @@ class Store {
 					if(	this.library[dependent].prereqs.indexOf(trick.name) === -1){
 							this.library[dependent].prereqs.push(trick.name)
 							let dependentRef = firebase.database().ref('library/'+dependent)
-			        		dependentRef.set(this.library[dependent]);
+							let newData = dependentRef.push();
+	    		    		newData.set(this.library[dependent]);
 	        		}
 	        	}
 			})
