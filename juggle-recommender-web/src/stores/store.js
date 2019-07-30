@@ -253,12 +253,15 @@ class Store {
 			console.log('stalePrereqs',stalePrereqs)
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
-				if(trick){
+				if(trick && trick.dependents){
 					const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
-					trick.dependents = newDependents
-					//update prereq's dependents in db
-					let newTrickRef = firebase.database().ref('library/'+prereq)
-	        		newTrickRef.set(trick);
+					let newTrickRef = firebase.database().ref('library/'+prereq+'/dependents')
+	        		newTrickRef.set(newDependents);
+					// const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
+					// trick.dependents = newDependents
+					// //update prereq's dependents in db
+					// let newTrickRef = firebase.database().ref('library/'+prereq)
+	    //     		newTrickRef.set(trick);
 	        	}
 			})
 		}
@@ -274,12 +277,10 @@ class Store {
 			}
 			staleDependents.forEach((dependent)=>{
 				const trick = this.library[dependent]
-				if(trick){
+				if(trick && trick.prereqs){
 					const newPrereqs = trick.prereqs.filter((x)=> x !== oldTrickKey)
-					trick.prereqs = newPrereqs
-					//update dependent's dependents in db
-					let newTrickRef = firebase.database().ref('library/'+dependent)
-	        		newTrickRef.set(trick);
+					let newTrickRef = firebase.database().ref('library/'+dependent+'/prereqs')
+	        		newTrickRef.set(newPrereqs);
 	        	}
 			})
 		}
@@ -297,10 +298,8 @@ class Store {
 				const trick = this.library[relatedTrick]
 				if(trick && trick.related){
 					const newRelated = trick.related.filter((x)=> x !== oldTrickKey)
-					trick.related = newRelated
-					//update relatedTrick's related in db
-					let newTrickRef = firebase.database().ref('library/'+relatedTrick)
-	        		newTrickRef.set(trick);
+					let newTrickRef = firebase.database().ref('library/'+relatedTrick+'/related')
+	        		newTrickRef.set(newRelated);
 	        	}
 			})
 		}
