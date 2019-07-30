@@ -295,7 +295,7 @@ class Store {
 			}
 			staleRelated.forEach((relatedTrick)=>{
 				const trick = this.library[relatedTrick]
-				if(trick){
+				if(trick && trick.related){
 					const newRelated = trick.related.filter((x)=> x !== oldTrickKey)
 					trick.related = newRelated
 					//update relatedTrick's related in db
