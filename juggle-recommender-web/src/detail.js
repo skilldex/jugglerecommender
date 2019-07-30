@@ -18,6 +18,7 @@ import './detail.css';
 import history from "./history"
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
+import ReactGA from 'react-ga'
 
 @observer
 class Detail extends Component {
@@ -97,6 +98,15 @@ class Detail extends Component {
         ){
         uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       }
+  }
+  handleEditTrickButtonClick=()=>{
+    if(!store.isLocalHost){
+      ReactGA.event({
+          category: 'detail',
+          action: 'edit pattern',
+      });
+    } 
+    uiStore.editDetailTrick()
   }
 
 	render() {
@@ -202,7 +212,7 @@ class Detail extends Component {
       (detailTrick.contributor === authStore.user.username || 
       authStore.user.username === "tjthejuggler") ? 
         <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
-             onClick={()=>{uiStore.editDetailTrick()}}
+             onClick={()=>{this.handleEditTrickButtonClick()}}
         /> : null
     const shareButton = <img 
                            className="shareFilterDetailButton"
