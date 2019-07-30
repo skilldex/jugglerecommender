@@ -15,8 +15,12 @@ v 1.9
 
 	Data fix scripts(see list below)
 
-	NEW BUG THAT WIPES OUT ALL RELATIONSHIPS:
-		-I think when a relationship is removed, instead of just removing the equivalent reltionship on the other trick, it is wiping out all relationships
+	Weird thing that happened:
+		Results counter quit working, changing it from
+		Results: {Object.keys(uiStore.rootTricks).length}
+		to
+		Results: {uiStore.rootTricks.length}
+		fixed it
 
 
 =========
