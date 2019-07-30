@@ -401,10 +401,17 @@ class Store {
 						this.library[prereq].dependents = []	
 					}
 					if(	this.library[prereq].dependents.indexOf(trick.name) === -1){
-							this.library[prereq].dependents.push(trick.name)
-							let prereqRef = firebase.database().ref('library/'+prereq)
-							let newData = prereqRef.push();
-	    		    		newData.set(this.library[prereq]);
+						let dependentsReadRefContents
+						let dependentsReadRef = firebase.database().ref('library/'+prereq+'/dependents')
+						dependentsReadRef.on('value', resp =>{
+							dependentsReadRefContents = this.snapshotToArray(resp)				
+						})
+						dependentsReadRef.off()	
+						if (dependentsReadRefContents.indexOf(trick.name) === -1){
+							dependentsReadRefContents.push(trick.name)
+							let dependentsWriteRef = firebase.database().ref('library/'+prereq+'/dependents')
+				    		dependentsWriteRef.set(dependentsReadRefContents);
+				    	}
 	        		}
 	        	}
 			})
@@ -413,30 +420,26 @@ class Store {
 	@action addEquivalentRelated=(trick)=>{
 		if(trick.related){
 			trick.related.forEach((item)=>{
-				console.log('item',item)
 				const relatedTrick = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
 				if(!this.library[relatedTrick]){
 					console.log("problem with ",relatedTrick)
 				}
-				console.log('relatedTrick',relatedTrick)
 				if(this.library[relatedTrick]){
-					console.log('this.library[relatedTrick]',this.library[relatedTrick])
 					if (!this.library[relatedTrick].related){
-						console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
 						this.library[relatedTrick].related = []	
 					}
 					if (this.library[relatedTrick].related.indexOf(trick.name) === -1){
-							console.log('this.library[relatedTrick].related.indexOf(trick.name)',this.library[relatedTrick].related.indexOf(trick.name))
-							console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
-							this.library[relatedTrick].related.push(trick.name)
-							console.log('this.library[relatedTrick].related',this.library[relatedTrick].related)
-							let relatedRef = firebase.database().ref('library/'+relatedTrick)
-	    		    		console.log('this.library[relatedTrick]1',this.library[relatedTrick])
-	    		    		let newData = relatedRef.push();
-	    		    		newData.set(this.library[relatedTrick]);
-	    		    		console.log('this.library[relatedTrick]2',this.library[relatedTrick])
-
-
+						let relatedReadRefContents
+						let relatedReadRef = firebase.database().ref('library/'+relatedTrick+'/related')
+						relatedReadRef.on('value', resp =>{
+							relatedReadRefContents = this.snapshotToArray(resp)				
+						})
+						relatedReadRef.off()	
+						if (relatedReadRefContents.indexOf(trick.name) === -1){
+							relatedReadRefContents.push(trick.name)
+							let relatedWriteRef = firebase.database().ref('library/'+relatedTrick+'/related')
+				    		relatedWriteRef.set(relatedReadRefContents);
+				    	}
 	    		    }
         		}
 			})
@@ -454,10 +457,17 @@ class Store {
 						this.library[dependent].prereqs = []	
 					}
 					if(	this.library[dependent].prereqs.indexOf(trick.name) === -1){
-							this.library[dependent].prereqs.push(trick.name)
-							let dependentRef = firebase.database().ref('library/'+dependent)
-							let newData = dependentRef.push();
-	    		    		newData.set(this.library[dependent]);
+						let prereqsReadRefContents
+						let prereqsReadRef = firebase.database().ref('library/'+dependent+'/prereqs')
+						prereqsReadRef.on('value', resp =>{
+							prereqsReadRefContents = this.snapshotToArray(resp)				
+						})
+						prereqsReadRef.off()	
+						if (prereqsReadRefContents.indexOf(trick.name) === -1){
+							prereqsReadRefContents.push(trick.name)
+							let prereqsWriteRef = firebase.database().ref('library/'+dependent+'/prereqs')
+				    		prereqsWriteRef.set(prereqsReadRefContents);
+				    	}
 	        		}
 	        	}
 			})
