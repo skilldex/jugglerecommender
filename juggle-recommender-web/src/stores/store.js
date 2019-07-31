@@ -591,6 +591,7 @@ class Store {
 	 	}else{
 	 		this.myTricks[trickKey][flairType] = 'false'
 	 	}
+	 	this.myTricks = {...this.myTricks}
  		this.updateTricksInDatabase()
  		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
  		uiStore.updateRootTricks()

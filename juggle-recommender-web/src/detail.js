@@ -110,7 +110,6 @@ class Detail extends Component {
   }
 
 	render() {
-   
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
     if (detailTrickKey && !detailTrick){
