@@ -15,7 +15,7 @@ import utilities from './utilities'
 import ReactGA from 'react-ga';
 import history from './history';
 import InfiniteScroll from 'react-infinite-scroller';
-const paginationSize = 20
+const paginationSize = 10
 
 @observer
 class TrickList extends Component {

@@ -376,9 +376,9 @@ class Store {
 			oldTrickRef.remove()
 		}
 
-        this.addPostreqsFromPrereqs(trick)
-        this.addEquivalentRelated(trick)
-        this.addPrereqsFromPostreqs(trick)
+        this.addEquivalentRelated(trick,"prereqs")
+        this.addEquivalentRelated(trick,"related")
+        this.addEquivalentRelated(trick,"dependents")
         uiStore.toggleAddingTrick()
 		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
         history.replace('/detail/'+trickKey, {detail : trickKey})
@@ -388,90 +388,31 @@ class Store {
 
         
 	}
-	@action addPostreqsFromPrereqs=(trick)=>{
-		if(trick.prereqs){
-			trick.prereqs.forEach((item)=>{
-				const prereq = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
-				if(!this.library[prereq]){
-					console.log("problem with ",prereq)
-				}
-				if(this.library[prereq]){
-					if (!this.library[prereq].dependents){
-						this.library[prereq].dependents = []	
-					}
-					if(	this.library[prereq].dependents.indexOf(trick.name) === -1){
-						let dependentsReadRefContents
-						let dependentsReadRef = firebase.database().ref('library/'+prereq+'/dependents')
-						dependentsReadRef.on('value', resp =>{
-							dependentsReadRefContents = this.snapshotToArray(resp)				
-						})
-						dependentsReadRef.off()	
-						if (dependentsReadRefContents.indexOf(trick.name) === -1){
-							dependentsReadRefContents.push(trick.name)
-							let dependentsWriteRef = firebase.database().ref('library/'+prereq+'/dependents')
-				    		dependentsWriteRef.set(dependentsReadRefContents);
-				    	}
-	        		}
-	        	}
-			})
-		}
-	}
-	@action addEquivalentRelated=(trick)=>{
-		if(trick.related){
-			trick.related.forEach((item)=>{
+	
+	@action addEquivalentRelated=(trick,relation)=>{
+		const relatedProperty = relation == "related" ? "related" : 
+								relation == "prereqs" ? "dependents" :
+								"prereqs"
+		if(trick[relation]){
+			trick[relation].forEach((item)=>{
 				const relatedTrick = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
 				if(!this.library[relatedTrick]){
 					console.log("problem with ",relatedTrick)
 				}
 				if(this.library[relatedTrick]){
-					if (!this.library[relatedTrick].related){
-						this.library[relatedTrick].related = []	
+					if (!this.library[relatedTrick][relatedProperty]){
+						this.library[relatedTrick][relatedProperty] = []	
 					}
-					if (this.library[relatedTrick].related.indexOf(trick.name) === -1){
-						let relatedReadRefContents
-						let relatedReadRef = firebase.database().ref('library/'+relatedTrick+'/related')
-						relatedReadRef.on('value', resp =>{
-							relatedReadRefContents = this.snapshotToArray(resp)				
-						})
-						relatedReadRef.off()	
-						if (relatedReadRefContents.indexOf(trick.name) === -1){
-							relatedReadRefContents.push(trick.name)
-							let relatedWriteRef = firebase.database().ref('library/'+relatedTrick+'/related')
-				    		relatedWriteRef.set(relatedReadRefContents);
-				    	}
+					if (!this.library[relatedTrick][relatedProperty].includes(trick.name)){
+						this.library[relatedTrick][relatedProperty].push(trick.name)
+						let relatedWriteRef = firebase.database().ref('library/'+relatedTrick+'/'+relatedProperty)
+				    	relatedWriteRef.set([...this.library[relatedTrick][relatedProperty]]);
 	    		    }
         		}
 			})
 		}
 	}
-	@action addPrereqsFromPostreqs=(trick)=>{
-		if(trick.dependents){
-			trick.dependents.forEach((item)=>{
-				const dependent = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
-				if(!this.library[dependent]){
-					console.log("problem with ",dependent)
-				}
-				if(this.library[dependent]){
-					if (!this.library[dependent].prereqs){
-						this.library[dependent].prereqs = []	
-					}
-					if(	this.library[dependent].prereqs.indexOf(trick.name) === -1){
-						let prereqsReadRefContents
-						let prereqsReadRef = firebase.database().ref('library/'+dependent+'/prereqs')
-						prereqsReadRef.on('value', resp =>{
-							prereqsReadRefContents = this.snapshotToArray(resp)				
-						})
-						prereqsReadRef.off()	
-						if (prereqsReadRefContents.indexOf(trick.name) === -1){
-							prereqsReadRefContents.push(trick.name)
-							let prereqsWriteRef = firebase.database().ref('library/'+dependent+'/prereqs')
-				    		prereqsWriteRef.set(prereqsReadRefContents);
-				    	}
-	        		}
-	        	}
-			})
-		}
-	}
+
 	@action getSavedTricks=()=>{
 		if(authStore.user){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)

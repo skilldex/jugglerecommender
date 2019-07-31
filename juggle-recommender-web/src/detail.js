@@ -341,7 +341,7 @@ class Detail extends Component {
             />
           </div> : null}
         </div> : null
-        
+        console.log("OUR DEPENDS", detailTrick.dependents)
 
 		return(      
 
