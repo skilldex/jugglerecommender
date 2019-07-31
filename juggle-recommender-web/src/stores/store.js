@@ -24,6 +24,7 @@ class Store {
 	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""
 	@observable totalCatchCount = null
+	@observable currentComments = null
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -54,6 +55,54 @@ class Store {
 		})
 		return contributorTags
 	}
+	@action getCommentsByTrickId(trickId){
+		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
+		let parentComments = []
+		commentsRef.on('value', resp =>{
+			const allComments = this.snapshotToArray(resp)
+            allComments.forEach(
+                function(curComment){
+                    if(!curComment["parentId"]){
+                        parentComments.push(curComment)
+                    }
+            })
+            this.setComments(this.filterUniqueComments(parentComments))
+		})
+	}
+	@action filterUniqueComments(currentComments){
+        let comments = {}
+        currentComments.forEach((comment)=>{
+            comments[comment["key"]] = comment
+        }) 
+        currentComments = []         
+        for(var commentKey in comments){
+            currentComments.push(comments[commentKey])
+        }
+        return currentComments
+    }
+	@action setComments(comments){
+		this.comments = comments
+	}
+	@action createComment(comment) {
+      const that = this
+      const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
+      let parentComments = []
+
+      
+      return new Promise((resolve, reject) => {
+
+        let newData = commentsRef.push();
+        newData.set(comment);
+        if (comment["parentId"]) {
+            
+            const repliesRef = firebase.database().ref('comments/' + comment.previousKeys.replace("replies/","") + '/numReplies')
+            repliesRef.transaction(function (currentValue) {
+                return (currentValue || 0) + 1;
+            });
+        }
+        resolve(comment)
+      });
+    }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''
 		let mostRecentlySubmittedTrickTime = 0

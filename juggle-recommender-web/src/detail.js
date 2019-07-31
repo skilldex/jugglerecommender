@@ -18,7 +18,7 @@ import './detail.css';
 import history from "./history"
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
-
+import Comments from "./comments"
 @observer
 class Detail extends Component {
   state = {
@@ -26,7 +26,6 @@ class Detail extends Component {
     changingInput : false,
     showExtraGif : false,
   }
-
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
@@ -303,6 +302,7 @@ class Detail extends Component {
                                 {uiStore.showMoreInformation?"less info":"more info"}
                               </label><br/>
                             </div>
+                             
                           </div>:null
     const relationshipLists = 
         detailTrick?
@@ -358,5 +358,17 @@ class Detail extends Component {
           )
     }
   }
-
+/*
+<div class="comment-container">
+                                <h3>Discussion</h3>
+                                { authStore.user ? 
+                                  <form class="first-comment-container"  onSubmit="postComment()">
+                                    <span class="first-comment-icon">{authStore.username}</span>
+                                    <input class="first-comment" type="submit"  placeholder="Write a comment..." onblur="this.placeholder = 'Write a comment...'" onfocus="this.placeholder = ''" type="text" ngModel="firstComment" name="firstComment"/>
+                                    <button class="secondary-button-hollow" type="submit">Submit</button>
+                                   </form> : null
+                                }
+                                <Comments comments={store.comments}></Comments>
+                              </div>
+                              */
 export default Detail

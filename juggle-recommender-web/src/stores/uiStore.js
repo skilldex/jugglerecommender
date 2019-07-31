@@ -98,6 +98,7 @@ class UIStore {
 	 	this.detailTrick = clickedTrick
 	 	this.detailCatchEditable = false
 	 	if (this.detailTrick){
+	 		store.getCommentsByTrickId(clickedTrick.id)
 	        if(this.showFilterDiv){
 	        	this.toggleFilterDiv()
 	        }
