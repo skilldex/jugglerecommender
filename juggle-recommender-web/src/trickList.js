@@ -97,7 +97,7 @@ class TrickList extends Component {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
 		this.props.tricksToList.forEach((trickKey, index)=>{
-			if(index > paginationSize * uiStore.pageNumber){
+			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return
 			}
 			trickKey = trickKey.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
