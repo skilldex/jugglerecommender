@@ -96,6 +96,7 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
+	 	console.log('uiStore.pageNumber',uiStore.pageNumber)
 		this.props.tricksToList.forEach((trickKey, index)=>{
 			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return
@@ -221,7 +222,7 @@ class TrickList extends Component {
 					<InfiniteScroll
 						id='listDiv' 
 						pageStart={0}
-						hasMore={true}
+						hasMore={uiStore.pageNumber*paginationSize<this.props.tricksToList.length}
 						threshold={10}
 	    				loadMore={()=>{
 	    					uiStore.setPageNumber(uiStore.pageNumber + 1)
