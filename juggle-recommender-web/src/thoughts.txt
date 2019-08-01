@@ -3,6 +3,10 @@ Maybes:
 	-make a ga for delete trick click
 
 Minor Bugs:
+	-siteswap recognizer picks up words sometimes, like 'can' since we look for any word in the name.
+		-possible solution is to only check if the first word is a siteswap, not look everywhere for a siteswap
+	-tricklist shows behind add pattern form
+
 	-old gif shows while new gif is loading
 	-frame by frame doesnt hide controls for youtube 
 	

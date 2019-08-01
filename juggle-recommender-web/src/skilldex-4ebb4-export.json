@@ -501,9 +501,9 @@
       "user" : "tjthejuggler"
     },
     "Half Shower" : {
-      "catches" : "100",
+      "catches" : "1000",
       "trick" : "Half Shower",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "Half Shower(4b)" : {
       "catches" : "200",
@@ -546,9 +546,9 @@
       "user" : "tjthejuggler"
     },
     "Juggler's Tennis" : {
-      "catches" : "600",
+      "catches" : "1000",
       "trick" : "Juggler's Tennis",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "Juggler's Tennis Synch(4b)" : {
       "catches" : "40",
@@ -796,9 +796,9 @@
       "user" : "tjthejuggler"
     },
     "Stacked Box(4b)" : {
-      "catches" : "75",
+      "catches" : "80",
       "trick" : "Stacked Box(4b)",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "Stacked Cascade(5b)" : {
       "catches" : "100",
@@ -861,9 +861,9 @@
       "user" : "tjthejuggler"
     },
     "The W" : {
-      "catches" : "200",
+      "catches" : "1000",
       "trick" : "The W",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "The Weave" : {
       "catches" : "300",
@@ -1110,9 +1110,26 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BymxcJIg0Cn/"
     },
+    "(4,2x)(4x,2) with Wristdrop 2xs" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "3.8",
+      "explanation" : "",
+      "name" : "(4,2x)(4x,2) with Wristdrop 2xs",
+      "num" : "3",
+      "prereqs" : [ "(4x,2x)(2,0) with a Wrist Drop 2x(2b)" ],
+      "related" : [ "Asymmetric Lemming Drop" ],
+      "siteswap" : "(4,2x)(4x,2)",
+      "tags" : [ "wrist-drop" ],
+      "timeSubmitted" : 1564455765663,
+      "timeUpdated" : 1564456201331,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoEndTime" : 62,
+      "videoStartTime" : 50
+    },
     "(4x,2x)(2,0) with a Wrist Drop 2x(2b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Asymmetric Lemming Drop", "Symmetric Lemming Drop" ],
+      "dependents" : [ "Asymmetric Lemming Drop", "Symmetric Lemming Drop", "(4,2x)(4x,2) with Wristdrop 2xs" ],
       "difficulty" : "2.9",
       "explanation" : "",
       "name" : "(4x,2x)(2,0) with a Wrist Drop 2x(2b)",
@@ -1898,7 +1915,7 @@
       "video" : "https://www.instagram.com/p/BVFCBStB32N/"
     },
     "40 Mills Mess(2b)" : {
-      "contributor" : "jahvorsky_",
+      "contributor" : "tjthejuggler",
       "dependents" : [ "Mills Mess(4b)" ],
       "difficulty" : "3.7",
       "explanation" : "",
@@ -1907,9 +1924,9 @@
       "prereqs" : [ "Underarm Catch (1b)", "Underarm Throw (1b)" ],
       "related" : [ "Mills Mess" ],
       "siteswap" : "40",
-      "tags" : [ "crossed-arms", "underarm-catch" ],
+      "tags" : [ "crossed-arms", "underarm-catch", "underarm-throw" ],
       "timeSubmitted" : 1564147709790,
-      "timeUpdated" : 1564147709790,
+      "timeUpdated" : 1564577799275,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=ha6LwgvKXq0"
     },
@@ -2096,6 +2113,7 @@
     },
     "441 Mills Lemming" : {
       "contributor" : "jahvorsky_",
+      "dependents" : [ "Antiparallel vectors blur edges" ],
       "difficulty" : "5.7",
       "explanation" : "",
       "name" : "441 Mills Lemming",
@@ -2125,6 +2143,23 @@
       "timeUpdated" : 1564267048317,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/441MillsMess.html",
       "video" : ""
+    },
+    "441 with Wristdrop 1s" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "4.2",
+      "explanation" : "",
+      "name" : "441 with Wristdrop 1s",
+      "num" : 3,
+      "prereqs" : [ "Asymmetric 441 Lemming Drop" ],
+      "related" : [ "Wristdrop Shower" ],
+      "siteswap" : "441",
+      "tags" : [ "wrist-drop" ],
+      "timeSubmitted" : 1564477476184,
+      "timeUpdated" : 1564477476184,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoEndTime" : 80,
+      "videoStartTime" : 62
     },
     "44133 with a Two-Up, Two-Down Style" : {
       "contributor" : "artifaxiom",
@@ -2368,9 +2403,9 @@
       "prereqs" : [ "534(4b)" ],
       "related" : [ "534 with Penguin 5s(4b)", "534 with the 3 Blind Behind the Head(4b)" ],
       "siteswap" : "534",
-      "tags" : [ "body-throw", "neck-throw" ],
+      "tags" : [ "body-throw", "neckcross" ],
       "timeSubmitted" : 1562793209858,
-      "timeUpdated" : 1562793209858,
+      "timeUpdated" : 1564350023185,
       "url" : "",
       "video" : "https://www.instagram.com/p/Bzu0VB9gD9l/"
     },
@@ -2438,7 +2473,7 @@
       "explanation" : "",
       "name" : "5551 with 1 down the back(4b)",
       "num" : "4",
-      "prereqs" : [ "5551(4b)" ],
+      "prereqs" : [ "5551(4b)", "Down the Back Tennis" ],
       "siteswap" : "5551",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563104907164,
@@ -2687,9 +2722,9 @@
       "prereqs" : [ "7531(4b)" ],
       "related" : [ "7531 With Slammed 3s(4b)" ],
       "siteswap" : "7531",
-      "tags" : [ "body-throw", "neck-throw" ],
+      "tags" : [ "body-throw", "neckcross" ],
       "timeSubmitted" : 1563305311713,
-      "timeUpdated" : 1563305311713,
+      "timeUpdated" : 1564350046647,
       "url" : "",
       "video" : "https://www.instagram.com/p/BsmR8CLgzce/"
     },
@@ -2797,9 +2832,9 @@
       "num" : "6",
       "prereqs" : [ "771(5b)", "77772(6b)", "777771(6b)" ],
       "siteswap" : "777771",
-      "tags" : [ "body-throw", "ss1", "neck-throw" ],
+      "tags" : [ "body-throw", "ss1", "neckcross" ],
       "timeSubmitted" : 1563152087574,
-      "timeUpdated" : 1563152087574,
+      "timeUpdated" : 1564350119270,
       "url" : "",
       "video" : "https://www.instagram.com/p/Bh_cmKLDHFg/"
     },
@@ -2910,6 +2945,21 @@
       "timeUpdated" : 1563750954302,
       "url" : "",
       "video" : ""
+    },
+    "Active Arcades in Superposition" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Knot Invariants Are Complementary" ],
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Active Arcades in Superposition",
+      "num" : "3",
+      "related" : [ "Proponent of double exponents", "Supersymmetry is Still a Mystery", "Doing is a Quantum Leap From Imagining", "Everything Has Rhythm", "Projective Transformations Add Perspective", "Paths Are Integral To Action Principles" ],
+      "siteswap" : "",
+      "tags" : [ "machine", "2T", "slam", "self-slam" ],
+      "timeSubmitted" : 1564523009037,
+      "timeUpdated" : 1564523009037,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BewFH5nAINR/"
     },
     "Active Slam" : {
       "contributor" : "jahvorsky_",
@@ -3034,6 +3084,21 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BzLI6rug7NJ/"
     },
+    "Antiparallel vectors blur edges" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.1",
+      "explanation" : "",
+      "name" : "Antiparallel vectors blur edges",
+      "num" : "3",
+      "prereqs" : [ "Timing is Relative", "441 Mills Lemming" ],
+      "related" : [ "Chiral Anomalies Exist", "Glide Reflection Befalls" ],
+      "siteswap" : "",
+      "tags" : [ "self-slam", "2T", "wrist-drop", "claw", "bounce-back" ],
+      "timeSubmitted" : 1564521226258,
+      "timeUpdated" : 1564521226258,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BebpNUxg53_/"
+    },
     "Apecross self(1b)" : {
       "contributor" : "tjthejuggler",
       "difficulty" : "1.8",
@@ -3052,19 +3117,37 @@
     },
     "Apecross(1b)" : {
       "contributor" : "tjthejuggler",
+      "dependents" : [ "Apeshoulder Tennis" ],
       "difficulty" : "1.8",
       "explanation" : "",
       "name" : "Apecross(1b)",
       "num" : "1",
-      "related" : [ "Apecross self(1b)" ],
+      "related" : [ "Apecross self(1b)", "Neckcross(1b)", "Backcross  (1b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563760920376,
-      "timeUpdated" : 1564054294225,
+      "timeUpdated" : 1564448281596,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 270,
-      "videoStartTime" : 259
+      "videoStartTime" : 0
+    },
+    "Apeshoulder Tennis" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "3.9",
+      "explanation" : "",
+      "name" : "Apeshoulder Tennis",
+      "num" : "3",
+      "prereqs" : [ "Apecross(1b)" ],
+      "related" : [ "Backcross Tennis" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1564435475727,
+      "timeUpdated" : 1564435475727,
+      "url" : "",
+      "video" : "https://youtu.be/4yQq6YocOAY",
+      "videoEndTime" : 12,
+      "videoStartTime" : 0
     },
     "Aquamarine" : {
       "contributor" : "jameschance_",
@@ -3193,7 +3276,7 @@
     },
     "Asymmetric 441 Lemming Drop" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Symmetric Reverse Shapeshifter" ],
+      "dependents" : [ "Symmetric Reverse Shapeshifter", "441 with Wristdrop 1s" ],
       "difficulty" : "5.4",
       "explanation" : "",
       "name" : "Asymmetric 441 Lemming Drop",
@@ -3216,11 +3299,11 @@
       "explanation" : "",
       "name" : "Asymmetric Active Crossover",
       "num" : "3",
-      "prereqs" : [ "Box", "Self Slam Overarm (crossover) (1b)" ],
+      "prereqs" : [ "Box", "Crossover Exchange Variation 1(2b)" ],
       "siteswap" : "",
-      "tags" : [ "2T", "slam", "underarm-catch", "crossed-arms", "downward 2T" ],
+      "tags" : [ "2T", "slam", "underarm-catch", "crossed-arms", "self-slam" ],
       "timeSubmitted" : 1563333811144,
-      "timeUpdated" : 1563390532780,
+      "timeUpdated" : 1564565458033,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=M1_0mEnwBpM",
       "videoEndTime" : 105,
@@ -3258,13 +3341,13 @@
     },
     "Asymmetric Lemming Drop" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Asymmetric 441 Lemming Drop", "441 Mills Lemming" ],
+      "dependents" : [ "Asymmetric 441 Lemming Drop", "441 Mills Lemming", "Wristdrop Shower" ],
       "difficulty" : "4.5",
       "explanation" : "",
       "name" : "Asymmetric Lemming Drop",
       "num" : "3",
       "prereqs" : [ "Columns", "Flying Disco Drop", "3122 with a Wrist Drop 1(2b)", "312 with a Wrist Drop 1(2b)", "(4x,2x)(2,0) with a Wrist Drop 2x(2b)", "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" ],
-      "related" : [ "Symmetric Lemming Drop" ],
+      "related" : [ "Symmetric Lemming Drop", "(4,2x)(4x,2) with Wristdrop 2xs" ],
       "siteswap" : "",
       "tags" : [ "wrist-drop" ],
       "timeSubmitted" : 1563334780090,
@@ -3384,7 +3467,7 @@
     },
     "Asymmetric Rising Disco" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Timing is Relative" ],
+      "dependents" : [ "Timing is Relative", "Metric Expansion Through Dynamic Interval" ],
       "difficulty" : "5.6",
       "explanation" : "",
       "name" : "Asymmetric Rising Disco",
@@ -3437,9 +3520,9 @@
       "num" : "3",
       "prereqs" : [ "Neck Throw Tennis", "Neckcross Tennis" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "asymmetric", "synch", "neck-throw" ],
+      "tags" : [ "body-throw", "asymmetric", "synch", "neckcross" ],
       "timeSubmitted" : 1563317309012,
-      "timeUpdated" : 1563317309012,
+      "timeUpdated" : 1564350057342,
       "url" : "",
       "video" : "https://www.instagram.com/p/BziTa0JgGng/"
     },
@@ -3567,9 +3650,9 @@
       "prereqs" : [ "Backcross Tennis" ],
       "related" : [ "Neck Throw Tennis", "Continuous Around and On the Head", "Backcross Neck Throw Combo", "Neckcross Tennis" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "neck-throw" ],
+      "tags" : [ "body-throw", "neckcross" ],
       "timeSubmitted" : 1563152160304,
-      "timeUpdated" : 1563440853580,
+      "timeUpdated" : 1564349818121,
       "url" : "",
       "video" : "https://www.instagram.com/p/BiCR2FAD87p/"
     },
@@ -3590,6 +3673,23 @@
       "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
       "videoEndTime" : 15,
       "videoStartTime" : 1
+    },
+    "Backcross + Reverse Backcross" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Backcrosses", "Reverse Backcrosses" ],
+      "difficulty" : "4.2",
+      "explanation" : "",
+      "name" : "Backcross + Reverse Backcross",
+      "num" : 3,
+      "prereqs" : [ "Reverse Backcross Tennis", "Half Backcross Cascade" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1564455649828,
+      "timeUpdated" : 1564455649828,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoEndTime" : 50,
+      "videoStartTime" : 39
     },
     "Backcross Exchange(2b)" : {
       "contributor" : "tjthejuggler",
@@ -3617,11 +3717,11 @@
       "name" : "Backcross Neck Throw Combo",
       "num" : "3",
       "prereqs" : [ "Backcrosses", "Neckcross Tennis" ],
-      "related" : [ "Backcross + Neck Throw" ],
+      "related" : [ "Backcross + Neck Throw", "Neck-throw + Penguin + Armpit" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "neck-throw" ],
+      "tags" : [ "body-throw", "neckcross" ],
       "timeSubmitted" : 1563313628878,
-      "timeUpdated" : 1563313628878,
+      "timeUpdated" : 1564349895262,
       "url" : "",
       "video" : "https://www.instagram.com/p/BvtpmWngJ71/"
     },
@@ -3632,11 +3732,11 @@
       "explanation" : "",
       "name" : "Backcross Penguin Neck Throw",
       "num" : "3",
-      "prereqs" : [ "Backcross + Neck Throw", "Backcross Tennis", "Penguins", "Neckcross Tennis" ],
+      "prereqs" : [ "Backcross + Neck Throw", "Backcross Tennis", "Penguins", "Neckcross Tennis", "Backcross Neck Throw Combo" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "penguin", "neck-throw" ],
+      "tags" : [ "body-throw", "penguin", "neckcross" ],
       "timeSubmitted" : 1563305644560,
-      "timeUpdated" : 1563442091685,
+      "timeUpdated" : 1564350069670,
       "url" : "",
       "video" : "https://www.instagram.com/p/BsxwDH3A_AM/"
     },
@@ -3648,7 +3748,7 @@
       "name" : "Backcross Tennis",
       "num" : "3",
       "prereqs" : [ "Normal + Backcross Exchange(2b)", "Backcross + Normal Exchange(2b)" ],
-      "related" : [ "Backcross Exchange(2b)" ],
+      "related" : [ "Backcross Exchange(2b)", "Reverse Backcross Tennis", "Down the Back Tennis" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563436910172,
@@ -3681,7 +3781,7 @@
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/backcrosses.gif",
       "name" : "Backcrosses",
       "num" : 3,
-      "prereqs" : [ "Cascade", "Backcross Exchange(2b)", "Backcross Tennis" ],
+      "prereqs" : [ "Cascade", "Backcross Exchange(2b)", "Backcross Tennis", "Backcross + Reverse Backcross" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 0,
@@ -3750,13 +3850,15 @@
       "contributor" : "lucasadverse",
       "dependents" : [ "Elbow-bounce Behind the Neck Box" ],
       "difficulty" : "5",
+      "explanation" : "",
       "name" : "Behind the Neck Elbow-Bounce Shower",
       "num" : "3",
       "prereqs" : [ "Behind the Neck  (1b)" ],
       "siteswap" : "51",
-      "tags" : [ "body-throw", "neck-throw" ],
+      "tags" : [ "body-throw", "neckcross" ],
       "timeSubmitted" : 1561317261116,
-      "timeUpdated" : 1561317261116,
+      "timeUpdated" : 1564350035349,
+      "url" : "",
       "video" : "https://www.instagram.com/p/-j9g75FwWT/"
     },
     "Bent Elbow Bounce(1b)" : {
@@ -3798,6 +3900,22 @@
       "timeSubmitted" : 1561301293097,
       "timeUpdated" : 1561301293097,
       "video" : "https://www.instagram.com/p/BfmEk2WFsWL/"
+    },
+    "Binary Companions Cycle Twice" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Entanglement Preserves Uncertainty" ],
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Binary Companions Cycle Twice",
+      "num" : "3",
+      "prereqs" : [ "Spiral paths twist evenly" ],
+      "related" : [ "Proponent of double exponents", "Strange Loops Blend Together", "Infinities Converge at Unbounded Limits", "Interlocking Tritones Swing" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "claw" ],
+      "timeSubmitted" : 1564520291839,
+      "timeUpdated" : 1564521500536,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BeCBMz8Agfl/"
     },
     "Bizarre Box" : {
       "dependents" : [ "Karas' Box" ],
@@ -4392,8 +4510,8 @@
       "explanation" : "",
       "name" : "Chiral Anomalies Exist",
       "num" : "3",
-      "prereqs" : [ "Timing is Relative" ],
-      "related" : [ "Momentum Can Change" ],
+      "prereqs" : [ "Timing is Relative", "Gravitational Aberrations Cancel" ],
+      "related" : [ "Momentum Can Change", "Glide Reflection Befalls", "Antiparallel vectors blur edges", "Metric Expansion Through Dynamic Interval", "Vortex Flow Can Curl", "Perpetual Entropy Is Uniform" ],
       "siteswap" : "",
       "tags" : [ "bounce-back", "2T", "claw", "self-slam" ],
       "timeSubmitted" : 1563393098768,
@@ -4491,13 +4609,13 @@
     },
     "Circles Reflect Eternity" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Timing is Relative" ],
+      "dependents" : [ "Timing is Relative", "Proponent of double exponents", "Spiral paths twist evenly", "Gravitational Aberrations Cancel", "Reciprocal Coils Are Transcendental" ],
       "difficulty" : "5.7",
       "explanation" : "",
       "name" : "Circles Reflect Eternity",
       "num" : "3",
       "prereqs" : [ "Symmetric Active Crossover" ],
-      "related" : [ "Motion is Tranquility" ],
+      "related" : [ "Motion is Tranquility", "Optimizing The Duality Gap" ],
       "siteswap" : "",
       "tags" : [ "2T", "self-slam" ],
       "timeSubmitted" : 1563391417565,
@@ -4546,7 +4664,7 @@
     },
     "Claws(Overhand) (1b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Clawed Reverse Cascade", "Clawed W", "Atari" ],
+      "dependents" : [ "Clawed Reverse Cascade", "Clawed W", "Atari", "Millsmess Overarm Throw Clawed", "Millsmess Normal Throw Clawed", "Millsmess underarm Throw Clawed" ],
       "difficulty" : "1.3",
       "explanation" : "",
       "name" : "Claws(Overhand) (1b)",
@@ -4711,6 +4829,22 @@
       "tags" : [ "synch" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallColumns.html"
     },
+    "Compacting subspace ribbons" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Linear Oscillations Resonate" ],
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Compacting subspace ribbons",
+      "num" : "3",
+      "prereqs" : [ "Motion is Tranquility" ],
+      "related" : [ "Momentum Can Change", "Syncopated Jubilee", "Connections Defined by Parallel Transport", "When Hypercycles Intersect", "Interlocking Tritones Swing" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "self-slam", "2T", "swap" ],
+      "timeSubmitted" : 1564522356119,
+      "timeUpdated" : 1564522356119,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BerJPkhgJnt/"
+    },
     "Compressed Olas" : {
       "difficulty" : "6",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/olascomp.gif",
@@ -4720,6 +4854,21 @@
       "siteswap" : "[31]23",
       "tags" : [ "carry", "multiplex", "ss1" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/CompressedOlas.html"
+    },
+    "Connections Defined by Parallel Transport" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.6",
+      "explanation" : "",
+      "name" : "Connections Defined by Parallel Transport",
+      "num" : "3",
+      "prereqs" : [ "Motion is Tranquility" ],
+      "related" : [ "Compacting subspace ribbons", "When Hypercycles Intersect", "Tessellations Form Congruent Boundaries" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "self-slam", "2T" ],
+      "timeSubmitted" : 1564523239119,
+      "timeUpdated" : 1564523239119,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Beywyn7A6IN/"
     },
     "Continuous Around and On the Head" : {
       "contributor" : "juggling_vegan_",
@@ -4731,9 +4880,9 @@
       "prereqs" : [ "Headplant Tennis", "Neck Throw Tennis", "Neckcross Tennis" ],
       "related" : [ "Backcross + Neck Throw" ],
       "siteswap" : "3",
-      "tags" : [ "body-throw", "neck-throw", "headplant" ],
+      "tags" : [ "body-throw", "headplant", "neckcross" ],
       "timeSubmitted" : 1563305190759,
-      "timeUpdated" : 1563305190759,
+      "timeUpdated" : 1564350005951,
       "url" : "",
       "video" : "https://www.instagram.com/p/BsDhCBRjl_y/"
     },
@@ -4943,7 +5092,7 @@
       "explanation" : "",
       "name" : "Cross Slam Self Slam",
       "num" : "3",
-      "prereqs" : [ "Inverted Box", "NBox", "Self Slam (1b)", "Self Slam Overarm (crossover) (1b)" ],
+      "prereqs" : [ "Inverted Box", "NBox", "Self Slam (1b)", "Crossover Exchange Variation 1(2b)" ],
       "siteswap" : "",
       "tags" : [ "slam" ],
       "timeSubmitted" : 1563317174987,
@@ -5013,16 +5162,20 @@
       "video" : "https://www.instagram.com/p/Bwm6rdsFeFF/"
     },
     "Crossed Arm Cascade" : {
-      "dependents" : [ "Frantic Cascade" ],
+      "dependents" : [ "Frantic Cascade", "Crossed Box" ],
       "difficulty" : "4",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/crossedarmcascade.gif",
       "name" : "Crossed Arm Cascade",
       "num" : 3,
       "prereqs" : [ "Cascade", "Underarm Catch (1b)", "Underarm Throw (1b)" ],
       "related" : [ "Crossed Arm Reverse Cascade" ],
       "siteswap" : "3",
+      "tags" : [ "underarm-throw", "underarm-catch" ],
       "timeSubmitted" : 0,
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmCascade.html"
+      "timeUpdated" : 1564577814388,
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/CrossedArmCascade.html",
+      "video" : ""
     },
     "Crossed Arm Factory" : {
       "difficulty" : "4",
@@ -5074,13 +5227,15 @@
     "Crossed Box" : {
       "contributor" : "jameschance_",
       "difficulty" : "5",
+      "explanation" : "",
       "name" : "Crossed Box",
       "num" : "3",
       "prereqs" : [ "Box", "Crossed Arm Cascade", "Crossed Reverse Cascade" ],
       "siteswap" : "",
-      "tags" : [ "ss1", "columns", "crossed-arms", "underarm-catch" ],
+      "tags" : [ "ss1", "columns", "crossed-arms", "underarm-catch", "underarm-throw" ],
       "timeSubmitted" : 1561459469888,
-      "timeUpdated" : 1561459469888,
+      "timeUpdated" : 1564577771416,
+      "url" : "",
       "video" : "https://www.instagram.com/p/BKMf45hDEZG/"
     },
     "Crossed Box Shower Mix" : {
@@ -5098,14 +5253,32 @@
       "contributor" : "3ballpatterns_",
       "dependents" : [ "Over the Arm Mill's Mess", "Crossed Box", "Over the Arm Mills Mess" ],
       "difficulty" : "3",
+      "explanation" : "",
       "name" : "Crossed Reverse Cascade",
       "num" : "3",
       "prereqs" : [ "Reverse Cascade", "Underarm Throw (1b)", "Overarm Throw (1b)" ],
       "siteswap" : "3",
-      "tags" : [ "crossed-arms", "underarm-catch" ],
+      "tags" : [ "crossed-arms", "underarm-catch", "underarm-throw" ],
       "timeSubmitted" : 1561202295063,
-      "timeUpdated" : 1561202295063,
+      "timeUpdated" : 1564577745458,
+      "url" : "",
       "video" : "https://www.instagram.com/p/BYvMsb9BEZc/"
+    },
+    "Crossover Exchange Variation 1(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Asymmetric Active Crossover", "Symmetric Active Crossover", "Cross Slam Self Slam" ],
+      "difficulty" : "2.8",
+      "explanation" : "",
+      "name" : "Crossover Exchange Variation 1(2b)",
+      "num" : "2",
+      "prereqs" : [ "Self Slam Overarm (crossover) (1b)" ],
+      "siteswap" : "",
+      "tags" : [ "2T" ],
+      "timeSubmitted" : 1564477791484,
+      "timeUpdated" : 1564477879287,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoStartTime" : 88
     },
     "Crossunder" : {
       "dependents" : [ "Matt's Mess", "Crossunder Factory", "Crossunder Factory" ],
@@ -5251,7 +5424,7 @@
       "name" : "Doing is a Quantum Leap From Imagining",
       "num" : "3",
       "prereqs" : [ "Matter Tells Space How To Bend" ],
-      "related" : [ "Inversion with Respect to Origin" ],
+      "related" : [ "Inversion with Respect to Origin", "Proponent of double exponents", "Active Arcades in Superposition" ],
       "siteswap" : "",
       "tags" : [ "2T", "slam", "claw", "self-slam" ],
       "timeSubmitted" : 1563390890364,
@@ -5360,8 +5533,27 @@
       "videoEndTime" : 9,
       "videoStartTime" : 1
     },
+    "Down the Back Tennis" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "5551 with 1 down the back(4b)" ],
+      "difficulty" : "3.8",
+      "explanation" : "",
+      "name" : "Down the Back Tennis",
+      "num" : "3",
+      "prereqs" : [ "Down the Back(1b)" ],
+      "related" : [ "Backcross Tennis" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1564455522099,
+      "timeUpdated" : 1564455522099,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoEndTime" : 39,
+      "videoStartTime" : 27
+    },
     "Down the Back(1b)" : {
       "contributor" : "tjthejuggler",
+      "dependents" : [ "Down the Back Tennis" ],
       "difficulty" : "1.8",
       "explanation" : "",
       "name" : "Down the Back(1b)",
@@ -5456,6 +5648,21 @@
       "videoEndTime" : 599,
       "videoStartTime" : 586
     },
+    "Entanglement Preserves Uncertainty" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.8",
+      "explanation" : "",
+      "name" : "Entanglement Preserves Uncertainty",
+      "num" : "3",
+      "prereqs" : [ "Spiral paths twist evenly", "Binary Companions Cycle Twice", "Infinities Converge at Unbounded Limits" ],
+      "related" : [ "Knot Invariants Are Complementary", "Vortex Flow Can Curl", "Perpetual Entropy Is Uniform" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "claw", "carry", "underarm-catch", "asymmetric" ],
+      "timeSubmitted" : 1564616451043,
+      "timeUpdated" : 1564616451043,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfeLYsTgoUY/"
+    },
     "Every third shuffle switch" : {
       "contributor" : "tjthejuggler",
       "dependents" : [ "Shuffle Switch" ],
@@ -5472,17 +5679,17 @@
     },
     "Everything Has Rhythm" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Momentum Can Change" ],
+      "dependents" : [ "Momentum Can Change", "Projective Transformations Add Perspective", "Rendered Cross Product Vectors" ],
       "difficulty" : "5.8",
       "explanation" : "",
       "name" : "Everything Has Rhythm",
       "num" : "3",
       "prereqs" : [ "Symmetric Active Crossover" ],
-      "related" : [ "Motion is Tranquility" ],
+      "related" : [ "Motion is Tranquility", "Active Arcades in Superposition", "Paths Are Integral To Action Principles" ],
       "siteswap" : "",
-      "tags" : [ "2T", "slam", "self-slam" ],
+      "tags" : [ "2T", "slam", "self-slam", "machine" ],
       "timeSubmitted" : 1563391600351,
-      "timeUpdated" : 1563394056856,
+      "timeUpdated" : 1564565109623,
       "url" : "",
       "video" : "https://www.instagram.com/p/BdJbEYVg1Q-/"
     },
@@ -5785,8 +5992,9 @@
       "video" : "https://youtu.be/LY2qhGr73oc"
     },
     "Fountain(4b)" : {
-      "dependents" : [ "534(4b)", "Pistons(4b)", "Reverse Fountain(4b)", "SynchFountain", "Windmill(4b)", "Six Ball Fountain(6b)", "Reverse Fountain Through Dots(4b)", "Headplants with Underarm Catches(4b)", "[54]51(4b)", "Isolated Fountain(4b)", "64(5b)", "Reverse Shoulder Throws (occasional)(4b)", "Sync 4b Slam Variation(4b)", "[44](8b)", "Asymmetric Columns Slam(4b)" ],
+      "dependents" : [ "534(4b)", "Pistons(4b)", "SynchFountain", "Windmill(4b)", "Six Ball Fountain(6b)", "Reverse Fountain Through Dots(4b)", "Headplants with Underarm Catches(4b)", "[54]51(4b)", "Isolated Fountain(4b)", "64(5b)", "Reverse Shoulder Throws (occasional)(4b)", "Sync 4b Slam Variation(4b)", "[44](8b)", "Asymmetric Columns Slam(4b)" ],
       "difficulty" : "4",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fountain.gif",
       "name" : "Fountain(4b)",
       "num" : 4,
@@ -5794,7 +6002,9 @@
       "related" : [ "Reverse Fountain(4b)" ],
       "siteswap" : "4",
       "timeSubmitted" : 0,
-      "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Fountain.html"
+      "timeUpdated" : 1564572691325,
+      "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Fountain.html",
+      "video" : ""
     },
     "Frances" : {
       "difficulty" : "4",
@@ -6063,6 +6273,21 @@
       "tags" : [ "crossed-arms", "ss1" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Gilligan'sBox.html"
     },
+    "Glide Reflection Befalls" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.5",
+      "explanation" : "",
+      "name" : "Glide Reflection Befalls",
+      "num" : "3",
+      "prereqs" : [ "Timing is Relative" ],
+      "related" : [ "Chiral Anomalies Exist", "Supersymmetry is Still a Mystery", "Antiparallel vectors blur edges", "Metric Expansion Through Dynamic Interval", "Vortex Flow Can Curl", "Perpetual Entropy Is Uniform" ],
+      "siteswap" : "",
+      "tags" : [ "self-slam", "claw", "bounce-back", "symmetric" ],
+      "timeSubmitted" : 1564519073692,
+      "timeUpdated" : 1564614424090,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BdweT1ag_em/"
+    },
     "Grace" : {
       "dependents" : [ "R+L Georgian Shuffle", "Kingston Shuffle 2", "R+L Georgian Shuffle 2" ],
       "difficulty" : "4",
@@ -6075,9 +6300,25 @@
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Grace.html"
     },
+    "Gravitational Aberrations Cancel" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Chiral Anomalies Exist", "Perpetual Entropy Is Uniform" ],
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Gravitational Aberrations Cancel",
+      "num" : "3",
+      "prereqs" : [ "Circles Reflect Eternity" ],
+      "related" : [ "Timing is Relative", "Reciprocal Coils Are Transcendental" ],
+      "siteswap" : "",
+      "tags" : [ "bounce-back", "2T", "self-slam", "claw" ],
+      "timeSubmitted" : 1564564326677,
+      "timeUpdated" : 1564564326677,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be1Slvdg-ME/"
+    },
     "Half Backcross Cascade" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Backcrosses" ],
+      "dependents" : [ "Backcrosses", "Backcross + Reverse Backcross" ],
       "difficulty" : "3.6",
       "explanation" : "",
       "name" : "Half Backcross Cascade",
@@ -6450,6 +6691,21 @@
       "tags" : [ "carry", "claw" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/IcelandicShuffle.html"
     },
+    "Infinities Converge at Unbounded Limits" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Entanglement Preserves Uncertainty" ],
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Infinities Converge at Unbounded Limits",
+      "num" : "3",
+      "related" : [ "Binary Companions Cycle Twice", "Spiral paths twist evenly" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "claw", "underarm-catch" ],
+      "timeSubmitted" : 1564580365963,
+      "timeUpdated" : 1564580365963,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be62VvVAcgY/"
+    },
     "Infinity" : {
       "dependents" : [ "Al's Slide", "Infinity Collision " ],
       "difficulty" : "3",
@@ -6545,6 +6801,21 @@
       "timeSubmitted" : 1560861103231,
       "video" : "https://www.instagram.com/p/BwuCIHrgTGO/"
     },
+    "Interlocking Tritones Swing" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Linear Oscillations Resonate" ],
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Interlocking Tritones Swing",
+      "num" : "3",
+      "related" : [ "Binary Companions Cycle Twice", "Compacting subspace ribbons", "Momentum Can Change", "Rendered Cross Product Vectors" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "swap", "claw" ],
+      "timeSubmitted" : 1564600151920,
+      "timeUpdated" : 1564600151920,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be9bP-Agwxv/"
+    },
     "Inversion with Respect to Origin" : {
       "contributor" : "jahvorsky_",
       "difficulty" : "5.9",
@@ -6552,7 +6823,7 @@
       "name" : "Inversion with Respect to Origin",
       "num" : "3",
       "prereqs" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry" ],
-      "related" : [ "Doing is a Quantum Leap From Imagining" ],
+      "related" : [ "Doing is a Quantum Leap From Imagining", "When Hypercycles Intersect", "Quantum Mosaics Are Continuous" ],
       "siteswap" : "",
       "tags" : [ "2T", "self-slam" ],
       "timeSubmitted" : 1563393340892,
@@ -6906,6 +7177,21 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/Bl5IxWVgtMu/"
     },
+    "Knot Invariants Are Complementary" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Knot Invariants Are Complementary",
+      "num" : "3",
+      "prereqs" : [ "Active Arcades in Superposition", "Spiral paths twist evenly", "Strange Loops Blend Together" ],
+      "related" : [ "Proponent of double exponents", "Supersymmetry is Still a Mystery", "Entanglement Preserves Uncertainty" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "self-slam", "2T", "claw" ],
+      "timeSubmitted" : 1564564726749,
+      "timeUpdated" : 1564609856618,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be34zzPAB9E/"
+    },
     "Kraken" : {
       "dependents" : [ "Georgian Scuffle", "Symmetric Georgian Scuffle", "Icelandic Shuffle" ],
       "difficulty" : "6",
@@ -6963,6 +7249,21 @@
       "timeUpdated" : 1563973249857,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Levels.html",
       "video" : ""
+    },
+    "Linear Oscillations Resonate" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.2",
+      "explanation" : "",
+      "name" : "Linear Oscillations Resonate",
+      "num" : "3",
+      "prereqs" : [ "Interlocking Tritones Swing", "Compacting subspace ribbons" ],
+      "related" : [ "Momentum Can Change" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "slam", "claw", "swap" ],
+      "timeSubmitted" : 1564616763630,
+      "timeUpdated" : 1564616763630,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfhAR4rAFfD/"
     },
     "Lisa(4b)" : {
       "difficulty" : "4",
@@ -7116,7 +7417,7 @@
     },
     "Matter Tells Space How To Bend" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Doing is a Quantum Leap From Imagining", "Inversion with Respect to Origin" ],
+      "dependents" : [ "Doing is a Quantum Leap From Imagining", "Inversion with Respect to Origin", "When Hypercycles Intersect", "Tessellations Form Congruent Boundaries", "Quantum Mosaics Are Continuous", "Trefoil Contours Contain Enantiomers" ],
       "difficulty" : "5.6",
       "explanation" : "",
       "name" : "Matter Tells Space How To Bend",
@@ -7129,6 +7430,21 @@
       "timeUpdated" : 1563393962331,
       "url" : "",
       "video" : "https://www.instagram.com/p/Bc-254WAVSa/"
+    },
+    "Metric Expansion Through Dynamic Interval" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.3",
+      "explanation" : "",
+      "name" : "Metric Expansion Through Dynamic Interval",
+      "num" : "3",
+      "prereqs" : [ "Asymmetric Rising Disco" ],
+      "related" : [ "Timing is Relative", "Chiral Anomalies Exist", "Supersymmetry is Still a Mystery", "Glide Reflection Befalls", "Vortex Flow Can Curl", "Perpetual Entropy Is Uniform" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "bounce-back", "claw", "self-slam" ],
+      "timeSubmitted" : 1564611242534,
+      "timeUpdated" : 1564611242534,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfPTLNwA27S/"
     },
     "Mike's Mess" : {
       "difficulty" : "4",
@@ -7157,7 +7473,7 @@
       "video" : "https://www.instagram.com/p/Bs5hrHtAMVB/"
     },
     "Mills Mess" : {
-      "dependents" : [ "Boston Mess", "Kraken", "441 Mills Mess", "531 Mills Mess", "Charley", "Flipped Mess", "Flo's Mess", "Half Mess 1", "Reverse Mills Mess", "Mills Mess Shower", "Rubenstein's Revenge", "Shuffler's Mess", "Windmill", "Cliff's Confusion(4b)", "Mills Mess(4b)", "552 Mills Mess(4b)", "Moxie's Mess", "Mills Mess + Broken Shower", "Clawed Mills Mess", "Half Boston Mess", "Columns Mess 1", "(6,4)(0,2x)*", "Sing's Mess", "The Guitar", "Mills Mess + Shower", "Over the Arm Mill's Mess", "Fake Boston Shuffle + Columns", "504 Crossed Arm Cascade", "Stacked Mess", "Catapult Mess", "Partial Penguin Mills", "[33] Mills Mess(6b)", "Moxie's Mess", "Mills Mess Slam Variation", "Half Mess 1", "Mills Multiplex Variation 2(4b)", "Mills Multiplex Variation 3(4b)", "Slam Mills", "Multiplex Squeeze Mills Mess(4b)", "Crossarm Shadow Pass Mills Mess", "Mills Headplants", "4440 Mills Mess", "Over the Arm Mills Mess" ],
+      "dependents" : [ "Boston Mess", "Kraken", "441 Mills Mess", "531 Mills Mess", "Charley", "Flipped Mess", "Flo's Mess", "Half Mess 1", "Reverse Mills Mess", "Mills Mess Shower", "Rubenstein's Revenge", "Shuffler's Mess", "Windmill", "Cliff's Confusion(4b)", "Mills Mess(4b)", "552 Mills Mess(4b)", "Moxie's Mess", "Mills Mess + Broken Shower", "Clawed Mills Mess", "Half Boston Mess", "Columns Mess 1", "(6,4)(0,2x)*", "Sing's Mess", "The Guitar", "Mills Mess + Shower", "Over the Arm Mill's Mess", "Fake Boston Shuffle + Columns", "504 Crossed Arm Cascade", "Stacked Mess", "Catapult Mess", "Partial Penguin Mills", "[33] Mills Mess(6b)", "Moxie's Mess", "Mills Mess Slam Variation", "Half Mess 1", "Mills Multiplex Variation 2(4b)", "Mills Multiplex Variation 3(4b)", "Slam Mills", "Multiplex Squeeze Mills Mess(4b)", "Crossarm Shadow Pass Mills Mess", "Mills Headplants", "4440 Mills Mess", "Over the Arm Mills Mess", "Millsmess Overarm Throw Clawed", "Millsmess Normal Throw Clawed", "Millsmess underarm Throw Clawed" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/millsmess.gif",
       "name" : "Mills Mess",
@@ -7307,6 +7623,51 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BenbIPThmts/"
     },
+    "Millsmess Normal Throw Clawed" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "3.9",
+      "explanation" : "",
+      "name" : "Millsmess Normal Throw Clawed",
+      "num" : "3",
+      "prereqs" : [ "Mills Mess", "Claws(Overhand) (1b)" ],
+      "related" : [ "Millsmess Overarm Throw Clawed", "Millsmess underarm Throw Clawed" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "underarm-catch", "claw" ],
+      "timeSubmitted" : 1564659283874,
+      "timeUpdated" : 1564659283874,
+      "url" : "",
+      "video" : "https://youtu.be/o9SfzSvoiJA"
+    },
+    "Millsmess Overarm Throw Clawed" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "3.8",
+      "explanation" : "",
+      "name" : "Millsmess Overarm Throw Clawed",
+      "num" : "3",
+      "prereqs" : [ "Mills Mess", "Claws(Overhand) (1b)" ],
+      "related" : [ "Millsmess Normal Throw Clawed", "Millsmess underarm Throw Clawed" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "claw", "underarm-catch" ],
+      "timeSubmitted" : 1564659178012,
+      "timeUpdated" : 1564659178012,
+      "url" : "",
+      "video" : "https://youtu.be/xKcqLntm8Ws"
+    },
+    "Millsmess underarm Throw Clawed" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "3.7",
+      "explanation" : "",
+      "name" : "Millsmess underarm Throw Clawed",
+      "num" : "3",
+      "prereqs" : [ "Mills Mess", "Claws(Overhand) (1b)" ],
+      "related" : [ "Millsmess Normal Throw Clawed", "Millsmess Overarm Throw Clawed" ],
+      "siteswap" : "",
+      "tags" : [ "claw", "underarm-catch" ],
+      "timeSubmitted" : 1564659378980,
+      "timeUpdated" : 1564659378980,
+      "url" : "",
+      "video" : "https://youtu.be/DkVMPaBEhss"
+    },
     "Mindfuckery Reverse Machine" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "5.0",
@@ -7330,7 +7691,7 @@
       "name" : "Momentum Can Change",
       "num" : "3",
       "prereqs" : [ "Doing is a Quantum Leap From Imagining", "Everything Has Rhythm" ],
-      "related" : [ "Timing is Relative", "Chiral Anomalies Exist", "Supersymmetry is Still a Mystery" ],
+      "related" : [ "Timing is Relative", "Chiral Anomalies Exist", "Supersymmetry is Still a Mystery", "Compacting subspace ribbons", "Interlocking Tritones Swing", "Rendered Cross Product Vectors", "Natural Harmonics Are Quintessential", "Linear Oscillations Resonate" ],
       "siteswap" : "",
       "tags" : [ "2T", "slam", "bounce-back", "self-slam", "swap" ],
       "timeSubmitted" : 1563393787347,
@@ -7340,13 +7701,13 @@
     },
     "Motion is Tranquility" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Timing is Relative" ],
+      "dependents" : [ "Timing is Relative", "Proponent of double exponents", "Compacting subspace ribbons", "Connections Defined by Parallel Transport" ],
       "difficulty" : "5.6",
       "explanation" : "",
       "name" : "Motion is Tranquility",
       "num" : "3",
       "prereqs" : [ "Symmetric Active Crossover" ],
-      "related" : [ "Circles Reflect Eternity", "Everything Has Rhythm" ],
+      "related" : [ "Circles Reflect Eternity", "Everything Has Rhythm", "Optimizing The Duality Gap" ],
       "siteswap" : "",
       "tags" : [ "2T", "self-slam" ],
       "timeSubmitted" : 1563391322709,
@@ -7567,6 +7928,21 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BcHt2vzhDxT/"
     },
+    "Möbius Ladders are Vertex-Transitive" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Möbius Ladders are Vertex-Transitive",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover" ],
+      "related" : [ "Strange Loops Blend Together", "Nature's Long Threaded Motion Tapestry", "Trefoil Contours Contain Enantiomers" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "self-slam", "2T" ],
+      "timeSubmitted" : 1564563802050,
+      "timeUpdated" : 1564563802050,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bey62e9ghIo/"
+    },
     "NBox" : {
       "dependents" : [ "Inverted Box", "Zebra Factory", "Levels", "Kimuras Star", "Chops + NBox", "Double Box + NBox", "Boston Takeouts", "Takeouts + Box", "Double NBox", "Box + Boston Shuffle", "DNI-Box", "Backwards Z", "Asymmetric Slam Box Variant", "Symmetric Slam Box Variant", "Z + Backward Z Box", "Inside Outside Slams", "Inverted Box Slam Combo", "NBox Multiplex Variation(4b)", "Symmetric Z Box", "Cross Slam Self Slam" ],
       "difficulty" : "4",
@@ -7596,15 +7972,30 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BuJM3VIgOOq/"
     },
+    "Natural Harmonics Are Quintessential" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Natural Harmonics Are Quintessential",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover" ],
+      "related" : [ "Momentum Can Change", "Retrograde Locomotion is Key", "Syncopated Jubilee" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "swap", "claw" ],
+      "timeSubmitted" : 1564612390146,
+      "timeUpdated" : 1564612390146,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfUEySjgkX3/"
+    },
     "Nature's Long Threaded Motion Tapestry" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Inversion with Respect to Origin" ],
+      "dependents" : [ "Inversion with Respect to Origin", "Quantum Mosaics Are Continuous", "Trefoil Contours Contain Enantiomers" ],
       "difficulty" : "5.7",
       "explanation" : "",
       "name" : "Nature's Long Threaded Motion Tapestry",
       "num" : "3",
       "prereqs" : [ "Symmetric Active Crossover" ],
-      "related" : [ "Matter Tells Space How To Bend", "Motion is Tranquility" ],
+      "related" : [ "Matter Tells Space How To Bend", "Motion is Tranquility", "Möbius Ladders are Vertex-Transitive" ],
       "siteswap" : "",
       "tags" : [ "2T", "slam", "self-slam" ],
       "timeSubmitted" : 1563390715356,
@@ -7662,12 +8053,12 @@
       "explanation" : "",
       "name" : "Neck Throw Penguin + Contortion + Backcross",
       "num" : "3",
-      "prereqs" : [ "Backcross Penguin Neck Throw", "Backcrosses", "Penguins", "Neckcross Tennis" ],
+      "prereqs" : [ "Backcross Penguin Neck Throw", "Backcrosses", "Penguins", "Neckcross Tennis", "Backcross Neck Throw Combo" ],
       "related" : [ "Gentoo" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "contortion", "penguin", "neck-throw" ],
+      "tags" : [ "body-throw", "contortion", "penguin", "neckcross" ],
       "timeSubmitted" : 1563315575985,
-      "timeUpdated" : 1563315575985,
+      "timeUpdated" : 1564350080895,
       "url" : "",
       "video" : "https://www.instagram.com/p/ByaHRPgAkjb/"
     },
@@ -7688,14 +8079,16 @@
     "Neck-throw + Penguin + Armpit" : {
       "contributor" : "lucasadverse",
       "difficulty" : "6",
+      "explanation" : "",
       "name" : "Neck-throw + Penguin + Armpit",
       "num" : "3",
       "prereqs" : [ "Penguins" ],
       "related" : [ "Backcross Neck Throw Combo", "Gentoo" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "penguin", "neck-throw" ],
+      "tags" : [ "body-throw", "penguin", "neckcross" ],
       "timeSubmitted" : 1561318582799,
-      "timeUpdated" : 1561330227975,
+      "timeUpdated" : 1564350105292,
+      "url" : "",
       "video" : "https://www.instagram.com/p/BupBropgJJl/",
       "videoEndTime" : 12,
       "videoStartTime" : 1
@@ -7710,9 +8103,9 @@
       "prereqs" : [ "Juggler's Tennis", "Neck Throw  (1b)", "Neckcross(1b)" ],
       "related" : [ "Backcross + Neck Throw" ],
       "siteswap" : "3",
-      "tags" : [ "body-throw", "neck-throw" ],
+      "tags" : [ "body-throw", "neckcross" ],
       "timeSubmitted" : 1563172967137,
-      "timeUpdated" : 1564266794598,
+      "timeUpdated" : 1564349918686,
       "url" : "",
       "video" : "https://www.instagram.com/p/BlVNhq5Ht1o/"
     },
@@ -7868,6 +8261,21 @@
       "timeSubmitted" : 1561076562810,
       "timeUpdated" : 1561076562810,
       "video" : "https://www.instagram.com/p/BTaO1IEhSOC/"
+    },
+    "Optimizing The Duality Gap" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Optimizing The Duality Gap",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover" ],
+      "related" : [ "Strange Loops Blend Together", "Motion is Tranquility", "Circles Reflect Eternity" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam" ],
+      "timeSubmitted" : 1564610333096,
+      "timeUpdated" : 1564610333096,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfMvZ8ZgXio/"
     },
     "Orinoco Flow" : {
       "difficulty" : "5",
@@ -8053,6 +8461,20 @@
       "timeUpdated" : 1561548244871,
       "video" : "https://www.instagram.com/p/BV4ic8Whgbx/"
     },
+    "Paths Are Integral To Action Principles" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Paths Are Integral To Action Principles",
+      "num" : "3",
+      "related" : [ "Active Arcades in Superposition", "Everything Has Rhythm", "Supersymmetry is Still a Mystery", "Projective Transformations Add Perspective" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "machine", "claw", "self-slam" ],
+      "timeSubmitted" : 1564609875012,
+      "timeUpdated" : 1564609875012,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfMuniFAyEF/"
+    },
     "Pendulum Drop" : {
       "dependents" : [ "The Shield", "Evolved Pendulum" ],
       "difficulty" : "4",
@@ -8207,6 +8629,21 @@
       "tags" : [ "carry", "claw", "synch" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Penman'sPandemonium.html"
     },
+    "Perpetual Entropy Is Uniform" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.8",
+      "explanation" : "",
+      "name" : "Perpetual Entropy Is Uniform",
+      "num" : "3",
+      "prereqs" : [ "Gravitational Aberrations Cancel" ],
+      "related" : [ "Vortex Flow Can Curl", "Metric Expansion Through Dynamic Interval", "Glide Reflection Befalls", "Chiral Anomalies Exist", "Entanglement Preserves Uncertainty" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "bounce-back", "claw", "swap", "carry", "underarm-throw" ],
+      "timeSubmitted" : 1564616027107,
+      "timeUpdated" : 1564616027107,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfeIucYAhj5/"
+    },
     "Peter's Shuffle" : {
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/petersshuffle.gif",
@@ -8284,6 +8721,36 @@
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Pistons.html"
     },
+    "Projective Transformations Add Perspective" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Projective Transformations Add Perspective",
+      "num" : "3",
+      "prereqs" : [ "Everything Has Rhythm" ],
+      "related" : [ "Proponent of double exponents", "Active Arcades in Superposition", "Quantum Mosaics Are Continuous", "Paths Are Integral To Action Principles" ],
+      "siteswap" : "",
+      "tags" : [ "machine", "claw", "2T", "self-slam", "slam", "underarm-catch", "underarm-throw" ],
+      "timeSubmitted" : 1564587483851,
+      "timeUpdated" : 1564587483851,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be67QzMAnM8/"
+    },
+    "Proponent of double exponents" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.1",
+      "explanation" : "",
+      "name" : "Proponent of double exponents",
+      "num" : "3",
+      "prereqs" : [ "Motion is Tranquility", "Circles Reflect Eternity", "Spiral paths twist evenly" ],
+      "related" : [ "Doing is a Quantum Leap From Imagining", "Supersymmetry is Still a Mystery", "Bonary Companions Cycle Twice", "Binary Companions Cycle Twice", "Active Arcades in Superposition", "Knot Invariants Are Complementary", "Projective Transformations Add Perspective" ],
+      "siteswap" : "",
+      "tags" : [ "self-slam", "machine", "claw", "2T" ],
+      "timeSubmitted" : 1564519426918,
+      "timeUpdated" : 1564519426918,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bd89epfg6mN/"
+    },
     "Protostar" : {
       "contributor" : "stefan",
       "difficulty" : "3",
@@ -8308,6 +8775,21 @@
       "timeSubmitted" : 1561296108070,
       "timeUpdated" : 1561296108070,
       "video" : "https://www.instagram.com/p/Bls1HgrA1Ho/"
+    },
+    "Quantum Mosaics Are Continuous" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.2",
+      "explanation" : "",
+      "name" : "Quantum Mosaics Are Continuous",
+      "num" : "3",
+      "prereqs" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry" ],
+      "related" : [ "Inversion with Respect to Origin", "Projective Transformations Add Perspective" ],
+      "siteswap" : "",
+      "tags" : [ "self-slam", "2T", "underarm-throw" ],
+      "timeSubmitted" : 1564600715678,
+      "timeUpdated" : 1564600715678,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfHYLQsAWjX/"
     },
     "Quickbox Reverse Slams" : {
       "contributor" : "juggling_vegan_",
@@ -8434,6 +8916,21 @@
       "tags" : [ "synch" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallRainbowCross.html"
     },
+    "Reciprocal Coils Are Transcendental" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Reciprocal Coils Are Transcendental",
+      "num" : "3",
+      "prereqs" : [ "Circles Reflect Eternity" ],
+      "related" : [ "Timing is Relative", "Gravitational Aberrations Cancel" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "self-slam", "crossed-arms", "bounce-back", "underarm-throw" ],
+      "timeSubmitted" : 1564577693202,
+      "timeUpdated" : 1564577693202,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be6gITkA7YP/"
+    },
     "Recrossing Columns" : {
       "contributor" : "stefan",
       "difficulty" : "5",
@@ -8504,6 +9001,21 @@
       "tags" : [ "carry", "orbit" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Relf'sRubensteins.html"
     },
+    "Rendered Cross Product Vectors" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Rendered Cross Product Vectors",
+      "num" : "3",
+      "prereqs" : [ "Everything Has Rhythm" ],
+      "related" : [ "Interlocking Tritones Swing", "Momentum Can Change" ],
+      "siteswap" : "",
+      "tags" : [ "swap", "claw", "2T", "self-slam", "machine", "slam" ],
+      "timeSubmitted" : 1564610826801,
+      "timeUpdated" : 1564616721112,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfM8xxkgq9Z/"
+    },
     "Retrograde Locomotion is Key" : {
       "contributor" : "jahvorsky_",
       "difficulty" : "5.7",
@@ -8511,7 +9023,7 @@
       "name" : "Retrograde Locomotion is Key",
       "num" : "3",
       "prereqs" : [ "Symmetric Active Crossover", "Momentum Can Change" ],
-      "related" : [ "Syncopated Jubilee" ],
+      "related" : [ "Syncopated Jubilee", "Natural Harmonics Are Quintessential" ],
       "siteswap" : "",
       "tags" : [ "self-slam", "swap" ],
       "timeSubmitted" : 1563534852186,
@@ -8550,7 +9062,7 @@
       "explanation" : "",
       "name" : "Reverse BX, Shadow Pass, Shoulder Throw",
       "num" : "3",
-      "prereqs" : [ "Backcrosses" ],
+      "prereqs" : [ "Backcrosses", "534 with the 3s behind the neck(4b)" ],
       "related" : [ "Shoulder Throw Neck Pass Combo" ],
       "siteswap" : "",
       "tags" : [ "body-throw", "shoulder-throw" ],
@@ -8561,7 +9073,7 @@
     },
     "Reverse Backcross  (1b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Reverse Backcrosses" ],
+      "dependents" : [ "Reverse Backcrosses", "Reverse Backcross Tennis" ],
       "difficulty" : "1.8",
       "explanation" : "",
       "name" : "Reverse Backcross  (1b)",
@@ -8575,6 +9087,24 @@
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 170,
       "videoStartTime" : 162
+    },
+    "Reverse Backcross Tennis" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Reverse Backcrosses", "Backcross + Reverse Backcross" ],
+      "difficulty" : "3.9",
+      "explanation" : "",
+      "name" : "Reverse Backcross Tennis",
+      "num" : "3",
+      "prereqs" : [ "Reverse Backcross  (1b)" ],
+      "related" : [ "Backcross Tennis" ],
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1564454959122,
+      "timeUpdated" : 1564455282828,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoEndTime" : 27,
+      "videoStartTime" : 12
     },
     "Reverse Backcross, Backcross Tennis" : {
       "contributor" : "juggling_vegan_",
@@ -8597,7 +9127,7 @@
       "explanation" : "",
       "name" : "Reverse Backcrosses",
       "num" : "3",
-      "prereqs" : [ "Backcrosses", "Reverse Backcross  (1b)" ],
+      "prereqs" : [ "Backcrosses", "Reverse Backcross  (1b)", "Reverse Backcross Tennis", "Backcross + Reverse Backcross" ],
       "siteswap" : "3",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563104182401,
@@ -8709,7 +9239,7 @@
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/reversefountain.gif",
       "name" : "Reverse Fountain(4b)",
       "num" : 4,
-      "prereqs" : [ "Fountain(4b)" ],
+      "related" : [ "Fountain(4b)" ],
       "siteswap" : "4",
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/ReverseFountain.html"
     },
@@ -9100,7 +9630,7 @@
     },
     "Self Slam Overarm (crossover) (1b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Cross Slam Self Slam", "Asymmetric Active Crossover", "Symmetric Active Crossover" ],
+      "dependents" : [ "Crossover Exchange Variation 1(2b)" ],
       "difficulty" : "1.8",
       "explanation" : "",
       "name" : "Self Slam Overarm (crossover) (1b)",
@@ -9109,7 +9639,7 @@
       "siteswap" : "",
       "tags" : [ "2T" ],
       "timeSubmitted" : 1563762021327,
-      "timeUpdated" : 1564056595838,
+      "timeUpdated" : 1564477912669,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 420,
@@ -9492,6 +10022,22 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BiMW_3DDXO-/"
     },
+    "Spiral paths twist evenly" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Proponent of double exponents", "Bonary Companions Cycle Twice", "Binary Companions Cycle Twice", "Knot Invariants Are Complementary", "Entanglement Preserves Uncertainty" ],
+      "difficulty" : "5.5",
+      "explanation" : "",
+      "name" : "Spiral paths twist evenly",
+      "num" : "3",
+      "prereqs" : [ "Circles Reflect Eternity" ],
+      "related" : [ "Strange Loops Blend Together", "Infinities Converge at Unbounded Limits" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "claw" ],
+      "timeSubmitted" : 1564519865733,
+      "timeUpdated" : 1564519865733,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bd_hZoAgfG-/"
+    },
     "Split Cascade(5b)" : {
       "dependents" : [ "Three-Way Split Multiplex(7b)", "Symmetrical Pigtails(5b)", "BOOMclawclaw(5b)", "Overhead Split Multiplex(5b)", "Alternating Triplex Box(5b)", "Split Reverse Shoulder Throws(5b)", "Split Penguins(5b)" ],
       "difficulty" : "5",
@@ -9741,6 +10287,22 @@
       "videoEndTime" : 21,
       "videoStartTime" : 16
     },
+    "Strange Loops Blend Together" : {
+      "contributor" : "jahvorsky_",
+      "dependents" : [ "Knot Invariants Are Complementary" ],
+      "difficulty" : "5.5",
+      "explanation" : "",
+      "name" : "Strange Loops Blend Together",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover" ],
+      "related" : [ "Spiral paths twist evenly", "Bonary Companions Cycle Twice", "Binary Companions Cycle Twice", "Möbius Ladders are Vertex-Transitive", "Tessellations Form Congruent Boundaries", "Optimizing The Duality Gap" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "self-slam" ],
+      "timeSubmitted" : 1564521482708,
+      "timeUpdated" : 1564521482708,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Bel9Sy7AmTq/"
+    },
     "Stylized Flo's Bird Mess " : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "4.9",
@@ -9786,8 +10348,8 @@
       "explanation" : "",
       "name" : "Supersymmetry is Still a Mystery",
       "num" : "3",
-      "prereqs" : [ "Factory (Machine)" ],
-      "related" : [ "Timing is Relative", "Momentum Can Change" ],
+      "prereqs" : [ "Factory (Machine)", "Symmetric Active Crossover" ],
+      "related" : [ "Timing is Relative", "Momentum Can Change", "Glide Reflection Befalls", "Proponent of double exponents", "Active Arcades in Superposition", "Knot Invariants Are Complementary", "Paths Are Integral To Action Principles", "Metric Expansion Through Dynamic Interval" ],
       "siteswap" : "",
       "tags" : [ "2T", "bounce-back", "machine", "self-slam" ],
       "timeSubmitted" : 1563535562524,
@@ -9882,17 +10444,17 @@
     },
     "Symmetric Active Crossover" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry", "Motion is Tranquility", "Circles Reflect Eternity", "Everything Has Rhythm", "Retrograde Locomotion is Key", "Syncopated Jubilee", "Supersymmetry is Still a Mystery" ],
+      "dependents" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry", "Motion is Tranquility", "Circles Reflect Eternity", "Everything Has Rhythm", "Retrograde Locomotion is Key", "Syncopated Jubilee", "Supersymmetry is Still a Mystery", "Strange Loops Blend Together", "Möbius Ladders are Vertex-Transitive", "Optimizing The Duality Gap", "Natural Harmonics Are Quintessential" ],
       "difficulty" : "5.2",
       "explanation" : "",
       "name" : "Symmetric Active Crossover",
       "num" : "3",
-      "prereqs" : [ "Asymmetric Active Crossover", "Self Slam Overarm (crossover) (1b)" ],
+      "prereqs" : [ "Asymmetric Active Crossover", "Crossover Exchange Variation 1(2b)" ],
       "related" : [ "Symmetric Reverse Shapeshifter" ],
       "siteswap" : "",
-      "tags" : [ "2T", "slam", "crossed-arms", "underarm-catch", "downward 2T" ],
+      "tags" : [ "2T", "crossed-arms", "underarm-catch", "self-slam" ],
       "timeSubmitted" : 1563333967128,
-      "timeUpdated" : 1563390552174,
+      "timeUpdated" : 1564610283094,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=M1_0mEnwBpM",
       "videoEndTime" : 122,
@@ -10214,7 +10776,7 @@
       "name" : "Syncopated Jubilee",
       "num" : "3",
       "prereqs" : [ "Symmetric Active Crossover", "Momentum Can Change" ],
-      "related" : [ "Retrograde Locomotion is Key" ],
+      "related" : [ "Retrograde Locomotion is Key", "Compacting subspace ribbons", "Natural Harmonics Are Quintessential" ],
       "siteswap" : "",
       "tags" : [ "swap", "self-slam" ],
       "timeSubmitted" : 1563535091064,
@@ -10397,6 +10959,21 @@
       "siteswap" : "3[32T]",
       "tags" : [ "multiplex", "carry", "crossed-arms", "underarm-catch" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/TennesseeWaltz.html"
+    },
+    "Tessellations Form Congruent Boundaries" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Tessellations Form Congruent Boundaries",
+      "num" : "3",
+      "prereqs" : [ "Matter Tells Space How To Bend" ],
+      "related" : [ "When Hypercycles Intersect", "Connections Defined by Parallel Transport", "Strange Loops Blend Together", "Trefoil Contours Contain Enantiomers" ],
+      "siteswap" : "",
+      "tags" : [ "slam", "self-slam", "2T" ],
+      "timeSubmitted" : 1564575482082,
+      "timeUpdated" : 1564575482082,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be4dwExgQ6_/"
     },
     "The Follow" : {
       "contributor" : "3ballpatterns_",
@@ -10613,17 +11190,17 @@
     },
     "Timing is Relative" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Chiral Anomalies Exist" ],
+      "dependents" : [ "Chiral Anomalies Exist", "Glide Reflection Befalls", "Antiparallel vectors blur edges" ],
       "difficulty" : "6.2",
       "explanation" : "",
       "name" : "Timing is Relative",
       "num" : "3",
       "prereqs" : [ "Motion is Tranquility", "Circles Reflect Eternity" ],
-      "related" : [ "Momentum Can Change", "Supersymmetry is Still a Mystery" ],
+      "related" : [ "Momentum Can Change", "Supersymmetry is Still a Mystery", "Gravitational Aberrations Cancel", "Reciprocal Coils Are Transcendental", "Metric Expansion Through Dynamic Interval" ],
       "siteswap" : "",
-      "tags" : [ "2T", "slam", "bounce-back", "self-slam" ],
+      "tags" : [ "2T", "slam", "bounce-back", "self-slam", "claw" ],
       "timeSubmitted" : 1563392484198,
-      "timeUpdated" : 1563394074931,
+      "timeUpdated" : 1564577561182,
       "url" : "",
       "video" : "https://www.instagram.com/p/BdLpcKiA47k/"
     },
@@ -10773,6 +11350,21 @@
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 516,
       "videoStartTime" : 508
+    },
+    "Trefoil Contours Contain Enantiomers" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Trefoil Contours Contain Enantiomers",
+      "num" : "3",
+      "prereqs" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry" ],
+      "related" : [ "Tessellations Form Congruent Boundaries", "When Hypercycles Intersect", "Möbius Ladders are Vertex-Transitive" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "self-slam", "slam", "underarm-throw" ],
+      "timeSubmitted" : 1564605767433,
+      "timeUpdated" : 1564605767433,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfKKkKVAPPS/"
     },
     "Triazzle" : {
       "difficulty" : "4",
@@ -10975,9 +11567,9 @@
       "prereqs" : [ "Penguins", "Neckcross Tennis" ],
       "related" : [ "Under Leg Catch to Behind Back Catch", "Under the Leg Shadow Pass Combo" ],
       "siteswap" : "",
-      "tags" : [ "body-throw", "penguin", "neck-throw" ],
+      "tags" : [ "body-throw", "penguin", "neckcross" ],
       "timeSubmitted" : 1563313466056,
-      "timeUpdated" : 1563313466056,
+      "timeUpdated" : 1564349990004,
       "url" : "",
       "video" : "https://www.instagram.com/p/BvgoIeOgovt/"
     },
@@ -11048,9 +11640,9 @@
       "num" : "1",
       "related" : [ "Underarm Catch (1b)", "Overarm Throw (1b)" ],
       "siteswap" : "",
-      "tags" : [ "crossed-arms" ],
+      "tags" : [ "crossed-arms", "underarm-throw" ],
       "timeSubmitted" : 1563759591938,
-      "timeUpdated" : 1564265680801,
+      "timeUpdated" : 1564577730051,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 77,
@@ -11124,6 +11716,20 @@
       "timeUpdated" : 1563153346106,
       "url" : "",
       "video" : "https://www.instagram.com/p/BjcEsJlDyjN/"
+    },
+    "Vortex Flow Can Curl" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "6.5",
+      "explanation" : "",
+      "name" : "Vortex Flow Can Curl",
+      "num" : "3",
+      "related" : [ "Metric Expansion Through Dynamic Interval", "Chiral Anomalies Exist", "Glide Reflection Befalls", "Perpetual Entropy Is Uniform", "Entanglement Preserves Uncertainty" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "claw", "bounce-back", "underarm-throw", "carry", "self-slam" ],
+      "timeSubmitted" : 1564614517933,
+      "timeUpdated" : 1564614517933,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BfZN3X6gc6D/"
     },
     "Waterfall" : {
       "contributor" : "3ballpatterns_",
@@ -11208,6 +11814,21 @@
       "timeSubmitted" : 9,
       "video" : "https://www.instagram.com/p/BnwAipllV6S/?utm_source=ig_web_copy_link"
     },
+    "When Hypercycles Intersect" : {
+      "contributor" : "jahvorsky_",
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "When Hypercycles Intersect",
+      "num" : "3",
+      "prereqs" : [ "Matter Tells Space How To Bend" ],
+      "related" : [ "Connections Defined by Parallel Transport", "Compacting subspace ribbons", "Inversion with Respect to Origin", "Tessellations Form Congruent Boundaries", "Trefoil Contours Contain Enantiomers" ],
+      "siteswap" : "",
+      "tags" : [ "2T", "slam", "self-slam" ],
+      "timeSubmitted" : 1564565474210,
+      "timeUpdated" : 1564565474210,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/Be4Ws3lg1DY/"
+    },
     "Where There's Fragile Stability" : {
       "contributor" : "noslowerdna_",
       "difficulty" : "7",
@@ -11285,7 +11906,7 @@
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballwindmill.gif",
       "name" : "Windmill(4b)",
       "num" : 4,
-      "prereqs" : [ "Mills Mess(4b)" ],
+      "prereqs" : [ "Mills Mess(4b)", "Fountain(4b)" ],
       "siteswap" : "4",
       "tags" : [ "crossed-arms" ],
       "timeSubmitted" : 0,
@@ -11345,6 +11966,23 @@
       "timeUpdated" : 1563229806826,
       "url" : "",
       "video" : "https://www.instagram.com/p/BnYtx1Pjj2q/"
+    },
+    "Wristdrop Shower" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "4.4",
+      "explanation" : "",
+      "name" : "Wristdrop Shower",
+      "num" : "3",
+      "prereqs" : [ "Asymmetric Lemming Drop" ],
+      "related" : [ "441 with Wristdrop 1s" ],
+      "siteswap" : "",
+      "tags" : [ "wrist-drop" ],
+      "timeSubmitted" : 1564477636603,
+      "timeUpdated" : 1564477636603,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=4yQq6YocOAY&feature=youtu.be",
+      "videoEndTime" : 88,
+      "videoStartTime" : 80
     },
     "Yo-Yo" : {
       "dependents" : [ "The Palindrome", "Asymmetric Yo-Yo Grafted onto Orka's Mess", "Crossed 423 Fake Tennis", "RL Oy-Oy", "The Follow", "R+L Tornado", "R+L Fake Columns", "Fake Columns 2", "Yo-Yo + Boston Shuffle", "Carry the One", "Cross Drop Robot" ],
@@ -12218,8 +12856,11 @@
           "lastUpdated" : 1564161206136
         },
         "Motion is Tranquility" : {
-          "catches" : "49",
-          "lastUpdated" : 1564213548213
+          "baby" : "false",
+          "catches" : "84",
+          "lastUpdated" : 1564605637143,
+          "ninja" : "false",
+          "starred" : "false"
         },
         "Multiplex Columns(5b)" : {
           "catches" : "25",
@@ -12341,6 +12982,13 @@
         "Rainbow Cross(4b)" : {
           "catches" : "100",
           "starred" : "true"
+        },
+        "Reciprocal Coils Are Transcendental" : {
+          "baby" : "false",
+          "catches" : "0",
+          "lastUpdated" : 1564580111777,
+          "ninja" : "false",
+          "starred" : "false"
         },
         "Reverse 423" : {
           "catches" : "200",
@@ -12665,6 +13313,10 @@
         },
         "531" : {
           "catches" : 0,
+          "starred" : "true"
+        },
+        "4b Windmills Mess(4b)" : {
+          "lastUpdated" : 1564351592823,
           "starred" : "true"
         },
         "Al's Slide" : {
@@ -13504,13 +14156,68 @@
     },
     "-LkaFCJQ6im3P24WD9MV" : {
       "username" : "Picheezy"
+    },
+    "-Lkwv_L-ABfJ6iyP0B-8" : {
+      "username" : "WillowW"
+    },
+    "-Ll2g4snYiURmZHoeKd2" : {
+      "username" : "jansbond"
+    },
+    "-LlCYV7W7-7Yu0-kiKxq" : {
+      "username" : "Ali"
+    },
+    "-LlDSIsmfcHnxF4Cj1f3" : {
+      "myTricks" : {
+        "Cascade" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564684961048,
+          "ninja" : "true"
+        },
+        "Half Shower" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564684979674,
+          "ninja" : "true"
+        },
+        "Juggler's Tennis" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564685047790,
+          "ninja" : "true"
+        },
+        "Mills Mess" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564685127996,
+          "ninja" : "true"
+        },
+        "Reverse Cascade" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564685022674,
+          "ninja" : "true"
+        },
+        "Stacked Box(4b)" : {
+          "baby" : "false",
+          "catches" : "80",
+          "lastUpdated" : 1564685309173,
+          "ninja" : "false",
+          "starred" : "false"
+        },
+        "The W" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564685149358,
+          "ninja" : "true"
+        }
+      },
+      "username" : "AndreyR"
     }
   },
   "stats" : {
-    "totalCatchCount" : 48048
+    "totalCatchCount" : 54169
   },
-  "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neck-pass", "neck-throw", "headplant" ],
+  "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neckcross", "neck-pass", "headplant", "underarm-throw" ],
   "trickOfTheDay" : {
+    "82" : {
+      "date" : "82",
+      "trick" : "Reverse Slams"
+    },
     "711" : {
       "date" : "711",
       "trick" : "Yo-Yo"
@@ -13586,6 +14293,18 @@
     "729" : {
       "date" : "729",
       "trick" : "423"
+    },
+    "730" : {
+      "date" : "730",
+      "trick" : "Crossunder"
+    },
+    "731" : {
+      "date" : "731",
+      "trick" : "Cascade(9b)"
+    },
+    "732" : {
+      "date" : "732",
+      "trick" : "Broken Shower"
     }
   },
   "users" : {
@@ -13763,6 +14482,26 @@
       "email" : "pichettet1@gmail.com",
       "lowerCaseUsername" : "picheezy",
       "username" : "Picheezy"
+    },
+    "-Lkwv_L2GCBf4JwJ4j4h" : {
+      "email" : "weeds@alum.mit.edu",
+      "lowerCaseUsername" : "willoww",
+      "username" : "WillowW"
+    },
+    "-Ll2g4sp2z-4egJcx8C0" : {
+      "email" : "jansbond@hotmail.com",
+      "lowerCaseUsername" : "jansbond",
+      "username" : "jansbond"
+    },
+    "-LlCYV7fC11xB5oMf27A" : {
+      "email" : "alexgavr@bk.ru",
+      "lowerCaseUsername" : "ali",
+      "username" : "Ali"
+    },
+    "-LlDSIsoetXshC0a1DFx" : {
+      "email" : "1990andreyrysh@gmail.com",
+      "lowerCaseUsername" : "andreyr",
+      "username" : "AndreyR"
     }
   }
 }

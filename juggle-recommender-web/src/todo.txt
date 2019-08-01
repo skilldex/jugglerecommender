@@ -15,14 +15,6 @@ v 1.9
 
 	Data fix scripts(see list below)
 
-	Weird thing that happened:
-		Results counter quit working, changing it from
-		Results: {Object.keys(uiStore.rootTricks).length}
-		to
-		Results: {uiStore.rootTricks.length}
-		fixed it
-
-
 =========
 Profile Screen
 	Stats

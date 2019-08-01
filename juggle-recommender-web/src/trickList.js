@@ -96,7 +96,6 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
-	 	console.log('uiStore.pageNumber',uiStore.pageNumber)
 		this.props.tricksToList.forEach((trickKey, index)=>{
 			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return
