@@ -24,7 +24,7 @@ class Store {
 	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""
 	@observable totalCatchCount = null
-	@observable currentComments = null
+	@observable currentComments = []
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -56,10 +56,12 @@ class Store {
 		return contributorTags
 	}
 	@action getCommentsByTrickId(trickId){
+		console.log("getting comments", trickId)
 		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
 		let parentComments = []
 		commentsRef.on('value', resp =>{
-			const allComments = this.snapshotToArray(resp)
+			const allComments = this.snapshotToArrayWithKey(resp)
+			console.log("updated comments" , trickId, allComments)
             allComments.forEach(
                 function(curComment){
                     if(!curComment["parentId"]){
@@ -81,13 +83,13 @@ class Store {
         return currentComments
     }
 	@action setComments(comments){
-		this.comments = comments
+		this.currentComments = comments
 	}
 	@action createComment(comment) {
       const that = this
       const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
       let parentComments = []
-
+      console.log("creating comment", comment)
       
       return new Promise((resolve, reject) => {
 
@@ -102,6 +104,14 @@ class Store {
         }
         resolve(comment)
       });
+    }
+    @action getCommentReplies(refPath){
+        const comments = firebase.database().ref('comments/'+refPath)
+        return new Promise(resolve => {
+            comments.on('value', resp => {
+                resolve(this.snapshotToArrayWithKey(resp))
+            });
+        }); 
     }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''

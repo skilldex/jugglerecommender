@@ -25,6 +25,7 @@ class Detail extends Component {
     catches : null,
     changingInput : false,
     showExtraGif : false,
+    firstComment : ""
   }
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
@@ -39,11 +40,6 @@ class Detail extends Component {
       uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       //set focus back to outer div
       //this.outerDiv.focus()   
-    }
-  }
-  seeExplanation=(trickKey)=>{
-    if(!uiStore.detailTimer){
-        window.open(store.library[trickKey].url)
     }
   }
   handleEditCatchButtonClick=()=>{
@@ -80,9 +76,7 @@ class Detail extends Component {
       textField.select()
       document.execCommand('copy')
       textField.remove()
-
       alert("Link for the details page copied to clipboard\n" + url)
-    
   }
   toggleExtraGif=()=>{
     this.setState({showExtraGif: !this.state.showExtraGif})
@@ -97,7 +91,23 @@ class Detail extends Component {
         uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       }
   }
+  postFirstComment=()=>{
+      let commentPost = {
+        comment: this.state.firstComment,
+        date: Date(),
+        parentPost: true,
+        user:authStore.user.username,
+        previousKeys : "",
+        trickId : uiStore.detailTrick.id
 
+      };
+      let that = this
+      store.createComment(commentPost).then(data => {
+        this.setState({firstcomment : ""})
+      }, error => {
+      });
+      
+  }
 	render() {
    
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
@@ -353,22 +363,25 @@ class Detail extends Component {
               />
               {extraGifSection}
               {infoSection}
+              <div className="comment-container">
+                <h3>Discussion</h3>
+                { authStore.user ? 
+                    <div>
+                      <span className="first-comment-icon">{authStore.username}</span>
+                      <input value={this.state.firstComment} 
+                      onChange={(e)=>{this.setState({firstComment : e.target.value})}} 
+                      className="firstcomment" type="submit"  placeholder="Write a comment..." onblur="this.placeholder = 'Write a comment...'" onfocus="this.placeholder = ''" type="text" />
+                      <button className="secondary-button-hollow" onClick={this.postFirstComment}>Submit</button>
+                    </div> : null
+                }
+                <Comments comments={store.currentComments}></Comments>
+              </div>
               {relationshipLists}                
             </div> 
           )
     }
   }
 /*
-<div class="comment-container">
-                                <h3>Discussion</h3>
-                                { authStore.user ? 
-                                  <form class="first-comment-container"  onSubmit="postComment()">
-                                    <span class="first-comment-icon">{authStore.username}</span>
-                                    <input class="first-comment" type="submit"  placeholder="Write a comment..." onblur="this.placeholder = 'Write a comment...'" onfocus="this.placeholder = ''" type="text" ngModel="firstComment" name="firstComment"/>
-                                    <button class="secondary-button-hollow" type="submit">Submit</button>
-                                   </form> : null
-                                }
-                                <Comments comments={store.comments}></Comments>
-                              </div>
+
                               */
 export default Detail

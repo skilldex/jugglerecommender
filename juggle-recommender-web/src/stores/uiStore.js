@@ -89,6 +89,7 @@ class UIStore {
 	}
 
 	@action setDetailTrick=(clickedTrick)=>{
+		this.detailTrick = null
 		if(this.showMoreInformation){
 			this.toggleShowMoreInformation()
 		}

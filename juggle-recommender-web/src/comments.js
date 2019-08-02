@@ -2,6 +2,8 @@
 
 import React,{Component} from 'react'
 import store from './stores/store'
+import authStore from './stores/authStore'
+
 import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
@@ -22,30 +24,9 @@ const paginationSize = 20
 @observer
 class Comments extends Component {
 	
-	componentDidMount(){
-        /*this.timer = Observable.timer(500,500);
-        let subscription = this.timer.subscribe(t => {
-            if( this.comments instanceof Array) {
-                this.comments.forEach(
-                    function(curComment){
-                        curComment["date"] = this.getTimeDiff(curComment["date"])
-                        this.setComments.push(curComment)
-                        
-                    }, this
-                )
-                subscription.unsubscribe()
-            }else if(this.comments instanceof Object){
-                for( let curCommentKey in this.comments){
-                    this.comments[curCommentKey]["key"] = curCommentKey
-                    this.comments[curCommentKey]["date"] = this.getTimeDiff(this.comments[curCommentKey]["date"])
-                    this.setComments.push(this.comments[curCommentKey])
-                }
-                subscription.unsubscribe()
-            }
-        });  */
-        console.log(this.comments)
+    state = {
+        newComment : ""
     }
-
     getTimeDiff=(referenceTimestamp)=>{
         const curTime = new Date()
         const timeDiff = curTime.getTime() -  Date.parse(referenceTimestamp) 
@@ -64,36 +45,10 @@ class Comments extends Component {
             return diffseconds + "s"
         }
     }
-    onComponentDidUpdate=()=>{
-        if(changes.pageType){
-            this.pageType = changes.pageType.currentValue
-        }
-        if(changes.comments){
-
-            this.setComments = []
-            if( changes.comments.currentValue instanceof Array) {
-                changes.comments.currentValue.forEach(
-                    function(curComment){
-                        curComment["date"] = this.getTimeDiff(curComment["date"] )
-                        this.setComments.push(curComment)
-                    }, this
-                )
-            }else if(changes.comments instanceof Object){
-                for( let curCommentKey in changes.comments.currentValue){
-                    changes.comments.currentValue[curCommentKey]["key"] = curCommentKey
-                    changes.comments.currentValue[curCommentKey]["date"] = this.getTimeDiff(changes.comments.currentValue[curCommentKey]["date"])
-                    this.setComments.push(changes.comments.currentValue[curCommentKey])
-                }
-            }
-        }
-
-    }
     showReplies=(key)=>{
-
         this.firstComment = ""
         var enabledComments = []
-        this.setComments.forEach(
-            function(curComment){
+        this.props.comments.forEach((curComment)=>{
             if(curComment.key == key||curComment.showReplies){
                 curComment.showReplies = true
             }else{
@@ -102,7 +57,7 @@ class Comments extends Component {
             enabledComments.push(curComment)
 
         })
-        this.setComments = enabledComments
+        this.props.comments = enabledComments
     }
     enableReply=(key)=>{
 
@@ -110,49 +65,49 @@ class Comments extends Component {
         this.firstComment = ""
         this.newComment = ""
         var enabledComments = []
-        this.setComments.forEach(
-            function(curComment){
-            if(curComment.key == key){
-                curComment.replying = true
+        this.props.comments.forEach((curComment)=>{
+            const newComment = {...curComment}
+            if(newComment.key == key){
+                newComment.replying = true
             }else{
-                curComment.replying = false
+                newComment.replying = false
             }
-            enabledComments.push(curComment)
+            enabledComments.push(newComment)
         })
-        this.setComments = enabledComments
+        store.setComments(enabledComments)
     }
     replyComment= (parent)=>{
 
         let commentData = {
-          comment: this.newComment,
+          comment: this.state.newComment,
           parentId: parent.key,
           previousKeys : parent.previousKeys + parent.key + "/replies/",
           date: Date(),
-          projectId: parent.projectId ? parent.projectId:false ,
-          featureId: parent.featureId ? parent.featureId:false ,
-          solutionId: parent.solutionId ? parent.solutionId:false ,
-          user:this.userService.username,
+          user:authStore.user.username,
           parentPost: false,
         };
         var tempComments = []
-        this.remoteService.createComment(commentData).then(data => {
-            this.remoteService.getCommentReplies(commentData.previousKeys).then(replies=>{
+        console.log("replying", parent)
+        store.createComment(commentData).then(data => {
+            store.getCommentReplies(commentData.previousKeys).then(replies=>{
                 
-                this.setComments.forEach(
-                    function(curComment){
-                        if(curComment.key == parent.key){
-                            curComment.showReplies = true
-                            curComment.replies = replies
-                            curComment.replying = false
-                            if(curComment.numReplies){
-                                curComment.numReplies = curComment.numReplies + 1
+                this.props.comment.forEach(
+                    (curComment)=>{
+                        const newComment = {...curComment}
+                        if(newComment.key == parent.key){
+                            newComment.showReplies = true
+                            newComment.replies = replies
+                            newComment.replying = false
+                            if(newComment.numReplies){
+                                newComment.numReplies = newComment.numReplies + 1
                             }else{
-                                curComment.numReplies = 1
+                                newComment.numReplies = 1
                             }
                         }
-                        tempComments.push(curComment)
-                },this)
-                this.setComments = tempComments
+                        tempComments.push(newComment)
+                })
+                console.log("getting replies")
+                //store.setComments(tempComments)
 
             })
         })
@@ -162,29 +117,38 @@ class Comments extends Component {
 
     }
 	render() {
-	 	let comments = store.currentComments.map((comment)=>{
-	 		<div class="comment" ngFor="let comment of setComments">
-			    <div class="comment-div" >
-			        <span class="comment-user" style="color:rgb(63, 79, 221)">{comment.user}</span>
-			        <span>{comment.comment}</span>
-			    </div> 
-			         
-			    <button class="reply-button" ngIf="userService.user" onClick={this.like(comment.key)}>Like</button>
-			    <button class="reply-button" ngIf="userService.user" onClick={this.enableReply(comment.key)}>Reply</button>
-			    <span style="color:gray;margin-left:5px">{comment.date}</span>
+        console.log("listing comments", this.props.comments)
+	 	let comments = this.props.comments.map((comment)=>{
+            return <div>
+                        <div className="commentContainer">
+                            <span className="commentUser">{comment.user}</span>
+                            <span className="commentText">{comment.comment}</span>
+                        </div>
+                        <button className="replyButton" onClick={()=>{this.like(comment.key)}}>Like</button>
+                        <button className="replyButton" onClick={()=>{this.enableReply(comment.key)}}>Reply</button>
+                        <button className="replyButton" onClick={()=>{this.replyComment(comment)}}>Actually reply</button>
 
-			    <form ngIf="comment.replying" ngSubmit="replyComment(comment)">
-			        <input class="reply-box" placeholder="Write a reply..." type="text" ngModel="newComment" name="comment.key"/>
-			    </form>
-			    <br/>
-			    <button style="color:rgb(63, 79, 221)" ngIf="comment.numReplies > 0 && !comment.showReplies" onClick="showReplies(comment.key)">Read {comment.numReplies} Replies</button>
+                        <span >{this.getTimeDiff(comment.date)}</span>
+                        <input 
+                            className="replyInput" 
+                            placeholder="Write a reply..." 
+                            type="text"  
+                            name="comment.key"
+                            onChange={(e)=>{
+                                console.log("changed" , e.target.value)
+                                this.setState({newComment : e.target.value })
+                            }}
+                        />
+                        <br/>
+                        <button   onClick={()=>{this.showReplies(comment.key)}}>Read {comment.numReplies} Replies</button>
+                        { comment.replies ? <Comments comments={comment.replies}></Comments> : null}
 
-			    <div  ngIf="comment.showReplies" class="reply">
-			        <Comments comments="comment.replies" ngIf="comment.replies"></Comments>
-			    </div>
-
-			</div>
+                    </div>
+            
+    	 		
+            
 	 	})
+        console.log("comment divs", comments)
 		return (
 			<div>
 				{comments}
@@ -192,5 +156,25 @@ class Comments extends Component {
 		)
 	}
 }
+/*
+<div class="comment" >
+                    <div class="comment-div" >
+                        <span class="comment-user" >{comment.user}</span>
+                        <span>{comment.comment}</span>
+                    </div> 
+                         
+                    <button class="reply-button" onClick={()=>{this.like(comment.key)}}>Like</button>
+                    <button class="reply-button" onClick={()=>{this.enableReply(comment.key)}}>Reply</button>
+                    <span >{comment.date}</span>
+                     <input class="reply-box" placeholder="Write a reply..." type="text"  name="comment.key"/>
+                    <br/>
+                    <button   onClick={()=>{this.showReplies(comment.key)}}>Read {comment.numReplies} Replies</button>
 
+                   
+
+                </div>
+            */
+/* <div  ngIf="comment.showReplies" class="reply">
+                        <Comments comments="comment.replies" ngIf="comment.replies"></Comments>
+                    </div>*/
 export default Comments
