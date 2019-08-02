@@ -357,6 +357,27 @@ class Store {
 			if (trickKey == oldTrickKey){
 				shouldBackUpBecauseEditing = true
 			}
+			console.log('trickKey',trickKey)
+			console.log('oldTrickKey',oldTrickKey)
+			console.log('this.randomLeaderboardTrick.key',this.randomLeaderboardTrick.key)
+			if (trickKey !== oldTrickKey && oldTrickKey === this.randomLeaderboardTrick.key){
+				console.log('changeTrick')
+				let leaderboardRef = firebase.database().ref('leaderboard/')
+				leaderboardRef.on('value', resp =>{
+				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
+					const currentDate = new Date()
+					const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1).toString()
+					const trickToSet = {	
+						date: formatted_date,
+						trick: trickKey,
+					}		
+					let trickOfTheDayWriteRef = firebase.database().ref('trickOfTheDay/'+formatted_date)
+					trickOfTheDayWriteRef.set(trickToSet);
+					const trickToUse = {...this.snapshotToObject(resp)[trickKey], key:trickKey}
+					this.setTrickOfTheDay(trickToUse)
+					leaderboardRef.off()
+				})
+			}
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
