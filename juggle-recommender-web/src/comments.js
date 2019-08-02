@@ -29,7 +29,11 @@ class Comments extends Component {
         newComment : "",
         comments : this.props.comments
     }
-
+    componentDidUpdate(prevProps,prevState){
+        if (this.props.comments.length>0 && prevProps.comments.length===0){
+            this.state.comments = this.props.comments
+        }
+    }
     getTimeDiff=(referenceTimestamp)=>{
         const curTime = new Date()
         const timeDiff = curTime.getTime() -  Date.parse(referenceTimestamp) 
@@ -52,10 +56,11 @@ class Comments extends Component {
         store.toggleShowReplies(key)
     }
     enableReply=(key)=>{
-
-        this.parentCommentDisabled = true
+        this.parentCommentDisabled = true//this variable seems to no be anywhere else
         this.firstComment = ""
         var newComments = []
+        console.log('key',key)
+        console.log('this.state.comments',this.state.comments)
         this.state.comments.forEach((curComment)=>{
             if(curComment.key == key){
                 curComment.replying = true
@@ -64,6 +69,7 @@ class Comments extends Component {
             }
             newComments.push(curComment)
         })
+        console.log('newComments',newComments)
         this.setState({ comments : newComments})
     }
     replyComment= (parent)=>{
@@ -108,9 +114,10 @@ class Comments extends Component {
     }
 
 	render() {
+        console.log('this.state.comments',this.state.comments)
         console.log("listing comments", this.props.comments)
         
-	 	let comments = this.props.comments.map((comment)=>{
+	 	let comments = this.state.comments.map((comment)=>{
             return <div>
                         <div className="commentContainer">
                             <span className="commentUser">{comment.user}</span>
