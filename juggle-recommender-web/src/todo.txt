@@ -45,6 +45,7 @@ Data fix scripts:
 		if x is listed as related for y, then y should be listed for x
 
 Code Cleaning:
+	-randomleaderboardtrick could have its name changed to trickOfTheDay or something like that, as well as surrounding variables since it really now has different functionality
 	-break up main render function in details.js
 	-get add trick can submit checker split into multiple functions
 	-clean up any trace of allTricksList/myTricksList
