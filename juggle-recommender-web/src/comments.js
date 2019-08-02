@@ -147,15 +147,15 @@ class Comments extends Component {
                         }
                         
                         <br/>
+                        {comment.numReplies > 0 ?
                         <button className="replyButton" onClick={()=>{this.showReplies(comment.key)}}>Read {comment.numReplies} Replies</button>
-                        
+                        :null}
                         { comment.replies && store.showReplyStates[comment.key] ? 
                             <div className="reply">
                                 <Comments comments={utilities.objectToArray(comment.replies)}></Comments>
                             </div> : null}
 
-                    </div>
-            
+                    </div>         
     	 		
             
 	 	})
