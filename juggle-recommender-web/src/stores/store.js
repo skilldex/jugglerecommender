@@ -25,6 +25,7 @@ class Store {
 	@observable userCount = ""
 	@observable totalCatchCount = null
 	@observable currentComments = []
+	@observable showReplyStates = {}
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -112,6 +113,19 @@ class Store {
                 resolve(this.snapshotToArrayWithKey(resp))
             });
         }); 
+    }
+    @action setShowReplies(commentId, state){
+    	this.showReplyStates[commentId] = state
+    }
+    @action toggleShowReplies(commentKey){
+    	console.log("show replies",commentKey)
+    	if(this.showReplyStates[commentKey]){
+    		this.showReplyStates[commentKey] = !this.showReplyStates[commentKey]
+    	}else{
+    		this.showReplyStates[commentKey] = true
+    	}
+    	this.showReplyStates = {...this.showReplyStates}
+    	console.log("states", this.showReplyStates)
     }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''

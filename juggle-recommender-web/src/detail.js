@@ -363,18 +363,20 @@ class Detail extends Component {
               />
               {extraGifSection}
               {infoSection}
-              <div className="comment-container">
+              <div className="commentsContainer">
                 <h3>Discussion</h3>
                 { authStore.user ? 
-                    <div>
-                      <span className="first-comment-icon">{authStore.username}</span>
+                     <div class="firstCommentContainer">
+                      <span className="firstCommentIcon">{authStore.user.username}</span>
                       <input value={this.state.firstComment} 
                       onChange={(e)=>{this.setState({firstComment : e.target.value})}} 
-                      className="firstcomment" type="submit"  placeholder="Write a comment..." onblur="this.placeholder = 'Write a comment...'" onfocus="this.placeholder = ''" type="text" />
-                      <button className="secondary-button-hollow" onClick={this.postFirstComment}>Submit</button>
-                    </div> : null
+                      className="firstComment" type="submit"  placeholder="Write a comment..." onblur="this.placeholder = 'Write a comment...'" onfocus="this.placeholder = ''" type="text" />
+                      <button onClick={this.postFirstComment}>Submit</button>
+                    </div> :             
+                    <div>No comments yet...</div>
+
                 }
-                <Comments comments={store.currentComments}></Comments>
+                <Comments comments={[...store.currentComments]}></Comments>
               </div>
               {relationshipLists}                
             </div> 

@@ -68,6 +68,7 @@ class Utilities{
 
   @action objectToArray=(object)=>{
       return Object.keys(object).map((key)=>{
+          object[key]["key"] = key
           return object[key]
       }) 
   }
