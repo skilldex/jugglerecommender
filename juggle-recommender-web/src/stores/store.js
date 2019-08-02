@@ -354,7 +354,9 @@ class Store {
 			this.removeOldPrereqs(trick,oldTrickKey)
 			this.removeOldRelated(trick,oldTrickKey)
 			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
-			shouldBackUpBecauseEditing = true
+			if (trickKey == oldTrickKey){
+				shouldBackUpBecauseEditing = true
+			}
 		}
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);

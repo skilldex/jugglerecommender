@@ -1,10 +1,21 @@
 Maybes:
+	-make a ga for catches input
 	-give edit trick its own url/ga
 	-make a ga for delete trick click
 
+Biggest Desires:
+	-Suggest a change (see below)
+	-An easy way to combine 2 patterns
+		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan
+
+Big Bugs:
+	-if trick of the day has its name edited, the site goes down for everybody
+		-change the trick of the day to the new trick if its name is edited
+
 Minor Bugs:
+	-changing a pattern name shows 'sorry...' message, and then crashes
 	-siteswap recognizer picks up words sometimes, like 'can' since we look for any word in the name.
-		-possible solution is to only check if the first word is a siteswap, not look everywhere for a siteswap
+		-possible partial solution is to only check if the first word is a siteswap, not look everywhere for a siteswap
 	-tricklist shows behind add pattern form
 
 	-old gif shows while new gif is loading
@@ -21,8 +32,7 @@ Frame by Frame / Slomo:
 Possible optimization: 
 	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a tricknsme changes we can more quickly update everyone's database.
 
-Biggest Desires:
-	-Suggest a change (see below)
+
 
 Suggest a Change:
 	-could be done just like edit, but instead of adding it to the site it emails/notifies the contributor.

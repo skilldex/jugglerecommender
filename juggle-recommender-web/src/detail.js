@@ -114,8 +114,8 @@ class Detail extends Component {
     const detailTrick = store.library[detailTrickKey]
     if (detailTrickKey && !detailTrick){
         alert("Sorry, this pattern has been deleted or renamed.")
-        uiStore.setDetailTrick(null)
-        uiStore.handleBackButtonClick()
+        //uiStore.setDetailTrick(null)
+        //uiStore.handleBackButtonClick()
     }
 
     const catchesSection = 
@@ -342,7 +342,6 @@ class Detail extends Component {
           </div> : null}
         </div> : null
 		return(      
-
       			<div className="detailDiv" 
                   id="detailDiv" 
                   onClick={this.handleDetailDivClick}>
