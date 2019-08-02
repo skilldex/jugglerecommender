@@ -66,6 +66,12 @@ class Utilities{
     return toReturn
   }
 
+  @action objectToArray=(object)=>{
+      return Object.keys(object).map((key)=>{
+          return object[key]
+      }) 
+  }
+
   @action sortObjectByAttribute(data, attr) {
     var arr = [];
     for (var prop in data) {

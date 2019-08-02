@@ -116,8 +116,10 @@ class Comments extends Component {
     like=(commentKey)=>{
 
     }
+
 	render() {
         console.log("listing comments", this.props.comments)
+
 	 	let comments = this.props.comments.map((comment)=>{
             return <div>
                         <div className="commentContainer">
@@ -141,7 +143,8 @@ class Comments extends Component {
                         />
                         <br/>
                         <button   onClick={()=>{this.showReplies(comment.key)}}>Read {comment.numReplies} Replies</button>
-                        { comment.replies ? <Comments comments={comment.replies}></Comments> : null}
+                        
+                        { comment.replies ? <Comments comments={utilities.objectToArray(comment.replies)}></Comments> : null}
 
                     </div>
             
