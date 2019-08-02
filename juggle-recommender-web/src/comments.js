@@ -31,7 +31,12 @@ class Comments extends Component {
     }
     componentDidUpdate(prevProps,prevState){
         if (this.props.comments.length>0 && prevProps.comments.length===0){
-            this.state.comments = this.props.comments
+            console.log('componentDidUpdate reset state.comments')
+            this.setState({comments : this.props.comments})
+        }
+        if (this.props.comments.length === 0 && prevProps.comments.length > 0){
+            console.log('componentDidUpdate reset state.comments to empty')
+            this.setState({comments : this.props.comments})            
         }
     }
     getTimeDiff=(referenceTimestamp)=>{
@@ -56,6 +61,7 @@ class Comments extends Component {
         store.toggleShowReplies(key)
     }
     enableReply=(key)=>{
+        console.log('enableReply')
         this.parentCommentDisabled = true//this variable seems to no be anywhere else
         this.firstComment = ""
         var newComments = []
@@ -85,37 +91,33 @@ class Comments extends Component {
         var tempComments = []
         console.log("replying", parent, commentData)
         store.createComment(commentData).then(data => {
-            store.getCommentReplies(commentData.previousKeys).then(replies=>{
-                
-                this.props.comments.forEach(
-                    (curComment)=>{
-                        const newComment = {...curComment}
-                        if(newComment.key == parent.key){
-                            newComment.showReplies = true
-                            newComment.replies = replies
-                            newComment.replying = false
-                            if(newComment.numReplies){
-                                newComment.numReplies = newComment.numReplies + 1
-                            }else{
-                                newComment.numReplies = 1
-                            }
+            store.getCommentReplies(commentData.previousKeys).then(replies=>{                
+                this.props.comments.forEach((curComment)=>{
+                    const newComment = {...curComment}
+                    if(newComment.key == parent.key){
+                        newComment.showReplies = true
+                        newComment.replies = replies
+                        newComment.replying = false
+                        if(newComment.numReplies){
+                            newComment.numReplies = newComment.numReplies + 1
+                        }else{
+                            newComment.numReplies = 1
                         }
-                        tempComments.push(newComment)
+                    }
+                    tempComments.push(newComment)
                 })
                 console.log("getting replies")
                 this.setState({comments:tempComments})
-
             })
-        })
-        
-      }			
+        })        
+    }			
     like=(commentKey)=>{
 
     }
 
 	render() {
-        console.log('this.state.comments',this.state.comments)
-        console.log("listing comments", this.props.comments)
+        console.log('RENDER this.state.comments',this.state.comments)
+        console.log("RENDER this.props.comments", this.props.comments)
         
 	 	let comments = this.state.comments.map((comment)=>{
             return <div>
@@ -159,7 +161,7 @@ class Comments extends Component {
     	 		
             
 	 	})
-        console.log("comment divs", comments)
+        console.log("RENDERcomment divs", comments)
 		return (
 			<div>
 				{comments}

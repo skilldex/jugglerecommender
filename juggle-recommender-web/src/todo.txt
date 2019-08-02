@@ -10,6 +10,20 @@ v 1.9
 		-make consuming tags be added automatically in the list
 
 	-Comments in details
+	-Bugs:
+		-in the db, the comments have individual replies showing up as properties of comments
+		-in the db, sometimes there are single digit numbers showing up as reply objects and when you open them they have objects called 'replies' in them
+		-there are comment containers with with no name or comment
+			-I belive these are the above mentioned single digit objects
+		-only 1st gen comments have 'numReply' fields, so all other generations don't have 'read # replies' buttons
+		-clicking reply when a reply input is already showing only hides the other inputs from that same generation, but not from previous generations.
+			-this is because we have nested comments components
+		-relying to a comment doesnt expand the next gneration to show you your comment
+		-when you reply to a 2nd generation comment it shows you the 'read # replies' buttons, but when you refresh the button is not there
+	-Possibly causing bugs:
+		-we have multiple comment components, and they reuse store variables:
+			showReplyStates and currentComments
+
 
 	-Email Notifications
 

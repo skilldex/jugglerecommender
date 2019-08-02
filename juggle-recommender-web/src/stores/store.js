@@ -66,6 +66,7 @@ class Store {
             allComments.forEach(
                 function(curComment){
                     if(!curComment["parentId"]){
+                    	console.log('curCommentPushed',curComment)
                         parentComments.push(curComment)
                     }
             })
@@ -85,6 +86,7 @@ class Store {
     }
 	@action setComments(comments){
 		this.currentComments = comments
+		console.log('store.setComments this.currentComments',this.currentComments)
 	}
 	@action createComment(comment) {
       const that = this

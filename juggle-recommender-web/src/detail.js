@@ -109,6 +109,7 @@ class Detail extends Component {
       
   }
 	render() {
+    
    
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
@@ -342,7 +343,7 @@ class Detail extends Component {
             />
           </div> : null}
         </div> : null
-        
+        console.log('details render store.currentComments',store.currentComments)
 
 		return(      
 
@@ -374,9 +375,8 @@ class Detail extends Component {
                       <button onClick={this.postFirstComment}>Submit</button>
                     </div> :             
                     <div>No comments yet...</div>
-
                 }
-                <Comments comments={[...store.currentComments]}></Comments>
+                <Comments comments={store.currentComments}></Comments>
               </div>
               {relationshipLists}                
             </div> 
