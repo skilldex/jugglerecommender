@@ -5,6 +5,7 @@
     color : blue;
     background-color: white;
     border : none;
+    cursor: pointer;
 }
 .replyInput{
     margin-top : 10px;
@@ -19,6 +20,7 @@
     font-weight: bold;
     margin-left: 10px;
     margin-right: 10px;
+    cursor: pointer;
 }
 .commentContainer{
     padding-left: 4px;
