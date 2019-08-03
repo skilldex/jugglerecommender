@@ -103,7 +103,8 @@ class Detail extends Component {
       };
       let that = this
       store.createComment(commentPost).then(data => {
-        this.setState({firstcomment : ""})
+        console.log("got em")
+        this.setState({firstComment : ""})
       }, error => {
       });
       
@@ -371,12 +372,15 @@ class Detail extends Component {
                       <span className="firstCommentIcon">{authStore.user.username}</span>
                       <input 
                         value={this.state.firstComment} 
-                        onChange={(e)=>{this.setState({firstComment : e.target.value})}} 
+                        onChange={(e)=>{
+                          console.log("changed ",e.target.value)
+                          this.setState({firstComment : e.target.value})
+                        }} 
                         className="firstComment" 
                         type="submit" 
                         placeholder="Write a comment..." 
-                        onBlur="this.placeholder = 'Write a comment...'" 
-                        onFocus="this.placeholder = ''" 
+                        onBlur={(e)=>{e.target.placeholder = 'Write a comment...' }}
+                        onFocus={(e)=>{e.target.placeholder = '' }}
                         type="text" 
                       />
                       <button className="submitButton" onClick={this.postFirstComment}>Submit</button>
