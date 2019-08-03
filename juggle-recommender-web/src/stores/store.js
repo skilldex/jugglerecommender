@@ -118,9 +118,7 @@ class Store {
             });
         }); 
     }
-    @action setShowReplies(commentId, state){
-    	this.showReplyStates[commentId] = state
-    }
+
     @action toggleShowReplies(commentKey){
     	if(this.showReplyStates[commentKey]){
     		this.showReplyStates[commentKey] = !this.showReplyStates[commentKey]
@@ -130,12 +128,14 @@ class Store {
     	this.showReplyStates = {...this.showReplyStates}
     }
     @action toggleEnableReplies(commentKey){
-    	if(this.enableReplyStates[commentKey]){
-    		this.enableReplyStates[commentKey] = !this.enableReplyStates[commentKey]
-    	}else{
+    	
+    	if(!this.enableReplyStates[commentKey]){
+    		this.enableReplyStates = {}
     		this.enableReplyStates[commentKey] = true
+    		this.enableReplyStates = {...this.enableReplyStates}
+    	}else{
+    		this.enableReplyStates = {}
     	}
-    	this.enableReplyStates = {...this.enableReplyStates}
     }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''

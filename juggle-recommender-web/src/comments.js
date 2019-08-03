@@ -76,8 +76,8 @@ class Comments extends Component {
         })        
         authStore.getEmailByUsername(parent.user).then((email)=>{
            authStore.sendEmail({
-                "emailSubject": "Someone Commented to a Discussion You're In",
-                "emailText" : authStore.user.username + " replied on a discussion about " + 
+                "emailSubject": "Someone Replied to Your Comment",
+                "emailText" : authStore.user.username + " replied to your comment about " + 
                     uiStore.detailTrick.id.replace(/ /g,"%20") + "! Click to see the thread: www.skilldex.org/detail/" +
                     uiStore.detailTrick.id.replace(/ /g,"%20"), 
                 "to" : email
@@ -96,7 +96,7 @@ class Comments extends Component {
                             <label className="commentUser">{comment.user}</label>
                             <label className="commentText">{comment.comment}</label>
                         </div>
-                        <div>   
+                        <div className="commentButtons">   
                             <button className="replyButton" onClick={()=>{this.enableReply(comment.key)}}>Reply</button>
                             <span className="date">{this.getTimeDiff(comment.date)}</span>
                         </div>
