@@ -111,6 +111,16 @@
   color: blue;
   margin : 0 auto;
 }
+.showCommentsLabelDiv{
+  width : 100%;
+  text-align:  center;
+  margin-bottom: 5px;
+}
+.showCommentsButton{
+  font-size: 14px;
+  color: blue;
+  margin : 0 auto;  
+}
 .extraGifSectionLab{
   max-height: 270px;
 }
@@ -228,7 +238,7 @@
 }
 .firstCommentContainer{
     margin-top : 20px;
-    margin-bottom : 20px;
+    margin-bottom : 4px;
     border : 1px solid lightgray;
     border-radius: 15px;
     padding-left : 10px;  
