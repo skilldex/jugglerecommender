@@ -74,6 +74,14 @@ class Comments extends Component {
             console.log("setting")
             this.setState({ newComment : "" })
         })        
+
+        authStore.sendEmail({
+            "emailSubject": "Someone Replied to your Comment",
+            "emailText" : authStore.user.username + " replied to your comment on " + 
+                uiStore.detailTrick.id + "! Click to see the thread: www.skilldex.org/detail/" +
+                uiStore.detailTrick.id, 
+            "to" : authStore.user.email
+        })
     }			
     like=(commentKey)=>{
 
