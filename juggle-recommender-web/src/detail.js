@@ -369,9 +369,16 @@ class Detail extends Component {
                 { authStore.user ? 
                      <div class="firstCommentContainer">
                       <span className="firstCommentIcon">{authStore.user.username}</span>
-                      <input value={this.state.firstComment} 
-                      onChange={(e)=>{this.setState({firstComment : e.target.value})}} 
-                      className="firstComment" type="submit"  placeholder="Write a comment..." onblur="this.placeholder = 'Write a comment...'" onfocus="this.placeholder = ''" type="text" />
+                      <input 
+                        value={this.state.firstComment} 
+                        onChange={(e)=>{this.setState({firstComment : e.target.value})}} 
+                        className="firstComment" 
+                        type="submit" 
+                        placeholder="Write a comment..." 
+                        onBlur="this.placeholder = 'Write a comment...'" 
+                        onFocus="this.placeholder = ''" 
+                        type="text" 
+                      />
                       <button onClick={this.postFirstComment}>Submit</button>
                     </div> :             
                     <div>No comments yet...</div>

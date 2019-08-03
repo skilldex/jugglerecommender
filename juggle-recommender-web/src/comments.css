@@ -6,20 +6,35 @@
     background-color: white;
     border : none;
 }
+.replyInput{
+    margin-top : 10px;
+    border-radius: 4px;
+
+}
+.submitButton{
+    border : 1px solid magenta ;
+    border-radius: 18px;
+    background-color: white;
+    color : magenta;
+    font-weight: bold;
+    margin-left: 10px;
+}
 .commentContainer{
     padding-left: 4px;
-    padding-top: 10px;
-    padding-bottom: 10px;
     margin-bottom: 5px;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 4px;
     background-color: rgb(235, 235, 235);
+    display: flex;
+    align-items: center;
+    height : 40px;
 }
 .commentUser{
     color : blue;
     font-weight : bold;
     border : none;
     margin-right : 15px;
+    margin-left: 10px;
 } 
 .date{
     color:gray;

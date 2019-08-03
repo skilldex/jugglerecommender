@@ -26,6 +26,8 @@ class Store {
 	@observable totalCatchCount = null
 	@observable currentComments = []
 	@observable showReplyStates = {}
+	@observable enableReplyStates = {}
+
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -128,6 +130,16 @@ class Store {
     	}
     	this.showReplyStates = {...this.showReplyStates}
     	console.log("states", this.showReplyStates)
+    }
+    @action toggleEnableReplies(commentKey){
+    	console.log("enable replies",commentKey)
+    	if(this.enableReplyStates[commentKey]){
+    		this.enableReplyStates[commentKey] = !this.enableReplyStates[commentKey]
+    	}else{
+    		this.enableReplyStates[commentKey] = true
+    	}
+    	this.enableReplyStates = {...this.enableReplyStates}
+    	console.log("enable reply states", this.enableReplyStates)
     }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''

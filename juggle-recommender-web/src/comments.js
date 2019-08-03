@@ -27,18 +27,8 @@ class Comments extends Component {
 	
     state = {
         newComment : "",
-        comments : this.props.comments
     }
-    componentDidUpdate(prevProps,prevState){
-        if (this.props.comments.length>0 && prevProps.comments.length===0){
-            console.log('componentDidUpdate reset state.comments')
-            this.setState({comments : this.props.comments})
-        }
-        if (this.props.comments.length === 0 && prevProps.comments.length > 0){
-            console.log('componentDidUpdate reset state.comments to empty')
-            this.setState({comments : this.props.comments})            
-        }
-    }
+
     getTimeDiff=(referenceTimestamp)=>{
         const curTime = new Date()
         const timeDiff = curTime.getTime() -  Date.parse(referenceTimestamp) 
@@ -61,22 +51,7 @@ class Comments extends Component {
         store.toggleShowReplies(key)
     }
     enableReply=(key)=>{
-        console.log('enableReply')
-        this.parentCommentDisabled = true//this variable seems to no be anywhere else
-        this.firstComment = ""
-        var newComments = []
-        console.log('key',key)
-        console.log('this.state.comments',this.state.comments)
-        this.state.comments.forEach((curComment)=>{
-            if(curComment.key == key){
-                curComment.replying = true
-            }else{
-                curComment.replying = false
-            }
-            newComments.push(curComment)
-        })
-        console.log('newComments',newComments)
-        this.setState({ comments : newComments})
+        store.toggleEnableReplies(key)
     }
     replyComment= (parent)=>{
 
@@ -88,27 +63,14 @@ class Comments extends Component {
           user:authStore.user.username,
           parentPost: false,
         };
-        var tempComments = []
         console.log("replying", parent, commentData)
         store.createComment(commentData).then(data => {
-            store.getCommentReplies(commentData.previousKeys).then(replies=>{                
-                this.props.comments.forEach((curComment)=>{
-                    const newComment = {...curComment}
-                    if(newComment.key == parent.key){
-                        newComment.showReplies = true
-                        newComment.replies = replies
-                        newComment.replying = false
-                        if(newComment.numReplies){
-                            newComment.numReplies = newComment.numReplies + 1
-                        }else{
-                            newComment.numReplies = 1
-                        }
-                    }
-                    tempComments.push(newComment)
-                })
-                console.log("getting replies")
-                this.setState({comments:tempComments})
-            })
+            if(!store.showReplyStates[parent.key]){
+                store.toggleShowReplies(parent.key)
+                store.toggleEnableReplies(parent.key)
+            }
+            console.log("setting")
+            this.setState({ newComment : "" })
         })        
     }			
     like=(commentKey)=>{
@@ -119,7 +81,7 @@ class Comments extends Component {
         console.log('RENDER this.state.comments',this.state.comments)
         console.log("RENDER this.props.comments", this.props.comments)
         
-	 	let comments = this.state.comments.map((comment)=>{
+	 	let comments = this.props.comments.map((comment)=>{
             return <div>
                         <div className="commentContainer">
                             <span className="commentUser">{comment.user}</span>
@@ -131,7 +93,7 @@ class Comments extends Component {
                             <span className="date">{this.getTimeDiff(comment.date)}</span>
                         </div>
                         { 
-                            comment.replying ? 
+                            store.enableReplyStates[comment.key] ? 
                             <div>
                                 <input 
                                     className="replyInput" 
@@ -142,15 +104,16 @@ class Comments extends Component {
                                         console.log("changed" , e.target.value)
                                         this.setState({newComment : e.target.value })
                                     }}
+                                    value={this.state.newComment}
                                 />
-                                <button onClick={()=>{this.replyComment(comment)}}>Submit</button>
+                                <button className="submitButton"  onClick={()=>{this.replyComment(comment)}}>Submit</button>
                             </div> : 
                             null
                         }
                         
-                        <br/>
-                        {comment.numReplies > 0 ?
-                        <button className="replyButton" onClick={()=>{this.showReplies(comment.key)}}>Read {comment.numReplies} Replies</button>
+                        
+                        {comment.replies && !store.showReplyStates[comment.key] ?
+                        <button className="replyButton" onClick={()=>{this.showReplies(comment.key)}}>Read {Object.keys(comment.replies).length + 1} Replies</button>
                         :null}
                         { comment.replies && store.showReplyStates[comment.key] ? 
                             <div className="reply">
