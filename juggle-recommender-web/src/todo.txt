@@ -18,6 +18,7 @@ v 1.9
 				https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
 		
 	-Minor:
+		-right end of container gets cut off more and more as reples get added
 		-since replies go to the bottom you dont see them when you click if there are already a few replies.
 			-Can be dealt with with an autoscroll to you comments
 
