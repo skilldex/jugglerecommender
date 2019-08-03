@@ -127,6 +127,9 @@ class Store {
     	}
     	this.showReplyStates = {...this.showReplyStates}
     }
+    @action clearShowReplies(){
+    	this.showReplyStates = {}
+    }
     @action toggleEnableReplies(commentKey){
     	
     	if(!this.enableReplyStates[commentKey]){
