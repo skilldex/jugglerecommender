@@ -387,12 +387,17 @@ class Detail extends Component {
                     </div> :             
                     <div>No comments yet...</div>
                 }
-                <div className="showCommentsLabelDiv">
-                  <label className="showCommentsButton" 
-                          onClick={()=>{uiStore.toggleShowCommentsSection()}}>
-                    {uiStore.showCommentsSection?"Hide Comments":"Show Comments"}
-                  </label>
-                </div>
+                {store.currentComments.length > 0 ?
+                  <div className="showCommentsLabelDiv">
+                    <label 
+                      className="showCommentsButton" 
+                      onClick={()=>{uiStore.toggleShowCommentsSection()}}
+                    >
+                      {uiStore.showCommentsSection ? "Hide Comments":"Show Comments"}
+                    </label>
+                  </div> : 
+                  null
+                }
                 {uiStore.showCommentsSection?
                   <Comments comments={store.currentComments}></Comments>
                   :null
