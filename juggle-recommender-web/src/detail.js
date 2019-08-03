@@ -379,7 +379,7 @@ class Detail extends Component {
                         onFocus="this.placeholder = ''" 
                         type="text" 
                       />
-                      <button onClick={this.postFirstComment}>Submit</button>
+                      <button className="submitButton" onClick={this.postFirstComment}>Submit</button>
                     </div> :             
                     <div>No comments yet...</div>
                 }
