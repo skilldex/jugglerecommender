@@ -76,11 +76,11 @@ class Comments extends Component {
         })        
 
         authStore.sendEmail({
-            "emailSubject": "Someone Replied to your Comment",
-            "emailText" : authStore.user.username + " replied to your comment on " + 
-                uiStore.detailTrick.id + "! Click to see the thread: www.skilldex.org/detail/" +
-                uiStore.detailTrick.id, 
-            "to" : authStore.user.email
+            "emailSubject": "Someone Commented to a Discussion You're In",
+            "emailText" : authStore.user.username + " replied on a discussion about " + 
+                uiStore.detailTrick.id.replace(/ /g,"%20") + "! Click to see the thread: www.skilldex.org/detail/" +
+                uiStore.detailTrick.id.replace(/ /g,"%20"), 
+            "to" : authStore.getEmailByUsername(parent.user)
         })
     }			
     like=(commentKey)=>{
@@ -120,7 +120,7 @@ class Comments extends Component {
                         
                         {comment.replies ?
                         <button className="showReplyButton" onClick={()=>{this.showReplies(comment.key)}}>
-                        {store.showReplyStates[comment.key] ? 'Hide Replies' : 'Read ' + (Object.keys(comment.replies).length + 1) + ' Replies'}</button>
+                        {store.showReplyStates[comment.key] ? 'Hide Replies' : 'Read ' + Object.keys(comment.replies).length + ' Replies'}</button>
                         :null
                         }
                         { comment.replies && store.showReplyStates[comment.key] ? 

@@ -111,6 +111,16 @@ class AuthStore {
             });
         }) 
     }
+    @action getEmailByUsername(username){
+        const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(this.username.toLowerCase())
+        let user
+        return new Promise(resolve => {
+            usersRef.on("value", resp =>{
+                user = store.snapshotToArray(resp)[0]
+                resolve(user.email)
+            })
+        })
+    }
 }
 
 const authStore = new AuthStore()
