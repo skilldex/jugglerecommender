@@ -103,8 +103,24 @@ class Detail extends Component {
       };
       let that = this
       store.createComment(commentPost).then(data => {
-        this.setState({firstComment : ""})
-      }, error => {
+          this.setState({firstComment : ""})
+          const contributor = store.library[uiStore.detailTrick.id].contributor
+          if(authStore.user.username !== contributor && contributor){
+            authStore.getEmailByUsername(contributor).then((email)=>{
+              if(email){
+                authStore.sendEmail({
+                  "emailSubject": "Someone Commented on Your Pattern",
+                  "emailText" : authStore.user.username + " commented on your pattern, " + 
+                      uiStore.detailTrick.id + " click to see the thread: www.skilldex.org/detail/" +
+                      uiStore.detailTrick.id.replace(/ /g,"%20"), 
+                  "to" : email
+                }) 
+              }
+            })
+          }
+         
+        }, 
+        error => {
       });
       
   }
@@ -387,7 +403,8 @@ class Detail extends Component {
                     </div> :             
                     <div>No comments yet...</div>
                 }
-                {store.currentComments.length > 0 ?
+                {
+                  store.currentComments.length > 0 ?
                   <div className="showCommentsLabelDiv">
                     <label 
                       className="showCommentsButton" 
