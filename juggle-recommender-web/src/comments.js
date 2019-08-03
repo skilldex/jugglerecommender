@@ -50,6 +50,9 @@ class Comments extends Component {
     showReplies=(key)=>{
         store.toggleShowReplies(key)
     }
+    hideReplies=(key)=>{
+        store.toggleShowReplies(key)
+    }
     enableReply=(key)=>{
         store.toggleEnableReplies(key)
     }
@@ -107,9 +110,11 @@ class Comments extends Component {
                         }
                         
                         
-                        {comment.replies && !store.showReplyStates[comment.key] ?
-                        <button className="replyButton" onClick={()=>{this.showReplies(comment.key)}}>Read {Object.keys(comment.replies).length + 1} Replies</button>
-                        :null}
+                        {comment.replies ?
+                        <button className="replyButton" onClick={()=>{this.showReplies(comment.key)}}>
+                        {store.showReplyStates[comment.key] ? 'Hide Replies' : 'Read ' + (Object.keys(comment.replies).length + 1) + ' Replies'}</button>
+                        :null
+                        }
                         { comment.replies && store.showReplyStates[comment.key] ? 
                             <div className="reply">
                                 <Comments comments={utilities.objectToArray(comment.replies)}></Comments>
