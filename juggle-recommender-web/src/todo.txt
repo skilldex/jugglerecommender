@@ -11,8 +11,6 @@ v 1.9
 
 	-Comments in details
 	-Bugs:
-		-If comments are longer than two lines then they stick out and overlap comment space above and below them, this means more than ~15 words breaks it
-			-see silly trick2 
 		-there is no way to go to next line when making comments, so there is no way to do something like this:(this is the main reason I have wanted comments)
 			1)throw first ball straight up with arms crossed
 			2)uncross arms and throw 2b split multiplex with other hand
@@ -21,10 +19,6 @@ v 1.9
 				https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
 		-since replies go to the bottom you dont see them when you click if there are already a few replies.
 			-Can be dealt with with an autoscroll to you comments
-		-font size is quite large
-		-like button is there but doesn't do anything
-
-
 
 	-Email Notifications
 

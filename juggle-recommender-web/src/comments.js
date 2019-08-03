@@ -83,8 +83,8 @@ class Comments extends Component {
 	 	let comments = this.props.comments.map((comment)=>{
             return <div>
                         <div className="commentContainer">
-                            <span className="commentUser">{comment.user}</span>
-                            <span className="commentText">{comment.comment}</span>
+                            <label className="commentUser">{comment.user}</label>
+                            <label className="commentText">{comment.comment}</label>
                         </div>
                         <div>
                             <button className="replyButton" onClick={()=>{this.like(comment.key)}}>Like</button>
@@ -111,7 +111,7 @@ class Comments extends Component {
                         
                         
                         {comment.replies ?
-                        <button className="replyButton" onClick={()=>{this.showReplies(comment.key)}}>
+                        <button className="showReplyButton" onClick={()=>{this.showReplies(comment.key)}}>
                         {store.showReplyStates[comment.key] ? 'Hide Replies' : 'Read ' + (Object.keys(comment.replies).length + 1) + ' Replies'}</button>
                         :null
                         }

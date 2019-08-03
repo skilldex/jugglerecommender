@@ -227,9 +227,10 @@
 
 }
 .firstCommentContainer{
-    margin-top : 40px;
+    margin-top : 20px;
+    margin-bottom : 20px;
     border : 1px solid lightgray;
-    border-radius: 3px;
+    border-radius: 15px;
     padding-left : 10px;  
     display: flex;
     align-items: center;  
