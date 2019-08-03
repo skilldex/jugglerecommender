@@ -108,6 +108,10 @@ class Detail extends Component {
       });
       
   }
+    autoGrow=(element)=>{
+      element.style.height = "5px";
+      element.style.height = (element.scrollHeight)+"px";
+  }
 	render() {   
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
@@ -366,7 +370,8 @@ class Detail extends Component {
                 { authStore.user ? 
                      <div class="firstCommentContainer">
                       <span className="firstCommentIcon">{authStore.user.username}</span>
-                      <input 
+                      <textarea 
+                        onKeyUp={(e)=>this.autoGrow(e.target)}
                         value={this.state.firstComment} 
                         onChange={(e)=>{
                           this.setState({firstComment : e.target.value})
@@ -377,7 +382,7 @@ class Detail extends Component {
                         onBlur={(e)=>{e.target.placeholder = 'Write a comment...' }}
                         onFocus={(e)=>{e.target.placeholder = '' }}
                         type="text" 
-                      />
+                      ></textarea>
                       <button className="submitButton" onClick={this.postFirstComment}>Submit</button>
                     </div> :             
                     <div>No comments yet...</div>

@@ -244,15 +244,20 @@
     padding-left : 10px;  
     display: flex;
     align-items: center;  
+    height: 30px;
 }
 .firstComment{
     width: 60%;
     margin : 0;
-    height: 50px;
     padding-left : 5px;
     margin-left: 15px;
     border : none;
+    resize: none;
+    overflow: hidden;
+    min-height: 30px;
+    max-height: 100px;
 }
+
 .firstCommentIcon{
     font-weight: bold;
     color : blue;
