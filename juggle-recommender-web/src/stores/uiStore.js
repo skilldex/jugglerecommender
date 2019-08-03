@@ -32,6 +32,7 @@ class UIStore {
 	@observable showHomeScreen = true
 	@observable showStatsScreen = false
 	@observable showProfileScreen = false
+	@observable showCommentsSection = false
 	@observable mainListScrollerPosition = null
 	@observable pageNumber = 0
 	@action setPageNumber=(page)=>{
@@ -54,6 +55,10 @@ class UIStore {
 	}
 	@action setShowProfileScreen=(bool)=>{
 		this.showProfileScreen = bool
+	}
+	@action toggleShowCommentsSection=()=>{
+		console.log('this.showCommentsSection',this.showCommentsSection)
+		this.showCommentsSection = !this.showCommentsSection
 	}
   	@action editDetailTrick=()=>{
   		const tempDetailTrick = this.detailTrick
@@ -89,6 +94,8 @@ class UIStore {
 	}
 
 	@action setDetailTrick=(clickedTrick)=>{
+		this.showCommentsSection = false
+		this.detailTrick = null
 		if(this.showMoreInformation){
 			this.toggleShowMoreInformation()
 		}
@@ -98,6 +105,8 @@ class UIStore {
 	 	this.detailTrick = clickedTrick
 	 	this.detailCatchEditable = false
 	 	if (this.detailTrick){
+	 		store.getCommentsByTrickId(clickedTrick.id)
+	 		store.clearShowReplies()
 	        if(this.showFilterDiv){
 	        	this.toggleFilterDiv()
 	        }

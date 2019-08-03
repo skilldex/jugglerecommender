@@ -24,6 +24,10 @@ class Store {
 	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""
 	@observable totalCatchCount = null
+	@observable currentComments = []
+	@observable showReplyStates = {}
+	@observable enableReplyStates = {}
+
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
 	}
@@ -54,6 +58,88 @@ class Store {
 		})
 		return contributorTags
 	}
+	@action getCommentsByTrickId(trickId){
+		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
+		let parentComments = []
+		commentsRef.on('value', resp =>{
+			const allComments = this.snapshotToArrayWithKey(resp)
+            allComments.forEach(
+                function(curComment){
+                    if(!curComment["parentId"]){
+                        parentComments.push(curComment)
+                    }
+            })
+            this.setComments(this.filterUniqueComments(parentComments))
+		})
+	}
+	@action filterUniqueComments(currentComments){
+        let comments = {}
+        currentComments.forEach((comment)=>{
+            comments[comment["key"]] = comment
+        }) 
+        currentComments = []         
+        for(var commentKey in comments){
+            currentComments.push(comments[commentKey])
+        }
+        return currentComments
+    }
+	@action setComments(comments){
+		this.currentComments = comments
+	}
+	@action createComment(comment) {
+      const that = this
+      const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
+      let parentComments = []
+      if(!store.isLocalHost){
+		ReactGA.event({
+			category: 'comment',
+			action: "commented " + comment.trickId,
+		});
+	  }	
+      return new Promise((resolve, reject) => {
+
+        let newData = commentsRef.push();
+        newData.set(comment);
+        if (comment["parentId"]) {
+            
+            const repliesRef = firebase.database().ref('comments/' + comment.previousKeys.replace("replies/","") + '/numReplies')
+            repliesRef.transaction(function (currentValue) {
+                return (currentValue || 0) + 1;
+            });
+        }
+        resolve(comment)
+      });
+    }
+    @action getCommentReplies(refPath){
+        const comments = firebase.database().ref('comments/'+refPath)
+        return new Promise(resolve => {
+            comments.on('value', resp => {
+                resolve(this.snapshotToArrayWithKey(resp))
+            });
+        }); 
+    }
+
+    @action toggleShowReplies(commentKey){
+    	if(this.showReplyStates[commentKey]){
+    		this.showReplyStates[commentKey] = !this.showReplyStates[commentKey]
+    	}else{
+    		this.showReplyStates[commentKey] = true
+    	}
+    	this.showReplyStates = {...this.showReplyStates}
+    }
+    @action clearShowReplies(){
+    	this.showReplyStates = {}
+    }
+    @action toggleEnableReplies(commentKey){
+    	
+    	if(!this.enableReplyStates[commentKey]){
+    		this.enableReplyStates = {}
+    		this.enableReplyStates[commentKey] = true
+    		this.enableReplyStates = {...this.enableReplyStates}
+    	}else{
+    		this.enableReplyStates = {}
+    	}
+    }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''
 		let mostRecentlySubmittedTrickTime = 0
@@ -241,8 +327,6 @@ class Store {
 	}	
 	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
 		const oldTrick = this.library[oldTrickKey]
-		console.log('oldTrickKey',oldTrickKey)
-		console.log('oldTrick.prereqs',oldTrick.prereqs)
 		if(oldTrick.prereqs){
 			let stalePrereqs
 			if(newTrickData){
@@ -250,7 +334,6 @@ class Store {
 			}else{//for the case of deleting a trick
 				stalePrereqs = oldTrick.prereqs
 			}
-			console.log('stalePrereqs',stalePrereqs)
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
 				if(trick && trick.dependents){
@@ -309,7 +392,7 @@ class Store {
 		let fullDBRef = firebase.database().ref()
 		fullDBRef.on('value', resp =>{
         	const fullDB = this.snapshotToArray(resp)
-        	allUsersMyTricks = fullDB[2] //if the db changes this 2 may need to change
+        	allUsersMyTricks = fullDB['myTricks']
         	Object.keys(allUsersMyTricks).forEach((user)=>{
         		if (user['myTricks']){
 					Object.keys(user['myTricks']).forEach((trickKey)=>{

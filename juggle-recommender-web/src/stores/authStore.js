@@ -82,6 +82,45 @@ class AuthStore {
             })
         })
     }
+    @action sendEmail(email){
+        let headers = {"Content-Type": "application/json; charset=utf-8"};
+        const api = "https://wt-b5a67af96f44fb6828d5a07d6bb70476-0.sandbox.auth0-extend.com/skilldex/email"
+        return new Promise((resolve, reject) => {
+            firebase.auth().currentUser.getIdToken(true).then( idToken => {
+                console.log(email, JSON.stringify(email))
+                fetch(
+                    api, 
+                        {
+                            method: "POST",
+                            body: JSON.stringify(email), 
+                            headers: headers
+                        }
+                ).subscribe(res => {
+                    console.log("sending email", res)
+                    resolve(res)
+                }, err => {
+                    if(err.status == 200){
+                        resolve("good")
+                    }else{
+                        reject(err)
+                    }
+                    console.log("error sending email", err)
+                });
+            }).catch(function(error) {
+                // Handle error
+            });
+        }) 
+    }
+    @action getEmailByUsername(username){
+        const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
+        let user
+        return new Promise(resolve => {
+            usersRef.on("value", resp =>{
+                user = store.snapshotToArray(resp)[0]
+                resolve(user.email)
+            })
+        })
+    }
 }
 
 const authStore = new AuthStore()

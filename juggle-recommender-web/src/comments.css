@@ -1,0 +1,67 @@
+.reply{
+    margin-left : 50px;
+    margin-right : 2px;
+}
+.replyButton{
+    color : blue;
+    background-color: white;
+    border : none;
+    cursor: pointer;
+    font-size: 10px;
+}
+.showReplyButton{
+    color : blue;
+    background-color: white;
+    border : none;
+    cursor: pointer;
+    font-size: 10px;
+    margin-left: 15px;    
+}
+.replyInput{
+    margin-top : 10px;
+    border-radius: 4px;
+
+}
+.submitButton{
+    border : 1px solid magenta ;
+    border-radius: 18px;
+    background-color: white;
+    color : magenta;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.commentContainer{
+    padding: 6px;
+    margin-top: 10px;
+    border-radius: 14px;
+    background-color: rgb(235, 235, 235);
+    display: inline-block;
+    align-items: center;
+    min-height : 20px;
+    width : 97%;
+    max-width : 400px;
+    font-size: 13px;
+}
+.commentButtons{
+    margin-left: 5px;
+}
+.commentUser{
+    color : blue;
+    font-weight : bold;
+    border : none;
+    margin-top: 10px;
+    margin-right : 7px;
+
+} 
+.commentText{
+     margin-right : 15px;
+     font-size: 13px;
+}
+
+.date{
+    color:gray;
+    margin-left:5px;
+    font-size: 10px;
+}

@@ -19,15 +19,16 @@ import history from "./history"
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
 import ReactGA from 'react-ga'
-
+import Comments from "./comments"
+import utilities from "./utilities"
 @observer
 class Detail extends Component {
   state = {
     catches : null,
     changingInput : false,
     showExtraGif : false,
+    firstComment : ""
   }
-
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
@@ -41,11 +42,6 @@ class Detail extends Component {
       uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       //set focus back to outer div
       //this.outerDiv.focus()   
-    }
-  }
-  seeExplanation=(trickKey)=>{
-    if(!uiStore.detailTimer){
-        window.open(store.library[trickKey].url)
     }
   }
   handleEditCatchButtonClick=()=>{
@@ -82,9 +78,7 @@ class Detail extends Component {
       textField.select()
       document.execCommand('copy')
       textField.remove()
-
       alert("Link for the details page copied to clipboard\n" + url)
-    
   }
   toggleExtraGif=()=>{
     this.setState({showExtraGif: !this.state.showExtraGif})
@@ -99,6 +93,40 @@ class Detail extends Component {
         uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
       }
   }
+
+  postFirstComment=()=>{
+      let commentPost = {
+        comment: this.state.firstComment,
+        date: Date(),
+        parentPost: true,
+        user:authStore.user.username,
+        previousKeys : "",
+        trickId : uiStore.detailTrick.id
+
+      };
+      let that = this
+      store.createComment(commentPost).then(data => {
+          this.setState({firstComment : ""})
+          const contributor = store.library[uiStore.detailTrick.id].contributor
+          if(authStore.user.username !== contributor && contributor){
+            authStore.getEmailByUsername(contributor).then((email)=>{
+              if(email){
+                authStore.sendEmail({
+                  "emailSubject": "Someone Commented on Your Pattern",
+                  "emailText" : authStore.user.username + " commented on your pattern, " + 
+                      uiStore.detailTrick.id + " click to see the thread: www.skilldex.org/detail/" +
+                      uiStore.detailTrick.id.replace(/ /g,"%20"), 
+                  "to" : email
+                }) 
+              }
+            })
+          }
+         
+        }, 
+        error => {
+      });
+      
+  }
   handleEditTrickButtonClick=()=>{
     if(!store.isLocalHost){
       ReactGA.event({
@@ -109,7 +137,7 @@ class Detail extends Component {
     uiStore.editDetailTrick()
   }
 
-	render() {
+	render() {   
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
     if (detailTrickKey && !detailTrick){
@@ -312,6 +340,7 @@ class Detail extends Component {
                                 {uiStore.showMoreInformation?"less info":"more info"}
                               </label><br/>
                             </div>
+                             
                           </div>:null
     const relationshipLists = 
         detailTrick?
@@ -341,6 +370,7 @@ class Detail extends Component {
             />
           </div> : null}
         </div> : null
+
 		return(      
       			<div className="detailDiv" 
                   id="detailDiv" 
@@ -359,10 +389,49 @@ class Detail extends Component {
               />
               {extraGifSection}
               {infoSection}
+              <div className="commentsContainer">
+                <h3>Discussion</h3>
+                { authStore.user ? 
+                     <div class="firstCommentContainer">
+                      <span className="firstCommentIcon">{authStore.user.username}</span>
+                      <textarea 
+                        onKeyUp={(e)=>utilities.autoGrow(e.target)}
+                        value={this.state.firstComment} 
+                        onChange={(e)=>{
+                          this.setState({firstComment : e.target.value})
+                        }} 
+                        className="firstComment" 
+                        placeholder="Write a comment..." 
+                        onBlur={(e)=>{e.target.placeholder = 'Write a comment...' }}
+                        onFocus={(e)=>{e.target.placeholder = '' }}
+                      ></textarea>
+                      <button className="submitButton" onClick={this.postFirstComment}>Submit</button>
+                    </div> :             
+                    <div>No comments yet...</div>
+                }
+                {
+                  store.currentComments.length > 0 ?
+                  <div className="showCommentsLabelDiv">
+                    <label 
+                      className="showCommentsButton" 
+                      onClick={()=>{uiStore.toggleShowCommentsSection()}}
+                    >
+                      {uiStore.showCommentsSection ? "Hide Comments":"Show Comments"}
+                    </label>
+                  </div> : 
+                  null
+                }
+                {uiStore.showCommentsSection?
+                  <Comments comments={store.currentComments}></Comments>
+                  :null
+                }
+              </div>
               {relationshipLists}                
             </div> 
           )
     }
   }
+/*
 
+                              */
 export default Detail

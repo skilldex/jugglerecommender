@@ -66,6 +66,13 @@ class Utilities{
     return toReturn
   }
 
+  @action objectToArray=(object)=>{
+      return Object.keys(object).map((key)=>{
+          object[key]["key"] = key
+          return object[key]
+      }) 
+  }
+
   @action sortObjectByAttribute(data, attr) {
     var arr = [];
     for (var prop in data) {
@@ -101,10 +108,13 @@ class Utilities{
       isValid = true                               
     }
     return isValid
-    }
   }
-
-
+  
+  @action autoGrow(element){
+      element.style.height = "5px"
+      element.style.height = element.scrollHeight+"px"
+  }
+}
 const utilites = new Utilities()
 
 export default utilites
