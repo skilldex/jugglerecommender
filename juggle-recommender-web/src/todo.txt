@@ -12,16 +12,14 @@ v 1.9
 	-Comments in details
 	-Bugs:
 		-If comments are longer than two lines then they stick out and overlap comment space above and below them, this means more than ~15 words breaks it
-		-there is no way to go to next line when making comments, so there is no way to do something like this:
+		-there is no way to go to next line when making comments, so there is no way to do something like this:(this is the main way I have wanted to comment)
 			1)throw first ball straight up with arms crossed
 			2)uncross arms and throw 2b split multiplex with other hand
 			3)claw first ball and place on head
 		-since replies go to the bottom you dont see them when you click if there are already a few replies
+		-there is no way to collapse comments once they are open
+		-font size is large
 
-		-when you reply to a 2nd generation comment it shows you the 'read # replies' buttons, but when you refresh the button is not there
-	-Possibly causing bugs:
-		-we have multiple comment components, and they reuse store variables:
-			showReplyStates and currentComments
 
 
 	-Email Notifications

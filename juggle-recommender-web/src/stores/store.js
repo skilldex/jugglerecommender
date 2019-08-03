@@ -59,16 +59,13 @@ class Store {
 		return contributorTags
 	}
 	@action getCommentsByTrickId(trickId){
-		console.log("getting comments", trickId)
 		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
 		let parentComments = []
 		commentsRef.on('value', resp =>{
 			const allComments = this.snapshotToArrayWithKey(resp)
-			console.log("updated comments" , trickId, allComments)
             allComments.forEach(
                 function(curComment){
                     if(!curComment["parentId"]){
-                    	console.log('curCommentPushed',curComment)
                         parentComments.push(curComment)
                     }
             })
@@ -88,13 +85,11 @@ class Store {
     }
 	@action setComments(comments){
 		this.currentComments = comments
-		console.log('store.setComments this.currentComments',this.currentComments)
 	}
 	@action createComment(comment) {
       const that = this
       const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
       let parentComments = []
-      console.log("creating comment", comment)
       
       return new Promise((resolve, reject) => {
 
@@ -122,24 +117,20 @@ class Store {
     	this.showReplyStates[commentId] = state
     }
     @action toggleShowReplies(commentKey){
-    	console.log("show replies",commentKey)
     	if(this.showReplyStates[commentKey]){
     		this.showReplyStates[commentKey] = !this.showReplyStates[commentKey]
     	}else{
     		this.showReplyStates[commentKey] = true
     	}
     	this.showReplyStates = {...this.showReplyStates}
-    	console.log("states", this.showReplyStates)
     }
     @action toggleEnableReplies(commentKey){
-    	console.log("enable replies",commentKey)
     	if(this.enableReplyStates[commentKey]){
     		this.enableReplyStates[commentKey] = !this.enableReplyStates[commentKey]
     	}else{
     		this.enableReplyStates[commentKey] = true
     	}
     	this.enableReplyStates = {...this.enableReplyStates}
-    	console.log("enable reply states", this.enableReplyStates)
     }
 	@action getMostRecentlySubmittedTrick(){
 		let mostRecentlySubmittedTrickKey = ''
@@ -328,8 +319,6 @@ class Store {
 	}	
 	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
 		const oldTrick = this.library[oldTrickKey]
-		console.log('oldTrickKey',oldTrickKey)
-		console.log('oldTrick.prereqs',oldTrick.prereqs)
 		if(oldTrick.prereqs){
 			let stalePrereqs
 			if(newTrickData){
@@ -337,7 +326,6 @@ class Store {
 			}else{//for the case of deleting a trick
 				stalePrereqs = oldTrick.prereqs
 			}
-			console.log('stalePrereqs',stalePrereqs)
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
 				if(trick){

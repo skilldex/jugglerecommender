@@ -103,15 +103,12 @@ class Detail extends Component {
       };
       let that = this
       store.createComment(commentPost).then(data => {
-        console.log("got em")
         this.setState({firstComment : ""})
       }, error => {
       });
       
   }
-	render() {
-    
-   
+	render() {   
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
     if (detailTrickKey && !detailTrick){
@@ -344,7 +341,6 @@ class Detail extends Component {
             />
           </div> : null}
         </div> : null
-        console.log('details render store.currentComments',store.currentComments)
 
 		return(      
 
@@ -373,7 +369,6 @@ class Detail extends Component {
                       <input 
                         value={this.state.firstComment} 
                         onChange={(e)=>{
-                          console.log("changed ",e.target.value)
                           this.setState({firstComment : e.target.value})
                         }} 
                         className="firstComment" 

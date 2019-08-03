@@ -63,7 +63,6 @@ class Comments extends Component {
           user:authStore.user.username,
           parentPost: false,
         };
-        console.log("replying", parent, commentData)
         store.createComment(commentData).then(data => {
             if(!store.showReplyStates[parent.key]){
                 store.toggleShowReplies(parent.key)
@@ -78,9 +77,6 @@ class Comments extends Component {
     }
 
 	render() {
-        console.log('RENDER this.state.comments',this.state.comments)
-        console.log("RENDER this.props.comments", this.props.comments)
-        
 	 	let comments = this.props.comments.map((comment)=>{
             return <div>
                         <div className="commentContainer">
@@ -101,7 +97,6 @@ class Comments extends Component {
                                     type="text"  
                                     name="comment.key"
                                     onChange={(e)=>{
-                                        console.log("changed" , e.target.value)
                                         this.setState({newComment : e.target.value })
                                     }}
                                     value={this.state.newComment}
@@ -124,7 +119,6 @@ class Comments extends Component {
     	 		
             
 	 	})
-        console.log("RENDERcomment divs", comments)
 		return (
 			<div>
 				{comments}
