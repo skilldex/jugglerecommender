@@ -108,10 +108,13 @@ class Utilities{
       isValid = true                               
     }
     return isValid
-    }
   }
-
-
+  
+  @action autoGrow(element){
+      element.style.height = "5px"
+      element.style.height = element.scrollHeight+"px"
+  }
+}
 const utilites = new Utilities()
 
 export default utilites

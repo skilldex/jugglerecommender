@@ -90,7 +90,12 @@ class Store {
       const that = this
       const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
       let parentComments = []
-      
+      if(!store.isLocalHost){
+		ReactGA.event({
+			category: 'comment',
+			action: "commented " + comment.trickId,
+		});
+	  }	
       return new Promise((resolve, reject) => {
 
         let newData = commentsRef.push();

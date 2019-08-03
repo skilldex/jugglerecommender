@@ -244,6 +244,7 @@
     padding-left : 10px;  
     display: flex;
     align-items: center;  
+    min-height: 15px;
 }
 .firstComment{
     width: 60%;
@@ -253,11 +254,16 @@
     border : none;
     resize: none;
     overflow: hidden;
-    min-height: 30px;
+    overflow-y: auto;
+    min-height: 15px;
     max-height: 100px;
+    padding-top: 4px;
+    height: 18px;
+    font-size: 13px;
 }
 
 .firstCommentIcon{
     font-weight: bold;
     color : blue;
+    font-size: 13px;
 }

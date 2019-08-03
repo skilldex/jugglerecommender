@@ -42,7 +42,7 @@
     min-height : 20px;
     width : 97%;
     max-width : 400px;
-    font-size: 14px;
+    font-size: 13px;
 }
 .commentUser{
     color : blue;
@@ -54,7 +54,7 @@
 } 
 .commentText{
      margin-right : 15px;
-
+     font-size: 13px;
 }
 
 .date{

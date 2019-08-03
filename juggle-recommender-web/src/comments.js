@@ -96,19 +96,18 @@ class Comments extends Component {
                             <label className="commentUser">{comment.user}</label>
                             <label className="commentText">{comment.comment}</label>
                         </div>
-                        <div>
-                            <button className="replyButton" onClick={()=>{this.like(comment.key)}}>Like</button>
+                        <div>   
                             <button className="replyButton" onClick={()=>{this.enableReply(comment.key)}}>Reply</button>
                             <span className="date">{this.getTimeDiff(comment.date)}</span>
                         </div>
                         { 
                             store.enableReplyStates[comment.key] ? 
-                            <div>
-                                <input 
-                                    className="replyInput" 
+                            <div className="firstCommentContainer">
+                                <span className="firstCommentIcon">{authStore.user.username}</span>
+                                <textarea 
+                                    onKeyUp={(e)=>{utilities.autoGrow(e.target)}}
+                                    className="firstComment" 
                                     placeholder="Write a reply..." 
-                                    type="text"  
-                                    name="comment.key"
                                     onChange={(e)=>{
                                         this.setState({newComment : e.target.value })
                                     }}
