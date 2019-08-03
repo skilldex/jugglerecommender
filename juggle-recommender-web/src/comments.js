@@ -74,14 +74,16 @@ class Comments extends Component {
             console.log("setting")
             this.setState({ newComment : "" })
         })        
-
-        authStore.sendEmail({
-            "emailSubject": "Someone Commented to a Discussion You're In",
-            "emailText" : authStore.user.username + " replied on a discussion about " + 
-                uiStore.detailTrick.id.replace(/ /g,"%20") + "! Click to see the thread: www.skilldex.org/detail/" +
-                uiStore.detailTrick.id.replace(/ /g,"%20"), 
-            "to" : authStore.getEmailByUsername(parent.user)
+        authStore.getEmailByUsername(parent.user).then((email)=>{
+           authStore.sendEmail({
+                "emailSubject": "Someone Commented to a Discussion You're In",
+                "emailText" : authStore.user.username + " replied on a discussion about " + 
+                    uiStore.detailTrick.id.replace(/ /g,"%20") + "! Click to see the thread: www.skilldex.org/detail/" +
+                    uiStore.detailTrick.id.replace(/ /g,"%20"), 
+                "to" : email
+            }) 
         })
+        
     }			
     like=(commentKey)=>{
 

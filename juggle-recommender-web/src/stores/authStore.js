@@ -112,7 +112,7 @@ class AuthStore {
         }) 
     }
     @action getEmailByUsername(username){
-        const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(this.username.toLowerCase())
+        const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
         let user
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
