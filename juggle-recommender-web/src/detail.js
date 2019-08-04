@@ -129,7 +129,6 @@ class Detail extends Component {
   }
   handleEditTrickButtonClick=()=>{
     if(!store.isLocalHost){
-      console.log('not localhost')
       ReactGA.event({
           category: 'detail',
           action: 'edit pattern',
