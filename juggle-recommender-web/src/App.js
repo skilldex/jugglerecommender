@@ -79,6 +79,7 @@ if(store.isLocalHost){
 		messagingSenderId: "224766397892",
 		appId: "1:224766397892:web:80beef32563065c3"
 	};
+	
 }else{
 	ReactGA.initialize('UA-140392015-1');
 	ReactGA.pageview(window.location.pathname + window.location.search);
