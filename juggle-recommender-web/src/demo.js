@@ -21,6 +21,7 @@ class Demo extends Component {
     timer : null
   }
   componentDidMount(){
+
     const trick = store.library[this.props.trickKey]
     if(trick && trick.video){
       this.getUsableVideoURL(trick.video, this.props.trickKey)
@@ -29,6 +30,7 @@ class Demo extends Component {
   componentDidUpdate(prevProps,prevState){
     const trick = store.library[this.props.trickKey]
     if(this.props.trickKey !== prevProps.trickKey ){
+      this.setState({slowmoPlayback: null})
       this.setState({
         igData : null,
         videoURL : null,
