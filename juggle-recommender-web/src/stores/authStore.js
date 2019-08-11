@@ -38,7 +38,6 @@ class AuthStore {
         console.log('setUser', user)
      }
     @action loginUser(username, pass) {
-        console.log("logging user", username, pass)
         const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
         let user
         return new Promise(resolve => {
