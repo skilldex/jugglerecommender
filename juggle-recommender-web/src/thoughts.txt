@@ -1,3 +1,78 @@
+To add to db:
+	-paper notes from workshops
+	-Put polyrhythms on skilldex, few basic ones, and add the tag
+	-Add claymotion tricks
+	-A trick like 'Asymmetric Reverse Slam Half Weaved Box(4b)', but is a symmetric box would be badass
+	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
+	-2 in 1 hand dots, 6
+	-2 in 1 outside inside, 40
+	-4b outside inside asynch, 100
+	-4b out in sync, 50
+
+
+New Details layout:
+	MINOR:
+		-Showing views, catches, flairs for tricks would be cool
+		-contributor name should be clickable
+		-Tags in details should be clickable to filters
+		-a section that is 'other tricks with the same name'
+	MAJOR:
+	-A components section that is like prereqs, but specifically for throws/exchanges that are actually in the trick, not just similar but simpler
+	-PROBLEM: names are generally not descriptive, and being so many it is impossible to remember what they are,
+		POSSIBLE SOLUTION, 'Technical Names'
+	-Technical Names:
+		-Is a literal name that tells what is happening in the pattern
+		-goes next to nickname
+		-only one or the other is required
+		-should probably be abbreviations
+		-maybe should be a more specific form of siteswap with all special throws/catches indicated
+		-could autofill component section with the throws/catches/movements that are used in its name
+		-needs a key somewhere
+		-needs a way to have keys added
+		-maybe keys should have some sort of relationship with tags, like every key should be a tag
+		-Once a technical name is set up, there can be a random trick creator that strings together technical components not yet on the site
+			*A next level of this is randomly created tricks in the style of a specific contributor
+			*Another next level of this is putting custom restrictions/requirements on their creation
+	-PROBLEM: the information on almost all tricks is not nearly as comprehensive as it could be.	
+		POSSIBLE SOLUTION, crowdsourced suggestion system
+	-Possible crowdsourced suggestion system for tags, relationships, siteswaps, names:
+		-they have a (collapsed?) suggestions section
+		-anyoneone can make suggestions
+		-both suggestions and "not-suggestions" have agree/disagree buttons next to them, when a suggestion gets enough "agrees", it goes to the main(not-suggestion) section
+		-even main items can get disagreed with enough to fall into suggestion territory
+		-contributor added items get an extra number of agrees automatically
+		-if an item has low score, but there is no other items, then it is the main item
+
+Bugs:
+	-add pattern form and filter often adds more than one tag with single click on spartphone (stefan)
+	-Expanded library of juggling gifs are too big
+	-Refreshing on skilldex.org/home gives me a 404 error
+
+Niceties:
+	-up arrow button that appears on list to zoom to top
+	-'Log in to join the discussion' message for comments of non-signed in users
+	-Juggledex text in top corner should go to home(stefan)
+	-Sort contributors and tags on stats page(stefan)
+	-Update about page, especially instructions(stefan)
+
+
+What does this mean 'I havn't searched patterns for a while nad had a hard time finding the list was looking for the word 'searching' or a magnifying glass icon' (stefan)
+
+Stefan - On the add patternform: if the submit button is grey you could give hints what the user is missing
+
+Research:
+	-Look into idiosensory
+	-'Next level dots' video on youtube, artifaxiom
+	-Michael falkov video
+
+DB changes:
+	-Reverse chops should be takeaways or 1 beat inside orbits
+
+External:
+	-Contact @loudjuggling if his tricks have names or if can easily get technical names
+
+
+
 Maybes:
 	-make a ga for catches input
 	-give edit trick its own url/ga

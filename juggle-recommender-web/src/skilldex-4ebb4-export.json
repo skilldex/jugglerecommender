@@ -1,7 +1,28 @@
 {
+  "comments" : {
+    "-LlNqL0ApAsa6tM1ziJi" : {
+      "comment" : "info (8.3.19) have mistake. Siteswap of this pattern (4x,2)(4x,2x)* not 3.",
+      "date" : "Sat Aug 03 2019 21:59:59 GMT+0300 (Москва, стандартное время)",
+      "numReplies" : 1,
+      "parentPost" : true,
+      "previousKeys" : "",
+      "replies" : {
+        "-LlOzM82gNQLpcP-w4NO" : {
+          "comment" : "Awesome! Thanks so much, really appreciate it! fixed it.",
+          "date" : "Sun Aug 04 2019 01:18:00 GMT+0100 (British Summer Time)",
+          "parentId" : "-LlNqL0ApAsa6tM1ziJi",
+          "parentPost" : false,
+          "previousKeys" : "-LlNqL0ApAsa6tM1ziJi/replies/",
+          "user" : "tjthejuggler"
+        }
+      },
+      "trickId" : "Reverse Slams",
+      "user" : "AndreyR"
+    }
+  },
   "leaderboard" : {
     "423" : {
-      "catches" : "333",
+      "catches" : "1680",
       "trick" : "423",
       "user" : "tjthejuggler"
     },
@@ -101,7 +122,7 @@
       "user" : "tjthejuggler"
     },
     "534 Mills Mess(4b)" : {
-      "catches" : "90",
+      "catches" : "171",
       "trick" : "534 Mills Mess(4b)",
       "user" : "tjthejuggler"
     },
@@ -121,7 +142,7 @@
       "user" : "tjthejuggler"
     },
     "5551(4b)" : {
-      "catches" : "100",
+      "catches" : "600",
       "trick" : "5551(4b)",
       "user" : "tjthejuggler"
     },
@@ -141,17 +162,17 @@
       "user" : "tjthejuggler"
     },
     "714(4b)" : {
-      "catches" : "100",
+      "catches" : "243",
       "trick" : "714(4b)",
       "user" : "tjthejuggler"
     },
     "744(5b)" : {
-      "catches" : "30",
+      "catches" : "60",
       "trick" : "744(5b)",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "753(5b)" : {
-      "catches" : "36",
+      "catches" : "78",
       "trick" : "753(5b)",
       "user" : "tjthejuggler"
     },
@@ -251,7 +272,7 @@
       "user" : "tjthejuggler"
     },
     "Broken Box" : {
-      "catches" : "76",
+      "catches" : "120",
       "trick" : "Broken Box",
       "user" : "tjthejuggler"
     },
@@ -261,7 +282,7 @@
       "user" : "tjthejuggler"
     },
     "Broken Shower" : {
-      "catches" : "40",
+      "catches" : "70",
       "trick" : "Broken Shower",
       "user" : "tjthejuggler"
     },
@@ -276,7 +297,7 @@
       "user" : "tjthejuggler"
     },
     "Burst Box" : {
-      "catches" : "104",
+      "catches" : "240",
       "trick" : "Burst Box",
       "user" : "tjthejuggler"
     },
@@ -301,9 +322,9 @@
       "user" : "tjthejuggler"
     },
     "Cascade(5b)" : {
-      "catches" : "1200",
+      "catches" : "1330",
       "trick" : "Cascade(5b)",
-      "user" : "ilia"
+      "user" : "tjthejuggler"
     },
     "Catapult Mess" : {
       "catches" : "1",
@@ -376,7 +397,7 @@
       "user" : "tjthejuggler"
     },
     "Column Shower Variation" : {
-      "catches" : "100",
+      "catches" : "400",
       "trick" : "Column Shower Variation",
       "user" : "tjthejuggler"
     },
@@ -476,9 +497,9 @@
       "user" : "tjthejuggler"
     },
     "Fountain(4b)" : {
-      "catches" : "400",
+      "catches" : "1000",
       "trick" : "Fountain(4b)",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "Frantic Cascade" : {
       "catches" : "32",
@@ -496,7 +517,7 @@
       "user" : "tjthejuggler"
     },
     "Gilligan's Box" : {
-      "catches" : "100",
+      "catches" : "460",
       "trick" : "Gilligan's Box",
       "user" : "tjthejuggler"
     },
@@ -536,7 +557,7 @@
       "user" : "tjthejuggler"
     },
     "Inverted Box" : {
-      "catches" : "100",
+      "catches" : "148",
       "trick" : "Inverted Box",
       "user" : "tjthejuggler"
     },
@@ -606,7 +627,7 @@
       "user" : "tjthejuggler"
     },
     "Multiplex Columns(5b)" : {
-      "catches" : "25",
+      "catches" : "75",
       "trick" : "Multiplex Columns(5b)",
       "user" : "tjthejuggler"
     },
@@ -741,7 +762,7 @@
       "user" : "tjthejuggler"
     },
     "Shower" : {
-      "catches" : "200",
+      "catches" : "1100",
       "trick" : "Shower",
       "user" : "tjthejuggler"
     },
@@ -776,9 +797,9 @@
       "user" : "tjthejuggler"
     },
     "Six Ball Fountain(6b)" : {
-      "catches" : "58",
+      "catches" : "100",
       "trick" : "Six Ball Fountain(6b)",
-      "user" : "tjthejuggler"
+      "user" : "Kinnijup"
     },
     "Snake" : {
       "catches" : "300",
@@ -806,7 +827,7 @@
       "user" : "tjthejuggler"
     },
     "Stacked Multiplex Box(5b)" : {
-      "catches" : "30",
+      "catches" : "66",
       "trick" : "Stacked Multiplex Box(5b)",
       "user" : "tjthejuggler"
     },
@@ -821,7 +842,7 @@
       "user" : "tjthejuggler"
     },
     "Sunny Side Up (David's Dilemma)" : {
-      "catches" : "60",
+      "catches" : "160",
       "trick" : "Sunny Side Up (David's Dilemma)",
       "user" : "tjthejuggler"
     },
@@ -836,9 +857,9 @@
       "user" : "tjthejuggler"
     },
     "SynchFountain" : {
-      "catches" : "480",
+      "catches" : "1000",
       "trick" : "SynchFountain",
-      "user" : "tjthejuggler"
+      "user" : "AndreyR"
     },
     "Takeouts" : {
       "catches" : "200",
@@ -886,7 +907,7 @@
       "user" : "tjthejuggler"
     },
     "Three-Way Split Multiplex(7b)" : {
-      "catches" : "45",
+      "catches" : "99",
       "trick" : "Three-Way Split Multiplex(7b)",
       "user" : "tjthejuggler"
     },
@@ -926,7 +947,7 @@
       "user" : "tjthejuggler"
     },
     "Windshield Wipers" : {
-      "catches" : "200",
+      "catches" : "422",
       "trick" : "Windshield Wipers",
       "user" : "tjthejuggler"
     },
@@ -938,7 +959,7 @@
   },
   "library" : {
     "423" : {
-      "dependents" : [ "Fake Mess", "Weave", "The W", "Creating a Magical Trick", "423 Armpit Throw", "Crossed 423 Fake Tennis", "Half Frostbite", "The Follow", "The Weave", "423 Tennis", "Fake Boston Shuffle", "R+L Tornado", "R+L Fake Columns", "423 Contortion Variation", "Windshield Wipers", "Takeouts + Orbits", "42T3 Slam Tennis", "Takeouts + Box", "Fake Columns 2", "Reverse 423", "R+L Yo-Yo", "The Tornado", "Windmill + Fakemess", "Columns Overthrow", "Clawed W", "Fake Boston Shuffle + Columns", "Fred's Thread", "423 Contortion Variation", "423 Active 2 Variation", "423 with Reverse Backcross 3s", "423 with Active 2 Slam Around the Arm", "423 with Reverse Backcross 2s" ],
+      "dependents" : [ "Fake Mess", "Weave", "The W", "Creating a Magical Trick", "423 Armpit Throw", "Crossed 423 Fake Tennis", "Half Frostbite", "The Follow", "The Weave", "423 Tennis", "Fake Boston Shuffle", "R+L Tornado", "R+L Fake Columns", "423 Contortion Variation", "Windshield Wipers", "Takeouts + Orbits", "42T3 Slam Tennis", "Takeouts + Box", "Fake Columns 2", "Reverse 423", "R+L Yo-Yo", "The Tornado", "Windmill + Fakemess", "Columns Overthrow", "Clawed W", "Fake Boston Shuffle + Columns", "Fred's Thread", "423 Contortion Variation", "423 Active 2 Variation", "423 with Reverse Backcross 3s", "423 with Active 2 Slam Around the Arm", "423 with Reverse Backcross 2s", "423 Mills Mess" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/423.gif",
       "name" : "423",
@@ -1698,18 +1719,18 @@
       "timeUpdated" : 1561079285575,
       "video" : "https://www.instagram.com/p/BnE2j4EDi_D/"
     },
-    "2 Ball Shower Under 1 Ball Cascade" : {
+    "2 Ball Cascade Under 1 Ball Shower" : {
       "contributor" : "juggling_vegan_",
       "difficulty" : "4.9",
       "explanation" : "",
-      "name" : "2 Ball Shower Under 1 Ball Cascade",
+      "name" : "2 Ball Cascade Under 1 Ball Shower",
       "num" : "3",
       "prereqs" : [ "Cascade", "Shower" ],
       "related" : [ "Inverted Box" ],
       "siteswap" : "",
       "tags" : [ "raised-hand", "slam", "ss1" ],
       "timeSubmitted" : 1563306858004,
-      "timeUpdated" : 1563306858004,
+      "timeUpdated" : 1565189663559,
       "url" : "",
       "video" : "https://www.instagram.com/p/BtixqGLAFLp/"
     },
@@ -2003,6 +2024,21 @@
       "timeUpdated" : 1561509892297,
       "video" : "https://www.instagram.com/p/BRlhzdChJQ2/"
     },
+    "423 Mills Mess" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "3.6",
+      "explanation" : "",
+      "name" : "423 Mills Mess",
+      "num" : 3,
+      "prereqs" : [ "Mills Mess", "423" ],
+      "related" : [ "441 Mills Mess", "531 Mills Mess" ],
+      "siteswap" : "423",
+      "tags" : [ "crossed-arms", "underarm-catch", "underarm-throw" ],
+      "timeSubmitted" : 1564997767116,
+      "timeUpdated" : 1564997767116,
+      "url" : "",
+      "video" : "https://youtu.be/WiVENWySg7s"
+    },
     "423 Tennis" : {
       "contributor" : "3ballpatterns_",
       "dependents" : [ "42T3 Slam Tennis", "Columns Overthrow", "423 with Active 2 Slam Around the Arm", "423 with Reverse Backcross 2s" ],
@@ -2136,7 +2172,7 @@
       "name" : "441 Mills Mess",
       "num" : 3,
       "prereqs" : [ "Reverse 441", "Mills Mess" ],
-      "related" : [ "4440 Mills Mess" ],
+      "related" : [ "4440 Mills Mess", "423 Mills Mess" ],
       "siteswap" : "441",
       "tags" : [ "crossed-arms", "ss1" ],
       "timeSubmitted" : 0,
@@ -2326,7 +2362,7 @@
       "name" : "531 Mills Mess",
       "num" : 3,
       "prereqs" : [ "531", "Mills Mess", "Mills Mess(4b)" ],
-      "related" : [ "4440 Mills Mess" ],
+      "related" : [ "4440 Mills Mess", "423 Mills Mess" ],
       "siteswap" : "531",
       "tags" : [ "crossed-arms", "ss1" ],
       "timeSubmitted" : 999999999999,
@@ -2870,6 +2906,23 @@
       "url" : "",
       "video" : ""
     },
+    "88441(5b)" : {
+      "contributor" : "AndreyR",
+      "difficulty" : 6,
+      "explanation" : "",
+      "gifUrl" : "https://jugglinglab.org/anim?88441",
+      "name" : "88441(5b)",
+      "num" : 5,
+      "related" : [ "97531(5b)" ],
+      "siteswap" : "88441",
+      "tags" : [ "pure-ss" ],
+      "timeSubmitted" : 1564909481799,
+      "timeUpdated" : 1564909586192,
+      "url" : "",
+      "video" : "https://youtu.be/0DX50e-ULJQ",
+      "videoEndTime" : 28,
+      "videoStartTime" : 24
+    },
     "8x6x4x0(6,6)* Semisolid(5b)" : {
       "contributor" : "jameschance_",
       "difficulty" : "6",
@@ -2939,6 +2992,7 @@
       "name" : "97531(5b)",
       "num" : 5,
       "prereqs" : [ "7531(4b)" ],
+      "related" : [ "88441 (5b)(5b)", "88441(5b)" ],
       "siteswap" : "97531",
       "tags" : [ "pure-ss" ],
       "timeSubmitted" : 1563750954302,
@@ -3126,11 +3180,11 @@
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563760920376,
-      "timeUpdated" : 1564448281596,
+      "timeUpdated" : 1565218743510,
       "url" : "",
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 270,
-      "videoStartTime" : 0
+      "videoStartTime" : 259
     },
     "Apeshoulder Tennis" : {
       "contributor" : "tjthejuggler",
@@ -3630,7 +3684,7 @@
       "explanation" : "",
       "name" : "Backcross  (1b)",
       "num" : "1",
-      "related" : [ "Reverse Backcross  (1b)", "Shoulder Throw (1b)", "Half Contortion(1b)" ],
+      "related" : [ "Reverse Backcross  (1b)", "Shoulder Throw (1b)", "Half Contortion(1b)", "Apecross(1b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563760203901,
@@ -3919,14 +3973,18 @@
     },
     "Bizarre Box" : {
       "dependents" : [ "Karas' Box" ],
-      "difficulty" : "7",
+      "difficulty" : "4.7",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/bizarrebox.gif",
       "name" : "Bizarre Box",
       "num" : 3,
       "prereqs" : [ "Box" ],
       "siteswap" : "(4,2T)(4x,2)(4x,2x)*",
       "tags" : [ "crossed-arms", "ss1" ],
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/BizarreBox.html"
+      "timeSubmitted" : 0,
+      "timeUpdated" : 1565311444587,
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/BizarreBox.html",
+      "video" : ""
     },
     "Blind Behind the Back Cascade" : {
       "contributor" : "taylor_tries_",
@@ -3963,7 +4021,7 @@
       "name" : "Boston Mess",
       "num" : 3,
       "prereqs" : [ "Mills Mess", "The W" ],
-      "related" : [ "Cherry Picker", "Cross Arm Over Under Pistons" ],
+      "related" : [ "Cherry Picker", "Cross Arm Over Under Pistons", "Half Boston Mess" ],
       "siteswap" : "3",
       "tags" : [ "columns" ],
       "timeSubmitted" : 0,
@@ -4001,13 +4059,16 @@
     },
     "Boston Takeouts" : {
       "contributor" : "3ballpatterns_",
-      "difficulty" : "5",
+      "difficulty" : "3.9",
+      "explanation" : "",
       "name" : "Boston Takeouts",
       "num" : "3",
       "prereqs" : [ "Boston Mess", "Takeouts", "NBox" ],
       "siteswap" : "",
       "tags" : [ "columns", "slam" ],
-      "timeUpdated" : 1561035382713,
+      "timeSubmitted" : 0,
+      "timeUpdated" : 1564691230210,
+      "url" : "",
       "video" : "https://www.instagram.com/p/BOBlxFLD6AD/"
     },
     "Bouncy shuffle" : {
@@ -4166,17 +4227,19 @@
       "video" : "https://www.instagram.com/p/BriIB7wlLLN/"
     },
     "Broken Box" : {
-      "dependents" : [ "Asymmetric Over Easy" ],
-      "difficulty" : "6",
+      "dependents" : [ "Asymmetric Over Easy", "Gilligan's Box", "Burst Box" ],
+      "difficulty" : "4.6",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/brokenbox.gif",
       "name" : "Broken Box",
       "num" : 3,
       "prereqs" : [ "Box", "Shower Cascade" ],
-      "related" : [ "Burst Box" ],
       "siteswap" : "(4,2x)*",
       "tags" : [ "crossed-arms", "ss1" ],
       "timeSubmitted" : 0,
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenBox.html"
+      "timeUpdated" : 1565440506386,
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/BrokenBox.html",
+      "video" : ""
     },
     "Broken Box + Orka's Mess" : {
       "contributor" : "3ballpatterns_",
@@ -4278,7 +4341,8 @@
     },
     "Burst Box" : {
       "dependents" : [ "Broken NBox Slam" ],
-      "difficulty" : "6",
+      "difficulty" : "4.7",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/burstbox.gif",
       "name" : "Burst Box",
       "num" : 3,
@@ -4287,7 +4351,9 @@
       "siteswap" : "(4,2x)(2x,4x)(2x,4x)*",
       "tags" : [ "crossed-arms", "ss1" ],
       "timeSubmitted" : 0,
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/BurstBox.html"
+      "timeUpdated" : 1565451698253,
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/BurstBox.html",
+      "video" : ""
     },
     "Butterfly" : {
       "contributor" : "stefanlethra_",
@@ -4340,7 +4406,7 @@
       "video" : "https://www.instagram.com/p/BvMai0sg31k/"
     },
     "Cascade" : {
-      "dependents" : [ "552(4b)", "Backcrosses", "Boston Shuffle", "Takeouts", "HighLow Cascade", "Chops", "Crossed Arm Cascade", "Georgian Shuffle", "Half Shower", "Juggler's Tennis", "Mangham's Mangle", "Olas", "Orka's Mess", "Ripley's Rainbow", "Sandbox Shuffle", "Tennessee Waltz(4b)", "Wimpy(4b)", "Cascade(5b)", "Split Cascade(5b)", "Stacked Cascade(5b)", "Hopscotch", "Shapeshifting Rainbows in the Floating Forest", "Penguins", "Blind Behind the Back Cascade", "Cascade on the Chest", "Clawed Reverse Cascade", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room", "Neck Pass Tennis", "Protostar", "Delayed Juggler's Tennis", "Armberts" ],
+      "dependents" : [ "552(4b)", "Backcrosses", "Boston Shuffle", "Takeouts", "HighLow Cascade", "Chops", "Crossed Arm Cascade", "Georgian Shuffle", "Half Shower", "Juggler's Tennis", "Mangham's Mangle", "Olas", "Orka's Mess", "Ripley's Rainbow", "Sandbox Shuffle", "Tennessee Waltz(4b)", "Wimpy(4b)", "Cascade(5b)", "Split Cascade(5b)", "Stacked Cascade(5b)", "Hopscotch", "Shapeshifting Rainbows in the Floating Forest", "Penguins", "Blind Behind the Back Cascade", "Cascade on the Chest", "Clawed Reverse Cascade", "Fork Cascade Under a Regular Cascade(4b)", "Elbow Room", "Neck Pass Tennis", "Protostar", "Delayed Juggler's Tennis", "Armberts", "2 Ball Cascade Under 1 Ball Shower" ],
       "difficulty" : "2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/3ballcascade.gif",
       "name" : "Cascade",
@@ -4994,13 +5060,17 @@
     },
     "Criss-Cross" : {
       "contributor" : "stefan",
+      "dependents" : [ "Waterfall" ],
       "difficulty" : "4",
+      "explanation" : "",
       "name" : "Criss-Cross",
       "num" : "3",
+      "prereqs" : [ "Factory (Machine)" ],
       "siteswap" : "",
       "tags" : [ "symmetric", "claw", "carry" ],
       "timeSubmitted" : 1561483514719,
-      "timeUpdated" : 1561483514719,
+      "timeUpdated" : 1564873688935,
+      "url" : "",
       "video" : "https://www.instagram.com/p/Bw7koW-godX/?utm_source=ig_web_copy_link"
     },
     "Cross 2xed Inverted Box" : {
@@ -5044,6 +5114,20 @@
       "timeUpdated" : 1563304221662,
       "url" : "",
       "video" : "https://www.instagram.com/p/BrVEYIsgpUb/"
+    },
+    "Cross Columns Inverted Box" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "Cross Columns Inverted Box",
+      "num" : "3",
+      "prereqs" : [ "Inverted Box" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "ss1" ],
+      "timeSubmitted" : 1565299965173,
+      "timeUpdated" : 1565299965173,
+      "url" : "",
+      "video" : "https://youtu.be/0yA1TMMN6Hk"
     },
     "Cross Corner Machine" : {
       "contributor" : "jameschance_",
@@ -5753,7 +5837,7 @@
       "video" : "https://www.instagram.com/p/BbzRShnBM6E/"
     },
     "Factory (Machine)" : {
-      "dependents" : [ "Crossed Arm Factory", "Relf's Factory", "Reverse Factory", "Zebra Factory", "Inverted Shower", "R+L Factory", "R+L Fake Columns", "663M5(5b)", "3-beat Reverse Slam Machine", "Machined Windmill", "Half Waterfall", "Waterfall", "Alt Fake Columns", "The Magnet Factory", "625M263(4b)", "Cross Drop Robot", "Isa's Factory", "Contraption", "Triphammer (Alternating bisected multi-machine)(4b)", "Cross Corner Machine", "Phi", "Crossunder Factory", "Continuous penguin machine (the wrist burner)", "Continuous Machine(4b)", "Multiplex Squeeze Catch Machine Variation(4b)", "423ish Underarm Factory", "FUF", "Multiplex/Squeeze Factory(4b)", "Sync Symmetrical Machine Variation 1", "Symmetric Machine + Slam", "Some Weird Machine Variant", "Sync Symmetrical Factory(4b)", "Mindfuckery Reverse Machine", "Wristburning Jambalaya", "Asymmetric Synch Cross Arm Machine", "Split Multiplex Squeeze Machine(4b)", "Reverse Machine Slams", "1up 3up Machine(5b)", "(6,4x)4 Machine(4b)", "Funky3", "Symmetric Reverse Slam Machine", "Asymmetric Reverse Shapeshifter", "Supersymmetry is Still a Mystery", "Atari" ],
+      "dependents" : [ "Crossed Arm Factory", "Relf's Factory", "Reverse Factory", "Zebra Factory", "Inverted Shower", "R+L Factory", "R+L Fake Columns", "663M5(5b)", "3-beat Reverse Slam Machine", "Machined Windmill", "Half Waterfall", "Waterfall", "Alt Fake Columns", "The Magnet Factory", "625M263(4b)", "Cross Drop Robot", "Isa's Factory", "Contraption", "Triphammer (Alternating bisected multi-machine)(4b)", "Cross Corner Machine", "Phi", "Crossunder Factory", "Continuous penguin machine (the wrist burner)", "Continuous Machine(4b)", "Multiplex Squeeze Catch Machine Variation(4b)", "423ish Underarm Factory", "FUF", "Multiplex/Squeeze Factory(4b)", "Sync Symmetrical Machine Variation 1", "Symmetric Machine + Slam", "Some Weird Machine Variant", "Sync Symmetrical Factory(4b)", "Mindfuckery Reverse Machine", "Wristburning Jambalaya", "Asymmetric Synch Cross Arm Machine", "Split Multiplex Squeeze Machine(4b)", "Reverse Machine Slams", "1up 3up Machine(5b)", "(6,4x)4 Machine(4b)", "Funky3", "Symmetric Reverse Slam Machine", "Asymmetric Reverse Shapeshifter", "Supersymmetry is Still a Mystery", "Atari", "Criss-Cross" ],
       "difficulty" : "3",
       "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/factory.gif",
@@ -6264,14 +6348,19 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/GeorgianShuffle.html"
     },
     "Gilligan's Box" : {
-      "difficulty" : "6",
+      "difficulty" : "4.7",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/gilligansbox.gif",
       "name" : "Gilligan's Box",
       "num" : 3,
       "prereqs" : [ "Broken Box" ],
+      "related" : [ "Burst Box" ],
       "siteswap" : "(4,2x)(4,2)(2x,4x)*",
       "tags" : [ "crossed-arms", "ss1" ],
-      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Gilligan'sBox.html"
+      "timeSubmitted" : "",
+      "timeUpdated" : 1565451154057,
+      "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Gilligan'sBox.html",
+      "video" : ""
     },
     "Glide Reflection Befalls" : {
       "contributor" : "jahvorsky_",
@@ -6336,14 +6425,18 @@
     },
     "Half Boston Mess" : {
       "contributor" : "3ballpatterns_",
-      "dependents" : [ "Boston Mess + Takeouts", "Boston Mess + Takeouts" ],
+      "dependents" : [ "Boston Mess + Takeouts" ],
       "difficulty" : "4",
+      "explanation" : "",
       "name" : "Half Boston Mess",
       "num" : "3",
       "prereqs" : [ "Mills Mess", "Columns" ],
+      "related" : [ "Boston Mess" ],
       "siteswap" : "3",
       "tags" : [ "columns", "crossed-arms", "underarm-catch" ],
       "timeSubmitted" : 1561031980168,
+      "timeUpdated" : 1564954628627,
+      "url" : "",
       "video" : "https://www.instagram.com/p/BKTZ4UjDc5T/"
     },
     "Half Contortion(1b)" : {
@@ -6394,6 +6487,7 @@
       "difficulty" : "4",
       "name" : "Half Isa's Mess",
       "num" : "3",
+      "related" : [ "Park Mess" ],
       "siteswap" : "",
       "tags" : [ "crossed-arms", "asymmetric" ],
       "timeSubmitted" : 1561415454093,
@@ -6402,6 +6496,7 @@
     },
     "Half Mess 1" : {
       "contributor" : "3ballpatterns_",
+      "dependents" : [ "Park Mess" ],
       "difficulty" : "4",
       "explanation" : "",
       "name" : "Half Mess 1",
@@ -6832,14 +6927,14 @@
       "video" : "https://www.instagram.com/p/BdOE7eLAOWv/"
     },
     "Inverted Box" : {
-      "dependents" : [ "Inspired by the Stars", "Deep in Alien Territory", "Silly Trick", "Inverted Sprung 312", "Upsidedown Shuffle", "Inside Inverted Switched Box", "Cross 2xed Inverted Box", "Shape Disruption of a Liked Orphan", "Inverted Sprung Cascade(4b)", "Reverse Slam with (2x,2x) above the High Throw", "Inverted Sprung Cascade(4b)", "Cross 2xed Inverted Box", "DNI-Box", "Wristburning Jambalaya", "Inverted Box Slam Combo", "Double Over the Top Slam", "Cross Slam Self Slam" ],
+      "dependents" : [ "Inspired by the Stars", "Deep in Alien Territory", "Silly Trick", "Inverted Sprung 312", "Upsidedown Shuffle", "Inside Inverted Switched Box", "Cross 2xed Inverted Box", "Shape Disruption of a Liked Orphan", "Inverted Sprung Cascade(4b)", "Reverse Slam with (2x,2x) above the High Throw", "Inverted Sprung Cascade(4b)", "Cross 2xed Inverted Box", "DNI-Box", "Wristburning Jambalaya", "Inverted Box Slam Combo", "Double Over the Top Slam", "Cross Slam Self Slam", "Cross Columns Inverted Box" ],
       "difficulty" : "4.8",
       "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/invertedbox.gif",
       "name" : "Inverted Box",
       "num" : 3,
       "prereqs" : [ "NBox", "Luke's Shuffle", "Symmetric Z Box" ],
-      "related" : [ "Asymmetric Slam Box Variant", "Z + Backward Z Box", "2 Ball Shower Under 1 Ball Cascade" ],
+      "related" : [ "Asymmetric Slam Box Variant", "Z + Backward Z Box", "2 Ball Shower Under 1 Ball Cascade", "2 Ball Cascade Under 1 Ball Shower" ],
       "siteswap" : "(4,2x)(2x,4)",
       "tags" : [ "slam", "claw", "columns", "ss1" ],
       "timeSubmitted" : 999999999999,
@@ -7473,7 +7568,7 @@
       "video" : "https://www.instagram.com/p/Bs5hrHtAMVB/"
     },
     "Mills Mess" : {
-      "dependents" : [ "Boston Mess", "Kraken", "441 Mills Mess", "531 Mills Mess", "Charley", "Flipped Mess", "Flo's Mess", "Half Mess 1", "Reverse Mills Mess", "Mills Mess Shower", "Rubenstein's Revenge", "Shuffler's Mess", "Windmill", "Cliff's Confusion(4b)", "Mills Mess(4b)", "552 Mills Mess(4b)", "Moxie's Mess", "Mills Mess + Broken Shower", "Clawed Mills Mess", "Half Boston Mess", "Columns Mess 1", "(6,4)(0,2x)*", "Sing's Mess", "The Guitar", "Mills Mess + Shower", "Over the Arm Mill's Mess", "Fake Boston Shuffle + Columns", "504 Crossed Arm Cascade", "Stacked Mess", "Catapult Mess", "Partial Penguin Mills", "[33] Mills Mess(6b)", "Moxie's Mess", "Mills Mess Slam Variation", "Half Mess 1", "Mills Multiplex Variation 2(4b)", "Mills Multiplex Variation 3(4b)", "Slam Mills", "Multiplex Squeeze Mills Mess(4b)", "Crossarm Shadow Pass Mills Mess", "Mills Headplants", "4440 Mills Mess", "Over the Arm Mills Mess", "Millsmess Overarm Throw Clawed", "Millsmess Normal Throw Clawed", "Millsmess underarm Throw Clawed" ],
+      "dependents" : [ "Boston Mess", "Kraken", "441 Mills Mess", "531 Mills Mess", "Charley", "Flipped Mess", "Flo's Mess", "Half Mess 1", "Reverse Mills Mess", "Mills Mess Shower", "Rubenstein's Revenge", "Shuffler's Mess", "Windmill", "Cliff's Confusion(4b)", "Mills Mess(4b)", "552 Mills Mess(4b)", "Moxie's Mess", "Mills Mess + Broken Shower", "Clawed Mills Mess", "Half Boston Mess", "Columns Mess 1", "(6,4)(0,2x)*", "Sing's Mess", "The Guitar", "Mills Mess + Shower", "Over the Arm Mill's Mess", "Fake Boston Shuffle + Columns", "504 Crossed Arm Cascade", "Stacked Mess", "Catapult Mess", "Partial Penguin Mills", "[33] Mills Mess(6b)", "Moxie's Mess", "Mills Mess Slam Variation", "Half Mess 1", "Mills Multiplex Variation 2(4b)", "Mills Multiplex Variation 3(4b)", "Slam Mills", "Multiplex Squeeze Mills Mess(4b)", "Crossarm Shadow Pass Mills Mess", "Mills Headplants", "4440 Mills Mess", "Over the Arm Mills Mess", "Millsmess Overarm Throw Clawed", "Millsmess Normal Throw Clawed", "Millsmess underarm Throw Clawed", "423 Mills Mess" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/millsmess.gif",
       "name" : "Mills Mess",
@@ -7580,14 +7675,14 @@
     },
     "Mills Mess(7b)" : {
       "contributor" : "tjthejuggler",
-      "difficulty" : "10",
+      "difficulty" : "9.7",
       "explanation" : "",
       "name" : "Mills Mess(7b)",
       "num" : "7",
       "prereqs" : [ "Mills Mess(6b)", "915 Mills Mess(5b)" ],
       "siteswap" : "7",
       "timeSubmitted" : 1561894281759,
-      "timeUpdated" : 1561915203432,
+      "timeUpdated" : 1565476228359,
       "url" : "",
       "video" : "https://youtu.be/f6X85NiHA1M",
       "videoEndTime" : 102,
@@ -8035,7 +8130,7 @@
     },
     "Neck Pass Tennis" : {
       "contributor" : "juggling_vegan_",
-      "dependents" : [ "Neck Pass Penguin Tennis", "Crossed Arm Neck Pass", "Half-contortion neck pass tennis", "Shoulder Throw Neck Pass Combo", "Neck pass/catch combo", "Multiplex Reverse Backcross Shadow Pass Combo" ],
+      "dependents" : [ "Neck Pass Penguin Tennis", "Crossed Arm Neck Pass", "Half-contortion neck pass tennis", "Shoulder Throw Neck Pass Combo", "Neck pass/catch combo", "Multiplex Reverse Backcross Shadow Pass Combo", "Neckcross + Reverse Neckcross Combo" ],
       "difficulty" : "5",
       "name" : "Neck Pass Tennis",
       "num" : "3",
@@ -8046,6 +8141,21 @@
       "timeSubmitted" : 1561545205147,
       "timeUpdated" : 1561545205147,
       "video" : "https://www.instagram.com/p/BToO8whhvaw/"
+    },
+    "Neck Stall(1b)" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "2.1",
+      "explanation" : "",
+      "name" : "Neck Stall(1b)",
+      "num" : "1",
+      "siteswap" : "",
+      "tags" : [ "body-throw" ],
+      "timeSubmitted" : 1563763415868,
+      "timeUpdated" : 1565470166643,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
+      "videoEndTime" : 664,
+      "videoStartTime" : 649
     },
     "Neck Throw Penguin + Contortion + Backcross" : {
       "contributor" : "juggling_vegan_",
@@ -8061,20 +8171,6 @@
       "timeUpdated" : 1564350080895,
       "url" : "",
       "video" : "https://www.instagram.com/p/ByaHRPgAkjb/"
-    },
-    "Neck pass-catch combo" : {
-      "contributor" : "juggling_vegan_",
-      "difficulty" : "4.4",
-      "explanation" : "",
-      "name" : "Neck pass/catch combo",
-      "num" : "3",
-      "prereqs" : [ "Neck Pass Tennis", "Reverse Neckcross(1b)" ],
-      "siteswap" : "3",
-      "tags" : [ "body-throw", "neck-pass" ],
-      "timeSubmitted" : 1563142820405,
-      "timeUpdated" : 1563142820405,
-      "url" : "",
-      "video" : "https://www.instagram.com/p/BcXKwzrBKDk/"
     },
     "Neck-throw + Penguin + Armpit" : {
       "contributor" : "lucasadverse",
@@ -8092,6 +8188,20 @@
       "video" : "https://www.instagram.com/p/BupBropgJJl/",
       "videoEndTime" : 12,
       "videoStartTime" : 1
+    },
+    "Neckcross + Reverse Neckcross Combo" : {
+      "contributor" : "juggling_vegan_",
+      "difficulty" : "4.4",
+      "explanation" : "",
+      "name" : "Neckcross + Reverse Neckcross Combo",
+      "num" : "3",
+      "prereqs" : [ "Neck Pass Tennis", "Reverse Neckcross(1b)" ],
+      "siteswap" : "3",
+      "tags" : [ "body-throw", "neckcross" ],
+      "timeSubmitted" : 1563142820405,
+      "timeUpdated" : 1564689174668,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BcXKwzrBKDk/"
     },
     "Neckcross Tennis" : {
       "contributor" : "juggling_vegan_",
@@ -8116,7 +8226,7 @@
       "explanation" : "",
       "name" : "Neckcross(1b)",
       "num" : "1",
-      "related" : [ "Neck Catch(1b)", "Behind the Neck  (1b)", "Reverse Neckcross(1b)" ],
+      "related" : [ "Neck Catch(1b)", "Behind the Neck  (1b)", "Reverse Neckcross(1b)", "Apecross(1b)" ],
       "siteswap" : "",
       "tags" : [ "body-throw" ],
       "timeSubmitted" : 1563761403087,
@@ -8235,21 +8345,6 @@
       "siteswap" : "3323[13]",
       "tags" : [ "carry", "multiplex", "ss1" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Olas.html"
-    },
-    "On the Neck Catch (Turtle Catch)(1b)" : {
-      "contributor" : "tjthejuggler",
-      "difficulty" : "2.1",
-      "explanation" : "",
-      "name" : "On the Neck Catch (Turtle Catch)(1b)",
-      "num" : "1",
-      "siteswap" : "",
-      "tags" : [ "body-throw" ],
-      "timeSubmitted" : 1563763415868,
-      "timeUpdated" : 1563763415868,
-      "url" : "",
-      "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
-      "videoEndTime" : 664,
-      "videoStartTime" : 649
     },
     "Open Handed Jugglers Tennis" : {
       "contributor" : "artifaxiom",
@@ -8448,6 +8543,21 @@
       "timeSubmitted" : 1561297357411,
       "timeUpdated" : 1561297357411,
       "video" : "https://www.instagram.com/p/BomaeemAOOy/"
+    },
+    "Park Mess" : {
+      "contributor" : "stefan",
+      "difficulty" : "3",
+      "explanation" : "",
+      "name" : "Park Mess",
+      "num" : "3",
+      "prereqs" : [ "Half Mess 1" ],
+      "related" : [ "Half Isa's Mess", "Reverse Park Mess" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "asymmetric" ],
+      "timeSubmitted" : 1564913286487,
+      "timeUpdated" : 1564998096812,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0qoXB_BimO/?igshid=zh6fw09rmiav"
     },
     "Partial Penguin Mills" : {
       "contributor" : "juggling_vegan_",
@@ -9282,7 +9392,7 @@
     },
     "Reverse Neckcross(1b)" : {
       "contributor" : "tjthejuggler",
-      "dependents" : [ "Neck pass-catch combo" ],
+      "dependents" : [ "Neck pass-catch combo", "Neckcross + Reverse Neckcross Combo" ],
       "difficulty" : "1.9",
       "explanation" : "",
       "name" : "Reverse Neckcross(1b)",
@@ -9296,6 +9406,20 @@
       "video" : "https://www.youtube.com/watch?v=rQmCXjsXyyA&feature=youtu.be",
       "videoEndTime" : 351,
       "videoStartTime" : 338
+    },
+    "Reverse Park Mess" : {
+      "contributor" : "stefan",
+      "difficulty" : "4",
+      "explanation" : "",
+      "name" : "Reverse Park Mess",
+      "num" : "3",
+      "related" : [ "Park Mess" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "asymmetric" ],
+      "timeSubmitted" : 1565108200676,
+      "timeUpdated" : 1565108200676,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B01AgGdBzMH/?igshid=p0sdip5yr1zi"
     },
     "Reverse Self Slam Around The Arm (1b)" : {
       "contributor" : "tjthejuggler",
@@ -9362,12 +9486,12 @@
       "difficulty" : "4.8",
       "explanation" : "",
       "name" : "Reverse Slams",
-      "num" : "3",
+      "num" : 3,
       "prereqs" : [ "Shuffle(Slams)" ],
-      "siteswap" : "3",
+      "siteswap" : "(4x,2)(4x,2x)*",
       "tags" : [ "slam", "ss1" ],
       "timeSubmitted" : 1563150915450,
-      "timeUpdated" : 1563150915450,
+      "timeUpdated" : 1564877808053,
       "url" : "",
       "video" : "https://www.instagram.com/p/BgWP1N5HEVr/"
     },
@@ -9753,7 +9877,7 @@
       "video" : "https://www.instagram.com/p/BbwhHGrhKvb/"
     },
     "Shower" : {
-      "dependents" : [ "Asymmetric Over Easy" ],
+      "dependents" : [ "Asymmetric Over Easy", "2 Ball Cascade Under 1 Ball Shower" ],
       "difficulty" : "3",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/shower.gif",
       "name" : "Shower",
@@ -10892,14 +11016,16 @@
     "Takeouts + NBox" : {
       "contributor" : "3ballpatterns_",
       "dependents" : [ "Takeouts + Box 2" ],
-      "difficulty" : "4",
+      "difficulty" : "4.4",
+      "explanation" : "",
       "name" : "Takeouts + NBox",
       "num" : "3",
       "prereqs" : [ "Takeouts + Box", "Burke's Burrage + Box", "Double Box", "Double Box + NBox" ],
       "siteswap" : "",
       "tags" : [ "carry", "ss1" ],
       "timeSubmitted" : 1561203956358,
-      "timeUpdated" : 1561203956358,
+      "timeUpdated" : 1564691289070,
+      "url" : "",
       "video" : "https://www.instagram.com/p/Bd3HHjBjzNk/"
     },
     "Takeouts + Orbits" : {
@@ -10914,14 +11040,18 @@
       "video" : "https://www.instagram.com/p/BOsGdGRDVca/"
     },
     "Takeouts(4b)" : {
-      "difficulty" : "5",
+      "difficulty" : "4.4",
+      "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/fourballtakeouts.gif",
       "name" : "Takeouts(4b)",
       "num" : 4,
       "prereqs" : [ "Takeouts", "Cliff's Confusion(4b)" ],
       "siteswap" : "[43]23",
       "tags" : [ "multiplex", "carry", "crossed-arms" ],
-      "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallTakeouts.html"
+      "timeSubmitted" : 0,
+      "timeUpdated" : 1564691021508,
+      "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallTakeouts.html",
+      "video" : ""
     },
     "Temple Box(4b)" : {
       "contributor" : "nycjuggler_",
@@ -11736,7 +11866,7 @@
       "difficulty" : "4",
       "name" : "Waterfall",
       "num" : "3",
-      "prereqs" : [ "Factory (Machine)", "Cherry Picker" ],
+      "prereqs" : [ "Factory (Machine)", "Cherry Picker", "Criss-Cross" ],
       "siteswap" : "",
       "tags" : [ "carry", "raised-hand" ],
       "timeSubmitted" : 1561204573323,
@@ -11840,6 +11970,20 @@
       "timeSubmitted" : 1560858322428,
       "video" : "https://www.instagram.com/p/BwhaNG1gL-K/"
     },
+    "Whirligig" : {
+      "contributor" : "stefan",
+      "difficulty" : "3",
+      "explanation" : "",
+      "name" : "Whirligig",
+      "num" : "3",
+      "prereqs" : [ "Windmill" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "asymmetric" ],
+      "timeSubmitted" : 1565174941960,
+      "timeUpdated" : 1565174941960,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B02_YQ8huCA/?igshid=1ohiq55re34jd"
+    },
     "Wimpy(4b)" : {
       "dependents" : [ "Half Shower(4b)", "Wimpy(6b)" ],
       "difficulty" : "4",
@@ -11866,7 +12010,7 @@
       "video" : "https://www.instagram.com/p/BTBf59wh2t3/"
     },
     "Windmill" : {
-      "dependents" : [ "Hands of Time", "Marden's Marvel", "Chop Shower", "Windmill(4b)", "Sliced Reverse Chops", "Wendy's Windmill", "Windmill Takeouts", "555003 Windmill", "Mills Mess + Shower", "Machined Windmill", "Windmill + Fakemess", "Over the Arm Mill's Mess", "Reverse Windmill", "Over the Arm Mills Mess" ],
+      "dependents" : [ "Hands of Time", "Marden's Marvel", "Chop Shower", "Windmill(4b)", "Sliced Reverse Chops", "Wendy's Windmill", "Windmill Takeouts", "555003 Windmill", "Mills Mess + Shower", "Machined Windmill", "Windmill + Fakemess", "Over the Arm Mill's Mess", "Reverse Windmill", "Over the Arm Mills Mess", "Whirligig" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/windmill.gif",
       "name" : "Windmill",
@@ -12041,8 +12185,8 @@
     "-Lfc2V0O5ry1rtchP79S" : {
       "myTricks" : {
         "423" : {
-          "catches" : "333",
-          "lastUpdated" : 1563653536218,
+          "catches" : "1680",
+          "lastUpdated" : 1565072736415,
           "starred" : "true"
         },
         "441" : {
@@ -12055,18 +12199,51 @@
           "lastUpdated" : 1562744992661,
           "starred" : "true"
         },
+        "603" : {
+          "catches" : "460",
+          "lastUpdated" : 1564915824520
+        },
+        "630" : {
+          "catches" : "300",
+          "lastUpdated" : 1564916575222
+        },
+        "50505" : {
+          "catches" : "726",
+          "lastUpdated" : 1565021203258
+        },
         "51234" : {
           "catches" : "1200",
           "lastUpdated" : 1564004698601
         },
         "52512" : {
-          "catches" : "103",
-          "lastUpdated" : 1563968738549
+          "catches" : "450",
+          "lastUpdated" : 1565088324430
+        },
+        "7070700" : {
+          "catches" : "198",
+          "lastUpdated" : 1565022658632
+        },
+        "(4,2x)(4x,2) with Wristdrop 2xs" : {
+          "catches" : "150",
+          "lastUpdated" : 1564689257066
+        },
+        "(4x,2x)(2,0) with a Wrist Drop 2x(2b)" : {
+          "catches" : "184",
+          "lastUpdated" : 1565070977801
+        },
+        "(4x,2x)(2,0)* with a Wrist Drop 2x(2b)" : {
+          "catches" : "400",
+          "lastUpdated" : 1565071251730
         },
         "(6,4)(0,4)(0,4x)*" : {
           "catches" : "128",
           "lastUpdated" : 1562340391953,
           "starred" : "true"
+        },
+        "(6,4x)(2x,4)(4x,6)(4,2x) with the 2x's as slams(4b)" : {
+          "baby" : "false",
+          "lastUpdated" : 1565167402382,
+          "ninja" : "true"
         },
         "(6x,4)(4,2x)(4,6x)(2x,4)(4b)" : {
           "catches" : "40",
@@ -12081,10 +12258,22 @@
           "catches" : "96",
           "lastUpdated" : 1564069602804
         },
+        "({13})(4b)" : {
+          "catches" : "160",
+          "lastUpdated" : 1565023705458
+        },
         "({33}) Mills Mess(6b)" : {
           "catches" : "12",
           "lastUpdated" : 1561890251534,
           "starred" : "true"
+        },
+        "({44})(8b)" : {
+          "catches" : "8",
+          "lastUpdated" : 1565122644402
+        },
+        "({46})41(5b)" : {
+          "catches" : "40",
+          "lastUpdated" : 1565120643225
         },
         "({54})({52})2 (6b)" : {
           "catches" : "108",
@@ -12096,6 +12285,10 @@
           "lastUpdated" : 1561725139573,
           "starred" : "true"
         },
+        "({55})5555(6b)" : {
+          "catches" : "7",
+          "lastUpdated" : 1565122433458
+        },
         "({64})41(5b)" : {
           "catches" : "4",
           "lastUpdated" : 1561889213473,
@@ -12105,6 +12298,10 @@
           "catches" : "135",
           "lastUpdated" : 1562442964421,
           "starred" : "true"
+        },
+        "1 Handed Fake Mess" : {
+          "catches" : "12",
+          "lastUpdated" : 1565472153203
         },
         "1up 3up Tennis(4b)" : {
           "catches" : "36",
@@ -12117,6 +12314,18 @@
         "1up crossing 3up multiplex(4b)" : {
           "catches" : "150",
           "lastUpdated" : 1563916809011
+        },
+        "312 with a Wrist Drop 1(2b)" : {
+          "catches" : "960",
+          "lastUpdated" : 1564699440318
+        },
+        "3122 with a Wrist Drop 1(2b)" : {
+          "catches" : "100",
+          "lastUpdated" : 1564699792097
+        },
+        "333({34})(4b)" : {
+          "catches" : "33",
+          "lastUpdated" : 1565120335908
         },
         "363 Mills Mess(4b)" : {
           "catches" : "150",
@@ -12140,6 +12349,10 @@
           "catches" : "60",
           "lastUpdated" : 1561735900602,
           "starred" : "true"
+        },
+        "423 Mills Mess" : {
+          "catches" : "300",
+          "lastUpdated" : 1565004450848
         },
         "423 Tennis" : {
           "catches" : "2004",
@@ -12167,6 +12380,10 @@
           "catches" : "246",
           "lastUpdated" : 1564153589216,
           "starred" : "true"
+        },
+        "441 with Wristdrop 1s" : {
+          "catches" : "120",
+          "lastUpdated" : 1564689287063
         },
         "4440 Mills Mess" : {
           "catches" : "18",
@@ -12206,17 +12423,21 @@
           "lastUpdated" : 1563981151045
         },
         "534 Mills Mess(4b)" : {
-          "catches" : "90",
-          "lastUpdated" : 1562444075725,
+          "catches" : "171",
+          "lastUpdated" : 1565020459304,
           "starred" : "true"
         },
         "534 with the 3s behind the neck(4b)" : {
-          "catches" : "15",
-          "lastUpdated" : 1562794274635
+          "catches" : "48",
+          "lastUpdated" : 1565087150496
         },
         "534(4b)" : {
           "catches" : "150",
           "starred" : "true"
+        },
+        "5344(4b)" : {
+          "catches" : "12",
+          "lastUpdated" : 1565020077831
         },
         "552 Mills Mess(4b)" : {
           "catches" : 0,
@@ -12233,7 +12454,8 @@
           "starred" : "true"
         },
         "5551(4b)" : {
-          "catches" : "100",
+          "catches" : "600",
+          "lastUpdated" : 1565114383246,
           "starred" : "true"
         },
         "55550(4b)" : {
@@ -12244,6 +12466,10 @@
           "catches" : "6",
           "lastUpdated" : 1561836843610,
           "starred" : "true"
+        },
+        "633(4b)" : {
+          "catches" : "420",
+          "lastUpdated" : 1564917031325
         },
         "64(5b)" : {
           "catches" : "32",
@@ -12258,13 +12484,17 @@
           "catches" : "6",
           "lastUpdated" : 1564014823628
         },
+        "663(5b)" : {
+          "catches" : "52",
+          "lastUpdated" : 1564917267064
+        },
         "7123456(4b)" : {
           "catches" : "300",
           "lastUpdated" : 1564004921303
         },
         "714(4b)" : {
-          "catches" : "100",
-          "lastUpdated" : 1561485683276,
+          "catches" : "243",
+          "lastUpdated" : 1565112454215,
           "starred" : "true"
         },
         "744(5b)" : {
@@ -12273,18 +12503,30 @@
           "starred" : "true"
         },
         "753(5b)" : {
-          "catches" : "36",
-          "lastUpdated" : 1561937129471,
+          "catches" : "78",
+          "lastUpdated" : 1565285357437,
           "starred" : "true"
+        },
+        "7531(4b)" : {
+          "catches" : "44",
+          "lastUpdated" : 1565117288513
         },
         "771(5b)" : {
           "catches" : "33",
           "lastUpdated" : 1561835804536,
           "starred" : "true"
         },
+        "88441(5b)" : {
+          "catches" : "6",
+          "lastUpdated" : 1565118001228
+        },
         "912345678(5b)" : {
           "catches" : "7",
           "lastUpdated" : 1564006045649
+        },
+        "97531(5b)" : {
+          "catches" : "5",
+          "lastUpdated" : 1565117814169
         },
         "Al's Slide" : {
           "catches" : "90",
@@ -12296,6 +12538,10 @@
           "lastUpdated" : 1561881187957,
           "starred" : "true"
         },
+        "Alternating Synch 3up Multiplex(6b)" : {
+          "catches" : "54",
+          "lastUpdated" : 1565122113061
+        },
         "Alternating Triplex Box(5b)" : {
           "catches" : "55",
           "lastUpdated" : 1562426902798,
@@ -12304,6 +12550,10 @@
         "Apecross(1b)" : {
           "catches" : "10",
           "lastUpdated" : 1564054056635
+        },
+        "Apeshoulder Tennis" : {
+          "catches" : "120",
+          "lastUpdated" : 1564689038647
         },
         "Aquamarine" : {
           "catches" : "1",
@@ -12320,16 +12570,28 @@
           "lastUpdated" : 1563970442127
         },
         "Asymmetric Active Crossover" : {
-          "catches" : "80",
-          "lastUpdated" : 1563395741523
+          "catches" : "200",
+          "lastUpdated" : 1564867509065
         },
         "Asymmetric Lemming Drop" : {
           "catches" : "50",
           "lastUpdated" : 1563374011005
         },
+        "Asymmetric Multiplex Switch(4b)" : {
+          "catches" : "5",
+          "lastUpdated" : 1565479673686
+        },
         "Asymmetric Reverse Shapeshifter" : {
           "catches" : "120",
           "lastUpdated" : 1563565316562
+        },
+        "Asymmetric Reverse Slam Half Weaved Box(4b)" : {
+          "catches" : "10",
+          "lastUpdated" : 1565477055764
+        },
+        "Asymmetric Slam Box Variant" : {
+          "catches" : "24",
+          "lastUpdated" : 1565480869335
         },
         "Asymmetric Synch Neck Throw" : {
           "catches" : "26",
@@ -12358,6 +12620,14 @@
           "catches" : "300",
           "lastUpdated" : 1564176010681
         },
+        "Backcross + Reverse Backcross" : {
+          "catches" : "30",
+          "lastUpdated" : 1564688845367
+        },
+        "Backcross Exchange(2b)" : {
+          "catches" : "140",
+          "lastUpdated" : 1564698876048
+        },
         "Backcross Tennis" : {
           "catches" : "1140",
           "lastUpdated" : 1563904279013
@@ -12385,6 +12655,10 @@
           "catches" : "300",
           "lastUpdated" : 1562410839034,
           "starred" : "true"
+        },
+        "Boston Takeouts" : {
+          "catches" : "180",
+          "lastUpdated" : 1564691186587
         },
         "Box" : {
           "catches" : "1400",
@@ -12420,9 +12694,13 @@
           "starred" : "true"
         },
         "Broken Box" : {
-          "catches" : "76",
-          "lastUpdated" : 1562343170489,
+          "catches" : "120",
+          "lastUpdated" : 1565441401290,
           "starred" : "true"
+        },
+        "Broken Box + Orka's Mess" : {
+          "catches" : "160",
+          "lastUpdated" : 1565440151112
         },
         "Broken NBox Slam" : {
           "catches" : "120",
@@ -12430,8 +12708,8 @@
           "starred" : "true"
         },
         "Broken Shower" : {
-          "catches" : "40",
-          "lastUpdated" : 1562414006916,
+          "catches" : "70",
+          "lastUpdated" : 1565440469684,
           "starred" : "true"
         },
         "Burke's Barrage" : {
@@ -12444,7 +12722,8 @@
           "starred" : "true"
         },
         "Burst Box" : {
-          "catches" : "104",
+          "catches" : "240",
+          "lastUpdated" : 1565451103957,
           "starred" : "true"
         },
         "Camiplex(5b)" : {
@@ -12467,9 +12746,13 @@
           "lastUpdated" : 1564173666182,
           "starred" : "true"
         },
+        "Cascade with every third a swap" : {
+          "catches" : "300",
+          "lastUpdated" : 1564701533759
+        },
         "Cascade(5b)" : {
-          "catches" : "500",
-          "lastUpdated" : 1563835038739,
+          "catches" : "1330",
+          "lastUpdated" : 1565189118442,
           "starred" : "true"
         },
         "Cascade(7b)" : {
@@ -12516,8 +12799,8 @@
           "starred" : "true"
         },
         "Circles Reflect Eternity" : {
-          "catches" : "35",
-          "lastUpdated" : 1564215123464
+          "catches" : "42",
+          "lastUpdated" : 1564688622294
         },
         "Clawed Reverse Cascade" : {
           "catches" : "100",
@@ -12528,6 +12811,10 @@
           "catches" : "90",
           "lastUpdated" : 1562258412868,
           "starred" : "true"
+        },
+        "Claws(Overhand) (1b)" : {
+          "catches" : "400",
+          "lastUpdated" : 1564705522380
         },
         "Collision Columns " : {
           "catches" : "156",
@@ -12555,7 +12842,8 @@
           "starred" : "true"
         },
         "Column Shower Variation" : {
-          "catches" : "100",
+          "catches" : "400",
+          "lastUpdated" : 1564701297969,
           "starred" : "true"
         },
         "ColumnOverVar" : {
@@ -12589,6 +12877,14 @@
           "lastUpdated" : 1561937107441,
           "starred" : "true"
         },
+        "Criss-Cross" : {
+          "catches" : "420",
+          "lastUpdated" : 1564873544511
+        },
+        "Cross Columns Inverted Box" : {
+          "catches" : "14",
+          "lastUpdated" : 1565308671118
+        },
         "Crossed 423 Fake Tennis" : {
           "catches" : "100",
           "lastUpdated" : 1564009826989
@@ -12609,6 +12905,10 @@
           "catches" : "100",
           "lastUpdated" : 1561462831517,
           "starred" : "true"
+        },
+        "Crossover Exchange Variation 1(2b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1564700442612
         },
         "Crossunder" : {
           "catches" : "300",
@@ -12640,14 +12940,26 @@
           "lastUpdated" : 1562745179142,
           "starred" : "true"
         },
+        "Double NBox" : {
+          "catches" : "140",
+          "lastUpdated" : 1564921849163
+        },
         "Double Yolked Sunny Side Up (version 1)(4b)" : {
           "catches" : 0,
           "lastUpdated" : 1561488610783,
           "starred" : "true"
         },
+        "Down the Back Tennis" : {
+          "catches" : "60",
+          "lastUpdated" : 1564688879464
+        },
         "Earl" : {
           "catches" : "75",
           "lastUpdated" : 1564010463297
+        },
+        "Every third shuffle switch" : {
+          "catches" : "90",
+          "lastUpdated" : 1564704670053
         },
         "Extended Box" : {
           "catches" : "400",
@@ -12714,12 +13026,17 @@
           "lastUpdated" : 1563980301375
         },
         "Gilligan's Box" : {
-          "catches" : "100",
+          "catches" : "460",
+          "lastUpdated" : 1565451594280,
           "starred" : "true"
         },
         "Half Backcross Cascade" : {
           "catches" : "140",
           "lastUpdated" : 1563908309576
+        },
+        "Half Boston Mess" : {
+          "catches" : "240",
+          "lastUpdated" : 1564955248956
         },
         "Half Mess 1" : {
           "catches" : 0,
@@ -12748,6 +13065,10 @@
           "catches" : "20",
           "lastUpdated" : 1561911900113,
           "starred" : "true"
+        },
+        "Half Slam Stacked Multiplex Box(5b)" : {
+          "catches" : "12",
+          "lastUpdated" : 1565480532869
         },
         "Half Waterfall" : {
           "catches" : "40",
@@ -12783,8 +13104,13 @@
           "lastUpdated" : 1562417520466,
           "starred" : "true"
         },
+        "Inside-outside same hand (1b)" : {
+          "catches" : "250",
+          "lastUpdated" : 1565525041799
+        },
         "Inverted Box" : {
-          "catches" : "100",
+          "catches" : "148",
+          "lastUpdated" : 1565311978093,
           "starred" : "true"
         },
         "Inverted Shower" : {
@@ -12806,8 +13132,8 @@
           "starred" : "true"
         },
         "Levels" : {
-          "catches" : "40",
-          "lastUpdated" : 1563974291762
+          "catches" : "300",
+          "lastUpdated" : 1565018832089
         },
         "Lisa(4b)" : {
           "catches" : "28",
@@ -12833,6 +13159,10 @@
           "catches" : "90",
           "lastUpdated" : 1564051458987
         },
+        "Matter Tells Space How To Bend" : {
+          "catches" : "63",
+          "lastUpdated" : 1564918796154
+        },
         "Mike's Mess" : {
           "catches" : "20",
           "starred" : "true"
@@ -12846,6 +13176,10 @@
           "catches" : "100",
           "starred" : "true"
         },
+        "Mills Mess Slam Variation" : {
+          "catches" : "140",
+          "lastUpdated" : 1565473673782
+        },
         "Mills Mess(4b)" : {
           "catches" : "150",
           "lastUpdated" : 1564135231484,
@@ -12855,6 +13189,18 @@
           "catches" : "6",
           "lastUpdated" : 1564161206136
         },
+        "Millsmess Normal Throw Clawed" : {
+          "catches" : "150",
+          "lastUpdated" : 1564705210523
+        },
+        "Millsmess Overarm Throw Clawed" : {
+          "catches" : "306",
+          "lastUpdated" : 1564706067555
+        },
+        "Millsmess underarm Throw Clawed" : {
+          "catches" : "150",
+          "lastUpdated" : 1564705081094
+        },
         "Motion is Tranquility" : {
           "baby" : "false",
           "catches" : "84",
@@ -12863,7 +13209,8 @@
           "starred" : "false"
         },
         "Multiplex Columns(5b)" : {
-          "catches" : "25",
+          "catches" : "75",
+          "lastUpdated" : 1565121692460,
           "starred" : "true"
         },
         "Multiplex Squeeze Mills Mess(4b)" : {
@@ -12875,6 +13222,14 @@
           "lastUpdated" : 1562838599141,
           "starred" : "true"
         },
+        "NBox Multiplex Variation(4b)" : {
+          "catches" : "28",
+          "lastUpdated" : 1565478495660
+        },
+        "Nature's Long Threaded Motion Tapestry" : {
+          "catches" : "96",
+          "lastUpdated" : 1564920410219
+        },
         "Neck Pass Penguin Tennis" : {
           "catches" : "30",
           "lastUpdated" : 1563979975676
@@ -12883,7 +13238,7 @@
           "catches" : "300",
           "lastUpdated" : 1563994143152
         },
-        "Neck pass-catch combo" : {
+        "Neckcross + Reverse Neckcross Combo" : {
           "catches" : "40",
           "lastUpdated" : 1563995362248
         },
@@ -12907,6 +13262,10 @@
           "catches" : "4",
           "lastUpdated" : 1564309588168
         },
+        "Outside-inside same hand (1b)" : {
+          "catches" : "30",
+          "lastUpdated" : 1565525235205
+        },
         "Over the Arm Mills Mess" : {
           "catches" : "120",
           "lastUpdated" : 1564217646467
@@ -12915,6 +13274,10 @@
           "catches" : "200",
           "lastUpdated" : 1561849018338,
           "starred" : "true"
+        },
+        "Park Mess" : {
+          "catches" : "36",
+          "lastUpdated" : 1565469818175
         },
         "Pendulum Drop" : {
           "catches" : "135",
@@ -12990,6 +13353,10 @@
           "ninja" : "false",
           "starred" : "false"
         },
+        "Relf's Revenge" : {
+          "catches" : "420",
+          "lastUpdated" : 1565075930642
+        },
         "Reverse 423" : {
           "catches" : "200",
           "lastUpdated" : 1561463918083,
@@ -12999,6 +13366,10 @@
           "catches" : "300",
           "lastUpdated" : 1561820319912,
           "starred" : "true"
+        },
+        "Reverse Backcross Tennis" : {
+          "catches" : "150",
+          "lastUpdated" : 1564688895782
         },
         "Reverse Backcrosses" : {
           "catches" : "10",
@@ -13031,10 +13402,18 @@
           "catches" : "210",
           "starred" : "true"
         },
+        "Reverse Slams" : {
+          "catches" : "75",
+          "lastUpdated" : 1564697220073
+        },
         "Reverse Synch Fountain(4b)" : {
           "catches" : "236",
           "lastUpdated" : 1564068190711,
           "starred" : "true"
+        },
+        "Reverse Takeouts" : {
+          "catches" : "26",
+          "lastUpdated" : 1564690453406
         },
         "Reverse Windmill" : {
           "catches" : "70",
@@ -13046,6 +13425,14 @@
           "lastUpdated" : 1561549636426,
           "starred" : "true"
         },
+        "Romeo's Revenge" : {
+          "catches" : "0",
+          "lastUpdated" : 1565077381284
+        },
+        "Rubenstein's Revenge" : {
+          "catches" : "165",
+          "lastUpdated" : 1565077942342
+        },
         "Sandbox Shuffle" : {
           "catches" : "120",
           "lastUpdated" : 1563110006747
@@ -13055,8 +13442,8 @@
           "lastUpdated" : 1564056540420
         },
         "Shower" : {
-          "catches" : "200",
-          "lastUpdated" : 1561130627355,
+          "catches" : "1100",
+          "lastUpdated" : 1565452755056,
           "starred" : "true"
         },
         "Shower Cascade" : {
@@ -13117,9 +13504,13 @@
           "catches" : "100",
           "starred" : "true"
         },
+        "Stacked Cascade(6b)" : {
+          "catches" : "154",
+          "lastUpdated" : 1565122235145
+        },
         "Stacked Multiplex Box(5b)" : {
-          "catches" : "30",
-          "lastUpdated" : 1561763987670,
+          "catches" : "66",
+          "lastUpdated" : 1565121174136,
           "starred" : "true"
         },
         "Stacked Multiplex Windmill(5b)" : {
@@ -13133,7 +13524,8 @@
           "starred" : "true"
         },
         "Sunny Side Up (David's Dilemma)" : {
-          "catches" : "60",
+          "catches" : "160",
+          "lastUpdated" : 1565452169000,
           "starred" : "true"
         },
         "Symmetric Active Crossover" : {
@@ -13145,8 +13537,12 @@
           "lastUpdated" : 1563374235128
         },
         "Symmetric Reverse Shapeshifter" : {
-          "catches" : "120",
-          "lastUpdated" : 1563567922734
+          "catches" : "490",
+          "lastUpdated" : 1564867059223
+        },
+        "Symmetric Slam Box Variant" : {
+          "catches" : "96",
+          "lastUpdated" : 1565481459762
         },
         "Sync Crossarm 1up 2up Tennis" : {
           "catches" : "102",
@@ -13191,10 +13587,26 @@
           "lastUpdated" : 1562744492503,
           "starred" : "true"
         },
+        "Takeouts + Broken Box" : {
+          "catches" : "12",
+          "lastUpdated" : 1564696005642
+        },
+        "Takeouts + Broken Box 2" : {
+          "catches" : "60",
+          "lastUpdated" : 1564696856000
+        },
+        "Takeouts + NBox" : {
+          "catches" : "2",
+          "lastUpdated" : 1564691709968
+        },
         "Takeouts + Orbits" : {
           "catches" : "30",
           "lastUpdated" : 1561051049554,
           "starred" : "true"
+        },
+        "Takeouts(4b)" : {
+          "catches" : "150",
+          "lastUpdated" : 1564690974237
         },
         "The Follow" : {
           "catches" : "200",
@@ -13221,8 +13633,8 @@
           "starred" : "true"
         },
         "Three-Way Split Multiplex(7b)" : {
-          "catches" : "45",
-          "lastUpdated" : 1562443912265,
+          "catches" : "99",
+          "lastUpdated" : 1565476155680,
           "starred" : "true"
         },
         "Tilted Tennis" : {
@@ -13240,10 +13652,26 @@
           "lastUpdated" : 1561840537122,
           "starred" : "true"
         },
+        "Tommi's Mess" : {
+          "catches" : "200",
+          "lastUpdated" : 1565474206231
+        },
+        "Tommi's Takeout Mess" : {
+          "catches" : "304",
+          "lastUpdated" : 1565474653754
+        },
         "Tommi's Trap" : {
           "catches" : "40",
           "lastUpdated" : 1561841332469,
           "starred" : "true"
+        },
+        "True Box" : {
+          "catches" : "48",
+          "lastUpdated" : 1565311751582
+        },
+        "Two in one hand with every third a swap" : {
+          "catches" : "175",
+          "lastUpdated" : 1564704949840
         },
         "Upcycling" : {
           "catches" : "120",
@@ -13254,6 +13682,10 @@
           "catches" : "60",
           "lastUpdated" : 1563998006480
         },
+        "Weave" : {
+          "catches" : "604",
+          "lastUpdated" : 1565074194106
+        },
         "Weaving 1up Crossing 3up Multiplex(4b)" : {
           "catches" : "400",
           "lastUpdated" : 1563918311603
@@ -13261,6 +13693,10 @@
         "Weaving a Collided Triangle(4b)" : {
           "catches" : "32",
           "lastUpdated" : 1563915364436
+        },
+        "Whirligig" : {
+          "catches" : "100",
+          "lastUpdated" : 1565468780086
         },
         "Wimpy(4b)" : {
           "catches" : "58",
@@ -13271,15 +13707,23 @@
           "catches" : "180",
           "lastUpdated" : 1564217986808
         },
+        "Windmill Takeouts" : {
+          "catches" : "21",
+          "lastUpdated" : 1564690598029
+        },
         "Windmill(4b)" : {
           "catches" : "30",
           "lastUpdated" : 1561731023697,
           "starred" : "true"
         },
         "Windshield Wipers" : {
-          "catches" : "40",
-          "lastUpdated" : 1561051226775,
+          "catches" : "422",
+          "lastUpdated" : 1564706826291,
           "starred" : "true"
+        },
+        "Wristdrop Shower" : {
+          "catches" : "8",
+          "lastUpdated" : 1564689312126
         },
         "Yo-Yo" : {
           "catches" : "140",
@@ -13314,6 +13758,11 @@
         "531" : {
           "catches" : 0,
           "starred" : "true"
+        },
+        "4({44})455({22})(5b)" : {
+          "baby" : "true",
+          "lastUpdated" : 1565053816632,
+          "starred" : "false"
         },
         "4b Windmills Mess(4b)" : {
           "lastUpdated" : 1564351592823,
@@ -13416,13 +13865,32 @@
           "starred" : "true"
         },
         "Pick And Fly" : {
-          "baby" : "true",
-          "lastUpdated" : 1564019964117,
+          "baby" : "false",
+          "catches" : "50",
+          "lastUpdated" : 1564771527999,
+          "ninja" : "true",
           "starred" : "true"
+        },
+        "R+L Factory" : {
+          "lastUpdated" : 1565129127450,
+          "ninja" : "true"
+        },
+        "R+L Fake Columns" : {
+          "lastUpdated" : 1565129121435,
+          "ninja" : "true"
         },
         "Reverse Cascade" : {
           "catches" : 0,
           "starred" : "true"
+        },
+        "Reverse Factory" : {
+          "baby" : "true",
+          "lastUpdated" : 1565129777991,
+          "starred" : "true"
+        },
+        "Reverse Slams" : {
+          "lastUpdated" : 1564886581966,
+          "ninja" : "false"
         },
         "Ripley's Rainbow" : {
           "catches" : 0,
@@ -13862,6 +14330,10 @@
           "lastUpdated" : 1562946973043,
           "starred" : "true"
         },
+        "423 Contortion Variation" : {
+          "lastUpdated" : 1565031674423,
+          "starred" : "true"
+        },
         "423ish Underarm Factory" : {
           "lastUpdated" : 1563016424183,
           "starred" : "true"
@@ -13869,6 +14341,10 @@
         "Alex" : {
           "catches" : 0,
           "lastUpdated" : 1561490381497,
+          "starred" : "true"
+        },
+        "Apeshoulder Tennis" : {
+          "lastUpdated" : 1565031612857,
           "starred" : "true"
         },
         "Asymmetric Yo-Yo Grafted onto Orka's Mess" : {
@@ -13953,6 +14429,10 @@
         "Relf's Revenge" : {
           "catches" : 0,
           "lastUpdated" : 1561489574923,
+          "starred" : "true"
+        },
+        "Reverse Backcross Tennis" : {
+          "lastUpdated" : 1565031648954,
           "starred" : "true"
         },
         "Takearound" : {
@@ -14149,6 +14629,17 @@
       "username" : "kein"
     },
     "-LkTy1H7e5P8B0XNaegv" : {
+      "myTricks" : {
+        "Cascade" : {
+          "catches" : "0",
+          "lastUpdated" : 1564776224658,
+          "ninja" : "false"
+        },
+        "Oy-Oy" : {
+          "baby" : "true",
+          "lastUpdated" : 1564776239235
+        }
+      },
       "username" : "Acropanther"
     },
     "-LkZC7Kp0SaTRFeLl4Do" : {
@@ -14164,13 +14655,103 @@
       "username" : "jansbond"
     },
     "-LlCYV7W7-7Yu0-kiKxq" : {
+      "myTricks" : {
+        "Cascade" : {
+          "catches" : "100",
+          "lastUpdated" : 1564721655337,
+          "ninja" : "true",
+          "starred" : "false"
+        },
+        "Claws(Overhand) (1b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1564721568389,
+          "ninja" : "true"
+        },
+        "Delayed Juggler's Tennis" : {
+          "lastUpdated" : 1564721933692,
+          "starred" : "true"
+        },
+        "Down the Back(1b)" : {
+          "baby" : "false",
+          "catches" : "0",
+          "lastUpdated" : 1564690846136,
+          "ninja" : "false",
+          "starred" : "false"
+        },
+        "Half Shower" : {
+          "catches" : "100",
+          "lastUpdated" : 1564721814374,
+          "ninja" : "true"
+        },
+        "Juggler's Tennis" : {
+          "catches" : "100",
+          "lastUpdated" : 1564721861873,
+          "ninja" : "true"
+        },
+        "Normal Reverse(1b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1564721748209,
+          "ninja" : "true"
+        },
+        "Normal(1b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1564721683295,
+          "ninja" : "true"
+        },
+        "Overarm Throw (1b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1564722020494,
+          "ninja" : "true",
+          "starred" : "false"
+        },
+        "Reverse Cascade" : {
+          "catches" : "100",
+          "lastUpdated" : 1564721763867,
+          "ninja" : "true"
+        },
+        "Takeouts  (1b)" : {
+          "catches" : "0",
+          "lastUpdated" : 1564690447483
+        },
+        "Underarm Catch (1b)" : {
+          "catches" : "50",
+          "lastUpdated" : 1564690919483,
+          "ninja" : "true"
+        }
+      },
       "username" : "Ali"
     },
     "-LlDSIsmfcHnxF4Cj1f3" : {
       "myTricks" : {
+        "1up 3up Tennis(4b)" : {
+          "lastUpdated" : 1564688912447
+        },
+        "744(5b)" : {
+          "baby" : "true",
+          "catches" : "60",
+          "lastUpdated" : 1564908420889,
+          "ninja" : "false",
+          "starred" : "false"
+        },
+        "753(5b)" : {
+          "baby" : "true",
+          "catches" : "15",
+          "lastUpdated" : 1564908358188,
+          "ninja" : "false"
+        },
+        "88441(5b)" : {
+          "baby" : "true",
+          "catches" : "5",
+          "lastUpdated" : 1564909651061
+        },
         "Cascade" : {
           "catches" : "1000",
           "lastUpdated" : 1564684961048,
+          "ninja" : "true"
+        },
+        "Fountain(4b)" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564864017368,
           "ninja" : "true"
         },
         "Half Shower" : {
@@ -14200,6 +14781,11 @@
           "ninja" : "false",
           "starred" : "false"
         },
+        "SynchFountain" : {
+          "catches" : "1000",
+          "lastUpdated" : 1564864191071,
+          "ninja" : "true"
+        },
         "The W" : {
           "catches" : "1000",
           "lastUpdated" : 1564685149358,
@@ -14207,16 +14793,187 @@
         }
       },
       "username" : "AndreyR"
+    },
+    "-LlFNUdfk9iE9J9YZKIe" : {
+      "username" : "jim995"
+    },
+    "-LlFVwkJRg-KR08qLvxQ" : {
+      "username" : "alex2706"
+    },
+    "-LlGZsfrmsjBtlpyM-jH" : {
+      "myTricks" : {
+        "Cascade(5b)" : {
+          "catches" : "1020",
+          "lastUpdated" : 1564736736542
+        },
+        "Cascade(7b)" : {
+          "catches" : "77",
+          "lastUpdated" : 1564736931268
+        },
+        "Six Ball Fountain(6b)" : {
+          "catches" : "100",
+          "lastUpdated" : 1564736864669
+        }
+      },
+      "username" : "Kinnijup"
+    },
+    "-LlHGQSMAvPnH8TMVsKu" : {
+      "username" : "hypercube"
+    },
+    "-LlRIBaMh_ilIw27TUqE" : {
+      "myTricks" : {
+        "Column Shower Variation" : {
+          "lastUpdated" : 1564916707507,
+          "starred" : "false"
+        },
+        "Columns" : {
+          "baby" : "false",
+          "lastUpdated" : 1564916732153,
+          "ninja" : "false",
+          "starred" : "false"
+        }
+      },
+      "username" : "mazanec"
+    },
+    "-LlVJEZhtQ9aFcxDzcTv" : {
+      "myTricks" : {
+        "Around the World(1b)" : {
+          "lastUpdated" : 1564984711759,
+          "starred" : "true"
+        },
+        "Chop (1b)" : {
+          "lastUpdated" : 1564984763902,
+          "starred" : "true"
+        },
+        "Claws(Overhand) (1b)" : {
+          "lastUpdated" : 1564984800349,
+          "starred" : "true"
+        },
+        "Columns same hand (1b)" : {
+          "lastUpdated" : 1564984374648,
+          "starred" : "true"
+        },
+        "Inside-outside same hand (1b)" : {
+          "lastUpdated" : 1564984468112,
+          "starred" : "true"
+        },
+        "Machine  (1b)" : {
+          "lastUpdated" : 1564984579701,
+          "starred" : "true"
+        },
+        "Normal Reverse(1b)" : {
+          "lastUpdated" : 1564984477358,
+          "starred" : "true"
+        },
+        "Normal(1b)" : {
+          "lastUpdated" : 1564984487497,
+          "starred" : "true"
+        },
+        "Outside-inside same hand (1b)" : {
+          "lastUpdated" : 1564984502272,
+          "starred" : "true"
+        },
+        "Overarm Throw (1b)" : {
+          "lastUpdated" : 1564984516383,
+          "starred" : "true"
+        },
+        "Straight Across (ss1) (1b)" : {
+          "lastUpdated" : 1564984530826,
+          "starred" : "true"
+        },
+        "Underarm Catch (1b)" : {
+          "lastUpdated" : 1564984662686,
+          "starred" : "true"
+        },
+        "Underarm Throw (1b)" : {
+          "lastUpdated" : 1564984684049,
+          "starred" : "true"
+        }
+      },
+      "username" : "dimnrlv"
+    },
+    "-Llc5AfbYYFG5_CHgh8i" : {
+      "myTricks" : {
+        "744(5b)" : {
+          "catches" : "45",
+          "lastUpdated" : 1565114806663
+        },
+        "Cascade" : {
+          "catches" : "1500",
+          "lastUpdated" : 1565114768406
+        },
+        "Cascade(5b)" : {
+          "catches" : "500",
+          "lastUpdated" : 1565114755032
+        },
+        "Mills Mess(5b)" : {
+          "catches" : "30",
+          "lastUpdated" : 1565114697006
+        },
+        "Shower(5b)" : {
+          "catches" : "20",
+          "lastUpdated" : 1565114736467
+        }
+      },
+      "username" : "Morpheus"
+    },
+    "-LldhrdeBK5g4V41GJEz" : {
+      "username" : "Michael.DeFalco"
+    },
+    "-Lm0LFOOlbUHmzGloINL" : {
+      "myTricks" : {
+        "441 Mills Mess" : {
+          "lastUpdated" : 1565538204278,
+          "starred" : "true"
+        },
+        "531 Mills Mess" : {
+          "lastUpdated" : 1565538226909,
+          "starred" : "true"
+        },
+        "Mills Mess(4b)" : {
+          "lastUpdated" : 1565538243580,
+          "starred" : "true"
+        }
+      },
+      "username" : "JorisL"
     }
   },
   "stats" : {
-    "totalCatchCount" : 54169
+    "totalCatchCount" : 78010
   },
   "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neckcross", "neck-pass", "headplant", "underarm-throw" ],
   "trickOfTheDay" : {
     "82" : {
       "date" : "82",
       "trick" : "Reverse Slams"
+    },
+    "83" : {
+      "date" : "83",
+      "trick" : "Cascade with a Bottom Dot(4b)"
+    },
+    "84" : {
+      "date" : "84",
+      "trick" : "Under the Leg Shadow Pass Combo"
+    },
+    "85" : {
+      "date" : "85",
+      "trick" : "603"
+    },
+    "86" : {
+      "date" : "86",
+      "trick" : "441 Mills Lemming"
+    },
+    "87" : {
+      "date" : "87",
+      "trick" : "534 with the 3s behind the neck(4b)"
+    },
+    "88" : {
+      "date" : "88",
+      "trick" : "(6,4x)(2x,4)(4x,6)(4,2x) with the 2x's as slams(4b)"
+    },
+    "89" : {
+      "date" : "89",
+      "trick" : "Truffle Shuffle"
     },
     "711" : {
       "date" : "711",
@@ -14305,6 +15062,18 @@
     "732" : {
       "date" : "732",
       "trick" : "Broken Shower"
+    },
+    "810" : {
+      "date" : "810",
+      "trick" : "Box(4b)"
+    },
+    "811" : {
+      "date" : "811",
+      "trick" : "Overarm Throw (1b)"
+    },
+    "812" : {
+      "date" : "812",
+      "trick" : "Box(4b)"
     }
   },
   "users" : {
@@ -14502,6 +15271,51 @@
       "email" : "1990andreyrysh@gmail.com",
       "lowerCaseUsername" : "andreyr",
       "username" : "AndreyR"
+    },
+    "-LlFNUdjnqR4dZ9_Db09" : {
+      "email" : "zsuperjames@gmail.com",
+      "lowerCaseUsername" : "jim995",
+      "username" : "jim995"
+    },
+    "-LlFVwkTPFZeMSLsv7VX" : {
+      "email" : "aleksejtihomirov0961@gmail.com",
+      "lowerCaseUsername" : "alex2706",
+      "username" : "alex2706"
+    },
+    "-LlGZsfviZuq4Ggd1Kxg" : {
+      "email" : "kinnijup@gmail.com",
+      "lowerCaseUsername" : "kinnijup",
+      "username" : "Kinnijup"
+    },
+    "-LlHGQSTa-TTjVCVEHqL" : {
+      "email" : "stenson124@gmail.com",
+      "lowerCaseUsername" : "hypercube",
+      "username" : "hypercube"
+    },
+    "-LlRIBaSpivek7QqzN4y" : {
+      "email" : "ondrejholub202@gmail.com",
+      "lowerCaseUsername" : "mazanec",
+      "username" : "mazanec"
+    },
+    "-LlVJEZp5MSgQiZ5TjrW" : {
+      "email" : "dimnrlv21@gmail.com",
+      "lowerCaseUsername" : "dimnrlv",
+      "username" : "dimnrlv"
+    },
+    "-Llc5AfiHDJnL57gRl_M" : {
+      "email" : "tassilo.neubauer@gmail.com",
+      "lowerCaseUsername" : "morpheus",
+      "username" : "Morpheus"
+    },
+    "-LldhrdisLwsjg9sJAex" : {
+      "email" : "challready@gmail.com",
+      "lowerCaseUsername" : "michael.defalco",
+      "username" : "Michael.DeFalco"
+    },
+    "-Lm0LFOTof16yO6Axbft" : {
+      "email" : "mail@jorisl.nl",
+      "lowerCaseUsername" : "jorisl",
+      "username" : "JorisL"
     }
   }
 }

@@ -1,4 +1,4 @@
-v 1.9
+v 2.0
 	Profile Screen: (Larger section below)
 		-upload image
 			ian has code for this
@@ -7,25 +7,23 @@ v 1.9
 		-a way to see info/demo of tricks when deciding what to use as related
 		-make consuming tags be added automatically in the list
 
-	-Comments in details
-	-there is no way to go to next line when making comments, so there is no way to do something like this:(this is the main reason I have wanted comments)
-			1)throw first ball straight up with arms crossed
-			2)uncross arms and throw 2b split multiplex with other hand
-			3)claw first ball and place on head
-			-It looks like we need to use textarea instead of input for multiline inputting, and then to preserve the newlines we need to do some sort of replace to <br>s and use the object system shown here:
-				https://reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml
-		
-	-Minor:
-		-since replies go to the bottom you dont see them when you click if there are already a few replies.
-			-Can be dealt with with an autoscroll to you comments
 
-	-Email Notifications
+	-when comment is submitted, return to original size
+	-autoscroll to comment when posted
+	-clear comment boxes when details page changes
+
+
+	-make details tags clickable to filtered list
+
 
 	-Think about leaderboard/details
 
 	Data fix scripts(see list below)
 
 =========
+
+	-allow line breaks to be seen in comments
+
 Profile Screen
 	Stats
 		eventual
