@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import store from './stores/store'
+import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
@@ -135,6 +136,20 @@ class Detail extends Component {
       });
     } 
     uiStore.editDetailTrick()
+  }
+  trickPropertyClicked=(propertyType, key)=>{
+    history.push('/tricklist')
+    uiStore.clearUI()
+    if (propertyType === 'contributor'){
+      filterStore.setContributors([{id: key,text: key,}]);
+    }else if (propertyType === 'ballNum'){
+      filterStore.setNumBalls([key])
+      
+    }else if (propertyType === 'tags'){
+      filterStore.setTags([{id: key,text: key,}]);      
+    }
+    uiStore.resetSelectedTrick()
+    uiStore.updateRootTricks()
   }
 
 	render() {   
@@ -297,7 +312,11 @@ class Detail extends Component {
                             <label className="detailLabel">Contributor </label>
                             {
                               detailTrick.contributor ? 
-                              detailTrick.contributor : <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
+                              <label className= "clickableProperty"
+                                     onClick = {()=>this.trickPropertyClicked('contributor', detailTrick.contributor)}>
+                                {detailTrick.contributor}
+                              </label> : 
+                              <a target="_" href='http://libraryOfJuggling.com'>Library Of Juggling</a>
                             }<br/>
                             {uiStore.showMoreInformation?
                               <div className="moreInfoDiv">                   

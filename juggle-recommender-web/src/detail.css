@@ -262,6 +262,12 @@
     font-size: 13px;
 }
 
+.clickableProperty{
+    color : blue;
+    font-size: 13px;
+    cursor: pointer;
+}
+
 .firstCommentIcon{
     font-weight: bold;
     color : blue;

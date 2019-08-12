@@ -2,19 +2,17 @@ To add to db:
 	-paper notes from workshops
 		-Freeze
 		-Machine
-	-put 4b and 5b mills tips in comments
-	-Put polyrhythms on skilldex, few basic ones, and add the tag
+		-inverted box(maybe just tips)
+	-a few basic ones polyrhythms
 	-Add claymotion tricks
 	-A trick like 'Asymmetric Reverse Slam Half Weaved Box(4b)', but is a symmetric box would be badass
-	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
-	-2 in 1 outside inside, 40
-	-4b outside inside asynch, 100
-	-4b out in sync, 50
 	-These are siteswaps for a couple of the switch patterns
 		(6x,2x)(2x,2x)
-		(6,2x)(2x,2x)*
+
+To film:
+	-2 in 1 outside inside, 40
+	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
 	-555551 - 24 catches
-	-6b half shower
 
 DB changes:
 	-Reverse chops should be takeaways or 1 beat inside orbits
@@ -85,6 +83,7 @@ Bugs:
 	-frame by frame doesnt hide controls for youtube
 
 Niceties:
+	-siteswaps should be searchable
 	-up arrow button that appears on list to zoom to top
 	-'Log in to join the discussion' message for comments of non-signed in users
 	-Juggledex text in top corner should go to home(stefan)
