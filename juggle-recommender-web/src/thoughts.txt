@@ -20,7 +20,6 @@ DB changes:
 External:
 	-Contact @loudjuggling if his tricks have names or if can easily get technical names
 	-look up haavard
-	-look up ofek snir and the lewis kenedy doc
 	-look up mura345
 	-Look into idiosensory
 	-Michael falkov video
@@ -35,12 +34,11 @@ Misc:
 New Details layout:
 	MINOR:
 		-Showing views, catches, number of users with catches for tricks would be cool
-		-contributor name should be clickable
 		-Tags in details should be clickable to filters
 		-a section that is 'other tricks with the same name'
 		-automatically remove relationships if they exist further down the line
 			-tell users when they go to add prereqs if they already exist further down the line. this probably needs to happen on submit.
-		-Chart that shows catches progress over time
+		-Chart that shows catches progress over time(like juggling edge)
 	MAJOR:
 		-A components section that is like prereqs, but specifically for throws/exchanges that are actually in the trick, not just similar but simpler
 		-PROBLEM: names are generally not descriptive, and being so many it is impossible to remember what they are,

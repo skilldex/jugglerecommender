@@ -145,7 +145,7 @@ class Detail extends Component {
     }else if (propertyType === 'ballNum'){
       filterStore.setNumBalls([key])
       
-    }else if (propertyType === 'tags'){
+    }else if (propertyType === 'tag'){
       filterStore.setTags([{id: key,text: key,}]);      
     }
     uiStore.resetSelectedTrick()
@@ -264,11 +264,13 @@ class Detail extends Component {
                            title="share your contributed tricks"
                         />
     const tags =  detailTrick && detailTrick.tags ? detailTrick.tags.sort().map((tag,i)=>{
-                    if(i < detailTrick.tags.length-1){
-                      return <span className="detailTag">{tag + ","}</span>
-                    }else{
-                      return <span className="detailTag">{tag}</span>
-                    }
+                      return <div>
+                              <label className= "clickableProperty"
+                                     onClick = {()=>this.trickPropertyClicked('tag', tag)}>
+                                {tag}
+                              </label>
+                               {i < detailTrick.tags.length-1 ?<span className="detailTag">,</span>:null}
+                             </div>
                   }) : null
     const related =  detailTrick && detailTrick.related ? detailTrick.related.sort().map((tag,i)=>{
                     if(i < detailTrick.related.length-1){
