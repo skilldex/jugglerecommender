@@ -1922,6 +1922,22 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BQfnG-AlBWd/"
     },
+    "3b Shower Over a Dot" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.3",
+      "explanation" : "",
+      "name" : "3b Shower Over a Dot",
+      "num" : "3",
+      "related" : [ "Reverse Slam 3b Shower Going Up Over a Dot(4b)", "Slam 3b Shower Coming Down On a Dot(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565616891060,
+      "timeUpdated" : 1565616891060,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 106,
+      "videoStartTime" : 103
+    },
     "4({44})455({22})(5b)" : {
       "contributor" : "juggling_vegan_",
       "dependents" : [ "[44](8b)" ],
@@ -2023,6 +2039,22 @@
       "timeSubmitted" : 1561509892297,
       "timeUpdated" : 1561509892297,
       "video" : "https://www.instagram.com/p/BRlhzdChJQ2/"
+    },
+    "423 Dots" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "4.8",
+      "explanation" : "",
+      "name" : "423 Dots",
+      "num" : "3",
+      "prereqs" : [ "Two Ball Half Shower Half Over A Dot" ],
+      "siteswap" : "423",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565606279413,
+      "timeUpdated" : 1565606279413,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "videoEndTime" : 340,
+      "videoStartTime" : 335
     },
     "423 Mills Mess" : {
       "contributor" : "tjthejuggler",
@@ -2722,8 +2754,42 @@
       "url" : "",
       "video" : ""
     },
+    "744 Dots Variation 1(5b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.5",
+      "explanation" : "",
+      "name" : "744 Dots Variation 1(5b)",
+      "num" : 5,
+      "prereqs" : [ "744(5b)", "Dots Asynch(4b)" ],
+      "related" : [ "744 Dots Variation 2(5b)" ],
+      "siteswap" : "744",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565618411014,
+      "timeUpdated" : 1565618468065,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 147,
+      "videoStartTime" : 142
+    },
+    "744 Dots Variation 2(5b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.8",
+      "explanation" : "",
+      "name" : "744 Dots Variation 2(5b)",
+      "num" : 5,
+      "related" : [ "744 Dots Variation 1(5b)" ],
+      "siteswap" : "744",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565618539202,
+      "timeUpdated" : 1565618539202,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 161,
+      "videoStartTime" : 157
+    },
     "744(5b)" : {
       "contributor" : "taylor_tries_",
+      "dependents" : [ "744 Dots Variation(5b)", "744 Dots Variation 1(5b)" ],
       "difficulty" : "5",
       "name" : "744(5b)",
       "num" : "5",
@@ -4417,6 +4483,23 @@
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Cascade.html"
     },
+    "Cascade Over Fake Dots(5b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Fountain Over Fake Dots(6b)" ],
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Cascade Over Fake Dots(5b)",
+      "num" : "5",
+      "prereqs" : [ "Tilted Cascade Over A Dot(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565617016010,
+      "timeUpdated" : 1565617852945,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 120,
+      "videoStartTime" : 113
+    },
     "Cascade on the Chest" : {
       "contributor" : "3ballpatterns_",
       "difficulty" : "3",
@@ -4446,11 +4529,11 @@
       "difficulty" : "3.4",
       "explanation" : "",
       "name" : "Cascade with every third a swap",
-      "num" : "3",
+      "num" : 3,
       "related" : [ "Two in one hand with every third a swap", "Every third shuffle switch" ],
-      "siteswap" : "",
+      "siteswap" : "(6x,2)(2,2)(2,6x)(2,2)(6x,2)(2x,2x)*",
       "timeSubmitted" : 1564139348108,
-      "timeUpdated" : 1564140426945,
+      "timeUpdated" : 1565610138259,
       "url" : "",
       "video" : "https://youtu.be/2Dm_VpGvAxg"
     },
@@ -5516,6 +5599,76 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BdD25zQgUmH/"
     },
+    "Dots Asynch(4b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "744 Dots Variation(5b)", "744 Dots Variation 1(5b)" ],
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Dots Asynch(4b)",
+      "num" : 4,
+      "prereqs" : [ "Dots Two in One Hand(2b)" ],
+      "related" : [ "Dots Synch(4b)", "Dots Split Synch(4b)" ],
+      "siteswap" : "4",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565605353057,
+      "timeUpdated" : 1565606959297,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 4,
+      "videoStartTime" : 1
+    },
+    "Dots Split Synch(4b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Dots Split Synch(4b)",
+      "num" : 4,
+      "prereqs" : [ "Dots Synch(4b)", "Synch Fountain Half Dots Alternating(4b)" ],
+      "related" : [ "Dots Asynch(4b)" ],
+      "siteswap" : "(4,4)",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565614496239,
+      "timeUpdated" : 1565614496239,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 14,
+      "videoStartTime" : 11
+    },
+    "Dots Synch(4b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Dots Split Synch(4b)" ],
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Dots Synch(4b)",
+      "num" : 4,
+      "prereqs" : [ "Dots Two in One Hand(2b)", "Synch Fountain Half Dots(4b)", "Synch Fountain Half Dots Alternating(4b)" ],
+      "related" : [ "Dots Asynch(4b)" ],
+      "siteswap" : "4",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565606865017,
+      "timeUpdated" : 1565606865017,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 7,
+      "videoStartTime" : 5
+    },
+    "Dots Two in One Hand(2b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Dots Asynch(4b)", "Synch Fountain Half Dots(4b)", "Dots Synch(4b)", "Two Ball Reverse Slam Shower Around A Dot", "Two in One With a Dots Above and Inside(4b)", "Reverse Slam 2b Shower Going Up Over a Dot", "Reverse Slam 2b Shower Coming Down On a Dot", "Slam 2b Shower Coming Down On a Dot(10b)", "Slam 2b Shower Coming Down On a Dot" ],
+      "difficulty" : "4.6",
+      "explanation" : "",
+      "name" : "Dots Two in One Hand(2b)",
+      "num" : 2,
+      "prereqs" : [ "Two Ball Half Shower Half Over A Dot" ],
+      "siteswap" : "40",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565605794336,
+      "timeUpdated" : 1565606035078,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "videoEndTime" : 367,
+      "videoStartTime" : 363
+    },
     "Dots with an Inverted Throw(4b)" : {
       "contributor" : "artifaxiom",
       "difficulty" : "7",
@@ -5564,6 +5717,23 @@
       "tags" : [ "carry" ],
       "timeSubmitted" : 1561032421399,
       "video" : "https://www.instagram.com/p/BK50ZMhDMuo/"
+    },
+    "Double Humped 3b Shower Around a Dot(4b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Double Humped 3b Shower Around a Dot(4b)",
+      "num" : "4",
+      "prereqs" : [ "Two Ball Reverse Slam Shower Around A Dot" ],
+      "related" : [ "Two in One With a Dots Above and Inside(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565615877641,
+      "timeUpdated" : 1565615877641,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 86,
+      "videoStartTime" : 82
     },
     "Double NBox" : {
       "contributor" : "3ballpatterns_",
@@ -6063,6 +6233,22 @@
       "timeUpdated" : 1561294634901,
       "video" : "https://www.instagram.com/p/BloPY-DAgjP/"
     },
+    "Fountain Over Fake Dots(6b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.2",
+      "explanation" : "",
+      "name" : "Fountain Over Fake Dots(6b)",
+      "num" : "6",
+      "prereqs" : [ "Cascade Over Fake Dots(5b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565617954033,
+      "timeUpdated" : 1565617954033,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 124,
+      "videoStartTime" : 120
+    },
     "Fountain(10b)" : {
       "contributor" : "tjthejuggler",
       "difficulty" : "10",
@@ -6533,6 +6719,20 @@
       "siteswap" : "4",
       "tags" : [ "crossed-arms" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallHalf-Mess.html"
+    },
+    "Half Overarm Bisector" : {
+      "contributor" : "stefan",
+      "difficulty" : "5",
+      "explanation" : "",
+      "name" : "Half Overarm Bisector",
+      "num" : "3",
+      "related" : [ "Overarm Bisector" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "asymmetric" ],
+      "timeSubmitted" : 1565549443312,
+      "timeUpdated" : 1565549443312,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B06hhn7A9i7/?igshid=1a709cvte32a"
     },
     "Half Overhead Box with Slanted Bottom" : {
       "contributor" : "juggling_vegan_",
@@ -8478,6 +8678,20 @@
       "timeSubmitted" : 1560858428344,
       "video" : "https://www.instagram.com/p/Bwjldz5Aiwd/"
     },
+    "Overarm Bisector" : {
+      "contributor" : "stefan",
+      "difficulty" : "5",
+      "explanation" : "",
+      "name" : "Overarm Bisector",
+      "num" : "3",
+      "related" : [ "Half Overarm Bisector" ],
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "symmetric" ],
+      "timeSubmitted" : 1565549342498,
+      "timeUpdated" : 1565549342498,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B1CDp7Lhr8l/?igshid=1awkwlukhe881"
+    },
     "Overarm Throw (1b)" : {
       "contributor" : "tjthejuggler",
       "dependents" : [ "Crossed Reverse Cascade" ],
@@ -9468,6 +9682,41 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BaJ4ysyhJol/"
     },
+    "Reverse Slam 2b Shower Going Up Over a Dot" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Two Ball Reverse Slam Shower Around A Dot", "Reverse Slam 3b Shower Going Up Over a Dot(4b)" ],
+      "difficulty" : "5.6",
+      "explanation" : "",
+      "name" : "Reverse Slam 2b Shower Going Up Over a Dot",
+      "num" : "3",
+      "prereqs" : [ "Dots Two in One Hand(2b)" ],
+      "related" : [ "Reverse Slam 2b Shower Coming Down On a Dot", "Slam 2b Shower Coming Down On a Dot(10b)", "Slam 2b Shower Coming Down On a Dot" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565616044208,
+      "timeUpdated" : 1565616044208,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 94,
+      "videoStartTime" : 91
+    },
+    "Reverse Slam 3b Shower Going Up Over a Dot(4b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.4",
+      "explanation" : "",
+      "name" : "Reverse Slam 3b Shower Going Up Over a Dot(4b)",
+      "num" : "4",
+      "prereqs" : [ "Reverse Slam 2b Shower Going Up Over a Dot" ],
+      "related" : [ "3b Shower Over a Dot" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565616307767,
+      "timeUpdated" : 1565616307767,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 101,
+      "videoStartTime" : 99
+    },
     "Reverse Slam with (2x,2x) above the High Throw" : {
       "contributor" : "artifaxiom",
       "difficulty" : "7",
@@ -10039,6 +10288,41 @@
       "prereqs" : [ "Fountain(4b)", "Three in One", "Cascade(5b)" ],
       "siteswap" : "6",
       "url" : "http://www.libraryofjuggling.com/Tricks/6balltricks/SixBallFountain.html"
+    },
+    "Slam 2b Shower Coming Down On a Dot" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Slam 3b Shower Coming Down On a Dot(4b)" ],
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Slam 2b Shower Coming Down On a Dot",
+      "num" : "3",
+      "prereqs" : [ "Dots Two in One Hand(2b)" ],
+      "related" : [ "Reverse Slam 2b Shower Going Up Over a Dot" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565616222410,
+      "timeUpdated" : 1565616568700,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 98,
+      "videoStartTime" : 95
+    },
+    "Slam 3b Shower Coming Down On a Dot(4b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.4",
+      "explanation" : "",
+      "name" : "Slam 3b Shower Coming Down On a Dot(4b)",
+      "num" : "4",
+      "prereqs" : [ "Slam 2b Shower Coming Down On a Dot(10b)", "Slam 2b Shower Coming Down On a Dot" ],
+      "related" : [ "3b Shower Over a Dot" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565616443205,
+      "timeUpdated" : 1565616532660,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 105,
+      "videoStartTime" : 103
     },
     "Slam Mills" : {
       "contributor" : "juggling_vegan_",
@@ -10871,6 +11155,40 @@
       "timeUpdated" : 1561206625343,
       "video" : "https://www.instagram.com/p/Bypq_wIgK4E/?utm_source=ig_web_copy_link\\"
     },
+    "Synch Fountain Half Dots Alternating(4b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Dots Synch(4b)", "Dots Split Synch(4b)" ],
+      "difficulty" : "5.8",
+      "explanation" : "",
+      "name" : "Synch Fountain Half Dots Alternating(4b)",
+      "num" : 4,
+      "prereqs" : [ "Synch Fountain Half Dots(4b)" ],
+      "siteswap" : "(4,4)",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565614724754,
+      "timeUpdated" : 1565614724754,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 39,
+      "videoStartTime" : 31
+    },
+    "Synch Fountain Half Dots(4b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Dots Synch(4b)", "Synch Fountain Half Dots Alternating(4b)" ],
+      "difficulty" : "5.0",
+      "explanation" : "",
+      "name" : "Synch Fountain Half Dots(4b)",
+      "num" : 4,
+      "prereqs" : [ "Dots Two in One Hand(2b)" ],
+      "siteswap" : "4",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565606558443,
+      "timeUpdated" : 1565606558443,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "videoEndTime" : 422,
+      "videoStartTime" : 418
+    },
     "Synch Pistons(4b)" : {
       "difficulty" : "4.2",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/4balltricks/synchpistons.gif",
@@ -11291,6 +11609,23 @@
       "timeUpdated" : 1561243221578,
       "video" : "https://www.instagram.com/p/BKMcGz2jw15/"
     },
+    "Tilted Cascade Over A Dot(4b)" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Cascade Over Two Dots(5b)", "Cascade Over Fake Dots(5b)" ],
+      "difficulty" : "5.6",
+      "explanation" : "",
+      "name" : "Tilted Cascade Over A Dot(4b)",
+      "num" : "4",
+      "prereqs" : [ "Two Ball Half Shower Half Over A Dot" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565614880869,
+      "timeUpdated" : 1565614880869,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 47,
+      "videoStartTime" : 41
+    },
     "Tilted Tennis" : {
       "contributor" : "stefan",
       "dependents" : [ "Upcycling" ],
@@ -11618,6 +11953,40 @@
       "tags" : [ "ss1", "crossed-arms" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Tsunami.html"
     },
+    "Two Ball Half Shower Half Over A Dot" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Dots Two in One Hand(2b)", "423 Dots", "Tilted Cascade Over A Dot(4b)", "Two Ball Reverse Slam Shower Around A Dot" ],
+      "difficulty" : "4.6",
+      "explanation" : "",
+      "name" : "Two Ball Half Shower Half Over A Dot",
+      "num" : "3",
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565606004807,
+      "timeUpdated" : 1565606130353,
+      "url" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "video" : "https://www.youtube.com/watch?v=o7omI45Tfg4",
+      "videoEndTime" : 295,
+      "videoStartTime" : 290
+    },
+    "Two Ball Reverse Slam Shower Around A Dot" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Double Humped 3b Shower Around a Dot(4b)" ],
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Two Ball Reverse Slam Shower Around A Dot",
+      "num" : "3",
+      "prereqs" : [ "Dots Two in One Hand(2b)", "Two Ball Half Shower Half Over A Dot", "Reverse Slam 2b Shower Going Up Over a Dot" ],
+      "related" : [ "Two in One With a Dots Above and Inside(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565615029357,
+      "timeUpdated" : 1565615029357,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 77,
+      "videoStartTime" : 71
+    },
     "Two High, Two Low" : {
       "contributor" : "artifaxiom",
       "dependents" : [ "44133 with a Two-Up, Two-Down Style" ],
@@ -11629,6 +11998,23 @@
       "timeSubmitted" : 1561077886537,
       "timeUpdated" : 1561079309362,
       "video" : "https://www.instagram.com/p/BcfnSoVn-ma/"
+    },
+    "Two in One With a Dots Above and Inside(4b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Two in One With a Dots Above and Inside(4b)",
+      "num" : "4",
+      "prereqs" : [ "Dots Two in One Hand(2b)" ],
+      "related" : [ "Two Ball Reverse Slam Shower Around A Dot", "Double Humped 3b Shower Around a Dot(4b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots", "asymmetric" ],
+      "timeSubmitted" : 1565615189735,
+      "timeUpdated" : 1565615189735,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=CMY4Jzn_gd0",
+      "videoEndTime" : 81,
+      "videoStartTime" : 79
     },
     "Two in one hand with every third a swap" : {
       "contributor" : "tjthejuggler",
@@ -12935,6 +13321,10 @@
           "catches" : "40",
           "lastUpdated" : 1563996864893
         },
+        "Dots Two in One Hand(2b)" : {
+          "catches" : "6",
+          "lastUpdated" : 1565608841799
+        },
         "Double Box" : {
           "catches" : "400",
           "lastUpdated" : 1562745179142,
@@ -13668,6 +14058,10 @@
         "True Box" : {
           "catches" : "48",
           "lastUpdated" : 1565311751582
+        },
+        "Two Ball Half Shower Half Over A Dot" : {
+          "catches" : "15",
+          "lastUpdated" : 1565608807239
         },
         "Two in one hand with every third a swap" : {
           "catches" : "175",
@@ -14939,7 +15333,7 @@
     }
   },
   "stats" : {
-    "totalCatchCount" : 78010
+    "totalCatchCount" : 78031
   },
   "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neckcross", "neck-pass", "headplant", "underarm-throw" ],
   "trickOfTheDay" : {
@@ -15074,6 +15468,10 @@
     "812" : {
       "date" : "812",
       "trick" : "Box(4b)"
+    },
+    "813" : {
+      "date" : "813",
+      "trick" : "Stefan's Mess"
     }
   },
   "users" : {
