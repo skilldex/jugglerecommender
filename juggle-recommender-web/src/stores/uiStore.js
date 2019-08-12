@@ -254,6 +254,7 @@ class UIStore {
 			const previoslySelected = document.getElementById(this.selectedTrick+"listCard");
 			previoslySelected.classList.toggle("expand");
 		}
+		filterStore.setSearchText(e.target.value)
 		this.searchInput = e.target.value 		
 		if(e.target.value === ""){
 			this.searchTrick = ""
@@ -412,7 +413,7 @@ class UIStore {
 				let passesSearch = false
 				if (this.searchTrick === '' || 
 					trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()) ||
-					trick.siteswap.toUpperCase().includes(this.searchTrick.toUpperCase())){
+					this.searchTrick.toUpperCase() === ("SS:"+trick.siteswap.toUpperCase())){
 					passesSearch = true					
 				}else{
 					if (trick.tags){

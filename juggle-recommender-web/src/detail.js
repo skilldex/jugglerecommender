@@ -137,16 +137,17 @@ class Detail extends Component {
     } 
     uiStore.editDetailTrick()
   }
-  trickPropertyClicked=(propertyType, key)=>{
+  trickPropertyClicked=(propertyType, property)=>{
     history.push('/tricklist')
     uiStore.clearUI()
     if (propertyType === 'contributor'){
-      filterStore.setContributors([{id: key,text: key,}]);
+      filterStore.setContributors([{id: property,text: property,}]);
     }else if (propertyType === 'ballNum'){
-      filterStore.setNumBalls([key])
-      
+      filterStore.setNumBalls([property])      
     }else if (propertyType === 'tag'){
-      filterStore.setTags([{id: key,text: key,}]);      
+      filterStore.setTags([{id: property,text: property,}]);      
+    }else if (propertyType === 'siteswap'){
+      filterStore.setSearchText("ss:"+property);
     }
     uiStore.resetSelectedTrick()
     uiStore.updateRootTricks()
@@ -330,7 +331,11 @@ class Detail extends Component {
                                 </label><br/>
                                 {detailTrick.siteswap ? 
                                   <div>
-                                    <label className="detailLabel">Siteswap: </label>{detailTrick.siteswap}<br/>
+                                    <label className="detailLabel">Siteswap: </label>
+                                    <label className= "clickableProperty"
+                                         onClick = {()=>this.trickPropertyClicked('siteswap', detailTrick.siteswap)}>
+                                    {detailTrick.siteswap}
+                                    </label><br/>
                                   </div> : null
                                 }
                                 {detailTrick && detailTrick.url ?

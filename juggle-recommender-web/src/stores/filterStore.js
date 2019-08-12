@@ -78,6 +78,14 @@ class FilterStore {
 		this.tags = []
 		this.minCatches = 0
 		this.maxCatches = 1000000
+		this.searchText = null
+	}
+	@action setSearchText=(searchText)=>{
+		console.log('searchText',searchText)
+		this.searchText = searchText
+		uiStore.setSearchInput(searchText)
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
 	}
 
 	@action setDemoType=(demoType)=>{

@@ -200,7 +200,10 @@ class MainTagsBar extends Component {
                       "sortDropdownButton "}
                       onClick={(e)=>this.sortDirectionClicked('descending')}>Descending</button>
             </div> : null                        
-
+            let searchTextToShow = uiStore.searchInput
+            if (filterStore.searchText){
+              searchTextToShow = filterStore.searchText
+            }
       return (
         <div className="searchAndFilterSection">
           <div className="inputSection">
@@ -210,9 +213,10 @@ class MainTagsBar extends Component {
               alt="searchIcon" 
               onClick={()=>{this.searchInput.focus()}}
             />
-            <input 
+            <input
+              id = "searchTextInput" 
               className="searchInput" 
-              value={uiStore.searchInput}
+              value= {searchTextToShow}
               onChange={uiStore.searchInputChange}
               ref={ref => this.searchInput = ref}
             />
