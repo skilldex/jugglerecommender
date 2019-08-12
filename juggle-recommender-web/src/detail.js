@@ -323,7 +323,11 @@ class Detail extends Component {
                             {uiStore.showMoreInformation?
                               <div className="moreInfoDiv">                   
                                 <label className="detailLabel">Difficulty </label>{detailTrick.difficulty} / 10<br/>
-                                <label className="detailLabel"># of Balls </label>{detailTrick.num}<br/>
+                                <label className="detailLabel"># of Balls </label>
+                                <label className= "clickableProperty"
+                                     onClick = {()=>this.trickPropertyClicked('ballNum', detailTrick.num)}>
+                                {detailTrick.num}
+                                </label><br/>
                                 {detailTrick.siteswap ? 
                                   <div>
                                     <label className="detailLabel">Siteswap: </label>{detailTrick.siteswap}<br/>

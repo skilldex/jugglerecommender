@@ -411,7 +411,8 @@ class UIStore {
 				}
 				let passesSearch = false
 				if (this.searchTrick === '' || 
-					trick.name.toUpperCase().includes(this.searchTrick.toUpperCase())){
+					trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()) ||
+					trick.siteswap.toUpperCase().includes(this.searchTrick.toUpperCase())){
 					passesSearch = true					
 				}else{
 					if (trick.tags){

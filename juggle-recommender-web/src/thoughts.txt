@@ -33,9 +33,10 @@ Misc:
 
 New Details layout:
 	MINOR:
+		-once siteswaps are searchable, they should be clickable in details
+		-ballNum should be clickable
 		-Showing views, catches, number of users with catches for tricks would be cool
-		-Tags in details should be clickable to filters
-		-a section that is 'other tricks with the same name'
+		-a section that is 'other tricks that sometimes are referred to by this name'
 		-automatically remove relationships if they exist further down the line
 			-tell users when they go to add prereqs if they already exist further down the line. this probably needs to happen on submit.
 		-Chart that shows catches progress over time(like juggling edge)
