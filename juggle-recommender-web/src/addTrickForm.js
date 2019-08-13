@@ -10,8 +10,6 @@ import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
 import downArrow from './images/down-arrow.svg'
 
-
-
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -552,7 +550,7 @@ class AddTrickForm extends Component {
 					          delimiters={delimiters}
 					          handleDelete={this.handleTagDelete}
 					          handleAddition={this.handleTagAddition}
-					          handleTagClick={this.handleTagClick}
+					          handleTagClick={this.handleTagDelete}
 					     />
 		const prereqsInput = <ReactTags
 			                      classNames={{tagInputField: 'addTrickReactTags',}}
@@ -565,7 +563,7 @@ class AddTrickForm extends Component {
 						          delimiters={delimiters}
 						          handleDelete={this.handlePrereqDelete}
 						          handleAddition={this.handlePrereqAddition}
-						          handleTagClick={this.handlePrereqClick}
+						          handleTagClick={this.handlePrereqDelete}
 					          />
 		const relatedInput = <ReactTags
 								  classNames={{tagInputField: 'addTrickReactTags',}}
@@ -579,7 +577,7 @@ class AddTrickForm extends Component {
 						          delimiters={delimiters}
 						          handleDelete={this.handleRelatedDelete}
 						          handleAddition={this.handleRelatedAddition}
-						          handleTagClick={this.handleRelatedClick}
+						          handleTagClick={this.handleRelatedDelete}
 					          />
 		const postreqsInput = <ReactTags
 								  classNames={{tagInputField: 'addTrickReactTags',}}
@@ -593,7 +591,7 @@ class AddTrickForm extends Component {
 						          delimiters={delimiters}
 						          handleDelete={this.handlePostreqDelete}
 						          handleAddition={this.handlePostreqAddition}
-						          handleTagClick={this.handlePostreqClick}
+						          handleTagClick={this.handlePostreqDelete}
 					          />
 		const titleText = uiStore.editingDetailTrick ? "Edit Pattern" : "Add Pattern"
 		const explanationInput = <textarea className="textarea" 

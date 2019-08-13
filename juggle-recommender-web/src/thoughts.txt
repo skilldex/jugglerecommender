@@ -70,10 +70,11 @@ New Details layout:
 
 Bugs:
 	-add pattern form and filter often adds more than one tag with single click on smartphone (stefan)
-		-find out for sure if fat finger problem, if so try to add empty space between
+		-maybe fixed by making item height higher
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
 	-changing a pattern name shows 'sorry...' message, and then crashes
+		-figure out exactly when this happens
 	-siteswap recognizer picks up words sometimes, like 'can' since we look for any word in the name.
 		-possible partial solution is to only check if the first word is a siteswap, not look everywhere for a siteswap
 	-tricklist shows behind add pattern form

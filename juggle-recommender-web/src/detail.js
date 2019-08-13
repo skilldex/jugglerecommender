@@ -69,6 +69,12 @@ class Detail extends Component {
     uiStore.toggleShowExplanation()
   }
   copyDetailUrl=()=>{
+      if(!store.isLocalHost){
+        ReactGA.event({
+            category: 'detail',
+            action: 'share',
+        });
+      }
       const textField = document.createElement('textarea')
       const url = window.location.href 
       textField.innerText = url

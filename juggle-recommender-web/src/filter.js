@@ -17,7 +17,6 @@ import starIcon from './images/starIcon.svg'
 import catchesIcon from './images/catchesIcon.svg'
 import ReactGA from 'react-ga';
 
-
 const KeyCodes = {
   comma: 188,
   enter: 13,
@@ -249,7 +248,7 @@ class Filter extends Component {
 							          tags={filterStore.tags}
 							          handleDelete={filterStore.handleDelete}
 							          handleAddition={this.handleAddition}
-							          handleTagClick={this.handleTagClick}/>
+							          handleTagClick={filterStore.handleDelete}/>
 							    </div>
 							</div>
 		const contributorSection = 
@@ -268,7 +267,7 @@ class Filter extends Component {
 				          tags={filterStore.contributors}
 				          handleDelete={filterStore.handleContributorTagDelete}
 				          handleAddition={this.handleContributorTagAddition}
-				          handleTagClick={this.handleContributorTagClick}/>
+				          handleTagClick={filterStore.handleContributorTagDelete}/>
 				    </div>
 				</div>
 	 	const numbersOfBalls = ['1','2','3','4','5','6','7','8','9','10','11']
@@ -368,7 +367,7 @@ class Filter extends Component {
 				          delimiters={delimiters}
 				          handleDelete={filterStore.handleDemoTypeDelete}
 				          handleAddition={this.handleDemoTypeTagAddition}
-				          handleTagClick={this.handleDemoTypeTagClick}/>
+				          handleTagClick={filterStore.handleDemoTypeDelete}/>
 				    </div>
 				</div>
 
