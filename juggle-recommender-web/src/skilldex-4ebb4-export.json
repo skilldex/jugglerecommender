@@ -18,6 +18,38 @@
       },
       "trickId" : "Reverse Slams",
       "user" : "AndreyR"
+    },
+    "-Lm5agiSyDI_RggRaz2F" : {
+      "comment" : "TIP: Try to get all balls to go down the center of the pattern.",
+      "date" : "Mon Aug 12 2019 17:13:09 GMT+0100 (British Summer Time)",
+      "parentPost" : true,
+      "previousKeys" : "",
+      "trickId" : "Mills Mess(4b)",
+      "user" : "tjthejuggler"
+    },
+    "-Lm5apvAPz1MtD6GNjpf" : {
+      "comment" : "TIP: Count 1,2,3 as you throw so you know which ball you are having trouble with.",
+      "date" : "Mon Aug 12 2019 17:13:47 GMT+0100 (British Summer Time)",
+      "parentPost" : true,
+      "previousKeys" : "",
+      "trickId" : "Mills Mess(4b)",
+      "user" : "tjthejuggler"
+    },
+    "-Lm5aws3oe7KU2BaI9nF" : {
+      "comment" : "TIP: Count 1,2,3 as you throw so you know which ball you are having trouble with.",
+      "date" : "Mon Aug 12 2019 17:14:15 GMT+0100 (British Summer Time)",
+      "parentPost" : true,
+      "previousKeys" : "",
+      "trickId" : "Mills Mess(5b)",
+      "user" : "tjthejuggler"
+    },
+    "-Lm5b3ENCte-7gKY0FRD" : {
+      "comment" : "TIP: Practice 4b Mills extra high and extra low.",
+      "date" : "Mon Aug 12 2019 17:14:46 GMT+0100 (British Summer Time)",
+      "parentPost" : true,
+      "previousKeys" : "",
+      "trickId" : "Mills Mess(5b)",
+      "user" : "tjthejuggler"
     }
   },
   "leaderboard" : {
@@ -2042,6 +2074,7 @@
     },
     "423 Dots" : {
       "contributor" : "artifaxiom",
+      "dependents" : [ "Inline 3" ],
       "difficulty" : "4.8",
       "explanation" : "",
       "name" : "423 Dots",
@@ -4911,6 +4944,20 @@
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Columns.html"
     },
+    "Columns Corkscrew Inverted Box" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.4",
+      "explanation" : "",
+      "name" : "Columns Corkscrew Inverted Box",
+      "num" : "3",
+      "prereqs" : [ "Inverted Box" ],
+      "siteswap" : "",
+      "tags" : [ "meta-pattern" ],
+      "timeSubmitted" : 1565628321171,
+      "timeUpdated" : 1565628321171,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0_dXOYg7Fg/"
+    },
     "Columns Mess 1" : {
       "contributor" : "3ballpatterns_",
       "dependents" : [ "Sing's Mess" ],
@@ -5567,6 +5614,20 @@
       "timeUpdated" : 1561078837826,
       "video" : "https://www.instagram.com/p/BmQjCdnAmAL/"
     },
+    "Disco Drop Variation" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "5.1",
+      "explanation" : "",
+      "name" : "Disco Drop Variation",
+      "num" : "3",
+      "prereqs" : [ "Flying Disco Drop" ],
+      "siteswap" : "",
+      "tags" : [ "carry", "machine" ],
+      "timeSubmitted" : 1565627361286,
+      "timeUpdated" : 1565627361286,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0KJJlZg7I5/"
+    },
     "Distorted Sunny Side Up" : {
       "contributor" : "lucasadverse",
       "dependents" : [ "Symmetrical Distorted Sunny Side Up", "Symmetrical Distorted Sunny Side Up" ],
@@ -5660,6 +5721,7 @@
       "name" : "Dots Two in One Hand(2b)",
       "num" : 2,
       "prereqs" : [ "Two Ball Half Shower Half Over A Dot" ],
+      "related" : [ "Inline 3" ],
       "siteswap" : "40",
       "tags" : [ "dots" ],
       "timeSubmitted" : 1565605794336,
@@ -6145,7 +6207,7 @@
       "video" : "https://www.instagram.com/p/BwhDP6cA6ch/"
     },
     "Flying Disco Drop" : {
-      "dependents" : [ "Asymmetric Lemming Drop" ],
+      "dependents" : [ "Asymmetric Lemming Drop", "Disco Drop Variation" ],
       "difficulty" : "4",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/flyingdiscodrop.gif",
       "name" : "Flying Disco Drop",
@@ -6748,6 +6810,20 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BdZJVWkBSGU/"
     },
+    "Half Overhead Inline 3 With Bottom Switch" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.5",
+      "explanation" : "",
+      "name" : "Half Overhead Inline 3 With Bottom Switch",
+      "num" : 3,
+      "prereqs" : [ "Inline 3 Bottom Switches", "Inline 3 With Reverse Grip" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565627893894,
+      "timeUpdated" : 1565627893894,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0qrlqPguu4/"
+    },
     "Half Shower" : {
       "dependents" : [ "Reverse Cascade", "Shower", "Statue of Liberty", "Half Shower(4b)" ],
       "difficulty" : "2.3",
@@ -6965,6 +7041,20 @@
       "siteswap" : "7131",
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/High-LowShower.html"
     },
+    "Highish Lowish Inline 3(4b)" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.9",
+      "explanation" : "",
+      "name" : "Highish Lowish Inline 3(4b)",
+      "num" : "4",
+      "prereqs" : [ "Inline 3" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565627782860,
+      "timeUpdated" : 1565627782860,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0jI25CgaPH/"
+    },
     "Hopscotch" : {
       "contributor" : "noslowerdna_",
       "difficulty" : "4",
@@ -7029,6 +7119,74 @@
       "timeSubmitted" : 4,
       "timeUpdated" : 1561206723004,
       "video" : "https://www.instagram.com/p/BnkaN4Ij7iw/?utm_source=ig_web_copy_link"
+    },
+    "Inline 3" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : [ "Inline 3 With Reverse Grip", "Inline 3 Bottom Switches", "Inline 3 Top Switches", "Highish Lowish Inline 3(4b)" ],
+      "difficulty" : "6.0",
+      "explanation" : "",
+      "name" : "Inline 3",
+      "num" : "3",
+      "prereqs" : [ "423 Dots" ],
+      "related" : [ "Dots Two in One Hand(2b)" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565626977328,
+      "timeUpdated" : 1565626977328,
+      "url" : "https://www.youtube.com/watch?v=kJNGbY3LRJE",
+      "video" : "https://www.youtube.com/watch?v=kJNGbY3LRJE",
+      "videoEndTime" : 15,
+      "videoStartTime" : 6
+    },
+    "Inline 3 Bottom Switches" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Half Overhead Inline 3 With Bottom Switch" ],
+      "difficulty" : "5.9",
+      "explanation" : "",
+      "name" : "Inline 3 Bottom Switches",
+      "num" : 3,
+      "prereqs" : [ "Inline 3" ],
+      "related" : [ "Inline 3 Top Switches" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565627582807,
+      "timeUpdated" : 1565627582807,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0jDfqzgA_a/",
+      "videoEndTime" : 8,
+      "videoStartTime" : 3
+    },
+    "Inline 3 Top Switches" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.1",
+      "explanation" : "",
+      "name" : "Inline 3 Top Switches",
+      "num" : 3,
+      "prereqs" : [ "Inline 3" ],
+      "related" : [ "Inline 3 Bottom Switches" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565627623963,
+      "timeUpdated" : 1565627623963,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0jDfqzgA_a/",
+      "videoEndTime" : 13,
+      "videoStartTime" : 8
+    },
+    "Inline 3 With Reverse Grip" : {
+      "contributor" : "artifaxiom",
+      "dependents" : [ "Half Overhead Inline 3 With Bottom Switch" ],
+      "difficulty" : "6.8",
+      "explanation" : "",
+      "name" : "Inline 3 With Reverse Grip",
+      "num" : 3,
+      "prereqs" : [ "Inline 3" ],
+      "siteswap" : "",
+      "tags" : [ "dots" ],
+      "timeSubmitted" : 1565627153787,
+      "timeUpdated" : 1565627153787,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/BzG4qnYAYgt/"
     },
     "Inside Inverted Switched Box" : {
       "contributor" : "3ballpatterns_",
@@ -7127,7 +7285,7 @@
       "video" : "https://www.instagram.com/p/BdOE7eLAOWv/"
     },
     "Inverted Box" : {
-      "dependents" : [ "Inspired by the Stars", "Deep in Alien Territory", "Silly Trick", "Inverted Sprung 312", "Upsidedown Shuffle", "Inside Inverted Switched Box", "Cross 2xed Inverted Box", "Shape Disruption of a Liked Orphan", "Inverted Sprung Cascade(4b)", "Reverse Slam with (2x,2x) above the High Throw", "Inverted Sprung Cascade(4b)", "Cross 2xed Inverted Box", "DNI-Box", "Wristburning Jambalaya", "Inverted Box Slam Combo", "Double Over the Top Slam", "Cross Slam Self Slam", "Cross Columns Inverted Box" ],
+      "dependents" : [ "Inspired by the Stars", "Deep in Alien Territory", "Silly Trick", "Inverted Sprung 312", "Upsidedown Shuffle", "Inside Inverted Switched Box", "Cross 2xed Inverted Box", "Shape Disruption of a Liked Orphan", "Inverted Sprung Cascade(4b)", "Reverse Slam with (2x,2x) above the High Throw", "Inverted Sprung Cascade(4b)", "Cross 2xed Inverted Box", "DNI-Box", "Wristburning Jambalaya", "Inverted Box Slam Combo", "Double Over the Top Slam", "Cross Slam Self Slam", "Cross Columns Inverted Box", "Columns Corkscrew Inverted Box" ],
       "difficulty" : "4.8",
       "explanation" : "",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/invertedbox.gif",
@@ -10018,6 +10176,20 @@
       "videoEndTime" : 420,
       "videoStartTime" : 412
     },
+    "Self Slams Around Outside Inside 2 in 1" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Self Slams Around Outside Inside 2 in 1",
+      "num" : "3",
+      "prereqs" : [ "Symmetric Active Crossover" ],
+      "siteswap" : "",
+      "tags" : [ "self-slam" ],
+      "timeSubmitted" : 1565628196450,
+      "timeUpdated" : 1565628196450,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0--ezqgbZo/"
+    },
     "Semi-Forked Semi-Mess(4b)" : {
       "contributor" : "jameschance_",
       "difficulty" : "6",
@@ -10852,7 +11024,7 @@
     },
     "Symmetric Active Crossover" : {
       "contributor" : "jahvorsky_",
-      "dependents" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry", "Motion is Tranquility", "Circles Reflect Eternity", "Everything Has Rhythm", "Retrograde Locomotion is Key", "Syncopated Jubilee", "Supersymmetry is Still a Mystery", "Strange Loops Blend Together", "Möbius Ladders are Vertex-Transitive", "Optimizing The Duality Gap", "Natural Harmonics Are Quintessential" ],
+      "dependents" : [ "Matter Tells Space How To Bend", "Nature's Long Threaded Motion Tapestry", "Motion is Tranquility", "Circles Reflect Eternity", "Everything Has Rhythm", "Retrograde Locomotion is Key", "Syncopated Jubilee", "Supersymmetry is Still a Mystery", "Strange Loops Blend Together", "Möbius Ladders are Vertex-Transitive", "Optimizing The Duality Gap", "Natural Harmonics Are Quintessential", "Self Slams Around Outside Inside 2 in 1" ],
       "difficulty" : "5.2",
       "explanation" : "",
       "name" : "Symmetric Active Crossover",
@@ -10904,6 +11076,19 @@
       "siteswap" : "3[34]032",
       "tags" : [ "columns", "carry", "multiplex" ],
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/SymmetricGeorgianShuffle.html"
+    },
+    "Symmetric Jellyfish" : {
+      "contributor" : "artifaxiom",
+      "difficulty" : "6.3",
+      "explanation" : "",
+      "name" : "Symmetric Jellyfish",
+      "num" : "3",
+      "siteswap" : "",
+      "tags" : [ "symmetric", "claw", "1up2up" ],
+      "timeSubmitted" : 1565628003789,
+      "timeUpdated" : 1565628003789,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B0567TsgJft/"
     },
     "Symmetric Lemming Drop" : {
       "contributor" : "jahvorsky_",
@@ -13913,6 +14098,10 @@
           "lastUpdated" : 1562744276595,
           "starred" : "true"
         },
+        "Stefan's Mess" : {
+          "catches" : "30",
+          "lastUpdated" : 1565625418611
+        },
         "Sunny Side Up (David's Dilemma)" : {
           "catches" : "160",
           "lastUpdated" : 1565452169000,
@@ -15330,12 +15519,15 @@
         }
       },
       "username" : "JorisL"
+    },
+    "-Lm5KAqSbkCa9HFfgkMK" : {
+      "username" : "thomasgold84"
     }
   },
   "stats" : {
-    "totalCatchCount" : 78031
+    "totalCatchCount" : 78061
   },
-  "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neckcross", "neck-pass", "headplant", "underarm-throw" ],
+  "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neckcross", "neck-pass", "headplant", "underarm-throw", "meta-pattern", "polyrhythm" ],
   "trickOfTheDay" : {
     "82" : {
       "date" : "82",
@@ -15714,6 +15906,11 @@
       "email" : "mail@jorisl.nl",
       "lowerCaseUsername" : "jorisl",
       "username" : "JorisL"
+    },
+    "-Lm5KAqUCgCUROcOn2Lv" : {
+      "email" : "thomasgold84@gmail.com",
+      "lowerCaseUsername" : "thomasgold84",
+      "username" : "thomasgold84"
     }
   }
 }

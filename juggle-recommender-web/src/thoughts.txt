@@ -28,18 +28,19 @@ Misc:
 	-I needed added as admin to GA
 	-all users emails are in db on github
 	-from stefan
-		-'I havn't searched patterns for a while nad had a hard time finding the list was looking for the word 'searching' or a magnifying glass icon' (stefan)
+		-'I havn't searched patterns for a while and had a hard time finding the list was looking for the word 'searching' or a magnifying glass icon' (stefan)
 		-On the add patternform: if the submit button is grey you could give hints what the user is missing
+			-followup with stefan
 
 New Details layout:
+	VOTING:
+		add a suggestion action
 	MINOR:
-		-once siteswaps are searchable, they should be clickable in details
-		-ballNum should be clickable
 		-Showing views, catches, number of users with catches for tricks would be cool
 		-a section that is 'other tricks that sometimes are referred to by this name'
 		-automatically remove relationships if they exist further down the line
 			-tell users when they go to add prereqs if they already exist further down the line. this probably needs to happen on submit.
-		-Chart that shows catches progress over time(like juggling edge)
+		-Chart that shows catches progress over time(like jugglingedge)
 	MAJOR:
 		-A components section that is like prereqs, but specifically for throws/exchanges that are actually in the trick, not just similar but simpler
 		-PROBLEM: names are generally not descriptive, and being so many it is impossible to remember what they are,
@@ -68,9 +69,9 @@ New Details layout:
 			-if an item has low score, but there is no other items, then it is the main item
 
 Bugs:
-	-add pattern form and filter often adds more than one tag with single click on spartphone (stefan)
+	-add pattern form and filter often adds more than one tag with single click on smartphone (stefan)
+		-find out for sure if fat finger problem, if so try to add empty space between
 	-Expanded library of juggling gifs are too big
-	-Refreshing on skilldex.org/home gives me a 404 error
 	-5.4 coloring is green, 5.5 is yellow, there is no fade there
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
@@ -79,10 +80,12 @@ Bugs:
 		-possible partial solution is to only check if the first word is a siteswap, not look everywhere for a siteswap
 	-tricklist shows behind add pattern form
 	-old gif shows while new gif is loading
+		-try immediately setting it to null(if not already done)
 	-frame by frame doesnt hide controls for youtube
 
 Niceties:
-	-siteswaps should be searchable
+	-add share buttons to GA
+	-look into share message on phone, maybe tap target shouold be made larger
 	-up arrow button that appears on list to zoom to top
 	-'Log in to join the discussion' message for comments of non-signed in users
 	-Juggledex text in top corner should go to home(stefan)
@@ -95,6 +98,7 @@ Niceties:
 	-there should be a way to add gifs even if pattern name is not a siteswap
 	-An easy way to combine 2 patterns
 		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan
+	-a way for the user to switch props would be nice, so catches can be seperately kept without needing to make seperate accounts
 
 Other Dexes:
 	-there could be a section of tricks that are similar feel from one prop to another.(ejc stranger suggested)

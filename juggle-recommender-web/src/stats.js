@@ -58,6 +58,7 @@ class Stats extends Component {
 	statsLabelButtonClicked=(tagType, key)=>{
 		history.push('/tricklist')
 		uiStore.clearUI()
+		filterStore.resetAllFilters()
 		if (tagType === 'contributor'){
 			filterStore.setContributors([{id: key,text: key,}]);
 		}else if (tagType === 'ballNum'){

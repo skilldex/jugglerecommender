@@ -147,7 +147,8 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
     copyFilterURL=()=>{
-    	if (Object.keys(uiStore.rootTricks).length === 0){
+    	console.log('uiStore.rootTricks',uiStore.rootTricks)
+    	if (uiStore.rootTricks.length === 0){
     			alert("Unable to create share URL when no results found.") 
     			return
     		}

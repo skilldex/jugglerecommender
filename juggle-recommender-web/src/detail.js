@@ -140,6 +140,7 @@ class Detail extends Component {
   trickPropertyClicked=(propertyType, property)=>{
     history.push('/tricklist')
     uiStore.clearUI()
+    filterStore.resetAllFilters()
     if (propertyType === 'contributor'){
       filterStore.setContributors([{id: property,text: property,}]);
     }else if (propertyType === 'ballNum'){
