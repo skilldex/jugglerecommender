@@ -74,6 +74,12 @@ class Profile extends Component {
  
 	}
     copyContributorURL=()=>{
+      if(!store.isLocalHost){
+        ReactGA.event({
+            category: 'profile',
+            action: 'share',
+        });
+      }
       const textField = document.createElement('textarea')
       const url = window.location.origin + "/?contributor=" + authStore.user.username +",&"
       textField.innerText = url

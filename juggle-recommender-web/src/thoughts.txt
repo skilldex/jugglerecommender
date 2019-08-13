@@ -82,7 +82,6 @@ Bugs:
 	-frame by frame doesnt hide controls for youtube
 
 Niceties:
-	-add share buttons to GA
 	-look into share message on phone, maybe tap target shouold be made larger
 	-up arrow button that appears on list to zoom to top
 	-'Log in to join the discussion' message for comments of non-signed in users

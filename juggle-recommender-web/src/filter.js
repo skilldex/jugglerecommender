@@ -15,6 +15,7 @@ import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
 import starIcon from './images/starIcon.svg'
 import catchesIcon from './images/catchesIcon.svg'
+import ReactGA from 'react-ga';
 
 
 const KeyCodes = {
@@ -152,6 +153,12 @@ class Filter extends Component {
     			alert("Unable to create share URL when no results found.") 
     			return
     		}
+    	if(!store.isLocalHost){
+	        ReactGA.event({
+	            category: 'filter',
+	            action: 'share',
+	        });
+	    }
     	let urlText = "/?"
     	if (filterStore.contributors.length > 0){
 			urlText = urlText + "contributor="    		
