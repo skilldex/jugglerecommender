@@ -83,7 +83,6 @@ Niceties:
 	-look into share message on phone, maybe tap target shouold be made larger
 	-up arrow button that appears on list to zoom to top
 	-'Log in to join the discussion' message for comments of non-signed in users
-	-Juggledex text in top corner should go to home(stefan)
 	-Sort contributors and tags on stats page(stefan)
 	-Update about page, especially instructions(stefan)
 	-A wanted list where people can post tricks they would like to have

@@ -43,6 +43,7 @@ class Header extends Component {
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick()
 			}
+
 			
 		}else if(paneFlag == "list"){
 			history.push('/tricklist')
@@ -76,6 +77,20 @@ class Header extends Component {
     mouseLeaveExpandedMenu=()=>{
       uiStore.setMouseInExpandedMenu(false)
     }
+    titleClicked=()=>{
+    	history.push('/home')
+			uiStore.clearUI()
+			uiStore.setShowHomeScreen(true)
+			if(uiStore.addingTrick){
+			 	uiStore.toggleAddingTrick()
+			}
+		if(!store.isLocalHost){
+			ReactGA.event({
+				  category: 'title',
+				  action: 'clicked',
+			});
+		}
+    }
     render(){
     	const expandMenu = uiStore.showExpandedMenu ? 
 						<div className="expandedMenu"
@@ -99,7 +114,7 @@ class Header extends Component {
         		<div>
 	                <div className="header">
 						<div >
-							<span className="title">Juggledex</span><span className="version">v1.9</span>
+							<label className="title" onClick={() => this.titleClicked()}>Juggledex</label><span className="version">v1.9</span>
 					    </div>
 					    <img className="hamburger" onClick={() => uiStore.toggleExpandedMenu()} src={hamburger}/>
 					    
