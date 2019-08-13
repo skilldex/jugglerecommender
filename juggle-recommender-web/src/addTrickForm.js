@@ -146,7 +146,9 @@ class AddTrickForm extends Component {
 			if (!this.state.gifUrl || 
 				(this.state.gifUrl && !this.state.gifUrl.includes('library'))){
 				const siteswapValidityChecker = Validate(name)
-				if (siteswapValidityChecker !== 'invalid'){
+				if (siteswapValidityChecker !== 'invalid' &&
+					name.length > 1 &&
+					/\d/.test(name)){
 					this.setState({num : siteswapValidityChecker[0]})
 					this.setState({siteswap : name})	
 					if (wordsInName.length === 1){

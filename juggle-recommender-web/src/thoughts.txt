@@ -69,18 +69,15 @@ New Details layout:
 			-if an item has low score, but there is no other items, then it is the main item
 
 Bugs:
-	-add pattern form and filter often adds more than one tag with single click on smartphone (stefan)
-		-maybe fixed by making item height higher
+	-line 395 in store uses 'fullDB[3]' to reference myTricks, this is no good if DB changes, but it doesnt work when i use 'fullDB[myTricks]'
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
-	-changing a pattern name shows 'sorry...' message, and then crashes
-		-figure out exactly when this happens
-	-siteswap recognizer picks up words sometimes, like 'can' since we look for any word in the name.
-		-possible partial solution is to only check if the first word is a siteswap, not look everywhere for a siteswap
 	-tricklist shows behind add pattern form
 	-old gif shows while new gif is loading
 		-try immediately setting it to null(if not already done)
 	-frame by frame doesnt hide controls for youtube
+	-MAYBE FIXED
+		-add pattern form and filter often adds more than one tag with single click on smartphone (stefan)
 
 Niceties:
 	-look into share message on phone, maybe tap target shouold be made larger

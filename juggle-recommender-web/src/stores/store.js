@@ -392,7 +392,7 @@ class Store {
 		let fullDBRef = firebase.database().ref()
 		fullDBRef.on('value', resp =>{
         	const fullDB = this.snapshotToArray(resp)
-        	allUsersMyTricks = fullDB['myTricks']
+        	allUsersMyTricks = fullDB[3]
         	Object.keys(allUsersMyTricks).forEach((user)=>{
         		if (user['myTricks']){
 					Object.keys(user['myTricks']).forEach((trickKey)=>{
