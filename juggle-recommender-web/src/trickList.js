@@ -5,6 +5,9 @@ import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
 import downArrow from './images/down-arrow.svg'
 import catchesIcon from './images/catchesIcon.svg'
+import thumbsUpIcon from './images/thumbsUp.svg'
+import thumbsDownIcon from './images/thumbsDown.svg'
+
 import Demo from './demo'
 import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
@@ -93,10 +96,14 @@ class TrickList extends Component {
 	  return (string.length === 1) ? '0' + string : string;
 	}
 							
+	vote=(trickKey, direction)=>{
+		store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
+	}
 	render() {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
-		this.props.tricksToList.forEach((trickKey, index)=>{
+		Object.keys(this.props.tricksToList).forEach((trickKey, index)=>{
+			console.log("list key",trickKey)
 			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return
 			}
@@ -143,11 +150,12 @@ class TrickList extends Component {
 											value={parseFloat(trick.difficulty).toFixed(1)} 
 											width={50} height={44} 
 										/>	
-					
+				console.log("list type", this.props.listType)
 				const expandTrickButtonClass =  
 					uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
+				const listCardClass = this.props.listType == "main" ? "listCard" : "listCard detailListCard"
 				tricks.push(
-					<div className="listCard" 
+					<div className= {listCardClass}
 						 key={trickKey + "div"} 
 						 id={trickKey + "listCard"}
 						 onClick={(e)=>{this.openDetail(trickKey)}}
@@ -166,6 +174,21 @@ class TrickList extends Component {
 										<b>Tags:</b> {tags}
 									</div>	
 								</div>
+								{ this.props.listType !== "main" ? 
+									<div className="thumbLine">
+										<span>relevance</span>
+										<label>245</label>
+										<img className="thumbIcon" alt="" src={thumbsUpIcon} onClick={(e)=>{
+											e.stopPropagation()
+											this.vote(trickKey,"upvoters")
+										}}/>
+										<img className="thumbIcon" alt="" src={thumbsDownIcon} onClick={(e)=>{
+											e.stopPropagation()
+											this.vote(trickKey,"downvoters")
+										}}/>
+									</div> : 
+									null
+								}
 							</div>
 							<div 
 								className="expandButtonDiv"

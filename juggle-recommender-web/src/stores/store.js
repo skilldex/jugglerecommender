@@ -58,6 +58,46 @@ class Store {
 		})
 		return contributorTags
 	}
+	@action vote(parentTrick, relatedTrickKey,listType, direction){
+		const oppositeDirection = direction == "upvoters" ? "downvoters" : "upvoters" 
+		if(listType == "postreqs"){ listType = "dependents"}
+		const relatedTrick = this.library[parentTrick][listType][relatedTrickKey]
+		console.log("opposite", oppositeDirection)
+		if(!relatedTrick[direction]){
+			relatedTrick[direction] = [authStore.user.username]
+		}
+		if(relatedTrick[direction].includes(authStore.user.username)){
+			relatedTrick[direction] = relatedTrick[direction].filter((value)=>{
+			    return value != authStore.user.username;
+			});
+		}else{
+			relatedTrick[direction].push(authStore.user.username)
+		}
+		if(
+			relatedTrick[oppositeDirection] && 
+			relatedTrick[oppositeDirection].includes(authStore.user.username)
+		){
+			relatedTrick[oppositeDirection] = relatedTrick[oppositeDirection].filter((value)=>{
+			    return value != authStore.user.username;
+			});
+			const oppositeVotesRef = firebase.database().ref(
+				'library/'+parentTrick+ 
+				"/"+listType + 
+				"/" + relatedTrickKey + 
+				"/" + oppositeDirection
+			)
+			oppositeVotesRef.set(relatedTrick[oppositeDirection])
+		}
+		
+		const relatedTricksRef = firebase.database().ref(
+			'library/'+parentTrick+ 
+			"/"+listType + 
+			"/" + relatedTrickKey + 
+			"/" + direction
+		)
+		console.log(relatedTrick, relatedTricksRef)
+		relatedTricksRef.set(relatedTrick[direction])
+	}
 	@action getCommentsByTrickId(trickId){
 		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
 		let parentComments = []
