@@ -71,7 +71,6 @@ New Details layout:
 Bugs:
 	-add pattern form and filter often adds more than one tag with single click on smartphone (stefan)
 		-find out for sure if fat finger problem, if so try to add empty space between
-	-Expanded library of juggling gifs are too big
 	-5.4 coloring is green, 5.5 is yellow, there is no fade there
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
