@@ -98,7 +98,11 @@ class TrickList extends Component {
 	}
 							
 	vote=(trickKey, direction)=>{
-		store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
+		if(authStore.user){
+			store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
+		}else{
+			alert("Please login to vote")
+		}
 	}
 	checkIfVoted=(votes)=>{
 		console.log("check if voted",votes,authStore.user)
