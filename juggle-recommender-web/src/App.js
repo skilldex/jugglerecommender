@@ -29,9 +29,10 @@ const unlisten = history.listen((location, action) => {
   	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick()
 	}
-	uiStore.clearUI()
+	//uiStore.clearUI()
   	const detailTrick = {...store.library[location.state.detail]}
 	detailTrick.id = location.state.detail
+	console.log("setting from URL")
   	uiStore.setDetailTrick(detailTrick)	
   }
   if(location.pathname == "/home" || location.pathname == "/" ){
@@ -161,6 +162,7 @@ class App extends Component {
 			  	if (store.library[trickKey]){
 				  	const detailTrick = {...store.library[trickKey]}
 					detailTrick.id = trickKey
+					console.log("setting from url", trickKey)
 				  	uiStore.setDetailTrick(detailTrick)			
 			  		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})	  		
 			  	}else{
@@ -173,7 +175,7 @@ class App extends Component {
 				}
 			}
 			if(window.location.pathname.includes("home")){
-			  	uiStore.clearUI()
+			  	//uiStore.clearUI()
 				uiStore.setShowHomeScreen(true)
 				if(uiStore.addingTrick){
 				 	uiStore.toggleAddingTrick()
@@ -337,6 +339,7 @@ class App extends Component {
 					            </SlidingPane>
 		const detail = uiStore.editingDetailTrick ? null : 
 						uiStore.detailTrick ? <Detail/> : null
+
 		return (
 			<div
 				className="main" 

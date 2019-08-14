@@ -102,7 +102,10 @@ class TrickList extends Component {
 	render() {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
-		Object.keys(this.props.tricksToList).forEach((trickKey, index)=>{
+	 	const detailTrick = uiStore.detailTrick ? store.library[uiStore.detailTrick.id] : null
+	 	const listType = this.props.listType == "postreqs" ? "dependents" : this.props.listType
+	 	console.log("LIST detail trick", detailTrick, this.props.tricksToList)
+		this.props.tricksToList.forEach((trickKey, index)=>{
 			console.log("list key",trickKey)
 			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return
@@ -154,6 +157,12 @@ class TrickList extends Component {
 				const expandTrickButtonClass =  
 					uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
 				const listCardClass = this.props.listType == "main" ? "listCard" : "listCard detailListCard"
+				let numUpvoters = 0
+				let numDownvoters = 0
+				if(detailTrick){
+					numUpvoters = detailTrick[listType][trickKey].upvoters ? detailTrick[listType][trickKey].upvoters.length : 0
+					numDownvoters = detailTrick[listType][trickKey].downvoters ? detailTrick[listType][trickKey].downvoters.length : 0
+				}
 				tricks.push(
 					<div className= {listCardClass}
 						 key={trickKey + "div"} 
@@ -177,7 +186,7 @@ class TrickList extends Component {
 								{ this.props.listType !== "main" ? 
 									<div className="thumbLine">
 										<span>relevance</span>
-										<label>245</label>
+										<label>{ numUpvoters - numDownvoters}</label>
 										<img className="thumbIcon" alt="" src={thumbsUpIcon} onClick={(e)=>{
 											e.stopPropagation()
 											this.vote(trickKey,"upvoters")

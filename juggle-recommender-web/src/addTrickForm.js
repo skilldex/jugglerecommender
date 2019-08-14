@@ -421,15 +421,18 @@ class AddTrickForm extends Component {
 			var tags = this.state.tags.map(function(item) {
 				return item['text'];
 			});
-			var prereqs = this.state.prereqs.map(function(item) {
-				return item['id'];
+			const prereqs = {}
+			const related = {}
+			const postreqs = {}
+			this.state.prereqs.forEach((item)=>{
+				prereqs[item['id']] = { source : "contributed"}
 			});
-			var related = this.state.related.map(function(item) {
-				return item['id'];
+			this.state.related.forEach((item)=>{
+				related[item['id']] = { source : "contributed"}
+			});
+			this.state.postreqs.forEach((item)=>{
+				postreqs[item['id']] = { source : "contributed"}
 			});	
-			var postreqs = this.state.postreqs.map(function(item) {
-				return item['id'];
-			});		
 
 			let suffix = ""
 			if (this.state.num.toString() !== "3"){

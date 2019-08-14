@@ -543,19 +543,21 @@ class Store {
 								relation == "prereqs" ? "dependents" :
 								"prereqs"
 		if(trick[relation]){
-			trick[relation].forEach((item)=>{
-				const relatedTrick = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
-				if(!this.library[relatedTrick]){
-					console.log("problem with ",relatedTrick)
+			Object.keys(trick[relation]).forEach((key)=>{
+				const relatedTrickKey = key.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
+				if(!this.library[relatedTrickKey]){
+					console.log("problem with ",relatedTrickKey)
 				}
-				if(this.library[relatedTrick]){
-					if (!this.library[relatedTrick][relatedProperty]){
-						this.library[relatedTrick][relatedProperty] = []	
+				if(this.library[relatedTrickKey]){
+					if (!this.library[relatedTrickKey][relatedProperty]){
+						this.library[relatedTrickKey][relatedProperty] = []	
 					}
-					if (!this.library[relatedTrick][relatedProperty].includes(trick.name)){
-						this.library[relatedTrick][relatedProperty].push(trick.name)
-						let relatedWriteRef = firebase.database().ref('library/'+relatedTrick+'/'+relatedProperty)
-				    	relatedWriteRef.set([...this.library[relatedTrick][relatedProperty]]);
+					if (!this.library[relatedTrickKey][relatedProperty][trick.name]){
+						this.library[relatedTrickKey][relatedProperty][trick.name] = {
+							source : "automatic"
+						}
+						let relatedWriteRef = firebase.database().ref('library/'+relatedTrickKey+'/'+relatedProperty)
+				    	relatedWriteRef.set({...this.library[relatedTrickKey][relatedProperty]});
 	    		    }
         		}
 			})

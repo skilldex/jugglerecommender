@@ -152,7 +152,11 @@ class Detail extends Component {
     uiStore.resetSelectedTrick()
     uiStore.updateRootTricks()
   }
-
+  getKeysFromRelatedObject=(related)=>{
+    return Object.keys(related).map((key)=>{
+      return key
+    })
+  }
 	render() {   
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
@@ -273,13 +277,7 @@ class Detail extends Component {
                                {i < detailTrick.tags.length-1 ?<span className="detailTag">,</span>:null}
                              </div>
                   }) : null
-    const related =  detailTrick && detailTrick.related ? detailTrick.related.sort().map((tag,i)=>{
-                    if(i < detailTrick.related.length-1){
-                      return <span className="detailTag">{tag + ","}</span>
-                    }else{
-                      return <span className="detailTag">{tag}</span>
-                    }
-                  }) : null
+
     let tutorialSite
     //TODO could be replaced with regex that gets everything between first two .s
     if (detailTrick && detailTrick.url && detailTrick.url.includes('.')){
@@ -379,7 +377,9 @@ class Detail extends Component {
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Prereqs</h3>
             <TrickList 
-              tricksToList = {detailTrick.prereqs}
+              tricksToList = {
+                this.getKeysFromRelatedObject(detailTrick.prereqs)
+              }
               listType = "prereqs"
             /> 
           </div> : null}
@@ -387,7 +387,9 @@ class Detail extends Component {
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Related</h3>
             <TrickList 
-              tricksToList = {detailTrick.related}
+              tricksToList = {
+                this.getKeysFromRelatedObject(detailTrick.related)
+              }
               listType = "related"
             />
           </div> : null}
@@ -395,7 +397,9 @@ class Detail extends Component {
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Postreqs</h3>
             <TrickList 
-              tricksToList = {detailTrick.dependents}
+              tricksToList = {
+                this.getKeysFromRelatedObject(detailTrick.dependents)
+              }
               listType = "postreqs"
             />
           </div> : null}
