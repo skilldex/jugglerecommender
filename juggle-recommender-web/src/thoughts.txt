@@ -25,7 +25,6 @@ External:
 	-Michael falkov video
 
 Misc:
-	-I needed added as admin to GA
 	-all users emails are in db on github
 	-from stefan
 		-'I havn't searched patterns for a while and had a hard time finding the list was looking for the word 'searching' or a magnifying glass icon' (stefan)
@@ -36,6 +35,11 @@ New Details layout:
 	VOTING:
 		add a suggestion action
 	MINOR:
+		-hover over message for flair
+		-allow for different types of catch inputting, modifiers
+			-next to catches a way to change/input new modifiers
+			-it should remember the most recent modifier used
+			-where exactly should it be in the ui?
 		-Showing views, catches, number of users with catches for tricks would be cool
 		-a section that is 'other tricks that sometimes are referred to by this name'
 		-automatically remove relationships if they exist further down the line
@@ -73,15 +77,16 @@ Bugs:
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
 	-tricklist shows behind add pattern form
-	-old gif shows while new gif is loading
-		-try immediately setting it to null(if not already done)
 	-frame by frame doesnt hide controls for youtube
 	-MAYBE FIXED
 		-add pattern form and filter often adds more than one tag with single click on smartphone (stefan)
+	-old gif shows while new gif is loading
+		-try immediately setting it to null(if not already done)
 
 Niceties:
-	-look into share message on phone, maybe tap target shouold be made larger
+	-look into share message on phone, maybe tap target should be made larger
 	-up arrow button that appears on list to zoom to top
+	-hide top bar on scroll down, show top bar on scroll up(like in reddit is fun app)
 	-'Log in to join the discussion' message for comments of non-signed in users
 	-Sort contributors and tags on stats page(stefan)
 	-Update about page, especially instructions(stefan)
@@ -101,6 +106,7 @@ Maybes:
 	-make a ga for catches input
 	-give edit trick its own url/ga
 	-make a ga for delete trick click
+	-make search bar always stay at top of screen and searching takes user to pattern list
 
 Frame by Frame / Slomo:
 	-should loop while in slomo whether it is going forward or backward
