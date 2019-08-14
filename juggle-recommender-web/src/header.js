@@ -114,7 +114,7 @@ class Header extends Component {
         		<div>
 	                <div className="header">
 						<div >
-							<label className="title" onClick={() => this.titleClicked()}>Juggledex</label><span className="version">v1.9</span>
+							<label className="title" onClick={() => this.titleClicked()}>Juggledex</label><span className="version">v2.0</span>
 					    </div>
 					    <img className="hamburger" onClick={() => uiStore.toggleExpandedMenu()} src={hamburger}/>
 					    
