@@ -58,48 +58,51 @@ class Store {
 		})
 		return contributorTags
 	}
-	@action vote(parentTrick, relatedTrickKey,listType, direction){
-		const oppositeDirection = direction == "upvoters" ? "downvoters" : "upvoters" 
+	@action vote(parentTrick, relatedTrickKey,listType, voteDirection){
+		const oppositeVoteDirection = voteDirection == "upvoters" ? "downvoters" : "upvoters" 
 		if(listType == "postreqs"){ listType = "dependents"}
-		const relatedTrick = this.library[parentTrick][listType][relatedTrickKey]
+		const relatedTrick = {...this.library[parentTrick][listType][relatedTrickKey]}
 		//first voter
-		if(!relatedTrick[direction]){
-			relatedTrick[direction] = []
+		console.log("original", relatedTrick[voteDirection], "opposite", relatedTrick[oppositeVoteDirection])
+		if(!relatedTrick[voteDirection]){
+			relatedTrick[voteDirection] = []
 		}
 		//voter already included
-		if(relatedTrick[direction] && relatedTrick[direction].includes(authStore.user.username)){
-			relatedTrick[direction] = relatedTrick[direction].filter((value)=>{
+		if(relatedTrick[voteDirection] && relatedTrick[voteDirection].includes(authStore.user.username)){
+			relatedTrick[voteDirection] = relatedTrick[voteDirection].filter((value)=>{
+				console.log("filtering", value, authStore.user.username)
 			    return value != authStore.user.username;
 			});
 		}else{
 			//voter not included
-			relatedTrick[direction].push(authStore.user.username)
+			relatedTrick[voteDirection].push(authStore.user.username)
 		}
-		//voter included in opposite direction
+		//voter included in opposite voteDirection
 		if(
-			relatedTrick[oppositeDirection] && 
-			relatedTrick[oppositeDirection].includes(authStore.user.username)
+			relatedTrick[oppositeVoteDirection] && 
+			relatedTrick[oppositeVoteDirection].includes(authStore.user.username)
 		){
-			relatedTrick[oppositeDirection] = relatedTrick[oppositeDirection].filter((value)=>{
+			relatedTrick[oppositeVoteDirection] = relatedTrick[oppositeVoteDirection].filter((value)=>{
 			    return value != authStore.user.username;
 			});
 			const oppositeVotesRef = firebase.database().ref(
 				'library/'+parentTrick+ 
 				"/"+listType + 
 				"/" + relatedTrickKey + 
-				"/" + oppositeDirection
+				"/" + oppositeVoteDirection
 			)
-			oppositeVotesRef.set(relatedTrick[oppositeDirection])
+			oppositeVotesRef.set([...relatedTrick[oppositeVoteDirection]])
 		}
 		//Set vote
-		const relatedTricksRef = firebase.database().ref(
+		const votesRef = firebase.database().ref(
 			'library/'+parentTrick+ 
 			"/"+listType + 
 			"/" + relatedTrickKey + 
-			"/" + direction
+			"/" + voteDirection
 		)
-		console.log(relatedTrick, relatedTricksRef)
-		relatedTricksRef.set(relatedTrick[direction])
+		console.log("final",toJS(relatedTrick[voteDirection]))
+		votesRef.set([...relatedTrick[voteDirection]])
+
 	}
 	@action getCommentsByTrickId(trickId){
 		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
@@ -304,7 +307,10 @@ class Store {
 		return new Promise(resolve => {
 			let libraryRef = firebase.database().ref('library/')
 			libraryRef.on('value', resp =>{
-	        	this.setLibrary(this.snapshotToObject(resp))
+				console.log("library changed")
+				const library = this.snapshotToObject(resp)
+				console.log(library["441"])
+	        	this.setLibrary(library)
 	        	this.setPatternCount(this.snapshotToArray(resp).length)
 	        	resolve()
 	        })
