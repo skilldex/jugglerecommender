@@ -140,7 +140,7 @@ class TrickList extends Component {
 				const modifiedTrickDifficulty = 
 					((trick.difficulty-filterStore.difficultyRange[0]) /
 					(filterStore.difficultyRange[1]-filterStore.difficultyRange[0]))*10
-				const r = Math.floor(modifiedTrickDifficulty >= 5? 255:255-(modifiedTrickDifficulty)* 51);
+				const r = Math.floor(modifiedTrickDifficulty >= 5? 255:(modifiedTrickDifficulty)* 51);
 			    const g = Math.floor(modifiedTrickDifficulty <= 5? 255:255-(modifiedTrickDifficulty-5)* 51);
 			    const b = 0;
 			    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);

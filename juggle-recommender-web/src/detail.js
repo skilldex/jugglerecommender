@@ -69,6 +69,12 @@ class Detail extends Component {
     uiStore.toggleShowExplanation()
   }
   copyDetailUrl=()=>{
+      if(!store.isLocalHost){
+        ReactGA.event({
+            category: 'detail',
+            action: 'share',
+        });
+      }
       const textField = document.createElement('textarea')
       const url = window.location.href 
       textField.innerText = url
@@ -140,6 +146,7 @@ class Detail extends Component {
   trickPropertyClicked=(propertyType, property)=>{
     history.push('/tricklist')
     uiStore.clearUI()
+    filterStore.resetAllFilters()
     if (propertyType === 'contributor'){
       filterStore.setContributors([{id: property,text: property,}]);
     }else if (propertyType === 'ballNum'){

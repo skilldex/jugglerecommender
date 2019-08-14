@@ -196,7 +196,7 @@ div.ReactTags__selected span.ReactTags__tag {
 }
 div.ReactTags__selected a.ReactTags__remove {
     color: #aaa;
-    margin-left: 5px;
+    margin-left: 0px;
     cursor: pointer;
 }
 
@@ -204,7 +204,6 @@ div.ReactTags__selected a.ReactTags__remove {
 div.ReactTags__suggestions {
     position: absolute;
     z-index: 1000;
-
 
 }
 div.ReactTags__suggestions ul {
@@ -216,8 +215,9 @@ div.ReactTags__suggestions ul {
 }
 div.ReactTags__suggestions li {
     border-bottom: 1px solid #ddd;
-    padding: 5px 10px;
+    padding: 10px 10px;
     margin: 0;
+    margin-left: -40px;
 
 }
 div.ReactTags__suggestions li mark {

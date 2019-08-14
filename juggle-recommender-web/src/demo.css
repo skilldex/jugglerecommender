@@ -89,6 +89,8 @@ iframe{
 .gifDemo{
   width: 93%;
   height: 100%;
+  max-height: 224px;
+  max-width: 220px;
   vertical-align: middle;
   animation: fade-in 1.3s ease;
 }
@@ -118,14 +120,17 @@ iframe{
   max-height: 270px;
   height: auto;
   z-index : 1200;
+  margin: auto;
 }
 .demoOuterDivExpandedSection{
   width: 60%;
+  max-width: 220px;
   margin: 0 auto;  
   margin-top: 10px;
 }
 .demoOuterDivExpandedSectionLab{
   width: 60%;
+  max-width: 220px;
   margin: 0 auto;  
   margin-left: 0px;
 }
