@@ -377,16 +377,25 @@ class Store {
 	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
 		const oldTrick = this.library[oldTrickKey]
 		if(oldTrick.prereqs){
-			let stalePrereqs
+			let stalePrereqs = []
 			if(newTrickData){
-				stalePrereqs = Object.keys(oldTrick.prereqs).filter(x => !newTrickData.prereqs.includes(x))
+				Object.keys(oldTrick.prereqs).forEach((key) => {
+					if(!newTrickData.prereqs[key]){
+						stalePrereqs.push(key)
+					}
+				})
 			}else{//for the case of deleting a trick
-				stalePrereqs = oldTrick.prereqs
+				stalePrereqs = Object.keys(oldTrick.prereqs).map(key => key)
 			}
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
 				if(trick && trick.dependents){
-					const newDependents = Object.keys(trick.dependents).map((x)=> x !== oldTrickKey)
+					let newDependents = {}
+					Object.keys(trick.dependents).forEach((key)=> {
+						if(key !== oldTrickKey){
+							newDependents[key] = trick.dependents[key]
+						}
+					})
 					let newTrickRef = firebase.database().ref('library/'+prereq+'/dependents')
 	        		newTrickRef.set(newDependents);
 					// const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
