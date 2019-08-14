@@ -63,14 +63,12 @@ class Store {
 		if(listType == "postreqs"){ listType = "dependents"}
 		const relatedTrick = {...this.library[parentTrick][listType][relatedTrickKey]}
 		//first voter
-		console.log("original", relatedTrick[voteDirection], "opposite", relatedTrick[oppositeVoteDirection])
 		if(!relatedTrick[voteDirection]){
 			relatedTrick[voteDirection] = []
 		}
 		//voter already included
 		if(relatedTrick[voteDirection] && relatedTrick[voteDirection].includes(authStore.user.username)){
 			relatedTrick[voteDirection] = relatedTrick[voteDirection].filter((value)=>{
-				console.log("filtering", value, authStore.user.username)
 			    return value != authStore.user.username;
 			});
 		}else{
@@ -100,7 +98,6 @@ class Store {
 			"/" + relatedTrickKey + 
 			"/" + voteDirection
 		)
-		console.log("final",toJS(relatedTrick[voteDirection]))
 		votesRef.set([...relatedTrick[voteDirection]])
 
 	}
@@ -307,9 +304,7 @@ class Store {
 		return new Promise(resolve => {
 			let libraryRef = firebase.database().ref('library/')
 			libraryRef.on('value', resp =>{
-				console.log("library changed")
 				const library = this.snapshotToObject(resp)
-				console.log(library["441"])
 	        	this.setLibrary(library)
 	        	this.setPatternCount(this.snapshotToArray(resp).length)
 	        	resolve()
@@ -458,11 +453,7 @@ class Store {
 			if (trickKey == oldTrickKey){
 				shouldBackUpBecauseEditing = true
 			}
-			console.log('trickKey',trickKey)
-			console.log('oldTrickKey',oldTrickKey)
-			console.log('this.randomLeaderboardTrick.key',this.randomLeaderboardTrick.key)
 			if (trickKey !== oldTrickKey && oldTrickKey === this.randomLeaderboardTrick.key){
-				console.log('changeTrick')
 				let leaderboardRef = firebase.database().ref('leaderboard/')
 				leaderboardRef.on('value', resp =>{
 				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)

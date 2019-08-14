@@ -105,10 +105,8 @@ class TrickList extends Component {
 		}
 	}
 	checkIfVoted=(votes)=>{
-		console.log("check if voted",votes,authStore.user)
 		if(votes && authStore.user){
 			const voted = votes.includes(authStore.user.username)
-			console.log("DEF VOTED", voted)
 			return voted
 		}else{
 			return false
@@ -167,14 +165,12 @@ class TrickList extends Component {
 											value={parseFloat(trick.difficulty).toFixed(1)} 
 											width={50} height={44} 
 										/>	
-				console.log("list type", this.props.listType)
 				const expandTrickButtonClass =  
 					uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
 				const listCardClass = this.props.listType == "main" ? "listCard" : "listCard detailListCard"
 				let numUpvoters = 0
 				let numDownvoters = 0
 				if(detailTrick){
-					console.log("the votes", detailTrick[listType][trickKey].upvoters, detailTrick[listType][trickKey].downvoters )
 					numUpvoters = detailTrick[listType][trickKey].upvoters ? detailTrick[listType][trickKey].upvoters.length : 0
 					numDownvoters = detailTrick[listType][trickKey].downvoters ? detailTrick[listType][trickKey].downvoters.length : 0
 				}

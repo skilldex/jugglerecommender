@@ -57,7 +57,6 @@ class UIStore {
 		this.showProfileScreen = bool
 	}
 	@action toggleShowCommentsSection=()=>{
-		console.log('this.showCommentsSection',this.showCommentsSection)
 		this.showCommentsSection = !this.showCommentsSection
 	}
   	@action editDetailTrick=()=>{
@@ -94,7 +93,6 @@ class UIStore {
 	}
 
 	@action setDetailTrick=(clickedTrick)=>{
-		console.log("setting detail trick", clickedTrick)
 		this.showCommentsSection = false
 		this.detailTrick = null
 		if(this.showMoreInformation){
@@ -115,7 +113,6 @@ class UIStore {
 	        	this.toggleSortDiv()
 	        }
 	 	}
-		console.log("finish setting detail trick", clickedTrick)
 
 	}
 	@action toggleCatchEdit=(catches, trickKey)=>{
