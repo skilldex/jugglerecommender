@@ -62,17 +62,20 @@ class Store {
 		const oppositeDirection = direction == "upvoters" ? "downvoters" : "upvoters" 
 		if(listType == "postreqs"){ listType = "dependents"}
 		const relatedTrick = this.library[parentTrick][listType][relatedTrickKey]
-		console.log("opposite", oppositeDirection)
+		//first voter
 		if(!relatedTrick[direction]){
-			relatedTrick[direction] = [authStore.user.username]
+			relatedTrick[direction] = []
 		}
-		if(relatedTrick[direction].includes(authStore.user.username)){
+		//voter already included
+		if(relatedTrick[direction] && relatedTrick[direction].includes(authStore.user.username)){
 			relatedTrick[direction] = relatedTrick[direction].filter((value)=>{
 			    return value != authStore.user.username;
 			});
 		}else{
+			//voter not included
 			relatedTrick[direction].push(authStore.user.username)
 		}
+		//voter included in opposite direction
 		if(
 			relatedTrick[oppositeDirection] && 
 			relatedTrick[oppositeDirection].includes(authStore.user.username)
@@ -88,7 +91,7 @@ class Store {
 			)
 			oppositeVotesRef.set(relatedTrick[oppositeDirection])
 		}
-		
+		//Set vote
 		const relatedTricksRef = firebase.database().ref(
 			'library/'+parentTrick+ 
 			"/"+listType + 
