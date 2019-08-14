@@ -373,81 +373,41 @@ class Store {
 		    text: tag,
 		  }
 		})
-	}	
-	@action removeOldDependents=(newTrickData, oldTrickKey)=>{
+	}
+	@action removeOldRelationship=(relation, newTrickData, oldTrickKey)=>{
+		const relatedProperty = relation == "related" ? "related" : 
+								relation == "prereqs" ? "dependents" :
+								"prereqs"
 		const oldTrick = this.library[oldTrickKey]
-		if(oldTrick.prereqs){
-			let stalePrereqs = []
+		if(oldTrick[relation]){
+			let staleRelations = []
 			if(newTrickData){
-				Object.keys(oldTrick.prereqs).forEach((key) => {
-					if(!newTrickData.prereqs[key]){
-						stalePrereqs.push(key)
+				Object.keys(oldTrick[relation]).forEach((key) => {
+					if(!newTrickData[relation][key]){
+						staleRelations.push(key)
 					}
 				})
 			}else{//for the case of deleting a trick
-				stalePrereqs = Object.keys(oldTrick.prereqs).map(key => key)
+				staleRelations = Object.keys(oldTrick[relation]).map(key => key)
 			}
-			stalePrereqs.forEach((prereq)=>{
-				const trick = this.library[prereq]
-				if(trick && trick.dependents){
-					let newDependents = {}
-					Object.keys(trick.dependents).forEach((key)=> {
+			staleRelations.forEach((staleRelation)=>{
+				const trick = this.library[staleRelation]
+				if(trick && trick[relatedProperty]){
+					let newRelatedPropert = {}
+					Object.keys(trick[relatedProperty]).forEach((key)=> {
 						if(key !== oldTrickKey){
-							newDependents[key] = trick.dependents[key]
+							newRelatedPropert[key] = trick[relatedProperty][key]
 						}
 					})
-					let newTrickRef = firebase.database().ref('library/'+prereq+'/dependents')
-	        		newTrickRef.set(newDependents);
-					// const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
-					// trick.dependents = newDependents
-					// //update prereq's dependents in db
-					// let newTrickRef = firebase.database().ref('library/'+prereq)
-	    //     		newTrickRef.set(trick);
-	        	}
-			})
-		}
-	}
-	@action removeOldPrereqs=(newTrickData, oldTrickKey)=>{
-		const oldTrick = this.library[oldTrickKey]
-		if(oldTrick.dependents){
-			let staleDependents
-			if(newTrickData){
-				staleDependents = oldTrick.dependents.filter(x => !newTrickData.dependents.includes(x))
-			}else{//for the case of deleting a trick
-				staleDependents = oldTrick.dependents
-			}
-			staleDependents.forEach((dependent)=>{
-				const trick = this.library[dependent]
-				if(trick && trick.prereqs){
-					const newPrereqs = trick.prereqs.filter((x)=> x !== oldTrickKey)
-					let newTrickRef = firebase.database().ref('library/'+dependent+'/prereqs')
-	        		newTrickRef.set(newPrereqs);
-	        	}
-			})
-		}
-	}
-	@action removeOldRelated=(newTrickData, oldTrickKey)=>{
-		const oldTrick = this.library[oldTrickKey]
-		if(oldTrick.related){
-			let staleRelated
-			if(newTrickData){
-				staleRelated = oldTrick.related.filter(x => !newTrickData.related.includes(x))
-			}else{//for the case of deleting a trick
-				staleRelated = oldTrick.related
-			}
-			staleRelated.forEach((relatedTrick)=>{
-				const trick = this.library[relatedTrick]
-				if(trick && trick.related){
-					const newRelated = trick.related.filter((x)=> x !== oldTrickKey)
-					let newTrickRef = firebase.database().ref('library/'+relatedTrick+'/related')
-	        		newTrickRef.set(newRelated);
+					let newTrickRef = firebase.database().ref('library/'+staleRelation+'/'+relatedProperty)
+	        		newTrickRef.set(newRelatedPropert);
 	        	}
 			})
 		}
 	}
 	@action changeNameInAllUsersMyTricks=(newTrick,oldTrickKey)=>{
 		let allUsersMyTricks
-		let fullDBRef = firebase.database().ref()('myTricks/')
+		let fullDBRef = firebase.database().ref('myTricks/')
 		fullDBRef.on('value', resp =>{
 			fullDBRef.off()
         	const allUsersMyTricks = this.snapshotToArray(resp)
@@ -475,9 +435,9 @@ class Store {
 
 			const trickToDelete = uiStore.detailTrick.id
 			uiStore.detailTrick = null
-		    this.removeOldDependents(null,trickToDelete)
-		    this.removeOldPrereqs(null,trickToDelete)
-		    this.removeOldRelated(null,trickToDelete)
+		    this.removeOldRelationship('dependents',null,trickToDelete)
+		    this.removeOldRelationship('prereqs',null,trickToDelete)
+		    this.removeOldRelationship('related',null,trickToDelete)
 		    this.removeTrickFromDatabase(trickToDelete)
 		    history.go(-1);
 		}
@@ -491,9 +451,9 @@ class Store {
 		let shouldBackUpBecauseEditing = false
 		if(uiStore.editingDetailTrick){
 			oldTrickKey = uiStore.detailTrick.id
-			this.removeOldDependents(trick,oldTrickKey)
-			this.removeOldPrereqs(trick,oldTrickKey)
-			this.removeOldRelated(trick,oldTrickKey)
+			this.removeOldRelationship('dependents',trick,oldTrickKey)
+			this.removeOldRelationship('prereqs',trick,oldTrickKey)
+			this.removeOldRelationship('related',trick,oldTrickKey)
 			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
 			if (trickKey == oldTrickKey){
 				shouldBackUpBecauseEditing = true
