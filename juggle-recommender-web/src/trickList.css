@@ -221,17 +221,25 @@
 }
 .thumbLine span{
   margin-right: 5px;
-  font-color : darkgray;
+  color : #6A7C92;
 }
 .thumbLine label{
     font-weight: bold;
+    width : 20px;
 }
 .thumbIcon{
   margin-left: 5px;
-  margin-right: 3px;
+  margin-right: 5px;
   height : 16px;
   width: 16px;
   vertical-align: middle;
+  filter:  brightness(85%) saturate(75%);
+
+}
+.selectedThumbIcon{
+  height : 18px;
+  width: 18px;
+  filter:  sepia(100%)  brightness(150%) contrast(50%) saturate(500%) hue-rotate(60deg);
 }
 .sectionHeader{
   display: inline-block;

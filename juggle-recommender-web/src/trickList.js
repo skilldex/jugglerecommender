@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import store from './stores/store'
 import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
+import authStore from './stores/authStore'
 import { observer } from "mobx-react"
 import downArrow from './images/down-arrow.svg'
 import catchesIcon from './images/catchesIcon.svg'
@@ -99,6 +100,17 @@ class TrickList extends Component {
 	vote=(trickKey, direction)=>{
 		store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
 	}
+	checkIfVoted=(votes)=>{
+		console.log("check if voted",votes,authStore.user)
+		if(votes && authStore.user){
+			const voted = votes.includes(authStore.user.username)
+			console.log("DEF VOTED", voted)
+			return voted
+		}else{
+			return false
+		}
+		
+	}
 	render() {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
@@ -158,9 +170,11 @@ class TrickList extends Component {
 				let numUpvoters = 0
 				let numDownvoters = 0
 				if(detailTrick){
+					console.log("the votes", detailTrick[listType][trickKey].upvoters, detailTrick[listType][trickKey].downvoters )
 					numUpvoters = detailTrick[listType][trickKey].upvoters ? detailTrick[listType][trickKey].upvoters.length : 0
 					numDownvoters = detailTrick[listType][trickKey].downvoters ? detailTrick[listType][trickKey].downvoters.length : 0
 				}
+
 				tricks.push(
 					<div className= {listCardClass}
 						 key={trickKey + "div"} 
@@ -185,14 +199,24 @@ class TrickList extends Component {
 									<div className="thumbLine">
 										<span>relevance</span>
 										<label>{ numUpvoters - numDownvoters}</label>
-										<img className="thumbIcon" alt="" src={thumbsUpIcon} onClick={(e)=>{
-											e.stopPropagation()
-											this.vote(trickKey,"upvoters")
-										}}/>
-										<img className="thumbIcon" alt="" src={thumbsDownIcon} onClick={(e)=>{
-											e.stopPropagation()
-											this.vote(trickKey,"downvoters")
-										}}/>
+										<img className={
+												this.checkIfVoted(detailTrick[listType][trickKey].upvoters) ? 
+												"thumbIcon selectedThumbIcon": "thumbIcon"
+											} 
+											alt="" src={thumbsUpIcon} onClick={(e)=>{
+												e.stopPropagation()
+												this.vote(trickKey,"upvoters")
+											}}
+											/>
+										<img className={
+											this.checkIfVoted(detailTrick[listType][trickKey].downvoters) ? 
+												"thumbIcon selectedThumbIcon": "thumbIcon"
+											} 
+											alt="" src={thumbsDownIcon} onClick={(e)=>{
+												e.stopPropagation()
+												this.vote(trickKey,"downvoters")
+											}}
+										/>
 									</div> : 
 									null
 								}
