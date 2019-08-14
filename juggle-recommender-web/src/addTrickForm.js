@@ -72,7 +72,7 @@ class AddTrickForm extends Component {
 			}
 			//convert prereq strings to tag objects
 			if(trick.prereqs){
-				trick.prereqs = trick.prereqs.map((prereq)=>{
+				trick.prereqs = Object.keys(trick.prereqs).map((prereq)=>{
 					return {
 						id : prereq,
 						text : prereq
@@ -81,7 +81,7 @@ class AddTrickForm extends Component {
 			}
 			//convert related strings to tag objects
 			if(trick.related){
-				trick.related = trick.related.map((related)=>{
+				trick.related = Object.keys(trick.related).map((related)=>{
 					return {
 						id : related,
 						text : related
@@ -90,7 +90,7 @@ class AddTrickForm extends Component {
 			}
 			//convert postreq strings to tag objects
 			if(trick.dependents){
-				trick.postreqs = trick.dependents.map((postreq)=>{
+				trick.postreqs = Object.keys(trick.dependents).map((postreq)=>{
 					return {
 						id : postreq,
 						text : postreq

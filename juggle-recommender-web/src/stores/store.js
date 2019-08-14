@@ -379,14 +379,14 @@ class Store {
 		if(oldTrick.prereqs){
 			let stalePrereqs
 			if(newTrickData){
-				stalePrereqs = oldTrick.prereqs.filter(x => !newTrickData.prereqs.includes(x))
+				stalePrereqs = Object.keys(oldTrick.prereqs).filter(x => !newTrickData.prereqs.includes(x))
 			}else{//for the case of deleting a trick
 				stalePrereqs = oldTrick.prereqs
 			}
 			stalePrereqs.forEach((prereq)=>{
 				const trick = this.library[prereq]
 				if(trick && trick.dependents){
-					const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
+					const newDependents = Object.keys(trick.dependents).map((x)=> x !== oldTrickKey)
 					let newTrickRef = firebase.database().ref('library/'+prereq+'/dependents')
 	        		newTrickRef.set(newDependents);
 					// const newDependents = trick.dependents.filter((x)=> x !== oldTrickKey)
@@ -438,10 +438,10 @@ class Store {
 	}
 	@action changeNameInAllUsersMyTricks=(newTrick,oldTrickKey)=>{
 		let allUsersMyTricks
-		let fullDBRef = firebase.database().ref()
+		let fullDBRef = firebase.database().ref()('myTricks/')
 		fullDBRef.on('value', resp =>{
-        	const fullDB = this.snapshotToArray(resp)
-        	allUsersMyTricks = fullDB[3]
+			fullDBRef.off()
+        	const allUsersMyTricks = this.snapshotToArray(resp)
         	Object.keys(allUsersMyTricks).forEach((user)=>{
         		if (user['myTricks']){
 					Object.keys(user['myTricks']).forEach((trickKey)=>{
