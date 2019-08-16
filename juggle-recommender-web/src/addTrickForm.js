@@ -408,7 +408,6 @@ class AddTrickForm extends Component {
 			this.setState({submitDisabled:true})			
 		}
     }
-
     toggleShowTimeInputs=()=>{
     	this.setState({showTimeInputs:!this.state.showTimeInputs})
   	}

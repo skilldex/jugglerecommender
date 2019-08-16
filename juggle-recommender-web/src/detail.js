@@ -22,13 +22,14 @@ import shareIcon from './images/shareIcon.png'
 import ReactGA from 'react-ga'
 import Comments from "./comments"
 import utilities from "./utilities"
+import AutoComplete from './autoComplete'
 @observer
 class Detail extends Component {
   state = {
     catches : null,
     changingInput : false,
     showExtraGif : false,
-    firstComment : ""
+    firstComment : "",
   }
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
@@ -164,6 +165,49 @@ class Detail extends Component {
       return key
     })
   }
+  suggestPrereqClicked=()=>{
+    console.log('suggestPrereqClicked')
+    uiStore.setSuggestingRelation('prereq',!uiStore.suggestingPrereq)
+    uiStore.setSuggestedRelation('prereq',null)
+  }
+  setSuggestedPrereq=(suggestedPrereq)=>{
+    console.log('setSuggestedPrereq',suggestedPrereq)
+    uiStore.setSuggestedRelation('prereq',suggestedPrereq)
+    uiStore.setAutoCompletedSuggestedRelation('prereq',true)
+  }
+  onSuggestPrereqInputKeyPress=(target)=>{
+    console.log('onSuggestPrereqInputKeyPress')
+    // If enter pressed
+      if(target.charCode===13){  
+        uiStore.setAutoCompletedSuggestedRelation('prereq',true)
+      }
+  }
+
+  handleSuggestPrereqChange=(e)=>{
+    uiStore.setSuggestedRelation('prereq',e.target.value)
+    uiStore.setAutoCompletedSuggestedRelation('prereq',false)
+    console.log('handleSuggestPrereqChange')
+  }
+  handleOnBlurSuggestPrereqInput=()=>{
+    console.log('handleOnBlurSuggestPrereqInput')
+  }
+  getSuggestedPrereqSubmitDisabledMessage=()=>{
+    let suggestedPrereqSubmitDisabledMessage = null
+
+    if (!(uiStore.suggestedPrereq && 
+        uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
+      suggestedPrereqSubmitDisabledMessage = 'Not in database.'
+    }
+    if (!uiStore.suggestedPrereq){
+      suggestedPrereqSubmitDisabledMessage = ''
+    }
+    if (uiStore.suggestedPrereq && uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
+      suggestedPrereqSubmitDisabledMessage = 'Already a prereq.'
+    }   
+    console.log('suggestedPrereqSubmitDisabledMessage',suggestedPrereqSubmitDisabledMessage)
+    return suggestedPrereqSubmitDisabledMessage
+  }
+
 	render() {   
     const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
     const detailTrick = store.library[detailTrickKey]
@@ -377,39 +421,70 @@ class Detail extends Component {
                             </div>
                              
                           </div>:null
+    const autoCompletePrereq = uiStore.suggestedPrereq && !uiStore.autoCompletedSuggestedPrereq ? 
+      <AutoComplete 
+        setAutoCompletedName={this.setSuggestedPrereq} 
+        input={uiStore.suggestedPrereq}
+        includeBallNums = {true}
+      /> : null
+      console.log(store.library)
     const relationshipLists = 
         detailTrick?
         <div className ='relationshipLists'>
-          {detailTrick.prereqs ?
+          
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Prereqs</h3>
+            {detailTrick.prereqs ?
             <TrickList 
               tricksToList = {
                 this.getKeysFromRelatedObject(detailTrick.prereqs)
               }
               listType = "prereqs"
-            /> 
-          </div> : null}
-          {detailTrick.related ?
+            /> : null}
+            <label onClick={()=>this.suggestPrereqClicked()}>
+              {uiStore.suggestingPrereq? 'Cancel' : 'Suggest Prereq' }
+            </label>
+            {uiStore.suggestingPrereq?   
+              <div>
+                <input className="formInputs" 
+                      onKeyPress={this.onSuggestPrereqInputKeyPress}
+                      value={uiStore.suggestedPrereq} 
+                      onChange={this.handleSuggestPrereqChange}
+                      onBlur={this.handleOnBlurSuggestPrereqInput}
+                />
+                <button onClick={()=>store.submitSuggestedRelated
+                      ("prereqs",
+                        detailTrickKey,
+                        uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                        disabled={this.getSuggestedPrereqSubmitDisabledMessage() != null}>Submit
+                </button>
+                <label>{this.getSuggestedPrereqSubmitDisabledMessage()}</label>
+                {autoCompletePrereq}
+              </div> : null
+            }
+          </div>
+          
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Related</h3>
+            {detailTrick.related ?
             <TrickList 
               tricksToList = {
                 this.getKeysFromRelatedObject(detailTrick.related)
               }
               listType = "related"
-            />
-          </div> : null}
-          {detailTrick.dependents ?
+            /> : null}
+          </div>
+          
           <div className = 'relationshipList'>
             <h3 className = 'relationshipLabel'>Postreqs</h3>
+            {detailTrick.dependents ?
             <TrickList 
               tricksToList = {
                 this.getKeysFromRelatedObject(detailTrick.dependents)
               }
               listType = "postreqs"
-            />
-          </div> : null}
+            /> : null}
+          </div>
         </div> : null
 
 		return(      
@@ -433,7 +508,7 @@ class Detail extends Component {
               <div className="commentsContainer">
                 <h3>Discussion</h3>
                 { authStore.user ? 
-                     <div class="firstCommentContainer">
+                    <div class="firstCommentContainer">
                       <span className="firstCommentIcon">{authStore.user.username}</span>
                       <textarea 
                         onKeyUp={(e)=>utilities.autoGrow(e.target)}

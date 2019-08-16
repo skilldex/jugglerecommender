@@ -35,6 +35,57 @@ class UIStore {
 	@observable showCommentsSection = false
 	@observable mainListScrollerPosition = null
 	@observable pageNumber = 0
+
+	@observable suggestingPrereq = false
+    @observable suggestedPrereq = null
+    @observable suggestedPrereqSubmitDisabledMessage = null
+    @observable autoCompletedSuggestedPrereq = false
+
+	@observable suggestingDependent = false
+    @observable suggestedDependent = null
+    @observable suggestedDependentSubmitDisabledMessage = null
+    @observable autoCompletedSuggestedDependent = false
+
+	@observable suggestingRelated = false
+    @observable suggestedRelated = null
+    @observable suggestedRelatedSubmitDisabledMessage = null
+    @observable autoCompletedSuggestedRelated = false
+    @action setSuggestingRelation=(relation,toSetTo)=>{
+    	if (relation === 'prereq'){
+    		this.suggestingPrereq = toSetTo
+    	}else if (relation === 'dependent'){
+    		this.suggestingDependent = toSetTo
+    	}else if (relation === 'related'){
+    		this.suggestingRelated = toSetTo
+    	}
+    }
+    @action setSuggestedRelation=(relation,toSetTo)=>{
+    	if (relation === 'prereq'){
+    		this.suggestedPrereq = toSetTo
+    	}else if (relation === 'dependent'){
+    		this.suggestedDependent = toSetTo
+    	}else if (relation === 'related'){
+    		this.suggestedRelated = toSetTo
+    	}
+    }
+    @action setSuggestedRelationSubmitDisabledMessage=(relation,toSetTo)=>{
+    	if (relation === 'prereq'){
+    		this.suggestedPrereqSubmitDisabledMessage = toSetTo
+    	}else if (relation === 'dependent'){
+    		this.suggestedDependentSubmitDisabledMessage = toSetTo
+    	}else if (relation === 'related'){
+    		this.suggestedRelatedSubmitDisabledMessage = toSetTo
+    	}
+    }
+    @action setAutoCompletedSuggestedRelation=(relation,toSetTo)=>{
+    	if (relation === 'prereq'){
+    		this.autoCompletedSuggestedPrereq = toSetTo
+    	}else if (relation === 'dependent'){
+    		this.autoCompletedSuggestedDependent = toSetTo
+    	}else if (relation === 'related'){
+    		this.autoCompletedSuggestedRelated = toSetTo
+    	}
+    }
 	@action setPageNumber=(page)=>{
 		this.pageNumber = page
 	}

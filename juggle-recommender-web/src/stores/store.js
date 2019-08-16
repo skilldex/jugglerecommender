@@ -531,6 +531,39 @@ class Store {
 		}
 	}
 
+	submitSuggestedRelated=(relation,trickKey,suggestedTrickKey)=>{
+	    //empty suggestion stuff when go to new details page
+	    //clear suggestion stuff when suggestion added
+	    //style
+	    //make prereqs suggions reusable for other relations
+	    if(!this.library[trickKey][relation]){
+			this.library[trickKey][relation] = []	
+	    }
+
+	    this.library[trickKey][relation][suggestedTrickKey] = {
+	      source : "suggested",
+	      upvoters : [authStore.user.username]
+	    }
+	    let relationWriteRef = firebase.database().ref('library/'+trickKey+'/'+relation)
+	    relationWriteRef.set({...this.library[trickKey][relation]});
+
+
+		const otherRelation = relation == "related" ? "related" : 
+								relation == "prereqs" ? "dependents" :
+								"prereqs"
+
+	    if(!this.library[suggestedTrickKey][otherRelation]){
+	    	this.library[suggestedTrickKey][otherRelation] = []
+	    }
+
+	    this.library[suggestedTrickKey][otherRelation][trickKey] = {
+	      source : "suggested",
+	      upvoters : [authStore.user.username]
+	    }
+	    let otherRelationWriteRef = firebase.database().ref('library/'+suggestedTrickKey+'/'+otherRelation)
+	      otherRelationWriteRef.set({...this.library[suggestedTrickKey][otherRelation]});
+	}
+
 	@action getSavedTricks=()=>{
 		if(authStore.user){
 			const myTricksRef = firebase.database().ref('myTricks/').orderByChild('username').equalTo(authStore.user.username)
