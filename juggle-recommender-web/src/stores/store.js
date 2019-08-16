@@ -532,8 +532,6 @@ class Store {
 	}
 
 	submitSuggestedRelated=(relation,trickKey,suggestedTrickKey)=>{
-	    //style
-	    //make prereqs suggions reusable for other relations
 	    if(!this.library[trickKey][relation]){
 			this.library[trickKey][relation] = []	
 	    }
