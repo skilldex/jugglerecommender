@@ -562,6 +562,8 @@ class Store {
 	    }
 	    let otherRelationWriteRef = firebase.database().ref('library/'+suggestedTrickKey+'/'+otherRelation)
 	      otherRelationWriteRef.set({...this.library[suggestedTrickKey][otherRelation]});
+	
+	    uiStore.clearRelationSuggestions()
 	}
 
 	@action getSavedTricks=()=>{
