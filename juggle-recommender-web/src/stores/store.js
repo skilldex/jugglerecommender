@@ -63,6 +63,7 @@ class Store {
 		if(listType == "postreqs"){ listType = "dependents"}
 		const relatedTrick = {...this.library[parentTrick][listType][relatedTrickKey]}
 		//first voter
+		console.log('store.vote',parentTrick,relatedTrickKey,listType, voteDirection)
 		if(!relatedTrick[voteDirection]){
 			relatedTrick[voteDirection] = []
 		}

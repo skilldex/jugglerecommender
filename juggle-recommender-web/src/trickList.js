@@ -99,7 +99,11 @@ class TrickList extends Component {
 							
 	vote=(trickKey, direction)=>{
 		if(authStore.user){
+			const oppositeListType = this.props.listType == "related" ? "related" : 
+									 this.props.listType == "prereqs" ? "dependents" :
+												"prereqs"
 			store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
+			store.vote(trickKey , uiStore.detailTrick.id, oppositeListType, direction)
 		}else{
 			alert("Please login to vote")
 		}
