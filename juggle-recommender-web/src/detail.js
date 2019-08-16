@@ -165,13 +165,12 @@ class Detail extends Component {
       return key
     })
   }
-  suggestPrereqClicked=()=>{
-    console.log('suggestPrereqClicked')
-    uiStore.setSuggestingRelation('prereq',!uiStore.suggestingPrereq)
-    uiStore.setSuggestedRelation('prereq',null)
+  suggestRelationClicked=(relation)=>{
+    console.log('suggestRelationClicked',relation)
+    uiStore.setSuggestingRelation(relation,!uiStore.suggestingPrereq)
+    uiStore.setSuggestedRelation(relation,null)
   }
   setSuggestedPrereq=(suggestedPrereq)=>{
-    console.log('setSuggestedPrereq',suggestedPrereq)
     uiStore.setSuggestedRelation('prereq',suggestedPrereq)
     uiStore.setAutoCompletedSuggestedRelation('prereq',true)
   }
@@ -182,30 +181,91 @@ class Detail extends Component {
         uiStore.setAutoCompletedSuggestedRelation('prereq',true)
       }
   }
-
   handleSuggestPrereqChange=(e)=>{
     uiStore.setSuggestedRelation('prereq',e.target.value)
     uiStore.setAutoCompletedSuggestedRelation('prereq',false)
     console.log('handleSuggestPrereqChange')
   }
-  handleOnBlurSuggestPrereqInput=()=>{
-    console.log('handleOnBlurSuggestPrereqInput')
-  }
-  getSuggestedPrereqSubmitDisabledMessage=()=>{
-    let suggestedPrereqSubmitDisabledMessage = null
 
-    if (!(uiStore.suggestedPrereq && 
-        uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
-      suggestedPrereqSubmitDisabledMessage = 'Not in database.'
+  setSuggestedDependent=(suggestedDependent)=>{
+    uiStore.setSuggestedRelation('dependent',suggestedDependent)
+    uiStore.setAutoCompletedSuggestedRelation('dependent',true)
+  }
+  onSuggestDependentInputKeyPress=(target)=>{
+    console.log('onSuggestDependentInputKeyPress')
+    // If enter pressed
+      if(target.charCode===13){  
+        uiStore.setAutoCompletedSuggestedRelation('dependent',true)
+      }
+  }
+  handleSuggestDependentChange=(e)=>{
+    uiStore.setSuggestedRelation('dependent',e.target.value)
+    uiStore.setAutoCompletedSuggestedRelation('dependent',false)
+    console.log('handleSuggestDependentChange')
+  }
+
+  setSuggestedRelated=(suggestedRelated)=>{
+    uiStore.setSuggestedRelation('related',suggestedRelated)
+    uiStore.setAutoCompletedSuggestedRelation('related',true)
+  }
+  onSuggestRelatedInputKeyPress=(target)=>{
+    console.log('onSuggestRelatedInputKeyPress')
+    // If enter pressed
+      if(target.charCode===13){  
+        uiStore.setAutoCompletedSuggestedRelation('related',true)
+      }
+  }
+  handleSuggestRelatedChange=(e)=>{
+    uiStore.setSuggestedRelation('related',e.target.value)
+    uiStore.setAutoCompletedSuggestedRelation('related',false)
+    console.log('handleSuggestRelatedChange')
+  }
+
+  getSuggestedRelationSubmitDisabledMessage=(relation)=>{
+    let suggestedRelationSubmitDisabledMessage = null
+
+    if (relation === 'prereq'){
+      if (!(uiStore.suggestedPrereq && 
+          uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
+        suggestedRelationSubmitDisabledMessage = 'Not in database.'
+      }
+      if (!uiStore.suggestedPrereq){
+        suggestedRelationSubmitDisabledMessage = ''
+      }
+      if (uiStore.suggestedPrereq && uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
+        suggestedRelationSubmitDisabledMessage = 'Already a prereq.'
+      }   
     }
-    if (!uiStore.suggestedPrereq){
-      suggestedPrereqSubmitDisabledMessage = ''
+
+    if (relation === 'dependent'){
+      if (!(uiStore.suggestedDependent && 
+          uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
+        suggestedRelationSubmitDisabledMessage = 'Not in database.'
+      }
+      if (!uiStore.suggestedDependent){
+        suggestedRelationSubmitDisabledMessage = ''
+      }
+      if (uiStore.suggestedDependent && uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
+        suggestedRelationSubmitDisabledMessage = 'Already a dependent.'
+      }   
     }
-    if (uiStore.suggestedPrereq && uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
-      suggestedPrereqSubmitDisabledMessage = 'Already a prereq.'
-    }   
-    console.log('suggestedPrereqSubmitDisabledMessage',suggestedPrereqSubmitDisabledMessage)
-    return suggestedPrereqSubmitDisabledMessage
+
+    if (relation === 'related'){
+      if (!(uiStore.suggestedRelated && 
+          uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
+        suggestedRelationSubmitDisabledMessage = 'Not in database.'
+      }
+      if (!uiStore.suggestedRelated){
+        suggestedRelationSubmitDisabledMessage = ''
+      }
+      if (uiStore.suggestedRelated && uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
+        suggestedRelationSubmitDisabledMessage = 'Already a related.'
+      }   
+    }
+
+
+    console.log('suggestedRelationSubmitDisabledMessage',suggestedRelationSubmitDisabledMessage)
+    return suggestedRelationSubmitDisabledMessage
   }
 
 	render() {   
@@ -427,7 +487,18 @@ class Detail extends Component {
         input={uiStore.suggestedPrereq}
         includeBallNums = {true}
       /> : null
-      console.log(store.library)
+    const autoCompleteDependent = uiStore.suggestedDependent && !uiStore.autoCompletedSuggestedDependent ? 
+      <AutoComplete 
+        setAutoCompletedName={this.setSuggestedDependent} 
+        input={uiStore.suggestedDependent}
+        includeBallNums = {true}
+      /> : null
+    const autoCompleteRelated = uiStore.suggestedRelated && !uiStore.autoCompletedSuggestedRelated ? 
+      <AutoComplete 
+        setAutoCompletedName={this.setSuggestedRelated} 
+        input={uiStore.suggestedRelated}
+        includeBallNums = {true}
+      /> : null
     const relationshipLists = 
         detailTrick?
         <div className ='relationshipLists'>
@@ -441,7 +512,7 @@ class Detail extends Component {
               }
               listType = "prereqs"
             /> : null}
-            <label onClick={()=>this.suggestPrereqClicked()}>
+            <label onClick={()=>this.suggestRelationClicked('prereq')}>
               {uiStore.suggestingPrereq? 'Cancel' : 'Suggest Prereq' }
             </label>
             {uiStore.suggestingPrereq?   
@@ -456,9 +527,9 @@ class Detail extends Component {
                       ("prereqs",
                         detailTrickKey,
                         uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
-                        disabled={this.getSuggestedPrereqSubmitDisabledMessage() != null}>Submit
+                        disabled={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null}>Submit
                 </button>
-                <label>{this.getSuggestedPrereqSubmitDisabledMessage()}</label>
+                <label>{this.getSuggestedRelationSubmitDisabledMessage('prereq')}</label>
                 {autoCompletePrereq}
               </div> : null
             }
@@ -473,6 +544,27 @@ class Detail extends Component {
               }
               listType = "related"
             /> : null}
+            <label onClick={()=>this.suggestRelationClicked('related')}>
+              {uiStore.suggestingRelated? 'Cancel' : 'Suggest Related' }
+            </label>
+            {uiStore.suggestingRelated?   
+              <div>
+                <input className="formInputs" 
+                      onKeyPress={this.onSuggestRelatedInputKeyPress}
+                      value={uiStore.suggestedRelated} 
+                      onChange={this.handleSuggestRelatedChange}
+                      onBlur={this.handleOnBlurSuggestRelatedInput}
+                />
+                <button onClick={()=>store.submitSuggestedRelated
+                      ("related",
+                        detailTrickKey,
+                        uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                        disabled={this.getSuggestedRelationSubmitDisabledMessage('related') != null}>Submit
+                </button>
+                <label>{this.getSuggestedRelationSubmitDisabledMessage('prereq')}</label>
+                {autoCompleteRelated}
+              </div> : null
+            }
           </div>
           
           <div className = 'relationshipList'>
@@ -484,6 +576,27 @@ class Detail extends Component {
               }
               listType = "postreqs"
             /> : null}
+            <label onClick={()=>this.suggestRelationClicked('dependent')}>
+              {uiStore.suggestingDependent? 'Cancel' : 'Suggest Postreq' }
+            </label>
+            {uiStore.suggestingDependent?   
+              <div>
+                <input className="formInputs" 
+                      onKeyPress={this.onSuggestDependentInputKeyPress}
+                      value={uiStore.suggestedDependent} 
+                      onChange={this.handleSuggestDependentChange}
+                      onBlur={this.handleOnBlurSuggestDependentInput}
+                />
+                <button onClick={()=>store.submitSuggestedRelated
+                      ("dependents",
+                        detailTrickKey,
+                        uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                        disabled={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null}>Submit
+                </button>
+                <label>{this.getSuggestedRelationSubmitDisabledMessage('dependent')}</label>
+                {autoCompleteDependent}
+              </div> : null
+            }
           </div>
         </div> : null
 

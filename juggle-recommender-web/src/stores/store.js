@@ -532,8 +532,6 @@ class Store {
 	}
 
 	submitSuggestedRelated=(relation,trickKey,suggestedTrickKey)=>{
-	    //empty suggestion stuff when go to new details page
-	    //clear suggestion stuff when suggestion added
 	    //style
 	    //make prereqs suggions reusable for other relations
 	    if(!this.library[trickKey][relation]){
