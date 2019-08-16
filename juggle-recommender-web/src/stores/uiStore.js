@@ -142,8 +142,24 @@ class UIStore {
 	@action setMainListScrollerPosition=(scrollPos)=>{
 		this.mainListScrollerPosition = scrollPos
 	}
+	@action clearRelationSuggestions=()=>{
+		this.suggestingPrereq = false
+	    this.suggestedPrereq = null
+	    this.suggestedPrereqSubmitDisabledMessage = null
+	    this.autoCompletedSuggestedPrereq = false
 
+		this.suggestingDependent = false
+	    this.suggestedDependent = null
+	    this.suggestedDependentSubmitDisabledMessage = null
+	    this.autoCompletedSuggestedDependent = false
+
+		this.suggestingRelated = false
+	    this.suggestedRelated = null
+	    this.suggestedRelatedSubmitDisabledMessage = null
+	    this.autoCompletedSuggestedRelated = false
+	}
 	@action setDetailTrick=(clickedTrick)=>{
+		this.clearRelationSuggestions()
 		this.showCommentsSection = false
 		this.detailTrick = null
 		if(this.showMoreInformation){
