@@ -59,6 +59,10 @@ class Store {
 		return contributorTags
 	}
 	@action vote(parentTrick, relatedTrickKey,listType, voteDirection){
+		utilities.sendGA('detail',
+			voteDirection.substring(0, voteDirection.length - 3) +
+			' ' + relatedTrickKey + ' as ' + voteDirection +
+			' for ' + parentTrick)
 		const oppositeVoteDirection = voteDirection == "upvoters" ? "downvoters" : "upvoters" 
 		if(listType == "postreqs"){ listType = "dependents"}
 		const relatedTrick = {...this.library[parentTrick][listType][relatedTrickKey]}
@@ -527,6 +531,7 @@ class Store {
 	}
 
 	submitSuggestedRelated=(relation,trickKey,suggestedTrickKey)=>{
+		utilities.sendGA('detail','submit suggestion')
 	    if(!this.library[trickKey][relation]){
 			this.library[trickKey][relation] = []	
 	    }

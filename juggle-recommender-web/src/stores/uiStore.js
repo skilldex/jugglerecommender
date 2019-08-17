@@ -52,10 +52,25 @@ class UIStore {
     @action toggleSuggestingRelation=(relation)=>{
     	if (relation === 'prereq'){
     		this.suggestingPrereq = !this.suggestingPrereq
+    		if (this.suggestingPrereq){
+	    		utilities.sendGA('detail','enable suggestion')
+	    	}else{
+	    		utilities.sendGA('detail','cancel suggestion')
+	    	}
     	}else if (relation === 'dependent'){
     		this.suggestingDependent = !this.suggestingDependent
+    		if (this.suggestingDependent){
+	    		utilities.sendGA('detail','enable suggestion')
+	    	}else{
+	    		utilities.sendGA('detail','cancel suggestion')
+	    	}
     	}else if (relation === 'related'){
     		this.suggestingRelated = !this.suggestingRelated
+    		if (this.suggestingRelated){
+	    		utilities.sendGA('detail','enable suggestion')
+	    	}else{
+	    		utilities.sendGA('detail','cancel suggestion')
+	    	}
     	}
     }
     @action setSuggestedRelation=(relation,toSetTo)=>{
