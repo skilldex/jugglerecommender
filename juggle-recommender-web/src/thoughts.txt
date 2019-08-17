@@ -33,8 +33,6 @@ Misc:
 
 New Details layout:
 	VOTING / SUGGESTED TRICKS:
-		-make it so can't suggest the pattern that you are on the details page of as a relationship
-		-style suggest relationships
 		-GA for everything involved in voting(May be good to function that is 'GAEvent(x,y)', so we dont always have that bulky GA code everywhere and we can easity add it without copy/paste)
 		-once a relationship has gotten a few votes, the contributor should lose the ability to remove it should belong to the public and contributor should lose ability to remove it
 	MINOR:
