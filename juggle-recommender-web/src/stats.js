@@ -11,7 +11,6 @@ import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import Demo from './demo'
-import ReactGA from 'react-ga';
 import history from './history';
 import downArrow from './images/down-arrow.svg'
 @observer

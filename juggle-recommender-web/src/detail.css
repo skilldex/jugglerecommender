@@ -207,6 +207,17 @@
     margin-right: 10px;
     cursor: pointer;
 }
+.suggestionButtonsNormal{
+    border : 1px solid magenta ;
+    border-radius: 18px;
+    background-color: white;
+    color : magenta;
+    padding: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+    cursor: pointer;
+}
 .suggestionButtonsDisabled{
     border : 1px solid gray ;
     border-radius: 18px;

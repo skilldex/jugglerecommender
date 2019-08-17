@@ -7,14 +7,9 @@ v 2.0
 		-a way to see info/demo of tricks when deciding what to use as related
 		-make consuming tags be added automatically in the list
 
-
 	-when comment is submitted, return to original size
 	-autoscroll to comment when posted
 	-clear comment boxes when details page changes
-
-
-	-make details tags clickable to filtered list
-
 
 	-Think about leaderboard/details
 

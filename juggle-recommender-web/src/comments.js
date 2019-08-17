@@ -16,7 +16,6 @@ import './App.css';
 import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
 //import { Resizable } from "re-resizable";
-import ReactGA from 'react-ga';
 import history from './history';
 import InfiniteScroll from 'react-infinite-scroller';
 import "./comments.css"

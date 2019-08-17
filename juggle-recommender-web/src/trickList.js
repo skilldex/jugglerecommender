@@ -16,7 +16,6 @@ import './App.css';
 import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
 //import { Resizable } from "re-resizable";
-import ReactGA from 'react-ga';
 import history from './history';
 import InfiniteScroll from 'react-infinite-scroller';
 const paginationSize = 10
@@ -45,13 +44,7 @@ class TrickList extends Component {
 	}
 
 	openDetail=(trickKey)=>{
-		if(!store.isLocalHost){
-			ReactGA.event({
-			  category: 'list ' + this.props.listType,
-			  action: 'opened detail',
-			  label: 'list ' + this.props.listType + " " + trickKey 
-			});
-		}
+		utilities.sendGA('list ' + this.props.listType,'opened detail','list ' + this.props.listType + ' ' + trickKey)
 		history.push('/detail/'+trickKey, {detail : trickKey})
 		if (this.props.listType === "main"){
 			uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
@@ -83,13 +76,7 @@ class TrickList extends Component {
 		}
 		element.classList.toggle("expand");
 		uiStore.toggleSelectedTrick(trickKey)
-		if(!store.isLocalHost && uiStore.selectedTrick == trickKey){
-			ReactGA.event({
-			  category: 'list ' + this.props.listType ,
-			  action: "expand",
-			  label : 'list ' + this.props.listType + " " + trickKey 
-			});
-		}
+		utilities.sendGA('list ' + this.props.listType,'expand','list ' + this.props.listType + ' ' + trickKey)
 	}
 
 	getHexColor=(value: number)=> {

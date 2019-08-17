@@ -4,9 +4,9 @@ import authStore from "./stores/authStore"
 import hamburger from "./images/menu_icon.svg"
 import "./header.css"
 import uiStore from "./stores/uiStore"
-import ReactGA from 'react-ga';
 import store from "./stores/store"
 import history from './history';
+import utilities from './utilities'
 @observer
 class Header extends Component {
 	state={
@@ -19,12 +19,7 @@ class Header extends Component {
 			uiStore.selectTrick(null)
 		}
 		uiStore.toggleExpandedMenu()
-		if(!store.isLocalHost){
-			ReactGA.event({
-				  category: 'header',
-				  action: paneFlag,
-			});
-		}		
+		utilities.sendGA('header',paneFlag)		
 		if(paneFlag == "addPattern"){
 			history.push('/addpattern')
 			uiStore.clearUI()
@@ -84,12 +79,7 @@ class Header extends Component {
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick()
 			}
-		if(!store.isLocalHost){
-			ReactGA.event({
-				  category: 'title',
-				  action: 'clicked',
-			});
-		}
+		utilities.sendGA('title','clicked')	
     }
     render(){
     	const expandMenu = uiStore.showExpandedMenu ? 

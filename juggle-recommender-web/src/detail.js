@@ -19,7 +19,6 @@ import './detail.css';
 import history from "./history"
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
-import ReactGA from 'react-ga'
 import Comments from "./comments"
 import utilities from "./utilities"
 import AutoComplete from './autoComplete'
@@ -70,12 +69,7 @@ class Detail extends Component {
     uiStore.toggleShowExplanation()
   }
   copyDetailUrl=()=>{
-      if(!store.isLocalHost){
-        ReactGA.event({
-            category: 'detail',
-            action: 'share',
-        });
-      }
+      utilities.sendGA('detail','share')
       const textField = document.createElement('textarea')
       const url = window.location.href 
       textField.innerText = url
@@ -136,12 +130,7 @@ class Detail extends Component {
       
   }
   handleEditTrickButtonClick=()=>{
-    if(!store.isLocalHost){
-      ReactGA.event({
-          category: 'detail',
-          action: 'edit pattern',
-      });
-    } 
+    utilities.sendGA('detail','edit pattern')
     uiStore.editDetailTrick()
   }
   trickPropertyClicked=(propertyType, property)=>{
@@ -503,10 +492,12 @@ class Detail extends Component {
               }
               listType = "prereqs"
             /> : null}
-            <label  className = "suggestButton"
-                    onClick={()=>this.suggestRelationClicked('prereq')}>
-              {uiStore.suggestingPrereq? null : 'Suggest a prereq' }
-            </label>
+            {uiStore.suggestingPrereq? null :
+              <label  className = "suggestionButtonsNormal"
+                      onClick={()=>this.suggestRelationClicked('prereq')}> 
+                      Suggest a prereq pattern 
+              </label>
+            }
             {uiStore.suggestingPrereq?   
               <div>
                 <input className="formInputs" 
@@ -547,10 +538,12 @@ class Detail extends Component {
               }
               listType = "related"
             /> : null}
-            <label  className = "suggestButton"
-                    onClick={()=>this.suggestRelationClicked('related')}>
-              {uiStore.suggestingRelated? null : 'Suggest a related' }
-            </label>
+            {uiStore.suggestingRelated? null :
+              <label  className = "suggestionButtonsNormal"
+                      onClick={()=>this.suggestRelationClicked('related')}> 
+                      Suggest a related pattern 
+              </label>
+            }
             {uiStore.suggestingRelated?   
               <div>
                 <input className="formInputs" 
@@ -591,10 +584,12 @@ class Detail extends Component {
               }
               listType = "postreqs"
             /> : null}
-            <label  className = "suggestButton"
-                    onClick={()=>this.suggestRelationClicked('dependent')}>
-              {uiStore.suggestingDependent? null : 'Suggest a postreq' }
-            </label>
+            {uiStore.suggestingDependent? null :
+              <label  className = "suggestionButtonsNormal"
+                      onClick={()=>this.suggestRelationClicked('dependent')}> 
+                      Suggest a postreq pattern 
+              </label>
+            }
             {uiStore.suggestingDependent?   
               <div>
                 <input className="formInputs" 

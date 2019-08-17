@@ -4,8 +4,8 @@ import uiStore from './uiStore'
 import authStore from './authStore'
 import {jugglingLibrary} from '../jugglingLibrary.js'
 import {TAGS} from '../tags';
-import ReactGA from 'react-ga'
 import history from "../history"
+import utilities from '../utilities'
 configure({ enforceActions: "always" })
 class Store {
 
@@ -134,12 +134,7 @@ class Store {
       const that = this
       const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
       let parentComments = []
-      if(!store.isLocalHost){
-		ReactGA.event({
-			category: 'comment',
-			action: "commented " + comment.trickId,
-		});
-	  }	
+	  utilities.sendGA('comment','commented ' + comment.trickId)
       return new Promise((resolve, reject) => {
 
         let newData = commentsRef.push();
@@ -602,12 +597,7 @@ class Store {
  		const date = new Date()
  		this.myTricks[trickKey].lastUpdated = date.getTime()
  		this.updateTricksInDatabase()
- 		if(!this.isLocalHost){
-			ReactGA.event({
-				  category: 'catches',
-				  action: "set catches " + trickKey + " " + catches,
-			});
-		}	
+		utilities.sendGA('catches','set catches ' + trickKey + ' ' + catches)
  		uiStore.updateRootTricks()
 		this.updateLeaderboard(trickKey,catches)
  	}

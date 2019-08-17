@@ -3,7 +3,6 @@ import store from "./store"
 import filterStore from "./filterStore"
 import authStore from "./authStore"
 import utilities from '../utilities'
-import ReactGA from 'react-ga';
 import history from '../history';
 
 configure({ enforceActions: "always" })
@@ -280,11 +279,7 @@ class UIStore {
 						}						
 						return key + " : " + value
 					})
-				ReactGA.event({
-					  category: 'filter',
-					  action: "close filter",
-					  label : filterStrings.join(" | ")
-				});
+				utilities.sendGA('filter','close filter',filterStrings.join(" | "))
 			}
 	    	this.setShowFilterDiv(false)
 	    }

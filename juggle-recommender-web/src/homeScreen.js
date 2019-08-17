@@ -10,7 +10,6 @@ import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import Demo from './demo'
-import ReactGA from 'react-ga';
 import history from './history';
 import downArrow from './images/down-arrow.svg'
 
@@ -23,27 +22,17 @@ class HomeScreen extends Component {
 		store.getTrickOfTheDay()
 	}
 	clickPatternList=()=>{
-			history.push('/tricklist')
-			uiStore.clearUI()
+		history.push('/tricklist')
+		uiStore.clearUI()
 		//uiStore.toggleShowHomeScreen()
-		if(!store.isLocalHost){
-			ReactGA.event({
-				  category: 'home screen',
-				  action: "pattern list",
-			});
-		}
+		utilities.sendGA('home screen','pattern list')	
 	}
 	openDetail=()=>{
 		uiStore.setDetailTrick(
 			{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
 		)
 		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
-		if(!store.isLocalHost){
-			ReactGA.event({
-			  category: 'home screen',
-			  action: "detail",
-			});
-		}
+		utilities.sendGA('home screen','detail')
 	}		
 	render (){
     const backButton = <img id="backButton" 

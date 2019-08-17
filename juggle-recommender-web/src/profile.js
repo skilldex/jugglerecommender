@@ -12,7 +12,6 @@ import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import shareIcon from './images/shareIcon.png'
 import Demo from './demo'
-import ReactGA from 'react-ga';
 import history from './history';
 import downArrow from './images/down-arrow.svg'
 import babyIcon from './images/babyIcon.svg'
@@ -74,12 +73,7 @@ class Profile extends Component {
  
 	}
     copyContributorURL=()=>{
-      if(!store.isLocalHost){
-        ReactGA.event({
-            category: 'profile',
-            action: 'share',
-        });
-      }
+      utilities.sendGA('profile','share')	
       const textField = document.createElement('textarea')
       const url = window.location.origin + "/?contributor=" + authStore.user.username +",&"
       textField.innerText = url

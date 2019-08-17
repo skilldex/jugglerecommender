@@ -1,4 +1,6 @@
 import {action, configure} from "mobx"
+import store from './stores/store'
+import ReactGA from 'react-ga';
 
 configure({ enforceActions: "always" })
 class Utilities{
@@ -64,6 +66,23 @@ class Utilities{
       toReturn = 1
     }
     return toReturn
+  }
+  @action sendGA(cat, act, lab){
+  if(!store.isLocalHost){
+      if (lab){
+        ReactGA.event({
+            category: cat,
+            action: act,
+            label: lab,
+        });
+      }
+      else{
+        ReactGA.event({
+            category: cat,
+            action: act,
+        });
+      }
+    } 
   }
 
   @action objectToArray=(object)=>{

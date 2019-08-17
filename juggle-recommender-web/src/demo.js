@@ -8,8 +8,7 @@ import frameIcon from "./images/frameIcon.svg"
 import './App.css';
 import './demo.css';
 import YouTube from 'react-youtube';
-import ReactGA from 'react-ga'
-
+import utilities from './utilities'
 
 @observer
 class Demo extends Component {
@@ -265,12 +264,7 @@ class Demo extends Component {
     video.setAttribute( 'controls', '' );
   }
   handleInstagramLogoClick=()=>{
-    if(!store.isLocalHost){
-      ReactGA.event({
-          category: 'demo',
-          action: 'instagram link',
-      });
-    } 
+    utilities.sendGA('demo','instagram link')
     if (store.library[this.props.trickKey]){
       const trick = store.library[this.props.trickKey]
       window.open(trick.video)

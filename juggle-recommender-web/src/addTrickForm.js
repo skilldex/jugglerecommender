@@ -604,6 +604,7 @@ class AddTrickForm extends Component {
 			<AutoComplete 
 				setAutoCompletedName={this.setAutoCompletedName} 
 				input={this.state.name}
+				includeBallNums = {false}
 			/> : null
 		const toggleTimeInputsButton =
 								<div>
