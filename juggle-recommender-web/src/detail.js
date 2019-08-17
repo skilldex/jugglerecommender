@@ -167,7 +167,7 @@ class Detail extends Component {
   }
   suggestRelationClicked=(relation)=>{
     console.log('suggestRelationClicked',relation)
-    uiStore.setSuggestingRelation(relation,!uiStore.suggestingPrereq)
+    uiStore.toggleSuggestingRelation(relation)
     uiStore.setSuggestedRelation(relation,null)
   }
   setSuggestedPrereq=(suggestedPrereq)=>{
@@ -223,44 +223,35 @@ class Detail extends Component {
 
   getSuggestedRelationSubmitDisabledMessage=(relation)=>{
     let suggestedRelationSubmitDisabledMessage = null
+    let suggestedRelation = ''
+    let relationProperty = ''
 
     if (relation === 'prereq'){
-      if (!(uiStore.suggestedPrereq && 
-          uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
-        suggestedRelationSubmitDisabledMessage = 'Not in database.'
-      }
-      if (!uiStore.suggestedPrereq){
-        suggestedRelationSubmitDisabledMessage = ''
-      }
-      if (uiStore.suggestedPrereq && uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
-        suggestedRelationSubmitDisabledMessage = 'Already a prereq.'
-      }   
+      suggestedRelation = uiStore.suggestedPrereq
+      relationProperty = 'prereqs'
+    }else if (relation === 'dependent'){
+      suggestedRelation = uiStore.suggestedDependent
+      relationProperty = 'dependents'
+    }else if (relation === 'related'){
+      suggestedRelation = uiStore.suggestedRelated
+      relationProperty = 'related'
     }
 
-    if (relation === 'dependent'){
-      if (!(uiStore.suggestedDependent && 
-          uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
+    if (!suggestedRelation){
+      suggestedRelationSubmitDisabledMessage = ''
+    }else{
+      suggestedRelation = suggestedRelation.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
+      if (!(suggestedRelation in store.library)){
         suggestedRelationSubmitDisabledMessage = 'Not in database.'
       }
-      if (!uiStore.suggestedDependent){
-        suggestedRelationSubmitDisabledMessage = ''
+      if (store.library[uiStore.detailTrick.id][relationProperty] && 
+          suggestedRelation in store.library[uiStore.detailTrick.id][relationProperty]){
+        suggestedRelationSubmitDisabledMessage = 'Already a '+relation+'.'
       }
-      if (uiStore.suggestedDependent && uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
-        suggestedRelationSubmitDisabledMessage = 'Already a dependent.'
+      if (suggestedRelation === uiStore.detailTrick.id){
+        suggestedRelationSubmitDisabledMessage = "Can't suggest it for itself."
       }   
-    }
 
-    if (relation === 'related'){
-      if (!(uiStore.suggestedRelated && 
-          uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library)){
-        suggestedRelationSubmitDisabledMessage = 'Not in database.'
-      }
-      if (!uiStore.suggestedRelated){
-        suggestedRelationSubmitDisabledMessage = ''
-      }
-      if (uiStore.suggestedRelated && uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-') in store.library[uiStore.detailTrick.id]['prereqs']){
-        suggestedRelationSubmitDisabledMessage = 'Already a related.'
-      }   
     }
 
 
@@ -561,7 +552,7 @@ class Detail extends Component {
                         uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
                         disabled={this.getSuggestedRelationSubmitDisabledMessage('related') != null}>Submit
                 </button>
-                <label>{this.getSuggestedRelationSubmitDisabledMessage('prereq')}</label>
+                <label>{this.getSuggestedRelationSubmitDisabledMessage('related')}</label>
                 {autoCompleteRelated}
               </div> : null
             }

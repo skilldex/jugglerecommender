@@ -50,13 +50,13 @@ class UIStore {
     @observable suggestedRelated = null
     @observable suggestedRelatedSubmitDisabledMessage = null
     @observable autoCompletedSuggestedRelated = false
-    @action setSuggestingRelation=(relation,toSetTo)=>{
+    @action toggleSuggestingRelation=(relation)=>{
     	if (relation === 'prereq'){
-    		this.suggestingPrereq = toSetTo
+    		this.suggestingPrereq = !this.suggestingPrereq
     	}else if (relation === 'dependent'){
-    		this.suggestingDependent = toSetTo
+    		this.suggestingDependent = !this.suggestingDependent
     	}else if (relation === 'related'){
-    		this.suggestingRelated = toSetTo
+    		this.suggestingRelated = !this.suggestingRelated
     	}
     }
     @action setSuggestedRelation=(relation,toSetTo)=>{
