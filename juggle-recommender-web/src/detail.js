@@ -238,7 +238,7 @@ class Detail extends Component {
     }
 
     if (!suggestedRelation){
-      suggestedRelationSubmitDisabledMessage = ''
+      suggestedRelationSubmitDisabledMessage = 'Choose a '+relation+'.'
     }else{
       suggestedRelation = suggestedRelation.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
       if (!(suggestedRelation in store.library)){
@@ -503,8 +503,9 @@ class Detail extends Component {
               }
               listType = "prereqs"
             /> : null}
-            <label onClick={()=>this.suggestRelationClicked('prereq')}>
-              {uiStore.suggestingPrereq? 'Cancel' : 'Suggest Prereq' }
+            <label  className = "suggestButton"
+                    onClick={()=>this.suggestRelationClicked('prereq')}>
+              {uiStore.suggestingPrereq? null : 'Suggest a prereq' }
             </label>
             {uiStore.suggestingPrereq?   
               <div>
@@ -514,13 +515,24 @@ class Detail extends Component {
                       onChange={this.handleSuggestPrereqChange}
                       onBlur={this.handleOnBlurSuggestPrereqInput}
                 />
-                <button onClick={()=>store.submitSuggestedRelated
-                      ("prereqs",
-                        detailTrickKey,
-                        uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
-                        disabled={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null}>Submit
-                </button>
-                <label>{this.getSuggestedRelationSubmitDisabledMessage('prereq')}</label>
+                <div>
+                  <button className={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null ? 
+                                    "suggestionButtonsDisabled" : "suggestionButtons"}
+                          onClick={()=>store.submitSuggestedRelated
+                        ("prereqs",
+                          detailTrickKey,
+                          uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                          disabled={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null}>
+                    Add prereq
+                  </button>
+                  <button className="suggestionButtons"
+                          onClick={()=>this.suggestRelationClicked('prereq')}>
+                      Cancel
+                  </button>
+                </div>
+                <label className = 'suggestSubmitMessage'>
+                  {this.getSuggestedRelationSubmitDisabledMessage('prereq')}
+                </label>
                 {autoCompletePrereq}
               </div> : null
             }
@@ -535,8 +547,9 @@ class Detail extends Component {
               }
               listType = "related"
             /> : null}
-            <label onClick={()=>this.suggestRelationClicked('related')}>
-              {uiStore.suggestingRelated? 'Cancel' : 'Suggest Related' }
+            <label  className = "suggestButton"
+                    onClick={()=>this.suggestRelationClicked('related')}>
+              {uiStore.suggestingRelated? null : 'Suggest a related' }
             </label>
             {uiStore.suggestingRelated?   
               <div>
@@ -546,13 +559,24 @@ class Detail extends Component {
                       onChange={this.handleSuggestRelatedChange}
                       onBlur={this.handleOnBlurSuggestRelatedInput}
                 />
-                <button onClick={()=>store.submitSuggestedRelated
-                      ("related",
-                        detailTrickKey,
-                        uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
-                        disabled={this.getSuggestedRelationSubmitDisabledMessage('related') != null}>Submit
-                </button>
-                <label>{this.getSuggestedRelationSubmitDisabledMessage('related')}</label>
+                <div>
+                  <button className={this.getSuggestedRelationSubmitDisabledMessage('related') != null ? 
+                                    "suggestionButtonsDisabled" : "suggestionButtons"}
+                          onClick={()=>store.submitSuggestedRelated
+                        ("related",
+                          detailTrickKey,
+                          uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                          disabled={this.getSuggestedRelationSubmitDisabledMessage('related') != null}>
+                      Add related
+                  </button>
+                  <button className="suggestionButtons"  
+                          onClick={()=>this.suggestRelationClicked('related')}>
+                      Cancel
+                  </button>
+                </div>
+                <label className = 'suggestSubmitMessage'>
+                  {this.getSuggestedRelationSubmitDisabledMessage('related')}
+                </label>
                 {autoCompleteRelated}
               </div> : null
             }
@@ -567,8 +591,9 @@ class Detail extends Component {
               }
               listType = "postreqs"
             /> : null}
-            <label onClick={()=>this.suggestRelationClicked('dependent')}>
-              {uiStore.suggestingDependent? 'Cancel' : 'Suggest Postreq' }
+            <label  className = "suggestButton"
+                    onClick={()=>this.suggestRelationClicked('dependent')}>
+              {uiStore.suggestingDependent? null : 'Suggest a postreq' }
             </label>
             {uiStore.suggestingDependent?   
               <div>
@@ -578,13 +603,24 @@ class Detail extends Component {
                       onChange={this.handleSuggestDependentChange}
                       onBlur={this.handleOnBlurSuggestDependentInput}
                 />
-                <button onClick={()=>store.submitSuggestedRelated
-                      ("dependents",
-                        detailTrickKey,
-                        uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
-                        disabled={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null}>Submit
-                </button>
-                <label>{this.getSuggestedRelationSubmitDisabledMessage('dependent')}</label>
+                <div>
+                  <button className={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null ? 
+                                    "suggestionButtonsDisabled" : "suggestionButtons"}
+                          onClick={()=>store.submitSuggestedRelated
+                        ("dependents",
+                          detailTrickKey,
+                          uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                          disabled={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null}>
+                      Add dependent
+                  </button>
+                  <button className="suggestionButtons"
+                          onClick={()=>this.suggestRelationClicked('dependent')}>
+                    Cancel
+                  </button>
+                </div>
+                <label className = 'suggestSubmitMessage'>
+                  {this.getSuggestedRelationSubmitDisabledMessage('dependent')}
+                </label>
                 {autoCompleteDependent}
               </div> : null
             }
@@ -646,7 +682,8 @@ class Detail extends Component {
                   :null
                 }
               </div>
-              {relationshipLists}                
+              {relationshipLists}
+              <br/>               
             </div> 
           )
     }

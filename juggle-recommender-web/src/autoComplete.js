@@ -24,7 +24,11 @@ class AutoComplete extends Component {
 	 		if(lowerCaseName.includes(lowerCaseInput) && !matchedNames.includes(lowerCaseName)){
 	 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
 	 			matchedNames.push(lowerCaseName)
-	 			return <div className="option" 
+	 			let optionClassName = "option"
+	 			if (this.props.includeBallNums){
+	 				optionClassName = "option optionBorders"
+	 			}
+	 			return <div className={optionClassName}
 	 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
 			 				<span>{name.slice(0,matchIndex)}</span>
 			 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
