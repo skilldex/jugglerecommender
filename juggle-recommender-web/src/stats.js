@@ -50,8 +50,17 @@ class Stats extends Component {
 				})
 			}			
 		})
-
-		this.setState({contributorsCounter,ballNumCounter,tagsCounter})
+		let orderedContributorsCounter = {}
+		Object.keys(contributorsCounter).sort(Intl.Collator().compare).forEach(function(key) {
+		  orderedContributorsCounter[key] = contributorsCounter[key];
+		});
+		let orderedTagsCounter = {}
+		Object.keys(tagsCounter).sort(Intl.Collator().compare).forEach(function(key) {
+		  orderedTagsCounter[key] = tagsCounter[key];
+		});
+		this.setState({contributorsCounter:orderedContributorsCounter,
+						ballNumCounter,
+						tagsCounter:orderedTagsCounter})
 		 
 	}
 
@@ -84,10 +93,14 @@ class Stats extends Component {
 		             		</label>
                         </div>
 		const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
+			let keyToShow = key
+			if (key.length>15){
+				keyToShow = key.substring(0, 14) + ".."
+			}
 			return <div className = "individualStatsDiv">
 						<label className= "statsLabelButton"
 								onClick = {()=>this.statsLabelButtonClicked('contributor', key)}>
-							{key}
+							{keyToShow}
 						</label>  
 						<div className = "statsValues">
 							{this.state.contributorsCounter[key]}
