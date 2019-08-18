@@ -165,8 +165,12 @@ class Detail extends Component {
     })
   }
   suggestRelationClicked=(relation)=>{
-    uiStore.toggleSuggestingRelation(relation)
-    uiStore.setSuggestedRelation(relation,null)
+    if(authStore.user){
+      uiStore.toggleSuggestingRelation(relation)
+      uiStore.setSuggestedRelation(relation,null)
+    }else{
+      alert("Please login to make a suggestion")
+    }
   }
   setSuggestedPrereq=(suggestedPrereq)=>{
     uiStore.setSuggestedRelation('prereq',suggestedPrereq)

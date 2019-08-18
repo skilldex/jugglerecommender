@@ -76,10 +76,11 @@ Bugs:
 		-old gif shows while new gif is loading
 			-try immediately setting it to null(if not already done)
 
-Styling:
-	position 'suggest a..' buttons 
 
 Niceties:
+	-when a pattern is initially added and the contributor goes to it's page,
+		it should get a view
+	-automatic upvotes for all related when patterns are contributed
 	-contributor url .../contributor/*contributorsName*
 	-autoscroll to voted on card and make it flash when it resorts
 	-maybe tap target should be made larger?
