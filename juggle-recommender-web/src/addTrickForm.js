@@ -61,6 +61,7 @@ class AddTrickForm extends Component {
 			}
 			this.setState({contributor: trick.contributor})
 			this.setState({trickNameBeingEdited:trick.name})
+			this.setState({explanation: trick.explanation})
 			//convert tag strings to tag objects
 			if(trick.tags){
 				trick.tags = trick.tags.map((tag)=>{
@@ -599,6 +600,7 @@ class AddTrickForm extends Component {
 					          />
 		const titleText = uiStore.editingDetailTrick ? "Edit Pattern" : "Add Pattern"
 		const explanationInput = <textarea className="textarea" 
+											value={this.state.explanation}
 											onChange={this.handleExplanationChange}/>
 		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
