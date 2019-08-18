@@ -157,7 +157,6 @@ class Detail extends Component {
       const relevance = numUpvoters - numDownvoters
       return [key,relevance]
     })
-    console.log('keysAndRelevance',keysAndRelevance)
     let sortedKeysAndRelevance = keysAndRelevance.sort(function(a,b) {
         return a[1]-b[1]
     }).reverse()
@@ -416,7 +415,7 @@ class Detail extends Component {
                           <div className="detailInfoDiv">
                           <div className="viewsDiv">
                             <label className="detailLabel">Views </label>
-                            {Math.round(detailTrick.views)}
+                            {detailTrick.views ? Math.round(detailTrick.views) : 0}
                           </div>
                           <div className="flairDiv">
                             <label className="detailLabel">Flair </label>

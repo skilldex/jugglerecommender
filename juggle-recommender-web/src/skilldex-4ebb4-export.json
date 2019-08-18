@@ -1136,6 +1136,9 @@
         "Reverse 441" : {
           "source" : "contributed"
         },
+        "Shapeshift of 531531441 Back of Hand First 3" : {
+          "source" : "automatic"
+        },
         "Shower" : {
           "source" : "contributed"
         },
@@ -1224,6 +1227,9 @@
         },
         "7531(4b)" : {
           "source" : "contributed"
+        },
+        "Shapeshift of 531531441 Back of Hand First 3" : {
+          "source" : "automatic"
         }
       },
       "difficulty" : "4",
@@ -1475,32 +1481,6 @@
       "timeUpdated" : 1563751543074,
       "url" : "",
       "video" : ""
-    },
-    " shapeshift of 531531441 Back of Hand First 3" : {
-      "contributor" : "nycjuggler_",
-      "difficulty" : "4.9",
-      "explanation" : "",
-      "name" : " shapeshift of 531531441 Back of Hand First 3",
-      "num" : 3,
-      "prereqs" : {
-        "441" : {
-          "source" : "contributed"
-        },
-        "531" : {
-          "source" : "contributed"
-        }
-      },
-      "related" : {
-        "Fork Cascade Under a Regular Cascade(4b)" : {
-          "source" : "contributed"
-        }
-      },
-      "siteswap" : "531531441",
-      "tags" : [ "contact", "ss1" ],
-      "timeSubmitted" : 1566056327066,
-      "timeUpdated" : 1566056327066,
-      "url" : "",
-      "video" : "https://www.instagram.com/p/B1MFzjFA4k4/"
     },
     "(({4x2}),({6x2}))(({6x2}),4x)(2x,6x)(({22}),2)(5b)" : {
       "contributor" : "juggling_vegan_",
@@ -4229,6 +4209,9 @@
         },
         "714(4b)" : {
           "source" : "contributed"
+        },
+        "Cascade(5b)" : {
+          "source" : "automatic"
         }
       },
       "difficulty" : "4",
@@ -4465,7 +4448,7 @@
       "num" : "5",
       "prereqs" : {
         "Cascade(5b)" : {
-          "source" : "contributed"
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -5470,6 +5453,11 @@
           "source" : "contributed"
         }
       },
+      "related" : {
+        "Fake Columns Variation" : {
+          "source" : "automatic"
+        }
+      },
       "siteswap" : "",
       "tags" : [ "carry", "columns" ],
       "timeSubmitted" : 1561207101953,
@@ -6005,6 +5993,19 @@
       "timeUpdated" : 1563315404729,
       "url" : "",
       "video" : "https://www.instagram.com/p/ByU_eQGAP-1/"
+    },
+    "Asymmetric High Low Slaps" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "5.0",
+      "explanation" : "",
+      "name" : "Asymmetric High Low Slaps",
+      "num" : "3",
+      "siteswap" : "",
+      "tags" : [ "asymmetric" ],
+      "timeSubmitted" : 1566144472601,
+      "timeUpdated" : 1566144472601,
+      "url" : "",
+      "video" : "https://youtu.be/Kwo0sY-sb-o"
     },
     "Asymmetric Lemming Drop" : {
       "contributor" : "jahvorsky_",
@@ -8279,9 +8280,6 @@
         "Cascade on the Chest" : {
           "source" : "contributed"
         },
-        "Cascade(5b)" : {
-          "source" : "contributed"
-        },
         "Chops" : {
           "source" : "contributed"
         },
@@ -8555,22 +8553,25 @@
         }
       },
       "difficulty" : "6",
-      "explanation" : "https://thomwall.com/everything-you-need-to-know-about-five-ball-juggling/",
+      "explanation" : "https://libraryofjuggling.com/Tricks/5balltricks/FiveBallCascade.html",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballcascade.gif",
       "name" : "Cascade(5b)",
       "num" : 5,
       "prereqs" : {
         "522" : {
-          "source" : "automatic"
+          "source" : "contributed"
         },
         "900" : {
-          "source" : "automatic"
+          "source" : "contributed"
         },
         "50505" : {
-          "source" : "automatic"
+          "source" : "contributed"
         },
         "55500" : {
-          "source" : "automatic"
+          "source" : "contributed"
+        },
+        "534(4b)" : {
+          "source" : "contributed"
         },
         "552(4b)" : {
           "source" : "contributed"
@@ -8581,19 +8582,14 @@
         "55550(4b)" : {
           "source" : "contributed"
         },
-        "Cascade" : {
-          "source" : "contributed"
-        }
-      },
-      "related" : {
-        "Reverse Cascade(5b)" : {
+        "Shower(4b)" : {
           "source" : "contributed"
         }
       },
       "siteswap" : "5",
       "timeSubmitted" : 0,
-      "timeUpdated" : 1565853135274,
-      "url" : "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallCascade.html",
+      "timeUpdated" : 1566066355222,
+      "url" : "https://thomwall.com/everything-you-need-to-know-about-five-ball-juggling/",
       "video" : ""
     },
     "Cascade(7b)" : {
@@ -12870,6 +12866,9 @@
       "dependents" : {
         "Alt Fake Columns" : {
           "source" : "contributed"
+        },
+        "Fake Columns Variation" : {
+          "source" : "automatic"
         }
       },
       "difficulty" : "3",
@@ -12894,6 +12893,40 @@
       "timeSubmitted" : 1561200611619,
       "timeUpdated" : 1561200611619,
       "video" : "https://www.instagram.com/p/BPZdwH8jOXk/"
+    },
+    "Fake Columns Variation" : {
+      "contributor" : "JuggleKraze_",
+      "difficulty" : "3.9",
+      "explanation" : "",
+      "name" : "Fake Columns Variation",
+      "num" : "3",
+      "prereqs" : {
+        "Fake Columns 2" : {
+          "source" : "contributed"
+        },
+        "R+L Fake Columns" : {
+          "source" : "contributed"
+        }
+      },
+      "related" : {
+        "Alt Fake Columns" : {
+          "source" : "contributed"
+        },
+        "False Triazzle" : {
+          "source" : "contributed"
+        },
+        "Follow Weave" : {
+          "source" : "contributed"
+        }
+      },
+      "siteswap" : "",
+      "tags" : [ "carry" ],
+      "timeSubmitted" : 1566076268898,
+      "timeUpdated" : 1566127339470,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=ARnZCL_cQfs",
+      "videoEndTime" : 29,
+      "videoStartTime" : 13
     },
     "Fake Mess" : {
       "dependents" : {
@@ -12966,6 +12999,32 @@
       "timeUpdated" : 1563229269762,
       "url" : "",
       "video" : "https://www.instagram.com/p/BmI4w5bnndm/"
+    },
+    "False Triazzle" : {
+      "contributor" : "JuggleKraze_",
+      "difficulty" : "3.9",
+      "explanation" : "",
+      "name" : "False Triazzle",
+      "num" : "3",
+      "related" : {
+        "Fake Columns Variation" : {
+          "source" : "automatic"
+        },
+        "Follow Weave" : {
+          "source" : "automatic"
+        },
+        "Triazzle" : {
+          "source" : "contributed"
+        }
+      },
+      "siteswap" : "",
+      "tags" : [ "carry" ],
+      "timeSubmitted" : 1566076468148,
+      "timeUpdated" : 1566076468148,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=ARnZCL_cQfs",
+      "videoEndTime" : 47,
+      "videoStartTime" : 31
     },
     "Fast Half Taffy Puller" : {
       "contributor" : "JuggleKraze_",
@@ -13119,6 +13178,40 @@
       "videoEndTime" : 285,
       "videoStartTime" : 260
     },
+    "Follow Weave" : {
+      "contributor" : "JuggleKraze_",
+      "difficulty" : "3.8",
+      "explanation" : "",
+      "name" : "Follow Weave",
+      "num" : "3",
+      "prereqs" : {
+        "The Follow" : {
+          "source" : "contributed"
+        },
+        "Weave" : {
+          "source" : "contributed"
+        }
+      },
+      "related" : {
+        "Fake Columns Variation" : {
+          "source" : "contributed"
+        },
+        "False Triazzle" : {
+          "source" : "contributed"
+        },
+        "R+L Fake Columns" : {
+          "source" : "contributed"
+        }
+      },
+      "siteswap" : "",
+      "tags" : [ "carry" ],
+      "timeSubmitted" : 1566076546503,
+      "timeUpdated" : 1566127359460,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=ARnZCL_cQfs",
+      "videoEndTime" : 64,
+      "videoStartTime" : 50
+    },
     "Foot Throw(1b)" : {
       "contributor" : "tjthejuggler",
       "difficulty" : "2.0",
@@ -13152,6 +13245,9 @@
         },
         "Half Forked Half Penguin Box" : {
           "source" : "contributed"
+        },
+        "Shapeshift of 531531441 Back of Hand First 3" : {
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -20141,6 +20237,12 @@
     "R+L Fake Columns" : {
       "contributor" : "3ballpatterns_",
       "dependents" : {
+        "Fake Columns Variation" : {
+          "source" : "automatic"
+        },
+        "Reverse Follow" : {
+          "source" : "automatic"
+        },
         "Windshield Wipers" : {
           "source" : "contributed"
         }
@@ -20166,6 +20268,9 @@
         }
       },
       "related" : {
+        "Follow Weave" : {
+          "source" : "automatic"
+        },
         "R+L Yo-Yo" : {
           "source" : "contributed"
         }
@@ -20883,11 +20988,6 @@
           "source" : "contributed"
         }
       },
-      "related" : {
-        "Cascade(5b)" : {
-          "source" : "automatic"
-        }
-      },
       "siteswap" : "5",
       "timeSubmitted" : 0,
       "url" : "http://www.libraryofjuggling.com/Tricks/5balltricks/FiveBallReverseCascade.html"
@@ -21069,6 +21169,31 @@
       "video" : "https://www.youtube.com/watch?v=ZMd2mVVvc_0",
       "videoEndTime" : 44,
       "videoStartTime" : 28
+    },
+    "Reverse Follow" : {
+      "contributor" : "JuggleKraze_",
+      "difficulty" : "3.7",
+      "explanation" : "",
+      "name" : "Reverse Follow",
+      "num" : "3",
+      "prereqs" : {
+        "R+L Fake Columns" : {
+          "source" : "contributed"
+        }
+      },
+      "related" : {
+        "The Follow" : {
+          "source" : "contributed"
+        }
+      },
+      "siteswap" : "",
+      "tags" : [ "carry" ],
+      "timeSubmitted" : 1566076707359,
+      "timeUpdated" : 1566076707359,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=ARnZCL_cQfs",
+      "videoEndTime" : 81,
+      "videoStartTime" : 65
     },
     "Reverse Fountain Through Dots(4b)" : {
       "contributor" : "artifaxiom",
@@ -21999,6 +22124,47 @@
       "timeUpdated" : 1561076770590,
       "video" : "https://www.instagram.com/p/BUSZYPMBaAv/"
     },
+    "Shape Jumble" : {
+      "contributor" : "JuggleKraze_",
+      "difficulty" : "3.6",
+      "explanation" : "",
+      "name" : "Shape Jumble",
+      "num" : "3",
+      "siteswap" : "",
+      "tags" : [ "multiplex", "claymotion", "asymmetric" ],
+      "timeSubmitted" : 1566076007993,
+      "timeUpdated" : 1566076802031,
+      "url" : "",
+      "video" : "https://www.youtube.com/watch?v=v668DXGLJ3U",
+      "videoEndTime" : 90,
+      "videoStartTime" : 14
+    },
+    "Shapeshift of 531531441 Back of Hand First 3" : {
+      "contributor" : "nycjuggler_",
+      "difficulty" : "4.9",
+      "explanation" : "",
+      "name" : "Shapeshift of 531531441 Back of Hand First 3",
+      "num" : 3,
+      "prereqs" : {
+        "441" : {
+          "source" : "contributed"
+        },
+        "531" : {
+          "source" : "contributed"
+        }
+      },
+      "related" : {
+        "Fork Cascade Under a Regular Cascade(4b)" : {
+          "source" : "contributed"
+        }
+      },
+      "siteswap" : "531531441",
+      "tags" : [ "contact", "ss1" ],
+      "timeSubmitted" : 1566056327066,
+      "timeUpdated" : 1566074474043,
+      "url" : "",
+      "video" : "https://www.instagram.com/p/B1MFzjFA4k4/"
+    },
     "Shapeshifting Rainbows in the Floating Forest" : {
       "contributor" : "noslowerdna_",
       "difficulty" : "6",
@@ -22319,6 +22485,9 @@
       "dependents" : {
         "4b Sunny Side Up(4b)" : {
           "source" : "contributed"
+        },
+        "Cascade(5b)" : {
+          "source" : "automatic"
         },
         "Double Yolked Egg(4b)" : {
           "source" : "contributed"
@@ -25143,6 +25312,9 @@
         "Fake Boston Shuffle + Columns" : {
           "source" : "contributed"
         },
+        "Follow Weave" : {
+          "source" : "automatic"
+        },
         "Relf's Revenge" : {
           "source" : "contributed"
         },
@@ -25165,6 +25337,11 @@
         },
         "Yo-Yo" : {
           "source" : "contributed"
+        }
+      },
+      "related" : {
+        "Reverse Follow" : {
+          "source" : "automatic"
         }
       },
       "siteswap" : "423",
@@ -25881,6 +26058,11 @@
       "prereqs" : {
         "Shower" : {
           "source" : "contributed"
+        }
+      },
+      "related" : {
+        "False Triazzle" : {
+          "source" : "automatic"
         }
       },
       "siteswap" : "(4,2)(4x,2)(4x,2x)*",
@@ -26634,6 +26816,9 @@
     },
     "Weave" : {
       "dependents" : {
+        "Follow Weave" : {
+          "source" : "automatic"
+        },
         "Orinoco Flow" : {
           "source" : "contributed"
         },
@@ -27917,6 +28102,18 @@
         "catches" : "420",
         "lastUpdated" : 1565857055720
       },
+      "Claymotion Base + Cross" : {
+        "catches" : "200",
+        "lastUpdated" : 1566128671057
+      },
+      "Claymotion Base + Penguin" : {
+        "catches" : "200",
+        "lastUpdated" : 1566128362247
+      },
+      "Claymotion Overarm Orbits" : {
+        "catches" : "202",
+        "lastUpdated" : 1566129224202
+      },
       "Claymotion Takeouts" : {
         "catches" : "300",
         "lastUpdated" : 1565859529108
@@ -28041,8 +28238,8 @@
         "lastUpdated" : 1563996864893
       },
       "Dots Two in One Hand(2b)" : {
-        "catches" : "6",
-        "lastUpdated" : 1565608841799
+        "catches" : "10",
+        "lastUpdated" : 1566140488407
       },
       "Double Box" : {
         "catches" : "400",
@@ -28097,6 +28294,10 @@
         "lastUpdated" : 1561462943508,
         "starred" : "true"
       },
+      "Fake Columns Variation" : {
+        "catches" : "164",
+        "lastUpdated" : 1566127291689
+      },
       "Fake Mess" : {
         "catches" : "206",
         "lastUpdated" : 1561884510213,
@@ -28106,6 +28307,10 @@
         "catches" : "100",
         "lastUpdated" : 1564162008717
       },
+      "False Triazzle" : {
+        "catches" : "176",
+        "lastUpdated" : 1566126996236
+      },
       "Flipped Mess" : {
         "catches" : "60",
         "starred" : "true"
@@ -28113,6 +28318,10 @@
       "Flying Disco Drop" : {
         "catches" : "120",
         "lastUpdated" : 1564308952749
+      },
+      "Follow Weave" : {
+        "catches" : "158",
+        "lastUpdated" : 1566126495667
       },
       "Forky The Robot" : {
         "catches" : "1",
@@ -28581,6 +28790,10 @@
         "catches" : "70",
         "starred" : "true"
       },
+      "Reverse Follow" : {
+        "catches" : "96",
+        "lastUpdated" : 1566125885701
+      },
       "Reverse Fountain(4b)" : {
         "catches" : "240",
         "lastUpdated" : 1564068004259,
@@ -28633,6 +28846,10 @@
       "Self Slam Overarm (crossover) (1b)" : {
         "catches" : "50",
         "lastUpdated" : 1564056540420
+      },
+      "Shape Jumble" : {
+        "catches" : "18",
+        "lastUpdated" : 1566127792510
       },
       "Shower" : {
         "catches" : "1100",
@@ -30161,8 +30378,12 @@
         "lastUpdated" : 1565856830068
       },
       "Claymotion Base + Claw" : {
+        "catches" : "100",
+        "lastUpdated" : 1566129072789
+      },
+      "Claymotion Base + Cross" : {
         "catches" : "40",
-        "lastUpdated" : 1565859181113
+        "lastUpdated" : 1566128807445
       },
       "Columns same hand (1b)" : {
         "catches" : "10",
@@ -30219,6 +30440,10 @@
       "Overarm Throw (1b)" : {
         "catches" : "30",
         "lastUpdated" : 1565652822520
+      },
+      "Penguin  (1b)" : {
+        "catches" : "4",
+        "lastUpdated" : 1566128442745
       },
       "Reverse Cascade" : {
         "catches" : "60",
@@ -31937,9 +32162,11 @@
       }
     },
     "username" : "JuggleKraze_"
+  }, {
+    "username" : "jugglerflo"
   } ],
   "stats" : {
-    "totalCatchCount" : 90591
+    "totalCatchCount" : 91913
   },
   "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neckcross", "neck-pass", "headplant", "underarm-throw", "meta-pattern", "polyrhythm" ],
   "trickOfTheDay" : {
@@ -32098,6 +32325,10 @@
     "818" : {
       "date" : "818",
       "trick" : "633M(4b)"
+    },
+    "819" : {
+      "date" : "819",
+      "trick" : "Inverted Boston Shuffle With Orbits"
     }
   },
   "users" : {
@@ -32375,6 +32606,11 @@
       "email" : "jugglekraze@tjstemp.com",
       "lowerCaseUsername" : "jugglekraze_",
       "username" : "JuggleKraze_"
+    },
+    "-LmYrXPJ-sENNc0hBO7k" : {
+      "email" : "florian.cauvin@gmail.com",
+      "lowerCaseUsername" : "jugglerflo",
+      "username" : "jugglerflo"
     }
   }
 }
