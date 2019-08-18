@@ -20,13 +20,14 @@
   margin-right: 5px;
 }
 .jugglingLabGifSection{
+  text-align: center;
   font-size: 10px;
 }
 iframe{
     margin-top: -100px;
     margin-left:-40px;
     overflow:hidden;
-    height:470px;
+    height:460px;
     width:500px;
     scroll-behavior: hidden;
     border:none;
@@ -129,9 +130,7 @@ iframe{
   margin-top: 10px;
 }
 .demoOuterDivExpandedSectionLab{
-  width: 60%;
-  max-width: 220px;
-  margin: 0 auto;  
-  margin-left: 0px;
+
+ 
 }
 
