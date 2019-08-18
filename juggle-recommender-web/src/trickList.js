@@ -110,7 +110,6 @@ class TrickList extends Component {
 	 	const pushedTrickkeys = []
 	 	const detailTrick = uiStore.detailTrick ? store.library[uiStore.detailTrick.id] : null
 	 	const listType = this.props.listType == "postreqs" ? "dependents" : this.props.listType
-	 	console.log('this.props.tricksToList',this.props.tricksToList)
 		this.props.tricksToList.forEach((trickKey, index)=>{
 			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return

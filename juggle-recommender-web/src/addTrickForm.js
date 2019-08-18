@@ -254,8 +254,13 @@ class AddTrickForm extends Component {
     }
     handlePrereqDelete=(i)=> {
         const { prereqs } = this.state;
-    	const prereqTrick = store.library[uiStore.detailTrick.id]['prereqs'][prereqs[i]['id']]
-    	if (prereqTrick['upvoters']){
+        let prereqTrick = null
+        if (uiStore.editingDetailTrick){
+	    	prereqTrick = store.library[uiStore.detailTrick.id]['prereqs'][prereqs[i].id] ?
+							store.library[uiStore.detailTrick.id]['prereqs'][prereqs[i].id]
+							: null
+    	}
+    	if (prereqTrick && prereqTrick['upvoters']){
     		alert('Prereqs with community upvotes can not be removed.')
     	}else{
 	        this.setState({
@@ -271,8 +276,13 @@ class AddTrickForm extends Component {
     }
     handleRelatedDelete=(i)=> {
         const { related } = this.state;
-    	const relatedTrick = store.library[uiStore.detailTrick.id]['related'][related[i]['id']]
-    	if (relatedTrick['upvoters']){
+        let relatedTrick = null
+        if (uiStore.editingDetailTrick){
+	    	relatedTrick = store.library[uiStore.detailTrick.id]['related'][related[i].id] ?
+							store.library[uiStore.detailTrick.id]['related'][related[i].id]
+							: null
+    	}
+    	if (relatedTrick && relatedTrick['upvoters']){
     		alert('Related tricks with community upvotes can not be removed.')
     	}else{
 	        this.setState({
@@ -288,8 +298,13 @@ class AddTrickForm extends Component {
     }
     handlePostreqDelete=(i)=> {
         const { postreqs } = this.state;
-    	const postreqTrick = store.library[uiStore.detailTrick.id]['dependents'][postreqs[i]['id']]
-    	if (postreqTrick['upvoters']){
+        let postreqTrick = null
+        if (uiStore.editingDetailTrick){
+	    	postreqTrick = store.library[uiStore.detailTrick.id]['dependents'][postreqs[i].id] ?
+							store.library[uiStore.detailTrick.id]['dependents'][postreqs[i].id]
+							: null
+    	}
+    	if (postreqTrick && postreqTrick['upvoters']){
     		alert('Postreqs with community upvotes can not be removed.')
     	}else{
 	        this.setState({

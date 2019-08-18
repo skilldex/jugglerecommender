@@ -106,6 +106,9 @@ MODIFIERS:
 		-it should remember the most recent modifier used
 		-where exactly should it be in the ui?
 
+Multiple Names:
+	Luke's Shuffle is also called Drop Box
+
 Other Dexes:
 	-there could be a section of tricks that are similar feel from one prop to another.(ejc stranger suggested)
 
