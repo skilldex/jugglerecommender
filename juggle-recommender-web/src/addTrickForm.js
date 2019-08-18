@@ -254,9 +254,14 @@ class AddTrickForm extends Component {
     }
     handlePrereqDelete=(i)=> {
         const { prereqs } = this.state;
-        this.setState({
-         	prereqs: prereqs.filter((tag, index) => index !== i),
-        });
+    	const prereqTrick = store.library[uiStore.detailTrick.id]['prereqs'][prereqs[i]['id']]
+    	if (prereqTrick['upvoters']){
+    		alert('Prereqs with community upvotes can not be removed.')
+    	}else{
+	        this.setState({
+	         	prereqs: prereqs.filter((tag, index) => index !== i),
+	        });
+	    }
     }
 	handleRelatedAddition=(tag)=> {
 		if (store.library[tag.id]){
@@ -266,9 +271,14 @@ class AddTrickForm extends Component {
     }
     handleRelatedDelete=(i)=> {
         const { related } = this.state;
-        this.setState({
-         	related: related.filter((tag, index) => index !== i),
-        });
+    	const relatedTrick = store.library[uiStore.detailTrick.id]['related'][related[i]['id']]
+    	if (relatedTrick['upvoters']){
+    		alert('Related tricks with community upvotes can not be removed.')
+    	}else{
+	        this.setState({
+	         	related: related.filter((tag, index) => index !== i),
+	        });
+	    }        
     }
 	handlePostreqAddition=(tag)=> {
 		if (store.library[tag.id]){
@@ -278,9 +288,14 @@ class AddTrickForm extends Component {
     }
     handlePostreqDelete=(i)=> {
         const { postreqs } = this.state;
-        this.setState({
-         	postreqs: postreqs.filter((tag, index) => index !== i),
-        });
+    	const postreqTrick = store.library[uiStore.detailTrick.id]['dependents'][postreqs[i]['id']]
+    	if (postreqTrick['upvoters']){
+    		alert('Postreqs with community upvotes can not be removed.')
+    	}else{
+	        this.setState({
+	         	postreqs: postreqs.filter((tag, index) => index !== i),
+	        });
+	    }   
     }
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
