@@ -165,7 +165,6 @@ class Detail extends Component {
     })
   }
   suggestRelationClicked=(relation)=>{
-    console.log('suggestRelationClicked',relation)
     uiStore.toggleSuggestingRelation(relation)
     uiStore.setSuggestedRelation(relation,null)
   }
@@ -174,7 +173,6 @@ class Detail extends Component {
     uiStore.setAutoCompletedSuggestedRelation('prereq',true)
   }
   onSuggestPrereqInputKeyPress=(target)=>{
-    console.log('onSuggestPrereqInputKeyPress')
     // If enter pressed
       if(target.charCode===13){  
         uiStore.setAutoCompletedSuggestedRelation('prereq',true)
@@ -183,7 +181,6 @@ class Detail extends Component {
   handleSuggestPrereqChange=(e)=>{
     uiStore.setSuggestedRelation('prereq',e.target.value)
     uiStore.setAutoCompletedSuggestedRelation('prereq',false)
-    console.log('handleSuggestPrereqChange')
   }
 
   setSuggestedDependent=(suggestedDependent)=>{
@@ -191,7 +188,6 @@ class Detail extends Component {
     uiStore.setAutoCompletedSuggestedRelation('dependent',true)
   }
   onSuggestDependentInputKeyPress=(target)=>{
-    console.log('onSuggestDependentInputKeyPress')
     // If enter pressed
       if(target.charCode===13){  
         uiStore.setAutoCompletedSuggestedRelation('dependent',true)
@@ -200,7 +196,6 @@ class Detail extends Component {
   handleSuggestDependentChange=(e)=>{
     uiStore.setSuggestedRelation('dependent',e.target.value)
     uiStore.setAutoCompletedSuggestedRelation('dependent',false)
-    console.log('handleSuggestDependentChange')
   }
 
   setSuggestedRelated=(suggestedRelated)=>{
@@ -208,7 +203,6 @@ class Detail extends Component {
     uiStore.setAutoCompletedSuggestedRelation('related',true)
   }
   onSuggestRelatedInputKeyPress=(target)=>{
-    console.log('onSuggestRelatedInputKeyPress')
     // If enter pressed
       if(target.charCode===13){  
         uiStore.setAutoCompletedSuggestedRelation('related',true)
@@ -217,7 +211,6 @@ class Detail extends Component {
   handleSuggestRelatedChange=(e)=>{
     uiStore.setSuggestedRelation('related',e.target.value)
     uiStore.setAutoCompletedSuggestedRelation('related',false)
-    console.log('handleSuggestRelatedChange')
   }
 
   getSuggestedRelationSubmitDisabledMessage=(relation)=>{
@@ -252,9 +245,6 @@ class Detail extends Component {
       }   
 
     }
-
-
-    console.log('suggestedRelationSubmitDisabledMessage',suggestedRelationSubmitDisabledMessage)
     return suggestedRelationSubmitDisabledMessage
   }
 

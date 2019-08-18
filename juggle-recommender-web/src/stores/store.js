@@ -61,14 +61,11 @@ class Store {
 	@action increaseViewsCounter=()=>{
 		const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
 		if (this.library[detailTrickKey]){
-			console.log('detailTrickKey',detailTrickKey)
 			const detailTrick = {...this.library[detailTrickKey]}
-			console.log('detailTrick',detailTrick)
 			if(!detailTrick['views']){
 				detailTrick['views'] = 0
 			}
 			detailTrick['views'] = detailTrick['views'] + 1
-			console.log('detailTrick[views]',detailTrick['views'])
 			const viewsRef = firebase.database().ref('library/'+detailTrickKey+'/views')
 			viewsRef.set(detailTrick['views'])
 		}
@@ -82,7 +79,6 @@ class Store {
 		if(listType == "postreqs"){ listType = "dependents"}
 		const relatedTrick = {...this.library[parentTrick][listType][relatedTrickKey]}
 		//first voter
-		console.log('store.vote',parentTrick,relatedTrickKey,listType, voteDirection)
 		if(!relatedTrick[voteDirection]){
 			relatedTrick[voteDirection] = []
 		}

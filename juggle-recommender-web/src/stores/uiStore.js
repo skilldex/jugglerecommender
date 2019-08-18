@@ -76,7 +76,6 @@ class UIStore {
     @action setSuggestedRelation=(relation,toSetTo)=>{
     	if (relation === 'prereq'){
     		this.suggestedPrereq = toSetTo
-    		console.log('this.suggestedPrereq',this.suggestedPrereq)
     	}else if (relation === 'dependent'){
     		this.suggestedDependent = toSetTo
     	}else if (relation === 'related'){
@@ -158,7 +157,6 @@ class UIStore {
 		this.mainListScrollerPosition = scrollPos
 	}
 	@action clearRelationSuggestions=()=>{
-		console.log('clearRelationSuggestions')
 		this.suggestingPrereq = false
 	    this.suggestedPrereq = null
 	    this.suggestedPrereqSubmitDisabledMessage = null

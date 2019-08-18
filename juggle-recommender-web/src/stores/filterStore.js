@@ -80,7 +80,6 @@ class FilterStore {
 		this.searchText = null
 	}
 	@action setSearchText=(searchText)=>{
-		console.log('searchText',searchText)
 		this.searchText = searchText
 		uiStore.setSearchInput(searchText)
 		uiStore.resetSelectedTrick()
