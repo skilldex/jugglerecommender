@@ -33,6 +33,7 @@ class HomeScreen extends Component {
 		)
 		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
 		utilities.sendGA('home screen','detail')
+		store.increaseViewsCounter()
 	}		
 	render (){
     const backButton = <img id="backButton" 

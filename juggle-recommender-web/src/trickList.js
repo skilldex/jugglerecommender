@@ -64,6 +64,7 @@ class TrickList extends Component {
     	if (document.getElementById('detailDiv')){
 	    	document.getElementById('detailDiv').scrollTop = 0
 	    }
+	    store.increaseViewsCounter()
 	}
 
 	expandCard=(trickKey)=> {

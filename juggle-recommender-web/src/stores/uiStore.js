@@ -189,7 +189,6 @@ class UIStore {
 	 	this.detailTrick = clickedTrick
 	 	this.detailCatchEditable = false
 	 	if (this.detailTrick){
-	 		store.increaseViewsCounter()
 	 		store.getCommentsByTrickId(clickedTrick.id)
 	 		store.clearShowReplies()
 	        if(this.showFilterDiv){

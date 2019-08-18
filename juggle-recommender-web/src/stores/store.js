@@ -67,7 +67,7 @@ class Store {
 			if(!detailTrick['views']){
 				detailTrick['views'] = 0
 			}
-			detailTrick['views'] = detailTrick['views'] + .5
+			detailTrick['views'] = detailTrick['views'] + 1
 			console.log('detailTrick[views]',detailTrick['views'])
 			const viewsRef = firebase.database().ref('library/'+detailTrickKey+'/views')
 			viewsRef.set(detailTrick['views'])
