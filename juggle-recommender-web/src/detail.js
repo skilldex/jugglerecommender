@@ -150,8 +150,19 @@ class Detail extends Component {
     uiStore.updateRootTricks()
   }
   getKeysFromRelatedObject=(related)=>{
-    return Object.keys(related).map((key)=>{
-      return key
+    const detailTrick = store.library[uiStore.detailTrick.id]
+    const keysAndRelevance = Object.keys(related).map((key)=>{
+      const numUpvoters = related[key].upvoters ? related[key].upvoters.length : 0
+      const numDownvoters = related[key].downvoters ? related[key].downvoters.length : 0
+      const relevance = numUpvoters - numDownvoters
+      return [key,relevance]
+    })
+    console.log('keysAndRelevance',keysAndRelevance)
+    let sortedKeysAndRelevance = keysAndRelevance.sort(function(a,b) {
+        return a[1]-b[1]
+    }).reverse()
+    return sortedKeysAndRelevance.map((key)=>{
+      return key[0]
     })
   }
   suggestRelationClicked=(relation)=>{
