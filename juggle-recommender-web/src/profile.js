@@ -148,7 +148,8 @@ class Profile extends Component {
 						</div>
 					</div>
 					<div className = "individualProfileStatsDiv">
-						<img id="starButton" 
+						<img  id="starButton" 
+							  title="Star flair: Special list"
                               src={starIcon} 
                               className="iconProfile"
                               alt="starIcon" 
@@ -163,7 +164,8 @@ class Profile extends Component {
 						</div>
 					</div>
 					<div className = "individualProfileStatsDiv">
-						<img id="babyButton" 
+						<img  id="babyButton" 
+							  title="Baby flair: You're learning"
                               src={babyIcon} 
                               className="iconProfile"
                               alt="babyIcon" 
@@ -178,7 +180,8 @@ class Profile extends Component {
 						</div>
 					</div>
 					<div className = "individualProfileStatsDiv">
-						<img id="ninjaButton" 
+						<img  id="ninjaButton" 
+							  title="Ninja flair: You're experienced" 
                               src={ninjaIcon} 
                               className="iconProfile"
                               alt="ninjaIcon" 
@@ -193,7 +196,8 @@ class Profile extends Component {
 						</div>
 					</div>
 					<div className = "individualProfileStatsDiv">
-						<img id="cathcesButton" 
+						<img  id="cathcesButton" 
+							  title="Catches flair: You've logged catches"
                               src={catchesIcon} 
                               className="iconProfile"
                               alt="catchesIcon" 

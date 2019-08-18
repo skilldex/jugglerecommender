@@ -311,19 +311,22 @@ class Detail extends Component {
           hasNinjaFlair = true;
       }
     } 
- 		const starTrickButton = <img id="starButton" 
+ 		const starTrickButton = <img id="starButton"
+                                  title="Star flair: Special list"
                                   src={starIcon} 
                                   className={hasStarFlair?"flairIcon selectedFlair":"flairIcon" }
                                   alt="starIcon" 
                                   onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}
                               />
     const babyFlairButton = <img id="babyButton" 
+                                  title="Baby flair: You're learning"
                                   src={babyIcon} 
                                   className={hasBabyFlair?"flairIcon selectedFlair":"flairIcon" }
                                   alt="babyIcon" 
                                   onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'baby')}}
                               />
-    const ninjaFlairButton = <img id="ninjaButton" 
+    const ninjaFlairButton = <img id="ninjaButton"
+                                  title="Ninja flair: You're experienced" 
                                   src={ninjaIcon} 
                                   className={hasNinjaFlair?"flairIcon selectedFlair":"flairIcon" } 
                                   alt="ninjaIcon" 
@@ -334,6 +337,7 @@ class Detail extends Component {
                                             "catchesIconDetailLarge selectedFlair" :  "catchesIconDetailLarge"}
                                   alt="" 
                                   src ={catchesIcon}
+                                  title="Catches flair: You've logged catches"
                             />
     const deleteTrickButton = 
       detailTrick && authStore.user && 

@@ -283,24 +283,28 @@ class Filter extends Component {
 								<h3 className="filterHeader">Flair</h3>
 								<div style={{marginLeft:10, marginRight:10}}>
 									<img id="starButton" 
+										  title="Star flair: Special list"
 		                                  src={starIcon} 
 		                                  className={filterStore.flair.includes('starred')?"starIconFilter selectedFlair":"starIconFilter" }
 		                                  alt="starIcon" 
 		                                  onClick={()=>{this.flairButtonClicked('starred')}}
 		                            />
 									<img id="babyButton" 
+										  title="Baby flair: You're learning"
 		                                  src={babyIcon} 
 		                                  className={filterStore.flair.includes('baby')?"babyIconFilter selectedFlair":"babyIconFilter" }
 		                                  alt="babyIcon" 
 		                                  onClick={()=>{this.flairButtonClicked('baby')}}
 		                            />
 									<img id="ninjaButton" 
+										  title="Ninja flair: You're experienced"
 		                                  src={ninjaIcon} 
 		                                  className={filterStore.flair.includes('ninja')?"ninjaIconFilter selectedFlair":"ninjaIconFilter" } 
 		                                  alt="ninjaIcon" 
 		                                  onClick={()=>{this.flairButtonClicked('ninja')}}
 		                            />
 		                            <img id="catchesButton" 
+		                                  title="Catches flair: You've logged catches"
 		                                  src={catchesIcon} 
 		                                  className={filterStore.flair.includes('catches')?"catchesIconFilter selectedFlair":"catchesIconFilter" } 
 		                                  alt="catchesIcon" 
