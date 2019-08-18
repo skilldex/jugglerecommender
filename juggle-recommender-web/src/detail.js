@@ -256,7 +256,6 @@ class Detail extends Component {
         //uiStore.setDetailTrick(null)
         //uiStore.handleBackButtonClick()
     }
-
     const catchesSection = 
       <div>
         <label className="detailLabel">Your Catches </label>

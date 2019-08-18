@@ -70,6 +70,19 @@ class Store {
 			viewsRef.set(detailTrick['views'])
 		}
 	}
+	@action changeUsersWithCatchesTally=(amount)=>{
+		console.log('amount',amount,uiStore.detailTrick)
+		const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
+		if (this.library[detailTrickKey]){
+			const detailTrick = {...this.library[detailTrickKey]}
+			if(!detailTrick['usersWithCatches']){
+				detailTrick['usersWithCatches'] = 0
+			}
+			detailTrick['usersWithCatches'] = detailTrick['usersWithCatches'] + amount
+			const usersWithCatchesRef = firebase.database().ref('library/'+detailTrickKey+'/usersWithCatches')
+			usersWithCatchesRef.set(detailTrick['usersWithCatches'])
+		}		
+	}
 	@action vote(parentTrick, relatedTrickKey,listType, voteDirection){
 		utilities.sendGA('detail',
 			voteDirection.substring(0, voteDirection.length - 3) +

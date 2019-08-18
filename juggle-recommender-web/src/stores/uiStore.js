@@ -214,6 +214,13 @@ class UIStore {
 			if (store.myTricks[trickKey].catches){
 				previousCatches = store.myTricks[trickKey].catches
 			}
+			console.log('previousCatches',previousCatches)
+			if (previousCatches == 0){
+				store.changeUsersWithCatchesTally(1)
+			}
+			if (catches == 0){
+				store.changeUsersWithCatchesTally(-1)
+			}
 			store.updateTotalCatchCount(catches-previousCatches)
 			store.setCatches(catches, trickKey)
 			store.updateTricksInDatabase()
