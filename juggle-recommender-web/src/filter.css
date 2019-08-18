@@ -40,6 +40,14 @@
   width : 15px;
   cursor: pointer;
 }
+.filterSubmitButton{
+  color: #3090C7;
+  cursor: pointer;
+  float: right;
+  margin-top: 15px;
+  margin-right: 50px;
+  font-size: 18px;
+}
 .backButtonLabel{
   color: #3090C7;
   cursor: pointer;

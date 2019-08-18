@@ -401,7 +401,10 @@ class Filter extends Component {
 					{difficultySection}
 					<ColoredLine/>
 					{catchesSection}
-					<br/>
+					<ColoredLine/>
+					<label className="filterSubmitButton" 
+		             	   onClick={()=>{uiStore.toggleFilterDiv()}}>Submit
+		            </label>
 				</div>
 			</div>
 		)
