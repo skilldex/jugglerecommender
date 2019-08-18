@@ -62,6 +62,7 @@ New Details layout:
 					*Another next level of this is putting custom restrictions/requirements on their creation
 
 Bugs:
+	-ios youtube autoplay doesn't work
 	-after about 10 loops, videos get stuck with loading wheel,
 		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
 	-multiple tags clicked at once, and not due to fat fingers(stefan)
@@ -75,7 +76,12 @@ Bugs:
 		-old gif shows while new gif is loading
 			-try immediately setting it to null(if not already done)
 
+Styling:
+	position 'suggest a..' buttons 
+
 Niceties:
+	-contributor url .../contributor/*contributorsName*
+	-autoscroll to voted on card and make it flash when it resorts
 	-maybe tap target should be made larger?
 		-which share button having issues with?
 	-up arrow button that appears on list to zoom to top
