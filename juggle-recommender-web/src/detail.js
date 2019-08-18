@@ -280,10 +280,11 @@ class Detail extends Component {
           </span>
         }
         <img id="editCatchButton"
-              src={editIcon} 
-              className="editCatchIcon" 
-              alt="toggleCatchEdit" 
+             src={editIcon} 
+             className="editCatchIcon" 
+             alt="toggleCatchEdit" 
              onClick={()=>{ this.handleEditCatchButtonClick()}}
+             title="edit your catches"
         />
       </div>
     const backButton = <img id="backButton" 
@@ -348,12 +349,17 @@ class Detail extends Component {
               className="deleteTrickIcon" 
               alt="deleteTrick" 
              onClick={()=>{store.deleteTrick()}}
+             title="delete this pattern"
         /> : null      
     const editTrickButton  = 
       detailTrick && authStore.user && 
       (detailTrick.contributor === authStore.user.username || 
       authStore.user.username === "tjthejuggler") ? 
-        <img id="editCardButton" src={editCardIcon} className="editCardIcon" alt="toggleCardEdit" 
+        <img id="editCardButton" 
+             src={editCardIcon} 
+             className="editCardIcon" 
+             alt="toggleCardEdit" 
+             title="edit this pattern"
              onClick={()=>{this.handleEditTrickButtonClick()}}
         /> : null
     const shareButton = <img 
@@ -361,7 +367,7 @@ class Detail extends Component {
                            src={shareIcon}
                            onClick={()=>this.copyDetailUrl()}
                            alt=""
-                           title="share your contributed tricks"
+                           title="share this pattern"
                         />
     const tags =  detailTrick && detailTrick.tags ? detailTrick.tags.sort().map((tag,i)=>{
                       return <div>

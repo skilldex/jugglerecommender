@@ -199,6 +199,7 @@ class TrickList extends Component {
 												e.stopPropagation()
 												this.vote(trickKey,"upvoters")
 											}}
+											title = "this pattern is relevant"
 											/>
 										<img className={
 											this.checkIfVoted(detailTrick[listType][trickKey].downvoters) ? 
@@ -208,6 +209,7 @@ class TrickList extends Component {
 												e.stopPropagation()
 												this.vote(trickKey,"downvoters")
 											}}
+											title = "this pattern is not relevant"
 										/>
 									</div> : 
 									null
@@ -221,6 +223,7 @@ class TrickList extends Component {
 												this.expandCard(trickKey)
 											}
 										}
+								title = "show pattern demo"
 							>
 								<img alt=""
 									className={expandTrickButtonClass}								

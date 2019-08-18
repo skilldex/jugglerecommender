@@ -143,6 +143,7 @@
   height : 15px;
   width : 15px;
   vertical-align: middle;
+  cursor: pointer;
 }
 
 .flairDiv{
@@ -173,7 +174,8 @@
   height : 20px;
   width : 20px;
   margin-right: 6px;
-  opacity: .2;    
+  opacity: .2;  
+  cursor: pointer;  
 }
 
 .selectedFlair{

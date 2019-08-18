@@ -37,7 +37,6 @@ New Details layout:
 			-we may just be able to cancel the ability to remove the association tags in the form
 		-relateds should be ordered based on number of votes
 	MINOR:
-		-hover over message for flair
 		-Showing views, catches, number of users with catches for tricks would be cool
 			-users working on it
 				-figure out how to label it in details page
@@ -45,9 +44,6 @@ New Details layout:
 				-first time add catches increase tally
 				-if catches get set to 0, remove a tally
 				-write a script to get current workerCount
-			-views
-				-tricks get new property that is 'views'
-				-everytime someone visits the details, increase tally
 		-'get me a trick' section
 
 	NAMING STUFF/COMPONENTS

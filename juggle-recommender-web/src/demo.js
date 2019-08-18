@@ -350,11 +350,13 @@ class Demo extends Component {
     let frameButtons = this.props.demoLocation === "detail" ?
                         <div className = "frameButtons">
                           <img src = {frameIcon} 
+                               title = "slow motion backwards"
                                className = {this.state.slowmoPlayback === "back" ? "frameIcon rotated180 selectedFlair" : "frameIcon rotated180"}
                                onClick = {() => this.toggleSlowmoPlayback('back')}
                                onContextMenu={(e) => e.preventDefault()}
                           />
                           <img src = {frameIcon} 
+                               title = "slow motion forwards"
                                className = {this.state.slowmoPlayback === "forward" ? "frameIcon selectedFlair" : "frameIcon"}
                                onClick = {() => this.toggleSlowmoPlayback('forward')}
                                onContextMenu={(e) => e.preventDefault()}
