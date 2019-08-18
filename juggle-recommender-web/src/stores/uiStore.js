@@ -174,7 +174,9 @@ class UIStore {
 	    this.suggestedRelatedSubmitDisabledMessage = null
 	    this.autoCompletedSuggestedRelated = false
 	}
+
 	@action setDetailTrick=(clickedTrick)=>{
+
 		this.clearRelationSuggestions()
 		this.showCommentsSection = false
 		this.detailTrick = null
@@ -187,6 +189,7 @@ class UIStore {
 	 	this.detailTrick = clickedTrick
 	 	this.detailCatchEditable = false
 	 	if (this.detailTrick){
+	 		store.increaseViewsCounter()
 	 		store.getCommentsByTrickId(clickedTrick.id)
 	 		store.clearShowReplies()
 	        if(this.showFilterDiv){
@@ -196,6 +199,7 @@ class UIStore {
 	        	this.toggleSortDiv()
 	        }
 	 	}
+
 
 	}
 	@action toggleCatchEdit=(catches, trickKey)=>{

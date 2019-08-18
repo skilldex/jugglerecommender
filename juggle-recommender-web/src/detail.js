@@ -393,6 +393,10 @@ class Detail extends Component {
                             </div>:null
     const infoSection = uiStore.detailTrick && detailTrickKey ?
                           <div className="detailInfoDiv">
+                          <div className="viewsDiv">
+                            <label className="detailLabel">Views </label>
+                            {Math.round(detailTrick.views)}
+                          </div>
                           <div className="flairDiv">
                             <label className="detailLabel">Flair </label>
                             {starTrickButton}

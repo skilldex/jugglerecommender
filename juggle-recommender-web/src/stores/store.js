@@ -58,6 +58,21 @@ class Store {
 		})
 		return contributorTags
 	}
+	@action increaseViewsCounter=()=>{
+		const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
+		if (this.library[detailTrickKey]){
+			console.log('detailTrickKey',detailTrickKey)
+			const detailTrick = {...this.library[detailTrickKey]}
+			console.log('detailTrick',detailTrick)
+			if(!detailTrick['views']){
+				detailTrick['views'] = 0
+			}
+			detailTrick['views'] = detailTrick['views'] + .5
+			console.log('detailTrick[views]',detailTrick['views'])
+			const viewsRef = firebase.database().ref('library/'+detailTrickKey+'/views')
+			viewsRef.set(detailTrick['views'])
+		}
+	}
 	@action vote(parentTrick, relatedTrickKey,listType, voteDirection){
 		utilities.sendGA('detail',
 			voteDirection.substring(0, voteDirection.length - 3) +
