@@ -259,7 +259,7 @@ class Detail extends Component {
 
     const catchesSection = 
       <div>
-        <label className="detailLabel">Catches </label>
+        <label className="detailLabel">Your Catches </label>
         <img className= {store.myTricks[detailTrickKey] && 
                           parseInt(store.myTricks[detailTrickKey].catches,10)>0?
                         "catchesIconDetailSmall selectedFlair" :  "catchesIconDetailSmall"}
@@ -407,14 +407,18 @@ class Detail extends Component {
                             <label className="detailLabel">Views </label>
                             {detailTrick.views ? Math.round(detailTrick.views) : 0}
                           </div>
+                          <div className="usersWithCatchesDiv">
+                            <label className="detailLabel">Users w. Catches </label>
+                            {detailTrick.usersWithCatches ? detailTrick.usersWithCatches : 0}
+                          </div>
+                            {catchesSection}
                           <div className="flairDiv">
-                            <label className="detailLabel">Flair </label>
+                            <label className="detailLabel">Your Flair </label>
                             {starTrickButton}
                             {babyFlairButton}
                             {ninjaFlairButton}
                             {catchesFlairIcon}
                           </div>
-                            {catchesSection}
                             <label className="detailLabel">Contributor </label>
                             {
                               detailTrick.contributor ? 
