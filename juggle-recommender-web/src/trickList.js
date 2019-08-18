@@ -188,7 +188,7 @@ class TrickList extends Component {
 										<b>Tags:</b> {tags}
 									</div>	
 								</div>
-								{ this.props.listType !== "main" ? 
+								{ this.props.listType !== "main" && uiStore.selectedTrick !== trickKey ? 
 									<div className="thumbLine">
 										<span>relevance</span>
 										<label>{ numUpvoters - numDownvoters}</label>
