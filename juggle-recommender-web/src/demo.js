@@ -116,6 +116,7 @@ class Demo extends Component {
     }
   }
   youtubeStateChange = (data) => {
+    console.log("State changed", data)
     const video = this.video.internalPlayer
       //video.setAttribute("controls", 0)
       video.getCurrentTime().then((time)=>{
@@ -270,19 +271,14 @@ class Demo extends Component {
       window.open(trick.video)
     }
   }
-  onYoutubePlayerReady=()=>{
-
-    setTimeout(()=>{
-      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
-        const video = this.video.internalPlayer
-        if (video){
-          if (this.state.slowmoPlayback !== 'forward'){
-            video.setPlaybackRate(1)
-          }
-          video.playVideo();
-        }
-      }
-    }, 100)
+  onYoutubePlayerReady=(e)=>{
+    console.log("on ready event", e)
+    const video = e.target
+    if (this.state.slowmoPlayback !== 'forward'){
+      video.setPlaybackRate(1)
+    }
+    video.setOption({playsinline : 1})
+    video.playVideo();
   }
 
 	render() {
@@ -321,9 +317,10 @@ class Demo extends Component {
         autoplay: 1,
         mute : true,
         loop : 1,
-        events: {
+        playsinline : 1
+        /*events: {
          onReady: this.onYoutubePlayerReady(),
-        }
+        }*/
       }
     }
     if(trick && trick.videoStartTime > -1){
@@ -346,6 +343,7 @@ class Demo extends Component {
                           allowtransparency="true"
                           src={this.state.videoURL}
                           onStateChange={this.youtubeStateChange}
+                          onReady={this.onYoutubePlayerReady}
                           onEnd={this.youtubeEnded}
                           ref={(video)=> {this.video = video}}  
                         ></YouTube> : this.state.videoURL && this.state.videoURL.includes('instagram') ? 
