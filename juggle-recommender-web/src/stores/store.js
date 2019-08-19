@@ -533,6 +533,8 @@ class Store {
         history.replace('/detail/'+trickKey, {detail : trickKey})
         if(shouldBackUpBecauseEditing){
         	uiStore.handleBackButtonClick()
+        }else{
+        	store.increaseViewsCounter()
         }
 
         
