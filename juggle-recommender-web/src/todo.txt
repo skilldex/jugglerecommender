@@ -1,4 +1,3 @@
-v 2.0
 	Profile Screen: (Larger section below)
 		-upload image
 			ian has code for this
@@ -7,11 +6,20 @@ v 2.0
 		-a way to see info/demo of tricks when deciding what to use as related
 		-make consuming tags be added automatically in the list
 
+v 2.2
 	-when comment is submitted, 
 		-return comment input to original size
 		-expand comments section
 		-autoscroll to comment
+
 	-clear comment boxes when details page changes
+
+	-permanent search bar
+		-also has a 'random trick' button or box with question mark
+			-random trick pulls out of filtered trick list
+
+
+
 
 	-Think about leaderboard/details
 
@@ -19,16 +27,17 @@ v 2.0
 
 =========
 
-	permanent search
+	
 
 	VOTING / SUGGESTED TRICKS:
 		-?only show a certain number, and hide any other behind a collapsable button?
-		-make tage voting
+		-make tags voting
 		-make name voting
 		-difficulty voting?
 			-maybe just as a temporary measure until we figure out a better difficulty system?
 			-one thing to consider with difficulty is that if difficulty is dynamic then it cant be used to get users back to a specific pattern.
 			-there may even be something to 2 different difficulty ratings, 1 for difficulty of figuring out and another for difficulty of doing once figured out
+				-the difficulty to understand could be called 'complexity'
 		-general voting considerations
 			-There is an issue with allowing contributors to delete tricks once other users have voted on its properties
 			-We need to limit contributors power once community has voted on stuff because right now they can change what a trick is 100%
@@ -37,6 +46,37 @@ v 2.0
 			-if so, what else could go on the page?
 			-if not, what page should it join?
 			-any user input conditions/settings?
+
+
+Niceties:
+
+	-automatic upvotes for all related when patterns are contributed
+	-contributor url .../contributor/*contributorsName*
+	-autoscroll to voted on card and make it flash when it resorts
+	-maybe tap target should be made larger?
+		-which share button having issues with?
+	-up arrow button that appears on list to zoom to top
+	-hide top bar on scroll down, show top bar on scroll up(like in reddit is fun app)
+	-'Log in to join the discussion' message for comments of non-signed in users
+	-A wanted list where people can post tricks they would like to have
+		-this could be not limited to tricks, but also info on existing tricks
+		-the list could be hooked up to rewards, like btc
+		-wanteds posted by users with accounts only, or the ones with accounts float to top of list
+	-there should be a way to add gifs even if pattern name is not a siteswap
+	-An easy way to combine 2 patterns(just for mods)
+		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan
+	-a way for the user to switch props would be nice, so catches can be seperately kept without needing to make seperate accounts
+	-SORT BY:
+		-view count
+		-users working on 
+	-a way to make playlists, or practice plans, would be nice to keep track of all the tricks of a kind that i want to work on consistantly
+	-User made lists for things like 'patterns where all 3 balls line up vertically' or 'easy uncommon patterns' or 'easy to do hard to figure out' or 'hard to do, easy to figure out' or 'tjthejuggler's 5b cascade warmpup'
+
+
+
+
+
+
 
 
 	-allow line breaks to be seen in comments

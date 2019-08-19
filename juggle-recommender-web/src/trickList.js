@@ -260,7 +260,7 @@ class TrickList extends Component {
 			</div>
 		return (
 			<div style={{ overflow:"auto"}} className="trickListOuterDiv">
-				{uiStore.detailTrick ? null:<MainTagsBar/>}
+				
 				{uiStore.detailTrick ?
 					<div className= "listDiv"
 							 id='listDiv' 

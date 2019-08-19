@@ -7,6 +7,7 @@ import uiStore from "./stores/uiStore"
 import store from "./stores/store"
 import history from './history';
 import utilities from './utilities'
+import MainTagsBar from "./mainTagsBar"
 @observer
 class Header extends Component {
 	state={
@@ -124,6 +125,7 @@ class Header extends Component {
 					    </div>
 					</div>
 					{expandMenu}
+					<MainTagsBar/>
 				</div>
             )
     }

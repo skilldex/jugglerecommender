@@ -10,6 +10,7 @@ import searchIcon from './images/searchIcon.png'
 import starIcon from './images/starIcon.svg'
 import authStore from "./stores/authStore"
 import './mainTagsBar.css';
+import history from './history';
 
 @observer
 class MainTagsBar extends Component {
@@ -46,9 +47,12 @@ class MainTagsBar extends Component {
     }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
+      this.showPatternList()
+      uiStore.setShowSortDiv(false)
     }
     sortDirectionClicked=(direction)=>{
       filterStore.setSortDirection(direction)
+      this.showPatternList()
     }
 
     mouseEnterSortDiv=()=>{
@@ -59,6 +63,14 @@ class MainTagsBar extends Component {
     mouseLeaveSortDiv=()=>{
       uiStore.setShowSortDiv(false)
       uiStore.setMouseInSortDiv(false)
+    }
+
+    showPatternList=()=>{
+      history.push('/tricklist')
+      uiStore.clearUI()
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }
     }
 
     render() {

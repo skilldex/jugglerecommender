@@ -261,7 +261,15 @@ class UIStore {
     @action clearSortTimer=()=>{
 		this.sortTimer = null
 	}
+	@action showPatternList=()=>{
+      history.push('/tricklist')
+      uiStore.clearUI()
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }
+    }
 	@action toggleSortDiv=()=>{
+	  //this.showPatternList()
 	  this.setShowExpandedMenu(false)
       if(!this.showSortDiv){
       	this.setShowSortDiv(true)
@@ -305,6 +313,7 @@ class UIStore {
 				utilities.sendGA('filter','close filter',filterStrings.join(" | "))
 			}
 	    	this.setShowFilterDiv(false)
+	    	this.showPatternList()
 	    }
 	}
 	@action setShowFilterDiv=(showDiv)=>{
@@ -312,6 +321,7 @@ class UIStore {
 			this.clearFilterTimer()
 		}, 50)
 		this.showFilterDiv=showDiv
+		//this.showPatternList()
 	}	
 
 	@action clearExpandedMenuTimer=()=>{
@@ -348,6 +358,7 @@ class UIStore {
 		this.performSearch()
 		this.resetSelectedTrick()
 		this.updateRootTricks()
+		this.showPatternList()
  	}
  		
  	@action performSearch=()=>{
