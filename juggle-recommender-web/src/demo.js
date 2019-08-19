@@ -276,6 +276,9 @@ class Demo extends Component {
       if (this.state.videoURL && this.state.videoURL.includes('youtube')){
         const video = this.video.internalPlayer
         if (video){
+          if (this.state.slowmoPlayback !== 'forward'){
+            video.setPlaybackRate(1)
+          }
           video.playVideo();
         }
       }

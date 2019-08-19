@@ -82,7 +82,8 @@ New Details layout:
 					*Another next level of this is putting custom restrictions/requirements on their creation
 
 Bugs:
-	-slow motion remains when detail changes, but slow motion arrow loses its color, it should be one way or the other
+	-youtube slowmo back causes glitch if details page changes
+	-youtube slowmo back doesnt loop
 	-after about 10 loops, videos get stuck with loading wheel,
 		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
 	-multiple tags clicked at once, and not due to fat fingers(stefan)

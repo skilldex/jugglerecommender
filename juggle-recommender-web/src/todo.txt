@@ -7,8 +7,10 @@ v 2.0
 		-a way to see info/demo of tricks when deciding what to use as related
 		-make consuming tags be added automatically in the list
 
-	-when comment is submitted, return to original size
-	-autoscroll to comment when posted
+	-when comment is submitted, 
+		-return comment input to original size
+		-expand comments section
+		-autoscroll to comment
 	-clear comment boxes when details page changes
 
 	-Think about leaderboard/details
