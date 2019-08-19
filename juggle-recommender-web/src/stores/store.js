@@ -129,6 +129,16 @@ class Store {
 		)
 		votesRef.set([...relatedTrick[voteDirection]])
 
+		/*
+		TODO: add votes collection
+		const votesCollectionRef = firebase.database().ref("votes/")
+		let newData = votesCollectionRef.push();
+        newData.set({
+        	parentTrickKey: parentTrick,
+        	relatedTrickKey : relatedTrickKey,
+        	user : authStore.user.username,
+        	voteDirection : voteDirection
+        });*/
 	}
 	@action getCommentsByTrickId(trickId){
 		const commentsRef = firebase.database().ref('comments/').orderByChild("trickId").equalTo(trickId)
