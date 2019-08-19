@@ -1,0 +1,65 @@
+
+=====
+Get random trick
+	check prereqs of trick
+		check catches of prereq
+			higher catches +
+			no catches - 
+
+		check flair of prereq
+			star weak +
+			baby weak +
+			ninja high + 
+			no flair - 
+
+	check related of trick
+		check catches of prereq
+			higher catches +
+			no catches - 
+			
+		check flair of prereq
+			star weak +
+			baby weak +
+			ninja high + 
+			no flair - 
+
+	check postreq of trick
+		check catches of postreq
+			higher catches +
+			no catches - 
+			
+		check flair of postreq
+			star weak +
+			baby weak +
+			ninja high + 
+			no flair - 
+
+	catches of trick*(-1 * postreqScore)
+
+	check flair of trick * (-1 * postreqScore)
+
+    x= (catches/(#numballs*hands)
+    score = 1+1/(-.05x - 1)
+
+	no Flair = 0
+	starFlair = 1
+	babyFlair = # balls * 2 
+	ninja = # balls * 2 * 15
+	Sum(
+		C1 * prereqCatches +
+		C1 * prereqFlair +
+	) +
+	Sum(
+		C2 * relatedCatches +
+		C2 * relatedFlair +
+	) + 
+	Sum(
+		C3 * postreqCatches +
+		C3 * postreqFlair +
+	) +
+	C7 * catches + 
+	C
+
+	calculate score
+
+	check with filter
