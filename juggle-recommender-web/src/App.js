@@ -98,6 +98,7 @@ if(store.isLocalHost){
 //loaded with a shared URL
 if (window.location.search.includes("?")){
 	uiStore.setShowHomeScreen(false)
+	history.push('/tricklist')
 }
 const ESCAPE_KEY = 27;
 

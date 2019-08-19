@@ -46,7 +46,9 @@ class AddTrickForm extends Component {
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
 		explanation: '',
-		gifUrl: null
+		gifUrl: null,
+		views: 0,
+		usersWithCatches: 0,
 	}
 
 	componentDidMount=()=>{
@@ -61,7 +63,15 @@ class AddTrickForm extends Component {
 			}
 			this.setState({contributor: trick.contributor})
 			this.setState({trickNameBeingEdited:trick.name})
-			this.setState({explanation: trick.explanation})
+			if(trick.explanation){
+				this.setState({explanation: trick.explanation})
+			}
+			if(trick.views){
+				this.setState({views: trick.views})
+			}
+			if(trick.usersWithCatches){
+				this.setState({usersWithCatches: trick.usersWithCatches})
+			}
 			//convert tag strings to tag objects
 			if(trick.tags){
 				trick.tags = trick.tags.map((tag)=>{
@@ -502,6 +512,8 @@ class AddTrickForm extends Component {
 				tags : tags,
 				timeUpdated : date.getTime(),
 				explanation : this.state.explanation,
+				views : this.state.views,
+				usersWithCatches : this.state.usersWithCatches,
 			}
 			if(!this.state.contributor){
 				delete trick.contributor

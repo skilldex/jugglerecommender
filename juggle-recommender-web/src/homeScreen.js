@@ -66,7 +66,7 @@ class HomeScreen extends Component {
 					}
 					<button className = "patternListButton"
 							onClick={this.clickPatternList}>
-						All Patterns
+						Pattern List
 					</button>				    
 				</div>
 			)

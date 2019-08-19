@@ -574,9 +574,11 @@ class Store {
 	      source : "suggested",
 	      upvoters : [authStore.user.username]
 	    }
-	    let relationWriteRef = firebase.database().ref('library/'+trickKey+'/'+relation)
-	    relationWriteRef.set({...this.library[trickKey][relation]});
-
+	    console.log('this.library[trickKey][relation]',this.library[trickKey][relation])
+	    let relationWriteRef = firebase.database().ref('library/'+trickKey+'/'+relation+'/'+suggestedTrickKey)
+	    relationWriteRef.set({...this.library[trickKey][relation][suggestedTrickKey]});
+	    relationWriteRef.off()
+	    console.log('this.library[trickKey][relation]',this.library[trickKey][relation])
 
 		const otherRelation = relation == "related" ? "related" : 
 								relation == "prereqs" ? "dependents" :
@@ -590,8 +592,8 @@ class Store {
 	      source : "suggested",
 	      upvoters : [authStore.user.username]
 	    }
-	    let otherRelationWriteRef = firebase.database().ref('library/'+suggestedTrickKey+'/'+otherRelation)
-	      otherRelationWriteRef.set({...this.library[suggestedTrickKey][otherRelation]});
+	    let otherRelationWriteRef = firebase.database().ref('library/'+suggestedTrickKey+'/'+otherRelation+'/'+trickKey)
+	      otherRelationWriteRef.set({...this.library[suggestedTrickKey][otherRelation][trickKey]});
 	
 	    uiStore.clearRelationSuggestions()
 	}

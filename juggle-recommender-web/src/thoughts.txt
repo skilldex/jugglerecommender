@@ -84,6 +84,10 @@ Bugs:
 			-try immediately setting it to null(if not already done)
 
 
+
+!!!!!!!WHEN A TRICK IS EDITED. VIEWS AND USERS WITH CATCHES GETS RESET!!!!!
+
+
 MODIFIERS:
 	-allow for different types of catch inputting, modifiers
 		-next to catches a way to change/input new modifiers
