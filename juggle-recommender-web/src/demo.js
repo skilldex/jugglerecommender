@@ -270,6 +270,18 @@ class Demo extends Component {
       window.open(trick.video)
     }
   }
+  onYoutubePlayerReady=()=>{
+
+    setTimeout(()=>{
+      if (this.state.videoURL && this.state.videoURL.includes('youtube')){
+        const video = this.video.internalPlayer
+        if (video){
+          video.playVideo();
+        }
+      }
+    }, 100)
+  }
+
 	render() {
     const trickKey = store.library[this.props.trickKey] ? this.props.trickKey : ""
     const trick = store.library[trickKey]
@@ -306,6 +318,9 @@ class Demo extends Component {
         autoplay: 1,
         mute : true,
         loop : 1,
+        events: {
+         onReady: this.onYoutubePlayerReady(),
+        }
       }
     }
     if(trick && trick.videoStartTime > -1){

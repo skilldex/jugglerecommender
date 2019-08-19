@@ -85,8 +85,8 @@ class Store {
 	}
 	@action vote(parentTrick, relatedTrickKey,listType, voteDirection){
 		utilities.sendGA('detail',
-			voteDirection.substring(0, voteDirection.length - 3) +
-			' ' + relatedTrickKey + ' as ' + voteDirection +
+			voteDirection.substring(0, voteDirection.length - 2) +
+			' ' + relatedTrickKey + ' as ' + listType +
 			' for ' + parentTrick)
 		const oppositeVoteDirection = voteDirection == "upvoters" ? "downvoters" : "upvoters" 
 		if(listType == "postreqs"){ listType = "dependents"}
