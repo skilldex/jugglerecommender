@@ -45,29 +45,25 @@ v 2.2
 
 
 Niceties:
-	-clicking maginifying glass should go to list as well as highlight search
-	-automatic upvotes for all related when patterns are contributed
 	-contributor url .../contributor/*contributorsName*
 	-autoscroll to voted on card and make it flash when it re-sorts
+		-would be nice if it animatedly moved
 	-maybe share tap target should be made larger?
 		-which share button having issues with?
-	-up arrow button that appears on list to zoom to top
-	-hide top bar on scroll down, show top bar on scroll up(like in reddit is fun app)
+	-maybe up arrow button that appears on list to zoom to top
 	-'Log in to join the discussion' message for comments of non-signed in users
+	-there should be a way to add gifs even if pattern name is not a siteswap
+	-An easy way to combine 2 patterns(just for mods)
+		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan
+	-SORT BY:
+		-view count, or users working on 
+			-maybe not since views are not shown on cards, but maybe this isnt a big deal
+	-a way to make playlists, or practice plans, would be nice to keep track of all the tricks of a kind that i want to work on consistantly
+	-User made lists for things like 'patterns where all 3 balls line up vertically' or 'easy uncommon patterns' or 'easy to do hard to figure out' or 'hard to do, easy to figure out' or 'tjthejuggler's 5b cascade warmpup'
 	-A wanted list where people can post tricks they would like to have
 		-this could be not limited to tricks, but also info on existing tricks
 		-the list could be hooked up to rewards, like btc
 		-wanteds posted by users with accounts only, or the ones with accounts float to top of list
-	-there should be a way to add gifs even if pattern name is not a siteswap
-	-An easy way to combine 2 patterns(just for mods)
-		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan
-	-a way for the user to switch props would be nice, so catches can be seperately kept without needing to make seperate accounts
-	-SORT BY:
-		-view count
-		-users working on 
-	-a way to make playlists, or practice plans, would be nice to keep track of all the tricks of a kind that i want to work on consistantly
-	-User made lists for things like 'patterns where all 3 balls line up vertically' or 'easy uncommon patterns' or 'easy to do hard to figure out' or 'hard to do, easy to figure out' or 'tjthejuggler's 5b cascade warmpup'
-
 
 
 

@@ -53,7 +53,8 @@
 .searchIcon{
   height : 23px;
   width : 23px;
-  display: inline-block;
+  display : inline-block;
+  cursor : pointer;
 }
 .randomTrickIcon{
   height : 35px;

@@ -69,8 +69,6 @@ Maybes:
 
 Bugs:
 	-sign in auto suggestions show up in search
-	-when a pattern is initially added and the contributor goes to it's page,
-		it should get a view
 	-youtube slowmo back causes glitch if details page changes
 	-youtube slowmo back doesnt loop
 	-after about 10 loops, videos get stuck with loading wheel,
