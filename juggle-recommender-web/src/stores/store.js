@@ -505,8 +505,26 @@ class Store {
 				})
 			}
 		}
+
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
+
+        const relationships = ['prereqs','related','dependents']
+        Object.keys(relationships).forEach((i)=>{
+        	console.log('relationships[i]',relationships[i])
+          	if (relationships[i] in trick){
+          		Object.keys(trick[relationships[i]]).forEach((j)=>{
+        			let relation = {'source':trick[relationships[i]][j]['source']}
+        			if(trick[relationships[i]][j]['upvoters']){
+        				relation['upvoters'] = [...trick[relationships[i]][j]['upvoters']]
+        			}if(trick[relationships[i]][j]['downvoters']){
+        				relation['downvoters'] = [...trick[relationships[i]][j]['downvoters']]
+        			}
+					let newRelatedPatternUpvotersRef = firebase.database().ref('library/'+trickKey+'/'+relationships[i]+'/'+j)
+			        newRelatedPatternUpvotersRef.set(relation);  
+        		})
+        	}
+        })
         //if name changed, delete old reference in firebase
         //delete in mytricks and selected tricks, swap with new key
         

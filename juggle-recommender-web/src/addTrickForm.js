@@ -461,18 +461,33 @@ class AddTrickForm extends Component {
 			var tags = this.state.tags.map(function(item) {
 				return item['text'];
 			});
-			const prereqs = {}
-			const related = {}
-			const postreqs = {}
-			this.state.prereqs.forEach((item)=>{
-				prereqs[item['id']] = { source : "contributed"}
-			});
-			this.state.related.forEach((item)=>{
-				related[item['id']] = { source : "contributed"}
-			});
-			this.state.postreqs.forEach((item)=>{
-				postreqs[item['id']] = { source : "contributed"}
-			});	
+			let prereqs = {}
+			let related = {}
+			let postreqs = {}
+			if(uiStore.editingDetailTrick){
+				console.log('editingDetailTrick')
+				prereqs = store.library[uiStore.detailTrick.id]['prereqs']
+				related = store.library[uiStore.detailTrick.id]['related']
+				postreqs = store.library[uiStore.detailTrick.id]['dependents']
+				console.log('prereqs',prereqs)
+			}else{
+				this.state.prereqs.forEach((item)=>{
+					console.log('counter')
+					prereqs[item['id']] = { source : "contributed",
+											 upvoters : [this.state.contributor]
+											}
+				});
+				this.state.related.forEach((item)=>{
+					related[item['id']] = { source : "contributed",
+											 upvoters : [this.state.contributor]
+											}
+				});
+				this.state.postreqs.forEach((item)=>{
+					postreqs[item['id']] = { source : "contributed",
+											 upvoters : [this.state.contributor]
+											}
+				});	
+			}
 
 			let suffix = ""
 			if (this.state.num.toString() !== "3"){
@@ -525,6 +540,7 @@ class AddTrickForm extends Component {
 				alert(trick.name+" added!")
 				trick["timeSubmitted"] = date.getTime()
 			}
+			Object.keys(trick).forEach(key => trick[key] === undefined ? delete trick[key] : '')
 			store.addTrickToDatabase(trick)
 			this.clearState()
 		}

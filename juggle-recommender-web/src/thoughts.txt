@@ -37,7 +37,6 @@ External:
 Misc:
 	-all users emails are in db on github
 	-from stefan
-		-'I havn't searched patterns for a while and had a hard time finding the list was looking for the word 'searching' or a magnifying glass icon' (stefan)
 		-On the add patternform: if the submit button is grey you could give hints what the user is missing
 			-followup with stefan
 
