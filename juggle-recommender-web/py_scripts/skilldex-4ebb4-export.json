@@ -3163,8 +3163,7 @@
       },
       "related" : {
         "Every 3rd Wall Takeout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -3770,28 +3769,22 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "423 with Active 2 Slam Around the Arm" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "423 with Reverse Backcross 2s" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "42T3 Slam Tennis" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "Box + Tennis" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Columns Overthrow" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "Drop Box + Tennis" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "3",
@@ -6196,12 +6189,10 @@
       },
       "related" : {
         "Fake Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Fake Columns Variation" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -6799,12 +6790,10 @@
       "num" : "4",
       "prereqs" : {
         "Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "juggling_vegan_" ]
+          "source" : "contributed"
         },
         "Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "juggling_vegan_" ]
+          "source" : "automatic"
         }
       },
       "related" : {
@@ -8328,32 +8317,25 @@
     "Boston Mess" : {
       "dependents" : {
         "4440522" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Bent Into a Pretzel" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Boston Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Boston Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Cherry Picker" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Mindfuckery Reverse Machine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Over the Undercover Thunder" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4",
@@ -8413,8 +8395,7 @@
       },
       "related" : {
         "Boston Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -8551,264 +8532,199 @@
     "Box" : {
       "dependents" : {
         "Asymmetric Active Crossover" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Asymmetric Columns Box(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Asymmetric Rising Disco" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Asynch Slam Box Variation" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Bizarre Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Boston Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Box + Boston Shuffle" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box + Factory" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Box + Fake Double Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box + Shower" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box + Tennis" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Box Over a an Extra Synch Ball(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box with ({11}) Bottom(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box with Headplant 1" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box with a Lid" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Broken Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Burke's Burrage + Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Charley Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Chops + Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Cross Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Crossed 423 Fake Tennis" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Crossed Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Double Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Double Box + NBox" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Double Yolked Egg(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Double Yolked Sunny Side Up (Version 2)(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Every 3rd Wall Takeout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Extended Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Extended Box with Vertical 2xs" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Extended Shapeshifter Thing" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Fake Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Gaudi's shuffle(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Half Overhead Box with Slanted Bottom" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Inverted Box Distorted By Inside Shapeshifter" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Lost in the Loop" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Luke's Shuffle" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Mills Mess + Shower" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "NBox" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Newton" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Penguin Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Penman's Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Shapeshifter Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Shower + Fake Mess" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Shuffle Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Shuffle(Slams)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Slide Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Split plane rolling box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Sprung Cascade(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Square Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Stacked Box(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Stacked Multiplex Box(5b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Swap Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Switch Factory Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Switched Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Temple Box(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "The Palindrome" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Threaded Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Tossout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "True Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Underarm Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Weave Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "3.6",
@@ -8908,12 +8824,10 @@
       },
       "related" : {
         "Switch Factory Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "Waterfall" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "",
@@ -9236,47 +9150,47 @@
       "dependents" : {
         "(6,4x)(2x,0) with Under arm 6 and 2x Slam" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Asymmetric Over Easy" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Broken Box + Orka's Mess" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Broken Bridger's Bridge" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Broken NBox Slam" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Burst Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Chops + Broken Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Gilligan's Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Karas Kubical" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Takeouts + Broken Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Takeouts + Broken Box 2" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "difficulty" : "4.6",
@@ -9287,21 +9201,21 @@
       "prereqs" : {
         "Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Shower Cascade" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "related" : {
         "Broken Shower" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "IVI Shuffle" : {
           "source" : "suggested",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "siteswap" : "(4,2x)*",
@@ -9471,28 +9385,22 @@
     "Burke's Barrage" : {
       "dependents" : {
         "2x Takeout Box (Takeouts + Box 2)" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Burke's Burrage + Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "The Tornado" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Time Reverse Burke's Burrage" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Weave" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4",
@@ -9519,20 +9427,16 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "2x Takeout Box (Takeouts + Box 2)" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Takeouts + Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "Takeouts + Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "Takeouts + NBox" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "5",
@@ -9588,12 +9492,10 @@
       "contributor" : "JuggleKraze_",
       "dependents" : {
         "Broken NBox Slam" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         },
         "Burst Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "4.7",
@@ -9604,17 +9506,17 @@
       "prereqs" : {
         "Broken Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "related" : {
         "Gilligan's Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         },
         "Underarm Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "siteswap" : "(4,2x)(2x,4x)(2x,4x)*",
@@ -10258,8 +10160,7 @@
     "Charley" : {
       "dependents" : {
         "Charley Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "4.7",
@@ -11988,148 +11889,112 @@
     "Columns" : {
       "dependents" : {
         "1up 2up Cross Arm Love Squeeze" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "1up 2up with 1 of 2up Reverse Backcrosses" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "1up 3up variation(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Aquamarine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Asymmetric Lemming Drop" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Collision Columns " : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Collision Columns (3)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Collision Columns Over The Top " : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Collision Columns Over The Top (3)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Column Box Variation" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Column Shower Variation" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Columns Mess 1" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Columns Overthrow" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Columns(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Continuous Asscatches 1up2up" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Cross Arm Over Under Pistons" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Crossunder" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Fake Boston Shuffle + Columns" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Fake Columns 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Half Boston Mess" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Infinity" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Multiplex Columns(5b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Nelson's Nemesis" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "R+L Fake Columns" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "R+L Yo-Yo" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Rainbow Arches" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Recrossing Columns" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse 423" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse Crossunder" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse Infinity" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Shuffle Switch" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Shuffle(Slams)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Sing's Mess" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Stacked Columns(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Sync Crossarm 1up 2up Tennis" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "3",
@@ -12156,12 +12021,10 @@
       "contributor" : "JuggleKraze_",
       "dependents" : {
         "Asymmetric Columns Box(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         },
         "Burst Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "3.8",
@@ -12180,8 +12043,7 @@
       },
       "related" : {
         "Fake Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -14454,13 +14316,12 @@
         },
         "Shuffle Box" : {
           "source" : "contributed",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "related" : {
         "Factory Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -14669,12 +14530,10 @@
       "contributor" : "JuggleKraze_",
       "dependents" : {
         "Takeout Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         },
         "Weave Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "3.7",
@@ -14983,216 +14842,163 @@
     "Factory (Machine)" : {
       "dependents" : {
         "(6,4x)4 Machine(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "1up 3up Machine(5b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "3-beat Reverse Slam Machine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "423 Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "423ish Underarm Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "531 With Factory 3s" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "625M263(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "663M5(5b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Alt Fake Columns" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Asymmetric Reverse Shapeshifter" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Asymmetric Synch Cross Arm Machine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Atari" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box + Factory" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Continuous Machine(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Continuous penguin machine (the wrist burner)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Contraption" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Criss-Cross" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Cross Corner Machine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Cross Drop Robot" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Crossed Arm Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Crossunder Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "FUF" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Factory Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Factory Tennis" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Funky3" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Half Waterfall" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Inverted Shower" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Isa's Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Machined Windmill" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Mindfuckery Reverse Machine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Multiplex Squeeze Catch Machine Variation(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Multiplex-Squeeze Factory(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Over Under Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Phi" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "R+L Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "R+L Fake Columns" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Relf's Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse Machine Slams" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Some Weird Machine Variant" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Split Multiplex Squeeze Machine(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Supersymmetry is Still a Mystery" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Switch Factory Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Switch Factory Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Symmetric Machine + Slam" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Symmetric Reverse Slam Machine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Sync Symmetrical Factory(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Sync Symmetrical Machine Variation 1" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "The Magnet Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Triphammer (Alternating bisected multi-machine)(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Waterfall" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Wristburning Jambalaya" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Zebra Factory" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "3",
@@ -15233,8 +15039,7 @@
       "contributor" : "JuggleKraze_",
       "dependents" : {
         "Switch Factory Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "4.2",
@@ -15248,7 +15053,7 @@
         },
         "Shuffle Box" : {
           "source" : "contributed",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "related" : {
@@ -15568,20 +15373,16 @@
       },
       "related" : {
         "Alt Fake Columns" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         },
         "Fake Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "False Triazzle" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         },
         "Follow Weave" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "",
@@ -15690,20 +15491,16 @@
       "num" : "3",
       "related" : {
         "Fake Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "Fake Columns Variation" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "Follow Weave" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "Triazzle" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "",
@@ -15893,8 +15690,7 @@
       "contributor" : "JuggleKraze_",
       "dependents" : {
         "Dan's Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "3.8",
@@ -16746,13 +16542,13 @@
       "prereqs" : {
         "Broken Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "related" : {
         "Burst Box" : {
           "source" : "contributed",
-          "upvoters" : [ "loj", "JuggleKraze_" ]
+          "upvoters" : [ "loj" ]
         }
       },
       "siteswap" : "(4,2x)(4,2)(2x,4x)*",
@@ -16926,12 +16722,10 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "Boston Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Boston Mess + Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4",
@@ -18486,16 +18280,13 @@
       "num" : "3",
       "prereqs" : {
         "Dan's Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "automatic"
         },
         "Inverted Boston Shuffle" : {
-          "source" : "contributed",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "contributed"
         },
         "The Weave" : {
-          "source" : "contributed",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "contributed"
         }
       },
       "related" : {
@@ -18626,36 +18417,28 @@
       "num" : 3,
       "prereqs" : {
         "Inverted Boston Shuffle" : {
-          "source" : "automatic",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "automatic"
         },
         "Inverted Box 1 Swap(2b)" : {
-          "source" : "automatic",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "automatic"
         },
         "Inverted Box 2 Swap(2b)" : {
-          "source" : "automatic",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "automatic"
         },
         "Inverted Box Swap Drill(2b)" : {
-          "source" : "automatic",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "automatic"
         },
         "Luke's Shuffle" : {
-          "source" : "contributed",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "contributed"
         },
         "NBox" : {
-          "source" : "contributed",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "contributed"
         },
         "Square Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "automatic"
         },
         "Symmetric Z Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "artifaxiom" ]
+          "source" : "contributed"
         }
       },
       "related" : {
@@ -18733,16 +18516,13 @@
       "contributor" : "tjthejuggler",
       "dependents" : {
         "Inverted Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "tjthejuggler" ]
+          "source" : "contributed"
         },
         "Inverted box 4 Swap(2b)" : {
-          "source" : "automatic",
-          "upvoters" : [ "tjthejuggler" ]
+          "source" : "automatic"
         },
         "Square Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "tjthejuggler" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "1.9",
@@ -19971,8 +19751,7 @@
       },
       "related" : {
         "Two-Layer Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "",
@@ -20207,16 +19986,14 @@
       "num" : 3,
       "prereqs" : {
         "Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Shuffle Box" : {
           "source" : "automatic",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_", "loj" ]
+          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
         },
         "Shuffle(Slams)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "related" : {
@@ -20768,20 +20545,16 @@
       },
       "related" : {
         "40 Mills Mess(2b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Fake Mess" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Mike's Mess" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Slide Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "3",
@@ -21828,11 +21601,11 @@
       "url" : "",
       "video" : "https://www.instagram.com/p/BcHt2vzhDxT/"
     },
-    "MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
+    "MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
       "contributor" : "jahvorsky_",
       "difficulty" : "5.7",
       "explanation" : "",
-      "name" : "MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive",
+      "name" : "MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive",
       "num" : "3",
       "prereqs" : {
         "Symmetric Active Crossover" : {
@@ -22096,7 +21869,7 @@
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         },
-        "MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
+        "MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         }
@@ -22809,8 +22582,7 @@
       "num" : "3",
       "prereqs" : {
         "Weave Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "",
@@ -22831,16 +22603,14 @@
       "num" : 3,
       "prereqs" : {
         "Dan's Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Orinoco Box" : {
           "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_", "loj" ]
+          "upvoters" : [ "JuggleKraze_" ]
         },
         "Weave" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "42423",
@@ -23841,8 +23611,7 @@
       },
       "related" : {
         "Weave Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "52512",
@@ -24219,20 +23988,16 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "Fake Columns Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Fake Columns Variation" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Reverse Follow" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Windshield Wipers" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "3",
@@ -24638,16 +24403,13 @@
       },
       "related" : {
         "Dan's Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Relf's Revenge 6" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Relf's Rubensteins" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "423",
@@ -24772,8 +24534,7 @@
       "num" : "3",
       "prereqs" : {
         "Weave Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "related" : {
@@ -26118,16 +25879,14 @@
       },
       "related" : {
         "Revenge Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Rubenstein's Revenge" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Twirl Box" : {
           "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_", "loj" ]
+          "upvoters" : [ "JuggleKraze_" ]
         }
       },
       "siteswap" : "52233",
@@ -26206,16 +25965,14 @@
       },
       "related" : {
         "Revenge Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Romeo's Revenge" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Twirl Box" : {
           "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_", "loj" ]
+          "upvoters" : [ "JuggleKraze_" ]
         }
       },
       "siteswap" : "52233",
@@ -26505,8 +26262,7 @@
       "contributor" : "JuggleKraze_",
       "dependents" : {
         "Slash Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "4.6",
@@ -26809,12 +26565,10 @@
       },
       "related" : {
         "Half Shower" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Tossout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "51",
@@ -26987,7 +26741,7 @@
         },
         "Layer Box" : {
           "source" : "automatic",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         },
         "Luke's Shuffle" : {
           "source" : "contributed",
@@ -26999,7 +26753,7 @@
         },
         "Two-Layer Box" : {
           "source" : "automatic",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "difficulty" : "3.9",
@@ -27015,11 +26769,11 @@
       "related" : {
         "Shuffle(Slams)" : {
           "source" : "contributed",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         },
         "Square Box" : {
           "source" : "automatic",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "siteswap" : "",
@@ -27252,16 +27006,14 @@
       },
       "related" : {
         "IVI Shuffle" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "IVi Shuffle" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Shuffle Box" : {
           "source" : "automatic",
-          "upvoters" : [ "tjthejuggler", "loj" ]
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "siteswap" : "51",
@@ -28605,7 +28357,7 @@
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         },
-        "MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
+        "MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         },
@@ -28843,7 +28595,7 @@
         },
         "Shuffle Box" : {
           "source" : "contributed",
-          "upvoters" : [ "tjthejuggler", "JuggleKraze_" ]
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "siteswap" : "",
@@ -29017,7 +28769,7 @@
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         },
-        "MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
+        "MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         },
@@ -29947,8 +29699,7 @@
       "num" : "3",
       "prereqs" : {
         "Every 3rd Wall Takeout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "lucasadverse" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -29962,104 +29713,79 @@
     "Takeouts" : {
       "dependents" : {
         "2x Takeout Box (Takeouts + Box 2)" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Aquamarine" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Boston Mess + Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Boston Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Box Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Burke's Barrage" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Burke's Slam" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Claymotion Underarm Orbit" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Every 3rd Wall Takeout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Flying Around the World" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Multiplex Takeouts(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Orka's Mess 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse Chops" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Reverse Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Richie's Rocket" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Squeeze Takeout in Synch(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takearound" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Broken Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Broken Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts + Orbits" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Takeouts(4b)" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "The Tornado" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Windmill Takeouts" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4",
@@ -30131,20 +29857,16 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "2x Takeout Box (Takeouts + Box 2)" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Takeouts + Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "Takeouts + Broken Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         },
         "Takeouts + NBox" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4",
@@ -30174,8 +29896,7 @@
       },
       "related" : {
         "Every 3rd Wall Takeout Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -30248,12 +29969,10 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "2x Takeout Box (Takeouts + Box 2)" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Takeouts + Box 2" : {
-          "source" : "contributed",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4.4",
@@ -30741,12 +30460,10 @@
       "contributor" : "3ballpatterns_",
       "dependents" : {
         "Inverted Boston Shuffle With Orbits" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         },
         "Weave Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "difficulty" : "3",
@@ -31189,12 +30906,10 @@
       },
       "related" : {
         "Cross Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "Shower" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "",
@@ -31310,7 +31025,7 @@
         }
       },
       "related" : {
-        "MÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
+        "MÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¶bius Ladders are Vertex-Transitive" : {
           "source" : "contributed",
           "upvoters" : [ "jahvorsky_" ]
         },
@@ -31588,14 +31303,12 @@
       "num" : "3",
       "prereqs" : {
         "Orinoco Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "contributed"
         }
       },
       "related" : {
         "Revenge Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "JuggleKraze_" ]
+          "source" : "automatic"
         },
         "Romeo's Revenge" : {
           "source" : "contributed",
@@ -31816,12 +31529,10 @@
       },
       "related" : {
         "Slide Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Underarm Box" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "siteswap" : "(4x,2x)",
@@ -32257,8 +31968,7 @@
       },
       "related" : {
         "Box + Factory" : {
-          "source" : "automatic",
-          "upvoters" : [ "3ballpatterns_" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "",
@@ -32272,20 +31982,16 @@
     "Weave" : {
       "dependents" : {
         "Dan's Drop Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Follow Weave" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         },
         "Orinoco Flow" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Relf's Revenge" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         }
       },
       "difficulty" : "4",
@@ -32662,12 +32368,10 @@
       },
       "related" : {
         "Flo's Mess" : {
-          "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "source" : "contributed"
         },
         "Slide Box" : {
-          "source" : "automatic",
-          "upvoters" : [ "loj" ]
+          "source" : "automatic"
         }
       },
       "siteswap" : "3",

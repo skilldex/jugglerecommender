@@ -1,7 +1,7 @@
 import json
 total_catch_count = 0
 
-with open('skilldex-4ebb4-export_modified.json') as f:
+with open('skilldex-4ebb4-export.json') as f:
     db = json.load(f)
 for user_id in db['myTricks']:
 	if 'myTricks' in db['myTricks'][user_id]:

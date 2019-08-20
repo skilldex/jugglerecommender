@@ -64,7 +64,11 @@ New Details layout:
 					*A next level of this is randomly created tricks in the style of a specific contributor
 					*Another next level of this is putting custom restrictions/requirements on their creation
 
+Maybes:
+	clear search when we go to details page? maybe just if details page is different?
+
 Bugs:
+	-sign in auto suggestions show up in search
 	-when a pattern is initially added and the contributor goes to it's page,
 		it should get a view
 	-youtube slowmo back causes glitch if details page changes
