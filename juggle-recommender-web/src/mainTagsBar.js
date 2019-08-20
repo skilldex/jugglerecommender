@@ -167,6 +167,16 @@ class MainTagsBar extends Component {
                          alt="showFilterMenu" 
                          onClick={()=>{uiStore.setShowFilterDiv(true)}}
                        />
+        let randomTrickIconDiv =
+                    <div className="randomTrickIcon">
+                      <img 
+                        className="randomTrickIcon" 
+                        src={randomTrickIcon} 
+                        alt="randomTrickIcon" 
+                        onClick={()=>{this.handleRandomTrickClick()}}
+                      />
+                    </div>
+        randomTrickIconDiv = null
         const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
                onMouseLeave = {()=>this.mouseLeaveSortDiv()}
@@ -244,14 +254,7 @@ class MainTagsBar extends Component {
               <span className="mainTagsHeader">Results: {uiStore.rootTricks.length}</span>
 
             </div>
-            <div className="randomTrickIcon">
-              <img 
-                className="randomTrickIcon" 
-                src={randomTrickIcon} 
-                alt="randomTrickIcon" 
-                onClick={()=>{this.handleRandomTrickClick()}}
-              />
-            </div>
+            {randomTrickIconDiv}
           </div>
 
           <div className="tagSection"> 
