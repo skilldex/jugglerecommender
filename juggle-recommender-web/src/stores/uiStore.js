@@ -317,6 +317,9 @@ class UIStore {
 	    }
 	}
 	@action setShowFilterDiv=(showDiv)=>{
+		if (showDiv){
+			utilities.sendGA('mainTagsBar','filter')
+		}
 		this.filterTimer = setTimeout(()=>{
 			this.clearFilterTimer()
 		}, 50)

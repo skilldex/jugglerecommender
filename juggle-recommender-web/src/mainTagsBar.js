@@ -12,6 +12,7 @@ import randomTrickIcon from './images/randomTrickIcon.png'
 import authStore from "./stores/authStore"
 import './mainTagsBar.css';
 import history from './history';
+import utilities from './utilities'
 
 @observer
 class MainTagsBar extends Component {
@@ -48,10 +49,12 @@ class MainTagsBar extends Component {
     }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
+      utilities.sendGA('mainTagsBar','sort by'+type)
       this.showPatternList()
       uiStore.setShowSortDiv(false)
     }
     sortDirectionClicked=(direction)=>{
+      utilities.sendGA('mainTagsBar','sort direction'+direction)
       filterStore.setSortDirection(direction)
       this.showPatternList()
     }
@@ -75,7 +78,18 @@ class MainTagsBar extends Component {
     }
 
     handleRandomTrickClick=()=>{
+      utilities.sendGA('mainTagsBar','random trick')
       console.log('random')
+      //get random trick
+      //give it a score
+      //choose random selection number
+      //if it passes selection, set it
+      //  else get random trick and repeat
+    }
+    handleSearchIconClicked=()=>{
+      utilities.sendGA('mainTagsBar','search icon')
+      this.searchInput.focus()
+      this.showPatternList()
     }
 
     render() {
@@ -239,7 +253,7 @@ class MainTagsBar extends Component {
                 className="searchIcon" 
                 src={searchIcon} 
                 alt="searchIcon" 
-                onClick={()=>{this.searchInput.focus()}}
+                onClick={()=>{this.handleSearchIconClicked()}}
               />
               <input
                 id = "searchTextInput" 
