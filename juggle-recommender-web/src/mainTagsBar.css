@@ -8,10 +8,12 @@
   background-color:white;
   padding : 10px;
   padding-bottom: 4px;
-  display: flex;
-  align-items: center;
+  display: inline-flex;
+    align-items: center;
   flex-wrap: wrap;
+
 }
+
 .tagSection{
   margin-bottom: 4px;
   margin-top:0px;
@@ -52,6 +54,14 @@
   height : 23px;
   width : 23px;
   display: inline-block;
+}
+.randomTrickIcon{
+  height : 35px;
+  width : 35px;
+  float: right;
+  margin-top: 2px;
+  margin-right: 6px;
+  cursor : pointer;
 }
 
 .filterButton{

@@ -38,9 +38,7 @@ class Header extends Component {
 			uiStore.setShowHomeScreen(true)
 			if(uiStore.addingTrick){
 			 	uiStore.toggleAddingTrick()
-			}
-
-			
+			}			
 		}else if(paneFlag == "list"){
 			history.push('/tricklist')
 			uiStore.clearUI()

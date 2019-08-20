@@ -8,6 +8,7 @@ import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
 import searchIcon from './images/searchIcon.png'
 import starIcon from './images/starIcon.svg'
+import randomTrickIcon from './images/randomTrickIcon.png'
 import authStore from "./stores/authStore"
 import './mainTagsBar.css';
 import history from './history';
@@ -71,6 +72,10 @@ class MainTagsBar extends Component {
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }
+    }
+
+    handleRandomTrickClick=()=>{
+      console.log('random')
     }
 
     render() {
@@ -218,25 +223,37 @@ class MainTagsBar extends Component {
             }
       return (
         <div className="searchAndFilterSection">
-          <div className="inputSection">
-            <img 
-              className="searchIcon" 
-              src={searchIcon} 
-              alt="searchIcon" 
-              onClick={()=>{this.searchInput.focus()}}
-            />
-            <input
-              id = "searchTextInput" 
-              className="searchInput" 
-              value= {searchTextToShow}
-              onChange={uiStore.searchInputChange}
-              ref={ref => this.searchInput = ref}
-            />
-            {sort}
-            {sortDropdown}
-            {filter}
-            <span className="mainTagsHeader">Results: {uiStore.rootTricks.length}</span>
+          <div>
+            <div className="inputSection">
+              <img 
+                className="searchIcon" 
+                src={searchIcon} 
+                alt="searchIcon" 
+                onClick={()=>{this.searchInput.focus()}}
+              />
+              <input
+                id = "searchTextInput" 
+                className="searchInput" 
+                value= {searchTextToShow}
+                onChange={uiStore.searchInputChange}
+                ref={ref => this.searchInput = ref}
+              />
+              {sort}
+              {sortDropdown}
+              {filter}
+              <span className="mainTagsHeader">Results: {uiStore.rootTricks.length}</span>
+
+            </div>
+            <div className="randomTrickIcon">
+              <img 
+                className="randomTrickIcon" 
+                src={randomTrickIcon} 
+                alt="randomTrickIcon" 
+                onClick={()=>{this.handleRandomTrickClick()}}
+              />
+            </div>
           </div>
+
           <div className="tagSection"> 
             {filterTags}
           </div>
