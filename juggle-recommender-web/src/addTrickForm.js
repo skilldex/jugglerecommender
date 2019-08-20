@@ -473,19 +473,13 @@ class AddTrickForm extends Component {
 			}else{
 				this.state.prereqs.forEach((item)=>{
 					console.log('counter')
-					prereqs[item['id']] = { source : "contributed",
-											 upvoters : [this.state.contributor]
-											}
+					prereqs[item['id']] = { source : "contributed" }
 				});
 				this.state.related.forEach((item)=>{
-					related[item['id']] = { source : "contributed",
-											 upvoters : [this.state.contributor]
-											}
+					related[item['id']] = { source : "contributed" }
 				});
 				this.state.postreqs.forEach((item)=>{
-					postreqs[item['id']] = { source : "contributed",
-											 upvoters : [this.state.contributor]
-											}
+					postreqs[item['id']] = { source : "contributed" }
 				});	
 			}
 

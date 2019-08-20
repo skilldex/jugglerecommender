@@ -511,8 +511,7 @@ class Store {
 
         const relationships = ['prereqs','related','dependents']
         Object.keys(relationships).forEach((i)=>{
-        	console.log('relationships[i]',relationships[i])
-          	if (relationships[i] in trick){
+           	if (relationships[i] in trick){
           		Object.keys(trick[relationships[i]]).forEach((j)=>{
         			let relation = {'source':trick[relationships[i]][j]['source']}
         			if(trick[relationships[i]][j]['upvoters']){
@@ -543,9 +542,19 @@ class Store {
 			oldTrickRef.remove()
 		}
 
-        this.addEquivalentRelated(trick,"prereqs")
-        this.addEquivalentRelated(trick,"related")
-        this.addEquivalentRelated(trick,"dependents")
+        Object.keys(relationships).forEach((i)=>{
+        	const relationship = relationship
+	        this.addEquivalentRelated(trick,relationship)
+	        if (trick[relationship]){
+	      		Object.keys(trick[relationship]).forEach((relatedTrickKey)=>{
+	    			this.vote(trickKey, relatedTrickKey,relationship, 'upvoters')
+					const oppositeRelationship = relationship == "related" ? "related" : 
+							 				relationship == "prereqs" ? "dependents" : "prereqs"
+	    			this.vote(relatedTrickKey, trickKey, oppositeRelationship, 'upvoters')
+	    		})	  
+    		}      
+      	})		
+
         uiStore.toggleAddingTrick()
 		uiStore.setDetailTrick(	{...store.library[trickKey], id: trickKey} )
         history.replace('/detail/'+trickKey, {detail : trickKey})
