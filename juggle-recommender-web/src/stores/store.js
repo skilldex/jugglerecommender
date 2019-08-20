@@ -512,14 +512,14 @@ class Store {
         const relationships = ['prereqs','related','dependents']
         Object.keys(relationships).forEach((i)=>{
            	if (relationships[i] in trick){
-          		Object.keys(trick[relationships[i]]).forEach((j)=>{
-        			let relation = {'source':trick[relationships[i]][j]['source']}
-        			if(trick[relationships[i]][j]['upvoters']){
-        				relation['upvoters'] = [...trick[relationships[i]][j]['upvoters']]
-        			}if(trick[relationships[i]][j]['downvoters']){
-        				relation['downvoters'] = [...trick[relationships[i]][j]['downvoters']]
+          		Object.keys(trick[relationships[i]]).forEach((relatedTrick)=>{
+        			let relation = {'source':trick[relationships[i]][relatedTrick]['source']}
+        			if(trick[relationships[i]][relatedTrick]['upvoters']){
+        				relation['upvoters'] = [...trick[relationships[i]][relatedTrick]['upvoters']]
+        			}if(trick[relationships[i]][relatedTrick]['downvoters']){
+        				relation['downvoters'] = [...trick[relationships[i]][relatedTrick]['downvoters']]
         			}
-					let newRelatedPatternUpvotersRef = firebase.database().ref('library/'+trickKey+'/'+relationships[i]+'/'+j)
+					let newRelatedPatternUpvotersRef = firebase.database().ref('library/'+trickKey+'/'+relationships[i]+'/'+relatedTrick)
 			        newRelatedPatternUpvotersRef.set(relation);  
         		})
         	}
