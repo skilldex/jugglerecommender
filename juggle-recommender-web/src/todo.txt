@@ -33,7 +33,6 @@ Niceties:
 	-maybe share tap target should be made larger?
 		-which share button having issues with?
 	-maybe up arrow button that appears on list to zoom to top
-	-'Log in to join the discussion' message for comments of non-signed in users
 	-there should be a way to add gifs even if pattern name is not a siteswap
 	-An easy way to combine 2 patterns(just for mods)
 		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan

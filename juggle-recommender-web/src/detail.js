@@ -679,7 +679,7 @@ class Detail extends Component {
                       ></textarea>
                       <button className="submitButton" onClick={this.postFirstComment}>Submit</button>
                     </div> :             
-                    <div>No comments yet...</div>
+                    <div>Log in to join the discussion.</div>
                 }
                 {
                   store.currentComments.length > 0 ?
@@ -691,6 +691,8 @@ class Detail extends Component {
                       {uiStore.showCommentsSection ? "Hide Comments":"Show Comments"}
                     </label>
                   </div> : 
+                  authStore.user ?
+                  <div>No comments yet...</div> :
                   null
                 }
                 {uiStore.showCommentsSection?
