@@ -461,9 +461,8 @@ class Store {
 	@action deleteTrick=()=>{
 		var result = window.confirm("Are you sure you want to permanently delete this pattern?");
 		if (result){
-
 			const trickToDelete = uiStore.detailTrick.id
-			sendGA('details',trickToDelete+' deleted')
+			this.sendGA('details',trickToDelete+' deleted')
 			uiStore.detailTrick = null
 		    this.removeOldRelationship('dependents',null,trickToDelete)
 		    this.removeOldRelationship('prereqs',null,trickToDelete)

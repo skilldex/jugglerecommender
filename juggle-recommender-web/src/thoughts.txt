@@ -5,7 +5,10 @@ Misc:
 			-followup with stefan
 
 Maybes:
-	clear search when we go to details page? maybe just if details page is different?
+	-clear search when we go to details page? maybe just if details page is different?
+	-give edit trick its own url/ga
+	-A special contributors stats page
+		-it is blank/unavailable for users who are not contributors and may entice people to contribute
 
 Bugs:
 	-tricklist shows behind add pattern form
@@ -61,7 +64,11 @@ ADD TRICK FORM:
 		-prereq/related in common
 
 STATS:
--'users with catches' for each contributor in stats, maybe total catches for each contributor as well, this could be done as a grid table possibly
+	-'users with catches' for each contributor in stats, maybe total catches for each contributor as well, this could be done as a grid table possibly
+	Potential pattern stats:
+		-# of users with records for a given trick
+		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
+	-# of contributed tricks that other users have catches for
 
 PROFILE SCREEN:
 	Stats
@@ -70,6 +77,7 @@ PROFILE SCREEN:
 		-consecutive days with record break?
 		-consecutive days with catches input for a trick?
 		-consecutive days with a trick contributed?	
+		-# of contributed tricks that other users have catches for
 	Notifications:(maybe done with email instead)
 		-contributed tricks get new related tricks
 		-contributed tricks get other users input catches
@@ -108,11 +116,15 @@ NEW SCREENS:
 	Possible:
 		-might be cool to show realtime ga data somewhere, like daily users or a map with daily country data or something on site, looks like there is an api for that
 
+Asthetics:
+	-loading animation for home screen
+		-not needed if we make homescreen load faster
+	-expand arrow could animatedly turn when popup expands
+	-move hamburger to left side, and make it's menu a slide out
+	-animate the hamburger button in a number of random ways so it turns into an X
+	-consider moving name and version into about screen
 
 ----------------DB THINGS---------------
-Multiple Names:
-	Luke's Shuffle is also called Drop Box
-
 To add to db:
 	-paper notes from workshops
 		-Freeze
@@ -122,30 +134,6 @@ To add to db:
 	-A trick like 'Asymmetric Reverse Slam Half Weaved Box(4b)', but is a symmetric box would be badass
 	-These are siteswaps for a couple of the switch patterns
 		(6x,2x)(2x,2x)
-
-To film:
-	-2 in 1 outside inside, 40
-	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
-	-555551 - 24 catches
-
-DB changes:
-	-Reverse chops should be takeaways or 1 beat inside orbits
-
-CONTACT/RESEARCH:
-	-Contact @loudjuggling if his tricks have names or if can easily get technical names
-	-look up haavard
-	-look up mura345
-	-Look into idiosensory
-	-Michael falkov video
-
-DB changes:
-	4440522 needs new name
-	5344 needs a new name
-	413333333 needs new name
-	Do we have a side by side pistons pattern?
-	filter for pure siteswaps
-
-Tricks that need uploaded:
 	Simple:
 		Tennis and Half Shower Versions of:(A few may be done already)
 			Backcross
@@ -160,24 +148,34 @@ Tricks that need uploaded:
 	Less Simple:
 		Time reverse versions of the primier primer video
 		Time reverse of lemming drop
-^^^^^^^^^^^^^DB THINGS^^^^^^^^^^^^^^^^^
 
+To film:
+	-2 in 1 outside inside, 40
+	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
+	-555551 - 24 catches
+
+CONTACT/RESEARCH:
+	-Contact @loudjuggling if his tricks have names or if can easily get technical names
+	-look up haavard
+	-look up mura345
+	-Look into idiosensory
+	-Michael falkov video
+
+DB changes:
+	4440522 needs new name
+	5344 needs a new name
+	413333333 needs new name
+	Do we have a side by side pistons pattern?
+	filter for pure siteswaps
+	Luke's Shuffle is also called Drop Box
+	Reverse chops should be takeaways or 1 beat inside orbits
+
+^^^^^^^^^^^^^DB THINGS^^^^^^^^^^^^^^^^^
 
 Other Dexes:
 	-there could be a section of tricks that are similar feel from one prop to another.(ejc stranger suggested)
 
-Maybes:
-	-make a ga for catches input
-	-give edit trick its own url/ga
-	-make a ga for delete trick click
-	-make search bar always stay at top of screen and searching takes user to pattern list
-
-Frame by Frame / Slomo:
-	-should loop while in slomo whether it is going forward or backward
-	-should not need to hold down to get continuous playback
-	-possible better playback option is a slider that you set the play speed at, if you want frame by frame then you can set the slider very slow and pause/play as you wish, but generally a very slow speed will
-
-Naming rules:
+General Naming rules:
 -Reverse always means time reverse, never anything else
 -If not specified, cross throws switch hands, shoulder throws go to same hand
 
@@ -186,19 +184,6 @@ Reasons it is easier to add tricks on pc:
 -Typing is easier
 -Can more easily have a seperate tab open to look for prereqs/related more easily
 -cant easily see video adding, would be nice if a preview was added once url was input
-
-
-
-Asthetics:
-	-in tricklist, details, maybe all screens that can be scrolled down low, top header bars should hide if scrolling downward, and show when scrolling upward, this way back arrow can always be easily gotten to
-	-loading animation for home screen
-		-not needed if we make homescreen load faster
-	-I think 'all patterns' button should stand out more since it is the main thing in the app, that may explain some of the bounces. It didnt even stick out to either of us enough to think to add it to the stack(maybe not ga either)
-	-expand arrow could animatedly turn when popup expands
-	-move hamburger to left side, and make it's menu a slide out
-	-animate the hamburger button in a number of random ways so it turns into an X
-	-consider moving name and version into an about screen
-
 
 Giveaway:
 	Competition Based:
@@ -224,27 +209,11 @@ Giveaway:
 		-Screenshotting and posting their profile
 		-Reward whoever uploads the 1000th pattern, or something like that
 
-Relationship Lists:
-	-Each relationship list could have an +add trick to this list button which either allows user to go directly to add trick form with appropriate relationship filled out, OR to a form with a dropdown that let's them pick a pattern that already exists
-
-
-Before working on general skilldex:
-	-finish new ui
-	-stats
-	-user suggestions/editing/comments
-	-make frame by frame video/gif control
-
 Reasons to get juggledex in really good shape before making general skilldex:
 	-Bigger userbase to help populate them with skills, we likely dont have a jol for other skills that can be easily scrapped, and I'm not likely able/willing to spend time filling out forms for other skills.
 	-the template will be better and we wont have to be adding features to both
 	-im much more motivated to make juggledex better than I am to work on general skilldex
 	-we only have a limited time before ejc, the better we can get it by then, the more likely we are to be able to hook users there.
-
-Difficulty situation:
-	-If we encourage users to input 0 or 1 or whatever even on tricks they cant do, it would help lower average number of user catches to make difficulty more accurate
-	-it would be nice if difficulty of prereqs/related were shown in add trick form
-
-
 
 _______________________________________________
 Two difficulty ratings: Contributor defined, User Average
@@ -256,18 +225,6 @@ CONS:
 Consideration:
 	-We need to indicate what the user is to be setting difficulty based on, their personal difficulty or some sort of imagined global difficulty. For instance, should a 9b juggler put 5b as a 5 or as a 1?
 
-______________________________________________
-
-
-
-_______________________________________________
-Stats
------------------------------------------------
-	Potential pattern stats:
-		-# of users with records for a given trick
-		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
-	Potential User Stats:
-		-# of contributed tricks that other users have catches for
 ______________________________________________
 
 
