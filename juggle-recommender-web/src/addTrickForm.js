@@ -465,23 +465,25 @@ class AddTrickForm extends Component {
 			let related = {}
 			let postreqs = {}
 			if(uiStore.editingDetailTrick){
-				console.log('editingDetailTrick')
 				prereqs = store.library[uiStore.detailTrick.id]['prereqs']
 				related = store.library[uiStore.detailTrick.id]['related']
 				postreqs = store.library[uiStore.detailTrick.id]['dependents']
-				console.log('prereqs',prereqs)
-			}else{
-				this.state.prereqs.forEach((item)=>{
-					console.log('counter')
-					prereqs[item['id']] = { source : "contributed" }
-				});
-				this.state.related.forEach((item)=>{
-					related[item['id']] = { source : "contributed" }
-				});
-				this.state.postreqs.forEach((item)=>{
-					postreqs[item['id']] = { source : "contributed" }
-				});	
 			}
+			this.state.prereqs.forEach((item)=>{
+				if (!prereqs[item['id']]){
+					prereqs[item['id']] = { source : "contributed" }
+				}
+			});
+			this.state.related.forEach((item)=>{
+				if (!related[item['id']]){
+					related[item['id']] = { source : "contributed" }
+				}
+			});
+			this.state.postreqs.forEach((item)=>{
+				if (!postreqs[item['id']]){
+					postreqs[item['id']] = { source : "contributed" }
+				}
+			});	
 
 			let suffix = ""
 			if (this.state.num.toString() !== "3"){

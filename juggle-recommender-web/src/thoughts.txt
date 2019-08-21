@@ -1,12 +1,8 @@
-
-
-
 STATS:
 -'users with catches' for each contributor in stats, maybe total catches for each contributor as well, this could be done as a grid table possibly
 
 IMPROVED ADD TRICK FORM:
 -demo previews in related dropdown lists would be good, both in add pattern as well as suggestion
-
 
 To add to db:
 	-paper notes from workshops
@@ -68,6 +64,7 @@ Maybes:
 	clear search when we go to details page? maybe just if details page is different?
 
 Bugs:
+	-editing a trick removes its votes, as well as the votes in the equivalent related
 	-sign in auto suggestions show up in search
 	-youtube slowmo back causes glitch if details page changes
 	-youtube slowmo back doesnt loop

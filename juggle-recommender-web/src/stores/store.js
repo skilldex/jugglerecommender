@@ -487,6 +487,7 @@ class Store {
 			if (trickKey == oldTrickKey){
 				shouldBackUpBecauseEditing = true
 			}
+			//if the leaderboard trick is having it's name edited
 			if (trickKey !== oldTrickKey && oldTrickKey === this.randomLeaderboardTrick.key){
 				let leaderboardRef = firebase.database().ref('leaderboard/')
 				leaderboardRef.on('value', resp =>{
@@ -505,10 +506,10 @@ class Store {
 				})
 			}
 		}
-
+		//put most of the info from the form into the library
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
-
+        //put the rest in, the relateds information
         const relationships = ['prereqs','related','dependents']
         Object.keys(relationships).forEach((i)=>{
            	if (relationships[i] in trick){
@@ -547,10 +548,18 @@ class Store {
 	        this.addEquivalentRelated(trick,relationship)
 	        if (trick[relationship]){
 	      		Object.keys(trick[relationship]).forEach((relatedTrickKey)=>{
-	    			this.vote(trickKey, relatedTrickKey,relationship, 'upvoters')
+	      			if (!trick[relationship][relatedTrickKey]['upvoters'] ||
+	      				!trick[relationship][relatedTrickKey]['upvoters'].includes(authStore.user.username)){
+		    			this.vote(trickKey, relatedTrickKey,relationship, 'upvoters')
+		    		}
 					const oppositeRelationship = relationship == "related" ? "related" : 
-							 				relationship == "prereqs" ? "dependents" : "prereqs"
-	    			this.vote(relatedTrickKey, trickKey, oppositeRelationship, 'upvoters')
+								 				relationship == "prereqs" ? "dependents" : "prereqs"
+					if (this.library[relatedTrickKey]){
+			    		if (!this.library[relatedTrickKey][oppositeRelationship][trickKey]['upvoters'] ||
+			    			!this.library[relatedTrickKey][oppositeRelationship][trickKey]['upvoters'].includes(authStore.user.username)){
+			    			this.vote(relatedTrickKey, trickKey, oppositeRelationship, 'upvoters')
+			    		}
+			    	}
 	    		})	  
     		}      
       	})		
