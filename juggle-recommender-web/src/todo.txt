@@ -25,29 +25,11 @@ v 2.2
 
 =========	
 
-	VOTING / SUGGESTED TRICKS:
-		-?only show a certain number, and hide any other behind a collapsable button?
-		-make tags voting
-		-make name voting
-		-difficulty voting?
-			-maybe just as a temporary measure until we figure out a better difficulty system?
-			-one thing to consider with difficulty is that if difficulty is dynamic then it cant be used to get users back to a specific pattern.
-			-there may even be something to 2 different difficulty ratings, 1 for difficulty of figuring out and another for difficulty of doing once figured out
-				-the difficulty to understand could be called 'complexity'
-		-general voting considerations
-			-There is an issue with allowing contributors to delete tricks once other users have voted on its properties
-			-We need to limit contributors power once community has voted on stuff because right now they can change what a trick is 100%
-	-'GET ME A TRICK' SECTION:
-		-seperate page?
-			-if so, what else could go on the page?
-			-if not, what page should it join?
-			-any user input conditions/settings?
-
-
 Niceties:
 	-contributor url .../contributor/*contributorsName*
 	-autoscroll to voted on card and make it flash when it re-sorts
 		-would be nice if it animatedly moved
+		-https://stackoverflow.com/questions/27198479/whats-a-react-js-friendly-way-to-animate-a-list-reordering/31080050
 	-maybe share tap target should be made larger?
 		-which share button having issues with?
 	-maybe up arrow button that appears on list to zoom to top
@@ -67,36 +49,6 @@ Niceties:
 
 
 
-
-
-
-
-	-allow line breaks to be seen in comments
-
-Profile Screen
-	Stats
-		eventual
-			-chart that shows number of patterns in various ranges
-			-consecutive days with record break?
-			-consecutive days with catches input for a trick?
-			-consecutive days with a trick contributed?	
-
-Profile:
-	Notifications:(maybe done with email instead)
-		-contributed tricks get new related tricks
-		-contributed tricks get other users input catches
-	Settings: (Maybe this eventualy its own section instead)
-		-option to have catch records public or not(listed in details) 
-
-Notifications:
-	-'Watch', type of flair to find out if
-		-related patterns added
-		-users are logging catches with it
-		-comments added
-
--Stats:
-	-records broken today
-
 Data fix scripts:
 	-a script to make related tricks go both directions
 		if x is listed as related for y, then y should be listed for x
@@ -113,52 +65,13 @@ Code Cleaning:
 	-trick of the day made cleaner now that it isnt so much focused on leader
 	-in filterStore these functions have similar functions that could prolly be combined: 		setTags
 		handleDelete
-Minor:
-	-thin lines on sort button
-	-if all ball nums or all associations are chosen in graph then it is just like none are, should we not show all those tags? should we make the buttons in filter all go gray?
+	-find highest catches should be only run when it is actually used
+		-is this still a thing?
+	-Update root tricks is running more than it needs to maybe
+		-this may no longer be a thing
 
-
--'suggest a change' form so we dont have to use instagram comments or other methods
-	-email through firebase or setup webtask
-	https://github.com/firebase/functions-samples/tree/master/quickstarts/email-users
-	-on desktop, when detail is showing, would be nice if rootnode gravitated towards open space
-		-shrink graph to end at detail
-
-	
--A button that is 'more catches than I want to count' in the details, inserts -1 into the db
-	*instead of -1, maybe better to use negative current number of catches so it can be reveresed, but still set compartamentalized like it can with -1
-
--edit profile(maybe beyond 1.1)
-	-color swatches to indicate difficulty instead of entire background
-
--make multi-termed search
--filter by num balls 2, 6, 7 or range/even odd
--allow users to add new tags
-
--find highest catches should be only run when it is actually used
--just make sure they are always used together first
--Update root tricks is running 4 times
-
--filter catches are allowed to be empty in which case no patterns are shown
--can't pinch zoom on list (android)
--filter for unstarred tricks
-- recommend tags based on trick name
-- recommended related list 
-	-tricks with the same siteswap
-	-a word in common in the title
-	-prereq/related in common
--on mobile, resize list height so it is never behind keyboard.
--The ability to see related tricks in graph
-
-- clicking contributor should make it a tag
-
-
-
-
-(name 2 is in seperate, because in incognito)If account 2 has trick open at the time, it crashes them.
-	once they referesh, they do not have a record with the changed trick name
-
-
-
-check for duplicates in add patterns by comparing video being submitted with all current videos
+Performance Improvement:
+	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
+		-check to see if tricklist or library load on home screen
+	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a tricknsme changes we can more quickly update everyone's database.
 

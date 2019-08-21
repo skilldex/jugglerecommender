@@ -1,14 +1,122 @@
+Misc:
+	-all users emails are in db on github
+	-from stefan
+		-On the add patternform: if the submit button is grey you could give hints what the user is missing
+			-followup with stefan
+
+Maybes:
+	clear search when we go to details page? maybe just if details page is different?
+
+Bugs:
+	-tricklist shows behind add pattern form
+	-after about 10 loops, videos get stuck with loading wheel,
+		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
+	-youtube slowmo back causes glitch if details page changes
+	-youtube slowmo back doesnt loop
+	-multiple tags clicked at once, and not due to fat fingers(stefan)
+	-frame by frame doesnt hide controls for youtube
+	-MAYBE FIXED
+		-old gif shows while new gif is loading
+			-try immediately setting it to null(if not already done)
+
+DETAILS:
+	NAMING STUFF/COMPONENTS
+		-a section that is 'other tricks that sometimes are referred to by this name'
+			-maybe reallow duplicately named tricks, but automatically put an A, B, C.. after it
+		TECHNICAL NAMES/COMPONENTS:
+			-A components section that is like prereqs, but specifically for throws/exchanges that are actually in the trick, not just similar but simpler
+			-Is a literal name that tells what is happening in the pattern
+			-goes next to nickname
+			-only one or the other is required
+			-should probably be abbreviations
+			-maybe should be a more specific form of siteswap with all special throws/catches indicated
+			-could autofill component section with the throws/catches/movements that are used in its name
+			-needs a key somewhere
+			-needs a way to have keys added
+			-maybe keys should have some sort of relationship with tags, like every key should be a tag
+			-Once a technical name is set up, there can be a random trick creator that strings together technical components not yet on the site
+				*A next level of this is randomly created tricks in the style of a specific contributor
+				*Another next level of this is putting custom restrictions/requirements on their creation
+	VOTING / SUGGESTED TRICKS:
+		-?only show a certain number, and hide any other behind a collapsable button?
+		-make tags voting
+		-make name voting
+		-difficulty voting?
+			-maybe just as a temporary measure until we figure out a better difficulty system?
+			-one thing to consider with difficulty is that if difficulty is dynamic then it cant be used to get users back to a specific pattern.
+			-there may even be something to 2 different difficulty ratings, 1 for difficulty of figuring out and another for difficulty of doing once figured out
+				-the difficulty to understand could be called 'complexity'
+		-general voting considerations
+			-There is an issue with allowing contributors to delete tricks once other users have voted on its properties
+			-We need to limit contributors power once community has voted on stuff because right now they can change what a trick is 100%
+	COMMENTS:
+		-allow line breaks that are in input to be seen in comments
+
+ADD TRICK FORM:
+	-demo previews in related dropdown lists would be good, both in add pattern as well as suggestion
+	-recommend tags based on trick name
+	-recommended related list 
+		-tricks with the same siteswap
+		-a word in common in the title
+		-prereq/related in common
+
 STATS:
 -'users with catches' for each contributor in stats, maybe total catches for each contributor as well, this could be done as a grid table possibly
 
-IMPROVED ADD TRICK FORM:
--demo previews in related dropdown lists would be good, both in add pattern as well as suggestion
+PROFILE SCREEN:
+	Stats
+		-records broken today
+		-chart that shows number of patterns in various ranges
+		-consecutive days with record break?
+		-consecutive days with catches input for a trick?
+		-consecutive days with a trick contributed?	
+	Notifications:(maybe done with email instead)
+		-contributed tricks get new related tricks
+		-contributed tricks get other users input catches
+	Settings: (Maybe this eventualy its own section instead)
+		-option to have catch records public or not(listed in details) 
+
+NOTIFICATIONS:
+	-'Watch', type of flair to find out if
+		-related patterns added
+		-users are logging catches with it
+		-comments added
+
+MODIFIERS:
+	-allow for different types of catch inputting, modifiers
+		-next to catches a way to change/input new modifiers
+		-it should remember the most recent modifier used
+		-where exactly should it be in the ui?
+
+MAIN TAGS BAR:
+	-make multi-termed search
+	-change its name (currently mainTagsBar.js)
+	-thin lines on sort button		
+	-if all ball nums or all associations are chosen in filter then it is just like none are, should we not show all those tags?
+	-Relevence Sort after search happens
+	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
+
+
+NEW SCREENS:
+	To add:
+		Leaderboard page
+		Feedback Form
+		Notifications (Could be used in conjuction with a 'Watch' Flair)
+	To change:
+		make about, login its own screen
+		make expand menu a slider
+	Possible:
+		-might be cool to show realtime ga data somewhere, like daily users or a map with daily country data or something on site, looks like there is an api for that
+
+
+----------------DB THINGS---------------
+Multiple Names:
+	Luke's Shuffle is also called Drop Box
 
 To add to db:
 	-paper notes from workshops
 		-Freeze
 		-Machine
-		-inverted box(maybe just tips left to add)
 	-a few basic ones polyrhythms
 	-Add claymotion tricks
 	-A trick like 'Asymmetric Reverse Slam Half Weaved Box(4b)', but is a symmetric box would be badass
@@ -23,72 +131,37 @@ To film:
 DB changes:
 	-Reverse chops should be takeaways or 1 beat inside orbits
 
-External:
+CONTACT/RESEARCH:
 	-Contact @loudjuggling if his tricks have names or if can easily get technical names
 	-look up haavard
 	-look up mura345
 	-Look into idiosensory
 	-Michael falkov video
 
-Misc:
-	-all users emails are in db on github
-	-from stefan
-		-On the add patternform: if the submit button is grey you could give hints what the user is missing
-			-followup with stefan
+DB changes:
+	4440522 needs new name
+	5344 needs a new name
+	413333333 needs new name
+	Do we have a side by side pistons pattern?
+	filter for pure siteswaps
 
-New Details layout:
+Tricks that need uploaded:
+	Simple:
+		Tennis and Half Shower Versions of:(A few may be done already)
+			Backcross
+			Penguin
+			Reverse Backcross
+			Under the Leg
+			Neck Pass
+			Neck Throw
+			Headplant
+		side by side pistons
+		1up 2up
+	Less Simple:
+		Time reverse versions of the primier primer video
+		Time reverse of lemming drop
+^^^^^^^^^^^^^DB THINGS^^^^^^^^^^^^^^^^^
 
-
-	NAMING STUFF/COMPONENTS
-		-a section that is 'other tricks that sometimes are referred to by this name'
-			-maybe reallow duplicately named tricks, but automatically put an A, B, C.. after it
-		TO BE CONSIDERED/ORGANIZED:
-			-A components section that is like prereqs, but specifically for throws/exchanges that are actually in the trick, not just similar but simpler
-			-PROBLEM: names are generally not descriptive, and being so many it is impossible to remember what they are,
-				POSSIBLE SOLUTION, 'Technical Names'
-			-Technical Names:
-				-Is a literal name that tells what is happening in the pattern
-				-goes next to nickname
-				-only one or the other is required
-				-should probably be abbreviations
-				-maybe should be a more specific form of siteswap with all special throws/catches indicated
-				-could autofill component section with the throws/catches/movements that are used in its name
-				-needs a key somewhere
-				-needs a way to have keys added
-				-maybe keys should have some sort of relationship with tags, like every key should be a tag
-				-Once a technical name is set up, there can be a random trick creator that strings together technical components not yet on the site
-					*A next level of this is randomly created tricks in the style of a specific contributor
-					*Another next level of this is putting custom restrictions/requirements on their creation
-
-Maybes:
-	clear search when we go to details page? maybe just if details page is different?
-
-Bugs:
-	-editing a trick removes its votes, as well as the votes in the equivalent related
-	-sign in auto suggestions show up in search
-	-youtube slowmo back causes glitch if details page changes
-	-youtube slowmo back doesnt loop
-	-after about 10 loops, videos get stuck with loading wheel,
-		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
-	-multiple tags clicked at once, and not due to fat fingers(stefan)
-	-if a pattern has an autogenerated gif, but also a video, the video is pushed over to the right in expand
-		-this is probably fixed, got an example?
-	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
-		-check to see if tricklist or library load on home screen
-	-tricklist shows behind add pattern form
-	-frame by frame doesnt hide controls for youtube
-	-MAYBE FIXED
-		-old gif shows while new gif is loading
-			-try immediately setting it to null(if not already done)
-
-MODIFIERS:
-	-allow for different types of catch inputting, modifiers
-		-next to catches a way to change/input new modifiers
-		-it should remember the most recent modifier used
-		-where exactly should it be in the ui?
-
-Multiple Names:
-	Luke's Shuffle is also called Drop Box
 
 Other Dexes:
 	-there could be a section of tricks that are similar feel from one prop to another.(ejc stranger suggested)
@@ -104,15 +177,6 @@ Frame by Frame / Slomo:
 	-should not need to hold down to get continuous playback
 	-possible better playback option is a slider that you set the play speed at, if you want frame by frame then you can set the slider very slow and pause/play as you wish, but generally a very slow speed will
 
-Possible optimization: 
-	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a tricknsme changes we can more quickly update everyone's database.
-
-Suggest a Change:
-	-could be done just like edit, but instead of adding it to the site it emails/notifies the contributor.
-	-if trick has no siteswap listed, maybe anyone should be able to input it directly
-	-an alternative names section where users can vote/submit a name for voting
-		-Maybe multiple URLs for same tricks in instances where tricks have multiple popular names
-
 Naming rules:
 -Reverse always means time reverse, never anything else
 -If not specified, cross throws switch hands, shoulder throws go to same hand
@@ -124,9 +188,6 @@ Reasons it is easier to add tricks on pc:
 -cant easily see video adding, would be nice if a preview was added once url was input
 
 
-Search:
-	-Relevence Sort after search happens
-	-If I type in Slam multiplex in search, I should get 'half slam stacked multiplex box' as result
 
 Asthetics:
 	-in tricklist, details, maybe all screens that can be scrolled down low, top header bars should hide if scrolling downward, and show when scrolling upward, this way back arrow can always be easily gotten to
@@ -138,16 +199,6 @@ Asthetics:
 	-animate the hamburger button in a number of random ways so it turns into an X
 	-consider moving name and version into an about screen
 
-Screens:
-	To add:
-		Leaderboard page
-		Feedback Form
-		Notifications (Could be used in conjuction with a 'Watch' Flair)
-	To change:
-		make about, login its own screen
-		make expand menu a slider
-	Possible:
-		-might be cool to show realtime ga data somewhere, like daily users or a map with daily country data or something on site, looks like there is an api for that
 
 Giveaway:
 	Competition Based:
@@ -176,31 +227,6 @@ Giveaway:
 Relationship Lists:
 	-Each relationship list could have an +add trick to this list button which either allows user to go directly to add trick form with appropriate relationship filled out, OR to a form with a dropdown that let's them pick a pattern that already exists
 
-External:
-	-Contact jugglekraze_youtuber, ask about using his stuff, specifically his tutorials as links in the tricks associated with them.
-
-DB changes:
-	4440522 needs new name
-	5344 needs a new name
-	413333333 needs new name
-	Do we have a side by side pistons pattern?
-	filter for pure siteswaps
-
-Tricks that need uploaded:
-	Simple:
-		Tennis and Half Shower Versions of:(A few may be done already)
-			Backcross
-			Penguin
-			Reverse Backcross
-			Under the Leg
-			Neck Pass
-			Neck Throw
-			Headplant
-		side by side pistons
-		1up 2up
-	Less Simple:
-		Time reverse versions of the primier primer video
-		Time reverse of lemming drop
 
 Before working on general skilldex:
 	-finish new ui
@@ -220,24 +246,6 @@ Difficulty situation:
 
 
 
-	
-
-Maybe new todos:
-	-maybe show the detail of the trick that was just added so they can be sure it is how they want it
-
-
-________________________________________
-Comments/Descriptions
-----------------------------------------
-Instead of comment section, there could just be a description section that is hooked up the 'suggest a change' button
-PRO
--It would be much simpler to make.
--Would be less cluttered in the UI.
-CON
--doesnt work well if contributor is not active, this could be beat by having ignored suggestions be sent to mods. Furthermore contributor could turn this on/off so it goes directly to mods.
--probably more work for mods
-___________________________________________
-
 _______________________________________________
 Two difficulty ratings: Contributor defined, User Average
 -----------------------------------------------
@@ -250,52 +258,6 @@ Consideration:
 
 ______________________________________________
 
-_______________________________________________
-Increase number of difficulty numbers
------------------------------------------------
-PROS:
-	-There are many more than 10 levels of difficulty tricks in juggling
-	-When scoring tricks, it is hard to remember where cutoffs are between difficulty ratings since we have to have such a wide range of tricks represented by each number
-	-Nearly all jugglers online who discuss difficulty rating online suggest more than 10
-		(See Difficulty online discussion sections below)
-	-It will be easier to get accurate averages once we start using user input to determine ratings
-	-It makes more room for 2 ball stuff as well as for 8,9,10,11 instead of just bunching everything up at the ends
-CONS:
-
-PROPOSED METHODS:
-	-Add 1 decimal place. It is a smooth transition from what we already have, and creates plenty of levels of difficulty, it is very unlikely that we would end up wanting more later.
-
-______________________________________________
-
-
-_______________________________________________
-Unrestrict catch inputting from starred tricks
------------------------------------------------
-PROS:
-	-Would make starred tricks more special, because then they are actually tricks that the user wants set aside, not every pattern they want to record catches for
-	-One less click to input catches
-	-Not intuitive that clicking a star will enable the ability to input catches
-	-Current starred trick list is far too broad to be useful(it shows tricks I want to learn, tricks I barely know, tricks I know kind of well..), filtering by catches is able to easily show any of these lists individually.
-CONS:
-	-scrolling through list would no longer give visual indication of which tricks have catches recorded
-		-this CON can be countered by having a seperate icon that shows that catches have been input as well. 
-
-______________________________________________
-
-
-
-_______________________________________________
-Increase number of difficulty colors
------------------------------------------------
-PROS:
-	-There are many more than 4 levels(Green, Yellow, Orange, Red) of juggling difficulty,
-		it would be nice to be able to see various levels at a glance
-CONS:
-	-confusing to remember the difficulty ordering for new users
-
-
-
-______________________________________________
 
 
 _______________________________________________
@@ -304,13 +266,7 @@ Stats
 	Potential pattern stats:
 		-# of users with records for a given trick
 		-longest run by any user on a given trick(maybe two records one for proven and one for claimed)
-	Potential general stats:
-		-users signed up
-		-users currently online
-		-# of all tricks
 	Potential User Stats:
-		-# of tricks with catches input
-		-# of contributed tricks
 		-# of contributed tricks that other users have catches for
 ______________________________________________
 
@@ -318,7 +274,7 @@ ______________________________________________
 
 
 _______________________________________________
-Difficult online discussion section:
+Difficultly online discussion section:
 -----------------------------------------------
 Difficulty Rating systems:
 	-https://www.libraryofjuggling.com
@@ -340,77 +296,17 @@ ________________________________________________
 -------------------------------------
 
 
-Tricks need changed:
-	-if machine and factory are the same thing, then we should put (machine) after factory, or vice versa
-
-My Mod Powers:
-	-names are empty when editing libraryofjuggling patterns
-	-contributor name is changed to mine
-
 Awesome but maybe difficult things:
 	-a way to save videos for offline viewing
-	-Automated instagram uploading if the info(tags, prereqs, ball num..) was in the description
-
-
-Difficulty Coloring Issue:
-	-Ideally the difficulty of tricks that I have not yet attempted should be catered to which tricks I can do, but I havnt yet envisioned an algorithm that can accomplish this. It would would be great to know that I can always look at my app and quickly watch a trick being done that I have never done before and just be able to do it. 
 
 thoughts/ideas:
-	-Right now juggledex really ignores non-jugglers. I think there is a great opportunity here to
-		 bring them in by way of lots of 2 ball tricks so that nearly everyone can start doing things that are not too far beyond their current level. Something about knowing that you always have low hanging fruit so far as new patterns that you can do is very motivational in continuing to learn. It is not just for new jugglers either, it is for jugglers new to certain props, like clubs rings, with a balance, etc..
 	-Different kinds of visualizers that users can toggle between may be nice
 	-Other juggling props may be good to put in just as a radiobutton next to catches since there is
 		 such a huge overlap of patterns. This rather than a whole new DeX for each kind of prop or different nodes for clubs, rings, balls. Another similar thing to consider is stuff like 'on a rola bola', 'with a face balance', 'ball bouncing on forehead'...
 	-Now that juggling.tv is going away, maybe there is more of a market for a site that actually 		hosts videos, we could allow for videos to be uploaded.
-	-If we end up doing some sort of incentivised competition it should come after we devise a method of community voting on best representation of tricks that way people really try to post high quality shit so their video stays as the official demo. Maybe an 'other videos' section that lists all the others for posterity.
-
-
-
 
 to see dark theme:
 	1) in App.css, change  '.headerButton { background-color : white' to black
 	2) in trickGraph.css, change 'border: 1px solid black;' to white
 	*This isn't complete, but enough to see how it would look
 
-Stuff done to database for key fixing:
-	run replaceTrickKeyWithName
-	change jugglers tennis related 'Half-Shower' to 'Half Shower'
-	replace(case sensitive) every OyOy with Oy-Oy
-	replace(case sensitive) every YoYo with Yo-Yo
-	change Column Box Var related 'Shower Variation' to 'Column Show Var'
-	replace every instance of '"Column Show Var"' to '"Column Shower Variation"'
-	replace every instance of '"Column Box Var"' to '"Column Box Variation"'
-	remove Columns related
-	change Columns(4b) related 'Four Ball Rainbow Cross' to 'Rainbow Cross(4b)'
-	change Fountain(4b) related 'Reverse Fountain' to 'Reverse Fountain(4b)'
-	change rainbow arches related 'Overthrow var' to 'Columns Overthrow(3b)'
-	remove entire related property from shower
-	change "SynchPistons(4b)" key and name to "Synch Pistons(4b)"
-		and change it's related from "Pistons" to "Pistons(4b)"
-	change Pistons(4b) related from "Synchroneous Pistons" to "Synch Pistons(4b)"
-	change every instance of '"SynchPistons(4b)"' to '"Synch Pistons(4b)"'
-	remove "Sprung Cascade" from 5551(4b) related
-	replace every instance of '"HalfMess"' with '"Half Mess 1(3b)"'
-	replace '"N-Box"' with '"NBox"'
-	replace Crossed-Arm Reverse Cascade with Crossed Arm Reverse Cascade
-	replace Crossed-Arm Cascade with Crossed Arm Cascade
-	change every instance of '"SymmetricGeorgian Scuffle"' to '"Symmetric Georgian Scuffle"'
-	replace '"Box Variation"'' with '"Column Box Variation"'
-	delete Half Shower(4b) related
-	replace '"Relf's Revenge6"' with '"Relf's Revenge 6"'
-	replace 'Five Ball Shower' with 'Shower(5b)'
-	replace 'Four Ball Box' with 'Box(4b)'
-	delete windmill related
-	delete 5550(4b) related
-	replace Box(4b) related 'Stacked variation' with 'Stacked Box(4b)'
-	remove ' (Slams)' from everywhere
-	replace "Slams(3b)" with "Shuffle"
-	replace "Shuffle" with "Shuffle(Slams)"
-	replace "Stacked Cascade" with "Stacked Cascade(5b)"
-	replace "Reverse Five Ball Cascade" with "Reverse Cascade(5b)"
-	remove related from "Bizarre Box"
-	replace "ReverseCrossed Arm Shower" with "Reverse Crossed Arm Shower"
-	replace "Reverse Variation" with "Reverse Crossed Arm Shower"
-	replace "Crossed-Arm Shower" with "Crossed Arm Shower"
-	replace "Shuffler'sMess" with "Shuffler's Mess"
-	replace SymmetricGeorgian Shuffle" with "Symmetric Georgian Shuffle"

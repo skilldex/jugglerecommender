@@ -463,6 +463,7 @@ class Store {
 		if (result){
 
 			const trickToDelete = uiStore.detailTrick.id
+			sendGA('details',trickToDelete+' deleted')
 			uiStore.detailTrick = null
 		    this.removeOldRelationship('dependents',null,trickToDelete)
 		    this.removeOldRelationship('prereqs',null,trickToDelete)
