@@ -382,11 +382,12 @@ class App extends Component {
 					!uiStore.showStatsScreen &&
 					!uiStore.showProfileScreen &&
 					uiStore.detailTrick == null ?
-					
-						<TrickList 
-							tricksToList = {uiStore.rootTricks}
-							listType = "main"
-						/>
+						<div className="trickListDiv">
+							<TrickList 
+								tricksToList = {uiStore.rootTricks}
+								listType = "main"
+							/>
+						</div>
 					 : null
 				}
 				{uiStore.showProfileScreen?<Profile/>: null}
