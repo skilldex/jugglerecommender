@@ -27,6 +27,7 @@ v 2.2
 
 Niceties:
 	-contributor url .../contributor/*contributorsName*
+		-why not just leave out the 'contributor' directory and go straight to their name?
 	-autoscroll to voted on card and make it flash when it re-sorts
 		-would be nice if it animatedly moved
 		-https://stackoverflow.com/questions/27198479/whats-a-react-js-friendly-way-to-animate-a-list-reordering/31080050
@@ -35,7 +36,7 @@ Niceties:
 	-maybe up arrow button that appears on list to zoom to top
 	-there should be a way to add gifs even if pattern name is not a siteswap
 	-An easy way to combine 2 patterns(just for mods)
-		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan
+		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan. Weave and The Weave is another
 	-SORT BY:
 		-view count, or users working on 
 			-maybe not since views are not shown on cards, but maybe this isnt a big deal

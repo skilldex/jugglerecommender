@@ -278,6 +278,11 @@ class Store {
 		leaderboardTrickRef.set(updatedStats);
 
 	}
+
+	  @action calculateRandomTrickScore=(trickKey)=>{
+	    return .9
+	  }
+
 	@action setStartTime=(startTime)=>{
 		this.startTime = startTime
 	}

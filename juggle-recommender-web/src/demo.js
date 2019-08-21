@@ -116,7 +116,6 @@ class Demo extends Component {
     }
   }
   youtubeStateChange = (data) => {
-    console.log("State changed", data)
     const video = this.video.internalPlayer
       //video.setAttribute("controls", 0)
       video.getCurrentTime().then((time)=>{
