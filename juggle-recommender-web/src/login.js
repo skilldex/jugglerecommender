@@ -39,9 +39,9 @@ class Login extends Component {
                             <button className="authButton"  onClick={authStore.signOut}>Sign Out</button>
                         </div> : 
                         <div>
-                            <label>user handle</label><br/><input className="inputStyle" onChange={this.usernameInputChange}/><br/>
+                            <label>user handle</label><br/><input id="userHandleInput" className="inputStyle" onChange={this.usernameInputChange}/><br/>
                             <br/>
-                            <label>password</label><br/><input type="password" className="inputStyle" onChange={this.passwordInputChange}/>
+                            <label>password</label><br/><input id="passwordInput"type="password" className="inputStyle" onChange={this.passwordInputChange}/>
                             <br/>
                             <div style={{color : "red"}}>{this.state.error}</div>
                             <br/>
