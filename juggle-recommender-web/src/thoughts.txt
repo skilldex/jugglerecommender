@@ -169,6 +169,7 @@ DB changes:
 	filter for pure siteswaps
 	Luke's Shuffle is also called Drop Box
 	Reverse chops should be takeaways or 1 beat inside orbits
+	423 factory and factory tennis are both R+L Factory
 
 ^^^^^^^^^^^^^DB THINGS^^^^^^^^^^^^^^^^^
 

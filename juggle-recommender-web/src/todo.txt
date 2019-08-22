@@ -25,6 +25,8 @@ v 2.2
 
 =========	
 
+change wording of 'suggest a ...'? to what exactly?
+
 Niceties:
 	-contributor url .../contributor/*contributorsName*
 		-why not just leave out the 'contributor' directory and go straight to their name?

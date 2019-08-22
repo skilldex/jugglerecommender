@@ -529,6 +529,10 @@ class AddTrickForm extends Component {
 			if(!this.state.contributor){
 				delete trick.contributor
 			}
+			if(authStore.user.username === "tjthejuggler" && 
+				document.getElementById('TJsContributorInput').value !== ''){
+				trick['contributor'] = document.getElementById('TJsContributorInput').value
+			}
 			if(uiStore.editingDetailTrick){
 				alert(trick.name+" edited!")
 				trick["timeSubmitted"] = this.state.timeSubmitted
@@ -671,11 +675,22 @@ class AddTrickForm extends Component {
 									<br/>
 								</div>
 
+		const TJsContributorInput = <div className="inputContainer">
+									<span className="inputLabel">Contributor</span><br/>
+									<input className="formInputs" 
+											id="TJsContributorInput"
+											value={uiStore.editingDetailTrick? 
+													store.library[uiStore.detailTrick.id]['contributor']
+													: ''}
+									/>
+								</div>
+
 		const form = 	
 					<div className="form">
 						{backButton}
 						<h3>{titleText}</h3>
 						<div className="innerForm">
+							{authStore.user.username === "tjthejuggler" ? TJsContributorInput:null}
 							<div className="inputContainer">
 								<span className="redText">*</span>
 								<span className="inputLabel">Trick name</span><br/>
