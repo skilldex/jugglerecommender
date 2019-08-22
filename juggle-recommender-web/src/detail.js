@@ -133,6 +133,10 @@ class Detail extends Component {
     textarea.setAttribute('style','');
     textarea.value = "";
 
+    if (!uiStore.showCommentsSection){
+      uiStore.toggleShowCommentsSection()
+    }
+
       
   }
   handleEditTrickButtonClick=()=>{
