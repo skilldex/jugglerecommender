@@ -30,6 +30,13 @@ class Detail extends Component {
     showExtraGif : false,
     firstComment : "",
   }
+  componentDidUpdate(prevProps, prevState){
+    if (prevProps.trick && this.props.trick.id !== prevProps.trick.id){
+      this.setState({firstComment : ""})
+      let textarea = document.getElementById('mainCommentTextArea');  
+    textarea.setAttribute('style','');
+    }
+  }
 	onCatchesChange=(e)=>{
 	 	const re = /^[0-9\b]+$/;
 	  	if (e.target.value === '' || re.test(e.target.value)) {
@@ -40,19 +47,19 @@ class Detail extends Component {
   onCatchesKeyPress=(target)=> {
     // If enter pressed
     if(target.charCode===13){  
-      uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
+      uiStore.toggleCatchEdit(this.state.catches, this.props.trick.id)
       //set focus back to outer div
       //this.outerDiv.focus()   
     }
   }
   handleEditCatchButtonClick=()=>{
     let catches = "0"
-    if (store.myTricks[uiStore.detailTrick.id] &&
-        store.myTricks[uiStore.detailTrick.id]['catches']){
-      catches = store.myTricks[uiStore.detailTrick.id].catches
+    if (store.myTricks[this.props.trick.id] &&
+        store.myTricks[this.props.trick.id]['catches']){
+      catches = store.myTricks[this.props.trick.id].catches
     }
     this.setState({catches:catches})
-    uiStore.toggleCatchEdit(this.state.catches,uiStore.detailTrick.id)
+    uiStore.toggleCatchEdit(this.state.catches,this.props.trick.id)
     //focus after render
     setTimeout(function() {
       if (this.catchInput){
@@ -92,7 +99,7 @@ class Detail extends Component {
 
       if (uiStore.detailCatchEditable && targetElement !== inputElement && targetElement !== buttonElement
         ){
-        uiStore.toggleCatchEdit(this.state.catches, uiStore.detailTrick.id)
+        uiStore.toggleCatchEdit(this.state.catches, this.props.trick.id)
       }
   }
 
@@ -103,21 +110,21 @@ class Detail extends Component {
         parentPost: true,
         user:authStore.user.username,
         previousKeys : "",
-        trickId : uiStore.detailTrick.id
+        trickId : this.props.trick.id
 
       };
       let that = this
       store.createComment(commentPost).then(data => {
           this.setState({firstComment : ""})
-          const contributor = store.library[uiStore.detailTrick.id].contributor
+          const contributor = store.library[this.props.trick.id].contributor
           if(authStore.user.username !== contributor && contributor){
             authStore.getEmailByUsername(contributor).then((email)=>{
               if(email){
                 authStore.sendEmail({
                   "emailSubject": "Someone Commented on Your Pattern",
                   "emailText" : authStore.user.username + " commented on your pattern, " + 
-                      uiStore.detailTrick.id + " click to see the thread: www.skilldex.org/detail/" +
-                      uiStore.detailTrick.id.replace(/ /g,"%20"), 
+                      this.props.trick.id + " click to see the thread: www.skilldex.org/detail/" +
+                      this.props.trick.id.replace(/ /g,"%20"), 
                   "to" : email
                 }) 
               }
@@ -129,7 +136,7 @@ class Detail extends Component {
       });
 
     //reset textArea height
-    var textarea = document.getElementById('mainCommentTextArea');  
+    let textarea = document.getElementById('mainCommentTextArea');  
     textarea.setAttribute('style','');
     textarea.value = "";
 
@@ -174,7 +181,8 @@ class Detail extends Component {
     uiStore.updateRootTricks()
   }
   getKeysFromRelatedObject=(related)=>{
-    const detailTrick = store.library[uiStore.detailTrick.id]
+
+    const detailTrick = store.library[this.props.trick.id]
     const keysAndRelevance = Object.keys(related).map((key)=>{
       const numUpvoters = related[key].upvoters ? related[key].upvoters.length : 0
       const numDownvoters = related[key].downvoters ? related[key].downvoters.length : 0
@@ -264,11 +272,11 @@ class Detail extends Component {
       if (!(suggestedRelation in store.library)){
         suggestedRelationSubmitDisabledMessage = 'Not in database.'
       }
-      if (store.library[uiStore.detailTrick.id][relationProperty] && 
-          suggestedRelation in store.library[uiStore.detailTrick.id][relationProperty]){
+      if (store.library[this.props.trick.id][relationProperty] && 
+          suggestedRelation in store.library[this.props.trick.id][relationProperty]){
         suggestedRelationSubmitDisabledMessage = 'Already a '+relation+'.'
       }
-      if (suggestedRelation === uiStore.detailTrick.id){
+      if (suggestedRelation === this.props.trick.id){
         suggestedRelationSubmitDisabledMessage = "Can't suggest it for itself."
       }   
 
@@ -277,7 +285,8 @@ class Detail extends Component {
   }
 
 	render() {   
-    const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
+    console.log('this.props.trick',this.props.trick)
+    const detailTrickKey = this.props.trick ? this.props.trick.id : ""
     const detailTrick = store.library[detailTrickKey]
     if (detailTrickKey && !detailTrick){
         alert("Sorry, this pattern has been deleted or renamed.")
@@ -326,16 +335,16 @@ class Detail extends Component {
     let hasStarFlair = false
     let hasBabyFlair = false
     let hasNinjaFlair = false
-    if (uiStore.detailTrick && 
-        store.myTricks[uiStore.detailTrick.id]){
-      if (store.myTricks[uiStore.detailTrick.id]['starred'] &&
-          store.myTricks[uiStore.detailTrick.id]['starred'] === 'true'){
+    if (this.props.trick && 
+        store.myTricks[this.props.trick.id]){
+      if (store.myTricks[this.props.trick.id]['starred'] &&
+          store.myTricks[this.props.trick.id]['starred'] === 'true'){
         hasStarFlair = true;
-      }if (store.myTricks[uiStore.detailTrick.id]['baby'] &&
-          store.myTricks[uiStore.detailTrick.id]['baby'] === 'true'){
+      }if (store.myTricks[this.props.trick.id]['baby'] &&
+          store.myTricks[this.props.trick.id]['baby'] === 'true'){
           hasBabyFlair = true;
-      }if (store.myTricks[uiStore.detailTrick.id]['ninja'] &&
-          store.myTricks[uiStore.detailTrick.id]['ninja'] === 'true'){
+      }if (store.myTricks[this.props.trick.id]['ninja'] &&
+          store.myTricks[this.props.trick.id]['ninja'] === 'true'){
           hasNinjaFlair = true;
       }
     } 
@@ -344,21 +353,21 @@ class Detail extends Component {
                                   src={starIcon} 
                                   className={hasStarFlair?"flairIcon selectedFlair":"flairIcon" }
                                   alt="starIcon" 
-                                  onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'starred')}}
+                                  onClick={()=>{store.toggleFlair(this.props.trick.id, 'starred')}}
                               />
     const babyFlairButton = <img id="babyButton" 
                                   title="Baby flair: You're learning"
                                   src={babyIcon} 
                                   className={hasBabyFlair?"flairIcon selectedFlair":"flairIcon" }
                                   alt="babyIcon" 
-                                  onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'baby')}}
+                                  onClick={()=>{store.toggleFlair(this.props.trick.id, 'baby')}}
                               />
     const ninjaFlairButton = <img id="ninjaButton"
                                   title="Ninja flair: You're experienced" 
                                   src={ninjaIcon} 
                                   className={hasNinjaFlair?"flairIcon selectedFlair":"flairIcon" } 
                                   alt="ninjaIcon" 
-                                  onClick={()=>{store.toggleFlair(uiStore.detailTrick.id, 'ninja')}}
+                                  onClick={()=>{store.toggleFlair(this.props.trick.id, 'ninja')}}
                               />
     const catchesFlairIcon = <img className= {store.myTricks[detailTrickKey] && 
                                               parseInt(store.myTricks[detailTrickKey].catches,10)>0?
@@ -423,12 +432,12 @@ class Detail extends Component {
                               </label>
                               {this.state.showExtraGif ? 
                                 <Demo 
-                                  trickKey = {uiStore.detailTrick.id}
+                                  trickKey = {this.props.trick.id}
                                   demoLocation="detailExtraGif"
                                 />:null
                               }
                             </div>:null
-    const infoSection = uiStore.detailTrick && detailTrickKey ?
+    const infoSection = this.props.trick && detailTrickKey ?
                           <div className="detailInfoDiv">
                           <div className="viewsDiv">
                             <label className="detailLabel">Views </label>
@@ -680,7 +689,7 @@ class Detail extends Component {
               </div>
               <h3 className="detailHeader">{detailTrick.name}</h3>  
               <Demo 
-                trickKey = {uiStore.detailTrick.id}
+                trickKey = {this.props.trick.id}
                 demoLocation="detail"
               />
               {extraGifSection}
