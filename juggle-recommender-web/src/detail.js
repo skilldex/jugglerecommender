@@ -127,6 +127,12 @@ class Detail extends Component {
         }, 
         error => {
       });
+
+    //reset textArea height
+    var textarea = document.getElementById('mainCommentTextArea');  
+    textarea.setAttribute('style','');
+    textarea.value = "";
+
       
   }
   handleEditTrickButtonClick=()=>{
@@ -667,6 +673,7 @@ class Detail extends Component {
                     <div class="firstCommentContainer">
                       <span className="firstCommentIcon">{authStore.user.username}</span>
                       <textarea 
+                        id="mainCommentTextArea"
                         onKeyUp={(e)=>utilities.autoGrow(e.target)}
                         value={this.state.firstComment} 
                         onChange={(e)=>{
@@ -677,7 +684,8 @@ class Detail extends Component {
                         onBlur={(e)=>{e.target.placeholder = 'Write a comment...' }}
                         onFocus={(e)=>{e.target.placeholder = '' }}
                       ></textarea>
-                      <button className="submitButton" onClick={this.postFirstComment}>Submit</button>
+                      <button className="submitButton" 
+                              onClick={this.postFirstComment}>Submit</button>
                     </div> :             
                     <div>Log in to join the discussion.</div>
                 }
