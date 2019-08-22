@@ -1,3 +1,20 @@
+.rotatingRandomTrickBox { 
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.rotatedRandomTrickBox { 
+    transform:rotate(360deg); 
+    -webkit-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg); 
+    -o-transform:rotate(360deg); 
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
 .searchAndFilterSection{
   display:block;
   border-top: 1px solid gray;

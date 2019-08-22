@@ -8,7 +8,7 @@ import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
 import searchIcon from './images/searchIcon.png'
 import starIcon from './images/starIcon.svg'
-import randomTrickIcon from './images/randomTrickIcon.png'
+import randomTrickIcon from './images/randomTrickIcon.svg'
 import authStore from "./stores/authStore"
 import './mainTagsBar.css';
 import history from './history';
@@ -17,7 +17,7 @@ import utilities from './utilities'
 @observer
 class MainTagsBar extends Component {
     state={
-         
+         rotateClass : "rotatingRandomTrickBox"
     }
     numButtonClicked=(element)=>{
       let tempNumBalls = [...filterStore.numBalls]
@@ -96,6 +96,9 @@ class MainTagsBar extends Component {
     handleRandomTrickClick=()=>{
       utilities.sendGA('mainTagsBar','random trick')
       console.log('random')
+      this.setState({
+        rotateClass : this.state.rotateClass == "rotatingRandomTrickBox" ? "rotatedRandomTrickBox" : "rotatingRandomTrickBox" 
+      })
       this.selectRandomTrick()
     }
     handleSearchIconClicked=()=>{
@@ -196,7 +199,7 @@ class MainTagsBar extends Component {
         let randomTrickIconDiv =
                     <div className="randomTrickIcon">
                       <img 
-                        className="randomTrickIcon" 
+                        className={"randomTrickIcon " + this.state.rotateClass}
                         src={randomTrickIcon} 
                         alt="randomTrickIcon" 
                         onClick={()=>{this.handleRandomTrickClick()}}
