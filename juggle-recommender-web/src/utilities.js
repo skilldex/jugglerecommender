@@ -157,11 +157,11 @@ class Utilities{
     }else{
       x = 0
     }
-    console.log("x",x)
     return x
   }
   calculateRandomTrickScore(trickKey){
-    trickKey = "Takeouts"    
+    console.log('trickKey',trickKey)
+    //trickKey = "Cascade"    
     
     const currentTrickScore = this.currentTrickScoringFunction(this.calculateX(trickKey))
     let relatedTricksScore = 0
@@ -169,18 +169,21 @@ class Utilities{
     const trick = store.library[trickKey]
 
     relationshipList.forEach((relation)=>{
-      console.log("relation", relation)
       if(trick[relation]){
         Object.keys(trick[relation]).forEach((relatedTrickKey)=>{
-          console.log("key", relatedTrickKey)
-          relatedTricksScore += this.relatedTrickScoringFunction(this.calculateX(relatedTrickKey))
-          console.log("score", relatedTricksScore)
+          if (store.library[relatedTrickKey]){
+            relatedTricksScore += this.relatedTrickScoringFunction(this.calculateX(relatedTrickKey))
+          }
+          console.log("score, key", relatedTricksScore,relatedTrickKey)
         })
       }
     })
-    
-    console.log("current trick score", currentTrickScore,relatedTricksScore)
+    const totalScore = (Math.min(10,relatedTricksScore)/10)*currentTrickScore
+    console.log("current trick score", totalScore,currentTrickScore,relatedTricksScore)
+    return totalScore
   }
+
+
 
 }
 const utilites = new Utilities()

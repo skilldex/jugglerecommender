@@ -7,8 +7,6 @@
 		-make consuming tags be added automatically in the list
 
 v 2.2
-	-when comment is submitted, 
-		-autoscroll to comment
 
 	-clear comment boxes when details page changes
 

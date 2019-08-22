@@ -80,15 +80,22 @@ class MainTagsBar extends Component {
     selectRandomTrick=()=>{
       var keys = Object.keys(store.library)
       const randomTrickKey = keys[ keys.length * Math.random() << 0];
-      if (Math.random() < utilities.calculateRandomTrickScore(randomTrickKey)){
+      const randomNumber = Math.random()
+      //console.log('randomNumber',randomNumber)
+      console.log('PRESELECTSrandomTrickKey',randomTrickKey)
+      const score = utilities.calculateRandomTrickScore(randomTrickKey)
+      if (randomNumber < score){
           console.log('randomTrickKey',randomTrickKey)
           uiStore.setDetailTrick({...store.library[randomTrickKey], id: randomTrickKey})
           history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
           store.increaseViewsCounter()
       }else{
           console.log('randomTrickKey failed',randomTrickKey)
-          //this.selectRandomTrick()
+          this.selectRandomTrick()
       }
+      console.log('score',score)
+      console.log('randomNumber',randomNumber)
+
     }
 
     handleRandomTrickClick=()=>{
