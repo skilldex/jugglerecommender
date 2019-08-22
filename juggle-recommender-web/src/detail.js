@@ -34,7 +34,9 @@ class Detail extends Component {
     if (prevProps.trick && this.props.trick.id !== prevProps.trick.id){
       this.setState({firstComment : ""})
       let textarea = document.getElementById('mainCommentTextArea');  
-    textarea.setAttribute('style','');
+      if(textarea){
+        textarea.setAttribute('style','');
+      }
     }
   }
 	onCatchesChange=(e)=>{
@@ -285,7 +287,6 @@ class Detail extends Component {
   }
 
 	render() {   
-    console.log('this.props.trick',this.props.trick)
     const detailTrickKey = this.props.trick ? this.props.trick.id : ""
     const detailTrick = store.library[detailTrickKey]
     if (detailTrickKey && !detailTrick){

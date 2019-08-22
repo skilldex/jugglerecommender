@@ -148,7 +148,7 @@ class Utilities{
     const numHands = 2 
     if(myTrick && myTrick.catches > 0){
        x = myTrick.catches/(numBalls*numHands)
-    }else if(myTrick && !myTrick.catches && (myTrick.ninja || myTrick.baby)){
+    }else if(myTrick && !myTrick.catches && (myTrick.ninja == "true" || myTrick.baby == "true")){
       if(myTrick.baby){
         x = numBalls*numHands
       }else{
@@ -160,11 +160,14 @@ class Utilities{
     return x
   }
   calculateRandomTrickScore(trickKey){
-    console.log('trickKey',trickKey)
-    //trickKey = "Cascade"    
-    
     const currentTrickScore = this.currentTrickScoringFunction(this.calculateX(trickKey))
-    let relatedTricksScore = 0
+    let myTricksAllTricksRatio = 1/Object.keys(store.library).length
+    if(store.myTricks){
+      myTricksAllTricksRatio = 
+      Object.keys(store.myTricks).length/ 
+      Object.keys(store.library).length
+    }
+    let relatedTricksScore = myTricksAllTricksRatio
     let relationshipList = ["prereqs","dependents","related"]
     const trick = store.library[trickKey]
 
@@ -172,14 +175,14 @@ class Utilities{
       if(trick[relation]){
         Object.keys(trick[relation]).forEach((relatedTrickKey)=>{
           if (store.library[relatedTrickKey]){
-            relatedTricksScore += this.relatedTrickScoringFunction(this.calculateX(relatedTrickKey))
+            const currentScore = this.relatedTrickScoringFunction(this.calculateX(relatedTrickKey))
+            relatedTricksScore += currentScore
           }
-          console.log("score, key", relatedTricksScore,relatedTrickKey)
         })
       }
     })
-    const totalScore = (Math.min(10,relatedTricksScore)/10)*currentTrickScore
-    console.log("current trick score", totalScore,currentTrickScore,relatedTricksScore)
+    
+    const totalScore = (Math.min(6,relatedTricksScore)/6)*currentTrickScore/(myTricksAllTricksRatio*5)
     return totalScore
   }
 
