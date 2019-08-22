@@ -80,14 +80,14 @@ class MainTagsBar extends Component {
     selectRandomTrick=()=>{
       var keys = Object.keys(store.library)
       const randomTrickKey = keys[ keys.length * Math.random() << 0];
-      if (Math.random() > store.calculateRandomTrickScore(randomTrickKey)){
+      if (Math.random() < utilities.calculateRandomTrickScore(randomTrickKey)){
           console.log('randomTrickKey',randomTrickKey)
           uiStore.setDetailTrick({...store.library[randomTrickKey], id: randomTrickKey})
           history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
           store.increaseViewsCounter()
       }else{
           console.log('randomTrickKey failed',randomTrickKey)
-          this.selectRandomTrick()
+          //this.selectRandomTrick()
       }
     }
 
@@ -200,7 +200,6 @@ class MainTagsBar extends Component {
                         onClick={()=>{this.handleRandomTrickClick()}}
                       />
                     </div>
-        randomTrickIconDiv = null
         const sortDropdown = uiStore.showSortDiv ? 
           <div onMouseEnter = {()=>this.mouseEnterSortDiv()}
                onMouseLeave = {()=>this.mouseLeaveSortDiv()}

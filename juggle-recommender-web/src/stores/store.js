@@ -279,10 +279,6 @@ class Store {
 
 	}
 
-	  @action calculateRandomTrickScore=(trickKey)=>{
-	    return .9
-	  }
-
 	@action setStartTime=(startTime)=>{
 		this.startTime = startTime
 	}

@@ -133,6 +133,55 @@ class Utilities{
       element.style.height = "5px"
       element.style.height = element.scrollHeight+"px"
   }
+
+  relatedTrickScoringFunction(x){
+    return 1+1/(-.05*x - 1)
+  }
+  currentTrickScoringFunction(x){
+    return -1*(1+1/(-.15*x - 1)) + 1
+  }
+  calculateX(trickKey){
+    let x
+    const trick = store.library[trickKey]
+    const numBalls = trick.num
+    const myTrick  = store.myTricks[trickKey] ? store.myTricks[trickKey] : null
+    const numHands = 2 
+    if(myTrick && myTrick.catches > 0){
+       x = myTrick.catches/(numBalls*numHands)
+    }else if(myTrick && !myTrick.catches && (myTrick.ninja || myTrick.baby)){
+      if(myTrick.baby){
+        x = numBalls*numHands
+      }else{
+        x = numBalls*numHands*15
+      }
+    }else{
+      x = 0
+    }
+    console.log("x",x)
+    return x
+  }
+  calculateRandomTrickScore(trickKey){
+    trickKey = "Takeouts"    
+    
+    const currentTrickScore = this.currentTrickScoringFunction(this.calculateX(trickKey))
+    let relatedTricksScore = 0
+    let relationshipList = ["prereqs","dependents","related"]
+    const trick = store.library[trickKey]
+
+    relationshipList.forEach((relation)=>{
+      console.log("relation", relation)
+      if(trick[relation]){
+        Object.keys(trick[relation]).forEach((relatedTrickKey)=>{
+          console.log("key", relatedTrickKey)
+          relatedTricksScore += this.relatedTrickScoringFunction(this.calculateX(relatedTrickKey))
+          console.log("score", relatedTricksScore)
+        })
+      }
+    })
+    
+    console.log("current trick score", currentTrickScore,relatedTricksScore)
+  }
+
 }
 const utilites = new Utilities()
 
