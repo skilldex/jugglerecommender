@@ -6,22 +6,16 @@
 		-a way to see info/demo of tricks when deciding what to use as related
 		-make consuming tags be added automatically in the list
 
-v 2.2
-
-	-clear comment boxes when details page changes
-
-	-create algorithm
-
-	-Think about leaderboard/details
-
 	Data fix scripts(see list below)
 
 =========	
 
 change wording of 'suggest a ...'? to what exactly?
 
-119 of authstore, if contributor is no associated with an account it cant send email,
+119 of authstore, if contributor is not associated with an account it cant send email,
 	we should hook these up to skilldex.feedback
+
+see if vote thumb can change colors quicker, maybe before work is done.
 
 Niceties:
 	-contributor url .../contributor/*contributorsName*

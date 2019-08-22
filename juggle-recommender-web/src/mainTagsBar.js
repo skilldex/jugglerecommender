@@ -95,7 +95,7 @@ class MainTagsBar extends Component {
 
     handleRandomTrickClick=()=>{
       utilities.sendGA('mainTagsBar','random trick')
-      console.log('random')
+      uiStore.clearUI()
       this.setState({
         rotateClass : this.state.rotateClass == "rotatingRandomTrickBox" ? "rotatedRandomTrickBox" : "rotatingRandomTrickBox" 
       })
