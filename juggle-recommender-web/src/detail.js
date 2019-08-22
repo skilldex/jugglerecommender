@@ -136,9 +136,23 @@ class Detail extends Component {
     if (!uiStore.showCommentsSection){
       uiStore.toggleShowCommentsSection()
     }
-
-      
+    //this timer is because it takes a moment for the comment section to expand,
+    //  and we want it's size after it expands
+    this.detailTimer = setTimeout(()=>{
+      const commentsContainer = document.getElementById('commentsContainer')
+      const commentsContainerBottomPosition = commentsContainer.offsetTop+
+                                              commentsContainer.offsetHeight
+      const viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight)
+      if (document.documentElement.scrollTop + viewHeight < commentsContainerBottomPosition){
+        window.scrollTo(0, commentsContainerBottomPosition - viewHeight+100)
+      }
+    }, 100)      
   }
+ checkVisible(position) {
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(document.documentElement.scrollTop + viewHeight < position);
+}
+
   handleEditTrickButtonClick=()=>{
     utilities.sendGA('detail','edit pattern')
     uiStore.editDetailTrick()
@@ -671,7 +685,8 @@ class Detail extends Component {
               />
               {extraGifSection}
               {infoSection}
-              <div className="commentsContainer">
+              <div  id="commentsContainer"
+                    className="commentsContainer">
                 <h3>Discussion</h3>
                 { authStore.user ? 
                     <div class="firstCommentContainer">

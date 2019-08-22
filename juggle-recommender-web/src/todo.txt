@@ -8,16 +8,11 @@
 
 v 2.2
 	-when comment is submitted, 
-		-return comment input to original size
-		-expand comments section
 		-autoscroll to comment
 
 	-clear comment boxes when details page changes
 
-	-also has a 'random trick' button or box with question mark
-		-add button
-		-random trick pulls out of filtered trick list
-		-create algorithm
+	-create algorithm
 
 	-Think about leaderboard/details
 
@@ -26,6 +21,9 @@ v 2.2
 =========	
 
 change wording of 'suggest a ...'? to what exactly?
+
+119 of authstore, if contributor is no associated with an account it cant send email,
+	we should hook these up to skilldex.feedback
 
 Niceties:
 	-contributor url .../contributor/*contributorsName*
