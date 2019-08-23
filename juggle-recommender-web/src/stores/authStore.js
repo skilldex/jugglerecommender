@@ -116,7 +116,9 @@ class AuthStore {
         return new Promise(resolve => {
             usersRef.on("value", resp =>{
                 user = store.snapshotToArray(resp)[0]
-                resolve(user.email)
+                let email = 'skilldex.feedback@gmail.com'
+                if(user){ email = user.email }
+                resolve(email)
             })
         })
     }
