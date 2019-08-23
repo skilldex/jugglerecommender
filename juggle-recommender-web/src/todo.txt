@@ -12,10 +12,11 @@
 
 change wording of 'suggest a ...'? to what exactly?
 
-119 of authstore, if contributor is not associated with an account it cant send email,
+119 of authstore, if contributor is not associated with an account(because I put in a contributor name with no account connected) it cant send email,
 	we should hook these up to skilldex.feedback
 
 see if vote thumb can change colors quicker, maybe before work is done.
+	-i dont see an obvious way to do this
 
 Niceties:
 	-contributor url .../contributor/*contributorsName*

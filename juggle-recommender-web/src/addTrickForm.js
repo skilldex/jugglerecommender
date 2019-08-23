@@ -528,10 +528,15 @@ class AddTrickForm extends Component {
 			}
 			if(!this.state.contributor){
 				delete trick.contributor
-			}
+			}//if I leave contributor blank, it uses my name
 			if(authStore.user.username === "tjthejuggler" && 
 				document.getElementById('TJsContributorInput').value !== ''){
+				//if I put something in, it use that name
 				trick['contributor'] = document.getElementById('TJsContributorInput').value
+				//if i put in loj it uses no name which defaults to Library Of Juggling
+				if(document.getElementById('TJsContributorInput').value == 'loj'){
+					delete trick.contributor
+				}
 			}
 			if(uiStore.editingDetailTrick){
 				alert(trick.name+" edited!")
