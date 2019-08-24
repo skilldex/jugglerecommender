@@ -37,29 +37,28 @@ Get random trick
 	catches of trick*(-1 * postreqScore)
 
 	check flair of trick * (-1 * postreqScore)
-
+	check with filter list
     x= (catches/(#numballs*hands)
-    score = 1+1/(-.05x - 1)
-
+    relate trick score = 1+1/(-.05x - 1)
+    current trick score = -1*(1+1/(-.05x - 1)) + 1
 	no Flair = 0
 	starFlair = 1
 	babyFlair = # balls * 2 
 	ninja = # balls * 2 * 15
+
+
+	(Sum(
+		prereqCatches +
+		prereqFlair +
+	)/#prereqs for current trick +
 	Sum(
-		C1 * prereqCatches +
-		C1 * prereqFlair +
-	) +
+		relatedCatches +
+		relatedFlair +
+	)/#related + 
 	Sum(
-		C2 * relatedCatches +
-		C2 * relatedFlair +
-	) + 
-	Sum(
-		C3 * postreqCatches +
-		C3 * postreqFlair +
-	) +
-	C7 * catches + 
-	C
+		postreqCatches +
+		postreqFlair +
+	))/#postreqs * (current trick catches , current trick flair)
 
 	calculate score
 
-	check with filter
