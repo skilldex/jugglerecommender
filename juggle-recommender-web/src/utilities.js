@@ -3,6 +3,24 @@ import store from './stores/store'
 import ReactGA from 'react-ga';
 
 configure({ enforceActions: "always" })
+let idleTimer
+
+function resetIdleTimer(){
+  clearTimeout(idleTimer)
+  idleTimer = setTimeout(()=>{
+    window.location.reload()
+  },10000)
+}
+window.onload = resetIdleTimer;
+document.onload = resetIdleTimer;
+document.onmousemove = resetIdleTimer;
+document.onmousedown = resetIdleTimer; // touchscreen presses
+document.ontouchstart = resetIdleTimer;
+document.onclick = resetIdleTimer;     // touchpad clicks
+document.onscroll = resetIdleTimer;    // scrolling with arrow keys
+document.onkeypress = resetIdleTimer;
+
+
 class Utilities{
   @action isEmptyOrSpaces=(str)=>{
     let strEmpty = false
@@ -185,8 +203,6 @@ class Utilities{
     const totalScore = (Math.min(6,relatedTricksScore)/6)*currentTrickScore/(myTricksAllTricksRatio*5)
     return totalScore
   }
-
-
 
 }
 const utilites = new Utilities()
