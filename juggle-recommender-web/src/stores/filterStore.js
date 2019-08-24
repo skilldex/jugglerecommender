@@ -7,8 +7,8 @@ console.log("filters " ,window.location)
 
 const urlQueryContributor = window.location.search.match(/\?contributor=(.+)/)
 const contributor = urlQueryContributor ? [{
-									id: urlQueryContributor[1].split('&')[0].slice(0, -1),
-									text: urlQueryContributor[1].split('&')[0].slice(0, -1)
+									id: urlQueryContributor[1].split('&')[0],
+									text: urlQueryContributor[1].split('&')[0]
 								}] : []
 let urlQueryDiff = window.location.search.match(/difficultyrange=(.+)/)	
 let difficultyRange	= [1,10]
@@ -19,31 +19,34 @@ if (urlQueryDiff){
 let urlQueryNumBalls = window.location.search.match(/numballs=(.+)/)
 let numBalls = []
 if (urlQueryNumBalls){
-		numBalls = urlQueryNumBalls[1].split('&')[0].split(',')
-		numBalls = numBalls.filter(Boolean);
+	numBalls = urlQueryNumBalls[1].split('&')[0].split(',')
+		console.log("numballs " ,numBalls)
 }
 let urlQueryFlair = window.location.search.match(/flair=(.+)/)
 let flair = []
 if (urlQueryFlair){
-		flair = urlQueryFlair[1].split('&')[0].split(',')
-		flair = flair.filter(Boolean);
+	flair = urlQueryFlair[1].split('&')[0].split(',')
 }
 let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
 let demoType = []
-if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo&"){demoType = [{
-																	id: "User Video",
-																	text: "User Video",
-																}]
-															}
-if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab&"){demoType = [{
-																	id: "Juggling Lab",
-																	text: "Juggling Lab",
-																}]
-															}
+console.log("demotype" ,urlQueryDemoType)
+if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo"){
+	demoType = [{
+		id: "User Video",
+		text: "User Video",
+	}]
+}															
+if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
+	demoType = [{
+		id: "Juggling Lab",
+		text: "Juggling Lab",
+	}]
+}
+console.log("final demotype",demoType)
 const urlQueryTags = window.location.search.match(/tags=(.+)/)
 const tags = urlQueryTags ? [{
-								id: urlQueryTags[1].split('&')[0].slice(0, -1),
-								text: urlQueryTags[1].split('&')[0].slice(0, -1)
+								id: urlQueryTags[1].split('&')[0],
+								text: urlQueryTags[1].split('&')[0]
 							}] : []
 let urlQueryCatches = window.location.search.match(/catches=(.+)/)	
 let minCatches = 0
@@ -88,6 +91,7 @@ class FilterStore {
 
 	@action setDemoType=(demoType)=>{
 		this.demoType = demoType
+		console.log("demotype set",demoType)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}

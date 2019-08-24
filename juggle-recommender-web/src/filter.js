@@ -154,51 +154,75 @@ class Filter extends Component {
     	let urlText = "/?"
     	if (filterStore.contributors.length > 0){
 			urlText = urlText + "contributor="    		
-    		filterStore.contributors.forEach(contributor => {
-	    		urlText = urlText + contributor.id + ","
+    		filterStore.contributors.forEach((contributor,index) => {
+	    		urlText = urlText + contributor.id 
+	    		if(index < filterStore.contributors.length-1){
+	    			urlText += ","
+	    		}
 			});
-			urlText.slice(0, -1);
-			urlText = urlText + "&"
     	}  
     	if (parseInt(filterStore.difficultyRange[0],10)!==1 || 
     		parseInt(filterStore.difficultyRange[1],10)!==10){
+    			if(urlText !== "/?"){
+    				urlText += "&"
+    			}
 	    		urlText = urlText + "difficultyrange=" + 
 	    			filterStore.difficultyRange[0] + "," + filterStore.difficultyRange[1] + "&"
     	}
     	if (filterStore.numBalls.length > 0){
+    		if(urlText !== "/?"){
+				urlText += "&"
+			}
 			urlText = urlText + "numballs="    		
-    		filterStore.numBalls.forEach(numball => {
-	    		urlText = urlText + numball + ","
+    		filterStore.numBalls.forEach((numball,index) => {
+	    		urlText = urlText + numball 
+	    		if(index < filterStore.numBalls.length-1){
+	    			urlText += ","
+	    		}
 			});
-			urlText.slice(0, -1);
-			urlText = urlText + "&"
     	}
     	if (filterStore.flair.length > 0){
+    		if(urlText !== "/?"){
+				urlText += "&"
+			}
 			urlText = urlText + "flair="    		
-    		filterStore.flair.forEach(flairItem => {
-	    		urlText = urlText + flairItem + ","
+    		filterStore.flair.forEach((flair,index) => {
+	    		urlText = urlText + flair
+	    		if(index < filterStore.flair.length-1){
+	    			urlText += ","
+	    		}
 			});
-			urlText.slice(0, -1);
-			urlText = urlText + "&"
+
     	}
     	if (filterStore.tags.length > 0){
+    		if(urlText !== "/?"){
+				urlText += "&"
+			}
 			urlText = urlText + "tags="   		
-    		filterStore.tags.forEach(tag => {
-	    		urlText = urlText + tag.id + ","
+    		filterStore.tags.forEach((tag,index) => {
+	    		urlText = urlText + tag.id
+	    		if(index < filterStore.tags.length-1){
+	    			urlText += ","
+	    		}
 			});
-			urlText.slice(0, -1);
-			urlText = urlText + "&"
     	}
     	if (parseInt(filterStore.minCatches,10)>0 || 
     		parseInt(filterStore.maxCatches,10)<store.highestCatches){
-	    		urlText = urlText + "catches=" + 
-	    			filterStore.minCatches + "," + filterStore.maxCatches + "&"
+    		if(urlText !== "/?"){
+				urlText += "&"
+			}
+    		urlText = urlText + "catches=" + 
+    			filterStore.minCatches + "," + filterStore.maxCatches 
     	}
     	if (filterStore.demoType.length > 0 && filterStore.demoType[0].id !== "All"){
-			urlText = urlText + "demotype=" + filterStore.demoType[0].id.replace(" ","").toLowerCase() + "&"		
+    		if(urlText !== "/?"){
+				urlText += "&"
+			}
+			urlText = urlText + "demotype=" + filterStore.demoType[0].id.replace(" ","").toLowerCase()		
     	}
 
  		if (urlText !== "/?"){
+ 			//if not blank copy link
 			const textField = document.createElement('textarea')
 			const url = window.location.origin + urlText 
 			textField.innerText = url
