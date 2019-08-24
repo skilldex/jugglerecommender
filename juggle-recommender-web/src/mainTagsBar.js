@@ -173,9 +173,7 @@ class MainTagsBar extends Component {
           )
         })
       }
-      console.log("final demos ", filterStore.demoType)
       if(filterStore.demoType[0]){   
-        console.log("final demos ", filterStore.demoType)
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"

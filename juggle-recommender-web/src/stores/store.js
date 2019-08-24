@@ -350,9 +350,9 @@ class Store {
 		this.patternCount = count
 	}
 	@action getUserCountFromDatabase=()=>{
-		let libraryRef = firebase.database().ref('users/')
+		let libraryRef = firebase.database().ref('stats/')
 		libraryRef.on('value', resp =>{
-        	this.setUserCount(this.snapshotToArray(resp).length)
+        	this.setUserCount(this.snapshotToArray(resp)[1])
         })		
 	}
 	@action setUserCount=(count)=>{

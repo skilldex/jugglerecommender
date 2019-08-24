@@ -14,33 +14,36 @@ v2.3
 
 	-extra GA for rapid reclick of suggestions if within a certain amount of time user clicks give random trick again, it should send a different GA
 
-	-extra stats for contributors in contributo page
+	-extra stats for contributors in contributor page
 		-greyed out and 0s if they dont contribute
 		query firebase with order by child for contributor number
 			-this is the way to filter the list this also works for views, or users with catches
 
-	-hook users on home screen up to a firebase number that is changed manually
+	-change suggest a... buttons to blue link and a plus sign to the left maybe bold
 
+	-change filter setup to tricklist/filter
+		-when the filter gets set, the url should change, but the page shouldnt reload
+
+	-and contributor links to contributor/
 =========
 
-Maybes:
-	-the users number on home makes us look smaller than we are since lots of users dont sign up, maybe label it as signed up somehow
 
 Niceties:
 	-donations section
-		-on about page or seperate page?
+		-bottom of homescreen
 		-paypal?
 		-btc?
-		-anything else?
-	-in details lists change wording of 'suggest a ...' button? to what exactly?
+
 	-see if vote thumb can change colors quicker, maybe before work is done.
-		-i dont see an obvious way to do this
+		-maybe see if can be done locally if it currently is waiting on db
 	-showing the GA map in about or stats or something would be cool
-	-contributor url .../contributor/*contributorsName*
-		-why not just leave out the 'contributor' directory and go straight to their name?
+
+
 	-autoscroll to voted on card and make it flash when it re-sorts
 		-would be nice if it animatedly moved
 		-https://stackoverflow.com/questions/27198479/whats-a-react-js-friendly-way-to-animate-a-list-reordering/31080050
+
+
 	-maybe share tap target should be made larger?
 		-which share button having issues with?
 	-maybe up arrow button that appears on list to zoom to top

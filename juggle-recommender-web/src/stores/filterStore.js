@@ -29,7 +29,6 @@ if (urlQueryFlair){
 }
 let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
 let demoType = []
-console.log("demotype" ,urlQueryDemoType)
 if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo"){
 	demoType = [{
 		id: "User Video",
@@ -42,7 +41,6 @@ if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
 		text: "Juggling Lab",
 	}]
 }
-console.log("final demotype",demoType)
 const urlQueryTags = window.location.search.match(/tags=(.+)/)
 const tags = urlQueryTags ? [{
 								id: urlQueryTags[1].split('&')[0],
