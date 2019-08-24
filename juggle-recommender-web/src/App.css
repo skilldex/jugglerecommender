@@ -30,10 +30,11 @@ input{
 .trickListDiv{
   margin-top: -10px;
 }
-.info{
+.aboutInfo{
   font-size: 16px;
   color : #787878;
   width: 375px;
+
 }
 
 .inputStyle{
@@ -43,7 +44,8 @@ input{
 .instructions{
   padding-left: 10px;
   margin-bottom: 15px;
-  z-index: 30
+  z-index: 30;
+  max-width: 375px;
 }
 .textLink{
   background-color : white;
