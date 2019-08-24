@@ -174,12 +174,12 @@ class MainTagsBar extends Component {
         })
       }
       console.log("final demos ", filterStore.demoType)
-      if(!filterStore.demoType===[]){   
+      if(filterStore.demoType[0]){   
         console.log("final demos ", filterStore.demoType)
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"
-                      onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType}</span>
+                      onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType[0].id}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.handleDemoTypeDelete()}> x </label>
               </div>      
         )

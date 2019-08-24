@@ -161,9 +161,8 @@ class FilterStore {
 		uiStore.updateRootTricks()
 	}
 	@action handleDemoTypeDelete=(i)=>{
-		this.setDemoType(
-			this.demoType.filter((tag, index) => index !== i)
-		)
+		console.log('demoTypeDEL',this.demoType)
+		this.demoType = []
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()	
 	}
