@@ -6,19 +6,24 @@ v2.3
 
 	-Add Trick Form:
 		-a way to see info/demo of tricks when deciding what to use as related
+			-similar to current list, but it's own component probably
+			-no catches shown, no relevance, letters highligh, title wont be blue
 		-make consuming tags be added automatically in the list
 
-=========	
-ABOUT:
-	-about page looks wanky on mobile because of new line setup
-	-maybe put something on about page telling users to each time they use the app since it is in active development. There was a Stefan trick add where he was using an old version of the site.
-	-add a blurb about random trick box
+	-add a blurb about random trick box in about
+
+	-extra GA for rapid reclick of suggestions if within a certain amount of time user clicks give random trick again, it should send a different GA
+
+	-extra stats for contributors in contributo page
+		-greyed out and 0s if they dont contribute
+		query firebase with order by child for contributor number
+			-this is the way to filter the list this also works for views, or users with catches
+
+	-hook users on home screen up to a firebase number that is changed manually
+
+=========
 
 Maybes:
-	-give edit trick its own url/ga
-	-A special stats page that only contributors get
-		-it is blank/unavailable for users who are not contributors and may entice people to contribute
-	-a little fleeting survey message asking if they like the random trick offered that just shows for a few seconds after they get the trick given
 	-the users number on home makes us look smaller than we are since lots of users dont sign up, maybe label it as signed up somehow
 
 Niceties:
