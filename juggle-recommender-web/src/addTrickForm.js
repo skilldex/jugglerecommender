@@ -684,7 +684,7 @@ class AddTrickForm extends Component {
 									<span className="inputLabel">Contributor</span><br/>
 									<input className="formInputs" 
 											id="TJsContributorInput"
-											value={uiStore.editingDetailTrick? 
+											defaultValue={uiStore.editingDetailTrick?
 													store.library[uiStore.detailTrick.id]['contributor']
 													: ''}
 									/>

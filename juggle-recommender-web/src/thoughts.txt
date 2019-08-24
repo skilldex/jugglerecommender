@@ -1,16 +1,50 @@
+Maybes:
+	-give edit trick its own url/ga
+	-A special stats page that only contributors get
+		-it is blank/unavailable for users who are not contributors and may entice people to contribute
+	-a little fleeting survey message asking if they like the random trick offered that just shows for a few seconds after they get the trick given
+	-the users number on home makes us look smaller than we are since lots of users dont sign up, maybe label it as signed up somehow
+
+Niceties:
+	-donations section
+		-on about page or seperate page?
+		-paypal?
+		-btc?
+		-anything else?
+	-in details lists change wording of 'suggest a ...' button? to what exactly?
+	-see if vote thumb can change colors quicker, maybe before work is done.
+		-i dont see an obvious way to do this
+	-showing the GA map in about or stats or something would be cool
+	-contributor url .../contributor/*contributorsName*
+		-why not just leave out the 'contributor' directory and go straight to their name?
+	-autoscroll to voted on card and make it flash when it re-sorts
+		-would be nice if it animatedly moved
+		-https://stackoverflow.com/questions/27198479/whats-a-react-js-friendly-way-to-animate-a-list-reordering/31080050
+	-maybe share tap target should be made larger?
+		-which share button having issues with?
+	-maybe up arrow button that appears on list to zoom to top
+	-there should be a way to add gifs even if pattern name is not a siteswap
+	-An easy way to combine 2 patterns(just for mods)
+		-for instance, Takeouts(4b) and Takeout Multiplex(4b) is the same trick, just one is LOJ, and one is juggling_vegan. Weave and The Weave is another
+	-SORT BY:
+		-view count, or users working on 
+			-maybe not since views are not shown on cards, but maybe this isnt a big deal
+	-a way to make playlists, or practice plans, would be nice to keep track of all the tricks of a kind that i want to work on consistantly
+	-User made lists for things like 'patterns where all 3 balls line up vertically' or 'easy uncommon patterns' or 'easy to do hard to figure out' or 'hard to do, easy to figure out' or 'tjthejuggler's 5b cascade warmpup'
+	-A wanted list where people can post tricks they would like to have
+		-this could be not limited to tricks, but also info on existing tricks
+		-the list could be hooked up to rewards, like btc
+		-wanteds posted by users with accounts only, or the ones with accounts float to top of list
+
 Misc:
 	-all users emails are in db on github
 	-from stefan
 		-On the add patternform: if the submit button is grey you could give hints what the user is missing
 			-followup with stefan
 
-Maybes:
-	-clear search when we go to details page? maybe just if details page is different?
-	-give edit trick its own url/ga
-	-A special contributors stats page
-		-it is blank/unavailable for users who are not contributors and may entice people to contribute
-
 Bugs:
+	-putting a comma in a list input, like (6x,4) clears the input
+	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
 	-tricklist shows behind add pattern form
 	-after about 10 loops, videos get stuck with loading wheel,
 		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
@@ -125,7 +159,8 @@ Asthetics:
 	-consider moving name and version into about screen
 
 ----------------DB THINGS---------------
-To add to db:
+To add to db (Some Filmed, Some found)
+	-(6x,4)* and (4x,6)*
 	-paper notes from workshops
 		-Freeze
 		-Machine
@@ -135,7 +170,7 @@ To add to db:
 	-These are siteswaps for a couple of the switch patterns
 		(6x,2x)(2x,2x)
 	Simple:
-		Tennis and Half Shower Versions of:(A few may be done already)
+		Tennis and Half(Every other) Versions of:(A few may be done already)
 			Backcross
 			Penguin
 			Reverse Backcross
@@ -150,8 +185,12 @@ To add to db:
 		Time reverse of lemming drop
 
 To film:
+	-neck catch tennis
+	-neck throw tennis
+	-stuff on phone list
 	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
 	-555551 - 24 catches
+	-far close shower - 36 catches
 
 CONTACT/RESEARCH:
 	-Contact @loudjuggling if his tricks have names or if can easily get technical names
@@ -159,8 +198,10 @@ CONTACT/RESEARCH:
 	-look up mura345
 	-Look into idiosensory
 	-Michael falkov video
+	-https://www.instagram.com/p/BCBgAfmEJX_/ <-- ask this guy
 
 DB changes:
+	Shadow pass/throw should be changed to neck pass
 	4440522 needs new name
 	5344 needs a new name
 	413333333 needs new name
@@ -169,6 +210,7 @@ DB changes:
 	Luke's Shuffle is also called Drop Box
 	Reverse chops should be takeaways or 1 beat inside orbits
 	423 factory and factory tennis are both R+L Factory
+	make a stall tag and put it on all elcrook catches and elcrook stalls
 
 ^^^^^^^^^^^^^DB THINGS^^^^^^^^^^^^^^^^^
 
@@ -186,6 +228,11 @@ Reasons it is easier to add tricks on pc:
 -cant easily see video adding, would be nice if a preview was added once url was input
 
 Giveaway:
+	-We could do multiple giveaways, first do one where we give away gift certificates to a few different juggling stores so that we do not have to deal with shipping, and we can let people pick what they want to get. Then, later once mikes balls get made we can do another.
+	-we could find a few different dealers in different parts of the world so users aer not excluded by high international shipping
+	-if we do a special giveaway just for our followers at the time we announce the giveaway(or maybe do something special for the first X number, like 'the first 5 are guarenteed winners, then we will randomly pick 20 after that), but we say we will do more like this in future, then it will incentivise people to follow us
+	-we should have some part of the giveaway be tagging friends, tag 3 friends and you get an entry
+	-make them say a pattern that they learned from skilldex.org
 	Competition Based:
 		Research:
 			Archived Version of JugglingDB records:

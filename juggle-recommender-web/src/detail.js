@@ -202,6 +202,21 @@ class Detail extends Component {
     if(authStore.user){
       uiStore.toggleSuggestingRelation(relation)
       uiStore.setSuggestedRelation(relation,null)
+      setTimeout(()=>{
+        if (relation === 'prereq'){
+          if (this.suggestPrereqInput){
+            this.suggestPrereqInput.focus()
+          }
+        }else if(relation === 'related'){
+          if (this.suggestRelatedInput){
+            this.suggestRelatedInput.focus()
+          }
+        }else if(relation === 'dependent'){
+          if (this.suggestDependentInput){
+            this.suggestDependentInput.focus()
+          }
+        }
+      }, 100)
     }else{
       alert("Please login to make a suggestion")
     }
@@ -560,6 +575,7 @@ class Detail extends Component {
                       value={uiStore.suggestedPrereq} 
                       onChange={this.handleSuggestPrereqChange}
                       onBlur={this.handleOnBlurSuggestPrereqInput}
+                      ref={ref => this.suggestPrereqInput = ref}
                 />
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null ? 
@@ -606,6 +622,7 @@ class Detail extends Component {
                       value={uiStore.suggestedRelated} 
                       onChange={this.handleSuggestRelatedChange}
                       onBlur={this.handleOnBlurSuggestRelatedInput}
+                      ref={ref => this.suggestRelatedInput = ref}
                 />
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('related') != null ? 
@@ -652,6 +669,7 @@ class Detail extends Component {
                       value={uiStore.suggestedDependent} 
                       onChange={this.handleSuggestDependentChange}
                       onBlur={this.handleOnBlurSuggestDependentInput}
+                      ref={ref => this.suggestDependentInput = ref}
                 />
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null ? 
