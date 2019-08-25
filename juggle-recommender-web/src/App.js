@@ -42,7 +42,7 @@ const unlisten = history.listen((location, action) => {
 	 	uiStore.toggleAddingTrick()
 	}
   }
-  if(location.pathname == "/tricklist"){
+  if(location.pathname.includes("/tricklist")){
   	uiStore.clearUI()
 	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick()
