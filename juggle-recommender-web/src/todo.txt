@@ -7,7 +7,7 @@ v2.3
 	-Add Trick Form:
 		-a way to see info/demo of tricks when deciding what to use as related
 			-similar to current list, but it's own component probably
-			-no catches shown, no relevance, letters highligh, title wont be blue
+			-no catches shown, no relevance, letters highlight, title wont be blue
 		-make consuming tags be added automatically in the list
 
 	-add a blurb about random trick box in about

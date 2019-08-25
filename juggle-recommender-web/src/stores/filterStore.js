@@ -5,11 +5,20 @@ import uiStore from "./uiStore"
 configure({ enforceActions: "always" })
 console.log("filters " ,window.location)
 
-const urlQueryContributor = window.location.href.match(/contributor=(.+)/)
-const contributor = urlQueryContributor ? [{
-									id: urlQueryContributor[1].split('&')[0],
-									text: urlQueryContributor[1].split('&')[0]
-								}] : []
+let urlQueryContributor = null
+const contributorMatch = window.location.href.match(/contributor=(.+)/)
+if (contributorMatch){
+		urlQueryContributor = contributorMatch[1].split('&')[0].split(',')
+}
+const contributor = urlQueryContributor ? 
+					urlQueryContributor.map((tag)=>{
+						return {
+							id : tag,
+							text : tag
+						}
+					})	
+				: []
+
 let urlQueryDiff = window.location.href.match(/difficultyrange=(.+)/)	
 let difficultyRange	= [1,10]
 if (urlQueryDiff){					
@@ -42,11 +51,21 @@ if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
 		text: "Juggling Lab",
 	}]
 }
-const urlQueryTags = window.location.href.match(/tags=(.+)/)
-const tags = urlQueryTags ? [{
-								id: urlQueryTags[1].split('&')[0],
-								text: urlQueryTags[1].split('&')[0]
-							}] : []
+
+let urlQueryTags = null
+const tagsMatch = window.location.href.match(/tags=(.+)/)
+if (tagsMatch){
+	urlQueryTags = tagsMatch[1].split('&')[0].split(',')
+}
+const tags = urlQueryTags ? 
+				urlQueryTags.map((tag)=>{
+					return {
+						id : tag,
+						text : tag
+					}
+				})	
+			: []
+
 let urlQueryCatches = window.location.href.match(/catches=(.+)/)	
 let minCatches = 0
 let maxCatches = 1000000
