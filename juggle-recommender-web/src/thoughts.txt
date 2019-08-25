@@ -124,24 +124,13 @@ Asthetics:
 
 ----------------DB THINGS---------------
 To add to db (Some Filmed, Some found)
-	-(6x,4)* and (4x,6)*
 	-paper notes from workshops
 		-Freeze
 		-Machine
 	-a few basic ones polyrhythms
-	-Add claymotion tricks
 	-A trick like 'Asymmetric Reverse Slam Half Weaved Box(4b)', but is a symmetric box would be badass
 	-These are siteswaps for a couple of the switch patterns
 		(6x,2x)(2x,2x)
-	Simple:
-		Tennis and Half(Every other) Versions of:(A few may be done already)
-			Backcross
-			Penguin
-			Reverse Backcross
-			Under the Leg
-			Neck Pass
-			Neck Throw
-			Headplant
 		side by side pistons
 		1up 2up
 	Less Simple:
@@ -149,12 +138,49 @@ To add to db (Some Filmed, Some found)
 		Time reverse of lemming drop
 
 To film:
-	-neck catch tennis
-	-neck throw tennis
-	-stuff on phone list
+	one sided backcrosses
+	penguin tennis 105
+	one sided penguins
+	one sided reverse backcrosses
+	**
+	throw under the leg tennis
+	one sided throw under the leg
+	throw under the other leg tennis
+	one sided throw under the other leg
+	**CATCH, THROW AND CATCH
+	neck catch tennis
+	one sided neck catches
+	neck throw tennis
+	one sided neck passes
+	headplant tennis
+	one sided headplants
+	Side by Side 1up 2up
+	Side by Side 1up 2up Cross Body
+	far close shower - 36 catches
+	Fake shoulder throw
+	Extended arm reverse shoulder throw
+	Bottom dot
+	Top dot
+	3b alternating side split multiplex
+	4b one sided split multiplex cascade
+	4b alternating side split multiplex cascade
+	Davenport Shuffle
+	(6x,4)* and (4x,6)*
+
+
+
 	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
 	-555551 - 24 catches
-	-far close shower - 36 catches
+	
+
+
+
+Freeze
+
+Bumble paper
+
+
+
 
 CONTACT/RESEARCH:
 	-Contact @loudjuggling if his tricks have names or if can easily get technical names
