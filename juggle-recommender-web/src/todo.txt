@@ -23,15 +23,17 @@ v2.3
 	-allow for multiple contributors in filter
 
 	-if there is no filter set up then the url shouldnt say filter
+
+
 =========
 
 
 Niceties:
-	-donations section
-		-bottom of homescreen
-		-paypal?
-		-btc?
-
+	-Show tutorial in unexpanded section
+	-filter for 'has tutorial'
+	-filter for day range of catches last updated
+	-since more and more loj tricks are getting videos and thus ceasing to be contributed by 	loj, maybe we should tag all of them loj. Maybe not if we make a filter for 'has tutorial'
+	
 	-see if vote thumb can change colors quicker, maybe before work is done.
 		-maybe see if can be done locally if it currently is waiting on db
 	-showing the GA map in about or stats or something would be cool
