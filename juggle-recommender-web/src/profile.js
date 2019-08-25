@@ -75,7 +75,7 @@ class Profile extends Component {
     copyContributorURL=()=>{
       utilities.sendGA('profile','share')	
       const textField = document.createElement('textarea')
-      const url = window.location.origin + "/?contributor=" + authStore.user.username
+      const url = window.location.origin + "/contributor/" + authStore.user.username
       textField.innerText = url
       document.body.appendChild(textField)
       var range = document.createRange();  

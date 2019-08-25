@@ -5,7 +5,7 @@ import uiStore from "./uiStore"
 configure({ enforceActions: "always" })
 console.log("filters " ,window.location)
 
-const urlQueryContributor = window.location.href.match(/\?contributor=(.+)/)
+const urlQueryContributor = window.location.href.match(/contributor=(.+)/)
 const contributor = urlQueryContributor ? [{
 									id: urlQueryContributor[1].split('&')[0],
 									text: urlQueryContributor[1].split('&')[0]

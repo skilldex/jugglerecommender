@@ -151,7 +151,7 @@ class Filter extends Component {
     			return
     		}
 	    utilities.sendGA('filter','share')
-    	let urlText = "/filter/"
+    	let urlText = "/tricklist/filter/"
     	if (filterStore.contributors.length > 0){
 			urlText = urlText + "contributor="    		
     		filterStore.contributors.forEach((contributor,index) => {
@@ -409,7 +409,7 @@ class Filter extends Component {
 			                 src={shareIcon}
 			                 onClick={()=>this.copyFilterURL()}
 			                 alt=""
-			                 title="share your contributed tricks"
+			                 title="share this set of filters"
 			            />
 		            </div>
 				    {numSection}

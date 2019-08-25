@@ -96,9 +96,19 @@ if(store.isLocalHost){
   };
 }
 //loaded with a shared URL
-if (window.location.search.includes("/filter/")){
+if (window.location.href.includes("/contributor/")){
+	const contributor = window.location.href.split("/contributor/")[1]
+	const newPathName = window.location.href.split("/contributor/")[0]
+
+	window.location.href = newPathName + '/tricklist/filter/contributor=' + contributor
+}
+if (window.location.href.includes("/filter/")){
 	uiStore.setShowHomeScreen(false)
-	history.push('/tricklist')
+	//history.push('/tricklist')
+	if(!window.location.href.includes("/tricklist/")){
+		window.location.href = window.location.origin+'/tricklist/filter/'+
+								window.location.href.split("/filter/")[1]
+	}
 }
 const ESCAPE_KEY = 27;
 
