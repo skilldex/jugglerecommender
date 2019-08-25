@@ -108,6 +108,7 @@ class MainTagsBar extends Component {
       utilities.sendGA('mainTagsBar','search icon')
       this.searchInput.focus()
       this.showPatternList()
+      uiStore.setFilterURL()
     }
 
     render() {

@@ -19,7 +19,6 @@ v2.3
 		query firebase with order by child for contributor number
 			-this is the way to filter the list this also works for views, or users with catches
 
-	-if there are filters, then whenever we show the /tricklist url, we should also silently show the filter items as well
 
 	-allow for multiple contributors in filter
 
