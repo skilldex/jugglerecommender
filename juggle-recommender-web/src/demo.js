@@ -142,6 +142,9 @@ class Demo extends Component {
       this.video.currentTime > parseInt(store.library[this.props.trickKey].videoEndTime,10)){
       this.video.currentTime = parseInt(store.library[this.props.trickKey].videoStartTime,10);
       this.video.load()
+      if(this.state.slowmoPlayback){
+        this.toggleInstagramSlowmoPlayback(this.state.slowmoPlayback)
+      }
     }
   }
     toggleInstagramSlowmoPlayback=(direction)=>{
@@ -332,7 +335,7 @@ class Demo extends Component {
                         <YouTube
                           id="YouTubeVideo"
                           name="vidFrame" 
-                          title="UniqueTitleForVideoIframeToStopWarning"
+                          title="YouTubeVid"
                           videoId={this.state.youtubeId}
                           className= "youTubeDemo"
                           onClick = {() => this.handleYoutubeVideoClick()}
@@ -350,7 +353,7 @@ class Demo extends Component {
                           id="instagramVideo"
                           ref={(video)=> {this.video = video}}
                           name="vidFrame" 
-                          title="UniqueTitleForVideoIframeToStopWarning"
+                          title="InstagramVid"
                           className= "demo"
                           onClick = {() => this.handleInstagramVideoClick()}                                  
                           autoPlay

@@ -17,11 +17,11 @@ v2.3
 		query firebase with order by child for contributor number
 			-this is the way to filter the list this also works for views, or users with catches
 
-
-
-
 =========
-
+Bugs:
+	on Takeout Box, an instagram, slow motion breaks on repeat
+		-it uses time ranges
+	if i am on details and do a search thing and it takes me to list, back arrow doesnt return me to the last details i was on, it does nothing
 
 Niceties:
 	-Show tutorial in unexpanded section
