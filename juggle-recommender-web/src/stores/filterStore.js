@@ -5,29 +5,30 @@ import uiStore from "./uiStore"
 configure({ enforceActions: "always" })
 console.log("filters " ,window.location)
 
-const urlQueryContributor = window.location.search.match(/\?contributor=(.+)/)
+const urlQueryContributor = window.location.href.match(/\?contributor=(.+)/)
 const contributor = urlQueryContributor ? [{
 									id: urlQueryContributor[1].split('&')[0],
 									text: urlQueryContributor[1].split('&')[0]
 								}] : []
-let urlQueryDiff = window.location.search.match(/difficultyrange=(.+)/)	
+let urlQueryDiff = window.location.href.match(/difficultyrange=(.+)/)	
 let difficultyRange	= [1,10]
 if (urlQueryDiff){					
 	difficultyRange[0] = urlQueryDiff[1].split('&')[0].split(',')[0]
 	difficultyRange[1] = urlQueryDiff[1].split('&')[0].split(',')[1]
 }
-let urlQueryNumBalls = window.location.search.match(/numballs=(.+)/)
+let urlQueryNumBalls = window.location.href.match(/numballs=(.+)/)
+console.log('urlQueryNumBalls',urlQueryNumBalls)
 let numBalls = []
 if (urlQueryNumBalls){
 	numBalls = urlQueryNumBalls[1].split('&')[0].split(',')
 		console.log("numballs " ,numBalls)
 }
-let urlQueryFlair = window.location.search.match(/flair=(.+)/)
+let urlQueryFlair = window.location.href.match(/flair=(.+)/)
 let flair = []
 if (urlQueryFlair){
 	flair = urlQueryFlair[1].split('&')[0].split(',')
 }
-let urlQueryDemoType = window.location.search.match(/demotype=(.+)/)
+let urlQueryDemoType = window.location.href.match(/demotype=(.+)/)
 let demoType = []
 if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo"){
 	demoType = [{
@@ -41,12 +42,12 @@ if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
 		text: "Juggling Lab",
 	}]
 }
-const urlQueryTags = window.location.search.match(/tags=(.+)/)
+const urlQueryTags = window.location.href.match(/tags=(.+)/)
 const tags = urlQueryTags ? [{
 								id: urlQueryTags[1].split('&')[0],
 								text: urlQueryTags[1].split('&')[0]
 							}] : []
-let urlQueryCatches = window.location.search.match(/catches=(.+)/)	
+let urlQueryCatches = window.location.href.match(/catches=(.+)/)	
 let minCatches = 0
 let maxCatches = 1000000
 if (urlQueryCatches){

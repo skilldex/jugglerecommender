@@ -96,7 +96,7 @@ if(store.isLocalHost){
   };
 }
 //loaded with a shared URL
-if (window.location.search.includes("?")){
+if (window.location.search.includes("/filter/")){
 	uiStore.setShowHomeScreen(false)
 	history.push('/tricklist')
 }

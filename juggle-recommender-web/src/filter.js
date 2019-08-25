@@ -151,7 +151,7 @@ class Filter extends Component {
     			return
     		}
 	    utilities.sendGA('filter','share')
-    	let urlText = "/?"
+    	let urlText = "/filter/"
     	if (filterStore.contributors.length > 0){
 			urlText = urlText + "contributor="    		
     		filterStore.contributors.forEach((contributor,index) => {
@@ -163,14 +163,14 @@ class Filter extends Component {
     	}  
     	if (parseInt(filterStore.difficultyRange[0],10)!==1 || 
     		parseInt(filterStore.difficultyRange[1],10)!==10){
-    			if(urlText !== "/?"){
+    			if(urlText !== "/filter/"){
     				urlText += "&"
     			}
 	    		urlText = urlText + "difficultyrange=" + 
 	    			filterStore.difficultyRange[0] + "," + filterStore.difficultyRange[1] + "&"
     	}
     	if (filterStore.numBalls.length > 0){
-    		if(urlText !== "/?"){
+    		if(urlText !== "/filter/"){
 				urlText += "&"
 			}
 			urlText = urlText + "numballs="    		
@@ -182,7 +182,7 @@ class Filter extends Component {
 			});
     	}
     	if (filterStore.flair.length > 0){
-    		if(urlText !== "/?"){
+    		if(urlText !== "/filter/"){
 				urlText += "&"
 			}
 			urlText = urlText + "flair="    		
@@ -195,7 +195,7 @@ class Filter extends Component {
 
     	}
     	if (filterStore.tags.length > 0){
-    		if(urlText !== "/?"){
+    		if(urlText !== "/filter/"){
 				urlText += "&"
 			}
 			urlText = urlText + "tags="   		
@@ -208,20 +208,20 @@ class Filter extends Component {
     	}
     	if (parseInt(filterStore.minCatches,10)>0 || 
     		parseInt(filterStore.maxCatches,10)<store.highestCatches){
-    		if(urlText !== "/?"){
+    		if(urlText !== "/filter/"){
 				urlText += "&"
 			}
     		urlText = urlText + "catches=" + 
     			filterStore.minCatches + "," + filterStore.maxCatches 
     	}
     	if (filterStore.demoType.length > 0 && filterStore.demoType[0].id !== "All"){
-    		if(urlText !== "/?"){
+    		if(urlText !== "/filter/"){
 				urlText += "&"
 			}
 			urlText = urlText + "demotype=" + filterStore.demoType[0].id.replace(" ","").toLowerCase()		
     	}
 
- 		if (urlText !== "/?"){
+ 		if (urlText !== "/filter/"){
  			//if not blank copy link
 			const textField = document.createElement('textarea')
 			const url = window.location.origin + urlText 
