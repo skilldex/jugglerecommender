@@ -25,6 +25,10 @@ v2.3
 	-and contributor links to contributor/
 
 	-put a little space to the right of catches
+
+	-if there are filters, then whenever we show the /tricklist url, we should also silently show the filter items as well
+
+	-allow for multiple contributors in filter
 =========
 
 

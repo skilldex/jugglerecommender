@@ -268,13 +268,13 @@ class Store {
 		this.randomLeaderboardTrick = randomTrick
 	}
 	@action updateTotalCatchCount(amount){
-	   	const totalCatchCountRef = firebase.database().ref('stats')
+	   	const totalCatchCountRef = firebase.database().ref('stats/')
 	   	let currentTotalCatchCount
 		totalCatchCountRef.on('value', resp =>{
 			currentTotalCatchCount = this.snapshotToArray(resp)[0]
         })
-		let leaderboardTrickRef = firebase.database().ref('stats')
-		const updatedStats = {'totalCatchCount':currentTotalCatchCount + amount}
+		let leaderboardTrickRef = firebase.database().ref('stats/totalCatchCount')
+		const updatedStats = currentTotalCatchCount + amount
 		leaderboardTrickRef.set(updatedStats);
 
 	}
