@@ -263,7 +263,7 @@ class UIStore {
 		this.sortTimer = null
 	}
 	@action showPatternList=()=>{
-      history.push('/tricklist')
+      this.setFilterURL()
       uiStore.clearUI()
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
@@ -291,6 +291,18 @@ class UIStore {
  	@action clearFilterTimer=()=>{
 		this.filterTimer = null
 	}
+	@action setFilterURL=()=>{
+		console.log('setFilterURL')
+		if (window.history.pushState) {
+			console.log('historyPus')
+			window.history.pushState({}, null, filterStore.getURLtext());
+  				//history.replaceState("filter", "Tricklist", window.location.origin+filterStore.getURLtext());
+		} else {
+		  	window.location.href = filterStore.getURLtext()
+		}
+	}
+
+
 	@action toggleFilterDiv=()=>{
 		this.setShowExpandedMenu(false)
 		if(!this.showFilterDiv){
@@ -313,6 +325,7 @@ class UIStore {
 					})
 				utilities.sendGA('filter','close filter',filterStrings.join(" | "))
 			}
+			this.setFilterURL()
 	    	this.setShowFilterDiv(false)
 	    	this.showPatternList()
 	    }

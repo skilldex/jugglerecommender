@@ -101,6 +101,7 @@ if (window.location.href.includes("/contributor/")){
 	const newPathName = window.location.href.split("/contributor/")[0]
 
 	window.location.href = newPathName + '/tricklist/filter/contributor=' + contributor
+	
 }
 if (window.location.href.includes("/filter/")){
 	uiStore.setShowHomeScreen(false)

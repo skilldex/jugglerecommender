@@ -70,6 +70,80 @@ class FilterStore {
 	@observable minCatches = minCatches
 	@observable maxCatches = maxCatches
 
+	@action getURLtext=()=>{
+		let urlText = "/tricklist/filter/"
+    	if (this.contributors.length > 0){
+			urlText = urlText + "contributor="    		
+    		this.contributors.forEach((contributor,index) => {
+	    		urlText = urlText + contributor.id 
+	    		if(index < this.contributors.length-1){
+	    			urlText += ","
+	    		}
+			});
+    	}  
+    	if (parseInt(this.difficultyRange[0],10)!==1 || 
+    		parseInt(this.difficultyRange[1],10)!==10){
+    			if(urlText !== "/filter/"){
+    				urlText += "&"
+    			}
+	    		urlText = urlText + "difficultyrange=" + 
+	    			this.difficultyRange[0] + "," + this.difficultyRange[1] + "&"
+    	}
+    	if (this.numBalls.length > 0){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+			urlText = urlText + "numballs="    		
+    		this.numBalls.forEach((numball,index) => {
+	    		urlText = urlText + numball 
+	    		if(index < this.numBalls.length-1){
+	    			urlText += ","
+	    		}
+			});
+    	}
+    	if (this.flair.length > 0){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+			urlText = urlText + "flair="    		
+    		this.flair.forEach((flair,index) => {
+	    		urlText = urlText + flair
+	    		if(index < this.flair.length-1){
+	    			urlText += ","
+	    		}
+			});
+
+    	}
+    	if (this.tags.length > 0){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+			urlText = urlText + "tags="   		
+    		this.tags.forEach((tag,index) => {
+	    		urlText = urlText + tag.id
+	    		if(index < this.tags.length-1){
+	    			urlText += ","
+	    		}
+			});
+    	}
+    	if (parseInt(this.minCatches,10)>0 || 
+    		parseInt(this.maxCatches,10)<store.highestCatches){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+    		urlText = urlText + "catches=" + 
+    			this.minCatches + "," + this.maxCatches 
+    	}
+    	if (this.demoType.length > 0 && this.demoType[0].id !== "All"){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+			urlText = urlText + "demotype=" + this.demoType[0].id.replace(" ","").toLowerCase()		
+    	}
+
+    	return urlText
+	}
+
 	@action resetAllFilters=()=>{
 		this.contributors = []
 		this.difficultyRange = [1,10]
@@ -110,11 +184,13 @@ class FilterStore {
 		this.maxCatches = store.highestCatches
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+		uiStore.setFilterURL()
 	}
 	@action resetDifficultyRange=()=>{
 		this.difficultyRange = [1,10]
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+		uiStore.setFilterURL()
 	}
 	@action setTags=(tags)=>{
 		this.tags = tags
@@ -131,7 +207,8 @@ class FilterStore {
 			this.contributors.filter((contributor, index) => index !== i)
 		)
 		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()		
+		uiStore.updateRootTricks()	
+		uiStore.setFilterURL()	
 	}
 	@action handleDelete=(i)=>{
 		this.setTags(
@@ -139,6 +216,7 @@ class FilterStore {
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+		uiStore.setFilterURL()
 	}
 	@action setFlair=(flair)=>{
 		this.flair = flair
@@ -151,6 +229,7 @@ class FilterStore {
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+		uiStore.setFilterURL()
 	}	
 	@action handleContributorTagDelete=(i)=>{
 		this.setContributors(
@@ -164,6 +243,7 @@ class FilterStore {
 		this.demoType = []
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()	
+		uiStore.setFilterURL()
 	}
 	@action setSortType=(type)=>{
 		this.sortType = type

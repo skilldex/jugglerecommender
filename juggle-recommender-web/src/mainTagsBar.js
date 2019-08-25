@@ -32,8 +32,10 @@ class MainTagsBar extends Component {
         tempNumBalls.push(element)
       }
       filterStore.setNumBalls(tempNumBalls)
+      uiStore.setFilterURL()
     }
     flairClicked=(element)=>{
+      console.log('flairClicked')
       let tempFlair = [...filterStore.flair]
       if (tempFlair.includes(element)){
         for( var i = 0; i < tempFlair.length; i++){ 
@@ -46,6 +48,7 @@ class MainTagsBar extends Component {
         tempFlair.push(element)
       }
       filterStore.setFlair(tempFlair)
+      uiStore.setFilterURL()
     }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
