@@ -193,12 +193,6 @@ TO ASK:
 	-https://www.instagram.com/p/BCBgAfmEJX_/ <-- ask this guy
 	-https://www.instagram.com/kandenti_/?hl=en
 
-DB changes(Straight forward):
-	Shadow pass/throw should be changed to neck pass
-	Neckcross to neck throw
-	Reverse neck throw to neck catch
-	Reverse scarf throw to scarf catch
-
 DB changes(Consideration required):	
 	4440522 needs new name
 	5344 needs a new name

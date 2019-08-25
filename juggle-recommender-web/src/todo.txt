@@ -19,6 +19,8 @@ v2.3
 
 =========
 Bugs:
+	Scrolling is weird on add trick form
+	Backing up in details after a name change crashes it
 	on Takeout Box, an instagram, slow motion breaks on repeat
 		-it uses time ranges
 	if i am on details and do a search thing and it takes me to list, back arrow doesnt return me to the last details i was on, it does nothing
