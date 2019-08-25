@@ -165,7 +165,8 @@ To film:
 	4b one sided split multiplex cascade
 	4b alternating side split multiplex cascade
 	Davenport Shuffle
-	(6x,4)* and (4x,6)*
+	(6x,4)* 
+	(4x,6)*
 
 
 
@@ -192,7 +193,6 @@ CONTACT/RESEARCH:
 TO ASK:
 	-https://www.instagram.com/p/BCBgAfmEJX_/ <-- ask this guy
 	-https://www.instagram.com/kandenti_/?hl=en
-
 DB changes(Consideration required):	
 	4440522 needs new name
 	5344 needs a new name

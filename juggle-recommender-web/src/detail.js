@@ -471,6 +471,13 @@ class Detail extends Component {
                             {ninjaFlairButton}
                             {catchesFlairIcon}
                           </div>
+                          {detailTrick && detailTrick.url ?
+                            <div>
+                              <label className="detailLabel">Tutorial </label>
+                              <a target="_" href={detailTrick.url}>{tutorialSite}</a>
+                            </div>
+                            : null
+                          } 
                             <label className="detailLabel">Contributor </label>
                             {
                               detailTrick.contributor ? 
@@ -497,12 +504,6 @@ class Detail extends Component {
                                     </label><br/>
                                   </div> : null
                                 }
-                                {detailTrick && detailTrick.url ?
-                                  <label className="detailLabel">Tutorial </label> : null
-                                }
-                                {detailTrick && detailTrick.url ?
-                                  <a target="_" href={detailTrick.url}>{tutorialSite}</a> : null
-                                } 
                                 {detailTrick && detailTrick.explanation?
                                   <div className="explanationSection">
                                     <label className="detailLabel">Explanation:</label>
