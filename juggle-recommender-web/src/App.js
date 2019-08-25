@@ -47,6 +47,7 @@ const unlisten = history.listen((location, action) => {
 	if(uiStore.addingTrick){
 	 	uiStore.toggleAddingTrick()
 	}
+	uiStore.setFilterURL()
   } 
     if(location.pathname == "/stats"){
   	uiStore.clearUI()

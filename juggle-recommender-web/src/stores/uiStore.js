@@ -292,13 +292,15 @@ class UIStore {
 		this.filterTimer = null
 	}
 	@action setFilterURL=()=>{
-		console.log('setFilterURL')
+		let filterURL = filterStore.getURLtext()
+		console.log('filterURL',filterURL)
+		if(filterURL === '/tricklist/filter/'){
+			filterURL = '/tricklist'
+		}
 		if (window.history.pushState) {
-			console.log('historyPus')
-			window.history.pushState({}, null, filterStore.getURLtext());
-  				//history.replaceState("filter", "Tricklist", window.location.origin+filterStore.getURLtext());
+			window.history.pushState({}, null, filterURL);
 		} else {
-		  	window.location.href = filterStore.getURLtext()
+		  	window.location.href = filterURL
 		}
 	}
 
