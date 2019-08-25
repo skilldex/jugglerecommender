@@ -98,11 +98,16 @@ class MainTagsBar extends Component {
 
     handleRandomTrickClick=()=>{
       utilities.sendGA('mainTagsBar','random trick')
+      const date = new Date()
+      if (date.getTime() - store.timeOfPreviousRandomTrickClick < 20000 ){
+        utilities.sendGA('mainTagsBar','random trick RECLICK')
+      }
       uiStore.clearUI()
       this.setState({
         rotateClass : this.state.rotateClass == "rotatingRandomTrickBox" ? "rotatedRandomTrickBox" : "rotatingRandomTrickBox" 
       })
       this.selectRandomTrick()
+      store.setTimeOfPreviousRandomTrickClick()
     }
     handleSearchIconClicked=()=>{
       utilities.sendGA('mainTagsBar','search icon')

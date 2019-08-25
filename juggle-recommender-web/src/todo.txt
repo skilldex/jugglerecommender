@@ -12,15 +12,11 @@ v2.3
 
 	-add a blurb about random trick box in about
 
-	-extra GA for rapid reclick of suggestions if within a certain amount of time user clicks give random trick again, it should send a different GA
-
 	-extra stats for contributors in contributor page
 		-greyed out and 0s if they dont contribute
 		query firebase with order by child for contributor number
 			-this is the way to filter the list this also works for views, or users with catches
 
-
-	-allow for multiple contributors in filter
 
 
 

@@ -27,6 +27,7 @@ class Store {
 	@observable currentComments = []
 	@observable showReplyStates = {}
 	@observable enableReplyStates = {}
+	@observable timeOfPreviousRandomTrickClick = 0
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
@@ -38,6 +39,7 @@ class Store {
 			return false
 		}
 	}
+
 	@computed get contributorTags(){
 		let contributors = []
 		for (let trick in this.library){
@@ -58,6 +60,7 @@ class Store {
 		})
 		return contributorTags
 	}
+
 	@action increaseViewsCounter=()=>{
 		const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
 		if (this.library[detailTrickKey]){
@@ -69,6 +72,10 @@ class Store {
 			const viewsRef = firebase.database().ref('library/'+detailTrickKey+'/views')
 			viewsRef.set(detailTrick['views'])
 		}
+	}
+	@action setTimeOfPreviousRandomTrickClick=()=>{
+		const date = new Date()
+		this.timeOfPreviousRandomTrickClick = date.getTime()
 	}
 	@action changeUsersWithCatchesTally=(amount)=>{
 		console.log('amount',amount,uiStore.detailTrick)
