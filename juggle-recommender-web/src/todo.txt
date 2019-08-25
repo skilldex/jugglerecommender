@@ -19,12 +19,12 @@ v2.3
 		query firebase with order by child for contributor number
 			-this is the way to filter the list this also works for views, or users with catches
 
-	-change suggest a... buttons to blue link and a plus sign to the left maybe bold
-
 	-change filter setup to tricklist/filter
 		-when the filter gets set, the url should change, but the page shouldnt reload
 
 	-and contributor links to contributor/
+
+	-put a little space to the right of catches
 =========
 
 

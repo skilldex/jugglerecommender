@@ -210,15 +210,16 @@
     cursor: pointer;
 }
 .suggestionButtonsNormal{
-    border : 1px solid magenta ;
-    border-radius: 18px;
     background-color: white;
-    color : magenta;
-    padding: 3px;
-    font-size: 12px;
-    font-weight: bold;
+
     margin-right: 10px;
     margin-left: 10px;
+    cursor: pointer;
+
+
+    font-size: 14px;
+    color: blue;
+ 
     cursor: pointer;
 }
 .suggestionButtonsDisabled{

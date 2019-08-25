@@ -565,7 +565,7 @@ class Detail extends Component {
             {uiStore.suggestingPrereq? null :
               <label  className = "suggestionButtonsNormal"
                       onClick={()=>this.suggestRelationClicked('prereq')}> 
-                      Suggest a prereq pattern 
+                      +Suggest a prereq pattern 
               </label>
             }
             {uiStore.suggestingPrereq?   
@@ -612,7 +612,7 @@ class Detail extends Component {
             {uiStore.suggestingRelated? null :
               <label  className = "suggestionButtonsNormal"
                       onClick={()=>this.suggestRelationClicked('related')}> 
-                      Suggest a related pattern 
+                      +Suggest a related pattern 
               </label>
             }
             {uiStore.suggestingRelated?   
@@ -659,7 +659,7 @@ class Detail extends Component {
             {uiStore.suggestingDependent? null :
               <label  className = "suggestionButtonsNormal"
                       onClick={()=>this.suggestRelationClicked('dependent')}> 
-                      Suggest a postreq pattern 
+                      +Suggest a postreq pattern 
               </label>
             }
             {uiStore.suggestingDependent?   
