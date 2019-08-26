@@ -315,11 +315,10 @@ class App extends Component {
 									<br/>
 				                	<h2>Random Trick</h2>
 									<span className="aboutInfo">
-										On a pattern's detail page you have all the information
-										about the pattern, as well as the ability to comment on it
-										and suggest other tricks that are prereqs, postreqs, or
-										related to it, as well as agree or disagree with the relevance
-										of the other patterns that have been suggested.
+										The 'Random Trick' button is the pink box located in the upper right 
+										corner. It takes the catches and flair that you have set for each 
+										pattern into account when determining which pattern to give you. You
+										limit the patterns it chooses from with the search/filter bar.
 									</span>
 									<br/>									
 				                	<h2>Add Pattern</h2>
