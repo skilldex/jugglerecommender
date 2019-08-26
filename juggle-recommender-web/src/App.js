@@ -313,6 +313,15 @@ class App extends Component {
 										of the other patterns that have been suggested.
 									</span>
 									<br/>
+				                	<h2>Random Trick</h2>
+									<span className="aboutInfo">
+										On a pattern's detail page you have all the information
+										about the pattern, as well as the ability to comment on it
+										and suggest other tricks that are prereqs, postreqs, or
+										related to it, as well as agree or disagree with the relevance
+										of the other patterns that have been suggested.
+									</span>
+									<br/>									
 				                	<h2>Add Pattern</h2>
 									<span className="aboutInfo">
 										Using this form, you  can contribute patterns to the community.

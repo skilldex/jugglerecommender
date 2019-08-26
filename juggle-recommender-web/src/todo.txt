@@ -17,30 +17,54 @@ v2.3
 		query firebase with order by child for contributor number
 			-this is the way to filter the list this also works for views, or users with catches
 
+	-filter for 'has tutorial'
+		-maybe tutorial should be a tag, if not, maybe loj should be a tag
+	
+	-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
+		-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
+
+
+
 =========
+MAYBES:
+	Homescreen changes:
+		-move pattern name to directly underneath 'pattern of the day'
+		-remove 'pattern list button' since we now have permanent search bar
+
 Bugs:
-	Scrolling is weird on add trick form
-	Backing up in details after a name change crashes it
-	on Takeout Box, an instagram, slow motion breaks on repeat
+	-Scrolling is weird on add trick form
+	-Backing up in details after a name change crashes it
+	-on Takeout Box, an instagram, slow motion breaks on repeat
 		-it uses time ranges
-	if i am on details and do a search thing and it takes me to list, back arrow doesnt return me to the last details i was on, it does nothing
+	-if i am on details and do a search thing and it takes me to list, back arrow doesnt -return me to the last details i was on, it does nothing
+	-putting a comma in a list input, like (6x,4) clears the input
+	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
+	-tricklist shows behind add pattern form
+	-after about 10 loops, videos get stuck with loading wheel,
+		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
+	-youtube slowmo back causes glitch if details page changes
+	-youtube slowmo back doesnt loop
+	-multiple tags clicked at once, and not due to fat fingers(stefan)
+	-frame by frame doesnt hide controls for youtube
+	-MAYBE FIXED
+		-old gif shows while new gif is loading
+			-try immediately setting it to null(if not already done)
+
+Misc:
+	-all users emails are in db on github
+	-from stefan
+		-On the add patternform: if the submit button is grey you could give hints what the user is missing
+			-followup with stefan when i message him about new contributor stats and other issues he mentioned
+
 
 Niceties:
-	-Show tutorial in unexpanded section
-	-filter for 'has tutorial'
-	-filter for day range of catches last updated
-	-since more and more loj tricks are getting videos and thus ceasing to be contributed by 	loj, maybe we should tag all of them loj. Maybe not if we make a filter for 'has tutorial'
-
-	-see if vote thumb can change colors quicker, maybe before work is done.
-		-maybe see if can be done locally if it currently is waiting on db
-	-showing the GA map in about or stats or something would be cool
-
-
 	-autoscroll to voted on card and make it flash when it re-sorts
 		-would be nice if it animatedly moved
 		-https://stackoverflow.com/questions/27198479/whats-a-react-js-friendly-way-to-animate-a-list-reordering/31080050
-
-
+	-see if vote thumb can change colors quicker, maybe before work is done.
+		-maybe see if can be done locally if it currently is waiting on db
+	-showing the GA map in about or stats or something would be cool
+	
 	-maybe share tap target should be made larger?
 		-which share button having issues with?
 	-maybe up arrow button that appears on list to zoom to top

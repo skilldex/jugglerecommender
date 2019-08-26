@@ -1,24 +1,17 @@
+Giveaway:
+	Possible Giftcard Companies:
+		UK-Oddballs   https://www.oddballs.co.uk/oddballs-gift-certificate.html
+		UK-Firetoys	  https://www.firetoys.co.uk/firetoys-gift-vouchers.html
+		US-Renegade   https://www.renegadejuggling.com/about-us/gift-certificate/
+		US-Dube       https://www.dube.com/giftcert/
+		EU-Henrys	  doesn't have git cards
+	THOUGHTS/IDEAS:
+		-The first X number will win for sure, and there will be more giveaways in the future, this way people want to make sure they are subscribed to us.
+		-we should have some part of the giveaway be tagging friends, tag 3 friends and you get an entry
+		-make them say a pattern that they discovered from skilldex.org
 
-
-Misc:
-	-all users emails are in db on github
-	-from stefan
-		-On the add patternform: if the submit button is grey you could give hints what the user is missing
-			-followup with stefan
-
-Bugs:
-	-putting a comma in a list input, like (6x,4) clears the input
-	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
-	-tricklist shows behind add pattern form
-	-after about 10 loops, videos get stuck with loading wheel,
-		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
-	-youtube slowmo back causes glitch if details page changes
-	-youtube slowmo back doesnt loop
-	-multiple tags clicked at once, and not due to fat fingers(stefan)
-	-frame by frame doesnt hide controls for youtube
-	-MAYBE FIXED
-		-old gif shows while new gif is loading
-			-try immediately setting it to null(if not already done)
+MAYBES:
+	-since more and more loj tricks are getting videos and thus ceasing to be contributed by 	loj, maybe we should tag all of them loj. Maybe not if we make a filter for 'has tutorial'
 
 DETAILS:
 	NAMING STUFF/COMPONENTS
@@ -137,50 +130,21 @@ To add to db (Some Filmed, Some found)
 		Time reverse versions of the primier primer video
 		Time reverse of lemming drop
 
-To film:
-	one sided backcrosses
-	penguin tennis 105
-	one sided penguins
-	one sided reverse backcrosses
-	**
-	throw under the leg tennis
-	one sided throw under the leg
-	throw under the other leg tennis
-	one sided throw under the other leg
-	**CATCH, THROW AND CATCH
-	neck catch tennis
-	one sided neck catches
-	neck throw tennis
-	one sided neck passes
-	headplant tennis
-	one sided headplants
-	Side by Side 1up 2up
-	Side by Side 1up 2up Cross Body
-	far close shower - 36 catches
-	Fake shoulder throw
-	Extended arm reverse shoulder throw
-	Bottom dot
-	Top dot
-	3b alternating side split multiplex
-	4b one sided split multiplex cascade
-	4b alternating side split multiplex cascade
-	Davenport Shuffle
-	(6x,4)* 
-	(4x,6)*
-
-
-
 	-There is an infinity box that is similar to this 'Half Slam Stacked Multiplex Box(5b)', I have 21 of it
 	-555551 - 24 catches
-	
+	Freeze Stuff
 
-
-
-Freeze
-
-Bumble paper
-
-
+TO FILM:
+	Bumble paper
+	normal + neck catch excahnge
+	neck catch + normal exchange
+	every other neck catch on one side
+	every third neck catch on one side
+	normal + neck pass excahnge
+	neck pass + normal exchange
+	neck pass exchange
+	every other neck pass on one side
+	every third neck pass on one side
 
 
 CONTACT/RESEARCH:
@@ -219,34 +183,7 @@ Reasons it is easier to add tricks on pc:
 -Can more easily have a seperate tab open to look for prereqs/related more easily
 -cant easily see video adding, would be nice if a preview was added once url was input
 
-Giveaway:
-	-We could do multiple giveaways, first do one where we give away gift certificates to a few different juggling stores so that we do not have to deal with shipping, and we can let people pick what they want to get. Then, later once mikes balls get made we can do another.
-	-we could find a few different dealers in different parts of the world so users aer not excluded by high international shipping
-	-if we do a special giveaway just for our followers at the time we announce the giveaway(or maybe do something special for the first X number, like 'the first 5 are guarenteed winners, then we will randomly pick 20 after that), but we say we will do more like this in future, then it will incentivise people to follow us
-	-we should have some part of the giveaway be tagging friends, tag 3 friends and you get an entry
-	-make them say a pattern that they learned from skilldex.org
-	Competition Based:
-		Research:
-			Archived Version of JugglingDB records:
-			https://web.archive.org/web/20120512143808/http://www.jugglingdb.com/records/
-		Pros:
-			-It gets users signed up and uploading videos without us needing to worry about them doing lots of repeat tricks just to post which might be the case if we just reward contributing 
-			-It gives users something to be proud of/brag about
-		Cons:
-			-It would be very difficult to create/post videos of the length that many records would be
-			-It would be a whole lot of work for users to make videos/count 1000s of throws just to have videos that nobody else will ever want to watch
-			-Competition is not one of the main goals of the site, learning/sharing is, maybe we don't want to give out first impressions of competition/grunt work
-	Alternative giveaway Ideas:
-		-Scavenger Hunt in the App, certain screens hold a code that is redeamable
-			for a set of juggling balls. We could tell people that they are hidden inside of normal usage for logged in users
-		-Tag us in a post that has something to do with 
-		-Uploading original content
-			-this could go along with making a way for users to report 2 tricks as being the same
-		-Making a share link to some sort of public profile
-		-Making a share link to their contributor tag
-		-Filling out a feedback form
-		-Screenshotting and posting their profile
-		-Reward whoever uploads the 1000th pattern, or something like that
+
 
 Reasons to get juggledex in really good shape before making general skilldex:
 	-Bigger userbase to help populate them with skills, we likely dont have a jol for other skills that can be easily scrapped, and I'm not likely able/willing to spend time filling out forms for other skills.

@@ -12,6 +12,7 @@ import TrickList from './trickList.js'
 import Demo from './demo'
 import history from './history';
 import downArrow from './images/down-arrow.svg'
+import bitcoinIcon from './images/bitcoin.png'
 
 @observer
 class HomeScreen extends Component {
@@ -67,7 +68,18 @@ class HomeScreen extends Component {
 					<button className = "patternListButton"
 							onClick={this.clickPatternList}>
 						Pattern List
-					</button>				    
+					</button>
+					<div className="donationSection">
+						<label>Donations:</label>
+						<div>
+							<img className="bitcoinIcon"
+								src={bitcoinIcon}/>
+		                    <a className ="donationLink"
+		                    	href="bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd">
+		                    		bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
+		                    </a>
+						</div>
+					</div>				    
 				</div>
 			)
 	}

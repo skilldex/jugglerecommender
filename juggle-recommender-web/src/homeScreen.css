@@ -103,3 +103,26 @@
   margin-left : 10px;
   font-size: 15px;
 }
+
+.donationSection{
+  position: fixed;
+  bottom:0;
+  font-size: 12px;
+
+  text-align: center;
+  width: 300px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:10px;
+}
+.bitcoinIcon{
+  width:12px;
+  padding-left: 7px;
+  padding-right: 4px;
+  padding-bottom: -2px;
+}
+.donationLink{
+  text-decoration: none;
+}
