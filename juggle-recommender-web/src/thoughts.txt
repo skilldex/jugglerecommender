@@ -136,7 +136,7 @@ To add to db (Some Filmed, Some found)
 
 TO FILM:
 	Bumble paper
-	normal + neck catch excahnge
+	normal + neck catch excahnge 
 	neck catch + normal exchange
 	every other neck catch on one side
 	every third neck catch on one side
@@ -145,6 +145,8 @@ TO FILM:
 	neck pass exchange
 	every other neck pass on one side
 	every third neck pass on one side
+	headplant to same hand underarm catch 51
+	headplant to other hand underarm catch
 
 
 CONTACT/RESEARCH:

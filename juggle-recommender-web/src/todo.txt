@@ -12,11 +12,6 @@ v2.3
 
 	-add a blurb about random trick box in about
 
-	-extra stats for contributors in contributor page
-		-greyed out and 0s if they dont contribute
-		query firebase with order by child for contributor number
-			-this is the way to filter the list this also works for views, or users with catches
-
 	-filter for 'has tutorial'
 		-maybe tutorial should be a tag, if not, maybe loj should be a tag
 	
@@ -32,11 +27,9 @@ MAYBES:
 		-remove 'pattern list button' since we now have permanent search bar
 
 Bugs:
-	-Scrolling is weird on add trick form
-	-Backing up in details after a name change crashes it
-	-on Takeout Box, an instagram, slow motion breaks on repeat
-		-it uses time ranges
-	-if i am on details and do a search thing and it takes me to list, back arrow doesnt -return me to the last details i was on, it does nothing
+	-Scrolling is weird on add trick form, it i like there are two scrollbars and 1 only 		works on green part of form
+	-if an instagram is using time ranges, slowmotion doesnt stay when it loops forward
+	-if i am on details and do a search thing and it takes me to list, back arrow doesnt 		return me to the last details i was on, it does nothing
 	-putting a comma in a list input, like (6x,4) clears the input
 	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
 	-tricklist shows behind add pattern form

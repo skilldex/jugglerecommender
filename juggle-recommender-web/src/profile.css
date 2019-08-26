@@ -14,11 +14,20 @@
   margin-left : auto;
   margin-right : 3px;
 }
+.shareProfileButton{
+  height : 20px;
+  width : 20px;
+  margin-left : auto; 
+  cursor: pointer;
+}
+.profileHeader{
+  margin-top : 40px;
+  margin-bottom : 10px;
+}
 .backButtonSurroundingDivProfile{
-  width: 300px;
-  margin : 0 auto;
-  text-align: right;
+  width: 100%;
   display: flex;
+  margin-right:none;
 }
 .backButtonProfile{
   height : 15px;
@@ -45,6 +54,17 @@
   font-weight: bold;
   cursor: pointer;
   color: blue;
+  margin:0 auto;
+  text-align: left;
+  margin-top: 10px;
+  margin-right:10px;
+  align-items: right;
+  font-size: 11pt;
+}
+.profileStatsLabelButtonGreyed{
+  font-weight: bold;
+  cursor: pointer;
+  color: grey;
   margin:0 auto;
   text-align: left;
   margin-top: 10px;

@@ -70,13 +70,14 @@ class HomeScreen extends Component {
 						Pattern List
 					</button>
 					<div className="donationSection">
-						<label>Donations:</label>
+						<label><b>Donations:</b></label>
 						<div>
 							<img className="bitcoinIcon"
 								src={bitcoinIcon}/>
+							<span>Bitcoin:</span>
 		                    <a className ="donationLink"
 		                    	href="bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd">
-		                    		bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
+		                    		1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
 		                    </a>
 						</div>
 					</div>				    

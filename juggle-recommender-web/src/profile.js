@@ -24,6 +24,8 @@ import catchesIcon from './images/catchesIcon.svg'
 class Profile extends Component {
 	state={
 		contributedTrickCount: 0,
+		contributedViewCount: 0,
+		contributedWorkerCount: 0,
 		withCatches: 0,
 		withStar: 0,
 		withBaby: 0,
@@ -32,13 +34,23 @@ class Profile extends Component {
 	}
 	componentDidMount(){
 		let contributorCount = 0
+		let viewCount = 0
+		let workerCount = 0
 		Object.keys(store.library).forEach((trick) => {
 			if (store.library[trick].contributor && 
 				store.library[trick].contributor === authStore.user.username){
 				contributorCount += 1
+				if (store.library[trick].views)
+					viewCount += store.library[trick].views
+				if (store.library[trick].usersWithCatches){
+					workerCount += store.library[trick].usersWithCatches
+				}
 			}
 		})
 		this.setState({contributedTrickCount: contributorCount})
+		this.setState({contributedViewCount: viewCount})
+		this.setState({contributedWorkerCount: workerCount})
+
 		let totalCatches = 0
 		let withCatches = 0
 		let withStar = 0
@@ -112,7 +124,7 @@ class Profile extends Component {
 	render (){
 
         const shareButton = authStore.user ? <img 
-			                 className="shareFilterButton"
+			                 className="shareProfileButton"
 			                 src={shareIcon}
 			                 onClick={this.copyContributorURL}
 			                 alt=""
@@ -137,16 +149,7 @@ class Profile extends Component {
 						<span> {authStore.user.username}</span>
 						<span> ({authStore.user.email})</span>
 					</div>
-					<h3>Your Stats</h3>		
-					<div className = "individualProfileStatsDiv">
-						<label className= "profileStatsLabelButton"
-								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
-							Contributed
-						</label>  
-						<div className = "profileStatsValues">
-							{this.state.contributedTrickCount} 
-						</div>
-					</div>
+					<h3 className="profileHeader">Your Pattern Stats</h3>		
 					<div className = "individualProfileStatsDiv">
 						<img  id="starButton" 
 							  title="Star flair: Special list"
@@ -218,6 +221,37 @@ class Profile extends Component {
 						</label>  
 						<div className = "profileStatsValues">
 							{this.state.totalCatches} 
+						</div>
+					</div>
+					<h3 className="profileHeader">Your Contribution Stats</h3>	
+					<div className = "individualProfileStatsDiv">
+						<label className= {this.state.contributedTrickCount > 0?
+											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
+								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
+							Contributed
+						</label>  
+						<div className = "profileStatsValues">
+							{this.state.contributedTrickCount} 
+						</div>
+					</div>
+					<div className = "individualProfileStatsDiv">
+						<label className= {this.state.contributedTrickCount > 0?
+											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
+								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
+							Views
+						</label>  
+						<div className = "profileStatsValues">
+							{this.state.contributedViewCount} 
+						</div>
+					</div>
+					<div className = "individualProfileStatsDiv">
+						<label className= {this.state.contributedTrickCount > 0?
+											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
+								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
+							Users w. Catches
+						</label>  
+						<div className = "profileStatsValues">
+							{this.state.contributedWorkerCount} 
 						</div>
 					</div>
 			</div>

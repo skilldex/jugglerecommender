@@ -304,10 +304,12 @@ class Detail extends Component {
 	render() {   
     const detailTrickKey = this.props.trick ? this.props.trick.id : ""
     const detailTrick = store.library[detailTrickKey]
+
     if (detailTrickKey && !detailTrick){
         alert("Sorry, this pattern has been deleted or renamed.")
-        //uiStore.setDetailTrick(null)
-        //uiStore.handleBackButtonClick()
+        uiStore.setDetailTrick(null)
+        uiStore.handleBackButtonClick()
+        return null
     }
     const catchesSection = 
       <div>
