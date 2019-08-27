@@ -9,7 +9,7 @@ const actionCodeSettings = {
         url: 'www.skilldex.org/',
     };
 class AuthStore {
-    @observable mods = ['tjthejuggler','Ianbreal']
+    @observable mods = ['tjthejugglerx','Ianbrealx']
 	@observable user = null
     @action signOut=()=>{
 	 	uiStore.closeDetails()
