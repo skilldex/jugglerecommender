@@ -19,50 +19,22 @@ class Header extends Component {
 			previoslySelected.classList.toggle("expand");
 			uiStore.selectTrick(null)
 		}
+		
 		uiStore.toggleExpandedMenu()
-		utilities.sendGA('header',paneFlag)		
-		if(paneFlag == "addPattern"){
-			history.push('/addpattern')
-			uiStore.clearUI()
-			uiStore.toggleAddingTrick()
-		}else if(paneFlag == "logout"){
-			authStore.signOut()
-			uiStore.clearUI()
-			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick()
-			}
-			
-		}else if(paneFlag == "home"){
-			history.push('/home')
-			uiStore.clearUI()
-			uiStore.setShowHomeScreen(true)
-			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick()
-			}			
-		}else if(paneFlag == "list"){
-			history.push('/tricklist')
-			uiStore.clearUI()
-			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick()
-			}
-		}else if(paneFlag == "stats"){
-			history.push('/stats')
-			uiStore.clearUI()
-			uiStore.setShowStatsScreen(true)
-			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick()
-			}
-		}else if(paneFlag == "profile"){
-			history.push('/profile')
-			uiStore.clearUI()
-			uiStore.setShowProfileScreen(true)
-			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick()
-			}
-		}else{
+		utilities.sendGA('header',paneFlag)	
+		if(paneFlag == "addpattern" ||
+			paneFlag == "logout" ||
+			paneFlag == "home" ||
+			paneFlag == "tricklist" ||
+			paneFlag == "stats" ||
+			paneFlag == "profile")
+		{
+			utilities.openPage(paneFlag, true)
+		}
+		else{
 			this.props.openSlidingPane(paneFlag)
 			uiStore.setShowExpandedMenu(false)
-		}
+		}	
 	}
 	mouseEnterExpandedMenu=()=>{
       uiStore.setMouseInExpandedMenu(true)
@@ -72,12 +44,7 @@ class Header extends Component {
       uiStore.setMouseInExpandedMenu(false)
     }
     titleClicked=()=>{
-    	history.push('/home')
-			uiStore.clearUI()
-			uiStore.setShowHomeScreen(true)
-			if(uiStore.addingTrick){
-			 	uiStore.toggleAddingTrick()
-			}
+		utilities.openPage('home',true)
 		utilities.sendGA('title','clicked')	
     }
     render(){
@@ -87,7 +54,7 @@ class Header extends Component {
 				             onMouseLeave = {()=>this.mouseLeaveExpandedMenu()}
 						>
 							<button className="dropDownButton" onClick={()=> this.clickMenuItem('home')}>Home</button>
-							<button className="dropDownButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
+							<button className="dropDownButton" onClick={()=> this.clickMenuItem('tricklist')}>Pattern List</button>
 					        {authStore.user ?
 						        <button className="dropDownButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
 						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
@@ -96,7 +63,7 @@ class Header extends Component {
 						   	{authStore.user ? 
 						   		<button className="dropDownButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>:null
 					      	}
-					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
+					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addpattern')}>Add Pattern</button>
 					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
 					    </div> : null
         return (   
@@ -117,8 +84,8 @@ class Header extends Component {
 					    	{authStore.user ? 
 					    		<button className="headerButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>:null
 					    	}
-					    	<button className="headerButton"  onClick={() => this.clickMenuItem('addPattern')}>Add Pattern</button>
-							<button className="headerButton" onClick={()=> this.clickMenuItem('list')}>Pattern List</button>
+					    	<button className="headerButton"  onClick={() => this.clickMenuItem('addpattern')}>Add Pattern</button>
+							<button className="headerButton" onClick={()=> this.clickMenuItem('tricklist')}>Pattern List</button>
 							<button className="headerButton" onClick={()=> this.clickMenuItem('home')}>Home</button>
 					    </div>
 					</div>

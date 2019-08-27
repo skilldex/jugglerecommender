@@ -2,12 +2,14 @@ import { action, configure, observable} from "mobx"
 import store from "./store"
 import firebase from 'firebase'
 import uiStore from './uiStore' 
+import utilities from '../utilities'
 
 configure({ enforceActions: "always" })
 const actionCodeSettings = {
         url: 'www.skilldex.org/',
     };
 class AuthStore {
+    @observable mods = ['tjthejuggler']
 	@observable user = null
     @action signOut=()=>{
 	 	uiStore.closeDetails()
@@ -28,6 +30,7 @@ class AuthStore {
                 if (user){
                     console.log("found user", user)
                 	this.setUser({"email": user.email,"username" : user.username})
+                    utilities.addModIgnoreToURL()
                 }
             })
         })

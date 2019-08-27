@@ -6,7 +6,8 @@ configure({ enforceActions: "always" })
 console.log("filters " ,window.location)
 
 let urlQueryContributor = null
-const contributorMatch = window.location.href.match(/contributor=(.+)/)
+const locationURL = window.location.href.split('/modignore')[0]
+const contributorMatch = locationURL.match(/contributor=(.+)/)
 if (contributorMatch){
 		urlQueryContributor = contributorMatch[1].split('&')[0].split(',')
 }
@@ -19,25 +20,23 @@ const contributor = urlQueryContributor ?
 					})	
 				: []
 
-let urlQueryDiff = window.location.href.match(/difficultyrange=(.+)/)	
+let urlQueryDiff = locationURL.match(/difficultyrange=(.+)/)	
 let difficultyRange	= [1,10]
 if (urlQueryDiff){					
 	difficultyRange[0] = urlQueryDiff[1].split('&')[0].split(',')[0]
 	difficultyRange[1] = urlQueryDiff[1].split('&')[0].split(',')[1]
 }
-let urlQueryNumBalls = window.location.href.match(/numballs=(.+)/)
-console.log('urlQueryNumBalls',urlQueryNumBalls)
+let urlQueryNumBalls = locationURL.match(/numballs=(.+)/)
 let numBalls = []
 if (urlQueryNumBalls){
 	numBalls = urlQueryNumBalls[1].split('&')[0].split(',')
-		console.log("numballs " ,numBalls)
 }
-let urlQueryFlair = window.location.href.match(/flair=(.+)/)
+let urlQueryFlair = locationURL.match(/flair=(.+)/)
 let flair = []
 if (urlQueryFlair){
 	flair = urlQueryFlair[1].split('&')[0].split(',')
 }
-let urlQueryDemoType = window.location.href.match(/demotype=(.+)/)
+let urlQueryDemoType = locationURL.match(/demotype=(.+)/)
 let demoType = []
 if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo"){
 	demoType = [{
@@ -53,7 +52,7 @@ if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
 }
 
 let urlQueryTags = null
-const tagsMatch = window.location.href.match(/tags=(.+)/)
+const tagsMatch = locationURL.match(/tags=(.+)/)
 if (tagsMatch){
 	urlQueryTags = tagsMatch[1].split('&')[0].split(',')
 }
@@ -66,7 +65,7 @@ const tags = urlQueryTags ?
 				})	
 			: []
 
-let urlQueryCatches = window.location.href.match(/catches=(.+)/)	
+let urlQueryCatches = locationURL.match(/catches=(.+)/)	
 let minCatches = 0
 let maxCatches = 1000000
 if (urlQueryCatches){
@@ -183,7 +182,6 @@ class FilterStore {
 
 	@action setDemoType=(demoType)=>{
 		this.demoType = demoType
-		console.log("demotype set",demoType)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
@@ -258,7 +256,6 @@ class FilterStore {
 		uiStore.updateRootTricks()
 	}
 	@action handleDemoTypeDelete=(i)=>{
-		console.log('demoTypeDEL',this.demoType)
 		this.demoType = []
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()	

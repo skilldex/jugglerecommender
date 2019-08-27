@@ -45,18 +45,10 @@ class TrickList extends Component {
 
 	openDetail=(trickKey)=>{
 		utilities.sendGA('list ' + this.props.listType,'opened detail','list ' + this.props.listType + ' ' + trickKey)
-		history.push('/detail/'+trickKey, {detail : trickKey})
 		if (this.props.listType === "main"){
 			uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
 		}
-		uiStore.setShowHomeScreen(false)
-		uiStore.setShowExpandedMenu(false)
-		if (uiStore.selectedTrick){
-			uiStore.toggleSelectedTrick(null)
-		}
-		const detailTrick = {...store.library[trickKey]}
-		detailTrick.id = trickKey
-		uiStore.setDetailTrick(detailTrick)	
+		utilities.openPage('detail/'+trickKey,true)
 		window.scrollTo(0,0);
 		if (document.getElementById('detailOuterDiv')){
     		document.getElementById('detailOuterDiv').scrollTop = 0

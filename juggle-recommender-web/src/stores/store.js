@@ -78,7 +78,6 @@ class Store {
 		this.timeOfPreviousRandomTrickClick = date.getTime()
 	}
 	@action changeUsersWithCatchesTally=(amount)=>{
-		console.log('amount',amount,uiStore.detailTrick)
 		const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
 		if (this.library[detailTrickKey]){
 			const detailTrick = {...this.library[detailTrickKey]}
@@ -624,11 +623,9 @@ class Store {
 	      source : "suggested",
 	      upvoters : [authStore.user.username]
 	    }
-	    console.log('this.library[trickKey][relation]',this.library[trickKey][relation])
 	    let relationWriteRef = firebase.database().ref('library/'+trickKey+'/'+relation+'/'+suggestedTrickKey)
 	    relationWriteRef.set({...this.library[trickKey][relation][suggestedTrickKey]});
 	    relationWriteRef.off()
-	    console.log('this.library[trickKey][relation]',this.library[trickKey][relation])
 
 		const otherRelation = relation == "related" ? "related" : 
 								relation == "prereqs" ? "dependents" :

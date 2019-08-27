@@ -73,11 +73,7 @@ class MainTagsBar extends Component {
     }
 
     showPatternList=()=>{
-      history.push('/tricklist')
-      uiStore.clearUI()
-      if(uiStore.addingTrick){
-        uiStore.toggleAddingTrick()
-      }
+      utilities.openPage('tricklist',true)
     }
 
     selectRandomTrick=()=>{
@@ -87,8 +83,7 @@ class MainTagsBar extends Component {
       const score = utilities.calculateRandomTrickScore(randomTrickKey)
 
       if (randomNumber < score){
-          uiStore.setDetailTrick({...store.library[randomTrickKey], id: randomTrickKey})
-          history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
+          utilities.openPage('detail/'+randomTrickKey,true)
           store.increaseViewsCounter()
       }else{
           this.selectRandomTrick()

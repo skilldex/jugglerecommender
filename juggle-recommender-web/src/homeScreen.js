@@ -23,17 +23,12 @@ class HomeScreen extends Component {
 		store.getTrickOfTheDay()
 	}
 	clickPatternList=()=>{
-		history.push('/tricklist')
-		uiStore.clearUI()
-		//uiStore.toggleShowHomeScreen()
+		utilities.openPage('tricklist',true)
 		utilities.sendGA('home screen','pattern list')	
 	}
 	openDetail=()=>{
-		uiStore.setDetailTrick(
-			{...store.library[store.randomLeaderboardTrick.key], id: store.randomLeaderboardTrick.key}
-		)
-		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})
-		utilities.sendGA('home screen','detail')
+		utilities.openPage('detail/'+store.randomLeaderboardTrick.key, true)
+		utilities.sendGA('home screen','trickOfDay detail')
 		store.increaseViewsCounter()
 	}		
 	render (){

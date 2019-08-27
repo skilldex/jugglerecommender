@@ -126,20 +126,21 @@ class UIStore {
 	}
   	@action editDetailTrick=()=>{
   		const tempDetailTrick = this.detailTrick
-		history.push('/addpattern')
-		this.clearUI()
-		this.toggleAddingTrick()
+  		utilities.sendGA('detail','edit pattern')
+  		utilities.openPage('addpattern',true)
 		this.detailTrick = tempDetailTrick
 		this.editingDetailTrick = true
   	}
   	@action	handleBackButtonClick=()=>{
-	    history.go(-1);
+  		if(this.addingTrick){
+  			this.toggleAddingTrick()
+  		}
+  		history.go(-1);
 	  }
 	@action toggleAddingTrick = ()=>{
 		if (!authStore.user){
 			window.alert("You must be signed in to add a trick");
 		}else{
-			this.detailTrick = null
 			this.addingTrick = !this.addingTrick
 		}
 		if(!this.addingTrick){
@@ -215,7 +216,6 @@ class UIStore {
 			if (store.myTricks[trickKey].catches){
 				previousCatches = store.myTricks[trickKey].catches
 			}
-			console.log('previousCatches',previousCatches)
 			if (previousCatches == 0){
 				store.changeUsersWithCatchesTally(1)
 			}
@@ -293,12 +293,11 @@ class UIStore {
 	}
 	@action setFilterURL=()=>{
 		let filterURL = filterStore.getURLtext()
-		console.log('filterURL',filterURL)
 		if(filterURL === '/tricklist/filter/'){
 			filterURL = '/tricklist'
 		}
-		if (window.history.pushState) {
-			window.history.pushState({}, null, filterURL);
+		if (window.history.replaceState) {
+			window.history.replaceState({}, null, filterURL);
 		} else {
 		  	window.location.href = filterURL
 		}

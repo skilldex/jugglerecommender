@@ -22,52 +22,40 @@ import ReactGA from 'react-ga'
 import Filter from './filter'
 import { withRouter, Router } from 'react-router-dom';
 import history from "./history"
+import utilities from './utilities'
 
 const unlisten = history.listen((location, action) => {
   // location is an object like window.location
   if(location.state && location.state.detail != uiStore.detailTrick){
-  	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
-	//uiStore.clearUI()
-  	const detailTrick = {...store.library[location.state.detail]}
-	detailTrick.id = location.state.detail
-	console.log("setting from URL")
-  	uiStore.setDetailTrick(detailTrick)	
+  	utilities.openPage('detail/'+location.state.detail,false)
+  }else if(location.pathname.includes("/detail/")){
+  	const trickKey = location.pathname.split("/detail/")[1].split('/modignore')[0]
+  	if(trickKey){
+	  	utilities.openPage('detail/'+trickKey,false)
+	  }
   }
-  if(location.pathname == "/home" || location.pathname == "/" ){
-  	uiStore.clearUI()
-	uiStore.setShowHomeScreen(true)
-	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
+  if(uiStore.addingTrick){
+	uiStore.toggleAddingTrick()
+  }
+
+  if(location.pathname.includes("/home") || 
+  				location.pathname == "/" ||
+  				location.pathname == "/modignore"){
+  	utilities.openPage('home', false)
   }
   if(location.pathname.includes("/tricklist")){
-  	uiStore.clearUI()
-	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
-	uiStore.setFilterURL()
+  	utilities.openPage('tricklist', false)
   } 
-    if(location.pathname == "/stats"){
-  	uiStore.clearUI()
-  	uiStore.setShowStatsScreen(true)
-	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
+  if(location.pathname.includes("/stats")){
+	utilities.openPage('stats', false)
   }  
-    if(location.pathname == "/profile"){
-  	uiStore.clearUI()
-  	uiStore.setShowProfileScreen(true)
-	if(uiStore.addingTrick){
-	 	uiStore.toggleAddingTrick()
-	}
-  } if(location.pathname == "/addpattern"){
-	uiStore.clearUI()
-	// if(uiStore.addingTrick){
-	//  	uiStore.toggleAddingTrick()
-	// }
+  if(location.pathname.includes("/profile")){
+  	utilities.openPage('profile', false)
+  } 
+  if(location.pathname.includes("/addpattern")){
+  	utilities.openPage('addpattern', false)
   }  
+
 });
 
 let firebaseConfig = {}
@@ -100,13 +88,10 @@ if(store.isLocalHost){
 if (window.location.href.includes("/contributor/")){
 	const contributor = window.location.href.split("/contributor/")[1]
 	const newPathName = window.location.href.split("/contributor/")[0]
-
 	window.location.href = newPathName + '/tricklist/filter/contributor=' + contributor
-	
 }
 if (window.location.href.includes("/filter/")){
 	uiStore.setShowHomeScreen(false)
-	//history.push('/tricklist')
 	if(!window.location.href.includes("/tricklist/")){
 		window.location.href = window.location.origin+'/tricklist/filter/'+
 								window.location.href.split("/filter/")[1]
@@ -162,82 +147,51 @@ class App extends Component {
 		store.getTagsFromDatabase()
 		store.getUserCountFromDatabase()
 		store.getTotalCatchCountFromDatabase()
+		utilities.addModIgnoreToURL()
+
 		
 	}
+
+
+
+
 	setPageBasedOnUrl=()=>{
 		store.getLibraryFromDatabase().then(()=>{
-			if(window.location.pathname.includes("detail")){
-			  	let match = window.location.pathname.match('/detail\/(.+)')
+			const locationPathname = window.location.pathname.split('/modignore')[0]
+			if(locationPathname.includes("detail")){
+			  	let match = locationPathname.match('/detail\/(.+)')
 			  	let trickKey = 'error'
 			  	if(match.length>0){
 				  	trickKey = match[1].replace(/%20/g, ' ')
 				}
 			  	if (store.library[trickKey]){
-				  	const detailTrick = {...store.library[trickKey]}
-					detailTrick.id = trickKey
-					console.log("setting from url", trickKey)
-				  	uiStore.setDetailTrick(detailTrick)			
-			  		history.push('/detail/'+uiStore.detailTrick.id, {detail : uiStore.detailTrick.id})	  		
-			  	}else{
+			  		utilities.openPage('detail/'+trickKey,false)
+				}else{
 					alert("There is no page for that trick.")
-					uiStore.clearUI()
-					uiStore.setShowHomeScreen(true)
-					if(uiStore.addingTrick){
-					 	uiStore.toggleAddingTrick
-					}
+					utilities.openPage('home',false)
 				}
 			}
 			if(window.location.pathname.includes("home")){
-			  	//uiStore.clearUI()
-				uiStore.setShowHomeScreen(true)
-				if(uiStore.addingTrick){
-				 	uiStore.toggleAddingTrick()
-				}
+				utilities.openPage('home',false)
 			}
 			if(window.location.pathname.includes("tricklist")){
-			  	uiStore.clearUI()
-				if(uiStore.addingTrick){
-				 	uiStore.toggleAddingTrick()
-				}
+				utilities.openPage('tricklist',false)
 			} 
 			if(window.location.pathname.includes("stats")){
-			  	uiStore.clearUI()
-			  	uiStore.setShowStatsScreen(true)
-				if(uiStore.addingTrick){
-				 	uiStore.toggleAddingTrick()
-				}
+				utilities.openPage('stats',false)
 			}  
 		    if(window.location.pathname.includes("profile") && authStore.user){
 			    if (authStore.user){
-				  	uiStore.clearUI()
-				  	uiStore.setShowProfileScreen(true)
-					if(uiStore.addingTrick){
-					 	uiStore.toggleAddingTrick()
-					}
-					history.push('/home')
+			    	utilities.openPage('profile',true)
 				}else{
-					history.push('/home')
-					uiStore.clearUI()
-					uiStore.setShowHomeScreen(true)
-					if(uiStore.addingTrick){
-					 	uiStore.toggleAddingTrick()
-					}
+					utilities.openPage('home',true)
 				}
 			}
 		  	if(window.location.pathname.includes("addpattern")){
 			    if (authStore.user){
-					uiStore.clearUI()
-					if(uiStore.addingTrick){
-					 	uiStore.toggleAddingTrick()
-					}
-					history.push('/addpattern')
+			    	utilities.openPage('addpattern',true)
 		  		}else{
-					history.push('/home')
-					uiStore.clearUI()
-					uiStore.setShowHomeScreen(true)
-					if(uiStore.addingTrick){
-					 	uiStore.toggleAddingTrick()
-					}
+		  			utilities.openPage('home',true)
 				}
 			}  	
 		})
@@ -260,7 +214,6 @@ class App extends Component {
  		if (paneName === 'isLoginPaneOpen'){
 	 		store.setIsLoginPaneOpen(true)
 	 	}else if(paneName === 'isInstructionsPaneOpen'){
-	 		//window.history.pushState("list", "list page", "localhost:3000/list")
 	 		this.setState({ 'isInstructionsPaneOpen': true })
 	 	}else if(paneName === 'isCreateAccountPaneOpen'){
 	 		this.setState({ 'isCreateAccountPaneOpen': true })

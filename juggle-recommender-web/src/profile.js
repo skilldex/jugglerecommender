@@ -101,8 +101,6 @@ class Profile extends Component {
     }
 
     handleStatsLabelClicked =(label)=>{
-		history.push('/tricklist')
-		uiStore.clearUI()
 		filterStore.resetAllFilters()
 		if (label === 'contributed'){
 			filterStore.setContributors([{id: authStore.user.username,text: authStore.user.username,}]);
@@ -117,8 +115,8 @@ class Profile extends Component {
 		else if (label === 'ninja'){
 			filterStore.setFlair(['ninja'])
 		}
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
+		utilities.sendGA('profile', 'tricklist via statsLabel')
+		utilities.openPage('tricklist',true)
     }
 
 	render (){

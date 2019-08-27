@@ -162,13 +162,7 @@ class Detail extends Component {
   return !(document.documentElement.scrollTop + viewHeight < position);
 }
 
-  handleEditTrickButtonClick=()=>{
-    utilities.sendGA('detail','edit pattern')
-    uiStore.editDetailTrick()
-  }
   trickPropertyClicked=(propertyType, property)=>{
-    history.push('/tricklist')
-    uiStore.clearUI()
     filterStore.resetAllFilters()
     if (propertyType === 'contributor'){
       filterStore.setContributors([{id: property,text: property,}]);
@@ -179,8 +173,9 @@ class Detail extends Component {
     }else if (propertyType === 'siteswap'){
       filterStore.setSearchText("ss:"+property);
     }
-    uiStore.resetSelectedTrick()
-    uiStore.updateRootTricks()
+
+    utilities.sendGA('details','tricklist via property')
+    utilities.openPage('tricklist',true)
   }
   getKeysFromRelatedObject=(related)=>{
 
@@ -414,7 +409,7 @@ class Detail extends Component {
              className="editCardIcon" 
              alt="toggleCardEdit" 
              title="edit this pattern"
-             onClick={()=>{this.handleEditTrickButtonClick()}}
+             onClick={()=>{uiStore.editDetailTrick()}}
         /> : null
     const shareButton = <img 
                            className="shareFilterDetailButton"

@@ -136,17 +136,7 @@ To add to db (Some Filmed, Some found)
 
 TO FILM:
 	Bumble paper
-	normal + neck catch excahnge 
-	neck catch + normal exchange
-	every other neck catch on one side
-	every third neck catch on one side
-	normal + neck pass excahnge
-	neck pass + normal exchange
-	neck pass exchange
-	every other neck pass on one side
-	every third neck pass on one side
-	headplant to same hand underarm catch 51
-	headplant to other hand underarm catch
+
 
 
 CONTACT/RESEARCH:
@@ -164,6 +154,9 @@ DB changes(Consideration required):
 	5344 needs a new name
 	413333333 needs new name	
 	Reverse chops should be takeaways or 1 beat inside orbits
+
+DB Fixes:
+	go through popular patterns like box, shower, cascade, and limit their postreqs
 
 DB Duplicates:
 	423 factory and factory tennis are both R+L Factory

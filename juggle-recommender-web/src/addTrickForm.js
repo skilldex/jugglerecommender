@@ -814,6 +814,7 @@ class AddTrickForm extends Component {
 							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 							<button className="formButton"onClick={this.cancel}>cancel</button>
 					</div>
+
 		return(
 				<div>
 					{uiStore.addingTrick ? form : null}

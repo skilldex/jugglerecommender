@@ -1,6 +1,9 @@
 import {action, configure} from "mobx"
 import store from './stores/store'
+import uiStore from './stores/uiStore'
+import authStore from './stores/authStore'
 import ReactGA from 'react-ga';
+import history from './history';
 
 configure({ enforceActions: "always" })
 let idleTimer
@@ -150,6 +153,75 @@ class Utilities{
   @action autoGrow(element){
       element.style.height = "5px"
       element.style.height = element.scrollHeight+"px"
+  }
+  openPage(page, shouldPush){
+    if(page === 'addpattern'){
+      uiStore.setShowExpandedMenu(false)
+    }else{
+      uiStore.clearUI()
+    }
+    if(page == 'logout'){
+      shouldPush = false
+    }
+    if(shouldPush){        
+        if(page.includes('detail/')){//if page is 'detail'/trickkey
+          history.push('/' + page, {detail : page.split('/')[1]})  
+        }else{
+          history.push('/' + page)
+        }       
+    }
+    if(page == "addpattern"){     
+      if(!uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }
+    }else if(page == "logout"){
+      authStore.signOut()
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }      
+    }else if(page == "home"){
+      uiStore.setShowHomeScreen(true)
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }     
+    }else if(page == "tricklist"){
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }
+      uiStore.setFilterURL()
+    }else if(page == "stats"){
+      uiStore.setShowStatsScreen(true)
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }
+    }else if(page == "profile"){
+      uiStore.setShowProfileScreen(true)
+      if(uiStore.addingTrick){
+        uiStore.toggleAddingTrick()
+      }
+    }else if(page.includes('detail/')){
+      const trickKey = page.split('/')[1]
+      uiStore.setShowHomeScreen(false)
+      uiStore.setShowExpandedMenu(false)
+      if (uiStore.selectedTrick){
+       uiStore.toggleSelectedTrick(null)
+      }
+      const detailTrick = {...store.library[trickKey]}
+      detailTrick.id = trickKey
+      uiStore.setDetailTrick(detailTrick)  
+    }
+    this.addModIgnoreToURL()
+  }
+  addModIgnoreToURL(){
+    if(authStore.user &&
+      authStore.mods.includes(authStore.user.username) &&
+      !window.location.href.includes('/modignore')){
+        if (window.history.replaceState) {
+          window.history.replaceState({}, null, window.location.href + '/modignore');
+        } else {//some browsers don't do pushState, so this changes url and reloads it
+            window.location.href = window.location.href + '/modignore'
+        }
+    }    
   }
 
   relatedTrickScoringFunction(x){
