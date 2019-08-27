@@ -38,6 +38,19 @@ class HomeScreen extends Component {
                             alt="backIcon" 
                             onClick={()=>{ uiStore.handleBackButtonClick()}}
                         />
+    let donationSection = <div className="donationSection">
+							<label><b>Donations:</b></label>
+							<div>
+								<img className="bitcoinIcon"
+									src={bitcoinIcon}/>
+								<span>Bitcoin:</span>
+			                    <a className ="donationLink"
+			                    	href="bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd">
+			                    		1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
+			                    </a>
+							</div>
+						</div>	
+	donationSection = null
 		return(
 				<div className = "homeOuterDiv">					
 					<div className ='homeScreenTrickOuterDiv'>
@@ -64,18 +77,7 @@ class HomeScreen extends Component {
 							onClick={this.clickPatternList}>
 						Pattern List
 					</button>
-					<div className="donationSection">
-						<label><b>Donations:</b></label>
-						<div>
-							<img className="bitcoinIcon"
-								src={bitcoinIcon}/>
-							<span>Bitcoin:</span>
-		                    <a className ="donationLink"
-		                    	href="bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd">
-		                    		1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
-		                    </a>
-						</div>
-					</div>				    
+					{donationSection}			    
 				</div>
 			)
 	}
