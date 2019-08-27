@@ -690,6 +690,15 @@ class AddTrickForm extends Component {
 									/>
 								</div>
 
+		// let prereqsSmallTrickList = <div>
+		// 								<span className="inputLabel">Prereqs</span>
+		// 								<span className="inputLabel">{uiStore.addTrickPrereqs}</span>
+		// 								<SmallTrickList 
+		// 									listType = "prereqs"
+		// 								/>
+		// 							</div>
+		let prereqsSmallTrickList = null
+
 		const form = 	
 					<div className="form">
 						{backButton}
@@ -785,6 +794,7 @@ class AddTrickForm extends Component {
 							<div className="inputContainer">
 								<span className="inputLabel">Tags</span><br/><br/>{tagInput}
 							</div>
+							{prereqsSmallTrickList}
 							<div className="inputContainer">
 								<span className="inputLabel">Prereqs</span><br/><br/>{prereqsInput}
 							</div>
