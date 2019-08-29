@@ -135,7 +135,10 @@ To add to db (Some Filmed, Some found)
 	Freeze Stuff
 
 TO FILM:
-	Bumble paper
+	Bumble paper 2.0
+	multiplex patterns from that post
+	multiplex patterns from paper
+	factory paper
 
 
 
@@ -149,6 +152,10 @@ CONTACT/RESEARCH:
 TO ASK:
 	-https://www.instagram.com/p/BCBgAfmEJX_/ <-- ask this guy
 	-https://www.instagram.com/kandenti_/?hl=en
+
+DB Changes(Straight-forwrard):
+	change all spelled out numbers to digits, it will save space and be easier to search
+
 DB changes(Consideration required):	
 	4440522 needs new name
 	5344 needs a new name

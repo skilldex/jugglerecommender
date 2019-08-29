@@ -6,12 +6,9 @@ v2.3
 
 	-Add Trick Form:
 		-SmallTrickList
-			-it's component has an input and the list and an add button
 			-the component fills a list in uiStore depnding on which it is and where it is
 				-addpattern form shows the items in its list above component
 				-details does whatever it currently does when add is clicked
-			-Component specifics:
-				-same as tricklist, but no catches shown, no relevance, letters highlight, title wont be blue
 		-make consuming tags be added automatically in the list
 		-when show time ranges is clicked it should auto focus
 
@@ -21,7 +18,19 @@ v2.3
 	-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 		-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 
+
+
+	-donations is currently turned off because onsome screens it overlaps bottom of home screen items
+		-we could move pattern name up to be directly underneath 'pattern of the day'
+		-possible get rid of 'pattern list button'
+		-we could make the donation go under home screen things instead of being stuck to bottom of screen.
+			-downside is that it will sometimes be hidden and it looks better on phone if it is stuck to bottom of screen
+				-we can also put it in about page incase people are specifically looking for it
+
+	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
+
 =========
+Stefan suggested we do suggestions for tags and siteswap like we did relateds
 
 NEW LISTS: 
 	dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
@@ -31,8 +40,12 @@ MAYBES:
 	Homescreen changes:
 		-move pattern name to directly underneath 'pattern of the day'
 		-remove 'pattern list button' since we now have permanent search bar
+	-Patterns mentioned in comments could be links
 
 Bugs:
+	-timerange in add trick form says invalid when one is empty, but empty is actually valid
+	-sometimes when add trick fields were invalid you have to click in another field to get it to catch up 
+	-if you log out/log in while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
 	-in mozilla, add pattern form, video tame range labels are shifted very far to the left

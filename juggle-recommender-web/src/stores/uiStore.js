@@ -49,6 +49,47 @@ class UIStore {
     @observable suggestedRelated = null
     @observable suggestedRelatedSubmitDisabledMessage = null
     @observable autoCompletedSuggestedRelated = false
+
+    @observable addTrickFormPrereqs = []
+ 	@observable addTrickFormRelated = []
+ 	@observable addTrickFormPostreqs = []	    
+    @observable smallListPageNumber = 0
+
+    @action addTrickToSmallTrickList=(listOfTricks, trickKey)=>{
+    	listOfTricks.push(trickKey)
+    }
+
+    @action removeTrickFromSmallTrickList=(listOfTricks, trickName)=>{
+    	let canRemove = true
+    	const trickKey = trickName.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
+        if (this.editingDetailTrick){
+	    	let prereqTrick = null
+	    	let listType = null
+	    	if (listOfTricks === this.addTrickFormPrereqs){
+	    		listType = 'prereqs'
+	    	}
+	    	if (listOfTricks === this.addTrickFormRelated){
+	    		listType = 'related'
+	    	}
+	    	if (listOfTricks === this.addTrickFormPostreqs){
+	    		listType = 'postreqs'
+	    	}
+	    	if (store.library[this.detailTrick.id]['prereqs'][trickKey] &&
+	    		store.library[this.detailTrick.id]['prereqs'][trickKey]['upvoters']){
+	    		alert('Prereqs with community upvotes can not be removed.')
+	    		canRemove = false
+	    	}
+		}	
+
+		if (canRemove){
+	    	console.log('remove ',listOfTricks, trickName)
+			var index = listOfTricks.indexOf(trickName);
+			if (index > -1) {
+			  listOfTricks.splice(index, 1);
+			}
+		}
+    }
+
     @action toggleSuggestingRelation=(relation)=>{
     	if (relation === 'prereq'){
     		this.suggestingPrereq = !this.suggestingPrereq
@@ -101,7 +142,12 @@ class UIStore {
     	}
     }
 	@action setPageNumber=(page)=>{
+		console.log('setPageNum')
 		this.pageNumber = page
+	}
+	@action setSmallListPageNumber=(page)=>{
+		console.log('SmallListsetPageNum')
+		this.smallListPageNumber = page
 	}
 	@action toggleShowMoreInformation=()=>{
 		this.showMoreInformation = !this.showMoreInformation
@@ -444,6 +490,22 @@ class UIStore {
 		}
 		return sortedJugglingLibrary
 	}
+
+	@action allTrickKeysSorted=(sortType, sortDirection)=>{
+		const allTrickKeys = []
+ 		let sortedJugglingLibrary = this.sortLibrary()
+ 		sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, sortType);
+ 		if(sortDirection==='descending'){
+			sortedJugglingLibrary.reverse()
+		}
+		sortedJugglingLibrary.forEach((trickObj, i) => {
+			const trickKey = Object.keys(trickObj)[0]
+			allTrickKeys.push(trickKey)
+		})
+
+		return allTrickKeys
+	}
+
  	@action updateRootTricks=(rootTricks)=>{
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []

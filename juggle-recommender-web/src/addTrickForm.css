@@ -196,5 +196,25 @@
     overflow-x: hidden;
     border-radius: 8px;
 }
+.addRelationshipDiv{
+  display: block;
+  text-align: left;
+  align-items: left;  
+  margin-bottom: 10px;
+}
+.addedRelatedTricksDiv{
+  margin-left: 2px; 
+  text-align: left;
+  align-items: left;
+  display:inline-block;
+  cursor: pointer;
+  padding : 5px;
+  border :1px solid darkgray;
+  border-radius: 2px;
+  background-color : #eee;
+  height: 14px;
+  line-height: 10px;
+
+}
 
 

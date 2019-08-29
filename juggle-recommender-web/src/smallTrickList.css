@@ -1,0 +1,251 @@
+.smallListDiv{
+
+  width: 99%;
+  max-width: 300px;
+  height: auto;
+  margin-left : 1px;
+  text-align: center;
+  display: inline-block;  
+  z-index: 1;
+  opacity : 100%;
+  background-color : white;
+  border-radius: 8px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling : touch;
+}
+
+.smallListNoResultsDiv{
+  padding-top: 15px;
+  font-style : italic;
+}
+.smallListInput{
+  width: 97%;
+  border-color: grey;
+}
+
+.smallListOuterDiv{
+  text-align: center;
+  width: 100%;
+}
+.smallListBackButtonSurroundingDivList{
+  width: 400px;
+  margin : 0 auto;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.smallListBackButtonList{
+  height : 15px;
+  width : 15px;
+  margin: auto 0;
+  margin-top : 5px;
+  cursor: pointer;
+}
+.smallListBackButtonListLabel{
+  color: #3090C7;
+  cursor: pointer;
+}
+
+.smallListCard{
+  height: 45px;
+  border : 1px solid gray;
+  box-shadow :   1px 0px 2px #888888;
+  border-radius: 3px;
+  text-align: left;
+  transition: all .5s ease;
+  cursor: pointer;
+  background-color: white;
+}
+.smallListDetailListCard{
+  height: 75px;
+}
+.smallListCard.expand {
+  height: 305px;
+  max-height: auto;
+}
+.smallListMainCard{
+  height: 45px;
+  display : flex;
+  align-items : center;
+}
+.smallListCardInfo{
+  display: inline-block;
+  height: 100%;
+  width:260px;
+
+}
+.smallListExpandButtonDiv{
+  display: inline-block;
+  width: 25px;
+  margin-left: auto;
+  height : 100%;
+  text-align: right;
+  display : flex;
+  align-items : center;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+
+.smallListBottomRow{
+  display: flex;
+  align-items: center;
+}
+.tags{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  width : 185px;
+}
+
+
+.smallListLoadingDiv{
+  width: 100%;
+  align-items: center;
+  display:block;
+}
+.smallListLoader {
+  margin:auto;
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); 
+  border-top: 8px solid rgb(0, 255, 0);}
+  25% { transform: rotate(90deg); 
+  border-top: 8px solid rgb(255, 255, 0);}
+  50% { transform: rotate(180deg); 
+  border-top: 8px solid rgb(255, 0, 0);}
+  75% { transform: rotate(270deg); 
+  border-top: 8px solid rgb(255, 255, 0);}
+  100% { transform: rotate(360deg); 
+  border-top: 8px solid rgb(0, 255, 0);}  
+}
+
+.smallListBottomRowText{
+  font-size : 11px;
+  display: inline-block;
+}
+
+
+.smallListaddAndRemoveMyTricksButtonList{
+  cursor: pointer;
+  line-height: -0px;
+  font-size: 14px;
+  box-shadow : 2px 0px 5px #888888;
+  padding : 2px;
+  border-radius: 5px;
+  margin-right: 5px;
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+}
+.smallListSelectTrickButton{
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.smallListCardNameDiv{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  color : black;
+  font-size: 15px;
+  z-index: 1300;
+  width: 260px;
+}
+
+.smallListDifficultyGauge{ 
+  margin-top:-10px;
+  margin-left:-5px;
+  vertical-align: middle;
+  display: inline-grid;
+  font-size: 22px;
+  font-weight:none;
+  z-index:1;
+  pointer-events: none;
+}
+
+.smallListSelectedListMinimizedIndicator{
+  width : 50%;
+  height: 40px;
+  cursor : pointer;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  filter:  invert(0.smallList5) sepia(1) saturate(8) hue-rotate(90deg);
+}
+
+.smallListListIcons{
+  margin-top:10px;
+  height : 25px;
+  width : 33px;
+}
+.smallListSearch{
+  margin:0;
+  margin-top : 20px;
+  margin-bottom : 10px;
+  text-align: center;
+  vertical-align: top;
+}
+
+
+.smallListSectionHeader{
+  display: inline-block;
+  cursor: pointer;
+}
+.smallListListSection{
+  height: auto;
+  max-height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling : touch;
+}
+.smallListSortDropdown{
+  position : absolute;
+  margin-top: 143px;
+  margin-left: 116px;
+  padding-top: 7px;
+  padding-left: 7px;
+  width: 200px;
+  height: 260px;
+  border: 2px solid gray;
+  border-radius: 8px;
+  background-color: white;
+  opacity: .smallList95;
+  margin-right : 85px;
+  z-index: 1300;
+}
+.smallListSortDropdownButton{
+  font-weight: bold;
+  display : block;
+  border: none;
+  background-color: white;
+  color: darkgray;
+  text-align: left;
+  font-size: 14px;
+  z-index: 1200;
+  width : 95%;
+  height : 30px;
+  outline: 0;
+  box-shadow: none!important;
+}
+.smallListSortDropdownButtonSelected{
+  color: gray;
+}
+
+.smallListSearchInput{
+  width: 90px;
+  margin-right : 3px;
+}
+

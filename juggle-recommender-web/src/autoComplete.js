@@ -25,6 +25,8 @@ class AutoComplete extends Component {
 	 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
 	 			matchedNames.push(lowerCaseName)
 	 			let optionClassName = "option"
+	 			//we includeBallNums if details page, and so we need borders because 
+	 			//	background is white, but this is being replaced by smallTrickList anyways
 	 			if (this.props.includeBallNums){
 	 				optionClassName = "option optionBorders"
 	 			}

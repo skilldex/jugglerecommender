@@ -9,6 +9,7 @@ import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
 import downArrow from './images/down-arrow.svg'
+import SmallTrickList from './smallTrickList'
 
 const KeyCodes = {
   comma: 188,
@@ -81,33 +82,22 @@ class AddTrickForm extends Component {
 					}
 				})
 			}
-			//convert prereq strings to tag objects
-			if(trick.prereqs){
-				trick.prereqs = Object.keys(trick.prereqs).map((prereq)=>{
-					return {
-						id : prereq,
-						text : prereq
-					}
-				})	
-			}
-			//convert related strings to tag objects
-			if(trick.related){
-				trick.related = Object.keys(trick.related).map((related)=>{
-					return {
-						id : related,
-						text : related
-					}
-				})	
-			}
-			//convert postreq strings to tag objects
-			if(trick.dependents){
-				trick.postreqs = Object.keys(trick.dependents).map((postreq)=>{
-					return {
-						id : postreq,
-						text : postreq
-					}
-				})	
-			}
+
+
+			Object.keys(trick.prereqs).forEach((trickKey)=>{
+				uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
+												store.library[trickKey].name)
+			});
+			Object.keys(trick.related).forEach((trickKey)=>{
+				uiStore.addTrickToSmallTrickList(uiStore.addTrickFormRelated,
+												store.library[trickKey].name)
+			});
+			Object.keys(trick.dependents).forEach((trickKey)=>{
+				uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPostreqs,
+												store.library[trickKey].name)
+			});
+
+
 			if(trick.videoStartTime || trick.videoEndTime){
 				this.setState({showTimeInputs : true})
 			}			
@@ -256,72 +246,7 @@ class AddTrickForm extends Component {
          	tags: tags.filter((tag, index) => index !== i),
         });
     }
-	handlePrereqAddition=(tag)=> {
-		if (store.library[tag.id]){
-	        this.setState(state => ({ prereqs: [...state.prereqs, tag] }));
-	        this.checkIfFormIsSubmittable()
-	    }
-    }
-    handlePrereqDelete=(i)=> {
-        const { prereqs } = this.state;
-        let prereqTrick = null
-        if (uiStore.editingDetailTrick){
-	    	prereqTrick = store.library[uiStore.detailTrick.id]['prereqs'][prereqs[i].id] ?
-							store.library[uiStore.detailTrick.id]['prereqs'][prereqs[i].id]
-							: null
-    	}
-    	if (prereqTrick && prereqTrick['upvoters']){
-    		alert('Prereqs with community upvotes can not be removed.')
-    	}else{
-	        this.setState({
-	         	prereqs: prereqs.filter((tag, index) => index !== i),
-	        });
-	    }
-    }
-	handleRelatedAddition=(tag)=> {
-		if (store.library[tag.id]){
-	        this.setState(state => ({ related: [...state.related, tag] }));
-	        this.checkIfFormIsSubmittable()
-	    }
-    }
-    handleRelatedDelete=(i)=> {
-        const { related } = this.state;
-        let relatedTrick = null
-        if (uiStore.editingDetailTrick){
-	    	relatedTrick = store.library[uiStore.detailTrick.id]['related'][related[i].id] ?
-							store.library[uiStore.detailTrick.id]['related'][related[i].id]
-							: null
-    	}
-    	if (relatedTrick && relatedTrick['upvoters']){
-    		alert('Related tricks with community upvotes can not be removed.')
-    	}else{
-	        this.setState({
-	         	related: related.filter((tag, index) => index !== i),
-	        });
-	    }        
-    }
-	handlePostreqAddition=(tag)=> {
-		if (store.library[tag.id]){
-	        this.setState(state => ({ postreqs: [...state.postreqs, tag] }));
-	        this.checkIfFormIsSubmittable()
-	    }
-    }
-    handlePostreqDelete=(i)=> {
-        const { postreqs } = this.state;
-        let postreqTrick = null
-        if (uiStore.editingDetailTrick){
-	    	postreqTrick = store.library[uiStore.detailTrick.id]['dependents'][postreqs[i].id] ?
-							store.library[uiStore.detailTrick.id]['dependents'][postreqs[i].id]
-							: null
-    	}
-    	if (postreqTrick && postreqTrick['upvoters']){
-    		alert('Postreqs with community upvotes can not be removed.')
-    	}else{
-	        this.setState({
-	         	postreqs: postreqs.filter((tag, index) => index !== i),
-	        });
-	    }   
-    }
+
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
@@ -469,21 +394,22 @@ class AddTrickForm extends Component {
 				related = store.library[uiStore.detailTrick.id]['related']
 				postreqs = store.library[uiStore.detailTrick.id]['dependents']
 			}
-			this.state.prereqs.forEach((item)=>{
-				if (!prereqs[item['id']]){
-					prereqs[item['id']] = { source : "contributed" }
+
+			uiStore.addTrickFormPrereqs.forEach((item)=>{
+				if (!prereqs[item]){
+					prereqs[item] = { source : "contributed" }
 				}
 			});
-			this.state.related.forEach((item)=>{
-				if (!related[item['id']]){
-					related[item['id']] = { source : "contributed" }
+			uiStore.addTrickFormRelated.forEach((item)=>{
+				if (!related[item]){
+					related[item] = { source : "contributed" }
 				}
 			});
-			this.state.postreqs.forEach((item)=>{
-				if (!postreqs[item['id']]){
-					postreqs[item['id']] = { source : "contributed" }
+			uiStore.addTrickFormPostreqs.forEach((item)=>{
+				if (!postreqs[item]){
+					postreqs[item] = { source : "contributed" }
 				}
-			});	
+			});
 
 			let suffix = ""
 			if (this.state.num.toString() !== "3"){
@@ -620,47 +546,6 @@ class AddTrickForm extends Component {
 					          handleAddition={this.handleTagAddition}
 					          handleTagClick={this.handleTagDelete}
 					     />
-		const prereqsInput = <ReactTags
-			                      classNames={{tagInputField: 'addTrickReactTags',}}
-						          autofocus = {false}
-						          placeholder = ''
-						          inputFieldPosition="bottom"
-						          tags={this.state.prereqs}
-						          minQueryLength={1}
-						          suggestions={patternsObj}
-						          delimiters={delimiters}
-						          handleDelete={this.handlePrereqDelete}
-						          handleAddition={this.handlePrereqAddition}
-						          handleTagClick={this.handlePrereqDelete}
-					          />
-		const relatedInput = <ReactTags
-								  classNames={{tagInputField: 'addTrickReactTags',}}
-						          autofocus = {false}
-						          style = {{width:"300px"}}
-						          placeholder = ''
-						          inputFieldPosition="bottom"
-						          tags={this.state.related}
-						          minQueryLength={1}
-						          suggestions={patternsObj}
-						          delimiters={delimiters}
-						          handleDelete={this.handleRelatedDelete}
-						          handleAddition={this.handleRelatedAddition}
-						          handleTagClick={this.handleRelatedDelete}
-					          />
-		const postreqsInput = <ReactTags
-								  classNames={{tagInputField: 'addTrickReactTags',}}
-						          autofocus = {false}
-						          style = {{width:"300px"}}
-						          placeholder = ''
-						          inputFieldPosition="bottom"
-						          tags={this.state.postreqs}
-						          minQueryLength={1}
-						          suggestions={patternsObj}
-						          delimiters={delimiters}
-						          handleDelete={this.handlePostreqDelete}
-						          handleAddition={this.handlePostreqAddition}
-						          handleTagClick={this.handlePostreqDelete}
-					          />
 		const titleText = uiStore.editingDetailTrick ? "Edit Pattern" : "Add Pattern"
 		const explanationInput = <textarea className="textarea" 
 											value={this.state.explanation}
@@ -690,14 +575,90 @@ class AddTrickForm extends Component {
 									/>
 								</div>
 
-		// let prereqsSmallTrickList = <div>
-		// 								<span className="inputLabel">Prereqs</span>
-		// 								<span className="inputLabel">{uiStore.addTrickPrereqs}</span>
-		// 								<SmallTrickList 
-		// 									listType = "prereqs"
-		// 								/>
-		// 							</div>
-		let prereqsSmallTrickList = null
+		let addedPrereqs = []
+		if(uiStore.addTrickFormPrereqs.length>0){
+		        uiStore.addTrickFormPrereqs.forEach((prereqName)=>{
+		        	addedPrereqs.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPrereqs,prereqName)}}>{prereqName}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPrereqs,prereqName)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+		const prereqsSortedAllTricks = uiStore.allTrickKeysSorted('difficulty','ascending')
+		let prereqsSmallTrickList = <div className="addRelationshipDiv">
+										<div>
+											<span className="inputLabel">Prereqs</span>
+										</div>
+										<br/>
+										{addedPrereqs}
+										<SmallTrickList 
+											tricksToList = {prereqsSortedAllTricks}
+											listType = "main"
+											listOfTricks = {uiStore.addTrickFormPrereqs}
+										/>
+									</div>
+
+
+
+		let addedRelated = []
+		if(uiStore.addTrickFormRelated.length>0){
+		        uiStore.addTrickFormRelated.forEach((relatedName)=>{
+		        	addedRelated.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormRelated,relatedName)}}>{relatedName}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormRelated,relatedName)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+		const relatedSortedAllTricks = uiStore.allTrickKeysSorted('difficulty','ascending')
+		let relatedSmallTrickList = <div className="addRelationshipDiv">
+										<div>
+											<span className="inputLabel">Related</span>
+										</div>
+										<br/>
+										{addedRelated}
+										<SmallTrickList 
+											tricksToList = {relatedSortedAllTricks}
+											listType = "main"
+											listOfTricks = {uiStore.addTrickFormRelated}
+										/>
+									</div>
+
+
+
+		let addedPostreqs = []
+		if(uiStore.addTrickFormPostreqs.length>0){
+		        uiStore.addTrickFormPostreqs.forEach((postreqName)=>{
+		        	addedPostreqs.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPostreqs,postreqName)}}>{postreqName}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPostreqs,postreqName)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+		const postreqsSortedAllTricks = uiStore.allTrickKeysSorted('difficulty','descending')
+		let postreqsSmallTrickList = <div className="addRelationshipDiv">
+										<div>
+											<span className="inputLabel">Postreqs</span>
+										</div>
+										<br/>
+										{addedPostreqs}
+										<SmallTrickList 
+											tricksToList = {postreqsSortedAllTricks}
+											listType = "main"
+											listOfTricks = {uiStore.addTrickFormPostreqs}
+										/>
+									</div>
 
 		const form = 	
 					<div className="form">
@@ -795,15 +756,8 @@ class AddTrickForm extends Component {
 								<span className="inputLabel">Tags</span><br/><br/>{tagInput}
 							</div>
 							{prereqsSmallTrickList}
-							<div className="inputContainer">
-								<span className="inputLabel">Prereqs</span><br/><br/>{prereqsInput}
-							</div>
-							<div className="inputContainer">
-								<span className="inputLabel">Related</span><br/><br/>{relatedInput}
-							</div>
-							<div className="inputContainer">
-								<span className="inputLabel">Postreqs</span><br/><br/>{postreqsInput}
-							</div>
+							{relatedSmallTrickList}
+							{postreqsSmallTrickList}
 							<div className="inputContainer">
 								<span className="inputLabel">Tutorial URL</span>
 								<span className="warning">{this.state.tutorialErrorMessage? this.state.tutorialErrorMessage:"\u00A0"}</span>
