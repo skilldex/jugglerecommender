@@ -1,7 +1,7 @@
 .smallListDiv{
 
   width: 99%;
-  max-width: 300px;
+  max-width: 400px;
   height: auto;
   margin-left : 1px;
   text-align: center;
@@ -10,6 +10,7 @@
   opacity : 100%;
   background-color : white;
   border-radius: 8px;
+  border-width: 2px;
   overflow-y: hidden;
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
@@ -50,7 +51,7 @@
 .smallListCard{
   height: 45px;
   border : 1px solid gray;
-  box-shadow :   1px 0px 2px #888888;
+  box-shadow : 2px 0px 2px #888888;
   border-radius: 3px;
   text-align: left;
   transition: all .5s ease;

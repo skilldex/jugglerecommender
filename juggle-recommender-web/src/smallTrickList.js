@@ -25,38 +25,6 @@ class SmallTrickList extends Component {
 			inputText : ''
 			
 	}
-	componentDidMount=()=>{
-		this.setScrollerPositions()
-	}
-
-  	setScrollerPositions=()=> {
-  		const listType = this.props.listType
-	    function setPositions() {
-	    	if (document.getElementById('smallListDiv') && listType === "main"){
-				document.getElementById('smallListDiv').scrollTop = uiStore.mainListScrollerPosition	
-			}
-		}
-	    setTimeout(function() {
-	        setPositions();
-	    }, 100);		
-	}
-
-	openDetail=(trickKey)=>{
-		utilities.sendGA('list ' + this.props.listType,'opened detail','list ' + this.props.listType + ' ' + trickKey)
-		if (this.props.listType === "main"){
-			uiStore.setMainListScrollerPosition(document.getElementById('smallListDiv').scrollTop)
-		}
-		utilities.openPage('detail/'+trickKey,true)
-		window.scrollTo(0,0);
-		if (document.getElementById('detailOuterDiv')){
-    		document.getElementById('detailOuterDiv').scrollTop = 0
-    	}    	
-    	if (document.getElementById('detailDiv')){
-	    	document.getElementById('detailDiv').scrollTop = 0
-	    }
-	    store.increaseViewsCounter()
-	}
-
 	expandCard=(trickKey)=> {
 		//reset expand state if trick is already selected so next
 		//expansion has correct state
@@ -67,7 +35,7 @@ class SmallTrickList extends Component {
 		}
 		element.classList.toggle("expand");
 		uiStore.toggleSelectedTrick(trickKey)
-		utilities.sendGA('list ' + this.props.listType,'expand','list ' + this.props.listType + ' ' + trickKey)
+		utilities.sendGA('small tricklist','expand','list' + trickKey)
 	}
 
 	getHexColor=(value: number)=> {
@@ -75,53 +43,55 @@ class SmallTrickList extends Component {
 	  return (string.length === 1) ? '0' + string : string;
 	}
 							
-	vote=(trickKey, direction)=>{
-		if(authStore.user){
-			const oppositeListType = this.props.listType == "related" ? "related" : 
-									 this.props.listType == "prereqs" ? "dependents" :
-												"prereqs"
-			store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
-			store.vote(trickKey , uiStore.detailTrick.id, oppositeListType, direction)
-		}else{
-			alert("Please login to vote")
-		}
-	}
-	checkIfVoted=(votes)=>{
-		if(votes && authStore.user){
-			const voted = votes.includes(authStore.user.username)
-			return voted
-		}else{
-			return false
-		}
-		
-	}
+
 	addToList=(trickKey)=>{
-		console.log('this.props.listOfTricks',this.props.listOfTricks)
 		uiStore.addTrickToSmallTrickList(this.props.listOfTricks,trickKey)
-		this.setState({inputText:''})
+		if(this.props.listType.includes('AddTrick')){
+			this.setState({inputText:''})
+		}else if (this.props.listType.includes('Details')){
+			this.setState({inputText:store.library[trickKey].name})
+		}
 	}
 	onInputKeyPress=()=>{
-		console.log('onInputKeyPress')
+
 	}
-	//todo
-	//hook up small tricklist to details
-	//change autosuggest back to how it was without a with number check
+
 	handleInputChange=(e)=>{
-		console.log('handleInputChange')
 		this.setState({inputText : e.target.value})
 	}
 	handleInputBlur=()=>{
-		console.log('handleInputBlur')
+
 	}
 
 	render() {
 		let list = null
-		if (this.state.inputText.length>1){
+		let shouldShowList = true
+		if (this.props.listType.includes('Details')){
+			if (this.props.listType.includes('prereq') &&
+				uiStore.autoCompletedSuggestedPrereq==true){
+					shouldShowList = false
+			}
+			if (this.props.listType.includes('related') &&
+				uiStore.autoCompletedSuggestedRelated==true){
+					shouldShowList = false
+			}
+			if (this.props.listType.includes('postreq') &&
+				uiStore.autoCompletedSuggestedPostreq==true){
+					shouldShowList = false
+			}
+		}
+		if (this.state.inputText.length>1 && shouldShowList){
 		 	let tricks = []
 		 	const pushedTrickkeys = []
 		 	const detailTrick = uiStore.detailTrick ? store.library[uiStore.detailTrick.id] : null
-		 	const listType = this.props.listType == "postreqs" ? "dependents" : this.props.listType
-			this.props.tricksToList.forEach((trickKey, index)=>{
+		 	let tricksToList = null
+		 	if (this.props.listType.includes('prereq') ||
+		 		this.props.listType.includes('related')){
+		 		tricksToList = uiStore.allTrickKeysSorted('difficulty','ascending')
+		 	}else{
+		 		tricksToList = uiStore.allTrickKeysSorted('difficulty','descending')
+		 	}
+			tricksToList.forEach((trickKey, index)=>{
 				const lowerCaseTrickName = store.library[trickKey].name.toLowerCase()
 				const lowerCaseInput = this.state.inputText.toLowerCase()
 				if (lowerCaseTrickName.includes(lowerCaseInput)){
@@ -239,6 +209,7 @@ class SmallTrickList extends Component {
 		return (
 			<div style={{ overflow:"auto"}} className="smallListOuterDiv">
 				<input 	id ="smallListInput"
+						autoComplete="off"
 						className="smallListInput" 
 						onKeyPress={this.onInputKeyPress}
 						value={this.state.inputText} 

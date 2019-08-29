@@ -56,7 +56,18 @@ class UIStore {
     @observable smallListPageNumber = 0
 
     @action addTrickToSmallTrickList=(listOfTricks, trickKey)=>{
-    	listOfTricks.push(trickKey)
+    	if (listOfTricks === this.suggestedPrereq){
+		     this.suggestedPrereq = trickKey
+		     this.autoCompletedSuggestedPrereq = true
+	   	}else if(listOfTricks === this.suggestedRelated){
+		     this.suggestedRelated = trickKey
+		     this.autoCompletedSuggestedRelated = true
+    	}else if(listOfTricks === this.suggestedPostreq){
+		     this.suggestedPostreq = trickKey
+		     this.autoCompletedSuggestedPostreq = true
+    	}else{//if we are in the add trick form
+    		listOfTricks.push(trickKey)
+    	}
     }
 
     @action removeTrickFromSmallTrickList=(listOfTricks, trickName)=>{

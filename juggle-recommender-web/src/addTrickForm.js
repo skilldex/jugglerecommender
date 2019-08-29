@@ -83,19 +83,24 @@ class AddTrickForm extends Component {
 				})
 			}
 
-
-			Object.keys(trick.prereqs).forEach((trickKey)=>{
-				uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
-												store.library[trickKey].name)
-			});
-			Object.keys(trick.related).forEach((trickKey)=>{
-				uiStore.addTrickToSmallTrickList(uiStore.addTrickFormRelated,
-												store.library[trickKey].name)
-			});
-			Object.keys(trick.dependents).forEach((trickKey)=>{
-				uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPostreqs,
-												store.library[trickKey].name)
-			});
+			if (trick.prereqs){
+				Object.keys(trick.prereqs).forEach((trickKey)=>{
+					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
+													store.library[trickKey].name)
+				});
+			}
+			if (trick.related){
+				Object.keys(trick.related).forEach((trickKey)=>{
+					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormRelated,
+													store.library[trickKey].name)
+				});
+			}
+			if (trick.dependents){
+				Object.keys(trick.dependents).forEach((trickKey)=>{
+					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPostreqs,
+													store.library[trickKey].name)
+				});
+			}
 
 
 			if(trick.videoStartTime || trick.videoEndTime){
@@ -390,9 +395,15 @@ class AddTrickForm extends Component {
 			let related = {}
 			let postreqs = {}
 			if(uiStore.editingDetailTrick){
-				prereqs = store.library[uiStore.detailTrick.id]['prereqs']
-				related = store.library[uiStore.detailTrick.id]['related']
-				postreqs = store.library[uiStore.detailTrick.id]['dependents']
+				if (store.library[uiStore.detailTrick.id]['prereqs']){
+					prereqs = store.library[uiStore.detailTrick.id]['prereqs']
+				}
+				if (store.library[uiStore.detailTrick.id]['related']){
+					related = store.library[uiStore.detailTrick.id]['related']
+				}
+				if (store.library[uiStore.detailTrick.id]['dependents']){
+					postreqs = store.library[uiStore.detailTrick.id]['dependents']
+				}
 			}
 
 			uiStore.addTrickFormPrereqs.forEach((item)=>{
@@ -588,7 +599,7 @@ class AddTrickForm extends Component {
 		        	)
 		        });
 		    }
-		const prereqsSortedAllTricks = uiStore.allTrickKeysSorted('difficulty','ascending')
+
 		let prereqsSmallTrickList = <div className="addRelationshipDiv">
 										<div>
 											<span className="inputLabel">Prereqs</span>
@@ -596,8 +607,7 @@ class AddTrickForm extends Component {
 										<br/>
 										{addedPrereqs}
 										<SmallTrickList 
-											tricksToList = {prereqsSortedAllTricks}
-											listType = "main"
+											listType = {'prereqsAddTrick'}
 											listOfTricks = {uiStore.addTrickFormPrereqs}
 										/>
 									</div>
@@ -617,7 +627,6 @@ class AddTrickForm extends Component {
 		        	)
 		        });
 		    }
-		const relatedSortedAllTricks = uiStore.allTrickKeysSorted('difficulty','ascending')
 		let relatedSmallTrickList = <div className="addRelationshipDiv">
 										<div>
 											<span className="inputLabel">Related</span>
@@ -625,8 +634,7 @@ class AddTrickForm extends Component {
 										<br/>
 										{addedRelated}
 										<SmallTrickList 
-											tricksToList = {relatedSortedAllTricks}
-											listType = "main"
+											listType = {'relatedAddTrick'}
 											listOfTricks = {uiStore.addTrickFormRelated}
 										/>
 									</div>
@@ -646,7 +654,7 @@ class AddTrickForm extends Component {
 		        	)
 		        });
 		    }
-		const postreqsSortedAllTricks = uiStore.allTrickKeysSorted('difficulty','descending')
+
 		let postreqsSmallTrickList = <div className="addRelationshipDiv">
 										<div>
 											<span className="inputLabel">Postreqs</span>
@@ -654,8 +662,7 @@ class AddTrickForm extends Component {
 										<br/>
 										{addedPostreqs}
 										<SmallTrickList 
-											tricksToList = {postreqsSortedAllTricks}
-											listType = "main"
+											listType = {'prereqsAddTrick'}
 											listOfTricks = {uiStore.addTrickFormPostreqs}
 										/>
 									</div>

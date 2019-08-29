@@ -14,6 +14,7 @@ import starIcon from './images/starIcon.svg'
 import Demo from './demo'
 import authStore from "./stores/authStore"
 import TrickList from './trickList.js'
+import SmallTrickList from './smallTrickList'
 import './App.css';
 import './detail.css';
 import history from "./history"
@@ -21,7 +22,6 @@ import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
 import Comments from "./comments"
 import utilities from "./utilities"
-import AutoComplete from './autoComplete'
 @observer
 class Detail extends Component {
   state = {
@@ -215,50 +215,6 @@ class Detail extends Component {
     }else{
       alert("Please login to make a suggestion")
     }
-  }
-  setSuggestedPrereq=(suggestedPrereq)=>{
-    uiStore.setSuggestedRelation('prereq',suggestedPrereq)
-    uiStore.setAutoCompletedSuggestedRelation('prereq',true)
-  }
-  onSuggestPrereqInputKeyPress=(target)=>{
-    // If enter pressed
-      if(target.charCode===13){  
-        uiStore.setAutoCompletedSuggestedRelation('prereq',true)
-      }
-  }
-  handleSuggestPrereqChange=(e)=>{
-    uiStore.setSuggestedRelation('prereq',e.target.value)
-    uiStore.setAutoCompletedSuggestedRelation('prereq',false)
-  }
-
-  setSuggestedDependent=(suggestedDependent)=>{
-    uiStore.setSuggestedRelation('dependent',suggestedDependent)
-    uiStore.setAutoCompletedSuggestedRelation('dependent',true)
-  }
-  onSuggestDependentInputKeyPress=(target)=>{
-    // If enter pressed
-      if(target.charCode===13){  
-        uiStore.setAutoCompletedSuggestedRelation('dependent',true)
-      }
-  }
-  handleSuggestDependentChange=(e)=>{
-    uiStore.setSuggestedRelation('dependent',e.target.value)
-    uiStore.setAutoCompletedSuggestedRelation('dependent',false)
-  }
-
-  setSuggestedRelated=(suggestedRelated)=>{
-    uiStore.setSuggestedRelation('related',suggestedRelated)
-    uiStore.setAutoCompletedSuggestedRelation('related',true)
-  }
-  onSuggestRelatedInputKeyPress=(target)=>{
-    // If enter pressed
-      if(target.charCode===13){  
-        uiStore.setAutoCompletedSuggestedRelation('related',true)
-      }
-  }
-  handleSuggestRelatedChange=(e)=>{
-    uiStore.setSuggestedRelation('related',e.target.value)
-    uiStore.setAutoCompletedSuggestedRelation('related',false)
   }
 
   getSuggestedRelationSubmitDisabledMessage=(relation)=>{
@@ -529,24 +485,7 @@ class Detail extends Component {
                             </div>
                              
                           </div>:null
-    const autoCompletePrereq = uiStore.suggestedPrereq && !uiStore.autoCompletedSuggestedPrereq ? 
-      <AutoComplete 
-        setAutoCompletedName={this.setSuggestedPrereq} 
-        input={uiStore.suggestedPrereq}
-        includeBallNums = {true}
-      /> : null
-    const autoCompleteDependent = uiStore.suggestedDependent && !uiStore.autoCompletedSuggestedDependent ? 
-      <AutoComplete 
-        setAutoCompletedName={this.setSuggestedDependent} 
-        input={uiStore.suggestedDependent}
-        includeBallNums = {true}
-      /> : null
-    const autoCompleteRelated = uiStore.suggestedRelated && !uiStore.autoCompletedSuggestedRelated ? 
-      <AutoComplete 
-        setAutoCompletedName={this.setSuggestedRelated} 
-        input={uiStore.suggestedRelated}
-        includeBallNums = {true}
-      /> : null
+
     const relationshipLists = 
         detailTrick?
         <div className ='relationshipLists'>
@@ -568,12 +507,9 @@ class Detail extends Component {
             }
             {uiStore.suggestingPrereq?   
               <div>
-                <input className="formInputs" 
-                      onKeyPress={this.onSuggestPrereqInputKeyPress}
-                      value={uiStore.suggestedPrereq} 
-                      onChange={this.handleSuggestPrereqChange}
-                      onBlur={this.handleOnBlurSuggestPrereqInput}
-                      ref={ref => this.suggestPrereqInput = ref}
+                <SmallTrickList 
+                  listType = {'prereqDetails'}
+                  listOfTricks = {uiStore.suggestedPrereq}
                 />
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null ? 
@@ -593,7 +529,6 @@ class Detail extends Component {
                 <label className = 'suggestSubmitMessage'>
                   {this.getSuggestedRelationSubmitDisabledMessage('prereq')}
                 </label>
-                {autoCompletePrereq}
               </div> : null
             }
           </div>
@@ -615,12 +550,9 @@ class Detail extends Component {
             }
             {uiStore.suggestingRelated?   
               <div>
-                <input className="formInputs" 
-                      onKeyPress={this.onSuggestRelatedInputKeyPress}
-                      value={uiStore.suggestedRelated} 
-                      onChange={this.handleSuggestRelatedChange}
-                      onBlur={this.handleOnBlurSuggestRelatedInput}
-                      ref={ref => this.suggestRelatedInput = ref}
+                <SmallTrickList 
+                  listType = {'relatedDetails'}
+                  listOfTricks = {uiStore.suggestedRelated}
                 />
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('related') != null ? 
@@ -640,7 +572,6 @@ class Detail extends Component {
                 <label className = 'suggestSubmitMessage'>
                   {this.getSuggestedRelationSubmitDisabledMessage('related')}
                 </label>
-                {autoCompleteRelated}
               </div> : null
             }
           </div>
@@ -662,12 +593,9 @@ class Detail extends Component {
             }
             {uiStore.suggestingDependent?   
               <div>
-                <input className="formInputs" 
-                      onKeyPress={this.onSuggestDependentInputKeyPress}
-                      value={uiStore.suggestedDependent} 
-                      onChange={this.handleSuggestDependentChange}
-                      onBlur={this.handleOnBlurSuggestDependentInput}
-                      ref={ref => this.suggestDependentInput = ref}
+                <SmallTrickList 
+                  listType = {'postreqDetails'}
+                  listOfTricks = {uiStore.suggestedPostreq}
                 />
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null ? 
@@ -687,7 +615,6 @@ class Detail extends Component {
                 <label className = 'suggestSubmitMessage'>
                   {this.getSuggestedRelationSubmitDisabledMessage('dependent')}
                 </label>
-                {autoCompleteDependent}
               </div> : null
             }
           </div>
