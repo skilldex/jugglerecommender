@@ -388,18 +388,21 @@ class AddTrickForm extends Component {
 			}
 
 			uiStore.addTrickFormPrereqs.forEach((item)=>{
-				if (!prereqs[item]){
-					prereqs[item] = { source : "contributed" }
+				const replacedItem = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
+				if (!prereqs[replacedItem]){
+					prereqs[replacedItem] = { source : "contributed" }
 				}
 			});
 			uiStore.addTrickFormRelated.forEach((item)=>{
-				if (!related[item]){
-					related[item] = { source : "contributed" }
+				const replacedItem = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
+				if (!related[replacedItem]){
+					related[replacedItem] = { source : "contributed" }
 				}
 			});
 			uiStore.addTrickFormPostreqs.forEach((item)=>{
-				if (!postreqs[item]){
-					postreqs[item] = { source : "contributed" }
+				const replacedItem = item.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
+				if (!postreqs[replacedItem]){
+					postreqs[replacedItem] = { source : "contributed" }
 				}
 			});
 

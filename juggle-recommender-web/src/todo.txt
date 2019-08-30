@@ -17,20 +17,23 @@ v2.4
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
+	-put catches, users and registered users in stats page
 
 
 =========
+clean out db of old fake accounts
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 
 NEW LISTS: 
-	dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
-
+	
 MAYBES:
 	GA hooked up to browser back button? our back button? Seperate GAs or same?
 	Homescreen changes:
 		-move pattern name to directly underneath 'pattern of the day'
 		-remove 'pattern list button' since we now have permanent search bar
 	-Patterns mentioned in comments could be links
+	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
+
 
 Bugs:
 	-timerange in add trick form says invalid when one is empty, but empty is actually valid

@@ -510,8 +510,10 @@ class Store {
 				})
 			}
 		}
+		console.log('trickKey',trickKey)
 		//put most of the info from the form into the library
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
+		console.log('trick',trick)
         newTrickRef.set(trick);
         //put the rest in, the relateds information
         const relationships = ['prereqs','related','dependents']
