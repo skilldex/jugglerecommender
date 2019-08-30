@@ -1,4 +1,4 @@
-v2.3
+v2.4
 
 	Profile Screen: (Larger section below)
 		-upload image
@@ -12,17 +12,8 @@ v2.3
 	-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 		-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 
-	-replace tags with autocomplete in filter
-
 	-filter for 'has tutorial'
 		-maybe tutorial should be a tag, if not, maybe loj should be a tag
-
-	-donations is currently turned off because onsome screens it overlaps bottom of home screen items
-		-we could move pattern name up to be directly underneath 'pattern of the day'
-		-possible get rid of 'pattern list button'
-		-we could make the donation go under home screen things instead of being stuck to bottom of screen.
-			-downside is that it will sometimes be hidden and it looks better on phone if it is stuck to bottom of screen
-				-we can also put it in about page incase people are specifically looking for it
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
