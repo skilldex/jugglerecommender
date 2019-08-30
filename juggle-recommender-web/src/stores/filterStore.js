@@ -11,14 +11,7 @@ const contributorMatch = locationURL.match(/contributor=(.+)/)
 if (contributorMatch){
 		urlQueryContributor = contributorMatch[1].split('&')[0].split(',')
 }
-const contributor = urlQueryContributor ? 
-					urlQueryContributor.map((tag)=>{
-						return {
-							id : tag,
-							text : tag
-						}
-					})	
-				: []
+const contributor = urlQueryContributor ? urlQueryContributor : []
 
 let urlQueryDiff = locationURL.match(/difficultyrange=(.+)/)	
 let difficultyRange	= [1,10]
@@ -39,16 +32,10 @@ if (urlQueryFlair){
 let urlQueryDemoType = locationURL.match(/demotype=(.+)/)
 let demoType = []
 if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo"){
-	demoType = [{
-		id: "User Video",
-		text: "User Video",
-	}]
+	demoType = "User Video"
 }															
 if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
-	demoType = [{
-		id: "Juggling Lab",
-		text: "Juggling Lab",
-	}]
+	demoType = "Juggling Lab"
 }
 
 let urlQueryTags = null
@@ -229,8 +216,16 @@ class FilterStore {
 	}
 	@action removeTag=(tagType, tagToRemove)=>{
 		console.log('tagType',tagType, tagToRemove)
+		let tagList
+		if(tagType == 'tags'){
+			tagList = this.tags
+		}else if(tagType == 'contributor'){
+			tagList = this.contributors	
+		}else if(tagType == 'demoType'){
+			tagList = this.demoType
+		}	
 		this.setTags(
-			tagType,this.tags.filter((tag) => tag !== tagToRemove)
+			tagType,tagList.filter((tag) => tag !== tagToRemove)
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()

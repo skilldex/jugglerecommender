@@ -14,8 +14,6 @@ v2.3
 
 	-replace tags with autocomplete in filter
 
-	-all those setStates in addTrickFOrm in componentdidmount, if (editing trick) may be redundant
-
 	-filter for 'has tutorial'
 		-maybe tutorial should be a tag, if not, maybe loj should be a tag
 
@@ -103,6 +101,7 @@ Niceties:
 
 
 Code Cleaning:
+	-all those setStates in addTrickFOrm in componentdidmount, if (editing trick) may be redundant
 	-reduce stuff at begining of filterstore into a more general function
 	-how can the timeout in details.suggestRelationClicked() be removed?
 	-randomleaderboardtrick could have its name changed to trickOfTheDay or something like that, as well as surrounding variables since it really now has different functionality

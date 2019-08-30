@@ -47,7 +47,7 @@ class Filter extends Component {
  	handleContributorTagAddition=(contributor)=>{
  		let canAdd = true
  		filterStore.contributors.forEach(function (arrayItem) {
-		    if (arrayItem.id === contributor.id){
+		    if (arrayItem === contributor){
 		    	canAdd = false
 		    }
 		});
@@ -264,9 +264,9 @@ class Filter extends Component {
 		        	addedTags.push(
 		                <div className="addedRelatedTricksDiv">
 		                  <span className="mainTagsName"
-		                        onClick={(e)=>{filterStore.removeTag('tags',e)}}>{tag}</span>
+		                        onClick={()=>{filterStore.removeTag('tags',tag)}}>{tag}</span>
 		                  <label className="mainTagsX"
-		                  		onClick={(e)=>{filterStore.removeTag('tags',e)}}> x </label>
+		                  		onClick={()=>{filterStore.removeTag('tags',tag)}}> x </label>
 		                </div>  						        		
 		        	)
 		        });
@@ -305,9 +305,9 @@ class Filter extends Component {
 		        	addedContributors.push(
 		                <div className="addedRelatedTricksDiv">
 		                  <span className="mainTagsName"
-		                        onClick={(tag)=>{filterStore.removeTag('contributor',tag)}}>{tag}</span>
+		                        onClick={()=>{filterStore.removeTag('contributor',tag)}}>{tag}</span>
 		                  <label className="mainTagsX"
-		                  		onClick={(tag)=>{filterStore.removeTag('contributor',tag)}}> x </label>
+		                  		onClick={()=>{filterStore.removeTag('contributor',tag)}}> x </label>
 		                </div>  						        		
 		        	)
 		        });
