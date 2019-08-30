@@ -162,7 +162,18 @@
   color : black;
   font-size: 15px;
   z-index: 1300;
-  width: 260px;
+  width: 360px;
+}
+
+.smallListCardNameDivAddTrickForm{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  color : black;
+  font-size: 15px;
+  z-index: 1300; 
+  width:260px;
 }
 
 .smallListDifficultyGauge{ 

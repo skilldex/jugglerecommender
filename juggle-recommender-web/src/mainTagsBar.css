@@ -61,9 +61,13 @@
 
 .mainTagsName{
   overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
   font-size: 12px;
   vertical-align: middle;
-  margin-top: -10px;
+  max-width: 95% ;
+  text-overflow: ellipsis;
+
 }
 
 .mainTagsX{

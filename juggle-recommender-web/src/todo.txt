@@ -19,6 +19,8 @@ v2.3
 
 	-when a tag is added remove it from input
 
+	-every time we go edit, back, more relateds are added
+
 	-filter for 'has tutorial'
 		-maybe tutorial should be a tag, if not, maybe loj should be a tag
 

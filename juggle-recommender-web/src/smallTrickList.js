@@ -139,7 +139,8 @@ class SmallTrickList extends Component {
 											/>	
 					const expandTrickButtonClass =  
 						uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
-
+					const smallListCardNameDivClassName = this.props.listType.includes('Details') ?
+											'smallListCardNameDiv' : 'smallListCardNameDivAddTrickForm'
 					tricks.push(
 						<div className= "smallListCard"
 							 key={trickKey + "div"} 
@@ -148,7 +149,7 @@ class SmallTrickList extends Component {
 						>	
 							<div className="smallListMainCard">
 								<div className = "smallListCardInfo">	
-									<div className="smallListCardNameDiv" title={trick.name}>
+									<div className={smallListCardNameDivClassName} title={trick.name}>
 				 		 				<span>{trick.name.slice(0,matchIndex)}</span>
 				 		 				<span className="match">{trick.name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
 				 		 				<span>{trick.name.slice(matchIndex+lowerCaseInput.length,)}</span>
