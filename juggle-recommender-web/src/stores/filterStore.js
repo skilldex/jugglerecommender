@@ -3,7 +3,6 @@ import store from "./store"
 import uiStore from "./uiStore"
 
 configure({ enforceActions: "always" })
-console.log("filters " ,window.location)
 
 let urlQueryContributor = null
 const locationURL = window.location.href.split('/modignore')[0]
@@ -190,7 +189,6 @@ class FilterStore {
 		uiStore.setFilterURL()
 	}
 	@action setTags=(tagType, tags)=>{
-		console.log('settags',tagType)
 		if (tagType === 'tags'){
 			this.tags = tags
 		}else if(tagType === 'contributor'){
@@ -215,7 +213,6 @@ class FilterStore {
 		uiStore.setFilterURL()	
 	}
 	@action removeTag=(tagType, tagToRemove)=>{
-		console.log('tagType',tagType, tagToRemove)
 		let tagList
 		if(tagType == 'tags'){
 			tagList = this.tags

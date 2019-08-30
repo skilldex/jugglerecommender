@@ -28,7 +28,6 @@ class AuthStore {
             usersRef.on("value", resp =>{
                 user = store.snapshotToArray(resp)[0]
                 if (user){
-                    console.log("found user", user)
                 	this.setUser({"email": user.email,"username" : user.username})
                     utilities.addModIgnoreToURL()
                 }
@@ -38,7 +37,6 @@ class AuthStore {
     @action setUser=(user)=>{       
         this.user = user
         store.getSavedTricks()
-        console.log('setUser', user)
      }
     @action loginUser(username, pass) {
         const usersRef = firebase.database().ref('users/').orderByChild('lowerCaseUsername').equalTo(username.toLowerCase())
@@ -89,7 +87,6 @@ class AuthStore {
         const api = "https://wt-b5a67af96f44fb6828d5a07d6bb70476-0.sandbox.auth0-extend.com/skilldex/email"
         return new Promise((resolve, reject) => {
             firebase.auth().currentUser.getIdToken(true).then( idToken => {
-                console.log(email, JSON.stringify(email))
                 fetch(
                     api, 
                         {
@@ -98,7 +95,6 @@ class AuthStore {
                             headers: headers
                         }
                 ).subscribe(res => {
-                    console.log("sending email", res)
                     resolve(res)
                 }, err => {
                     if(err.status == 200){

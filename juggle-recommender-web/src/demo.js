@@ -274,7 +274,6 @@ class Demo extends Component {
     }
   }
   onYoutubePlayerReady=(e)=>{
-    console.log("on ready event", e)
     const video = e.target
     if (this.state.slowmoPlayback !== 'forward'){
       video.setPlaybackRate(1)

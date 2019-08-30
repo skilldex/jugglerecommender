@@ -497,7 +497,6 @@ class AddTrickForm extends Component {
 		})
 	}
 	setAutoCompletedTag=(tag)=>{
-		console.log('sact',this.state.tags)
 		if (store.tagsSuggestions.includes(tag)){
 	        this.setState(state => ({ tags: [...state.tags, tag] }));
 	        this.checkIfFormIsSubmittable()
@@ -510,14 +509,11 @@ class AddTrickForm extends Component {
 
 
     handleTagDelete=(tag)=>{
-	    console.log('remove ',this.state.tags, tag)
 		var index = this.state.tags.indexOf(tag);
-		console.log('index',index)
 		let newTagList = this.state.tags
 		if (index > -1) {
 		  newTagList.splice(index, 1);
 		}
-		console.log('newTagList',newTagList)
 		this.setState({tags:newTagList})
     }
 
@@ -548,7 +544,6 @@ class AddTrickForm extends Component {
 	}
 
 	render (){
-		console.log(this.state.tags)
 	    const backButton = <div className = "backButtonSurroundingDivAddTrick">
 		    					<img id="backButton" 
 		                            src={downArrow} 

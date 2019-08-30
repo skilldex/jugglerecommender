@@ -35,7 +35,6 @@ class MainTagsBar extends Component {
       uiStore.setFilterURL()
     }
     flairClicked=(element)=>{
-      console.log('flairClicked')
       let tempFlair = [...filterStore.flair]
       if (tempFlair.includes(element)){
         for( var i = 0; i < tempFlair.length; i++){ 

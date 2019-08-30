@@ -99,7 +99,6 @@ class UIStore {
 		}	
 
 		if (canRemove){
-	    	console.log('remove ',listOfTricks, trickName)
 			var index = listOfTricks.indexOf(trickName);
 			if (index > -1) {
 			  listOfTricks.splice(index, 1);
@@ -159,11 +158,9 @@ class UIStore {
     	}
     }
 	@action setPageNumber=(page)=>{
-		console.log('setPageNum')
 		this.pageNumber = page
 	}
 	@action setSmallListPageNumber=(page)=>{
-		console.log('SmallListsetPageNum')
 		this.smallListPageNumber = page
 	}
 	@action toggleShowMoreInformation=()=>{
