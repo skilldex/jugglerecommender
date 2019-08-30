@@ -13,11 +13,9 @@ v2.3
 	-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 		-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 
-	replace tags with autocomplete in filter
+	-replace tags with autocomplete in filter
 
-	-related tricks name too long on rectangles in add trick form, pushes x down to lext line
-
-	-when a tag is added remove it from input
+	-all those setStates in addTrickFOrm in component didmount, if editing trick may be redundant
 
 	-every time we go edit, back, more relateds are added
 

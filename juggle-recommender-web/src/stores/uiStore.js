@@ -55,6 +55,12 @@ class UIStore {
  	@observable addTrickFormPostreqs = []	    
     @observable smallListPageNumber = 0
 
+    @action clearAddTrickSmallTrickLists=()=>{
+    	this.addTrickFormPrereqs = []
+ 		this.addTrickFormRelated = []
+ 		this.addTrickFormPostreqs = []	
+    }
+
     @action addTrickToSmallTrickList=(listOfTricks, trickKey)=>{
     	if (listOfTricks === this.suggestedPrereq){
 		     this.suggestedPrereq = trickKey

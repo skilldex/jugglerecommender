@@ -76,6 +76,8 @@ class AddTrickForm extends Component {
 				this.setState({usersWithCatches: trick.usersWithCatches})
 			}
 
+			uiStore.clearAddTrickSmallTrickLists()
+			
 			if (trick.prereqs){
 				Object.keys(trick.prereqs).forEach((trickKey)=>{
 					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
