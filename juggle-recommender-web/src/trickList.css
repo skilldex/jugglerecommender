@@ -46,41 +46,44 @@
 }
 
 .listCard{
-  height: 45px;
-  border : 1px solid gray;
-  box-shadow :   1px 0px 2px #888888;
-  border-radius: 3px;
+  height: 55px;
+  border : .5px solid gray;
+  border-top : none;
   text-align: left;
   transition: all .5s ease;
   cursor: pointer;
 }
+.mainCard{
+  height: 55px;
+  display : flex;
+  align-items : center;
+}
+.topCard{
+  border-top : .5px solid gray;
+}
 .detailListCard{
-  height: 75px;
+  height: 80px;
+  display: flex;
 }
 .listCard.expand {
   height: 305px;
   max-height: auto;
 }
-.mainCard{
-  height: 45px;
-  display : flex;
-  align-items : center;
-}
+
 .cardInfo{
   display: inline-block;
   height: 100%;
-  padding : 5px;
 }
 .expandButtonDiv{
   display: inline-block;
-  width: 25px;
-  margin-left: auto;
+  width: 15px;
   height : 100%;
-  text-align: right;
   display : flex;
   align-items : center;
-  justify-content: flex-end;
-  padding-right: 10px;
+  justify-content: center;
+  padding-right: 5px;
+  padding-left: 5px;
+
 }
 .catchesIconList{
   width: 18px;
@@ -103,9 +106,7 @@
   vertical-align: middle;
   width : 225px;
 }
-.expandTrickButton{
-  cursor: pointer;
-}
+
 .rotated90{
   -webkit-transform: rotate(-90deg); /* Safari and Chrome */
   -moz-transform: rotate(-90deg);   /* Firefox */
@@ -147,7 +148,6 @@
   display: inline-block;
 }
 
-
 .addAndRemoveMyTricksButtonList{
   cursor: pointer;
   line-height: -0px;
@@ -172,11 +172,12 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   vertical-align: middle;
-  color : #6666FF;
+  color : #212121;
   font-weight: bold;
-  font-size: 15px;
+  font-size: 14px;
   z-index: 1300;
-  width: 360px;
+  width: 345px;
+  margin-top: 5px;
 }
 
 .difficultyGauge{ 
@@ -190,16 +191,6 @@
   pointer-events: none;
 }
 
-.selectedListMinimizedIndicator{
-  width : 50%;
-  height: 40px;
-  cursor : pointer;
-  display: inline-block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
-}
 
 .listIcons{
   margin-top:10px;
@@ -216,7 +207,7 @@
 .thumbLine{
   display: flex;
   align-items: center; 
-  justify-content: center;
+  justify-content: flex-start;
   font-size : 12px ;
 }
 .thumbLine span{

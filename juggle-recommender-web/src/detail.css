@@ -8,6 +8,9 @@
   overflow-x:hidden;
   margin : 0 auto;
 }
+.noCommentsDiv{
+  padding-left: 10px;
+}
 .rotatedNegative90{
   -webkit-transform: rotate(90deg); /* Safari and Chrome */
   -moz-transform: rotate(90deg);   /* Firefox */

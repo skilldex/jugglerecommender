@@ -151,7 +151,8 @@ class TrickList extends Component {
 										/>	
 				const expandTrickButtonClass =  
 					uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
-				const listCardClass = this.props.listType == "main" ? "listCard" : "listCard detailListCard"
+				let listCardClass = this.props.listType == "main" ? "listCard" : "listCard detailListCard"
+				listCardClass =  index == 0 && this.props.listType != "main" ? listCardClass + " topCard" : listCardClass
 				let numUpvoters = 0
 				let numDownvoters = 0
 				if(detailTrick){
@@ -160,12 +161,27 @@ class TrickList extends Component {
 				}
 
 				tricks.push(
-					<div className= {listCardClass}
+					<div className= {listCardClass  }
 						 key={trickKey + "div"} 
 						 id={trickKey + "listCard"}
 						 onClick={(e)=>{this.openDetail(trickKey)}}
 					>	
 						<div className="mainCard">
+							<div 
+									className="expandButtonDiv"
+									onClick={
+												(e)=>{
+													e.stopPropagation()
+													this.expandCard(trickKey)
+												}
+											}
+									title = "show pattern demo"
+								>
+								<img alt=""
+									className={expandTrickButtonClass}								
+									src={downArrow}
+								/>	 		
+							</div>
 							 <div className = "cardInfo">	
 								<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
 								<div className="bottomRow">
@@ -207,21 +223,7 @@ class TrickList extends Component {
 									null
 								}
 							</div>
-							<div 
-								className="expandButtonDiv"
-								onClick={
-											(e)=>{
-												e.stopPropagation()
-												this.expandCard(trickKey)
-											}
-										}
-								title = "show pattern demo"
-							>
-								<img alt=""
-									className={expandTrickButtonClass}								
-									src={downArrow}
-								/>	 		
-							</div>
+							
 						</div>
 						{uiStore.selectedTrick === trickKey ? 
 							<Demo

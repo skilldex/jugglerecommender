@@ -672,7 +672,7 @@ class Detail extends Component {
                     </label>
                   </div> : 
                   authStore.user ?
-                  <div>No comments yet...</div> :
+                  <div class="noCommentsDiv">No comments yet...</div> :
                   null
                 }
                 {uiStore.showCommentsSection?
