@@ -49,8 +49,6 @@ Bugs:
 		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
 	-youtube slowmo back causes glitch if details page changes
 	-youtube slowmo back doesnt loop
-	-multiple tags clicked at once, and not due to fat fingers(stefan)
-		-this is fixed in addTrickForm, and will be fixed in filter once we use autocomplete instead of reactTags
 	-frame by frame doesnt hide controls for youtube
 	-MAYBE FIXED
 		-old gif shows while new gif is loading

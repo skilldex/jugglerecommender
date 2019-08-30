@@ -78,14 +78,7 @@
   position: static;
   text-align: left;
 }
-/* Styles for the input */
-.addTrickReactTags {
-    width: 280px;
-    border-radius: 4px;
-    border-color: darkgray;
-    font-size: 16px;
-    height: 16px;
-}
+
 .formInputs{
   width: 280px;
   border: 1px solid darkgray;

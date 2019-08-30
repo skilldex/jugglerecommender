@@ -6,7 +6,6 @@ import { observer } from "mobx-react"
 import { toJS } from "mobx"
 import authStore from "./stores/authStore"
 import store from "./stores/store"
-import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
 import TrickList from './trickList.js'
 import shareIcon from './images/shareIcon.png'
