@@ -58,9 +58,14 @@
 }
 .detailHeader{  
   margin-bottom: 5px ;
+  font-size: 20px;
+  width: 100%;
+  max-width:300px;
+  margin: auto;
+  margin-bottom: 5px;
+  text-align: left;
   margin-top:  35px;
   padding-top: 5px;
-  font-size: 20px;
 }
 
 .detailLabel{

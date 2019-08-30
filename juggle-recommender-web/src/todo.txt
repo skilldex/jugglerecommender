@@ -16,8 +16,6 @@ v2.3
 
 	-all those setStates in addTrickFOrm in componentdidmount, if (editing trick) may be redundant
 
-	-left alight details header
-
 	-filter for 'has tutorial'
 		-maybe tutorial should be a tag, if not, maybe loj should be a tag
 
