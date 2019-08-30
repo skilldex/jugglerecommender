@@ -32,10 +32,10 @@ if (urlQueryFlair){
 let urlQueryDemoType = locationURL.match(/demotype=(.+)/)
 let demoType = []
 if (urlQueryDemoType && urlQueryDemoType[1] === "uservideo"){
-	demoType = "User Video"
+	demoType = ["User Video"]
 }															
 if (urlQueryDemoType && urlQueryDemoType[1] === "jugglinglab"){
-	demoType = "Juggling Lab"
+	demoType = ["Juggling Lab"]
 }
 
 let urlQueryTags = null

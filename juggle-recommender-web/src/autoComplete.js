@@ -24,16 +24,24 @@ class AutoComplete extends Component {
 	 			name = name.slice(0,ballMatch.index)
 	 		}
 	 		//avoid duplicates
-	 		if(lowerCaseName.includes(lowerCaseInput) && !matchedNames.includes(lowerCaseName)){
+	 		if(lowerCaseName.includes(lowerCaseInput) && 
+	 			!matchedNames.includes(lowerCaseName) || 
+	 			this.props.optionsList.length < 4){
 	 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
 	 			matchedNames.push(lowerCaseName)
 	 			let optionClassName = "option"
-	 			return <div className={optionClassName}
+	 			return this.props.optionsList.length < 4?
+	 					<div className={optionClassName}
+	 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
+			 				<span>{name}</span>
+	 					</div>
+	 					: <div className={optionClassName}
 	 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
 			 				<span>{name.slice(0,matchIndex)}</span>
 			 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
 			 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>
 	 					</div>
+	 				
 	 		}
 	 	})
 		return (

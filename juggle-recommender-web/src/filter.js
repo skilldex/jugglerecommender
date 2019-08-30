@@ -6,7 +6,6 @@ import { observer } from "mobx-react"
 import './filter.css';
 import downArrow from './images/down-arrow.svg'
 import './App.css';
-import { WithContext as ReactTags } from 'react-tag-input';
 import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import utilities from './utilities'
@@ -31,11 +30,7 @@ class Filter extends Component {
       	numBalls: filterStore.numBalls,
       	filter: filterStore.flair,
       	difficultyRange: filterStore.difficultyRange,
-      	demoTypesTags: [
-		   {size: null, id: 'All',          text: 'All',},
-		   {size: null, id: 'User Video',   text: 'User Video',},
-		   {size: null, id: 'Juggling Lab', text: 'Juggling Lab',},
-		],
+      	demoTypesTags: ['All', 'User Video','Juggling Lab'],
 		tagInput:'',
 		autoCompletedTag : false,
 		contributorInput:'',
@@ -43,30 +38,8 @@ class Filter extends Component {
 		demoTypeInput:'',
 		autoCompleteddemoType : false,
   	}
- 	
- 	handleContributorTagAddition=(contributor)=>{
- 		let canAdd = true
- 		filterStore.contributors.forEach(function (arrayItem) {
-		    if (arrayItem === contributor){
-		    	canAdd = false
-		    }
-		});
-		if (store.contributors.includes(contributor.id) && canAdd){
-			filterStore.setContributors(
-				 [...filterStore.contributors, contributor] 
-			);
-		}
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
- 	}	
 
- 	 handleDemoTypeTagAddition=(demoType)=>{
-		filterStore.setDemoType(
-			 [demoType] 
-		);		
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
- 	}									         
+									         
 									          
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
@@ -328,25 +301,47 @@ class Filter extends Component {
 									{autoCompleteContributor}
 								</div>
 
-		const oldContributorSection = 
-				<div>
-					<div>
-						<h3 className="filterHeader">Contributors</h3>
-					</div>	
-					<div>
-				        <ReactTags
-				          autofocus = {false}
-				          inputFieldPosition="bottom"
-				          placeholder = ""
-				          minQueryLength={0}
-				          suggestions={store.contributorTags.length>0?store.contributorTags:[]}
-				          delimiters={delimiters}
-				          tags={filterStore.contributors}
-				          handleDelete={filterStore.handleContributorTagDelete}
-				          handleAddition={this.handleContributorTagAddition}
-				          handleTagClick={filterStore.handleContributorTagDelete}/>
-				    </div>
-				</div>
+		const autoCompleteDemoType = this.state.demoTypeInput && 
+										!this.state.autoCompletedDemoType ? 
+					<AutoComplete 
+						optionsListType = 'tags'
+						optionsList = {this.state.demoTypesTags}
+						setAutoCompletedName={(demoType)=>this.setAutoCompletedTag(this.state.demoTypesTags,
+																		filterStore.demoType,
+																		'demoType',
+																		demoType)} 
+						input={this.state.demoTypeInput}
+					/>:null
+
+		let addedDemoTypes = []
+		if(filterStore.demoType.length>0){
+		        filterStore.demoType.forEach((tag)=>{
+		        	addedDemoTypes.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={()=>{filterStore.removeTag('demoType',tag)}}>{tag}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={()=>{filterStore.removeTag('demoType',tag)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+
+
+		let demoTypeSection =<div className="inputContainer">
+			 						<div>
+										<h3 className="filterHeader">Demo Types</h3>
+									</div>	
+									{addedDemoTypes}
+									<input className="formInputs" 
+											onKeyPress={(e)=>this.onTagInputKeyPress('demoType',e)}
+											value={this.state.demoTypeInput} 
+											onChange={(e)=>this.handleTagChange('demoType',e)}
+											onBlur={this.handleOnBlurTag}
+									/>
+									{autoCompleteDemoType}
+								</div>
+
 	 	const numbersOfBalls = ['1','2','3','4','5','6','7','8','9','10','11']
 	 	const numButtons = [] 
 		numbersOfBalls.forEach(function(element) {
@@ -432,25 +427,7 @@ class Filter extends Component {
 											onChange={(e)=>this.handleMaxCatchesChange(e)}
 									/>
 								</div>
-		const demoTypeSection = 
-				<div>
-					<div>
-						<h3 className="filterHeader">Demo Type</h3>
-					</div>	
-					<div>
-				        <ReactTags
-				          autofocus = {false}
-				          inputFieldPosition="bottom"
-				          placeholder = ""
-				          minQueryLength={0}
-				          suggestions={this.state.demoTypesTags}
-				          tags={filterStore.demoType}
-				          delimiters={delimiters}
-				          handleDelete={filterStore.handleDemoTypeDelete}
-				          handleAddition={this.handleDemoTypeTagAddition}
-				          handleTagClick={filterStore.handleDemoTypeDelete}/>
-				    </div>
-				</div>
+
 
 		return (
 			<div className="outerFilterDiv">
