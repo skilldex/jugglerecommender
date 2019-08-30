@@ -51,17 +51,45 @@
   width: 100%;
   margin-left : 10px;
   font-size: 12px;
-
 }
+.homeScreenHeaderOuterDiv{
+  background-color: #EE82EE;
+    margin-top:-10px;
+    margin-bottom:15px;
+}
+.homeWelcomeHeader{
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  font-size: 25px;
+  color:white;
+}
+.homeWelcomeHeaderPatternCount{
+  font-size: 13px;
+  color:white;
+  padding-bottom: 3px;
+  text-align: left;
+  font-style: italic;
+}
+.homeScreenHeader{
+  text-align: left;
+  margin-bottom: 0px !important;
+  width: 100%;
+  max-width:300px;
+
+  margin: auto;
+}
+
+
+
 .patternListButton{
   width:200px;
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 20px;
   background-color: #EE82EE;
   border-radius: 5px;
   font-family: Futura;
   color:white;
-  margin-bottom:30px;
+  margin-bottom:15px;
 }
 
 .detailButton{
@@ -97,18 +125,23 @@
   margin-top: 5px;
 }
 
-.info{
+.homeTrickName{
   text-align: left;
   width: 100%;
-  margin-left : 10px;
   font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #EE82EE;
+
+  width: 100%;
+  max-width:300px;
+  margin: auto;
+  margin-bottom: 5px;
 }
 
 .donationSection{
-  position: fixed;
   bottom:0;
   font-size: 12px;
-
   text-align: center;
   width: 300px;
   left: 0;

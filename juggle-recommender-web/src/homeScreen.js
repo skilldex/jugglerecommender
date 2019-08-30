@@ -15,6 +15,9 @@ import downArrow from './images/down-arrow.svg'
 import bitcoinIcon from './images/bitcoin.png'
 
 @observer
+						//<div className = 'statsLabel'>Users </div>{store.userCount}
+						//<div className = 'statsLabel'>Patterns</div>{store.patternCount}
+						//<div className = 'statsLabel'>Catches</div>{store.totalCatchCount}
 class HomeScreen extends Component {
 	state ={
 		
@@ -50,26 +53,26 @@ class HomeScreen extends Component {
 			                    </a>
 							</div>
 						</div>	
-	donationSection = null
 		return(
 				<div className = "homeOuterDiv">					
-					<div className ='homeScreenTrickOuterDiv'>
-						<div className = 'statsLabel'>Users </div>{store.userCount}
-						<div className = 'statsLabel'>Patterns</div>{store.patternCount}
-						<div className = 'statsLabel'>Catches</div>{store.totalCatchCount}
+					<div className ='homeScreenHeaderOuterDiv'>
+						<h2 className='homeWelcomeHeader'>Welcome To Juggledex</h2>
+						<label className='homeWelcomeHeaderPatternCount'>
+							{store.patternCount} patterns and counting
+						</label>
 				    </div>
 				    {store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
 							<div className = 'homeScreenTrickDiv'>
-					            <h3 style={{marginBottom: "10px"}}>Pattern of The Day</h3>
-					            <button className="detailButton" onClick = {this.openDetail}>View Details</button>
+								<h3 className = 'homeScreenHeader' style={{marginBottom: "10px"}}>Pattern of The Day</h3>
+			        
+					           	<div className = "homeTrickName" onClick = {this.openDetail}>
+						           	{store.randomLeaderboardTrick.key} 
+						        </div>
 				            	<Demo 
 					            	trickKey={store.randomLeaderboardTrick.key}
 		                         	demoLocation="home"
 		  						/>
-		  						<div className = "info">
-						           	<span className='infoLabel'>Pattern</span> 
-						           	{store.randomLeaderboardTrick.key} 
-						        </div>
+
 					        </div>
 						: null
 					}
