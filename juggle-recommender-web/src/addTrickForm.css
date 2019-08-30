@@ -147,6 +147,7 @@
   background-color: white;
   border:1px solid darkgray;
   font-size: 20px;
+  margin-bottom: 1000px;
 }
 .disabledSubmitButton{
   background-color : lightgray;
