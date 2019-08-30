@@ -101,7 +101,7 @@ class Profile extends Component {
     handleStatsLabelClicked =(label)=>{
 		filterStore.resetAllFilters()
 		if (label === 'contributed'){
-			filterStore.setContributors([{id: authStore.user.username,text: authStore.user.username,}]);
+			filterStore.setContributors([authStore.user.username]);
 		}else if (label === 'catches'){
 			filterStore.setFlair(['catches'])
 		}else if (label === 'star'){
