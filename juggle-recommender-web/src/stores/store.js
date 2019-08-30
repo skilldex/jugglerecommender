@@ -52,14 +52,7 @@ class Store {
   		contributors.push('libraryofjuggling.com')
   		contributors = contributors.sort()
   		this.setContributors(contributors)
- 		const contributorTags = contributors.map((contributor) => {
-		  return {
-		  	size: null,
-		    id: contributor,
-		    text: contributor,
-		  }
-		})
-		return contributorTags
+		return contributors
 	}
 
 	@action increaseViewsCounter=()=>{
@@ -405,7 +398,7 @@ class Store {
 
 	@action setTagsSuggestions=(tagsSuggestions)=>{
 		this.tagsSuggestions = tagsSuggestions.sort()
-		
+
 		this.presetTags = this.tagsSuggestions.map((tag) => {
 		  return {
 		  	size: null,

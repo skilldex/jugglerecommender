@@ -382,7 +382,7 @@ class UIStore {
 						//for tags and the like
 						if(Array.isArray(filterStore[key])){
 							value = filterStore[key].map((object)=>{
-								return object.id + " , "
+								return object + " , "
 							})
 						}						
 						return key + " : " + value
@@ -529,7 +529,7 @@ class UIStore {
  		const sortedJugglingLibrary = this.sortLibrary()
 		const filterTagNames= []
 		filterStore.tags.forEach(function (arrayItem) {
-		    filterTagNames.push(arrayItem.id)
+		    filterTagNames.push(arrayItem)
 		});
 		sortedJugglingLibrary.forEach((trickObj, i) => {
 			const trickKey = Object.keys(trickObj)[0]
@@ -548,11 +548,11 @@ class UIStore {
 					passesContributorFilter = true
 				}else{
 					filterStore.contributors.forEach(function (arrayItem) {
-					    if (trick.contributor === arrayItem.id ){
+					    if (trick.contributor === arrayItem ){
 					    	passesContributorFilter = true
 					    }
 					    if (trick.contributor == null && 
-					    	arrayItem.id === "libraryofjuggling.com"){
+					    	arrayItem === "libraryofjuggling.com"){
 					    	passesContributorFilter = true
 					    }
 					})
@@ -561,13 +561,13 @@ class UIStore {
 				if (filterStore.demoType.length===0){
 					passesDemoTypeFilter = true
 				}else{
-					if(filterStore.demoType[0].id === "All"){
+					if(filterStore.demoType[0] === "All"){
 						passesDemoTypeFilter = true
 					}else if(trick.video == null && 
-				    	filterStore.demoType[0].id === "Juggling Lab" ){
+				    	filterStore.demoType[0] === "Juggling Lab" ){
 				    	passesDemoTypeFilter = true
 				    }
-				    else if(trick.video && filterStore.demoType[0].id === "User Video" ){
+				    else if(trick.video && filterStore.demoType[0] === "User Video" ){
 				    	passesDemoTypeFilter = true
 				    }
 				    else{

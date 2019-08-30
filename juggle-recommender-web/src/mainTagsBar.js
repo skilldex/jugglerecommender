@@ -141,8 +141,8 @@ class MainTagsBar extends Component {
           filterTags.push(
                 <div className="tagDiv">
                   <span className="mainTagsName"
-                        onClick={()=>{uiStore.toggleFilterDiv()}}>By '{filterStore.contributors[i].text}'</span>
-                  <label className="mainTagsX"onClick={()=>filterStore.removeContributor(i)}> x </label>
+                        onClick={()=>{uiStore.toggleFilterDiv()}}>By '{filterStore.contributors[i]}'</span>
+                  <label className="mainTagsX"onClick={()=>filterStore.removeTag('contributor',contributor)}> x </label>
                 </div>      
           )
         })
@@ -171,8 +171,8 @@ class MainTagsBar extends Component {
           filterTags.push(
                 <div className="tagDiv">
                   <span className="mainTagsName"
-                        onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.tags[i].text}</span>
-                  <label className="mainTagsX"onClick={()=>filterStore.handleDelete(i)}> x </label>
+                        onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.tags[i]}</span>
+                  <label className="mainTagsX"onClick={()=>filterStore.removeTag('tags',tag)}> x </label>
                 </div>      
           )
         })
@@ -181,8 +181,8 @@ class MainTagsBar extends Component {
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"
-                      onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType[0].id}</span>
-                <label className="mainTagsX"onClick={()=>filterStore.handleDemoTypeDelete()}> x </label>
+                      onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType[0]}</span>
+                <label className="mainTagsX"onClick={()=>filterStore.removeTag('demoType',filterStore.demoType[0])}> x </label>
               </div>      
         )
       }

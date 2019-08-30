@@ -56,14 +56,7 @@ const tagsMatch = locationURL.match(/tags=(.+)/)
 if (tagsMatch){
 	urlQueryTags = tagsMatch[1].split('&')[0].split(',')
 }
-const tags = urlQueryTags ? 
-				urlQueryTags.map((tag)=>{
-					return {
-						id : tag,
-						text : tag
-					}
-				})	
-			: []
+const tags = urlQueryTags ? urlQueryTags : []
 
 let urlQueryCatches = locationURL.match(/catches=(.+)/)	
 let minCatches = 0
@@ -93,7 +86,7 @@ class FilterStore {
     	if (this.contributors.length > 0){
 			urlText = urlText + "contributor="    		
     		this.contributors.forEach((contributor,index) => {
-	    		urlText = urlText + contributor.id 
+	    		urlText = urlText + contributor
 	    		if(index < this.contributors.length-1){
 	    			urlText += ","
 	    		}
@@ -138,7 +131,7 @@ class FilterStore {
 			}
 			urlText = urlText + "tags="   		
     		this.tags.forEach((tag,index) => {
-	    		urlText = urlText + tag.id
+	    		urlText = urlText + tag
 	    		if(index < this.tags.length-1){
 	    			urlText += ","
 	    		}
@@ -152,11 +145,11 @@ class FilterStore {
     		urlText = urlText + "catches=" + 
     			this.minCatches + "," + this.maxCatches 
     	}
-    	if (this.demoType.length > 0 && this.demoType[0].id !== "All"){
+    	if (this.demoType.length > 0 && this.demoType[0] !== "All"){
     		if(urlText !== "/filter/"){
 				urlText += "&"
 			}
-			urlText = urlText + "demotype=" + this.demoType[0].id.replace(" ","").toLowerCase()		
+			urlText = urlText + "demotype=" + this.demoType[0].replace(" ","").toLowerCase()		
     	}
 
     	return urlText
@@ -209,8 +202,15 @@ class FilterStore {
 		uiStore.updateRootTricks()
 		uiStore.setFilterURL()
 	}
-	@action setTags=(tags)=>{
-		this.tags = tags
+	@action setTags=(tagType, tags)=>{
+		console.log('settags',tagType)
+		if (tagType === 'tags'){
+			this.tags = tags
+		}else if(tagType === 'contributor'){
+			this.contributors = tags	
+		}else if(tagType === 'demoType'){
+			this.demoType = tags
+		}			
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
@@ -227,9 +227,10 @@ class FilterStore {
 		uiStore.updateRootTricks()	
 		uiStore.setFilterURL()	
 	}
-	@action handleDelete=(i)=>{
+	@action removeTag=(tagType, tagToRemove)=>{
+		console.log('tagType',tagType, tagToRemove)
 		this.setTags(
-			this.tags.filter((tag, index) => index !== i)
+			tagType,this.tags.filter((tag) => tag !== tagToRemove)
 		)
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()

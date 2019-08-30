@@ -15,6 +15,7 @@ import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
 import starIcon from './images/starIcon.svg'
 import catchesIcon from './images/catchesIcon.svg'
+import AutoComplete from './autoComplete'
 
 const KeyCodes = {
   comma: 188,
@@ -27,8 +28,6 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 class Filter extends Component {
  	state = {
 	 	sortType: filterStore.sortType,
- 		tags: filterStore.tags,
-      	presetTags: store.presetTags,
       	numBalls: filterStore.numBalls,
       	filter: filterStore.flair,
       	difficultyRange: filterStore.difficultyRange,
@@ -36,23 +35,14 @@ class Filter extends Component {
 		   {size: null, id: 'All',          text: 'All',},
 		   {size: null, id: 'User Video',   text: 'User Video',},
 		   {size: null, id: 'Juggling Lab', text: 'Juggling Lab',},
-		]
+		],
+		tagInput:'',
+		autoCompletedTag : false,
+		contributorInput:'',
+		autoCompletedContributor : false,
+		demoTypeInput:'',
+		autoCompleteddemoType : false,
   	}
-	handleAddition=(tag)=>{
- 		let canAdd = true
- 		filterStore.tags.forEach(function (arrayItem) {
-		    if (arrayItem.id === tag.id){
-		    	canAdd = false
-		    }
-		});
-		if (store.tagsSuggestions.includes(tag.id) && canAdd){
-			filterStore.setTags(
-				 [...filterStore.tags, tag] 
-			);
-		}
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
-	}
  	
  	handleContributorTagAddition=(contributor)=>{
  		let canAdd = true
@@ -170,7 +160,81 @@ class Filter extends Component {
 		}else{
 			alert("Set filters to share.")
 		}
-    }
+    } 
+
+    setAutoCompletedTag=(suggestions, tagsList, tagType, tag)=>{
+		if (suggestions.includes(tag)){
+	    	if(tagType === 'tags'){
+				this.setState({
+					autoCompletedTag : true,
+					tagInput : ''
+				})		
+			}else if(tagType === 'contributor'){
+				this.setState({
+					contributorInput: '',
+					autoCompletedContributor : true
+				})		
+			}else if(tagType === 'demoType'){
+				this.setState({
+					demoTypeInput: '',
+					autoCompletedDemoType : true
+				})	
+			}			
+	    }
+	    let canAdd = true
+ 		tagsList.forEach(function (arrayItem) {
+		    if (arrayItem === tag){
+		    	canAdd = false
+		    }
+		});
+		if (suggestions.includes(tag) && canAdd){
+			filterStore.setTags(
+				tagType, [...filterStore.tags, tag] 
+			);
+		}
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+
+    handleTagChange=(tagType, e)=>{
+    	if(tagType === 'tags'){
+			this.setState({
+				tagInput:e.target.value,
+				autoCompletedTag : false
+			})		
+		}else if(tagType === 'contributor'){
+			this.setState({
+				contributorInput:e.target.value,
+				autoCompletedContributor : false
+			})		
+		}else if(tagType === 'demoType'){
+			this.setState({
+				demoTypeInput:e.target.value,
+				autoCompletedDemoType : false
+			})	
+		}
+	}
+
+
+	onTagInputKeyPress=(tagType, target)=> {
+	    // If enter pressed
+	    if(target.charCode===13){  
+		    if(tagType === 'tags'){
+				this.setState({
+					autoCompletedTag : true
+				})
+			}else if(tagType === 'contributor'){
+				this.setState({
+					autoCompletedContributor : true
+				})
+			}else if(tagType === 'demoType'){
+				this.setState({
+					autoCompletedDemoType : true
+				})
+			}
+	    }
+	}
+
 
 	render() {
 	 	const ColoredLine = ()=>(
@@ -182,25 +246,89 @@ class Filter extends Component {
 			        }}
 			   />				
 		 )
-	 	const tagSection =  <div>
+		const autoCompleteTags = this.state.tagInput && !this.state.autoCompletedTag ? 
+			<AutoComplete 
+				optionsListType = 'tags'
+				optionsList = {store.tagsSuggestions}
+				setAutoCompletedName={(tag)=>this.setAutoCompletedTag(store.tagsSuggestions,
+																filterStore.tags,
+																'tags',
+																tag)} 
+				input={this.state.tagInput}
+			/>:null
+
+
+		let addedTags = []
+		if(filterStore.tags.length>0){
+		        filterStore.tags.forEach((tag)=>{
+		        	addedTags.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={(e)=>{filterStore.removeTag('tags',e)}}>{tag}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={(e)=>{filterStore.removeTag('tags',e)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+
+
+		let tagSection =	<div className="inputContainer">
 		 						<div>
 									<h3 className="filterHeader">Select Tags</h3>
 								</div>	
-								<div>
-							        <ReactTags
-							          autofocus = {false}
-							          inputFieldPosition="bottom"
-							          placeholder = ""
-							          minQueryLength={0}
-							          suggestions={store.presetTags.length>0?store.presetTags:[]}
-							          delimiters={delimiters}
-							          tags={filterStore.tags}
-							          handleDelete={filterStore.handleDelete}
-							          handleAddition={this.handleAddition}
-							          handleTagClick={filterStore.handleDelete}/>
-							    </div>
+								{addedTags}
+								<input className="formInputs" 
+										onKeyPress={(e)=>this.onTagInputKeyPress('tags',e)}
+										value={this.state.tagInput} 
+										onChange={(e)=>this.handleTagChange('tags',e)}
+										onBlur={this.handleOnBlurTag}
+								/>
+								{autoCompleteTags}
 							</div>
-		const contributorSection = 
+
+		const autoCompleteContributor = this.state.contributorInput && 
+										!this.state.autoCompletedContributor ? 
+					<AutoComplete 
+						optionsListType = 'tags'
+						optionsList = {store.contributorTags}
+						setAutoCompletedName={(contributor)=>this.setAutoCompletedTag(store.contributorTags,
+																		filterStore.contributors,
+																		'contributor',
+																		contributor)} 
+						input={this.state.contributorInput}
+					/>:null
+
+		let addedContributors = []
+		if(filterStore.contributors.length>0){
+		        filterStore.contributors.forEach((tag)=>{
+		        	addedContributors.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={(tag)=>{filterStore.removeTag('contributor',tag)}}>{tag}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={(tag)=>{filterStore.removeTag('contributor',tag)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+
+
+		let contributorSection =<div className="inputContainer">
+			 						<div>
+										<h3 className="filterHeader">Contributors</h3>
+									</div>	
+									{addedContributors}
+									<input className="formInputs" 
+											onKeyPress={(e)=>this.onTagInputKeyPress('contributor',e)}
+											value={this.state.contributorInput} 
+											onChange={(e)=>this.handleTagChange('contributor',e)}
+											onBlur={this.handleOnBlurTag}
+									/>
+									{autoCompleteContributor}
+								</div>
+
+		const oldContributorSection = 
 				<div>
 					<div>
 						<h3 className="filterHeader">Contributors</h3>

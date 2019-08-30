@@ -546,10 +546,7 @@ class AddTrickForm extends Component {
 			this.checkIfFormIsSubmittable()
 	    }
 	}
-	//todo
-	//	remove all trace of old tags from this file
-	//	switch out rectangle clickable tags for the span we have of tags
-	//	install new tags in the places we need them in filter
+
 	render (){
 		console.log(this.state.tags)
 	    const backButton = <div className = "backButtonSurroundingDivAddTrick">

@@ -14,6 +14,7 @@ class AutoComplete extends Component {
 	 		if (this.props.optionsListType == 'name'){
 		 		name = store.library[key].name
 		 	}else if(this.props.optionsListType == 'tags'){
+		 		console.log('settingName',this.props.optionsList)
 		 		name = this.props.optionsList[i]
 		 	}
 	 		let lowerCaseName = name.toLowerCase()
