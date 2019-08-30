@@ -169,7 +169,8 @@ class SmallTrickList extends Component {
 				 					</div>
 									<div className="smallListBottomRowText">
 										<div className="difficultyGauge">{difficultyGauge}</div>
-										<div className="smallListBottomRowText tags">
+										<div className="smallListBottomRowText tags"
+												title={trick.tags}>
 											Tags: {tags}
 										</div>	
 									</div>

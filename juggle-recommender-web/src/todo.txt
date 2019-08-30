@@ -19,7 +19,17 @@ v2.4
 
 	-put catches, users and registered users in stats page
 
+	-related are staying after pattern is added with the form
 
+	-hover over tags in smalllist to show all of them
+
+	-style autocomplete, maybe give it borders on all sides
+
+	-when editing the form thinks the name is empty when it isnt and stops me from submitting
+
+	-urls for multiplex tricks dont work
+
+	-increase margin below form submit button and it will cover up the tacky page behind thing
 =========
 clean out db of old fake accounts
 Stefan suggested we do suggestions for tags and siteswap like we did relateds

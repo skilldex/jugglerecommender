@@ -165,11 +165,11 @@ class Detail extends Component {
   trickPropertyClicked=(propertyType, property)=>{
     filterStore.resetAllFilters()
     if (propertyType === 'contributor'){
-      filterStore.setContributors([{id: property,text: property,}]);
+      filterStore.setContributors([property]);
     }else if (propertyType === 'ballNum'){
       filterStore.setNumBalls([property])      
     }else if (propertyType === 'tag'){
-      filterStore.setTags([{id: property,text: property,}]);      
+      filterStore.setTags([property]);      
     }else if (propertyType === 'siteswap'){
       filterStore.setSearchText("ss:"+property);
     }
