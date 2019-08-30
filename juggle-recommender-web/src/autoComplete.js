@@ -40,8 +40,7 @@ class AutoComplete extends Component {
 			 				<span>{name.slice(0,matchIndex)}</span>
 			 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
 			 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>
-	 					</div>
-	 				
+	 					</div>	 				
 	 		}
 	 	})
 		return (

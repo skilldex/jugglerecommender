@@ -148,6 +148,19 @@ class SmallTrickList extends Component {
 							 onClick={(e)=>{this.addToList(store.library[trickKey].name)}}
 						>	
 							<div className="smallListMainCard">
+								<div className="expandButtonDiv"
+									onClick={(e)=>{
+													e.stopPropagation()
+													this.expandCard(trickKey)
+												}
+											}
+									title = "show pattern demo"
+									>
+									<img alt=""
+										className={expandTrickButtonClass}								
+										src={downArrow}
+									/>	 		
+								</div>
 								<div className = "smallListCardInfo">	
 									<div className={smallListCardNameDivClassName} title={trick.name}>
 				 		 				<span>{trick.name.slice(0,matchIndex)}</span>
@@ -160,21 +173,6 @@ class SmallTrickList extends Component {
 											Tags: {tags}
 										</div>	
 									</div>
-								</div>
-								<div 
-									className="expandButtonDiv"
-									onClick={
-												(e)=>{
-													e.stopPropagation()
-													this.expandCard(trickKey)
-												}
-											}
-									title = "show pattern demo"
-								>
-									<img alt=""
-										className={expandTrickButtonClass}								
-										src={downArrow}
-									/>	 		
 								</div>
 							</div>
 							{uiStore.selectedTrick === trickKey ? 
