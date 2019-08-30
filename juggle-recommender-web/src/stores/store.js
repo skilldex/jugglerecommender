@@ -19,6 +19,7 @@ class Store {
 	@observable tagsSuggestions = []
 	@observable contributors = []
 	@observable presetTags = {}
+	@observable presetAutoCompleteTags = []
 	@observable videoURL = ""
 	@observable randomLeaderboardTrick = null
 	@observable mostRecentlySubmittedTrickKey = null
@@ -398,10 +399,13 @@ class Store {
 		let tagRef = firebase.database().ref('tags/')
 		tagRef.on('value', resp =>{
         	this.setTagsSuggestions(this.snapshotToArray(resp))
+        	
         })
 	}
+
 	@action setTagsSuggestions=(tagsSuggestions)=>{
 		this.tagsSuggestions = tagsSuggestions.sort()
+		
 		this.presetTags = this.tagsSuggestions.map((tag) => {
 		  return {
 		  	size: null,

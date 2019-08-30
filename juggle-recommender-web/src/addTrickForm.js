@@ -21,6 +21,7 @@ const delimiters = [KeyCodes.comma, KeyCodes.enter];
 class AddTrickForm extends Component {
 	state = {
 		name : "",
+		tagInput : "",
 		num : "",
 		difficulty : "",
 		url : "",
@@ -44,6 +45,7 @@ class AddTrickForm extends Component {
 		videoTimeErrorMessage:'',
 		timeSubmitted : "",
 		autoCompletedName : false,
+		autoCompletedTag : false,
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
 		explanation: '',
@@ -73,15 +75,6 @@ class AddTrickForm extends Component {
 			if(trick.usersWithCatches){
 				this.setState({usersWithCatches: trick.usersWithCatches})
 			}
-			//convert tag strings to tag objects
-			if(trick.tags){
-				trick.tags = trick.tags.map((tag)=>{
-					return {
-						id : tag,
-						text : tag
-					}
-				})
-			}
 
 			if (trick.prereqs){
 				Object.keys(trick.prereqs).forEach((trickKey)=>{
@@ -109,6 +102,13 @@ class AddTrickForm extends Component {
 			this.setState({...trick})
 			this.setState({submitDisabled : false,})
 
+			//this converts the tags from observable to plain arrays
+			if(trick.tags){
+				this.setState({tags:[]})
+				trick.tags.forEach((tag)=>{
+					this.setAutoCompletedTag(tag)
+				});		
+			}
 		}	
 	}
 	handleNameChange=(e)=>{
@@ -122,12 +122,8 @@ class AddTrickForm extends Component {
 			if (siteswapValidityChecker === 'invalid'){
 				this.setState({gifUrl: null})
 				document.getElementById("numInput").disabled = false
-				const pureSStag = {
-						id : 'pure-ss',
-						text : 'pure-ss'
-					}
 		        const { tags } = this.state;
-		        const i = tags.findIndex(x => x.id ==="pure-ss")
+		        const i = tags.findIndex(x => x ==="pure-ss")
 		        this.setState({
 		         	tags: tags.filter((tag, index) => index !== i),
 		        });
@@ -137,6 +133,7 @@ class AddTrickForm extends Component {
 		}
 		this.checkIfFormIsSubmittable()
 	}
+
 	handleExplanationChange=(e)=>{
 		this.setState({
 			explanation:e.target.value,
@@ -163,14 +160,10 @@ class AddTrickForm extends Component {
 						this.setState({gifUrl : 'https://jugglinglab.org/anim?'+name})
 						document.getElementById("numInput").disabled = true
 						document.getElementById("siteswapInput").disabled = true
-						const pureSStag = {
-								id : 'pure-ss',
-								text : 'pure-ss'
-							}
 				        const { tags } = this.state;
-				        const i = tags.findIndex(x => x.id ==="pure-ss")
-				    	if (i===-1 && !this.state.tags.includes(pureSStag.id)){
-					        this.setState(state => ({ tags: [...state.tags, pureSStag] }));
+				        const i = tags.findIndex(x => x ==="pure-ss")
+				    	if (i===-1 && !this.state.tags.includes("pure-ss")){
+					        this.setState(state => ({ tags: [...state.tags, "pure-ss"] }));
 					    }
 					}
 				break;
@@ -239,18 +232,7 @@ class AddTrickForm extends Component {
 		})
 		this.checkIfFormIsSubmittable()
 	}
-    handleTagAddition=(tag)=> {
-    	if (store.tagsSuggestions.includes(tag.id)){
-	        this.setState(state => ({ tags: [...state.tags, tag] }));
-	        this.checkIfFormIsSubmittable()
-	    }
-    }
-    handleTagDelete=(i)=> {
-        const { tags } = this.state;
-        this.setState({
-         	tags: tags.filter((tag, index) => index !== i),
-        });
-    }
+
 
     checkIfFormIsSubmittable=()=>{
     	this.setState({submitDisabled:false})
@@ -388,9 +370,7 @@ class AddTrickForm extends Component {
 			document.getElementById("submitButton").focus();
 		}
 		if (!this.state.submitDisabled){
-			var tags = this.state.tags.map(function(item) {
-				return item['text'];
-			});
+			var tags = this.state.tags
 			let prereqs = {}
 			let related = {}
 			let postreqs = {}
@@ -515,7 +495,39 @@ class AddTrickForm extends Component {
 			autoCompletedName : true
 		})
 	}
-	 onNameInputKeyPress=(target)=> {
+	setAutoCompletedTag=(tag)=>{
+		console.log('sact',this.state.tags)
+		if (store.tagsSuggestions.includes(tag)){
+	        this.setState(state => ({ tags: [...state.tags, tag] }));
+	        this.checkIfFormIsSubmittable()
+	        this.setState({
+				autoCompletedTag : true,
+				tagInput : ''
+			})		
+	    }
+	}
+
+
+    handleTagDelete=(tag)=>{
+	    console.log('remove ',this.state.tags, tag)
+		var index = this.state.tags.indexOf(tag);
+		console.log('index',index)
+		let newTagList = this.state.tags
+		if (index > -1) {
+		  newTagList.splice(index, 1);
+		}
+		console.log('newTagList',newTagList)
+		this.setState({tags:newTagList})
+    }
+
+    handleTagChange=(e)=>{
+		this.setState({
+			tagInput:e.target.value,
+			autoCompletedTag : false
+		})		
+	}
+
+    onNameInputKeyPress=(target)=> {
 	    // If enter pressed
 	    if(target.charCode===13){  
 			this.setState({
@@ -524,8 +536,21 @@ class AddTrickForm extends Component {
 			this.checkIfFormIsSubmittable()
 	    }
 	}
-
+	 onTagInputKeyPress=(target)=> {
+	    // If enter pressed
+	    if(target.charCode===13){  
+			this.setState({
+				autoCompletedTag : true
+			})
+			this.checkIfFormIsSubmittable()
+	    }
+	}
+	//todo
+	//	remove all trace of old tags from this file
+	//	switch out rectangle clickable tags for the span we have of tags
+	//	install new tags in the places we need them in filter
 	render (){
+		console.log(this.state.tags)
 	    const backButton = <div className = "backButtonSurroundingDivAddTrick">
 		    					<img id="backButton" 
 		                            src={downArrow} 
@@ -544,28 +569,56 @@ class AddTrickForm extends Component {
 		    text: store.library[pattern].name,
 		  }
 		})
-		const tagInput = <ReactTags
-							  classNames={{tagInputField: 'addTrickReactTags',}}
-					          autofocus = {false}
-					          placeholder = ''
-					          inputFieldPosition="bottom"
-					          tags={this.state.tags}
-					          minQueryLength={0}
-					          suggestions={store.presetTags}
-					          delimiters={delimiters}
-					          handleDelete={this.handleTagDelete}
-					          handleAddition={this.handleTagAddition}
-					          handleTagClick={this.handleTagDelete}
-					     />
+		const autoCompleteTags = this.state.tagInput && !this.state.autoCompletedTag ? 
+			<AutoComplete 
+				optionsListType = 'tags'
+				optionsList = {store.tagsSuggestions}
+				setAutoCompletedName={this.setAutoCompletedTag} 
+				input={this.state.tagInput}
+			/>:null
 		const titleText = uiStore.editingDetailTrick ? "Edit Pattern" : "Add Pattern"
 		const explanationInput = <textarea className="textarea" 
 											value={this.state.explanation}
 											onChange={this.handleExplanationChange}/>
-		const autoComplete = this.state.name && !this.state.autoCompletedName ? 
+
+		let addedTags = []
+		if(this.state.tags.length>0){
+		        this.state.tags.forEach((tag)=>{
+		        	addedTags.push(
+		                <div className="addedRelatedTricksDiv">
+		                  <span className="mainTagsName"
+		                        onClick={()=>{this.handleTagDelete(tag)}}>{tag}</span>
+		                  <label className="mainTagsX"
+		                  		onClick={()=>{this.handleTagDelete(tag)}}> x </label>
+		                </div>  						        		
+		        	)
+		        });
+		    }
+
+
+		let tagsSection =	<div className="inputContainer">
+								<div>
+									<span className="inputLabel">Tags</span><br/>
+								</div>
+								<br/>
+								{addedTags}
+								<input className="formInputs" 
+										onKeyPress={this.onTagInputKeyPress}
+										value={this.state.tagInput} 
+										onChange={this.handleTagChange}
+										onBlur={this.handleOnBlurTag}
+								/>
+								{autoCompleteTags}
+							</div>
+
+
+
+		const autoCompleteName = this.state.name && !this.state.autoCompletedName ? 
 			<AutoComplete 
+				optionsListType = 'name'
+				optionsList = {Object.keys(store.library)}
 				setAutoCompletedName={this.setAutoCompletedName} 
 				input={this.state.name}
-				includeBallNums = {false}
 			/> : null
 		const toggleTimeInputsButton =
 								<div>
@@ -683,7 +736,7 @@ class AddTrickForm extends Component {
 										onChange={this.handleNameChange}
 										onBlur={this.handleOnBlurName}
 								/>
-								{autoComplete}
+								{autoCompleteName}
 							</div>
 							{this.state.gifUrl ?
 								<div className="videoInputContainer">
@@ -759,9 +812,7 @@ class AddTrickForm extends Component {
 									/><br/><br/>
 								</div>
 							</div>
-							<div className="inputContainer">
-								<span className="inputLabel">Tags</span><br/><br/>{tagInput}
-							</div>
+							{tagsSection}
 							{prereqsSmallTrickList}
 							{relatedSmallTrickList}
 							{postreqsSmallTrickList}

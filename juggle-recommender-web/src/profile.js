@@ -8,7 +8,6 @@ import authStore from "./stores/authStore"
 import store from "./stores/store"
 import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
-import AutoComplete from './autoComplete'
 import TrickList from './trickList.js'
 import shareIcon from './images/shareIcon.png'
 import Demo from './demo'

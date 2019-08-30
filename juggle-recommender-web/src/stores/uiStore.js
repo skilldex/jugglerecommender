@@ -85,8 +85,8 @@ class UIStore {
 	    	if (listOfTricks === this.addTrickFormPostreqs){
 	    		listType = 'postreqs'
 	    	}
-	    	if (store.library[this.detailTrick.id]['prereqs'][trickKey] &&
-	    		store.library[this.detailTrick.id]['prereqs'][trickKey]['upvoters']){
+	    	if (store.library[this.detailTrick.id][listType][trickKey] &&
+	    		store.library[this.detailTrick.id][listType][trickKey]['upvoters']){
 	    		alert('Prereqs with community upvotes can not be removed.')
 	    		canRemove = false
 	    	}
