@@ -8,16 +8,13 @@ v2.3
 		-make consuming tags be added automatically in the list
 			-need a fleeting message to tell that this happenend
 		-when show time ranges is clicked it should auto focus
-
 	
 	-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 		-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 
 	-replace tags with autocomplete in filter
 
-	-all those setStates in addTrickFOrm in component didmount, if editing trick may be redundant
-
-	-every time we go edit, back, more relateds are added
+	-all those setStates in addTrickFOrm in componentdidmount, if (editing trick) may be redundant
 
 	-filter for 'has tutorial'
 		-maybe tutorial should be a tag, if not, maybe loj should be a tag
@@ -64,6 +61,7 @@ Bugs:
 	-youtube slowmo back causes glitch if details page changes
 	-youtube slowmo back doesnt loop
 	-multiple tags clicked at once, and not due to fat fingers(stefan)
+		-this is fixed in addTrickForm, and will be fixed in filter once we use autocomplete instead of reactTags
 	-frame by frame doesnt hide controls for youtube
 	-MAYBE FIXED
 		-old gif shows while new gif is loading

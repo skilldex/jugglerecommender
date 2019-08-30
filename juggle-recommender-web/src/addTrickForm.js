@@ -4,7 +4,6 @@ import "./addTrickForm.css"
 import { observer } from "mobx-react"
 import authStore from "./stores/authStore"
 import store from "./stores/store"
-import { WithContext as ReactTags } from 'react-tag-input';
 import utilities from './utilities'
 import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
@@ -77,7 +76,7 @@ class AddTrickForm extends Component {
 			}
 
 			uiStore.clearAddTrickSmallTrickLists()
-			
+
 			if (trick.prereqs){
 				Object.keys(trick.prereqs).forEach((trickKey)=>{
 					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
