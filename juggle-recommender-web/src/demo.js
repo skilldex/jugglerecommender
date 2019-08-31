@@ -308,9 +308,13 @@ class Demo extends Component {
     let igHeader = this.state.videoURL && this.props.demoLocation !== 'expandedSection' && this.state.videoURL.includes('instagram') && this.state.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
+                                  onClick={()=>{this.handleInstagramLogoClick()}}
                                   alt=""
                                   src={this.state.igData.picURL}/>
-                            <span className="instagramUsername">{this.state.igData.username}</span>
+                            <span className="instagramUsername"
+                                  onClick={()=>{this.handleInstagramLogoClick()}}>
+                                    {this.state.igData.username}
+                                  </span>
                             {instagramLogo}
                           </div> : null
     const youtubeOpts = {
