@@ -27,6 +27,10 @@ v2.4
 
 	-if the only upvoter is the contributor then they should be able to delete relateds
 
+	-fix arms-crossed tags once reuploaded
+
+	-in edit trick it doesnt show autocomplete tags if there is only 1 result left, works fine in normal add trick and filter tags
+
 =========
 email a UK store
 
