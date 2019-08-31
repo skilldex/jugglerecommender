@@ -374,7 +374,13 @@ class AddTrickForm extends Component {
 		}
     }
     toggleShowTimeInputs=()=>{
-    	this.setState({showTimeInputs:!this.state.showTimeInputs})
+		this.setState({
+		   	showTimeInputs:!this.state.showTimeInputs
+			}, () => {
+				if(this.state.showTimeInputs){
+			    	document.getElementById('startTimeInput').focus()
+			    }
+		});
   	}
 
 	submit=()=>{
@@ -776,6 +782,7 @@ class AddTrickForm extends Component {
 										{this.state.showTimeInputs && this.state.videoTimeErrorMessage? this.state.videoTimeErrorMessage:"\u00A0"}
 									</span>
 									<input className="timeInput" 
+											id="startTimeInput"
 											placeholder="mm:ss"
 											value={this.state.videoStartTime} 
 											onBlur={this.handleStartTimeChange}
