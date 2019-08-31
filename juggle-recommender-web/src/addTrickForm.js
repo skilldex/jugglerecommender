@@ -54,7 +54,12 @@ class AddTrickForm extends Component {
 	}
 
 	componentDidMount=()=>{
-		this.setState({contributor: authStore.user.username})
+		if(authStore.user.username === "tjthejuggler" &&
+			!uiStore.editingDetailTrick){
+			document.getElementById('TJsContributorInput').value = store.TJsPreviouslyUsedContributor
+		}else{
+			this.setState({contributor: authStore.user.username})
+		}
 		uiStore.clearAddTrickSmallTrickLists()
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
@@ -460,6 +465,7 @@ class AddTrickForm extends Component {
 				document.getElementById('TJsContributorInput').value !== ''){
 				//if I put something in, it use that name
 				trick['contributor'] = document.getElementById('TJsContributorInput').value
+				store.setTJsPreviouslyUsedContributor(trick['contributor'])
 				//if i put in loj it uses no name which defaults to Library Of Juggling
 				if(document.getElementById('TJsContributorInput').value == 'loj'){
 					delete trick.contributor

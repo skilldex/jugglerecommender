@@ -29,6 +29,7 @@ class Store {
 	@observable showReplyStates = {}
 	@observable enableReplyStates = {}
 	@observable timeOfPreviousRandomTrickClick = 0
+	@observable TJsPreviouslyUsedContributor = 'tjthejuggler'
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
@@ -52,6 +53,10 @@ class Store {
   		contributors.push('libraryofjuggling.com')
   		contributors = contributors.sort()
 		return contributors
+	}
+
+	@action setTJsPreviouslyUsedContributor=(contributor)=>{
+		this.TJsPreviouslyUsedContributor = contributor
 	}
 
 	@action increaseViewsCounter=()=>{

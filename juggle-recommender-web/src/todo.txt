@@ -4,31 +4,32 @@ v2.4
 		-upload image
 			ian has code for this
 
+	-style autocomplete, maybe give it borders on all sides
+
 	-Add Trick Form:
 		-make consuming tags be added automatically in the list
 			-need a fleeting message to tell that this happenend
 		-when show time ranges is clicked it should auto focus	
+		-when editing, the form thinks the name is empty when it isnt and stops me from submitting
+		-if the only upvoter is the contributor then they should be able to delete relateds
+	
+	Filter
 		-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 			-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 		-filter for 'has tutorial'
 			-make it it's own section
-
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
-	-style autocomplete, maybe give it borders on all sides
-
-	-when editing, the form thinks the name is empty when it isnt and stops me from submitting
+	-change 'users with catches' to 'users working on'
+		-do this on details as well as profile stats
+		-include ninja and baby flair in count
+		-make a 'tricks being worked on stat'
+		-hover over to explain
 
 	-urls for multiplex tricks dont work
 		-some special character needs converted, maybe { and )
 
-	-make my contributor name remember the last name i used and automatically put it in next time i open the form
-
-	-if the only upvoter is the contributor then they should be able to delete relateds
-
 	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
-
-	-crashes when i try to edit 'stacked multiplex(5b)'
 =========
 email a UK store
 
