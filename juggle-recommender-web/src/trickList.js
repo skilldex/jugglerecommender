@@ -191,7 +191,8 @@ class TrickList extends Component {
 										{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
 										utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
 									</div>
-									<div className="bottomRowText tags">
+									<div className="bottomRowText tags"
+											title={trick.tags}>
 										<b>Tags:</b> {tags}
 									</div>	
 								</div>
