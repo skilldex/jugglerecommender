@@ -55,6 +55,7 @@ class AddTrickForm extends Component {
 
 	componentDidMount=()=>{
 		this.setState({contributor: authStore.user.username})
+		uiStore.clearAddTrickSmallTrickLists()
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
 			if (trick.name.endsWith("b)")){
@@ -75,7 +76,6 @@ class AddTrickForm extends Component {
 				this.setState({usersWithCatches: trick.usersWithCatches})
 			}
 
-			uiStore.clearAddTrickSmallTrickLists()
 
 			if (trick.prereqs){
 				Object.keys(trick.prereqs).forEach((trickKey)=>{
