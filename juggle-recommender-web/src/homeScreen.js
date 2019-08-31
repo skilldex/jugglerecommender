@@ -54,9 +54,12 @@ class HomeScreen extends Component {
 				<div className = "homeOuterDiv">					
 					<div className ='homeScreenHeaderOuterDiv'>
 						<h2 className='homeWelcomeHeader'>Welcome To Juggledex</h2>
-						<label className='homeWelcomeHeaderPatternCount'>
-							{store.patternCount} patterns and counting
-						</label>
+						{store.patternCount ?
+							<label className='homeWelcomeHeaderPatternCount'>
+								{store.patternCount} patterns and counting
+							</label> 
+							: null
+						}
 				    </div>
 				    {store.randomLeaderboardTrick && Object.keys(store.library).length > 0 ? 
 							<div className = 'homeScreenTrickDiv'>

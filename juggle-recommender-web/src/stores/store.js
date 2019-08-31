@@ -30,6 +30,7 @@ class Store {
 	@observable enableReplyStates = {}
 	@observable timeOfPreviousRandomTrickClick = 0
 	@observable TJsPreviouslyUsedContributor = 'tjthejuggler'
+	@observable patternCount = null
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
