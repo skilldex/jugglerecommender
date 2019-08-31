@@ -188,8 +188,8 @@ class AddTrickForm extends Component {
 	handleNumChange=(e)=>{
 		this.setState({
 			num:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		},this.checkIfFormIsSubmittable)
+		
 	}
 	handleDiffChange=(e)=>{
 		this.setState({
