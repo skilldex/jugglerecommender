@@ -6,13 +6,17 @@ v2.4
 
 	-style autocomplete, maybe give it borders on all sides
 
+	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
+		-all flair filters are broken, they show slightly different things, but they all show way too much, i think it might be that they show all tricks with catches, plus those with the selected flair. not sure.
+
+	-urls for multiplex tricks dont work
+		-some special character needs converted, maybe { and )
+
 	-Add Trick Form:
 		-make consuming tags be added automatically in the list
-			-need a fleeting message to tell that this happenend
-		-when show time ranges is clicked it should auto focus	
+			-need a fleeting message to tell that this happenend	
 		-when editing, the form thinks the name is empty when it isnt and stops me from submitting
-		-if the only upvoter is the contributor then they should be able to delete relateds
-	
+
 	Filter
 		-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 			-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
@@ -26,16 +30,11 @@ v2.4
 		-make a 'tricks being worked on stat'
 		-hover over to explain
 
-	-urls for multiplex tricks dont work
-		-some special character needs converted, maybe { and )
-
 	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
+
+	-when i put 'crossed p' into smalltricklist it didnt find 'crossed penguin'
 =========
-email a UK store
-
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
-
-NEW LISTS: 
 	
 MAYBES:
 	GA hooked up to browser back button? our back button? Seperate GAs or same?
@@ -48,17 +47,12 @@ MAYBES:
 
 Bugs:
 	-timerange in add trick form says invalid when one is empty, but empty is actually valid
-	-sometimes when add trick fields were invalid you have to click in another field to get it to catch up 
 	-if you log out/log in while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
 	-in mozilla, add pattern form, video tame range labels are shifted very far to the left
 	-Scrolling is weird on add trick form, it i like there are two scrollbars and 1 only 		works on green part of form
 	-if an instagram is using time ranges, slowmotion doesnt stay when it loops forward
-	-putting a comma in a list input, like (6x,4) clears the input
-	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
-		-all flair filters are broken, they show slightly different things, but they all show way too much, i think it might be that they show all tricks with catches, plus those with the selected flair. not sure.
-	-tricklist shows behind add pattern form
 	-after about 10 loops, videos get stuck with loading wheel,
 		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
 	-youtube slowmo back causes glitch if details page changes
