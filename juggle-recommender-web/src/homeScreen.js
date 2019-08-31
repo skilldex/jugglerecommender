@@ -14,9 +14,7 @@ import downArrow from './images/down-arrow.svg'
 import bitcoinIcon from './images/bitcoin.png'
 
 @observer
-						//<div className = 'statsLabel'>Users </div>{store.userCount}
-						//<div className = 'statsLabel'>Patterns</div>{store.patternCount}
-						//<div className = 'statsLabel'>Catches</div>{store.totalCatchCount}
+
 class HomeScreen extends Component {
 	state ={
 		

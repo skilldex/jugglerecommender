@@ -4,7 +4,12 @@
   width : 100%;
   margin-bottom: 60px;
 }
-
+.mainStats{
+  font-size: 12px;
+}
+.mainIndividualStats{
+  margin: 10px;
+}
 .individualStatsDiv{
   width: 300px;
   margin : 0 auto;
@@ -38,7 +43,7 @@
   transform: rotate(90deg);
 }
 .backButtonSurroundingDivStats{
-  width: 300px;
+  width: 400px;
   margin : 0 auto;
   text-align: right;
   display: flex;

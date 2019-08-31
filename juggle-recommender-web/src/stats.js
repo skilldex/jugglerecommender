@@ -134,6 +134,12 @@ class Stats extends Component {
 			<div className = "statsOuterDiv">
 				{backButton}
 				<h3 style={{marginBottom: "10px"}}>Stats</h3>
+				<div className="mainStats">
+					<label className="mainIndividualStats"><b>Users</b> {store.userCount}</label>
+					<label className="mainIndividualStats"><b>Registered</b> {store.registeredUserCount}</label>
+					<label className="mainIndividualStats"><b>Patterns</b> {store.patternCount}</label>
+					<label className="mainIndividualStats"><b>Catches</b> {store.totalCatchCount}</label>
+				</div>
 				<h3>By Numbers of Balls</h3>
 				{ballNumStats}
 				<h3>By Contributor</h3>

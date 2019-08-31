@@ -13,15 +13,9 @@ v2.4
 		-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 
 	-filter for 'has tutorial'
-		-maybe tutorial should be a tag, if not, maybe loj should be a tag
+		-make it it's own section
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
-
-	-put catches, users and registered users in stats page
-
-	-related are staying after pattern is added with the form
-
-	-hover over tags in smalllist to show all of them
 
 	-style autocomplete, maybe give it borders on all sides
 
@@ -29,9 +23,10 @@ v2.4
 
 	-urls for multiplex tricks dont work
 
-	-increase margin below form submit button and it will cover up the tacky page behind thing
+	-make my contributor name remmeber the last name i used and automatically put it in next time i open the form
+
 =========
-clean out db of old fake accounts
+
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 
 NEW LISTS: 

@@ -146,6 +146,7 @@ class App extends Component {
 		this.setPageBasedOnUrl()
 		store.getTagsFromDatabase()
 		store.getUserCountFromDatabase()
+		store.getRegisteredUserCountFromDatabase()
 		store.getTotalCatchCountFromDatabase()
 		utilities.addModIgnoreToURL()
 

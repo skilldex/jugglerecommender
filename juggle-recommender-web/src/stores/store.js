@@ -24,6 +24,7 @@ class Store {
 	@observable randomLeaderboardTrick = null
 	@observable mostRecentlySubmittedTrickKey = null
 	@observable userCount = ""
+	@observable registeredUserCount = ""
 	@observable totalCatchCount = null
 	@observable currentComments = []
 	@observable showReplyStates = {}
@@ -357,6 +358,15 @@ class Store {
 	}
 	@action setUserCount=(count)=>{
 		this.userCount = count
+	}
+	@action getRegisteredUserCountFromDatabase=()=>{
+		let libraryRef = firebase.database().ref('users/')
+		libraryRef.on('value', resp =>{
+        	this.setRegisteredUserCount(this.snapshotToArray(resp).length)
+        })		
+	}
+	@action setRegisteredUserCount=(count)=>{
+		this.registeredUserCount = count
 	}
 	@action getTotalCatchCountFromDatabase=()=>{
 		let libraryRef = firebase.database().ref('stats/')
