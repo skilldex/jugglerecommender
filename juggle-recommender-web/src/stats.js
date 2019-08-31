@@ -65,12 +65,12 @@ class Stats extends Component {
 	statsLabelButtonClicked=(tagType, key)=>{
 		filterStore.resetAllFilters()
 		if (tagType === 'contributor'){
-			filterStore.setContributors([key]);
+			filterStore.setTags('contributor',[key]);
 		}else if (tagType === 'ballNum'){
 			filterStore.setNumBalls([key])
 			
 		}else if (tagType === 'tags'){
-			filterStore.setTags([key]);			
+			filterStore.setTags('tags',[key]);			
 		}
 		utilities.sendGA('stats','tricklist via labels')
 		utilities.openPage('tricklist',true)

@@ -17,7 +17,6 @@ class Store {
 	@observable isForgotPasswordPaneOpen = false
 	@observable library = {}
 	@observable tagsSuggestions = []
-	@observable contributors = []
 	@observable presetTags = {}
 	@observable presetAutoCompleteTags = []
 	@observable videoURL = ""
@@ -52,7 +51,6 @@ class Store {
   		}
   		contributors.push('libraryofjuggling.com')
   		contributors = contributors.sort()
-  		this.setContributors(contributors)
 		return contributors
 	}
 
@@ -283,10 +281,6 @@ class Store {
 	@action setStartTime=(startTime)=>{
 		this.startTime = startTime
 	}
-	@action setContributors=(contributors)=>{
-		this.contributors = contributors
-	}
-	
 	@action setIsLoginPaneOpen=(isOpen)=>{
 		this.isLoginPaneOpen = isOpen
 	}

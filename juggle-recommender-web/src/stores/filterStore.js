@@ -204,14 +204,7 @@ class FilterStore {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
-	@action removeContributor=(i)=>{
-		this.setContributors(
-			this.contributors.filter((contributor, index) => index !== i)
-		)
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()	
-		uiStore.setFilterURL()	
-	}
+
 	@action removeTag=(tagType, tagToRemove)=>{
 		let tagList
 		if(tagType == 'tags'){
@@ -241,13 +234,6 @@ class FilterStore {
 		uiStore.updateRootTricks()
 		uiStore.setFilterURL()
 	}	
-	@action handleContributorTagDelete=(i)=>{
-		this.setContributors(
-			this.contributors.filter((tag, index) => index !== i)
-		)
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
-	}
 	@action handleDemoTypeDelete=(i)=>{
 		this.demoType = []
 		uiStore.resetSelectedTrick()

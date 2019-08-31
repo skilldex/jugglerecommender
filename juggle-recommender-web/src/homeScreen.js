@@ -38,7 +38,7 @@ class HomeScreen extends Component {
                             alt="backIcon" 
                             onClick={()=>{ uiStore.handleBackButtonClick()}}
                         />
-    let donationSection = <div className="donationSection">
+    const donationSection = <div className="donationSection">
 							<label><b>Donations:</b></label>
 							<div>
 								<img className="bitcoinIcon"
