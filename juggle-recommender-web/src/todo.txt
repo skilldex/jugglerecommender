@@ -25,7 +25,10 @@ v2.4
 
 	-make my contributor name remmeber the last name i used and automatically put it in next time i open the form
 
+	-if the only upvoter is the contributor then they should be able to delete relateds
+
 =========
+email a UK store
 
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 
