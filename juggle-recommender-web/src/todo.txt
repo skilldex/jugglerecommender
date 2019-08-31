@@ -22,6 +22,7 @@ v2.4
 	-when editing the form thinks the name is empty when it isnt and stops me from submitting
 
 	-urls for multiplex tricks dont work
+		-some special character needs converted, maybe { and )
 
 	-make my contributor name remmeber the last name i used and automatically put it in next time i open the form
 

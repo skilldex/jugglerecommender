@@ -140,8 +140,6 @@ TO FILM:
 	multiplex patterns from paper
 	factory paper
 
-
-
 CONTACT/RESEARCH:
 	-Contact @loudjuggling if his tricks have names or if can easily get technical names
 	-look up haavard
@@ -155,15 +153,19 @@ TO ASK:
 
 DB Changes(Straight-forwrard):
 	change all spelled out numbers to digits, it will save space and be easier to search
+	'Under Arm' should be changed to underarm
+
 
 DB changes(Consideration required):	
 	4440522 needs new name
 	5344 needs a new name
 	413333333 needs new name	
 	Reverse chops should be takeaways or 1 beat inside orbits
+	figure out what to do about armpit-throw tag and apecross
 
 DB Fixes:
 	go through popular patterns like box, shower, cascade, and limit their postreqs
+
 
 DB Duplicates:
 	423 factory and factory tennis are both R+L Factory

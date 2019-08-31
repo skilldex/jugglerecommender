@@ -136,22 +136,26 @@ class Filter extends Component {
     } 
 
     setAutoCompletedTag=(suggestions, tagsList, tagType, tag)=>{
+    	let currentFilterTags = []
 		if (suggestions.includes(tag)){
 	    	if(tagType === 'tags'){
 				this.setState({
 					autoCompletedTag : true,
 					tagInput : ''
 				})		
+				currentFilterTags = filterStore.tags
 			}else if(tagType === 'contributor'){
 				this.setState({
 					contributorInput: '',
 					autoCompletedContributor : true
 				})		
+				currentFilterTags = filterStore.contributors
 			}else if(tagType === 'demoType'){
 				this.setState({
 					demoTypeInput: '',
 					autoCompletedDemoType : true
 				})	
+				currentFilterTags = filterStore.demoType
 			}			
 	    }
 	    let canAdd = true
@@ -161,8 +165,11 @@ class Filter extends Component {
 		    }
 		});
 		if (suggestions.includes(tag) && canAdd){
+
+
+
 			filterStore.setTags(
-				tagType, [...filterStore.tags, tag] 
+				tagType, [...currentFilterTags, tag] 
 			);
 		}
 		uiStore.resetSelectedTrick()
