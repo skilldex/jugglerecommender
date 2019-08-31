@@ -79,20 +79,26 @@ class AddTrickForm extends Component {
 
 			if (trick.prereqs){
 				Object.keys(trick.prereqs).forEach((trickKey)=>{
-					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
-													store.library[trickKey].name)
+					if (store.library[trickKey]){
+						uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPrereqs,
+														store.library[trickKey].name)
+					}
 				});
 			}
 			if (trick.related){
 				Object.keys(trick.related).forEach((trickKey)=>{
-					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormRelated,
-													store.library[trickKey].name)
+					if (store.library[trickKey]){
+						uiStore.addTrickToSmallTrickList(uiStore.addTrickFormRelated,
+														store.library[trickKey].name)
+					}
 				});
 			}
 			if (trick.dependents){
 				Object.keys(trick.dependents).forEach((trickKey)=>{
-					uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPostreqs,
-													store.library[trickKey].name)
+					if (store.library[trickKey]){
+						uiStore.addTrickToSmallTrickList(uiStore.addTrickFormPostreqs,
+														store.library[trickKey].name)
+					}
 				});
 			}
 
