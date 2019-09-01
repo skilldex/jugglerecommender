@@ -110,6 +110,12 @@ class MainTagsBar extends Component {
       uiStore.setFilterURL()
     }
 
+    handleResultsLabelClicked=()=>{
+      utilities.sendGA('mainTagsBar','results label')
+      this.showPatternList()
+      uiStore.setFilterURL()
+    }
+
     render() {
       let filterButtonClass = uiStore.showFilterDiv?
                     "selectedfilterButton" : "unselectedfilterButton" 
@@ -282,7 +288,10 @@ class MainTagsBar extends Component {
               {sort}
               {sortDropdown}
               {filter}
-              <span className="mainTagsHeader">Results: {uiStore.rootTricks.length}</span>
+              <span className="mainTagsResults"
+                    onClick={()=>{this.handleResultsLabelClicked()}}>
+                    Results: {uiStore.rootTricks.length}
+              </span>
 
             </div>
             {randomTrickIconDiv}

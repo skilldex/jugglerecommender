@@ -41,10 +41,11 @@
   margin-top:0px;
   text-align: left;
 }
-.mainTagsHeader{
+.mainTagsResults{
   margin-left: 5px;
   font-size: 12px;
   font-style: italic;
+  cursor: pointer;
 }
 .tagDiv{
   margin-left: 2px; 
