@@ -215,13 +215,22 @@ class Utilities{
            );         
         }
       }else{
-        if(filterStore.sortDirection == 'ascending'){
-           return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
+        if (filterStore.sortType === 'lastUpdated' || 
+            filterStore.sortType === 'difficulty' ||
+            filterStore.sortType === 'alphabetically'){
+          if(filterStore.sortDirection == 'ascending'){
+             return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
+          }else{
+             return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
+          }
         }else{
-           return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
+          if(filterStore.sortDirection == 'descending'){
+             return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
+          }else{
+             return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
+          }          
         }
-      }
-      
+      }      
     }); 
     uiStore.setRootTricks(finalTricks)   
   }

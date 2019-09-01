@@ -26,11 +26,20 @@ v2.4
 
 	-when i put 'crossed p' into smalltricklist it didnt find 'crossed penguin'
 
-	fix asceding and desceding
 	message guy about new search and ask if he is aware of going into details to find postreqs of tricks
 	figure out how when to set sort to search relevance
 		maybe show current sort as a tag
 	make family filter
+
+	Search observations:
+		-'box' has 143/923 good results
+		-'mills' has 57/79 good results
+		-'shower' has 47/54 good results
+		-'cascade' has 54/55 good results 
+		-'millsmess' has 36/37 good results
+		-search no longer searches tags or ss
+		Possible default sorting setup:
+			-if the user sets a sort method we could show it as a tag, and then when they search we remove their tag to indicate that their choice is now gone, after they type in their search they could put their 
 =========
 Problem: overwhelming lists.
 -we could have a way to only show base patterns, either with an 'all patterns' toggle on search bar or a 'base-pattern' tag that defaults to on.
