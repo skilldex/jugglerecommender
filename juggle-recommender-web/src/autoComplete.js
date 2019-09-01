@@ -22,7 +22,6 @@ class AutoComplete extends Component {
 	 			lowerCaseName = lowerCaseName.slice(0,ballMatch.index)
 	 			name = name.slice(0,ballMatch.index)
 	 		}
-	 		//console.log('matchedNames',matchedNames,name,lowerCaseName,lowerCaseInput)
 	 		if(lowerCaseName.includes(lowerCaseInput) && 
 	 			!matchedNames.includes(lowerCaseName) || 
 	 			this.props.optionsList.length < 4){

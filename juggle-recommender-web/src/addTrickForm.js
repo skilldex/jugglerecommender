@@ -249,7 +249,6 @@ class AddTrickForm extends Component {
 
 
     checkIfFormIsSubmittable=()=>{
-    	console.log('checksubm')
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
 			this.setState({nameErrorMessage:'Pattern name blank.'})
