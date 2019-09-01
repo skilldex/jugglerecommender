@@ -167,72 +167,78 @@ class TrickList extends Component {
 						 onClick={(e)=>{this.openDetail(trickKey)}}
 					>	
 						<div className="mainCard">
-							<div 
-									className="expandButtonDiv"
-									onClick={
-												(e)=>{
-													e.stopPropagation()
-													this.expandCard(trickKey)
+							<div className="unexpandedSection">
+								<div
+										className="expandButtonDiv"
+										onClick={
+													(e)=>{
+														e.stopPropagation()
+														this.expandCard(trickKey)
+													}
 												}
-											}
-									title = "show pattern demo"
-								>
-								<img alt=""
-									className={expandTrickButtonClass}								
-									src={downArrow}
-								/>	 		
-							</div>
-							 <div className = "cardInfo">	
-								<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
-								<div className="bottomRow">
-									<div className="difficultyGauge">{difficultyGauge}</div>
-									<img className="catchesIconList" alt="" src ={catchesIcon}/>
-									<div className="bottomRowText catchesListLabel">
-										{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
-										utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
-									</div>
-									<div className="bottomRowText tags"
-											title={trick.tags}>
-										<b>Tags:</b> {tags}
-									</div>	
+										title = "show pattern demo"
+									>
+									<img alt=""
+										className={expandTrickButtonClass}								
+										src={downArrow}
+									/>	 		
 								</div>
-								{ this.props.listType !== "main" && uiStore.selectedTrick !== trickKey ? 
-									<div className="thumbLine">
-										<span>relevance</span>
-										<label>{ numUpvoters - numDownvoters}</label>
-										<img className={
-												this.checkIfVoted(detailTrick[listType][trickKey].upvoters) ? 
-												"thumbIcon selectedThumbIcon": "thumbIcon"
-											} 
-											alt="" src={thumbsUpIcon} onClick={(e)=>{
-												e.stopPropagation()
-												this.vote(trickKey,"upvoters")
-											}}
-											title = "this pattern is relevant"
+								 <div className = "cardInfo">	
+									<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
+									<div className="bottomRow">
+										<div className="difficultyGauge">{difficultyGauge}</div>
+										<img className="catchesIconList" alt="" src ={catchesIcon}/>
+										<div className="bottomRowText catchesListLabel">
+											{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
+											utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
+										</div>
+										<div className="bottomRowText tags"
+												title={trick.tags}>
+											<b>Tags:</b> {tags}
+										</div>	
+									</div>
+									{ this.props.listType !== "main" && uiStore.selectedTrick !== trickKey ? 
+										<div className="thumbLine">
+											<span>relevance</span>
+											<label>{ numUpvoters - numDownvoters}</label>
+											<img className={
+													this.checkIfVoted(detailTrick[listType][trickKey].upvoters) ? 
+													"thumbIcon selectedThumbIcon": "thumbIcon"
+												} 
+												alt="" src={thumbsUpIcon} onClick={(e)=>{
+													e.stopPropagation()
+													this.vote(trickKey,"upvoters")
+												}}
+												title = "this pattern is relevant"
+												/>
+											<img className={
+												this.checkIfVoted(detailTrick[listType][trickKey].downvoters) ? 
+													"thumbIcon selectedThumbIcon": "thumbIcon"
+												} 
+												alt="" src={thumbsDownIcon} onClick={(e)=>{
+													e.stopPropagation()
+													this.vote(trickKey,"downvoters")
+												}}
+												title = "this pattern is not relevant"
 											/>
-										<img className={
-											this.checkIfVoted(detailTrick[listType][trickKey].downvoters) ? 
-												"thumbIcon selectedThumbIcon": "thumbIcon"
-											} 
-											alt="" src={thumbsDownIcon} onClick={(e)=>{
-												e.stopPropagation()
-												this.vote(trickKey,"downvoters")
-											}}
-											title = "this pattern is not relevant"
-										/>
-									</div> : 
-									null
-								}
+										</div> : 
+										null
+									}
+								</div>
+								
 							</div>
-							
+							{uiStore.selectedTrick === trickKey ? 
+								<div className="demoOuterDivTrickList">
+									<Demo
+										trickKey = {trickKey}
+										demoLocation="expandedSection"
+									/> 
+								</div>: null
+							}
 						</div>
-						{uiStore.selectedTrick === trickKey ? 
-							<Demo
-								trickKey = {trickKey}
-								demoLocation="expandedSection"
-							/> : null
-						}
+
 					</div>	
+
 				)
 				pushedTrickkeys.push(trickKey)
 			}

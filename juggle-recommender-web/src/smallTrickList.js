@@ -50,6 +50,7 @@ class SmallTrickList extends Component {
 			this.setState({inputText:''})
 		}else if (this.props.listType.includes('Details')){
 			this.setState({inputText:store.library[trickKey].name})
+			uiStore.selectTrick(null)
 		}
 	}
 	onInputKeyPress=()=>{
@@ -153,40 +154,45 @@ class SmallTrickList extends Component {
 							 onClick={(e)=>{this.addToList(store.library[trickKey].name)}}
 						>	
 							<div className="smallListMainCard">
-								<div className="expandButtonDiv"
-									onClick={(e)=>{
-													e.stopPropagation()
-													this.expandCard(trickKey)
+								<div className="unexpandedSection">
+									<div className="expandButtonDiv"
+										onClick={(e)=>{
+														e.stopPropagation()
+														this.expandCard(trickKey)
+													}
 												}
-											}
-									title = "show pattern demo"
-									>
-									<img alt=""
-										className={expandTrickButtonClass}								
-										src={downArrow}
-									/>	 		
-								</div>
-								<div className = "smallListCardInfo">	
-									<div className={smallListCardNameDivClassName} title={trick.name}>
-				 		 				<span>{trick.name.slice(0,matchIndex)}</span>
-				 		 				<span className="match">{trick.name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
-				 		 				<span>{trick.name.slice(matchIndex+lowerCaseInput.length,)}</span>
-				 					</div>
-									<div className="smallListBottomRowText">
-										<div className="difficultyGauge">{difficultyGauge}</div>
-										<div className="smallListBottomRowText tags"
-												title={trick.tags}>
-											Tags: {tags}
-										</div>	
+										title = "show pattern demo"
+										>
+										<img alt=""
+											className={expandTrickButtonClass}								
+											src={downArrow}
+										/>	 		
+									</div>
+									<div className = "smallListCardInfo">	
+										<div className={smallListCardNameDivClassName} title={trick.name}>
+					 		 				<span>{trick.name.slice(0,matchIndex)}</span>
+					 		 				<span className="match">{trick.name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
+					 		 				<span>{trick.name.slice(matchIndex+lowerCaseInput.length,)}</span>
+					 					</div>
+										<div className="smallListBottomRowText">
+											<div className="difficultyGauge">{difficultyGauge}</div>
+											<div className="smallListBottomRowText tags"
+													title={trick.tags}>
+												Tags: {tags}
+											</div>	
+										</div>
 									</div>
 								</div>
+								{uiStore.selectedTrick === trickKey ? 
+									<div className="demoOuterDivTrickList">
+										<Demo
+											trickKey = {trickKey}
+											demoLocation="expandedSection"
+										/> 
+									</div>: null
+								}
 							</div>
-							{uiStore.selectedTrick === trickKey ? 
-								<Demo
-									trickKey = {trickKey}
-									demoLocation="expandedSection"
-								/> : null
-							}
+
 						</div>	
 					)
 					pushedTrickkeys.push(trickKey)

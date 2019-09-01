@@ -66,9 +66,7 @@
   max-height: auto;
 }
 .smallListMainCard{
-  height: 55px;
-  display : flex;
-  align-items : center;
+  display: block;
 }
 .smallListCardInfo{
   display: inline-block;

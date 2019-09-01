@@ -26,6 +26,9 @@
   text-align: center;
   width: 100%;
 }
+.demoOuterDivTrickList{
+  display: block;
+}
 .backButtonSurroundingDivList{
   width: 400px;
   margin : 0 auto;
@@ -54,9 +57,12 @@
   cursor: pointer;
 }
 .mainCard{
+  display: block;
+}
+.unexpandedSection{
   height: 55px;
   display : flex;
-  align-items : center;
+  align-items : center;  
 }
 .topCard{
   border-top : .5px solid gray;
