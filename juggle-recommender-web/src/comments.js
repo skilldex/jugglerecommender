@@ -77,8 +77,12 @@ class Comments extends Component {
            authStore.sendEmail({
                 "emailSubject": "Someone Replied to Your Comment",
                 "emailText" : authStore.user.username + " replied to your comment about " + 
-                    uiStore.detailTrick.id.replace(/ /g,"%20") + "! Click to see the thread: www.skilldex.org/detail/" +
-                    uiStore.detailTrick.id.replace(/ /g,"%20"), 
+                    uiStore.detailTrick.id.replace(/ /g,"%20")
+                                            .replace(/{/g,'%7B')
+                                            .replace(/}/g,'%7D') + "! Click to see the thread: www.skilldex.org/detail/" +
+                    uiStore.detailTrick.id.replace(/ /g,"%20")
+                                            .replace(/{/g,'%7B')
+                                            .replace(/}/g,'%7D') , 
                 "to" : email
             }) 
         })

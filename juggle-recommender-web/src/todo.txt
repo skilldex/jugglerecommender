@@ -6,9 +6,6 @@ v2.4
 
 	-style autocomplete, maybe give it borders on all sides
 
-	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
-		-all flair filters are broken, they show slightly different things, but they all show way too much, i think it might be that they show all tricks with catches, plus those with the selected flair. not sure.
-
 	-urls for multiplex tricks dont work
 		-some special character needs converted, maybe { and )
 

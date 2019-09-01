@@ -126,7 +126,7 @@ class Detail extends Component {
                   "emailSubject": "Someone Commented on Your Pattern",
                   "emailText" : authStore.user.username + " commented on your pattern, " + 
                       this.props.trick.id + " click to see the thread: www.skilldex.org/detail/" +
-                      this.props.trick.id.replace(/ /g,"%20"), 
+                      this.props.trick.id.replace(/ /g,"%20").replace(/{/g,'%7B').replace(/}/g,'%7D') , 
                   "to" : email
                 }) 
               }

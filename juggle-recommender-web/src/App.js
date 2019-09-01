@@ -165,6 +165,9 @@ class App extends Component {
 			  	let trickKey = 'error'
 			  	if(match.length>0){
 				  	trickKey = match[1].replace(/%20/g, ' ')
+				  						.replace(/%7B/g,'{')
+				  						.replace(/%7D/g,'}')
+				  	console.log('trickey',trickKey)
 				}
 			  	if (store.library[trickKey]){
 			  		utilities.openPage('detail/'+trickKey,false)
