@@ -65,6 +65,7 @@ class AddTrickForm extends Component {
 			let trick = {...store.library[uiStore.detailTrick.id]}
 			if (trick.name.endsWith("b)")){
 				trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
+				this.setState({name: trick.name})
 			}
 			if (trick.gifUrl){
 				this.setState({gifUrl: trick.gifUrl})
@@ -111,7 +112,7 @@ class AddTrickForm extends Component {
 			if(trick.videoStartTime || trick.videoEndTime){
 				this.setState({showTimeInputs : true})
 			}			
-			this.setState({...trick})
+			this.setState({...trick},this.checkIfFormIsSubmittable)
 			this.setState({submitDisabled : false,})
 
 			//this converts the tags from observable to plain arrays
@@ -120,6 +121,7 @@ class AddTrickForm extends Component {
 				trick.tags.forEach((tag)=>{
 					this.setAutoCompletedTag(tag)
 				});		
+			
 			}
 		}	
 	}
@@ -247,6 +249,7 @@ class AddTrickForm extends Component {
 
 
     checkIfFormIsSubmittable=()=>{
+    	console.log('checksubm')
     	this.setState({submitDisabled:false})
     	if (utilities.isEmptyOrSpaces(this.state.name)){
 			this.setState({nameErrorMessage:'Pattern name blank.'})
