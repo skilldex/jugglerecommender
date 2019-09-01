@@ -4,21 +4,16 @@ v2.4
 		-upload image
 			ian has code for this
 
-	-style autocomplete, maybe give it borders on all sides
-
-	-urls for multiplex tricks dont work
-		-some special character needs converted, maybe { and )
-
 	-Add Trick Form:
 		-make consuming tags be added automatically in the list
 			-need a fleeting message to tell that this happenend	
-		-when editing, the form thinks the name is empty when it isnt and stops me from submitting
 
 	Filter
 		-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 			-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 		-filter for 'has tutorial'
 			-make it it's own section
+			
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 	-change 'users with catches' to 'users working on'
@@ -31,6 +26,13 @@ v2.4
 
 	-when i put 'crossed p' into smalltricklist it didnt find 'crossed penguin'
 =========
+Problem: overwhelming lists.
+-we could have a way to only show base patterns, either with an 'all patterns' toggle on search bar or a 'base-pattern' tag that defaults to on.
+-if we use a 'base-pattern' tag, then we probably dont want it to be a tag that anyone can add
+-if we use a toggle, then when the toggle is on it could clear all tags, when of it could just turn on the base-pattern tag filter
+-we could default to the 'base-pattern' tag, but then we lose the benifit of automatically seeing new patterns
+	-we could make two 'pattern list' buttons on home screen that are 'new patterns' and 'base patterns' each that go to filtered/sorted lists. if we do this then we probably want to show the sort type in the tags bar
+
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 	
 MAYBES:
