@@ -63,6 +63,7 @@ class SmallTrickList extends Component {
 		this.setState({inputText : e.target.value})
 		if (e.target.value == ''){
 			uiStore.selectTrick(null)
+			uiStore.clearSuggestions(this.props.listType)
 		}
 	}
 	handleInputBlur=()=>{
