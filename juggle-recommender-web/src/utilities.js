@@ -200,11 +200,28 @@ class Utilities{
         finalA = uiStore.rootTrickRelevance[a]
         finalB = uiStore.rootTrickRelevance[b]
       }
-      if(filterStore.sortDirection == 'ascending'){
-         return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
+      if(filterStore.sortType == "relevance"){
+        if(filterStore.sortDirection == 'ascending'){
+           return finalA > finalB ? 1 : ( 
+            finalA < finalB ? -1 : 
+            a.length > b.length ? 1 : 
+            a.length < b.length ? -1 : 0 
+           );               
+        }else{
+           return finalA < finalB ? 1 : ( 
+            finalA > finalB ? -1 : 
+            a.length < b.length ? 1 : 
+            a.length > b.length ? -1 : 0 
+           );         
+        }
       }else{
-         return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
+        if(filterStore.sortDirection == 'ascending'){
+           return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
+        }else{
+           return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
+        }
       }
+      
     }); 
     uiStore.setRootTricks(finalTricks)   
   }
