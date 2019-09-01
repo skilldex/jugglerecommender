@@ -612,7 +612,8 @@ class UIStore {
 						if (store.myTricks[trickKey].ninja === 'true'){
 							myFlairForThisTrick.push('ninja')
 						} 
-						if (thisTricksCatches>0){
+						if (thisTricksCatches>0 && 
+							filterStore.flair.includes('catches')){
 							passesFlairFilter = true	
 						} 
 						var flairOverlap = myFlairForThisTrick.filter(function(n) {

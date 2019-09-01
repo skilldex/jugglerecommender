@@ -4,8 +4,6 @@ v2.4
 		-upload image
 			ian has code for this
 
-	-when small trick list is closed, it needs to have whatever demo it is showing also go away. the problem happens when you are seeing a video and then pick an item.
-
 	-style autocomplete, maybe give it borders on all sides
 
 	-star flair filter shows more than just star flair tricks, it may be showing all mytricks
