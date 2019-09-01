@@ -18,7 +18,7 @@ import utilities from './utilities'
 //import { Resizable } from "re-resizable";
 import history from './history';
 import InfiniteScroll from 'react-infinite-scroller';
-const paginationSize = 10
+const paginationSize = 40
 
 @observer
 class TrickList extends Component {
@@ -266,7 +266,7 @@ class TrickList extends Component {
 						id='listDiv' 
 						pageStart={0}
 						hasMore={uiStore.pageNumber*paginationSize<this.props.tricksToList.length}
-						threshold={10}
+						threshold={1300}
 	    				loadMore={()=>{
 	    					uiStore.setPageNumber(uiStore.pageNumber + 1)
 	    				}}
