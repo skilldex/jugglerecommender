@@ -1,11 +1,9 @@
-import {action, configure} from "mobx"
 import store from './stores/store'
 import uiStore from './stores/uiStore'
 import authStore from './stores/authStore'
 import ReactGA from 'react-ga';
 import history from './history';
-
-configure({ enforceActions: "always" })
+import filterStore from './stores/filterStore'
 let idleTimer
 
 function resetIdleTimer(){
@@ -25,7 +23,7 @@ document.onkeypress = resetIdleTimer;
 
 
 class Utilities{
-  @action isEmptyOrSpaces=(str)=>{
+  isEmptyOrSpaces=(str)=>{
     let strEmpty = false
     if (str === null){
       strEmpty = true
@@ -35,17 +33,17 @@ class Utilities{
     return strEmpty
   }
 
-  @action isNotOnlyDigits=(str)=>{
+  isNotOnlyDigits=(str)=>{
       str = str.toString()
       return str.match(/^[0-9]+$/) === null;
   }
-  @action isNotOnlyDigitsOrDecimal=(str)=>{
+  isNotOnlyDigitsOrDecimal=(str)=>{
       str = str.toString()
       var isNumber = /^\d*\.?\d+$/.test(str)
       return !isNumber;
   }
 
-  @action formatListCatches(catches){    
+  formatListCatches(catches){    
     if (!catches){
       return '0'
     }
@@ -62,7 +60,7 @@ class Utilities{
   }
   
 
-  @action isValidTime=(str)=>{
+  isValidTime=(str)=>{
     let isValid = false
     str = str.toString()
     if (str.match(/^[0-9]+$/) === null){
@@ -75,7 +73,7 @@ class Utilities{
     return isValid
   }
 
-  @action formatSeconds=(str)=>{
+  formatSeconds=(str)=>{
     str = str.toString()
     let toReturn
     if (str.includes(":")){
@@ -88,38 +86,72 @@ class Utilities{
     }
     return toReturn
   }
-  @action sendGA(cat, act, lab){
+  sendGA(cat, act, lab){
   if(!store.isLocalHost){
       if (lab){
         ReactGA.event({
             category: cat,
-            action: act,
+            act,
             label: lab,
         });
       }
       else{
         ReactGA.event({
             category: cat,
-            action: act,
+            act,
         });
       }
     } 
   }
 
-  @action objectToArray=(object)=>{
+  objectToArray=(object)=>{
       return Object.keys(object).map((key)=>{
           object[key]["key"] = key
           return object[key]
       }) 
   }
-  @action sortRootTricksBySearchRelevance(){
-    uiStore.rootTricks.forEach((trickKey)=>{
-      const trickName = trickKey.replace(/\({/g,'\[').replace(/}\)/g,'\]').replace(/-/g,'\/')
+  hammingDistance(a, b) {
+    let minDistance = null
+    for(let i = 0; i <= b.length; i += 1){
+      if(b.length - i - a.length  < 0){
+        continue
+      }
+      const bSub = b.slice(i,i+a.length)
+      let distance = 0;
 
+      for (let i = 0; i < a.length; i += 1) {
+        if (a[i] !== bSub[i]) {
+          distance += 1;
+        }
+      }
+      if(minDistance == null || distance < minDistance){
+        minDistance = distance
+      }
+    }
+    return minDistance;
+  }
+  sortRootTricksBySearchRelevance(){
+
+    uiStore.rootTricks.forEach((trickKey,index)=>{
+      //restore siteswap notation
+      const trickName = trickKey.replace(/\({/g,'\[').replace(/}\)/g,'\]').replace(/-/g,'\/')
+      const compareScore = this.compareStrings(uiStore.searchTrick,trickName)
     })
   }
-
-  @action sortObjectByAttribute(data, attr) {
+  compareStrings=(string1,string2)=>{
+    string1 = this.removeSpecialCharacters(string1) 
+    string2 = this.removeSpecialCharacters(string2)
+    const stringDistance = this.hammingDistance(string1.toLowerCase(),string2.toLowerCase())
+    if(stringDistance !== null && stringDistance < 3){
+      return stringDistance 
+    }else{
+      return null
+    }
+  }
+  removeSpecialCharacters(string){
+    return string.replace(/[ +']/g,"")
+  }
+  sortObjectByAttribute(data, attr) {
     var arr = [];
     for (var prop in data) {
       if (data.hasOwnProperty(prop)) {
@@ -149,8 +181,34 @@ class Utilities{
     });    
     return arr;
   }
+  sortRootTricks() {
+    const finalTricks = [...uiStore.rootTricks].sort(function(a, b) {
+      let finalA
+      let finalB
 
-  @action isValidVideoURL(videoURL){
+      if(filterStore.sortType === "random"){
+        finalA = Math.floor((Math.random() * 1000000));
+        finalB = Math.floor((Math.random() * 1000000));
+      }
+      if(filterStore.sortType === "alphabetical"){
+        finalA = store.library[a].name
+        finalB =store.library[b].name
+      }else if (filterStore.sortType !== "relevance"){
+        finalA = parseFloat(store.library[a][filterStore.sortType])*10;
+        finalB = parseFloat(store.library[b][filterStore.sortType])*10;
+      }else if (filterStore.sortType === "relevance"){
+        finalA = uiStore.rootTrickRelevance[a]
+        finalB = uiStore.rootTrickRelevance[b]
+      }
+      if(filterStore.sortDirection == 'ascending'){
+         return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
+      }else{
+         return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
+      }
+    }); 
+    uiStore.setRootTricks(finalTricks)   
+  }
+  isValidVideoURL(videoURL){
     let isValid = false
     if (videoURL.includes("instagram.com") || 
         videoURL.includes("youtu")){
@@ -159,7 +217,7 @@ class Utilities{
     return isValid
   }
   
-  @action autoGrow(element){
+  autoGrow(element){
       element.style.height = "5px"
       element.style.height = element.scrollHeight+"px"
   }

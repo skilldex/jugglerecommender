@@ -390,8 +390,6 @@ class Store {
 		this.library = library
 		//TODO clean this up
 		uiStore.updateRootTricks() 
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
 	}
 
 	@action initializeTags=()=>{

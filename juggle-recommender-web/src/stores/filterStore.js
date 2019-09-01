@@ -55,7 +55,7 @@ if (urlQueryCatches){
 
 class FilterStore {
 
-	@observable sortType = 'timeSubmitted'
+	@observable sortType = 'relevance'
 	@observable demoType = demoType
 	@observable sortDirection = 'ascending'
 	@observable difficultyRange = difficultyRange
@@ -155,8 +155,6 @@ class FilterStore {
 	@action setSearchText=(searchText)=>{
 		this.searchText = searchText
 		uiStore.setSearchInput(searchText)
-		uiStore.resetSelectedTrick()
-		uiStore.updateRootTricks()
 	}
 
 	@action setDemoType=(demoType)=>{

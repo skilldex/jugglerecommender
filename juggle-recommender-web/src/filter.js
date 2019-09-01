@@ -43,7 +43,6 @@ class Filter extends Component {
 									          
 	onDifficultyRangeChange=(range)=>{
 		filterStore.setDifficultyRange(range)
-		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	flairButtonClicked=(flair)=>{//TODO I just changed this to color up in state, need to keep doin that here
@@ -59,7 +58,6 @@ class Filter extends Component {
 			tempFlair.push(flair)
 		}
 		filterStore.setFlair(tempFlair)
-		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 	numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
@@ -75,7 +73,6 @@ class Filter extends Component {
 			tempNumBalls.push(element)
 		}
 		filterStore.setNumBalls(tempNumBalls)
-		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
@@ -90,7 +87,6 @@ class Filter extends Component {
 		}
 		inputElement.value = newMin
 		filterStore.setMinCatches(newMin)
-		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 
@@ -105,7 +101,6 @@ class Filter extends Component {
 		}
 		inputElement.value = newMax
 		filterStore.setMaxCatches(newMax)
-		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
     copyFilterURL=()=>{
@@ -172,7 +167,6 @@ class Filter extends Component {
 				tagType, [...currentFilterTags, tag] 
 			);
 		}
-		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}
 

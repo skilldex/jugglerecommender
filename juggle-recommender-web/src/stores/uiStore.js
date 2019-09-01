@@ -54,7 +54,7 @@ class UIStore {
  	@observable addTrickFormRelated = []
  	@observable addTrickFormPostreqs = []	    
     @observable smallListPageNumber = 0
-
+    @observable rootTrickRelevance = {}
     @action clearAddTrickSmallTrickLists=()=>{
     	this.addTrickFormPrereqs = []
  		this.addTrickFormRelated = []
@@ -322,7 +322,9 @@ class UIStore {
 	@action resetSelectedTrick=()=>{
 		uiStore.updateRootTricks()
 	}
-
+	@action setRootTricks=(tricks)=>{
+		this.rootTricks = tricks
+	}
 	@action selectTrick=(trick)=>{
 		this.selectedTrick = trick
 	}
@@ -445,6 +447,7 @@ class UIStore {
  		this.performSearch()
  	}
  	@action	searchInputChange=(e)=>{
+ 		console.log("search imnput changing")
  		if (this.selectedTrick){
 			const previoslySelected = document.getElementById(this.selectedTrick+"listCard");
 			previoslySelected.classList.toggle("expand");
@@ -455,13 +458,12 @@ class UIStore {
 			this.searchTrick = ""
 		}
 		this.performSearch()
-		this.resetSelectedTrick()
-		this.updateRootTricks()
 		this.showPatternList()
  	}
  		
  	@action performSearch=()=>{
  		this.selectedTrick = null
+ 		console.log("performing search")
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
  	}
@@ -543,7 +545,8 @@ class UIStore {
 		return allTrickKeys
 	}
 
- 	@action updateRootTricks=(rootTricks)=>{
+ 	@action updateRootTricks=()=>{
+ 		console.log("updating root tricks")
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
  		const sortedJugglingLibrary = this.sortLibrary()
@@ -551,9 +554,9 @@ class UIStore {
 		filterStore.tags.forEach(function (arrayItem) {
 		    filterTagNames.push(arrayItem)
 		});
-		sortedJugglingLibrary.forEach((trickObj, i) => {
-			const trickKey = Object.keys(trickObj)[0]
-			const trick = trickObj[trickKey]
+		this.rootTrickRelevance = {}
+		Object.keys(store.library).forEach((trickKey, i) => {
+			const trick = store.library[trickKey]
 			if(this.selectedList === "allTricks" || 
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
 				const tagsInFilter = trick.tags? trick.tags.filter((tag)=>{
@@ -625,20 +628,7 @@ class UIStore {
 						})
 					}
 				}
-				let passesSearch = false
-				if (this.searchTrick === '' || 
-					trick.name.toUpperCase().includes(this.searchTrick.toUpperCase()) ||
-					this.searchTrick.toUpperCase() === ("SS:"+trick.siteswap.toUpperCase())){
-					passesSearch = true					
-				}else{
-					if (trick.tags){
-						trick.tags.forEach((tag) => {
-							if (tag.toUpperCase().includes(this.searchTrick.toUpperCase())){
-								passesSearch = true
-							}
-						})
-					}
-				}
+				const relevance = this.searchTrick ? utilities.compareStrings(this.searchTrick, trickKey) : 0
 				if(
 				   passesContributorFilter && passesDemoTypeFilter &&
 				   trick.difficulty >= filterStore.difficultyRange[0] && 
@@ -647,17 +637,19 @@ class UIStore {
 				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length === 0) &&
 				   passesFlairFilter &&
 				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
-				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) &&
-				   passesSearch
+				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) && 
+				   relevance !== null
 				 ){
 					this.rootTricks.push(trickKey)
+					this.rootTrickRelevance[trickKey] = relevance
 				}
 			}
-		})	//should we put all sorts down here instead of before filtering?
-			//we pass roottricks into this function, but i think we dont actually use it in here?
-		if (uiStore.rootTricks && filterStore.sortType == 'relevance'){
+		})	
+		console.log( this.rootTrickRelevance)
+		utilities.sortRootTricks()
+		/*if (uiStore.rootTricks && this.searchTrick && this.rootTricks && filterStore.sortType == 'relevance'){
 			utilities.sortRootTricksBySearchRelevance()
-		}
+		} */
 	}
 	@action clearUI=()=>{
 		this.setShowHomeScreen(false)
