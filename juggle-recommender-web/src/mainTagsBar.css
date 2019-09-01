@@ -138,19 +138,18 @@
 
 .sortDropdown{
   position : absolute;
-  left:-30px;
-  margin-top: 142px;
-  margin-left: 22px;
-  padding-top: 9px;
+  margin-top: 163px;
+  margin-left: 116px;
+  padding-top: 7px;
   padding-left: 7px;
   width: 200px;
-  height: 270px;
-  border: 1px solid gray;
+  height: 300px;
+  border: 2px solid gray;
   border-radius: 8px;
   background-color: white;
   opacity: .95;
+  margin-right : 85px;
   z-index: 1300;
-  box-shadow : 5px 10px 8px #888888;
 }
 .sortDropdownButton{
   font-weight: bold;

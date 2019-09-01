@@ -262,7 +262,7 @@ class MainTagsBar extends Component {
                       className={filterStore.sortDirection === 'ascending' ?
                       "sortDropdownButton  sortDropdownButtonSelected" :
                       "sortDropdownButton "}
-                      onClick={(e)=>this.sortDirectionClicked('ascending')}>Ascending</button>            
+                      onClick={(e)=>this.sortDirectionClicked('ascending')}>Ascendinggggg</button>            
               <button alt="sortDropdownButtonLastUpdated"
                       className={filterStore.sortDirection === 'descending' ?
                       "sortDropdownButton  sortDropdownButtonSelected" :

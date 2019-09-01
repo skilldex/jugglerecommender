@@ -13,7 +13,7 @@ v2.4
 			-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 		-filter for 'has tutorial'
 			-make it it's own section
-			
+
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 	-change 'users with catches' to 'users working on'
@@ -25,6 +25,12 @@ v2.4
 	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
 
 	-when i put 'crossed p' into smalltricklist it didnt find 'crossed penguin'
+
+	fix asceding and desceding
+	message guy about new search and ask if he is aware of going into details to find postreqs of tricks
+	figure out how when to set sort to search relevance
+		maybe show current sort as a tag
+	make family filter
 =========
 Problem: overwhelming lists.
 -we could have a way to only show base patterns, either with an 'all patterns' toggle on search bar or a 'base-pattern' tag that defaults to on.

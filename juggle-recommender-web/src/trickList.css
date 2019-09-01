@@ -249,35 +249,7 @@
   overflow-x: hidden;
   -webkit-overflow-scrolling : touch;
 }
-.sortDropdown{
-  position : absolute;
-  margin-top: 143px;
-  margin-left: 116px;
-  padding-top: 7px;
-  padding-left: 7px;
-  width: 200px;
-  height: 260px;
-  border: 2px solid gray;
-  border-radius: 8px;
-  background-color: white;
-  opacity: .95;
-  margin-right : 85px;
-  z-index: 1300;
-}
-.sortDropdownButton{
-  font-weight: bold;
-  display : block;
-  border: none;
-  background-color: white;
-  color: darkgray;
-  text-align: left;
-  font-size: 14px;
-  z-index: 1200;
-  width : 95%;
-  height : 30px;
-  outline: 0;
-  box-shadow: none!important;
-}
+
 .sortDropdownButtonSelected{
   color: gray;
 }
