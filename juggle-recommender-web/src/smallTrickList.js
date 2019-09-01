@@ -53,11 +53,16 @@ class SmallTrickList extends Component {
 		}
 	}
 	onInputKeyPress=()=>{
-
+		if (this.props.listType.includes('Details')){
+			uiStore.clearSuggestions(this.props.listType)
+		}
 	}
 
 	handleInputChange=(e)=>{
 		this.setState({inputText : e.target.value})
+		if (e.target.value == ''){
+			uiStore.selectTrick(null)
+		}
 	}
 	handleInputBlur=()=>{
 

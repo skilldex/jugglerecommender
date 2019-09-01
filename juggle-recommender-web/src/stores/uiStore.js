@@ -61,6 +61,21 @@ class UIStore {
  		this.addTrickFormPostreqs = []	
     }
 
+    @action clearSuggestions=(listType)=>{
+		if (listType.includes('prereq')){
+    		this.suggestedPrereq = null
+		    this.autoCompletedSuggestedPrereq = false
+			}
+		if (listType.includes('related')){
+		    this.suggestedRelated = null
+		    this.autoCompletedSuggestedRelated = false
+			}
+		if (listType.includes('postreq')){
+		    this.suggestedPostreq = null
+		    this.autoCompletedSuggestedPostreq = false
+			}
+    }
+
     @action addTrickToSmallTrickList=(listOfTricks, trickKey)=>{
     	if (listOfTricks === this.suggestedPrereq){
 		     this.suggestedPrereq = trickKey
