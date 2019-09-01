@@ -1,10 +1,10 @@
 Giveaway:
 	Possible Giftcard Companies:
-		UK-Oddballs   https://www.oddballs.co.uk/oddballs-gift-certificate.html
+		NO RESPONSE UK-Oddballs   https://www.oddballs.co.uk/oddballs-gift-certificate.html
 		UK-Firetoys	  https://www.firetoys.co.uk/firetoys-gift-vouchers.html
-		US-Renegade   https://www.renegadejuggling.com/about-us/gift-certificate/
+		10% US-Renegade   https://www.renegadejuggling.com/about-us/gift-certificate/
 		US-Dube       https://www.dube.com/giftcert/
-		EU-Henrys	  doesn't have git cards
+		NORESPONSE EU-Henrys	  doesn't have git cards
 	THOUGHTS/IDEAS:
 		-The first X number will win for sure, and there will be more giveaways in the future, this way people want to make sure they are subscribed to us.
 		-we should have some part of the giveaway be tagging friends, tag 3 friends and you get an entry
