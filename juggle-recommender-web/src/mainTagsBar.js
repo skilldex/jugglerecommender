@@ -223,6 +223,11 @@ class MainTagsBar extends Component {
                className="sortDropdown"
           >
               <button alt="sortDropdownButtonDif"
+                      className={filterStore.sortType === 'relevance' ?
+                      "sortDropdownButton  sortDropdownButtonSelected" :
+                      "sortDropdownButton "}
+                      onClick={(e)=>this.sortOptionClicked('relevance')}>Search Relevance</button>
+              <button alt="sortDropdownButtonDif"
                       className={filterStore.sortType === 'random' ?
                       "sortDropdownButton  sortDropdownButtonSelected" :
                       "sortDropdownButton "}

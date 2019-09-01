@@ -112,6 +112,12 @@ class Utilities{
           return object[key]
       }) 
   }
+  @action sortRootTricksBySearchRelevance(){
+    uiStore.rootTricks.forEach((trickKey)=>{
+      const trickName = trickKey.replace(/\({/g,'\[').replace(/}\)/g,'\]').replace(/-/g,'\/')
+
+    })
+  }
 
   @action sortObjectByAttribute(data, attr) {
     var arr = [];
@@ -126,6 +132,9 @@ class Utilities{
         }
         arr.push(obj);
       }
+    }
+    if (attr === "relevance"){
+      return arr
     }    
     arr.sort(function(a, b) {
       var at, bt

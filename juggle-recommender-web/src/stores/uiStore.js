@@ -478,7 +478,9 @@ class UIStore {
 	}
 	@action sortLibrary=()=>{
 		let sortedJugglingLibrary
-	 	if (filterStore.sortType === 'alphabetical'){
+		if (filterStore.sortType === 'relevance'){
+		 	sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'relevance');
+		}else if (filterStore.sortType === 'alphabetical'){
 		 	sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'name');
 		}else if (filterStore.sortType === 'difficulty'){
 		 	sortedJugglingLibrary = utilities.sortObjectByAttribute(store.library, 'difficulty');
@@ -637,9 +639,6 @@ class UIStore {
 						})
 					}
 				}
-
-
-
 				if(
 				   passesContributorFilter && passesDemoTypeFilter &&
 				   trick.difficulty >= filterStore.difficultyRange[0] && 
@@ -654,7 +653,11 @@ class UIStore {
 					this.rootTricks.push(trickKey)
 				}
 			}
-		})	
+		})	//should we put all sorts down here instead of before filtering?
+			//we pass roottricks into this function, but i think we dont actually use it in here?
+		if (uiStore.rootTricks && filterStore.sortType == 'relevance'){
+			utilities.sortRootTricksBySearchRelevance()
+		}
 	}
 	@action clearUI=()=>{
 		this.setShowHomeScreen(false)
