@@ -227,7 +227,6 @@ class App extends Component {
  	}
 
  	render(){
- 		console.log("rendering app")
 	    window.onclick = function(event) {
 	        if (uiStore.showSortDiv && !uiStore.mouseInSortDiv && !uiStore.sortTimer){
 	            uiStore.setShowSortDiv(false)

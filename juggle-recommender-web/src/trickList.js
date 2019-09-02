@@ -98,7 +98,6 @@ class TrickList extends Component {
 		
 	}
 	render() {
-		console.log("rendering list")
 	 	let tricks = []
 	 	const pushedTrickkeys = []
 	 	const detailTrick = uiStore.detailTrick ? store.library[uiStore.detailTrick.id] : null

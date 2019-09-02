@@ -447,7 +447,6 @@ class UIStore {
  		this.performSearch()
  	}
  	@action	searchInputChange=(e)=>{
- 		console.log("search imnput changing")
  		if (this.selectedTrick){
 			const previoslySelected = document.getElementById(this.selectedTrick+"listCard");
 			previoslySelected.classList.toggle("expand");
@@ -463,7 +462,6 @@ class UIStore {
  		
  	@action performSearch=()=>{
  		this.selectedTrick = null
- 		console.log("performing search")
  		this.searchTrick = this.searchInput
  		this.updateRootTricks()
  	}
@@ -545,8 +543,18 @@ class UIStore {
 		return allTrickKeys
 	}
 
+	@action doesntIncludeSearchSubtractions=(trickKey,searchSubtractions)=>{
+		const trickName = store.library[trickKey].name.toLowerCase()
+		let constainsSubtraction = false
+		searchSubtractions.forEach((term) => {
+			if (trickName.includes(term.toLowerCase())){
+				constainsSubtraction = true
+			}
+		})
+		return !constainsSubtraction
+	}
+
  	@action updateRootTricks=()=>{
- 		console.log("updating root tricks")
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
  		const sortedJugglingLibrary = this.sortLibrary()
@@ -628,7 +636,10 @@ class UIStore {
 						})
 					}
 				}
-				const relevance = this.searchTrick ? utilities.compareStrings(this.searchTrick, trickKey) : 0
+
+
+				const [searchTrick, searchSubtractions] = utilities.seperateSearchSubtraction(this.searchTrick)
+				const relevance = searchTrick ? utilities.compareStrings(searchTrick, trickKey) : 0
 				if(
 				   passesContributorFilter && passesDemoTypeFilter &&
 				   trick.difficulty >= filterStore.difficultyRange[0] && 
@@ -638,6 +649,7 @@ class UIStore {
 				   passesFlairFilter &&
 				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
 				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) && 
+				   this.doesntIncludeSearchSubtractions(trickKey,searchSubtractions) &&
 				   relevance !== null
 				 ){
 					this.rootTricks.push(trickKey)
@@ -645,7 +657,6 @@ class UIStore {
 				}
 			}
 		})	
-		console.log( this.rootTrickRelevance)
 		utilities.sortRootTricks()
 		/*if (uiStore.rootTricks && this.searchTrick && this.rootTricks && filterStore.sortType == 'relevance'){
 			utilities.sortRootTricksBySearchRelevance()
