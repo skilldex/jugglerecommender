@@ -639,6 +639,7 @@ class UIStore {
 
 
 				const [searchTrick, searchSubtractions] = utilities.seperateSearchSubtraction(this.searchTrick)
+				//const trickTags = store.library[trickKey].tags ? store.library[trickKey].tags.join('') : ''
 				const relevance = searchTrick ? utilities.compareStrings(searchTrick, trickKey) : 0
 				if(
 				   passesContributorFilter && passesDemoTypeFilter &&

@@ -201,8 +201,7 @@ class Utilities{
       if(filterStore.sortType === "random"){
         finalA = Math.floor((Math.random() * 1000000));
         finalB = Math.floor((Math.random() * 1000000));
-      }
-      if(filterStore.sortType === "alphabetical"){
+      }else if(filterStore.sortType === "alphabetical"){
         finalA = store.library[a].name
         finalB =store.library[b].name
       }else if (filterStore.sortType !== "relevance"){

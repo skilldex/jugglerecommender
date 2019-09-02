@@ -31,18 +31,34 @@ v2.4
 
 
 	Search observations:
-		-'box' has 143/923 good results
+		-'box' has 143/923 good results 
 		-'mills' has 57/79 good results
 		-'shower' has 47/54 good results
 		-'cascade' has 54/55 good results 
 		-'revenge' has 7/76 good results (because it gets a lot of 'reverse' results)
 		-'millsmess' has 36/37 good results
+
+
+		WITH distance threshold less than searchLength/3:
+		-box 143/143
+		-mills 57/57
+		-shower47/47
+		-cascade 54/55
+		-revenge 7/76
+		-millsmess 36/37
+
+
+
+
 		-search no longer searches tags or ss
+			-the issue with searching tags is that 441 has the tag 'columns' and since 441 is horter than the trick 'columns', it comes up first. this happens a bit.
 		-should we implement the new search everywhere?
 			-autocompletes?
 			-smallTrickList?
 		Possible default sorting setup:
-			-if the user sets a sort method we could show it as a tag, and then when they search we remove their tag to indicate that their choice is now gone, after they type in their search they could put their 
+			-sort starts as timeSubmitted
+			-if user has not set a sort and they search, then we set sort to relevance
+				-make a variable that is 'hasSetSort', starts false, becomes true
 =========
 Problem: overwhelming lists.
 -we could have a way to only show base patterns, either with an 'all patterns' toggle on search bar or a 'base-pattern' tag that defaults to on.
