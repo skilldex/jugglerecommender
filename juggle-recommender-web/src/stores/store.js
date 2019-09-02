@@ -500,7 +500,9 @@ class Store {
 				shouldBackUpBecauseEditing = true
 			}
 			//if the leaderboard trick is having it's name edited
-			if (trickKey !== oldTrickKey && oldTrickKey === this.randomLeaderboardTrick.key){
+			if (trickKey !== oldTrickKey && 
+				this.randomLeaderboardTrick &&
+				oldTrickKey === this.randomLeaderboardTrick.key){
 				let leaderboardRef = firebase.database().ref('leaderboard/')
 				leaderboardRef.on('value', resp =>{
 				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
