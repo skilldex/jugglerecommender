@@ -59,6 +59,9 @@ v2.4
 			-sort starts as timeSubmitted
 			-if user has not set a sort and they search, then we set sort to relevance
 				-make a variable that is 'hasSetSort', starts false, becomes true
+
+
+				//give message if flair filter clicked and (!authStore.user)
 =========
 Problem: overwhelming lists.
 -we could have a way to only show base patterns, either with an 'all patterns' toggle on search bar or a 'base-pattern' tag that defaults to on.

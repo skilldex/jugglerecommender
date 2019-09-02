@@ -545,6 +545,113 @@ class UIStore {
 		return allTrickKeys
 	}
 
+	@action passesContributorFilter=(contributor)=>{
+		let passesContributorFilter = false
+		if (filterStore.contributors.length===0){
+			passesContributorFilter = true
+		}else{
+			filterStore.contributors.forEach(function (arrayItem) {
+			    if (contributor === arrayItem ){
+			    	passesContributorFilter = true
+			    }
+			    if (contributor == null && 
+			    	arrayItem === "libraryofjuggling.com"){
+			    	passesContributorFilter = true
+			    }
+			})
+		}
+		return passesContributorFilter				
+	}
+
+	@action passesDemoTypeFilter=(video)=>{
+		let passesDemoTypeFilter = false
+		if (filterStore.demoType.length===0){
+			passesDemoTypeFilter = true
+		}else{
+			if(filterStore.demoType[0] === "All"){
+				passesDemoTypeFilter = true
+			}else if(video == null && 
+		    	filterStore.demoType[0] === "Juggling Lab" ){
+		    	passesDemoTypeFilter = true
+		    }
+		    else if(video && filterStore.demoType[0] === "User Video" ){
+		    	passesDemoTypeFilter = true
+		    }
+		    else{
+		    	passesDemoTypeFilter = false
+		    }
+		}
+		return passesDemoTypeFilter
+	}
+
+	@action passesDifficultyFilter=(difficulty)=>{
+		return (difficulty >= filterStore.difficultyRange[0] && 
+	   		    difficulty <= filterStore.difficultyRange[1])
+	}
+
+	@action passesTagsFilter=(tags)=>{
+		const filterTagNames= []
+		filterStore.tags.forEach(function (arrayItem) {
+		    filterTagNames.push(arrayItem)
+		});
+		const tagsInFilter = tags? 
+					tags.filter((tag)=>{
+						if (filterTagNames.includes(tag)){
+							return tag
+						}else{
+							return ''
+						}
+					}) 
+				: []
+
+		return (tagsInFilter.length >= filterTagNames.length || 
+				filterTagNames.length === 0)
+	}			
+
+	@action passesNumBallFilter=(num)=>{
+		return (filterStore.numBalls.includes(num) || filterStore.numBalls.length === 0)
+	}
+
+	@action passesFlairFilter=(myTrick)=>{
+		let passesFlairFilter = false 
+		let myFlairForThisTrick = []
+		const thisTricksCatches = myTrick ? parseInt(myTrick.catches, 10) : null
+		if (filterStore.flair.length === 0){
+			passesFlairFilter = true
+		}else{
+			if (myTrick){
+				if (myTrick.starred === 'true'){
+					myFlairForThisTrick.push('starred')
+				} 
+				if (myTrick.baby === 'true'){
+					myFlairForThisTrick.push('baby')
+				} 
+				if (myTrick.ninja === 'true'){
+					myFlairForThisTrick.push('ninja')
+				} 
+				if (thisTricksCatches>0 && 
+					filterStore.flair.includes('catches')){
+					passesFlairFilter = true	
+				} 
+				var flairOverlap = myFlairForThisTrick.filter(function(n) {
+				  if (filterStore.flair.indexOf(n) > -1){
+				  	passesFlairFilter = true
+				  }
+				})
+			}
+		}
+		return passesFlairFilter
+	}
+
+	@action passesCatchesFilter=(myTrick)=>{
+		let thisTricksCatches = 0
+		if(myTrick && myTrick.catches){
+			thisTricksCatches = parseInt(myTrick.catches, 10)
+		}
+		return (thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
+	    		thisTricksCatches <= parseInt(filterStore.maxCatches, 10))
+	}
+
 	@action doesntIncludeSearchSubtractions=(trickKey,searchSubtractions)=>{
 		const trickName = store.library[trickKey].name.toLowerCase()
 		let constainsSubtraction = false
@@ -561,98 +668,22 @@ class UIStore {
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
  		const sortedJugglingLibrary = this.sortLibrary()
-		const filterTagNames= []
-		filterStore.tags.forEach(function (arrayItem) {
-		    filterTagNames.push(arrayItem)
-		});
 		this.rootTrickRelevance = {}
 		Object.keys(store.library).forEach((trickKey, i) => {
 			const trick = store.library[trickKey]
 			if(this.selectedList === "allTricks" || 
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
-				const tagsInFilter = trick.tags? trick.tags.filter((tag)=>{
-					if (filterTagNames.includes(tag)){
-						return tag
-					}else{
-						return ''
-					}
-				}) : []
-				let passesContributorFilter = false
-				if (filterStore.contributors.length===0){
-					passesContributorFilter = true
-				}else{
-					filterStore.contributors.forEach(function (arrayItem) {
-					    if (trick.contributor === arrayItem ){
-					    	passesContributorFilter = true
-					    }
-					    if (trick.contributor == null && 
-					    	arrayItem === "libraryofjuggling.com"){
-					    	passesContributorFilter = true
-					    }
-					})
-				}
-				let passesDemoTypeFilter = false
-				if (filterStore.demoType.length===0){
-					passesDemoTypeFilter = true
-				}else{
-					if(filterStore.demoType[0] === "All"){
-						passesDemoTypeFilter = true
-					}else if(trick.video == null && 
-				    	filterStore.demoType[0] === "Juggling Lab" ){
-				    	passesDemoTypeFilter = true
-				    }
-				    else if(trick.video && filterStore.demoType[0] === "User Video" ){
-				    	passesDemoTypeFilter = true
-				    }
-				    else{
-				    	passesDemoTypeFilter = false
-				    }
-				}
-				let thisTricksCatches = 0
-				if(store.myTricks[trickKey] && store.myTricks[trickKey].catches){
-					thisTricksCatches = parseInt(store.myTricks[trickKey].catches, 10)
-				}
-				//give message if flair filter clicked and (!authStore.user)
-				let passesFlairFilter = false 
-				let myFlairForThisTrick = []
-				if (filterStore.flair.length === 0){
-					passesFlairFilter = true
-				}else{
-					if (store.myTricks[trickKey]){
-						if (store.myTricks[trickKey].starred === 'true'){
-							myFlairForThisTrick.push('starred')
-						} 
-						if (store.myTricks[trickKey].baby === 'true'){
-							myFlairForThisTrick.push('baby')
-						} 
-						if (store.myTricks[trickKey].ninja === 'true'){
-							myFlairForThisTrick.push('ninja')
-						} 
-						if (thisTricksCatches>0 && 
-							filterStore.flair.includes('catches')){
-							passesFlairFilter = true	
-						} 
-						var flairOverlap = myFlairForThisTrick.filter(function(n) {
-						  if (filterStore.flair.indexOf(n) > -1){
-						  	passesFlairFilter = true
-						  }
-						})
-					}
-				}
-
-
 				const [searchTrick, searchSubtractions] = utilities.seperateSearchSubtraction(this.searchTrick)
 				//const trickTags = store.library[trickKey].tags ? store.library[trickKey].tags.join('') : ''
 				const relevance = searchTrick ? utilities.compareStrings(searchTrick, trickKey) : 0
 				if(
-				   passesContributorFilter && passesDemoTypeFilter &&
-				   trick.difficulty >= filterStore.difficultyRange[0] && 
-				   trick.difficulty <= filterStore.difficultyRange[1] &&
-				   (tagsInFilter.length >= filterTagNames.length || filterTagNames.length === 0) &&
-				   (filterStore.numBalls.includes(trick.num.toString()) || filterStore.numBalls.length === 0) &&
-				   passesFlairFilter &&
-				   thisTricksCatches >= parseInt(filterStore.minCatches, 10) &&
-				   thisTricksCatches <= parseInt(filterStore.maxCatches, 10) && 
+				   this.passesContributorFilter(trick.contributor) && 
+				   this.passesDemoTypeFilter(trick.video) &&
+				   this.passesDifficultyFilter(trick.difficulty) &&
+				   this.passesTagsFilter(trick.tags) &&
+				   this.passesNumBallFilter(trick.num.toString()) &&
+				   this.passesFlairFilter(store.myTricks[trickKey]) &&
+				   this.passesCatchesFilter(store.myTricks[trickKey]) &&
 				   this.doesntIncludeSearchSubtractions(trickKey,searchSubtractions) &&
 				   relevance !== null
 				 ){
@@ -662,9 +693,6 @@ class UIStore {
 			}
 		})	
 		utilities.sortRootTricks()
-		/*if (uiStore.rootTricks && this.searchTrick && this.rootTricks && filterStore.sortType == 'relevance'){
-			utilities.sortRootTricksBySearchRelevance()
-		} */
 	}
 	@action clearUI=()=>{
 		this.setShowHomeScreen(false)
