@@ -270,6 +270,8 @@ class App extends Component {
 				                	<h2>Pattern List</h2>
 									<span className="aboutInfo">
 										In the pattern list you are able to search, sort and filter.
+										To exclude specific keywords from the search put a "-" before
+										the word you wish to exclude, for example: "-claymotion".
 										Each pattern's card has a blue arrow on the left that can be 
 										used to	expand the card to see the pattern demonstrated. Clicking
 										anywhere else on the card will take you to it's detail page

@@ -31,6 +31,8 @@ v2.4
 
 
 	Search observations:
+		-maybe we should remove the word 'the'
+
 		-'box' has 143/923 good results 
 		-'mills' has 57/79 good results
 		-'shower' has 47/54 good results
