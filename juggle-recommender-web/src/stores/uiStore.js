@@ -332,7 +332,6 @@ class UIStore {
  		this.selectedList = listType
  		this.detailTrick = null
  		this.detailCatchEditable = false
- 		this.resetSelectedTrick()
  		this.updateRootTricks()
  	}
 
@@ -447,6 +446,9 @@ class UIStore {
  		this.performSearch()
  	}
  	@action	searchInputChange=(e)=>{
+ 		if(!filterStore.hasSetSort){
+ 			filterStore.setSortType('relevance')
+ 		}
  		if (this.selectedTrick){
 			const previoslySelected = document.getElementById(this.selectedTrick+"listCard");
 			previoslySelected.classList.toggle("expand");
@@ -547,6 +549,7 @@ class UIStore {
 		const trickName = store.library[trickKey].name.toLowerCase()
 		let constainsSubtraction = false
 		searchSubtractions.forEach((term) => {
+			//console.log('term',term)
 			if (trickName.includes(term.toLowerCase())){
 				constainsSubtraction = true
 			}

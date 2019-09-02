@@ -133,17 +133,18 @@ class Utilities{
   seperateSearchSubtraction(searchTrick){
     const searchArray = searchTrick.split(" ")
     const subtractions = []
+    const searches = []
     searchArray.forEach((item, i) => {
       if (item.startsWith("-")){
         subtractions.push(item.replace(/-/g,''))
-        searchArray.splice(i, 1);
+      }else{
+        searches.push(item)
       }
     })
-    return [searchArray.join(' '), subtractions]
+    return [searches.join(' '), subtractions]
   }
 
   sortRootTricksBySearchRelevance(){
-
     uiStore.rootTricks.forEach((trickKey,index)=>{
       //restore siteswap notation
       const trickName = trickKey.replace(/\({/g,'\[').replace(/}\)/g,'\]').replace(/-/g,'\/')

@@ -55,9 +55,10 @@ if (urlQueryCatches){
 
 class FilterStore {
 
-	@observable sortType = 'relevance'
+	@observable sortType = 'timeSubmitted'
 	@observable demoType = demoType
 	@observable sortDirection = 'ascending'
+	@observable hasSetSort = false
 	@observable difficultyRange = difficultyRange
 	@observable numBalls = numBalls
 	@observable flair = flair
@@ -241,10 +242,12 @@ class FilterStore {
 	@action setSortType=(type)=>{
 		this.sortType = type
 		uiStore.updateRootTricks()
+		this.hasSetSort = true
 	}
 	@action setSortDirection=(direction)=>{
 		this.sortDirection = direction
 		uiStore.updateRootTricks()
+		this.hasSetSort = true
 	}
 	@action setDifficultyRange=(difficultyRange)=>{
 		this.difficultyRange = difficultyRange
