@@ -366,7 +366,7 @@ class App extends Component {
 					            </SlidingPane>
 		const detail = uiStore.editingDetailTrick ? null : 
 						uiStore.detailTrick ? <Detail trick={uiStore.detailTrick}/> : null
-
+		
 		return (
 			<div
 				className="main" 

@@ -41,21 +41,19 @@ MAYBES:
 	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
 
 Bugs:
-	-logging out shouldnt send the user to the pattern list, they should stay where they are unless they are in profile
-	-if you log out/log in while there is something in the search box it doesnt apply to the list
+	-if you log in while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
 	-in mozilla, add pattern form, video tame range labels are shifted very far to the left
 	-Scrolling is weird on add trick form, it i like there are two scrollbars and 1 only 		works on green part of form
 	-if an instagram is using time ranges, slowmotion doesnt stay when it loops forward
+	VIDEO BUGS:
 	-after about 10 loops, videos get stuck with loading wheel,
 		/detail/Claymotion%20Overarm%20Orbits  is a quick looper
 	-youtube slowmo back causes glitch if details page changes
 	-youtube slowmo back doesnt loop
 	-frame by frame doesnt hide controls for youtube
-	-MAYBE FIXED
-		-old gif shows while new gif is loading
-			-try immediately setting it to null(if not already done)
+
 
 Misc:
 	-all users emails are in db on github

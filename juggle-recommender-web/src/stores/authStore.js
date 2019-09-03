@@ -18,6 +18,7 @@ class AuthStore {
             firebase.auth().signOut().then(() => {
                 this.setUser(null)
                 resolve("signed out")
+                uiStore.updateRootTricks()
             });
         })
     }
@@ -56,6 +57,7 @@ class AuthStore {
 	                    this.setUser({"email": user.email,"username" : user.username})
 	                    store.setIsLoginPaneOpen(false)
 	                    resolve("success")
+                        uiStore.updateRootTricks()
 	                }).catch(error=>{
 	                    resolve(error)
 	                });
