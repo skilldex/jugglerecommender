@@ -22,6 +22,7 @@ class AuthStore {
         })
     }
     @action setUsername(email){
+        console.log("setting username", email)
     	const usersRef = firebase.database().ref('users/').orderByChild('email').equalTo(email)
         let user
         return new Promise(resolve => {
@@ -34,7 +35,13 @@ class AuthStore {
             })
         })
     }
-    @action setUser=(user)=>{       
+    @action setUser=(user)=>{ 
+        console.log("set user user",user)
+        if(["ianbreal","tjthejuggler"].includes(user.username.toLowerCase())){
+            console.log("turned off ga")
+            window['ga-disable-UA-140392015-1'] = true;
+        }
+      
         this.user = user
         store.getSavedTricks()
      }

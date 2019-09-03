@@ -61,6 +61,10 @@ const unlisten = history.listen((location, action) => {
 
 let firebaseConfig = {}
 if(store.isLocalHost){
+	//for testing GA locally
+	ReactGA.initialize('UA-140392015-1');
+	ReactGA.pageview(window.location.pathname + window.location.search);
+	
 	firebaseConfig = {
 		apiKey: "AIzaSyA_3_UUnQ0iII4jblL4Nf6OLALpH1AbaKQ",
 		authDomain: "skilldex-dev-6c0ff.firebaseapp.com",
