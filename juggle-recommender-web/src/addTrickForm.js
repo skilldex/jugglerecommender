@@ -151,8 +151,7 @@ class AddTrickForm extends Component {
 	handleExplanationChange=(e)=>{
 		this.setState({
 			explanation:e.target.value,
-		})	
-		this.checkIfFormIsSubmittable()	
+		},this.checkIfFormIsSubmittable)	
 	}
 	handleOnBlurName=(e)=>{
 		const wordsInName = e.target.value.split(" ")
@@ -202,14 +201,12 @@ class AddTrickForm extends Component {
 	handleTutorialChange=(e)=>{
 		this.setState({
 			url:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		},this.checkIfFormIsSubmittable)
 	}
 	handleVideoChange=(e)=>{
 		this.setState({
 			video:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		},this.checkIfFormIsSubmittable)
 	}
 	handleSSChange=(e)=>{
 		this.setState({
@@ -237,14 +234,12 @@ class AddTrickForm extends Component {
 	handleStartTimeChange=(e)=>{
 		this.setState({
 			videoStartTime:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		},this.checkIfFormIsSubmittable)
 	}
 	handleEndTimeChange=(e)=>{		
 		this.setState({
 			videoEndTime:e.target.value
-		})
-		this.checkIfFormIsSubmittable()
+		},this.checkIfFormIsSubmittable)
 	}
 
 
