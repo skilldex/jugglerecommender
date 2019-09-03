@@ -155,7 +155,9 @@ class Utilities{
     string1 = this.removeSpecialCharacters(string1) 
     string2 = this.removeSpecialCharacters(string2)
     const stringDistance = this.hammingDistance(string1.toLowerCase(),string2.toLowerCase())
-    if(stringDistance !== null && stringDistance < Math.min(string1.length/3,3)){
+    if(stringDistance !== null && 
+      stringDistance === 0 ||
+      stringDistance/string1.length <= .25 ){//Math.min(string1.length/3,3)){
       return stringDistance 
     }else{
       return null
