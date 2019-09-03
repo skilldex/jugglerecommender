@@ -12,7 +12,7 @@ class AuthStore {
     @observable mods = ['tjthejugglerx','Ianbrealx']
 	@observable user = null
     @action signOut=()=>{
-	 	uiStore.closeDetails()
+	 	//uiStore.closeDetails()
 	 	window.alert(this.user.username + " has been signed out.")
         return new Promise(resolve => {
             firebase.auth().signOut().then(() => {

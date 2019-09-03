@@ -274,6 +274,7 @@ class MainTagsBar extends Component {
             if (filterStore.searchText){
               searchTextToShow = filterStore.searchText
             }
+      if (store.isLoginPaneOpen){console.log("isOpen")}
       return (
         <div className="searchAndFilterSection">
           <div>
@@ -284,15 +285,20 @@ class MainTagsBar extends Component {
                 alt="searchIcon" 
                 onClick={()=>{this.handleSearchIconClicked()}}
               />
-              <DebounceInput
-                id = "searchTextInput" 
-                className="searchInput" 
-                minLength={1}
-                debounceTimeout={store.isMobile ? 750 : 300}
-                value= {searchTextToShow}
-                onChange={uiStore.searchInputChange}
-                ref={ref => this.searchInput = ref}
-              />
+              <form autocomplete = "off">
+                <DebounceInput
+                  id = "searchTextInput" 
+                  type = "search"
+                  name = "patternSearch"
+                  autocomplete="new-password"
+                  className="searchInput" 
+                  minLength={1}
+                  debounceTimeout={store.isMobile ? 750 : 300}
+                  value= {searchTextToShow}
+                  onChange={uiStore.searchInputChange}
+                  ref={ref => this.searchInput = ref}
+                />
+              </form>
               {sort}
               {sortDropdown}
               {filter}
