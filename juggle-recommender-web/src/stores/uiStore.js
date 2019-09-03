@@ -675,7 +675,7 @@ class UIStore {
 			  (this.selectedList === "myTricks" && store.myTricks[trickKey])){
 				const [searchTrick, searchSubtractions] = utilities.seperateSearchSubtraction(this.searchTrick)
 				//const trickTags = store.library[trickKey].tags ? store.library[trickKey].tags.join('') : ''
-				const relevance = searchTrick ? utilities.compareStrings(searchTrick, trickKey) : 0
+				const relevance = searchTrick ? utilities.compareStrings(searchTrick, trickKey+trick.siteswap) : 0
 				if(
 				   this.passesContributorFilter(trick.contributor) && 
 				   this.passesDemoTypeFilter(trick.video) &&

@@ -31,10 +31,6 @@ v2.4
 
 
 	Search observations:
-		-maybe we should remove the word 'the' from search query as well as trick names?
-			this way 'the box' is top result for search 'box'
-		-search no longer searches tags or ss
-			-the issue with searching tags is that 441 has the tag 'columns' and since 441 is shorter than the trick 'columns', it comes up first. this happens a bit.
 		-should we implement the new search everywhere?
 			-autocompletes?
 			-smallTrickList?
@@ -45,7 +41,7 @@ v2.4
 			-should we pick a default sort to go when search gets cleared?
 
 
-				
+	include siteswap in search, if has problems put it into filter
 =========
 //give message if flair filter clicked and (!authStore.user)
 Problem: overwhelming lists.
