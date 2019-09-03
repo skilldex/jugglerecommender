@@ -36,11 +36,11 @@ class AuthStore {
         })
     }
     @action setUser=(user)=>{ 
-        console.log("set user user",user)
-        if(["ianbreal","tjthejuggler"].includes(user.username.toLowerCase())){
-            console.log("turned off ga")
-            window['ga-disable-UA-140392015-1'] = true;
-        }
+        // console.log("set user user",user)
+        // if(["ianbreal","tjthejuggler"].includes(user.username.toLowerCase())){
+        //     console.log("turned off ga")
+        //     window['ga-disable-UA-140392015-1'] = true;
+        // }
       
         this.user = user
         store.getSavedTricks()
