@@ -52,12 +52,12 @@ class MainTagsBar extends Component {
     }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
-      utilities.sendGA('mainTagsBar','sort by'+type)
+      utilities.sendGA('mainTagsBar','sort by '+type)
       this.showPatternList()
       uiStore.setShowSortDiv(false)
     }
     sortDirectionClicked=(direction)=>{
-      utilities.sendGA('mainTagsBar','sort direction'+direction)
+      utilities.sendGA('mainTagsBar','sort direction '+direction)
       filterStore.setSortDirection(direction)
       this.showPatternList()
     }
