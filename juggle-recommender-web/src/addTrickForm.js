@@ -344,15 +344,13 @@ class AddTrickForm extends Component {
 		let timesAreValid = true
 		let startSeconds
 		let endSeconds
-		if (!utilities.isEmptyOrSpaces(this.state.videoStartTime) &&
-			!utilities.isValidTime(this.state.videoStartTime)){
+		if (!utilities.isValidTime(this.state.videoStartTime)){
 			timesAreValid = false
 		}else{
 			startSeconds = utilities.formatSeconds(this.state.videoStartTime)
 		}
 		
-		if (!utilities.isEmptyOrSpaces(this.state.videoEndTime) &&
-			!utilities.isValidTime(this.state.videoEndTime)){
+		if (!utilities.isValidTime(this.state.videoEndTime)){
 			timesAreValid = false
 		}else{
 			endSeconds = utilities.formatSeconds(this.state.videoEndTime)

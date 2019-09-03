@@ -64,12 +64,14 @@ class Utilities{
     let isValid = false
     str = str.toString()
     if (str.match(/^[0-9]+$/) === null){
-      if (str.match(/^.+:\d+$/)){
+      if (str.match(/^.+:\d+$/) ||
+          str === ''){
         isValid = true
       }
     }else{
       isValid = true
     }
+
     return isValid
   }
 

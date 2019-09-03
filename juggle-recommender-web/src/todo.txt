@@ -47,9 +47,6 @@ MAYBES:
 	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
 
 Bugs:
-	-timerange in add trick form says invalid when one is empty, but empty is actually valid
-	-timerange needs an on blur submitchecker
-	-you must be signed in to add trick message shows twice
 	-if you log out/log in while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
