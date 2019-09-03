@@ -91,14 +91,14 @@ class Utilities{
       if (lab){
         ReactGA.event({
             category: cat,
-            act,
+            action: act,
             label: lab,
         });
       }
       else{
         ReactGA.event({
             category: cat,
-            act,
+            action: act,
         });
       }
     } 
