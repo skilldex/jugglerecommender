@@ -70,7 +70,6 @@ class Comments extends Component {
                 store.toggleShowReplies(parent.key)
                 store.toggleEnableReplies(parent.key)
             }
-            console.log("setting")
             this.setState({ newComment : "" })
         })        
         authStore.getEmailByUsername(parent.user).then((email)=>{

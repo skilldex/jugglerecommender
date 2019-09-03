@@ -219,11 +219,7 @@ class UIStore {
   		history.go(-1);
 	  }
 	@action toggleAddingTrick = ()=>{
-		if (!authStore.user){
-			window.alert("You must be signed in to add a trick");
-		}else{
-			this.addingTrick = !this.addingTrick
-		}
+		this.addingTrick = !this.addingTrick
 		if(!this.addingTrick){
 			this.editingDetailTrick = false
 		}
@@ -660,7 +656,6 @@ class UIStore {
 		const trickName = store.library[trickKey].name.toLowerCase()
 		let constainsSubtraction = false
 		searchSubtractions.forEach((term) => {
-			//console.log('term',term)
 			if (trickName.includes(term.toLowerCase())){
 				constainsSubtraction = true
 			}

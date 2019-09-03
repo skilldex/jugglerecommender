@@ -19,19 +19,24 @@ class Header extends Component {
 			previoslySelected.classList.toggle("expand");
 			uiStore.selectTrick(null)
 		}
-		
-		uiStore.toggleExpandedMenu()
-		utilities.sendGA('header',paneFlag)	
-		if(paneFlag == "addpattern" ||
-			paneFlag == "logout" ||
-			paneFlag == "home" ||
-			paneFlag == "tricklist" ||
-			paneFlag == "stats" ||
-			paneFlag == "profile")
-		{
-			utilities.openPage(paneFlag, true)
+		if(uiStore.showExpandedMenu){		
+			uiStore.toggleExpandedMenu()
 		}
-		else{
+		utilities.sendGA('header',paneFlag)	
+		if(paneFlag === "addpattern" ||
+			paneFlag === "logout" ||
+			paneFlag === "home" ||
+			paneFlag === "tricklist" ||
+			paneFlag === "stats" ||
+			paneFlag === "profile")
+		{
+			if (paneFlag === "addpattern" &&
+				!authStore.user){
+					window.alert("You must be signed in to add a trick");
+				}else{
+					utilities.openPage(paneFlag, true)
+				}
+		}else{
 			this.props.openSlidingPane(paneFlag)
 			uiStore.setShowExpandedMenu(false)
 		}	

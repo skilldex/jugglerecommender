@@ -14,6 +14,7 @@ v2.4
 		-filter for 'has tutorial'
 			-make it it's own section
 		-make family filter
+			-families seem similar to the playlist thing, maybe the two can be combined somehow
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
@@ -24,32 +25,16 @@ v2.4
 		-hover over to explain
 
 	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
-
-	message guy about new search and ask if he is aware of going into details to find postreqs of tricks
-	figure out how when to set sort to search relevance
-		maybe show current sort as a tag
-
+		-maybe this will be fixed by hooking up improved search to smallTrickList
 
 	Search observations:
 		-should we implement the new search everywhere?
 			-autocompletes?
 			-smallTrickList?
-		Possible default sorting setup:
-			-sort starts as timeSubmitted
-			-if user has not set a sort and they search, then we set sort to relevance
-				-make a variable that is 'hasSetSort', starts false, becomes true
-			-should we pick a default sort to go when search gets cleared?
+				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
-
-	include siteswap in search, if has problems put it into filter
 =========
 //give message if flair filter clicked and (!authStore.user)
-Problem: overwhelming lists.
--we could have a way to only show base patterns, either with an 'all patterns' toggle on search bar or a 'base-pattern' tag that defaults to on.
--if we use a 'base-pattern' tag, then we probably dont want it to be a tag that anyone can add
--if we use a toggle, then when the toggle is on it could clear all tags, when of it could just turn on the base-pattern tag filter
--we could default to the 'base-pattern' tag, but then we lose the benifit of automatically seeing new patterns
-	-we could make two 'pattern list' buttons on home screen that are 'new patterns' and 'base patterns' each that go to filtered/sorted lists. if we do this then we probably want to show the sort type in the tags bar
 
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 	
@@ -61,9 +46,10 @@ MAYBES:
 	-Patterns mentioned in comments could be links
 	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
 
-
 Bugs:
 	-timerange in add trick form says invalid when one is empty, but empty is actually valid
+	-timerange needs an on blur submitchecker
+	-you must be signed in to add trick message shows twice
 	-if you log out/log in while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
