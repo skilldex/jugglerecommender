@@ -106,11 +106,19 @@
   height: 16px;
 }
 .videoTimeInputsDiv{
-  display: inline;
+  display: inline-block;
+  width: 100%;
+}
+.timeInputLabels{
+  width: 100%;
 }
 .startTimeLabel{
-  margin-left:-186px;
-  margin-right: 64px;
+
+  margin-right: 30px;
+}
+.endTimeLabel{
+  margin-left: 34px;
+  margin-right: 184px;
 }
 .inputLabel{
   margin-bottom: 2px;

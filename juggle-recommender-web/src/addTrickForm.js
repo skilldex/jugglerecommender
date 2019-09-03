@@ -771,8 +771,10 @@ class AddTrickForm extends Component {
 							</div> 
 	                        {this.state.showTimeInputs?
 	                        	<div className="videoTimeInputsDiv">
-									<span className="startTimeLabel">Start</span>
-									<span>End</span><br/>
+	                        		<div className="timeInputLabels">
+										<span className="startTimeLabel">Start</span>
+										<span className="endTimeLabel">End</span>
+									</div>
 									<span className="timeWarning">
 										{this.state.showTimeInputs && this.state.videoTimeErrorMessage? this.state.videoTimeErrorMessage:"\u00A0"}
 									</span>
