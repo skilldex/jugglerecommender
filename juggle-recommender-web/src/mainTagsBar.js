@@ -70,11 +70,11 @@ class MainTagsBar extends Component {
     mouseLeaveSortDiv=()=>{
       uiStore.setShowSortDiv(false)
       uiStore.setMouseInSortDiv(false)
-      document.getElementById("searchTextInput").focus()   }
+    }
 
     showPatternList=()=>{
       utilities.openPage('tricklist',true)
-      document.getElementById("searchTextInput").focus()   }
+    }
 
     selectRandomTrick=()=>{
       var keys = uiStore.rootTricks
@@ -106,7 +106,7 @@ class MainTagsBar extends Component {
     }
     handleSearchIconClicked=()=>{
       utilities.sendGA('mainTagsBar','search icon')
-      document.getElementById("searchTextInput").focus()
+      this.searchInput.focus()
       this.showPatternList()
       uiStore.setFilterURL()
     }
