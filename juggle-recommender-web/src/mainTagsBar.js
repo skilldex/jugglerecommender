@@ -13,6 +13,7 @@ import authStore from "./stores/authStore"
 import './mainTagsBar.css';
 import history from './history';
 import utilities from './utilities'
+import {DebounceInput} from 'react-debounce-input';
 
 @observer
 class MainTagsBar extends Component {
@@ -283,9 +284,11 @@ class MainTagsBar extends Component {
                 alt="searchIcon" 
                 onClick={()=>{this.handleSearchIconClicked()}}
               />
-              <input
+              <DebounceInput
                 id = "searchTextInput" 
                 className="searchInput" 
+                minLength={1}
+                debounceTimeout={store.isMobile ? 750 : 300}
                 value= {searchTextToShow}
                 onChange={uiStore.searchInputChange}
                 ref={ref => this.searchInput = ref}
