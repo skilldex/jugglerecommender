@@ -457,6 +457,10 @@ class UIStore {
 		this.searchInput = e.target.value 		
 		if(e.target.value === ""){
 			this.searchTrick = ""
+			if (filterStore.sortType === 'relevance'){
+				filterStore.setSortType('timeSubmitted')
+				filterStore.setHasSetSort(false)
+			}
 		}
 		this.performSearch()
 		this.showPatternList()

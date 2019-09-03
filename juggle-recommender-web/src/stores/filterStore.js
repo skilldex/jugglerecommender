@@ -249,6 +249,9 @@ class FilterStore {
 		uiStore.updateRootTricks()
 		this.hasSetSort = true
 	}
+	@action setHasSetSort=(bool)=>{
+		this.hasSetSort = bool
+	}
 	@action setDifficultyRange=(difficultyRange)=>{
 		this.difficultyRange = difficultyRange
 		uiStore.resetSelectedTrick()
