@@ -268,6 +268,7 @@ class Utilities{
       uiStore.setShowExpandedMenu(false)
     }else{
       uiStore.clearUI()
+      document.getElementById("searchTextInput").focus()
     }
     if(page == 'logout'){
       shouldPush = false
