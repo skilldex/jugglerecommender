@@ -391,6 +391,18 @@ class Filter extends Component {
 		                            />											
 								</div>
 							</div>
+	
+		const hasTutorialSection = 	 
+							<div>
+								<div>
+									<h3 className="filterHeader">Has a tutorial</h3>
+								</div>
+								<button className={filterStore.hasTutorialSelected?
+									'filterHasTutorial filterHasTutorialSelected':'filterHasTutorial'}
+								key='hasTutorialButton' 
+								onClick={()=>{filterStore.toggleHasTutorialSelected()}}></button>
+							</div>
+
 
 		const difficultySection =<div>
 									<h3 className="filterHeader">Difficulty</h3>
@@ -454,15 +466,17 @@ class Filter extends Component {
 					<ColoredLine/>
 					{tagSection}
 					<ColoredLine/>
+					{difficultySection}
+					<ColoredLine/>
 					{contributorSection}
+					<ColoredLine/>
+					{hasTutorialSection}
 					<ColoredLine/>
 					{demoTypeSection}
 					<ColoredLine/>
-					{flairSection}
-					<ColoredLine/>
-					{difficultySection}
-					<ColoredLine/>
 					{catchesSection}
+					<ColoredLine/>
+					{flairSection}
 					<ColoredLine/>
 					<label className="filterSubmitButton" 
 		             	   onClick={()=>{uiStore.toggleFilterDiv()}}>Submit

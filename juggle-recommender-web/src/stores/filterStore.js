@@ -67,6 +67,7 @@ class FilterStore {
 	@observable contributors = contributor
 	@observable minCatches = minCatches
 	@observable maxCatches = maxCatches
+	@observable hasTutorialSelected = false
 
 	@action getURLtext=()=>{
 		let urlText = "/tricklist/filter/"
@@ -140,6 +141,11 @@ class FilterStore {
     	}
 
     	return urlText
+	}
+
+	@action toggleHasTutorialSelected=()=>{
+		this.hasTutorialSelected = !this.hasTutorialSelected
+		uiStore.updateRootTricks()
 	}
 
 	@action resetAllFilters=()=>{

@@ -652,6 +652,18 @@ class UIStore {
 	    		thisTricksCatches <= parseInt(filterStore.maxCatches, 10))
 	}
 
+	@action passesHasTutorialFilter=(tutorialURL)=>{
+		let passesFilter = true
+		let trickHasTutorial = false
+		if (tutorialURL && tutorialURL.length>3){
+			trickHasTutorial = true
+		}
+		if (filterStore.hasTutorialSelected && !trickHasTutorial){
+			passesFilter = false
+		}
+		return passesFilter
+	}
+
 	@action doesntIncludeSearchSubtractions=(trickKey,searchSubtractions)=>{
 		const trickName = store.library[trickKey].name.toLowerCase()
 		let constainsSubtraction = false
@@ -683,6 +695,7 @@ class UIStore {
 				   this.passesNumBallFilter(trick.num.toString()) &&
 				   this.passesFlairFilter(store.myTricks[trickKey]) &&
 				   this.passesCatchesFilter(store.myTricks[trickKey]) &&
+				   this.passesHasTutorialFilter(trick.url) &&
 				   this.doesntIncludeSearchSubtractions(trickKey,searchSubtractions) &&
 				   relevance !== null
 				 ){

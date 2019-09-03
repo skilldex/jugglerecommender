@@ -92,6 +92,21 @@
   margin: 2px;
   outline: none;
 }
+.filterNumSelected{
+  background-color: lightblue;
+}
+.filterHasTutorial{
+  height: 22px;
+  width: 22px;
+  color: black;
+  border-radius: 8px;
+  margin: 2px;
+  margin-left: 13px;
+  outline: none;
+}
+.filterHasTutorialSelected{
+  background-color: lightblue;
+}
 .starIconFilter{
   height : 24px;
   width : 24px;
@@ -124,9 +139,7 @@
   filter:  invert(0.5) sepia(1) saturate(8) hue-rotate(90deg);
 
 }
-.filterNumSelected{
-  background-color: lightblue;
-}
+
 
 .relationshipButton{
   color: black;

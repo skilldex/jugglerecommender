@@ -11,10 +11,9 @@ v2.4
 	Filter
 		-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
 			-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
-		-filter for 'has tutorial'
-			-make it it's own section
 		-family filter
 			-families seem similar to the playlist thing, maybe the two can be combined somehow
+			-families is very similar to search, maybe the two could be combined, families could be a suggestions dropdown for search
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
@@ -27,7 +26,7 @@ v2.4
 	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
 		-maybe this will be fixed by hooking up improved search to smallTrickList
 
-	Search observations:
+	Search:
 		-should we implement the new search everywhere?
 			-autocompletes?
 			-smallTrickList?
