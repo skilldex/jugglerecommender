@@ -23,8 +23,10 @@ v2.4
 		-make a 'tricks being worked on stat'
 		-hover over to explain
 
+	Bugs: (that might get fixed when autocomplete gets new search)
 	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
 		-maybe this will be fixed by hooking up improved search to smallTrickList
+	-in edit more than 1 letter of a tag and they suggestions go away
 
 	Search:
 		-should we implement the new search everywhere?
@@ -33,6 +35,8 @@ v2.4
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
 	-show siteswap in tricklist of desktop
+	-decrease font size of smallTrickList pattern names
+	-i get a warning when i type names into contributor filter
 =========
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 	
@@ -42,6 +46,8 @@ MAYBES:
 	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
 
 Bugs:
+	-search broke once, i cant reproduce it, i had a contributor and tag filters se, refresh cured it.
+		-it happenend again, again cant reproduce, but it said 'cannot read classlist of null' of uiStore 451
 	-if you login while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
