@@ -29,11 +29,15 @@ v2.4
 	-in edit more than 1 letter of a tag and they suggestions go away
 
 	Search:
+		-deal with spacing issue in current search
+			-'alex' search is a good example of this
 		-should we implement the new search everywhere?
 			-autocompletes?
 			-smallTrickList?
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
+	-increase catch range inputs
+	-pressing enter on earch changes url and clears search
 	-i get a warning when i type names into contributor filter
 	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
 		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 

@@ -117,6 +117,7 @@ class MainTagsBar extends Component {
       uiStore.setFilterURL()
     }
 
+
     render() {
       let filterButtonClass = uiStore.showFilterDiv?
                     "selectedfilterButton" : "unselectedfilterButton" 
@@ -285,7 +286,8 @@ class MainTagsBar extends Component {
                 alt="searchIcon" 
                 onClick={()=>{this.handleSearchIconClicked()}}
               />
-              <form autocomplete = "off">
+              <form autocomplete = "off"
+                    onSubmit={e => { e.preventDefault(); }}>
                 <DebounceInput
                   id = "searchTextInput" 
                   type = "search"
