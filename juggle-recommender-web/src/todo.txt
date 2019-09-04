@@ -37,6 +37,8 @@ v2.4
 	-show siteswap in tricklist of desktop
 	-decrease font size of smallTrickList pattern names
 	-i get a warning when i type names into contributor filter
+	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
+	-check to see if removing catches is messing up total catch count, if so maybe we need to rerun a script to get an accurate catch count on website once code is fixed
 =========
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 	

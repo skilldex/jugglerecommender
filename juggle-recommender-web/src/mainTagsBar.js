@@ -106,7 +106,7 @@ class MainTagsBar extends Component {
     }
     handleSearchIconClicked=()=>{
       utilities.sendGA('mainTagsBar','search icon')
-      this.searchInput.focus()
+      document.getElementById("searchTextInput").focus()
       this.showPatternList()
       uiStore.setFilterURL()
     }
