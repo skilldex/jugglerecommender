@@ -71,6 +71,12 @@
 .smallListCardInfo{
   display: inline-block;
   height: 100%;
+  width:320px;
+}
+
+.smallListCardInfoAddTrick{
+  display: inline-block;
+  height: 100%;
   width:260px;
 
 }
@@ -90,14 +96,21 @@
   display: flex;
   align-items: center;
 }
-.tags{
+.smallListTags{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  width : 250px;
+}
+
+.smallListTagsAddTrick{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   vertical-align: middle;
   width : 185px;
 }
-
 
 .smallListLoadingDiv{
   width: 100%;
@@ -158,7 +171,7 @@
   text-overflow: ellipsis;
   vertical-align: middle;
   color : black;
-  font-size: 15px;
+  font-size: 13px;
   z-index: 1300;
   width: 360px;
 }
@@ -169,7 +182,7 @@
   text-overflow: ellipsis;
   vertical-align: middle;
   color : black;
-  font-size: 15px;
+  font-size: 12px;
   z-index: 1300; 
   width:260px;
 }

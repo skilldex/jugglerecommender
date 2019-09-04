@@ -159,6 +159,11 @@ class TrickList extends Component {
 					numUpvoters = detailTrick[listType][trickKey].upvoters ? detailTrick[listType][trickKey].upvoters.length : 0
 					numDownvoters = detailTrick[listType][trickKey].downvoters ? detailTrick[listType][trickKey].downvoters.length : 0
 				}
+				const siteswapSection = 
+										<div className="bottomRowText siteswap"
+												title={trick.siteswap}>
+											<b>Siteswap:</b> {trick.siteswap}
+										</div>
 
 				tricks.push(
 					<div className= {listCardClass  }
@@ -192,10 +197,20 @@ class TrickList extends Component {
 											{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
 											utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
 										</div>
-										<div className="bottomRowText tags"
+										<div className={!store.isMobile && 
+														this.props.listType =="main"?
+															"bottomRowText tagsDesktop":
+															"bottomRowText tags"
+														}
 												title={trick.tags}>
 											<b>Tags:</b> {tags}
 										</div>	
+										{!store.isMobile && 
+										  trick.siteswap &&
+										  this.props.listType=="main"?
+											 siteswapSection:
+											 null
+										}
 									</div>
 									{ this.props.listType !== "main" && uiStore.selectedTrick !== trickKey ? 
 										<div className="thumbLine">

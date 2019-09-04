@@ -169,7 +169,7 @@ class SmallTrickList extends Component {
 											src={downArrow}
 										/>	 		
 									</div>
-									<div className = "smallListCardInfo">	
+									<div className = {this.props.listType.includes('Details') ? "smallListCardInfo" : "smallListCardInfo"}>	
 										<div className={smallListCardNameDivClassName} title={trick.name}>
 					 		 				<span>{trick.name.slice(0,matchIndex)}</span>
 					 		 				<span className="match">{trick.name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
@@ -177,7 +177,10 @@ class SmallTrickList extends Component {
 					 					</div>
 										<div className="smallListBottomRowText">
 											<div className="difficultyGauge">{difficultyGauge}</div>
-											<div className="smallListBottomRowText tags"
+											<div className={this.props.listType.includes('Details') ? 
+																"smallListBottomRowText smallListTags" : 
+																"smallListBottomRowText smallListTagsAddTrick"
+															}
 													title={trick.tags}>
 												Tags: {tags}
 											</div>	
