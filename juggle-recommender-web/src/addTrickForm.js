@@ -44,6 +44,7 @@ class AddTrickForm extends Component {
 		explanation: '',
 		views: 0,
 		usersWithCatches: 0,
+		usersWorkingOn: 0,
 	}
 
 	componentDidMount=()=>{
@@ -74,7 +75,9 @@ class AddTrickForm extends Component {
 			if(trick.usersWithCatches){
 				this.setState({usersWithCatches: trick.usersWithCatches})
 			}
-
+			if(trick.usersWorkingOn){
+				this.setState({usersWorkingOn: trick.usersWorkingOn})
+			}
 
 			if (trick.prereqs){
 				Object.keys(trick.prereqs).forEach((trickKey)=>{
@@ -451,6 +454,7 @@ class AddTrickForm extends Component {
 				explanation : this.state.explanation,
 				views : this.state.views,
 				usersWithCatches : this.state.usersWithCatches,
+				usersWorkingOn : this.state.usersWorkingOn,
 			}
 			if(!this.state.contributor){
 				delete trick.contributor

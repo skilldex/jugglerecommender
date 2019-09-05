@@ -152,9 +152,6 @@ class Filter extends Component {
 		    }
 		});
 		if (suggestions.includes(tag) && canAdd){
-
-
-
 			filterStore.setTags(
 				tagType, [...currentFilterTags, tag] 
 			);

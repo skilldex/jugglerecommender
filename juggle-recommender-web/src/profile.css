@@ -44,7 +44,7 @@
 	font-size: 14px;
 }
 .individualProfileStatsDiv{
-  width: 300px;
+  width: 320px;
   margin : 0 auto;
   text-align: right;
   display: flex;
@@ -57,9 +57,9 @@
   margin:0 auto;
   text-align: left;
   margin-top: 10px;
-  margin-right:10px;
+  margin-right:1px;
   align-items: right;
-  font-size: 11pt;
+  font-size: 10pt;
 }
 .profileStatsLabelButtonGreyed{
   font-weight: bold;
@@ -68,9 +68,9 @@
   margin:0 auto;
   text-align: left;
   margin-top: 10px;
-  margin-right:10px;
+  margin-right:1px;
   align-items: right;
-  font-size: 11pt;
+  font-size: 10pt;
 }
 
 .iconProfile{
@@ -91,4 +91,5 @@
    margin-top: 10px;
   text-align: right;
   padding-right: 110px;
+  font-size: 10pt;
 }

@@ -89,6 +89,18 @@ class Store {
 			usersWithCatchesRef.set(detailTrick['usersWithCatches'])
 		}		
 	}
+	@action changeUsersWorkingOnTally=(amount)=>{
+		const detailTrickKey = uiStore.detailTrick ? uiStore.detailTrick.id : ""
+		if (this.library[detailTrickKey]){
+			const detailTrick = {...this.library[detailTrickKey]}
+			if(!detailTrick['usersWorkingOn']){
+				detailTrick['usersWorkingOn'] = 0
+			}
+			detailTrick['usersWorkingOn'] = detailTrick['usersWorkingOn'] + amount
+			const usersWorkingOnRef = firebase.database().ref('library/'+detailTrickKey+'/usersWorkingOn')
+			usersWorkingOnRef.set(detailTrick['usersWorkingOn'])
+		}		
+	}
 	@action vote(parentTrick, relatedTrickKey,listType, voteDirection){
 		utilities.sendGA('detail',
 			voteDirection.substring(0, voteDirection.length - 2) +
@@ -754,6 +766,13 @@ class Store {
 	 		this.myTricks[trickKey][flairType] = 'true'
 	 		const date = new Date()
 	 		this.myTricks[trickKey].lastUpdated = date.getTime()
+	 		if (flairType === "baby"  ||
+	 			flairType === "ninja"){
+	 			if (!this.myTricks[trickKey].catches ||
+	 				parseInt(this.myTricks[trickKey].catches, 10) < 1){
+	 					this.changeUsersWorkingOnTally(1)
+	 			}
+	 		}
 	 		if(flairType === "baby" && this.myTricks[trickKey]["ninja"] === 'true'){
 	 			this.toggleFlair(trickKey, "ninja")
 	 		}
@@ -762,6 +781,10 @@ class Store {
 	 		}
 	 	}else{
 	 		this.myTricks[trickKey][flairType] = 'false'
+	 			if (!this.myTricks[trickKey].catches ||
+	 				parseInt(this.myTricks[trickKey].catches, 10) < 1){
+	 					this.changeUsersWorkingOnTally(-1)
+	 			}
 	 	}
 	 	this.myTricks = {...this.myTricks}
  		this.updateTricksInDatabase()

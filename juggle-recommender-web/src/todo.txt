@@ -17,13 +17,6 @@ v2.4
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
-	-change 'users with catches' to 'users working on'
-		-do this on details as well as profile stats
-		-include ninja and baby flair in count
-		-make a 'tricks being worked on stat'
-		-hover over to explain
-		-in profile contributor stats, exclude user from 'users working on' count
-
 	Search:
 		-deal with spacing issue in current search
 			-'alex' search is a good example of this
@@ -44,6 +37,7 @@ MAYBES/QUESTIONS:
 	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
 		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
 	-should flair filters require all selected flairs or any of the selected flairs?
+	-make a 'tricks being worked on stat'?
 
 Bugs:
 	-search broke once, i cant reproduce it, i had a contributor and tag filters se, refresh cured it.

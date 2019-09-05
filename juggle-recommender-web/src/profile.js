@@ -20,7 +20,8 @@ class Profile extends Component {
 	state={
 		contributedTrickCount: 0,
 		contributedViewCount: 0,
-		contributedWorkerCount: 0,
+		contributedCatchesCount: 0,
+		contributedWorkersCount: 0,
 		withCatches: 0,
 		withStar: 0,
 		withBaby: 0,
@@ -31,6 +32,7 @@ class Profile extends Component {
 		let contributorCount = 0
 		let viewCount = 0
 		let workerCount = 0
+		let catchesCount = 0
 		Object.keys(store.library).forEach((trick) => {
 			if (store.library[trick].contributor && 
 				store.library[trick].contributor === authStore.user.username){
@@ -38,13 +40,42 @@ class Profile extends Component {
 				if (store.library[trick].views)
 					viewCount += store.library[trick].views
 				if (store.library[trick].usersWithCatches){
-					workerCount += store.library[trick].usersWithCatches
+					catchesCount += store.library[trick].usersWithCatches
+				}
+				if (store.library[trick].usersWorkingOn){
+					workerCount += store.library[trick].usersWorkingOn
+				}
+
+				let contributorHasCatches = false
+				if (store.myTricks[trick] && 
+					store.myTricks[trick]['catches'] &&
+					parseInt(store.myTricks[trick]['catches'])>0){
+						catchesCount = catchesCount - 1
+						workerCount = workerCount - 1
+						contributorHasCatches = true
+				}
+				if (!contributorHasCatches){
+					let contributorHasFlair = false
+					if (store.myTricks[trick] && 
+						store.myTricks[trick]['baby'] &&
+						store.myTricks[trick]['baby'] === 'true'){
+							contributorHasFlair = true
+					}	
+					if (store.myTricks[trick] && 
+						store.myTricks[trick]['ninja'] &&
+						store.myTricks[trick]['ninja'] === 'true'){
+							contributorHasFlair = true
+					}	
+					if (contributorHasFlair){
+						workerCount = workerCount - 1
+					}				
 				}
 			}
 		})
 		this.setState({contributedTrickCount: contributorCount})
 		this.setState({contributedViewCount: viewCount})
-		this.setState({contributedWorkerCount: workerCount})
+		this.setState({contributedCatchesCount: catchesCount})
+		this.setState({contributedWorkersCount: workerCount})
 
 		let totalCatches = 0
 		let withCatches = 0
@@ -241,12 +272,33 @@ class Profile extends Component {
 						<label className= {this.state.contributedTrickCount > 0?
 											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
 								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
-							Users w. Catches
+							Other Users w. Catches
 						</label>  
 						<div className = "profileStatsValues">
-							{this.state.contributedWorkerCount} 
+							{this.state.contributedCatchesCount} 
 						</div>
 					</div>
+					<div className = "individualProfileStatsDiv">
+						<label className= {this.state.contributedTrickCount > 0?
+											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
+								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
+							Other Users w. Flair
+						</label>  
+						<div className = "profileStatsValues">
+							{this.state.contributedWorkersCount - this.state.contributedCatchesCount} 
+						</div>
+					</div>
+					<div className = "individualProfileStatsDiv">
+						<label className= {this.state.contributedTrickCount > 0?
+											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
+								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
+							Other Users Working On
+						</label>  
+						<div className = "profileStatsValues">
+							{this.state.contributedWorkersCount} 
+						</div>
+					</div>
+					<br/><br/>
 			</div>
 		)
 	}

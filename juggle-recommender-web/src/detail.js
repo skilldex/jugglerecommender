@@ -407,9 +407,9 @@ class Detail extends Component {
                             <label className="detailLabel">Views </label>
                             {detailTrick.views ? Math.round(detailTrick.views) : 0}
                           </div>
-                          <div className="usersWithCatchesDiv">
-                            <label className="detailLabel">Users w. Catches </label>
-                            {detailTrick.usersWithCatches ? detailTrick.usersWithCatches : 0}
+                          <div className="usersWorkingOnDiv">
+                            <label className="detailLabel">Users Working On </label>
+                            {detailTrick.usersWorkingOn ? detailTrick.usersWorkingOn : 0}
                           </div>
                             {catchesSection}
                           <div className="flairDiv">
