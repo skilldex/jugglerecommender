@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import authStore from "./stores/authStore"
-import store from './stores/store'
 import "./App.css"
-import firebase from 'firebase' 
 
 class ForgotPassword extends Component {
     // public ui = new firebaseui.auth.AuthUI(firebase.auth());
