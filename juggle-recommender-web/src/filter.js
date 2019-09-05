@@ -22,7 +22,6 @@ class Filter extends Component {
 	 	sortType: filterStore.sortType,
       	numBalls: filterStore.numBalls,
       	filter: filterStore.flair,
-      	difficultyRange: filterStore.difficultyRange,
       	demoTypesTags: ['All', 'User Video','Juggling Lab'],
 		tagInput:'',
 		autoCompletedTag : false,
@@ -229,7 +228,9 @@ class Filter extends Component {
 		if(filterStore.tags.length>0){
 		        filterStore.tags.forEach((tag)=>{
 		        	addedTags.push(
-		                <div className="addedRelatedTricksDiv">
+		                <div className="addedRelatedTricksDiv"
+		                		  key = {{tag} + " filter"}
+		                >
 		                  <span className="mainTagsName"
 		                        onClick={()=>{filterStore.removeTag('tags',tag)}}>{tag}</span>
 		                  <label className="mainTagsX"
@@ -270,7 +271,9 @@ class Filter extends Component {
 		if(filterStore.contributors.length>0){
 		        filterStore.contributors.forEach((tag)=>{
 		        	addedContributors.push(
-		                <div className="addedRelatedTricksDiv">
+		                <div className="addedRelatedTricksDiv"
+		                		  key = {{tag} + " filter"}
+		                >
 		                  <span className="mainTagsName"
 		                        onClick={()=>{filterStore.removeTag('contributor',tag)}}>{tag}</span>
 		                  <label className="mainTagsX"
@@ -311,7 +314,10 @@ class Filter extends Component {
 		if(filterStore.demoType.length>0){
 		        filterStore.demoType.forEach((tag)=>{
 		        	addedDemoTypes.push(
-		                <div className="addedRelatedTricksDiv">
+		                <div className="addedRelatedTricksDiv"
+		                		  key = {{tag} + " filter"}
+		                >
+
 		                  <span className="mainTagsName"
 		                        onClick={()=>{filterStore.removeTag('demoType',tag)}}>{tag}</span>
 		                  <label className="mainTagsX"
@@ -395,7 +401,6 @@ class Filter extends Component {
 								key='hasTutorialButton' 
 								onClick={()=>{filterStore.toggleHasTutorialSelected()}}></button>
 							</div>
-
 
 		const difficultySection =<div>
 									<h3 className="filterHeader">Difficulty</h3>

@@ -31,6 +31,7 @@ v2.4
 			-smallTrickList?
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
+
 	-if we load page with flair url that results in no matches, we get endless loading wheel
 	-should flair filters require all selected flairs or any of the selected flairs?
 	-style left alignment of filter sections
@@ -124,9 +125,10 @@ Code Cleaning:
 		-this may no longer be a thing
 
 Performance Improvement:
+	-when we go to a details page of a youtube trick, we get a firebase warning about adding security rule to increase performance
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
-	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a tricknsme changes we can more quickly update everyone's database.
+	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a trick name changes we can more quickly update everyone's database.
 
 
 SEARCH NUMBERS:
