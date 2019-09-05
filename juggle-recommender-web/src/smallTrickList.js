@@ -2,20 +2,16 @@ import React,{Component} from 'react'
 import store from './stores/store'
 import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
-import authStore from './stores/authStore'
 import { observer } from "mobx-react"
 import downArrow from './images/down-arrow.svg'
-
 import Demo from './demo'
-import MainTagsBar from "./mainTagsBar"
 import './smallTrickList.css';
 import './App.css';
 import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
 //import { Resizable } from "re-resizable";
-import history from './history';
-import InfiniteScroll from 'react-infinite-scroller';
-const paginationSize = 10
+//import InfiniteScroll from 'react-infinite-scroller';
+//const paginationSize = 10
 
 @observer
 class SmallTrickList extends Component {
@@ -61,7 +57,7 @@ class SmallTrickList extends Component {
 
 	handleInputChange=(e)=>{
 		this.setState({inputText : e.target.value})
-		if (e.target.value == ''){
+		if (e.target.value === ''){
 			uiStore.selectTrick(null)
 			uiStore.clearSuggestions(this.props.listType)
 		}
@@ -75,22 +71,21 @@ class SmallTrickList extends Component {
 		let shouldShowList = true
 		if (this.props.listType.includes('Details')){
 			if (this.props.listType.includes('prereq') &&
-				uiStore.autoCompletedSuggestedPrereq==true){
+				uiStore.autoCompletedSuggestedPrereq === true){
 					shouldShowList = false
 			}
 			if (this.props.listType.includes('related') &&
-				uiStore.autoCompletedSuggestedRelated==true){
+				uiStore.autoCompletedSuggestedRelated === true){
 					shouldShowList = false
 			}
 			if (this.props.listType.includes('postreq') &&
-				uiStore.autoCompletedSuggestedPostreq==true){
+				uiStore.autoCompletedSuggestedPostreq === true){
 					shouldShowList = false
 			}
 		}
 		if (this.state.inputText.length>1 && shouldShowList){
 		 	let tricks = []
 		 	const pushedTrickkeys = []
-		 	const detailTrick = uiStore.detailTrick ? store.library[uiStore.detailTrick.id] : null
 		 	let tricksToList = null
 		 	if (this.props.listType.includes('prereq') ||
 		 		this.props.listType.includes('related')){
