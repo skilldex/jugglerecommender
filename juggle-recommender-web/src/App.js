@@ -25,7 +25,7 @@ import history from "./history"
 import utilities from './utilities'
 import bitcoinIcon from './images/bitcoin.png'
 
-const unlisten = history.listen((location, action) => {
+history.listen((location, action) => {
   // location is an object like window.location
   if(location.state && location.state.detail !== uiStore.detailTrick){
   	utilities.openPage('detail/'+location.state.detail,false)
@@ -244,6 +244,7 @@ class App extends Component {
 						<label><b>Donations:</b></label>
 						<div>
 							<img className="bitcoinIcon"
+								alt=''
 								src={bitcoinIcon}/>
 							<span>Bitcoin:</span>
 		                    <a className ="donationLink"
