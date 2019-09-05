@@ -3,14 +3,9 @@ import uiStore from "./stores/uiStore"
 import filterStore from "./stores/filterStore"
 import "./stats.css"
 import { observer } from "mobx-react"
-import { toJS } from "mobx"
-import authStore from "./stores/authStore"
+//import { toJS } from "mobx"
 import store from "./stores/store"
 import utilities from './utilities'
-import AutoComplete from './autoComplete'
-import TrickList from './trickList.js'
-import Demo from './demo'
-import history from './history';
 import downArrow from './images/down-arrow.svg'
 @observer
 class Stats extends Component {
