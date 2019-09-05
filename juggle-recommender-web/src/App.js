@@ -136,9 +136,9 @@ class App extends Component {
 		store.getSavedTricks()	
 		Modal.setAppElement(this.el);
 		firebase.auth().onAuthStateChanged(function(user) {
-			console.log("user check" ,user)
+		  //console.log("user check" ,user)
           if (user && !authStore.user) {
-            console.log("user auth changed", user)
+            //console.log("user auth changed", user)
             authStore.setUsername(user.email)
           }
         });
