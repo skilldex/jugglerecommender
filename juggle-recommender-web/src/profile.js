@@ -3,14 +3,11 @@ import uiStore from "./stores/uiStore"
 import filterStore from "./stores/filterStore"
 import "./profile.css"
 import { observer } from "mobx-react"
-import { toJS } from "mobx"
+//import { toJS } from "mobx"
 import authStore from "./stores/authStore"
 import store from "./stores/store"
 import utilities from './utilities'
-import TrickList from './trickList.js'
 import shareIcon from './images/shareIcon.png'
-import Demo from './demo'
-import history from './history';
 import downArrow from './images/down-arrow.svg'
 import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
