@@ -1,6 +1,5 @@
 import React,{Component} from 'react'
 import store from "./stores/store"
-import uiStore from "./stores/uiStore"
 import './App.css';
 import './autoComplete.css'
 
@@ -11,9 +10,9 @@ class AutoComplete extends Component {
 		let matchedNames = []
 	 	const options = this.props.optionsList.map((key, i)=>{
 	 		let name = null
-	 		if (this.props.optionsListType == 'name'){
+	 		if (this.props.optionsListType === 'name'){
 		 		name = store.library[key].name
-		 	}else if(this.props.optionsListType == 'tags'){
+		 	}else if(this.props.optionsListType === 'tags'){
 		 		name = this.props.optionsList[i]
 		 	}
 	 		let lowerCaseName = name.toLowerCase()
@@ -22,8 +21,10 @@ class AutoComplete extends Component {
 	 			lowerCaseName = lowerCaseName.slice(0,ballMatch.index)
 	 			name = name.slice(0,ballMatch.index)
 	 		}
-		 		if(lowerCaseName.includes(lowerCaseInput) && 
-	 			!matchedNames.includes(lowerCaseName) || 
+		 		if((lowerCaseName.includes(lowerCaseInput) && 
+	 			!matchedNames.includes(lowerCaseName)) || 
+				//..or if it is less than 4 then it is demo types and 
+				//we want to show whehter the input matches or not
 	 			this.props.optionsList.length < 4){
 		 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
 		 			matchedNames.push(lowerCaseName)
