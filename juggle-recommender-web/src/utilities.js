@@ -146,20 +146,13 @@ class Utilities{
     return [searches.join(' '), subtractions]
   }
 
-  sortRootTricksBySearchRelevance(){
-    uiStore.rootTricks.forEach((trickKey,index)=>{
-      //restore siteswap notation
-      const trickName = trickKey.replace(/\({/g,'\[').replace(/}\)/g,'\]').replace(/-/g,'\/')
-      const compareScore = this.compareStrings(uiStore.searchTrick,trickName)
-    })
-  }
   compareStrings=(string1,string2)=>{
     string1 = this.removeSpecialCharacters(string1) 
     string2 = this.removeSpecialCharacters(string2)
     const stringDistance = this.hammingDistance(string1.toLowerCase(),string2.toLowerCase())
     if(stringDistance !== null && 
-      stringDistance === 0 ||
-      stringDistance/string1.length <= .25 ){//Math.min(string1.length/3,3)){
+      (stringDistance === 0 ||
+      stringDistance/string1.length <= .25 )){//Math.min(string1.length/3,3)){
       return stringDistance 
     }else{
       return null
@@ -216,8 +209,8 @@ class Utilities{
         finalA = uiStore.rootTrickRelevance[a]
         finalB = uiStore.rootTrickRelevance[b]
       }
-      if(filterStore.sortType == "relevance"){
-        if(filterStore.sortDirection == 'ascending'){
+      if(filterStore.sortType === "relevance"){
+        if(filterStore.sortDirection === 'ascending'){
            return finalA > finalB ? 1 : ( 
             finalA < finalB ? -1 : 
             a.length > b.length ? 1 : 
@@ -234,13 +227,13 @@ class Utilities{
         if (filterStore.sortType === 'lastUpdated' || 
             filterStore.sortType === 'difficulty' ||
             filterStore.sortType === 'alphabetically'){
-          if(filterStore.sortDirection == 'ascending'){
+          if(filterStore.sortDirection === 'ascending'){
              return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
           }else{
              return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
           }
         }else{
-          if(filterStore.sortDirection == 'descending'){
+          if(filterStore.sortDirection === 'descending'){
              return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
           }else{
              return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
@@ -270,7 +263,7 @@ class Utilities{
       uiStore.clearUI()
       document.getElementById("searchTextInput").focus()
     }
-    if(page == 'logout'){
+    if(page === 'logout'){
       shouldPush = false
     }
     if(shouldPush){        
@@ -280,31 +273,31 @@ class Utilities{
           history.push('/' + page)
         }       
     }
-    if(page == "addpattern"){     
+    if(page === "addpattern"){     
       if(!uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }
-    }else if(page == "logout"){
+    }else if(page === "logout"){
       authStore.signOut()
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }      
-    }else if(page == "home"){
+    }else if(page === "home"){
       uiStore.setShowHomeScreen(true)
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }     
-    }else if(page == "tricklist"){
+    }else if(page === "tricklist"){
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }
       uiStore.setFilterURL()
-    }else if(page == "stats"){
+    }else if(page === "stats"){
       uiStore.setShowStatsScreen(true)
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }
-    }else if(page == "profile"){
+    }else if(page === "profile"){
       uiStore.setShowProfileScreen(true)
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
@@ -348,7 +341,7 @@ class Utilities{
     const numHands = 2 
     if(myTrick && myTrick.catches > 0){
        x = myTrick.catches/(numBalls*numHands)
-    }else if(myTrick && !myTrick.catches && (myTrick.ninja == "true" || myTrick.baby == "true")){
+    }else if(myTrick && !myTrick.catches && (myTrick.ninja === "true" || myTrick.baby === "true")){
       if(myTrick.baby){
         x = numBalls*numHands
       }else{
