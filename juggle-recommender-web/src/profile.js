@@ -287,16 +287,6 @@ class Profile extends Component {
 						<label className= {this.state.contributedTrickCount > 0?
 											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
 								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
-							Other Users w. Flair
-						</label>  
-						<div className = "profileStatsValues">
-							{this.state.contributedWorkersCount - this.state.contributedCatchesCount} 
-						</div>
-					</div>
-					<div className = "individualProfileStatsDiv">
-						<label className= {this.state.contributedTrickCount > 0?
-											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
-								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
 							Other Users Working On
 						</label>  
 						<div className = "profileStatsValues">

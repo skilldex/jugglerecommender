@@ -297,9 +297,7 @@ class UIStore {
 			if ((store.myTricks[trickKey]['baby'] && 
 				store.myTricks[trickKey]['baby'] === 'true') ||
 				(store.myTricks[trickKey]['ninja'] && 
-				store.myTricks[trickKey]['ninja'] === 'true') ||
-				(store.myTricks[trickKey]['starred'] && 
-				store.myTricks[trickKey]['starred'] === 'true')){
+				store.myTricks[trickKey]['ninja'] === 'true')){
 					userHasFlairWithThisTrick = true
 			}
 			if (parseInt(previousCatches,10) === 0){
