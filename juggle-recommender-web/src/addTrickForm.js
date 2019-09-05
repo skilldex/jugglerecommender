@@ -10,12 +10,6 @@ import Validate from './siteswapValidator'
 import downArrow from './images/down-arrow.svg'
 import SmallTrickList from './smallTrickList'
 
-const KeyCodes = {
-  comma: 188,
-  enter: 13,
-};
-
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
 @observer
 class AddTrickForm extends Component {
 	state = {
@@ -48,7 +42,6 @@ class AddTrickForm extends Component {
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
 		explanation: '',
-		gifUrl: null,
 		views: 0,
 		usersWithCatches: 0,
 	}
@@ -468,7 +461,7 @@ class AddTrickForm extends Component {
 				trick['contributor'] = document.getElementById('TJsContributorInput').value
 				store.setTJsPreviouslyUsedContributor(trick['contributor'])
 				//if i put in loj it uses no name which defaults to Library Of Juggling
-				if(document.getElementById('TJsContributorInput').value == 'loj'){
+				if(document.getElementById('TJsContributorInput').value === 'loj'){
 					delete trick.contributor
 				}
 			}
@@ -571,13 +564,6 @@ class AddTrickForm extends Component {
 			             		   onClick={()=>{ uiStore.handleBackButtonClick()}}>Back
 			             		</label>
 	                        </div>
-		let patternsObj = Object.keys(store.library).map((pattern) => {
-		  return {
-		  	size: null,
-		    id: pattern,
-		    text: store.library[pattern].name,
-		  }
-		})
 		const autoCompleteTags = this.state.tagInput && !this.state.autoCompletedTag ? 
 			<AutoComplete 
 				optionsListType = 'tags'
