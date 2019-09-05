@@ -7,11 +7,8 @@ import sortIconSelected from './images/sortIconSelected.png'
 import sortIconUnselected from './images/sortIconUnselected.png'
 import filterIcon from './images/filterIcon.svg'
 import searchIcon from './images/searchIcon.png'
-import starIcon from './images/starIcon.svg'
 import randomTrickIcon from './images/randomTrickIcon.svg'
-import authStore from "./stores/authStore"
 import './mainTagsBar.css';
-import history from './history';
 import utilities from './utilities'
 import {DebounceInput} from 'react-debounce-input';
 
@@ -99,7 +96,7 @@ class MainTagsBar extends Component {
       }
       uiStore.clearUI()
       this.setState({
-        rotateClass : this.state.rotateClass == "rotatingRandomTrickBox" ? "rotatedRandomTrickBox" : "rotatingRandomTrickBox" 
+        rotateClass : this.state.rotateClass === "rotatingRandomTrickBox" ? "rotatedRandomTrickBox" : "rotatingRandomTrickBox" 
       })
       this.selectRandomTrick()
       store.setTimeOfPreviousRandomTrickClick()
@@ -193,9 +190,6 @@ class MainTagsBar extends Component {
               </div>      
         )
       }
-        let myTricksButtonClass = uiStore.selectedList === "myTricks" ? 
-                      "selectedListButton" :"unselectedListButton" 
-            myTricksButtonClass = myTricksButtonClass + " listButton"
         const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 
