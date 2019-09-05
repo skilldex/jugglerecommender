@@ -8,15 +8,11 @@ import downArrow from './images/down-arrow.svg'
 import catchesIcon from './images/catchesIcon.svg'
 import thumbsUpIcon from './images/thumbsUp.svg'
 import thumbsDownIcon from './images/thumbsDown.svg'
-
 import Demo from './demo'
-import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
 import './App.css';
 import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
-//import { Resizable } from "re-resizable";
-import history from './history';
 import InfiniteScroll from 'react-infinite-scroller';
 const paginationSize = 40
 
@@ -79,8 +75,8 @@ class TrickList extends Component {
 							
 	vote=(trickKey, direction)=>{
 		if(authStore.user){
-			const oppositeListType = this.props.listType == "related" ? "related" : 
-									 this.props.listType == "prereqs" ? "dependents" :
+			const oppositeListType = this.props.listType === "related" ? "related" : 
+									 this.props.listType === "prereqs" ? "dependents" :
 												"prereqs"
 			store.vote(uiStore.detailTrick.id , trickKey, this.props.listType, direction)
 			store.vote(trickKey , uiStore.detailTrick.id, oppositeListType, direction)
@@ -101,7 +97,7 @@ class TrickList extends Component {
 	 	let tricks = []
 	 	const pushedTrickkeys = []
 	 	const detailTrick = uiStore.detailTrick ? store.library[uiStore.detailTrick.id] : null
-	 	const listType = this.props.listType == "postreqs" ? "dependents" : this.props.listType
+	 	const listType = this.props.listType === "postreqs" ? "dependents" : this.props.listType
 		this.props.tricksToList.forEach((trickKey, index)=>{
 			if(!uiStore.detailTrick && index > paginationSize * uiStore.pageNumber){
 				return
@@ -151,8 +147,8 @@ class TrickList extends Component {
 										/>	
 				const expandTrickButtonClass =  
 					uiStore.selectedTrick === trickKey ?  "expandTrickButton"  :  "expandTrickButton rotated90"
-				let listCardClass = this.props.listType == "main" ? "listCard" : "listCard detailListCard"
-				listCardClass =  index == 0 && this.props.listType != "main" ? listCardClass + " topCard" : listCardClass
+				let listCardClass = this.props.listType === "main" ? "listCard" : "listCard detailListCard"
+				listCardClass =  index === 0 && this.props.listType !== "main" ? listCardClass + " topCard" : listCardClass
 				let numUpvoters = 0
 				let numDownvoters = 0
 				if(detailTrick){
@@ -189,7 +185,10 @@ class TrickList extends Component {
 									/>	 		
 								</div>
 								 <div className = "cardInfo">	
-									<div className="listCardNameDiv" title={trick.name}>{trick.name}</div>
+									<div className={store.isMobile? "listCardNameDiv" : "listCardNameDivDesktop"} 
+											title={trick.name}>
+												{trick.name}
+									</div>
 									<div className="bottomRow">
 										<div className="difficultyGauge">{difficultyGauge}</div>
 										<img className="catchesIconList" alt="" src ={catchesIcon}/>
