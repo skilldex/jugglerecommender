@@ -184,7 +184,7 @@ class MainTagsBar extends Component {
           )
         })
       }
-      if(filterStore.demoType[0]){   
+      if(filterStore.demoType.length > 0 && filterStore.demoType[0]){   
         filterTags.push(
               <div className="tagDiv">
                 <span className="mainTagsName"
@@ -286,13 +286,13 @@ class MainTagsBar extends Component {
                 alt="searchIcon" 
                 onClick={()=>{this.handleSearchIconClicked()}}
               />
-              <form autocomplete = "off"
+              <form autoComplete = "off"
                     onSubmit={e => { e.preventDefault(); }}>
                 <DebounceInput
                   id = "searchTextInput" 
                   type = "search"
                   name = "patternSearch"
-                  autocomplete="new-password"
+                  autoComplete="new-password"
                   className="searchInput" 
                   minLength={1}
                   debounceTimeout={store.isMobile ? 750 : 300}
