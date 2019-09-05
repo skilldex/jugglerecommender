@@ -55,7 +55,7 @@ class Utilities{
       return ((catches/1000).toFixed(1)+"K")
     }
     if (catches>10000){
-      return (parseInt(catches/1000)+"K")
+      return (parseInt(catches/1000,10)+"K")
     }
   }
   
