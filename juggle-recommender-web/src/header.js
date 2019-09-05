@@ -4,8 +4,6 @@ import authStore from "./stores/authStore"
 import hamburger from "./images/menu_icon.svg"
 import "./header.css"
 import uiStore from "./stores/uiStore"
-import store from "./stores/store"
-import history from './history';
 import utilities from './utilities'
 import MainTagsBar from "./mainTagsBar"
 @observer
@@ -58,26 +56,61 @@ class Header extends Component {
 						     onMouseEnter = {()=>this.mouseEnterExpandedMenu()}
 				             onMouseLeave = {()=>this.mouseLeaveExpandedMenu()}
 						>
-							<button className="dropDownButton" onClick={()=> this.clickMenuItem('home')}>Home</button>
-							<button className="dropDownButton" onClick={()=> this.clickMenuItem('tricklist')}>Pattern List</button>
+							<button className="dropDownButton" 
+									onClick={()=> this.clickMenuItem('home')}>
+										Home
+							</button>
+							<button className="dropDownButton" 
+									onClick={()=> this.clickMenuItem('tricklist')}>
+										Pattern List
+							</button>
 					        {authStore.user ?
-						        <button className="dropDownButton" onClick={()=> this.clickMenuItem('logout')}>Logout</button>:
-						        <button className="dropDownButton" onClick={() => this.clickMenuItem('isLoginPaneOpen')}>Login</button>
+						        <button className="dropDownButton" 
+						        		onClick={()=> this.clickMenuItem('logout')}>
+						        			Logout
+						        </button>
+						        :
+						        <button className="dropDownButton" 
+						        		onClick={() => this.clickMenuItem('isLoginPaneOpen')}>
+						        			Login
+						        </button>
 						   	}
-						   	<button className="dropDownButton"  onClick={() => this.clickMenuItem('stats')}>Stats</button>
+						   	<button className="dropDownButton" 
+						   			onClick={() => this.clickMenuItem('stats')}>
+						   				Stats
+						   	</button>
 						   	{authStore.user ? 
-						   		<button className="dropDownButton"  onClick={() => this.clickMenuItem('profile')}>Profile</button>:null
+						   		<button className="dropDownButton"  
+						   				onClick={() => this.clickMenuItem('profile')}>
+						   					Profile
+						   		</button>
+						   		:null
 					      	}
-					      	<button className="dropDownButton"  onClick={() => this.clickMenuItem('addpattern')}>Add Pattern</button>
-					        <button className="dropDownButton"  onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>About</button>
-					    </div> : null
+					      	<button className="dropDownButton"  
+					      			onClick={() => this.clickMenuItem('addpattern')}>
+					      				Add Pattern
+					      	</button>
+					        <button className="dropDownButton" 
+					        		onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>
+					        			bout
+					        </button>
+					    </div> 
+					    : null
         return (   
         		<div>
 	                <div className="header">
 						<div >
-							<label className="title" onClick={() => this.titleClicked()}>Juggledex</label><span className="version">v2.34</span>
+							<label className="title" 
+									onClick={() => this.titleClicked()}>
+										Juggledex
+							</label>
+							<span className="version">v2.34</span>
 					    </div>
-					    <img className="hamburger" onClick={() => uiStore.toggleExpandedMenu()} src={hamburger}/>
+					    <img className="hamburger" 
+					    	alt='' 
+					    	onClick={() => uiStore.toggleExpandedMenu()} 
+					    	src={hamburger}
+					    />
 					    
 					    <div className="fullHeader">
 						    {authStore.user ? 
