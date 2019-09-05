@@ -6,7 +6,7 @@ v2.4
 
 	-Add Trick Form:
 		-make consuming tags be added automatically in the list
-			-need a fleeting message to tell that this happenend. this can be made manually.	
+			-need a fleeting message to tell that this happenend. this can be made manually.
 
 	Filter
 		-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
@@ -22,6 +22,7 @@ v2.4
 		-include ninja and baby flair in count
 		-make a 'tricks being worked on stat'
 		-hover over to explain
+		-in profile contributor stats, exclude user from 'users working on' count
 
 	Search:
 		-deal with spacing issue in current search
@@ -31,26 +32,18 @@ v2.4
 			-smallTrickList?
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
-
 	-if we load page with flair url that results in no matches, we get endless loading wheel
-	-should flair filters require all selected flairs or any of the selected flairs?
-	-style left alignment of filter sections
-	-increase the timeout time for automatic refresh, it only needs to happen if they keep the tab open for a long time
-	-in profile contributor stats, exclude user from 'users working on' count
-	-hook enter up to login form
-	-increase catch range inputs
-	-pressing enter on earch changes url and clears search
-	-i get a warning when i type names into contributor filter
-	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
-		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
 	-check to see if removing catches is messing up total catch count, if so maybe we need to rerun a script to get an accurate catch count on website once code is fixed
 =========
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 	
-MAYBES:
+MAYBES/QUESTIONS:
 	GA hooked up to browser back button? our back button? Seperate GAs or same?
 	-Patterns mentioned in comments could be links
 	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
+	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
+		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
+	-should flair filters require all selected flairs or any of the selected flairs?
 
 Bugs:
 	-search broke once, i cant reproduce it, i had a contributor and tag filters se, refresh cured it.
@@ -58,7 +51,7 @@ Bugs:
 	-if you login while there is something in the search box it doesnt apply to the list
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
-	-Scrolling is weird on add trick form, it i like there are two scrollbars and 1 only 		works on green part of form
+	-Scrolling is weird on add trick form, it is like there are two scrollbars and 1 only 		works on green part of form
 	VIDEO BUGS:
 	-if an instagram is using time ranges, slowmotion doesnt stay when it loops forward
 	-after about 10 loops, videos get stuck with loading wheel,
