@@ -10,7 +10,7 @@ function resetIdleTimer(){
   clearTimeout(idleTimer)
   idleTimer = setTimeout(()=>{
     window.location.reload()
-  },3600000)
+  },7200000)
 }
 window.onload = resetIdleTimer;
 document.onload = resetIdleTimer;
