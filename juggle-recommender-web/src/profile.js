@@ -66,6 +66,11 @@ class Profile extends Component {
 						store.myTricks[trick]['ninja'] === 'true'){
 							contributorHasFlair = true
 					}	
+					if (store.myTricks[trick] && 
+						store.myTricks[trick]['starred'] &&
+						store.myTricks[trick]['starred'] === 'true'){
+							contributorHasFlair = true
+					}
 					if (contributorHasFlair){
 						workerCount = workerCount - 1
 					}				

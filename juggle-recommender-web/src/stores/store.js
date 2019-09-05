@@ -766,13 +766,10 @@ class Store {
 	 		this.myTricks[trickKey][flairType] = 'true'
 	 		const date = new Date()
 	 		this.myTricks[trickKey].lastUpdated = date.getTime()
-	 		if (flairType === "baby"  ||
-	 			flairType === "ninja"){
-	 			if (!this.myTricks[trickKey].catches ||
-	 				parseInt(this.myTricks[trickKey].catches, 10) < 1){
-	 					this.changeUsersWorkingOnTally(1)
-	 			}
-	 		}
+ 			if (!this.myTricks[trickKey].catches ||
+ 				parseInt(this.myTricks[trickKey].catches, 10) < 1){
+ 					this.changeUsersWorkingOnTally(1)
+ 			}
 	 		if(flairType === "baby" && this.myTricks[trickKey]["ninja"] === 'true'){
 	 			this.toggleFlair(trickKey, "ninja")
 	 		}

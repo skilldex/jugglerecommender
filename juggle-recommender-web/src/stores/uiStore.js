@@ -297,21 +297,22 @@ class UIStore {
 			if ((store.myTricks[trickKey]['baby'] && 
 				store.myTricks[trickKey]['baby'] === 'true') ||
 				(store.myTricks[trickKey]['ninja'] && 
-				store.myTricks[trickKey]['ninja'] === 'true')){
+				store.myTricks[trickKey]['ninja'] === 'true') ||
+				(store.myTricks[trickKey]['starred'] && 
+				store.myTricks[trickKey]['starred'] === 'true')){
 					userHasFlairWithThisTrick = true
 			}
 			if (parseInt(previousCatches,10) === 0){
 				store.changeUsersWithCatchesTally(1)
 					if(!userHasFlairWithThisTrick){
-					store.changeUsersWorkingOnTally(1)
+						store.changeUsersWorkingOnTally(1)
 				}
 			}
 			if (parseInt(catches, 10) === 0){
 				store.changeUsersWithCatchesTally(-1)
-				if(!userHasFlairWithThisTrick){
-
-					store.changeUsersWorkingOnTally(-1)
-				}
+					if(!userHasFlairWithThisTrick){
+						store.changeUsersWorkingOnTally(-1)
+					}
 			}
 			store.updateTotalCatchCount(catches-previousCatches)
 			store.setCatches(catches, trickKey)
