@@ -1,25 +1,13 @@
-
-
 import React,{Component} from 'react'
 import store from './stores/store'
 import authStore from './stores/authStore'
-
-import filterStore from './stores/filterStore'
 import uiStore from './stores/uiStore'
 import { observer } from "mobx-react"
-import downArrow from './images/down-arrow.svg'
-import catchesIcon from './images/catchesIcon.svg'
-import Demo from './demo'
-import MainTagsBar from "./mainTagsBar"
 import './trickList.css';
 import './App.css';
-import Gauge from 'react-svg-gauge';
 import utilities from './utilities'
 //import { Resizable } from "re-resizable";
-import history from './history';
-import InfiniteScroll from 'react-infinite-scroller';
 import "./comments.css"
-const paginationSize = 20
 
 @observer
 class Comments extends Component {
