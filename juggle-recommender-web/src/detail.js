@@ -642,7 +642,7 @@ class Detail extends Component {
                     className="commentsContainer">
                 <h3>Discussion</h3>
                 { authStore.user ? 
-                    <div class="firstCommentContainer">
+                    <div className="firstCommentContainer">
                       <span className="firstCommentIcon">{authStore.user.username}</span>
                       <textarea 
                         id="mainCommentTextArea"
@@ -672,7 +672,7 @@ class Detail extends Component {
                     </label>
                   </div> : 
                   authStore.user ?
-                  <div class="noCommentsDiv">No comments yet...</div> :
+                  <div className="noCommentsDiv">No comments yet...</div> :
                   null
                 }
                 {uiStore.showCommentsSection?
