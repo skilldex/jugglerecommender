@@ -1,4 +1,5 @@
-import { action, configure, computed, observable, toJS} from "mobx"
+import { action, configure, computed, observable } from "mobx"
+//import { toJS } from "mobx"
 import firebase from 'firebase'
 import uiStore from './uiStore'
 import authStore from './authStore'
@@ -93,8 +94,8 @@ class Store {
 			voteDirection.substring(0, voteDirection.length - 2) +
 			' ' + relatedTrickKey + ' as ' + listType +
 			' for ' + parentTrick)
-		const oppositeVoteDirection = voteDirection == "upvoters" ? "downvoters" : "upvoters" 
-		if(listType == "postreqs"){ listType = "dependents"}
+		const oppositeVoteDirection = voteDirection === "upvoters" ? "downvoters" : "upvoters" 
+		if(listType === "postreqs"){ listType = "dependents"}
 		const relatedTrick = {...this.library[parentTrick][listType][relatedTrickKey]}
 		//first voter
 		if(!relatedTrick[voteDirection]){
@@ -103,7 +104,7 @@ class Store {
 		//voter already included
 		if(relatedTrick[voteDirection] && relatedTrick[voteDirection].includes(authStore.user.username)){
 			relatedTrick[voteDirection] = relatedTrick[voteDirection].filter((value)=>{
-			    return value != authStore.user.username;
+			    return value !== authStore.user.username;
 			});
 		}else{
 			//voter not included
@@ -115,7 +116,7 @@ class Store {
 			relatedTrick[oppositeVoteDirection].includes(authStore.user.username)
 		){
 			relatedTrick[oppositeVoteDirection] = relatedTrick[oppositeVoteDirection].filter((value)=>{
-			    return value != authStore.user.username;
+			    return value !== authStore.user.username;
 			});
 			const oppositeVotesRef = firebase.database().ref(
 				'library/'+parentTrick+ 
@@ -174,9 +175,7 @@ class Store {
 		this.currentComments = comments
 	}
 	@action createComment(comment) {
-      const that = this
       const commentsRef = firebase.database().ref('comments/'+comment.previousKeys);
-      let parentComments = []
 	  utilities.sendGA('comment','commented ' + comment.trickId)
       return new Promise((resolve, reject) => {
 
@@ -250,7 +249,6 @@ class Store {
 		   	let leaderboardRef = firebase.database().ref('leaderboard/')
 		   	let trickToUse
 			leaderboardRef.on('value', resp =>{
-				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
 				if (!trickKeyToUse){
 					var keys = Object.keys(this.library)
     				trickKeyToUse = keys[ keys.length * Math.random() << 0];
@@ -416,8 +414,8 @@ class Store {
 		})
 	}
 	@action removeOldRelationship=(relation, newTrickData, oldTrickKey)=>{
-		const relatedProperty = relation == "related" ? "related" : 
-								relation == "prereqs" ? "dependents" :
+		const relatedProperty = relation === "related" ? "related" : 
+								relation === "prereqs" ? "dependents" :
 								"prereqs"
 		const oldTrick = this.library[oldTrickKey]
 		if(oldTrick[relation]){
@@ -447,17 +445,16 @@ class Store {
 		}
 	}
 	@action changeNameInAllUsersMyTricks=(newTrick,oldTrickKey)=>{
-		let allUsersMyTricks
 		let fullDBRef = firebase.database().ref('myTricks/')
 		fullDBRef.on('value', resp =>{
 			fullDBRef.off()
         	const allUsersMyTricks = this.snapshotToArray(resp)
         	Object.keys(allUsersMyTricks).forEach((user)=>{
-        		if (user['myTricks']){
-					Object.keys(user['myTricks']).forEach((trickKey)=>{
+        		if (allUsersMyTricks[user]['myTricks']){
+					Object.keys(allUsersMyTricks[user]['myTricks']).forEach((trickKey)=>{
 						if (trickKey === oldTrickKey){	
-							user['myTricks'][newTrick.name] = user['myTricks'][oldTrickKey]
-							delete user['myTricks'][oldTrickKey]
+							allUsersMyTricks[user]['myTricks'][newTrick.name] = allUsersMyTricks[user]['myTricks'][oldTrickKey]
+							delete allUsersMyTricks[user]['myTricks'][oldTrickKey]
 						}
 					})
 				}
@@ -496,7 +493,7 @@ class Store {
 			this.removeOldRelationship('prereqs',trick,oldTrickKey)
 			this.removeOldRelationship('related',trick,oldTrickKey)
 			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
-			if (trickKey == oldTrickKey){
+			if (trickKey === oldTrickKey){
 				shouldBackUpBecauseEditing = true
 			}
 			//if the leaderboard trick is having it's name edited
@@ -566,8 +563,8 @@ class Store {
 	      				!trick[relationship][relatedTrickKey]['upvoters'].includes(authStore.user.username)){
 		    			this.vote(trickKey, relatedTrickKey,relationship, 'upvoters')
 		    		}
-					const oppositeRelationship = relationship == "related" ? "related" : 
-								 				relationship == "prereqs" ? "dependents" : "prereqs"
+					const oppositeRelationship = relationship === "related" ? "related" : 
+								 				relationship === "prereqs" ? "dependents" : "prereqs"
 					if (this.library[relatedTrickKey]){
 			    		if (!this.library[relatedTrickKey][oppositeRelationship][trickKey]['upvoters'] ||
 			    			!this.library[relatedTrickKey][oppositeRelationship][trickKey]['upvoters'].includes(authStore.user.username)){
@@ -591,8 +588,8 @@ class Store {
 	}
 	
 	@action addEquivalentRelated=(trick,relation)=>{
-		const relatedProperty = relation == "related" ? "related" : 
-								relation == "prereqs" ? "dependents" :
+		const relatedProperty = relation === "related" ? "related" : 
+								relation === "prereqs" ? "dependents" :
 								"prereqs"
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
@@ -634,8 +631,8 @@ class Store {
 	    relationWriteRef.set({...this.library[trickKey][relation][suggestedTrickKey]});
 	    relationWriteRef.off()
 
-		const otherRelation = relation == "related" ? "related" : 
-								relation == "prereqs" ? "dependents" :
+		const otherRelation = relation === "related" ? "related" : 
+								relation === "prereqs" ? "dependents" :
 								"prereqs"
 
 	    if(!this.library[suggestedTrickKey][otherRelation]){
