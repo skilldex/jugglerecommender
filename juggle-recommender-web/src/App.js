@@ -20,14 +20,14 @@ import Stats from "./stats"
 import Profile from "./profile"
 import ReactGA from 'react-ga'
 import Filter from './filter'
-import { withRouter, Router } from 'react-router-dom';
+//import { withRouter, Router } from 'react-router-dom';
 import history from "./history"
 import utilities from './utilities'
 import bitcoinIcon from './images/bitcoin.png'
 
 const unlisten = history.listen((location, action) => {
   // location is an object like window.location
-  if(location.state && location.state.detail != uiStore.detailTrick){
+  if(location.state && location.state.detail !== uiStore.detailTrick){
   	utilities.openPage('detail/'+location.state.detail,false)
   }else if(location.pathname.includes("/detail/")){
   	const trickKey = location.pathname.split("/detail/")[1].split('/modignore')[0]
@@ -40,8 +40,8 @@ const unlisten = history.listen((location, action) => {
   }
 
   if(location.pathname.includes("/home") || 
-  				location.pathname == "/" ||
-  				location.pathname == "/modignore"){
+  				location.pathname === "/" ||
+  				location.pathname === "/modignore"){
   	utilities.openPage('home', false)
   }
   if(location.pathname.includes("/tricklist")){
@@ -165,7 +165,7 @@ class App extends Component {
 		store.getLibraryFromDatabase().then(()=>{
 			const locationPathname = window.location.pathname.split('/modignore')[0]
 			if(locationPathname.includes("detail")){
-			  	let match = locationPathname.match('/detail\/(.+)')
+			  	let match = locationPathname.match('/detail/(.+)')
 			  	let trickKey = 'error'
 			  	if(match.length>0){
 				  	trickKey = match[1].replace(/%20/g, ' ')
@@ -366,7 +366,7 @@ class App extends Component {
 					            </SlidingPane>
 		const detail = uiStore.editingDetailTrick ? null : 
 						uiStore.detailTrick ? <Detail trick={uiStore.detailTrick}/> : null
-		
+
 		return (
 			<div
 				className="main" 
