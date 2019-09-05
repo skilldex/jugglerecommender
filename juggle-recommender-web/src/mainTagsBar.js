@@ -123,7 +123,7 @@ class MainTagsBar extends Component {
       if(filterStore.numBalls){   
         filterStore.numBalls.forEach((numBall,i)=>{
           filterTags.push(
-                <div className="tagDiv">
+                <div className="tagDiv" key={{numBall}+"FilterTag"}>
                   <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.numBalls[i]} Balls</span>
                   <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.numBalls[i])}> x </label>
                 </div>      
@@ -133,7 +133,7 @@ class MainTagsBar extends Component {
       if(filterStore.flair){   
         filterStore.flair.forEach((flair,i)=>{
           filterTags.push(
-                <div className="tagDiv">
+                <div className="tagDiv" key={{flair}+"FilterTag"}>
                   <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.flair[i].replace('red','')} Flair</span>
                   <label className="mainTagsX"onClick={()=>this.flairClicked(filterStore.flair[i])}> x </label>
                 </div>      
@@ -143,7 +143,7 @@ class MainTagsBar extends Component {
       if(filterStore.contributors){   
         filterStore.contributors.forEach((contributor,i)=>{
           filterTags.push(
-                <div className="tagDiv">
+                <div className="tagDiv" key={{contributor}+"FilterTag"}>
                   <span className="mainTagsName"
                         onClick={()=>{uiStore.toggleFilterDiv()}}>By '{filterStore.contributors[i]}'</span>
                   <label className="mainTagsX"onClick={()=>filterStore.removeTag('contributor',contributor)}> x </label>
@@ -153,7 +153,7 @@ class MainTagsBar extends Component {
       }
       if(filterStore.difficultyRange[0] !==1 || filterStore.difficultyRange[1] !==10 ){
         filterTags.push(
-              <div className="tagDiv">
+              <div className="tagDiv" key={"difficultyRangeFilterTag"}>
                 <span className="mainTagsName"
                       onClick={()=>{uiStore.toggleFilterDiv()}}> Difficulty {filterStore.difficultyRange[0]}-{filterStore.difficultyRange[1]}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.resetDifficultyRange()}> x </label>
@@ -162,7 +162,7 @@ class MainTagsBar extends Component {
       }
       if(filterStore.minCatches !==0 || filterStore.maxCatches <store.highestCatches ){
         filterTags.push(
-              <div className="tagDiv">
+              <div className="tagDiv" key={"catchesFilterTag"}>
                 <span className="mainTagsName"
                       onClick={()=>{uiStore.toggleFilterDiv()}}>
                         {filterStore.minCatches}-{filterStore.maxCatches} Catches </span>
@@ -173,7 +173,7 @@ class MainTagsBar extends Component {
       if(filterStore.tags){   
         filterStore.tags.forEach((tag,i)=>{
           filterTags.push(
-                <div className="tagDiv">
+                <div className="tagDiv" key={{tag}+"FilterTag"}>
                   <span className="mainTagsName"
                         onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.tags[i]}</span>
                   <label className="mainTagsX"onClick={()=>filterStore.removeTag('tags',tag)}> x </label>
@@ -183,7 +183,7 @@ class MainTagsBar extends Component {
       }
       if(filterStore.demoType.length > 0 && filterStore.demoType[0]){   
         filterTags.push(
-              <div className="tagDiv">
+              <div className="tagDiv" key={"demoTypeFilterTag"}>
                 <span className="mainTagsName"
                       onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType[0]}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.removeTag('demoType',filterStore.demoType[0])}> x </label>
