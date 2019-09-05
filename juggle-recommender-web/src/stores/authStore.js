@@ -23,7 +23,6 @@ class AuthStore {
         })
     }
     @action setUsername(email){
-        console.log("setting username", email)
     	const usersRef = firebase.database().ref('users/').orderByChild('email').equalTo(email)
         let user
         return new Promise(resolve => {
@@ -105,7 +104,7 @@ class AuthStore {
                 ).subscribe(res => {
                     resolve(res)
                 }, err => {
-                    if(err.status == 200){
+                    if(parseInt(err.status,10) === 200){
                         resolve("good")
                     }else{
                         reject(err)
