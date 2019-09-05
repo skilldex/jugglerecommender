@@ -499,23 +499,23 @@ class Store {
 			//if the leaderboard trick is having it's name edited
 			if (trickKey !== oldTrickKey && 
 				this.randomLeaderboardTrick &&
-				oldTrickKey === this.randomLeaderboardTrick.key){
-				let leaderboardRef = firebase.database().ref('leaderboard/')
-				leaderboardRef.on('value', resp =>{
-				let allLeaderBoardTricks = this.snapshotToArrayWithKey(resp)
-					const currentDate = new Date()
-					const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1).toString()
-					const trickToSet = {	
-						date: formatted_date,
-						trick: trickKey,
-					}		
-					let trickOfTheDayWriteRef = firebase.database().ref('trickOfTheDay/'+formatted_date)
-					trickOfTheDayWriteRef.set(trickToSet);
-					const trickToUse = {...this.snapshotToObject(resp)[trickKey], key:trickKey}
-					this.setTrickOfTheDay(trickToUse)
-					leaderboardRef.off()
-				})
-			}
+				oldTrickKey === this.randomLeaderboardTrick.key)
+				{
+					let leaderboardRef = firebase.database().ref('leaderboard/')
+					leaderboardRef.on('value', resp =>{
+						const currentDate = new Date()
+						const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1).toString()
+						const trickToSet = {	
+							date: formatted_date,
+							trick: trickKey,
+						}		
+						let trickOfTheDayWriteRef = firebase.database().ref('trickOfTheDay/'+formatted_date)
+						trickOfTheDayWriteRef.set(trickToSet);
+						const trickToUse = {...this.snapshotToObject(resp)[trickKey], key:trickKey}
+						this.setTrickOfTheDay(trickToUse)
+						leaderboardRef.off()
+					})
+				}
 		}
 		//put most of the info from the form into the library
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
@@ -703,7 +703,7 @@ class Store {
 			if(allLeaderBoardTricks[trickKey]){
 				currentLeaderboardCatches = parseInt(allLeaderBoardTricks[trickKey]['catches'],10)
 			}
-	 		if (parseInt(catches)<currentLeaderboardCatches &&
+	 		if (parseInt(catches,10)<currentLeaderboardCatches &&
 	 			authStore.user.username === allLeaderBoardTricks[trickKey]['user']){
 	 			let allUsersMyTricksRef = firebase.database().ref('myTricks/')
 				allUsersMyTricksRef.on('value', resp =>{	 
@@ -732,7 +732,7 @@ class Store {
 		        		leaderboardRef.off()
 					}
 				});			
-	 		}else if(parseInt(catches)>currentLeaderboardCatches){ 			
+	 		}else if(parseInt(catches,10)>currentLeaderboardCatches){ 			
 	 			newLeaderEntry = {
 	 				user: authStore.user.username,
 	 				catches: catches,

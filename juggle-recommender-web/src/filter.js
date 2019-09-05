@@ -16,13 +16,6 @@ import starIcon from './images/starIcon.svg'
 import catchesIcon from './images/catchesIcon.svg'
 import AutoComplete from './autoComplete'
 
-const KeyCodes = {
-  comma: 188,
-  enter: 13,
-};
-
-const delimiters = [KeyCodes.comma, KeyCodes.enter];
-
 @observer
 class Filter extends Component {
  	state = {
