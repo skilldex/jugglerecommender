@@ -23,6 +23,12 @@ class Login extends Component {
             }
         }) 
     }
+    userNameOrPasswordKeypress=(target)=> {
+        // If enter pressed
+        if(target.charCode===13){  
+            this.signIn()
+        }
+    }
 
     usernameInputChange=(e)=>{
         this.setState({username : e.target.value})
@@ -39,15 +45,33 @@ class Login extends Component {
                             <button className="authButton"  onClick={authStore.signOut}>Sign Out</button>
                         </div> : 
                         <div>
-                            <label>user handle</label><br/><input id="userHandleInput"type="text" className="inputStyle" onChange={this.usernameInputChange}/><br/>
+                            <label>user handle</label><br/>
+                            <input id="userHandleInput"
+                                    type="text" 
+                                    className="inputStyle" 
+                                    onKeyPress = {this.userNameOrPasswordKeypress}
+                                    onChange={this.usernameInputChange}/><br/>
                             <br/>
-                            <label>password</label><br/><input id="passwordInput"type="password" className="inputStyle" onChange={this.passwordInputChange}/>
+                            <label>password</label><br/>
+                            <input id="passwordInput"
+                                    type="password" 
+                                    className="inputStyle" 
+                                    onKeyPress = {this.userNameOrPasswordKeypress}
+                                    onChange={this.passwordInputChange}/>
                             <br/>
                             <div style={{color : "red"}}>{this.state.error}</div>
                             <br/>
-                            <button className="authButton" onClick={this.signIn}>Sign In</button><br/>
-                            Don't have an account yet? <button className="textLink" onClick={store.toggleCreateAccountPane}>Create Account</button><br/><br/>
-                            Forgot Password? <button className="textLink" onClick={store.toggleForgotPasswordPane}>Reset Password</button>
+                            <button className="authButton" onClick={this.signIn}>
+                                Sign In
+                            </button><br/>
+                            Don't have an account yet? 
+                            <button className="textLink" onClick={store.toggleCreateAccountPane}>
+                                Create Account
+                            </button><br/><br/>
+                            Forgot Password? 
+                            <button className="textLink" onClick={store.toggleForgotPasswordPane}>
+                                Reset Password
+                            </button>
                         </div>
                     }
                 </div>
