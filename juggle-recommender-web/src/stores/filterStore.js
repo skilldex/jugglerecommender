@@ -212,11 +212,11 @@ class FilterStore {
 
 	@action removeTag=(tagType, tagToRemove)=>{
 		let tagList
-		if(tagType == 'tags'){
+		if(tagType === 'tags'){
 			tagList = this.tags
-		}else if(tagType == 'contributor'){
+		}else if(tagType === 'contributor'){
 			tagList = this.contributors	
-		}else if(tagType == 'demoType'){
+		}else if(tagType === 'demoType'){
 			tagList = this.demoType
 		}	
 		this.setTags(
