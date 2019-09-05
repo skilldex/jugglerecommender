@@ -23,11 +23,6 @@ v2.4
 		-make a 'tricks being worked on stat'
 		-hover over to explain
 
-	Bugs: (that might get fixed when autocomplete gets new search)
-	-if editing a trick, and typing into tags, if there is only 1 result left, it doesnt show the dropdown. this is not the case with normal add trick or filter
-		-maybe this will be fixed by hooking up improved search to smallTrickList
-	-in edit more than 1 letter of a tag and they suggestions go away
-
 	Search:
 		-deal with spacing issue in current search
 			-'alex' search is a good example of this

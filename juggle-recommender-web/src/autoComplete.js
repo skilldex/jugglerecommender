@@ -22,28 +22,30 @@ class AutoComplete extends Component {
 	 			lowerCaseName = lowerCaseName.slice(0,ballMatch.index)
 	 			name = name.slice(0,ballMatch.index)
 	 		}
-	 		if(lowerCaseName.includes(lowerCaseInput) && 
+		 		if(lowerCaseName.includes(lowerCaseInput) && 
 	 			!matchedNames.includes(lowerCaseName) || 
 	 			this.props.optionsList.length < 4){
-	 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
-	 			matchedNames.push(lowerCaseName)
-	 			let optionClassName = "option"
-	 			return this.props.optionsList.length < 4?
-	 					<div className={optionClassName}
-	 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
-			 				<span>{name}</span>
-	 					</div>
-	 					: <div className={optionClassName}
-	 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
-			 				<span>{name.slice(0,matchIndex)}</span>
-			 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
-			 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>
-	 					</div>	 				
-	 		}
+		 			const matchIndex = lowerCaseName.indexOf(lowerCaseInput)
+		 			matchedNames.push(lowerCaseName)
+		 			let optionClassName = "option"
+		 			return this.props.optionsList.length < 4?
+		 					<div className={optionClassName}
+		 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
+				 				<span>{name}</span>
+		 					</div>
+		 					: <div className={optionClassName}
+		 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
+				 				<span>{name.slice(0,matchIndex)}</span>
+				 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>
+				 				<span>{name.slice(matchIndex+lowerCaseInput.length,)}</span>
+		 					</div>	 				
+	 			}else{
+	 				return null
+	 			}
 	 	})
 		return (
 			<div className = "options">
-				{uiStore.editingDetailTrick && matchedNames.length<2?null:options}
+				{options}
 			</div>
 		)
 	  }
