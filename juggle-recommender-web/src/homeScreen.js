@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
-import uiStore from "./stores/uiStore"
 import "./homeScreen.css"
 import { observer } from "mobx-react"
-import { toJS } from "mobx"
-import authStore from "./stores/authStore"
+//import { toJS } from "mobx"
 import store from "./stores/store"
 import utilities from './utilities'
-import AutoComplete from './autoComplete'
-import TrickList from './trickList.js'
 import Demo from './demo'
-import history from './history';
-import downArrow from './images/down-arrow.svg'
 import bitcoinIcon from './images/bitcoin.png'
 
 @observer
@@ -32,16 +26,11 @@ class HomeScreen extends Component {
 		store.increaseViewsCounter()
 	}		
 	render (){
-    const backButton = <img id="backButton" 
-                            src={downArrow} 
-                            className="backButtonHome rotatedNegative90" 
-                            alt="backIcon" 
-                            onClick={()=>{ uiStore.handleBackButtonClick()}}
-                        />
     const donationSection = <div className="donationSection">
 							<label><b>Donations:</b></label>
 							<div>
 								<img className="bitcoinIcon"
+									alt=''
 									src={bitcoinIcon}/>
 								<span>Bitcoin:</span>
 			                    <a className ="donationLink"
