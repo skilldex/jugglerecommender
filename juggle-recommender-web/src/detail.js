@@ -6,7 +6,6 @@ import { observer } from "mobx-react"
 import editIcon from './images/editIcon.png'
 import deleteTrickIcon from './images/deleteTrickIcon.svg'
 import editCardIcon from './images/cardEditIcon.png'
-import closeIcon from './images/closeIcon.jpg'
 import catchesIcon from './images/catchesIcon.svg'
 import babyIcon from './images/babyIcon.svg'
 import ninjaIcon from './images/ninjaIcon.svg'
@@ -17,7 +16,6 @@ import TrickList from './trickList.js'
 import SmallTrickList from './smallTrickList'
 import './App.css';
 import './detail.css';
-import history from "./history"
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
 import Comments from "./comments"
@@ -115,7 +113,6 @@ class Detail extends Component {
         trickId : this.props.trick.id
 
       };
-      let that = this
       store.createComment(commentPost).then(data => {
           this.setState({firstComment : ""})
           const contributor = store.library[this.props.trick.id].contributor
@@ -178,8 +175,6 @@ class Detail extends Component {
     utilities.openPage('tricklist',true)
   }
   getKeysFromRelatedObject=(related)=>{
-
-    const detailTrick = store.library[this.props.trick.id]
     const keysAndRelevance = Object.keys(related).map((key)=>{
       const numUpvoters = related[key].upvoters ? related[key].upvoters.length : 0
       const numDownvoters = related[key].downvoters ? related[key].downvoters.length : 0
@@ -514,9 +509,7 @@ class Detail extends Component {
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null ? 
                                     "suggestionButtonsDisabled" : "suggestionButtons"}
-                          onClick={()=>store.submitSuggestedRelated
-                        ("prereqs",
-                          detailTrickKey,
+                          onClick={()=>store.submitSuggestedRelated("prereqs",detailTrickKey,
                           uiStore.suggestedPrereq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
                           disabled={this.getSuggestedRelationSubmitDisabledMessage('prereq') != null}>
                     Add prereq
@@ -557,9 +550,7 @@ class Detail extends Component {
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('related') != null ? 
                                     "suggestionButtonsDisabled" : "suggestionButtons"}
-                          onClick={()=>store.submitSuggestedRelated
-                        ("related",
-                          detailTrickKey,
+                          onClick={()=>store.submitSuggestedRelated("related",detailTrickKey,
                           uiStore.suggestedRelated.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
                           disabled={this.getSuggestedRelationSubmitDisabledMessage('related') != null}>
                       Add related
@@ -600,9 +591,7 @@ class Detail extends Component {
                 <div>
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null ? 
                                     "suggestionButtonsDisabled" : "suggestionButtons"}
-                          onClick={()=>store.submitSuggestedRelated
-                        ("dependents",
-                          detailTrickKey,
+                          onClick={()=>store.submitSuggestedRelated("dependents",detailTrickKey,
                           uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
                           disabled={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null}>
                       Add dependent
