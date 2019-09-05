@@ -95,7 +95,6 @@ class UIStore {
     	let canRemove = true
     	const trickKey = trickName.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
         if (this.editingDetailTrick){
-	    	let prereqTrick = null
 	    	let listType = null
 	    	if (listOfTricks === this.addTrickFormPrereqs){
 	    		listType = 'prereqs'
@@ -293,10 +292,10 @@ class UIStore {
 			if (store.myTricks[trickKey].catches){
 				previousCatches = store.myTricks[trickKey].catches
 			}
-			if (previousCatches == 0){
+			if (parseInt(previousCatches,10) === 0){
 				store.changeUsersWithCatchesTally(1)
 			}
-			if (catches == 0){
+			if (parseInt(catches, 10) === 0){
 				store.changeUsersWithCatchesTally(-1)
 			}
 			store.updateTotalCatchCount(catches-previousCatches)
@@ -622,24 +621,23 @@ class UIStore {
 			passesFlairFilter = true
 		}else{
 			if (myTrick){
-				if (myTrick.starred === 'true'){
-					myFlairForThisTrick.push('starred')
-				} 
-				if (myTrick.baby === 'true'){
-					myFlairForThisTrick.push('baby')
-				} 
-				if (myTrick.ninja === 'true'){
-					myFlairForThisTrick.push('ninja')
-				} 
 				if (thisTricksCatches>0 && 
 					filterStore.flair.includes('catches')){
 					passesFlairFilter = true	
 				} 
-				var flairOverlap = myFlairForThisTrick.filter(function(n) {
-				  if (filterStore.flair.indexOf(n) > -1){
-				  	passesFlairFilter = true
-				  }
-				})
+				if(!passesFlairFilter){//if it hasnt already passed the flair filterStore
+					if (myTrick.starred === 'true'){
+						myFlairForThisTrick.push('starred')
+					} 
+					if (myTrick.baby === 'true'){
+						myFlairForThisTrick.push('baby')
+					} 
+					if (myTrick.ninja === 'true'){
+						myFlairForThisTrick.push('ninja')
+					} 
+					const intersection = myFlairForThisTrick.filter(Set.prototype.has, new Set(filterStore.flair));
+					passesFlairFilter = intersection.length>0
+				}
 			}
 		}
 		return passesFlairFilter
@@ -680,7 +678,6 @@ class UIStore {
  	@action updateRootTricks=()=>{
  		if(Object.keys(store.library).length === 0){ return }
 	 	this.rootTricks = []
- 		const sortedJugglingLibrary = this.sortLibrary()
 		this.rootTrickRelevance = {}
 		Object.keys(store.library).forEach((trickKey, i) => {
 			const trick = store.library[trickKey]
