@@ -197,7 +197,7 @@ class TrickList extends Component {
 											utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
 										</div>
 										<div className={!store.isMobile && 
-														this.props.listType =="main"?
+														this.props.listType === "main"?
 															"bottomRowText tagsDesktop":
 															"bottomRowText tags"
 														}
@@ -206,7 +206,7 @@ class TrickList extends Component {
 										</div>	
 										{!store.isMobile && 
 										  trick.siteswap &&
-										  this.props.listType=="main"?
+										  this.props.listType === "main"?
 											 siteswapSection:
 											 null
 										}

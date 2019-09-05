@@ -16,9 +16,6 @@ if (!Array.prototype.indexOf)
 }
 
 var Hex='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var SynchChars='(,)';
-var Feedback;
-var Type
 function getDifficulty(siteswap,Period){
   //Example Alg for ss441
   //D1 = 2 + √ ( ((4-2)squared + (4-2)squared + (1-2)squared)÷3 ) 
@@ -55,30 +52,34 @@ export default function Validate(toValidate)//TJ
 {
   var FullCode=toValidate.toUpperCase();  
   FullCode=FullCode.replace(/\s/g,""); // remove all spaces
-  if(FullCode=='') // nothing entered
+  if(FullCode === '') // nothing entered
     return ('invalid');
 // if pattern contains parentheses it should be synchronous
-  var Synch=FullCode.search(/\(|\)/)!=-1;
+  var Synch=parseInt(FullCode.search(/\(|\)/),10)!==-1;
 // Check syntax
-  if(FullCode.match(/^[0-9A-Z]+$/))
-    Type='Vanilla';
-  else if(FullCode.match(/^([0-9A-Z]*(\[[1-9A-Z]{2,}\])+[0-9A-Z]*)+$/))
-    Type='Multiplex';
-  else if(FullCode.match(/^(\([02468ACEGIKMOQSUWY]X?,[02468ACEGIKMOQSUWY]X?\))+\*?$/))
-    Type='Synchronous';
-  else if(FullCode.match(/^(\(([02468ACEGIKMOQSUWYX]X?|\[[2468ACEGIKMOQSUWYX]{2,}\]),([02468ACEGIKMOQSUWY]X?|\[[2468ACEGIKMOQSUWYX]{2,}\])\))+\*?$/))
-    Type='Synchronous multiplex';
+  if(FullCode.match(/^[0-9A-Z]+$/)){
+    //Type='Vanilla';
+  }
+  else if(FullCode.match(/^([0-9A-Z]*(\[[1-9A-Z]{2,}\])+[0-9A-Z]*)+$/)){
+    //Type='Multiplex';
+  }
+  else if(FullCode.match(/^(\([02468ACEGIKMOQSUWY]X?,[02468ACEGIKMOQSUWY]X?\))+\*?$/)){
+    //Type='Synchronous';
+  }
+  else if(FullCode.match(/^(\(([02468ACEGIKMOQSUWYX]X?|\[[2468ACEGIKMOQSUWYX]{2,}\]),([02468ACEGIKMOQSUWY]X?|\[[2468ACEGIKMOQSUWYX]{2,}\])\))+\*?$/)){
+    //Type='Synchronous multiplex';
+  }
   else
     {
       return ('invalid');
     }
 // Syntax OK
 // If Synch SS ends with * mirror pairs of throws
-  if(Synch && FullCode.charAt(FullCode.length-1)=='*')
+  if(Synch && FullCode.charAt(FullCode.length-1) === '*')
     {
       FullCode=FullCode.substring(0,FullCode.length-1); // remove *
       var TempStr=FullCode.substring(1,FullCode.length-1);
-      TempStr=TempStr.replace(/[\(\)]+/g,","); // replace () with ,
+      TempStr=TempStr.replace(/[()]+/g,","); // replace () with ,
       var Mirror=TempStr.split(',');
       for(var a=0;a<Mirror.length;a=a+2)
         {
@@ -121,16 +122,16 @@ export default function Validate(toValidate)//TJ
 
       if(Synch)
         {
-          if(ThisChar=='(' || ThisChar==')')
+          if(ThisChar === '(' || ThisChar === ')')
             SynchOffset=1;
-          if(ThisChar==',')
+          if(ThisChar === ',')
             SynchOffset=-1;
         }        
       if(ThisChar.match(/^[0-9A-Z]+$/))
         {
           Chars[Chars.length]=ThisChar;
           Beat[Beat.length]=ThisBeat;
-          if(Synch && FullCode.charAt(a+1)=='X')
+          if(Synch && FullCode.charAt(a+1) === 'X')
             {
               Values[Values.length]=Hex.indexOf(ThisChar)+SynchOffset;
               Chars[Chars.length-1]+='x';
@@ -139,14 +140,14 @@ export default function Validate(toValidate)//TJ
           else
             Values[Values.length]=Hex.indexOf(ThisChar);
 
-          if(InMultiplex==false)
+          if(InMultiplex === false)
             ThisBeat++;
         }
       else
         {
-          if(ThisChar=='[')
+          if(ThisChar === '[')
             InMultiplex=true;
-          if(ThisChar==']')
+          if(ThisChar === ']')
             {
               InMultiplex=false;
               ThisBeat++;
@@ -159,7 +160,7 @@ export default function Validate(toValidate)//TJ
   b=Values.length;
   for(a=0;a<b;a++)
     {
-      if(Values[a]==0)
+      if(parseInt(Values[a],10) === 0)
         Destination[a]=Beat[a];
       else
         {
@@ -178,13 +179,13 @@ export default function Validate(toValidate)//TJ
   b=Destination.length;
   for(a=0;a<b;a++)
     {
-      if(Values[a]!=0)
+      if(parseInt(Values[a],10)!==0)
         {
           In[Destination[a]]++;
           Out[Beat[a]]++;
         }
     }
-  if(In.toString()==Out.toString() && Total/Period < 17)
+  if(In.toString() === Out.toString() && Total/Period < 17)
     {
       const objects = Total/Period
       const difficulty = getDifficulty(toValidate,Period)
