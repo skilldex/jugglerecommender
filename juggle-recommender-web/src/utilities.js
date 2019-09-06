@@ -89,7 +89,8 @@ class Utilities{
     return toReturn
   }
   sendGA(cat, act, lab){
-  if(!store.isLocalHost){
+    //console.log('sendGA ',cat+' ', act+' ', lab)
+    if(!store.isLocalHost){
       if (lab){
         ReactGA.event({
             category: cat,
