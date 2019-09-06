@@ -88,7 +88,9 @@ class Stats extends Component {
 			if (key.length>15){
 				keyToShow = key.substring(0, 14) + ".."
 			}
-			return <div className = "individualStatsDiv">
+			return <div className = "individualStatsDiv"
+							  key = {key}
+					>
 						<label className= "statsLabelButton"
 								onClick = {()=>this.statsLabelButtonClicked('contributor', key)}>
 							{keyToShow}
@@ -100,7 +102,9 @@ class Stats extends Component {
 		})
 
 		const ballNumStats = Object.keys(this.state.ballNumCounter).map((key)=>{
-			return <div className = "individualStatsDiv">
+			return <div className = "individualStatsDiv"
+							  key = {key}
+					>
 						<label className= "statsLabelButton"
 								onClick = {()=>this.statsLabelButtonClicked('ballNum', key)}>
 							{key} Balls
@@ -112,7 +116,9 @@ class Stats extends Component {
 		})
 
 		const tagsStats = Object.keys(this.state.tagsCounter).map((key)=>{
-			return <div className = "individualStatsDiv">
+			return <div className = "individualStatsDiv"
+							  key = {key}
+					>
 						<label className= "statsLabelButton"
 								onClick = {()=>this.statsLabelButtonClicked('tags', key)}>
 							{key}
