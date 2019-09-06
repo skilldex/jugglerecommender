@@ -31,12 +31,12 @@ class AutoComplete extends Component {
 		 			let optionClassName = "option"
 		 			return this.props.optionsList.length < 4?
 		 					<div className={optionClassName}
-		 						key={{name}+"autocomplete"}
+		 						key={name}
 		 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
 				 				<span>{name}</span>
 		 					</div>
 		 					: <div className={optionClassName}
-		 						key={{name}+"autocomplete"}
+		 						key={name}
 		 						onClick={()=>{this.props.setAutoCompletedName(name)}}>
 				 				<span>{name.slice(0,matchIndex)}</span>
 				 				<span className="match">{name.slice(matchIndex,matchIndex+lowerCaseInput.length)}</span>

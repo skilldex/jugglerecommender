@@ -193,57 +193,91 @@ class Utilities{
     return arr;
   }
   sortRootTricks() {
-    const finalTricks = [...uiStore.rootTricks].sort(function(a, b) {
-      let finalA
-      let finalB
-
-      if(filterStore.sortType === "random"){
-        finalA = Math.floor((Math.random() * 1000000));
-        finalB = Math.floor((Math.random() * 1000000));
-      }else if(filterStore.sortType === "alphabetical"){
-        finalA = store.library[a].name
-        finalB =store.library[b].name
-      }else if (filterStore.sortType !== "relevance"){
-        finalA = parseFloat(store.library[a][filterStore.sortType])*10;
-        finalB = parseFloat(store.library[b][filterStore.sortType])*10;
-      }else if (filterStore.sortType === "relevance"){
-        finalA = uiStore.rootTrickRelevance[a]
-        finalB = uiStore.rootTrickRelevance[b]
+    let attr = filterStore.sortType
+    if (filterStore.sortType === "alphabetical"){
+      attr = 'name'
+    }
+    let tempLibrary = store.library
+    if(attr === 'timeSubmitted'){
+      for (let tempLibraryTrick in tempLibrary){
+        if (!tempLibrary[tempLibraryTrick].timeSubmitted){
+          tempLibrary[tempLibraryTrick].timeSubmitted = 0
+        }
       }
-      if(filterStore.sortType === "relevance"){
-        if(filterStore.sortDirection === 'ascending'){
-           return finalA > finalB ? 1 : ( 
-            finalA < finalB ? -1 : 
-            a.length > b.length ? 1 : 
-            a.length < b.length ? -1 : 0 
-           );               
+    }else if (attr === 'lastUpdated'){
+      for (let tempLibraryTrick in tempLibrary){
+        if (store.myTricks[tempLibraryTrick] && store.myTricks[tempLibraryTrick].lastUpdated){
+          tempLibrary[tempLibraryTrick].lastUpdated = 999999999999 - store.myTricks[tempLibraryTrick].lastUpdated
         }else{
-           return finalA < finalB ? 1 : ( 
-            finalA > finalB ? -1 : 
-            a.length < b.length ? 1 : 
-            a.length > b.length ? -1 : 0 
-           );         
+          tempLibrary[tempLibraryTrick].lastUpdated = 0
+        }
+      }
+    }else if (attr === 'catches'){
+      for (let tempLibraryTrick in tempLibrary){
+        if (store.myTricks[tempLibraryTrick] && store.myTricks[tempLibraryTrick].catches){
+          tempLibrary[tempLibraryTrick].catches = store.myTricks[tempLibraryTrick].catches
+        }else{
+          tempLibrary[tempLibraryTrick].catches = 0
+        }
+      }
+    }
+    var arr = [];
+    for (var index in [...uiStore.rootTricks]) {
+      const trick = uiStore.rootTricks[index]
+      var obj = {};
+          obj['trick'] = trick;
+      if (attr !== "relevance"){
+        if (tempLibrary[trick] && tempLibrary[trick][attr] !== null) {
+          if (attr === "random"){
+            obj.tempSortName = Math.floor((Math.random() * 1000000));
+          }else{
+            obj.tempSortName = tempLibrary[trick][attr];
+          }
+          arr.push(obj);
         }
       }else{
-        if (filterStore.sortType === 'lastUpdated' || 
-            filterStore.sortType === 'difficulty' ||
-            filterStore.sortType === 'alphabetically'){
-          if(filterStore.sortDirection === 'ascending'){
-             return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
-          }else{
-             return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
-          }
-        }else{
-          if(filterStore.sortDirection === 'descending'){
-             return finalA > finalB ? 1 : ( finalA < finalB ? -1 : 0 );               
-          }else{
-             return finalA < finalB ? 1 : ( finalA > finalB ? -1 : 0 ); 
-          }          
+        obj.tempSortName = uiStore.rootTrickRelevance[trick]
+        arr.push(obj);
+      }
+    }
+    const finalTricks = arr.sort(function(a, b) {      
+      if(attr === "relevance"){
+        if(filterStore.sortDirection === 'ascending'){
+           return a.tempSortName > b.tempSortName ? 1 : ( 
+            a.tempSortName < b.tempSortName ? -1 : 
+            a.trick.length > b.trick.length ? 1 : 
+            a.trick.length < b.trick.length ? -1 : 0 
+           );               
         }
+      }else{
+        var at, bt
+        if(attr === "name"){
+          at = a.tempSortName
+          bt = b.tempSortName
+        }else{
+          at = parseFloat(a.tempSortName)*10;
+          bt = parseFloat(b.tempSortName)*10;
+        }
+        return at > bt ? 1 : ( at < bt ? -1 : 0 ); 
       }      
     }); 
-    uiStore.setRootTricks(finalTricks)   
+    const tempRootTricks = []
+    Object.keys(finalTricks).forEach((index, i) => {
+      tempRootTricks.push(finalTricks[index].trick)
+    })
+    if(attr === 'lastUpdated' ||
+      attr === 'difficulty' ||
+      attr === 'name' ||
+      attr === 'relevance'){
+      if(filterStore.sortDirection === 'descending'){
+        tempRootTricks.reverse()
+      }      
+    }else if(filterStore.sortDirection === 'ascending'){
+      tempRootTricks.reverse()
+    }
+    uiStore.setRootTricks(tempRootTricks)   
   }
+
   isValidVideoURL(videoURL){
     let isValid = false
     if (videoURL.includes("instagram.com") || 
