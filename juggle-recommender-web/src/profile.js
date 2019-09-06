@@ -49,7 +49,7 @@ class Profile extends Component {
 				let contributorHasCatches = false
 				if (store.myTricks[trick] && 
 					store.myTricks[trick]['catches'] &&
-					parseInt(store.myTricks[trick]['catches'])>0){
+					parseInt(store.myTricks[trick]['catches'], 10)>0){
 						catchesCount = catchesCount - 1
 						workerCount = workerCount - 1
 						contributorHasCatches = true

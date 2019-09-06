@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import authStore from "./stores/authStore"
 import store from './stores/store'
+import uiStore from './stores/uiStore'
 import "./App.css"
 import "./auth.css"; 
 

@@ -476,6 +476,7 @@ class UIStore {
 		this.performSearch()
 		this.showPatternList()
  	}
+
  		
  	@action performSearch=()=>{
  		this.selectedTrick = null

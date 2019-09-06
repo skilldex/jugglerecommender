@@ -670,7 +670,7 @@ class Store {
 	            	if(Object.keys(myTricksObject.myTricks).length > 1){
 	            		this.setMyTricks(myTricksObject.myTricks)
 	            	}
-	            	uiStore.setSearchInput('')
+	            	uiStore.setSearchInput(document.getElementById("searchTextInput").value)
 	            	uiStore.resetSelectedTrick()
 	            	uiStore.updateRootTricks()
 	            }else{
