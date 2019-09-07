@@ -319,6 +319,7 @@
 .unclickableProperty{
     color : black;
     font-size: 14px;
+    margin-right: 6px;
 }
 .clickableProperty{
     color : blue;

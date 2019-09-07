@@ -684,20 +684,22 @@ class UIStore {
 	}
 	@action passesWorkedOnDateFilter=(myTrick)=>{
 		let passesWorkedOnFilter = false
+
 		if (filterStore.workedOnPeriod === null){
 			passesWorkedOnFilter = true
 		}else{
 			let periodMultiplier = 1
-			if (filterStore.workedOnPeriod === 'week'){
+			//console.log('filterStore.workedOnPeriod',filterStore.workedOnPeriod)
+			if (filterStore.workedOnPeriod === 'Week'){
 				periodMultiplier = 7
-			}else if(filterStore.workedOnPeriod === 'month'){
+			}else if(filterStore.workedOnPeriod === 'Month'){
 				periodMultiplier = 30
 			}
 			const totalTimePeriod = parseInt(filterStore.workedOnValue,10)*
-									periodMultiplier*86400000
+									periodMultiplier*24*60*60*1000
 			const date = new Date()
 			const minTime = date.getTime() - totalTimePeriod
-			if (myTrick && myTrick.lastUpdated > minTime){
+			if (myTrick && parseInt(myTrick.lastUpdated,10) > minTime){
 				passesWorkedOnFilter = true
 			}
 		}

@@ -164,7 +164,7 @@ class Utilities{
   }
   getDateLastWorkedOnFilter(workedOnTime){
     const date = new Date()
-    let period = 'day'
+    let period = 'Day'
     let value = '1'
     const dayLength = 86400000
     const timeSince = date.getTime() - workedOnTime
@@ -173,10 +173,10 @@ class Utilities{
       value = (Math.ceil(timeSince / dayLength)).toString()
     }else if(timeSince > dayLength * 7 &&
             timeSince < dayLength * 30){
-      period = 'week'
+      period = 'Week'
       value = (Math.ceil(timeSince / (dayLength*7))).toString()
     }else if(timeSince > dayLength * 30){
-      period = 'month'
+      period = 'Month'
       value = (Math.ceil(timeSince / (dayLength*30))).toString()
     }
     let plural = ''

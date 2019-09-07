@@ -282,7 +282,7 @@ class Profile extends Component {
 						<label className= {this.state.contributedTrickCount > 0?
 											"profileStatsLabelButton" : "profileStatsLabelButtonGreyed"}
 								onClick = {()=>this.handleStatsLabelClicked('contributed')}>
-							Other Users Working On
+							Users Practicing Your Tricks
 						</label>  
 						<div className = "profileStatsValues">
 							{this.state.contributedWorkersCount} 

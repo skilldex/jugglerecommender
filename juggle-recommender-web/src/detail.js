@@ -300,7 +300,7 @@ class Detail extends Component {
         store.myTricks[detailTrickKey].lastUpdated){
         var date = new Date(store.myTricks[detailTrickKey].lastUpdated);
         dateLastWorkedOn = date.toLocaleDateString()
-        dateLastWorkedOnFilter = utilities.getDateLastWorkedOnFilter(store.myTricks[detailTrickKey].lastUpdated)
+        dateLastWorkedOnFilter = utilities.getDateLastWorkedOnFilter(store.myTricks[detailTrickKey].lastUpdated)+" ago"
     }
     const backButton = <img id="backButton" 
                             src={downArrow} 
