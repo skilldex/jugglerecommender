@@ -47,6 +47,10 @@ class MainTagsBar extends Component {
       filterStore.setFlair(tempFlair)
       uiStore.setFilterURL()
     }
+    handleWorkedOnXClicked=()=>{
+      filterStore.setWorkedOnPeriod(null)
+      uiStore.setFilterURL()
+    }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
       utilities.sendGA('mainTagsBar','sort by '+type)
@@ -123,7 +127,7 @@ class MainTagsBar extends Component {
       if(filterStore.numBalls){   
         filterStore.numBalls.forEach((numBall,i)=>{
           filterTags.push(
-                <div className="tagDiv" key={{numBall}+"FilterTag"}>
+                <div className="tagDiv" key={numBall}>
                   <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.numBalls[i]} Balls</span>
                   <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.numBalls[i])}> x </label>
                 </div>      
@@ -133,7 +137,7 @@ class MainTagsBar extends Component {
       if(filterStore.flair){   
         filterStore.flair.forEach((flair,i)=>{
           filterTags.push(
-                <div className="tagDiv" key={{flair}+"FilterTag"}>
+                <div className="tagDiv" key={flair}>
                   <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.flair[i].replace('red','')} Flair</span>
                   <label className="mainTagsX"onClick={()=>this.flairClicked(filterStore.flair[i])}> x </label>
                 </div>      
@@ -143,7 +147,7 @@ class MainTagsBar extends Component {
       if(filterStore.contributors){   
         filterStore.contributors.forEach((contributor,i)=>{
           filterTags.push(
-                <div className="tagDiv" key={{contributor}+"FilterTag"}>
+                <div className="tagDiv" key={contributor}>
                   <span className="mainTagsName"
                         onClick={()=>{uiStore.toggleFilterDiv()}}>By '{filterStore.contributors[i]}'</span>
                   <label className="mainTagsX"onClick={()=>filterStore.removeTag('contributor',contributor)}> x </label>
@@ -153,7 +157,7 @@ class MainTagsBar extends Component {
       }
       if(filterStore.difficultyRange[0] !==1 || filterStore.difficultyRange[1] !==10 ){
         filterTags.push(
-              <div className="tagDiv" key={"difficultyRangeFilterTag"}>
+              <div className="tagDiv" key="difficultyRangeFilterTag">
                 <span className="mainTagsName"
                       onClick={()=>{uiStore.toggleFilterDiv()}}> Difficulty {filterStore.difficultyRange[0]}-{filterStore.difficultyRange[1]}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.resetDifficultyRange()}> x </label>
@@ -173,7 +177,7 @@ class MainTagsBar extends Component {
       if(filterStore.tags){   
         filterStore.tags.forEach((tag,i)=>{
           filterTags.push(
-                <div className="tagDiv" key={{tag}+"FilterTag"}>
+                <div className="tagDiv" key={tag}>
                   <span className="mainTagsName"
                         onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.tags[i]}</span>
                   <label className="mainTagsX"onClick={()=>filterStore.removeTag('tags',tag)}> x </label>
@@ -181,9 +185,21 @@ class MainTagsBar extends Component {
           )
         })
       }
+      if(filterStore.workedOnPeriod !== null){
+        let plural = parseInt(filterStore.workedOnValue,10)>1
+        filterTags.push(
+              <div className="tagDiv" key="workedOnTag">
+                <span className="mainTagsName"
+                      onClick={()=>{uiStore.toggleFilterDiv()}}>
+                      {filterStore.workedOnValue} {filterStore.workedOnPeriod}{plural?'s':''}
+                </span>
+                <label className="mainTagsX"onClick={()=>this.handleWorkedOnXClicked()}> x </label>
+              </div>      
+        )
+      }
       if(filterStore.demoType.length > 0 && filterStore.demoType[0]){   
         filterTags.push(
-              <div className="tagDiv" key={"demoTypeFilterTag"}>
+              <div className="tagDiv" key="demoTypeFilterTag">
                 <span className="mainTagsName"
                       onClick={()=>{uiStore.toggleFilterDiv()}}>Demo: {filterStore.demoType[0]}</span>
                 <label className="mainTagsX"onClick={()=>filterStore.removeTag('demoType',filterStore.demoType[0])}> x </label>

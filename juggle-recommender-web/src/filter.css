@@ -172,6 +172,21 @@
   position:relative;
   display: inline-block;
 }
+.filterWorkedOnInput{
+  width: 46px;
+  margin-right: 8px;
+}
+
+.filterWorkedOnPeriod{
+  color: black;
+  border-radius: 8px;
+  margin: 2px;
+  outline: none;
+}
+.filterWorkedOnPeriodSelected{
+  background-color: lightblue;
+}
+
 
 .catchesInput{
   width: 70px;

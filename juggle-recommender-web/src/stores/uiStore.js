@@ -678,6 +678,27 @@ class UIStore {
 		}
 		return passesFilter
 	}
+	@action passesWorkedOnDateFilter=(myTrick)=>{
+		let passesWorkedOnFilter = false
+		if (filterStore.workedOnPeriod === null){
+			passesWorkedOnFilter = true
+		}else{
+			let periodMultiplier = 1
+			if (filterStore.workedOnPeriod === 'week'){
+				periodMultiplier = 7
+			}else if(filterStore.workedOnPeriod === 'month'){
+				periodMultiplier = 30
+			}
+			const totalTimePeriod = parseInt(filterStore.workedOnValue,10)*
+									periodMultiplier*86400000
+			const date = new Date()
+			const minTime = date.getTime() - totalTimePeriod
+			if (myTrick && myTrick.lastUpdated > minTime){
+				passesWorkedOnFilter = true
+			}
+		}
+		return passesWorkedOnFilter
+	}
 
 	@action doesntIncludeSearchSubtractions=(trickKey,searchSubtractions)=>{
 		const trickName = store.library[trickKey].name.toLowerCase()
@@ -710,6 +731,7 @@ class UIStore {
 				   this.passesFlairFilter(store.myTricks[trickKey]) &&
 				   this.passesCatchesFilter(store.myTricks[trickKey]) &&
 				   this.passesHasTutorialFilter(trick.url) &&
+				   this.passesWorkedOnDateFilter(store.myTricks[trickKey]) &&
 				   this.doesntIncludeSearchSubtractions(trickKey,searchSubtractions) &&
 				   relevance !== null
 				 ){

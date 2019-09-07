@@ -44,6 +44,15 @@ if (tagsMatch){
 }
 const tags = urlQueryTags ? urlQueryTags : []
 
+let urlQueryWorkedOn = locationURL.match(/workedon=(.+)/)	
+let workedOnPeriod = null
+let workedOnValue = ''
+if (urlQueryWorkedOn){
+	urlQueryWorkedOn = urlQueryWorkedOn[1].split('&')[0]					
+	workedOnValue = urlQueryWorkedOn.split(',')[0]
+	workedOnPeriod = urlQueryWorkedOn.split(',')[1]
+}
+
 let urlQueryCatches = locationURL.match(/catches=(.+)/)	
 let minCatches = 0
 let maxCatches = 1000000
@@ -65,6 +74,8 @@ class FilterStore {
 	@observable associations = []
 	@observable tags = tags
 	@observable contributors = contributor
+	@observable workedOnPeriod = workedOnPeriod
+	@observable workedOnValue = workedOnValue
 	@observable minCatches = minCatches
 	@observable maxCatches = maxCatches
 	@observable hasTutorialSelected = false
@@ -125,6 +136,12 @@ class FilterStore {
 	    		}
 			});
     	}
+    	if (this.workedOnPeriod !== null){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+			urlText = urlText + "workedon=" + this.workedOnValue + ',' +this.workedOnPeriod  		
+    	}
     	if (parseInt(this.minCatches,10)>0 || 
     		parseInt(this.maxCatches,10)<store.highestCatches){
     		if(urlText !== "/filter/"){
@@ -166,6 +183,21 @@ class FilterStore {
 
 	@action setDemoType=(demoType)=>{
 		this.demoType = demoType
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+
+	@action setWorkedOnPeriod=(period)=>{
+		this.workedOnPeriod = period
+		if (!period){
+			this.workedOnValue = ''
+		}
+		uiStore.resetSelectedTrick()
+		uiStore.updateRootTricks()
+	}
+
+	@action setWorkedOnValue=(value)=>{
+		this.workedOnValue = value
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 	}

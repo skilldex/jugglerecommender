@@ -79,7 +79,6 @@ class Filter extends Component {
 		}
 		inputElement.value = newMin
 		filterStore.setMinCatches(newMin)
-		uiStore.updateRootTricks()
 	}
 
 	handleMaxCatchesChange=(e)=>{
@@ -93,8 +92,23 @@ class Filter extends Component {
 		}
 		inputElement.value = newMax
 		filterStore.setMaxCatches(newMax)
-		uiStore.updateRootTricks()
 	}
+
+	workedOnPeriodClicked=(period)=>{
+		if (filterStore.workedOnPeriod === period){
+			filterStore.setWorkedOnPeriod(null)
+		}else{
+			filterStore.setWorkedOnPeriod(period)
+			if (filterStore.workedOnValue === ''){
+				filterStore.setWorkedOnValue('1')
+			}
+		}
+	}
+
+	handleWorkedOnValueChanged=(e)=>{
+		filterStore.setWorkedOnValue(e.target.value)
+	}
+
     copyFilterURL=()=>{
     	if (uiStore.rootTricks.length === 0){
     			alert("Unable to create share URL when no results found.") 
@@ -345,7 +359,7 @@ class Filter extends Component {
 			numButtons.push(
 				<button className={filterStore.numBalls.includes(element)?
 					'filterNum filterNumSelected':'filterNum'}
-				key={'numButton' + element} 
+				key={element} 
 				onClick={()=>{this.numButtonClicked(element)}}>{element}</button>
 		)},this);	
 		const numSection = <div>
@@ -388,17 +402,6 @@ class Filter extends Component {
 								</div>
 							</div>
 	
-		const hasTutorialSection = 	 
-							<div>
-								<div>
-									<h3 className="filterHeader">Has a tutorial</h3>
-								</div>
-								<button className={filterStore.hasTutorialSelected?
-									'filterHasTutorial filterHasTutorialSelected':'filterHasTutorial'}
-								key='hasTutorialButton' 
-								onClick={()=>{filterStore.toggleHasTutorialSelected()}}></button>
-							</div>
-
 		const difficultySection =<div>
 									<h3 className="filterHeader">Difficulty</h3>
 									<div style={{marginLeft:10, marginRight:10}}>
@@ -415,6 +418,37 @@ class Filter extends Component {
 												step={null} /><br/>
 									</div>
 								</div>
+
+		let workedOnPeriods = ['Day','Week','Month']
+		let workedOnPeriodsPlural = false
+		if (filterStore.workedOnValue !== '1' &&
+			filterStore.workedOnValue !== '' ){
+			workedOnPeriodsPlural = true
+		}
+	 	const workedOnPeriodsButtons = [] 
+		workedOnPeriods.forEach(function(element) {
+			workedOnPeriodsButtons.push(
+				<button className={filterStore.workedOnPeriod === element?
+					'filterWorkedOnPeriod filterWorkedOnPeriodSelected':'filterWorkedOnPeriod'}
+				key={element} 
+				onClick={()=>{this.workedOnPeriodClicked(element)}}>{element}{workedOnPeriodsPlural?'s':''}</button>
+		)},this);
+
+		const workedOnDatesSection =  <div>
+										<div>
+											<h3 className="filterHeader">Worked on in the Last</h3>
+										</div>
+										<input className="filterWorkedOnInput" 
+												type = "number"
+												id = "filterWorkedOnInput"
+												min = {1}
+												max = {999} 
+												disabled = {filterStore.workedOnPeriod === null}
+												value={filterStore.workedOnValue} 
+												onChange={(e)=>this.handleWorkedOnValueChanged(e)}/>
+										{workedOnPeriodsButtons}
+									</div>	
+
 
 		const catchesSection = <div>
 									<h3 className="filterHeader">Catches</h3>
@@ -436,6 +470,16 @@ class Filter extends Component {
 									/>
 								</div>
 
+		const hasTutorialSection = 	 
+							<div>
+								<div>
+									<h3 className="filterHeader">Has a tutorial</h3>
+								</div>
+								<button className={filterStore.hasTutorialSelected?
+									'filterHasTutorial filterHasTutorialSelected':'filterHasTutorial'}
+								key='hasTutorialButton' 
+								onClick={()=>{filterStore.toggleHasTutorialSelected()}}></button>
+							</div>
 
 		return (
 			<div className="outerFilterDiv">
@@ -465,13 +509,15 @@ class Filter extends Component {
 					<ColoredLine/>
 					{contributorSection}
 					<ColoredLine/>
-					{hasTutorialSection}
-					<ColoredLine/>
 					{demoTypeSection}
+					<ColoredLine/>
+					{workedOnDatesSection}
 					<ColoredLine/>
 					{catchesSection}
 					<ColoredLine/>
 					{flairSection}
+					<ColoredLine/>
+					{hasTutorialSection}
 					<ColoredLine/>
 					<label className="filterSubmitButton" 
 		             	   onClick={()=>{uiStore.toggleFilterDiv()}}>Submit
