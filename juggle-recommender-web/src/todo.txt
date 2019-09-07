@@ -1,6 +1,6 @@
 v2.4
 	in menu about says bout
-	time range cuts off first 1
+
 
 	Profile Screen: (Larger section below)
 		-upload image
@@ -11,10 +11,6 @@ v2.4
 			-need a fleeting message to tell that this happenend. this can be made manually.
 			-https://github.com/ianboru/genetic_beats/tree/4288c4dc089e1e32516c4b7a0a534228fc29eea7/app/components
 				-messagestore and message component(make css and replace component with div)
-	Filter
-		-family filter
-			-families seem similar to the playlist thing, maybe the two can be combined somehow
-			-families is very similar to search, maybe the two could be combined, families could be a suggestions dropdown for search
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 

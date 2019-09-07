@@ -92,7 +92,7 @@ class Header extends Component {
 					      	</button>
 					        <button className="dropDownButton" 
 					        		onClick={() => this.clickMenuItem('isInstructionsPaneOpen')}>
-					        			bout
+					        			About
 					        </button>
 					    </div> 
 					    : null

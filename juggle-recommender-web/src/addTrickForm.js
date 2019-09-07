@@ -344,8 +344,7 @@ class AddTrickForm extends Component {
 			timesAreValid = false
 		}else{
 			startSeconds = utilities.formatSeconds(this.state.videoStartTime)
-		}
-		
+		}		
 		if (!utilities.isValidTime(this.state.videoEndTime)){
 			timesAreValid = false
 		}else{
@@ -357,7 +356,7 @@ class AddTrickForm extends Component {
 		if(utilities.isEmptyOrSpaces(this.state.videoEndTime)){
 			endSeconds = 999999
 		}			
-		if(timesAreValid && startSeconds<endSeconds){
+		if(timesAreValid && Math.max(startSeconds,1)<endSeconds){
 			this.setState({videoTimeErrorMessage:''})
 		}else{
 			this.setState({videoTimeErrorMessage:'Invalid timestamps.'})

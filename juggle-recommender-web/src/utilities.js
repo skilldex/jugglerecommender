@@ -83,9 +83,6 @@ class Utilities{
     }else{
       toReturn = parseInt(str,10)
     }
-    if (toReturn === 0){
-      toReturn = 1
-    }
     return toReturn
   }
   sendGA(cat, act, lab){
