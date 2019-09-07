@@ -5,12 +5,11 @@ v2.4
 			ian has code for this
 
 	-Add Trick Form:
-		-make consuming tags be added automatically in the list
+		-make inferred tags be added automatically in the list
 			-need a fleeting message to tell that this happenend. this can be made manually.
-
+			-https://github.com/ianboru/genetic_beats/tree/4288c4dc089e1e32516c4b7a0a534228fc29eea7/app/components
+				-messagestore and message component(make css and replace component with div)
 	Filter
-		-filter for day range of catches last updated, in bunches like today, this week, this month, 6 months
-			-find out when exactly we are curently keeping track of the 'last updated' time, is it just catches? if so, maybe it should be baby/ninja flair as well
 		-family filter
 			-families seem similar to the playlist thing, maybe the two can be combined somehow
 			-families is very similar to search, maybe the two could be combined, families could be a suggestions dropdown for search
@@ -18,18 +17,13 @@ v2.4
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 	Search:
-		-deal with spacing issue in current search
-			-'alex' search is a good example of this
 		-should we implement the new search everywhere?
 			-autocompletes?
 			-smallTrickList?
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
-	WORKED ON:
-		-when i make a filter from detail and then go into the filter, its period isnt selected
-		-the filter doesnt seem to show anything older than 3 days old n matter what it is set at
 
-	-autocomplete is only matching 1 letter in filter
+BUGS:
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it
 	-dissalow repeat related patterns in add trick  (dont even show them in the list)
@@ -53,8 +47,6 @@ MAYBES/QUESTIONS:
 	-make a 'tricks being worked on stat'?
 
 Bugs:
-	-search broke once, i cant reproduce it, i had a contributor and tag filters se, refresh cured it.
-		-it happenend again, again cant reproduce, but it said 'cannot read classlist of null' of uiStore 451
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
 	-Scrolling is weird on add trick form, it is like there are two scrollbars and 1 only 		works on green part of form
