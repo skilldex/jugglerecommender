@@ -423,7 +423,7 @@ class Detail extends Component {
                             {detailTrick.views ? Math.round(detailTrick.views) : 0}
                           </div>
                           <div className="usersWorkingOnDiv">
-                            <label className="detailLabel">Users Working On </label>
+                            <label className="detailLabel">Users Practicing </label>
                             {detailTrick.usersWorkingOn ? detailTrick.usersWorkingOn : 0}
                           </div>
                             {catchesSection}
@@ -471,11 +471,11 @@ class Detail extends Component {
                                   <div>
                                     <label className="detailLabel">Last Worked On: </label>
                                     <label className="unclickableProperty">
-                                    {dateLastWorkedOn}
+                                      {dateLastWorkedOn}
                                     </label>
                                     <label className= "clickableProperty"
                                             onClick = {()=>this.trickPropertyClicked('workedOn', dateLastWorkedOnFilter)}>
-                                    ({dateLastWorkedOnFilter})
+                                      ({dateLastWorkedOnFilter})
                                     </label><br/>
                                   </div> : null
                                 }                                

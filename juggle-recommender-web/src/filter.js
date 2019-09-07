@@ -439,7 +439,7 @@ class Filter extends Component {
 
 		const workedOnDatesSection =  <div>
 										<div>
-											<h3 className="filterHeader">Worked on in the Last</h3>
+											<h3 className="filterHeader">Last Practiced</h3>
 										</div>
 										<input className="filterWorkedOnInput" 
 												type = "number"
