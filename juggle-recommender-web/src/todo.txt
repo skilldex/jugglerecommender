@@ -1,4 +1,6 @@
 v2.4
+	in menu about says bout
+	time range cuts off first 1
 
 	Profile Screen: (Larger section below)
 		-upload image
