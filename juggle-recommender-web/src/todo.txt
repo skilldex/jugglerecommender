@@ -25,6 +25,10 @@ v2.4
 			-smallTrickList?
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
+	WORKED ON:
+		-when i make a filter from detail and then go into the filter, its period isnt selected
+		-the filter doesnt seem to show anything older than 3 days old n matter what it is set at
+
 	-autocomplete is only matching 1 letter in filter
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it

@@ -169,6 +169,12 @@ class Detail extends Component {
       filterStore.setTags('tags',[property]);      
     }else if (propertyType === 'siteswap'){
       filterStore.setSearchText("ss:"+property);
+    }else if (propertyType === 'workedOn'){
+      const value = property.split(' ')[0]
+      const period = property.split(' ')[1].replace('s','')
+      console.log('ca',value,period)
+      filterStore.setWorkedOnPeriod(period)
+      filterStore.setWorkedOnValue(value)
     }
 
     utilities.sendGA('details','tricklist via property')
@@ -287,6 +293,15 @@ class Detail extends Component {
              title="edit your catches"
         />
       </div>
+
+    let dateLastWorkedOn = null
+    let dateLastWorkedOnFilter = null
+    if (store.myTricks[detailTrickKey] && 
+        store.myTricks[detailTrickKey].lastUpdated){
+        var date = new Date(store.myTricks[detailTrickKey].lastUpdated);
+        dateLastWorkedOn = date.toLocaleDateString()
+        dateLastWorkedOnFilter = utilities.getDateLastWorkedOnFilter(store.myTricks[detailTrickKey].lastUpdated)
+    }
     const backButton = <img id="backButton" 
                             src={downArrow} 
                             className="backButtonDetails rotatedNegative90" 
@@ -452,6 +467,18 @@ class Detail extends Component {
                                     </label><br/>
                                   </div> : null
                                 }
+                                {dateLastWorkedOn ? 
+                                  <div>
+                                    <label className="detailLabel">Last Worked On: </label>
+                                    <label className="unclickableProperty">
+                                    {dateLastWorkedOn}
+                                    </label>
+                                    <label className= "clickableProperty"
+                                            onClick = {()=>this.trickPropertyClicked('workedOn', dateLastWorkedOnFilter)}>
+                                    ({dateLastWorkedOnFilter})
+                                    </label><br/>
+                                  </div> : null
+                                }                                
                                 {detailTrick && detailTrick.explanation?
                                   <div className="explanationSection">
                                     <label className="detailLabel">Explanation:</label>

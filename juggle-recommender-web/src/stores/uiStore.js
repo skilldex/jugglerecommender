@@ -359,7 +359,9 @@ class UIStore {
       if(uiStore.addingTrick){
         uiStore.toggleAddingTrick()
       }
-      document.getElementById("searchTextInput").focus()
+      if (!store.isMobile){
+      	document.getElementById("searchTextInput").focus()
+      }
     }
 	@action toggleSortDiv=()=>{
 	  //this.showPatternList()
@@ -378,7 +380,9 @@ class UIStore {
 			this.clearSortTimer()
 		}, 500)
 		this.showSortDiv=showDiv
-		document.getElementById("searchTextInput").focus()
+      if (!store.isMobile){
+      	document.getElementById("searchTextInput").focus()
+      }
 	}
 
  	@action clearFilterTimer=()=>{

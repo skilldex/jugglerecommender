@@ -162,6 +162,29 @@ class Utilities{
   removeSpecialCharacters(string){
     return string.replace(/[ +'-]/g,"")
   }
+  getDateLastWorkedOnFilter(workedOnTime){
+    const date = new Date()
+    let period = 'day'
+    let value = '1'
+    const dayLength = 86400000
+    const timeSince = date.getTime() - workedOnTime
+    if (timeSince > dayLength &&
+        timeSince < dayLength * 7){
+      value = (Math.ceil(timeSince / dayLength)).toString()
+    }else if(timeSince > dayLength * 7 &&
+            timeSince < dayLength * 30){
+      period = 'week'
+      value = (Math.ceil(timeSince / (dayLength*7))).toString()
+    }else if(timeSince > dayLength * 30){
+      period = 'month'
+      value = (Math.ceil(timeSince / (dayLength*30))).toString()
+    }
+    let plural = ''
+    if (parseInt(value,10)>1){
+      plural = 's'
+    }
+    return (value + ' ' + period + plural)
+  }
   sortObjectByAttribute(data, attr) {
     var arr = [];
     for (var prop in data) {
@@ -296,7 +319,9 @@ class Utilities{
       uiStore.setShowExpandedMenu(false)
     }else{
       uiStore.clearUI()
-      document.getElementById("searchTextInput").focus()
+      if (!store.isMobile){
+        document.getElementById("searchTextInput").focus()
+      }
     }
     if(page === 'logout'){
       shouldPush = false

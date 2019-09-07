@@ -316,7 +316,10 @@
     height: 18px;
     font-size: 13px;
 }
-
+.unclickableProperty{
+    color : black;
+    font-size: 14px;
+}
 .clickableProperty{
     color : blue;
     font-size: 14px;
