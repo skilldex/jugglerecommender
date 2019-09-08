@@ -117,7 +117,7 @@ class AddTrickForm extends Component {
 			if(trick.tags){
 				this.setState({tags:[]})
 				trick.tags.forEach((tag)=>{
-					this.setAutoCompletedTag(tag)
+					this.setAutoCompletedTag(tag, true)
 				});		
 			
 			}
@@ -539,7 +539,7 @@ class AddTrickForm extends Component {
 		
 	}
 
-	setAutoCompletedTag=(tag)=>{
+	setAutoCompletedTag=(tag, isMounting)=>{
 		if (store.tagsSuggestions.includes(tag) &&
 			!this.state.tags.includes(tag)){
 		        this.setState(state => ({ tags: [...state.tags, tag] }));
@@ -548,7 +548,9 @@ class AddTrickForm extends Component {
 						autoCompletedTag : true,
 						tagInput : ''
 				})	
-				this.addInferredTag(tag)	
+			    if(!isMounting){
+					this.addInferredTag(tag)	
+				}
 	    }
 	}
 
