@@ -148,6 +148,32 @@
   color: blue;
   padding-bottom: 0px;
 }
+.tagsTopLine{
+  display: flex;
+  margin-bottom: 10px;
+  vertical-align : center;
+}
+.addedTagDivFade{
+  margin-left: 2px; 
+  text-align: left;
+  align-items: left;
+  display:inline-block;
+  cursor: pointer;
+  padding : 5px;
+  border :1px solid darkgray;
+  border-radius: 2px;
+  background-color : #eee;
+  height: 14px;
+  line-height: 10px;
+  animation: fadeIt 6s ease-in-out; 
+}
+
+@keyframes fadeIt {
+  0%   { background-color: #FFCBA4; }
+  70%  { background-color: #FFCBA4; }
+  100% { background-color: #eee; }
+}
+
 
 .formButton{
   color : green;

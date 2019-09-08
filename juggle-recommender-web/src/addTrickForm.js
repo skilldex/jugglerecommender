@@ -9,6 +9,8 @@ import AutoComplete from './autoComplete'
 import Validate from './siteswapValidator'
 import downArrow from './images/down-arrow.svg'
 import SmallTrickList from './smallTrickList'
+import MessageQueue from './messageQueue'
+import messageStore from "./stores/messageStore"
 
 @observer
 class AddTrickForm extends Component {
@@ -508,14 +510,45 @@ class AddTrickForm extends Component {
 			autoCompletedName : true
 		})
 	}
+
+	addInferredTag=(tag)=>{
+		let inferredTag = null
+		if (tag === 'underarm-catch'){inferredTag = 'crossed-arms'}
+		else if (tag === 'underarm-throw'){inferredTag = 'crossed-arms'}
+		else if (tag === 'orbit'){inferredTag = 'carry'}
+		else if (tag === 'stacked'){inferredTag = 'multiplex'}
+		else if (tag === 'underarm-throw'){inferredTag = 'crossed-arms'}
+		else if (tag === 'chop'){inferredTag = 'carry'}
+		else if (tag === 'sprung'){inferredTag = 'ss1'}
+		else if (tag === 'armpit-throw'){inferredTag = 'body-throw'}
+		else if (tag === 'inverted'){inferredTag = 'ss1'}
+		else if (tag === 'underarm-throw'){inferredTag = 'crossed-arms'}
+		else if (tag === 'machine'){inferredTag = 'carry'}
+		else if (tag === 'swap'){inferredTag = 'ss1'}
+		else if (tag === 'self-slam'){inferredTag = '2T'}
+		else if (tag === 'shoulder-throw'){inferredTag = 'body-throw'}
+		else if (tag === 'neck-throw'){inferredTag = 'body-throw'}
+		else if (tag === 'neck-pass'){inferredTag = 'body-throw'}
+		else if (tag === 'apecross'){inferredTag = 'body-throw'}
+		else if (tag === 'backcross'){inferredTag = 'body-throw'}
+		if (inferredTag && !this.state.tags.includes(inferredTag)){
+			this.setAutoCompletedTag(inferredTag)
+			messageStore.addMessageToQueue('added automatically');
+			uiStore.setInferredFadeTag(inferredTag)
+		}
+		
+	}
+
 	setAutoCompletedTag=(tag)=>{
-		if (store.tagsSuggestions.includes(tag)){
-	        this.setState(state => ({ tags: [...state.tags, tag] }));
-	        this.checkIfFormIsSubmittable()
-	        this.setState({
-				autoCompletedTag : true,
-				tagInput : ''
-			})		
+		if (store.tagsSuggestions.includes(tag) &&
+			!this.state.tags.includes(tag)){
+		        this.setState(state => ({ tags: [...state.tags, tag] }));
+			        this.checkIfFormIsSubmittable()
+			        this.setState({
+						autoCompletedTag : true,
+						tagInput : ''
+				})	
+				this.addInferredTag(tag)	
 	    }
 	}
 
@@ -582,8 +615,12 @@ class AddTrickForm extends Component {
 		let addedTags = []
 		if(this.state.tags.length>0){
 		        this.state.tags.forEach((tag)=>{
+		        	let addedTagDiv = "addedRelatedTricksDiv"
+	        		if (uiStore.inferredFadeTag === tag){
+	        			addedTagDiv = "addedTagDivFade"
+	        		}
 		        	addedTags.push(
-		                <div className="addedRelatedTricksDiv"
+		                <div className= {addedTagDiv}
 		                	 		key={tag}
 		                >
 		                  <span className="mainTagsName"
@@ -597,10 +634,10 @@ class AddTrickForm extends Component {
 
 
 		let tagsSection =	<div className="inputContainer">
-								<div>
-									<span className="inputLabel">Tags</span><br/>
-								</div>
-								<br/>
+								<div className="tagsTopLine">
+									<span className="inputLabel">Tags</span>
+									<MessageQueue/>
+								</div>								
 								{addedTags}
 								<input className="formInputs" 
 										onKeyPress={this.onTagInputKeyPress}

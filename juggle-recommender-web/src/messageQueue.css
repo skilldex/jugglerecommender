@@ -1,0 +1,21 @@
+  .message{
+  background: #FFCBA4;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 1px rgba(255, 255, 255, 0.8);
+  color: black;
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: -3px;
+  padding: 1px 10px;
+  position: absolute;
+  opacity: 1;
+  animation: messagefade 6s ease-in-out; 
+}
+
+@keyframes messagefade {
+  0%   { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+  

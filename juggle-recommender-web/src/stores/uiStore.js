@@ -34,6 +34,7 @@ class UIStore {
 	@observable showCommentsSection = false
 	@observable mainListScrollerPosition = null
 	@observable pageNumber = 0
+	@observable inferredFadeTag = null
 
 	@observable suggestingPrereq = false
     @observable suggestedPrereq = null
@@ -59,6 +60,9 @@ class UIStore {
     	this.addTrickFormPrereqs = []
  		this.addTrickFormRelated = []
  		this.addTrickFormPostreqs = []	
+    }
+    @action setInferredFadeTag=(inferredTag)=>{
+    	this.inferredFadeTag = inferredTag
     }
 
     @action clearSuggestions=(listType)=>{

@@ -5,7 +5,7 @@ v2.4
 
 	-Add Trick Form:
 		-make inferred tags be added automatically in the list
-			-need a fleeting message to tell that this happenend. this can be made manually.
+			-need a fleeting message to tell that this happenend.
 			-https://github.com/ianboru/genetic_beats/tree/4288c4dc089e1e32516c4b7a0a534228fc29eea7/app/components
 				-messagestore and message component(make css and replace component with div)
 
@@ -17,14 +17,12 @@ v2.4
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
+	-if there is 1 item in an autocomplete list, enter should select that item
+
 BUGS:
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it
-	-dissalow repeat related patterns in add trick
-	-we are still getting some phantom demos in add tricks smallTrickList
-		-arrows stay turned if they are submitted while video is being demoed?
-
-
+	-if a repeat tag is added in add tricks, then the original cant be deleted
 	-if we load page with flair url that results in no matches, we get endless loading wheel
 =========
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
