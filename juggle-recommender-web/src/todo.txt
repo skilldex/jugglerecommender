@@ -9,16 +9,21 @@ v2.4
 			-smallTrickList?
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
-	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 
 	-if there is 1 item in an autocomplete list, enter should select that item
 	-list things next to submit button that still need to be filled in
-BUGS:
+
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it
-	-if we load page with flair url that results in no matches, we get endless loading wheel
-	-message acts weird if two inferred tricks are added to rapidly
+
+	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
+
+
+INFERRED TAGS:
+	-shown for long enough?
+	-should show tag name in message?
+	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
 	
@@ -32,6 +37,7 @@ MAYBES/QUESTIONS:
 	-make a 'tricks being worked on stat'?
 
 Bugs:
+	-if we load page with flair url that results in no matches, we get endless loading wheel
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
 	-Scrolling is weird on add trick form, it is like there are two scrollbars and 1 only 		works on green part of form
