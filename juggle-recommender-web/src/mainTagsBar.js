@@ -268,7 +268,7 @@ class MainTagsBar extends Component {
                       className={filterStore.sortType === 'lastUpdated' ?
                       "sortDropdownButton  sortDropdownButtonSelected" :
                       "sortDropdownButton "}
-                      onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Date Worked On</button>
+                      onClick={(e)=>this.sortOptionClicked('lastUpdated')}>Date Practiced</button>
               <hr className="divdingLine"/>
               <button alt="sortDropdownButtonCatches"
                       className={filterStore.sortDirection === 'ascending' ?
