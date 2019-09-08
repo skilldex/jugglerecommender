@@ -107,9 +107,6 @@ class Filter extends Component {
 
 	handleWorkedOnValueChanged=(e)=>{
 		filterStore.setWorkedOnValue(e.target.value)
-		if (e.target.value === ""){
-			filterStore.setWorkedOnPeriod(null)
-		}
 	}
 
     copyFilterURL=()=>{

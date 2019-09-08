@@ -429,6 +429,10 @@ class UIStore {
 					})
 				utilities.sendGA('filter','close filter',filterStrings.join(" | "))
 			}
+
+	 		if (filterStore.workedOnValue === ""){
+				filterStore.setWorkedOnPeriod(null)
+			}
 			if (!filterStore.hasSetSort && 
 				filterStore.workedOnPeriod !== null){
 	 				filterStore.setSortType('lastUpdated')
