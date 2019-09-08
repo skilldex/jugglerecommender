@@ -87,7 +87,9 @@ class UIStore {
 		     this.suggestedPostreq = trickKey
 		     this.autoCompletedSuggestedPostreq = true
     	}else{//if we are in the add trick form
-    		listOfTricks.push(trickKey)
+    		if (!listOfTricks.includes(trickKey)){
+    			listOfTricks.push(trickKey)
+    		}
     	}
     }
 
