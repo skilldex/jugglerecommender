@@ -3,12 +3,6 @@ v2.4
 		-upload image
 			ian has code for this
 
-	-Add Trick Form:
-		-make inferred tags be added automatically in the list
-			-need a fleeting message to tell that this happenend.
-			-https://github.com/ianboru/genetic_beats/tree/4288c4dc089e1e32516c4b7a0a534228fc29eea7/app/components
-				-messagestore and message component(make css and replace component with div)
-
 	Search:
 		-should we implement the new search everywhere?
 			-autocompletes?
@@ -22,7 +16,6 @@ v2.4
 BUGS:
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it
-	-if a repeat tag is added in add tricks, then the original cant be deleted
 	-if we load page with flair url that results in no matches, we get endless loading wheel
 =========
 Stefan suggested we do suggestions for tags and siteswap like we did relateds
