@@ -10,7 +10,7 @@
   padding: 1px 10px;
   position: absolute;
   opacity: 1;
-  animation: messagefade 6s ease-in-out; 
+  animation: messagefade 4s ease-in-out; 
 }
 
 @keyframes messagefade {

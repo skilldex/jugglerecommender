@@ -1,17 +1,18 @@
 import { action, configure, observable } from "mobx"
 
 configure({ enforceActions: "always" })
-const MESSAGE_DURATION = 5800
+const MESSAGE_DURATION = 3950
 
 class MessageStore {
 
   @observable messageQueue = []
 
   @action addMessageToQueue(message){
-    this.messageQueue.push(message)
-    setTimeout(()=>{
-      this.shiftMessageFromQueue()
-    }, MESSAGE_DURATION)
+      this.messageQueue.push(message)
+      setTimeout(()=>{
+        this.shiftMessageFromQueue()
+      }, MESSAGE_DURATION)
+    
   }
 
   @action shiftMessageFromQueue(){

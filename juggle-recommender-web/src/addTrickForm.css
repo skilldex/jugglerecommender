@@ -165,7 +165,7 @@
   background-color : #eee;
   height: 14px;
   line-height: 10px;
-  animation: fadeIt 6s ease-in-out; 
+  animation: fadeIt 4s ease-in-out; 
 }
 
 @keyframes fadeIt {
