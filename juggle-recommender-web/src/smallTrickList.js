@@ -24,8 +24,8 @@ class SmallTrickList extends Component {
 	expandCard=(trickKey)=> {
 		//reset expand state if trick is already selected so next
 		//expansion has correct state
-		const previoslySelected = document.getElementById(uiStore.selectedTrick+"listCard");
-		const element = document.getElementById(trickKey+"listCard");
+		const previoslySelected = document.getElementById(uiStore.selectedTrick+"SmallListCard");
+		const element = document.getElementById(trickKey+"SmallListCard");
 		if(previoslySelected && previoslySelected !== element){
 			previoslySelected.classList.toggle("expand");
 		}
@@ -44,6 +44,7 @@ class SmallTrickList extends Component {
 		uiStore.addTrickToSmallTrickList(this.props.listOfTricks,trickKey)
 		if(this.props.listType.includes('AddTrick')){
 			this.setState({inputText:''})
+			uiStore.selectTrick(null)
 		}else if (this.props.listType.includes('Details')){
 			this.setState({inputText:store.library[trickKey].name})
 			uiStore.selectTrick(null)
@@ -146,7 +147,7 @@ class SmallTrickList extends Component {
 					tricks.push(
 						<div className= "smallListCard"
 							 key={trickKey + "div"} 
-							 id={trickKey + "listCard"}
+							 id={trickKey + "SmallListCard"}
 							 onClick={(e)=>{this.addToList(store.library[trickKey].name)}}
 						>	
 							<div className="smallListMainCard">
