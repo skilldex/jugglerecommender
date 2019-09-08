@@ -11,8 +11,12 @@ v2.4
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
-	-if there is 1 item in an autocomplete list, enter should select that item
 
+	-creating a worked on filter should automatically switch sort to date practiced
+		-date worked on needs wording changed to 'date practiced'
+	-clearing worked on filter value should not make the period null until back or submit is hit
+	-if there is 1 item in an autocomplete list, enter should select that item
+	-list things next to submit button that still need to be filled in
 BUGS:
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it

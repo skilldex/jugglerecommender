@@ -429,6 +429,11 @@ class UIStore {
 					})
 				utilities.sendGA('filter','close filter',filterStrings.join(" | "))
 			}
+			if (!filterStore.hasSetSort && 
+				filterStore.workedOnPeriod !== null){
+	 				filterStore.setSortType('lastUpdated')
+	 				filterStore.setSortDirection('descending')
+	 		}
 			this.setFilterURL()
 	    	this.setShowFilterDiv(false)
 	    	this.showPatternList()
