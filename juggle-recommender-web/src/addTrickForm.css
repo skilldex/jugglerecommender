@@ -181,7 +181,7 @@
   background-color: white;
   border:1px solid darkgray;
   font-size: 20px;
-  margin-bottom: 1000px;
+  margin-bottom: 20px;
 }
 .disabledSubmitButton{
   background-color : lightgray;
@@ -191,6 +191,15 @@
   color : red;
   font-size: 10px;
   vertical-align: middle;
+}
+.submitWarnings{
+  width:360px;
+  color : red;
+  font-size: 14px;
+  margin:0 auto;
+  margin-bottom: 3px;
+  display: block;
+  align-items: left;
 }
 .warning{
   color : red;
@@ -214,15 +223,15 @@
   display: inline;
 }
 .textarea {
-    font-size: 12px;
-    resize: both;
-    min-height: 10px;
-    height: 80px;
-    min-width:280px;
-    max-width:280px;
-    overflow-y: auto;
-    overflow-x: hidden;
-    border-radius: 8px;
+  font-size: 12px;
+  resize: both;
+  min-height: 10px;
+  height: 80px;
+  min-width:280px;
+  max-width:280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 8px;
 }
 .addRelationshipDiv{
   display: block;
@@ -243,6 +252,10 @@
   height: 14px;
   line-height: 10px;
 
+}
+
+.addTrickFormBottomSpace{
+  margin-bottom: 1000px;
 }
 
 

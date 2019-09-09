@@ -1542,7 +1542,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 7
+      "views" : 8
     },
     "50505" : {
       "contributor" : "tjthejuggler",
@@ -1612,7 +1612,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 5
+      "views" : 6
     },
     "52512" : {
       "contributor" : "tjthejuggler",
@@ -1682,7 +1682,7 @@
       "video" : "https://www.youtube.com/watch?v=Y2fGD4Hhw4U",
       "videoEndTime" : 29,
       "videoStartTime" : 15,
-      "views" : 6
+      "views" : 7
     },
     "4440522" : {
       "contributor" : "nycjuggler_",
@@ -3051,7 +3051,7 @@
       "timeUpdated" : 1563229396805,
       "url" : "",
       "video" : "https://www.instagram.com/p/BmgG1YrDuaU/",
-      "views" : 3
+      "views" : 4
     },
     "({33})33 with Penguin Squeezes(4b)" : {
       "contributor" : "juggling_vegan_",
@@ -3759,7 +3759,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "juggling_vegan_" ]
+          "upvoters" : [ "juggling_vegan_", "tjthejuggler" ]
         }
       },
       "related" : {
@@ -5264,6 +5264,12 @@
     },
     "363 Mills Mess(4b)" : {
       "contributor" : "juggling_vegan_",
+      "dependents" : {
+        "663 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
       "difficulty" : "6",
       "explanation" : "",
       "name" : "363 Mills Mess(4b)",
@@ -7844,6 +7850,10 @@
           "source" : "contributed",
           "upvoters" : [ "loj" ]
         },
+        "645 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Semi-Forked Semi-Mess(4b)" : {
           "source" : "contributed",
           "upvoters" : [ "loj" ]
@@ -8500,7 +8510,7 @@
         },
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         }
       },
       "difficulty" : "4.3",
@@ -8601,7 +8611,7 @@
         },
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Sprung Cascade(4b)" : {
           "source" : "contributed",
@@ -8637,7 +8647,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 7
+      "views" : 8
     },
     "55550(4b)" : {
       "dependents" : {
@@ -8647,7 +8657,7 @@
         },
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         }
       },
       "difficulty" : "4.7",
@@ -8669,7 +8679,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 4
+      "views" : 5
     },
     "5623453 Variation(4b)" : {
       "contributor" : "lauge_benjaminsen_",
@@ -8753,7 +8763,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "automatic",
-          "upvoters" : [ "juggling_vegan_" ]
+          "upvoters" : [ "juggling_vegan_", "tjthejuggler" ]
         }
       },
       "siteswap" : "",
@@ -9093,9 +9103,53 @@
       "video" : "https://www.instagram.com/p/BU9ME8uhcCB/",
       "views" : 1
     },
+    "645 Mills Mess(5b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "6.8",
+      "explanation" : "",
+      "name" : "645 Mills Mess(5b)",
+      "num" : 5,
+      "prereqs" : {
+        "534 Mills Mess(4b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "645(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "related" : {
+        "663 Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "753 Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "645",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw" ],
+      "timeSubmitted" : 1567971812139,
+      "timeUpdated" : 1567971812139,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1vvPRvibEA/",
+      "views" : 3
+    },
     "645(5b)" : {
       "contributor" : "AndreyR",
       "dependents" : {
+        "645 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "84445(5b)" : {
           "source" : "automatic",
           "upvoters" : [ "AndreyR" ]
@@ -9125,7 +9179,7 @@
         },
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "AndreyR" ]
+          "upvoters" : [ "AndreyR", "tjthejuggler" ]
         }
       },
       "related" : {
@@ -9258,6 +9312,42 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BckCTMRhl3k/"
+    },
+    "663 Mills Mess(5b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "6.4",
+      "explanation" : "",
+      "name" : "663 Mills Mess(5b)",
+      "num" : "5",
+      "prereqs" : {
+        "363 Mills Mess(4b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "related" : {
+        "645 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "753 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "663",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw" ],
+      "timeSubmitted" : 1567967240847,
+      "timeUpdated" : 1567967240847,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1MuKvpH-wt/",
+      "views" : 2
     },
     "663(5b)" : {
       "contributor" : "tjthejuggler",
@@ -9608,7 +9698,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "taylor_tries_" ]
+          "upvoters" : [ "taylor_tries_", "tjthejuggler" ]
         }
       },
       "related" : {
@@ -9625,9 +9715,55 @@
       "video" : "https://www.instagram.com/p/BvdLd5egjaZ/",
       "views" : 6
     },
+    "753 Mills Mess(5b)" : {
+      "contributor" : "omnikrabundi_",
+      "dependents" : {
+        "753567345 Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "difficulty" : "6.2",
+      "explanation" : "",
+      "name" : "753 Mills Mess(5b)",
+      "num" : "5",
+      "prereqs" : {
+        "753(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "related" : {
+        "645 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "663 Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "753",
+      "tags" : [ "underarm-catch", "underarm-throw", "crossed-arms" ],
+      "timeSubmitted" : 1567967450293,
+      "timeUpdated" : 1567971220956,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1M2lSanpkD/",
+      "views" : 3
+    },
     "753(5b)" : {
       "contributor" : "tjthejuggler",
       "dependents" : {
+        "753 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "963(6b)" : {
           "source" : "automatic",
           "upvoters" : [ "matanjuggles_" ]
@@ -9786,9 +9922,71 @@
       "video" : "https://www.instagram.com/p/829VOyMe-q/?igshid=ircv237dkb61",
       "views" : 6
     },
+    "753567345 Mills Mess(5b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "7.0",
+      "explanation" : "",
+      "name" : "753567345 Mills Mess(5b)",
+      "num" : 5,
+      "prereqs" : {
+        "753 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "753567345",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw" ],
+      "timeSubmitted" : 1567967355095,
+      "timeUpdated" : 1567967355095,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1Mu3cMHb2z/",
+      "views" : 3
+    },
+    "771 Mills Mess(5b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "6.3",
+      "explanation" : "",
+      "name" : "771 Mills Mess(5b)",
+      "num" : 5,
+      "prereqs" : {
+        "771(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "related" : {
+        "915 Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "771",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw", "ss1" ],
+      "timeSubmitted" : 1567967556734,
+      "timeUpdated" : 1567967556734,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1M5XIWHgmP/",
+      "views" : 1
+    },
     "771(5b)" : {
       "contributor" : "nycjuggler_",
       "dependents" : {
+        "771 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "777771 With the 1 Behind the Neck(6b)" : {
           "source" : "contributed",
           "upvoters" : [ "nycjuggler_" ]
@@ -10147,6 +10345,12 @@
           "upvoters" : [ "matanjuggles_" ]
         }
       },
+      "related" : {
+        "855 Mills Mess(6b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
       "siteswap" : "855",
       "tags" : [ "360" ],
       "timeSubmitted" : 1566584702686,
@@ -10155,6 +10359,34 @@
       "usersWithCatches" : 0,
       "video" : "https://www.instagram.com/p/BXgjSdWBq87/",
       "views" : 2
+    },
+    "855 Mills Mess(6b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "8.1",
+      "explanation" : "",
+      "name" : "855 Mills Mess(6b)",
+      "num" : 6,
+      "prereqs" : {
+        "Mills Mess(6b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "related" : {
+        "855 6up 360(6b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "855",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw" ],
+      "timeSubmitted" : 1567971619012,
+      "timeUpdated" : 1567971619012,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1W_imMASYc/",
+      "views" : 3
     },
     "85813(5b)" : {
       "contributor" : "matanjuggles_",
@@ -10181,6 +10413,28 @@
       "usersWithCatches" : 0,
       "video" : "https://www.instagram.com/p/BfhqkTahtSG/",
       "views" : 1
+    },
+    "861 Mills Mess(5b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "6.8",
+      "explanation" : "",
+      "name" : "861 Mills Mess(5b)",
+      "num" : 5,
+      "related" : {
+        "915 Mills Mess(5b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "861",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw", "ss1" ],
+      "timeSubmitted" : 1567971331060,
+      "timeUpdated" : 1567971331060,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1M56hfHdkV/",
+      "views" : 2
     },
     "86222 With The First 2 as a Scarf Catch(4b)" : {
       "contributor" : "drorlotan_",
@@ -10313,7 +10567,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "jameschance_" ]
+          "upvoters" : [ "jameschance_", "tjthejuggler" ]
         }
       },
       "siteswap" : "",
@@ -10388,6 +10642,14 @@
         }
       },
       "related" : {
+        "771 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "861 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Mills Mess(6b)" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -10401,7 +10663,7 @@
       "video" : "https://www.youtube.com/watch?v=cNCzkM7eCsM",
       "videoEndTime" : 25,
       "videoStartTime" : 1,
-      "views" : 8
+      "views" : 10
     },
     "915(5b)" : {
       "contributor" : "tjthejuggler",
@@ -12830,7 +13092,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 487,
       "videoStartTime" : 470,
-      "views" : 14
+      "views" : 15
     },
     "Asymmetric Split Multiplex Overhead(4b)" : {
       "contributor" : "jugglerjoerg",
@@ -13482,7 +13744,7 @@
       "usersWithCatches" : 0,
       "usersWorkingOn" : 0,
       "video" : "https://www.instagram.com/p/BzkocKOjAE-/",
-      "views" : 1
+      "views" : 2
     },
     "BOOMclawclaw(5b)" : {
       "contributor" : "nycjuggler_",
@@ -13646,7 +13908,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BiCR2FAD87p/",
-      "views" : 1
+      "views" : 2
     },
     "Backcross + Normal Exchange(2b)" : {
       "contributor" : "tjthejuggler",
@@ -13987,7 +14249,7 @@
       "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
       "videoEndTime" : 66,
       "videoStartTime" : 48,
-      "views" : 1
+      "views" : 2
     },
     "Backcross to catch beside head(1b)" : {
       "contributor" : "tjthejuggler",
@@ -14836,7 +15098,7 @@
       "video" : "https://www.youtube.com/watch?v=--98LM5h04Y",
       "videoEndTime" : 232,
       "videoStartTime" : 217,
-      "views" : 5
+      "views" : 6
     },
     "Boston Mess" : {
       "dependents" : {
@@ -15032,7 +15294,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 4
+      "views" : 6
     },
     "Boston Takeouts" : {
       "contributor" : "3ballpatterns_",
@@ -15304,7 +15566,7 @@
       "video" : "https://www.youtube.com/watch?v=YnjEX8N4FC4",
       "videoEndTime" : 101,
       "videoStartTime" : 92,
-      "views" : 10
+      "views" : 12
     },
     "Box Double Shower Variation" : {
       "contributor" : "xdjameron_",
@@ -16985,23 +17247,23 @@
       "dependents" : {
         "({74})333(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "5b 3up 360(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "645(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "744(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "8x6x4x0(6,6)* Semisolid(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Cascade 1up Backflip(5b)" : {
           "source" : "automatic",
@@ -17009,46 +17271,46 @@
         },
         "Cascade(7b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Five-ball semisolid columns(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Half Shower(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Reverse Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Six Ball Fountain(6b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         }
       },
-      "difficulty" : "6",
+      "difficulty" : "5.4",
       "explanation" : "https://libraryofjuggling.com/Tricks/5balltricks/FiveBallCascade.html",
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/5balltricks/fiveballcascade.gif",
       "name" : "Cascade(5b)",
-      "num" : 5,
+      "num" : "5",
       "prereqs" : {
         "522" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "900" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "50505" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "55500" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "534(4b)" : {
           "source" : "contributed",
@@ -17056,15 +17318,15 @@
         },
         "552(4b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "5551(4b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "55550(4b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Shower(4b)" : {
           "source" : "contributed",
@@ -17073,12 +17335,12 @@
       },
       "siteswap" : "5",
       "timeSubmitted" : 0,
-      "timeUpdated" : 1566066355222,
+      "timeUpdated" : 1567967126406,
       "url" : "https://thomwall.com/everything-you-need-to-know-about-five-ball-juggling/",
       "usersWithCatches" : 6,
       "usersWorkingOn" : 12,
       "video" : "",
-      "views" : 11
+      "views" : 13
     },
     "Cascade(7b)" : {
       "contributor" : "esteban_almonacid_cardenas_",
@@ -17516,6 +17778,10 @@
     "Cherry Picker" : {
       "contributor" : "3ballpatterns_",
       "dependents" : {
+        "Cherry Picker(4b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Cherrypicked time-reversed half mess" : {
           "source" : "contributed",
           "upvoters" : [ "3ballpatterns_" ]
@@ -17566,6 +17832,28 @@
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BLl_gI7jC6a/",
       "views" : 1
+    },
+    "Cherry Picker(4b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "5.7",
+      "explanation" : "",
+      "name" : "Cherry Picker(4b)",
+      "num" : "4",
+      "prereqs" : {
+        "Cherry Picker" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "",
+      "tags" : [ "underarm-catch", "crossed-arms", "underarm-throw", "claw" ],
+      "timeSubmitted" : 1567971458709,
+      "timeUpdated" : 1567971458709,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1M9KX7nJtz/",
+      "views" : 4
     },
     "Cherrypicked time-reversed half mess" : {
       "contributor" : "juggling_vegan_",
@@ -18543,7 +18831,7 @@
       "video" : "https://www.youtube.com/watch?v=HtHQX93w-j4",
       "videoEndTime" : 218,
       "videoStartTime" : 209,
-      "views" : 3
+      "views" : 4
     },
     "Claymotion Base + Box + Orbit + Claw" : {
       "contributor" : "JuggleKraze_",
@@ -19795,7 +20083,7 @@
       "video" : "https://www.youtube.com/watch?v=YnjEX8N4FC4",
       "videoEndTime" : 28,
       "videoStartTime" : 18,
-      "views" : 6
+      "views" : 7
     },
     "Columns Corkscrew Inverted Box" : {
       "contributor" : "artifaxiom",
@@ -20029,7 +20317,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/FourBallColumns.html",
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
-      "views" : 10
+      "views" : 11
     },
     "Comfy Asymmetric Slam Shapeshifter Variation" : {
       "contributor" : "xdjameron_",
@@ -20295,7 +20583,7 @@
       "video" : "https://www.youtube.com/watch?v=kDeEmvpRHlw",
       "videoEndTime" : 146,
       "videoStartTime" : 138,
-      "views" : 12
+      "views" : 13
     },
     "Continuous Bumbles(1b)" : {
       "contributor" : "tjthejuggler",
@@ -20800,7 +21088,7 @@
       "video" : "https://www.youtube.com/watch?v=YnjEX8N4FC4",
       "videoEndTime" : 261,
       "videoStartTime" : 252,
-      "views" : 7
+      "views" : 8
     },
     "Cross Columns Inverted Box" : {
       "contributor" : "tjthejuggler",
@@ -21210,7 +21498,7 @@
       "video" : "https://www.youtube.com/watch?v=a_WmiaL43NA",
       "videoEndTime" : 169,
       "videoStartTime" : 154,
-      "views" : 6
+      "views" : 7
     },
     "Crossed  Penguin Variation of 423 With Slapped 3" : {
       "contributor" : "matanjuggles_",
@@ -22159,7 +22447,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/Bz8emPVBECd/?utm_source=ig_web_copy_link",
-      "views" : 3
+      "views" : 4
     },
     "Db97531 360(7b)" : {
       "contributor" : "esteban_almonacid_cardenas_",
@@ -22316,7 +22604,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BdVS692hmxm/",
-      "views" : 2
+      "views" : 3
     },
     "Diagonal Line Freezes" : {
       "contributor" : "artifaxiom",
@@ -23602,7 +23890,7 @@
       "video" : "https://www.youtube.com/watch?v=YnjEX8N4FC4",
       "videoEndTime" : 81,
       "videoStartTime" : 72,
-      "views" : 9
+      "views" : 10
     },
     "Every Other Neck Catch on One Side" : {
       "contributor" : "tjthejuggler",
@@ -23792,7 +24080,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://youtu.be/qlmtKmJxbv0",
-      "views" : 1
+      "views" : 2
     },
     "Everything Has Rhythm" : {
       "contributor" : "jahvorsky_",
@@ -24556,7 +24844,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 11
+      "views" : 12
     },
     "Factory Drop Box" : {
       "contributor" : "JuggleKraze_",
@@ -24642,7 +24930,7 @@
       "usersWithCatches" : 2,
       "usersWorkingOn" : 4,
       "video" : "https://www.youtube.com/watch?v=iD_6Dn-GLX8",
-      "views" : 2
+      "views" : 3
     },
     "Factory Exchange 2(2b)" : {
       "contributor" : "tjthejuggler",
@@ -24718,7 +25006,7 @@
       "video" : "https://www.youtube.com/watch?v=ZMd2mVVvc_0",
       "videoEndTime" : 18,
       "videoStartTime" : 2,
-      "views" : 5
+      "views" : 6
     },
     "Fake Boston Shuffle" : {
       "contributor" : "3ballpatterns_",
@@ -25164,7 +25452,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 369,
       "videoStartTime" : 356,
-      "views" : 2
+      "views" : 3
     },
     "Fast Half Taffy Puller" : {
       "contributor" : "JuggleKraze_",
@@ -25324,7 +25612,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "jameschance_" ]
+          "upvoters" : [ "jameschance_", "tjthejuggler" ]
         }
       },
       "siteswap" : "",
@@ -25398,7 +25686,7 @@
       "video" : "https://www.youtube.com/watch?v=--98LM5h04Y",
       "videoEndTime" : 280,
       "videoStartTime" : 269,
-      "views" : 6
+      "views" : 7
     },
     "Flo's Mess" : {
       "dependents" : {
@@ -26030,7 +26318,7 @@
       "usersWithCatches" : 3,
       "usersWorkingOn" : 6,
       "video" : "",
-      "views" : 5
+      "views" : 6
     },
     "Frances" : {
       "difficulty" : "4",
@@ -26375,7 +26663,7 @@
       "video" : "https://www.instagram.com/p/BzU-pSXDK9i/",
       "videoEndTime" : 12,
       "videoStartTime" : 3,
-      "views" : 3
+      "views" : 4
     },
     "Full Contortion(1b)" : {
       "contributor" : "tjthejuggler",
@@ -27022,7 +27310,7 @@
       "video" : "https://www.youtube.com/watch?v=uflurPQVAAc",
       "videoEndTime" : 80,
       "videoStartTime" : 68,
-      "views" : 1
+      "views" : 2
     },
     "Half Boston Mess" : {
       "contributor" : "3ballpatterns_",
@@ -27688,7 +27976,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Half Shower(4b)" : {
           "source" : "contributed",
@@ -31346,7 +31634,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Lisa.html",
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
-      "views" : 3
+      "views" : 5
     },
     "Loopty Loop Elcrook Stalls(4b)" : {
       "contributor" : "matanjuggles_",
@@ -32606,6 +32894,26 @@
     "Mills Mess(5b)" : {
       "contributor" : "tjthejuggler",
       "dependents" : {
+        "645 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "663 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "753 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "753567345 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "771 Mills Mess(5b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "915 Mills Mess(5b)" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -32636,11 +32944,15 @@
       "usersWithCatches" : 2,
       "usersWorkingOn" : 4,
       "video" : "https://youtu.be/Wz5g--Y2-zA",
-      "views" : 5
+      "views" : 6
     },
     "Mills Mess(6b)" : {
       "contributor" : "tjthejuggler",
       "dependents" : {
+        "855 Mills Mess(6b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Mills Mess(7b)" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -32667,7 +32979,7 @@
       "timeUpdated" : 1561894019288,
       "url" : "",
       "video" : "https://youtu.be/qEtKoysjw4c",
-      "views" : 4
+      "views" : 5
     },
     "Mills Mess(7b)" : {
       "contributor" : "tjthejuggler",
@@ -32908,7 +33220,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://youtu.be/DkVMPaBEhss",
-      "views" : 3
+      "views" : 4
     },
     "Mindfuckery Reverse Machine" : {
       "contributor" : "juggling_vegan_",
@@ -34335,7 +34647,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 240,
       "videoStartTime" : 216,
-      "views" : 2
+      "views" : 3
     },
     "Neck Catch(1b)" : {
       "contributor" : "tjthejuggler",
@@ -35651,7 +35963,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 321,
       "videoStartTime" : 306,
-      "views" : 2
+      "views" : 3
     },
     "One Sided Neck Catches" : {
       "contributor" : "tjthejuggler",
@@ -35743,7 +36055,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 291,
       "videoStartTime" : 279,
-      "views" : 3
+      "views" : 4
     },
     "One Sided Neck Throws" : {
       "contributor" : "juggling_vegan_",
@@ -35823,7 +36135,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 57,
       "videoStartTime" : 40,
-      "views" : 3
+      "views" : 4
     },
     "One Sided Reverse Backcrosses" : {
       "contributor" : "tjthejuggler",
@@ -35863,7 +36175,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 75,
       "videoStartTime" : 57,
-      "views" : 3
+      "views" : 4
     },
     "Open Handed Juggler's Tennis" : {
       "contributor" : "artifaxiom",
@@ -36872,7 +37184,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 40,
       "videoStartTime" : 18,
-      "views" : 5
+      "views" : 6
     },
     "Penguin Throws" : {
       "contributor" : "xdjameron_",
@@ -37422,7 +37734,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 5
+      "views" : 6
     },
     "Polkadots(4b)" : {
       "contributor" : "lauge_benjaminsen_",
@@ -38042,7 +38354,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/RainbowArches.html",
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
-      "views" : 2
+      "views" : 3
     },
     "Rainbow Cross(4b)" : {
       "difficulty" : "6",
@@ -38479,11 +38791,12 @@
       "timeSubmitted" : 1566865392024,
       "timeUpdated" : 1566866152385,
       "url" : "",
-      "usersWithCatches" : 0,
+      "usersWithCatches" : 1,
+      "usersWorkingOn" : 1,
       "video" : "https://www.youtube.com/watch?v=zUJe_GsrXqs",
       "videoEndTime" : 132,
       "videoStartTime" : 110,
-      "views" : 6
+      "views" : 7
     },
     "Revenge Box" : {
       "contributor" : "JuggleKraze_",
@@ -38917,7 +39230,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         }
       },
       "siteswap" : "5",
@@ -39274,7 +39587,7 @@
       "video" : "https://www.youtube.com/watch?v=ARnZCL_cQfs",
       "videoEndTime" : 81,
       "videoStartTime" : 65,
-      "views" : 8
+      "views" : 9
     },
     "Reverse Fountain Through Dots(4b)" : {
       "contributor" : "artifaxiom",
@@ -40527,7 +40840,7 @@
       "video" : "https://www.youtube.com/watch?v=v668DXGLJ3U",
       "videoEndTime" : 90,
       "videoStartTime" : 14,
-      "views" : 11
+      "views" : 12
     },
     "Shapeshift of 531531441 Back of Hand First 3" : {
       "contributor" : "nycjuggler_",
@@ -41026,7 +41339,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/Shower.html",
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
-      "views" : 16
+      "views" : 17
     },
     "Shower + Fake Mess" : {
       "contributor" : "3ballpatterns_",
@@ -41420,7 +41733,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "",
-      "views" : 3
+      "views" : 4
     },
     "Shuffle Switch(4b)" : {
       "contributor" : "tjthejuggler",
@@ -41792,7 +42105,7 @@
       "video" : "https://www.youtube.com/watch?v=gUBHnVapaV8",
       "videoEndTime" : 356,
       "videoStartTime" : 337,
-      "views" : 2
+      "views" : 3
     },
     "Side Elbow Bounce(1b)" : {
       "contributor" : "tjthejuggler",
@@ -41977,7 +42290,7 @@
       "prereqs" : {
         "Cascade(5b)" : {
           "source" : "contributed",
-          "upvoters" : [ "loj" ]
+          "upvoters" : [ "loj", "tjthejuggler" ]
         },
         "Fountain(4b)" : {
           "source" : "contributed",
@@ -42239,7 +42552,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BZyWgEWBIJ6/",
-      "views" : 2
+      "views" : 4
     },
     "Slams(4b)" : {
       "contributor" : "jameschance_",
@@ -43698,7 +44011,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/3balltricks/StatueofLiberty.html",
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
-      "views" : 1
+      "views" : 2
     },
     "Stefan's Mess" : {
       "contributor" : "stefan",
@@ -45524,7 +45837,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/SynchFountain.html",
       "usersWithCatches" : 2,
       "usersWorkingOn" : 4,
-      "views" : 2
+      "views" : 3
     },
     "Synchish 423 with Active 2s Overarm From Far Side" : {
       "contributor" : "JuggleKraze_",
@@ -45760,7 +46073,7 @@
       "video" : "https://www.youtube.com/watch?v=8S__eRBwRfU",
       "videoEndTime" : 68,
       "videoStartTime" : 53,
-      "views" : 6
+      "views" : 7
     },
     "Takearound" : {
       "difficulty" : "5",
@@ -45800,7 +46113,7 @@
       "video" : "https://www.instagram.com/p/BhNdIMRH3qb/",
       "videoEndTime" : 9,
       "videoStartTime" : 1,
-      "views" : 9
+      "views" : 10
     },
     "Takeout Flipped Windmill Mess" : {
       "contributor" : "JuggleKraze_",
@@ -47370,7 +47683,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BzI_GkjBRGU/?utm_source=ig_web_copy_link",
-      "views" : 2
+      "views" : 3
     },
     "Time Reverse Burke's Burrage" : {
       "contributor" : "nycjuggler_",
@@ -47510,7 +47823,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BpC8A6zgoKb/?utm_source=ig_web_copy_link",
-      "views" : 3
+      "views" : 4
     },
     "Tommi's Lazy Mess" : {
       "contributor" : "stefan",
@@ -47712,7 +48025,7 @@
       "video" : "https://www.youtube.com/watch?v=YnjEX8N4FC4",
       "videoEndTime" : 121,
       "videoStartTime" : 114,
-      "views" : 6
+      "views" : 7
     },
     "Tracing the Perfect Path" : {
       "contributor" : "noslowerdna_",
@@ -49425,7 +49738,7 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/BzLo7B5hFUv/?igshid=1ulmft8kfy5jq",
-      "views" : 1
+      "views" : 3
     },
     "Updates" : {
       "contributor" : "lauge_benjaminsen_",
@@ -50017,7 +50330,7 @@
       "url" : "http://www.libraryofjuggling.com/Tricks/4balltricks/Wimpy.html",
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
-      "views" : 3
+      "views" : 4
     },
     "Wimpy(6b)" : {
       "contributor" : "juggling_vegan_",
@@ -50242,6 +50555,10 @@
         "4b Windmills Mess(4b)" : {
           "source" : "contributed",
           "upvoters" : [ "loj" ]
+        },
+        "Windmill(6b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "difficulty" : "5",
@@ -50269,6 +50586,28 @@
       "usersWithCatches" : 1,
       "usersWorkingOn" : 2,
       "views" : 2
+    },
+    "Windmill(6b)" : {
+      "contributor" : "omnikrabundi_",
+      "difficulty" : "7.6",
+      "explanation" : "",
+      "name" : "Windmill(6b)",
+      "num" : "6",
+      "prereqs" : {
+        "Windmill(4b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "",
+      "tags" : [ "crossed-arms", "underarm-throw", "crossed-arms" ],
+      "timeSubmitted" : 1567967048499,
+      "timeUpdated" : 1567971514887,
+      "url" : "",
+      "usersWithCatches" : 0,
+      "usersWorkingOn" : 0,
+      "video" : "https://www.instagram.com/p/B1LRDIWHrj6/",
+      "views" : 4
     },
     "Windshield Wipers" : {
       "contributor" : "3ballpatterns_",
@@ -51211,8 +51550,8 @@
         "starred" : "true"
       },
       "Backcross + Neck Throw" : {
-        "catches" : "44",
-        "lastUpdated" : 1566764256143
+        "catches" : "76",
+        "lastUpdated" : 1567960427293
       },
       "Backcross + Normal Exchange(2b)" : {
         "catches" : "300",
@@ -51414,11 +51753,6 @@
       "Cascade with every third a swap" : {
         "catches" : "300",
         "lastUpdated" : 1564701533759
-      },
-      "Cascade(5b)" : {
-        "catches" : "1330",
-        "lastUpdated" : 1565189118442,
-        "starred" : "true"
       },
       "Cascade(7b)" : {
         "catches" : "54",
@@ -51878,8 +52212,8 @@
         "lastUpdated" : 1566126996236
       },
       "Far Close Shower" : {
-        "catches" : "36",
-        "lastUpdated" : 1566777129859
+        "catches" : "100",
+        "lastUpdated" : 1567960710436
       },
       "Fast Martin" : {
         "catches" : "160",
@@ -52266,8 +52600,8 @@
         "lastUpdated" : 1564920410219
       },
       "Neck Catch Tennis" : {
-        "catches" : "54",
-        "lastUpdated" : 1566821900079
+        "catches" : "99",
+        "lastUpdated" : 1567978119430
       },
       "Neck Pass Penguin Tennis" : {
         "catches" : "30",
@@ -52334,16 +52668,16 @@
         "lastUpdated" : 1566821921773
       },
       "One Sided Neck Passes" : {
-        "catches" : "6",
-        "lastUpdated" : 1566821931129
+        "catches" : "8",
+        "lastUpdated" : 1567978513619
       },
       "One Sided Neck Throws" : {
         "catches" : "64",
         "lastUpdated" : 1566501655824
       },
       "One Sided Penguins" : {
-        "catches" : "60",
-        "lastUpdated" : 1566821688430
+        "catches" : "80",
+        "lastUpdated" : 1567977677247
       },
       "One Sided Reverse Backcrosses" : {
         "catches" : "32",
@@ -52400,8 +52734,8 @@
         "starred" : "true"
       },
       "Penguin Tennis" : {
-        "catches" : "105",
-        "lastUpdated" : 1566777114466
+        "catches" : "306",
+        "lastUpdated" : 1567960294102
       },
       "Penguins" : {
         "catches" : "32",
@@ -52470,6 +52804,10 @@
       "Relf's Revenge" : {
         "catches" : "420",
         "lastUpdated" : 1565075930642
+      },
+      "Return Bumble(1b)" : {
+        "catches" : "50",
+        "lastUpdated" : 1567979037163
       },
       "Reverse 423" : {
         "catches" : "200",
@@ -52636,8 +52974,8 @@
         "lastUpdated" : 1566811194480
       },
       "Side By Side 1up 2up Cross Body" : {
-        "catches" : "27",
-        "lastUpdated" : 1566811546102
+        "catches" : "45",
+        "lastUpdated" : 1567977427168
       },
       "Side Grab 2in1 Hand Columns(2b)" : {
         "catches" : "44",
@@ -52823,8 +53161,8 @@
         "lastUpdated" : 1566906662392
       },
       "Takeout Box" : {
-        "catches" : "38",
-        "lastUpdated" : 1566750925810
+        "catches" : "158",
+        "lastUpdated" : 1567960147227
       },
       "Takeouts" : {
         "catches" : "200",
@@ -53123,11 +53461,6 @@
         "lastUpdated" : 1564075316756,
         "ninja" : "true",
         "starred" : "false"
-      },
-      "Cascade(5b)" : {
-        "catches" : 0,
-        "lastUpdated" : 1560518484200,
-        "starred" : "true"
       },
       "Chops" : {
         "catches" : 0,
@@ -53904,11 +54237,6 @@
         "lastUpdated" : 1562044879695,
         "starred" : "true"
       },
-      "Cascade(5b)" : {
-        "catches" : "1200",
-        "lastUpdated" : 1562045368158,
-        "starred" : "true"
-      },
       "Six Ball Fountain(6b)" : {
         "catches" : "40",
         "lastUpdated" : 1562045323685,
@@ -54094,11 +54422,6 @@
         "lastUpdated" : 1564684961048,
         "ninja" : "true"
       },
-      "Cascade(5b)" : {
-        "catches" : "1000",
-        "lastUpdated" : 1565720323537,
-        "ninja" : "true"
-      },
       "Fountain(4b)" : {
         "catches" : "1000",
         "lastUpdated" : 1564864017368,
@@ -54156,10 +54479,6 @@
     "username" : "alex2706"
   }, {
     "myTricks" : {
-      "Cascade(5b)" : {
-        "catches" : "1020",
-        "lastUpdated" : 1564736736542
-      },
       "Cascade(7b)" : {
         "catches" : "77",
         "lastUpdated" : 1564736931268
@@ -54251,10 +54570,6 @@
       "Cascade" : {
         "catches" : "1500",
         "lastUpdated" : 1565114768406
-      },
-      "Cascade(5b)" : {
-        "catches" : "500",
-        "lastUpdated" : 1565114755032
       },
       "Mills Mess(5b)" : {
         "catches" : "30",
@@ -54726,10 +55041,6 @@
         "catches" : "204",
         "lastUpdated" : 1567290483699
       },
-      "Cascade(5b)" : {
-        "catches" : "144",
-        "lastUpdated" : 1567290825713
-      },
       "Fountain(4b)" : {
         "catches" : "740",
         "lastUpdated" : 1567357228407
@@ -54750,8 +55061,8 @@
     "username" : "Rode407"
   } ],
   "stats" : {
-    "totalCatchCount" : 126378,
-    "userCount" : 1289
+    "totalCatchCount" : 126930,
+    "userCount" : 1296
   },
   "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neck-throw", "neck-pass", "headplant", "underarm-throw", "meta-pattern", "polyrhythm", "squeeze", "stall", "slaps", "foot", "acro", "bumble", "extended-arm", "apecross", "micro", "backcross" ],
   "trickOfTheDay" : {

@@ -877,12 +877,57 @@ class AddTrickForm extends Component {
 								{explanationInput}
 							</div>
 						</div>
-							<button id = "submitButton"
-									className={this.state.submitDisabled?
-										"formButton disabledSubmitButton":"formButton"}
-									onClick={this.submit}>submit</button>
-							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-							<button className="formButton"onClick={this.cancel}>cancel</button>
+						<div className="submitWarnings">
+							{this.state.nameErrorMessage?
+								<div>
+									<label>
+										 {this.state.nameErrorMessage}
+									</label>
+								</div>:null
+							}
+							{this.state.videoErrorMessage?
+								<div>
+									<label>
+										 Video: {this.state.videoErrorMessage}
+									</label>
+								</div>:null
+							}							
+							{this.state.numErrorMessage?
+								<div>
+									<label>
+										 Number of Balls: {this.state.numErrorMessage}
+									</label>
+								</div>:null
+							}	
+							{this.state.showTimeInputs && this.state.videoTimeErrorMessage?
+								<div>
+									<label>
+										 Time Inputs: {this.state.videoTimeErrorMessage}
+									</label>
+								</div>:null
+							}
+							{this.state.difficultyErrorMessage?
+								<div>
+									<label>
+										 Difficulty: {this.state.difficultyErrorMessage}
+									</label>
+								</div>:null
+							}
+							{this.state.tutorialErrorMessage?
+								<div>
+									<label>
+										 Tutorial: {this.state.tutorialErrorMessage}
+									</label>
+								</div>:null
+							}	
+						</div>
+						<button id = "submitButton"
+								className={this.state.submitDisabled?
+									"formButton disabledSubmitButton":"formButton"}
+								onClick={this.submit}>submit</button>
+						<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+						<button className="formButton"onClick={this.cancel}>cancel</button>
+						<div className= "addTrickFormBottomSpace"/>
 					</div>
 
 		return(

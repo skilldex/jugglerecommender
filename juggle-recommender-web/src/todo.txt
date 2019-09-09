@@ -19,6 +19,7 @@ v2.4
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
+	-make search wider if not in mobile
 
 INFERRED TAGS:
 	-shown for long enough?
@@ -35,6 +36,8 @@ MAYBES/QUESTIONS:
 		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
 	-should flair filters require all selected flairs or any of the selected flairs?
 	-make a 'tricks being worked on stat'?
+
+-show preview in add trick form so it is easier to get time ranges for instagram videos
 
 Bugs:
 	-if we load page with flair url that results in no matches, we get endless loading wheel
