@@ -4,15 +4,12 @@ v2.4
 			ian has code for this
 
 	Search:
-		-should we implement the new search everywhere?
-			-autocompletes?
-			-smallTrickList?
+		-implement the new search everywhere
+			-autocompletes
+			-smallTrickList
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
-
-
 	-if there is 1 item in an autocomplete list, enter should select that item
-	-list things next to submit button that still need to be filled in
 
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it

@@ -136,6 +136,10 @@
   margin-bottom : 0px;
 }
 
+.widerSearchInput{
+  width: 190px;
+}
+
 .sortDropdown{
   position : absolute;
   margin-top: 163px;

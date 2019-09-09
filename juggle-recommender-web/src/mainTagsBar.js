@@ -303,7 +303,7 @@ class MainTagsBar extends Component {
                   type = "search"
                   name = "patternSearch"
                   autoComplete="new-password"
-                  className="searchInput" 
+                  className={store.isMobile?"searchInput" : "searchInput widerSearchInput"}
                   minLength={1}
                   debounceTimeout={store.isMobile ? 750 : 300}
                   value= {searchTextToShow}
