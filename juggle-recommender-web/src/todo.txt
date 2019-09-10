@@ -16,10 +16,7 @@ v2.4
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
-	-make search wider if not in mobile
-
 INFERRED TAGS:
-	-shown for long enough?
 	-should show tag name in message?
 	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
@@ -33,6 +30,7 @@ MAYBES/QUESTIONS:
 		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
 	-should flair filters require all selected flairs or any of the selected flairs?
 	-make a 'tricks being worked on stat'?
+	-make a possible duplicate section when a trick is submitted if there another trick very similarly named, tagged, ballnumber..?
 
 -show preview in add trick form so it is easier to get time ranges for instagram videos
 
