@@ -41,10 +41,10 @@ class UIStore {
     @observable suggestedPrereqSubmitDisabledMessage = null
     @observable autoCompletedSuggestedPrereq = false
 
-	@observable suggestingDependent = false
-    @observable suggestedDependent = null
-    @observable suggestedDependentSubmitDisabledMessage = null
-    @observable autoCompletedSuggestedDependent = false
+	@observable suggestingPostreq = false
+    @observable suggestedPostreq = null
+    @observable suggestedPostreqSubmitDisabledMessage = null
+    @observable autoCompletedSuggestedPostreq = false
 
 	@observable suggestingRelated = false
     @observable suggestedRelated = null
@@ -141,8 +141,8 @@ class UIStore {
 	    		utilities.sendGA('detail','cancel suggestion')
 	    	}
     	}else if (relation === 'dependent'){
-    		this.suggestingDependent = !this.suggestingDependent
-    		if (this.suggestingDependent){
+    		this.suggestingPostreq = !this.suggestingPostreq
+    		if (this.suggestingPostreq){
 	    		utilities.sendGA('detail','enable suggestion')
 	    	}else{
 	    		utilities.sendGA('detail','cancel suggestion')
@@ -160,7 +160,7 @@ class UIStore {
     	if (relation === 'prereq'){
     		this.suggestedPrereq = toSetTo
     	}else if (relation === 'dependent'){
-    		this.suggestedDependent = toSetTo
+    		this.suggestedPostreq = toSetTo
     	}else if (relation === 'related'){
     		this.suggestedRelated = toSetTo
     	}
@@ -169,7 +169,7 @@ class UIStore {
     	if (relation === 'prereq'){
     		this.suggestedPrereqSubmitDisabledMessage = toSetTo
     	}else if (relation === 'dependent'){
-    		this.suggestedDependentSubmitDisabledMessage = toSetTo
+    		this.suggestedPostreqSubmitDisabledMessage = toSetTo
     	}else if (relation === 'related'){
     		this.suggestedRelatedSubmitDisabledMessage = toSetTo
     	}
@@ -178,7 +178,7 @@ class UIStore {
     	if (relation === 'prereq'){
     		this.autoCompletedSuggestedPrereq = toSetTo
     	}else if (relation === 'dependent'){
-    		this.autoCompletedSuggestedDependent = toSetTo
+    		this.autoCompletedSuggestedPostreq = toSetTo
     	}else if (relation === 'related'){
     		this.autoCompletedSuggestedRelated = toSetTo
     	}
@@ -245,10 +245,10 @@ class UIStore {
 	    this.suggestedPrereqSubmitDisabledMessage = null
 	    this.autoCompletedSuggestedPrereq = false
 
-		this.suggestingDependent = false
-	    this.suggestedDependent = null
-	    this.suggestedDependentSubmitDisabledMessage = null
-	    this.autoCompletedSuggestedDependent = false
+		this.suggestingPostreq = false
+	    this.suggestedPostreq = null
+	    this.suggestedPostreqSubmitDisabledMessage = null
+	    this.autoCompletedSuggestedPostreq = false
 
 		this.suggestingRelated = false
 	    this.suggestedRelated = null

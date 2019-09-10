@@ -227,7 +227,7 @@ class Detail extends Component {
       suggestedRelation = uiStore.suggestedPrereq
       relationProperty = 'prereqs'
     }else if (relation === 'dependent'){
-      suggestedRelation = uiStore.suggestedDependent
+      suggestedRelation = uiStore.suggestedPostreq
       relationProperty = 'dependents'
     }else if (relation === 'related'){
       suggestedRelation = uiStore.suggestedRelated
@@ -603,13 +603,13 @@ class Detail extends Component {
               }
               listType = "postreqs"
             /> : null}
-            {uiStore.suggestingDependent? null :
+            {uiStore.suggestingPostreq? null :
               <label  className = "suggestionButtonsNormal"
                       onClick={()=>this.suggestRelationClicked('dependent')}> 
                       +Suggest a postreq pattern 
               </label>
             }
-            {uiStore.suggestingDependent?   
+            {uiStore.suggestingPostreq?   
               <div>
                 <SmallTrickList 
                   listType = {'postreqDetails'}
@@ -619,7 +619,7 @@ class Detail extends Component {
                   <button className={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null ? 
                                     "suggestionButtonsDisabled" : "suggestionButtons"}
                           onClick={()=>store.submitSuggestedRelated("dependents",detailTrickKey,
-                          uiStore.suggestedDependent.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
+                          uiStore.suggestedPostreq.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-'))}
                           disabled={this.getSuggestedRelationSubmitDisabledMessage('dependent') != null}>
                       Add dependent
                   </button>
