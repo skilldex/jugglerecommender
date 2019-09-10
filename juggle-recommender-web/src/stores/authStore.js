@@ -71,11 +71,15 @@ class AuthStore {
             usersRef.on("value", resp =>{
                 const user = store.snapshotToArray(resp)[0]
                 if(!user){
-                    firebase.auth().createUserWithEmailAndPassword(email, pass).then(data =>{
-                        resolve("user created")
-                    }).catch(function (error) {
-                        resolve(error)
-                    });
+                    if (username.endsWith("_")){
+                        resolve({message :"username can't end with _"})
+                    }else{
+                        firebase.auth().createUserWithEmailAndPassword(email, pass).then(data =>{
+                            resolve("user created")
+                        }).catch(function (error) {
+                            resolve(error)
+                        });
+                    }
                 }else{
                     resolve({message :"username already exists"})
                 }
