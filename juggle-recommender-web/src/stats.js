@@ -83,15 +83,16 @@ class Stats extends Component {
 		             		   onClick={()=>{ uiStore.handleBackButtonClick()}}>Back
 		             		</label>
                         </div>
-		const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
+			const contributorsStats = Object.keys(this.state.contributorsCounter).map((key)=>{
 			let keyToShow = key
-			if (key.length>15){
-				keyToShow = key.substring(0, 14) + ".."
+			if (key.length>21){
+				keyToShow = key.substring(0, 20) + ".."
 			}
 			return <div className = "individualStatsDiv"
 							  key = {key}
 					>
 						<label className= "statsLabelButton"
+									title = {key}
 								onClick = {()=>this.statsLabelButtonClicked('contributor', key)}>
 							{keyToShow}
 						</label>  

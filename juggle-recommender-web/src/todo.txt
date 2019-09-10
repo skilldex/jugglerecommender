@@ -17,7 +17,8 @@ v2.4
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 
-
+	-dissalow people from making accounts that end in _
+	
 INFERRED TAGS:
 	-body throw glows red when edited and when added by itself without the added automatically message
 	-should show tag name in message?

@@ -11,7 +11,7 @@
   margin: 10px;
 }
 .individualStatsDiv{
-  width: 300px;
+  width: 350px;
   margin : 0 auto;
   text-align: right;
   display: flex;
@@ -22,17 +22,19 @@
   cursor: pointer;
   color: blue;
   margin:0 auto;
-  text-align: left;
+  text-align: right;
   margin-right:10px;
   align-items: right;
+  width:100%;
 }
 
 .statsValues{
-  align-items: right;
+  align-items: left;
   color:black;
   width: 50px;
-  text-align: right;
-  padding-right: 110px;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 120px;
 }
 
 .rotatedNegative90{
