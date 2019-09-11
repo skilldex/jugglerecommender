@@ -68,9 +68,9 @@ class SmallTrickList extends Component {
 		this.setState({listBlurred:false})
 	}
 	handleInputBlur=()=>{
-		      setTimeout(()=>{
-		      	this.setState({listBlurred:true})
-      }, 800)
+		    //   setTimeout(()=>{
+		    //   	this.setState({listBlurred:true})
+      // }, 800)
 		
 	}
 
@@ -235,7 +235,7 @@ class SmallTrickList extends Component {
 						onClick={this.handleInputClicked}
 						onBlur={this.handleInputBlur}
 				/>
-				{this.state.inputText.length>1 && !this.state.listBlurred?	
+				{this.state.inputText.length>1?	
 					<div className= "smallListDiv"
 							 id='smallListDiv' 
 						>	
