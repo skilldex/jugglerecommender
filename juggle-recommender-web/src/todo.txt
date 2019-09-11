@@ -9,18 +9,16 @@ v2.4
 			-smallTrickList
 				we may want to do a secondary sort, like first relevance, but then if relevance is equal go to difficulty
 
+	-on homescreen make clicking on the demo go to its details like in expand
+
 	-if there is 1 item in an autocomplete list, enter should select that item
 
 	-clicking off of smallTrickList should make its list go away, 
 		and then giving its input focus again should make the list come back if there is anything in it
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
-
-
-	-dissalow people from making accounts that end in _
-	
+	-give my account the trick of the day a day early
 INFERRED TAGS:
-	-body throw glows red when edited and when added by itself without the added automatically message
 	-should show tag name in message?
 	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
