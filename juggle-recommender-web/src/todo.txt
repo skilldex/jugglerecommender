@@ -37,6 +37,7 @@ MAYBES/QUESTIONS:
 -show preview in add trick form so it is easier to get time ranges for instagram videos
 
 Bugs:
+	-instagram videos clicked in tricklist open up thier detail page, youtube videos do not, the video on homescreen also does not.
 	-if we load page with flair url that results in no matches, we get endless loading wheel
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though

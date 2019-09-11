@@ -248,7 +248,11 @@ class Store {
 	@action getTrickOfTheDay(){
 		let trickKeyToUse = null
 		const currentDate = new Date()
-		const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1).toString()
+		let TJsExtraDay = 0
+		if (authStore.user){
+			TJsExtraDay = authStore.user.username === 'tjthejuggler' ? 1 : 0 
+		}
+		const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1 + TJsExtraDay).toString()
 		let trickOfTheDayReadRef = firebase.database().ref('trickOfTheDay/')
 		trickOfTheDayReadRef.on('value', resp =>{
 			let allTricksOfTheDay = this.snapshotToArrayWithKey(resp)

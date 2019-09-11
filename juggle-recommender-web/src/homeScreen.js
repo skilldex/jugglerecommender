@@ -21,6 +21,7 @@ class HomeScreen extends Component {
 		utilities.sendGA('home screen','pattern list')	
 	}
 	openDetail=()=>{
+		console.log('openDetail')
 		utilities.openPage('detail/'+store.randomLeaderboardTrick.key, true)
 		utilities.sendGA('home screen','trickOfDay detail')
 		store.increaseViewsCounter()

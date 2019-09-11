@@ -266,6 +266,7 @@ class Demo extends Component {
    }
 
   handleInstagramVideoClick=()=>{
+    console.log('instaclick')
     const video = document.getElementById("instagramVideo")
     video.setAttribute( 'controls', '' );
   }
