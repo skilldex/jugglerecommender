@@ -64,7 +64,14 @@ class UIStore {
     @action setInferredFadeTag=(inferredTag)=>{
     	this.inferredFadeTag = inferredTag
     }
-
+    @action getInferredFadeTag=(tag)=>{
+    	const currentInferredFadeTag = this.inferredFadeTag
+    	if(currentInferredFadeTag === tag){
+    		//sets it to null if it uses it so it won't fade when it shouldn't
+    		this.inferredFadeTag = null
+    	}
+    	return currentInferredFadeTag
+    }
     @action clearSuggestions=(listType)=>{
 		if (listType.includes('prereq')){
     		this.suggestedPrereq = null

@@ -618,7 +618,7 @@ class AddTrickForm extends Component {
 		if(this.state.tags.length>0){
 		        this.state.tags.forEach((tag)=>{
 		        	let addedTagDiv = "addedRelatedTricksDiv"
-	        		if (uiStore.inferredFadeTag === tag){
+		        	if (uiStore.getInferredFadeTag(tag) === tag){
 	        			addedTagDiv = "addedTagDivFade"
 	        		}
 		        	addedTags.push(
