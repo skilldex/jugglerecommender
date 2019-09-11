@@ -57,14 +57,21 @@ class SmallTrickList extends Component {
 	}
 
 	handleInputChange=(e)=>{
+		this.setState({listBlurred:false})
 		this.setState({inputText : e.target.value})
 		if (e.target.value === ''){
 			uiStore.selectTrick(null)
 			uiStore.clearSuggestions(this.props.listType)
 		}
 	}
+	handleInputClicked=()=>{
+		this.setState({listBlurred:false})
+	}
 	handleInputBlur=()=>{
-
+		      setTimeout(()=>{
+		      	this.setState({listBlurred:true})
+      }, 800)
+		
 	}
 
 	render() {
@@ -225,9 +232,10 @@ class SmallTrickList extends Component {
 						onKeyPress={this.onInputKeyPress}
 						value={this.state.inputText} 
 						onChange={(e)=>this.handleInputChange(e)}
+						onClick={this.handleInputClicked}
 						onBlur={this.handleInputBlur}
 				/>
-				{this.state.inputText.length>1 ?	
+				{this.state.inputText.length>1 && !this.state.listBlurred?	
 					<div className= "smallListDiv"
 							 id='smallListDiv' 
 						>	
