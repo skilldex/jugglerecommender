@@ -94,7 +94,6 @@ class SmallTrickList extends Component {
 
 	getTricksToList=()=>{			
 		let tricksToListObjs = []
-		let tricksToListRelevance = []
 		const lowerCaseInput = this.state.inputText.toLowerCase()
 
 	    for (var trickObj in store.library) {
