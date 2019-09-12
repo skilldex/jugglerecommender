@@ -73,9 +73,7 @@ class SmallTrickList extends Component {
       // }, 800)
 		
 	}
-
-	render() {
-		let list = null
+	checkIfShouldShowList=()=>{
 		let shouldShowList = true
 		if (this.props.listType.includes('Details')){
 			if (this.props.listType.includes('prereq') &&
@@ -91,54 +89,56 @@ class SmallTrickList extends Component {
 					shouldShowList = false
 			}
 		}
-		if (this.state.inputText.length>1 && shouldShowList){
-			let tricksToListObjs = []
-			let tricksToListRelevance = []
+		return shouldShowList
+	}
+
+	getTricksToList=()=>{			
+		let tricksToListObjs = []
+		let tricksToListRelevance = []
+		const lowerCaseInput = this.state.inputText.toLowerCase()
+
+	    for (var trickObj in store.library) {
+	      if (store.library.hasOwnProperty(trickObj)) {
+	      	const trick = {}
+			const trickKey = trickObj
+			const lowerCaseTrickName = store.library[trickObj].name.toLowerCase()
+			const relevance = utilities.compareStrings(lowerCaseInput, lowerCaseTrickName)
+			if (relevance !== null){
+				trick.key = trickKey
+				trick.relevance = relevance
+				tricksToListObjs.push(trick)
+			}
+	      }
+	    }
+	    const postreqMultiplier = this.props.listType.includes('postreq') ? -1 : 1
+	    const sortedTricksToListObjs = tricksToListObjs.sort(function(a, b) {   
+	   		const verySimilarA = a.key.length < lowerCaseInput.length+10 ? (((10-(a.key.length-lowerCaseInput.length))*10)*postreqMultiplier) : 0
+	   		const verySimilarB = b.key.length < lowerCaseInput.length+10 ? (((10-(b.key.length-lowerCaseInput.length))*10)*postreqMultiplier) : 0
+           return a.relevance > b.relevance ? 1 : ( 
+	            	a.relevance < b.relevance ? -1 : 
+		            (parseFloat(store.library[a.key].difficulty)-verySimilarA)*postreqMultiplier > 
+		            (parseFloat(store.library[b.key].difficulty)-verySimilarB)*postreqMultiplier ? 1 : 
+		            (parseFloat(store.library[a.key].difficulty)-verySimilarA)*postreqMultiplier < 
+		            (parseFloat(store.library[b.key].difficulty)-verySimilarB)*postreqMultiplier ? -1 : 0
+            	
+           );               
+	    }); 
+
+	    const tricksToList = []
+	    Object.keys(sortedTricksToListObjs).forEach((index, i) => {
+	      tricksToList.push(sortedTricksToListObjs[index].key)
+	    })
+
+	    return tricksToList
+	}
+
+	render() {
+		let list = null
+		if (this.state.inputText.length>1 && this.checkIfShouldShowList()){
 			const lowerCaseInput = this.state.inputText.toLowerCase()
-
-		    for (var trickObj in store.library) {
-		      if (store.library.hasOwnProperty(trickObj)) {
-		      	const trick = {}
-				const trickKey = trickObj
-				const lowerCaseTrickName = store.library[trickObj].name.toLowerCase()
-				const relevance = utilities.compareStrings(lowerCaseInput, lowerCaseTrickName)
-				if (relevance !== null){
-					trick.key = trickKey
-					trick.relevance = relevance
-					tricksToListObjs.push(trick)
-				}
-		      }
-		    }
-		    const postreqMultiplier = this.props.listType.includes('postreq') ? -1 : 1
-		    const sortedTricksToListObjs = tricksToListObjs.sort(function(a, b) {   
-		   		const verySimilarA = a.key.length < lowerCaseInput.length+10 ? (((10-(a.key.length-lowerCaseInput.length))*10)*postreqMultiplier) : 0
-		   		const verySimilarB = b.key.length < lowerCaseInput.length+10 ? (((10-(b.key.length-lowerCaseInput.length))*10)*postreqMultiplier) : 0
-	           return a.relevance > b.relevance ? 1 : ( 
-		            	a.relevance < b.relevance ? -1 : 
-			            (parseFloat(store.library[a.key].difficulty)-verySimilarA)*postreqMultiplier > 
-			            (parseFloat(store.library[b.key].difficulty)-verySimilarB)*postreqMultiplier ? 1 : 
-			            (parseFloat(store.library[a.key].difficulty)-verySimilarA)*postreqMultiplier < 
-			            (parseFloat(store.library[b.key].difficulty)-verySimilarB)*postreqMultiplier ? -1 : 0
-	            	
-	           );               
-		    }); 
-
-		    const tricksToList = []
-		    Object.keys(sortedTricksToListObjs).forEach((index, i) => {
-		      tricksToList.push(sortedTricksToListObjs[index].key)
-		    })
-
 		 	let tricks = []
 		 	const pushedTrickkeys = []
-		 	//let tricksToList = null
-
-		 	// if (this.props.listType.includes('prereq') ||
-		 	// 	this.props.listType.includes('related')){
-		 	// 	tricksToList = uiStore.allTrickKeysSorted('difficulty','ascending')
-		 	// }else{
-		 	// 	tricksToList = uiStore.allTrickKeysSorted('difficulty','descending')
-		 	// }
-		 	//console.log('trickstolist',tricksToList)
+		 	const tricksToList = this.getTricksToList()
 			tricksToList.forEach((trickKey, index)=>{
 				const lowerCaseTrickName = store.library[trickKey].name.toLowerCase()
 	 			const matchIndex = lowerCaseTrickName.includes(lowerCaseInput)?
