@@ -760,7 +760,7 @@ class AddTrickForm extends Component {
 										<br/>
 										{addedPostreqs}
 										<SmallTrickList 
-											listType = {'prereqsAddTrick'}
+											listType = {'postreqsAddTrick'}
 											listOfTricks = {uiStore.addTrickFormPostreqs}
 										/>
 									</div>
