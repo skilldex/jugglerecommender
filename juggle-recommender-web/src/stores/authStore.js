@@ -41,7 +41,7 @@ class AuthStore {
         //     console.log("turned off ga")
         //     window['ga-disable-UA-140392015-1'] = true;
         // }
-        if (user.username === 'tjthejuggler'){
+        if (user.username && user.username === 'tjthejuggler'){
             store.setTrickOfTheDay(null)
             store.getTrickOfTheDay()
         }

@@ -3,10 +3,7 @@ v2.4
 		-upload image
 			ian has code for this
 
-	Search:
-		-implement the new search everywhere
-			-autocompletes
-	-change meta-pattern to continuum
+	-'demo: all' should not be shown as a tag
 
 	-if there is 1 item in an autocomplete list, enter should select that item
 
@@ -16,8 +13,9 @@ INFERRED TAGS:
 	-should show tag name in message?
 	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
-Stefan suggested we do suggestions for tags and siteswap like we did relateds
-bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
+-Stefan suggested we do suggestions for tags and siteswap like we did relateds
+-bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
+-Someone on facebook recomended organizing tricks into a tree
 
 MAYBES/QUESTIONS:
 	GA hooked up to browser back button? our back button? Seperate GAs or same?

@@ -80,14 +80,20 @@ class MainTagsBar extends Component {
     selectRandomTrick=()=>{
       var keys = uiStore.rootTricks
       const randomTrickKey = keys[ keys.length * Math.random() << 0];
-      const randomNumber = Math.random()
-      const score = utilities.calculateRandomTrickScore(randomTrickKey)
 
-      if (randomNumber < score){
-          utilities.openPage('detail/'+randomTrickKey,true)
-          store.increaseViewsCounter()
+      if (store.myTricks.length>0){
+        const randomNumber = Math.random()
+        const score = utilities.calculateRandomTrickScore(randomTrickKey)
+
+        if (randomNumber < score){
+            utilities.openPage('detail/'+randomTrickKey,true)
+            store.increaseViewsCounter()
+        }else{
+            this.selectRandomTrick()
+        }
       }else{
-          this.selectRandomTrick()
+            utilities.openPage('detail/'+randomTrickKey,true)
+            store.increaseViewsCounter()        
       }
 
     }

@@ -393,6 +393,7 @@ class Utilities{
   calculateX(trickKey){
     let x
     const trick = store.library[trickKey]
+    console.log(trick)
     const numBalls = trick.num
     const myTrick  = store.myTricks[trickKey] ? store.myTricks[trickKey] : null
     const numHands = 2 
