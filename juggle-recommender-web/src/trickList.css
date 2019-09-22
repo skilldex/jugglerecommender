@@ -94,12 +94,13 @@
 .catchesIconList{
   width: 18px;
   height: 18px;
-  margin-right: 3px
+  padding-right: 3px
 }
 .catchesListLabel{
   font-size: 10px;
   margin-right: 4px;
   width: 22px;
+  vertical-align: center;
 }
 .bottomRow{
   display: flex;
@@ -220,7 +221,6 @@
   font-size: 22px;
   font-weight:none;
   z-index:1;
-  pointer-events: none;
 }
 
 

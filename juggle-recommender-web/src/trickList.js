@@ -136,9 +136,11 @@ class TrickList extends Component {
 			    const g = Math.floor(modifiedTrickDifficulty <= 5? 255:255-(modifiedTrickDifficulty-5)* 51);
 			    const b = 0;
 			    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
-			    const gaugeTitle = "Pattern Difficulty: "+trick.difficulty
+			    const difficultyTitle = "Pattern Difficulty: "+trick.difficulty
+			    const tagsTitle = "Tags: " + trick.tags.join(', ')
+			    const siteswapTitle = "Siteswap: "+trick.siteswap
 			    const difficultyGauge = <Gauge 
-			    							title = {difficultyGauge}
+			    							title = {difficultyTitle}
 			    							valueLabelStyle ={{fontWeight:'none'}}
 			    							style={{overflow:'auto'}} 
 			    							color={colorHex}
@@ -159,10 +161,12 @@ class TrickList extends Component {
 				}
 				const siteswapSection = 
 										<div className="bottomRowText siteswap"
-												title={trick.siteswap}>
+												title={siteswapTitle}>
 											<b>Siteswap:</b> {trick.siteswap}
 										</div>
-
+				const catchesNumber = store.myTricks && store.myTricks[trickKey] ? store.myTricks[trickKey].catches : 0
+				const catchesTitle = "Your Catches: " + catchesNumber
+						
 				tricks.push(
 					<div className= {listCardClass}
 						 key={trickKey + "div"} 
@@ -192,11 +196,19 @@ class TrickList extends Component {
 												{trick.name}
 									</div>
 									<div className="bottomRow">
-										<div className="difficultyGauge">
+										<div title={difficultyTitle}
+											 className="difficultyGauge"
+										>
 											{difficultyGauge}
 										</div>
-										<img className="catchesIconList" alt="" src ={catchesIcon}/>
-										<div className="bottomRowText catchesListLabel">
+										<img className="catchesIconList" 
+											 alt="" 
+											 src ={catchesIcon}
+											 title={catchesTitle}
+										/>
+										<div className="bottomRowText catchesListLabel"
+												title={catchesTitle}
+										>
 											{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 
 											utilities.formatListCatches(store.myTricks[trickKey].catches) : "0"}
 										</div>
@@ -205,7 +217,7 @@ class TrickList extends Component {
 															"bottomRowText tagsDesktop":
 															"bottomRowText tags"
 														}
-												title={trick.tags}>
+												title={tagsTitle}>
 											<b>Tags:</b> {tags}
 										</div>	
 										{!store.isMobile && 

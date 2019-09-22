@@ -21,8 +21,6 @@ INFERRED TAGS:
 -5b millsmess tutorial link label is weird, and as so our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird
 -there are a few 3b pure-ss that are not actually pure and need to have their tags changed
 -on mobile the back arrow is not lined up with the word 'back'
--check to see if there are hover messages for difficulty and catches on tricklist
-
 
 -updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
 
