@@ -137,7 +137,7 @@ class TrickList extends Component {
 			    const b = 0;
 			    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
 			    const difficultyTitle = "Pattern Difficulty: "+trick.difficulty
-			    const tagsTitle = "Tags: " + trick.tags.join(', ')
+			    const tagsTitle = trick.tags ? "Tags: " + trick.tags.join(', ') : "Tags: none" 	
 			    const siteswapTitle = "Siteswap: "+trick.siteswap
 			    const difficultyGauge = <Gauge 
 			    							title = {difficultyTitle}

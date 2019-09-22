@@ -211,6 +211,15 @@ class MainTagsBar extends Component {
               </div>      
         )
       }
+      if(filterStore.hasTutorialSelected === true){   
+        filterTags.push(
+              <div className="tagDiv" key="TutorialFilterTag">
+                <span className="mainTagsName"
+                      onClick={()=>{uiStore.toggleFilterDiv()}}>Tutorial</span>
+                <label className="mainTagsX"onClick={filterStore.toggleHasTutorialSelected}> x </label>
+              </div>      
+        )
+      }
         const sort = <img src={uiStore.showSortDiv? sortIconSelected:sortIconUnselected} 
                           className="filterButton"  
                           alt="showSortMenu" 

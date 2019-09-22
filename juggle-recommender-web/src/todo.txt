@@ -13,14 +13,14 @@ INFERRED TAGS:
 	-should show tag name in message?
 	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
--expanding tricks on multiple related lists messes up demos
+-expanding tricks on multiple (smalltrickslist)related lists messes up demos
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
 
 
--tutorial filter doesnt show in tags bar or url, but it does work.
--5b millsmess tutorial link label is weird, and as so our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird
--there are a few 3b pure-ss that are not actually pure and need to have their tags changed
+-Our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird
+
 -on mobile the back arrow is not lined up with the word 'back'
+	-on PC stats back arrow/word alignment is different than details and profile
 
 -updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
 

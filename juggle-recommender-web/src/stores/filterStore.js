@@ -61,6 +61,8 @@ if (urlQueryCatches){
 	minCatches = urlQueryCatches.split(',')[0]
 	maxCatches = urlQueryCatches.split(',')[1]
 }
+let urlQueryTutorial = locationURL.match(/tutorial=true/)	
+let hasTutorialSelected = urlQueryTutorial ? true : false
 
 class FilterStore {
 
@@ -78,7 +80,7 @@ class FilterStore {
 	@observable workedOnValue = workedOnValue
 	@observable minCatches = minCatches
 	@observable maxCatches = maxCatches
-	@observable hasTutorialSelected = false
+	@observable hasTutorialSelected = hasTutorialSelected
 
 	@action getURLtext=()=>{
 		let urlText = "/tricklist/filter/"
@@ -156,12 +158,20 @@ class FilterStore {
 			}
 			urlText = urlText + "demotype=" + this.demoType[0].replace(" ","").toLowerCase()		
     	}
-
+    	if (this.hasTutorialSelected){
+    		if(urlText !== "/filter/"){
+				urlText += "&"
+			}
+			urlText = urlText + "tutorial=true"	
+    	}
     	return urlText
 	}
 
 	@action toggleHasTutorialSelected=()=>{
 		this.hasTutorialSelected = !this.hasTutorialSelected
+		if (!this.hasTutorialSelected){
+			uiStore.setFilterURL()
+		}			
 		uiStore.updateRootTricks()
 	}
 
