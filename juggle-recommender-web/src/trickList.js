@@ -136,7 +136,9 @@ class TrickList extends Component {
 			    const g = Math.floor(modifiedTrickDifficulty <= 5? 255:255-(modifiedTrickDifficulty-5)* 51);
 			    const b = 0;
 			    const colorHex = '#' + this.getHexColor(r) + this.getHexColor(g) + this.getHexColor(b);
+			    const gaugeTitle = "Pattern Difficulty: "+trick.difficulty
 			    const difficultyGauge = <Gauge 
+			    							title = {difficultyGauge}
 			    							valueLabelStyle ={{fontWeight:'none'}}
 			    							style={{overflow:'auto'}} 
 			    							color={colorHex}
@@ -162,7 +164,7 @@ class TrickList extends Component {
 										</div>
 
 				tricks.push(
-					<div className= {listCardClass  }
+					<div className= {listCardClass}
 						 key={trickKey + "div"} 
 						 id={trickKey + "listCard"}
 						 onClick={(e)=>{this.openDetail(trickKey)}}
@@ -190,7 +192,9 @@ class TrickList extends Component {
 												{trick.name}
 									</div>
 									<div className="bottomRow">
-										<div className="difficultyGauge">{difficultyGauge}</div>
+										<div className="difficultyGauge">
+											{difficultyGauge}
+										</div>
 										<img className="catchesIconList" alt="" src ={catchesIcon}/>
 										<div className="bottomRowText catchesListLabel">
 											{store.myTricks[trickKey] && store.myTricks[trickKey].catches? 

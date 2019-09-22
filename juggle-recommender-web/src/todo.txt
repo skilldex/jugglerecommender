@@ -16,15 +16,13 @@ INFERRED TAGS:
 -expanding tricks on multiple related lists messes up demos
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
 
--a quickstart tag and quickstart tricks would be cool
--tutorial filter doesnt show in rags bar or url, but it does work.
+
+-tutorial filter doesnt show in tags bar or url, but it does work.
 -5b millsmess tutorial link label is weird, and as so our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird
 -there are a few 3b pure-ss that are not actually pure and need to have their tags changed
 -on mobile the back arrow is not lined up with the word 'back'
 -check to see if there are hover messages for difficulty and catches on tricklist
--there is another trick in heidiskaffe video
--True Box and Box with a Lid are same tricks
--reverse backcrosses video is actually frontcrosses
+
 
 -updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
 

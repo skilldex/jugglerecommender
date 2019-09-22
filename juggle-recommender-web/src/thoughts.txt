@@ -137,25 +137,26 @@ TO ASK:
 	-https://www.instagram.com/kandenti_/?hl=en
 
 DB Changes(Straight-forwrard):
-	change all spelled out numbers to digits, it will save space and be easier to search
-	'Under Arm' should be changed to underarm
-
+	-change all spelled out numbers to digits, it will save space and be easier to search
+	-'Under Arm' should be changed to underarm
+	-reverse backcrosses video is actually frontcrosses
+	-there is another trick in heidiskaffe video(not in detials entry, just in that same vid)
 
 DB changes(Consideration required):	
-	4440522 needs new name
-	5344 needs a new name
-	413333333 needs new name	
-	Reverse chops should be takeaways or 1 beat inside orbits
-	figure out what to do about armpit-throw tag and apecross
+	-4440522 needs new name
+	-5344 needs a new name
+	-413333333 needs new name	
+	-Reverse chops should be takeaways or 1 beat inside orbits
+	-figure out what to do about armpit-throw tag and apecross
 
 DB Fixes:
 	go through popular patterns like box, shower, cascade, and limit their postreqs
 
 
 DB Duplicates:
-	423 factory and factory tennis are both R+L Factory
-	Weave and The Weave
-
+	-423 factory and factory tennis are both R+L Factory
+	-Weave and The Weave
+	-True Box and Box with a Lid are same tricks
 
 ^^^^^^^^^^^^^DB THINGS^^^^^^^^^^^^^^^^^
 
