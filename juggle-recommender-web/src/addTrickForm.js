@@ -105,21 +105,17 @@ class AddTrickForm extends Component {
 					}
 				});
 			}
-
-
 			if(trick.videoStartTime || trick.videoEndTime){
 				this.setState({showTimeInputs : true})
 			}			
 			this.setState({...trick},this.checkIfFormIsSubmittable)
 			this.setState({submitDisabled : false,})
-
 			//this converts the tags from observable to plain arrays
 			if(trick.tags){
 				this.setState({tags:[]})
 				trick.tags.forEach((tag)=>{
 					this.setAutoCompletedTag(tag, true)
-				});		
-			
+				});					
 			}
 		}	
 	}
@@ -625,7 +621,7 @@ class AddTrickForm extends Component {
 		                <div className= {addedTagDiv}
 		                	 		key={tag}
 		                >
-		                  <span className="mainTagsName"
+		                  <span className="addTrickTagsName"
 		                        onClick={()=>{this.handleTagDelete(tag)}}>{tag}</span>
 		                  <label className="mainTagsX"
 		                  		onClick={()=>{this.handleTagDelete(tag)}}> x </label>
@@ -685,7 +681,7 @@ class AddTrickForm extends Component {
 		                <div className="addedRelatedTricksDiv"
 		                			key={prereqName}
 		                >
-		                  <label className="mainTagsName"
+		                  <label className="addTrickTagsName"
 		                        onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPrereqs,prereqName)}}>{prereqName}</label>
 		                  <label className="mainTagsX"
 		                  		onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPrereqs,prereqName)}}> x </label>
@@ -715,7 +711,7 @@ class AddTrickForm extends Component {
 		                <div className="addedRelatedTricksDiv"
 		                			key={relatedName}
 		                >
-		                  <label className="mainTagsName"
+		                  <label className="addTrickTagsName"
 		                        onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormRelated,relatedName)}}>{relatedName}</label>
 		                  <label className="mainTagsX"
 		                  		onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormRelated,relatedName)}}> x </label>
@@ -744,7 +740,7 @@ class AddTrickForm extends Component {
 		                <div className="addedRelatedTricksDiv"
 		                			key={postreqName}
 		                >
-		                  <label className="mainTagsName"
+		                  <label className="addTrickTagsName"
 		                        onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPostreqs,postreqName)}}>{postreqName}</label>
 		                  <label className="mainTagsX"
 		                  		onClick={()=>{uiStore.removeTrickFromSmallTrickList(uiStore.addTrickFormPostreqs,postreqName)}}> x </label>

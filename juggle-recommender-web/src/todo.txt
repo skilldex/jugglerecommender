@@ -15,9 +15,7 @@ INFERRED TAGS:
 =========
 -expanding tricks on multiple related lists messes up demos
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
--removing tags on maintagsbar should take user back to list
--some catches are acting like they are being recorded, but then next day they are gone, I had a 5 or 6 records not there the next day. It has happened with the basic neck pass stuff, as well as cascade(5b). I think this is happening because of having multiple tabs open. It even happens for aggregation things like how many people are working on a trick, maybe it gets an old record of how many people, then it updates the record based on that old version if you use a new tab.
--tags in add pattern form are too long, the x gets bumped down to next line, and rectangle extends beyond green. Editing 'Claymotion Orbit + Underarm Catch + 2b Switch' will show it
+
 -a quickstart tag and quickstart tricks would be cool
 -tutorial filter doesnt show in rags bar or url, but it does work.
 -5b millsmess tutorial link label is weird, and as so our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird

@@ -251,7 +251,18 @@
   background-color : #eee;
   height: 14px;
   line-height: 10px;
+  max-width: 270px;
+}
 
+.addTrickTagsName{
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 12px;
+  vertical-align: middle;
+  max-width: 93% ;
+  height: 100%;
+  text-overflow: ellipsis;
 }
 
 .addTrickFormBottomSpace{
