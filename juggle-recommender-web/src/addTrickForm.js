@@ -59,9 +59,14 @@ class AddTrickForm extends Component {
 		uiStore.clearAddTrickSmallTrickLists()
 		if(uiStore.editingDetailTrick){
 			let trick = {...store.library[uiStore.detailTrick.id]}
+			this.setState({
+				autoCompletedName : true
+			})
 			if (trick.name.endsWith("b)")){
 				trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
-				this.setState({name: trick.name})
+				this.setState({
+					name : trick.name,
+				})
 			}
 			if (trick.gifUrl){
 				this.setState({gifUrl: trick.gifUrl})
