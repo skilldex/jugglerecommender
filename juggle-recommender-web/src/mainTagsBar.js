@@ -31,6 +31,7 @@ class MainTagsBar extends Component {
       }
       filterStore.setNumBalls(tempNumBalls)
       uiStore.setFilterURL()
+      uiStore.showPatternList()
     }
     flairClicked=(element)=>{
       let tempFlair = [...filterStore.flair]
@@ -46,10 +47,12 @@ class MainTagsBar extends Component {
       }
       filterStore.setFlair(tempFlair)
       uiStore.setFilterURL()
+      uiStore.showPatternList()
     }
     handleWorkedOnXClicked=()=>{
       filterStore.setWorkedOnPeriod(null)
       uiStore.setFilterURL()
+      uiStore.showPatternList()
     }
     sortOptionClicked=(type)=>{
       filterStore.setSortType(type)
@@ -80,11 +83,9 @@ class MainTagsBar extends Component {
     selectRandomTrick=()=>{
       var keys = uiStore.rootTricks
       const randomTrickKey = keys[ keys.length * Math.random() << 0];
-
       if (store.myTricks.length>0){
         const randomNumber = Math.random()
         const score = utilities.calculateRandomTrickScore(randomTrickKey)
-
         if (randomNumber < score){
             utilities.openPage('detail/'+randomTrickKey,true)
             store.increaseViewsCounter()
@@ -95,7 +96,6 @@ class MainTagsBar extends Component {
             utilities.openPage('detail/'+randomTrickKey,true)
             store.increaseViewsCounter()        
       }
-
     }
 
     handleRandomTrickClick=()=>{
@@ -123,7 +123,6 @@ class MainTagsBar extends Component {
       this.showPatternList()
       uiStore.setFilterURL()
     }
-
 
     render() {
       let filterButtonClass = uiStore.showFilterDiv?

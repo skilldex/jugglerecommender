@@ -218,12 +218,14 @@ class FilterStore {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 		uiStore.setFilterURL()
+		uiStore.showPatternList()
 	}
 	@action resetDifficultyRange=()=>{
 		this.difficultyRange = [1,10]
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 		uiStore.setFilterURL()
+		uiStore.showPatternList()
 	}
 	@action setTags=(tagType, tags)=>{
 		if (tagType === 'tags'){
@@ -240,6 +242,7 @@ class FilterStore {
 		this.contributors = contributors
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
+		uiStore.showPatternList()
 	}
 
 	@action removeTag=(tagType, tagToRemove)=>{
@@ -257,6 +260,7 @@ class FilterStore {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 		uiStore.setFilterURL()
+		uiStore.showPatternList()
 	}
 	@action setFlair=(flair)=>{
 		this.flair = flair

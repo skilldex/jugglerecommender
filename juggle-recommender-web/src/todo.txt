@@ -28,7 +28,7 @@ INFERRED TAGS:
 -True Box and Box with a Lid are same tricks
 -reverse backcrosses video is actually frontcrosses
 
-
+-updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
 
 -Stefan suggested we do suggestions for tags and siteswap like we did relateds
 -bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
