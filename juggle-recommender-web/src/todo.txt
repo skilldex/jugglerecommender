@@ -13,6 +13,23 @@ INFERRED TAGS:
 	-should show tag name in message?
 	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
+-expanding tricks on multiple related lists messes up demos
+-in ga, pageviews are sometimes way lower than events, right now it is 100:10
+-removing tags on maintagsbar should take user back to list
+-some catches are acting like they are being recorded, but then next day they are gone, I had a 5 or 6 records not there the next day. It has happened with the basic neck pass stuff, as well as cascade(5b). I think this is happening because of having multiple tabs open. It even happens for aggregation things like how many people are working on a trick, maybe it gets an old record of how many people, then it updates the record based on that old version if you use a new tab.
+-tags in add pattern form are too long, the x gets bumped down to next line, and rectangle extends beyond green. Editing 'Claymotion Orbit + Underarm Catch + 2b Switch' will show it
+-a quickstart tag and quickstart tricks would be cool
+-tutorial filter doesnt show in rags bar or url, but it does work.
+-5b millsmess tutorial link label is weird, and as so our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird
+-there are a few 3b pure-ss that are not actually pure and need to have their tags changed
+-on mobile the back arrow is not lined up with the word 'back'
+-check to see if there are hover messages for difficulty and catches on tricklist
+-there is another trick in heidiskaffe video
+-True Box and Box with a Lid are same tricks
+-reverse backcrosses video is actually frontcrosses
+
+
+
 -Stefan suggested we do suggestions for tags and siteswap like we did relateds
 -bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
 -Someone on facebook recomended organizing tricks into a tree
