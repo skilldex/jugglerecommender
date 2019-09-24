@@ -397,9 +397,19 @@ class Detail extends Component {
     let tutorialSite
     //TODO could be replaced with regex that gets everything between first two .s
     if (detailTrick && detailTrick.url && detailTrick.url.includes('.')){
-      tutorialSite = detailTrick.url.split('.')[1]
+      if (detailTrick.url.includes('www')){
+        tutorialSite = detailTrick.url.split('.')[1]
+      }else{
+        tutorialSite = detailTrick.url.split('.')[0]
+      }
       if (tutorialSite.includes('.')){
         tutorialSite = tutorialSite.split('.')[0]
+      }
+      if (tutorialSite.includes('http')){
+        tutorialSite = tutorialSite.split('//')[1]
+      }
+      if (tutorialSite.toLowerCase() === 'youtu'){
+        tutorialSite = 'Youtube'
       }
     }
     const extraGifSection = detailTrick.video && detailTrick.gifUrl ?

@@ -16,9 +16,6 @@ INFERRED TAGS:
 -expanding tricks on multiple (smalltrickslist)related lists messes up demos
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
 
-
--Our way of picking labels is weird. The issue is that it is looking for what is after the 2nd '.', so if here is no www then it is weird
-
 -on mobile the back arrow is not lined up with the word 'back'
 	-on PC stats back arrow/word alignment is different than details and profile
 
