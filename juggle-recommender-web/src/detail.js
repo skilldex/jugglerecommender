@@ -196,6 +196,7 @@ class Detail extends Component {
   }
   suggestRelationClicked=(relation)=>{
     if(authStore.user){
+      uiStore.closeAllSuggestionLists()
       uiStore.toggleSuggestingRelation(relation)
       uiStore.setSuggestedRelation(relation,null)
       setTimeout(()=>{
@@ -395,7 +396,6 @@ class Detail extends Component {
                   }) : null
 
     let tutorialSite
-    //TODO could be replaced with regex that gets everything between first two .s
     if (detailTrick && detailTrick.url && detailTrick.url.includes('.')){
       if (detailTrick.url.includes('www')){
         tutorialSite = detailTrick.url.split('.')[1]

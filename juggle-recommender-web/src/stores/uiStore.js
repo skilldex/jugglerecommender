@@ -138,6 +138,17 @@ class UIStore {
 			}
 		}
     }
+    @action closeAllSuggestionLists=()=>{
+    	if (this.suggestingPrereq){
+    		this.suggestingPrereq = false
+    	}
+    	if (this.suggestingPostreq){
+    		this.suggestingPostreq = false
+    	}
+    	if (this.suggestingRelated){
+    		this.suggestingRelated = false
+    	}
+    }
 
     @action toggleSuggestingRelation=(relation)=>{
     	if (relation === 'prereq'){
