@@ -56,6 +56,7 @@ class UIStore {
  	@observable addTrickFormPostreqs = []	    
     @observable smallListPageNumber = 0
     @observable rootTrickRelevance = {}
+    
     @action clearAddTrickSmallTrickLists=()=>{
     	this.addTrickFormPrereqs = []
  		this.addTrickFormRelated = []

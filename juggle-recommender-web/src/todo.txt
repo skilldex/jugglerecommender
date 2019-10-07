@@ -3,27 +3,19 @@ v2.4
 		-upload image
 			ian has code for this
 
-	-'demo: all' should not be shown as a tag
-
 	-if there is 1 item in an autocomplete list, enter should select that item
 
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
-INFERRED TAGS:
-	-should show tag name in message?
-	-it is a little quirky if two inferred tags are added within 4 seconds, not so bad, but 	worse if we show the tag names
 =========
--expanding tricks on multiple (smalltrickslist)related lists messes up demos
+
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
 
 -on mobile the back arrow is not lined up with the word 'back'
-	-on PC stats back arrow/word alignment is different than details and profile
-
--updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
+	-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
 
 -Stefan suggested we do suggestions for tags and siteswap like we did relateds
 -bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
--Someone on facebook recomended organizing tricks into a tree
 
 MAYBES/QUESTIONS:
 	GA hooked up to browser back button? our back button? Seperate GAs or same?
@@ -38,6 +30,7 @@ MAYBES/QUESTIONS:
 -show preview in add trick form so it is easier to get time ranges for instagram videos
 
 Bugs:
+	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
 	-instagram videos clicked in tricklist open up thier detail page, youtube videos do not, the video on homescreen also does not.
 	-if we load page with flair url that results in no matches, we get endless loading wheel
 	-there is a problem with the 'there is a problem with...' message
@@ -84,10 +77,6 @@ Niceties:
 		-the list could be hooked up to rewards, like btc
 		-wanteds posted by users with accounts only, or the ones with accounts float to top of list
 
-
-
-
-
 Code Cleaning:
 	-consolidate the sort alg in utilities into several smaller functions
 	-all those setStates in addTrickForm in componentdidmount, if (editing trick) may be redundant
@@ -109,7 +98,7 @@ Code Cleaning:
 		-is this still a thing?
 	-Update root tricks is running more than it needs to maybe
 		-this may no longer be a thing
-
+	-updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
 
 Performance Improvement:
 	-when we go to a details page of a youtube trick, we get a firebase warning about adding security rule to increase performance

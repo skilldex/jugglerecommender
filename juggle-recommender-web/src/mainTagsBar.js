@@ -202,7 +202,7 @@ class MainTagsBar extends Component {
               </div>      
         )
       }
-      if(filterStore.demoType.length > 0 && filterStore.demoType[0]){   
+      if(filterStore.demoType.length > 0 && filterStore.demoType[0] ){   
         filterTags.push(
               <div className="tagDiv" key="demoTypeFilterTag">
                 <span className="mainTagsName"
