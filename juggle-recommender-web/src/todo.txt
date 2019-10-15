@@ -8,6 +8,9 @@ v2.4
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 =========
+BIG BUGS:
+	-when a pattern is edited, all myTricks records are deleted
+	-removing an edited trick while editing crashses
 
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
 
@@ -96,7 +99,7 @@ Code Cleaning:
 		handleDelete
 	-find highest catches should be only run when it is actually used
 		-is this still a thing?
-	-Update root tricks is running more than it needs to maybe
+	-Updateroottricks is running more than it needs to maybe
 		-this may no longer be a thing
 	-updateroottricks gets run when a trick is clicked on the list(probably any time details is entered into)
 

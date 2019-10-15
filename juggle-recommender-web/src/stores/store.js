@@ -499,6 +499,7 @@ class Store {
 
 	 }
 	@action addTrickToDatabase=(trick)=>{
+		console.log('myTrick'+JSON.stringify(this.myTricks[uiStore.detailTrick.id]))
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 		let oldTrickKey
@@ -508,7 +509,9 @@ class Store {
 			this.removeOldRelationship('dependents',trick,oldTrickKey)
 			this.removeOldRelationship('prereqs',trick,oldTrickKey)
 			this.removeOldRelationship('related',trick,oldTrickKey)
-			this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
+			if (trickKey !== oldTrickKey){
+				this.changeNameInAllUsersMyTricks(trick,oldTrickKey)
+			}
 			if (trickKey === oldTrickKey){
 				shouldBackUpBecauseEditing = true
 			}
@@ -562,6 +565,7 @@ class Store {
     		}
         	if(this.myTricks[oldTrickKey]){
         		this.myTricks[trickKey] = this.myTricks[oldTrickKey]
+        		console.log('delete from myTricks')
         		delete this.myTricks[oldTrickKey]
         		this.updateTricksInDatabase()
 		 		localStorage.setItem('myTricks', JSON.stringify(this.myTricks))
@@ -600,7 +604,7 @@ class Store {
         	store.increaseViewsCounter()
         }
 
-        
+        console.log('myTrick2'+JSON.stringify(this.myTricks[uiStore.detailTrick.id]))
 	}
 	
 	@action addEquivalentRelated=(trick,relation)=>{
