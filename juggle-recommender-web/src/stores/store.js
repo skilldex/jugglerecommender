@@ -499,7 +499,6 @@ class Store {
 
 	 }
 	@action addTrickToDatabase=(trick)=>{
-		console.log('myTrick'+JSON.stringify(this.myTricks[uiStore.detailTrick.id]))
 		const trickKey = 
 			trick.name.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
 		let oldTrickKey
