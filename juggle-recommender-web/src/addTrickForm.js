@@ -479,7 +479,7 @@ class AddTrickForm extends Component {
 				trick["timeSubmitted"] = date.getTime()
 			}
 			Object.keys(trick).forEach(key => trick[key] === undefined ? delete trick[key] : '')
-			store.addTrickToDatabase(trick)
+			store.addTrickToDatabase(trick)	
 			this.clearState()
 			console.log('myTrick3'+JSON.stringify(store.myTricks[uiStore.detailTrick.id]))
 		}

@@ -82,88 +82,142 @@ class FilterStore {
 	@observable maxCatches = maxCatches
 	@observable hasTutorialSelected = hasTutorialSelected
 
-	@action getURLtext=()=>{
-		let urlText = "/tricklist/filter/"
-    	if (this.contributors.length > 0){
-			urlText = urlText + "contributor="    		
+
+	@action contributorUrlText=()=>{
+		let text = ''
+		if (this.contributors.length > 0){
+			text = "contributor="    		
     		this.contributors.forEach((contributor,index) => {
-	    		urlText = urlText + contributor
+	    		text = text + contributor
 	    		if(index < this.contributors.length-1){
-	    			urlText += ","
+	    			text += ","
 	    		}
 			});
-    	}  
+    	}
+    	return text 
+	}
+
+	@action difficultyRangeUrlText=(urlText)=>{
+		let text = ''
     	if (parseInt(this.difficultyRange[0],10)!==1 || 
     		parseInt(this.difficultyRange[1],10)!==10){
     			if(urlText !== "/filter/"){
-    				urlText += "&"
+    				text += "&"
     			}
-	    		urlText = urlText + "difficultyrange=" + 
+	    		text = text + "difficultyrange=" + 
 	    			this.difficultyRange[0] + "," + this.difficultyRange[1] + "&"
-    	}
+    	}		
+    	return text
+	}
+
+	@action numBallsUrlText=(urlText)=>{
+		let text = ''
     	if (this.numBalls.length > 0){
     		if(urlText !== "/filter/"){
-				urlText += "&"
+				text += "&"
 			}
-			urlText = urlText + "numballs="    		
+			text = text + "numballs="    		
     		this.numBalls.forEach((numball,index) => {
-	    		urlText = urlText + numball 
+	    		text = text + numball 
 	    		if(index < this.numBalls.length-1){
-	    			urlText += ","
+	    			text += ","
 	    		}
 			});
-    	}
-    	if (this.flair.length > 0){
-    		if(urlText !== "/filter/"){
-				urlText += "&"
-			}
-			urlText = urlText + "flair="    		
-    		this.flair.forEach((flair,index) => {
-	    		urlText = urlText + flair
-	    		if(index < this.flair.length-1){
-	    			urlText += ","
-	    		}
-			});
+    	}	
+    	return text	
+	}
 
-    	}
-    	if (this.tags.length > 0){
+	@action flairUrlText=(urlText)=>{
+		let text = ''
+		if (this.flair.length > 0){
     		if(urlText !== "/filter/"){
-				urlText += "&"
+				text += "&"
 			}
-			urlText = urlText + "tags="   		
-    		this.tags.forEach((tag,index) => {
-	    		urlText = urlText + tag
-	    		if(index < this.tags.length-1){
-	    			urlText += ","
+			text = text + "flair="    		
+    		this.flair.forEach((flair,index) => {
+	    		text = text + flair
+	    		if(index < this.flair.length-1){
+	    			text += ","
 	    		}
 			});
     	}
+    	return text
+	}
+
+	@action tagsUrlText=(urlText)=>{
+		let text = ''
+		if (this.tags.length > 0){
+    		if(urlText !== "/filter/"){
+				text += "&"
+			}
+			text = text + "tags="   		
+    		this.tags.forEach((tag,index) => {
+	    		text = text + tag
+	    		if(index < this.tags.length-1){
+	    			text += ","
+	    		}
+			});
+    	}
+    	return text
+	}
+
+	@action workedOnPeriodUrlText=(urlText)=>{
+		let text = ''
     	if (this.workedOnPeriod !== null){
     		if(urlText !== "/filter/"){
-				urlText += "&"
+				text += "&"
 			}
-			urlText = urlText + "workedon=" + this.workedOnValue + ',' +this.workedOnPeriod  		
+			text = text + "workedon=" + this.workedOnValue + ',' +this.workedOnPeriod  		
     	}
+    	return text
+	}
+
+	@action catchesUrlText=(urlText)=>{
+		let text = ''
     	if (parseInt(this.minCatches,10)>0 || 
     		parseInt(this.maxCatches,10)<store.highestCatches){
     		if(urlText !== "/filter/"){
-				urlText += "&"
+				text += "&"
 			}
-    		urlText = urlText + "catches=" + 
+    		text = text + "catches=" + 
     			this.minCatches + "," + this.maxCatches 
     	}
+    	return text
+	}
+
+	@action demoTypeUrlText=(urlText)=>{
+		let text = ''
     	if (this.demoType.length > 0 && this.demoType[0] !== "All"){
     		if(urlText !== "/filter/"){
-				urlText += "&"
+				text += "&"
 			}
-			urlText = urlText + "demotype=" + this.demoType[0].replace(" ","").toLowerCase()		
+			text = text + "demotype=" + this.demoType[0].replace(" ","").toLowerCase()		
     	}
+    	return text
+	}
+
+	@action hasTutorialSelectedUrlText=(urlText)=>{
+		let text = ''
     	if (this.hasTutorialSelected){
     		if(urlText !== "/filter/"){
-				urlText += "&"
+				text += "&"
 			}
-			urlText = urlText + "tutorial=true"	
+			text = text + "tutorial=true"	
     	}
+    	return text
+	}
+
+	@action getURLtext=()=>{
+		let urlText = "/tricklist/filter/"
+		urlText = urlText + this.contributorUrlText()
+		urlText = urlText + this.difficultyRangeUrlText(urlText)
+		urlText = urlText + this.numBallsUrlText(urlText)
+		urlText = urlText + this.flairUrlText(urlText)
+		urlText = urlText + this.tagsUrlText(urlText)
+		urlText = urlText + this.workedOnPeriodUrlText(urlText)
+		urlText = urlText + this.catchesUrlText(urlText)
+		urlText = urlText + this.demoTypeUrlText(urlText)
+		urlText = urlText + this.hasTutorialSelectedUrlText(urlText)
     	return urlText
 	}
 
