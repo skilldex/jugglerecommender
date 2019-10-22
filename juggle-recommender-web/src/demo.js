@@ -16,7 +16,8 @@ class Demo extends Component {
     videoURL : null,
     youtubeId : null,
     mouseDown : false,
-    timer : null
+    timer : null,
+    videoExists : true,
   }
   componentDidMount(){
 
@@ -73,7 +74,7 @@ class Demo extends Component {
       const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
       videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
       const url = "https://www.instagram.com"+usefulPart+"?__a=1"
-        fetch(url).then(
+        let fetchResponse = fetch(url).then(
             response => response.json()
         ).then(
             (data) => {
@@ -85,7 +86,7 @@ class Demo extends Component {
                 this.setIGData(data, trickKey)
               }
             }
-        );                                
+        );
       }
       else if(userProvidedURL.includes("youtu")){
         let usefulPart
@@ -266,7 +267,6 @@ class Demo extends Component {
    }
 
   handleInstagramVideoClick=()=>{
-    console.log('instaclick')
     const video = document.getElementById("instagramVideo")
     video.setAttribute( 'controls', '' );
   }
@@ -284,6 +284,10 @@ class Demo extends Component {
     }
     video.setOption({playsinline : 1})
     video.playVideo();
+  }
+  setVideoErrorMessage=(e)=>{
+    console.log("video Doesn't exist")
+    this.setState({videoExists: false})
   }
 
 	render() {
@@ -355,6 +359,7 @@ class Demo extends Component {
                           onStateChange={this.youtubeStateChange}
                           onReady={this.onYoutubePlayerReady}
                           onEnd={this.youtubeEnded}
+                          onError={() => this.setVideoErrorMessage()}
                           ref={(video)=> {this.video = video}}  
                         ></YouTube> : this.state.videoURL && this.state.videoURL.includes('instagram') ? 
                         <video 
@@ -405,9 +410,14 @@ class Demo extends Component {
         outerDivClass = "demoOuterDivExpandedSection"
       }
     }
+    let videoRemovedMessage = 
+                            <span className="videoRemovedMessage">
+                              VIDEO HAS BEEN REMOVED!
+                            </span>
 		return(
       			<div className={outerDivClass}>
-              {this.props.demoLocation === "detailExtraGif" ? gifSection:video}
+              {!this.state.videoExists || !video && !gifSection ? videoRemovedMessage : ""}
+              {this.props.demoLocation === "detailExtraGif" ? gifSection:this.state.videoExists?video:""}
               {video? frameButtons:gifSection}
               {this.props.demoLocation === "detailExtraGif" ? null:igHeader}
       			</div>

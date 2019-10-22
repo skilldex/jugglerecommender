@@ -83,7 +83,6 @@ Code Cleaning:
 	-consolidate the sort alg in utilities into several smaller functions
 	-all those setStates in addTrickForm in componentdidmount, if (editing trick) may be redundant
 		-when I comment them out I get the 'pattern already exists' message, so not redundant, but i don't understand why, it seems like we re-set state at the end of that function anyways.
-	-reduce stuff at begining of filterstore into a more general function
 	-how can the timeout in details.suggestRelationClicked() be removed?
 	-randomleaderboardtrick could have its name changed to trickOfTheDay or something like that, as well as surrounding variables since it really now has different functionality
 	-break up main render function in details.js
