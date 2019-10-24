@@ -19,6 +19,8 @@ BIG BUGS:
 -Stefan suggested we do suggestions for tags and siteswap like we did relateds
 -bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
 
+if a page stops loading (switch tabs) while video is loading it may give a false no video message
+
 MAYBES/QUESTIONS:
 	GA hooked up to browser back button? our back button? Seperate GAs or same?
 	-Patterns mentioned in comments could be links
