@@ -8,8 +8,8 @@ v2.4
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 =========
-BIG BUGS:
-	-removing an edited trick while editing crashses
+Bugs:
+	-there are patterns that make it through the libraryofjuggling.com contributor filter, but not through the 'juggling lab' demo type filter
 
 -in ga, pageviews are sometimes way lower than events, right now it is 100:10
 
