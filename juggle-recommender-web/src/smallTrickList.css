@@ -7,7 +7,7 @@
   text-align: center;
   display: inline-block;  
   z-index: 1;
-  opacity : 100%;
+  opacity : 1;
   background-color : white;
   border-radius: 8px;
   border-width: 2px;
@@ -245,7 +245,7 @@
   border: 2px solid gray;
   border-radius: 8px;
   background-color: white;
-  opacity: .smallList95;
+  opacity: .95;
   margin-right : 85px;
   z-index: 1300;
 }
