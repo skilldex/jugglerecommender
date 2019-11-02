@@ -532,6 +532,7 @@ class AddTrickForm extends Component {
 		else if (tag === 'neck-throw'){inferredTag = 'body-throw'}
 		else if (tag === 'neck-catch'){inferredTag = 'body-throw'}
 		else if (tag === 'contortion'){inferredTag = 'body-throw'}
+		else if (tag === 'under-the-leg'){inferredTag = 'body-throw'}
 		else if (tag === 'neck-pass'){inferredTag = 'body-throw'}
 		else if (tag === 'apecross'){inferredTag = 'body-throw'}
 		else if (tag === 'backcross'){inferredTag = 'body-throw'}
