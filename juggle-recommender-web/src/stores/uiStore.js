@@ -107,9 +107,9 @@ class UIStore {
 
     @action removeTrickFromSmallTrickList=(listOfTricks, trickName)=>{
     	let canRemove = true
+    	let listType = null
     	const trickKey = trickName.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
         if (this.editingDetailTrick){
-	    	let listType = null
 	    	if (listOfTricks === this.addTrickFormPrereqs){
 	    		listType = 'prereqs'
 	    	}
@@ -117,25 +117,28 @@ class UIStore {
 	    		listType = 'related'
 	    	}
 	    	if (listOfTricks === this.addTrickFormPostreqs){
-	    		listType = 'postreqs'
+	    		listType = 'dependents'
 	    	}
+	    	console.log('store.library[this.detailTrick.id]',store.library[this.detailTrick.id])
 	    	const trick = store.library[this.detailTrick.id][listType][trickKey]
 	    	if (trick && trick['upvoters']){
 	    		let otherUpvoters = []
 	    		otherUpvoters = trick['upvoters'].filter(function(item) { 
 				    return item !== authStore.user.username
 				})
-	    		if (otherUpvoters.length>0){
+	    		if (otherUpvoters.length>0 && authStore.user.username !== "tjthejuggler"){
 		    		alert('Prereqs with community upvotes can not be removed.')
 		    		canRemove = false
 		    	}
 	    	}
 		}	
-
 		if (canRemove){
 			var index = listOfTricks.indexOf(trickName);
 			if (index > -1) {
 			  listOfTricks.splice(index, 1);
+			  if (this.detailTrick){
+				  store.removeRelationshipTrick(this.detailTrick.id,listType,trickKey)
+				}
 			}
 		}
     }
