@@ -444,6 +444,15 @@ class Detail extends Component {
                             {ninjaFlairButton}
                             {catchesFlairIcon}
                           </div>
+                          {detailTrick.siteswap ? 
+                            <div>
+                              <label className="detailLabel">Siteswap </label>
+                              <label className= "clickableProperty"
+                                   onClick = {()=>this.trickPropertyClicked('siteswap', detailTrick.siteswap)}>
+                              {detailTrick.siteswap}
+                              </label><br/>
+                            </div> : null
+                          }
                           {detailTrick && detailTrick.url ?
                             <div>
                               <label className="detailLabel">Tutorial </label>
@@ -468,15 +477,6 @@ class Detail extends Component {
                                      onClick = {()=>this.trickPropertyClicked('ballNum', detailTrick.num)}>
                                 {detailTrick.num}
                                 </label><br/>
-                                {detailTrick.siteswap ? 
-                                  <div>
-                                    <label className="detailLabel">Siteswap </label>
-                                    <label className= "clickableProperty"
-                                         onClick = {()=>this.trickPropertyClicked('siteswap', detailTrick.siteswap)}>
-                                    {detailTrick.siteswap}
-                                    </label><br/>
-                                  </div> : null
-                                }
                                 {dateLastWorkedOn ? 
                                   <div>
                                     <label className="detailLabel">Last Worked On </label>
