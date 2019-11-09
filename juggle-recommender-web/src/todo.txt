@@ -8,6 +8,16 @@ v2.4
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 =========
+-Siteswap should show outside of more info
+-when I change siteswap in edit form I have to click of to make submittable
+-Make a wanted list on skilldex
+-Comma separated tutorials would be good
+-Make my account able to remove related in edit
+-Clicking a sort direction should close the sort dropdown
+-See if bug is fixed that makes loj videos be different than jlab videos
+-clicking tags/contributors in filter should show all
+-change any hardcoded tjthejuggler out for a mods list
+
 Bugs:
 	-there are patterns that make it through the libraryofjuggling.com contributor filter, but not through the 'juggling lab' demo type filter
 

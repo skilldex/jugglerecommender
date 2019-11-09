@@ -470,7 +470,7 @@ class Detail extends Component {
                                 </label><br/>
                                 {detailTrick.siteswap ? 
                                   <div>
-                                    <label className="detailLabel">Siteswap: </label>
+                                    <label className="detailLabel">Siteswap </label>
                                     <label className= "clickableProperty"
                                          onClick = {()=>this.trickPropertyClicked('siteswap', detailTrick.siteswap)}>
                                     {detailTrick.siteswap}
@@ -479,7 +479,7 @@ class Detail extends Component {
                                 }
                                 {dateLastWorkedOn ? 
                                   <div>
-                                    <label className="detailLabel">Last Worked On: </label>
+                                    <label className="detailLabel">Last Worked On </label>
                                     <label className="unclickableProperty">
                                       {dateLastWorkedOn}
                                     </label>
