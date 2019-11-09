@@ -64,6 +64,7 @@ class MainTagsBar extends Component {
       utilities.sendGA('mainTagsBar','sort direction '+direction)
       filterStore.setSortDirection(direction)
       this.showPatternList()
+      uiStore.setShowSortDiv(false)
     }
 
     mouseEnterSortDiv=()=>{
