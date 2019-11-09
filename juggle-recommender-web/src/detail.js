@@ -447,8 +447,7 @@ class Detail extends Component {
                           {detailTrick.siteswap ? 
                             <div>
                               <label className="detailLabel">Siteswap </label>
-                              <label className= "clickableProperty"
-                                   onClick = {()=>this.trickPropertyClicked('siteswap', detailTrick.siteswap)}>
+                              <label>
                               {detailTrick.siteswap}
                               </label><br/>
                             </div> : null
