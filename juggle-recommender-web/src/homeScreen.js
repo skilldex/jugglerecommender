@@ -56,7 +56,7 @@ class HomeScreen extends Component {
 								<h3 className = 'homeScreenHeader' style={{marginBottom: "10px"}}>Pattern of The Day</h3>
 			        
 					           	<div className = "homeTrickName" onClick = {this.openDetail}>
-						           	{store.randomLeaderboardTrick.key} 
+						           	{store.library[store.randomLeaderboardTrick.key].name} 
 						        </div>
 				            	<Demo 
 					            	trickKey={store.randomLeaderboardTrick.key}
