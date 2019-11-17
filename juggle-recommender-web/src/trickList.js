@@ -31,7 +31,7 @@ class TrickList extends Component {
   		const listType = this.props.listType
 	    function setPositions() {
 	    	if (document.getElementById('listDiv') && listType === "main"){
-				document.getElementById('listDiv').scrollTop = uiStore.mainListScrollerPosition	
+				window.scrollTo(0,Math.abs(uiStore.mainListScrollerPosition))	
 			}
 		}
 	    setTimeout(function() {
@@ -42,7 +42,7 @@ class TrickList extends Component {
 	openDetail=(trickKey)=>{
 		utilities.sendGA('list ' + this.props.listType,'opened detail','list ' + this.props.listType + ' ' + trickKey)
 		if (this.props.listType === "main"){
-			uiStore.setMainListScrollerPosition(document.getElementById('listDiv').scrollTop)
+			uiStore.setMainListScrollerPosition(document.body.getBoundingClientRect().top)
 		}
 		utilities.openPage('detail/'+trickKey,true)
 		window.scrollTo(0,0);
