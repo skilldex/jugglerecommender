@@ -8,6 +8,10 @@ v2.4
 	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
 
 =========
+-Show siteswap in list on details
+-When a relation is edited out it doesnt get rid of the equivalent
+-cancel button doesnt work for relationships list in details
+-make slowmo button toggle play, not stop
 -when I change siteswap in edit form I have to click off to make submittable
 -Make a wanted list
 -Comma separated tutorials would be good
