@@ -10,14 +10,11 @@ v2.4
 =========
 -Show siteswap in list on details
 -When a relation is edited out it doesnt get rid of the equivalent
--cancel button doesnt work for relationships list in details
--make slowmo button toggle play, not stop
--when I change siteswap in edit form I have to click off to make submittable
 -Make a wanted list
 -Comma separated tutorials would be good
--See if bug is fixed that makes loj videos be different than jlab videos
 -clicking tags/contributors in filter should show all
 -change any hardcoded tjthejuggler out for a mods list
+-possibly make catches able to be input from list (requested by ilia)
 
 Bugs:
 	-there are patterns that make it through the libraryofjuggling.com contributor filter, but not through the 'juggling lab' demo type filter

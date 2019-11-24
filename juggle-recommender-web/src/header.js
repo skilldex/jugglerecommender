@@ -104,7 +104,7 @@ class Header extends Component {
 									onClick={() => this.titleClicked()}>
 										Juggledex
 							</label>
-							<span className="version">v2.56</span>
+							<span className="version">v3.57</span>
 					    </div>
 					    <img className="hamburger" 
 					    	alt='' 
