@@ -627,11 +627,11 @@ class UIStore {
 		}else{
 			if(filterStore.demoType[0] === "All"){
 				passesDemoTypeFilter = true
-			}else if(video == null && 
+			}else if((video == null || video == "" )&& 
 		    	filterStore.demoType[0] === "Juggling Lab" ){
 		    	passesDemoTypeFilter = true
 		    }
-		    else if(video && filterStore.demoType[0] === "User Video" ){
+		    else if(video && video != "" && filterStore.demoType[0] === "User Video" ){
 		    	passesDemoTypeFilter = true
 		    }
 		    else{
