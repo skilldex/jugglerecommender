@@ -616,7 +616,7 @@ class Store {
 			Object.keys(trick[relation]).forEach((key)=>{
 				const relatedTrickKey = key.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')				
 				if(!this.library[relatedTrickKey]){
-					console.log("problem with ",relatedTrickKey)
+					//console.log("problem with ",relatedTrickKey)
 				}
 				if(this.library[relatedTrickKey]){
 					if (!this.library[relatedTrickKey][relatedProperty]){
