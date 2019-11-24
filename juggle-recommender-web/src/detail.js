@@ -194,6 +194,9 @@ class Detail extends Component {
       return key[0]
     })
   }
+  suggestRelationCancelClicked=()=>{
+    uiStore.closeAllSuggestionLists()
+  }
   suggestRelationClicked=(relation)=>{
     if(authStore.user){
       uiStore.closeAllSuggestionLists()
@@ -551,7 +554,7 @@ class Detail extends Component {
                     Add prereq
                   </button>
                   <button className="suggestionButtons"
-                          onClick={()=>this.suggestRelationClicked('prereq')}>
+                          onClick={()=>this.suggestRelationCancelClicked()}>
                       Cancel
                   </button>
                 </div>
@@ -592,7 +595,7 @@ class Detail extends Component {
                       Add related
                   </button>
                   <button className="suggestionButtons"  
-                          onClick={()=>this.suggestRelationClicked('related')}>
+                          onClick={()=>this.suggestRelationCancelClicked()}>
                       Cancel
                   </button>
                 </div>
@@ -633,7 +636,7 @@ class Detail extends Component {
                       Add dependent
                   </button>
                   <button className="suggestionButtons"
-                          onClick={()=>this.suggestRelationClicked('dependent')}>
+                          onClick={()=>this.suggestRelationCancelClicked()}>
                     Cancel
                   </button>
                 </div>
