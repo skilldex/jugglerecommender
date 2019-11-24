@@ -191,7 +191,7 @@ class Demo extends Component {
         }else{
           clearInterval(this.state.intervalRewind);
           video.playbackRate = 1.0
-          video.pause();
+          video.play();
         }
       })      
     }
@@ -253,7 +253,7 @@ class Demo extends Component {
         }else{
           clearInterval(this.state.intervalRewind);
           video.setPlaybackRate(1)
-          video.pauseVideo()
+          video.playVideo()
         }
       })      
     }
