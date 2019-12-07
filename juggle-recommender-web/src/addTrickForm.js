@@ -163,7 +163,8 @@ class AddTrickForm extends Component {
 				const siteswapValidityChecker = Validate(name)
 				if (siteswapValidityChecker !== 'invalid' &&
 					name.length > 1 &&
-					/\d/.test(name)){
+					/\d/.test(name) &&
+					name !== '2in1'){
 					this.setState({num : siteswapValidityChecker[0]})
 					this.setState({siteswap : name})	
 					if (wordsInName.length === 1){

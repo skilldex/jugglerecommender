@@ -1,45 +1,63 @@
-v2.4
+v3.6
 	Profile Screen: (Larger section below)
 		-upload image
 			ian has code for this
 
+=========
+
+minor todos:
+	-indicate missing inputs next to submit button on form when not submittable
+	-put time ranges in edit video form in x:xx format
 	-if there is 1 item in an autocomplete list, enter should select that item
 
-	-modignore is currently turned off just by having no names in store.mods because I couldn't figure out how to actually ignore them in GA
+todos:
+	-make autocomplete search match words individually instead of as solid strings
+	-show preview in add trick form so it is easier to get time ranges for instagram videos
+	-ability for users to suggest tags like they can relationships
+	-multiple videos for a pattern/skill
+	-clicking tags/contributors inputs in filter should show all
+		-right now this happens when just a single character is input, not on click
+	-Comma separated tutorials
+		-this means we need multiple tutorial inputs in form
+	-chart of personal improvement over time, like number of patterns/skills improved per day
+	-change any hardcoded tjthejuggler out for a mods list
 
-=========
--Show siteswap in list on details
--When a relation is edited out it doesnt get rid of the equivalent
--Make a wanted list
--Comma separated tutorials would be good
--clicking tags/contributors in filter should show all
--change any hardcoded tjthejuggler out for a mods list
--possibly make catches able to be input from list (requested by ilia)
+Bigger todos:
+	-Make skilldex template for other skills
+	-reintroduce graph
+	-Make a wanted list
+	-get a way to ignore particular users(mods) in GA
+		-last attempt was with 'modignore' setup currently in code, but it didnt work and so is currently turned off just by having no names in code
+
+For general skilldex:
+	-an alternative to catches, maybe a personal rating system of goodness
 
 Bugs:
+	-when suggesting a pattern in details, clicking once makes it fill in the input, but then it needs to be clicked again to make it actually submittable
+		-this is only an issue with related and postreqs, prereqs works as expected
 	-there are patterns that make it through the libraryofjuggling.com contributor filter, but not through the 'juggling lab' demo type filter
+	-When a relation is edited out it doesnt get rid of the equivalent
+	-it occasionally gives a false 'video removed' message, or it gives it temporarily on slow connections
 
--in ga, pageviews are sometimes way lower than events, right now it is 100:10
-
--on mobile the back arrow is not lined up with the word 'back'
-	-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
-
--Stefan suggested we do suggestions for tags and siteswap like we did relateds
--bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
-
-if a page stops loading (switch tabs) while video is loading it may give a false no video message
-
-MAYBES/QUESTIONS:
-	GA hooked up to browser back button? our back button? Seperate GAs or same?
-	-Patterns mentioned in comments could be links
-	-to make the lists less cluttery, dont show patterns with balls of more than 1 more for prereqs, and opposite for post? 
+Discuss:
+	-user emails on github
+	-make a possible duplicate section when a trick is submitted if there is another trick very similarly named, tagged, ballnumber..
+	-possibly make catches able to be input from list (requested by ilia)
+	-in ga, pageviews are sometimes way lower than events, right now it is 100:10
+	-Stefan suggested we do suggestions for tags and siteswap like we did relateds
+	-bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
 	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
 		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
+
+Minor:
+	-on mobile the back arrow is not lined up with the word 'back'
+		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
+
+MAYBES/QUESTIONS:
+	-GA hooked up to browser back button? our back button? Seperate GAs or same?
+	-Patterns mentioned in comments could be links
 	-should flair filters require all selected flairs or any of the selected flairs?
 	-make a 'tricks being worked on stat'?
-	-make a possible duplicate section when a trick is submitted if there another trick very similarly named, tagged, ballnumber..
-
--show preview in add trick form so it is easier to get time ranges for instagram videos
 
 Bugs:
 	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
@@ -57,22 +75,13 @@ Bugs:
 	-youtube slowmo back doesnt loop
 	-frame by frame doesnt hide controls for youtube
 
-
-Misc:
-	-all users emails are in db on github
-	-from stefan
-		-On the add patternform: if the submit button is grey you could give hints what the user is missing
-			-followup with stefan when i message him about new contributor stats and other issues he mentioned
-
-
 Niceties:
 	-autoscroll to voted on card and make it flash when it re-sorts
 		-would be nice if it animatedly moved
 		-https://stackoverflow.com/questions/27198479/whats-a-react-js-friendly-way-to-animate-a-list-reordering/31080050
 	-see if vote thumb can change colors quicker, maybe before work is done.
 		-maybe see if can be done locally if it currently is waiting on db
-	-showing the GA map in about or stats or something would be cool
-	
+	-showing the GA map in about or stats or something would be cool	
 	-maybe share tap target should be made larger?
 		-which share button having issues with?
 	-maybe up arrow button that appears on list to zoom to top
@@ -90,7 +99,7 @@ Niceties:
 		-wanteds posted by users with accounts only, or the ones with accounts float to top of list
 
 Code Cleaning:
-	-consolidate the sort alg in utilities into several smaller functions
+	-consolidate 'sortRootTricks' in utilities into several smaller functions
 	-all those setStates in addTrickForm in componentdidmount, if (editing trick) may be redundant
 		-when I comment them out I get the 'pattern already exists' message, so not redundant, but i don't understand why, it seems like we re-set state at the end of that function anyways.
 	-how can the timeout in details.suggestRelationClicked() be removed?
@@ -136,3 +145,4 @@ SEARCH NUMBERS:
 		-cascade 54/55
 		-revenge 7/76
 		-millsmess 36/37
+

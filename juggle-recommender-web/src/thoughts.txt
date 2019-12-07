@@ -188,6 +188,10 @@ DB changes(Consideration required):
 	-Reverse chops should be takeaways or 1 beat inside orbits
 	-figure out what to do about armpit-throw tag and apecross
 
+DB items need combined:
+	-there are probably some of these listed on phone
+	-alternate zebra & symmetric zebra
+
 DB Fixes:
 	-go through popular patterns like box, shower, cascade, and limit their postreqs
 	-there are a few 3b pure-ss that are not actually pure and need to have their tags changed
