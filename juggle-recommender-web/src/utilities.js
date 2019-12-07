@@ -85,6 +85,14 @@ class Utilities{
     }
     return toReturn
   }
+  convertSecondsToColonNotation=(seconds)=>{
+    seconds = parseInt(seconds,10)
+    let toReturn
+    let colonMin = Math.floor(seconds/60)
+    let colonSec = seconds%60
+    toReturn = colonMin.toString() + ":" + colonSec.toString()
+    return toReturn
+  }
   sendGA(cat, act, lab){
     //console.log('sendGA ',cat+' ', act+' ', lab)
     if(!store.isLocalHost){

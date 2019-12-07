@@ -123,12 +123,12 @@ class AddTrickForm extends Component {
 				});					
 			}
 			//instead of 0:20, make it be formated based on value
-			// if(trick.videoStartTime){
-			// 	this.setState({videoStartTime : '0:20'})
-			// }	
-			// if(trick.videoEndTime){
-			// 	this.setState({videoEndTime : '0:20'})
-			// }
+			if(trick.videoStartTime){
+				this.setState({videoStartTime : utilities.convertSecondsToColonNotation(trick.videoStartTime)})
+			}	
+			if(trick.videoEndTime){
+				this.setState({videoEndTime : utilities.convertSecondsToColonNotation(trick.videoEndTime)})
+			}
 		}	
 	}
 	handleNameChange=(e)=>{
@@ -373,8 +373,6 @@ class AddTrickForm extends Component {
 			this.setState({videoTimeErrorMessage:'Invalid timestamps.'})
 			this.setState({submitDisabled:true})			
 		}
-		console.log('checkIfFormIsSubmittable')
-		console.log('videoStartTime ', this.state.videoStartTime)
     }
     toggleShowTimeInputs=()=>{
 		this.setState({

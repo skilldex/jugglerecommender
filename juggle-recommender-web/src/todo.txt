@@ -6,15 +6,17 @@ v3.6
 =========
 
 minor todos:
-	-indicate missing inputs next to submit button on form when not submittable
-	-put time ranges in edit video form in x:xx format
+	-TJ put time ranges in edit video form in x:xx format
 	-if there is 1 item in an autocomplete list, enter should select that item
 
 todos:
 	-make autocomplete search match words individually instead of as solid strings
-	-show preview in add trick form so it is easier to get time ranges for instagram videos
+	-show preview in add trick form so it is easier to get time ranges for instagram/youtube videos
 	-ability for users to suggest tags like they can relationships
 	-multiple videos for a pattern/skill
+		-a user can upload a video through a link for an existing trick and that video
+			would show in an expandable list of user videos for that trick.
+		-user voting ranking to float best video to top and be main video.
 	-clicking tags/contributors inputs in filter should show all
 		-right now this happens when just a single character is input, not on click
 	-Comma separated tutorials
