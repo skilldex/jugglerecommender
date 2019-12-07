@@ -122,6 +122,13 @@ class AddTrickForm extends Component {
 					this.setAutoCompletedTag(tag, true)
 				});					
 			}
+			//instead of 0:20, make it be formated based on value
+			// if(trick.videoStartTime){
+			// 	this.setState({videoStartTime : '0:20'})
+			// }	
+			// if(trick.videoEndTime){
+			// 	this.setState({videoEndTime : '0:20'})
+			// }
 		}	
 	}
 	handleNameChange=(e)=>{
@@ -366,6 +373,8 @@ class AddTrickForm extends Component {
 			this.setState({videoTimeErrorMessage:'Invalid timestamps.'})
 			this.setState({submitDisabled:true})			
 		}
+		console.log('checkIfFormIsSubmittable')
+		console.log('videoStartTime ', this.state.videoStartTime)
     }
     toggleShowTimeInputs=()=>{
 		this.setState({
