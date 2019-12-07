@@ -6,8 +6,9 @@ v3.6
 =========
 
 minor todos:
-	-TJ put time ranges in edit video form in x:xx format
 	-if there is 1 item in an autocomplete list, enter should select that item
+	-on mobile the back arrow is not lined up with the word 'back'
+		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
 
 todos:
 	-make autocomplete search match words individually instead of as solid strings
@@ -34,13 +35,6 @@ Bigger todos:
 For general skilldex:
 	-an alternative to catches, maybe a personal rating system of goodness
 
-Bugs:
-	-when suggesting a pattern in details, clicking once makes it fill in the input, but then it needs to be clicked again to make it actually submittable
-		-this is only an issue with related and postreqs, prereqs works as expected
-	-there are patterns that make it through the libraryofjuggling.com contributor filter, but not through the 'juggling lab' demo type filter
-	-When a relation is edited out it doesnt get rid of the equivalent
-	-it occasionally gives a false 'video removed' message, or it gives it temporarily on slow connections
-
 Discuss:
 	-user emails on github
 	-make a possible duplicate section when a trick is submitted if there is another trick very similarly named, tagged, ballnumber..
@@ -50,20 +44,16 @@ Discuss:
 	-bluring small trick list should make them go away and clicking on the input should bring them back. I had it hooked up, but realised that expand broke it.
 	-if difficulty filters are set on main pattern list, then difficulties higher than that in details become black
 		-maybe this is ok, it shows that they are higher than is set in filter, if we ignore filter here then it may be confusing 
-
-Minor:
-	-on mobile the back arrow is not lined up with the word 'back'
-		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
-
-MAYBES/QUESTIONS:
 	-GA hooked up to browser back button? our back button? Seperate GAs or same?
 	-Patterns mentioned in comments could be links
 	-should flair filters require all selected flairs or any of the selected flairs?
 	-make a 'tricks being worked on stat'?
 
 Bugs:
+	-When a relation is edited out it doesn't get rid of the equivalent
+	-it occasionally gives a false 'video removed' message, or maybe it just gives it temporarily on slow connections
 	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
-	-instagram videos clicked in tricklist open up thier detail page, youtube videos do not, the video on homescreen also does not.
+	-instagram videos clicked in tricklist open up their detail page, youtube videos do not, the video on homescreen also does not.
 	-if we load page with flair url that results in no matches, we get endless loading wheel
 	-there is a problem with the 'there is a problem with...' message
 	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
@@ -94,10 +84,9 @@ Niceties:
 		-view count, or users working on 
 			-maybe not since views are not shown on cards, but maybe this isnt a big deal
 	-a way to make playlists, or practice plans, would be nice to keep track of all the tricks of a kind that i want to work on consistantly
-	-User made lists for things like 'patterns where all 3 balls line up vertically' or 'easy uncommon patterns' or 'easy to do hard to figure out' or 'hard to do, easy to figure out' or 'tjthejuggler's 5b cascade warmpup'
+		-User made lists for things like 'patterns where all 3 balls line up vertically' or 'easy uncommon patterns' or 'easy to do hard to figure out' or 'hard to do, easy to figure out' or 'tjthejuggler's 5b cascade warmpup'
 	-A wanted list where people can post tricks they would like to have
 		-this could be not limited to tricks, but also info on existing tricks
-		-the list could be hooked up to rewards, like btc
 		-wanteds posted by users with accounts only, or the ones with accounts float to top of list
 
 Code Cleaning:
@@ -128,23 +117,3 @@ Performance Improvement:
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
 	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a trick name changes we can more quickly update everyone's database.
-
-
-SEARCH NUMBERS:
-		WITH distance threshold < 3:
-		-'box' has 143/923 good results 
-		-'mills' has 57/79 good results
-		-'shower' has 47/54 good results
-		-'cascade' has 54/55 good results 
-		-'revenge' has 7/76 good results (because it gets a lot of 'reverse' results)
-		-'millsmess' has 36/37 good results
-
-
-		WITH distance threshold less than searchLength/3:
-		-box 143/143
-		-mills 57/57
-		-shower47/47
-		-cascade 54/55
-		-revenge 7/76
-		-millsmess 36/37
-
