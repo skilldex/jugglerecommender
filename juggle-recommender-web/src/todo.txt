@@ -9,6 +9,8 @@ minor todos:
 	-if there is 1 item in an autocomplete list, enter should select that item
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
+	-clicking tags/contributors inputs in filter should show all
+		-right now this happens when just a single character is input, not on click
 
 todos:
 	-make autocomplete search match words individually instead of as solid strings
@@ -18,8 +20,6 @@ todos:
 		-a user can upload a video through a link for an existing trick and that video
 			would show in an expandable list of user videos for that trick.
 		-user voting ranking to float best video to top and be main video.
-	-clicking tags/contributors inputs in filter should show all
-		-right now this happens when just a single character is input, not on click
 	-Comma separated tutorials
 		-this means we need multiple tutorial inputs in form
 	-chart of personal improvement over time, like number of patterns/skills improved per day
