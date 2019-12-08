@@ -50,15 +50,14 @@ Discuss:
 	-make a 'tricks being worked on stat'?
 
 Bugs:
-	-When a relation is edited out it doesn't get rid of the equivalent
-	-it occasionally gives a false 'video removed' message, or maybe it just gives it temporarily on slow connections
 	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
-	-instagram videos clicked in tricklist open up their detail page, youtube videos do not, the video on homescreen also does not.
 	-if we load page with flair url that results in no matches, we get endless loading wheel
-	-there is a problem with the 'there is a problem with...' message
-	-if the name of a trick with lots of relationships is changed it works for a while and then crashes, seems like the change worked after refresh though
+	-if a trick with lots of relationships is edited it works for a while and then crashes, seems like the edit worked after refresh though
 	-Scrolling is weird on add trick form, it is like there are two scrollbars and 1 only 		works on green part of form
 	-catchCount slowly gets off over time, dunno why
+	-When multiple relationships are edited out it doesn't get rid of the equivalents
+		-this is very minor because multiple relationships are not often edited out at the same time
+	-it occasionally gives a false 'video removed' message, or maybe it just gives it temporarily on slow connections
 	VIDEO BUGS:
 	-if an instagram is using time ranges, slowmotion doesnt stay when it loops forward
 	-after about 10 loops, videos get stuck with loading wheel,
@@ -66,6 +65,8 @@ Bugs:
 	-youtube slowmo back causes glitch if details page changes
 	-youtube slowmo back doesnt loop
 	-frame by frame doesnt hide controls for youtube
+	-instagram videos clicked in tricklist open up their detail page, youtube videos do not, the video on homescreen also does not.
+
 
 Niceties:
 	-autoscroll to voted on card and make it flash when it re-sorts

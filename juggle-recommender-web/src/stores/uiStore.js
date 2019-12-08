@@ -108,16 +108,20 @@ class UIStore {
     @action removeTrickFromSmallTrickList=(listOfTricks, trickName)=>{
     	let canRemove = true
     	let listType = null
+    	let oppositeListType = null
     	const trickKey = trickName.replace(/\[/g,'({').replace(/\]/g,'})').replace(/\//g,'-')
         if (this.editingDetailTrick){
 	    	if (listOfTricks === this.addTrickFormPrereqs){
 	    		listType = 'prereqs'
+	    		oppositeListType = 'dependents'
 	    	}
 	    	if (listOfTricks === this.addTrickFormRelated){
 	    		listType = 'related'
+	    		oppositeListType = 'related'
 	    	}
 	    	if (listOfTricks === this.addTrickFormPostreqs){
 	    		listType = 'dependents'
+	    		oppositeListType = 'prereqs'
 	    	}
 	    	console.log('store.library[this.detailTrick.id]',store.library[this.detailTrick.id])
 	    	const trick = store.library[this.detailTrick.id][listType][trickKey]
@@ -138,6 +142,8 @@ class UIStore {
 			  listOfTricks.splice(index, 1);
 			  if (this.detailTrick){
 				  store.removeRelationshipTrick(this.detailTrick.id,listType,trickKey)
+				  store.removeRelationshipTrick(trickKey,oppositeListType,this.detailTrick.id)
+				  store.addToRelationshipTricksToRemoveEquivalentFrom(trickKey)
 				}
 			}
 		}

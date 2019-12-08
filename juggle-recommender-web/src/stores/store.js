@@ -32,6 +32,7 @@ class Store {
 	@observable timeOfPreviousRandomTrickClick = 0
 	@observable TJsPreviouslyUsedContributor = 'tjthejuggler'
 	@observable patternCount = null
+	@observable relationshipTricksToRemoveEquivalentFrom = []
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
@@ -535,6 +536,20 @@ class Store {
 					})
 				}
 		}
+		console.log('this.relationshipTricksToRemoveEquivalentFrom2',this.relationshipTricksToRemoveEquivalentFrom)
+		// Object.keys(this.relationshipTricksToRemoveEquivalentFrom).forEach((i)=>{
+		// 	console.log('trick',i)
+		// 	let newTrickRef = firebase.database().ref('library/'+i)
+	 //        newTrickRef.set(this.library[i]);			
+		// })
+
+		for (let entry of this.relationshipTricksToRemoveEquivalentFrom){
+			console.log('trick',entry)
+			let newTrickRef = firebase.database().ref('library/'+entry)
+	        newTrickRef.set(this.library[entry]);					
+		}
+
+		store.clearRelationshipTricksToRemoveEquivalentFrom()
 		//put most of the info from the form into the library
 		let newTrickRef = firebase.database().ref('library/'+trickKey)
         newTrickRef.set(trick);
@@ -602,8 +617,6 @@ class Store {
         }else{
         	store.increaseViewsCounter()
         }
-
-        console.log('myTrick2'+JSON.stringify(this.myTricks[uiStore.detailTrick.id]))
 	}
 	
 	@action addEquivalentRelated=(trick,relation)=>{
@@ -671,6 +684,14 @@ class Store {
 		if (this.library[detailTrick][listType][trickKeyToRemove]){
 			delete this.library[detailTrick][listType][trickKeyToRemove]
 		}
+	}
+	@action addToRelationshipTricksToRemoveEquivalentFrom=(trickKey)=>{
+		this.relationshipTricksToRemoveEquivalentFrom.push(trickKey)
+		console.log('relationshipTricksToRemoveEquivalentFrom',this.relationshipTricksToRemoveEquivalentFrom)
+		
+	}
+	@action clearRelationshipTricksToRemoveEquivalentFrom=()=>{
+		this.relationshipTricksToRemoveEquivalentFrom = []
 	}
 
 	@action getSavedTricks=()=>{

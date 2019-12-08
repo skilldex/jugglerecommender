@@ -489,7 +489,6 @@ class AddTrickForm extends Component {
 			Object.keys(trick).forEach(key => trick[key] === undefined ? delete trick[key] : '')
 			store.addTrickToDatabase(trick)	
 			this.clearState()
-			console.log('myTrick3'+JSON.stringify(store.myTricks[uiStore.detailTrick.id]))
 		}
 	}
 	
