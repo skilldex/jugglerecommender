@@ -538,13 +538,6 @@ class Store {
 					})
 				}
 		}
-		console.log('this.relationshipTricksToRemoveEquivalentFrom2',this.relationshipTricksToRemoveEquivalentFrom)
-		// Object.keys(this.relationshipTricksToRemoveEquivalentFrom).forEach((i)=>{
-		// 	console.log('trick',i)
-		// 	let newTrickRef = firebase.database().ref('library/'+i)
-	 //        newTrickRef.set(this.library[i]);			
-		// })
-
 		for (let entry of this.relationshipTricksToRemoveEquivalentFrom){
 			console.log('trick',entry)
 			let newTrickRef = firebase.database().ref('library/'+entry)
