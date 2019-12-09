@@ -23,7 +23,7 @@ todos:
 	-Comma separated tutorials
 		-this means we need multiple tutorial inputs in form
 	-chart of personal improvement over time, like number of patterns/skills improved per day
-	-change any hardcoded tjthejuggler out for a mods list
+	
 
 Bigger todos:
 	-Make skilldex template for other skills
@@ -51,8 +51,8 @@ Discuss:
 
 Bugs:
 	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
-	-if we load page with flair url that results in no matches, we get endless loading wheel
-	-if a trick with lots of relationships is edited it works for a while and then crashes, seems like the edit worked after refresh though
+	-if we load page with filter url that results in no matches, we get endless loading wheel
+	-if a trick with lots of relationships is edited it runs for a while and then crashes, seems like the edit worked after refresh though. Sometimes it says it is not responding, but then starts responding if you wait.
 	-Scrolling is weird on add trick form, it is like there are two scrollbars and 1 only 		works on green part of form
 	-catchCount slowly gets off over time, dunno why
 	-When multiple relationships are edited out it doesn't get rid of the equivalents

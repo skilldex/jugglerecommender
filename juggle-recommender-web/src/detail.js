@@ -362,7 +362,7 @@ class Detail extends Component {
     const deleteTrickButton = 
       detailTrick && authStore.user && 
       (detailTrick.contributor === authStore.user.username || 
-      authStore.user.username === "tjthejuggler") ?
+      store.editMods.includes(authStore.user.username)) ?
         <img id="deleteTrickButton" 
               src={deleteTrickIcon} 
               className="deleteTrickIcon" 
@@ -373,7 +373,7 @@ class Detail extends Component {
     const editTrickButton  = 
       detailTrick && authStore.user && 
       (detailTrick.contributor === authStore.user.username || 
-      authStore.user.username === "tjthejuggler") ? 
+      store.editMods.includes(authStore.user.username)) ? 
         <img id="editCardButton" 
              src={editCardIcon} 
              className="editCardIcon" 

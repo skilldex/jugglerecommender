@@ -50,9 +50,9 @@ class AddTrickForm extends Component {
 	}
 
 	componentDidMount=()=>{
-		if(authStore.user.username === "tjthejuggler" &&
+		if(store.editMods.includes(authStore.user.username) &&
 			!uiStore.editingDetailTrick){
-			document.getElementById('TJsContributorInput').value = store.TJsPreviouslyUsedContributor
+			document.getElementById('editModsContributorInput').value = store.editModsPreviouslyUsedContributor
 		}else{
 			this.setState({contributor: authStore.user.username})
 		}
@@ -469,13 +469,13 @@ class AddTrickForm extends Component {
 			if(!this.state.contributor){
 				delete trick.contributor
 			}//if I leave contributor blank, it uses my name
-			if(authStore.user.username === "tjthejuggler" && 
-				document.getElementById('TJsContributorInput').value !== ''){
+			if(store.editMods.includes(authStore.user.username) && 
+				document.getElementById('editModsContributorInput').value !== ''){
 				//if I put something in, it use that name
-				trick['contributor'] = document.getElementById('TJsContributorInput').value
-				store.setTJsPreviouslyUsedContributor(trick['contributor'])
+				trick['contributor'] = document.getElementById('editModsContributorInput').value
+				store.setEditModsPreviouslyUsedContributor(trick['contributor'])
 				//if i put in loj it uses no name which defaults to Library Of Juggling
-				if(document.getElementById('TJsContributorInput').value === 'loj'){
+				if(document.getElementById('editModsContributorInput').value === 'loj'){
 					delete trick.contributor
 				}
 			}
@@ -681,10 +681,10 @@ class AddTrickForm extends Component {
 									<br/>
 								</div>
 
-		const TJsContributorInput = <div className="inputContainer">
+		const editModsContributorInput = <div className="inputContainer">
 									<span className="inputLabel">Contributor</span><br/>
 									<input className="formInputs" 
-											id="TJsContributorInput"
+											id="editModsContributorInput"
 											defaultValue={uiStore.editingDetailTrick?
 													store.library[uiStore.detailTrick.id]['contributor']
 													: ''}
@@ -783,7 +783,7 @@ class AddTrickForm extends Component {
 						{backButton}
 						<h3>{titleText}</h3>
 						<div className="innerForm">
-							{authStore.user.username === "tjthejuggler" ? TJsContributorInput:null}
+							{store.editMods.includes(authStore.user.username) ? editModsContributorInput:null}
 							<div className="inputContainer">
 								<span className="redText">*</span>
 								<span className="inputLabel">Trick name</span><br/>

@@ -130,7 +130,7 @@ class UIStore {
 	    		otherUpvoters = trick['upvoters'].filter(function(item) { 
 				    return item !== authStore.user.username
 				})
-	    		if (otherUpvoters.length>0 && authStore.user.username !== "tjthejuggler"){
+	    		if (otherUpvoters.length>0 && !store.editMods.includes(authStore.user.username)){
 		    		alert('Prereqs with community upvotes can not be removed.')
 		    		canRemove = false
 		    	}

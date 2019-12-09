@@ -30,9 +30,10 @@ class Store {
 	@observable showReplyStates = {}
 	@observable enableReplyStates = {}
 	@observable timeOfPreviousRandomTrickClick = 0
-	@observable TJsPreviouslyUsedContributor = 'tjthejuggler'
+	@observable editModsPreviouslyUsedContributor = 'tjthejuggler'
 	@observable patternCount = null
 	@observable relationshipTricksToRemoveEquivalentFrom = []
+	@observable editMods = ['tjthejuggler']
 
 	@computed get isMobile(){
 	   return true ?  /Mobi|Android/i.test(navigator.userAgent) : false
@@ -58,8 +59,8 @@ class Store {
 		return contributors
 	}
 
-	@action setTJsPreviouslyUsedContributor=(contributor)=>{
-		this.TJsPreviouslyUsedContributor = contributor
+	@action setEditModsPreviouslyUsedContributor=(contributor)=>{
+		this.editModsPreviouslyUsedContributor = contributor
 	}
 
 	@action increaseViewsCounter=()=>{
@@ -249,11 +250,12 @@ class Store {
 	@action getTrickOfTheDay(){
 		let trickKeyToUse = null
 		const currentDate = new Date()
-		let TJsExtraDay = 0
+		//modsExtraDay is so mods can see tomorrows pattern of the day when they click 'home'
+		let modsExtraDay = 0
 		if (authStore.user){
-			TJsExtraDay = authStore.user.username === 'tjthejuggler' ? 1 : 0 
+			modsExtraDay = store.editMods.includes(authStore.user.username) ? 1 : 0 
 		}
-		const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1 + TJsExtraDay).toString()
+		const formatted_date = (currentDate.getMonth() + 1).toString() + (currentDate.getDate() + 1 + modsExtraDay).toString()
 		let trickOfTheDayReadRef = firebase.database().ref('trickOfTheDay/')
 		trickOfTheDayReadRef.on('value', resp =>{
 			let allTricksOfTheDay = this.snapshotToArrayWithKey(resp)
