@@ -683,7 +683,9 @@ class Store {
 	    uiStore.clearRelationSuggestions()
 	}
 	@action removeRelationshipTrick=(detailTrick,listType,trickKeyToRemove)=>{
-		if (this.library[detailTrick][listType][trickKeyToRemove]){
+		if (this.library[detailTrick] &&
+			this.library[detailTrick][listType] && 
+			this.library[detailTrick][listType][trickKeyToRemove]){
 			delete this.library[detailTrick][listType][trickKeyToRemove]
 		}
 	}
