@@ -23,7 +23,7 @@ todos:
 	-Comma separated tutorials
 		-this means we need multiple tutorial inputs in form
 	-chart of personal improvement over time, like number of patterns/skills improved per day
-	
+		
 
 Bigger todos:
 	-Make skilldex template for other skills
@@ -50,6 +50,7 @@ Discuss:
 	-make a 'tricks being worked on stat'?
 
 Bugs:
+	-it seems like going from a trick with a missing video to another trick via the relationships lists in details results in the new trick having the missing video message.
 	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
 	-if we load page with filter url that results in no matches, we get endless loading wheel
 	-if a trick with lots of relationships is edited it runs for a while and then crashes, seems like the edit worked after refresh though. Sometimes it says it is not responding, but then starts responding if you wait.
