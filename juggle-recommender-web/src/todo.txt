@@ -51,12 +51,11 @@ Discuss:
 	-make a 'tricks being worked on stat'?
 
 Bugs:
-	-it seems like going from a trick with a missing video to another trick via the relationships lists in details results in the new trick having the missing video message.
 	-in add trick form, expanding tricks on multiple (smalltrickslist)related lists messes up demos 
 	-if we load page with filter url that results in no matches, we get endless loading wheel
 	-if a trick with lots of relationships is edited it runs for a while and then crashes, seems like the edit worked after refresh though. Sometimes it says it is not responding, but then starts responding if you wait.
 	-Scrolling is weird on add trick form, it is like there are two scrollbars and 1 only 		works on green part of form
-	-catchCount slowly gets off over time, dunno why
+	-catchCount slowly gets off over time
 	-When multiple relationships are edited out it doesn't get rid of the equivalents
 		-this is very minor because multiple relationships are not often edited out at the same time
 	-it occasionally gives a false 'video removed' message, or maybe it just gives it temporarily on slow connections

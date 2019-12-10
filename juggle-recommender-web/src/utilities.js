@@ -90,7 +90,11 @@ class Utilities{
     let toReturn
     let colonMin = Math.floor(seconds/60)
     let colonSec = seconds%60
-    toReturn = colonMin.toString() + ":" + colonSec.toString()
+    let colonSecZeroBuffer = ""
+    if (colonSec < 10){
+      colonSecZeroBuffer = "0"
+    }
+    toReturn = colonMin.toString() + ":" + colonSecZeroBuffer + colonSec.toString()
     return toReturn
   }
   sendGA(cat, act, lab){
