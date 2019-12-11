@@ -6,7 +6,6 @@ v3.6
 =========
 
 minor todos:
-	-put a 0 before the seconds of filled in range time seconds that are less than 10
 	-if there is 1 item in an autocomplete list, enter should select that item
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned

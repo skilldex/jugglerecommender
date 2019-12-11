@@ -544,12 +544,12 @@ class AddTrickForm extends Component {
 		else if (tag === 'apecross'){inferredTag = 'body-throw'}
 		else if (tag === 'backcross'){inferredTag = 'body-throw'}
 		else if (tag === 'overhead'){inferredTag = 'body-throw'}
+		else if (tag === 'shower'){inferredTag = 'ss1'}
 		if (inferredTag && !this.state.tags.includes(inferredTag)){
 			this.setAutoCompletedTag(inferredTag)
 			messageStore.addMessageToQueue('added automatically');
 			uiStore.setInferredFadeTag(inferredTag)
-		}
-		
+		}		
 	}
 
 	setAutoCompletedTag=(tag, isMounting)=>{
