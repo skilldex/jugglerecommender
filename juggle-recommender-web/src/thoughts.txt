@@ -182,6 +182,7 @@ DB Changes(Straight-forwrard):
 	-there is another trick in heidiskaffe video(not in detials entry, just in that same vid)
 
 DB changes(Consideration required):	
+	-maybe change the tag 'ss1' to zip
 	-4440522 needs new name
 	-5344 needs a new name
 	-413333333 needs new name	
