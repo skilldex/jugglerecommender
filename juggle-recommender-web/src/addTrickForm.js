@@ -586,19 +586,17 @@ class AddTrickForm extends Component {
 
     onNameInputKeyPress=(target)=> {
 	    // If enter pressed
-	    if(target.charCode===13){  
-			this.setState({
-				autoCompletedName : true
-			})
+	    if(target.charCode===13 &&  
+	    	uiStore.autocompleteMatchedNames.length === 1){
+			this.setAutoCompletedName(uiStore.autocompleteMatchedNames[0])
 			this.checkIfFormIsSubmittable()
 	    }
 	}
 	 onTagInputKeyPress=(target)=> {
 	    // If enter pressed
-	    if(target.charCode===13){  
-			this.setState({
-				autoCompletedTag : true
-			})
+	    if(target.charCode===13 &&  
+	    	uiStore.autocompleteMatchedNames.length === 1){
+			this.setAutoCompletedTag(uiStore.autocompleteMatchedNames[0])
 			this.checkIfFormIsSubmittable()
 	    }
 	}

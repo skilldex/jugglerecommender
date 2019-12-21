@@ -51,6 +51,7 @@ class AutoComplete extends Component {
 	}
 
 	render() {		
+		let matchedLowerCaseNames = []
 		let matchedNames = []
 		const options = []
 		const lowerCaseInput = this.props.input.toLowerCase()		
@@ -81,9 +82,10 @@ class AutoComplete extends Component {
 		 			name = name.slice(0,ballMatch.index)
 		 		}
 		 		const relevance = utilities.compareStrings(lowerCaseInput, lowerCaseName)
-		 		if(relevance !== null && !matchedNames.includes(lowerCaseName)){
+		 		if(relevance !== null && !matchedLowerCaseNames.includes(lowerCaseName)){
 		 			const matchIndex = lowerCaseName.includes(lowerCaseInput) ? lowerCaseName.indexOf(lowerCaseInput) :-1
-		 			matchedNames.push(lowerCaseName)
+		 			matchedLowerCaseNames.push(lowerCaseName)
+					matchedNames.push(name)
 	 				options.push(
 	 					<div className="option"
 	 						key={name}

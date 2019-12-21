@@ -50,9 +50,15 @@ class SmallTrickList extends Component {
 			uiStore.selectTrick(null)
 		}
 	}
-	onInputKeyPress=()=>{
+	onInputKeyPress=(target)=>{
 		if (this.props.listType.includes('Details')){
 			uiStore.clearSuggestions(this.props.listType)
+		}
+		if(target.charCode===13){ 
+			const tricksToList = this.getTricksToList()
+			if (tricksToList.length === 1){
+				this.addToList(tricksToList[0])
+			}
 		}
 	}
 
@@ -269,7 +275,7 @@ class SmallTrickList extends Component {
 				<input 	id ="smallListInput"
 						autoComplete="off"
 						className="smallListInput" 
-						onKeyPress={this.onInputKeyPress}
+						onKeyPress={(e)=>this.onInputKeyPress(e)}
 						value={this.state.inputText} 
 						onChange={(e)=>this.handleInputChange(e)}
 						onClick={this.handleInputClicked}
