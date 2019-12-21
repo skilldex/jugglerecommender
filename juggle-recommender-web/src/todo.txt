@@ -7,7 +7,6 @@ v3.6
 
 minor todos:
 	-hitting x on a tag in the filter closes the filter
-	-if there is 1 item in an autocomplete list, enter should select that item
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
 	-clicking tags/contributors inputs in filter should show all
