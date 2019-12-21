@@ -1,5 +1,6 @@
 import React,{Component} from 'react'
 import store from "./stores/store"
+import uiStore from './stores/uiStore'
 import './App.css';
 import './autoComplete.css'
 import utilities from './utilities'
@@ -99,6 +100,7 @@ class AutoComplete extends Component {
 	 				)		 			
 		 		}				
  			})
+ 			uiStore.setAutocompleteMatchedNames(matchedNames)
 	 	}
 		return (
 			<div className = "options">

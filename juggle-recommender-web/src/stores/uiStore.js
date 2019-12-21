@@ -56,6 +56,8 @@ class UIStore {
  	@observable addTrickFormPostreqs = []	    
     @observable smallListPageNumber = 0
     @observable rootTrickRelevance = {}
+
+    @observable autocompleteMatchedNames = []
     
     @action clearAddTrickSmallTrickLists=()=>{
     	this.addTrickFormPrereqs = []
@@ -669,7 +671,11 @@ class UIStore {
 
 		return (tagsInFilter.length >= filterTagNames.length || 
 				filterTagNames.length === 0)
-	}			
+	}		
+
+	@action setAutocompleteMatchedNames=(matchedNames)=>{
+		this.autocompleteMatchedNames = matchedNames
+	}	
 
 	@action passesNumBallFilter=(num)=>{
 		return (filterStore.numBalls.includes(num) || filterStore.numBalls.length === 0)

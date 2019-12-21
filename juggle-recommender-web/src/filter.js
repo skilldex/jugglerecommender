@@ -197,17 +197,25 @@ class Filter extends Component {
 	    // If enter pressed
 	    if(target.charCode===13){  
 		    if(tagType === 'tags'){
-				this.setState({
-					autoCompletedTag : true
-				})
+		    	if (uiStore.autocompleteMatchedNames.length === 1){
+			    	this.setAutoCompletedTag(store.tagsSuggestions,
+											filterStore.tags,
+											'tags',
+											uiStore.autocompleteMatchedNames[0])
+					this.setState({
+						autoCompletedTag : true
+					})
+				}
 			}else if(tagType === 'contributor'){
-				this.setState({
-					autoCompletedContributor : true
-				})
-			}else if(tagType === 'demoType'){
-				this.setState({
-					autoCompletedDemoType : true
-				})
+		    	if (uiStore.autocompleteMatchedNames.length === 1){
+			    	this.setAutoCompletedTag(store.contributorTags,
+											filterStore.contributors,
+											'contributor',
+											uiStore.autocompleteMatchedNames[0])
+					this.setState({
+						autoCompletedContributor : true
+					})
+				}
 			}
 	    }
 	}
