@@ -25,10 +25,10 @@ class Filter extends Component {
       	demoTypesTags: ['All', 'User Video','Juggling Lab'],
 		tagInput:'',
 		autoCompletedTag : false,
-		showTagAutocomplete: false,
+		clickedTagInput: false,
 		contributorInput:'',
 		autoCompletedContributor : false,
-		showContributorAutocomplete: false,
+		clickedContributorInput: false,
 		demoTypeInput:'',
 		autoCompleteddemoType : false,
   	}
@@ -198,20 +198,20 @@ class Filter extends Component {
 		if (tagType == 'tags') {
 			this.setState({
 				autoCompletedTag : false,
-				showTagAutocomplete: true
+				clickedTagInput: true
 			})
 		} else if (tagType == 'contributor') {
 			this.setState({
 				autoCompletedContributor : false,
-				showContributorAutocomplete: true
+				clickedContributorInput: true
 			})
 		}
 	}
 
 	handleOnBlurTag=()=> {
 		this.setState({
-			showTagAutocomplete: false,
-			showContributorAutocomplete: false
+			clickedTagInput: false,
+			clickedContributorInput: false
 		})
 	}
 
@@ -253,7 +253,7 @@ class Filter extends Component {
 			        }}
 			   />				
 		 )
-		const autoCompleteTags = (this.state.tagInput || this.state.showTagAutocomplete) && !this.state.autoCompletedTag ? 
+		const autoCompleteTags = (this.state.tagInput || this.state.clickedTagInput) && !this.state.autoCompletedTag ? 
 			<AutoComplete 
 				optionsListType = 'tags'
 				optionsList = {store.tagsSuggestions}
@@ -297,7 +297,7 @@ class Filter extends Component {
 								{autoCompleteTags}
 							</div>
 
-		const autoCompleteContributor = (this.state.contributorInput || this.state.showContributorAutocomplete) && 
+		const autoCompleteContributor = (this.state.contributorInput || this.state.clickedContributorInput) && 
 										!this.state.autoCompletedContributor ? 
 					<AutoComplete 
 						optionsListType = 'tags'
