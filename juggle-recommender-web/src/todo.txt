@@ -9,8 +9,6 @@ minor todos:
 	-hitting x on a tag in the filter closes the filter
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
-	-clicking tags/contributors inputs in filter should show all
-		-right now this happens when just a single character is input, not on click
 
 todos:
 	-make autocomplete search match words individually instead of as solid strings

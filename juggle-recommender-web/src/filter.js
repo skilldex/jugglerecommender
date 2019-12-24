@@ -25,8 +25,10 @@ class Filter extends Component {
       	demoTypesTags: ['All', 'User Video','Juggling Lab'],
 		tagInput:'',
 		autoCompletedTag : false,
+		clickedTagInput: false,
 		contributorInput:'',
 		autoCompletedContributor : false,
+		clickedContributorInput: false,
 		demoTypeInput:'',
 		autoCompleteddemoType : false,
   	}
@@ -192,6 +194,26 @@ class Filter extends Component {
 		}
 	}
 
+	onInputClick=(tagType, e)=> {
+		if (tagType == 'tags') {
+			this.setState({
+				autoCompletedTag : false,
+				clickedTagInput: true
+			})
+		} else if (tagType == 'contributor') {
+			this.setState({
+				autoCompletedContributor : false,
+				clickedContributorInput: true
+			})
+		}
+	}
+
+	handleOnBlurTag=()=> {
+		this.setState({
+			clickedTagInput: false,
+			clickedContributorInput: false
+		})
+	}
 
 	onTagInputKeyPress=(tagType, target)=> {
 	    // If enter pressed
@@ -231,7 +253,7 @@ class Filter extends Component {
 			        }}
 			   />				
 		 )
-		const autoCompleteTags = this.state.tagInput && !this.state.autoCompletedTag ? 
+		const autoCompleteTags = (this.state.tagInput || this.state.clickedTagInput) && !this.state.autoCompletedTag ? 
 			<AutoComplete 
 				optionsListType = 'tags'
 				optionsList = {store.tagsSuggestions}
@@ -266,6 +288,7 @@ class Filter extends Component {
 								</div>	
 								{addedTags}
 								<input className="formInputs" 
+										onClick={(e)=>this.onInputClick('tags',e)}
 										onKeyPress={(e)=>this.onTagInputKeyPress('tags',e)}
 										value={this.state.tagInput} 
 										onChange={(e)=>this.handleTagChange('tags',e)}
@@ -274,7 +297,7 @@ class Filter extends Component {
 								{autoCompleteTags}
 							</div>
 
-		const autoCompleteContributor = this.state.contributorInput && 
+		const autoCompleteContributor = (this.state.contributorInput || this.state.clickedContributorInput) && 
 										!this.state.autoCompletedContributor ? 
 					<AutoComplete 
 						optionsListType = 'tags'
@@ -309,6 +332,7 @@ class Filter extends Component {
 									</div>	
 									{addedContributors}
 									<input className="formInputs" 
+											onClick={(e)=>this.onInputClick('contributor',e)}
 											onKeyPress={(e)=>this.onTagInputKeyPress('contributor',e)}
 											value={this.state.contributorInput} 
 											onChange={(e)=>this.handleTagChange('contributor',e)}
