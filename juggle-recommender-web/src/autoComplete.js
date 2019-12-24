@@ -57,7 +57,7 @@ class AutoComplete extends Component {
 		const lowerCaseInput = this.props.input.toLowerCase()		
 		const sortedOptionsList = this.sortOptionsList()
 		//this is for the demo type dropdown, show all its options no matter the user input
-		if (this.props.optionsList.length < 4 || lowerCaseInput.length < 2){
+		if (this.props.optionsList.length < 4 || lowerCaseInput.length < 1){
 			this.props.optionsList.forEach((name, i)=>{
  				options.push(
  					<div className="option"
