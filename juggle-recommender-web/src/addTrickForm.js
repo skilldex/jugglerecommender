@@ -588,7 +588,10 @@ class AddTrickForm extends Component {
 	    // If enter pressed
 	    if(target.charCode===13 &&  
 	    	uiStore.autocompleteMatchedNames.length === 1){
-			this.setAutoCompletedName(uiStore.autocompleteMatchedNames[0])
+			//this.setAutoCompletedName(uiStore.autocompleteMatchedNames[0])
+			this.setState({
+				autoCompletedName : true
+			})
 			this.checkIfFormIsSubmittable()
 	    }
 	}
