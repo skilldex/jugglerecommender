@@ -324,7 +324,7 @@ class FilterStore {
 		uiStore.resetSelectedTrick()
 		uiStore.updateRootTricks()
 		uiStore.setFilterURL()
-		uiStore.showPatternList()
+		//uiStore.showPatternList()
 	}
 	@action setFlair=(flair)=>{
 		this.flair = flair
