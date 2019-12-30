@@ -122,11 +122,13 @@ To add to db (Some Filmed, Some found)
 	Freeze Stuff
 
 TO FILM:
-	Bumble paper 2.0
 	multiplex patterns from that post
 	multiplex patterns from paper
 	factory paper
 
+Retroactively Added Tags:
+DONE: backcross, scarf, 423, shoulder, neck pass, neck throw, neck catch, blind, tennis
+NOT DONE: foot, synch, reverse?
 
 Come up with more continuums:
 
