@@ -5,6 +5,8 @@ v3.6
 
 =========
 
+test push
+
 minor todos:
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
