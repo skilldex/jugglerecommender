@@ -7,6 +7,12 @@ v3.6
 minor todos:
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
+	-clicking a relationship pattern to add in details isnt putting full trick name in input
+	-automatically add multiplex / synch for siteswaps with them
+	-if a tag is used in the name of a trick then it should be automatically added to tags
+	-if there is nothing typed into an input and you click an autocomplete item. It doesnt work.
+	-Reply to comment broken if not signed in
+
 
 todos:
 	-make autocomplete search match words individually instead of as solid strings

@@ -87,7 +87,9 @@ class Comments extends Component {
                             <label className="commentText">{comment.comment}</label>
                         </div>
                         <div className="commentButtons">   
+                            {authStore.user ?
                             <button className="replyButton" onClick={()=>{this.enableReply(comment.key)}}>Reply</button>
+                            : null}
                             <span className="date">{this.getTimeDiff(comment.date)}</span>
                         </div>
                         { 
