@@ -11,7 +11,11 @@ minor todos:
 	-automatically add multiplex / synch for siteswaps with them
 	-if a tag is used in the name of a trick then it should be automatically added to tags
 	-if there is nothing typed into an input and you click an autocomplete item. It doesnt work.
-	-Reply to comment broken if not signed in
+
+issue:
+	-when i try to do this on new comp it doesnt work:
+	pscp -r ./build/* tj@45.33.81.74:/var/www/skilldex/
+		./build/*: No such file or directory
 
 
 todos:
