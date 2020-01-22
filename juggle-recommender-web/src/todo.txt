@@ -5,6 +5,7 @@ v3.6
 
 =========
 minor todos:
+	-if 423 is the siteswap, make it a tag automatically
 	-on mobile the back arrow is not lined up with the word 'back'
 		-on PC stats back arrow/word alignment is different than details and profile, but not sure which is better aligned
 	-clicking a relationship pattern to add in details isnt putting full trick name in input
