@@ -216,6 +216,9 @@ class AddTrickForm extends Component {
 		},this.checkIfFormIsSubmittable)
 	}
 	handleSSChange=(e)=>{
+		if (e.target.value.includes("423")) {
+			this.setAutoCompletedTag("423")
+		}
 		this.setState({
 			siteswap:e.target.value
 		})
