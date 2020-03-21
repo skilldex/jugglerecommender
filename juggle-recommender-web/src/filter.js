@@ -15,6 +15,8 @@ import ninjaIcon from './images/ninjaIcon.svg'
 import starIcon from './images/starIcon.svg'
 import catchesIcon from './images/catchesIcon.svg'
 import AutoComplete from './autoComplete'
+import {DebounceInput} from 'react-debounce-input';
+
 
 @observer
 class Filter extends Component {
@@ -485,21 +487,32 @@ class Filter extends Component {
 		const catchesSection = <div>
 									<h3 className="filterHeader">Catches</h3>
 									<span>Min</span>
-									<input className="catchesInput" 
-											type = "number"
-											id = "minCatchesInput"
-											min = {0}
-											max = {filterStore.maxCatches} 
-											value={filterStore.minCatches} 
-											onChange={(e)=>this.handleMinCatchesChange(e)}/>
+					                <DebounceInput
+					                  id = "minCatchesInput" 
+					                  type = "number"
+					                  name = "minCatchesInput"
+					                  autoComplete="new-password"
+					                  className="catchesInput"
+					                  min = {0}
+									  max = {filterStore.maxCatches} 
+									  value={filterStore.minCatches} 
+					                  minLength={1}
+					                  debounceTimeout={store.isMobile ? 750 : 300}
+					                  onChange={(e)=>this.handleMinCatchesChange(e)}
+					                />
 									<span>Max</span>
-									<input className="catchesInput" 
-											id = "maxCatchesInput"
-											min = {filterStore.minCatches}
-											type = "number" 
-											value={filterStore.maxCatches} 
-											onChange={(e)=>this.handleMaxCatchesChange(e)}
-									/>
+					                <DebounceInput
+					                  id = "maxCatchesInput" 
+					                  type = "number"
+					                  name = "maxCatchesInput"
+					                  autoComplete="new-password"
+					                  className="catchesInput"
+					                  min = {filterStore.minCatches}
+									  value={filterStore.maxCatches} 
+					                  minLength={1}
+					                  debounceTimeout={store.isMobile ? 750 : 300}
+					                  onChange={(e)=>this.handleMaxCatchesChange(e)}
+					                />
 								</div>
 
 		const hasTutorialSection = 	 
