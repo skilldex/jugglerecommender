@@ -4,7 +4,7 @@ v3.6
 			ian has code for this
 
 =========
-there is a bug with setting the max to higher than the min via temporarily having the max lower than the min
+fix the weirdness when suggesting a prereq
 
 minor todos:
 	-on mobile the back arrow is not lined up with the word 'back'
