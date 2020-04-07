@@ -39,7 +39,7 @@ class TrickList extends Component {
 	    }, 100);		
 	}
 
-	openDetail=(trickKey)=>{
+	openDetail=(trickKey,e)=>{
 		utilities.sendGA('list ' + this.props.listType,'opened detail','list ' + this.props.listType + ' ' + trickKey)
 		if (this.props.listType === "main"){
 			uiStore.setMainListScrollerPosition(document.body.getBoundingClientRect().top)
@@ -53,6 +53,10 @@ class TrickList extends Component {
 	    	document.getElementById('detailDiv').scrollTop = 0
 	    }
 	    store.increaseViewsCounter()
+	   	if (e.ctrlKey){
+		    window.open(window.location.href, "_blank")
+		    uiStore.handleBackButtonClick()
+		}
 	}
 
 	expandCard=(trickKey)=> {
@@ -171,7 +175,7 @@ class TrickList extends Component {
 					<div className= {listCardClass}
 						 key={trickKey + "div"} 
 						 id={trickKey + "listCard"}
-						 onClick={(e)=>{this.openDetail(trickKey)}}
+						 onClick={(e)=>{this.openDetail(trickKey,e)}}
 					>	
 						<div className="mainCard">
 							<div className="unexpandedSection">
