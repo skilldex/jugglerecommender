@@ -4,7 +4,11 @@ v3.6
 			ian has code for this
 
 =========
+when the clubs tag is used, make it say (2c),(3c).. instead of (#b)
+make a balls tag in the filter that gets rid of anything that is a prop that is not balls
+	it should be assumed that if there is no prop tag then it is balls
 fix the weirdness when suggesting a prereq
+
 
 minor todos:
 	-on mobile the back arrow is not lined up with the word 'back'
