@@ -398,7 +398,7 @@ class Filter extends Component {
 		)},this);	
 		const numSection = <div>
 								<div>
-									<h3 className="filterHeader">Number of balls</h3>
+									<h3 className="filterHeader">Number of objects</h3>
 								</div>
 								{numButtons}
 							</div>
