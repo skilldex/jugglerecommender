@@ -63,7 +63,7 @@ class AddTrickForm extends Component {
 				autoCompletedName : true
 			})
 			let propLetter = "b"
-			if (this.state.tags.includes("clubs")){
+			if (trick.tags.includes("clubs")){
 				propLetter = "c"
 			}
 			if (trick.name.endsWith(propLetter+")")){
