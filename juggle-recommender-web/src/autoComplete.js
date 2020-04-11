@@ -77,9 +77,14 @@ class AutoComplete extends Component {
 			 	}
 		 		let lowerCaseName = name.toLowerCase()
 		 		const ballMatch = lowerCaseName.match(/\(\d+b\)$/)
+		 		const clubMatch = lowerCaseName.match(/\(\d+c\)$/)
 		 		if(ballMatch){
 		 			lowerCaseName = lowerCaseName.slice(0,ballMatch.index)
 		 			name = name.slice(0,ballMatch.index)
+		 		}
+		 		if(clubMatch){
+		 			lowerCaseName = lowerCaseName.slice(0,clubMatch.index)
+		 			name = name.slice(0,clubMatch.index)
 		 		}
 		 		const relevance = utilities.compareStrings(lowerCaseInput, lowerCaseName)
 		 		if(relevance !== null && !matchedLowerCaseNames.includes(lowerCaseName)){
