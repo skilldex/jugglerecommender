@@ -62,7 +62,11 @@ class AddTrickForm extends Component {
 			this.setState({
 				autoCompletedName : true
 			})
-			if (trick.name.endsWith("b)")){
+			let propLetter = "b"
+			if (this.state.tags.includes("clubs")){
+				propLetter = "c"
+			}
+			if (trick.name.endsWith(propLetter+")")){
 				trick.name = trick.name.substr(0, trick.name.lastIndexOf("("))
 				this.setState({
 					name : trick.name,
@@ -269,11 +273,15 @@ class AddTrickForm extends Component {
 			let tricksInLibraryModifiedName = []
 			for (let key in store.library) {
 				let modifiedKey = key.toLowerCase()
-				if (modifiedKey.includes("b)")){
+				let propLetter = "b"
+				if (this.state.tags.includes("clubs")){
+					propLetter = "c"
+				}
+				if (modifiedKey.includes(propLetter+")")){
 					modifiedKey = modifiedKey.substr(0,modifiedKey.lastIndexOf("("))
 				}
 				let modifiedName = store.library[key].name.toLowerCase()
-				if (modifiedName.includes("b)")){
+				if (modifiedName.includes(propLetter+")")){
 					modifiedName = modifiedName.substr(0,modifiedName.lastIndexOf("("))
 				}
 			    tricksInLibraryKeys.push(key)
@@ -293,12 +301,22 @@ class AddTrickForm extends Component {
     			}
 			});
     		const stateNum = this.state.num
+    		let propLetter = "b"
+			if (this.state.tags.includes("clubs")){
+				propLetter = "c"
+			}
     		let patternAlreadyExists = false
     		if (indecesToCheck.length>0){
     			indecesToCheck.forEach(function (item, index) {
-	    			if (parseInt(stateNum,10) === 
-	    				parseInt(store.library[tricksInLibraryKeys[item]].num,10) ||
-	    				store.library[tricksInLibraryKeys[item]+"("+stateNum+"b)"]){
+    				let existingPatternPropLetter = "b"
+    				if (store.library[tricksInLibraryKeys[item]].tags &&
+    					store.library[tricksInLibraryKeys[item]].tags.includes("clubs")){
+    					existingPatternPropLetter = "c"
+    				}
+	    			if ((parseInt(stateNum,10) === 
+	    				parseInt(store.library[tricksInLibraryKeys[item]].num,10) &&
+	    				propLetter === existingPatternPropLetter) ||
+	    				store.library[tricksInLibraryKeys[item]+"("+stateNum+propLetter+")"]){
 	    				patternAlreadyExists = true
 					}
 				});
@@ -432,8 +450,12 @@ class AddTrickForm extends Component {
 			});
 
 			let suffix = ""
-			if (this.state.num.toString() !== "3"){
-				suffix = "("+this.state.num+"b)"
+			let propLetter = "b"
+			if (this.state.tags.includes("clubs")){
+				propLetter = "c"
+			}
+			if (this.state.num.toString() !== "3" || propLetter === "c"){
+				suffix = "("+this.state.num+propLetter+")"
 			}
 			const date = new Date()
 			const name = this.state.name.charAt(0).toUpperCase()+this.state.name.slice(1)+suffix
@@ -556,13 +578,14 @@ class AddTrickForm extends Component {
 			this.setAutoCompletedTag(inferredTag)
 			messageStore.addMessageToQueue('added automatically');
 			uiStore.setInferredFadeTag(inferredTag)
-		}		
+		}
+
 	}
 
 	setAutoCompletedTag=(tag, isMounting)=>{
 		if (store.tagsSuggestions.includes(tag) &&
 			!this.state.tags.includes(tag)){
-		        this.setState(state => ({ tags: [...state.tags, tag] }));
+		        this.setState(state => ({ tags: [...state.tags, tag] }),this.checkIfFormIsSubmittable);
 			        this.checkIfFormIsSubmittable()
 			        this.setState({
 						autoCompletedTag : true,
@@ -572,6 +595,7 @@ class AddTrickForm extends Component {
 					this.addInferredTag(tag)	
 				}
 	    }
+	    this.checkIfFormIsSubmittable()
 	}
 
 
@@ -582,14 +606,16 @@ class AddTrickForm extends Component {
 		  newTagList.splice(index, 1);
 		}
 		this.setState({tags:newTagList})
+		this.checkIfFormIsSubmittable()
     }
 
     handleTagChange=(e)=>{
 		this.setState({
 			tagInput:e.target.value,
 			autoCompletedTag : false
-		})		
+		},this.checkIfFormIsSubmittable)
 	}
+
 
     onNameInputKeyPress=(target)=> {
 	    // If enter pressed
@@ -852,7 +878,7 @@ class AddTrickForm extends Component {
 							<div className="smallInputsDiv">
 								<div className="inputContainer1">
 									<span className="redText">*</span>
-									<span className="inputLabel">Number of balls</span>
+									<span className="inputLabel">Number of {this.state.tags.includes("clubs")?"clubs":"balls"}</span>
 									<span className="warning">{this.state.numErrorMessage? this.state.numErrorMessage:"\u00A0"}</span>							
 									<input className="smallInput" 
 											id="numInput"
