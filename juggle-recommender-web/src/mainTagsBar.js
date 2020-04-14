@@ -134,7 +134,7 @@ class MainTagsBar extends Component {
         filterStore.numBalls.forEach((numBall,i)=>{
           filterTags.push(
                 <div className="tagDiv" key={numBall}>
-                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.numBalls[i]} Balls</span>
+                  <span className="mainTagsName"onClick={()=>{uiStore.toggleFilterDiv()}}> {filterStore.numBalls[i]} Objects</span>
                   <label className="mainTagsX"onClick={()=>this.numButtonClicked(filterStore.numBalls[i])}> x </label>
                 </div>      
           )

@@ -398,6 +398,8 @@ class Detail extends Component {
                              </div>
                   }) : null
 
+    const propType = detailTrick.tags.includes("clubs") ? "Clubs" : "Balls"
+
     let tutorialSite
     if (detailTrick && detailTrick.url && detailTrick.url.includes('.')){
       if (detailTrick.url.includes('www')){
@@ -474,7 +476,7 @@ class Detail extends Component {
                             {uiStore.showMoreInformation?
                               <div className="moreInfoDiv">                   
                                 <label className="detailLabel">Difficulty </label>{detailTrick.difficulty} / 10<br/>
-                                <label className="detailLabel"># of Balls </label>
+                                <label className="detailLabel"># of {propType} </label>
                                 <label className= "clickableProperty"
                                      onClick = {()=>this.trickPropertyClicked('ballNum', detailTrick.num)}>
                                 {detailTrick.num}
