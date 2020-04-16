@@ -108,7 +108,7 @@ class Stats extends Component {
 					>
 						<label className= "statsLabelButton"
 								onClick = {()=>this.statsLabelButtonClicked('ballNum', key)}>
-							{key} Balls
+							{key} Objects
 						</label>  
 						<div className = "statsValues">
 							{this.state.ballNumCounter[key]} 
@@ -142,7 +142,7 @@ class Stats extends Component {
 					<label className="mainIndividualStats"><b>Patterns</b> {store.patternCount}</label>
 					<label className="mainIndividualStats"><b>Catches</b> {store.totalCatchCount}</label>
 				</div>
-				<h3>By Numbers of Balls</h3>
+				<h3>By Numbers of Objects</h3>
 				{ballNumStats}
 				<h3>By Contributor</h3>
 				{contributorsStats}
