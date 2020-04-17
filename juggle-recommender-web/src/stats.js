@@ -108,7 +108,7 @@ class Stats extends Component {
 					>
 						<label className= "statsLabelButton"
 								onClick = {()=>this.statsLabelButtonClicked('ballNum', key)}>
-							{key} Objects
+							{key} Objs
 						</label>  
 						<div className = "statsValues">
 							{this.state.ballNumCounter[key]} 
