@@ -1574,6 +1574,12 @@
       "gifUrl" : "http://www.libraryofjuggling.com/JugglingGifs/3balltricks/423.gif",
       "name" : "423",
       "num" : 3,
+      "prereqs" : {
+        "4030223(2b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
       "siteswap" : "423",
       "tags" : [ "423", "pure-ss" ],
       "timeSubmitted" : 0,
@@ -1582,7 +1588,7 @@
       "usersWithCatches" : 6,
       "usersWorkingOn" : 15,
       "video" : "https://www.instagram.com/p/BKjG2jbjiRV/",
-      "views" : 155
+      "views" : 156
     },
     "441" : {
       "contributor" : "JuggleKraze_",
@@ -13206,6 +13212,10 @@
         "42333 Behind Back" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
+        },
+        "Behind Back Tennis" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "difficulty" : "3.9",
@@ -13213,6 +13223,10 @@
       "name" : "4030223 With 4s Caught And Thrown Behind Back(2b)",
       "num" : 2,
       "prereqs" : {
+        "4030223(2b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Same Side Catch + Throw Behind Back(1b)" : {
           "source" : "automatic",
           "upvoters" : [ "tjthejuggler" ]
@@ -13229,6 +13243,45 @@
       "videoEndTime" : 39,
       "videoStartTime" : 28,
       "views" : 6
+    },
+    "4030223(2b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : {
+        "423" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "4030223 With 4s Caught And Thrown Behind Back(2b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "The W" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "difficulty" : 3.4,
+      "explanation" : "",
+      "gifUrl" : "https://jugglinglab.org/anim?4030223",
+      "name" : "4030223(2b)",
+      "num" : 2,
+      "prereqs" : {
+        "Normal(1b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "4030223",
+      "tags" : [ "pure-ss", "symmetric" ],
+      "timeSubmitted" : 1587771181683,
+      "timeUpdated" : 1587771181683,
+      "url" : "",
+      "usersWithCatches" : 1,
+      "usersWorkingOn" : 1,
+      "video" : "https://www.youtube.com/watch?v=gNh32qo1zfc",
+      "videoEndTime" : 44,
+      "videoStartTime" : 0,
+      "views" : 1
     },
     "423 Active 2 Claw Around the Arm" : {
       "contributor" : "juggling_vegan_",
@@ -13405,6 +13458,10 @@
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
         },
+        "Behind Back Tennis" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Neck Pass Tennis" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -13453,7 +13510,7 @@
       "video" : "https://www.youtube.com/watch?v=JKft242si68",
       "videoEndTime" : 54,
       "videoStartTime" : 40,
-      "views" : 7
+      "views" : 8
     },
     "423 Contortion Variation" : {
       "contributor" : "juggling_vegan_",
@@ -15490,6 +15547,10 @@
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
         },
+        "Behind Back Tennis" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Neck Pass + Reverse Backcross + Backcross" : {
           "source" : "automatic",
           "upvoters" : [ "tjthejuggler" ]
@@ -15569,7 +15630,7 @@
       "video" : "https://www.youtube.com/watch?v=nTZ8Ydb58f4",
       "videoEndTime" : 78,
       "videoStartTime" : 65,
-      "views" : 3
+      "views" : 4
     },
     "42333 With A Neck Pass + Neck Catch + Neck Throw" : {
       "contributor" : "matanjuggles_",
@@ -15780,7 +15841,7 @@
       "url" : "",
       "usersWithCatches" : 0,
       "video" : "https://www.instagram.com/p/Bp-8JiTgqUQ/",
-      "views" : 7
+      "views" : 8
     },
     "423ish Underarm Factory" : {
       "contributor" : "nycjuggler_",
@@ -19657,6 +19718,30 @@
       "videoEndTime" : 156,
       "videoStartTime" : 135,
       "views" : 55
+    },
+    "5340 With Raised Hand Bumbled 5" : {
+      "contributor" : "tjthejuggler",
+      "difficulty" : "4.0",
+      "explanation" : "",
+      "name" : "5340 With Raised Hand Bumbled 5",
+      "num" : 3,
+      "prereqs" : {
+        "Bumble Tennis" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "5340",
+      "tags" : [ "bumble", "asymmetric" ],
+      "timeSubmitted" : 1587771377531,
+      "timeUpdated" : 1587771377531,
+      "url" : "",
+      "usersWithCatches" : 1,
+      "usersWorkingOn" : 1,
+      "video" : "https://www.youtube.com/watch?v=gNh32qo1zfc",
+      "videoEndTime" : 68,
+      "videoStartTime" : 44,
+      "views" : 1
     },
     "5344(4b)" : {
       "contributor" : "stefanlethra_",
@@ -26997,7 +27082,7 @@
       "url" : "",
       "usersWithCatches" : 0,
       "video" : "https://www.instagram.com/p/Bs4fowOgLNP/",
-      "views" : 7
+      "views" : 8
     },
     "Asymmetric 441 Lemming Drop" : {
       "contributor" : "tjthejuggler",
@@ -30962,6 +31047,10 @@
           "source" : "automatic",
           "upvoters" : [ "tjthejuggler" ]
         },
+        "Behind Back Tennis" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Bumble Backcross Tennis" : {
           "source" : "automatic",
           "upvoters" : [ "tjthejuggler" ]
@@ -31783,6 +31872,10 @@
       "name" : "Behind Back Neck Pass Tennis",
       "num" : "3",
       "prereqs" : {
+        "Behind Back Tennis" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Neck Pass Tennis" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -31799,6 +31892,48 @@
       "videoEndTime" : 311,
       "videoStartTime" : 303,
       "views" : 9
+    },
+    "Behind Back Tennis" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : {
+        "423 Behind Back" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "42333 Behind Back" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Behind Back Neck Pass Tennis" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "difficulty" : "4.5",
+      "explanation" : "",
+      "name" : "Behind Back Tennis",
+      "num" : 3,
+      "prereqs" : {
+        "4030223 With 4s Caught And Thrown Behind Back(2b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Backcross Tennis" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "3",
+      "tags" : [ "backcross", "body-throw", "tennis" ],
+      "timeSubmitted" : 1587771559618,
+      "timeUpdated" : 1587771632164,
+      "url" : "",
+      "usersWithCatches" : 1,
+      "usersWorkingOn" : 1,
+      "video" : "https://www.youtube.com/watch?v=gNh32qo1zfc",
+      "videoEndTime" : 89,
+      "videoStartTime" : 0,
+      "views" : 1
     },
     "Behind Other Shoulder(1b)" : {
       "contributor" : "tjthejuggler",
@@ -34808,6 +34943,10 @@
           "source" : "automatic",
           "upvoters" : [ "tjthejuggler" ]
         },
+        "5340 With Raised Hand Bumbled 5" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Backcross Bumble Tennis" : {
           "source" : "automatic",
           "upvoters" : [ "tjthejuggler" ]
@@ -35768,6 +35907,40 @@
       "videoStartTime" : 148,
       "views" : 15
     },
+    "Bumbled Neck Throw Shoulder Bounce(1b)" : {
+      "contributor" : "tjthejuggler",
+      "dependents" : {
+        "Every Fourth Bumbled Neck Throw Shoulder Bounce" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "difficulty" : "2.7",
+      "explanation" : "",
+      "name" : "Bumbled Neck Throw Shoulder Bounce(1b)",
+      "num" : 1,
+      "prereqs" : {
+        "Bumbled Neck Throw(1b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        },
+        "Neck Throw Shoulder Bounce(1b)" : {
+          "source" : "contributed",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
+      "siteswap" : "300",
+      "tags" : [ "neck-throw", "body-throw", "bumble" ],
+      "timeSubmitted" : 1587771454920,
+      "timeUpdated" : 1587771454920,
+      "url" : "",
+      "usersWithCatches" : 1,
+      "usersWorkingOn" : 1,
+      "video" : "https://www.youtube.com/watch?v=gNh32qo1zfc",
+      "videoEndTime" : 89,
+      "videoStartTime" : 68,
+      "views" : 1
+    },
     "Bumbled Neck Throw Tennis" : {
       "contributor" : "tjthejuggler",
       "dependents" : {
@@ -35815,6 +35988,10 @@
     "Bumbled Neck Throw(1b)" : {
       "contributor" : "tjthejuggler",
       "dependents" : {
+        "Bumbled Neck Throw Shoulder Bounce(1b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Bumbled Neck Throw Tennis" : {
           "source" : "suggested"
         }
@@ -48923,7 +49100,7 @@
       "video" : "https://www.youtube.com/watch?v=43WwFxgY8ck",
       "videoEndTime" : 103,
       "videoStartTime" : 89,
-      "views" : 2
+      "views" : 3
     },
     "Every Fourth Bumble To Penguin" : {
       "contributor" : "tjthejuggler",
@@ -48956,6 +49133,10 @@
       "name" : "Every Fourth Bumbled Neck Throw Shoulder Bounce",
       "num" : 3,
       "prereqs" : {
+        "Bumbled Neck Throw Shoulder Bounce(1b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Bumbled Neck Throw Tennis" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -49843,7 +50024,7 @@
       "usersWithCatches" : 0,
       "usersWorkingOn" : 0,
       "video" : "https://www.instagram.com/p/BspDwi0gfXX/",
-      "views" : 8
+      "views" : 9
     },
     "Extended Reverse Slow Hector's Bisector" : {
       "contributor" : "JuggleKraze_",
@@ -60656,7 +60837,7 @@
       "video" : "https://www.youtube.com/watch?v=xP0VlzdjlEo",
       "videoEndTime" : 82,
       "videoStartTime" : 77,
-      "views" : 13
+      "views" : 14
     },
     "Inverted Box 41302" : {
       "contributor" : "stefanlethra_",
@@ -64038,7 +64219,7 @@
       "tags" : [ "crossed-arms", "ss1" ],
       "timeSubmitted" : 1560861103231,
       "video" : "https://www.instagram.com/p/BwdqXkEAIof/?igshid=ul41i2jk3dcv",
-      "views" : 19
+      "views" : 20
     },
     "Mangham's Mangle" : {
       "contributor" : "3ballpatterns_",
@@ -69936,6 +70117,12 @@
     },
     "Neck Throw Shoulder Bounce(1b)" : {
       "contributor" : "tjthejuggler",
+      "dependents" : {
+        "Bumbled Neck Throw Shoulder Bounce(1b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        }
+      },
       "difficulty" : "3.0",
       "explanation" : "",
       "name" : "Neck Throw Shoulder Bounce(1b)",
@@ -69960,7 +70147,7 @@
       "video" : "https://www.youtube.com/watch?v=43WwFxgY8ck",
       "videoEndTime" : 151,
       "videoStartTime" : 126,
-      "views" : 2
+      "views" : 3
     },
     "Neck Throw Tennis" : {
       "contributor" : "juggling_vegan_",
@@ -71248,6 +71435,10 @@
     "Normal(1b)" : {
       "contributor" : "tjthejuggler",
       "dependents" : {
+        "4030223(2b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
+        },
         "Backcross + Normal Exchange(2b)" : {
           "source" : "contributed",
           "upvoters" : [ "tjthejuggler" ]
@@ -93287,6 +93478,10 @@
         "423" : {
           "source" : "contributed",
           "upvoters" : [ "Ianbreal", "loj", "tjthejuggler" ]
+        },
+        "4030223(2b)" : {
+          "source" : "automatic",
+          "upvoters" : [ "tjthejuggler" ]
         }
       },
       "related" : {
@@ -98385,7 +98580,7 @@
       "usersWithCatches" : 2,
       "usersWorkingOn" : 2,
       "video" : "https://www.instagram.com/p/B2mHf0QgIH6/",
-      "views" : 19
+      "views" : 20
     },
     "Walter(4b)" : {
       "contributor" : "Pseudonym",
@@ -100805,6 +101000,10 @@
           "catches" : "72",
           "lastUpdated" : 1586829881320
         },
+        "4030223(2b)" : {
+          "catches" : "690",
+          "lastUpdated" : 1587771661260
+        },
         "423 Active 2 Claw Around the Arm" : {
           "catches" : "120",
           "lastUpdated" : 1568103399503
@@ -100960,8 +101159,8 @@
           "lastUpdated" : 1566984776418
         },
         "42333 With 4 Behind Shoulder" : {
-          "catches" : "32",
-          "lastUpdated" : 1573746914021
+          "catches" : "72",
+          "lastUpdated" : 1587762916440
         },
         "42333 With Second 3 Bumbled" : {
           "catches" : "120",
@@ -101198,6 +101397,10 @@
         "534(4b)" : {
           "catches" : "645",
           "lastUpdated" : 1571073804270
+        },
+        "5340 With Raised Hand Bumbled 5" : {
+          "catches" : "15",
+          "lastUpdated" : 1587771653803
         },
         "5344(4b)" : {
           "catches" : "80",
@@ -101772,6 +101975,10 @@
           "catches" : "8",
           "lastUpdated" : 1574362036778
         },
+        "Behind Back Tennis" : {
+          "catches" : "60",
+          "lastUpdated" : 1587771641118
+        },
         "Behind Other Shoulder(1b)" : {
           "catches" : "5",
           "lastUpdated" : 1573609469880
@@ -102066,6 +102273,10 @@
         "Bumbled Mills Mess" : {
           "catches" : "27",
           "lastUpdated" : 1585338625595
+        },
+        "Bumbled Neck Throw Shoulder Bounce(1b)" : {
+          "catches" : "16",
+          "lastUpdated" : 1587771647628
         },
         "Bumbled Neck Throw Tennis" : {
           "catches" : "78",
@@ -102896,8 +103107,8 @@
           "lastUpdated" : 1566421559628
         },
         "Every Fifth Triple Bumble" : {
-          "catches" : "85",
-          "lastUpdated" : 1587519048510
+          "catches" : "100",
+          "lastUpdated" : 1587763153556
         },
         "Every Fourth Bumble To Penguin" : {
           "catches" : "40",
@@ -109505,8 +109716,8 @@
     }
   },
   "stats" : {
-    "totalCatchCount" : 262073,
-    "userCount" : 3393
+    "totalCatchCount" : 262909,
+    "userCount" : 3491
   },
   "tags" : [ "common", "ss1", "columns", "crossed-arms", "synch", "wrist-drop", "multiplex", "body-throw", "slam", "claw", "orbit", "423", "carry", "underarm-catch", "chop", "collisions", "1up2up", "graphy", "raised-hand", "sprung", "armpit-throw", "claymotion", "stacked", "dots", "freeze", "2up-2down", "inverted", "contact", "semisolid", "symmetric", "asymmetric", "360", "contortion", "machine", "2T", "bounce-back", "self-slam", "swap", "pure-ss", "penguin", "shoulder-throw", "neck-throw", "neck-pass", "headplant", "underarm-throw", "meta-pattern", "polyrhythm", "squeeze", "stall", "slaps", "foot", "acro", "bumble", "extended-arm", "apecross", "micro", "backcross", "continuum", "clubs", "quickstart", "overhead", "blind", "two-person", "neck-catch", "under-the-leg", "stop-go", "pinball", "ending", "reverse", "scarf", "shower", "tennis", "backhand" ],
   "trickOfTheDay" : {
