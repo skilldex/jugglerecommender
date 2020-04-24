@@ -40,7 +40,7 @@ class AddTrickForm extends Component {
 		videoTimeErrorMessage:'',
 		timeSubmitted : "",
 		autoCompletedName : false,
-		autoCompletedTag : false,
+		autoCompletedTag : true,
 		trickNameBeingEdited: "",
 		showTimeInputs: false,
 		explanation: '',
@@ -636,6 +636,18 @@ class AddTrickForm extends Component {
 	    }
 	}
 
+	onTagInputClick=(e)=> {
+		this.setState({
+			autoCompletedTag : false
+		})
+	}
+
+	handleOnBlurTag=(e)=> {
+		this.setState({
+			autoCompletedTag : true
+		})		
+	}
+
 	render (){
 	    const backButton = <div className = "backButtonSurroundingDivAddTrick">
 		    					<img id="backButton" 
@@ -648,7 +660,7 @@ class AddTrickForm extends Component {
 			             		   onClick={()=>{ uiStore.handleBackButtonClick()}}>Back
 			             		</label>
 	                        </div>
-		const autoCompleteTags = this.state.tagInput && !this.state.autoCompletedTag ? 
+		const autoCompleteTags = !this.state.autoCompletedTag ? 
 			<AutoComplete 
 				optionsListType = 'tags'
 				optionsList = {store.tagsSuggestions}
@@ -688,6 +700,7 @@ class AddTrickForm extends Component {
 								</div>								
 								{addedTags}
 								<input className="formInputs" 
+										onClick={(e)=>this.onTagInputClick(e)}
 										onKeyPress={this.onTagInputKeyPress}
 										value={this.state.tagInput} 
 										onChange={this.handleTagChange}
