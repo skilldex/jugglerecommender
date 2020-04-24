@@ -26,13 +26,14 @@ class Filter extends Component {
       	filter: filterStore.flair,
       	demoTypesTags: ['All', 'User Video','Juggling Lab'],
 		tagInput:'',
-		autoCompletedTag : false,
+		autoCompletedTag : true,
 		clickedTagInput: false,
 		contributorInput:'',
-		autoCompletedContributor : false,
+		autoCompletedContributor : true,
 		clickedContributorInput: false,
 		demoTypeInput:'',
-		autoCompleteddemoType : false,
+		autoCompletedDemoType : true,
+		clickedDemoTypeInput: false,
   	}
 
 									         
@@ -189,6 +190,7 @@ class Filter extends Component {
 				autoCompletedContributor : false
 			})		
 		}else if(tagType === 'demoType'){
+			console.log("demotypesetfalse")
 			this.setState({
 				demoTypeInput:e.target.value,
 				autoCompletedDemoType : false
@@ -207,13 +209,22 @@ class Filter extends Component {
 				autoCompletedContributor : false,
 				clickedContributorInput: true
 			})
+		} else if (tagType == 'demo') {
+			this.setState({
+				autoCompletedDemoType : false,
+				clickedDemoTypeInput: true
+			})
 		}
 	}
 
 	handleOnBlurTag=()=> {
 		this.setState({
 			clickedTagInput: false,
-			clickedContributorInput: false
+			autoCompletedTag : true,
+			clickedContributorInput: false,
+			autoCompletedContributor : true,
+			clickedDemoTypeInput: false,
+			autoCompletedDemoType : true
 		})
 	}
 
@@ -255,7 +266,7 @@ class Filter extends Component {
 			        }}
 			   />				
 		 )
-		const autoCompleteTags = (this.state.tagInput || this.state.clickedTagInput) && !this.state.autoCompletedTag ? 
+		const autoCompleteTags =  !this.state.autoCompletedTag ? 
 			<AutoComplete 
 				optionsListType = 'tags'
 				optionsList = {store.tagsSuggestions}
@@ -299,8 +310,7 @@ class Filter extends Component {
 								{autoCompleteTags}
 							</div>
 
-		const autoCompleteContributor = (this.state.contributorInput || this.state.clickedContributorInput) && 
-										!this.state.autoCompletedContributor ? 
+		const autoCompleteContributor = !this.state.autoCompletedContributor ? 
 					<AutoComplete 
 						optionsListType = 'tags'
 						optionsList = {store.contributorTags}
@@ -343,8 +353,7 @@ class Filter extends Component {
 									{autoCompleteContributor}
 								</div>
 
-		const autoCompleteDemoType = this.state.demoTypeInput && 
-										!this.state.autoCompletedDemoType ? 
+		const autoCompleteDemoType = !this.state.autoCompletedDemoType ? 
 					<AutoComplete 
 						optionsListType = 'tags'
 						optionsList = {this.state.demoTypesTags}
@@ -379,6 +388,7 @@ class Filter extends Component {
 									</div>	
 									{addedDemoTypes}
 									<input className="formInputs" 
+											onClick={(e)=>this.onInputClick('demo',e)}
 											onKeyPress={(e)=>this.onTagInputKeyPress('demoType',e)}
 											value={this.state.demoTypeInput} 
 											onChange={(e)=>this.handleTagChange('demoType',e)}
