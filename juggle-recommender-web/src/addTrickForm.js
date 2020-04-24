@@ -407,6 +407,7 @@ class AddTrickForm extends Component {
 			    	document.getElementById('startTimeInput').focus()
 			    }
 		});
+		this.collapseTagAutoComplete()
   	}
 
 	submit=()=>{
@@ -642,7 +643,7 @@ class AddTrickForm extends Component {
 		})
 	}
 
-	handleOnBlurTag=(e)=> {
+	collapseTagAutoComplete=(e)=> {
 		this.setState({
 			autoCompletedTag : true
 		})		
@@ -704,7 +705,6 @@ class AddTrickForm extends Component {
 										onKeyPress={this.onTagInputKeyPress}
 										value={this.state.tagInput} 
 										onChange={this.handleTagChange}
-										onBlur={this.handleOnBlurTag}
 								/>
 								{autoCompleteTags}
 							</div>
@@ -828,7 +828,8 @@ class AddTrickForm extends Component {
 					<div className="form">
 						{backButton}
 						<h3>{titleText}</h3>
-						<div className="innerForm">
+						<div className="innerForm"
+							onClick={this.collapseTagAutoComplete}>
 							{store.editMods.includes(authStore.user.username) ? editModsContributorInput:null}
 							<div className="inputContainer">
 								<span className="redText">*</span>

@@ -43,6 +43,7 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
 	flairButtonClicked=(flair)=>{//TODO I just changed this to color up in state, need to keep doin that here
+		this.collapseTagAutoCompletes()
 		let tempFlair = [...filterStore.flair]
 		if (tempFlair.includes(flair)){
 			for( var i = 0; i < tempFlair.length; i++){ 
@@ -58,6 +59,7 @@ class Filter extends Component {
 		uiStore.updateRootTricks()
 	}
 	numButtonClicked=(element)=>{//TODO I just changed this to color up in state, need to keep doin that here
+		this.collapseTagAutoCompletes()
 		let tempNumBalls = [...filterStore.numBalls]
 		if (tempNumBalls.includes(element)){
 			for( var i = 0; i < tempNumBalls.length; i++){ 
@@ -100,6 +102,7 @@ class Filter extends Component {
 	}
 
 	workedOnPeriodClicked=(period)=>{
+		this.collapseTagAutoCompletes()
 		if (filterStore.workedOnPeriod === period){
 			filterStore.setWorkedOnPeriod(null)
 		}else{
@@ -115,6 +118,7 @@ class Filter extends Component {
 	}
 
     copyFilterURL=()=>{
+    	this.collapseTagAutoCompletes()
     	if (uiStore.rootTricks.length === 0){
     			alert("Unable to create share URL when no results found.") 
     			return
@@ -202,28 +206,31 @@ class Filter extends Component {
 		if (tagType == 'tags') {
 			this.setState({
 				autoCompletedTag : false,
+				autoCompletedContributor : true,
+				autoCompletedDemoType : true,
 				clickedTagInput: true
 			})
 		} else if (tagType == 'contributor') {
 			this.setState({
 				autoCompletedContributor : false,
+				autoCompletedTag: true,
+				autoCompletedDemoType : true,
 				clickedContributorInput: true
 			})
 		} else if (tagType == 'demo') {
 			this.setState({
 				autoCompletedDemoType : false,
+				autoCompletedContributor : true,
+				autoCompletedTag: true,
 				clickedDemoTypeInput: true
 			})
 		}
 	}
 
-	handleOnBlurTag=()=> {
+	collapseTagAutoCompletes=()=> {
 		this.setState({
-			clickedTagInput: false,
 			autoCompletedTag : true,
-			clickedContributorInput: false,
 			autoCompletedContributor : true,
-			clickedDemoTypeInput: false,
 			autoCompletedDemoType : true
 		})
 	}
@@ -305,7 +312,6 @@ class Filter extends Component {
 										onKeyPress={(e)=>this.onTagInputKeyPress('tags',e)}
 										value={this.state.tagInput} 
 										onChange={(e)=>this.handleTagChange('tags',e)}
-										onBlur={this.handleOnBlurTag}
 								/>
 								{autoCompleteTags}
 							</div>
@@ -348,7 +354,6 @@ class Filter extends Component {
 											onKeyPress={(e)=>this.onTagInputKeyPress('contributor',e)}
 											value={this.state.contributorInput} 
 											onChange={(e)=>this.handleTagChange('contributor',e)}
-											onBlur={this.handleOnBlurTag}
 									/>
 									{autoCompleteContributor}
 								</div>
@@ -392,7 +397,6 @@ class Filter extends Component {
 											onKeyPress={(e)=>this.onTagInputKeyPress('demoType',e)}
 											value={this.state.demoTypeInput} 
 											onChange={(e)=>this.handleTagChange('demoType',e)}
-											onBlur={this.handleOnBlurTag}
 									/>
 									{autoCompleteDemoType}
 								</div>
