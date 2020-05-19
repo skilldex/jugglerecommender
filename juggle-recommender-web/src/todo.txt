@@ -4,6 +4,15 @@ v3.6
 			ian has code for this
 
 =========
+
+To discuss with Ian:
+	Custom lists
+	Fix 'pattern missing' message on weak connections
+	Extra user set difficulties
+	Firebase email warning about volnerability
+	find way to keep user info private
+
+
 when the clubs tag is used, make it say (2c),(3c).. instead of (#b)
 make a balls tag in the filter that gets rid of anything that is a prop that is not balls
 	it should be assumed that if there is no prop tag then it is balls
@@ -130,3 +139,6 @@ Performance Improvement:
 	-if home page stats are calculated on startup, switch to keeping running totals so it loads faster
 		-check to see if tricklist or library load on home screen
 	-if inside of each tricks info we keep track of all users that have that trick as a myTrick, then when a trick name changes we can more quickly update everyone's database.
+
+Alternative video
+	-714, "https://youtu.be/Kyk9FNWR_JE" (22-33), "des_juggler"
