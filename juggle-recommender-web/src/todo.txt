@@ -6,14 +6,15 @@ v3.6
 =========
 
 To discuss with Ian:
-	Custom lists
 	Fix 'pattern missing' message on weak connections
-	Extra user set difficulties
-	Firebase email warning about volnerability
+	Firebase email warning about vulnerability
 	find way to keep user info private
+	yearly pay?
+	Extra user set difficulties
+	Custom lists
+	excited state entries and exits / crashes if someone names pattern something(2)
 
 
-when the clubs tag is used, make it say (2c),(3c).. instead of (#b)
 make a balls tag in the filter that gets rid of anything that is a prop that is not balls
 	it should be assumed that if there is no prop tag then it is balls
 fix the weirdness when suggesting a prereq
