@@ -398,7 +398,7 @@ class Detail extends Component {
                              </div>
                   }) : null
 
-    const propType = detailTrick.tags.includes("clubs") ? "Clubs" : "Balls"
+    const propType = detailTrick.tags && detailTrick.tags.includes("clubs") ? "Clubs" : "Balls"
 
     let tutorialSite
     if (detailTrick && detailTrick.url && detailTrick.url.includes('.')){

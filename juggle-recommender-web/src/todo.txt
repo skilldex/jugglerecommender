@@ -6,14 +6,21 @@ v3.6
 =========
 
 To discuss with Ian:
-	Firebase email warning about vulnerability
-	Github email warning about vulnerability
-	find way to keep user info private?
-	yearly pay?
 	Fix 'video has been removed' message on weak connections - very hard to reproduce 			consistently
 	Extra user set difficulties
-	Custom lists
-	excited state entries and exits / crashes if someone names pattern something(2)
+		-contributor difficulty
+		-your difficulty
+		-community difficulty
+	Custom lists (tricklists)
+		-button to add to list on lower right of vid/gif
+			-opens seperate page like filter
+			-can add to existing list or create a list
+		-in filter make dropdown of playlists
+			-store tricklists in user
+				-outer object name is 'playlist'
+					-properties of 1)name and 2)trickKeys(list)
+		-list your tricklists in profile with names being links to main list filtered
+	Add/commit/push/publish
 
 
 make a balls tag in the filter that gets rid of anything that is a prop that is not balls
