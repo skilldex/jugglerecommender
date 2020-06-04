@@ -5,7 +5,7 @@ v3.6
 
 =========
 
-To discuss with Ian:
+
 	Fix 'video has been removed' message on weak connections - very hard to reproduce 			consistently
 	Extra user set difficulties
 		-contributor difficulty
@@ -21,6 +21,7 @@ To discuss with Ian:
 					-properties of 1)name and 2)trickKeys(list)
 		-list your tricklists in profile with names being links to main list filtered
 	Add/commit/push/publish
+
 
 
 make a balls tag in the filter that gets rid of anything that is a prop that is not balls
