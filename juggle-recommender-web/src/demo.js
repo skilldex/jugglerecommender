@@ -18,6 +18,7 @@ class Demo extends Component {
     mouseDown : false,
     timer : null,
     videoExists : true,
+    embedURL: null,
   }
   componentDidMount(){
 
@@ -74,17 +75,29 @@ class Demo extends Component {
       const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
       videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
       const url = "https://www.instagram.com"+usefulPart+"?__a=1"
+      console.log("url "+url)
+      if (!userProvidedURL.includes('ig_web_copy_link')) {
+        this.setState({embedURL : "https://www.instagram.com"+usefulPart+"embed"})
+      }else{
+        this.setState({embedURL : null})
+      }
+
         let fetchResponse = fetch(url).then(
             response => response.json()
         ).then(
             (data) => {
+              //console.log(JSON.stringify(data))
               if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
-          this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
-          this.setIGData(data, trickKey)
+                console.log("if")
+                this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
+                this.setIGData(data, trickKey)
               }else{
+                console.log("else")
                 this.setVideoURL(data.graphql.shortcode_media.video_url, trickKey)
                 this.setIGData(data, trickKey)
+                console.log(data.graphql.shortcode_media.video_url)
               }
+              console.log(data)
             }
         );
       }
@@ -314,7 +327,7 @@ class Demo extends Component {
                              src={instagramLogoIcon}
                              onClick={()=>{this.handleInstagramLogoClick()}}
                           />
-    let igHeader = this.state.videoURL && this.props.demoLocation !== 'expandedSection' && this.state.videoURL.includes('instagram') && this.state.igData ? 
+    let igHeader = !this.state.embedURL && this.state.videoURL && this.props.demoLocation !== 'expandedSection' && this.state.videoURL.includes('instagram') && this.state.igData ? 
                           <div className="instagramHeader">
                             <img className="profileImage" 
                                   onClick={()=>{this.handleInstagramLogoClick()}}
@@ -343,6 +356,13 @@ class Demo extends Component {
     }else{
       youtubeOpts.playerVars.playlist = this.state.youtubeId
     }
+    console.log("..."+this.state.embedURL)
+    const igEmbedSection = this.state.embedURL ?
+
+                          <iframe 
+                               className="igEmbedClass" 
+                               src={this.state.embedURL}></iframe> 
+                         : null
     let video = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
                         <YouTube
                           id="YouTubeVideo"
@@ -378,7 +398,11 @@ class Demo extends Component {
                           onPause={this.instagramPaused}
                           src={this.state.videoURL}
                         ></video> : null 
-    let frameButtons = this.props.demoLocation === "detail" ?
+    if (igEmbedSection){
+      console.log(igEmbedSection)
+      video = igEmbedSection
+    }
+    let frameButtons = this.props.demoLocation === "detail" && !igEmbedSection ?
                         <div className = "frameButtons">
                           <img src = {frameIcon} 
                                alt = ""
@@ -409,6 +433,8 @@ class Demo extends Component {
       }else{
         outerDivClass = "demoOuterDivExpandedSection"
       }
+    }if(this.state.embedURL){
+      outerDivClass = "igEmbedOuterDiv"
     }
     let videoRemovedMessage = 
                             <span className="videoRemovedMessage">

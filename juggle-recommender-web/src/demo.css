@@ -59,6 +59,11 @@ iframe{
     transform: scale(0.50);
 }
 
+.igEmbedClass{
+  width: 500px ;
+  height: 500px;
+}
+
 .frameIcon{
   width: 20px;
   height:20px;
@@ -126,6 +131,13 @@ iframe{
     100% {
         opacity: 1;
     }
+}
+.igEmbedOuterDiv{
+    width: 100%;
+  max-width:300px;
+  height: 300px;
+  z-index : 1200;
+
 }
 
 .demoOuterDivDetail{
