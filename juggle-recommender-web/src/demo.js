@@ -360,7 +360,7 @@ class Demo extends Component {
     const igEmbedSection = this.state.embedURL ?
 
                           <iframe 
-                               className="igEmbedClass" 
+                               className={this.props.demoLocation === "expandedSection"?"igEmbedClassExpanded":"igEmbedClass"}
                                src={this.state.embedURL}></iframe> 
                          : null
     let video = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
@@ -434,7 +434,12 @@ class Demo extends Component {
         outerDivClass = "demoOuterDivExpandedSection"
       }
     }if(this.state.embedURL){
-      outerDivClass = "igEmbedOuterDiv"
+      if(this.props.demoLocation === "expandedSection"){
+        console.log("expanded")
+        outerDivClass = "igEmbedOuterDivExpandedSection"
+      }else{
+        outerDivClass = "igEmbedOuterDiv"
+      }
     }
     let videoRemovedMessage = 
                             <span className="videoRemovedMessage">
