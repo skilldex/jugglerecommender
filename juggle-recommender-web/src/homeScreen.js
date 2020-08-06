@@ -25,7 +25,9 @@ class HomeScreen extends Component {
 		utilities.openPage('detail/'+store.randomLeaderboardTrick.key, true)
 		utilities.sendGA('home screen','trickOfDay detail')
 		store.increaseViewsCounter()
-	}		
+	}	
+
+
 	render (){
     const donationSection = <div className="donationSection">
 							<label><b>Donations:</b></label>
@@ -56,7 +58,9 @@ class HomeScreen extends Component {
 								<h3 className = 'homeScreenHeader' style={{marginBottom: "10px"}}>Pattern of The Day</h3>
 			        
 					           	<div className = "homeTrickName" onClick = {this.openDetail}>
-						           	{store.library[store.randomLeaderboardTrick.key].name} 
+						           	{store.library[store.randomLeaderboardTrick.key] ?
+						           		store.library[store.randomLeaderboardTrick.key].name :
+						           		null} 
 						        </div>
 				            	<Demo 
 					            	trickKey={store.randomLeaderboardTrick.key}

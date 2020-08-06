@@ -422,7 +422,7 @@ class Demo extends Component {
     let outerDivClass
     if (this.props.demoLocation === "detail" || this.props.demoLocation === "home"){
       
-      if (trick.gifUrl && trick.gifUrl.includes('lab') && !video){
+      if (trick && trick.gifUrl && trick.gifUrl.includes('lab') && !video){
         outerDivClass = "demoOuterDivDetailLab"
       }else{
         outerDivClass = "demoOuterDivDetail"
