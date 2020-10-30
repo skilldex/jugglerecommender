@@ -5,7 +5,7 @@ v3.6
 
 =========
 
-once again testing git branches again!
+still trying to get git
 
 	Custom lists (tricklists)
 		-button to add to list on lower right of vid/gif
