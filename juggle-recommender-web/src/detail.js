@@ -391,7 +391,7 @@ class Detail extends Component {
                         />
 
     const tricklistButton = <img 
-                           className="shareFilterDetailButton"
+                           className="playlistDetailButton"
                            src={playlistIcon}
                            onClick={()=>this.copyDetailUrl()}
                            alt=""
@@ -670,6 +670,7 @@ class Detail extends Component {
                 {shareButton}
                 {deleteTrickButton}
                 {editTrickButton}
+                {tricklistButton}
               </div>
               <h3 className="detailHeader">{detailTrick.name}</h3>  
               <Demo 

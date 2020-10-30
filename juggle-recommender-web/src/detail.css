@@ -253,6 +253,16 @@
   align-items: right;
   cursor: pointer;
 }
+.playlistDetailButton{
+  height : 20px;
+  width : 30px;
+  padding-top : 3px;
+  padding-right: 10px;
+  float: right; 
+  margin-left: 6px;
+  align-items: right;
+  cursor: pointer;
+}
 .topButtons{
   display: inline;
   margin-top: 5px;
