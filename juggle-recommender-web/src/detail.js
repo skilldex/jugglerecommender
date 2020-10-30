@@ -18,6 +18,7 @@ import './App.css';
 import './detail.css';
 import downArrow from './images/down-arrow.svg'
 import shareIcon from './images/shareIcon.png'
+import playlistIcon from './images/playlistIcon.png'
 import Comments from "./comments"
 import utilities from "./utilities"
 @observer
@@ -365,7 +366,7 @@ class Detail extends Component {
       store.editMods.includes(authStore.user.username)) ?
         <img id="deleteTrickButton" 
               src={deleteTrickIcon} 
-              className="deleteTrickIcon" 
+              className="deleteTrickIcon" syntax options greyed out
               alt="deleteTrick" 
              onClick={()=>{store.deleteTrick()}}
              title="delete this pattern"
@@ -388,6 +389,15 @@ class Detail extends Component {
                            alt=""
                            title="share this pattern"
                         />
+
+    const tricklistButton = <img 
+                           className="shareFilterDetailButton"
+                           src={playlistIcon}
+                           onClick={()=>this.copyDetailUrl()}
+                           alt=""
+                           title="add this pattern to a playlist"
+                        />
+
     const tags =  detailTrick && detailTrick.tags ? detailTrick.tags.sort().map((tag,i)=>{
                       return <div>
                               <label className= "clickableProperty"
