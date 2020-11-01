@@ -18,6 +18,7 @@ class UIStore {
 	@observable detailTimer = null
 	@observable sortTimer = null
 	@observable filterTimer = null
+	@observable playlistTimer = null
 	@observable expandedMenuTimer = null
 	@observable addingTrick = false
 	@observable editingDetailTrick = false
@@ -25,6 +26,7 @@ class UIStore {
 	@observable mouseInExpandedMenu = false
 	@observable showSortDiv = false
 	@observable showFilterDiv = false
+	@observable showPlaylistDiv = false
 	@observable showMoreInformation = false
 	@observable showExplanation = false
 	@observable showExpandedMenu = false
@@ -421,9 +423,6 @@ class UIStore {
       }
 	}
 
- 	@action clearFilterTimer=()=>{
-		this.filterTimer = null
-	}
 	@action setFilterURL=()=>{
 		let filterURL = filterStore.getURLtext()
 		if(filterURL === '/tricklist/filter/'){
@@ -435,7 +434,6 @@ class UIStore {
 		  	window.location.href = filterURL
 		}
 	}
-
 
 	@action toggleFilterDiv=()=>{
 		this.setShowExpandedMenu(false)
@@ -473,6 +471,10 @@ class UIStore {
 	    	this.showPatternList()
 	    }
 	}
+ 	@action clearFilterTimer=()=>{
+		this.filterTimer = null
+	}
+
 	@action setShowFilterDiv=(showDiv)=>{
 		if (showDiv){
 			utilities.sendGA('mainTagsBar','filter')
@@ -483,6 +485,21 @@ class UIStore {
 		this.showFilterDiv=showDiv
 		//this.showPatternList()
 	}	
+
+ 	@action clearPlaylistTimer=()=>{
+		this.playlistTimer = null
+	}	
+
+	@action setShowPlaylistDiv=(showDiv)=>{
+		if (showDiv){
+			utilities.sendGA('detail','playlist')
+		}
+		this.playlistTimer = setTimeout(()=>{
+			this.clearPlaylistTimer()
+		}, 50)
+		this.showPlaylistDiv=showDiv
+		//this.showPatternList()
+	}
 
 	@action clearExpandedMenuTimer=()=>{
 		this.expandedMenuTimer = null

@@ -9,7 +9,6 @@ still trying to get git, hopefully it is working now!!!!
 
 	Custom lists (tricklists)
 		-button to add to list on lower right of vid/gif
-			-get icon
 			-make icon clickable
 				look at other similar icons
 			-opens seperate page like filter

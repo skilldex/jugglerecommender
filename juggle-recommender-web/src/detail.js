@@ -90,6 +90,7 @@ class Detail extends Component {
       textField.remove()
       alert("Link for the details page copied to clipboard\n" + url)
   }
+
   toggleExtraGif=()=>{
     this.setState({showExtraGif: !this.state.showExtraGif})
   }
@@ -390,10 +391,10 @@ class Detail extends Component {
                            title="share this pattern"
                         />
 
-    const tricklistButton = <img 
+    const playlistButton = <img 
                            className="playlistDetailButton"
                            src={playlistIcon}
-                           onClick={()=>this.copyDetailUrl()}
+                           onClick={()=>{uiStore.setShowPlaylistDiv(true)}}
                            alt=""
                            title="add this pattern to a playlist"
                         />
@@ -670,7 +671,7 @@ class Detail extends Component {
                 {shareButton}
                 {deleteTrickButton}
                 {editTrickButton}
-                {tricklistButton}
+                {playlistButton}
               </div>
               <h3 className="detailHeader">{detailTrick.name}</h3>  
               <Demo 
