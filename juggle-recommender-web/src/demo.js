@@ -73,14 +73,16 @@ class Demo extends Component {
       let videoURLtoUse = "notValid"
       if (userProvidedURL.includes("instagram.com")){
       const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
+      console.log('usefulPart',usefulPart)
       videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
       const url = "https://www.instagram.com"+usefulPart+"?__a=1"
       console.log("url "+url)
-      if (!userProvidedURL.includes('ig_web_copy_link')) {
-        this.setState({embedURL : "https://www.instagram.com"+usefulPart+"embed"})
-      }else{
-        this.setState({embedURL : null})
-      }
+      this.setState({embedURL : null})
+      // if (!userProvidedURL.includes('ig_web_copy_link')) {
+      //   this.setState({embedURL : "https://www.instagram.com"+usefulPart+"embed"})
+      // }else{
+      //   this.setState({embedURL : null})
+      // }
 
         let fetchResponse = fetch(url).then(
             response => response.json()
