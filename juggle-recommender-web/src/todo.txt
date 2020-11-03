@@ -5,6 +5,8 @@ v3.6
 
 =========
 
+add rings to places that clubs is so it can be added as tag
+
 still trying to get git, hopefully it is working now!!!!
 
 	Custom lists (tricklists)
