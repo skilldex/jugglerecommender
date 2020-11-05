@@ -18,7 +18,7 @@ class UIStore {
 	@observable detailTimer = null
 	@observable sortTimer = null
 	@observable filterTimer = null
-	@observable playlistTimer = null
+	@observable addPlaylistTimer = null
 	@observable expandedMenuTimer = null
 	@observable addingTrick = false
 	@observable editingDetailTrick = false
@@ -26,7 +26,7 @@ class UIStore {
 	@observable mouseInExpandedMenu = false
 	@observable showSortDiv = false
 	@observable showFilterDiv = false
-	@observable showPlaylistDiv = false
+	@observable showAddPlaylistDiv = false
 	@observable showMoreInformation = false
 	@observable showExplanation = false
 	@observable showExpandedMenu = false
@@ -435,6 +435,14 @@ class UIStore {
 		}
 	}
 
+	@action toggleAddPlaylistsDiv=()=>{
+		if(!this.showAddPlaylistDiv){
+	      	this.setShowAddPlaylistDiv(true)
+	    }else{
+	    	this.setShowAddPlaylistDiv(false)
+	    }		
+	}
+
 	@action toggleFilterDiv=()=>{
 		this.setShowExpandedMenu(false)
 		if(!this.showFilterDiv){
@@ -486,18 +494,19 @@ class UIStore {
 		//this.showPatternList()
 	}	
 
- 	@action clearPlaylistTimer=()=>{
-		this.playlistTimer = null
+ 	@action clearAddPlaylistTimer=()=>{
+		this.addPlaylistTimer = null
 	}	
 
-	@action setShowPlaylistDiv=(showDiv)=>{
+	@action setShowAddPlaylistDiv=(showDiv)=>{
+		console.log('setShowAddPlaylistDiv')
 		if (showDiv){
-			utilities.sendGA('detail','playlist')
+			utilities.sendGA('detail','addPlaylist')
 		}
-		this.playlistTimer = setTimeout(()=>{
-			this.clearPlaylistTimer()
+		this.addPlaylistTimer = setTimeout(()=>{
+			this.clearAddPlaylistTimer()
 		}, 50)
-		this.showPlaylistDiv=showDiv
+		this.showAddPlaylistDiv=showDiv
 		//this.showPatternList()
 	}
 

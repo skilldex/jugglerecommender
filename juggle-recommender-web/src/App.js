@@ -20,7 +20,7 @@ import Stats from "./stats"
 import Profile from "./profile"
 import ReactGA from 'react-ga'
 import Filter from './filter'
-import Playlist from './playlist'
+import Playlist from './addplaylist'
 //import { withRouter, Router } from 'react-router-dom';
 import history from "./history"
 import utilities from './utilities'
@@ -400,7 +400,7 @@ class App extends Component {
 				{detail}
 				
 				{uiStore.showFilterDiv?<Filter/>: null}
-				{uiStore.showPlaylistDiv?<Playlist/>: null}
+				{uiStore.showAddPlaylistDiv?<Playlist/>: null}
 				{uiStore.addingTrick ? <AddTrickForm/> : null}
 			</div>
 		);

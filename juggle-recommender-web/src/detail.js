@@ -394,7 +394,7 @@ class Detail extends Component {
     const playlistButton = <img 
                            className="playlistDetailButton"
                            src={playlistIcon}
-                           onClick={()=>{uiStore.setShowPlaylistDiv(true)}}
+                           onClick={()=>{uiStore.setShowAddPlaylistDiv(true)}}
                            alt=""
                            title="add this pattern to a playlist"
                         />

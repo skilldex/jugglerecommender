@@ -4,6 +4,9 @@ v3.6
 			ian has code for this
 
 =========
+ask Ian:
+	change word 'playlist' to something else? custom list? custom trick list?
+	placement of playlist icon on details page? move to lower right corner of video?
 
 add rings to places that clubs is so it can be added as tag
 
