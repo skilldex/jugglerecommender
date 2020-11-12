@@ -1,0 +1,19 @@
+.addPlaylistHeaderButtons{
+  margin-bottom: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.addPlaylistHeader{
+  color: #000000;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 34px;
+}
+
+.newPlaylistInput{
+  color: #000000;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 34px;
+}
