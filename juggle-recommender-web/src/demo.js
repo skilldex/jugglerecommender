@@ -19,6 +19,7 @@ class Demo extends Component {
     timer : null,
     videoExists : true,
     embedURL: null,
+    userProvidedURL: null,
   }
   componentDidMount(){
 
@@ -72,36 +73,41 @@ class Demo extends Component {
   getUsableVideoURL=(userProvidedURL, trickKey)=>{
       let videoURLtoUse = "notValid"
       if (userProvidedURL.includes("instagram.com")){
-      const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
-      videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
-      const url = "https://www.instagram.com"+usefulPart+"?__a=1"
-      console.log("url "+url)
-      this.setState({embedURL : null})
-      // if (!userProvidedURL.includes('ig_web_copy_link')) {
-      //   this.setState({embedURL : "https://www.instagram.com"+usefulPart+"embed"})
-      // }else{
-      //   this.setState({embedURL : null})
-      // }
+        const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
+        videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
+        const url = "https://www.instagram.com"+usefulPart+"?__a=1"
+        console.log("url "+url)
+        this.setState({embedURL : null})
+        // if (!userProvidedURL.includes('ig_web_copy_link')) {
+        //   this.setState({embedURL : "https://www.instagram.com"+usefulPart+"embed"})
+        // }else{
+        //   this.setState({embedURL : null})
+        // }
+        this.setState({userProvidedURL : userProvidedURL})
+
 
         let fetchResponse = fetch(url).then(
-            response => response.json()
-        ).then(
-            (data) => {
-              //console.log(JSON.stringify(data))
-              if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
-                console.log("if")
-                this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
-                this.setIGData(data, trickKey)
-              }else{
-                console.log("else")
-                this.setVideoURL(data.graphql.shortcode_media.video_url, trickKey)
-                this.setIGData(data, trickKey)
-                console.log(data.graphql.shortcode_media.video_url)
+              response => response.json()
+          ).then(
+              (data) => {
+                console.log("data")
+                //console.log(JSON.stringify(data))
+                if(data.graphql.shortcode_media.__typename === "GraphSidecar"){
+                  console.log("if")
+                  this.setVideoURL(data.graphql.shortcode_media.edge_sidecar_to_children.edges[0].node.video_url, trickKey)
+                  this.setIGData(data, trickKey)
+                }else{
+                  console.log("else")
+                  this.setVideoURL(data.graphql.shortcode_media.video_url, trickKey)
+                  this.setIGData(data, trickKey)
+                  console.log(data.graphql.shortcode_media.video_url)
+                }
+                console.log(data)
               }
-              console.log(data)
-            }
-        );
-      }
+          );
+                  console.log("end")
+        }
+
       else if(userProvidedURL.includes("youtu")){
         let usefulPart
         if (userProvidedURL.includes("youtube.com/watch")){
@@ -444,15 +450,25 @@ class Demo extends Component {
     }
     let videoRemovedMessage = 
                             <span className="videoRemovedMessage">
-                              VIDEO HAS BEEN REMOVED!
+                              VIDEO ERROR!                              
                             </span>
+
+    let userVideoURL = <a href={this.state.userProvidedURL}>Go to video</a>
+
+                            
 		return(
+          <div>
       			<div className={outerDivClass}>
               {!this.state.videoExists || !video && !gifSection ? videoRemovedMessage : ""}
+              
               {this.props.demoLocation === "detailExtraGif" ? gifSection:this.state.videoExists?video:""}
               {video? frameButtons:gifSection}
               {this.props.demoLocation === "detailExtraGif" ? null:igHeader}
       			</div>
+            <div>
+              {!this.state.videoExists || !video && !gifSection ? userVideoURL : ""}
+            </div>
+          </div>
           )
     }
   }

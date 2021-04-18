@@ -7,6 +7,9 @@
   margin-left: 10px;
   cursor: pointer;
 }
+.userVideoURL{
+  
+}
 .videoRemovedMessage{
   color : red;
   font-weight: bold;
