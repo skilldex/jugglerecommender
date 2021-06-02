@@ -80,7 +80,7 @@
   },
   "devDependencies": {
     "chalk": "^2.4.2",
-    "react-dev-utils": "^5.0.3"
+    "react-dev-utils": "^11.0.4"
   },
   "scripts": {
     "start": "node scripts/start.js",
