@@ -85,6 +85,9 @@ class Demo extends Component {
         // }
         this.setState({userProvidedURL : userProvidedURL})
 
+        //try https://stackoverflow.com/questions/43842793/basic-authentication-with-fetch
+
+        //try just embedding the video the way instagram wants me too and only let it play once
 
         let fetchResponse = fetch(url).then(
               response => response.json()
@@ -448,29 +451,32 @@ class Demo extends Component {
         outerDivClass = "igEmbedOuterDiv"
       }
     }
-    let videoRemovedMessage = 
-                            <span className="videoRemovedMessage">
-                              VIDEO ERROR!                              
-                            </span>
-
-    let userVideoURL = <a href={this.state.userProvidedURL}>Go to video</a>
-
+//     let videoRemovedMessage = 
+//                             <span className="videoRemovedMessage">
+//                               VIDEO ERROR!                              
+//                             </span>
+// {!this.state.videoExists || !video && !gifSection ? videoRemovedMessage : ""}
+    //let userVideoURL = <a href={this.state.userProvidedURL}>Watch video on Instagram</a>
+    let userVideoURL = <a style={{display: "table-cell"}} href={this.state.userProvidedURL} target="_blank">Watch video on Instagram</a>
                             
 		return(
           <div>
       			<div className={outerDivClass}>
-              {!this.state.videoExists || !video && !gifSection ? videoRemovedMessage : ""}
+              
               
               {this.props.demoLocation === "detailExtraGif" ? gifSection:this.state.videoExists?video:""}
               {video? frameButtons:gifSection}
               {this.props.demoLocation === "detailExtraGif" ? null:igHeader}
       			</div>
-            <div>
+            <div className="watchVideoOnInsta">
               {!this.state.videoExists || !video && !gifSection ? userVideoURL : ""}
             </div>
           </div>
           )
     }
   }
+
+
+
 
 export default Demo
