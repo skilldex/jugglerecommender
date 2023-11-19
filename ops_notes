@@ -1,0 +1,6 @@
+nginx config file location on linode server:
+/etc/nginx/sites-enabled/skilldex.org
+
+nginx config created through certbot auto.
+Likely since a config for skilldex is in sites-enabled, certbot recognizes it to be able
+to modify the config automatically so that it can add https support.
