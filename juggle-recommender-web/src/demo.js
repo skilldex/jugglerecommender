@@ -72,6 +72,7 @@ class Demo extends Component {
 
   getUsableVideoURL=(userProvidedURL, trickKey)=>{
       let videoURLtoUse = "notValid"
+      this.setState({userProvidedURL : userProvidedURL})
       if (userProvidedURL.includes("instagram.com")){
         const usefulPart = userProvidedURL.match(new RegExp("(?:/p/)(.*?)(?:/)", "ig"))
         videoURLtoUse = "https://www.instagram.com"+usefulPart+"?__a=1"  
@@ -113,7 +114,11 @@ class Demo extends Component {
 
       else if(userProvidedURL.includes("youtu")){
         let usefulPart
-        if (userProvidedURL.includes("youtube.com/watch")){
+        //https://www.youtube.com/shorts/hi2DBC8BW4U 
+        if (userProvidedURL.includes("youtube.com/shorts/")){
+          usefulPart = userProvidedURL.split('youtube.com/shorts/')
+          usefulPart = usefulPart[usefulPart.length-1]
+        }else if (userProvidedURL.includes("youtube.com/watch")){
           usefulPart = userProvidedURL.split('youtube.com/watch?v=')
           usefulPart = usefulPart[usefulPart.length-1]
           if (usefulPart.includes("&feature=youtu.be")){
@@ -126,8 +131,11 @@ class Demo extends Component {
           usefulPart = usefulPart[usefulPart.length-1]            
         }
         videoURLtoUse = usefulPart
-        this.setVideoURL("https://www.youtube.com/embed/"+usefulPart+
-                       "?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
+        if (userProvidedURL.includes("youtube.com/shorts/")){
+          this.setVideoURL("https://www.youtube.com/embed/"+usefulPart)
+        }else{
+          this.setVideoURL("https://www.youtube.com/embed/"+usefulPart+"?rel=0&autoplay=1&mute=1&loop=1&playlist="+usefulPart)
+        }
         this.setState({youtubeId : usefulPart})
       }
       return videoURLtoUse
@@ -373,7 +381,14 @@ class Demo extends Component {
                                className={this.props.demoLocation === "expandedSection"?"igEmbedClassExpanded":"igEmbedClass"}
                                src={this.state.embedURL}></iframe> 
                          : null
-    let video = this.state.videoURL && this.state.videoURL.includes('youtube') ? 
+    let video = this.state.videoURL && this.state.videoURL.includes('youtube') && this.state.userProvidedURL && this.state.userProvidedURL.includes('shorts') ? 
+                        <iframe
+                        style={{ marginLeft: '-125px', height: '850px', marginBottom: '-240px', marginTop: '-200px'}}
+                        src={this.state.videoURL} 
+                        //src="https://www.youtube.com/embed/hi2DBC8BW4U"
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>                          
+                        </iframe> :this.state.videoURL && this.state.videoURL.includes('youtube') && this.state.userProvidedURL && !this.state.userProvidedURL.includes('shorts')? 
                         <YouTube
                           id="YouTubeVideo"
                           name="vidFrame" 
@@ -412,7 +427,7 @@ class Demo extends Component {
       console.log(igEmbedSection)
       video = igEmbedSection
     }
-    let frameButtons = this.props.demoLocation === "detail" && !igEmbedSection ?
+    let frameButtons = this.props.demoLocation === "detail" && !igEmbedSection && this.state.userProvidedURL && !this.state.userProvidedURL.includes('shorts')?
                         <div className = "frameButtons">
                           <img src = {frameIcon} 
                                alt = ""
@@ -458,7 +473,7 @@ class Demo extends Component {
 // {!this.state.videoExists || !video && !gifSection ? videoRemovedMessage : ""}
     //let userVideoURL = <a href={this.state.userProvidedURL}>Watch video on Instagram</a>
     let userVideoURL = <a style={{display: "table-cell"}} href={this.state.userProvidedURL} target="_blank">Watch video on Instagram</a>
-                            
+                        
 		return(
           <div>
       			<div className={outerDivClass}>
