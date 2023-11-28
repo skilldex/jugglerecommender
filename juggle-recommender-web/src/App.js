@@ -61,6 +61,7 @@ history.listen((location, action) => {
 
 let firebaseConfig = {}
 if(store.isLocalHost){ //The ! is only there so i can have the online database to run locally
+// if(0==1){
 	/*for testing GA locally
 	ReactGA.initialize('UA-140392015-1');
 	ReactGA.pageview(window.location.pathname + window.location.search);
