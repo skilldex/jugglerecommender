@@ -35,11 +35,6 @@ class HomeScreen extends Component {
 								<img className="bitcoinIcon"
 									alt=''
 									src={bitcoinIcon}/>
-								<span>Bitcoin:</span>
-			                    <a className ="donationLink"
-			                    	href="bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd">
-			                    		1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
-			                    </a>
 							</div>
 						</div>	
 		return(
@@ -74,7 +69,7 @@ class HomeScreen extends Component {
 							onClick={this.clickPatternList}>
 						Pattern List
 					</button>
-					{donationSection}			    
+		    
 				</div>
 			)
 	}

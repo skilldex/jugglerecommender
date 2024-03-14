@@ -248,10 +248,6 @@ class App extends Component {
 								alt=''
 								src={bitcoinIcon}/>
 							<span>Bitcoin:</span>
-		                    <a className ="donationLink"
-		                    	href="bitcoin:1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd">
-		                    		1842rusLXbYZqraHyoJsHtaSsTxYqQuBtd
-		                    </a>
 						</div>
 					</div>	
      
@@ -326,7 +322,6 @@ class App extends Component {
 										<a target="_" href="mailto:skilldex.feedback@gmail.com">skilldex.feedback@gmail.com</a>
 									</div>
 								</div><br/>
-								{donationSection}
 				            </SlidingPane> 
 
 		const login = 	<SlidingPane
